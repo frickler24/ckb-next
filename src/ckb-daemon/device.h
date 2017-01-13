@@ -62,4 +62,5 @@ void setmodeindex_nrgb(usbdevice* kb, int index);
 #define ACT_M2          11
 #define ACT_M3          12
 
+#include <limits.h>
 #endif  // DEVICE_H
