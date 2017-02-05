@@ -1,7 +1,6 @@
 #ifndef CKBSETTINGS_H
 #define CKBSETTINGS_H
 
-#include <QMessageBox>
 #include <QSettings>
 #include <QStringList>
 #include <QMap>
@@ -24,9 +23,6 @@ public:
     // One-shot get/set
     static QVariant get(const QString& key, const QVariant& defaultValue = QVariant());
     static void     set(const QString& key, const QVariant& value);
-
-    /// If config files are writable, do nothing. Otherwise give the user a pop up
-    static void checkIfWritable();
 
     // Whether or not CkbSettings is busy writing data. If busy, the constructors will block until it is not.
     // The global set() will also block if busy, but global get() will not, unless the value has never been read before.

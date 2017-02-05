@@ -17,12 +17,6 @@ QMutex settingsMutex(QMutex::Recursive), settingsCacheMutex(QMutex::Recursive);
 #define lockMutexStatic2    QMutexLocker locker2(&settingsMutex)
 #define lockMutexCache      QMutexLocker locker(&settingsCacheMutex)
 
-///
-/// \brief globalSettings
-/// \return QSettings* _globalsettings
-/// Opens the global settings organized by QSettings class (machine independent implementation).
-/// Settings contain key definitions, colors, macros, settings for the profiles and so on.
-///
 static QSettings* globalSettings(){
     if(!_globalSettings){
         lockMutexStatic;
@@ -36,23 +30,6 @@ static QSettings* globalSettings(){
     }
     return _globalSettings;
 }
-
-///
-/// \brief CkbSettings::checkIfWritable
-/// If the local implementation of the config database is not yet writable,
-/// bring up a popup to the user to informhim about it.
-/// Bring up the information where he can find the info.
-void CkbSettings::checkIfWritable() {
-    if (_globalSettings->isWritable()) return;
-    QMessageBox msgBox;
-    msgBox.setIcon(QMessageBox::Warning);
-    msgBox.setText("Your profile information for ckb-next is not writable.\n");
-    QString info = "This might happen, if you did start the ckb-next program with root privileges earlier.\n\nOr did you copy it from somewhere?\n\nPlease have a look at "
-            + _globalSettings->fileName() + "\n\n";
-    msgBox.setInformativeText(info);
-    msgBox.exec();
-}
-
 
 bool CkbSettings::isBusy(){
     return cacheWritesInProgress.load() > 0;
