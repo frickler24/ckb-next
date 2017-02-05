@@ -103,7 +103,13 @@ sudo rm -f /usr/lib/systemd/system/ckb-daemon.service
 sudo service ckb-daemon stop
 sudo rm -f /etc/init/ckb-daemon.conf
 ```
-* If you're not sure, re-run the `quickinstall` script and proceed to the service installation. The script will say `System service: Upstart detected` or `System service: systemd detected`
+* If you have OpenRC:
+```
+sudo rc-service ckb-daemon stop
+sudo rc-update del ckb-daemon default
+sudo rm -f /etc/init.d/ckb-daemon
+```
+* If you're not sure, re-run the `quickinstall` script and proceed to the service installation. The script will say `System service: Upstart detected` or `System service: systemd detected`. Please be aware that OpenRC is currently not detected automatically.
 
 Afterward, remove the applications and related files:
 ```
