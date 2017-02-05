@@ -51,7 +51,8 @@ static const char* const cmd_strings[CMD_COUNT - 1] = {
 
     "notify",
     "inotify",
-    "get"
+    "get",
+    "restart"
 };
 
 #define TRY_WITH_RESET(action)  \
@@ -198,9 +199,20 @@ int readcmd(usbdevice* kb, const char* line){
             }
             continue;
         }
-        case DELAY:
-            kb->delay = (!strcmp (word, "on")); // independendant from parameter to handle false commands like "delay off"
+        case DELAY: {
+            long int delay;
+            if(sscanf(word, "%ld", &delay) == 1 && 0 <= delay && delay < UINT_MAX) {
+                // Add delay of `newdelay` microseconds to macro playback
+                kb->delay = (unsigned int)delay;
+            } else if(strcmp(word, "on") == 0) {
+                // allow previous syntax, `delay on` means use old `long macro delay`
+                kb->delay = UINT_MAX;
+            } else {
+                // bad parameter to handle false commands like "delay off"
+                kb->delay = 0; // No delay.
+            }
             continue;
+        }
         default:;
         }
 
@@ -275,6 +287,9 @@ int readcmd(usbdevice* kb, const char* line){
                 vt->macro(kb, mode, notifynumber, 0, 0);
                 continue;
             }
+            break;
+        case RESTART:
+            vt->do_cmd[command](kb, mode, notifynumber, 0, word);
             break;
         default:;
         }

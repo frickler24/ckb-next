@@ -128,6 +128,37 @@ Macros are a more advanced form of key binding, controlled with the `macro` comm
 
 Assigning a macro to a key will cause its binding to be ignored; for instance, `macro a:+b,-b` will cause A to generate a B character regardless of its binding. However, `macro lctrl+a:+b,-b` will cause A to generate a B only when Ctrl is also held down.
 
+### Macro playback delay
+
+There are two types of playback delay that can be set with macros; global and local. Setting a _global delay_ value introduces a time delay between events during macro execution or playback. _Local delay_ allows setting the delay after an individual event, overriding the global delay value for that event. Thus global delay can be used to set the overall playback speed of macros and local delays can be used to tune individual events within a macro.
+
+All delay values are specified in microseconds (us) and are positive values from `0` to  `UINT_MAX - 1`. This means delays range from 0 to just over 1 hour (4,294,967,294us, 4,294 seconds, 71 minutes, or 1.19 hours). A value of zero (0) represents no delay between actions.
+
+#### Global macro delay (default delay)
+
+Global delay allows macro playback speed to be changed. It sets the time between (actually after) each recorded macro event. If global delay is set to 1 microsecond then a 1 ms delay will follow each individual macro event when the macro is triggered.
+
+The _global delay_ is set with the ckb-daemon's existing (in testing branch) `delay` command followed by an unsigned integer representing the number of microseconds to wait after each macro action and before the next.
+
+Global delay can also be set to `on` which maintains backwards compatibility with the current development of `ckb-daemon` for long macro playback. That is, setting the global delay to `on` introduces a 30us and a 100us delay based on the macro's length during playback.
+
+**NOTE**: This setting also introduces a delay after the last macro action. This functionality exists in the current testing branch and was left as-is. It is still to be determined if this is a bug or a feature.
+
+**Examples:**
+* `delay 1000` sets a 1,000us delay between action playback.
+* `delay on` sets long macro delay; 30us for actions between 20 and 200, 100us for actions > 200.
+* `delay off` sets no delay (same as 0).
+* `delay 0` sets no delay (same as off).
+* `delay spearmint-potato` is invalid input, sets no delay (same as off).
+
+#### Local macro delay (keystroke delay)
+
+Local Delay allows each macro action to have a post-action delay associated with it. This allows a macro to vary it's playback speed for each event. If no local delay is specified for a macro action, then the global `delay` (above) is used. All delay values are in microsecods (us) as with the global delay setting.
+
+***Examples:*** 
+* `macro g5:+d,-d,+e=5000,-e,+l,-l=10000,+a,-a,+y,-y=1000000,+enter,-enter` define a macro for `g5` with a 5,000us delay between the `e`  down and `e` up actions. A 1,000us delay between `l` up and `a` down, a delay of one second (1,000,000us) after `y` up and before `enter`, and the global delay for all other actions.
+* `macro g5:+d,-d=0` use default delay between `d` down and `d` up and no delay (0us) after `d` up. This removes the noted feature/bug (above) where the last action has a trailing delay associated with it.
+
 DPI and mouse settings
 ----------------------
 
@@ -202,6 +233,18 @@ Firmware updates
 The latest firmware versions and their URLs can be found in the `FIRMWARE` document. To update your keyboard's firmware, first extract the contents of the zip file and then issue the command `fwupdate /path/to/fw/file.bin` to the keyboard you wish to update. The path name must be absolute and must not include spaces. If it succeeded, you should see `fwupdate <path> ok` logged to the keyboard's notification node and then the device will disconnect and reconnect. If you see `fwupdate <path> invalid` it means that the firmware file was not valid for the device; more info may be available in the daemon's `stdout`. If you see `fwupdate <path> fail` it means that the file was valid but the update failed at a hardware level. The keyboard may disconnect/reconnect anyway or it may remain in operation.
 
 When the device reconnects you should see the new firmware version in its `fwversion` node; if you see `0000` instead it means that the keyboard did not update successfully and will need another `fwupdate` command in order to function again. If the update fails repeatedly, try connecting the keyboard to a Windows PC and using the official firmware update in CUE.
+
+Restart
+-------
+
+Because sometimes tho communication between daemon and KB is corrupted after resuming from Standby or suspend, a restart function is implemented.
+It first calls the quit() funtion, then it calls main() again with the original parameter list.
+
+There are two ways to restart the daemon:
+- send the string "restart some-description-as-one-word" to the cmd-pipe (normally /dev/input/ckb1/cmd or /dev/input/ckb2/cmd, dependign on what device gets what usb number
+- sending SIGUSR1 to the daemon-process (as root).
+
+Later on, there may be a user interface in the client for the first method.
 
 Security
 --------
