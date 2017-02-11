@@ -107,6 +107,9 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->tabWidget->addTab(settingsWidget = new SettingsWidget(this), configLabel);
     settingsWidget->setVersion("ckb-next " CKB_VERSION_STR);
+
+    /// give a hint if the config files are not writeable
+    CkbSettings::informIfNotWritable();
 }
 
 void MainWindow::toggleTrayIcon(bool visible) {
