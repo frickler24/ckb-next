@@ -17,11 +17,35 @@ QMutex settingsMutex(QMutex::Recursive), settingsCacheMutex(QMutex::Recursive);
 #define lockMutexStatic2    QMutexLocker locker2(&settingsMutex)
 #define lockMutexCache      QMutexLocker locker(&settingsCacheMutex)
 
+///
+/// \brief globalSettings
+/// \return QSettings* _globalsettings
+/// Opens the global settings organized by QSettings class (machine independent implementation).
+/// Settings contain key definitions, colors, macros, settings for the profiles and so on.
+///
 static QSettings* globalSettings(){
     if(!_globalSettings){
         lockMutexStatic;
         if(!(volatile QSettings*)_globalSettings){   // Check again after locking mutex in case another thread created the object
-            // Put the settings object in a separate thread so that it won't lock up the GUI when it syncs
+            /// first check, if QSettings structures can be written in the filesystem.
+            /// Try to open the standard config file and to write something into it. Close the file.
+            CkbSettings::setWritable(false);
+            QSettings* testSettings = new QSettings;
+            testSettings->setValue("testIfWritable", 42);
+            testSettings->sync();
+            delete testSettings;
+
+            /// Try to open the conf file again and to read the standard value. Delete the standard value afterwards.
+            testSettings = new QSettings;
+            if (testSettings->value("testIfWritable").toInt() == 42) {
+                CkbSettings::setWritable(true);
+                testSettings->remove("testIfWritable");
+                testSettings->sync();
+            }
+            delete testSettings;
+            testSettings = 0;
+
+            /// Put the settings object in a separate thread so that it won't lock up the GUI when it syncs
             globalThread = new QThread;
             globalThread->start();
             _globalSettings = new QSettings;
@@ -31,6 +55,42 @@ static QSettings* globalSettings(){
     }
     return _globalSettings;
 }
+
+///
+/// \brief CkbSettings::_writable
+///
+bool CkbSettings::_writable = false;
+
+///
+/// \brief CkbSettings::isWritable Remember if the config files are writable (boolean getter)
+/// \return the value of CkbSettings::writable
+///
+bool CkbSettings::isWritable() { return _writable; }
+
+///
+/// \brief CkbSettings::setWritable Remember if the config files are writable (setter)
+/// \param v
+/// Set the value of CkbSettings::writable
+///
+void CkbSettings::setWritable(bool v) { _writable = v; }
+
+///
+/// \brief CkbSettings::checkIfWritable
+/// If the local implementation of the config database is not yet writable,
+/// bring up a popup to the user to informhim about it.
+/// Bring up the information where he can find the info.
+bool CkbSettings::informIfNotWritable() {
+    if (isWritable()) return false;
+    QMessageBox msgBox;
+    msgBox.setIcon(QMessageBox::Warning);
+    msgBox.setText("\n\n\nYour profile information for ckb-next is not writable.\n");
+    QString info = "This might happen, if you started the ckb-next program with root privileges earlier.\nOr did you copy it from somewhere?\n\nPlease have a look at "
+            + _globalSettings->fileName() + "\nand check the file and its directory (ls -lsa).\n\nThe program runs normally now, but you can\'t save anyting.\n\n";
+    msgBox.setInformativeText(info);
+    msgBox.exec();
+    return true;
+}
+
 
 bool CkbSettings::isBusy(){
     return cacheWritesInProgress.load() > 0;
