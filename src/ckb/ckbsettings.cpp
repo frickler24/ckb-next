@@ -27,8 +27,9 @@ static QSettings* globalSettings(){
     if(!_globalSettings){
         lockMutexStatic;
         if(!(volatile QSettings*)_globalSettings){   // Check again after locking mutex in case another thread created the object
-            /// first check, if QSettings structures can be written in the filesystem.
+            /// first check if QSettings structures can be written in the filesystem.
             /// Try to open the standard config file and to write something into it. Close the file.
+            ///
             CkbSettings::setWritable(false);
             QSettings* testSettings = new QSettings;
             testSettings->setValue("testIfWritable", 42);
@@ -36,8 +37,11 @@ static QSettings* globalSettings(){
             delete testSettings;
 
             /// Try to open the conf file again and to read the standard value. Delete the standard value afterwards.
+            /// Because on linux QSettings does somehow caching, it reads the correct value even the file (not the directory) is read only.
+            /// So we need to add the original isWritabel() function.
+            ///
             testSettings = new QSettings;
-            if (testSettings->value("testIfWritable").toInt() == 42) {
+            if ((testSettings->value("testIfWritable").toInt() == 42) && testSettings->isWritable()) {
                 CkbSettings::setWritable(true);
                 testSettings->remove("testIfWritable");
                 testSettings->sync();
