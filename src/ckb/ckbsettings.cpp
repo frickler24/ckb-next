@@ -94,9 +94,9 @@ bool CkbSettings::informIfNotWritable() {
     if (isWritable()) return false;
     QMessageBox msgBox;
     msgBox.setIcon(QMessageBox::Warning);
-    msgBox.setText("\n\n\nYour profile information for ckb-next is not writable.\n");
-    QString info = "This might happen, if you started the ckb-next program with root privileges earlier.\nOr did you copy it from somewhere?\n\nPlease have a look at "
-            + _globalSettings->fileName() + "\nand check the file and its directory (ls -lsa).\n\nThe program runs normally now, but you can\'t save anyting.\n\n";
+    msgBox.setText("Your profile information for ckb-next is not writable.\n");
+    QString info = "This might happen if you did start the ckb-next program with root privileges earlier.\n\nOr did you copy it from somewhere?\n\nPlease have a look at "
+            + _globalSettings->fileName() + "\n\n";
     msgBox.setInformativeText(info);
     msgBox.exec();
     return true;
