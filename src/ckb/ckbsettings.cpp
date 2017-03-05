@@ -38,7 +38,7 @@ static QSettings* globalSettings(){
 
             /// Try to open the conf file again and to read the standard value. Delete the standard value afterwards.
             /// Because on linux QSettings does somehow caching, it reads the correct value even the file (not the directory) is read only.
-            /// So we need to add the original isWritabel() function.
+            /// So we need to add the original isWritable() function.
             ///
             testSettings = new QSettings;
             if ((testSettings->value("testIfWritable").toInt() == 42) && testSettings->isWritable()) {
