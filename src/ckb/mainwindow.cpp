@@ -109,7 +109,7 @@ MainWindow::MainWindow(QWidget *parent) :
     settingsWidget->setVersion("ckb-next " CKB_VERSION_STR);
 
     /// give a hint if the config files are not writeable
-    CkbSettings::informIfNotWritable();
+    CkbSettings::informIfNonWritable();
 }
 
 void MainWindow::toggleTrayIcon(bool visible) {
