@@ -83,15 +83,17 @@ void CkbSettings::setWritable(bool v) { _writable = v; }
 /// If the local implementation of the config database is not yet writable,
 /// bring up a popup to the user to informhim about it.
 /// Bring up the information where he can find the info.
-bool CkbSettings::informIfNotWritable() {
+bool CkbSettings::informIfNonWritable() {
     if (isWritable()) return false;
     QMessageBox msgBox;
     msgBox.setIcon(QMessageBox::Warning);
-    msgBox.setText("Your profile information for ckb-next is not writable.\n");
+    msgBox.setProperty("Title", "Profile is read only");
+    msgBox.setText("Your profile information for ckb-next is nonwritable.");
     QString info = "This might happen if you did start the ckb-next program with root privileges earlier.\n\nOr did you copy it from somewhere?\n\nPlease have a look at\n"
             + _globalSettings->fileName();
     msgBox.setInformativeText(info);
     msgBox.exec();
+    qDebug() << "Profile information for ckb-next is nonwritable. It is located at" << _globalSettings->fileName();
     return true;
 }
 
