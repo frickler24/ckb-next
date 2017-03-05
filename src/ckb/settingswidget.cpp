@@ -95,7 +95,23 @@ SettingsWidget::~SettingsWidget(){
     delete ui;
 }
 
+///
+/// \brief SettingsWidget::showLayoutDialog pops up a modal window to select the keyboard layout.
+/// Before the modal windows is created, look for a popssible open info-window about read only config file.
+/// If showLayoutDialog() finds an info window, it waits with creating the keyboard-selection
+/// until the info window has gone.
+///
 void SettingsWidget::showLayoutDialog(){
+
+    /// If the profile is read only and the info panel is open, wait asynchronous until the panel is closed.
+    foreach (QWidget *widget, QApplication::topLevelWidgets()) {
+        if (widget->property("Title") == "Profile is read only") {
+            QTimer::singleShot(333, this, SLOT(showLayoutDialog()));   // Run the function after a delay as the dialog may not appear correctly otherwise
+            return;
+        }
+    }
+
+    /// Now create the panel to select the keyboard layout
     LayoutDialog dialog(this);
     dialog.exec();
     // Set selected layout
