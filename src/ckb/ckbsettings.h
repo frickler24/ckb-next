@@ -26,7 +26,7 @@ public:
     static void     set(const QString& key, const QVariant& value);
 
     /// If config files are writable, return false. Otherwise give the user a pop up and return true
-    static bool informIfNotWritable();
+    static bool informIfNonWritable();
     /// Setter & getter for it
     static bool isWritable();
     static void setWritable(bool v);
