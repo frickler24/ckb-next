@@ -87,8 +87,8 @@ bool CkbSettings::informIfNotWritable() {
     QMessageBox msgBox;
     msgBox.setIcon(QMessageBox::Warning);
     msgBox.setText("Your profile information for ckb-next is not writable.\n");
-    QString info = "This might happen if you did start the ckb-next program with root privileges earlier.\n\nOr did you copy it from somewhere?\n\nPlease have a look at "
-            + _globalSettings->fileName() + "\n\n";
+    QString info = "This might happen if you did start the ckb-next program with root privileges earlier.\n\nOr did you copy it from somewhere?\n\nPlease have a look at\n"
+            + _globalSettings->fileName();
     msgBox.setInformativeText(info);
     msgBox.exec();
     return true;
