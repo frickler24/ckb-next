@@ -285,7 +285,7 @@ int mkfwnode(usbdevice* kb){
     snprintf(fwpath, sizeof(fwpath), "%s%d/fwversion", devpath, index);
     FILE* fwfile = fopen(fwpath, "w");
     if(fwfile){
-        fprintf(fwfile, "%04x", kb->fwversion);
+        fprintf(fwfile, "%04x:0x%04x:0x%04x", kb->fwversion, kb->vendor, kb->product);
         fputc('\n', fwfile);
         fclose(fwfile);
         chmod(fwpath, S_GID_READ);

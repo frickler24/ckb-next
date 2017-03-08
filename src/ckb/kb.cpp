@@ -5,6 +5,7 @@
 #include <QDateTime>
 #include "kb.h"
 #include "kbmanager.h"
+#include <qdebug.h>
 
 // All active devices
 static QSet<Kb*> activeDevices;
@@ -60,8 +61,10 @@ Kb::Kb(QObject *parent, const QString& path) :
     if(usbSerial == "")
         usbSerial = "Unknown-" + usbModel;
     if(features.contains("fwversion") && fwpath.open(QIODevice::ReadOnly)){
-        firmware = fwpath.read(100);
-        firmware = QString::number(firmware.trimmed().toInt() / 100., 'f', 2);
+        QString firmwareString = fwpath.read(100);
+        QStringList firmwareList = firmwareString.split(":");
+        qDebug() << "Firmware Version read from ckb-daemon in fwversion file is" << firmwareList.at(0) << ", VID=" << firmwareList.at(1) << ", PID=" << firmwareList.at(2);
+        firmware = QString::number(firmwareList.at(0).trimmed().toInt() / 100., 'f', 2);
         fwpath.close();
     }
     if(features.contains("pollrate") && ppath.open(QIODevice::ReadOnly)){
