@@ -28,7 +28,7 @@ void MacroReaderThread::readMacro(QString line) {
     ///
     /// Because it is possible to change the Focus via keyboard,
     /// we must set the focus on each call.
-    macroText->setFocus();
+//    macroText->setFocus();
     QTextCursor c = macroText->textCursor();
     c.setPosition(macroText->toPlainText().length());
     macroText->setTextCursor(c);
@@ -45,6 +45,9 @@ void MacroReaderThread::readMacro(QString line) {
 ///
 void MacroReaderThread::run() {
     qDebug() << "MacroReader::run() started with" << macroNumber << "and" << macroPath << "and" << macroBox << "and" << macroText;
+
+    /// \brief at least here we should set the focus into the text pane
+    macroText->setFocus();
 
     QFile macroFile(macroPath);
     // Wait a small amount of time for the node to open (100ms) (code reused from kb.cpp)
