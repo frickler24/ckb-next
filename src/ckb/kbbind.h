@@ -86,6 +86,8 @@ public:
     ////////
     /// \brief KbBind::getMacroNumber
     /// \return number of notification channel. Use it in combination with notifyon/off-Statement
+    /// This var holds the number of the notify-channel from the keyboard,
+    /// because mouse clicks should not be recorded in macros.
     int getMacroNumber();
 
     ////////
@@ -98,7 +100,8 @@ public:
     /// Send a notify cmd to the keyboard to set or clear notification for reading macro definition.
     /// The file handle for the cmd pipe is stored in lastCmd.
     /// \param start is boolean. If true, notification channel is opened for all keys, otherwise channel ist closed.
-    void handleNotificationChannel(bool start);
+    /// \param cmdpath holds the path for the notification pipe.
+    void handleNotificationChannel(bool start, QString cmdpath);
 
 public slots:
     // Callback for a keypress event.

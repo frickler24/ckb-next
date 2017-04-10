@@ -20,7 +20,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>5</number>
      </property>
      <widget class="QWidget" name="keyTab">
       <property name="sizePolicy">
@@ -1356,7 +1356,7 @@
         <rect>
          <x>300</x>
          <y>20</y>
-         <width>119</width>
+         <width>131</width>
          <height>81</height>
         </rect>
        </property>
@@ -1383,7 +1383,7 @@
          <x>300</x>
          <y>160</y>
          <width>436</width>
-         <height>30</height>
+         <height>33</height>
         </rect>
        </property>
        <layout class="QGridLayout" name="gridLayout_10">
@@ -1548,22 +1548,6 @@
  <resources/>
  <connections>
   <connection>
-   <sender>cancelButton</sender>
-   <signal>clicked()</signal>
-   <receiver>pteMacroBox</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>735</x>
-     <y>331</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>252</x>
-     <y>201</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>btnClearMacro</sender>
    <signal>clicked()</signal>
    <receiver>pteMacroBox</receiver>
@@ -1624,6 +1608,22 @@
     <hint type="destinationlabel">
      <x>612</x>
      <y>206</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cancelButton</sender>
+   <signal>clicked()</signal>
+   <receiver>pteMacroBox</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>547</x>
+     <y>322</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>168</x>
+     <y>205</y>
     </hint>
    </hints>
   </connection>

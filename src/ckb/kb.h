@@ -150,9 +150,13 @@ private:
     /// \brief pathVars
     /// devpath is the device root path (e.g. /dev/device/ckb1),
     /// cmdpath leads to the daemon input pipe for daemon commands,
-    /// notifyPath is the standard input monitor for general purpose,
+    /// notifyPath is the standard input monitor for general purpose.
+    QString devpath, cmdpath, notifyPath;
+
     /// macroPath added for a second thread to read macro input.
-    QString devpath, cmdpath, notifyPath, macroPath;
+    /// Must be static, because there is only one keyboard but multiple devices.
+    static QString macroPath;
+
     // Is this the keyboard at the given serial/path?
     inline bool matches(const QString& path, const QString& serial) { return path.trimmed() == devpath.trimmed() && usbSerial == serial.trimmed().toUpper(); }
 
@@ -192,9 +196,11 @@ private:
 
     /// \brief notifyNumber is the trailing number in the device path.
     int notifyNumber;
-    // Macro Numer to notify macro definition events
-    int macroNumber;
-    // flag if macro delay hast to be switched on
+    /// \brief Macro Number to notify macro definition events.
+    /// As macroPath, macroNumber must be static, because only keyboard may set this value
+    /// and others (eg mice) needs to read it.
+    static int macroNumber;
+    /// flag if macro delay hast to be switched on
     static bool _delay;
 
     // Needs to be saved?

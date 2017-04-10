@@ -37,7 +37,7 @@ public:
     /// returns the complete string except the leading "$"
     /// (the $ may confuse some caller).
     /// \return QString
-    /// All 4 parts are returned in one QString.
+    /// All 4 or 5 parts are returned in one QString.
     /// If no definition exists, return ""
     ///
     inline QString macroFullLine() const {
@@ -55,7 +55,7 @@ public:
         if (isMacro()) {
             QStringList ret;
             ret =_value.split(":");
-            return (ret.count() == 4);
+            return ((ret.count() >= 4) && (ret.count() <= 5));  ///> a macro definition may have 4 or 5 elements. Later might be more.
         } else {
             return false;
         }
@@ -64,8 +64,10 @@ public:
     //////////
     /// \brief macroLine returns all interresting content for a macro definition.
     /// \return QStringList returns the Macro Key Definition,
-    ///     Readble Macro String and
-    ///     Readable Macro Comment as QStringList.
+    ///     Readble Macro String
+    ///     Readable Macro Comment
+    ///     If it exists, the new 5th element (all data including delay information)
+    ///  as QStringList.
     ///
     inline QStringList macroLine() const {
         if (isValidMacro()) {
@@ -78,10 +80,11 @@ public:
     //////////
     /// \brief macroContent returns the macro key definition only
     /// (the second part of the macro action).
+    /// In this Implementation, strip the delay information.
     /// \return QString macroContent
     ///
     inline QString macroContent() const {
-        return isValidMacro() ? _value.split(":")[1] : "";
+        return isValidMacro() ? _value.split(":")[1].replace(QRegExp("=[0-9]+"), "") : "";
     }
 
     //////////

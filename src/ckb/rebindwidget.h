@@ -72,6 +72,7 @@ private slots:
 
 private:
     Ui::RebindWidget *ui;
+    bool firstCall; ///> Used to position the mouse panel on first bind calls
 
     // Tab indices
     const static int TAB_KB = 0, TAB_MOUSE = 1, TAB_ANIM = 2, TAB_SPECIAL = 3, TAB_PROGRAM = 4, TAB_MACRO = 5;

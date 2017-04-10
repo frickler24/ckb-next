@@ -1,3 +1,4 @@
+#include <fcntl.h>
 #include <QDateTime>
 #include <QUrl>
 #include "ckbsettings.h"
@@ -244,7 +245,7 @@ void KbBind::update(QFile& cmd, bool force){
     if(_winLock)
         cmd.write(" unbind lwin rwin");
 
-    // At last, send Macro definitions if avalilable.
+    // At last, send Macro definitions if available.
     // If no definitions are made, clear macro will be sent only to reset all macros,
     cmd.write(macros.toLatin1());
     lastCmd = &cmd;
@@ -268,22 +269,36 @@ QString KbBind::getMacroPath() {
 
 ////////
 /// \brief handleNotificationChannel sends commands to ckb-daemon for (de-) activating the notify channel.
-/// Send a notify cmd to the keyboard to set or clear notification for reading macro definition.
-/// The file handle for the cmd pipe is stored in lastCmd.
 /// \param start If true, notification channel is opened for all keys, otherwise channel ist closed.
+/// \param cmdpath QString sets the first part of the cmd pipe pathname (eg "/dev/input/ckb2")
+/// to locate the correct keyboard related cmd pipe.
 ///
-void KbBind::handleNotificationChannel(bool start) {
-    if (getMacroNumber() > 0 && lastCmd) {
-        if (start) {
-            lastCmd->write (QString("\nnotifyon %1\n@%1 notify all:on\n").arg(getMacroNumber()).toLatin1());
+void KbBind::handleNotificationChannel(bool start, QString cmdpath) {
+    if (getMacroNumber() > 0) {
+        QFile cmd;
+        cmdpath.append("/cmd");
+        int fd = open(cmdpath.toLatin1().constData(), O_WRONLY | O_NONBLOCK);
+        if(cmd.open(fd, QIODevice::WriteOnly, QFileDevice::AutoCloseHandle)) {
+            qDebug() << "Writing to new Notification channel" << cmdpath << "with" << start;
+            if (start) {
+                cmd.write (QString("\nnotifyon %1\n@%1 notify all:on\n").arg(getMacroNumber()).toLatin1());
+            } else {
+                cmd.write(QString("\n@%1 notify all:off\nnotifyoff %1\n").arg(getMacroNumber()).toLatin1());
+            }
+            cmd.flush();
         } else {
-            lastCmd->write (QString("\n@%1 notify all:off\nnotifyoff %1\n").arg(getMacroNumber()).toLatin1());
+            qDebug() << "error while opening" << cmdpath;
         }
-        lastCmd->flush();
+        cmd.close();
     } else qDebug() << QString("No cmd or valid handle for notification found, macroNumber = %1, lastCmd = %2")
-                       .arg(getMacroNumber()).arg(lastCmd? "set" : "unset");
+                       .arg(getMacroNumber()).arg(cmdpath);
 }
 
+///
+/// \brief KbBind::keyEvent
+/// \param key
+/// \param down
+///
 void KbBind::keyEvent(const QString& key, bool down){
     QString rKey = globalRemap(key);
     KeyAction* act = bindAction(rKey);
