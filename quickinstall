@@ -31,7 +31,7 @@ SRCDIR="src"
 BINDIR="bin"
 [[ "$OSTYPE" == "darwin"* ]] && BINDIR="ckb.app"
 # This script respects the PREFIX variable on Linux (always /Applications on OSX)
-[[ $PREFIX == "" ]] && PREFIX="/usr/bin"
+[[ $PREFIX == "" ]] && PREFIX="/usr"
 [[ "$OSTYPE" == "darwin"* ]] && PREFIX="/Applications"
 
 tab=$'\t'
@@ -62,11 +62,19 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     fi
 fi
 
+# Purge old animations on Linux
+if [ -d "/usr/bin/ckb-animations" ]; then
+    echo "Found deprecated installation scheme, fixing"
+    sudo rm -rf "/usr/bin/ckb-animations"
+    checkfail $?
+    echo "Done"
+fi
+
 if [[ -d $SRCDIR ]]; then
     echo "Preparing build files..."
-    # Clean first
+    # Clean up first
     make clean >/dev/null 2>&1
-    rm Makefile Makefile.* ./*/*/Makefile ./*/*/Makefile.* >/dev/null 2>&1
+    rm -f Makefile Makefile.* ./*/*/Makefile ./*/*/Makefile.* >/dev/null 2>&1
     # Generate makefiles
     ./qmake-auto "$QMAKEFLAGS" > "$TMPFILE" 2>&1
     checkfail $?
@@ -125,22 +133,24 @@ else
     # Linux
     newtmp
     # Install apps
-    sudo mkdir -p "$PREFIX"
+    sudo mkdir -p "$PREFIX/bin"
+    sudo mkdir -p "$PREFIX/lib"
     checkfail $?
-    sudo install bin/ckb "$PREFIX"/ckb 2>"$TMPFILE"
+    sudo install bin/ckb "$PREFIX/bin/ckb" 2>"$TMPFILE"
     checkfail $?
-    sudo install bin/ckb-daemon "$PREFIX"/ckb-daemon 2>"$TMPFILE"
+    sudo install bin/ckb-daemon "$PREFIX/bin/ckb-daemon" 2>"$TMPFILE"
     checkfail $?
-    sudo mkdir -p "$PREFIX"/ckb-animations 2>"$TMPFILE"
+    sudo mkdir -p "$PREFIX/lib/ckb-animations" 2>"$TMPFILE"
     checkfail $?
-    sudo install bin/ckb-animations/* "$PREFIX"/ckb-animations 2>"$TMPFILE"
+    sudo install bin/ckb-animations/* "$PREFIX/lib/ckb-animations" 2>"$TMPFILE"
     checkfail $?
     # Install icon and .desktop
     sudo xdg-icon-resource install --novendor --size 512 usr/ckb.png 2>"$TMPFILE"
     checkfail $?
     sudo xdg-desktop-menu install --novendor usr/ckb.desktop 2>"$TMPFILE"
     checkfail $?
-    echo "Installed in $PREFIX"
+    echo "Binaries were installed under $PREFIX/bin"
+    echo "Animations were installed under $PREFIX/lib/ckb-animations"
 fi
 
 # Offer to run as a system service
