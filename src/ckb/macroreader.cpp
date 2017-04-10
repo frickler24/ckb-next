@@ -10,6 +10,7 @@ MacroReader::MacroReader() {
 }
 
 MacroReader::MacroReader(int macroNumber, QString macroPath, QPlainTextEdit* macBox, QPlainTextEdit* macText) {
+    macText->setFocus();
     startWorkInAThread(macroNumber, macroPath, macBox, macText);
 }
 MacroReader::~MacroReader() {}
@@ -25,9 +26,6 @@ void MacroReader::startWorkInAThread(int macroNumber, QString macroPath, QPlainT
 ///
 void MacroReaderThread::readMacro(QString line) {
     /// \details We want to see the keys as they appear in the macroText Widget.
-    ///
-    /// Because it is possible to change the Focus via keyboard,
-    /// we must set the focus on each call.
 //    macroText->setFocus();
     QTextCursor c = macroText->textCursor();
     c.setPosition(macroText->toPlainText().length());
@@ -47,9 +45,12 @@ void MacroReaderThread::run() {
     qDebug() << "MacroReader::run() started with" << macroNumber << "and" << macroPath << "and" << macroBox << "and" << macroText;
 
     /// \brief at least here we should set the focus into the text pane
-    macroText->setFocus();
+    //macroText->setFocus();
 
-    QFile macroFile(macroPath);
+    QString notifyFile = (macroPath + "/notify%1").arg(macroNumber);
+    QFile macroFile(notifyFile);
+    qDebug() << "trying to open notify-File" << notifyFile;
+
     // Wait a small amount of time for the node to open (100ms) (code reused from kb.cpp)
     QThread::usleep(100000);
     if(!macroFile.open(QIODevice::ReadOnly)){
@@ -61,7 +62,7 @@ void MacroReaderThread::run() {
             QThread::sleep(1);
         }
         if(!macroFile.isOpen()) {
-            qDebug() << QString("unable to open macroFile (%1)").arg(macroPath);
+            qDebug() << "unable to open macroFile" << notifyFile;
             return;
         }
     }

@@ -11,6 +11,7 @@ RebindWidget::RebindWidget(QWidget *parent) :
     ui(new Ui::RebindWidget),
     bind(0), profile(0), macReader(0)
 {
+    firstCall = true;
     ui->setupUi(this);
     ui->lightWrapBox->hide();
     ui->modeWrapBox->hide();
@@ -196,7 +197,10 @@ void RebindWidget::setSelection(const QStringList& newSelection, bool applyPrevi
     bool mouse = act.isMouse();
     if(mouse){
         // Mouse buttons
-        ui->tabWidget->setCurrentIndex(TAB_MOUSE);
+        if (firstCall) {
+            ui->tabWidget->setCurrentIndex(TAB_MOUSE);
+            firstCall = false;
+        }
         // Set mouse buttons (indexOf returns -1 if not found, index zero is blank)
         ui->mbBox->setCurrentIndex(mouseKeys.indexOf(action) + 1);
         ui->mb2Box->setCurrentIndex(mouseExtKeys.indexOf(action) + 1);
@@ -393,6 +397,7 @@ void RebindWidget::on_applyButton_clicked(){
 }
 
 void RebindWidget::on_cancelButton_clicked(){
+    on_btnStopMacro_clicked();
     // Re-load selection
     setSelection(selection);
 }
@@ -702,7 +707,7 @@ void RebindWidget::on_animButton_clicked(bool checked){
 ///
 void RebindWidget::on_btnStartMacro_clicked() {
     if (!macReader) {
-        bind->handleNotificationChannel(true);
+        bind->handleNotificationChannel(true, bind->getMacroPath());
         macReader = new MacroReader(bind->getMacroNumber(), bind->getMacroPath(), ui->pteMacroBox, ui->pteMacroText);
         // because of the second thread we need to disable three of the four bottom buttons.
         // Clicking "Stop" will enable them again.
@@ -724,7 +729,7 @@ void RebindWidget::on_btnStartMacro_clicked() {
 ///
 void RebindWidget::on_btnStopMacro_clicked() {
     if (macReader) {
-        bind->handleNotificationChannel(false);
+        bind->handleNotificationChannel(false, bind->getMacroPath());
         delete macReader;
         macReader = 0;
         convertMacroBox();

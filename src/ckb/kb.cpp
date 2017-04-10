@@ -3,6 +3,7 @@
 #include <QUrl>
 #include <QMutex>
 #include <QDateTime>
+#include <QDebug>
 #include "kb.h"
 #include "kbmanager.h"
 
@@ -15,14 +16,16 @@ static QMutex notifyPathMutex;
 int Kb::_frameRate = 30, Kb::_scrollSpeed = 0;
 KeyMap::Layout Kb::_layout = KeyMap::NO_LAYOUT;
 bool Kb::_dither = false, Kb::_mouseAccel = true, Kb::_delay = false;
+QString Kb::macroPath = ""; ///> is invalid entry.
+int Kb::macroNumber = -1;   ///> is invalid also.
 
 Kb::Kb(QObject *parent, const QString& path) :
     QThread(parent), features("N/A"), firmware("N/A"), pollrate("N/A"), monochrome(false),
-    devpath(path), cmdpath(path + "/cmd"), notifyPath(path + "/notify1"), macroPath(path + "/notify2"),
+    devpath(path), cmdpath(path + "/cmd"), notifyPath(path + "/notify1"),
     _currentProfile(0), _currentMode(0), _model(KeyMap::NO_MODEL),
     lastAutoSave(QDateTime::currentMSecsSinceEpoch()),
     _hwProfile(0), prevProfile(0), prevMode(0),
-    cmd(cmdpath), notifyNumber(1), macroNumber(2), _needsSave(false)
+    cmd(cmdpath), notifyNumber(1), _needsSave(false)
 {
     memset(iState, 0, sizeof(iState));
     memset(hwLoading, 0, sizeof(hwLoading));
@@ -35,8 +38,10 @@ Kb::Kb(QObject *parent, const QString& path) :
         ftpath.close();
         // Read model from features (first word: vendor, second word: product)
         QStringList list = features.split(" ");
-        if(list.length() < 2)
+        if(list.length() < 2) {
+            qDebug() << "Kb::Kb() Error in reading features, read" << list.length() << "entries, 2 expected.";
             return;
+        }
         _model = KeyMap::getModel(list[1]);
         if(_model == KeyMap::NO_MODEL)
             return;
@@ -69,20 +74,20 @@ Kb::Kb(QObject *parent, const QString& path) :
         pollrate = pollrate.trimmed();
         ppath.close();
     }
-
     prefsPath = "Devices/" + usbSerial;
+    qDebug() << "Features =" << features;
 
     hwModeCount = (_model == KeyMap::K95) ? 3 : 1;
-    // Open cmd in non-blocking mode so that it doesn't lock up if nothing is reading
-    // (e.g. if the daemon crashed and didn't clean up the node)
+    /// Open cmd in non-blocking mode so that it doesn't lock up if nothing is reading
+    /// (e.g. if the daemon crashed and didn't clean up the node)
     int fd = open(cmdpath.toLatin1().constData(), O_WRONLY | O_NONBLOCK);
     if(!cmd.open(fd, QIODevice::WriteOnly, QFileDevice::AutoCloseHandle))
         return;
 
-    // Find an available notification node (if none is found, take notify1)
+    /// Find an available notification node (if none is found, take notify1)
     {
         QMutexLocker locker(&notifyPathMutex);
-        for(int i = 1; i < 10; i++){
+        for (int i = 1; i < 10; i++) {
             QString notify = QString(path + "/notify%1").arg(i);
             if(!QFile::exists(notify) && !notifyPaths.contains(notify)){
                 notifyNumber = i;
@@ -95,19 +100,32 @@ Kb::Kb(QObject *parent, const QString& path) :
     cmd.write(QString("notifyon %1\n").arg(notifyNumber).toLatin1());
     cmd.flush();
 
-    // Again, find an available notification node for macro definition
-    // (if none is found, take notify2)
-    {
-        QMutexLocker locker(&notifyPathMutex);
-        for(int i = 1; i < 10; i++){
-            QString notify = QString(path + "/notify%1").arg(i);
-            if(!QFile::exists(notify) && !notifyPaths.contains(notify)){
-                macroNumber = i;
-                macroPath = notify;
-                break;
-            }
+    /// Again, find an available notification node for macro definition if we handle a keyboard.
+    /// (if none is found, take notify2)
+    if (isKeyboard()) {
+        qDebug() << "Keyboard detected, setting macroPath and macroNumber";
+        if (macroPath != "") {
+            qDebug() << "Warning: Redefinition of macroPath. Value was" << macroPath;
         }
-        notifyPaths.insert(notifyPath); ///< \todo Is adding notify2 to the notifypaths neccessary?
+        {   ///> Block ist used to have QMutexLocker as an auto var.
+            QMutexLocker locker(&notifyPathMutex);
+            int i;
+            for (i = 1; i < 10; i++) {
+                QString notify = QString(path + "/notify%1").arg(i);
+                if(!QFile::exists(notify) && !notifyPaths.contains(notify)){
+                    macroNumber = i;
+                    break;
+                }
+            }
+            if (i == 10) {
+                macroNumber = 2;
+            }
+            macroPath = path;
+            notifyPaths.insert(QString(macroPath + "/notify%1").arg(macroNumber)); ///< \todo Is adding notifyX to the notifypaths neccessary?
+            qDebug() << "new macroPath =" << macroPath << "and macroNumber =" << macroNumber;
+        }
+    } else {
+        qDebug() << "No Keyboard detected, leaving macroPath as is:" << macroPath << "and macroNumber as" << macroNumber;
     }
     // Activate device, apply settings, and ask for hardware profile
     cmd.write(QString("fps %1\n").arg(_frameRate).toLatin1());
