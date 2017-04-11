@@ -30,11 +30,8 @@ enum CommandLineParseResults {
     CommandLineBackground
 };
 
-<<<<<<< Updated upstream
-=======
 static Debug ckbdebug;    ///> initialize debugLevel on startup
 
->>>>>>> Stashed changes
 /**
  * parseCommandLine - Setup options and parse command line arguments.
  *
