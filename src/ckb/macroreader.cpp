@@ -1,4 +1,4 @@
-#include <qdebug.h>
+#include "debug.h"
 #include "macroreader.h"
 
 //////////

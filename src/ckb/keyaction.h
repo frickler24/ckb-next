@@ -80,11 +80,20 @@ public:
     //////////
     /// \brief macroContent returns the macro key definition only
     /// (the second part of the macro action).
-    /// In this Implementation, strip the delay information.
+    /// In this Implementation, strip the delay information from element #1, if we detect a short definition
+    /// with only 4 values or the fifth element is not set yet.
     /// \return QString macroContent
     ///
     inline QString macroContent() const {
-        return isValidMacro() ? _value.split(":")[1].replace(QRegExp("=[0-9]+"), "") : "";
+        if (isValidMacro()) {
+            QStringList macroList = _value.split(":");
+            if (macroList.length() >= 5 && macroList[4] != "") {
+                return macroList[1];
+            } else {
+                return macroList[1].replace(QRegExp("=[0-9]+"), "");
+            }
+        }
+        return "";
     }
 
     //////////

@@ -1,7 +1,7 @@
 #include <QStandardPaths>
 #include "rebindwidget.h"
 #include "ui_rebindwidget.h"
-#include <qdebug.h>     // lae.
+#include "debug.h"
 
 static const int DPI_OFFSET = -KeyAction::DPI_UP + 1;
 static const int DPI_CUST_IDX = KeyAction::DPI_CUSTOM + DPI_OFFSET;

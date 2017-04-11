@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include <signal.h>
 #include <errno.h>
+#include "debug.h"
 
 QSharedMemory appShare("ckb");
 
@@ -29,6 +30,8 @@ enum CommandLineParseResults {
     CommandLineClose,
     CommandLineBackground
 };
+
+u_int8_t debugLevel = DEBUGLEVEL_CONFIGURED;    ///> initialize debugLevel on startup
 
 /**
  * parseCommandLine - Setup options and parse command line arguments.
