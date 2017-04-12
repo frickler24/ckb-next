@@ -7,6 +7,9 @@
 #include <unistd.h>
 #include <signal.h>
 #include <errno.h>
+#include "debug.h"
+#include <QtGlobal>
+#include <stdio.h>
 
 QSharedMemory appShare("ckb");
 
@@ -27,10 +30,9 @@ enum CommandLineParseResults {
     CommandLineVersionRequested,
     CommandLineHelpRequested,
     CommandLineClose,
-    CommandLineBackground
+    CommandLineBackground,
+    CommandLineDebug
 };
-
-static Debug ckbdebug;    ///> initialize debugLevel on startup
 
 /**
  * parseCommandLine - Setup options and parse command line arguments.
@@ -57,6 +59,10 @@ CommandLineParseResults parseCommandLine(QCommandLineParser &parser, QString *er
     const QCommandLineOption closeOption(QStringList() << "c" << "close",
                                          "Causes already running instance (if any) to exit.");
     parser.addOption(closeOption);
+    // add -d, --debug
+    const QCommandLineOption debugOption(QStringList() << "d" << "debuglevel",
+                                         "sets the debug level to <level> (0=min..7=max).", "level");
+    parser.addOption(debugOption);
 
     /* parse arguments */
     if (!parser.parse(QCoreApplication::arguments())) {
@@ -84,6 +90,11 @@ CommandLineParseResults parseCommandLine(QCommandLineParser &parser, QString *er
     if (parser.isSet(closeOption)) {
         // close already running application instances, if any
         return CommandLineClose;
+    }
+
+    if (parser.isSet(debugOption)) {
+        // set the debug level to the given value
+        return CommandLineDebug;
     }
 
     /* no explicit argument was passed */
@@ -147,9 +158,95 @@ static bool isRunning(const char* command){
     return false;
 }
 
+///
+/// \brief myDebugLevel static definition;
+/// If you  want to change the initializing value,
+/// please change the assignment to DEBUGLEVEL_INITIAL in debug.h, not here.
+static int myDebugLevel = DEBUGLEVEL_INITIAL;
+
+///
+/// \brief setMyDebugLevel C-function to set the current debugLevel to newDebugLevel
+/// \param newDebugLevel Value between DEBUGLEVEL_FATAL and DEBUGLEVEL_MAX,
+/// see \a debug.h and \a myMessageOutput().
+///
+void setMyDebugLevel (int newDebugLevel) {
+    myDebugLevel = newDebugLevel;
+}
+
+///
+/// \brief myMessageOutput C-Function to handle messages via qDebug, qWarning, qInfo, qCritical
+/// (and somewhen later: qFatal).
+/// This function is "loaded" in \a main() via \a qInstallMessageHandler().
+/// Depending on the value of \a myDebugLevel we print either nothing, a short form or long form
+/// of the message. If ckb is compiled without debug-mode, then QT_NO_DEBUG will be set
+/// and we generate the short form only (because without debug-mode no code-info is available).
+///
+/// - Short form is "<type>: <msg>\n"
+/// - Long form is  "<type>: <msg> (<file>:<line>, <function>)\n"
+/// All three parameters are documented in \a qInstallMessageHandler().
+/// \param type
+/// \param context
+/// \param msg
+///
+void myMessageOutput (QtMsgType type, const QMessageLogContext &context, const QString &msg) {
+    QByteArray localMsg = msg.toLocal8Bit();
+    char textBuffer [DEBUGBUFFERSIZE];
+    char longForm [] = "%s (%s:%u, %s)";
+    char shortForm [] = "%s";
+
+    switch (myDebugLevel) {
+    case DEBUGLEVEL_FATAL:
+    case DEBUGLEVEL_CRITICAL:
+    case DEBUGLEVEL_WARNING:
+    case DEBUGLEVEL_INFO:
+        snprintf(textBuffer, DEBUGBUFFERSIZE, shortForm, localMsg.constData());
+        break;
+    case DEBUGLEVEL_FATAL_LONG:
+    case DEBUGLEVEL_CRITICAL_LONG:
+    case DEBUGLEVEL_WARNING_LONG:
+    case DEBUGLEVEL_ALL:
+#ifdef QT_NO_DEBUG
+        snprintf(textBuffer, DEBUGBUFFERSIZE, shortForm, localMsg.constData());
+#else
+        snprintf(textBuffer, DEBUGBUFFERSIZE, longForm, localMsg.constData(), context.file, context.line, context.function);
+#endif
+        break;
+    default:
+        // FATAL Error, because value of myDebugLevel should be 0..7
+        snprintf(textBuffer, DEBUGBUFFERSIZE, longForm, "Fatal", "wrong value of myDebugLevel in myMessageOutput", context.file, context.line, context.function);
+    }
+
+    switch (type) {
+    case QtDebugMsg:
+        if (myDebugLevel == DEBUGLEVEL_ALL) fprintf(stderr, "%s: %s\n", "Debug", textBuffer);
+        break;
+    case QtInfoMsg:
+        if (myDebugLevel >= DEBUGLEVEL_INFO) fprintf(stderr, "%s: %s\n", "Info", textBuffer);
+        break;
+    case QtWarningMsg:
+        if (myDebugLevel >= DEBUGLEVEL_WARNING) fprintf(stderr, "%s: %s\n", "Warning", textBuffer);
+        break;
+    case QtCriticalMsg:
+        if (myDebugLevel >= DEBUGLEVEL_CRITICAL) fprintf(stderr, "%s: %s\n", "Critical", textBuffer);
+        break;
+    case QtFatalMsg:
+        fprintf(stderr, "%s: %s\n", "Fatal", textBuffer);
+        abort();
+    }
+}
+
+///
+/// \brief main
+/// \param argc
+/// \param argv
+/// \return
+///
 int main(int argc, char *argv[]){
     // Setup main application
     QApplication a(argc, argv);
+
+    /// Setup debug info handler and debugLevel
+    qInstallMessageHandler(myMessageOutput); // Install the handler
 
     // Setup names and versions
     QCoreApplication::setOrganizationName("ckb");
@@ -208,7 +305,18 @@ int main(int argc, char *argv[]){
         // If launched with --background, launch in background
         background = 1;
         break;
+    case CommandLineDebug:
+        // a value should be given
+        setMyDebugLevel(parser.value("d").toUInt());
+        printf ("DebugLevel is set to %d\n", parser.value("d").toUInt());
+        break;
     }
+
+    qDebug() << "Debug messages are shown";
+    qInfo() << "Info messages are shown";
+    qWarning() << "Warnings are shown";
+    qCritical() << "Critical messages are shown";
+    //qFatal() << "Meine erste Fatal Info";
 
     // Launch in background if requested, or if re-launching a previous session
     if(qApp->isSessionRestored())

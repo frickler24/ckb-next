@@ -1,10 +1,10 @@
-#include <qdebug.h>
 #include "keyaction.h"
 #include "kb.h"
 #include "kbanim.h"
 #include "kbprofile.h"
 #include <QDateTime>
 #include <QUrl>
+#include "debug.h"
 #include <cstring>
 #include <cstdio>
 #ifdef USE_LIBX11
