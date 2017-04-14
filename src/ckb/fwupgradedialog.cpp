@@ -4,7 +4,9 @@
 #include "kbfirmware.h"
 #include "ui_fwupgradedialog.h"
 
-// IDs for verifying firmware suitability
+/// \brief IDs for verifying firmware suitability
+/// Some newer hardware models have the same features as older ones, but need a different firmware version number
+/// but not a different firmware file.
 struct KbId {
     short vendor;
     short product;
@@ -13,16 +15,16 @@ struct KbId {
 
 static KbId ids[] = {
     // Keyboards
-    { 0x1b1c, 0x1b17, "corsair k65 rgb" },
-    { 0x1b1c, 0x1b13, "corsair k70 rgb" },
-    { 0x1b1c, 0x1b11, "corsair k95 rgb" },
-    { 0x1b1c, 0x1b15, "corsair strafe monochrome" },
-    { 0x1b1c, 0x1b20, "corsair strafe rgb" },
+    { 0x1b1c, 0x1b17, "corsair k65 rgb"},
+    { 0x1b1c, 0x1b13, "corsair k70 rgb"},
+    { 0x1b1c, 0x1b11, "corsair k95 rgb"},
+    { 0x1b1c, 0x1b15, "corsair strafe monochrome"},
+    { 0x1b1c, 0x1b20, "corsair strafe rgb"},
     // Mice
-    { 0x1b1c, 0x1b12, "corsair m65 rgb" },
-    { 0x1b1c, 0x1b1e, "corsair scimitar rgb" },
+    { 0x1b1c, 0x1b12, "corsair m65 rgb"},
+    { 0x1b1c, 0x1b1e, "corsair scimitar rgb"},
     //SABRE CH-9000111-EU
-    { 0x1b1c, 0x1b32, "corsair sabre optical rgb" }
+    { 0x1b1c, 0x1b32, "corsair sabre optical rgb"}
 };
 
 static const int DIALOG_WIDTH = 420;

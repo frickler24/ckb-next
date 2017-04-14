@@ -1,6 +1,8 @@
 #include <clocale>
 #include <QMap>
+#include <QDebug>
 #include "keymap.h"
+#include "firmware_special.h"
 
 // Normal key size
 #define NS 12, 12
@@ -492,6 +494,29 @@ QStringList KeyMap::layoutNames(){
             << "Swedish";
 }
 
+///
+/// \brief KeyMap::getModel get the KeyMap::Model from the vendor / product special table.
+/// Use this function first, if you want to determine the firmware version to load or check.
+/// \param vendor Corsair's vendor ID V_CORSAIR - just to be sure...
+/// \param myProduct the productID of your USB device
+/// \return the corresponding KeyMap::Model if the v/p-combination could be found, NO_MODEL else.
+///
+KeyMap::Model KeyMap::getModel(const short vendor, const short myProduct){
+    if (vendor != V_CORSAIR) {
+        qCritical() << "Wrong vendor number" << vendor << "with product number" << myProduct;
+        return NO_MODEL;
+    }
+    for (uint i = 0; i < sizeof(specials)/sizeof(struct firmwareSpecial)  ; i++) {
+        if (specials[i].product == myProduct) return specials[i].model;
+    }
+    return NO_MODEL;
+}
+
+///
+/// \brief KeyMap::getModel KeyMap model name.
+/// \param name QString with the name from "features" file
+/// \return the corresponding KeyMap::Model or NO_MODEL (-1), if name does not exist.
+///
 KeyMap::Model KeyMap::getModel(const QString& name){
     QString lower = name.toLower();
     if(lower == "k65")
@@ -511,6 +536,11 @@ KeyMap::Model KeyMap::getModel(const QString& name){
     return NO_MODEL;
 }
 
+///
+/// \brief KeyMap::getModel get the KeyMap name from the KeyMap::Model.
+/// \param model KeyMap::Model
+/// \return QString with model name or "" if model exceeds boundaries
+///
 QString KeyMap::getModel(KeyMap::Model model){
     switch(model){
     case K65:

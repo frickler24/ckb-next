@@ -20,7 +20,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>5</number>
      </property>
      <widget class="QWidget" name="keyTab">
       <property name="sizePolicy">
@@ -1433,9 +1433,135 @@
         <string>Comment label for help</string>
        </property>
       </widget>
+      <widget class="QWidget" name="layoutWidget_delay">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>170</y>
+         <width>238</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="delayButtons">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="sizeConstraint">
+         <enum>QLayout::SetMinimumSize</enum>
+        </property>
+        <item>
+         <widget class="QRadioButton" name="rb_delay_no">
+          <property name="whatsThis">
+           <string>configure delays between keystrokes: Disable delay</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 10pt ; color:  green;</string>
+          </property>
+          <property name="text">
+           <string>No delay</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="rb_delay_default">
+          <property name="whatsThis">
+           <string>configure delays between keystrokes: Set delay to default values: 20us up to 15 chars, 200us above</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 10pt ; color:  green;</string>
+          </property>
+          <property name="text">
+           <string>default</string>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+          <property name="autoExclusive">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="rb_delay_asTyped">
+          <property name="whatsThis">
+           <string>configure delays between keystrokes: Remember delays as they had been typed while the macro definition process</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 10pt ; color:  green;</string>
+          </property>
+          <property name="text">
+           <string>as typed</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QLabel" name="txtBuffer">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>100</y>
+         <width>0</width>
+         <height>0</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="toolTip">
+        <string notr="true"/>
+       </property>
+       <property name="toolTipDuration">
+        <number>0</number>
+       </property>
+       <property name="statusTip">
+        <string notr="true"/>
+       </property>
+       <property name="whatsThis">
+        <string notr="true"/>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>0</number>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="textFormat">
+        <enum>Qt::PlainText</enum>
+       </property>
+       <property name="indent">
+        <number>0</number>
+       </property>
+       <property name="textInteractionFlags">
+        <set>Qt::NoTextInteraction</set>
+       </property>
+      </widget>
       <zorder>pteMacroComment</zorder>
-      <zorder>layoutWidget1</zorder>
       <zorder>layoutWidget</zorder>
+>>>>>>> 450e80a... handle specials in firmware upgrade: Detection of correct version
+      <zorder>layoutWidget1</zorder>
+      <zorder>layoutWidget_delay</zorder>
       <zorder>pteMacroText</zorder>
       <zorder>layoutWidget_2</zorder>
       <zorder>lbl_macro</zorder>
