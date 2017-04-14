@@ -30,6 +30,20 @@ Kb::Kb(QObject *parent, const QString& path) :
 
     // Get the features, model, serial number, FW version (if available), and poll rate (if available) from /dev nodes
     QFile ftpath(path + "/features"), mpath(path + "/model"), spath(path + "/serial"), fwpath(path + "/fwversion"), ppath(path + "/pollrate");
+    if(fwpath.open(QIODevice::ReadOnly)){
+        QString fwString = fwpath.read(1000);
+        fwString = fwString.trimmed();
+        fwpath.close();
+        QStringList list = fwString.split(":");
+        if(list.length() == 3) {    ///> Firmware Info is now current fw-number:vendor:model
+            /// Look for special entries (newest models)
+            bool okVendor, okProduct;
+            const uint vendor = list[1].toUInt(&okVendor, 16);
+            const uint product = list[2].toUInt(&okProduct, 16);
+            if (okVendor && okProduct) _model = KeyMap::getModel(vendor, product);    ///> perhaps we have found something, perhaps not.
+            qDebug() << "first look for special firmware returned" << _model;
+        }
+    }
     if(ftpath.open(QIODevice::ReadOnly)){
         features = ftpath.read(1000);
         features = features.trimmed();
@@ -38,9 +52,14 @@ Kb::Kb(QObject *parent, const QString& path) :
         QStringList list = features.split(" ");
         if(list.length() < 2)
             return;
-        _model = KeyMap::getModel(list[1]);
-        if(_model == KeyMap::NO_MODEL)
+        if (_model == KeyMap::NO_MODEL) {   ///> If nothing found in the special firmware search, try here.
+            _model = KeyMap::getModel(list[1]);
+        }
+        /// Last chance gone to get a valid firmware information.
+        if (_model == KeyMap::NO_MODEL) {
+            qWarning() << "Neither firmware-special-search nor feature file analysis resulted in valid firmware information.";
             return;
+        }
     } else
         // Bail if features aren't readable
         return;
