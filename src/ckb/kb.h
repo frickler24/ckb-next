@@ -16,6 +16,7 @@ public:
     QString usbModel, usbSerial;
     // Device information
     QString features, firmware, pollrate;
+    QStringList firmwareReasons;    ///> store decisions for firmware-detection
     bool monochrome;
 
     // Keyboard model

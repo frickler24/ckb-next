@@ -27,6 +27,7 @@ Kb::Kb(QObject *parent, const QString& path) :
 {
     memset(iState, 0, sizeof(iState));
     memset(hwLoading, 0, sizeof(hwLoading));
+    firmwareReasons.clear();
 
     // Get the features, model, serial number, FW version (if available), and poll rate (if available) from /dev nodes
     QFile ftpath(path + "/features"), mpath(path + "/model"), spath(path + "/serial"), fwpath(path + "/fwversion"), ppath(path + "/pollrate");
@@ -41,7 +42,8 @@ Kb::Kb(QObject *parent, const QString& path) :
             const uint vendor = list[1].toUInt(&okVendor, 16);
             const uint product = list[2].toUInt(&okProduct, 16);
             if (okVendor && okProduct) _model = KeyMap::getModel(vendor, product);    ///> perhaps we have found something, perhaps not.
-            qDebug() << "first look for special firmware returned" << _model;
+            firmwareReasons << QString("First look for special firmware returned " + KeyMap::getModel(_model)
+                                       + " with vendor " + QString(vendor) + " and product " + QString(product));
         }
     }
     if(ftpath.open(QIODevice::ReadOnly)){
@@ -54,10 +56,12 @@ Kb::Kb(QObject *parent, const QString& path) :
             return;
         if (_model == KeyMap::NO_MODEL) {   ///> If nothing found in the special firmware search, try here.
             _model = KeyMap::getModel(list[1]);
+            firmwareReasons << QString("Found model " + QString(_model) + " for " + list[1]);
         }
         /// Last chance gone to get a valid firmware information.
         if (_model == KeyMap::NO_MODEL) {
-            qWarning() << "Neither firmware-special-search nor feature file analysis resulted in valid firmware information.";
+            firmwareReasons << "Neither firmware-special-search nor feature file analysis resulted in valid firmware information.";
+            qWarning() << firmwareReasons.last();
             return;
         }
     } else
@@ -82,7 +86,9 @@ Kb::Kb(QObject *parent, const QString& path) :
     if(features.contains("fwversion") && fwpath.open(QIODevice::ReadOnly)){
         QString firmwareString = fwpath.read(100);
         QStringList firmwareList = firmwareString.split(":");
-        qDebug() << "Firmware Version read from ckb-daemon in fwversion file is" << firmwareList.at(0) << ", VID=" << firmwareList.at(1) << ", PID=" << firmwareList.at(2);
+        firmwareReasons << QString("Current firmware version read from ckb-daemon in fwversion file is " + firmwareList.at(0)
+                                   + ", VID=" + firmwareList.at(1) + ", PID=" + firmwareList.at(2));
+        qDebug() << firmwareReasons.last();
         firmware = QString::number(firmwareList.at(0).trimmed().toInt() / 100., 'f', 2);
         fwpath.close();
     }

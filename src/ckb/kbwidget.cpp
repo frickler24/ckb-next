@@ -302,6 +302,12 @@ void KbWidget::devUpdate(){
     ui->serialLabel->setText(device->usbSerial);
     ui->fwLabel->setText(device->firmware);
     ui->pollLabel->setText(device->pollrate);
+
+    ui->firmwareSpecial->clear();
+    QStringListIterator singleString(device->firmwareReasons);
+    while (singleString.hasNext()) {
+        ui->firmwareSpecial->append(singleString.next());
+    }
 }
 
 void KbWidget::modeUpdate(){
