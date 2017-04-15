@@ -26,7 +26,7 @@
       <string notr="true"/>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>5</number>
      </property>
      <property name="usesScrollButtons">
       <bool>false</bool>
@@ -1464,7 +1464,7 @@
         <string>Comment label for help</string>
        </property>
       </widget>
-      <widget class="QWidget" name="layoutWidget">
+      <widget class="QWidget" name="layoutWidget_delay">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -1588,9 +1588,10 @@
         <set>Qt::NoTextInteraction</set>
        </property>
       </widget>
+      <zorder>pteMacroComment</zorder>
       <zorder>layoutWidget</zorder>
       <zorder>layoutWidget1</zorder>
-      <zorder>layoutWidget</zorder>
+      <zorder>layoutWidget_delay</zorder>
       <zorder>pteMacroText</zorder>
       <zorder>layoutWidget_2</zorder>
       <zorder>lbl_macro</zorder>

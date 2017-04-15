@@ -159,7 +159,8 @@ HEADERS  += mainwindow.h \
     extrasettingswidget.h \
     kbmanager.h \
     colormap.h \
-    macroreader.h
+    macroreader.h \
+    firmware_special.h
 
 FORMS    += mainwindow.ui \
     kbwidget.ui \

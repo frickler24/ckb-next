@@ -104,7 +104,8 @@ public:
     static Layout   getLayout(const QString& name);
     static QString  getLayout(Layout layout);
     inline QString  strLayout() const { return getLayout(keyLayout); }
-    // Gets a model by name or name by model
+    // Gets a model by name or vendor:product or name by model
+    static Model    getModel(const short vendor, const short product);
     static Model    getModel(const QString& name);
     static QString  getModel(Model model);
     inline QString  strModel() const { return getModel(keyModel); }
