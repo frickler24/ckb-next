@@ -5,6 +5,8 @@
 #include "usb.h"
 
 #ifdef OS_LINUX
+#define DEBUG_USB
+#define DEBUG_USB_RECV
 
 /// \details
 /// \brief all open usb devices have their system path names here in this array.
@@ -77,6 +79,7 @@ int os_usbsend(usbdevice* kb, const uchar* out_msg, int is_recv, const char* fil
         res = ioctl(kb->handle - 1, USBDEVFS_BULK, &transfer);
     } else {
         struct usbdevfs_ctrltransfer transfer = { 0x21, 0x09, 0x0200, kb->epcount - 1, MSG_SIZE, 5000, (void*)out_msg };
+        ckb_info("os_usbsend: %s to %d\n", is_recv? "receiving" : "sending", kb->epcount - 1);
         res = ioctl(kb->handle - 1, USBDEVFS_CONTROL, &transfer);
     }
     if(res <= 0){
