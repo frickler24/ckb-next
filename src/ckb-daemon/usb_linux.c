@@ -69,6 +69,8 @@ static char kbsyspath[DEV_MAX][FILENAME_MAX];
 ///
 int os_usbsend(usbdevice* kb, const uchar* out_msg, int is_recv, const char* file, int line){
     int res;
+    ckb_info_fn("fwversion = 0x%x, is_recv = %d, ", file, line, kb->fwversion, is_recv);
+
     if(kb->fwversion >= 0x120 && !is_recv){
         struct usbdevfs_bulktransfer transfer;
         memset(&transfer, 0, sizeof(transfer));
@@ -76,12 +78,15 @@ int os_usbsend(usbdevice* kb, const uchar* out_msg, int is_recv, const char* fil
         transfer.len = MSG_SIZE;
         transfer.timeout = 5000;
         transfer.data = (void*)out_msg;
+        ckb_info_fn("starting bulk transfer with ep = %d, len = 0x%x\n", file, line, transfer.ep, transfer.len);
         res = ioctl(kb->handle - 1, USBDEVFS_BULK, &transfer);
     } else {
         struct usbdevfs_ctrltransfer transfer = { 0x21, 0x09, 0x0200, kb->epcount - 1, MSG_SIZE, 5000, (void*)out_msg };
-        ckb_info("os_usbsend: %s to %d\n", is_recv? "receiving" : "sending", kb->epcount - 1);
+        ckb_info_fn("starting control transfer with bmRequestType = 0x21, bRequest = 0x09, wValue = 0x200, ep = %d, len = 0x%x\n",
+                    file, line, transfer.wIndex, transfer.wLength);
         res = ioctl(kb->handle - 1, USBDEVFS_CONTROL, &transfer);
     }
+    ckb_info_fn("os_usbsend: ioctl returned 0x%x\n", file, line, res);
     if(res <= 0){
         ckb_err_fn("%s\n", file, line, res ? strerror(errno) : "No data written");
         if(res == -1 && errno == ETIMEDOUT)
@@ -96,6 +101,7 @@ int os_usbsend(usbdevice* kb, const uchar* out_msg, int is_recv, const char* fil
         sprintf(&converted[i*3], "%02x ", out_msg[i]);
     ckb_warn_fn("Sent %s\n", file, line, converted);
 #endif
+    usleep(1000000);
     return res;
 }
 
@@ -131,6 +137,8 @@ int os_usbsend(usbdevice* kb, const uchar* out_msg, int is_recv, const char* fil
 ///
 int os_usbrecv(usbdevice* kb, uchar* in_msg, const char* file, int line){
     int res;
+    ckb_info_fn("os_usbrecv: fwversion = 0x%x", file, line, kb->fwversion);
+
     // This is what CUE does, but it doesn't seem to work on linux.
     /*if(kb->fwversion >= 0x130){
         struct usbdevfs_bulktransfer transfer;
@@ -142,8 +150,11 @@ int os_usbrecv(usbdevice* kb, uchar* in_msg, const char* file, int line){
         res = ioctl(kb->handle - 1, USBDEVFS_BULK, &transfer);
     } else {*/
         struct usbdevfs_ctrltransfer transfer = { 0xa1, 0x01, 0x0300, kb->epcount - 1, MSG_SIZE, 5000, in_msg };
+        ckb_info_fn("starting control transfer with bmRequestType = 0xA1, bRequest = 0x01, wValue = 0x300, ep = %d, len = 0x%x\n",
+                    file, line, transfer.wIndex, transfer.wLength);
         res = ioctl(kb->handle - 1, USBDEVFS_CONTROL, &transfer);
     //}
+    ckb_info_fn("os_usbrecv: ioctl returned 0x%x\n", file, line, res);
     if(res <= 0){
         ckb_err_fn("%s\n", file, line, res ? strerror(errno) : "No data read");
         if(res == -1 && errno == ETIMEDOUT)
@@ -158,6 +169,7 @@ int os_usbrecv(usbdevice* kb, uchar* in_msg, const char* file, int line){
         sprintf(&converted[i*3], "%02x ", in_msg[i]);
     ckb_warn_fn("Recv %s\n", file, line, converted);
 #endif
+    usleep(1000000);
     return res;
 }
 
