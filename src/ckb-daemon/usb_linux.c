@@ -101,7 +101,6 @@ int os_usbsend(usbdevice* kb, const uchar* out_msg, int is_recv, const char* fil
         sprintf(&converted[i*3], "%02x ", out_msg[i]);
     ckb_warn_fn("Sent %s\n", file, line, converted);
 #endif
-    usleep(1000000);
     return res;
 }
 
@@ -169,7 +168,6 @@ int os_usbrecv(usbdevice* kb, uchar* in_msg, const char* file, int line){
         sprintf(&converted[i*3], "%02x ", in_msg[i]);
     ckb_warn_fn("Recv %s\n", file, line, converted);
 #endif
-    usleep(1000000);
     return res;
 }
 
