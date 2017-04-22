@@ -12,6 +12,13 @@ env:
     - GH_REPO_REF: "github.com/$GH_REPO_ORG/$GH_REPO_NAME.git"
     - DOXYFILE: $TRAVIS_BUILD_DIR/documentation/Doxy-ckb-daemon
 
+before_install:
+    - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
+    - sudo apt-get update -qq
+    - sudo apt-get install -yq --no-install-suggests --no-install-recommends --force-yes qtbase5-dev qtdeclarative5-dev libqt5webkit5-dev libsqlite3-dev
+    - sudo apt-get -yq --no-install-suggests --no-install-recommends --force-yes install qt5-default qttools5-dev-tools
+    - sudo apt-get -yq --no-install-suggests --no-install-recommends --force-yes install libudev-dev zlib1g-dev libappindicator-dev
+
 # Install dependencies
 addons:
   apt:
@@ -21,11 +28,6 @@ addons:
       - doxygen-latex
       - doxygen-gui
       - graphviz
-      - build-essential
-      - libudev-dev
-      - qt5
-      - zlib1g-dev
-      - libappindicator-dev
 
 # Build your code e.g. by calling make
 language:
