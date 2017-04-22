@@ -4,6 +4,7 @@ set -v
 echo "Starting execution, GH_REPO_SLUG = $TRAVIS_REPO_SLUG"
 GH_REPO_ORG=$(echo $TRAVIS_REPO_SLUG | cut -d "/" -f 1)
 GH_REPO_NAME=$(echo $TRAVIS_REPO_SLUG | cut -d "/" -f 2)
+GH_REPO_REF=github.com:${TRAVIS_REPO_SLUG}.git
 ################################################################################
 # Title         : generateDocumentationAndDeploy.sh
 # Date created  : 2017/04/22
