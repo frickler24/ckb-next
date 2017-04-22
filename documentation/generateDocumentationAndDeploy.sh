@@ -85,7 +85,7 @@ echo "" > .nojekyll
 echo 'Generating Doxygen code documentation...'
 # Redirect both stderr and stdout to the log file AND the console.
 echo Starting doxygen with $DOXYFILE1
-echo "quit" | doxygen $DOXYFILE1 > doxygen.log
+doxygen $DOXYFILE1 > doxygen.log
 echo Starting doxygen with $DOXYFILE2
 doxygen $DOXYFILE2 >> doxygen.log 2>&1 
 echo Starting doxygen with $DOXYFILE3
@@ -93,8 +93,8 @@ doxygen $DOXYFILE3 >> doxygen.log 2>&1
 echo Starting doxygen with $DOXYFILE4
 doxygen $DOXYFILE4 >> doxygen.log 2>&1 
 
-echo Generating pdf from latex1
-(cd latex ; make )
+# echo Generating pdf from latex1
+# (cd latex ; make )
 # echo Generating pdf from latex2
 # (cd ckb/latex ; make )
 # echo Generating pdf from latex3
