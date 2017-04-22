@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh +x +v
 GH_REPO_ORG=$(echo $TRAVIS_REPO_SLUG | cut -d "/" -f 1)
 GH_REPO_NAME=$(echo $TRAVIS_REPO_SLUG | cut -d "/" -f 2)
 ################################################################################
