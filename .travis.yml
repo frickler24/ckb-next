@@ -21,7 +21,12 @@ addons:
       - doxygen-latex
       - doxygen-gui
       - graphviz
-
+      - build-essential
+      - libudev-dev
+      - qt5-default
+      - zlib1g-dev
+      - libappindicator-dev
+	
 # Build your code e.g. by calling make
 language:
     - c++
