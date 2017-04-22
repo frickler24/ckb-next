@@ -4,7 +4,7 @@ set -v
 echo "Starting execution, GH_REPO_SLUG = $TRAVIS_REPO_SLUG"
 GH_REPO_ORG=$(echo $TRAVIS_REPO_SLUG | cut -d "/" -f 1)
 GH_REPO_NAME=$(echo $TRAVIS_REPO_SLUG | cut -d "/" -f 2)
-GH_REPO_REF=github.com:${TRAVIS_REPO_SLUG}.git
+GH_REPO_REF=${TRAVIS_REPO_SLUG}
 ################################################################################
 # Title         : generateDocumentationAndDeploy.sh
 # Date created  : 2017/04/22
@@ -50,8 +50,7 @@ mkdir code_docs
 cd code_docs
 
 # Get the current gh-pages branch
-# git clone -b gh-pages https://git@$GH_REPO_REF
-git clone -b gh-pages git@$GH_REPO_REF
+git clone -b gh-pages https://github.com/${GH_REPO_REF}.git
 cd $GH_REPO_NAME
 
 ##### Configure git.
