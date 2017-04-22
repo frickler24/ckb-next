@@ -9,7 +9,7 @@ branches:
 # Environment variables
 env:
   global:
-	- GH_REPO_REF: "github.com/$GH_REPO_ORG/$GH_REPO_NAME.git"
+    - GH_REPO_REF: "github.com/$GH_REPO_ORG/$GH_REPO_NAME.git"
     - DOXYFILE: $TRAVIS_BUILD_DIR/documentation/Doxy-ckb-daemon
 
 # Install dependencies
@@ -23,6 +23,9 @@ addons:
       - graphviz
 
 # Build your code e.g. by calling make
+language:
+    - c++
+
 script:
   - cd $TRAVIS_BUILD_DIR
   - sh -c 'echo "n" | ./quickinstall'
