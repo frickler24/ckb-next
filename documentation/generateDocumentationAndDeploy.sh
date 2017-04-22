@@ -84,9 +84,9 @@ echo "" > .nojekyll
 ##### Generate the Doxygen code documentation and log the output.          #####
 echo 'Generating Doxygen code documentation...'
 # Redirect both stderr and stdout to the log file AND the console.
-doxygen $DOXYFILE1 2>&1 | tee doxygen.log
-doxygen $DOXYFILE2 2>&1 | tee -a doxygen.log
-doxygen $DOXYFILE3 2>&1 | tee -a doxygen.log
+doxygen $DOXYFILE1 2>&1 > doxygen.log
+doxygen $DOXYFILE2 2>&1 >> doxygen.log
+doxygen $DOXYFILE3 2>&1 >> doxygen.log
 
 (cd latex ; make > /dev/null)
 (cd ckb/latex ; make > /dev/null)
