@@ -84,13 +84,20 @@ echo "" > .nojekyll
 ##### Generate the Doxygen code documentation and log the output.          #####
 echo 'Generating Doxygen code documentation...'
 # Redirect both stderr and stdout to the log file AND the console.
+echo Starting doxygen with $DOXYFILE1
 doxygen $DOXYFILE1 2>&1 > doxygen.log
+echo Starting doxygen with $DOXYFILE2
 doxygen $DOXYFILE2 2>&1 >> doxygen.log
+echo Starting doxygen with $DOXYFILE3
 doxygen $DOXYFILE3 2>&1 >> doxygen.log
 
+echo Generating pdf from latex1
 (cd latex ; make > /dev/null)
+echo Generating pdf from latex1
 (cd ckb/latex ; make > /dev/null)
+echo Generating pdf from latex1
 (cd ckb-daemon/latex ; make > /dev/null)
+echo done generating.
 
 ################################################################################
 ##### Upload the documentation to the gh-pages branch of the repository.   #####
