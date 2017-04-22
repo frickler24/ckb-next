@@ -94,13 +94,13 @@ echo Starting doxygen with $DOXYFILE4
 doxygen $DOXYFILE4 >> doxygen.log 2>&1 
 
 echo Generating pdf from latex1
-(cd latex ; make > /dev/null)
-echo Generating pdf from latex2
-(cd ckb/latex ; make > /dev/null)
-echo Generating pdf from latex3
-(cd ckb-daemon/latex ; make > /dev/null)
+(cd latex ; make )
+# echo Generating pdf from latex2
+# (cd ckb/latex ; make )
+# echo Generating pdf from latex3
+# (cd ckb-daemon/latex ; make )
 echo Generating pdf from latex4
-(cd usb/latex ; make > /dev/null)
+(cd usb/latex ; make )
 echo done generating.
 
 ################################################################################
