@@ -85,7 +85,7 @@ echo "" > .nojekyll
 echo 'Generating Doxygen code documentation...'
 # Redirect both stderr and stdout to the log file AND the console.
 echo Starting doxygen with $DOXYFILE1
-doxygen $DOXYFILE1 > doxygen.log
+echo "quit" | doxygen $DOXYFILE1 > doxygen.log
 echo Starting doxygen with $DOXYFILE2
 doxygen $DOXYFILE2 >> doxygen.log 2>&1 
 echo Starting doxygen with $DOXYFILE3
@@ -93,8 +93,8 @@ doxygen $DOXYFILE3 >> doxygen.log 2>&1
 echo Starting doxygen with $DOXYFILE4
 doxygen $DOXYFILE4 >> doxygen.log 2>&1 
 
-# echo Generating pdf from latex1
-# (cd latex ; make )
+echo Generating pdf from latex1
+(cd latex ; make )
 # echo Generating pdf from latex2
 # (cd ckb/latex ; make )
 # echo Generating pdf from latex3
@@ -124,7 +124,7 @@ if [ -d "html" ] && [ -f "html/index.html" ]; then
     # Force push to the remote gh-pages branch.
     # The ouput is redirected to /dev/null to hide any sensitive credential data
     # that might otherwise be exposed.
-    git push --force "https://${GH_REPO_TOKEN}@${GH_REPO_REF}" # > /dev/null 2>&1
+    git push --force "https://${GH_REPO_TOKEN}@${GH_REPO_REF}" > /dev/null # 2>&1
 else
     echo '' >&2
     echo 'Warning: No documentation (html) files have been found!' >&2

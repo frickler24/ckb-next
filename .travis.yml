@@ -68,6 +68,7 @@ addons:
       - libudev-dev qt5-default
       - zlib1g-dev
       - libappindicator-dev
+      - texlive-full
 
 # Build your code e.g. by calling make
 script:
