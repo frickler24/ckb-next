@@ -1,7 +1,7 @@
 #!/bin/sh
-set +x
-set +v
-echo "Starting execution"
+set -x
+set -v
+echo "Starting execution, GH_REPO_SLUG = $GH_REPO_SLUG"
 GH_REPO_ORG=$(echo $TRAVIS_REPO_SLUG | cut -d "/" -f 1)
 GH_REPO_NAME=$(echo $TRAVIS_REPO_SLUG | cut -d "/" -f 2)
 ################################################################################
