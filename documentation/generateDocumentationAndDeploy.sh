@@ -1,7 +1,7 @@
 #!/bin/sh
-set -x
-set -v
-echo "Starting execution, GH_REPO_SLUG = $TRAVIS_REPO_SLUG, GH_REPO_TOKEN = $GH_REPO_TOKEN"
+# set -x
+# set -v
+# echo "Starting execution, GH_REPO_SLUG = $TRAVIS_REPO_SLUG, GH_REPO_TOKEN = $GH_REPO_TOKEN"
 GH_REPO_ORG=$(echo $TRAVIS_REPO_SLUG | cut -d "/" -f 1)
 GH_REPO_NAME=$(echo $TRAVIS_REPO_SLUG | cut -d "/" -f 2)
 GH_REPO_REF=github.com/${TRAVIS_REPO_SLUG}
@@ -45,6 +45,9 @@ echo 'Setting up the script...'
 # Exit with nonzero exit code if anything fails
 set -e
 
+# save the current branch
+export CURRENT_BRANCH=$(git branch | egrep "^\\*" | cut -d" " -f2)
+
 # Create a clean working directory for this script.
 mkdir code_docs
 cd code_docs
@@ -81,7 +84,13 @@ echo "" > .nojekyll
 ##### Generate the Doxygen code documentation and log the output.          #####
 echo 'Generating Doxygen code documentation...'
 # Redirect both stderr and stdout to the log file AND the console.
-doxygen $DOXYFILE 2>&1 | tee doxygen.log
+doxygen $DOXYFILE1 2>&1 | tee doxygen.log
+doxygen $DOXYFILE2 2>&1 | tee -a doxygen.log
+doxygen $DOXYFILE3 2>&1 | tee -a doxygen.log
+
+(cd latex ; make > /dev/null)
+(cd ckb/latex ; make > /dev/null)
+(cd ckb-daemon/latex ; make > /dev/null)
 
 ################################################################################
 ##### Upload the documentation to the gh-pages branch of the repository.   #####

@@ -10,7 +10,9 @@ branches:
 env:
   global:
     - GH_REPO_REF: "github.com/$GH_REPO_ORG/$GH_REPO_NAME.git"
-    - DOXYFILE: $TRAVIS_BUILD_DIR/documentation/Doxy-ckb-daemon
+    - DOXYFILE1: $TRAVIS_BUILD_DIR/documentation/Doxy-ckb-daemon
+    - DOXYFILE2: $TRAVIS_BUILD_DIR/documentation/Doxy-ckb
+    - DOXYFILE3: $TRAVIS_BUILD_DIR/documentation/Doxy-ckb-all
 
 language: cpp
 
