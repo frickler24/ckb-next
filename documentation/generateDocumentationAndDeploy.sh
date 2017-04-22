@@ -1,4 +1,6 @@
 #!/bin/sh
+GH_REPO_ORG=$(echo $TRAVIS_REPO_SLUG | cut -d "/" -f 1)
+GH_REPO_NAME=$(echo $TRAVIS_REPO_SLUG | cut -d "/" -f 2)
 ################################################################################
 # Title         : generateDocumentationAndDeploy.sh
 # Date created  : 2017/04/22
