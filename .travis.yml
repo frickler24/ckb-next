@@ -23,7 +23,7 @@ addons:
       - graphviz
       - build-essential
       - libudev-dev
-      - qt5-default
+      - qt5
       - zlib1g-dev
       - libappindicator-dev
 
