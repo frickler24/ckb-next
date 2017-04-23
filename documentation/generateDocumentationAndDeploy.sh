@@ -96,7 +96,7 @@ mkdir -p ${DOXDIR}
 echo 'Generating Doxygen code documentation...'
 # Redirect both stderr and stdout to the log file AND the console.
 echo Starting doxygen with $DOXYFILE1
-doxygen $DOXYFILE1 > doxygen.log
+doxygen $DOXYFILE1 > doxygen.log 2>&1
 echo Starting doxygen with $DOXYFILE2
 doxygen $DOXYFILE2 >> doxygen.log 2>&1 
 echo Starting doxygen with $DOXYFILE3
@@ -105,10 +105,10 @@ echo Starting doxygen with $DOXYFILE4
 doxygen $DOXYFILE4 >> doxygen.log 2>&1 
 
 echo Generating pdf from latex1 in $(pwd)
-cp ../../documentation/Makefile_skeleton all/latex/Makefile
+cp ../../documentation/Makefile_skeleton ${DOXDIR}/all/latex/Makefile
 (cd all/latex ; make > make_pdf1.log )
 echo Generating pdf from latex2
-cp ../../documentation/Makefile_skeleton ckb/latex/Makefile
+cp ../../documentation/Makefile_skeleton ${DOXDIR}/ckb/latex/Makefile
 (cd ckb/latex ; make > make_pdf2.log )
 echo Generating pdf from latex3
 (cd ckb-daemon/latex ; make > make_pdf3.log )

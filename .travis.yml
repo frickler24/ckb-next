@@ -61,13 +61,13 @@ addons:
   apt:
     packages:
       - doxygen
-      - doxygen-doc
       - doxygen-latex
-      - doxygen-gui
       - graphviz
       - libudev-dev qt5-default
       - zlib1g-dev
       - libappindicator-dev
+      #- doxygen-doc
+      #- doxygen-gui
 
 # Build your code e.g. by calling make
 script:
