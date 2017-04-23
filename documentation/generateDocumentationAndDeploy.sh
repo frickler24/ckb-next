@@ -1,5 +1,5 @@
 #!/bin/sh
-set -x
+# set -x
 # set -v
 echo "Starting execution, GH_REPO_SLUG = $TRAVIS_REPO_SLUG"
 # echo "GH_REPO_TOKEN = $GH_REPO_TOKEN"
@@ -96,14 +96,14 @@ doxygen $DOXYFILE4 >> doxygen.log 2>&1
 
 echo Generating pdf from latex1 in $(pwd)
 cp ../../documentation/Makefile_skeleton latex/Makefile
-(cd latex ; make )
+(cd latex ; make > make_pdf1.log )
 echo Generating pdf from latex2
 cp ../../documentation/Makefile_skeleton ckb/latex/Makefile
-(cd ckb/latex ; make )
+(cd ckb/latex ; make > make_pdf2.log )
 echo Generating pdf from latex3
-(cd ckb-daemon/latex ; make )
+(cd ckb-daemon/latex ; make > make_pdf3.log )
 echo Generating pdf from latex4
-(cd usb/latex ; make )
+(cd usb/latex ; make > make_pdf4.log )
 echo done generating.
 
 ################################################################################
