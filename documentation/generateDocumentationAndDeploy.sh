@@ -85,7 +85,7 @@ echo "" > .nojekyll
 ##### Generate the Doxygen code documentation and log the output.          #####
 
 # Check if we have a pull request. If so, handle the name in a special way (furture)
-# if [ ${TRAVIS_PULL_REQUEST} == "false" ]; then
+# if [ "${TRAVIS_PULL_REQUEST}" == "false" ]; then
     export DOXDIR=${TRAVIS_BRANCH};
 # else
 # export DOXDIR=pullreq_${TRAVIS_PULL_REQUEST};
@@ -106,14 +106,14 @@ doxygen $DOXYFILE4 >> doxygen.log 2>&1
 
 echo Generating pdf from latex1 in $(pwd)
 cp ../../documentation/Makefile_skeleton ${DOXDIR}/all/latex/Makefile
-(cd all/latex ; make > make_pdf1.log )
+(cd ${DOXDIR}/all/latex ; make > make_pdf1.log )
 echo Generating pdf from latex2
 cp ../../documentation/Makefile_skeleton ${DOXDIR}/ckb/latex/Makefile
-(cd ckb/latex ; make > make_pdf2.log )
+(cd ${DOXDIR}/ckb/latex ; make > make_pdf2.log )
 echo Generating pdf from latex3
-(cd ckb-daemon/latex ; make > make_pdf3.log )
+(cd ${DOXDIR}/ckb-daemon/latex ; make > make_pdf3.log )
 echo Generating pdf from latex4
-(cd usb/latex ; make > make_pdf4.log )
+(cd ${DOXDIR}/usb/latex ; make > make_pdf4.log )
 echo done generating.
 
 ################################################################################
