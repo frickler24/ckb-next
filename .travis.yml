@@ -14,6 +14,7 @@ env:
     - DOXYFILE2: $TRAVIS_BUILD_DIR/documentation/Doxy-ckb
     - DOXYFILE3: $TRAVIS_BUILD_DIR/documentation/Doxy-ckb-all
     - DOXYFILE4: $TRAVIS_BUILD_DIR/documentation/JustUSBfiles
+    - MAKEFLAGS: "-j 8"
 
 language: cpp
 
@@ -66,8 +67,6 @@ addons:
       - libudev-dev qt5-default
       - zlib1g-dev
       - libappindicator-dev
-      #- doxygen-doc
-      #- doxygen-gui
 
 # Build your code e.g. by calling make
 script:
