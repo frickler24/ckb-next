@@ -338,6 +338,7 @@ void KeyWidget::paintEvent(QPaintEvent*){
             struct {
                 const char* keyName, *displayName;
             } names[] = {
+                /// \htmlonly
                 {"light", "☼"}, {"lock", "☒"}, {"mute", "◖⊘"}, {"volup", keyMap.model() == KeyMap::K65 ? "◖))" : "▲"}, {"voldn", keyMap.model() == KeyMap::K65 ? "◖)" : "▼"},
                 {"prtscn",  "PrtScn\nSysRq"}, {"scroll", "Scroll\nLock"}, {"pause", "Pause\nBreak"}, {"stop", "▪"}, {"prev", "|◂◂"}, {"play", "▸||"}, {"next", "▸▸|"},
                 {"pgup", "Page\nUp"}, {"pgdn", "Page\nDown"}, {"numlock", "Num\nLock"},
@@ -349,6 +350,10 @@ void KeyWidget::paintEvent(QPaintEvent*){
 #endif
                 {"rmenu", "▤"}, {"up", "▲"}, {"left", "◀"}, {"down", "▼"}, {"right", "▶"}, {"fn","Fn"},
                 {"mouse1", ""}, {"mouse2", ""}, {"mouse3", "∙"}, {"dpiup", "▲"}, {"dpidn", "▼"}, {"wheelup", "▲"}, {"wheeldn", "▼"}, {"dpi", "◉"}, {"mouse5", "▲"}, {"mouse4", "▼"}, {"sniper", "⊕"}
+                /// \endhtmlonly
+                /// \latexonly
+                /// Attention: Missing code here. Please refer to html docs
+                /// \endlatexonly
             };
             for(uint k = 0; k < sizeof(names) / sizeof(names[0]); k++){
                 if(keyName == names[k].keyName){

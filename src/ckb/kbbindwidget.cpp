@@ -73,7 +73,12 @@ void KbBindWidget::updateSelDisplay(){
         if(!pos)
             ui->selectLabel->setText("(Unknown)");
         else
-            ui->selectLabel->setText(pos.friendlyName(false).split("\n")[0] + " → " + bind->friendlyActionName(key).split("\n")[0]);
+            /// \htmlonly
+            ui->selectLabel->setText(pos.friendlyName(false).split("\n")[0] + " → " + bind->friendlyActionName(key).split("\n")[0]); ///> e2 86 92 is keycode for the rightarrow
+            /// \endhtmlonly
+            /// \latexonly
+            /// unprintable code, please refer to html view
+            /// \endlatexonly
         return;
     }
     ui->selectLabel->setText(QString("%1 %2 selected").arg(count).arg(bind->isMouse() ? "buttons" : "keys"));
