@@ -95,8 +95,8 @@ echo Starting doxygen with $DOXYFILE4
 doxygen $DOXYFILE4 >> doxygen.log 2>&1 
 
 echo Generating pdf from latex1 in $(pwd)
-cp ../../documentation/Makefile_skeleton latex/Makefile
-(cd latex ; make > make_pdf1.log )
+cp ../../documentation/Makefile_skeleton all/latex/Makefile
+(cd all/latex ; make > make_pdf1.log )
 echo Generating pdf from latex2
 cp ../../documentation/Makefile_skeleton ckb/latex/Makefile
 (cd ckb/latex ; make > make_pdf2.log )
