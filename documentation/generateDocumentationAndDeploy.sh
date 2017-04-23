@@ -85,7 +85,7 @@ echo "" > .nojekyll
 ##### Generate the Doxygen code documentation and log the output.          #####
 
 # Check if we have a pull request. If so, handle the name in a special way (furture)
-if [ ${TRAVIS_PULL_REQUEST} == false ]; then
+if [ ${TRAVIS_PULL_REQUEST} == "false" ]; then
     export DOXDIR=${TRAVIS_BRANCH};
 else
 	export DOXDIR=pullreq_${TRAVIS_PULL_REQUEST};
