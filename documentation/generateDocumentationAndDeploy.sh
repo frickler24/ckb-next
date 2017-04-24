@@ -96,24 +96,27 @@ echo 'Generating Doxygen code documentation below ${DOXDIR}/ ...'
 
 # Redirect both stderr and stdout to the log file AND the console.
 echo Starting doxygen with $DOXYFILE1 
-doxygen $DOXYFILE1 > doxygen.log 2>&1
+doxygen $DOXYFILE1 > doxygen.log 2>&1 &
 echo Starting doxygen with $DOXYFILE2
-doxygen $DOXYFILE2 >> doxygen.log 2>&1 
+doxygen $DOXYFILE2 >> doxygen.log 2>&1  &
 echo Starting doxygen with $DOXYFILE3
-doxygen $DOXYFILE3 >> doxygen.log 2>&1 
+doxygen $DOXYFILE3 >> doxygen.log 2>&1  &
 echo Starting doxygen with $DOXYFILE4
-doxygen $DOXYFILE4 >> doxygen.log 2>&1 
+doxygen $DOXYFILE4 >> doxygen.log 2>&1  &
+wait
+echo doxygen done.
 
 echo Generating pdf from latex1 in $(pwd)
 cp ../../documentation/Makefile_skeleton ${DOXDIR}/all/latex/Makefile
-(cd ${DOXDIR}/all/latex ; make > make_pdf1.log )
+(cd ${DOXDIR}/all/latex ; make > make_pdf1.log ) &
 echo Generating pdf from latex2
 cp ../../documentation/Makefile_skeleton ${DOXDIR}/ckb/latex/Makefile
-(cd ${DOXDIR}/ckb/latex ; make > make_pdf2.log )
+(cd ${DOXDIR}/ckb/latex ; make > make_pdf2.log ) &
 echo Generating pdf from latex3
-(cd ${DOXDIR}/ckb-daemon/latex ; make > make_pdf3.log )
+(cd ${DOXDIR}/ckb-daemon/latex ; make > make_pdf3.log ) &
 echo Generating pdf from latex4
-(cd ${DOXDIR}/usb/latex ; make > make_pdf4.log )
+(cd ${DOXDIR}/usb/latex ; make > make_pdf4.log ) &
+wait
 echo done generating.
 
 ################################################################################
