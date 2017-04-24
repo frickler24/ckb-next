@@ -15,7 +15,6 @@ env:
     - DOXYFILE3: $TRAVIS_BUILD_DIR/documentation/Doxy-ckb-all
     - DOXYFILE4: $TRAVIS_BUILD_DIR/documentation/JustUSBfiles
     - MAKEFLAGS: "-j 8"
-	- PATH: $PATH:.
 
 language: cpp
 
@@ -77,4 +76,5 @@ script:
 # Generate and deploy documentation
 after_success:
   - cd $TRAVIS_BUILD_DIR
+  - PATH="$PATH:."
   - sh ./documentation/generateDocumentationAndDeploy.sh
