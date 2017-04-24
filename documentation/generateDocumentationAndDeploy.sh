@@ -96,13 +96,13 @@ echo 'Generating Doxygen code documentation below ${DOXDIR}/ ...'
 
 # Redirect both stderr and stdout to the log file AND the console.
 echo Starting doxygen with $DOXYFILE1 
-doxygen $DOXYFILE1 > doxygen.log 2>&1 &
+doxygen $DOXYFILE1 > doxygen1.log 2>&1 &
 echo Starting doxygen with $DOXYFILE2
-doxygen $DOXYFILE2 >> doxygen.log 2>&1  &
+doxygen $DOXYFILE2 > doxygen2.log 2>&1 &
 echo Starting doxygen with $DOXYFILE3
-doxygen $DOXYFILE3 >> doxygen.log 2>&1  &
+doxygen $DOXYFILE3 > doxygen3.log 2>&1 &
 echo Starting doxygen with $DOXYFILE4
-doxygen $DOXYFILE4 >> doxygen.log 2>&1  &
+doxygen $DOXYFILE4 > doxygen4.log 2>&1 &
 wait
 echo doxygen done.
 
