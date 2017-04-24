@@ -77,4 +77,3 @@ script:
 after_success:
   - cd $TRAVIS_BUILD_DIR
   - sh ./documentation/generateDocumentationAndDeploy.sh
-
