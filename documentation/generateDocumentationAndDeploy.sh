@@ -127,7 +127,7 @@ echo done generating.
 if [ -d "${DOXDIR}/all/html" ] && [ -f "${DOXDIR}/all/html/index.html" ]; then
 
 	echo "generating html file at antry level"
-	(cd ${DOXIDIR}/; ${TRAVIS_BUILD_DIR}/documentation/html-generator.sh
+	(cd ${DOXDIR}/..; html-generator.sh)
 
     echo 'Uploading documentation to the gh-pages branch...'
     # Add everything in this directory (the Doxygen code documentation) to the
