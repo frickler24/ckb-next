@@ -92,10 +92,10 @@ echo "" > .nojekyll
 # fi
 
 mkdir -p ${DOXDIR}
+echo 'Generating Doxygen code documentation below ${DOXDIR}/ ...'
 
-echo 'Generating Doxygen code documentation...'
 # Redirect both stderr and stdout to the log file AND the console.
-echo Starting doxygen with $DOXYFILE1
+echo Starting doxygen with $DOXYFILE1 
 doxygen $DOXYFILE1 > doxygen.log 2>&1
 echo Starting doxygen with $DOXYFILE2
 doxygen $DOXYFILE2 >> doxygen.log 2>&1 
