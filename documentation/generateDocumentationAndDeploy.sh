@@ -124,8 +124,8 @@ echo done generating.
 # both exist. This is a good indication that Doxygen did it's work.
 if [ -d "${DOXDIR}/all/html" ] && [ -f "${DOXDIR}/all/html/index.html" ]; then
 
-	echo "generating html file at antry level"
-	(pwd; ls -l; html-generator.sh)
+	echo "generating html file at antry level in $(pwd)"
+	./html-generator.sh
 
     echo 'Uploading documentation to the gh-pages branch...'
     # Add everything in this directory (the Doxygen code documentation) to the
