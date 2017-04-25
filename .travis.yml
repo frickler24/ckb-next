@@ -19,12 +19,12 @@ language: cpp
 
 matrix:
  include:
-  - os: linux
-    dist: trusty
-    sudo: required
-    compiler: gcc
-    env:
-     - QT_BASE=56
+#  - os: linux
+#    dist: trusty
+#    sudo: required
+#    compiler: gcc
+#    env:
+#     - QT_BASE=56
   - os: linux
     dist: trusty
     sudo: required
