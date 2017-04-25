@@ -754,11 +754,13 @@ WARN_LOGFILE           = doxygenDoc/warnAndError.log
 # spaces.
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = $(TRAVIS_BUILD_DIR)/src/ckb/usb.c \
-						 $(TRAVIS_BUILD_DIR)/src/ckb/usb.h \
-						 $(TRAVIS_BUILD_DIR)/src/ckb/usb_linux.c \
-						 $(TRAVIS_BUILD_DIR)/src/ckb/device_vtable.c \
-						 $(TRAVIS_BUILD_DIR)/src/ckb/device.c
+INPUT                  = $(TRAVIS_BUILD_DIR)/src/ckb/
+
+# INPUT                  = $(TRAVIS_BUILD_DIR)/src/ckb/usb.c \
+# 						 $(TRAVIS_BUILD_DIR)/src/ckb/usb.h \
+# 						 $(TRAVIS_BUILD_DIR)/src/ckb/usb_linux.c \
+# 						 $(TRAVIS_BUILD_DIR)/src/ckb/device_vtable.c \
+# 						 $(TRAVIS_BUILD_DIR)/src/ckb/device.c
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses
@@ -778,7 +780,7 @@ INPUT_ENCODING         = UTF-8
 # *.md, *.mm, *.dox, *.py, *.f90, *.f, *.for, *.tcl, *.vhd, *.vhdl, *.ucf,
 # *.qsf, *.as and *.js.
 
-FILE_PATTERNS          = 
+FILE_PATTERNS          = usb*c device*c usb*h
 
 # The RECURSIVE tag can be used to specify whether or not subdirectories should
 # be searched for input files as well.
