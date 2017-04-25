@@ -97,7 +97,7 @@ const char* product_str(short product);
 #define IS_MOUSE_DEV(kb)                IS_MOUSE((kb)->vendor, (kb)->product)
 
 // USB delays for when the keyboards get picky about timing
-#define DELAY_SHORT(kb)     usleep((int)(kb)->usbdelay * 1000)  // base (default: 5ms)
+#define DELAY_SHORT(kb)     usleep((int)(kb)->usbdelay * 2000)  // base (default: 10ms for testing mode-switch of RGB keyboards)
 #define DELAY_MEDIUM(kb)    usleep((int)(kb)->usbdelay * 10000) // x10 (default: 50ms)
 #define DELAY_LONG(kb)      usleep(100000)                      // long, fixed 100ms
 #define USB_DELAY_DEFAULT   5

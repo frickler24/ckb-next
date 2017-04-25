@@ -6,6 +6,8 @@
 
 #ifdef OS_LINUX
 
+#define DEBUG
+
 static char kbsyspath[DEV_MAX][FILENAME_MAX];
 
 int os_usbsend(usbdevice* kb, const uchar* out_msg, int is_recv, const char* file, int line){
@@ -100,10 +102,14 @@ void* os_inputmain(void* context){
     // Monitor input transfers on all endpoints for non-RGB devices
     // For RGB, monitor all but the last, as it's used for input/output
     int urbcount = IS_RGB(vendor, product) ? (kb->epcount - 1) : kb->epcount;
+    if (urbcount == 0) {
+        ckb_err("urbcount = 0, so there is nothing to claim in os_inputmain()\n");
+        return 0;
+    }
     struct usbdevfs_urb urbs[urbcount];
     memset(urbs, 0, sizeof(urbs));
     urbs[0].buffer_length = 8;
-    if(IS_RGB(vendor, product)){
+    if(urbcount > 1 && IS_RGB(vendor, product)) {
         if(IS_MOUSE(vendor, product))
             urbs[1].buffer_length = 10;
         else
@@ -225,11 +231,17 @@ void os_closeusb(usbdevice* kb){
 
 int usbclaim(usbdevice* kb){
     int count = kb->epcount;
+#ifdef DEBUG
+    ckb_info("claiming %d endpoints\n", count);
+#endif // DEBUG
+
     for(int i = 0; i < count; i++){
         struct usbdevfs_ioctl ctl = { i, USBDEVFS_DISCONNECT, 0 };
         ioctl(kb->handle - 1, USBDEVFS_IOCTL, &ctl);
-        if(ioctl(kb->handle - 1, USBDEVFS_CLAIMINTERFACE, &i))
+        if(ioctl(kb->handle - 1, USBDEVFS_CLAIMINTERFACE, &i)) {
+            ckb_err("Failed to claim interface %d: %s\n", i, strerror(errno));
             return -1;
+        }
     }
     return 0;
 }
@@ -286,17 +298,23 @@ int os_setupusb(usbdevice* kb){
     else
         kb->fwversion = 0;
     int index = INDEX_OF(kb, keyboard);
-    ckb_info("Connecting %s at %s%d\n", kb->name, devpath, index);
-
     // Claim the USB interfaces
     const char* ep_str = udev_device_get_sysattr_value(dev, "bNumInterfaces");
+#ifdef DEBUG
+    ckb_info("Connecting %s at %s%d\n", kb->name, devpath, index);
+    ckb_info("claiming interfaces. name=%s, serial=%s, firmware=%s; Got >>%s<< as ep_str\n", name, serial, firmware, ep_str);
+#endif //DEBUG
     kb->epcount = 0;
     if(ep_str)
         sscanf(ep_str, "%d", &kb->epcount);
-    if(kb->epcount == 0){
-        // This shouldn't happen, but if it does, assume EP count based on what the device is supposed to have
-        kb->epcount = (HAS_FEATURES(kb, FEAT_RGB) ? 4 : 3);
-        ckb_warn("Unable to read endpoint count from udev, assuming %d...\n", kb->epcount);
+    if(kb->epcount < 2){
+        // IF we have an RGB KB with 0 or 1 endpoints, it will be in BIOS mode.
+        ckb_err("Possibly unable to read endpoint count from udev, assuming %d and reading >>%s<<...\n", kb->epcount, ep_str);
+        return -1;
+        // ToDo are there special versions we have to detect? If there are, that was the old code to handle it:
+        // This shouldn't happen, but if it does, assume EP count based onckb_warn what the device is supposed to have
+        // kb->epcount = (HAS_FEATURES(kb, FEAT_RGB) ? 4 : 3);
+        // ckb_warn("Unable to read endpoint count from udev, assuming %d and reading >>%s<<...\n", kb->epcount, ep_str);
     }
     if(usbclaim(kb)){
         ckb_err("Failed to claim interfaces: %s\n", strerror(errno));
@@ -312,6 +330,9 @@ int usbadd(struct udev_device* dev, short vendor, short product){
         ckb_err("Failed to get device path\n");
         return -1;
     }
+#ifdef DEBUG
+    ckb_info(">>>vendor = 0x%x, product = 0x%x, path = %s, syspath = %s\n", vendor, product, path, syspath);
+#endif // DEDBUG
     // Find a free USB slot
     for(int index = 1; index < DEV_MAX; index++){
         usbdevice* kb = keyboard + index;

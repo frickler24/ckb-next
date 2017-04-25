@@ -298,6 +298,9 @@ int readcmd(usbdevice* kb, const char* line){
                 continue;
             }
             break;
+        case RESTART:
+            vt->do_cmd[command](kb, mode, notifynumber, 0, word);
+            break;
         default:;
         }
         // For anything else, split the parameter at the colon
