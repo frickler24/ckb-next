@@ -100,8 +100,6 @@ doxygen $DOXYFILE1 > doxygen1.log 2>&1 &
 doxygen $DOXYFILE2 > doxygen2.log 2>&1 &
 # echo Starting doxygen with $DOXYFILE3
 doxygen $DOXYFILE3 > doxygen3.log 2>&1 &
-# echo Starting doxygen with $DOXYFILE4
-doxygen $DOXYFILE4 > doxygen4.log 2>&1 &
 wait
 echo doxygen done.
 
@@ -113,8 +111,6 @@ cp ../../documentation/Makefile_skeleton ${DOXDIR}/ckb/latex/Makefile
 (cd ${DOXDIR}/ckb/latex ; make > make_pdf2.log ) &
 # echo Generating pdf from latex3
 (cd ${DOXDIR}/ckb-daemon/latex ; make > make_pdf3.log ) &
-# echo Generating pdf from latex4
-(cd ${DOXDIR}/usb/latex ; make > make_pdf4.log ) &
 wait
 echo done generating.
 
