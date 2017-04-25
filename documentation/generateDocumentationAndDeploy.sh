@@ -1,7 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 # set -x
 # set -v
-echo "Starting execution, GH_REPO_SLUG = $TRAVIS_REPO_SLUG"
+echo "Starting execution $0, GH_REPO_SLUG = $TRAVIS_REPO_SLUG"
 # echo "GH_REPO_TOKEN = $GH_REPO_TOKEN"
 GH_REPO_ORG=$(echo $TRAVIS_REPO_SLUG | cut -d "/" -f 1)
 GH_REPO_NAME=$(echo $TRAVIS_REPO_SLUG | cut -d "/" -f 2)
@@ -85,36 +85,34 @@ echo "" > .nojekyll
 ##### Generate the Doxygen code documentation and log the output.          #####
 
 # Check if we have a pull request. If so, handle the name in a special way (furture)
-# if [ "${TRAVIS_PULL_REQUEST}" == "false" ]; then
+if [ "${TRAVIS_PULL_REQUEST}" == "false" ]; then
     export DOXDIR=${TRAVIS_BRANCH};
-# else
-# export DOXDIR=pullreq_${TRAVIS_PULL_REQUEST};
-# fi
+else
+	export DOXDIR=PR_${TRAVIS_PULL_REQUEST};
+fi
 
 mkdir -p ${DOXDIR}
 echo 'Generating Doxygen code documentation below ${DOXDIR}/ ...'
-
-# Redirect both stderr and stdout to the log file AND the console.
-echo Starting doxygen with $DOXYFILE1 
+# echo Starting doxygen with $DOXYFILE1 
 doxygen $DOXYFILE1 > doxygen1.log 2>&1 &
-echo Starting doxygen with $DOXYFILE2
+# echo Starting doxygen with $DOXYFILE2
 doxygen $DOXYFILE2 > doxygen2.log 2>&1 &
-echo Starting doxygen with $DOXYFILE3
+# echo Starting doxygen with $DOXYFILE3
 doxygen $DOXYFILE3 > doxygen3.log 2>&1 &
-echo Starting doxygen with $DOXYFILE4
+# echo Starting doxygen with $DOXYFILE4
 doxygen $DOXYFILE4 > doxygen4.log 2>&1 &
 wait
 echo doxygen done.
 
-echo Generating pdf from latex1 in $(pwd)
+echo Generating pdf from latex directories in $(pwd)
 cp ../../documentation/Makefile_skeleton ${DOXDIR}/all/latex/Makefile
 (cd ${DOXDIR}/all/latex ; make > make_pdf1.log ) &
-echo Generating pdf from latex2
+# echo Generating pdf from latex2
 cp ../../documentation/Makefile_skeleton ${DOXDIR}/ckb/latex/Makefile
 (cd ${DOXDIR}/ckb/latex ; make > make_pdf2.log ) &
-echo Generating pdf from latex3
+# echo Generating pdf from latex3
 (cd ${DOXDIR}/ckb-daemon/latex ; make > make_pdf3.log ) &
-echo Generating pdf from latex4
+# echo Generating pdf from latex4
 (cd ${DOXDIR}/usb/latex ; make > make_pdf4.log ) &
 wait
 echo done generating.
