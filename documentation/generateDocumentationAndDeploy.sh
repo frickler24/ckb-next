@@ -85,14 +85,15 @@ echo "" > .nojekyll
 ##### Generate the Doxygen code documentation and log the output.          #####
 
 # Check if we have a pull request. If so, handle the name in a special way (furture)
-if [ "${TRAVIS_PULL_REQUEST}" == "false" ]; then
+echo "TRAVIS_PULL_REQUEST = ${TRAVIS_PULL_REQUEST}"
+if [ x"${TRAVIS_PULL_REQUEST}" == x"false" ]; then
     export DOXDIR=${TRAVIS_BRANCH};
 else
 	export DOXDIR=PR_${TRAVIS_PULL_REQUEST};
 fi
 
 mkdir -p ${DOXDIR}
-echo 'Generating Doxygen code documentation below ${DOXDIR}/ ...'
+echo -n "Generating Doxygen code documentation below ${DOXDIR}/ ..."
 # echo Starting doxygen with $DOXYFILE1 
 doxygen $DOXYFILE1 > doxygen1.log 2>&1 &
 # echo Starting doxygen with $DOXYFILE2
