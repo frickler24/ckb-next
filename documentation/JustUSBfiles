@@ -754,7 +754,7 @@ WARN_LOGFILE           = doxygenDoc/warnAndError.log
 # spaces.
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = $(TRAVIS_BUILD_DIR)/src/ckb/
+INPUT                  = $(TRAVIS_BUILD_DIR)/src/ckb
 
 # INPUT                  = $(TRAVIS_BUILD_DIR)/src/ckb/usb.c \
 # 						 $(TRAVIS_BUILD_DIR)/src/ckb/usb.h \
@@ -780,7 +780,7 @@ INPUT_ENCODING         = UTF-8
 # *.md, *.mm, *.dox, *.py, *.f90, *.f, *.for, *.tcl, *.vhd, *.vhdl, *.ucf,
 # *.qsf, *.as and *.js.
 
-FILE_PATTERNS          = usb*c device*c usb*h
+FILE_PATTERNS          = usb.c usb.h usb_linux.c device_vtable.c device.c
 
 # The RECURSIVE tag can be used to specify whether or not subdirectories should
 # be searched for input files as well.
