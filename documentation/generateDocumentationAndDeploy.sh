@@ -86,7 +86,7 @@ echo "" > .nojekyll
 
 # Check if we have a pull request. If so, handle the name in a special way (furture)
 echo "TRAVIS_PULL_REQUEST = ${TRAVIS_PULL_REQUEST}"
-if [ x"${TRAVIS_PULL_REQUEST}" == x"false" ]; then
+if [ ${TRAVIS_PULL_REQUEST} == false ]; then
     export DOXDIR=${TRAVIS_BRANCH};
 else
 	export DOXDIR=PR_${TRAVIS_PULL_REQUEST};
