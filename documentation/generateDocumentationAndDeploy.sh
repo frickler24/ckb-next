@@ -86,14 +86,14 @@ echo "" > .nojekyll
 
 # Check if we have a pull request. If so, handle the name in a special way (furture)
 echo "TRAVIS_PULL_REQUEST = ${TRAVIS_PULL_REQUEST}"
-if [ ${TRAVIS_PULL_REQUEST} == false ]; then
+if [ x"${TRAVIS_PULL_REQUEST}" == "xfalse" ]; then
     export DOXDIR=${TRAVIS_BRANCH};
 else
 	export DOXDIR=PR_${TRAVIS_PULL_REQUEST};
 fi
 
 mkdir -p ${DOXDIR}
-echo -n "Generating Doxygen code documentation below ${DOXDIR}/ ..."
+echo "Generating Doxygen code documentation below ${DOXDIR}/ ..."
 # echo Starting doxygen with $DOXYFILE1 
 doxygen $DOXYFILE1 > doxygen1.log 2>&1 &
 # echo Starting doxygen with $DOXYFILE2
