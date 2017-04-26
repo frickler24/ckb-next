@@ -1,7 +1,7 @@
 #!/bin/bash
 # set -x
 # set -v
-echo "Starting execution $0, GH_REPO_SLUG = $TRAVIS_REPO_SLUG"
+echo "Starting execution $0 with bash version = ${BASH_VERSION}, GH_REPO_SLUG = $TRAVIS_REPO_SLUG"
 # echo "GH_REPO_TOKEN = $GH_REPO_TOKEN"
 GH_REPO_ORG=$(echo $TRAVIS_REPO_SLUG | cut -d "/" -f 1)
 GH_REPO_NAME=$(echo $TRAVIS_REPO_SLUG | cut -d "/" -f 2)
@@ -86,7 +86,7 @@ echo "" > .nojekyll
 
 # Check if we have a pull request. If so, handle the name in a special way (furture)
 echo "TRAVIS_PULL_REQUEST = ${TRAVIS_PULL_REQUEST}"
-if [ x"${TRAVIS_PULL_REQUEST}" == "xfalse" ]; then
+if [ "${TRAVIS_PULL_REQUEST}" == false ]; then
     export DOXDIR=${TRAVIS_BRANCH};
 else
 	export DOXDIR=PR_${TRAVIS_PULL_REQUEST};
