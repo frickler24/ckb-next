@@ -5,7 +5,7 @@
 # The name is fix because of interpretation in github / github-pages
 
 # CONFIG PART
-# Set the name of the remote alias (normally set to "origin"
+# Set the name of the remote alias (normally set to "origin")
 REMOTE=origin
 REMOTE=my
 
@@ -24,7 +24,7 @@ set -e
 git checkout --orphan gh-pages
 
 # Remove all existing content, because only generated docs
-# will be allowed  in this branch
+# will be allowed in this branch
 git rm -rf .
 
 # Now clone and copy the prepared content and cleanup

@@ -93,7 +93,7 @@ else
 fi
 
 mkdir -p ${DOXDIR}
-echo "Generating Doxygen code documentation below ${DOXDIR}/ ..."
+echo "Generating Doxygen code documentation for branch ${DOXDIR}/ ..."
 # echo Starting doxygen with $DOXYFILE1 
 doxygen $DOXYFILE1 > doxygen1.log 2>&1 &
 # echo Starting doxygen with $DOXYFILE2
@@ -121,7 +121,7 @@ echo done generating.
 # both exist. This is a good indication that Doxygen did it's work.
 if [ -d "${DOXDIR}/all/html" ] && [ -f "${DOXDIR}/all/html/index.html" ]; then
 
-	echo "generating html file at antry level in $(pwd)"
+	echo "generating html file at entry level in $(pwd)"
 	./html-generator.sh
 
     echo 'Uploading documentation to the gh-pages branch...'
