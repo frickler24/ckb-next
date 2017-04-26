@@ -1,7 +1,6 @@
 #!/bin/bash
-set -x
-set -v
 
+############
 # Create or recreate a branch gh-pages.
 # The name is fix because of interpretation in github / github-pages
 
@@ -40,3 +39,4 @@ git push ${REMOTE} gh-pages
 
 # check out the previous branch (i.e. master)
 git checkout @{-1}
+exit 0
