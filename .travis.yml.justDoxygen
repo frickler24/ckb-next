@@ -13,7 +13,6 @@ env:
     - DOXYFILE1: $TRAVIS_BUILD_DIR/documentation/Doxy-ckb-daemon
     - DOXYFILE2: $TRAVIS_BUILD_DIR/documentation/Doxy-ckb
     - DOXYFILE3: $TRAVIS_BUILD_DIR/documentation/Doxy-ckb-all
-    - DOXYFILE4: $TRAVIS_BUILD_DIR/documentation/JustUSBfiles
     - MAKEFLAGS: "-j 8"
 
 language: cpp
