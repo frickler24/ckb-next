@@ -1,0 +1,15 @@
+<map id="KbAnimWidget::setLight" name="KbAnimWidget::setLight">
+<area shape="rect" id="node2" href="$classKbAnimWidget.html#a096921d8224cc5d7580a9e5a46305061" title="KbAnimWidget::refreshList" alt="" coords="216,81,395,108"/>
+<area shape="rect" id="node3" href="$classKbLight.html#a0d37ba50d07c949db3d9714f9b559e6b" title="KbLight::animList" alt="" coords="471,5,593,32"/>
+<area shape="rect" id="node4" href="$classKbAnim.html#ab3f14ad52f306a4714642e5decb4db36" title="KbAnim::guid" alt="" coords="482,56,582,83"/>
+<area shape="rect" id="node5" href="$classKbAnim.html#aacd458fb1f1a853a483ec2798370ba87" title="KbAnim::name" alt="" coords="689,56,797,83"/>
+<area shape="rect" id="node6" href="$classKbAnimWidget.html#a810aaafb80b34c3f03345b9a265da1c2" title="KbAnimWidget::setCurrent" alt="" coords="443,233,621,260"/>
+<area shape="rect" id="node7" href="$classAnimScript.html#a9c35c39aa82523625e47cac84d17a53e" title="AnimScript::copyright" alt="" coords="669,107,816,133"/>
+<area shape="rect" id="node8" href="$classKbAnim.html#aebfd6f4cc51099a1de64eae4929c6bb5" title="KbAnim::keys" alt="" coords="691,157,795,184"/>
+<area shape="rect" id="node9" href="$classKbAnim.html#a0885e61a08cd8e539096abffeeed87df" title="KbAnim::mode" alt="" coords="689,208,797,235"/>
+<area shape="rect" id="node10" href="$classAnimScript.html#afe1509ae396bf2924318580974db487c" title="AnimScript::name" alt="" coords="679,259,806,285"/>
+<area shape="rect" id="node11" href="$classKbAnim.html#a9808617e6f8d91a74cafa3de8b618df8" title="KbAnim::opacity" alt="" coords="683,309,802,336"/>
+<area shape="rect" id="node12" href="$classKbAnim.html#a20ce294b015ed0fc649e92ba3995ef18" title="KbAnim::script" alt="" coords="689,360,797,387"/>
+<area shape="rect" id="node13" href="$classKbAnim.html#a5faf8aacc2d4b61cc75ea4bff12d7617" title="KbAnim::scriptName" alt="" coords="671,411,814,437"/>
+<area shape="rect" id="node14" href="$classAnimScript.html#abda7a757d5a7d80d73ab02ccfc91c248" title="AnimScript::version" alt="" coords="675,461,811,488"/>
+</map>

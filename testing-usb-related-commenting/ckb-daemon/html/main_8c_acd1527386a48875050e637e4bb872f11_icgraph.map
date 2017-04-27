@@ -1,0 +1,6 @@
+<map id="quit" name="quit">
+<area shape="rect" id="node2" href="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="227,5,277,32"/>
+<area shape="rect" id="node5" href="$main_8c.html#a05f9b9989842b986a26caf9e4c66a4c7" title="sighandler" alt="" coords="97,31,178,57"/>
+<area shape="rect" id="node3" href="$notify_8c.html#ae246359e104d63520158c26329caac80" title="restart" alt="" coords="325,5,384,32"/>
+<area shape="rect" id="node4" href="$notify_8h.html#a700b520b9eb9a3698af8f8ebf547a9ab" title="cmd_restart" alt="" coords="432,5,523,32"/>
+</map>

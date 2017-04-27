@@ -1,0 +1,7 @@
+<map id="MainWindow::showWindow" name="MainWindow::showWindow">
+<area shape="rect" id="node2" href="$classMainWindow.html#a3e292f1ddb54b722c8270b1259c1f85a" title="MainWindow::iconClicked" alt="" coords="249,5,423,32"/>
+<area shape="rect" id="node3" href="$classMainWindow.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow" alt="" coords="483,115,663,141"/>
+<area shape="rect" id="node4" href="$classMainWindow.html#ae50767c4ed6029f63ebacfffde4bc802" title="MainWindow::showFwUpdate\lNotification" alt="" coords="238,107,434,149"/>
+<area shape="rect" id="node5" href="$classMainWindow.html#a5692226589f74f2d81ed0b9656f74a83" title="MainWindow::stateChange" alt="" coords="247,173,425,200"/>
+<area shape="rect" id="node6" href="$classMainWindow.html#a888ae1a192a5ca93d0d8bddd104ae953" title="MainWindow::timerTick" alt="" coords="257,224,415,251"/>
+</map>

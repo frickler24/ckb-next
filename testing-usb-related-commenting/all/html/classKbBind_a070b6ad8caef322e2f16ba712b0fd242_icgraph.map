@@ -1,0 +1,9 @@
+<map id="KbBind::setGlobalRemap" name="KbBind::setGlobalRemap">
+<area shape="rect" id="node2" href="$classSettingsWidget.html#a68aeceaa2058598f7e6784c82c8397df" title="SettingsWidget::updateModifiers" alt="" coords="224,176,435,203"/>
+<area shape="rect" id="node3" href="$classSettingsWidget.html#ab381a630fcf24d7fe49ab7bd2896c052" title="SettingsWidget::Settings\lWidget" alt="" coords="483,5,650,46"/>
+<area shape="rect" id="node4" href="$classSettingsWidget.html#af8894b47710cab3a91739977dedf1119" title="SettingsWidget::on\l_capsBox_activated" alt="" coords="497,70,637,111"/>
+<area shape="rect" id="node5" href="$classSettingsWidget.html#a2c6c7c342a4ad625963cbeaa0fc1c541" title="SettingsWidget::on\l_shiftBox_activated" alt="" coords="498,135,635,177"/>
+<area shape="rect" id="node6" href="$classSettingsWidget.html#a23897b8d71a585a7e45cd56482e37873" title="SettingsWidget::on\l_ctrlBox_activated" alt="" coords="500,201,633,242"/>
+<area shape="rect" id="node7" href="$classSettingsWidget.html#a41e97046c246580d14313dc02edb7f7c" title="SettingsWidget::on\l_altBox_activated" alt="" coords="500,266,633,307"/>
+<area shape="rect" id="node8" href="$classSettingsWidget.html#a0f7f20e71cadd0ca7eae1038e261d2a5" title="SettingsWidget::on\l_winBox_activated" alt="" coords="500,331,633,373"/>
+</map>

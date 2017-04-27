@@ -1,0 +1,39 @@
+<map id="zip64FlushWriteBuffer" name="zip64FlushWriteBuffer">
+<area shape="rect" id="node2" href="$zip_8c.html#a3bed1cfe7ae981d2a433a1dbdb2cc436" title="zipCloseFileInZipRaw64" alt="" coords="206,147,370,174"/>
+<area shape="rect" id="node37" href="$zip_8c.html#acc932f54d0746b26f428660c92029a9f" title="zipWriteInFileInZip" alt="" coords="223,198,353,224"/>
+<area shape="rect" id="node3" href="$classQuaZipFile.html#a42a39b12619bccd3d419ee60bbb3fcf6" title="Closes the file. " alt="" coords="1238,83,1362,110"/>
+<area shape="rect" id="node14" href="$zip_8c.html#a43fe6f36cef62c7f34c0fdb4c8288b87" title="zipCloseFileInZipRaw" alt="" coords="419,147,570,174"/>
+<area shape="rect" id="node4" href="$classJlCompress.html#a78c6f547384208cfa4fc7079c677522d" title="Compress a single file. " alt="" coords="1411,32,1589,59"/>
+<area shape="rect" id="node5" href="$classJlCompress.html#a8c581f5f8a692fc598ea98cb5fa53d37" title="Compress a subdirectory. " alt="" coords="1637,32,1835,59"/>
+<area shape="rect" id="node9" href="$classJlCompress.html#a522739a65b382a9838ed69812340dd40" title="Extract a single file. " alt="" coords="1419,438,1581,464"/>
+<area shape="rect" id="node13" href="$classQuaZipFile.html#aa1e5a0cf491bafae6cc73e649caa97fc" title="Destroys a QuaZipFile instance. " alt="" coords="1418,83,1582,110"/>
+<area shape="rect" id="node7" href="$classJlCompress.html#a4a4de9c62ecf161bb658d4d80495ea97" title="Compress a single file. " alt="" coords="1647,83,1825,110"/>
+<area shape="rect" id="node8" href="$classJlCompress.html#a9cdb92d29a94c6b13a718a3249685846" title="Compress a list of files. " alt="" coords="1643,134,1829,160"/>
+<area shape="rect" id="node6" href="$classJlCompress.html#a8708eafcadc5c192a1d492e784cfc98f" title="Compress a whole directory. " alt="" coords="1885,235,2059,262"/>
+<area shape="rect" id="node10" href="$classJlCompress.html#a38c0d58bfe3bbbcb3cf4e98d126633a3" title="Extract a single file. " alt="" coords="1655,438,1817,464"/>
+<area shape="rect" id="node11" href="$classJlCompress.html#a309e9ee366719a4d8aa28f837fab73ae" title="Extract a list of files. " alt="" coords="1652,488,1820,515"/>
+<area shape="rect" id="node12" href="$classJlCompress.html#a365a153baa4c11812d93cbca60b6a293" title="Extract a whole archive. " alt="" coords="1657,387,1815,414"/>
+<area shape="rect" id="node15" href="$zip_8c.html#ae470f753aef4cffe4f77a5ec2bcfbde1" title="zipCloseFileInZip" alt="" coords="619,196,741,223"/>
+<area shape="rect" id="node16" href="$zip_8c.html#a638e4d5a7305f25e1ef6c2f6f14e2861" title="zipOpenNewFileInZip4_64" alt="" coords="790,488,965,515"/>
+<area shape="rect" id="node25" href="$zip_8c.html#a4fda7a41fa2f57d105ffc7d1cbcf53cc" title="zipClose" alt="" coords="841,235,914,262"/>
+<area shape="rect" id="node17" href="$zip_8c.html#a18b74c0699d8c456b405a0fa43a322e8" title="zipOpenNewFileInZip4" alt="" coords="1024,463,1179,490"/>
+<area shape="rect" id="node18" href="$zip_8c.html#a6b17cc2fa173054a156218befe2b31f5" title="zipOpenNewFileInZip3" alt="" coords="1024,514,1179,540"/>
+<area shape="rect" id="node19" href="$zip_8c.html#adef753bf5ddc5752d6069a2d4f3ca0e9" title="zipOpenNewFileInZip3_64" alt="" coords="1014,666,1189,692"/>
+<area shape="rect" id="node21" href="$zip_8c.html#ae3c822f7ddf7c351e7a6c633ed1590d4" title="zipOpenNewFileInZip2" alt="" coords="1024,564,1179,591"/>
+<area shape="rect" id="node22" href="$zip_8c.html#ad975ed2489784c4ae4847d75bc3fc7bc" title="zipOpenNewFileInZip2_64" alt="" coords="1014,615,1189,642"/>
+<area shape="rect" id="node23" href="$zip_8c.html#a180a6d99515153ada3b58349fcee6a4c" title="zipOpenNewFileInZip64" alt="" coords="1021,362,1182,388"/>
+<area shape="rect" id="node24" href="$zip_8c.html#a14cf664b19f00f41f6865a7c3173e973" title="zipOpenNewFileInZip" alt="" coords="1028,412,1175,439"/>
+<area shape="rect" id="node20" href="$classQuaZipFile.html#af3c45f6d1963610a60331969fa3fd357" title="Opens a file for writing. " alt="" coords="1239,666,1361,692"/>
+<area shape="rect" id="node26" href="$classQuaZip.html#abfa4e6018b2964a3d10a4c54e5ab3962" title="Opens ZIP file. " alt="" coords="1450,235,1550,262"/>
+<area shape="rect" id="node35" href="$classQuaZip.html#a7a4323b73e12f3b4470109f200728f9f" title="Closes ZIP file. " alt="" coords="1050,311,1153,338"/>
+<area shape="rect" id="node27" href="$classKbFirmware.html#ae5f3c91fcf3fe8fe55e2c1e3cea877eb" title="KbFirmware::_fileForBoard" alt="" coords="1647,184,1825,211"/>
+<area shape="rect" id="node33" href="$classJlCompress.html#ab42422be913f817d7e04c1b1cd5d0156" title="Get the file list. " alt="" coords="1656,286,1816,312"/>
+<area shape="rect" id="node34" href="$classQuaZipFile.html#aed75bace51f2bb4c3e4f656ab4493aac" title="Opens a file for reading. " alt="" coords="1675,336,1797,363"/>
+<area shape="rect" id="node28" href="$classKbFirmware.html#a1cc600d07217f327a1541a44d353004c" title="KbFirmware::dataForBoard" alt="" coords="1883,184,2061,211"/>
+<area shape="rect" id="node29" href="$classFwUpgradeDialog.html#a1fd1f6f1285ab4998a7c81e2ee118d54" title="FwUpgradeDialog::exec" alt="" coords="2109,184,2272,211"/>
+<area shape="rect" id="node30" href="$classKbWidget.html#a38c9f29a5d8f1edfcb5f8040de3dadb9" title="KbWidget::on_fwUpdButton\l_clicked" alt="" coords="2320,177,2504,218"/>
+<area shape="rect" id="node31" href="$classKbWidget.html#a428930086336c668e8a1055c21c938d9" title="KbWidget::showFwUpdate" alt="" coords="2552,184,2731,211"/>
+<area shape="rect" id="node32" href="$classMainWindow.html#ae50767c4ed6029f63ebacfffde4bc802" title="MainWindow::showFwUpdate\lNotification" alt="" coords="2779,177,2975,218"/>
+<area shape="rect" id="node36" href="$classQuaZip.html#af60a2d3930b90f3b25a3148baecad81e" title="Destroys QuaZip object. " alt="" coords="1239,438,1361,464"/>
+<area shape="rect" id="node38" href="$classQuaZipFile.html#abd07949a6fcc2ef094d2be5398bc8e7c" title="Implementation of the QIODevice::writeData(). " alt="" coords="420,198,569,224"/>
+</map>

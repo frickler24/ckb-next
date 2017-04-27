@@ -1,0 +1,15 @@
+<map id="UsbId::hwModifiedString" name="UsbId::hwModifiedString">
+<area shape="rect" id="node2" href="$classKbMode.html#a399519dd076e0231fd636023f6479436" title="KbMode::KbMode" alt="" coords="223,5,350,32"/>
+<area shape="rect" id="node3" href="$classKbProfile.html#a60359b616f0383db215ba2d7d50ff0f8" title="KbProfile::KbProfile" alt="" coords="219,56,355,83"/>
+<area shape="rect" id="node4" href="$classKb.html#afa36635dcc1cd9512f372594c57c546c" title="Kb::readNotify" alt="" coords="233,107,340,133"/>
+<area shape="rect" id="node5" href="$classKbProfile.html#af9b406938a9e562fe33d14ddf84dd5c0" title="KbProfile::save" alt="" coords="403,183,514,209"/>
+<area shape="rect" id="node14" href="$classKbMode.html#ae540dd758235c7b3ab23fe13309ec6fb" title="KbMode::save" alt="" coords="233,208,340,235"/>
+<area shape="rect" id="node6" href="$classKb.html#aa5c9fc262d89441ef82a3bbd6eb8ca21" title="Kb::save" alt="" coords="563,183,637,209"/>
+<area shape="rect" id="node7" href="$classKb.html#af993d8050eed40c657f4ed0db30f7023" title="Kb::autoSave" alt="" coords="732,95,833,121"/>
+<area shape="rect" id="node8" href="$classKbWidget.html#a65f38c3fc88b4e1a8fbabc7a27946c49" title="KbWidget::on_hwSaveButton\l_clicked" alt="" coords="686,146,879,187"/>
+<area shape="rect" id="node9" href="$classKbManager.html#ac7660c297a81ed3ff5a5e20e674e6d6e" title="KbManager::scanKeyboards" alt="" coords="689,212,876,239"/>
+<area shape="rect" id="node13" href="$classKb.html#a9a8e6fea085f652cc63c9845a62d1f03" title="Kb::~Kb" alt="" coords="747,263,818,289"/>
+<area shape="rect" id="node10" href="$classKbManager.html#ac1baa1b3be9efa0bbca1b4ca40139df4" title="KbManager::KbManager" alt="" coords="928,212,1091,239"/>
+<area shape="rect" id="node11" href="$classKbManager.html#add00fc7213f369bf50e8b069f9387206" title="KbManager::init" alt="" coords="1139,212,1253,239"/>
+<area shape="rect" id="node12" href="$classMainWindow.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow" alt="" coords="1302,212,1482,239"/>
+</map>

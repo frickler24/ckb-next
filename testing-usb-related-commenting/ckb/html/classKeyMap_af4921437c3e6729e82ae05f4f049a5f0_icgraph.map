@@ -1,0 +1,16 @@
+<map id="KeyMap::isMouse" name="KeyMap::isMouse">
+<area shape="rect" id="node2" href="$classKbBind.html#abd94dfb3d7ffa68b94ac08b0c1c10970" title="KbBind::isMouse" alt="" coords="218,121,339,148"/>
+<area shape="rect" id="node12" href="$classKeyWidget.html#aaa210c3892db604e9e9c0ab0ed8f9bf1" title="KeyWidget::map" alt="" coords="219,172,338,199"/>
+<area shape="rect" id="node13" href="$classKbLightWidget.html#ad25f692208da8c01fc483f8d1f979eea" title="KbLightWidget::newSelection" alt="" coords="182,223,375,249"/>
+<area shape="rect" id="node15" href="$classKeyWidget.html#ae41120f21e087439104cb6bce42f489e" title="KeyWidget::paintEvent" alt="" coords="201,273,357,300"/>
+<area shape="rect" id="node3" href="$classKbBindWidget.html#afa54eb21dc5dfff20175d5201a7d2698" title="KbBindWidget::on_copyButton\l_clicked" alt="" coords="432,5,632,46"/>
+<area shape="rect" id="node4" href="$classKbBindWidget.html#a1ac20b99c822f65c7a2c8c61a5a1f029" title="KbBindWidget::on_resetButton\l_clicked" alt="" coords="929,85,1130,126"/>
+<area shape="rect" id="node5" href="$classRebindWidget.html#a6a68ae3d9abc935dbba8e2ce187337ce" title="RebindWidget::setBind" alt="" coords="454,121,610,148"/>
+<area shape="rect" id="node6" href="$classKbBindWidget.html#ab8b3fe0117d2cab59e8342153efc0eb0" title="KbBindWidget::updateSelDisplay" alt="" coords="425,172,639,199"/>
+<area shape="rect" id="node7" href="$classKbBindWidget.html#ad052b9ce7166f5a1c46ee7a01f3457dc" title="KbBindWidget::newLayout" alt="" coords="696,172,872,199"/>
+<area shape="rect" id="node9" href="$classKbBindWidget.html#ad1ce63ee68f21c7857ca8b24b7bb8309" title="KbBindWidget::newSelection" alt="" coords="689,223,879,249"/>
+<area shape="rect" id="node11" href="$classKbBindWidget.html#a3274fb51d224f0ca111bd714ed524a59" title="KbBindWidget::updateBind" alt="" coords="695,121,873,148"/>
+<area shape="rect" id="node8" href="$classKbBindWidget.html#ae06c7e036759eb9a1ae7224cdba30b0b" title="KbBindWidget::setBind" alt="" coords="951,172,1108,199"/>
+<area shape="rect" id="node10" href="$classKbBindWidget.html#ab41173324ff2873e36dbebb96951ed8b" title="KbBindWidget::KbBindWidget" alt="" coords="931,223,1127,249"/>
+<area shape="rect" id="node14" href="$classKbLightWidget.html#aeba7635ba699a30033a877a2994df618" title="KbLightWidget::KbLightWidget" alt="" coords="432,223,632,249"/>
+</map>

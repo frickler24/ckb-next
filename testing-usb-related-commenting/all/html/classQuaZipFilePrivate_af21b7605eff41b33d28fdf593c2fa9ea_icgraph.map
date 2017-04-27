@@ -1,0 +1,14 @@
+<map id="QuaZipFilePrivate::resetZipError" name="QuaZipFilePrivate::resetZipError">
+<area shape="rect" id="node2" href="$classQuaZipFile.html#a42a39b12619bccd3d419ee60bbb3fcf6" title="Closes the file. " alt="" coords="190,132,314,159"/>
+<area shape="rect" id="node13" href="$classQuaZipFile.html#aed75bace51f2bb4c3e4f656ab4493aac" title="Opens a file for reading. " alt="" coords="191,183,313,209"/>
+<area shape="rect" id="node3" href="$classJlCompress.html#a78c6f547384208cfa4fc7079c677522d" title="Compress a single file. " alt="" coords="363,56,541,83"/>
+<area shape="rect" id="node6" href="$classJlCompress.html#a8c581f5f8a692fc598ea98cb5fa53d37" title="Compress a subdirectory. " alt="" coords="589,107,787,133"/>
+<area shape="rect" id="node8" href="$classJlCompress.html#a522739a65b382a9838ed69812340dd40" title="Extract a single file. " alt="" coords="371,157,533,184"/>
+<area shape="rect" id="node12" href="$classQuaZipFile.html#aa1e5a0cf491bafae6cc73e649caa97fc" title="Destroys a QuaZipFile instance. " alt="" coords="370,208,534,235"/>
+<area shape="rect" id="node4" href="$classJlCompress.html#a4a4de9c62ecf161bb658d4d80495ea97" title="Compress a single file. " alt="" coords="599,5,777,32"/>
+<area shape="rect" id="node5" href="$classJlCompress.html#a9cdb92d29a94c6b13a718a3249685846" title="Compress a list of files. " alt="" coords="595,56,781,83"/>
+<area shape="rect" id="node7" href="$classJlCompress.html#a8708eafcadc5c192a1d492e784cfc98f" title="Compress a whole directory. " alt="" coords="835,107,1010,133"/>
+<area shape="rect" id="node9" href="$classJlCompress.html#a365a153baa4c11812d93cbca60b6a293" title="Extract a whole archive. " alt="" coords="609,157,767,184"/>
+<area shape="rect" id="node10" href="$classJlCompress.html#a38c0d58bfe3bbbcb3cf4e98d126633a3" title="Extract a single file. " alt="" coords="607,208,769,235"/>
+<area shape="rect" id="node11" href="$classJlCompress.html#a309e9ee366719a4d8aa28f837fab73ae" title="Extract a list of files. " alt="" coords="604,259,772,285"/>
+</map>

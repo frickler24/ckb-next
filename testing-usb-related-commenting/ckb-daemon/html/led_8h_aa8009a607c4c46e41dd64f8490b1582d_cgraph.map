@@ -1,0 +1,6 @@
+<map id="savergb_kb" name="savergb_kb">
+<area shape="rect" id="node2" href="$led__keyboard_8c.html#ad37b49215ddbb5fdfcbc185bee256b28" title="makergb_512" alt="" coords="145,5,245,32"/>
+<area shape="rect" id="node3" href="$led__keyboard_8c.html#aa2518c44d1de14ec9852cc768f4e19f8" title="makergb_full" alt="" coords="147,56,243,83"/>
+<area shape="rect" id="node4" href="$led__keyboard_8c.html#a384276467a5331b5c6d134c00476b8a3" title="ordered8to3" alt="" coords="149,107,240,133"/>
+<area shape="rect" id="node5" href="$led__keyboard_8c.html#abb9b4e916b13b54ab23b4b5ace4e293d" title="quantize8to3" alt="" coords="147,157,243,184"/>
+</map>

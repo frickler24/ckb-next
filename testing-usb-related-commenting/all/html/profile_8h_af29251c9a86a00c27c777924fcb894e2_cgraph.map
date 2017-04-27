@@ -1,0 +1,5 @@
+<map id="cmd_hwload_kb" name="cmd_hwload_kb">
+<area shape="rect" id="node2" href="$profile__keyboard_8c.html#ab7d53e61dda826ebc069bad9a3dfebeb" title="hwloadmode" alt="" coords="171,5,266,32"/>
+<area shape="rect" id="node4" href="$profile_8c.html#a232733bb2602d6ac417114dfb9174d8d" title="hwtonative" alt="" coords="176,56,261,83"/>
+<area shape="rect" id="node3" href="$led_8h.html#a05cf9e0967ce8cbb2a51f0120b10365e" title="loadrgb_kb" alt="" coords="315,5,400,32"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="KbBind::noAction" name="KbBind::noAction">
+<area shape="rect" id="node2" href="$classRebindWidget.html#a7f4ff1d01115ce47182c52b51347e719" title="RebindWidget::applyChanges" alt="" coords="184,64,379,91"/>
+<area shape="rect" id="node7" href="$classRebindWidget.html#a0f0deea19c66e409007f12d015abf96b" title="RebindWidget::on_unbindButton\l_clicked" alt="" coords="177,115,386,157"/>
+<area shape="rect" id="node3" href="$classRebindWidget.html#a0edad41d578028bea3ea0e327fc4c203" title="RebindWidget::setSelection" alt="" coords="444,35,628,61"/>
+<area shape="rect" id="node6" href="$classRebindWidget.html#a9d18655d9f8160c70e2bc237c1f732b5" title="RebindWidget::on_applyButton\l_clicked" alt="" coords="435,86,637,127"/>
+<area shape="rect" id="node4" href="$classRebindWidget.html#a6a68ae3d9abc935dbba8e2ce187337ce" title="RebindWidget::setBind" alt="" coords="713,5,869,32"/>
+<area shape="rect" id="node5" href="$classRebindWidget.html#a8cb2e54e8bbd17cae8e152132a7a1ddf" title="RebindWidget::on_cancelButton\l_clicked" alt="" coords="686,57,895,98"/>
+</map>

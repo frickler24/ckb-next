@@ -1,0 +1,4 @@
+<map id="KeyAction::macroLine" name="KeyAction::macroLine">
+<area shape="rect" id="node2" href="$classKeyAction.html#ae657d934ff312fb11e306472472b31ef" title="isValidMacro checks whether a keyAction contains a valid macro. This is done easily: If the macro act..." alt="" coords="205,5,371,32"/>
+<area shape="rect" id="node3" href="$classKeyAction.html#a52e1d42a5993690c760add5321bc79f4" title="KeyAction::isMacro" alt="" coords="419,5,555,32"/>
+</map>

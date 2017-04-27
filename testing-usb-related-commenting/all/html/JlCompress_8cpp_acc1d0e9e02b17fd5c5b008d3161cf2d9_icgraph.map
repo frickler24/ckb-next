@@ -1,0 +1,11 @@
+<map id="copyData" name="copyData">
+<area shape="rect" id="node2" href="$classJlCompress.html#a78c6f547384208cfa4fc7079c677522d" title="Compress a single file. " alt="" coords="133,81,312,108"/>
+<area shape="rect" id="node7" href="$classJlCompress.html#a522739a65b382a9838ed69812340dd40" title="Extract a single file. " alt="" coords="142,183,303,209"/>
+<area shape="rect" id="node3" href="$classJlCompress.html#a8c581f5f8a692fc598ea98cb5fa53d37" title="Compress a subdirectory. " alt="" coords="360,5,557,32"/>
+<area shape="rect" id="node5" href="$classJlCompress.html#a4a4de9c62ecf161bb658d4d80495ea97" title="Compress a single file. " alt="" coords="369,56,548,83"/>
+<area shape="rect" id="node6" href="$classJlCompress.html#a9cdb92d29a94c6b13a718a3249685846" title="Compress a list of files. " alt="" coords="366,107,551,133"/>
+<area shape="rect" id="node4" href="$classJlCompress.html#a8708eafcadc5c192a1d492e784cfc98f" title="Compress a whole directory. " alt="" coords="606,5,781,32"/>
+<area shape="rect" id="node8" href="$classJlCompress.html#a38c0d58bfe3bbbcb3cf4e98d126633a3" title="Extract a single file. " alt="" coords="378,157,539,184"/>
+<area shape="rect" id="node9" href="$classJlCompress.html#a309e9ee366719a4d8aa28f837fab73ae" title="Extract a list of files. " alt="" coords="375,208,543,235"/>
+<area shape="rect" id="node10" href="$classJlCompress.html#a365a153baa4c11812d93cbca60b6a293" title="Extract a whole archive. " alt="" coords="380,259,537,285"/>
+</map>

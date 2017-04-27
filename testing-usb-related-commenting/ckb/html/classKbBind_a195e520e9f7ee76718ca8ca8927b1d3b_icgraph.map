@@ -1,0 +1,28 @@
+<map id="KbBind::globalRemap" name="KbBind::globalRemap">
+<area shape="rect" id="node2" href="$classKbBind.html#ab140ce3e9ab0c94d5b23129729234bfb" title="KbBind::action" alt="" coords="233,208,340,235"/>
+<area shape="rect" id="node12" href="$classKbBind.html#a9a3abe6f6aeb707c3e1f691c0e3e5e1b" title="KbBind::resetAction" alt="" coords="443,321,581,348"/>
+<area shape="rect" id="node13" href="$classKbBind.html#a1d547649389b10379aff0e7bcbb009ec" title="KbBind::noAction" alt="" coords="700,427,823,453"/>
+<area shape="rect" id="node20" href="$classKbBind.html#a6c16c7cd34f6166cf078564a08959d81" title="KbBind::setAction" alt="" coords="698,376,825,403"/>
+<area shape="rect" id="node22" href="$classKbBind.html#adc0b3a203d2f9604799d2f7513241f91" title="KbBind::defaultAction" alt="" coords="213,477,361,504"/>
+<area shape="rect" id="node23" href="$classKeyWidget.html#ae41120f21e087439104cb6bce42f489e" title="KeyWidget::paintEvent" alt="" coords="434,544,590,571"/>
+<area shape="rect" id="node24" href="$classKbBind.html#ae8c30bd6a4d70bb379a8829c4b45ba6d" title="KbBind::friendlyName" alt="" coords="212,579,361,605"/>
+<area shape="rect" id="node25" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent" alt="" coords="223,629,350,656"/>
+<area shape="rect" id="node27" href="$classSettingsWidget.html#ab381a630fcf24d7fe49ab7bd2896c052" title="SettingsWidget::Settings\lWidget" alt="" coords="203,681,370,722"/>
+<area shape="rect" id="node3" href="$classKbBind.html#a610e348fc6762607c0c4b17ce0fcc88f" title="KbBind::friendlyActionName" alt="" coords="419,56,605,83"/>
+<area shape="rect" id="node5" href="$classKbBindWidget.html#a3274fb51d224f0ca111bd714ed524a59" title="KbBindWidget::updateBind" alt="" coords="933,107,1112,133"/>
+<area shape="rect" id="node11" href="$classKbBindWidget.html#afa54eb21dc5dfff20175d5201a7d2698" title="KbBindWidget::on_copyButton\l_clicked" alt="" coords="923,310,1123,351"/>
+<area shape="rect" id="node15" href="$classRebindWidget.html#a0edad41d578028bea3ea0e327fc4c203" title="RebindWidget::setSelection" alt="" coords="1185,347,1369,373"/>
+<area shape="rect" id="node4" href="$classKbBindWidget.html#ab8b3fe0117d2cab59e8342153efc0eb0" title="KbBindWidget::updateSelDisplay" alt="" coords="654,56,869,83"/>
+<area shape="rect" id="node8" href="$classKbBindWidget.html#ad052b9ce7166f5a1c46ee7a01f3457dc" title="KbBindWidget::newLayout" alt="" coords="935,56,1111,83"/>
+<area shape="rect" id="node9" href="$classKbBindWidget.html#ad1ce63ee68f21c7857ca8b24b7bb8309" title="KbBindWidget::newSelection" alt="" coords="927,5,1118,32"/>
+<area shape="rect" id="node6" href="$classKbBindWidget.html#ae06c7e036759eb9a1ae7224cdba30b0b" title="KbBindWidget::setBind" alt="" coords="1199,56,1356,83"/>
+<area shape="rect" id="node7" href="$classKbBindWidget.html#a1ac20b99c822f65c7a2c8c61a5a1f029" title="KbBindWidget::on_resetButton\l_clicked" alt="" coords="1177,154,1378,195"/>
+<area shape="rect" id="node10" href="$classKbBindWidget.html#ab41173324ff2873e36dbebb96951ed8b" title="KbBindWidget::KbBindWidget" alt="" coords="1179,5,1375,32"/>
+<area shape="rect" id="node21" href="$classRebindWidget.html#a035cad7199aa020f3b4a8b14340c1a9c" title="RebindWidget::on_resetButton\l_clicked" alt="" coords="661,310,861,351"/>
+<area shape="rect" id="node14" href="$classRebindWidget.html#a7f4ff1d01115ce47182c52b51347e719" title="RebindWidget::applyChanges" alt="" coords="925,376,1120,403"/>
+<area shape="rect" id="node19" href="$classRebindWidget.html#a0f0deea19c66e409007f12d015abf96b" title="RebindWidget::on_unbindButton\l_clicked" alt="" coords="918,427,1127,469"/>
+<area shape="rect" id="node18" href="$classRebindWidget.html#a9d18655d9f8160c70e2bc237c1f732b5" title="RebindWidget::on_applyButton\l_clicked" alt="" coords="1176,398,1379,439"/>
+<area shape="rect" id="node16" href="$classRebindWidget.html#a6a68ae3d9abc935dbba8e2ce187337ce" title="RebindWidget::setBind" alt="" coords="1454,449,1610,476"/>
+<area shape="rect" id="node17" href="$classRebindWidget.html#a8cb2e54e8bbd17cae8e152132a7a1ddf" title="RebindWidget::on_cancelButton\l_clicked" alt="" coords="1427,339,1637,381"/>
+<area shape="rect" id="node26" href="$classKb.html#afa36635dcc1cd9512f372594c57c546c" title="Kb::readNotify" alt="" coords="459,629,565,656"/>
+</map>

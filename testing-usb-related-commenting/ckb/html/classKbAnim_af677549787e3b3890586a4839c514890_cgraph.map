@@ -1,0 +1,9 @@
+<map id="KbAnim::stop" name="KbAnim::stop">
+<area shape="rect" id="node2" href="$classAnimScript.html#a8e7d2398dbd2ac258db9bf1cfbd4b007" title="AnimScript::end" alt="" coords="155,31,269,57"/>
+<area shape="rect" id="node3" href="$classColorMap.html#a229d3bb3a24ab7e10ef38a7847dd3519" title="ColorMap::clear" alt="" coords="344,5,459,32"/>
+<area shape="rect" id="node4" href="$classAnimScript.html#a879fc5eba58a3ba08623bc4064501c38" title="AnimScript::readProcess" alt="" coords="318,56,485,83"/>
+<area shape="rect" id="node5" href="$classColorMap.html#a206bfd8a9465e856c16a71bb908772fe" title="ColorMap::colorForName" alt="" coords="533,5,701,32"/>
+<area shape="rect" id="node7" href="$classColorMap.html#a177f4fe41f3a085128d563aaf32a24ad" title="ColorMap::colors" alt="" coords="557,56,678,83"/>
+<area shape="rect" id="node8" href="$classColorMap.html#a0755e3891edd1e0d2dce1491f5b06ba7" title="ColorMap::count" alt="" coords="558,107,677,133"/>
+<area shape="rect" id="node6" href="$colormap_8cpp.html#aadd858d434ca6f9507ef897c2e4c12ab" title="qs_strcmp" alt="" coords="749,5,832,32"/>
+</map>
