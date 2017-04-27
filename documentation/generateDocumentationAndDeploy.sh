@@ -1,6 +1,6 @@
 #!/bin/bash
-# set -x
-# set -v
+set -x
+set -v
 echo "Starting execution $0 with bash version = ${BASH_VERSION}, GH_REPO_SLUG = $TRAVIS_REPO_SLUG"
 # echo "GH_REPO_TOKEN = $GH_REPO_TOKEN"
 GH_REPO_ORG=$(echo $TRAVIS_REPO_SLUG | cut -d "/" -f 1)
