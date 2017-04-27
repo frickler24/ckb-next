@@ -47,7 +47,7 @@ echo 'Setting up the script...'
 set -e
 
 # save the current branch
-export CURRENT_BRANCH=$(git branch | egrep "^\\*" | cut -d" " -f2)
+# export CURRENT_BRANCH=$(git branch | egrep "^\\*" | cut -d" " -f2)
 
 # Create a clean working directory for this script.
 mkdir code_docs
@@ -71,15 +71,19 @@ git config user.email "travis@frickler24.de"
 # documentation.
 # never do this: rm -rf *
 # rm -rf ./??*
-CURRENTCOMMIT=`git rev-parse HEAD`
-git reset --hard `git rev-list HEAD | tail -n 1` # Reset working tree to initial commit
-git reset --soft $CURRENTCOMMIT # Move HEAD back to where it was
+# CURRENTCOMMIT=`git rev-parse HEAD`
+# git reset --hard `git rev-list HEAD | tail -n 1` # Reset working tree to initial commit
+# git reset --soft $CURRENTCOMMIT # Move HEAD back to where it was
+#
+# The following line allows to handle documentation for more than one branch
+# because it clears the current branch only.
+git rm -rf ./${TRAVIS_COMMIT}
 
 # Need to create a .nojekyll file to allow filenames starting with an underscore
 # to be seen on the gh-pages site. Therefore creating an empty .nojekyll file.
 # Presumably this is only needed when the SHORT_NAMES option in Doxygen is set
 # to NO, which it is by default. So creating the file just in case.
-echo "" > .nojekyll
+echo > .nojekyll
 
 ################################################################################
 ##### Generate the Doxygen code documentation and log the output.          #####
@@ -145,3 +149,4 @@ else
     echo 'Warning: Not going to push the documentation to GitHub!' >&2
     exit 1
 fi
+
