@@ -1,7 +1,0 @@
-<map id="ExtraSettingsWidget::on_sSpeedBox_valueChanged" name="ExtraSettingsWidget::on_sSpeedBox_valueChanged">
-<area shape="rect" id="node2" href="$classKb.html#a8795688dbc484f61ad6b487556d914b6" title="Kb::scrollSpeed" alt="" coords="264,5,379,32"/>
-<area shape="rect" id="node3" href="$classCkbSettings.html#a65c4f3ff1f75e5a554759040fb76044e" title="CkbSettings::set" alt="" coords="261,56,381,83"/>
-<area shape="rect" id="node4" href="$ckbsettings_8cpp.html#aa405e58960532b36ddb38251775238fd" title="globalSettings" alt="" coords="444,31,548,57"/>
-<area shape="rect" id="node5" href="$classCkbSettings.html#a3793106d98878f170f9f9734bf39409b" title="CkbSettings::value" alt="" coords="429,81,563,108"/>
-<area shape="rect" id="node6" href="$classCkbSettings.html#a29695ed0012617ba943a1878d4abc71c" title="CkbSettings::pwd" alt="" coords="611,81,738,108"/>
-</map>

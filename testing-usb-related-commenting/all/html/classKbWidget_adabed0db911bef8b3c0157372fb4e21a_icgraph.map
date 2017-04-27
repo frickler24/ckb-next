@@ -1,9 +1,0 @@
-<map id="KbWidget::updateFwButton" name="KbWidget::updateFwButton">
-<area shape="rect" id="node2" href="$classMainWindow.html#a7bd3f729676a76651d4852d03d1cfb8e" title="MainWindow::checkFwUpdates" alt="" coords="238,5,445,32"/>
-<area shape="rect" id="node5" href="$classKbWidget.html#a38c9f29a5d8f1edfcb5f8040de3dadb9" title="KbWidget::on_fwUpdButton\l_clicked" alt="" coords="249,57,433,98"/>
-<area shape="rect" id="node8" href="$classKbWidget.html#a16381b1ae59f8e1649d7d06232dadc1d" title="KbWidget::on_tabWidget\l_currentChanged" alt="" coords="258,122,425,163"/>
-<area shape="rect" id="node3" href="$classMainWindow.html#a888ae1a192a5ca93d0d8bddd104ae953" title="MainWindow::timerTick" alt="" coords="503,5,662,32"/>
-<area shape="rect" id="node4" href="$classMainWindow.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow" alt="" coords="729,5,909,32"/>
-<area shape="rect" id="node6" href="$classKbWidget.html#a428930086336c668e8a1055c21c938d9" title="KbWidget::showFwUpdate" alt="" coords="493,64,672,91"/>
-<area shape="rect" id="node7" href="$classMainWindow.html#ae50767c4ed6029f63ebacfffde4bc802" title="MainWindow::showFwUpdate\lNotification" alt="" coords="721,57,917,98"/>
-</map>

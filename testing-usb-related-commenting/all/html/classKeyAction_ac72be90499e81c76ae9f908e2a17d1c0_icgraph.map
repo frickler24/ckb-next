@@ -1,7 +1,0 @@
-<map id="KeyAction::macroContent" name="KeyAction::macroContent">
-<area shape="rect" id="node2" href="$classRebindWidget.html#a0edad41d578028bea3ea0e327fc4c203" title="RebindWidget::setSelection" alt="" coords="227,64,411,91"/>
-<area shape="rect" id="node5" href="$classKbBind.html#abc1d7d434d4e38e0db04f8fba5d90a2d" title="KbBind::update" alt="" coords="263,119,374,145"/>
-<area shape="rect" id="node3" href="$classRebindWidget.html#a6a68ae3d9abc935dbba8e2ce187337ce" title="RebindWidget::setBind" alt="" coords="486,5,642,32"/>
-<area shape="rect" id="node4" href="$classRebindWidget.html#a8cb2e54e8bbd17cae8e152132a7a1ddf" title="RebindWidget::on_cancelButton\l_clicked" alt="" coords="459,57,669,98"/>
-<area shape="rect" id="node6" href="$classKb.html#a97694a4cd55681adca7b972fb5722049" title="Kb::frameUpdate" alt="" coords="503,123,625,149"/>
-</map>

@@ -1,6 +1,0 @@
-<map id="cmd_fwupdate" name="cmd_fwupdate">
-<area shape="rect" id="node2" href="$firmware_8c.html#a23b0c6bc6d6ca8b0324b18869fbbc4d7" title="fwupdate" alt="" coords="171,56,245,83"/>
-<area shape="rect" id="node3" href="$notify_8c.html#a7ac88f15243030290e4d57c3c9ac7c98" title="nprintf" alt="" coords="316,5,375,32"/>
-<area shape="rect" id="node5" href="$usb_8c.html#a8a1c88df5e127732cb63f1a8be180926" title="usb_tryreset" alt="" coords="161,107,255,133"/>
-<area shape="rect" id="node4" href="$devnode_8c.html#ad130425a617cf973b28603a72607a057" title="Writes a keyboard&#39;s firmware version and poll rate to its device node. " alt="" coords="304,56,387,83"/>
-</map>

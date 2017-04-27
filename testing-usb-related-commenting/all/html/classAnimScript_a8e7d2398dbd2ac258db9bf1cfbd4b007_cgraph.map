@@ -1,8 +1,0 @@
-<map id="AnimScript::end" name="AnimScript::end">
-<area shape="rect" id="node2" href="$classColorMap.html#a229d3bb3a24ab7e10ef38a7847dd3519" title="ColorMap::clear" alt="" coords="195,5,309,32"/>
-<area shape="rect" id="node3" href="$classAnimScript.html#a879fc5eba58a3ba08623bc4064501c38" title="AnimScript::readProcess" alt="" coords="169,56,335,83"/>
-<area shape="rect" id="node4" href="$classColorMap.html#a206bfd8a9465e856c16a71bb908772fe" title="ColorMap::colorForName" alt="" coords="384,5,552,32"/>
-<area shape="rect" id="node6" href="$classColorMap.html#a177f4fe41f3a085128d563aaf32a24ad" title="ColorMap::colors" alt="" coords="407,56,529,83"/>
-<area shape="rect" id="node7" href="$classColorMap.html#a0755e3891edd1e0d2dce1491f5b06ba7" title="ColorMap::count" alt="" coords="409,107,527,133"/>
-<area shape="rect" id="node5" href="$colormap_8cpp.html#aadd858d434ca6f9507ef897c2e4c12ab" title="qs_strcmp" alt="" coords="600,5,683,32"/>
-</map>

@@ -1,4 +1,0 @@
-<map id="QuaZIODevice::~QuaZIODevice" name="QuaZIODevice::~QuaZIODevice">
-<area shape="rect" id="node2" href="$classQuaZIODevice.html#ad27e447544d57f897316ee6f44535895" title="Closes this device, but not the underlying one. " alt="" coords="267,5,415,32"/>
-<area shape="rect" id="node3" href="$classQuaZIODevice.html#a25f586eb564841b51c395fd17f1cc080" title="Flushes data waiting to be written. " alt="" coords="465,5,610,32"/>
-</map>

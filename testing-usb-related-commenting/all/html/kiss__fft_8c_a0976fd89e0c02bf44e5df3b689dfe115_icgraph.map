@@ -1,9 +1,0 @@
-<map id="kf_bfly4" name="kf_bfly4">
-<area shape="rect" id="node2" href="$kiss__fft_8c.html#a96e4f47862a2df7183ae9e8caaf7a866" title="kf_work" alt="" coords="123,56,191,83"/>
-<area shape="rect" id="node3" href="$kiss__fft_8h.html#a240e0a77bb991890d609f498f9c75ec8" title="kiss_fft_stride" alt="" coords="240,56,344,83"/>
-<area shape="rect" id="node4" href="$kiss__fft_8h.html#ab36e2bb33b74c1a7eabe3271d0916030" title="kiss_fft" alt="" coords="393,56,458,83"/>
-<area shape="rect" id="node5" href="$ckb-mviz_2main_8c.html#a6f211ea1133b321a73965875e19d40bb" title="getFreqDec" alt="" coords="507,5,597,32"/>
-<area shape="rect" id="node7" href="$kiss__fftr_8h.html#a2b79989da6b6a328c9ed3eaeb820d9d1" title="kiss_fftr" alt="" coords="517,56,587,83"/>
-<area shape="rect" id="node8" href="$kiss__fftr_8h.html#a86f06bfb6a8f9c33d79b8cd15bf1c877" title="kiss_fftri" alt="" coords="516,107,588,133"/>
-<area shape="rect" id="node6" href="$ckb-mviz_2main_8c.html#a2cc26be74afb0f7d61c61a6c05bc558a" title="ckb_frame" alt="" coords="645,5,728,32"/>
-</map>
