@@ -77,7 +77,7 @@ git config user.email "travis@frickler24.de"
 #
 # The following line allows to handle documentation for more than one branch
 # because it clears the current branch only.
-git rm -rf ./${TRAVIS_BRANCH}
+if [ -d ./${TRAVIS_BRANCH} ] ; then git rm -rf ./${TRAVIS_BRANCH} ; fi
 
 # Need to create a .nojekyll file to allow filenames starting with an underscore
 # to be seen on the gh-pages site. Therefore creating an empty .nojekyll file.
