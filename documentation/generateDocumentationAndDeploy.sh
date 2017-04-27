@@ -64,6 +64,14 @@ git config --global push.default simple
 git config user.name "Travis CI"
 git config user.email "travis@frickler24.de"
 
+# Check if we have a pull request. If so, handle the name in a special way (furture)
+echo "TRAVIS_PULL_REQUEST = ${TRAVIS_PULL_REQUEST}"
+if [ "${TRAVIS_PULL_REQUEST}" == false ]; then
+    export DOXDIR=${TRAVIS_BRANCH};
+else
+	export DOXDIR=PR_${TRAVIS_PULL_REQUEST};
+fi
+
 # Remove everything currently in the gh-pages branch.
 # GitHub is smart enough to know which files have changed and which files have
 # stayed the same and will only update the changed files. So the gh-pages branch
@@ -77,10 +85,10 @@ git config user.email "travis@frickler24.de"
 #
 # The following line allows to handle documentation for more than one branch
 # because it clears the current branch only.
-if [ -d ./${TRAVIS_BRANCH} ] ; then
-    git rm -rf ./${TRAVIS_BRANCH} ;
+if [ -d ./${DOXDIR} ] ; then
+    git rm -rf ./${DOXDIR} > /dev/null ;
 else
-    echo "Did not find older version of ${TRAVIS_BRANCH}.";
+    echo "Did not find older version of ${DOXDIR}.";
 fi
 
 # Need to create a .nojekyll file to allow filenames starting with an underscore
@@ -92,14 +100,6 @@ echo > .nojekyll
 ################################################################################
 ##### Generate the Doxygen code documentation and log the output.          #####
 
-# Check if we have a pull request. If so, handle the name in a special way (furture)
-echo "TRAVIS_PULL_REQUEST = ${TRAVIS_PULL_REQUEST}"
-if [ "${TRAVIS_PULL_REQUEST}" == false ]; then
-    export DOXDIR=${TRAVIS_BRANCH};
-else
-	export DOXDIR=PR_${TRAVIS_PULL_REQUEST};
-fi
-
 mkdir -p ${DOXDIR}
 echo "Generating Doxygen code documentation for branch ${DOXDIR}/ ..."
 # echo Starting doxygen with $DOXYFILE1 
@@ -110,6 +110,9 @@ doxygen $DOXYFILE2 > doxygen2.log 2>&1 &
 doxygen $DOXYFILE3 > doxygen3.log 2>&1 &
 wait
 echo doxygen done.
+
+echo "DOXDIR = ${DOXDIR}"
+ls -lsRa ${DOXDIR}
 
 echo Generating pdf from latex directories in $(pwd)
 cp ../../documentation/Makefile_skeleton ${DOXDIR}/all/latex/Makefile
