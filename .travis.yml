@@ -64,14 +64,14 @@ addons:
       - doxygen
       - doxygen-latex
       - graphviz
-#      - libudev-dev qt5-default
-#      - zlib1g-dev
-#      - libappindicator-dev
+      - libudev-dev qt5-default
+      - zlib1g-dev
+      - libappindicator-dev
 
 # Build your code e.g. by calling make
 script:
   - cd $TRAVIS_BUILD_DIR
-#  - echo "n" | ./quickinstall
+  - echo "n" | ./quickinstall
 
 # Generate and deploy documentation
 after_success:
