@@ -1,0 +1,5 @@
+<map id="KeyAction::isMouse" name="KeyAction::isMouse">
+<area shape="rect" id="node2" href="$classRebindWidget.html#a0edad41d578028bea3ea0e327fc4c203" title="RebindWidget::setSelection" alt="" coords="192,35,376,61"/>
+<area shape="rect" id="node3" href="$classRebindWidget.html#a6a68ae3d9abc935dbba8e2ce187337ce" title="RebindWidget::setBind" alt="" coords="451,5,607,32"/>
+<area shape="rect" id="node4" href="$classRebindWidget.html#a8cb2e54e8bbd17cae8e152132a7a1ddf" title="RebindWidget::on_cancelButton\l_clicked" alt="" coords="425,57,634,98"/>
+</map>

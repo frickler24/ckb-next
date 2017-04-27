@@ -1,0 +1,14 @@
+<map id="QuaZip_getFileInfo" name="QuaZip_getFileInfo">
+<area shape="rect" id="node2" href="$classQuaZip.html#a9783f8b4f39cd55e71e975aea78fd54a" title="Returns the current file name. " alt="" coords="187,81,376,108"/>
+<area shape="rect" id="node3" href="$classQuaZip.html#a5b869a9c0d4f49955b759592fec08888" title="Returns true if ZIP file is open, false otherwise. " alt="" coords="457,5,570,32"/>
+<area shape="rect" id="node4" href="$classQuaZip.html#a00b237d926648f45da86db25e7cfb697" title="Returns true if the current file has been set. " alt="" coords="435,56,592,83"/>
+<area shape="rect" id="node5" href="$unzip_8c.html#a530654c7abbcd1c432942eb41f613d48" title="unzGetCurrentFileInfo64" alt="" coords="431,107,595,133"/>
+<area shape="rect" id="node12" href="$classQuaZipPrivate.html#aaffe963507cb17b2848bc9546c740bb2" title="QuaZipPrivate::addCurrent\lFileToDirectoryMap" alt="" coords="425,158,602,199"/>
+<area shape="rect" id="node6" href="$unzip_8c.html#a33e149842497fe83f96ef95e71ba4973" title="unz64local_GetCurrentFile\lInfoInternal" alt="" coords="651,99,827,141"/>
+<area shape="rect" id="node7" href="$unzip_8c.html#aadf5d3516ffd4262012ddfbd80a34863" title="unz64local_getLong" alt="" coords="913,31,1050,57"/>
+<area shape="rect" id="node9" href="$unzip_8c.html#a3c9da06aac7eccb3e336ba0f56c1f1a3" title="unz64local_getShort" alt="" coords="911,81,1051,108"/>
+<area shape="rect" id="node10" href="$unzip_8c.html#afbbabad43d7045e4b4373e2a3fafc206" title="unz64local_DosDateToTmuDate" alt="" coords="875,132,1087,159"/>
+<area shape="rect" id="node11" href="$unzip_8c.html#aba9b9b69240930610d4c80e5fdf30e68" title="unz64local_getLong64" alt="" coords="906,183,1057,209"/>
+<area shape="rect" id="node8" href="$unzip_8c.html#a25e6c6413117acc85f65ab2a085e0c49" title="unz64local_getByte" alt="" coords="1136,81,1272,108"/>
+<area shape="rect" id="node13" href="$unzip_8c.html#a455a15e23936251eb614675b2e7bae64" title="unzGetFilePos64" alt="" coords="677,165,800,192"/>
+</map>

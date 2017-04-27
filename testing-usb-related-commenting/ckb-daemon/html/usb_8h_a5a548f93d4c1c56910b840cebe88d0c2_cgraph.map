@@ -1,0 +1,4 @@
+<map id="_usbrecv" name="_usbrecv">
+<area shape="rect" id="node2" href="$usb_8h.html#a5694446920cfae8c887163847312a8f8" title="os_usbrecv receives a max MSGSIZE long buffer from usb device " alt="" coords="130,5,219,32"/>
+<area shape="rect" id="node3" href="$usb_8h.html#a9e813287cd0ee9c7b665002a929d2894" title="os_usbsend sends a data packet (MSG_SIZE = 64) Bytes long " alt="" coords="129,56,221,83"/>
+</map>

@@ -86,6 +86,7 @@ fi
 # The following line allows to handle documentation for more than one branch
 # because it clears the current branch only.
 if [ -d ./${DOXDIR} ] ; then
+    echo "Deleting existing directory $(pwd)/${DOXDIR}" ;
     git rm -rf ./${DOXDIR} > /dev/null ;
 else
     echo "Did not find older version of ${DOXDIR}.";
@@ -102,7 +103,6 @@ echo > .nojekyll
 
 mkdir -p ${DOXDIR}
 echo "Generating Doxygen code documentation for branch ${DOXDIR}/ ..."
-pwd
 # echo Starting doxygen with $DOXYFILE1 
 doxygen $DOXYFILE1 > doxygen1.log 2>&1 &
 # echo Starting doxygen with $DOXYFILE2
@@ -112,8 +112,6 @@ doxygen $DOXYFILE3 > doxygen3.log 2>&1 &
 wait
 echo doxygen done.
 
-echo "DOXDIR = ${DOXDIR}"
-pwd
 echo Generating pdf from latex directories in $(pwd)
 cp ../../documentation/Makefile_skeleton ${DOXDIR}/all/latex/Makefile
 (cd ${DOXDIR}/all/latex ; make > make_pdf1.log ) &

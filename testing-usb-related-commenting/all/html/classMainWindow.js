@@ -1,0 +1,26 @@
+var classMainWindow =
+[
+    [ "MainWindow", "classMainWindow.html#a8b244be8b7b7db1b08de2a2acb9409db", null ],
+    [ "~MainWindow", "classMainWindow.html#ae98d00a93bc118200eeef9f9bba1dba7", null ],
+    [ "addDevice", "classMainWindow.html#a64fe894ef88b14a53d6ab7166786f957", null ],
+    [ "checkFwUpdates", "classMainWindow.html#a7bd3f729676a76651d4852d03d1cfb8e", null ],
+    [ "cleanup", "classMainWindow.html#aa9dd2871f040b8f79efae0bf864b90dd", null ],
+    [ "closeEvent", "classMainWindow.html#a4e20a4a065fbb0e4d3532a45a0a91425", null ],
+    [ "iconClicked", "classMainWindow.html#a3e292f1ddb54b722c8270b1259c1f85a", null ],
+    [ "quitApp", "classMainWindow.html#a683ed5e58e5caa4503dfc53142321746", null ],
+    [ "removeDevice", "classMainWindow.html#a4deff5cf0649f26ae70c3081c9ca6280", null ],
+    [ "showFwUpdateNotification", "classMainWindow.html#ae50767c4ed6029f63ebacfffde4bc802", null ],
+    [ "showWindow", "classMainWindow.html#a04d901dec193f723d5ab3c4a3231b6b8", null ],
+    [ "stateChange", "classMainWindow.html#a5692226589f74f2d81ed0b9656f74a83", null ],
+    [ "timerTick", "classMainWindow.html#a888ae1a192a5ca93d0d8bddd104ae953", null ],
+    [ "toggleTrayIcon", "classMainWindow.html#a5f7b64a1013389fd3b13974f6f4b4dc5", null ],
+    [ "updateVersion", "classMainWindow.html#af8adffe48835b0d1f5356e7209b5207b", null ],
+    [ "closeAction", "classMainWindow.html#aa548b025a7f0179f05c928038c656fd7", null ],
+    [ "kbWidgets", "classMainWindow.html#a3d91eadbc8e1596b6e4bf8bc82467536", null ],
+    [ "mainWindow", "classMainWindow.html#ad67e6c15ddc2716574875baa5fe52362", null ],
+    [ "restoreAction", "classMainWindow.html#afdb43fce9b4e402971930c98a9d00b88", null ],
+    [ "settingsWidget", "classMainWindow.html#a85021663204accae241553816e820a1a", null ],
+    [ "trayIcon", "classMainWindow.html#a0c42f7496716d94e18650e2a29b07040", null ],
+    [ "trayIconMenu", "classMainWindow.html#a995e66a3606b2779e26a8a5330a1b39f", null ],
+    [ "ui", "classMainWindow.html#a35466a70ed47252a0191168126a352a5", null ]
+];

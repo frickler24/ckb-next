@@ -1,0 +1,7 @@
+<map id="KbPerf::settingsUpdated" name="KbPerf::settingsUpdated">
+<area shape="rect" id="node2" href="$classKbPerf.html#aa5bceb4eb364e56e9e55a2b33595514c" title="KbPerf::update" alt="" coords="219,73,328,100"/>
+<area shape="rect" id="node3" href="$classKb.html#abd5f5fc526541fd9fe41a4755e6b42f2" title="Kb::hwSave" alt="" coords="391,48,484,75"/>
+<area shape="rect" id="node6" href="$classKb.html#a97694a4cd55681adca7b972fb5722049" title="Kb::frameUpdate" alt="" coords="377,99,498,125"/>
+<area shape="rect" id="node4" href="$classKbWidget.html#a65f38c3fc88b4e1a8fbabc7a27946c49" title="KbWidget::on_hwSaveButton\l_clicked" alt="" coords="547,5,741,46"/>
+<area shape="rect" id="node5" href="$classKbProfileDialog.html#aac105b06b0a29e39c05cb70f01c37fcd" title="KbProfileDialog::on\l_profileList_customContext\lMenuRequested" alt="" coords="553,69,735,125"/>
+</map>

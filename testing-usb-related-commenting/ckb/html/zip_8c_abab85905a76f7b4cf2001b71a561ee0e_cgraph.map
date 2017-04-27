@@ -1,0 +1,22 @@
+<map id="zipOpen64" name="zipOpen64">
+<area shape="rect" id="node2" href="$zip_8c.html#a6cb26503b56121bf3b5779b4df561b24" title="zipOpen3" alt="" coords="139,376,216,403"/>
+<area shape="rect" id="node3" href="$qioapi_8cpp.html#a791fffcedf2d2c9dabd67232dafe447b" title="fill_qiodevice64_filefunc" alt="" coords="277,224,437,251"/>
+<area shape="rect" id="node12" href="$zip_8c.html#a6c2a1e974d3ab6f326b743af32e53794" title="init_linkedlist" alt="" coords="309,376,406,403"/>
+<area shape="rect" id="node13" href="$zip_8c.html#a44da2707a5a0031b9c263f9373918f29" title="LoadCentralDirectoryRecord" alt="" coords="264,528,451,555"/>
+<area shape="rect" id="node4" href="$qioapi_8cpp.html#ab64e25237ce8d0748a8e63552c811a6c" title="qiodevice64_seek_file_func" alt="" coords="501,325,683,352"/>
+<area shape="rect" id="node5" href="$qioapi_8cpp.html#ab23e0bdd92f6df922a97e865ca5e9030" title="qiodevice64_tell_file_func" alt="" coords="507,376,677,403"/>
+<area shape="rect" id="node6" href="$qioapi_8cpp.html#a5c1872cbc73a6107a59983cf68a7eb71" title="qiodevice_close_file_func" alt="" coords="507,5,677,32"/>
+<area shape="rect" id="node7" href="$qioapi_8cpp.html#aa28e993bb89e141777695b5ed3908e5f" title="qiodevice_error_file_func" alt="" coords="509,56,675,83"/>
+<area shape="rect" id="node8" href="$qioapi_8cpp.html#af65a39ff0265a40151e9c15bead60db8" title="qiodevice_fakeclose\l_file_func" alt="" coords="522,107,662,149"/>
+<area shape="rect" id="node9" href="$qioapi_8cpp.html#a32af99f13f6baf9617565716780ae818" title="qiodevice_open_file_func" alt="" coords="508,173,676,200"/>
+<area shape="rect" id="node10" href="$qioapi_8cpp.html#ae865403be09e32051ca7a36fc6b0da3d" title="qiodevice_read_file_func" alt="" coords="509,224,675,251"/>
+<area shape="rect" id="node11" href="$qioapi_8cpp.html#aa7c1be5bc23d2d6730884f16b1cbe991" title="qiodevice_write_file_func" alt="" coords="508,275,676,301"/>
+<area shape="rect" id="node14" href="$zip_8c.html#af027310aec51b70ed53bc0bda4392ede" title="add_data_in_datablock" alt="" coords="515,477,669,504"/>
+<area shape="rect" id="node16" href="$zip_8c.html#af9e4ecae0dd3d2e2a749f83c48e78d66" title="zip64local_getLong" alt="" coords="748,587,881,613"/>
+<area shape="rect" id="node18" href="$zip_8c.html#a7d544970649a6e4e7e423a29b29dba81" title="zip64local_getLong64" alt="" coords="741,641,888,668"/>
+<area shape="rect" id="node19" href="$zip_8c.html#a49d52d3592e65398e57bb52850c3f18b" title="zip64local_getShort" alt="" coords="747,693,883,720"/>
+<area shape="rect" id="node20" href="$zip_8c.html#a7235a2cfdd684a93a58a36a7dab3ecea" title="zip64local_SearchCentralDir" alt="" coords="499,427,685,453"/>
+<area shape="rect" id="node21" href="$zip_8c.html#ac4b5c3b2aeca1bd92799ba00f0cc8fe5" title="zip64local_SearchCentral\lDir64" alt="" coords="507,579,677,621"/>
+<area shape="rect" id="node15" href="$zip_8c.html#a904f85612fbfecc3a5238535e7a34cc6" title="allocate_new_datablock" alt="" coords="734,477,895,504"/>
+<area shape="rect" id="node17" href="$zip_8c.html#ad60b20a868ebdbd3d314d277faa9b096" title="zip64local_getByte" alt="" coords="945,641,1077,668"/>
+</map>

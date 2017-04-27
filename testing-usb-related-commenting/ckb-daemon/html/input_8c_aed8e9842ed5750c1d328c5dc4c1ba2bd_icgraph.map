@@ -1,0 +1,19 @@
+<map id="inputupdate_keys" name="inputupdate_keys">
+<area shape="rect" id="node2" href="$input_8h.html#ae360d0b9a764a1d38c5be5464be8b70a" title="inputupdate" alt="" coords="179,120,269,147"/>
+<area shape="rect" id="node3" href="$device__keyboard_8c.html#aeb1b886efdcfce59e4ee8977ba2fd135" title="setactive_kb" alt="" coords="331,56,427,83"/>
+<area shape="rect" id="node6" href="$device__mouse_8c.html#a78f463c19ce586845e80094c949beda2" title="setactive_mouse" alt="" coords="318,120,439,147"/>
+<area shape="rect" id="node9" href="$usb__linux_8c.html#a9e5784bfca2e4612f498ce67c7dab275" title="os_inputmain This function is run in a separate thread and will be detached from the main thread..." alt="" coords="329,196,428,223"/>
+<area shape="rect" id="node4" href="$device__keyboard_8c.html#ac520b855af37b199562c5d6e2d4b8c80" title="cmd_active_kb" alt="" coords="501,5,611,32"/>
+<area shape="rect" id="node5" href="$device__keyboard_8c.html#ae904b92525c5e59de06c92a95120bdeb" title="cmd_idle_kb" alt="" coords="509,56,603,83"/>
+<area shape="rect" id="node7" href="$device__mouse_8c.html#a645921c6fa6d8c1c2f3db338113fac51" title="cmd_active_mouse" alt="" coords="489,107,623,133"/>
+<area shape="rect" id="node8" href="$device__mouse_8c.html#ac071786fa2b1fb41f79c7876666f686c" title="cmd_idle_mouse" alt="" coords="496,157,616,184"/>
+<area shape="rect" id="node10" href="$usb_8c.html#a10ad381abfe51e67e341c882c92bb9ac" title="brief . " alt="" coords="515,208,597,235"/>
+<area shape="rect" id="node11" href="$usb_8h.html#a1ab9d61dd894466125283465201161cd" title="setupusb starts a thread with kb as parameter and _setupusb() as entrypoint. " alt="" coords="672,208,747,235"/>
+<area shape="rect" id="node12" href="$usb__linux_8c.html#a3185d6da36c8b0f8b862a8479ae82034" title="usbadd" alt="" coords="795,208,859,235"/>
+<area shape="rect" id="node13" href="$usb__linux_8c.html#a50efc8ee0ffcb6f201735d1a3bb08779" title="Add a udev device. Returns 0 if device was recognized/added. " alt="" coords="907,208,1023,235"/>
+<area shape="rect" id="node14" href="$usb__linux_8c.html#ad56c1e4ec53bbd6b947cb535590328ea" title="udev_enum use the udev_enumerate_add_match_subsystem() to get all you need but only that..." alt="" coords="1073,183,1162,209"/>
+<area shape="rect" id="node15" href="$usb__linux_8c.html#a0859efad3739abe2ec61af4f3bb983ff" title="usbmain" alt="" coords="1211,208,1282,235"/>
+<area shape="rect" id="node16" href="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1331,208,1381,235"/>
+<area shape="rect" id="node17" href="$notify_8c.html#ae246359e104d63520158c26329caac80" title="restart" alt="" coords="1429,208,1488,235"/>
+<area shape="rect" id="node18" href="$notify_8h.html#a700b520b9eb9a3698af8f8ebf547a9ab" title="cmd_restart" alt="" coords="1536,208,1627,235"/>
+</map>

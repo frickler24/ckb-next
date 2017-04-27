@@ -1,0 +1,7 @@
+<map id="Kb::isOpen" name="Kb::isOpen">
+<area shape="rect" id="node2" href="$classKbManager.html#ac7660c297a81ed3ff5a5e20e674e6d6e" title="KbManager::scanKeyboards" alt="" coords="141,5,328,32"/>
+<area shape="rect" id="node6" href="$classKb.html#a9a8e6fea085f652cc63c9845a62d1f03" title="Kb::~Kb" alt="" coords="199,56,270,83"/>
+<area shape="rect" id="node3" href="$classKbManager.html#ac1baa1b3be9efa0bbca1b4ca40139df4" title="KbManager::KbManager" alt="" coords="376,5,539,32"/>
+<area shape="rect" id="node4" href="$classKbManager.html#add00fc7213f369bf50e8b069f9387206" title="KbManager::init" alt="" coords="587,5,701,32"/>
+<area shape="rect" id="node5" href="$classMainWindow.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow" alt="" coords="750,5,930,32"/>
+</map>

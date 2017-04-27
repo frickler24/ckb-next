@@ -1,0 +1,12 @@
+<map id="cacheWritesInProgress" name="cacheWritesInProgress">
+<area shape="rect" id="node2" href="$classCkbSettings.html#a39d3a0336b7414de8c56c88174f46985" title="CkbSettings::cleanUp" alt="" coords="214,28,365,55"/>
+<area shape="rect" id="node6" href="$classCkbSettings.html#a9c6a37558344dc426dd222deec6792f8" title="CkbSettings::isBusy" alt="" coords="218,83,361,109"/>
+<area shape="rect" id="node3" href="$classMainWindow.html#aa9dd2871f040b8f79efae0bf864b90dd" title="MainWindow::cleanup" alt="" coords="414,24,565,51"/>
+<area shape="rect" id="node4" href="$classMainWindow.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow" alt="" coords="1059,28,1239,55"/>
+<area shape="rect" id="node5" href="$classMainWindow.html#ae98d00a93bc118200eeef9f9bba1dba7" title="MainWindow::~MainWindow" alt="" coords="614,24,802,51"/>
+<area shape="rect" id="node7" href="$classExtraSettingsWidget.html#a77ded97e5f5097c29da0e6fe1a969ee7" title="ExtraSettingsWidget\l::pollUpdates" alt="" coords="418,75,561,117"/>
+<area shape="rect" id="node11" href="$classKb.html#af993d8050eed40c657f4ed0db30f7023" title="Kb::autoSave" alt="" coords="439,141,540,168"/>
+<area shape="rect" id="node8" href="$classExtraSettingsWidget.html#acc6116c20fe8030cf2dc3443558bff18" title="ExtraSettingsWidget\l::on_brightnessBox_clicked" alt="" coords="617,75,799,117"/>
+<area shape="rect" id="node9" href="$classSettingsWidget.html#a6ae876420712dcb104ce3ef5cabb0f53" title="SettingsWidget::pollUpdates" alt="" coords="614,141,802,168"/>
+<area shape="rect" id="node10" href="$classMainWindow.html#a888ae1a192a5ca93d0d8bddd104ae953" title="MainWindow::timerTick" alt="" coords="851,83,1010,109"/>
+</map>

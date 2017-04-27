@@ -1,0 +1,6 @@
+<map id="KbPerf::sniperDpi" name="KbPerf::sniperDpi">
+<area shape="rect" id="node2" href="$classKbPerf.html#aefa0a6b03be3fa508285bcfb2fd7b582" title="KbPerf::pushSniper" alt="" coords="179,5,314,32"/>
+<area shape="rect" id="node3" href="$classKeyAction.html#a1fd7bef50c828e25299d514222d5b5a4" title="KeyAction::keyEvent" alt="" coords="363,5,509,32"/>
+<area shape="rect" id="node4" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent" alt="" coords="558,5,685,32"/>
+<area shape="rect" id="node5" href="$classKb.html#afa36635dcc1cd9512f372594c57c546c" title="Kb::readNotify" alt="" coords="733,5,840,32"/>
+</map>

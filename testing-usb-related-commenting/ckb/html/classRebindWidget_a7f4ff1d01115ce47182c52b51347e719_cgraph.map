@@ -1,0 +1,23 @@
+<map id="RebindWidget::applyChanges" name="RebindWidget::applyChanges">
+<area shape="rect" id="node2" href="$classKeyAction.html#a7a2b4890c18242420439ac5689be88b0" title="KeyAction::animAction" alt="" coords="259,5,413,32"/>
+<area shape="rect" id="node3" href="$classKbLight.html#a0d37ba50d07c949db3d9714f9b559e6b" title="KbLight::animList" alt="" coords="275,56,397,83"/>
+<area shape="rect" id="node4" href="$classKeyAction.html#ac6ca2711aabf19331099ae5203ff315c" title="KeyAction::dpiAction" alt="" coords="264,107,408,133"/>
+<area shape="rect" id="node5" href="$classKbAnim.html#ab3f14ad52f306a4714642e5decb4db36" title="KbAnim::guid" alt="" coords="286,157,386,184"/>
+<area shape="rect" id="node6" href="$classKbBind.html#a5ec162b416f0ffad926348db02db3084" title="KbBind::light" alt="" coords="288,208,384,235"/>
+<area shape="rect" id="node9" href="$classKeyAction.html#adfa57ca3b8e177861faac0d0e69304da" title="KeyAction::lightAction" alt="" coords="261,259,411,285"/>
+<area shape="rect" id="node10" href="$classKeyAction.html#ab8196204b95731d7effd9f52b44fb014" title="KeyAction::lockAction" alt="" coords="261,309,411,336"/>
+<area shape="rect" id="node11" href="$classKeyAction.html#aae0da6c8f1c3bf409c35c6ab21a1115d" title="well documented in cpp file " alt="" coords="255,360,417,387"/>
+<area shape="rect" id="node12" href="$classKeyAction.html#a2932bd638ecc7ae59178c50153b82b79" title="KeyAction::modeAction" alt="" coords="257,411,415,437"/>
+<area shape="rect" id="node13" href="$classKbBind.html#a1d547649389b10379aff0e7bcbb009ec" title="KbBind::noAction" alt="" coords="275,512,397,539"/>
+<area shape="rect" id="node21" href="$classKeyAction.html#a633d7230c3e357788b6c60ad83feca54" title="KeyAction::programAction" alt="" coords="249,563,423,589"/>
+<area shape="rect" id="node22" href="$classKbBind.html#a6c16c7cd34f6166cf078564a08959d81" title="KbBind::setAction" alt="" coords="273,461,399,488"/>
+<area shape="rect" id="node7" href="$classKbMode.html#afdfc0cdec0315dd3b2ab6506f6ef43f9" title="KbMode::light" alt="" coords="493,183,595,209"/>
+<area shape="rect" id="node8" href="$classKbBind.html#a92923d9f4643d368f70e54c7f409261c" title="KbBind::modeParent" alt="" coords="473,233,615,260"/>
+<area shape="rect" id="node14" href="$classKbBind.html#a195e520e9f7ee76718ca8ca8927b1d3b" title="KbBind::globalRemap" alt="" coords="819,512,967,539"/>
+<area shape="rect" id="node15" href="$classKeyMap.html#a0748b06120f93ad61d90c360dafbb59c" title="KeyMap::key" alt="" coords="495,512,593,539"/>
+<area shape="rect" id="node16" href="$classKbBind.html#a9a3abe6f6aeb707c3e1f691c0e3e5e1b" title="KbBind::resetAction" alt="" coords="475,461,613,488"/>
+<area shape="rect" id="node17" href="$classKbBind.html#ab140ce3e9ab0c94d5b23129729234bfb" title="KbBind::action" alt="" coords="664,613,771,640"/>
+<area shape="rect" id="node18" href="$classKbBind.html#a116916d2451ee7dcfe69cd816eb6d255" title="KbBind::bindAction" alt="" coords="827,639,960,665"/>
+<area shape="rect" id="node20" href="$classKeyAction.html#a67bbf6dd422e76ef20ed858f28bb4b21" title="KeyAction::value" alt="" coords="833,588,954,615"/>
+<area shape="rect" id="node19" href="$classKeyAction.html#ae744da2dd239b7d6596a341ea63b0e88" title="KeyAction::defaultAction" alt="" coords="1017,639,1183,665"/>
+</map>

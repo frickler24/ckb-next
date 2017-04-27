@@ -1,0 +1,6 @@
+<map id="GradientDialog::makeIcon" name="GradientDialog::makeIcon">
+<area shape="rect" id="node2" href="$classGradientDialog.html#a5a44977d7ab54d18a46f5f64e0df5b02" title="GradientDialog::updatePresets" alt="" coords="227,77,427,104"/>
+<area shape="rect" id="node3" href="$classGradientDialog.html#a30a03b6ef4aaa3fe4968699a76cc9a00" title="GradientDialog::Gradient\lDialog" alt="" coords="475,5,640,46"/>
+<area shape="rect" id="node4" href="$classGradientDialog.html#a2b23b01768c4187d2adabea307555db6" title="GradientDialog::on\l_presetSave_clicked" alt="" coords="486,70,629,111"/>
+<area shape="rect" id="node5" href="$classGradientDialog.html#a88c52c9239d30413dd1c902c9d51e6a7" title="GradientDialog::on\l_presetDelete_clicked" alt="" coords="482,135,633,177"/>
+</map>
