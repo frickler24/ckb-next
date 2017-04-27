@@ -102,6 +102,7 @@ echo > .nojekyll
 
 mkdir -p ${DOXDIR}
 echo "Generating Doxygen code documentation for branch ${DOXDIR}/ ..."
+pwd
 # echo Starting doxygen with $DOXYFILE1 
 doxygen $DOXYFILE1 > doxygen1.log 2>&1 &
 # echo Starting doxygen with $DOXYFILE2
@@ -112,6 +113,7 @@ wait
 echo doxygen done.
 
 echo "DOXDIR = ${DOXDIR}"
+pwd
 ls -lsRa ${DOXDIR}
 
 echo Generating pdf from latex directories in $(pwd)
