@@ -1,0 +1,31 @@
+<map id="KbWidget::KbWidget" name="KbWidget::KbWidget">
+<area shape="rect" id="node2" href="$classKbWidget.html#ad70b03da0e0df456f16e9ad26df1a3a2" title="KbWidget::devUpdate" alt="" coords="210,53,361,80"/>
+<area shape="rect" id="node3" href="$classKb.html#a21057c05509d3e7cb90c8f509b025d8f" title="Kb::isKeyboard" alt="" coords="230,104,341,131"/>
+<area shape="rect" id="node5" href="$classKb.html#ab4c9c664189ad5b084be7dd5ad55b8fa" title="Kb::isMouse" alt="" coords="238,155,333,181"/>
+<area shape="rect" id="node7" href="$classKbWidget.html#aae4a00bb180d711b5df7df6443c8bf36" title="KbWidget::modeChanged" alt="" coords="200,737,371,764"/>
+<area shape="rect" id="node18" href="$classKbWidget.html#adaed06a12b40c605341e0cbb12239e2b" title="KbWidget::modesList\l_reordered" alt="" coords="212,451,359,493"/>
+<area shape="rect" id="node25" href="$classKbWidget.html#a49de52afbca9a13838058ec68d9c3f29" title="KbWidget::profileChanged" alt="" coords="198,307,373,333"/>
+<area shape="rect" id="node28" href="$classKbWidget.html#a00761b40736c331e77a3f0ec944d545c" title="KbWidget::updateProfileList" alt="" coords="427,155,611,181"/>
+<area shape="rect" id="node4" href="$classKeyMap.html#af9a63ba290c87d6250156407561cfc98" title="KeyMap::isKeyboard" alt="" coords="447,29,590,56"/>
+<area shape="rect" id="node6" href="$classKeyMap.html#a5a138948fefad6ad812f35a22277edb2" title="KeyMap::isMouse" alt="" coords="455,104,582,131"/>
+<area shape="rect" id="node8" href="$classKb.html#a4a9b9ba54fb83506ae61aa787d98cbb8" title="Kb::currentProfile" alt="" coords="664,357,787,384"/>
+<area shape="rect" id="node9" href="$classKbProfile.html#ad3533e835b9ea8dbf031ef57d8823eef" title="KbProfile::indexOf" alt="" coords="455,661,583,688"/>
+<area shape="rect" id="node10" href="$classKb.html#ad5ff9af4c586f42e8656f17b798a3696" title="Kb::currentMode" alt="" coords="459,712,578,739"/>
+<area shape="rect" id="node11" href="$classKb.html#ae273dffef31bc4df7a01a3ede9e0b590" title="Kb::currentLight" alt="" coords="461,813,576,840"/>
+<area shape="rect" id="node13" href="$classKb.html#af9ff36a53624a3e5548d8060d125edb9" title="Kb::currentBind" alt="" coords="463,915,575,941"/>
+<area shape="rect" id="node15" href="$classKb.html#a14cc9509ee1bd5908cc0d891163861ef" title="Kb::currentPerf" alt="" coords="463,763,574,789"/>
+<area shape="rect" id="node17" href="$classKbWidget.html#a1f2c1062e29f5ea95a16cd5b68da52c7" title="KbWidget::modeUpdate" alt="" coords="438,864,599,891"/>
+<area shape="rect" id="node12" href="$classKbMode.html#afdfc0cdec0315dd3b2ab6506f6ef43f9" title="KbMode::light" alt="" coords="674,813,777,840"/>
+<area shape="rect" id="node14" href="$classKbMode.html#aa90c7537a90e0a960a5eb327f3a2cdbb" title="KbMode::bind" alt="" coords="674,915,777,941"/>
+<area shape="rect" id="node16" href="$classKbMode.html#afd90aa9cce9846da60a1ccc862b5a2ee" title="KbMode::perf" alt="" coords="675,763,775,789"/>
+<area shape="rect" id="node19" href="$classKbProfile.html#a3b50f802caaced0964e6c304c656b75c" title="KbProfile::find" alt="" coords="467,611,571,637"/>
+<area shape="rect" id="node22" href="$classKbWidget.html#ae0406fb1288b3ef1c9ed5e2457ca805a" title="KbWidget::modeIcon" alt="" coords="447,357,591,384"/>
+<area shape="rect" id="node24" href="$classKbProfile.html#a84a8f4428749f8ac37d8b34393856a32" title="KbProfile::modes" alt="" coords="457,459,580,485"/>
+<area shape="rect" id="node20" href="$classKbProfile.html#a868bdfbe3f9c00ce2708a1ed8f457ccf" title="KbProfile::id" alt="" coords="679,611,772,637"/>
+<area shape="rect" id="node21" href="$classKbMode.html#a7f9aa60df1f6adabad5d6b6314546c57" title="KbMode::id" alt="" coords="681,484,769,511"/>
+<area shape="rect" id="node23" href="$classKb.html#a8917f2f252b7d46ca02c9d3b71025be7" title="Kb::hwProfile" alt="" coords="675,256,775,283"/>
+<area shape="rect" id="node26" href="$classKbMode.html#adfd90af39233d8c1431566859a21af1c" title="KbMode::name" alt="" coords="463,205,574,232"/>
+<area shape="rect" id="node27" href="$classKbWidget.html#aa592f030638a59bc13901b2e1b13de8e" title="KbWidget::addNewModeItem" alt="" coords="422,256,615,283"/>
+<area shape="rect" id="node29" href="$classKb.html#abd3211644024c6f6eee8186c44836aec" title="Kb::profiles" alt="" coords="681,129,769,156"/>
+<area shape="rect" id="node30" href="$classKbProfile.html#a0239b0037d8206ed5bfd6c774d803d1a" title="KbProfile::name" alt="" coords="668,180,783,207"/>
+</map>

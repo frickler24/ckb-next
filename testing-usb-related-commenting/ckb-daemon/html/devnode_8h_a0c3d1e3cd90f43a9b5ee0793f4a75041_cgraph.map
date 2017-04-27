@@ -1,0 +1,9 @@
+<map id="mkdevpath" name="mkdevpath">
+<area shape="rect" id="node2" href="$devnode_8c.html#a81c81014b2dfa89e326dd61769842953" title="_mkdevpath" alt="" coords="141,132,235,159"/>
+<area shape="rect" id="node3" href="$devnode_8c.html#a38fcf6ff044f9249ae04234340ee8e7b" title="_mknotifynode" alt="" coords="293,5,400,32"/>
+<area shape="rect" id="node4" href="$devnode_8c.html#acc36eaba5eb854461ab3c0a4d146e9c9" title="_updateconnected Update the list of connected devices. " alt="" coords="283,56,411,83"/>
+<area shape="rect" id="node5" href="$devnode_8c.html#ad130425a617cf973b28603a72607a057" title="Writes a keyboard&#39;s firmware version and poll rate to its device node. " alt="" coords="305,107,388,133"/>
+<area shape="rect" id="node6" href="$usb_8c.html#af87f830e031d8f63d2d1c3fc14fdad20" title="brief . " alt="" coords="303,157,390,184"/>
+<area shape="rect" id="node7" href="$devnode_8c.html#aac8f6f936a0ff6c16adc677622b226c4" title="rm_recursive" alt="" coords="298,208,395,235"/>
+<area shape="rect" id="node8" href="$usb_8c.html#a8e6389e8183a834fedb6ed317dd26f94" title="brief . " alt="" coords="305,259,388,285"/>
+</map>

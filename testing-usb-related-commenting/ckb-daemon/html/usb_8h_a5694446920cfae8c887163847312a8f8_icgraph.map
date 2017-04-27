@@ -1,0 +1,3 @@
+<map id="os_usbrecv" name="os_usbrecv">
+<area shape="rect" id="node2" href="$usb_8h.html#a5a548f93d4c1c56910b840cebe88d0c2" title="_usbrecv Request data from a USB device by first sending an output packet and then reading the respon..." alt="" coords="144,5,219,32"/>
+</map>

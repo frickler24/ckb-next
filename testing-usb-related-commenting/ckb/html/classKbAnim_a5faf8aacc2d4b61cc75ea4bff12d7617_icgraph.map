@@ -1,0 +1,13 @@
+<map id="KbAnim::scriptName" name="KbAnim::scriptName">
+<area shape="rect" id="node2" href="$classAnimSettingDialog.html#ae8882ea2cc60e89a446b763cc212a605" title="AnimSettingDialog::\lAnimSettingDialog" alt="" coords="217,117,356,158"/>
+<area shape="rect" id="node3" href="$classKbAnimWidget.html#a810aaafb80b34c3f03345b9a265da1c2" title="KbAnimWidget::setCurrent" alt="" coords="197,183,376,209"/>
+<area shape="rect" id="node4" href="$classKbAnimWidget.html#a7f694bfa406d2f1fdab7a7169f837efb" title="KbAnimWidget::KbAnimWidget" alt="" coords="425,5,629,32"/>
+<area shape="rect" id="node5" href="$classKbAnimWidget.html#a096921d8224cc5d7580a9e5a46305061" title="KbAnimWidget::refreshList" alt="" coords="437,56,616,83"/>
+<area shape="rect" id="node7" href="$classKbAnimWidget.html#aa49c33f3e673b9521ab812df554dec93" title="KbAnimWidget::duplicateAnim" alt="" coords="683,107,882,133"/>
+<area shape="rect" id="node8" href="$classKbAnimWidget.html#a8fefdad4f8ee8082890159438c78e911" title="KbAnimWidget::on_animList\l_customContextMenuRequested" alt="" coords="936,150,1149,191"/>
+<area shape="rect" id="node9" href="$classKbAnimWidget.html#adcd31f32f63db310da51fe32c53caeb6" title="KbAnimWidget::clearSelection" alt="" coords="427,208,626,235"/>
+<area shape="rect" id="node10" href="$classKbAnimWidget.html#aec38d76f8f14709e03526c9f4b2782e8" title="KbAnimWidget::addAnim" alt="" coords="443,259,611,285"/>
+<area shape="rect" id="node11" href="$classKbAnimWidget.html#a3983ad58852303bd0a8643cf1a610880" title="KbAnimWidget::on_animList\l_currentItemChanged" alt="" coords="433,310,620,351"/>
+<area shape="rect" id="node12" href="$classKbAnimWidget.html#a5d00279a905a85a5e702f266ca84f6ef" title="KbAnimWidget::on_deleteButton\l_clicked" alt="" coords="677,289,888,330"/>
+<area shape="rect" id="node6" href="$classKbAnimWidget.html#a986780d15107d5aaf661b578db7703af" title="KbAnimWidget::setLight" alt="" coords="701,56,864,83"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="AnimScript::hasFrame" name="AnimScript::hasFrame">
+<area shape="rect" id="node2" href="$classKbAnim.html#ab5bbacd92d8396badc0c9f26fd5e2e17" title="KbAnim::isRunning" alt="" coords="206,5,341,32"/>
+<area shape="rect" id="node3" href="$classKbLight.html#a9c5da2fd5175d75bcac5c18a46362669" title="KbLight::isStarted" alt="" coords="390,5,517,32"/>
+<area shape="rect" id="node4" href="$classKb.html#a97694a4cd55681adca7b972fb5722049" title="Kb::frameUpdate" alt="" coords="566,5,687,32"/>
+</map>

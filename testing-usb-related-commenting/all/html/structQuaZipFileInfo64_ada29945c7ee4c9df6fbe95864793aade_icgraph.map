@@ -1,0 +1,12 @@
+<map id="QuaZipFileInfo64::toQuaZipFileInfo" name="QuaZipFileInfo64::toQuaZipFileInfo">
+<area shape="rect" id="node2" href="$classQuaZip.html#a9c91a53ed4c2038e153c64bdc097ebe8" title="Retrieves information about the current file. " alt="" coords="237,157,413,184"/>
+<area shape="rect" id="node11" href="$classQuaZipFile.html#ad3f5807329321be21b12c1ba5798b359" title="Gets information about current file. " alt="" coords="248,208,403,235"/>
+<area shape="rect" id="node3" href="$classJlCompress.html#a522739a65b382a9838ed69812340dd40" title="Extract a single file. " alt="" coords="462,56,623,83"/>
+<area shape="rect" id="node7" href="$classQuaZipFile.html#af35876a5ac6e9c35234275a9e503110d" title="Gets information about current file with zip64 support. " alt="" coords="465,107,620,133"/>
+<area shape="rect" id="node8" href="$classJlCompress.html#ab42422be913f817d7e04c1b1cd5d0156" title="Get the file list. " alt="" coords="463,157,623,184"/>
+<area shape="rect" id="node9" href="$quazip_8cpp.html#af8861bdb11e81fb21dfc45a5bf6dca75" title="QuaZip_getFileInfo" alt="" coords="477,208,609,235"/>
+<area shape="rect" id="node10" href="$quazipdir_8cpp.html#adde313859c93c5bd433e1e5e9e55f431" title="QuaZipDir_getFileInfo" alt="" coords="468,259,617,285"/>
+<area shape="rect" id="node4" href="$classJlCompress.html#a365a153baa4c11812d93cbca60b6a293" title="Extract a whole archive. " alt="" coords="677,5,835,32"/>
+<area shape="rect" id="node5" href="$classJlCompress.html#a38c0d58bfe3bbbcb3cf4e98d126633a3" title="Extract a single file. " alt="" coords="675,56,837,83"/>
+<area shape="rect" id="node6" href="$classJlCompress.html#a309e9ee366719a4d8aa28f837fab73ae" title="Extract a list of files. " alt="" coords="672,107,840,133"/>
+</map>

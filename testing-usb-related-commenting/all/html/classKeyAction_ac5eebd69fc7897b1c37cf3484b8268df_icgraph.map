@@ -1,0 +1,8 @@
+<map id="KeyAction::animInfo" name="KeyAction::animInfo">
+<area shape="rect" id="node2" href="$classKeyAction.html#a1fd7bef50c828e25299d514222d5b5a4" title="KeyAction::keyEvent" alt="" coords="214,5,359,32"/>
+<area shape="rect" id="node5" href="$classRebindWidget.html#a0edad41d578028bea3ea0e327fc4c203" title="RebindWidget::setSelection" alt="" coords="195,56,379,83"/>
+<area shape="rect" id="node3" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent" alt="" coords="469,5,595,32"/>
+<area shape="rect" id="node4" href="$classKb.html#afa36635dcc1cd9512f372594c57c546c" title="Kb::readNotify" alt="" coords="685,5,792,32"/>
+<area shape="rect" id="node6" href="$classRebindWidget.html#a6a68ae3d9abc935dbba8e2ce187337ce" title="RebindWidget::setBind" alt="" coords="454,56,610,83"/>
+<area shape="rect" id="node7" href="$classRebindWidget.html#a8cb2e54e8bbd17cae8e152132a7a1ddf" title="RebindWidget::on_cancelButton\l_clicked" alt="" coords="427,107,637,149"/>
+</map>

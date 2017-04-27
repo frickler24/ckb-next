@@ -1,0 +1,11 @@
+<map id="KbProfileDialog::profileList_reordered" name="KbProfileDialog::profileList_reordered">
+<area shape="rect" id="node2" href="$classKbProfile.html#afdb7ddf3f0cf18fdebba5f4eed76eaf8" title="KbProfile::append" alt="" coords="208,31,333,57"/>
+<area shape="rect" id="node8" href="$classKb.html#a33b53e70102295bea761b7ee14f22851" title="Kb::find" alt="" coords="237,81,304,108"/>
+<area shape="rect" id="node10" href="$classKb.html#abd3211644024c6f6eee8186c44836aec" title="Kb::profiles" alt="" coords="227,132,315,159"/>
+<area shape="rect" id="node3" href="$classKbProfile.html#a6a35f6ecae0910a7a9b4cfc238b4c318" title="KbProfile::setNeedsUpdate" alt="" coords="381,31,563,57"/>
+<area shape="rect" id="node4" href="$classKbProfile.html#a30827cbf8720209464b7acd99d7b59e4" title="KbProfile::setNeedsSave" alt="" coords="614,5,783,32"/>
+<area shape="rect" id="node5" href="$classKbMode.html#abc86ed1b24f62f1d0056de7ed6668d70" title="KbMode::setNeedsUpdate" alt="" coords="611,56,787,83"/>
+<area shape="rect" id="node6" href="$classKbBind.html#ab4c4ec0863c0bc07a9f4e2d5a1a60436" title="KbBind::setNeedsUpdate" alt="" coords="835,31,1005,57"/>
+<area shape="rect" id="node7" href="$classKbPerf.html#a7323c70a0794aa0fc8313bf2dc7a36c1" title="KbPerf::setNeedsUpdate" alt="" coords="836,81,1004,108"/>
+<area shape="rect" id="node9" href="$classKbProfile.html#a868bdfbe3f9c00ce2708a1ed8f457ccf" title="KbProfile::id" alt="" coords="425,81,519,108"/>
+</map>

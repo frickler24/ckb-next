@@ -1,0 +1,6 @@
+<map id="SettingsWidget::setStatus" name="SettingsWidget::setStatus">
+<area shape="rect" id="node2" href="$classMainWindow.html#af8adffe48835b0d1f5356e7209b5207b" title="MainWindow::updateVersion" alt="" coords="230,56,418,83"/>
+<area shape="rect" id="node3" href="$classMainWindow.html#a64fe894ef88b14a53d6ab7166786f957" title="MainWindow::addDevice" alt="" coords="478,5,645,32"/>
+<area shape="rect" id="node4" href="$classMainWindow.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow" alt="" coords="705,56,885,83"/>
+<area shape="rect" id="node5" href="$classMainWindow.html#a4deff5cf0649f26ae70c3081c9ca6280" title="MainWindow::removeDevice" alt="" coords="467,107,656,133"/>
+</map>

@@ -1,0 +1,14 @@
+<map id="KbAnimWidget::KbAnimWidget" name="KbAnimWidget::KbAnimWidget">
+<area shape="rect" id="node2" href="$classKbAnimWidget.html#a77f2ad6f4ffff6389594591b102da636" title="KbAnimWidget::reorderAnims" alt="" coords="259,81,453,108"/>
+<area shape="rect" id="node4" href="$classKbAnimWidget.html#a810aaafb80b34c3f03345b9a265da1c2" title="KbAnimWidget::setCurrent" alt="" coords="267,233,445,260"/>
+<area shape="rect" id="node3" href="$classKbLight.html#a0d37ba50d07c949db3d9714f9b559e6b" title="KbLight::animList" alt="" coords="513,5,636,32"/>
+<area shape="rect" id="node5" href="$classKbAnim.html#aebfd6f4cc51099a1de64eae4929c6bb5" title="KbAnim::keys" alt="" coords="523,56,627,83"/>
+<area shape="rect" id="node6" href="$classKbAnim.html#a20ce294b015ed0fc649e92ba3995ef18" title="KbAnim::script" alt="" coords="521,107,629,133"/>
+<area shape="rect" id="node7" href="$classKbAnim.html#a5faf8aacc2d4b61cc75ea4bff12d7617" title="KbAnim::scriptName" alt="" coords="503,157,646,184"/>
+<area shape="rect" id="node8" href="$classAnimScript.html#afe1509ae396bf2924318580974db487c" title="AnimScript::name" alt="" coords="511,208,638,235"/>
+<area shape="rect" id="node9" href="$classAnimScript.html#abda7a757d5a7d80d73ab02ccfc91c248" title="AnimScript::version" alt="" coords="507,259,643,285"/>
+<area shape="rect" id="node10" href="$classAnimScript.html#a9c35c39aa82523625e47cac84d17a53e" title="AnimScript::copyright" alt="" coords="501,309,648,336"/>
+<area shape="rect" id="node11" href="$classKbAnim.html#aacd458fb1f1a853a483ec2798370ba87" title="KbAnim::name" alt="" coords="521,360,629,387"/>
+<area shape="rect" id="node12" href="$classKbAnim.html#a9808617e6f8d91a74cafa3de8b618df8" title="KbAnim::opacity" alt="" coords="515,411,634,437"/>
+<area shape="rect" id="node13" href="$classKbAnim.html#a0885e61a08cd8e539096abffeeed87df" title="KbAnim::mode" alt="" coords="521,461,629,488"/>
+</map>

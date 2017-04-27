@@ -1,0 +1,5 @@
+<map id="SettingsWidget" name="SettingsWidget">
+<area shape="rect" id="node2" href="$classQWidget.html" title="{QWidget\n||}" alt="" coords="5,228,77,305"/>
+<area shape="rect" id="node4" href="$classExtraSettingsWidget.html" title="{ExtraSettingsWidget\n||+ ExtraSettingsWidget()\l+ ~ExtraSettingsWidget()\l+ pollUpdates()\l&#45; on_trayBox_clicked()\l&#45; on_brightnessBox_clicked()\l&#45; on_animScanButton_clicked()\l&#45; on_fpsBox_valueChanged()\l&#45; on_ditherBox_clicked()\l&#45; on_mAccelBox_clicked()\l&#45; on_sAccelBox_clicked()\l&#45; on_sSpeedBox_valueChanged()\l&#45; on_delayBox_clicked()\l}" alt="" coords="247,147,463,386"/>
+<area shape="rect" id="node5" href="$classQDialog.html" title="{QDialog\n||}" alt="" coords="252,5,321,83"/>
+</map>

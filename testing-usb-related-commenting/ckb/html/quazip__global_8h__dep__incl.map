@@ -1,0 +1,28 @@
+<map id="src/ckb/quazip/quazip_global.h" name="src/ckb/quazip/quazip_global.h">
+<area shape="rect" id="node2" href="$quazip_8h.html" title="src/ckb/quazip/quazip.h" alt="" coords="568,171,727,197"/>
+<area shape="rect" id="node4" href="$quazipfile_8h.html" title="src/ckb/quazip/quazipfile.h" alt="" coords="249,245,425,272"/>
+<area shape="rect" id="node11" href="$quazipfileinfo_8h.html" title="src/ckb/quazip/quazipfileinfo.h" alt="" coords="701,96,899,123"/>
+<area shape="rect" id="node12" href="$quazipnewinfo_8h.html" title="src/ckb/quazip/quazipnewinfo.h" alt="" coords="248,171,453,197"/>
+<area shape="rect" id="node15" href="$crypt_8h.html" title="src/ckb/quazip/crypt.h" alt="" coords="1066,96,1216,123"/>
+<area shape="rect" id="node18" href="$qioapi_8cpp.html" title="src/ckb/quazip/qioapi.cpp" alt="" coords="1241,96,1412,123"/>
+<area shape="rect" id="node19" href="$quachecksum32_8h.html" title="src/ckb/quazip/quachecksum32.h" alt="" coords="1437,96,1653,123"/>
+<area shape="rect" id="node24" href="$quagzipfile_8h.html" title="src/ckb/quazip/quagzipfile.h" alt="" coords="1729,96,1913,123"/>
+<area shape="rect" id="node26" href="$quaziodevice_8h.html" title="src/ckb/quazip/quaziodevice.h" alt="" coords="2039,96,2237,123"/>
+<area shape="rect" id="node3" href="$kbfirmware_8cpp.html" title="src/ckb/kbfirmware.cpp" alt="" coords="385,320,543,347"/>
+<area shape="rect" id="node5" href="$JlCompress_8h.html" title="src/ckb/quazip/JlCompress.h" alt="" coords="599,320,791,347"/>
+<area shape="rect" id="node8" href="$quazip_8cpp.html" title="src/ckb/quazip/quazip.cpp" alt="" coords="502,245,676,272"/>
+<area shape="rect" id="node9" href="$quazipdir_8h.html" title="src/ckb/quazip/quazipdir.h" alt="" coords="803,245,977,272"/>
+<area shape="rect" id="node7" href="$quazipfile_8cpp.html" title="src/ckb/quazip/quazipfile.cpp" alt="" coords="170,320,360,347"/>
+<area shape="rect" id="node6" href="$JlCompress_8cpp.html" title="src/ckb/quazip/JlCompress.cpp" alt="" coords="591,395,797,421"/>
+<area shape="rect" id="node10" href="$quazipdir_8cpp.html" title="src/ckb/quazip/quazipdir.cpp" alt="" coords="815,320,1003,347"/>
+<area shape="rect" id="node14" href="$quazipfileinfo_8cpp.html" title="src/ckb/quazip/quazipfileinfo.cpp" alt="" coords="853,171,1064,197"/>
+<area shape="rect" id="node13" href="$quazipnewinfo_8cpp.html" title="src/ckb/quazip/quazipnewinfo.cpp" alt="" coords="5,245,224,272"/>
+<area shape="rect" id="node16" href="$unzip_8c.html" title="src/ckb/quazip/unzip.c" alt="" coords="1089,171,1241,197"/>
+<area shape="rect" id="node17" href="$zip_8c.html" title="src/ckb/quazip/zip.c" alt="" coords="1267,171,1405,197"/>
+<area shape="rect" id="node20" href="$quaadler32_8h.html" title="src/ckb/quazip/quaadler32.h" alt="" coords="1430,171,1615,197"/>
+<area shape="rect" id="node22" href="$quacrc32_8h.html" title="src/ckb/quazip/quacrc32.h" alt="" coords="1639,171,1813,197"/>
+<area shape="rect" id="node21" href="$quaadler32_8cpp.html" title="src/ckb/quazip/quaadler32.cpp" alt="" coords="1415,245,1613,272"/>
+<area shape="rect" id="node23" href="$quacrc32_8cpp.html" title="src/ckb/quazip/quacrc32.cpp" alt="" coords="1639,245,1828,272"/>
+<area shape="rect" id="node25" href="$quagzipfile_8cpp.html" title="src/ckb/quazip/quagzipfile.cpp" alt="" coords="1838,171,2036,197"/>
+<area shape="rect" id="node27" href="$quaziodevice_8cpp.html" title="src/ckb/quazip/quaziodevice.cpp" alt="" coords="2061,171,2272,197"/>
+</map>

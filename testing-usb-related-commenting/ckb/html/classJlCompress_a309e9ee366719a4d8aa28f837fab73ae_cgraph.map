@@ -1,0 +1,51 @@
+<map id="JlCompress::extractFiles" name="JlCompress::extractFiles">
+<area shape="rect" id="node2" href="$classQuaZip.html#a7a4323b73e12f3b4470109f200728f9f" title="Closes ZIP file. " alt="" coords="751,487,854,513"/>
+<area shape="rect" id="node13" href="$classJlCompress.html#a522739a65b382a9838ed69812340dd40" title="Extract a single file. " alt="" coords="222,1044,383,1071"/>
+<area shape="rect" id="node22" href="$classQuaZip.html#a28b91a6282ddd9382c96a069572c6fb4" title="Returns the error code of the last operation. " alt="" coords="735,436,871,463"/>
+<area shape="rect" id="node31" href="$classJlCompress.html#a7ad8a4470544fe7e2da5c29e92a1096f" title="Remove some files. " alt="" coords="459,1272,623,1299"/>
+<area shape="rect" id="node38" href="$classQuaZip.html#abfa4e6018b2964a3d10a4c54e5ab3962" title="Opens ZIP file. " alt="" coords="753,335,853,361"/>
+<area shape="rect" id="node3" href="$unzip_8c.html#af6ab0ba88ab5da62747df8f9336f1bb3" title="unzClose" alt="" coords="1025,487,1103,513"/>
+<area shape="rect" id="node5" href="$zip_8c.html#a4fda7a41fa2f57d105ffc7d1cbcf53cc" title="zipClose" alt="" coords="1027,436,1101,463"/>
+<area shape="rect" id="node12" href="$classQuaZipPrivate.html#ad324b69fdfbe29b4caa6030bf1b2d141" title="Stores map of filenames and file locations for unzipping. " alt="" coords="955,537,1173,564"/>
+<area shape="rect" id="node4" href="$unzip_8c.html#ac48279e5325cfdabbc67a312b1d32700" title="unzCloseCurrentFile" alt="" coords="1263,807,1404,833"/>
+<area shape="rect" id="node6" href="$zip_8c.html#afdf0486190c480fc1cc3b194ec0c0956" title="free_linkedlist" alt="" coords="1282,420,1385,447"/>
+<area shape="rect" id="node7" href="$zip_8c.html#a26acf4764f6b8c19f0feb18ac5315438" title="Write_EndOfCentralDirectory\lRecord" alt="" coords="1237,471,1429,513"/>
+<area shape="rect" id="node8" href="$zip_8c.html#afe52628c128fa6397329f43e60420142" title="Write_GlobalComment" alt="" coords="1256,537,1411,564"/>
+<area shape="rect" id="node9" href="$zip_8c.html#a9c440209ccea3275591d82ef1170caec" title="Write_Zip64EndOfCentralDirectory\lLocator" alt="" coords="1221,289,1445,330"/>
+<area shape="rect" id="node10" href="$zip_8c.html#a3e803b9de3378b55508de949f9725480" title="Write_Zip64EndOfCentralDirectory\lRecord" alt="" coords="1221,354,1445,395"/>
+<area shape="rect" id="node11" href="$zip_8c.html#ae470f753aef4cffe4f77a5ec2bcfbde1" title="zipCloseFileInZip" alt="" coords="1272,588,1395,615"/>
+<area shape="rect" id="node14" href="$classQuaZipFile.html#a42a39b12619bccd3d419ee60bbb3fcf6" title="Closes the file. " alt="" coords="479,719,603,745"/>
+<area shape="rect" id="node23" href="$JlCompress_8cpp.html#acc1d0e9e02b17fd5c5b008d3161cf2d9" title="copyData" alt="" coords="502,968,581,995"/>
+<area shape="rect" id="node24" href="$classQuaZip.html#a9c91a53ed4c2038e153c64bdc097ebe8" title="Retrieves information about the current file. " alt="" coords="453,1019,629,1045"/>
+<area shape="rect" id="node26" href="$classQuaZip.html#a129ceff04d28fb00531f7bf7f9329664" title="Returns the mode in which ZIP file was opened. " alt="" coords="480,1069,603,1096"/>
+<area shape="rect" id="node27" href="$structQuaZipFileInfo64.html#a099216bd8991a983168d91c06a689f61" title="Get the file permissions. " alt="" coords="432,917,651,944"/>
+<area shape="rect" id="node29" href="$classQuaZipFile.html#a26d2ee56aad947193b73052f80597ef0" title="Returns the error code returned by the last ZIP/UNZIP API call. " alt="" coords="463,1120,620,1147"/>
+<area shape="rect" id="node30" href="$classQuaZipFile.html#a4c20c0ef00ae79c9a59eafe2906c9384" title="Opens a file for reading. " alt="" coords="481,1171,602,1197"/>
+<area shape="rect" id="node32" href="$classQuaZip.html#a6c657bfcfccb59d728e0da24c677d899" title="Sets current file by its name. " alt="" coords="464,1221,619,1248"/>
+<area shape="rect" id="node15" href="$classQuaZipFilePrivate.html#af21b7605eff41b33d28fdf593c2fa9ea" title="Resets zipError. " alt="" coords="735,741,870,782"/>
+<area shape="rect" id="node16" href="$classQuaZip.html#a5b869a9c0d4f49955b759592fec08888" title="Returns true if ZIP file is open, false otherwise. " alt="" coords="1007,872,1121,899"/>
+<area shape="rect" id="node17" href="$classQuaZipFilePrivate.html#ac5b22d3b5ccced847ddce1a6f971cc80" title="Sets the zip error. " alt="" coords="735,806,870,847"/>
+<area shape="rect" id="node18" href="$classQuaZip.html#a3b78a652f296ff4a678a791e8294e642" title="Returns unzFile handle. " alt="" coords="735,923,870,949"/>
+<area shape="rect" id="node19" href="$classQuaZipFile.html#a0df3db94c2a34c8d17ddaa0f54fc32c1" title="Returns true if the file was opened in raw mode. " alt="" coords="737,537,868,564"/>
+<area shape="rect" id="node20" href="$zip_8c.html#a3bed1cfe7ae981d2a433a1dbdb2cc436" title="zipCloseFileInZipRaw64" alt="" coords="721,639,885,665"/>
+<area shape="rect" id="node21" href="$classQuaZip.html#a425043a4d7cc31e2fe2bba73d954f15c" title="Returns zipFile handle. " alt="" coords="738,689,867,716"/>
+<area shape="rect" id="node25" href="$structQuaZipFileInfo64.html#ada29945c7ee4c9df6fbe95864793aade" title="Converts to QuaZipFileInfo. " alt="" coords="711,1075,894,1117"/>
+<area shape="rect" id="node28" href="$quazipfileinfo_8cpp.html#a184e1eff12e7014b554df9d3821291c5" title="permissionsFromExternalAttr" alt="" coords="707,1024,898,1051"/>
+<area shape="rect" id="node33" href="$classQuaZip.html#a1d3fbd445a8e9d3449ded7371931c6b3" title="Returns the actual case sensitivity for the specified QuaZIP one. " alt="" coords="699,1141,906,1168"/>
+<area shape="rect" id="node34" href="$unzip_8c.html#a667afaf715015b8195e2f6f22390202d" title="unzGoToFilePos64" alt="" coords="997,1280,1131,1307"/>
+<area shape="rect" id="node35" href="$classQuaZipPrivate.html#a7eddafdcdfc540f25e98d6df03fed1a7" title="QuaZipPrivate::goToFirst\lUnmappedFile" alt="" coords="719,1243,887,1285"/>
+<area shape="rect" id="node36" href="$classQuaZip.html#aee6779b6cd338420c2e8c5655fa8ba97" title="Sets the current file to the next file in the archive. " alt="" coords="727,1360,878,1387"/>
+<area shape="rect" id="node37" href="$classQuaZip.html#a9783f8b4f39cd55e71e975aea78fd54a" title="Returns the current file name. " alt="" coords="708,1192,897,1219"/>
+<area shape="rect" id="node39" href="$unzip_8c.html#af1c890ff2c8e5173ded0af79a64f8b0a" title="unzOpenInternal" alt="" coords="1275,107,1392,133"/>
+<area shape="rect" id="node45" href="$unzip_8c.html#a24b14e9aa3110ed982718ba061eec60a" title="unzOpen2" alt="" coords="1023,132,1105,159"/>
+<area shape="rect" id="node46" href="$unzip_8c.html#a9455ce696340a474a2dc57623e6d5f72" title="unzSetFlags" alt="" coords="1017,284,1111,311"/>
+<area shape="rect" id="node47" href="$unzip_8c.html#a57edd6ce767edb60441e3d260089ab9b" title="unzClearFlags" alt="" coords="1011,335,1117,361"/>
+<area shape="rect" id="node48" href="$zip_8c.html#a6cb26503b56121bf3b5779b4df561b24" title="zipOpen3" alt="" coords="1295,208,1372,235"/>
+<area shape="rect" id="node49" href="$zip_8c.html#a67ab4da81787241b90623ab2dfb5f64a" title="zipOpen2" alt="" coords="1025,233,1103,260"/>
+<area shape="rect" id="node50" href="$zip_8c.html#a697bb6dde7f8267f764a85a4367d75dd" title="zipSetFlags" alt="" coords="1019,385,1109,412"/>
+<area shape="rect" id="node40" href="$qioapi_8cpp.html#a791fffcedf2d2c9dabd67232dafe447b" title="fill_qiodevice64_filefunc" alt="" coords="1509,208,1669,235"/>
+<area shape="rect" id="node41" href="$unzip_8c.html#aadf5d3516ffd4262012ddfbd80a34863" title="unz64local_getLong" alt="" coords="1521,107,1658,133"/>
+<area shape="rect" id="node42" href="$unzip_8c.html#aba9b9b69240930610d4c80e5fdf30e68" title="unz64local_getLong64" alt="" coords="1514,157,1665,184"/>
+<area shape="rect" id="node43" href="$unzip_8c.html#a3c9da06aac7eccb3e336ba0f56c1f1a3" title="unz64local_getShort" alt="" coords="1519,5,1659,32"/>
+<area shape="rect" id="node44" href="$unzip_8c.html#a98491b7ec49c27be6d228e22e40030d6" title="unz64local_SearchCentralDir" alt="" coords="1494,56,1685,83"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="cmd_hwsave_mouse" name="cmd_hwsave_mouse">
+<area shape="rect" id="node2" href="$profile_8c.html#aab5b57ba9a9f089eaa7b176396dfa3a3" title="nativetohw" alt="" coords="215,5,300,32"/>
+<area shape="rect" id="node3" href="$dpi_8c.html#af595d2199e261ebf2ddb6d9cbb4090e5" title="savedpi" alt="" coords="224,56,291,83"/>
+<area shape="rect" id="node4" href="$led_8h.html#accf371f84a8aecacae0143edc399885e" title="savergb_mouse" alt="" coords="200,107,315,133"/>
+</map>

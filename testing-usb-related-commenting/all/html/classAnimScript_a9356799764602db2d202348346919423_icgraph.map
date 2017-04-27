@@ -1,0 +1,8 @@
+<map id="AnimScript::count" name="AnimScript::count">
+<area shape="rect" id="node2" href="$classKbLightWidget.html#aeba7635ba699a30033a877a2994df618" title="KbLightWidget::KbLightWidget" alt="" coords="183,5,383,32"/>
+<area shape="rect" id="node3" href="$classAnimScript.html#a90121fc1ed15264bb8ffb56288127fed" title="AnimScript::load" alt="" coords="223,56,342,83"/>
+<area shape="rect" id="node5" href="$classExtraSettingsWidget.html#a59868422fbecc72b233ad472be99bb54" title="ExtraSettingsWidget\l::on_animScanButton\l_clicked" alt="" coords="603,67,749,123"/>
+<area shape="rect" id="node7" href="$classKbLightWidget.html#a854d8332999f4b2337d198199661d405" title="KbLightWidget::on_animButton\l_clicked" alt="" coords="181,158,384,199"/>
+<area shape="rect" id="node4" href="$classAnimScript.html#ae59ff1932ad97696fcaf244bb9d7a537" title="AnimScript::scan" alt="" coords="432,56,555,83"/>
+<area shape="rect" id="node6" href="$classExtraSettingsWidget.html#acde7ec134d1094521001d4512edbbe92" title="ExtraSettingsWidget\l::ExtraSettingsWidget" alt="" coords="798,74,949,115"/>
+</map>

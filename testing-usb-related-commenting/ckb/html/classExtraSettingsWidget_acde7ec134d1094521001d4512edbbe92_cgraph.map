@@ -1,0 +1,34 @@
+<map id="ExtraSettingsWidget::ExtraSettingsWidget" name="ExtraSettingsWidget::ExtraSettingsWidget">
+<area shape="rect" id="node2" href="$classKb.html#a729d649e8c9bed02475cf6c1c97bc200" title="Kb::dither" alt="" coords="246,5,325,32"/>
+<area shape="rect" id="node3" href="$classKb.html#ad31c0469bf328f2dc4154c2c86611783" title="Kb::frameRate" alt="" coords="232,56,339,83"/>
+<area shape="rect" id="node4" href="$classKb.html#a3c3c9f7d0bb57507c9c9cb0c4f647c20" title="Kb::macroDelay" alt="" coords="227,107,343,133"/>
+<area shape="rect" id="node5" href="$classKb.html#abffafd74b71834600b6859106689b847" title="Kb::mouseAccel" alt="" coords="226,157,345,184"/>
+<area shape="rect" id="node6" href="$classExtraSettingsWidget.html#a59868422fbecc72b233ad472be99bb54" title="ExtraSettingsWidget\l::on_animScanButton\l_clicked" alt="" coords="212,208,359,264"/>
+<area shape="rect" id="node29" href="$classAnimScript.html#a58a393ebc47227f0d0cfa6048a57c6b6" title="AnimScript::path" alt="" coords="610,307,729,333"/>
+<area shape="rect" id="node30" href="$classKb.html#a8795688dbc484f61ad6b487556d914b6" title="Kb::scrollSpeed" alt="" coords="228,339,343,365"/>
+<area shape="rect" id="node31" href="$classKbLight.html#ae077a5423a30ade9554ff6749247156c" title="KbLight::shareDimming" alt="" coords="206,389,365,416"/>
+<area shape="rect" id="node32" href="$classCkbSettings.html#a3793106d98878f170f9f9734bf39409b" title="CkbSettings::value" alt="" coords="219,440,352,467"/>
+<area shape="rect" id="node7" href="$classAnimScript.html#ae59ff1932ad97696fcaf244bb9d7a537" title="AnimScript::scan" alt="" coords="416,223,539,249"/>
+<area shape="rect" id="node11" href="$classAnimScript.html#a9356799764602db2d202348346919423" title="AnimScript::count" alt="" coords="811,65,938,92"/>
+<area shape="rect" id="node8" href="$classAnimScript.html#a73b7edd1bec41ded8f5e79c1df523bbc" title="AnimScript::AnimScript" alt="" coords="590,256,749,283"/>
+<area shape="rect" id="node9" href="$classAnimScript.html#aa9785155252c9352f1100c2c0197a00c" title="AnimScript::guid" alt="" coords="610,155,729,181"/>
+<area shape="rect" id="node10" href="$classAnimScript.html#a90121fc1ed15264bb8ffb56288127fed" title="AnimScript::load" alt="" coords="610,205,729,232"/>
+<area shape="rect" id="node12" href="$classAnimScript.html#aa62e0aac7a3859a42273584e702f444b" title="AnimScript::hasParam" alt="" coords="798,217,951,244"/>
+<area shape="rect" id="node13" href="$classAnimScript.html#afe1509ae396bf2924318580974db487c" title="AnimScript::name" alt="" coords="1009,192,1135,219"/>
+<area shape="rect" id="node14" href="$classAnimScript.html#ab4d28f52e87a474053e5933a3c8dcbc8" title="AnimScript::param" alt="" coords="809,268,940,295"/>
+<area shape="rect" id="node15" href="$classAnimScript.html#ad514f6bc2e306de2df195c627dd28360" title="AnimScript::preset" alt="" coords="809,319,940,345"/>
+<area shape="rect" id="node16" href="$classAnimScript.html#a820df5b0aa18e289606c70320177db9d" title="AnimScript::stop" alt="" coords="815,369,934,396"/>
+<area shape="rect" id="node28" href="$animscript_8cpp.html#a82f0a92f274c0318e9d49f796dc4884b" title="urlParam" alt="" coords="837,116,912,143"/>
+<area shape="rect" id="node17" href="$classAnimScript.html#aadb8980b27d6f0dbe6e0a59311499344" title="AnimScript::advance" alt="" coords="1001,344,1143,371"/>
+<area shape="rect" id="node18" href="$classAnimScript.html#a72b76b011846a06fafc9ddff09eb85e3" title="AnimScript::begin" alt="" coords="1009,395,1135,421"/>
+<area shape="rect" id="node19" href="$classAnimScript.html#a8e7d2398dbd2ac258db9bf1cfbd4b007" title="AnimScript::end" alt="" coords="1217,319,1332,345"/>
+<area shape="rect" id="node21" href="$classAnimScript.html#a879fc5eba58a3ba08623bc4064501c38" title="AnimScript::readProcess" alt="" coords="1406,369,1573,396"/>
+<area shape="rect" id="node26" href="$classKeyMap.html#a0748b06120f93ad61d90c360dafbb59c" title="KeyMap::key" alt="" coords="1225,420,1324,447"/>
+<area shape="rect" id="node27" href="$classAnimScript.html#ad14f3e232f3f4b0670b91d9cfe719c1d" title="AnimScript::printParams" alt="" coords="1193,471,1357,497"/>
+<area shape="rect" id="node20" href="$classColorMap.html#a229d3bb3a24ab7e10ef38a7847dd3519" title="ColorMap::clear" alt="" coords="1432,319,1547,345"/>
+<area shape="rect" id="node22" href="$classColorMap.html#a206bfd8a9465e856c16a71bb908772fe" title="ColorMap::colorForName" alt="" coords="1621,319,1789,345"/>
+<area shape="rect" id="node24" href="$classColorMap.html#a177f4fe41f3a085128d563aaf32a24ad" title="ColorMap::colors" alt="" coords="1645,369,1766,396"/>
+<area shape="rect" id="node25" href="$classColorMap.html#a0755e3891edd1e0d2dce1491f5b06ba7" title="ColorMap::count" alt="" coords="1646,420,1765,447"/>
+<area shape="rect" id="node23" href="$colormap_8cpp.html#aadd858d434ca6f9507ef897c2e4c12ab" title="qs_strcmp" alt="" coords="1837,319,1920,345"/>
+<area shape="rect" id="node33" href="$classCkbSettings.html#a29695ed0012617ba943a1878d4abc71c" title="CkbSettings::pwd" alt="" coords="414,440,541,467"/>
+</map>

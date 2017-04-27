@@ -1,0 +1,6 @@
+<map id="KbWidget::updateProfileList" name="KbWidget::updateProfileList">
+<area shape="rect" id="node2" href="$classKb.html#a4a9b9ba54fb83506ae61aa787d98cbb8" title="Kb::currentProfile" alt="" coords="237,5,360,32"/>
+<area shape="rect" id="node3" href="$classKb.html#a8917f2f252b7d46ca02c9d3b71025be7" title="Kb::hwProfile" alt="" coords="249,56,349,83"/>
+<area shape="rect" id="node4" href="$classKbProfile.html#a0239b0037d8206ed5bfd6c774d803d1a" title="KbProfile::name" alt="" coords="241,107,356,133"/>
+<area shape="rect" id="node5" href="$classKb.html#abd3211644024c6f6eee8186c44836aec" title="Kb::profiles" alt="" coords="255,157,343,184"/>
+</map>
