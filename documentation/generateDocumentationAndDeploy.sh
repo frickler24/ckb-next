@@ -1,6 +1,6 @@
 #!/bin/bash
-set -x
-set -v
+# set -x
+# set -v
 echo "Starting execution $0 with bash version = ${BASH_VERSION}, GH_REPO_SLUG = $TRAVIS_REPO_SLUG"
 # echo "GH_REPO_TOKEN = $GH_REPO_TOKEN"
 GH_REPO_ORG=$(echo $TRAVIS_REPO_SLUG | cut -d "/" -f 1)
@@ -77,7 +77,11 @@ git config user.email "travis@frickler24.de"
 #
 # The following line allows to handle documentation for more than one branch
 # because it clears the current branch only.
-if [ -d ./${TRAVIS_BRANCH} ] ; then git rm -rf ./${TRAVIS_BRANCH} ; fi
+if [ -d ./${TRAVIS_BRANCH} ] ; then
+    git rm -rf ./${TRAVIS_BRANCH} ;
+else
+    echo "Did not find older version of ${TRAVIS_BRANCH}.";
+fi
 
 # Need to create a .nojekyll file to allow filenames starting with an underscore
 # to be seen on the gh-pages site. Therefore creating an empty .nojekyll file.
