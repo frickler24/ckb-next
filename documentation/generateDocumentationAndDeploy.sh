@@ -114,8 +114,6 @@ echo doxygen done.
 
 echo "DOXDIR = ${DOXDIR}"
 pwd
-ls -lsRa ${DOXDIR}
-
 echo Generating pdf from latex directories in $(pwd)
 cp ../../documentation/Makefile_skeleton ${DOXDIR}/all/latex/Makefile
 (cd ${DOXDIR}/all/latex ; make > make_pdf1.log ) &
