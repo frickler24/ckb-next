@@ -108,7 +108,7 @@ doxygen $DOXYFILE1 > doxygen1.log 2>&1 &
 # echo Starting doxygen with $DOXYFILE2
 doxygen $DOXYFILE2 > doxygen2.log 2>&1 &
 # echo Starting doxygen with $DOXYFILE3
-doxygen $DOXYFILE3 > doxygen3.log 2>&1 &
+doxygen $DOXYFILE3 |tee  doxygen3.log 2>&1 &
 wait
 echo doxygen done.
 
