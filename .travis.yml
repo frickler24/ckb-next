@@ -76,9 +76,9 @@ script:
 # Generate and deploy documentation
 after_success:
   - if [ "$MAKEDOXY" = true ]; then
-        cd $TRAVIS_BUILD_DIR
-        documentation/generateDocumentationAndDeploy.sh
+        cd $TRAVIS_BUILD_DIR;
+        documentation/generateDocumentationAndDeploy.sh;
     else
-        echo "Do not create Doxygen files"
+        echo "Do not create Doxygen files";
     fi
 
