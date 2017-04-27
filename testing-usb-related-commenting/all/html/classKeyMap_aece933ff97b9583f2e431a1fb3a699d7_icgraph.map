@@ -1,9 +1,0 @@
-<map id="KeyMap::KeyMap" name="KeyMap::KeyMap">
-<area shape="rect" id="node2" href="$classKeyMap.html#a17534cc00d6042c83b0251ef68afa167" title="KeyMap::friendlyName" alt="" coords="181,56,336,83"/>
-<area shape="rect" id="node5" href="$classKeyMap.html#af5ee0c50fa207c167783f45ca1ff3b82" title="KeyMap::fromName" alt="" coords="189,107,328,133"/>
-<area shape="rect" id="node3" href="$classKeyAction.html#a835015a369d6ff00d65c1ee59a2fc8da" title="KeyAction::friendlyName" alt="" coords="398,5,565,32"/>
-<area shape="rect" id="node4" href="$classRebindWidget.html#a2982577bb3fe00fc2a5b358f1968919e" title="RebindWidget::RebindWidget" alt="" coords="384,56,579,83"/>
-<area shape="rect" id="node6" href="$classKbBind.html#a25670999ed5a452b7df6c16633d197b5" title="KbBind::load" alt="" coords="433,107,529,133"/>
-<area shape="rect" id="node8" href="$classKbLight.html#a82d4feddc998442f245b562b7637de5d" title="KbLight::load" alt="" coords="432,157,531,184"/>
-<area shape="rect" id="node7" href="$classKbMode.html#a399519dd076e0231fd636023f6479436" title="KbMode::KbMode" alt="" coords="627,132,754,159"/>
-</map>

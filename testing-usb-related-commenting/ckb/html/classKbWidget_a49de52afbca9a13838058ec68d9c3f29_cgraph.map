@@ -1,9 +1,0 @@
-<map id="KbWidget::profileChanged" name="KbWidget::profileChanged">
-<area shape="rect" id="node2" href="$classKbWidget.html#aa592f030638a59bc13901b2e1b13de8e" title="KbWidget::addNewModeItem" alt="" coords="230,5,423,32"/>
-<area shape="rect" id="node3" href="$classKb.html#a4a9b9ba54fb83506ae61aa787d98cbb8" title="Kb::currentProfile" alt="" coords="472,81,595,108"/>
-<area shape="rect" id="node4" href="$classKbMode.html#a7f9aa60df1f6adabad5d6b6314546c57" title="KbMode::id" alt="" coords="283,107,371,133"/>
-<area shape="rect" id="node5" href="$classKbWidget.html#ae0406fb1288b3ef1c9ed5e2457ca805a" title="KbWidget::modeIcon" alt="" coords="255,157,399,184"/>
-<area shape="rect" id="node7" href="$classKbProfile.html#a84a8f4428749f8ac37d8b34393856a32" title="KbProfile::modes" alt="" coords="265,208,388,235"/>
-<area shape="rect" id="node8" href="$classKbMode.html#adfd90af39233d8c1431566859a21af1c" title="KbMode::name" alt="" coords="271,259,382,285"/>
-<area shape="rect" id="node6" href="$classKb.html#a8917f2f252b7d46ca02c9d3b71025be7" title="Kb::hwProfile" alt="" coords="483,157,583,184"/>
-</map>

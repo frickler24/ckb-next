@@ -1,7 +1,0 @@
-<map id="MainWindow" name="MainWindow">
-<area shape="rect" id="node2" href="$classQMainWindow.html" title="{QMainWindow\n||}" alt="" coords="5,568,112,645"/>
-<area shape="rect" id="node7" href="$classSettingsWidget.html" title="{SettingsWidget\n||+ SettingsWidget()\l+ ~SettingsWidget()\l+ setVersion()\l+ setStatus()\l+ pollUpdates()\l&#45; updateModifiers()\l&#45; on_pushButton_clicked()\l&#45; on_capsBox_activated()\l&#45; on_shiftBox_activated()\l&#45; on_ctrlBox_activated()\l&#45; on_altBox_activated()\l&#45; on_winBox_activated()\l&#45; on_autoFWBox_clicked()\l&#45; on_loginItemBox_clicked()\l&#45; on_layoutBox_activated()\l&#45; showLayoutDialog()\l&#45; on_extraButton_clicked()\l}" alt="" coords="635,451,817,763"/>
-<area shape="rect" id="node8" href="$classQWidget.html" title="{QWidget\n||}" alt="" coords="569,228,641,305"/>
-<area shape="rect" id="node10" href="$classExtraSettingsWidget.html" title="{ExtraSettingsWidget\n||+ ExtraSettingsWidget()\l+ ~ExtraSettingsWidget()\l+ pollUpdates()\l&#45; on_trayBox_clicked()\l&#45; on_brightnessBox_clicked()\l&#45; on_animScanButton_clicked()\l&#45; on_fpsBox_valueChanged()\l&#45; on_ditherBox_clicked()\l&#45; on_mAccelBox_clicked()\l&#45; on_sAccelBox_clicked()\l&#45; on_sSpeedBox_valueChanged()\l&#45; on_delayBox_clicked()\l}" alt="" coords="811,147,1027,386"/>
-<area shape="rect" id="node11" href="$classQDialog.html" title="{QDialog\n||}" alt="" coords="817,5,887,83"/>
-</map>

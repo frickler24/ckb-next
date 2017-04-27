@@ -1,6 +1,0 @@
-<map id="KbPerf::iOpacity" name="KbPerf::iOpacity">
-<area shape="rect" id="node2" href="$classKPerfWidget.html#a70d4081e26a84e1be642c9864647c3a3" title="KPerfWidget::on_intensity\lBox_valueChanged" alt="" coords="174,5,349,46"/>
-<area shape="rect" id="node3" href="$classMPerfWidget.html#a1db4443d794f38754b482b921966fa8b" title="MPerfWidget::on_spinBox\l_valueChanged" alt="" coords="174,70,349,111"/>
-<area shape="rect" id="node4" href="$classKPerfWidget.html#ae761365cfff8135fe60d2bf9792232e1" title="KPerfWidget::setPerf" alt="" coords="188,136,335,163"/>
-<area shape="rect" id="node5" href="$classMPerfWidget.html#ac0cf0ff2a6c0de5e888eae1288433a7f" title="MPerfWidget::setPerf" alt="" coords="187,187,335,213"/>
-</map>

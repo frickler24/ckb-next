@@ -1,7 +1,0 @@
-<map id="updatergb_kb" name="updatergb_kb">
-<area shape="rect" id="node2" href="$led__keyboard_8c.html#ad37b49215ddbb5fdfcbc185bee256b28" title="makergb_512" alt="" coords="155,5,255,32"/>
-<area shape="rect" id="node3" href="$led__keyboard_8c.html#aa2518c44d1de14ec9852cc768f4e19f8" title="makergb_full" alt="" coords="157,56,253,83"/>
-<area shape="rect" id="node4" href="$led__keyboard_8c.html#a384276467a5331b5c6d134c00476b8a3" title="ordered8to3" alt="" coords="160,107,251,133"/>
-<area shape="rect" id="node5" href="$led__keyboard_8c.html#abb9b4e916b13b54ab23b4b5ace4e293d" title="quantize8to3" alt="" coords="157,157,253,184"/>
-<area shape="rect" id="node6" href="$led__keyboard_8c.html#a26c3f20a1a58c8116d45d3792ce9b923" title="rgbcmp" alt="" coords="173,208,238,235"/>
-</map>

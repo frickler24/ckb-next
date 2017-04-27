@@ -1,6 +1,0 @@
-<map id="iselect" name="iselect">
-<area shape="rect" id="node2" href="$led_8h.html#a7eadbd56d224b15470e93a3f75f2a1ab" title="cmd_iauto" alt="" coords="119,5,201,32"/>
-<area shape="rect" id="node3" href="$led_8h.html#ae981d4fb6374f5752bf50af6866de8d7" title="cmd_inotify" alt="" coords="115,56,205,83"/>
-<area shape="rect" id="node4" href="$led_8h.html#a357e2fd6e5fdf90a128d586befd9148b" title="cmd_ioff" alt="" coords="124,107,196,133"/>
-<area shape="rect" id="node5" href="$led_8h.html#aaae7e5a91b6be4d792848f2de17cdfea" title="cmd_ion" alt="" coords="125,157,195,184"/>
-</map>

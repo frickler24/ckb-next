@@ -1,6 +1,0 @@
-<map id="KeyWidget::selectionChanged" name="KeyWidget::selectionChanged">
-<area shape="rect" id="node2" href="$classKeyWidget.html#a8d40c82dcb72b2ab97be866b8f95fe75" title="KeyWidget::clearSelection" alt="" coords="273,5,449,32"/>
-<area shape="rect" id="node3" href="$classKeyWidget.html#abcb740426a026f3bf260eb49120be128" title="KeyWidget::mouseReleaseEvent" alt="" coords="254,56,469,83"/>
-<area shape="rect" id="node4" href="$classKeyWidget.html#a82ce91ad4b2a3e15e8ab8023137c76bc" title="KeyWidget::selectAll" alt="" coords="289,107,433,133"/>
-<area shape="rect" id="node5" href="$classKeyWidget.html#ac89be95afd2a854b019dc0ee86871a81" title="KeyWidget::setSelection" alt="" coords="278,157,445,184"/>
-</map>

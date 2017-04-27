@@ -1,7 +1,0 @@
-<map id="MainWindow::updateVersion" name="MainWindow::updateVersion">
-<area shape="rect" id="node2" href="$classKbManager.html#af15aca180d0e60fd27d1484fdbc0f605" title="KbManager::ckbDaemonVersion" alt="" coords="247,5,457,32"/>
-<area shape="rect" id="node3" href="$classKbManager.html#ad22cd8487923dc938a925a6941ed6f3d" title="KbManager::ckbDaemonVersionF" alt="" coords="243,56,461,83"/>
-<area shape="rect" id="node5" href="$classKbManager.html#a444f0c8ab29309aad704e07a9aaaee05" title="KbManager::ckbGuiVersionF" alt="" coords="257,107,447,133"/>
-<area shape="rect" id="node6" href="$classSettingsWidget.html#ada6f8e321e7ca9ff79dcb3c2b58c13e9" title="SettingsWidget::setStatus" alt="" coords="265,157,439,184"/>
-<area shape="rect" id="node4" href="$classKbManager.html#a4ce88ef95a35d0cd5a3ac67a0bc076ea" title="KbManager::parseVersionString" alt="" coords="510,81,717,108"/>
-</map>

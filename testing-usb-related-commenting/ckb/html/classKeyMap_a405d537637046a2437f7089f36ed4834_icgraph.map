@@ -1,9 +1,0 @@
-<map id="KeyMap::keys" name="KeyMap::keys">
-<area shape="rect" id="node2" href="$classKeyWidget.html#abcb740426a026f3bf260eb49120be128" title="KeyWidget::mouseReleaseEvent" alt="" coords="161,5,375,32"/>
-<area shape="rect" id="node3" href="$classKbBindWidget.html#afa54eb21dc5dfff20175d5201a7d2698" title="KbBindWidget::on_copyButton\l_clicked" alt="" coords="168,57,368,98"/>
-<area shape="rect" id="node4" href="$classKbBindWidget.html#a1ac20b99c822f65c7a2c8c61a5a1f029" title="KbBindWidget::on_resetButton\l_clicked" alt="" coords="425,162,626,203"/>
-<area shape="rect" id="node5" href="$classKeyWidget.html#a894d8299425b4c78e14d8b832d1571a1" title="KeyWidget::setAnimation" alt="" coords="183,173,353,200"/>
-<area shape="rect" id="node6" href="$classKeyWidget.html#ac89be95afd2a854b019dc0ee86871a81" title="KeyWidget::setSelection" alt="" coords="185,224,351,251"/>
-<area shape="rect" id="node7" href="$classKbBindWidget.html#a3274fb51d224f0ca111bd714ed524a59" title="KbBindWidget::updateBind" alt="" coords="179,275,357,301"/>
-<area shape="rect" id="node8" href="$classKbBindWidget.html#ae06c7e036759eb9a1ae7224cdba30b0b" title="KbBindWidget::setBind" alt="" coords="447,275,604,301"/>
-</map>

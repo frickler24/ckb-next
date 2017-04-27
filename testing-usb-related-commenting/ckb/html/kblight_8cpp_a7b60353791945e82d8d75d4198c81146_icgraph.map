@@ -1,9 +1,0 @@
-<map id="monoRgb" name="monoRgb">
-<area shape="rect" id="node2" href="$classKbLight.html#a6bc366191c38d327b82b8d0acd741cea" title="KbLight::base" alt="" coords="161,56,263,83"/>
-<area shape="rect" id="node6" href="$classKbLight.html#aaf2d348ef39cc9fbbf198e7105a72f35" title="KbLight::frameUpdate" alt="" coords="137,107,287,133"/>
-<area shape="rect" id="node8" href="$classKeyWidget.html#ae41120f21e087439104cb6bce42f489e" title="KeyWidget::paintEvent" alt="" coords="134,157,290,184"/>
-<area shape="rect" id="node3" href="$classKb.html#abd5f5fc526541fd9fe41a4755e6b42f2" title="Kb::hwSave" alt="" coords="353,56,447,83"/>
-<area shape="rect" id="node4" href="$classKbProfileDialog.html#aac105b06b0a29e39c05cb70f01c37fcd" title="KbProfileDialog::on\l_profileList_customContext\lMenuRequested" alt="" coords="516,5,697,61"/>
-<area shape="rect" id="node5" href="$classKbWidget.html#a65f38c3fc88b4e1a8fbabc7a27946c49" title="KbWidget::on_hwSaveButton\l_clicked" alt="" coords="510,85,703,126"/>
-<area shape="rect" id="node7" href="$classKb.html#a97694a4cd55681adca7b972fb5722049" title="Kb::frameUpdate" alt="" coords="339,107,461,133"/>
-</map>

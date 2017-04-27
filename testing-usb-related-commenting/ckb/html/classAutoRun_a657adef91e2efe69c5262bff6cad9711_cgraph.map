@@ -1,7 +1,0 @@
-<map id="AutoRun::enable" name="AutoRun::enable">
-<area shape="rect" id="node2" href="$classAutoRun.html#abc596cb83ba6b611aa6df7eb98c51f19" title="AutoRun::available" alt="" coords="174,5,306,32"/>
-<area shape="rect" id="node3" href="$classCkbSettings.html#a65c4f3ff1f75e5a554759040fb76044e" title="CkbSettings::set" alt="" coords="180,56,300,83"/>
-<area shape="rect" id="node4" href="$classCkbSettings.html#a3793106d98878f170f9f9734bf39409b" title="CkbSettings::value" alt="" coords="355,31,488,57"/>
-<area shape="rect" id="node6" href="$ckbsettings_8cpp.html#aa405e58960532b36ddb38251775238fd" title="globalSettings" alt="" coords="369,81,473,108"/>
-<area shape="rect" id="node5" href="$classCkbSettings.html#a29695ed0012617ba943a1878d4abc71c" title="CkbSettings::pwd" alt="" coords="537,31,663,57"/>
-</map>

@@ -1,7 +1,0 @@
-<map id="KeyWidget::mouseMoveEvent" name="KeyWidget::mouseMoveEvent">
-<area shape="rect" id="node2" href="$classKeyWidget.html#aff83b1dc2248b02552ad9c3a1e70d97c" title="KeyWidget::drawInfo" alt="" coords="253,31,397,57"/>
-<area shape="rect" id="node5" href="$structKey.html#a70ac5b7c5186fbef61f62f4c04c8db62" title="Key::friendlyName" alt="" coords="260,81,391,108"/>
-<area shape="rect" id="node6" href="$classKeyMap.html#a72ab32524b88e5a6bce86b1d9eafde48" title="KeyMap::model" alt="" coords="269,132,382,159"/>
-<area shape="rect" id="node3" href="$classKeyMap.html#a451d641449fbd38bb7c0f0656531d7ad" title="KeyMap::height" alt="" coords="446,5,559,32"/>
-<area shape="rect" id="node4" href="$classKeyMap.html#aac028a47f67d63edff5ed67eec2c31e2" title="KeyMap::width" alt="" coords="448,56,557,83"/>
-</map>
