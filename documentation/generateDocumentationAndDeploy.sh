@@ -72,6 +72,9 @@ else
 	export DOXDIR=PR_${TRAVIS_PULL_REQUEST};
 fi
 
+# This ernvironment var is used in the Doxy* files at PROJECT_NUMBER
+export CKB_VERSION_STRING="$(cat VERSION) at branch ${TRAVIS_BRANCH}"
+
 # Remove everything currently in the gh-pages branch.
 # GitHub is smart enough to know which files have changed and which files have
 # stayed the same and will only update the changed files. So the gh-pages branch
