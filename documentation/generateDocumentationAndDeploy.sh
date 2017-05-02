@@ -73,7 +73,7 @@ else
 fi
 
 # This ernvironment var is used in the Doxy* files at PROJECT_NUMBER
-export CKB_VERSION_STRING="$(cat VERSION) at branch ${TRAVIS_BRANCH}"
+export CKB_VERSION_STRING="$(cat ${TRAVIS_BUILD_DIR}/VERSION) at branch ${TRAVIS_BRANCH}"
 
 # Remove everything currently in the gh-pages branch.
 # GitHub is smart enough to know which files have changed and which files have
