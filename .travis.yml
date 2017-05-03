@@ -32,10 +32,10 @@ matrix:
     env:
      - QT_BASE=57
      - MAKEDOXY=true
-#  - os: osx
-#    compiler: clang
-#    env:
-#     - QT_BASE=57
+  - os: osx
+    compiler: clang
+    env:
+     - QT_BASE=57
 
 before_install:
   - if [ "$QT_BASE" = "56" ]; then sudo add-apt-repository ppa:beineri/opt-qt562-trusty -y; fi
