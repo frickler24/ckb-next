@@ -104,6 +104,7 @@ echo > .nojekyll
 ################################################################################
 ##### Generate the Doxygen code documentation and log the output.          #####
 
+<<<<<<< HEAD
 # Check if we have a pull request. If so, handle the name in a special way (furture)
 echo "TRAVIS_PULL_REQUEST = ${TRAVIS_PULL_REQUEST}"
 if [ ${TRAVIS_PULL_REQUEST} == false ]; then
@@ -112,6 +113,8 @@ else
 	export DOXDIR=PR_${TRAVIS_PULL_REQUEST};
 fi
 
+=======
+>>>>>>> testing-usb-related-commenting
 mkdir -p ${DOXDIR}
 echo "Generating Doxygen code documentation for branch ${DOXDIR}/ ..."
 # echo Starting doxygen with $DOXYFILE1 

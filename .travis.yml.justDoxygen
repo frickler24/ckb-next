@@ -13,25 +13,25 @@ env:
     - DOXYFILE1: $TRAVIS_BUILD_DIR/documentation/Doxy-ckb-daemon
     - DOXYFILE2: $TRAVIS_BUILD_DIR/documentation/Doxy-ckb
     - DOXYFILE3: $TRAVIS_BUILD_DIR/documentation/Doxy-ckb-all
-    - DOXYFILE4: $TRAVIS_BUILD_DIR/documentation/JustUSBfiles
     - MAKEFLAGS: "-j 8"
 
 language: cpp
 
 matrix:
  include:
-  - os: linux
-    dist: trusty
-    sudo: required
-    compiler: gcc
-    env:
-#     - QT_BASE=56
 #  - os: linux
 #    dist: trusty
 #    sudo: required
 #    compiler: gcc
 #    env:
-#     - QT_BASE=57
+#     - QT_BASE=56
+  - os: linux
+    dist: trusty
+    sudo: required
+    compiler: gcc
+    env:
+     - QT_BASE=57
+     - MAKEDOXY=true
 #  - os: osx
 #    compiler: clang
 #    env:
@@ -75,6 +75,9 @@ script:
 
 # Generate and deploy documentation
 after_success:
-  - cd $TRAVIS_BUILD_DIR
-  - sh ./documentation/generateDocumentationAndDeploy.sh
-
+  - if [ "$MAKEDOXY" = true ]; then
+        cd $TRAVIS_BUILD_DIR
+        documentation/generateDocumentationAndDeploy.sh
+    else
+        echo "Do not create Doxygen files"
+    fi
