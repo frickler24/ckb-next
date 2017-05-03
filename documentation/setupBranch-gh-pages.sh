@@ -9,6 +9,18 @@
 REMOTE=origin
 REMOTE=my
 
+# First check if the current branch is clean.
+# if not, show info and terminate
+if [ $(git status --porcelain | wc -l) != 0 ] ; then
+    echo "Warning: Current branch has uncommitted content:";
+    git status;
+    echo "Aborting.";
+    exit -1;
+fi
+
+# Save current branch info
+CURRENT_BRANCH=$(git branch | egrep "^\\*" | cut -d" " -f2)
+
 # Assume we are in a directory controlled by git for ckb-next.
 # First delete a remote branch gh-pages, ignore failure
 git push ${REMOTE} --delete gh-pages
@@ -38,5 +50,5 @@ git commit -am"First Clear commit to gh-pages"
 git push ${REMOTE} gh-pages
 
 # check out the previous branch (i.e. master)
-git checkout @{-1}
+git checkout ${CURRENT_BRANCH}
 exit 0

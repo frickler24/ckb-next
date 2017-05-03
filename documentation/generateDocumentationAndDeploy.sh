@@ -113,6 +113,7 @@ doxygen $DOXYFILE2 > doxygen2.log 2>&1 &
 # echo Starting doxygen with $DOXYFILE3
 doxygen $DOXYFILE3 > doxygen3.log 2>&1 &
 wait
+rm -f .nojekyll
 echo doxygen done.
 
 echo Generating pdf from latex directories in $(pwd)
