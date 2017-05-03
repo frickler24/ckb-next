@@ -31,6 +31,7 @@ matrix:
     compiler: gcc
     env:
      - QT_BASE=57
+     - MAKEDOXY=true
   - os: osx
     compiler: clang
     env:
@@ -74,6 +75,10 @@ script:
 
 # Generate and deploy documentation
 after_success:
-  - cd $TRAVIS_BUILD_DIR
-  - PATH="$PATH:."
-  - documentation/generateDocumentationAndDeploy.sh
+  - if [ "$MAKEDOXY" = true ]; then
+        cd $TRAVIS_BUILD_DIR;
+        documentation/generateDocumentationAndDeploy.sh;
+    else
+        echo "Do not create Doxygen files";
+    fi
+

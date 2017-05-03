@@ -1,7 +1,7 @@
 #!/bin/bash
 # set -x
 # set -v
-echo "Starting execution $0, GH_REPO_SLUG = $TRAVIS_REPO_SLUG"
+echo "Starting execution $0 with bash version = ${BASH_VERSION}, GH_REPO_SLUG = $TRAVIS_REPO_SLUG"
 # echo "GH_REPO_TOKEN = $GH_REPO_TOKEN"
 GH_REPO_ORG=$(echo $TRAVIS_REPO_SLUG | cut -d "/" -f 1)
 GH_REPO_NAME=$(echo $TRAVIS_REPO_SLUG | cut -d "/" -f 2)
@@ -47,7 +47,7 @@ echo 'Setting up the script...'
 set -e
 
 # save the current branch
-export CURRENT_BRANCH=$(git branch | egrep "^\\*" | cut -d" " -f2)
+# export CURRENT_BRANCH=$(git branch | egrep "^\\*" | cut -d" " -f2)
 
 # Create a clean working directory for this script.
 mkdir code_docs
@@ -64,6 +64,17 @@ git config --global push.default simple
 git config user.name "Travis CI"
 git config user.email "travis@frickler24.de"
 
+# Check if we have a pull request. If so, handle the name in a special way (furture)
+echo "TRAVIS_PULL_REQUEST = ${TRAVIS_PULL_REQUEST}"
+if [ "${TRAVIS_PULL_REQUEST}" == false ]; then
+    export DOXDIR=${TRAVIS_BRANCH};
+else
+	export DOXDIR=PR_${TRAVIS_PULL_REQUEST};
+fi
+
+# This ernvironment var is used in the Doxy* files at PROJECT_NUMBER
+export CKB_VERSION_STRING="$(cat ${TRAVIS_BUILD_DIR}/VERSION) at branch ${TRAVIS_BRANCH}"
+
 # Remove everything currently in the gh-pages branch.
 # GitHub is smart enough to know which files have changed and which files have
 # stayed the same and will only update the changed files. So the gh-pages branch
@@ -71,15 +82,24 @@ git config user.email "travis@frickler24.de"
 # documentation.
 # never do this: rm -rf *
 # rm -rf ./??*
-CURRENTCOMMIT=`git rev-parse HEAD`
-git reset --hard `git rev-list HEAD | tail -n 1` # Reset working tree to initial commit
-git reset --soft $CURRENTCOMMIT # Move HEAD back to where it was
+# CURRENTCOMMIT=`git rev-parse HEAD`
+# git reset --hard `git rev-list HEAD | tail -n 1` # Reset working tree to initial commit
+# git reset --soft $CURRENTCOMMIT # Move HEAD back to where it was
+#
+# The following line allows to handle documentation for more than one branch
+# because it clears the current branch only.
+if [ -d ./${DOXDIR} ] ; then
+    echo "Deleting existing directory $(pwd)/${DOXDIR}" ;
+    git rm -rf ./${DOXDIR} > /dev/null ;
+else
+    echo "Did not find older version of ${DOXDIR}.";
+fi
 
 # Need to create a .nojekyll file to allow filenames starting with an underscore
 # to be seen on the gh-pages site. Therefore creating an empty .nojekyll file.
 # Presumably this is only needed when the SHORT_NAMES option in Doxygen is set
 # to NO, which it is by default. So creating the file just in case.
-echo "" > .nojekyll
+echo > .nojekyll
 
 ################################################################################
 ##### Generate the Doxygen code documentation and log the output.          #####
@@ -93,16 +113,15 @@ else
 fi
 
 mkdir -p ${DOXDIR}
-echo -n "Generating Doxygen code documentation below ${DOXDIR}/ ..."
+echo "Generating Doxygen code documentation for branch ${DOXDIR}/ ..."
 # echo Starting doxygen with $DOXYFILE1 
 doxygen $DOXYFILE1 > doxygen1.log 2>&1 &
 # echo Starting doxygen with $DOXYFILE2
 doxygen $DOXYFILE2 > doxygen2.log 2>&1 &
 # echo Starting doxygen with $DOXYFILE3
 doxygen $DOXYFILE3 > doxygen3.log 2>&1 &
-# echo Starting doxygen with $DOXYFILE4
-doxygen $DOXYFILE4 > doxygen4.log 2>&1 &
 wait
+rm -f .nojekyll
 echo doxygen done.
 
 echo Generating pdf from latex directories in $(pwd)
@@ -113,8 +132,6 @@ cp ../../documentation/Makefile_skeleton ${DOXDIR}/ckb/latex/Makefile
 (cd ${DOXDIR}/ckb/latex ; make > make_pdf2.log ) &
 # echo Generating pdf from latex3
 (cd ${DOXDIR}/ckb-daemon/latex ; make > make_pdf3.log ) &
-# echo Generating pdf from latex4
-(cd ${DOXDIR}/usb/latex ; make > make_pdf4.log ) &
 wait
 echo done generating.
 
@@ -125,7 +142,7 @@ echo done generating.
 # both exist. This is a good indication that Doxygen did it's work.
 if [ -d "${DOXDIR}/all/html" ] && [ -f "${DOXDIR}/all/html/index.html" ]; then
 
-	echo "generating html file at antry level in $(pwd)"
+	echo "generating html file at entry level in $(pwd)"
 	./html-generator.sh
 
     echo 'Uploading documentation to the gh-pages branch...'
@@ -149,3 +166,4 @@ else
     echo 'Warning: Not going to push the documentation to GitHub!' >&2
     exit 1
 fi
+
