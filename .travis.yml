@@ -32,7 +32,7 @@ matrix:
     env:
      - QT_BASE=57
      - MAKEDOXY=true
-  - os: osx
+#  - os: osx
     compiler: clang
     env:
      - QT_BASE=57
@@ -71,7 +71,7 @@ addons:
 # Build your code e.g. by calling make
 script:
   - cd $TRAVIS_BUILD_DIR
-  - echo "n" | ./quickinstall
+  #- echo "n" | ./quickinstall
 
 # Generate and deploy documentation
 after_success:
