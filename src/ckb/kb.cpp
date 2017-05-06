@@ -35,14 +35,14 @@ Kb::Kb(QObject *parent, const QString& path) :
         fwString = fwString.trimmed();
         fwpath.close();
         QStringList list = fwString.split(":");
-        if(list.length() == 3) {    ///> Firmware Info is now current fw-number:vendor:model
+        if(list.length() == 3) {    ///< Firmware Info is now current fw-number:vendor:model
             /// Look for special entries (newest models)
             bool okVendor, okProduct;
             const uint vendor = list[1].toUInt(&okVendor, 16);
             const uint product = list[2].toUInt(&okProduct, 16);
-            if (okVendor && okProduct) _model = KeyMap::getModel(vendor, product);    ///> perhaps we have found something, perhaps not.
-            qDebug() << "first look for special firmware returned" << _model;
-        }
+            if (okVendor && okProduct) _model = KeyMap::getModel(vendor, product);    ///< perhaps we have found something, perhaps not.
+            qInfo() << "First look for special firmware returned" << _model;
+        } else qWarning() << "Expected 3 entries in file" << fwpath.fileName() << "but reading" << list.length();
     }
     if(ftpath.open(QIODevice::ReadOnly)){
         features = ftpath.read(1000);
@@ -52,12 +52,12 @@ Kb::Kb(QObject *parent, const QString& path) :
         QStringList list = features.split(" ");
         if(list.length() < 2)
             return;
-        if (_model == KeyMap::NO_MODEL) {   ///> If nothing found in the special firmware search, try here.
+        if (_model == KeyMap::NO_MODEL) {   ///< If nothing found in the special firmware search, try here.
             _model = KeyMap::getModel(list[1]);
         }
         /// Last chance gone to get a valid firmware information.
         if (_model == KeyMap::NO_MODEL) {
-            qWarning() << "Neither firmware-special-search nor feature file analysis resulted in valid firmware information.";
+            qCritical() << "Neither firmware-special-search nor feature file analysis resulted in valid firmware information.";
             return;
         }
     } else
@@ -82,9 +82,21 @@ Kb::Kb(QObject *parent, const QString& path) :
     if(features.contains("fwversion") && fwpath.open(QIODevice::ReadOnly)){
         QString firmwareString = fwpath.read(100);
         QStringList firmwareList = firmwareString.split(":");
-        qDebug() << "Firmware Version read from ckb-daemon in fwversion file is" << firmwareList.at(0) << ", VID=" << firmwareList.at(1) << ", PID=" << firmwareList.at(2);
-        firmware = QString::number(firmwareList.at(0).trimmed().toInt() / 100., 'f', 2);
         fwpath.close();
+
+        /// Handle inputs
+        QStringList firmwareList = firmwareString.remove("\n").split(":");
+        switch (firmwareList.length()) {
+        case 3: ///< This is the normal case if we have a new daemon and a running device
+            qInfo() << "Reading 3 entries from fwversion file, VID=" << firmwareList.at(1) << ", PID=" << firmwareList.at(2);
+        case 1: ///< That means we have an older daemon which does not write three infos into the file
+            firmware = QString::number(firmwareList.at(0).trimmed().toInt() / 100., 'f', 2);
+            qInfo() << "Firmware version read from ckb-daemon in fwversion file is" << firmwareList.at(0);
+            break;
+        default:
+            qCritical() << "Firware version file is invalid. Number of entries is" << firmwareList.length();
+            break;
+        }
     }
     if(features.contains("pollrate") && ppath.open(QIODevice::ReadOnly)){
         pollrate = ppath.read(100);
