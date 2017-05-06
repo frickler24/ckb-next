@@ -73,7 +73,7 @@ else
 fi
 
 # This ernvironment var is used in the Doxy* files at PROJECT_NUMBER
-export CKB_VERSION_STRING="$(cat ${TRAVIS_BUILD_DIR}/VERSION) at branch ${TRAVIS_BRANCH}"
+export CKB_VERSION_STRING="$(cat ${TRAVIS_BUILD_DIR}/VERSION) at branch ${DOXDIR}"
 
 # Remove everything currently in the gh-pages branch.
 # GitHub is smart enough to know which files have changed and which files have
@@ -104,7 +104,6 @@ echo > .nojekyll
 ################################################################################
 ##### Generate the Doxygen code documentation and log the output.          #####
 
-<<<<<<< HEAD
 # Check if we have a pull request. If so, handle the name in a special way (furture)
 echo "TRAVIS_PULL_REQUEST = ${TRAVIS_PULL_REQUEST}"
 if [ ${TRAVIS_PULL_REQUEST} == false ]; then
@@ -113,8 +112,6 @@ else
 	export DOXDIR=PR_${TRAVIS_PULL_REQUEST};
 fi
 
-=======
->>>>>>> testing-usb-related-commenting
 mkdir -p ${DOXDIR}
 echo "Generating Doxygen code documentation for branch ${DOXDIR}/ ..."
 # echo Starting doxygen with $DOXYFILE1 

@@ -32,10 +32,18 @@ matrix:
     env:
      - QT_BASE=57
      - MAKEDOXY=true
+<<<<<<< HEAD
   - os: osx
     compiler: clang
     env:
      - QT_BASE=57
+=======
+#  - os: osx
+#    compiler: clang
+#    env:
+#     - QT_BASE=57
+
+>>>>>>> testing
 
 before_install:
   - if [ "$QT_BASE" = "56" ]; then sudo add-apt-repository ppa:beineri/opt-qt562-trusty -y; fi
@@ -71,7 +79,11 @@ addons:
 # Build your code e.g. by calling make
 script:
   - cd $TRAVIS_BUILD_DIR
+<<<<<<< HEAD
   - echo "n" | ./quickinstall
+=======
+#  - echo "n" | ./quickinstall
+>>>>>>> testing
 
 # Generate and deploy documentation
 after_success:
