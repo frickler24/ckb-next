@@ -4,10 +4,10 @@
 #include "profile.h"
 #include "usb.h"
 
-int hwload_mode = 1;        ///> hwload_mode = 1 means read hardware once. should be enough
+int hwload_mode = 1;        ///< hwload_mode = 1 means read hardware once. should be enough
 
 // Device list
-usbdevice keyboard[DEV_MAX];    ///> remember all usb devices. Needed for closeusb().
+usbdevice keyboard[DEV_MAX];    ///< remember all usb devices. Needed for closeusb().
 pthread_mutex_t devlistmutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_mutex_t devmutex[DEV_MAX] = { [0 ... DEV_MAX-1] = PTHREAD_MUTEX_INITIALIZER };
 pthread_mutex_t inputmutex[DEV_MAX] = { [0 ... DEV_MAX-1] = PTHREAD_MUTEX_INITIALIZER };
@@ -15,7 +15,7 @@ pthread_mutex_t macromutex[DEV_MAX] = { [0 ... DEV_MAX-1] = PTHREAD_MUTEX_INITIA
 
 /// \brief .
 ///
-/// \brief _start_dev get fw-info and pollrate; if available, install new firmware; get all hardware profiles
+/// \brief _start_dev get fw-info and pollrate; if available, install new firmware; get all hardware profiles.
 /// \param kb   the normal kb pointer to the usbdevice. Is also valid for mice.
 /// \param makeactive if set to 1, activate the device via setactive()
 /// \return 0 if success, other else

@@ -455,7 +455,7 @@ static int usbclaim(usbdevice* kb){
     ckb_info("claiming %d endpoints\n", count);
 #endif // DEBUG
 
-    for(int i = 0; i < count; i++){
+    for(int i = 0; i < count; i++) {
         struct usbdevfs_ioctl ctl = { i, USBDEVFS_DISCONNECT, 0 };
         ioctl(kb->handle - 1, USBDEVFS_IOCTL, &ctl);
         if(ioctl(kb->handle - 1, USBDEVFS_CLAIMINTERFACE, &i)) {
@@ -624,7 +624,7 @@ int usbadd(struct udev_device* dev, short vendor, short product) {
     return -1;
 }
 
-static struct udev* udev;   ///> struct udef is defined in /usr/include/libudev.h
+static struct udev* udev;   ///< struct udef is defined in /usr/include/libudev.h
 
 /// \todo These two thread vasriables seem to be unused: usbtread, udevthread
 pthread_t usbthread, udevthread;

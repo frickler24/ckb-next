@@ -38,8 +38,13 @@ int rm_recursive(const char* path){
 ///
 /// \brief _updateconnected Update the list of connected devices.
 ///
+<<<<<<< HEAD
 /// <devicepath> normally is /dev/input/ckb or /input/ckb.
 /// \n Open the normal file under <devicepath>0/connected for writing.
+=======
+/// \<devicepath\> normally is /dev/input/ckb or /input/ckb.
+/// \n Open the normal file under \<devicepath\>0/connected for writing.
+>>>>>>> usb-related-comments
 /// For each device connected, print its devicepath+number,
 /// the serial number of the usb device and the usb name of the device connected to that usb interface.
 /// \n eg:
@@ -48,7 +53,11 @@ int rm_recursive(const char* path){
 ///
 /// Set the file ownership to root.
 /// If the glob var gid is explicitly set to something different from -1 (the initial value), set file permission to 640, else to 644.
+<<<<<<< HEAD
 /// This is used if you start the daemon with --gid=<GID> Parameter.
+=======
+/// This is used if you start the daemon with --gid=\<GID\> Parameter.
+>>>>>>> usb-related-comments
 ///
 /// Because several independent threads may call updateconnected(), protect that procedure with locking/unlocking of \b devmutex.
 ///
