@@ -2,6 +2,7 @@
 #include "ckbsettingswriter.h"
 #include <QThread>
 #include <QMutex>
+#include <QFile>
 #include <QDebug>
 
 // Shared global QSettings object
@@ -34,7 +35,25 @@ static QSettings* globalSettings(){
             QSettings* testSettings = new QSettings;
             testSettings->setValue("testIfWritable", 42);
             testSettings->sync();
+            QString settingsFileName = testSettings->fileName();
             delete testSettings;
+
+            bool fileWriteAccess = false;
+            int lastSlashInName = settingsFileName.lastIndexOf("/");
+            if (lastSlashInName != -1) {
+                QString newFileName = settingsFileName.left(settingsFileName.lastIndexOf("/")).append("/testFileToCheckWriteAccess");
+                QFile testFile(newFileName);
+                try {
+                    if (testFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
+                        QTextStream out(&testFile);
+                        out << "The magic number is: " << 42 << "\n";
+                        testFile.close();
+                        fileWriteAccess = QFile::remove(newFileName);
+                    }
+                } catch(int e) {
+                    fileWriteAccess = false;
+                }
+            }
 
             /// Try to open the conf file again and to read the standard value. Delete the standard value afterwards.
             /// Because on linux QSettings does somehow caching, it reads the correct value even the file (not the directory) is read only.
@@ -42,7 +61,7 @@ static QSettings* globalSettings(){
             ///
             testSettings = new QSettings;
             if ((testSettings->value("testIfWritable").toInt() == 42) && testSettings->isWritable()) {
-                CkbSettings::setWritable(true);
+                CkbSettings::setWritable(fileWriteAccess);
                 testSettings->remove("testIfWritable");
                 testSettings->sync();
             }
