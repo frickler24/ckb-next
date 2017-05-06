@@ -108,7 +108,6 @@
 /// \brief vendor_str Vendor/product string representations
 /// \param vendor \a short vendor ID
 /// \return a string: either "" or "corsair"
->>>>>>> usb-related-comments
 const char* vendor_str(short vendor);
 
 ///

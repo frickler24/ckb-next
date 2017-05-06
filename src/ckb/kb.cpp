@@ -81,7 +81,6 @@ Kb::Kb(QObject *parent, const QString& path) :
         usbSerial = "Unknown-" + usbModel;
     if(features.contains("fwversion") && fwpath.open(QIODevice::ReadOnly)){
         QString firmwareString = fwpath.read(100);
-        QStringList firmwareList = firmwareString.split(":");
         fwpath.close();
 
         /// Handle inputs
