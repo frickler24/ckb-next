@@ -2,6 +2,7 @@
 #include "ckbsettingswriter.h"
 #include <QThread>
 #include <QMutex>
+#include <QFile>
 #include <QDebug>
 
 // Shared global QSettings object
@@ -27,18 +28,41 @@ static QSettings* globalSettings(){
     if(!_globalSettings){
         lockMutexStatic;
         if(!(volatile QSettings*)_globalSettings){   // Check again after locking mutex in case another thread created the object
-            /// first check, if QSettings structures can be written in the filesystem.
+            /// first check if QSettings structures can be written in the filesystem.
             /// Try to open the standard config file and to write something into it. Close the file.
+            ///
             CkbSettings::setWritable(false);
             QSettings* testSettings = new QSettings;
             testSettings->setValue("testIfWritable", 42);
             testSettings->sync();
+
+            QString settingsFileName = testSettings->fileName();
             delete testSettings;
 
+            bool fileWriteAccess = false;
+            int lastSlashInName = settingsFileName.lastIndexOf("/");
+            if (lastSlashInName != -1) {
+                QString newFileName = settingsFileName.left(settingsFileName.lastIndexOf("/")).append("/testFileToCheckWriteAccess");
+                QFile testFile(newFileName);
+                try {
+                    if (testFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
+                        QTextStream out(&testFile);
+                        out << "The magic number is: " << 42 << "\n";
+                        testFile.close();
+                        fileWriteAccess = QFile::remove(newFileName);
+                    }
+                } catch(int e) {
+                    fileWriteAccess = false;
+                }
+            }
+
             /// Try to open the conf file again and to read the standard value. Delete the standard value afterwards.
+            /// Because on linux QSettings does somehow caching, it reads the correct value even the file (not the directory) is read only.
+            /// So we need to add the original isWritable() function.
+            ///
             testSettings = new QSettings;
-            if (testSettings->value("testIfWritable").toInt() == 42) {
-                CkbSettings::setWritable(true);
+            if ((testSettings->value("testIfWritable").toInt() == 42) && testSettings->isWritable()) {
+                CkbSettings::setWritable(fileWriteAccess);
                 testSettings->remove("testIfWritable");
                 testSettings->sync();
             }
@@ -75,15 +99,21 @@ bool CkbSettings::isWritable() { return _writable; }
 void CkbSettings::setWritable(bool v) { _writable = v; }
 
 ///
-bool CkbSettings::informIfNotWritable() {
+/// \brief CkbSettings::checkIfWritable
+/// If the local implementation of the config database is not yet writable,
+/// bring up a popup to the user to informhim about it.
+/// Bring up the information where he can find the info.
+bool CkbSettings::informIfNonWritable() {
     if (isWritable()) return false;
     QMessageBox msgBox;
     msgBox.setIcon(QMessageBox::Warning);
-    msgBox.setText("\n\n\nYour profile information for ckb-next is not writable.\n");
-    QString info = "This might happen, if you started the ckb-next program with root privileges earlier.\nOr did you copy it from somewhere?\n\nPlease have a look at "
-            + _globalSettings->fileName() + "\nand check the file and its directory (ls -lsa).\n\nThe program runs normally now, but you can\'t save anyting.\n\n";
+    msgBox.setProperty("Title", "Profile is read only");
+    msgBox.setText("Your profile information for ckb-next is nonwritable.");
+    QString info = "This might happen if you did start the ckb-next program with root privileges earlier.\n\nOr did you copy it from somewhere?\n\nPlease have a look at\n"
+            + _globalSettings->fileName();
     msgBox.setInformativeText(info);
     msgBox.exec();
+    qDebug() << "Profile information for ckb-next is nonwritable. It is located at" << _globalSettings->fileName();
     return true;
 }
 

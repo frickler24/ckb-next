@@ -219,5 +219,6 @@ int main(int argc, char *argv[]){
     if(!background)
         w.show();
 
-    return a.exec();
+    if (CkbSettings::isWritable())
+        return a.exec();
 }
