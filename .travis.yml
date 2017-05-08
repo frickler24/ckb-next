@@ -88,9 +88,6 @@ install:
       else
         brew install qt55;
         brew link --force qt55;
-        find / -name qmake -print 2>/dev/null;
-        export QMAKE="/usr/local/Cellar/qt/5.8.0_2/bin/qmake";
-        export PATH="/usr/local/opt/qt@5.5/bin:$PATH";
       fi
     fi
   - if [ "$QT_BASE" = "56" ]; then sudo apt-get install -qq qt56base; source /opt/qt56/bin/qt56-env.sh; fi
@@ -117,7 +114,7 @@ addons:
 # Build your code e.g. by calling make
 script:
   - cd $TRAVIS_BUILD_DIR
-  - echo n | ./quickinstall
+  - echo "n" | ./quickinstall
 
 # Generate and deploy documentation
 after_success:
