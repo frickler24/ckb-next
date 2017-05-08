@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>932</width>
-    <height>637</height>
+    <width>773</width>
+    <height>802</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1045,7 +1045,7 @@
   <customwidget>
    <class>ColorButton</class>
    <extends>QPushButton</extends>
-   <header location="global">colorbutton.h</header>
+   <header>colorbutton.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
