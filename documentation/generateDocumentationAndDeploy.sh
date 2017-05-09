@@ -117,12 +117,10 @@ rm -f .nojekyll
 echo doxygen done.
 
 echo Generating pdf from latex directories in $(pwd)
-cp ../../documentation/Makefile_skeleton ${DOXDIR}/all/latex/Makefile
-(cd ${DOXDIR}/all/latex ; make > make_pdf1.log ) &
+(cd ${DOXDIR}/all/latex ; make -f ../../../documentation/Makefile_skeleton > make_pdf1.log ) &
 # echo Generating pdf from latex2
-cp ../../documentation/Makefile_skeleton ${DOXDIR}/ckb/latex/Makefile
-(cd ${DOXDIR}/ckb/latex ; make > make_pdf2.log ) &
-# echo Generating pdf from latex3
+(cd ${DOXDIR}/ckb/latex ; make -f ../../../documentation/Makefile_skeleton > make_pdf2.log ) &
+# echo Generating pdf from latex3 without special handling
 (cd ${DOXDIR}/ckb-daemon/latex ; make > make_pdf3.log ) &
 wait
 echo done generating.
