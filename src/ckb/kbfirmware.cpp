@@ -33,7 +33,7 @@ bool KbFirmware::_checkUpdates(){
     if(now < lastCheck + AUTO_CHECK_TIME)
         return false;
     // First location is for debugging only.
-    // tableDownload = networkManager->get(QNetworkRequest(QUrl("https://raw.githubusercontent.com/frickler24/ckb-next/issues-26-Firmware-Incident/FIRMWARE")));
+    // tableDownload = networkManager->get(QNetworkRequest(QUrl("https://raw.githubusercontent.com/frickler24/ckb-next/new-firmware-file-format/FIRMWARE")));
     // This one is the production one.
     tableDownload = networkManager->get(QNetworkRequest(QUrl("https://raw.githubusercontent.com/mattanger/ckb-next/master/FIRMWARE")));
     connect(tableDownload, SIGNAL(finished()), this, SLOT(downloadFinished()));
@@ -125,7 +125,7 @@ void KbFirmware::processDownload(QNetworkReply* reply){
         if(line == "!END FW ENTRIES")
             break;
         QStringList components = line.split(" ");
-        if(components.length() != 7)
+        if(components.length() != 8)
             continue;
         // "VENDOR-PRODUCT"
         QString device = components[0].toUpper() + "-" + components[1].toUpper();
@@ -135,6 +135,9 @@ void KbFirmware::processDownload(QNetworkReply* reply){
         fw.ckbVersion = KbManager::parseVersionString(components[4]);       // Minimum ckb version
         fw.fileName = QUrl::fromPercentEncoding(components[5].toLatin1());  // Name of file inside zip
         fw.hash = QByteArray::fromHex(components[6].toLatin1());            // SHA256 of file inside zip
+        bool ok;
+        fw.forProductID = components[7].toUInt(&ok, 16);
+        if (!ok) qWarning() << "Could not read product specification from FIRMWARE, value =" << components[7];
         // Update entry
         fwTable[device] = fw;
     }

@@ -35,6 +35,7 @@ private:
         QString     url, fileName;
         QByteArray  hash;
         float       fwVersion, ckbVersion;
+        uint16_t    forProductID;
 
         FW();
     };
