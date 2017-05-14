@@ -12,7 +12,7 @@ Hash: SHA256
 !BEGIN FW ENTRIES
 
 # Vendor  Model             FW   URL                                                        Min.ckb File Name                       SHA256                                                              ProductID
-  Corsair K70RGB            2.05 https://www3.corsair.com/software/HID/K70RGB.zip           0.2.7   K70RGB_APP_V205.bin             3e43bdcc5077dc413fbdee7ff6e57a978f758599142eef6979a96e3b8c3a566a    0x1b13
+  Corsair K70RGB            2.05:0x1b13 https://www3.corsair.com/software/HID/K70RGB.zip           0.2.7   K70RGB_APP_V205.bin             3e43bdcc5077dc413fbdee7ff6e57a978f758599142eef6979a96e3b8c3a566a    0x1b13
   Corsair K70LUX            2.04 https://www3.corsair.com/software/HID/K70LUX.zip           0.2.7   K70LUX_APP_V204.bin             c2b5411e1dce391788eca294563801b32a14bf7802eb29688213f8f07e112966    0x1b36
   Corsair K70LUXRGB         2.05 https://www3.corsair.com/software/HID/K70LUXRGB.zip        0.2.7   K70LUXRGB_APP_V205.bin          a1a0a4b2f74890eb708435b21ab197a301ea668269bca895f89f7301c354e83d    0x1b33
   Corsair K70RFIRE          2.05 https://www3.corsair.com/software/HID/K70RAPIDFIRE.zip     0.2.7   K70RAPIDFIRE_APP_V205.bin       6b1d2bb962ffd987ce5eb25c46b02a9069c5f79ca05d7b2cc71c749fe9813536    0x1b3a
