@@ -5,6 +5,8 @@
 #include <QDateTime>
 #include <QDebug>
 
+#define CHECKFORGPG 0
+
 // Auto check: 1 hr
 static const quint64 AUTO_CHECK_TIME = 60 * 60 * 1000;
 
@@ -33,9 +35,9 @@ bool KbFirmware::_checkUpdates(){
     if(now < lastCheck + AUTO_CHECK_TIME)
         return false;
     // First location is for debugging only.
-    // tableDownload = networkManager->get(QNetworkRequest(QUrl("https://raw.githubusercontent.com/frickler24/ckb-next/new-firmware-file-format/FIRMWARE")));
+    tableDownload = networkManager->get(QNetworkRequest(QUrl("https://raw.githubusercontent.com/frickler24/ckb-next/new-firmware-file-format/FIRMWARE")));
     // This one is the production one.
-    tableDownload = networkManager->get(QNetworkRequest(QUrl("https://raw.githubusercontent.com/mattanger/ckb-next/master/FIRMWARE")));
+    // tableDownload = networkManager->get(QNetworkRequest(QUrl("https://raw.githubusercontent.com/mattanger/ckb-next/master/FIRMWARE")));
     connect(tableDownload, SIGNAL(finished()), this, SLOT(downloadFinished()));
     lastCheck = now;
     return true;
@@ -71,7 +73,7 @@ void KbFirmware::processDownload(QNetworkReply* reply){
         if(!hasGPG)
             qDebug() << "No GPG detected, signature verification disabled";
     }
-    if(hasGPG){
+    if (hasGPG && CHECKFORGPG) { ///< CHECKFORGPG is a debug flag. Set to 0 if GPG should be ignored
         // If GPG is available, check the signature on the file before proceeding.
         QDir tmp = QDir::temp();
         // Save file to a temporary path. Include PID to avoid conflicts
