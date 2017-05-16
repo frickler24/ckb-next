@@ -1,0 +1,6 @@
+<div class="contentTitle">LINETEXT</div>
+<div class="contentText">
+<p><a href="BRANCH/all/FORMATDEFINITION" target="_blank">Complete documentation</a></p>
+<p><a href="BRANCH/ckb/FORMATDEFINITION" target="_blank">Documentation of ckb GUI client</a></p>
+<p><a href="BRANCH/ckb-daemon/FORMATDEFINITION" target="_blank">Documentation of the ckb-next daemon</a></p>
+</div>
