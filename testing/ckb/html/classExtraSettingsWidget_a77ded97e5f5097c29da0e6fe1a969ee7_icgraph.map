@@ -1,0 +1,6 @@
+<map id="ExtraSettingsWidget::pollUpdates" name="ExtraSettingsWidget::pollUpdates">
+<area shape="rect" id="node2" href="$classExtraSettingsWidget.html#acc6116c20fe8030cf2dc3443558bff18" title="ExtraSettingsWidget\l::on_brightnessBox_clicked" alt="" coords="201,5,383,46"/>
+<area shape="rect" id="node3" href="$classSettingsWidget.html#a6ae876420712dcb104ce3ef5cabb0f53" title="SettingsWidget::pollUpdates" alt="" coords="198,71,386,97"/>
+<area shape="rect" id="node4" href="$classMainWindow.html#a888ae1a192a5ca93d0d8bddd104ae953" title="MainWindow::timerTick" alt="" coords="435,71,594,97"/>
+<area shape="rect" id="node5" href="$classMainWindow.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow" alt="" coords="643,71,823,97"/>
+</map>

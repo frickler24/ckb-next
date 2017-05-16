@@ -1,0 +1,2055 @@
+.TH "Kb" 3 "Tue May 16 2017" "Version beta-v0.2.7 at branch testing" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Kb \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/kb\&.h>\fP
+.PP
+Inherits \fBQThread\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBframeUpdate\fP ()"
+.br
+.ti -1c
+.RI "void \fBautoSave\fP ()"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBinfoUpdated\fP ()"
+.br
+.ti -1c
+.RI "void \fBprofileAdded\fP ()"
+.br
+.ti -1c
+.RI "void \fBprofileRenamed\fP ()"
+.br
+.ti -1c
+.RI "void \fBmodeRenamed\fP ()"
+.br
+.ti -1c
+.RI "void \fBprofileChanged\fP ()"
+.br
+.ti -1c
+.RI "void \fBmodeChanged\fP (bool spontaneous)"
+.br
+.ti -1c
+.RI "void \fBfwUpdateProgress\fP (int \fBcurrent\fP, int total)"
+.br
+.ti -1c
+.RI "void \fBfwUpdateFinished\fP (bool succeeded)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBKeyMap::Model\fP \fBmodel\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisKeyboard\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisMouse\fP () const "
+.br
+.ti -1c
+.RI "\fBKbProfile\fP * \fBhwProfile\fP ()"
+.br
+.ti -1c
+.RI "void \fBhwProfile\fP (\fBKbProfile\fP *newHwProfile)"
+.br
+.ti -1c
+.RI "void \fBfwUpdate\fP (const QString &path)"
+.br
+.ti -1c
+.RI "\fBKbProfile\fP * \fBcurrentProfile\fP ()"
+.br
+.ti -1c
+.RI "const QList< \fBKbProfile\fP * > & \fBprofiles\fP () const "
+.br
+.ti -1c
+.RI "void \fBprofiles\fP (const QList< \fBKbProfile\fP * > &newProfiles)"
+.br
+.ti -1c
+.RI "void \fBappendProfile\fP (\fBKbProfile\fP *\fBnewProfile\fP)"
+.br
+.ti -1c
+.RI "int \fBindexOf\fP (\fBKbProfile\fP *profile)"
+.br
+.ti -1c
+.RI "\fBKbProfile\fP * \fBfind\fP (const QUuid &id)"
+.br
+.ti -1c
+.RI "\fBKbMode\fP * \fBcurrentMode\fP ()"
+.br
+.ti -1c
+.RI "\fBKbLight\fP * \fBcurrentLight\fP ()"
+.br
+.ti -1c
+.RI "\fBKbBind\fP * \fBcurrentBind\fP ()"
+.br
+.ti -1c
+.RI "\fBKbPerf\fP * \fBcurrentPerf\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetCurrentProfile\fP (\fBKbProfile\fP *profile, bool spontaneous=true)"
+.br
+.ti -1c
+.RI "void \fBsetCurrentMode\fP (\fBKbProfile\fP *profile, \fBKbMode\fP *mode, bool spontaneous=true)"
+.br
+.ti -1c
+.RI "void \fBsetCurrentMode\fP (\fBKbProfile\fP *profile, int index, bool spontaneous=true)"
+.br
+.ti -1c
+.RI "void \fBsetCurrentMode\fP (\fBKbMode\fP *mode, bool spontaneous=true)"
+.br
+.ti -1c
+.RI "\fBKbProfile\fP * \fBnewProfile\fP ()"
+.br
+.ti -1c
+.RI "\fBKbProfile\fP * \fBnewProfile\fP (\fBKbProfile\fP *other)"
+.br
+.ti -1c
+.RI "\fBKbMode\fP * \fBnewMode\fP ()"
+.br
+.ti -1c
+.RI "\fBKbMode\fP * \fBnewMode\fP (\fBKbMode\fP *other)"
+.br
+.ti -1c
+.RI "void \fBload\fP ()"
+.br
+.ti -1c
+.RI "void \fBsave\fP ()"
+.br
+.ti -1c
+.RI "bool \fBneedsSave\fP () const "
+.br
+.ti -1c
+.RI "void \fBhwSave\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetMacroNumber\fP ()"
+.br
+.RI "\fIFor usage with macro definions, these two params must only be readable\&. So there are no setters\&. \fP"
+.ti -1c
+.RI "QString \fBgetMacroPath\fP ()"
+.br
+.RI "\fIgetMacroPath returns the macroPath (e\&.g\&. /dev/input/ckb1/notify), which we have saved in the constructor\&. For usage with macro definions, this param must only be readable\&. So there is no setter\&. \fP"
+.ti -1c
+.RI "\fB~Kb\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static int \fBframeRate\fP ()"
+.br
+.ti -1c
+.RI "static void \fBframeRate\fP (int newFrameRate)"
+.br
+.ti -1c
+.RI "static \fBKeyMap::Layout\fP \fBlayout\fP ()"
+.br
+.ti -1c
+.RI "static void \fBlayout\fP (\fBKeyMap::Layout\fP newLayout)"
+.br
+.ti -1c
+.RI "static bool \fBdither\fP ()"
+.br
+.ti -1c
+.RI "static void \fBdither\fP (bool newDither)"
+.br
+.ti -1c
+.RI "static bool \fBmacroDelay\fP ()"
+.br
+.ti -1c
+.RI "static void \fBmacroDelay\fP (bool flag)"
+.br
+.RI "\fI\fBKb::macroDelay\fP handles the UI-Element macroBox\&. Sends a command to the keyboard to switch on or off the delay function on very large macros\&. \fP"
+.ti -1c
+.RI "static bool \fBmouseAccel\fP ()"
+.br
+.ti -1c
+.RI "static void \fBmouseAccel\fP (bool newAccel)"
+.br
+.ti -1c
+.RI "static int \fBscrollSpeed\fP ()"
+.br
+.ti -1c
+.RI "static void \fBscrollSpeed\fP (int newSpeed)"
+.br
+.in -1c
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "QString \fBusbModel\fP"
+.br
+.ti -1c
+.RI "QString \fBusbSerial\fP"
+.br
+.ti -1c
+.RI "QString \fBfeatures\fP"
+.br
+.ti -1c
+.RI "QString \fBfirmware\fP"
+.br
+.ti -1c
+.RI "QString \fBpollrate\fP"
+.br
+.ti -1c
+.RI "bool \fBmonochrome\fP"
+.br
+.ti -1c
+.RI "int \fBhwModeCount\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const int \fBHWMODE_MAX\fP = 3"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBreadNotify\fP (QString line)"
+.br
+.ti -1c
+.RI "void \fBdeleteHw\fP ()"
+.br
+.ti -1c
+.RI "void \fBdeletePrevious\fP ()"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBKb\fP (\fBQObject\fP *parent, const QString &path)"
+.br
+.ti -1c
+.RI "bool \fBisOpen\fP () const "
+.br
+.ti -1c
+.RI "bool \fBmatches\fP (const QString &path, const QString &serial)"
+.br
+.ti -1c
+.RI "void \fBupdateLayout\fP ()"
+.br
+.ti -1c
+.RI "void \fBwriteProfileHeader\fP ()"
+.br
+.ti -1c
+.RI "\fBKeyMap\fP \fBgetKeyMap\fP ()"
+.br
+.ti -1c
+.RI "void \fBrun\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBdevpath\fP"
+.br
+.RI "\fIpathVars devpath is the device root path (e\&.g\&. /dev/device/ckb1), cmdpath leads to the daemon input pipe for daemon commands, notifyPath is the standard input monitor for general purpose, macroPath added for a second thread to read macro input\&. \fP"
+.ti -1c
+.RI "QString \fBcmdpath\fP"
+.br
+.ti -1c
+.RI "QString \fBnotifyPath\fP"
+.br
+.ti -1c
+.RI "QString \fBmacroPath\fP"
+.br
+.ti -1c
+.RI "\fBKbProfile\fP * \fB_currentProfile\fP"
+.br
+.ti -1c
+.RI "QList< \fBKbProfile\fP * > \fB_profiles\fP"
+.br
+.ti -1c
+.RI "\fBKbMode\fP * \fB_currentMode\fP"
+.br
+.ti -1c
+.RI "\fBKeyMap::Model\fP \fB_model\fP"
+.br
+.ti -1c
+.RI "bool \fBiState\fP [\fBKbPerf::HW_I_COUNT\fP]"
+.br
+.ti -1c
+.RI "QString \fBprefsPath\fP"
+.br
+.ti -1c
+.RI "quint64 \fBlastAutoSave\fP"
+.br
+.ti -1c
+.RI "QString \fBfwUpdPath\fP"
+.br
+.ti -1c
+.RI "\fBKbProfile\fP * \fB_hwProfile\fP"
+.br
+.ti -1c
+.RI "\fBKbProfile\fP * \fBprevProfile\fP"
+.br
+.ti -1c
+.RI "\fBKbMode\fP * \fBprevMode\fP"
+.br
+.ti -1c
+.RI "QFile \fBcmd\fP"
+.br
+.ti -1c
+.RI "int \fBnotifyNumber\fP"
+.br
+.RI "\fInotifyNumber is the trailing number in the device path\&. \fP"
+.ti -1c
+.RI "int \fBmacroNumber\fP"
+.br
+.ti -1c
+.RI "bool \fB_needsSave\fP"
+.br
+.ti -1c
+.RI "bool \fBhwLoading\fP [\fBHWMODE_MAX\fP+1]"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static \fBKeyMap::Layout\fP \fB_layout\fP = \fBKeyMap::NO_LAYOUT\fP"
+.br
+.ti -1c
+.RI "static int \fB_frameRate\fP = 30"
+.br
+.ti -1c
+.RI "static int \fB_scrollSpeed\fP = 0"
+.br
+.ti -1c
+.RI "static bool \fB_dither\fP = false"
+.br
+.ti -1c
+.RI "static bool \fB_mouseAccel\fP = true"
+.br
+.ti -1c
+.RI "static bool \fB_delay\fP = false"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBKbManager\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 11 of file kb\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Kb::~Kb ()"
+<
+.PP
+\fBTodo\fP
+.RS 4
+I don't think, that notifypaths is used somewhere\&. So why do we have it? If we do not need it, searching for an ununsed notify channel can easy be refactored to a private member function\&. 
+.RE
+.PP
+
+.PP
+Definition at line 141 of file kb\&.cpp\&.
+.PP
+References activeDevices, isOpen(), macroPath, notifyNumber, notifyPaths, and save()\&.
+.PP
+.nf
+141        {
+142     // Save settings first
+143     save();
+144 
+145     // remove the notify channel from the list of notifyPaths\&.
+148     notifyPaths\&.remove(macroPath);
+149 
+150     // Kill notification thread and remove node
+151     activeDevices\&.remove(this);
+152     if(!isOpen()){
+153         terminate();
+154         wait(1000);
+155         return;
+156     }
+157     if(notifyNumber > 0)
+158         cmd\&.write(QString("idle\nnotifyoff %1\n")\&.arg(notifyNumber)\&.toLatin1());
+159     cmd\&.flush();
+160     terminate();
+161     wait(1000);
+162     cmd\&.close();
+163 }
+.fi
+.SS "Kb::Kb (\fBQObject\fP *parent, const QString &path)\fC [private]\fP"
+<
+.PP
+\fBTodo\fP
+.RS 4
+Is adding notify2 to the notifypaths neccessary? 
+.RE
+.PP
+
+.PP
+Definition at line 19 of file kb\&.cpp\&.
+.PP
+References _delay, _dither, _frameRate, _layout, _mouseAccel, _scrollSpeed, activeDevices, cmdpath, features, firmware, KeyMap::getModel(), hwLoading, hwModeCount, infoUpdated(), KeyMap::isISO(), iState, KeyMap::K95, macroNumber, macroPath, monochrome, KeyMap::NO_MODEL, notifyNumber, notifyPath, notifyPathMutex, notifyPaths, pollrate, prefsPath, usbModel, and usbSerial\&.
+.PP
+.nf
+19                                            :
+20     QThread(parent), features("N/A"), firmware("N/A"), pollrate("N/A"), monochrome(false),
+21     devpath(path), cmdpath(path + "/cmd"), notifyPath(path + "/notify1"), macroPath(path + "/notify2"),
+22     _currentProfile(0), _currentMode(0), _model(KeyMap::NO_MODEL),
+23     lastAutoSave(QDateTime::currentMSecsSinceEpoch()),
+24     _hwProfile(0), prevProfile(0), prevMode(0),
+25     cmd(cmdpath), notifyNumber(1), macroNumber(2), _needsSave(false)
+26 {
+27     memset(iState, 0, sizeof(iState));
+28     memset(hwLoading, 0, sizeof(hwLoading));
+29 
+30     // Get the features, model, serial number, FW version (if available), and poll rate (if available) from /dev nodes
+31     QFile ftpath(path + "/features"), mpath(path + "/model"), spath(path + "/serial"), fwpath(path + "/fwversion"), ppath(path + "/pollrate");
+32     if(ftpath\&.open(QIODevice::ReadOnly)){
+33         features = ftpath\&.read(1000);
+34         features = features\&.trimmed();
+35         ftpath\&.close();
+36         // Read model from features (first word: vendor, second word: product)
+37         QStringList list = features\&.split(" ");
+38         if(list\&.length() < 2)
+39             return;
+40         _model = KeyMap::getModel(list[1]);
+41         if(_model == KeyMap::NO_MODEL)
+42             return;
+43     } else
+44         // Bail if features aren't readable
+45         return;
+46     if(features\&.contains("monochrome"))
+47         monochrome = true;
+48     if(mpath\&.open(QIODevice::ReadOnly)){
+49         usbModel = mpath\&.read(100);
+50         usbModel = usbModel\&.remove("Corsair")\&.remove("Gaming")\&.remove("Keyboard")\&.remove("Mouse")\&.remove("Bootloader")\&.trimmed();
+51         mpath\&.close();
+52     }
+53     if(usbModel == "")
+54         usbModel = "Keyboard";
+55     if(spath\&.open(QIODevice::ReadOnly)){
+56         usbSerial = spath\&.read(100);
+57         usbSerial = usbSerial\&.trimmed()\&.toUpper();
+58         spath\&.close();
+59     }
+60     if(usbSerial == "")
+61         usbSerial = "Unknown-" + usbModel;
+62     if(features\&.contains("fwversion") && fwpath\&.open(QIODevice::ReadOnly)){
+63         firmware = fwpath\&.read(100);
+64         firmware = QString::number(firmware\&.trimmed()\&.toInt() / 100\&., 'f', 2);
+65         fwpath\&.close();
+66     }
+67     if(features\&.contains("pollrate") && ppath\&.open(QIODevice::ReadOnly)){
+68         pollrate = ppath\&.read(100);
+69         pollrate = pollrate\&.trimmed();
+70         ppath\&.close();
+71     }
+72 
+73     prefsPath = "Devices/" + usbSerial;
+74 
+75     hwModeCount = (_model == KeyMap::K95) ? 3 : 1;
+76     // Open cmd in non-blocking mode so that it doesn't lock up if nothing is reading
+77     // (e\&.g\&. if the daemon crashed and didn't clean up the node)
+78     int fd = open(cmdpath\&.toLatin1()\&.constData(), O_WRONLY | O_NONBLOCK);
+79     if(!cmd\&.open(fd, QIODevice::WriteOnly, QFileDevice::AutoCloseHandle))
+80         return;
+81 
+82     // Find an available notification node (if none is found, take notify1)
+83     {
+84         QMutexLocker locker(&notifyPathMutex);
+85         for(int i = 1; i < 10; i++){
+86             QString notify = QString(path + "/notify%1")\&.arg(i);
+87             if(!QFile::exists(notify) && !notifyPaths\&.contains(notify)){
+88                 notifyNumber = i;
+89                 notifyPath = notify;
+90                 break;
+91             }
+92         }
+93         notifyPaths\&.insert(notifyPath);
+94     }
+95     cmd\&.write(QString("notifyon %1\n")\&.arg(notifyNumber)\&.toLatin1());
+96     cmd\&.flush();
+97 
+98     // Again, find an available notification node for macro definition
+99     // (if none is found, take notify2)
+100     {
+101         QMutexLocker locker(&notifyPathMutex);
+102         for(int i = 1; i < 10; i++){
+103             QString notify = QString(path + "/notify%1")\&.arg(i);
+104             if(!QFile::exists(notify) && !notifyPaths\&.contains(notify)){
+105                 macroNumber = i;
+106                 macroPath = notify;
+107                 break;
+108             }
+109         }
+110         notifyPaths\&.insert(notifyPath); 
+111     }
+112     // Activate device, apply settings, and ask for hardware profile
+113     cmd\&.write(QString("fps %1\n")\&.arg(_frameRate)\&.toLatin1());
+114     cmd\&.write(QString("dither %1\n")\&.arg(static_cast<int>(_dither))\&.toLatin1());
+115     cmd\&.write(QString("\ndelay %1\n")\&.arg(_delay? "on" : "off")\&.toLatin1());
+116 #ifdef Q_OS_MACX
+117     // Write ANSI/ISO flag to daemon (OSX only)
+118     cmd\&.write("layout ");
+119     cmd\&.write(KeyMap::isISO(_layout) ? "iso" : "ansi");
+120     // Also OSX only: scroll speed and mouse acceleration
+121     cmd\&.write(QString("accel %1\n")\&.arg(QString(_mouseAccel ? "on" : "off"))\&.toLatin1());
+122     cmd\&.write(QString("scrollspeed %1\n")\&.arg(_scrollSpeed)\&.toLatin1());
+123 #endif
+124     cmd\&.write(QString("\nactive\n@%1 get :hwprofileid")\&.arg(notifyNumber)\&.toLatin1());
+125     hwLoading[0] = true;
+126     for(int i = 0; i < hwModeCount; i++){
+127         cmd\&.write(QString(" mode %1 get :hwid")\&.arg(i + 1)\&.toLatin1());
+128         hwLoading[i + 1] = true;
+129     }
+130     // Ask for current indicator and key state
+131     cmd\&.write(" get :i :keys\n");
+132     cmd\&.flush();
+133 
+134     emit infoUpdated();
+135     activeDevices\&.insert(this);
+136 
+137     // Start a separate thread to read from the notification node
+138     start();
+139 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void Kb::appendProfile (\fBKbProfile\fP *newProfile)\fC [inline]\fP"
+
+.PP
+Definition at line 60 of file kb\&.h\&.
+.PP
+References _needsSave, and _profiles\&.
+.PP
+Referenced by KbProfileDialog::on_profileList_itemClicked()\&.
+.PP
+.nf
+60 { _needsSave = true; _profiles\&.append(newProfile); }
+.fi
+.SS "void Kb::autoSave ()\fC [slot]\fP"
+
+.PP
+Definition at line 289 of file kb\&.cpp\&.
+.PP
+References CkbSettings::isBusy(), lastAutoSave, needsSave(), and save()\&.
+.PP
+.nf
+289                  {
+290     quint64 now = QDateTime::currentMSecsSinceEpoch();
+291     if(needsSave() && now >= lastAutoSave + 15 * 1000 && !CkbSettings::isBusy()){
+292         save();
+293         lastAutoSave = now;
+294     }
+295 }
+.fi
+.SS "\fBKbBind\fP* Kb::currentBind ()\fC [inline]\fP"
+
+.PP
+Definition at line 67 of file kb\&.h\&.
+.PP
+References _currentMode, and KbMode::bind()\&.
+.PP
+Referenced by KbWidget::modeChanged()\&.
+.PP
+.nf
+67 { return !_currentMode ? 0 : _currentMode->bind(); }
+.fi
+.SS "\fBKbLight\fP* Kb::currentLight ()\fC [inline]\fP"
+
+.PP
+Definition at line 66 of file kb\&.h\&.
+.PP
+References _currentMode, and KbMode::light()\&.
+.PP
+Referenced by KbWidget::modeChanged()\&.
+.PP
+.nf
+66 { return !_currentMode ? 0 : _currentMode->light(); }
+.fi
+.SS "\fBKbMode\fP* Kb::currentMode ()\fC [inline]\fP"
+
+.PP
+Definition at line 65 of file kb\&.h\&.
+.PP
+References _currentMode\&.
+.PP
+Referenced by KbWidget::modeChanged()\&.
+.PP
+.nf
+65 { return _currentMode; }
+.fi
+.SS "\fBKbPerf\fP* Kb::currentPerf ()\fC [inline]\fP"
+
+.PP
+Definition at line 68 of file kb\&.h\&.
+.PP
+References _currentMode, and KbMode::perf()\&.
+.PP
+Referenced by KbWidget::modeChanged()\&.
+.PP
+.nf
+68 { return !_currentMode ? 0 : _currentMode->perf(); }
+.fi
+.SS "\fBKbProfile\fP* Kb::currentProfile ()\fC [inline]\fP"
+
+.PP
+Definition at line 56 of file kb\&.h\&.
+.PP
+References _currentProfile\&.
+.PP
+Referenced by KeyAction::keyEvent(), KbWidget::modeChanged(), KbWidget::modeIcon(), KbWidget::modesList_reordered(), KbWidget::on_modesList_currentItemChanged(), KbWidget::on_modesList_customContextMenuRequested(), KbWidget::on_modesList_itemClicked(), KbProfileDialog::on_profileList_customContextMenuRequested(), KbProfileDialog::on_profileList_itemChanged(), KbWidget::profileChanged(), KbProfileDialog::repopulate(), and KbWidget::updateProfileList()\&.
+.PP
+.nf
+56 { return _currentProfile; }
+.fi
+.SS "void Kb::deleteHw ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 441 of file kb\&.cpp\&.
+.PP
+References _hwProfile\&.
+.PP
+Referenced by hwProfile()\&.
+.PP
+.nf
+441                  {
+442     disconnect(_hwProfile, SIGNAL(destroyed()), this, SLOT(deleteHw()));
+443     _hwProfile = 0;
+444 }
+.fi
+.SS "void Kb::deletePrevious ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 426 of file kb\&.cpp\&.
+.PP
+References prevMode\&.
+.PP
+Referenced by frameUpdate(), and hwSave()\&.
+.PP
+.nf
+426                        {
+427     disconnect(prevMode, SIGNAL(destroyed()), this, SLOT(deletePrevious()));
+428     prevMode = 0;
+429 }
+.fi
+.SS "static bool Kb::dither ()\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line 33 of file kb\&.h\&.
+.PP
+References _dither\&.
+.PP
+Referenced by ExtraSettingsWidget::ExtraSettingsWidget(), and ExtraSettingsWidget::on_ditherBox_clicked()\&.
+.PP
+.nf
+33 { return _dither; }
+.fi
+.SS "void Kb::dither (boolnewDither)\fC [static]\fP"
+
+.PP
+Definition at line 204 of file kb\&.cpp\&.
+.PP
+References _dither, activeDevices, and cmd\&.
+.PP
+.nf
+204                              {
+205     if(newDither == _dither)
+206         return;
+207     _dither = newDither;
+208     // Update all devices
+209     foreach(Kb* kb, activeDevices){
+210         kb->cmd\&.write(QString("dither %1\n")\&.arg(static_cast<int>(newDither))\&.toLatin1());
+211         kb->cmd\&.flush();
+212     }
+213 }
+.fi
+.SS "\fBKbProfile\fP* Kb::find (const QUuid &id)\fC [inline]\fP"
+
+.PP
+Definition at line 62 of file kb\&.h\&.
+.PP
+References _profiles, UsbId::guid, and KbProfile::id()\&.
+.PP
+Referenced by KbProfileDialog::on_profileList_currentItemChanged(), KbProfileDialog::on_profileList_customContextMenuRequested(), and KbProfileDialog::profileList_reordered()\&.
+.PP
+.nf
+62 { foreach(KbProfile* profile, _profiles) { if(profile->id()\&.guid == id) return profile; } return 0; }
+.fi
+.SS "static int Kb::frameRate ()\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line 27 of file kb\&.h\&.
+.PP
+References _frameRate\&.
+.PP
+Referenced by ExtraSettingsWidget::ExtraSettingsWidget(), and ExtraSettingsWidget::on_fpsBox_valueChanged()\&.
+.PP
+.nf
+27 { return _frameRate; }
+.fi
+.SS "void Kb::frameRate (intnewFrameRate)\fC [static]\fP"
+
+.PP
+Definition at line 165 of file kb\&.cpp\&.
+.PP
+References _frameRate, activeDevices, cmd, and KbManager::fps()\&.
+.PP
+.nf
+165                                   {
+166     KbManager::fps(newFrameRate);
+167     // If the rate has changed, send to all devices
+168     if(newFrameRate == _frameRate)
+169         return;
+170     _frameRate = newFrameRate;
+171     foreach(Kb* kb, activeDevices){
+172         kb->cmd\&.write(QString("fps %1\n")\&.arg(newFrameRate)\&.toLatin1());
+173         kb->cmd\&.flush();
+174     }
+175 }
+.fi
+.SS "void Kb::frameUpdate ()\fC [slot]\fP"
+
+.PP
+Definition at line 375 of file kb\&.cpp\&.
+.PP
+References _currentMode, _currentProfile, KbPerf::applyIndicators(), KbMode::bind(), KbLight::close(), deletePrevious(), KbLight::frameUpdate(), KbProfile::indexOf(), KbLight::isStarted(), iState, KbMode::light(), monochrome, notifyNumber, KbLight::open(), KbMode::perf(), prevMode, prevProfile, KbBind::update(), KbPerf::update(), and writeProfileHeader()\&.
+.PP
+.nf
+375                     {
+376     // Advance animation frame
+377     if(!_currentMode)
+378         return;
+379     KbLight* light = _currentMode->light();
+380     KbBind* bind = _currentMode->bind();
+381     KbPerf* perf = _currentMode->perf();
+382     if(!light->isStarted()){
+383         // Don't do anything until the animations are started
+384         light->open();
+385         return;
+386     }
+387 
+388     // Stop animations on the previously active mode (if any)
+389     bool changed = false;
+390     if(prevMode != _currentMode){
+391         if(prevMode){
+392             prevMode->light()->close();
+393             disconnect(prevMode, SIGNAL(destroyed()), this, SLOT(deletePrevious()));
+394         }
+395         prevMode = _currentMode;
+396         connect(prevMode, SIGNAL(destroyed()), this, SLOT(deletePrevious()));
+397         changed = true;
+398     }
+399 
+400     // If the profile has changed, update it
+401     if(prevProfile != _currentProfile){
+402         writeProfileHeader();
+403         cmd\&.write(" ");
+404         prevProfile = _currentProfile;
+405     }
+406 
+407     // Update current mode
+408     int index = _currentProfile->indexOf(_currentMode);
+409     // ckb-daemon only has 6 modes: 3 hardware, 3 non-hardware\&. Beyond mode six, switch back to four\&.
+410     // e\&.g\&. 1, 2, 3, 4, 5, 6, 4, 5, 6, 4, 5, 6 \&.\&.\&.
+411     if(index >= 6)
+412         index = 3 + index % 3;
+413 
+414     // Send lighting/binding to driver
+415     cmd\&.write(QString("mode %1 switch ")\&.arg(index + 1)\&.toLatin1());
+416     perf->applyIndicators(index, iState);
+417     light->frameUpdate(cmd, monochrome);
+418     cmd\&.write(QString("\n@%1 ")\&.arg(notifyNumber)\&.toLatin1());
+419     bind->update(cmd, changed);
+420     cmd\&.write(" ");
+421     perf->update(cmd, changed);
+422     cmd\&.write("\n");
+423     cmd\&.flush();
+424 }
+.fi
+.SS "void Kb::fwUpdate (const QString &path)"
+
+.PP
+Definition at line 365 of file kb\&.cpp\&.
+.PP
+References fwUpdPath, and notifyNumber\&.
+.PP
+Referenced by FwUpgradeDialog::on_actionButton_clicked()\&.
+.PP
+.nf
+365                                     {
+366     fwUpdPath = path;
+367     // Write the active command to ensure it's not ignored
+368     cmd\&.write("active");
+369     cmd\&.write(QString(" @%1 ")\&.arg(notifyNumber)\&.toLatin1());
+370     cmd\&.write("fwupdate ");
+371     cmd\&.write(path\&.toLatin1());
+372     cmd\&.write("\n");
+373 }
+.fi
+.SS "void Kb::fwUpdateFinished (boolsucceeded)\fC [signal]\fP"
+
+.PP
+Definition at line 277 of file moc_kb\&.cpp\&.
+.PP
+Referenced by readNotify()\&.
+.PP
+.nf
+278 {
+279     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+280     QMetaObject::activate(this, &staticMetaObject, 7, _a);
+281 }
+.fi
+.SS "void Kb::fwUpdateProgress (intcurrent, inttotal)\fC [signal]\fP"
+
+.PP
+Definition at line 270 of file moc_kb\&.cpp\&.
+.PP
+Referenced by readNotify()\&.
+.PP
+.nf
+271 {
+272     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+273     QMetaObject::activate(this, &staticMetaObject, 6, _a);
+274 }
+.fi
+.SS "\fBKeyMap\fP Kb::getKeyMap ()\fC [private]\fP"
+
+.PP
+Definition at line 756 of file kb\&.cpp\&.
+.PP
+References _layout\&.
+.PP
+Referenced by hwSave(), load(), newMode(), newProfile(), readNotify(), setCurrentProfile(), and updateLayout()\&.
+.PP
+.nf
+756                     {
+757     return KeyMap(_model, _layout);
+758 }
+.fi
+.SS "int Kb::getMacroNumber ()\fC [inline]\fP"
+getMacroNumber returns the macroNumber, which we have saved in the constructor\&. For usage with macro definions, this param must only be readable\&. So there is no setter\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+The Number is returned as int\&. 
+.RE
+.PP
+
+.PP
+Definition at line 97 of file kb\&.h\&.
+.PP
+References macroNumber\&.
+.PP
+Referenced by KbBind::getMacroNumber()\&.
+.PP
+.nf
+97 { return macroNumber; }
+.fi
+.SS "QString Kb::getMacroPath ()\fC [inline]\fP"
+
+.PP
+\fBReturns:\fP
+.RS 4
+The absolute path as String 
+.RE
+.PP
+
+.PP
+Definition at line 106 of file kb\&.h\&.
+.PP
+References macroPath\&.
+.PP
+Referenced by KbBind::getMacroPath()\&.
+.PP
+.nf
+106 { return macroPath; }
+.fi
+.SS "\fBKbProfile\fP* Kb::hwProfile ()\fC [inline]\fP"
+
+.PP
+Definition at line 46 of file kb\&.h\&.
+.PP
+References _hwProfile\&.
+.PP
+Referenced by hwSave(), KbWidget::modeIcon(), KbProfileDialog::on_profileList_customContextMenuRequested(), readNotify(), KbProfileDialog::repopulate(), and KbWidget::updateProfileList()\&.
+.PP
+.nf
+46 { return _hwProfile; }
+.fi
+.SS "void Kb::hwProfile (\fBKbProfile\fP *newHwProfile)"
+
+.PP
+Definition at line 431 of file kb\&.cpp\&.
+.PP
+References _hwProfile, and deleteHw()\&.
+.PP
+.nf
+431                                          {
+432     if(_hwProfile == newHwProfile)
+433         return;
+434     if(_hwProfile)
+435         disconnect(_hwProfile, SIGNAL(destroyed()), this, SLOT(deleteHw()));
+436     _hwProfile = newHwProfile;
+437     if(_hwProfile)
+438         connect(_hwProfile, SIGNAL(destroyed()), this, SLOT(deleteHw()));
+439 }
+.fi
+.SS "void Kb::hwSave ()"
+
+.PP
+Definition at line 297 of file kb\&.cpp\&.
+.PP
+References _currentMode, _currentProfile, _hwProfile, KbProfile::append(), KbLight::base(), KbLight::close(), deletePrevious(), getKeyMap(), UsbId::guidString(), hwModeCount, UsbId::hwModified, hwProfile(), KbProfile::id(), KbMode::id(), KbMode::light(), KbProfile::modeCount(), KbProfile::modes(), UsbId::modified, UsbId::modifiedString(), monochrome, KbMode::name(), KbMode::perf(), prevMode, KbProfile::setNeedsSave(), KbMode::setNeedsSave(), KbPerf::update(), and writeProfileHeader()\&.
+.PP
+Referenced by KbWidget::on_hwSaveButton_clicked(), and KbProfileDialog::on_profileList_customContextMenuRequested()\&.
+.PP
+.nf
+297                {
+298     if(!_currentProfile)
+299         return;
+300     // Close active lighting (if any)
+301     if(prevMode){
+302         prevMode->light()->close();
+303         deletePrevious();
+304     }
+305     hwProfile(_currentProfile);
+306     _hwProfile->id()\&.hwModified = _hwProfile->id()\&.modified;
+307     _hwProfile->setNeedsSave();
+308     // Re-send the current profile from scratch to ensure consistency
+309     writeProfileHeader();
+310     // Make sure there are enough modes
+311     while(_currentProfile->modeCount() < hwModeCount)
+312         _currentProfile->append(new KbMode(this, getKeyMap()));
+313     // Write only the base colors of each mode, no animations
+314     for(int i = 0; i < hwModeCount; i++){
+315         KbMode* mode = _currentProfile->modes()[i];
+316         cmd\&.write(QString("\nmode %1")\&.arg(i + 1)\&.toLatin1());
+317         KbLight* light = mode->light();
+318         KbPerf* perf = mode->perf();
+319         if(mode == _currentMode)
+320             cmd\&.write(" switch");
+321         // Write the mode name and ID
+322         cmd\&.write(" name ");
+323         cmd\&.write(QUrl::toPercentEncoding(mode->name()));
+324         cmd\&.write(" id ");
+325         cmd\&.write(mode->id()\&.guidString()\&.toLatin1());
+326         cmd\&.write(" ");
+327         cmd\&.write(mode->id()\&.modifiedString()\&.toLatin1());
+328         cmd\&.write(" ");
+329         // Write lighting and performance
+330         light->base(cmd, true, monochrome);
+331         cmd\&.write(" ");
+332         perf->update(cmd, true, false);
+333         // Update mode ID
+334         mode->id()\&.hwModified = mode->id()\&.modified;
+335         mode->setNeedsSave();
+336     }
+337     cmd\&.write("\n");
+338 
+339     // Save the profile to memory
+340     cmd\&.write("hwsave\n");
+341     cmd\&.flush();
+342 }
+.fi
+.SS "int Kb::indexOf (\fBKbProfile\fP *profile)\fC [inline]\fP"
+
+.PP
+Definition at line 61 of file kb\&.h\&.
+.PP
+References _profiles\&.
+.PP
+Referenced by KbProfileDialog::on_profileList_customContextMenuRequested()\&.
+.PP
+.nf
+61 { return _profiles\&.indexOf(profile); }
+.fi
+.SS "void Kb::infoUpdated ()\fC [signal]\fP"
+
+.PP
+Definition at line 233 of file moc_kb\&.cpp\&.
+.PP
+Referenced by Kb(), load(), and updateLayout()\&.
+.PP
+.nf
+234 {
+235     QMetaObject::activate(this, &staticMetaObject, 0, Q_NULLPTR);
+236 }
+.fi
+.SS "bool Kb::isKeyboard () const\fC [inline]\fP"
+
+.PP
+Definition at line 23 of file kb\&.h\&.
+.PP
+References KeyMap::isKeyboard()\&.
+.PP
+Referenced by KbWidget::KbWidget()\&.
+.PP
+.nf
+23 { return KeyMap::isKeyboard(_model); }
+.fi
+.SS "bool Kb::isMouse () const\fC [inline]\fP"
+
+.PP
+Definition at line 24 of file kb\&.h\&.
+.PP
+References KeyMap::isMouse()\&.
+.PP
+Referenced by KbWidget::KbWidget(), and readNotify()\&.
+.PP
+.nf
+24 { return KeyMap::isMouse(_model); }
+.fi
+.SS "bool Kb::isOpen () const\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 147 of file kb\&.h\&.
+.PP
+Referenced by KbManager::scanKeyboards(), and ~Kb()\&.
+.PP
+.nf
+147 { return cmd\&.isOpen(); }
+.fi
+.SS "static \fBKeyMap::Layout\fP Kb::layout ()\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line 30 of file kb\&.h\&.
+.PP
+References _layout\&.
+.PP
+Referenced by LayoutDialog::LayoutDialog(), SettingsWidget::on_layoutBox_activated(), and SettingsWidget::SettingsWidget()\&.
+.PP
+.nf
+30 { return _layout; }
+.fi
+.SS "void Kb::layout (\fBKeyMap::Layout\fPnewLayout)\fC [static]\fP"
+
+.PP
+Definition at line 177 of file kb\&.cpp\&.
+.PP
+References _layout, activeDevices, KeyMap::NO_LAYOUT, and updateLayout()\&.
+.PP
+.nf
+177                                      {
+178     if(newLayout == KeyMap::NO_LAYOUT || newLayout == _layout)
+179         return;
+180     _layout = newLayout;
+181     // Update all devices
+182     foreach(Kb* kb, activeDevices)
+183         kb->updateLayout();
+184 }
+.fi
+.SS "void Kb::load ()"
+
+.PP
+Definition at line 241 of file kb\&.cpp\&.
+.PP
+References _needsSave, _profiles, current, getKeyMap(), infoUpdated(), prefsPath, profileAdded(), setCurrentProfile(), and CkbSettings::value()\&.
+.PP
+Referenced by KbManager::scanKeyboards()\&.
+.PP
+.nf
+241              {
+242     if(prefsPath\&.isEmpty())
+243         return;
+244     _needsSave = false;
+245     CkbSettings settings(prefsPath);
+246     // Read profiles
+247     KbProfile* newCurrentProfile = 0;
+248     QString current = settings\&.value("CurrentProfile")\&.toString()\&.trimmed()\&.toUpper();
+249     foreach(QString guid, settings\&.value("Profiles")\&.toString()\&.split(" ")){
+250         guid = guid\&.trimmed()\&.toUpper();
+251         if(guid != ""){
+252             KbProfile* profile = new KbProfile(this, getKeyMap(), settings, guid);
+253             _profiles\&.append(profile);
+254             if(guid == current || !newCurrentProfile)
+255                 newCurrentProfile = profile;
+256         }
+257     }
+258     if(newCurrentProfile)
+259         setCurrentProfile(newCurrentProfile);
+260     else {
+261         // If nothing was loaded, load the demo profile
+262         QSettings demoSettings(":/txt/demoprofile\&.conf", QSettings::IniFormat, this);
+263         CkbSettings cSettings(demoSettings);
+264         KbProfile* demo = new KbProfile(this, getKeyMap(), cSettings, "{BA7FC152-2D51-4C26-A7A6-A036CC93D924}");
+265         _profiles\&.append(demo);
+266         setCurrentProfile(demo);
+267     }
+268 
+269     emit infoUpdated();
+270     emit profileAdded();
+271 }
+.fi
+.SS "static bool Kb::macroDelay ()\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line 36 of file kb\&.h\&.
+.PP
+References _delay\&.
+.PP
+Referenced by ExtraSettingsWidget::ExtraSettingsWidget(), and ExtraSettingsWidget::on_delayBox_clicked()\&.
+.PP
+.nf
+36 { return _delay; }
+.fi
+.SS "void Kb::macroDelay (boolflag)\fC [static]\fP"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIflag\fP true: Switch on delay function, else switch off 
+.RE
+.PP
+
+.PP
+Definition at line 787 of file kb\&.cpp\&.
+.PP
+References _delay, activeDevices, and cmd\&.
+.PP
+.nf
+787                              {
+788    _delay = flag;
+789 
+790    foreach(Kb* kb, activeDevices){
+791        kb->cmd\&.write(QString("\ndelay %1\n")\&.arg(flag? "on" : "off")\&.toLatin1());
+792    }
+793 }
+.fi
+.SS "bool Kb::matches (const QString &path, const QString &serial)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 157 of file kb\&.h\&.
+.PP
+References devpath, and usbSerial\&.
+.PP
+Referenced by KbManager::scanKeyboards()\&.
+.PP
+.nf
+157 { return path\&.trimmed() == devpath\&.trimmed() && usbSerial == serial\&.trimmed()\&.toUpper(); }
+.fi
+.SS "void Kb::modeChanged (boolspontaneous)\fC [signal]\fP"
+
+.PP
+Definition at line 263 of file moc_kb\&.cpp\&.
+.PP
+Referenced by setCurrentMode()\&.
+.PP
+.nf
+264 {
+265     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+266     QMetaObject::activate(this, &staticMetaObject, 5, _a);
+267 }
+.fi
+.SS "\fBKeyMap::Model\fP Kb::model () const\fC [inline]\fP"
+
+.PP
+Definition at line 22 of file kb\&.h\&.
+.PP
+References _model\&.
+.PP
+.nf
+22 { return _model; }
+.fi
+.SS "void Kb::modeRenamed ()\fC [signal]\fP"
+
+.PP
+Definition at line 251 of file moc_kb\&.cpp\&.
+.PP
+Referenced by readNotify()\&.
+.PP
+.nf
+252 {
+253     QMetaObject::activate(this, &staticMetaObject, 3, Q_NULLPTR);
+254 }
+.fi
+.SS "static bool Kb::mouseAccel ()\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line 39 of file kb\&.h\&.
+.PP
+References _mouseAccel\&.
+.PP
+Referenced by ExtraSettingsWidget::ExtraSettingsWidget(), and ExtraSettingsWidget::on_mAccelBox_clicked()\&.
+.PP
+.nf
+39 { return _mouseAccel; }
+.fi
+.SS "void Kb::mouseAccel (boolnewAccel)\fC [static]\fP"
+
+.PP
+Definition at line 215 of file kb\&.cpp\&.
+.PP
+References _mouseAccel, activeDevices, and cmd\&.
+.PP
+.nf
+215                                 {
+216     if(newAccel == _mouseAccel)
+217         return;
+218     _mouseAccel = newAccel;
+219 #ifdef Q_OS_MACX
+220     // Update all devices
+221     foreach(Kb* kb, activeDevices){
+222         kb->cmd\&.write(QString("accel %1\n")\&.arg(QString(newAccel ? "on" : "off"))\&.toLatin1());
+223         kb->cmd\&.flush();
+224     }
+225 #endif
+226 }
+.fi
+.SS "bool Kb::needsSave () const"
+
+.PP
+Definition at line 344 of file kb\&.cpp\&.
+.PP
+References _needsSave, _profiles, and KbProfile::needsSave()\&.
+.PP
+Referenced by autoSave()\&.
+.PP
+.nf
+344                          {
+345     if(_needsSave)
+346         return true;
+347     foreach(const KbProfile* profile, _profiles){
+348         if(profile->needsSave())
+349             return true;
+350     }
+351     return false;
+352 }
+.fi
+.SS "\fBKbMode\fP* Kb::newMode ()\fC [inline]\fP"
+
+.PP
+Definition at line 79 of file kb\&.h\&.
+.PP
+References getKeyMap()\&.
+.PP
+Referenced by KbWidget::on_modesList_customContextMenuRequested(), and KbWidget::on_modesList_itemClicked()\&.
+.PP
+.nf
+79 { return new KbMode(this, getKeyMap()); }
+.fi
+.SS "\fBKbMode\fP* Kb::newMode (\fBKbMode\fP *other)\fC [inline]\fP"
+
+.PP
+Definition at line 80 of file kb\&.h\&.
+.PP
+References getKeyMap()\&.
+.PP
+.nf
+80 { return new KbMode(this, getKeyMap(), *other); }
+.fi
+.SS "\fBKbProfile\fP* Kb::newProfile ()\fC [inline]\fP"
+
+.PP
+Definition at line 77 of file kb\&.h\&.
+.PP
+References getKeyMap()\&.
+.PP
+Referenced by KbProfileDialog::on_profileList_customContextMenuRequested(), KbProfileDialog::on_profileList_itemClicked(), and readNotify()\&.
+.PP
+.nf
+77 { return new KbProfile(this, getKeyMap()); }
+.fi
+.SS "\fBKbProfile\fP* Kb::newProfile (\fBKbProfile\fP *other)\fC [inline]\fP"
+
+.PP
+Definition at line 78 of file kb\&.h\&.
+.PP
+References getKeyMap()\&.
+.PP
+.nf
+78 { return new KbProfile(this, getKeyMap(), *other); }
+.fi
+.SS "void Kb::profileAdded ()\fC [signal]\fP"
+
+.PP
+Definition at line 239 of file moc_kb\&.cpp\&.
+.PP
+Referenced by load(), and readNotify()\&.
+.PP
+.nf
+240 {
+241     QMetaObject::activate(this, &staticMetaObject, 1, Q_NULLPTR);
+242 }
+.fi
+.SS "void Kb::profileChanged ()\fC [signal]\fP"
+
+.PP
+Definition at line 257 of file moc_kb\&.cpp\&.
+.PP
+Referenced by readNotify(), and setCurrentMode()\&.
+.PP
+.nf
+258 {
+259     QMetaObject::activate(this, &staticMetaObject, 4, Q_NULLPTR);
+260 }
+.fi
+.SS "void Kb::profileRenamed ()\fC [signal]\fP"
+
+.PP
+Definition at line 245 of file moc_kb\&.cpp\&.
+.PP
+Referenced by readNotify()\&.
+.PP
+.nf
+246 {
+247     QMetaObject::activate(this, &staticMetaObject, 2, Q_NULLPTR);
+248 }
+.fi
+.SS "const QList<\fBKbProfile\fP*>& Kb::profiles () const\fC [inline]\fP"
+
+.PP
+Definition at line 58 of file kb\&.h\&.
+.PP
+References _profiles\&.
+.PP
+Referenced by KbWidget::on_profileBox_activated(), KbProfileDialog::on_profileList_customContextMenuRequested(), KbProfileDialog::profileList_reordered(), KbProfileDialog::repopulate(), and KbWidget::updateProfileList()\&.
+.PP
+.nf
+58 { return _profiles; }
+.fi
+.SS "void Kb::profiles (const QList< \fBKbProfile\fP * > &newProfiles)\fC [inline]\fP"
+
+.PP
+Definition at line 59 of file kb\&.h\&.
+.PP
+References _needsSave, and _profiles\&.
+.PP
+.nf
+59 { _needsSave = true; _profiles = newProfiles; }
+.fi
+.SS "void Kb::readNotify (QStringline)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 471 of file kb\&.cpp\&.
+.PP
+References _currentMode, _currentProfile, _hwProfile, _needsSave, _profiles, KbPerf::angleSnap(), KbLight::animKeypress(), KbProfile::append(), KbMode::bind(), KbLight::color(), KbPerf::curDpiIdx(), KbPerf::dpi(), KbPerf::DPI_COUNT, KbPerf::dpiColor(), KbPerf::dpiEnabled(), fwUpdateFinished(), fwUpdateProgress(), fwUpdPath, getKeyMap(), UsbId::guid, hwLoading, HWMODE_MAX, hwModeCount, UsbId::hwModifiedString(), hwProfile(), KbProfile::id(), KbMode::id(), KbProfile::indexOf(), isMouse(), iState, KbBind::keyEvent(), KbPerf::liftHeight(), KbMode::light(), KbProfile::modeCount(), modeRenamed(), KbProfile::modes(), UsbId::modifiedString(), KbProfile::move(), KbProfile::name(), KbMode::name(), newProfile(), notifyNumber, KbMode::perf(), profileAdded(), profileChanged(), profileRenamed(), setCurrentProfile(), KbProfile::setNeedsSave(), KbMode::setNeedsSave(), x, and y\&.
+.PP
+.nf
+471                                {
+472     QStringList components = line\&.trimmed()\&.split(" ");
+473     if(components\&.count() < 2)
+474         return;
+475     if(components[0] == "key"){
+476         // Key event
+477         QString key = components[1];
+478         if(key\&.length() < 2)
+479             return;
+480         QString keyName = key\&.mid(1);
+481         bool keyPressed = (key[0] == '+');
+482         KbMode* mode = _currentMode;
+483         if(mode){
+484             mode->light()->animKeypress(keyName, keyPressed);
+485             mode->bind()->keyEvent(keyName, keyPressed);
+486         }
+487     } else if(components[0] == "i"){
+488         // Indicator event
+489         QString i = components[1];
+490         if(i\&.length() < 2)
+491             return;
+492         QString iName = i\&.mid(1);
+493         bool on = (i[0] == '+');
+494         if(iName == "num")
+495             iState[0] = on;
+496         else if(iName == "caps")
+497             iState[1] = on;
+498         else if(iName == "scroll")
+499             iState[2] = on;
+500     } else if(components[0] == "hwprofileid"){
+501         // Hardware profile ID
+502         if(components\&.count() < 3)
+503             return;
+504         // Find the hardware profile in the list of profiles
+505         QString guid = components[1];
+506         QString modified = components[2];
+507         KbProfile* newProfile = 0;
+508         foreach(KbProfile* profile, _profiles){
+509             if(profile->id()\&.guid == guid){
+510                 newProfile = profile;
+511                 break;
+512             }
+513         }
+514         // If it wasn't found, create it
+515         if(!newProfile){
+516             newProfile = new KbProfile(this, getKeyMap(), guid, modified);
+517             hwLoading[0] = true;
+518             cmd\&.write(QString("@%1 get :hwprofilename\n")\&.arg(notifyNumber)\&.toLatin1());
+519             cmd\&.flush();
+520         } else {
+521             // If it's been updated, fetch its name
+522             if(newProfile->id()\&.hwModifiedString() != modified){
+523                 newProfile->id()\&.modifiedString(modified);
+524                 newProfile->id()\&.hwModifiedString(modified);
+525                 newProfile->setNeedsSave();
+526                 if(hwLoading[0]){
+527                     cmd\&.write(QString("@%1 get :hwprofilename\n")\&.arg(notifyNumber)\&.toLatin1());
+528                     cmd\&.flush();
+529                 }
+530             } else {
+531                 hwLoading[0] = false;
+532             }
+533         }
+534         hwProfile(newProfile);
+535         emit profileAdded();
+536         if(_hwProfile == _currentProfile)
+537             emit profileChanged();
+538     } else if(components[0] == "hwprofilename"){
+539         // Hardware profile name
+540         QString name = QUrl::fromPercentEncoding(components[1]\&.toUtf8());
+541         if(!_hwProfile || !hwLoading[0])
+542             return;
+543         QString oldName = _hwProfile->name();
+544         if(!(oldName\&.length() >= name\&.length() && oldName\&.left(name\&.length()) == name)){
+545             // Don't change the name if it's a truncated version of what we already have
+546             _hwProfile->name(name);
+547             emit profileRenamed();
+548         }
+549     } else if(components[0] == "mode"){
+550         // Mode-specific data
+551         if(components\&.count() < 4)
+552             return;
+553         int mode = components[1]\&.toInt() - 1;
+554         if(components[2] == "hwid"){
+555             if(components\&.count() < 5 || mode >= HWMODE_MAX || !_hwProfile)
+556                 return;
+557             // Hardware mode ID
+558             QString guid = components[3];
+559             QString modified = components[4];
+560             // Look for this mode in the hardware profile
+561             KbMode* hwMode = 0;
+562             bool isUpdated = false;
+563             foreach(KbMode* kbMode, _hwProfile->modes()){
+564                 if(kbMode->id()\&.guid == guid){
+565                     hwMode = kbMode;
+566                     if(kbMode->id()\&.hwModifiedString() != modified){
+567                         // Update modification time
+568                         hwMode->id()\&.modifiedString(modified);
+569                         hwMode->id()\&.hwModifiedString(modified);
+570                         hwMode->setNeedsSave();
+571                         isUpdated = true;
+572                     } else {
+573                         hwLoading[mode + 1] = false;
+574                     }
+575                     break;
+576                 }
+577             }
+578             // If it wasn't found, add it
+579             if(!hwMode){
+580                 isUpdated = true;
+581                 hwMode = new KbMode(this, getKeyMap(), guid, modified);
+582                 _hwProfile->append(hwMode);
+583                 // If the hardware profile now contains enough modes to be added to the list, do so
+584                 if(!_profiles\&.contains(_hwProfile) && _hwProfile->modeCount() >= hwModeCount){
+585                     _profiles\&.append(_hwProfile);
+586                     _needsSave = true;
+587                     emit profileAdded();
+588                     if(!_currentProfile)
+589                         setCurrentProfile(_hwProfile);
+590                 }
+591             }
+592             if(hwLoading[mode + 1] && isUpdated){
+593                 // If the mode isn't in the right place, move it
+594                 int index = _hwProfile->indexOf(hwMode);
+595                 if(mode < _hwProfile->modeCount() && index != mode)
+596                     _hwProfile->move(index, mode);
+597                 // Fetch the updated data
+598                 cmd\&.write(QString("@%1 mode %2 get :hwname :hwrgb")\&.arg(notifyNumber)\&.arg(mode + 1)\&.toLatin1());
+599                 if(isMouse())
+600                     cmd\&.write(" :hwdpi :hwdpisel :hwlift :hwsnap");
+601                 cmd\&.write("\n");
+602                 cmd\&.flush();
+603             }
+604         } else if(components[2] == "hwname"){
+605             // Mode name - update list
+606             if(!_hwProfile || _hwProfile->modeCount() <= mode || mode >= HWMODE_MAX || !hwLoading[mode + 1])
+607                 return;
+608             KbMode* hwMode = _hwProfile->modes()[mode];
+609             QString name = QUrl::fromPercentEncoding(components[3]\&.toUtf8());
+610             QString oldName = hwMode->name();
+611             if(!(oldName\&.length() >= name\&.length() && oldName\&.left(name\&.length()) == name)){
+612                 // Don't change the name if it's a truncated version of what we already have
+613                 hwMode->name(name);
+614                 if(_hwProfile == _currentProfile)
+615                     emit modeRenamed();
+616             }
+617         } else if(components[2] == "hwrgb"){
+618             // RGB - set mode lighting
+619             if(!_hwProfile || _hwProfile->modeCount() <= mode || mode >= HWMODE_MAX || !hwLoading[mode + 1])
+620                 return;
+621             KbMode* kbmode = _hwProfile->modes()[mode];
+622             KbLight* light = kbmode->light();
+623             // Scan the input for colors
+624             QColor lightColor = QColor();
+625             for(int i = 3; i < components\&.count(); i++){
+626                 QString comp = components[i];
+627                 if(comp\&.indexOf(":") < 0){
+628                     // No ":" - single hex constant
+629                     bool ok;
+630                     int rgb = comp\&.toInt(&ok, 16);
+631                     if(ok)
+632                         light->color(QColor::fromRgb((QRgb)rgb));
+633                 } else {
+634                     // List of keys ("a,b:xxxxxx")\&. Parse color first
+635                     QStringList set = comp\&.split(":");
+636                     bool ok;
+637                     int rgb = set[1]\&.toInt(&ok, 16);
+638                     if(ok){
+639                         QColor color = QColor::fromRgb((QRgb)rgb);
+640                         // Parse keys
+641                         QStringList keys = set[0]\&.split(",");
+642                         foreach(QString key, keys){
+643                             if(key == "light")
+644                                 // Extrapolate the Light key to the M-keys and Lock key, since those will be set to black on hwsave
+645                                 lightColor = color;
+646                             if(key\&.startsWith("dpi") && key\&.length() > 3){
+647                                 // DPI levels go to the KbPerf object instead of KbLight
+648                                 bool ok = false;
+649                                 int index = key\&.mid(3)\&.toInt(&ok);
+650                                 if(ok)
+651                                     kbmode->perf()->dpiColor(index, color);
+652                                 continue;
+653                             }
+654                             light->color(key, color);
+655                         }
+656                     }
+657                 }
+658             }
+659             if(lightColor\&.isValid()){
+660                 light->color("mr", lightColor);
+661                 light->color("m1", lightColor);
+662                 light->color("m2", lightColor);
+663                 light->color("m3", lightColor);
+664                 light->color("lock", lightColor);
+665             }
+666         } else if(components[2] == "hwdpi"){
+667             // DPI settings
+668             if(!_hwProfile || _hwProfile->modeCount() <= mode || mode >= HWMODE_MAX || !hwLoading[mode + 1])
+669                 return;
+670             KbPerf* perf = _hwProfile->modes()[mode]->perf();
+671             // Read the rest of the line as stage:x,y
+672             foreach(QString comp, components\&.mid(3)){
+673                 QStringList dpi = comp\&.split(':');
+674                 if(dpi\&.length() != 2)
+675                     continue;
+676                 QStringList xy = dpi[1]\&.split(',');
+677                 int x, y;
+678                 bool off = false;
+679                 if(xy\&.length() < 2){
+680                     // If the right side only has one parameter, set both X and Y
+681                     if(xy[0] == "off")
+682                         off = true;
+683                     else
+684                         x = y = xy[0]\&.toInt();
+685                 } else {
+686                     x = xy[0]\&.toInt();
+687                     y = xy[1]\&.toInt();
+688                 }
+689                 // Set DPI for this stage
+690                 int index = dpi[0]\&.toInt();
+691                 if(off){
+692                     perf->dpiEnabled(index, false);
+693                     // If all DPIs have been disabled, turn them back on
+694                     bool allOff = true;
+695                     for(int i = 1; i < KbPerf::DPI_COUNT; i++){
+696                         if(perf->dpiEnabled(i)){
+697                             allOff = false;
+698                             break;
+699                         }
+700                     }
+701                     if(allOff){
+702                         for(int i = 1; i < KbPerf::DPI_COUNT; i++)
+703                             perf->dpiEnabled(i, true);
+704                     }
+705                 } else {
+706                     perf->dpiEnabled(index, true);
+707                     perf->dpi(index, QPoint(x, y));
+708                 }
+709             }
+710         } else if(components[2] == "hwdpisel"){
+711             // Hardware DPI selection (0\&.\&.\&.5)
+712             if(!_hwProfile || _hwProfile->modeCount() <= mode || mode >= HWMODE_MAX || !hwLoading[mode + 1])
+713                 return;
+714             KbPerf* perf = _hwProfile->modes()[mode]->perf();
+715             int idx = components[3]\&.toInt();
+716             if(idx < 1)
+717                 idx = 1;
+718             if(idx >= KbPerf::DPI_COUNT)
+719                 idx = KbPerf::DPI_COUNT - 1;
+720             perf->curDpiIdx(idx);
+721         } else if(components[2] == "hwlift"){
+722             // Mouse lift height (1\&.\&.\&.5)
+723             if(!_hwProfile || _hwProfile->modeCount() <= mode || mode >= HWMODE_MAX || !hwLoading[mode + 1])
+724                 return;
+725             KbPerf* perf = _hwProfile->modes()[mode]->perf();
+726             perf->liftHeight((KbPerf::height)components[3]\&.toInt());
+727         } else if(components[3] == "hwsnap"){
+728             // Mouse angle snapping ("on" or "off")
+729             if(!_hwProfile || _hwProfile->modeCount() <= mode || mode >= HWMODE_MAX || !hwLoading[mode + 1])
+730                 return;
+731             KbPerf* perf = _hwProfile->modes()[mode]->perf();
+732             perf->angleSnap(components[3] == "on");
+733         }
+734     } else if(components[0] == "fwupdate"){
+735         // Firmware update progress
+736         if(components\&.count() < 3)
+737             return;
+738         // Make sure path is the same
+739         if(components[1] != fwUpdPath)
+740             return;
+741         QString res = components[2];
+742         if(res == "invalid" || res == "fail")
+743             emit fwUpdateFinished(false);
+744         else if(res == "ok")
+745             emit fwUpdateFinished(true);
+746         else {
+747             // "xx/yy" indicates progress
+748             if(!res\&.contains("/"))
+749                 return;
+750             QStringList numbers = res\&.split("/");
+751             emit fwUpdateProgress(numbers[0]\&.toInt(), numbers[1]\&.toInt());
+752         }
+753     }
+754 }
+.fi
+.SS "void Kb::run ()\fC [private]\fP"
+
+.PP
+Definition at line 446 of file kb\&.cpp\&.
+.PP
+References notifyPath, notifyPathMutex, and notifyPaths\&.
+.PP
+.nf
+446             {
+447     QFile notify(notifyPath);
+448     // Wait a small amount of time for the node to open (100ms)
+449     QThread::usleep(100000);
+450     if(!notify\&.open(QIODevice::ReadOnly)){
+451         // If it's still not open, try again before giving up (1s at a time, 10s total)
+452         QThread::usleep(900000);
+453         for(int i = 1; i < 10; i++){
+454             if(notify\&.open(QIODevice::ReadOnly))
+455                 break;
+456             QThread::sleep(1);
+457         }
+458         if(!notify\&.isOpen())
+459             return;
+460     }
+461     // Read data from notification node
+462     QByteArray line;
+463     while(notify\&.isOpen() && (line = notify\&.readLine())\&.length() > 0){
+464         QString text = QString::fromUtf8(line);
+465         metaObject()->invokeMethod(this, "readNotify", Qt::QueuedConnection, Q_ARG(QString, text));
+466     }
+467     QMutexLocker locker(&notifyPathMutex);
+468     notifyPaths\&.remove(notifyPath);
+469 }
+.fi
+.SS "void Kb::save ()"
+
+.PP
+Definition at line 273 of file kb\&.cpp\&.
+.PP
+References _currentProfile, _needsSave, _profiles, UsbId::guidString(), KbProfile::id(), prefsPath, KbProfile::save(), and CkbSettings::setValue()\&.
+.PP
+Referenced by autoSave(), KbWidget::on_hwSaveButton_clicked(), KbManager::scanKeyboards(), and ~Kb()\&.
+.PP
+.nf
+273              {
+274     if(prefsPath\&.isEmpty())
+275         return;
+276     _needsSave = false;
+277     CkbSettings settings(prefsPath, true);
+278     QString guids, currentGuid;
+279     foreach(KbProfile* profile, _profiles){
+280         guids\&.append(" " + profile->id()\&.guidString());
+281         if(profile == _currentProfile)
+282             currentGuid = profile->id()\&.guidString();
+283         profile->save(settings);
+284     }
+285     settings\&.setValue("CurrentProfile", currentGuid);
+286     settings\&.setValue("Profiles", guids\&.trimmed());
+287 }
+.fi
+.SS "static int Kb::scrollSpeed ()\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line 42 of file kb\&.h\&.
+.PP
+References _scrollSpeed\&.
+.PP
+Referenced by ExtraSettingsWidget::ExtraSettingsWidget(), ExtraSettingsWidget::on_sAccelBox_clicked(), and ExtraSettingsWidget::on_sSpeedBox_valueChanged()\&.
+.PP
+.nf
+42 { return _scrollSpeed; }
+.fi
+.SS "void Kb::scrollSpeed (intnewSpeed)\fC [static]\fP"
+
+.PP
+Definition at line 228 of file kb\&.cpp\&.
+.PP
+References _scrollSpeed, activeDevices, and cmd\&.
+.PP
+.nf
+228                                 {
+229     if(newSpeed == _scrollSpeed)
+230         return;
+231     _scrollSpeed = newSpeed;
+232 #ifdef Q_OS_MACX
+233     // Update all devices
+234     foreach(Kb* kb, activeDevices){
+235         kb->cmd\&.write(QString("scrollspeed %1\n")\&.arg(newSpeed)\&.toLatin1());
+236         kb->cmd\&.flush();
+237     }
+238 #endif
+239 }
+.fi
+.SS "void Kb::setCurrentMode (\fBKbProfile\fP *profile, \fBKbMode\fP *mode, boolspontaneous = \fCtrue\fP)"
+
+.PP
+Definition at line 769 of file kb\&.cpp\&.
+.PP
+References _currentMode, _currentProfile, _needsSave, KbProfile::currentMode(), modeChanged(), and profileChanged()\&.
+.PP
+Referenced by KeyAction::keyEvent(), KbWidget::on_modesList_currentItemChanged(), KbWidget::on_modesList_customContextMenuRequested(), KbWidget::on_modesList_itemClicked(), and setCurrentProfile()\&.
+.PP
+.nf
+769                                                                          {
+770     if(_currentProfile != profile){
+771         _currentProfile = profile;
+772         _needsSave = true;
+773         emit profileChanged();
+774     }
+775     if(_currentMode != mode || _currentProfile->currentMode() != mode){
+776         _currentProfile->currentMode(_currentMode = mode);
+777         _needsSave = true;
+778         emit modeChanged(spontaneous);
+779     }
+780 }
+.fi
+.SS "void Kb::setCurrentMode (\fBKbProfile\fP *profile, intindex, boolspontaneous = \fCtrue\fP)\fC [inline]\fP"
+
+.PP
+Definition at line 73 of file kb\&.h\&.
+.PP
+References KbProfile::modes(), and setCurrentMode()\&.
+.PP
+Referenced by setCurrentMode()\&.
+.PP
+.nf
+73 { setCurrentMode(profile, profile->modes()[index], spontaneous); }
+.fi
+.SS "void Kb::setCurrentMode (\fBKbMode\fP *mode, boolspontaneous = \fCtrue\fP)\fC [inline]\fP"
+
+.PP
+Definition at line 74 of file kb\&.h\&.
+.PP
+References _currentProfile, and setCurrentMode()\&.
+.PP
+Referenced by setCurrentMode()\&.
+.PP
+.nf
+74 { setCurrentMode(_currentProfile, mode, spontaneous); }
+.fi
+.SS "void Kb::setCurrentProfile (\fBKbProfile\fP *profile, boolspontaneous = \fCtrue\fP)"
+
+.PP
+Definition at line 760 of file kb\&.cpp\&.
+.PP
+References KbProfile::append(), KbProfile::currentMode(), getKeyMap(), hwModeCount, KbProfile::modeCount(), KbProfile::modes(), and setCurrentMode()\&.
+.PP
+Referenced by load(), KbWidget::on_profileBox_activated(), KbProfileDialog::on_profileList_currentItemChanged(), KbProfileDialog::on_profileList_customContextMenuRequested(), KbProfileDialog::on_profileList_itemClicked(), and readNotify()\&.
+.PP
+.nf
+760                                                               {
+761     while(profile->modeCount() < hwModeCount)
+762         profile->append(new KbMode(this, getKeyMap()));
+763     KbMode* mode = profile->currentMode();
+764     if(!mode)
+765         profile->currentMode(mode = profile->modes()\&.first());
+766     setCurrentMode(profile, mode, spontaneous);
+767 }
+.fi
+.SS "void Kb::updateLayout ()\fC [private]\fP"
+
+.PP
+Definition at line 186 of file kb\&.cpp\&.
+.PP
+References _currentProfile, _hwProfile, _layout, _profiles, KbLight::close(), getKeyMap(), infoUpdated(), KeyMap::isISO(), KbProfile::keyMap(), KbMode::light(), and KbProfile::modes()\&.
+.PP
+Referenced by layout()\&.
+.PP
+.nf
+186                      {
+187 #ifdef Q_OS_MACX
+188     // Write ANSI/ISO flag to daemon (OSX only)
+189     cmd\&.write("layout ");
+190     cmd\&.write(KeyMap::isISO(_layout) ? "iso" : "ansi");
+191     cmd\&.write("\n");
+192     cmd\&.flush();
+193 #endif
+194     foreach(KbProfile* profile, _profiles)
+195         profile->keyMap(getKeyMap());
+196     if(_hwProfile && !_profiles\&.contains(_hwProfile))
+197         _hwProfile->keyMap(getKeyMap());
+198     // Stop all animations as they'll need to be restarted
+199     foreach(KbMode* mode, _currentProfile->modes())
+200         mode->light()->close();
+201     emit infoUpdated();
+202 }
+.fi
+.SS "void Kb::writeProfileHeader ()\fC [private]\fP"
+
+.PP
+Definition at line 354 of file kb\&.cpp\&.
+.PP
+References _currentProfile, UsbId::guidString(), KbProfile::id(), UsbId::modifiedString(), and KbProfile::name()\&.
+.PP
+Referenced by frameUpdate(), and hwSave()\&.
+.PP
+.nf
+354                            {
+355     cmd\&.write("eraseprofile");
+356     // Write the profile name and ID
+357     cmd\&.write(" profilename ");
+358     cmd\&.write(QUrl::toPercentEncoding(_currentProfile->name()));
+359     cmd\&.write(" profileid ");
+360     cmd\&.write(_currentProfile->id()\&.guidString()\&.toLatin1());
+361     cmd\&.write(" ");
+362     cmd\&.write(_currentProfile->id()\&.modifiedString()\&.toLatin1());
+363 }
+.fi
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBKbManager\fP\fC [friend]\fP"
+
+.PP
+Definition at line 142 of file kb\&.h\&.
+.SH "Field Documentation"
+.PP 
+.SS "\fBKbMode\fP* Kb::_currentMode\fC [private]\fP"
+
+.PP
+Definition at line 169 of file kb\&.h\&.
+.PP
+Referenced by currentBind(), currentLight(), currentMode(), currentPerf(), frameUpdate(), hwSave(), readNotify(), and setCurrentMode()\&.
+.SS "\fBKbProfile\fP* Kb::_currentProfile\fC [private]\fP"
+
+.PP
+Definition at line 167 of file kb\&.h\&.
+.PP
+Referenced by currentProfile(), frameUpdate(), hwSave(), readNotify(), save(), setCurrentMode(), updateLayout(), and writeProfileHeader()\&.
+.SS "bool Kb::_delay = false\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 198 of file kb\&.h\&.
+.PP
+Referenced by Kb(), and macroDelay()\&.
+.SS "bool Kb::_dither = false\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 165 of file kb\&.h\&.
+.PP
+Referenced by dither(), and Kb()\&.
+.SS "int Kb::_frameRate = 30\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 164 of file kb\&.h\&.
+.PP
+Referenced by frameRate(), and Kb()\&.
+.SS "\fBKbProfile\fP* Kb::_hwProfile\fC [private]\fP"
+
+.PP
+Definition at line 183 of file kb\&.h\&.
+.PP
+Referenced by deleteHw(), hwProfile(), hwSave(), readNotify(), and updateLayout()\&.
+.SS "\fBKeyMap::Layout\fP Kb::_layout = \fBKeyMap::NO_LAYOUT\fP\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 161 of file kb\&.h\&.
+.PP
+Referenced by getKeyMap(), Kb(), layout(), and updateLayout()\&.
+.SS "\fBKeyMap::Model\fP Kb::_model\fC [private]\fP"
+
+.PP
+Definition at line 171 of file kb\&.h\&.
+.PP
+Referenced by model()\&.
+.SS "bool Kb::_mouseAccel = true\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 165 of file kb\&.h\&.
+.PP
+Referenced by Kb(), and mouseAccel()\&.
+.SS "bool Kb::_needsSave\fC [private]\fP"
+
+.PP
+Definition at line 201 of file kb\&.h\&.
+.PP
+Referenced by appendProfile(), load(), needsSave(), profiles(), readNotify(), save(), and setCurrentMode()\&.
+.SS "QList<\fBKbProfile\fP*> Kb::_profiles\fC [private]\fP"
+
+.PP
+Definition at line 168 of file kb\&.h\&.
+.PP
+Referenced by appendProfile(), find(), indexOf(), load(), needsSave(), profiles(), readNotify(), save(), and updateLayout()\&.
+.SS "int Kb::_scrollSpeed = 0\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 164 of file kb\&.h\&.
+.PP
+Referenced by Kb(), and scrollSpeed()\&.
+.SS "QFile Kb::cmd\fC [private]\fP"
+
+.PP
+Definition at line 191 of file kb\&.h\&.
+.PP
+Referenced by dither(), frameRate(), macroDelay(), mouseAccel(), and scrollSpeed()\&.
+.SS "QString Kb::cmdpath\fC [private]\fP"
+
+.PP
+Definition at line 155 of file kb\&.h\&.
+.PP
+Referenced by Kb()\&.
+.SS "QString Kb::devpath\fC [private]\fP"
+
+.PP
+Definition at line 155 of file kb\&.h\&.
+.PP
+Referenced by matches()\&.
+.SS "QString Kb::features"
+
+.PP
+Definition at line 18 of file kb\&.h\&.
+.PP
+Referenced by MainWindow::checkFwUpdates(), FwUpgradeDialog::exec(), Kb(), KbWidget::KbWidget(), KbWidget::on_fwUpdButton_clicked(), and KbWidget::updateFwButton()\&.
+.SS "QString Kb::firmware"
+
+.PP
+Definition at line 18 of file kb\&.h\&.
+.PP
+Referenced by MainWindow::checkFwUpdates(), KbWidget::devUpdate(), FwUpgradeDialog::FwUpgradeDialog(), Kb(), KbWidget::on_fwUpdButton_clicked(), and KbWidget::updateFwButton()\&.
+.SS "QString Kb::fwUpdPath\fC [private]\fP"
+
+.PP
+Definition at line 181 of file kb\&.h\&.
+.PP
+Referenced by fwUpdate(), and readNotify()\&.
+.SS "bool Kb::hwLoading[\fBHWMODE_MAX\fP+1]\fC [private]\fP"
+
+.PP
+Definition at line 205 of file kb\&.h\&.
+.PP
+Referenced by Kb(), and readNotify()\&.
+.SS "const int Kb::HWMODE_MAX = 3\fC [static]\fP"
+
+.PP
+Definition at line 50 of file kb\&.h\&.
+.PP
+Referenced by KbPerf::applyIndicators(), and readNotify()\&.
+.SS "int Kb::hwModeCount"
+
+.PP
+Definition at line 49 of file kb\&.h\&.
+.PP
+Referenced by hwSave(), Kb(), KbWidget::modeIcon(), KbWidget::on_modesList_customContextMenuRequested(), readNotify(), and setCurrentProfile()\&.
+.SS "bool Kb::iState[\fBKbPerf::HW_I_COUNT\fP]\fC [private]\fP"
+
+.PP
+Definition at line 174 of file kb\&.h\&.
+.PP
+Referenced by frameUpdate(), Kb(), and readNotify()\&.
+.SS "quint64 Kb::lastAutoSave\fC [private]\fP"
+
+.PP
+Definition at line 178 of file kb\&.h\&.
+.PP
+Referenced by autoSave()\&.
+.SS "int Kb::macroNumber\fC [private]\fP"
+
+.PP
+Definition at line 196 of file kb\&.h\&.
+.PP
+Referenced by getMacroNumber(), and Kb()\&.
+.SS "QString Kb::macroPath\fC [private]\fP"
+
+.PP
+Definition at line 155 of file kb\&.h\&.
+.PP
+Referenced by getMacroPath(), Kb(), and ~Kb()\&.
+.SS "bool Kb::monochrome"
+
+.PP
+Definition at line 19 of file kb\&.h\&.
+.PP
+Referenced by frameUpdate(), hwSave(), Kb(), and KbWidget::KbWidget()\&.
+.SS "int Kb::notifyNumber\fC [private]\fP"
+
+.PP
+Definition at line 194 of file kb\&.h\&.
+.PP
+Referenced by frameUpdate(), fwUpdate(), Kb(), readNotify(), and ~Kb()\&.
+.SS "QString Kb::notifyPath\fC [private]\fP"
+
+.PP
+Definition at line 155 of file kb\&.h\&.
+.PP
+Referenced by Kb(), and run()\&.
+.SS "QString Kb::pollrate"
+
+.PP
+Definition at line 18 of file kb\&.h\&.
+.PP
+Referenced by KbWidget::devUpdate(), and Kb()\&.
+.SS "QString Kb::prefsPath\fC [private]\fP"
+
+.PP
+Definition at line 177 of file kb\&.h\&.
+.PP
+Referenced by Kb(), load(), and save()\&.
+.SS "\fBKbMode\fP* Kb::prevMode\fC [private]\fP"
+
+.PP
+Definition at line 186 of file kb\&.h\&.
+.PP
+Referenced by deletePrevious(), frameUpdate(), and hwSave()\&.
+.SS "\fBKbProfile\fP* Kb::prevProfile\fC [private]\fP"
+
+.PP
+Definition at line 185 of file kb\&.h\&.
+.PP
+Referenced by frameUpdate()\&.
+.SS "QString Kb::usbModel"
+
+.PP
+Definition at line 16 of file kb\&.h\&.
+.PP
+Referenced by FwUpgradeDialog::FwUpgradeDialog(), Kb(), KbWidget::name(), and MainWindow::showFwUpdateNotification()\&.
+.SS "QString Kb::usbSerial"
+
+.PP
+Definition at line 16 of file kb\&.h\&.
+.PP
+Referenced by KbWidget::devUpdate(), Kb(), and matches()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

@@ -1,0 +1,4 @@
+<map id="QuaZipDir_getFileInfo" name="QuaZipDir_getFileInfo">
+<area shape="rect" id="node2" href="$classQuaZip.html#a9c91a53ed4c2038e153c64bdc097ebe8" title="Retrieves information about the current file. " alt="" coords="203,12,379,39"/>
+<area shape="rect" id="node3" href="$structQuaZipFileInfo64.html#ada29945c7ee4c9df6fbe95864793aade" title="Converts to QuaZipFileInfo. " alt="" coords="427,5,610,46"/>
+</map>

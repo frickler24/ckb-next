@@ -1,0 +1,15 @@
+<map id="src/ckb/release/moc_fwupgradedialog.cpp" name="src/ckb/release/moc_fwupgradedialog.cpp">
+<area shape="rect" id="node2" href="$fwupgradedialog_8h.html" title="../fwupgradedialog.h" alt="" coords="783,96,921,123"/>
+<area shape="rect" id="node6" href="$kb_8h.html" title="kb.h" alt="" coords="977,171,1023,197"/>
+<area shape="rect" id="node10" href="$kbprofile_8h.html" title="kbprofile.h" alt="" coords="997,245,1079,272"/>
+<area shape="rect" id="node15" href="$kbmode_8h.html" title="kbmode.h" alt="" coords="673,320,751,347"/>
+<area shape="rect" id="node16" href="$kblight_8h.html" title="kblight.h" alt="" coords="677,395,747,421"/>
+<area shape="rect" id="node30" href="$kbbind_8h.html" title="kbbind.h" alt="" coords="499,469,569,496"/>
+<area shape="rect" id="node32" href="$kbperf_8h.html" title="kbperf.h" alt="" coords="1001,469,1071,496"/>
+<area shape="rect" id="node18" href="$animscript_8h.html" title="animscript.h" alt="" coords="613,544,707,571"/>
+<area shape="rect" id="node23" href="$keymap_8h.html" title="keymap.h" alt="" coords="665,693,743,720"/>
+<area shape="rect" id="node25" href="$colormap_8h.html" title="colormap.h" alt="" coords="297,619,383,645"/>
+<area shape="rect" id="node27" href="$kbanim_8h.html" title="kbanim.h" alt="" coords="781,469,855,496"/>
+<area shape="rect" id="node28" href="$ckbsettings_8h.html" title="ckbsettings.h" alt="" coords="782,544,881,571"/>
+<area shape="rect" id="node31" href="$keyaction_8h.html" title="keyaction.h" alt="" coords="398,544,487,571"/>
+</map>

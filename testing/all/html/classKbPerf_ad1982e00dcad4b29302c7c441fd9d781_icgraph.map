@@ -1,0 +1,9 @@
+<map id="KbPerf::iOpacity" name="KbPerf::iOpacity">
+<area shape="rect" id="node2" href="$classKPerfWidget.html#a70d4081e26a84e1be642c9864647c3a3" title="KPerfWidget::on_intensity\lBox_valueChanged" alt="" coords="174,5,349,46"/>
+<area shape="rect" id="node3" href="$classMPerfWidget.html#a1db4443d794f38754b482b921966fa8b" title="MPerfWidget::on_spinBox\l_valueChanged" alt="" coords="174,70,349,111"/>
+<area shape="rect" id="node4" href="$classKPerfWidget.html#ae761365cfff8135fe60d2bf9792232e1" title="KPerfWidget::setPerf" alt="" coords="188,136,335,163"/>
+<area shape="rect" id="node8" href="$classMPerfWidget.html#ac0cf0ff2a6c0de5e888eae1288433a7f" title="MPerfWidget::setPerf" alt="" coords="187,187,335,213"/>
+<area shape="rect" id="node5" href="$classKbWidget.html#aae4a00bb180d711b5df7df6443c8bf36" title="KbWidget::modeChanged" alt="" coords="397,161,568,188"/>
+<area shape="rect" id="node6" href="$classKbWidget.html#a848a21f1fd112e13ca5fcf25da4592c6" title="KbWidget::KbWidget" alt="" coords="651,132,795,159"/>
+<area shape="rect" id="node7" href="$classKbWidget.html#add5eb15a399c87faf80db9fdfc2e868f" title="KbWidget::on_modesList_customContextMenuRequested. " alt="" coords="616,183,829,225"/>
+</map>

@@ -1,0 +1,132 @@
+.TH "MacroReader" 3 "Tue May 16 2017" "Version beta-v0.2.7 at branch testing" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MacroReader \- 
+.PP
+The \fBMacroReader\fP class creates a worker thread object\&. It does a connect do delayed deletion of thread local variables in the case the worker thread terminates\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/macroreader\&.h>\fP
+.PP
+Inherits \fBQThread\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMacroReader\fP ()"
+.br
+.RI "\fI\fBMacroReader\fP Calling \fBMacroReader\fP without params is not allowed\&. \fP"
+.ti -1c
+.RI "\fBMacroReader\fP (int macroNumber, QString macroPath, QPlainTextEdit *macBox, QPlainTextEdit *macText)"
+.br
+.RI "\fI\fBMacroReader\fP This is the only allowed constructor\&. It only calls \fBstartWorkInAThread()\fP with the four params\&. \fP"
+.ti -1c
+.RI "\fB~MacroReader\fP ()"
+.br
+.ti -1c
+.RI "void \fBstartWorkInAThread\fP (int macroNumber, QString macroPath, QPlainTextEdit *macBox, QPlainTextEdit *macText)"
+.br
+.RI "\fIstartWorkInAThread This member function creates the new thread object and starts it with the four params\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBMacroReaderThread\fP * \fBmacroReaderThread\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 87 of file macroreader\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MacroReader::MacroReader ()"
+
+.PP
+Definition at line 8 of file macroreader\&.cpp\&.
+.PP
+.nf
+8                          {
+9     qDebug() << "Calling MacroReader without params is not allowed\&.";
+10 }
+.fi
+.SS "MacroReader::MacroReader (intmacroNumber, QStringmacroPath, QPlainTextEdit *macBox, QPlainTextEdit *macText)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fImacroNumber\fP 
+.br
+\fImacroPath\fP 
+.br
+\fImacBox\fP 
+.br
+\fImacText\fP 
+.RE
+.PP
+
+.PP
+Definition at line 12 of file macroreader\&.cpp\&.
+.PP
+References startWorkInAThread()\&.
+.PP
+.nf
+12                                                                                                             {
+13     startWorkInAThread(macroNumber, macroPath, macBox, macText);
+14 }
+.fi
+.SS "MacroReader::~MacroReader ()"
+
+.PP
+Definition at line 15 of file macroreader\&.cpp\&.
+.PP
+.nf
+15 {}
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void MacroReader::startWorkInAThread (intmacroNumber, QStringmacroPath, QPlainTextEdit *macBox, QPlainTextEdit *macText)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fImacroNumber\fP 
+.br
+\fImacroPath\fP 
+.br
+\fImacBox\fP 
+.br
+\fImacText\fP 
+.RE
+.PP
+
+.PP
+Definition at line 17 of file macroreader\&.cpp\&.
+.PP
+References macroReaderThread\&.
+.PP
+Referenced by MacroReader()\&.
+.PP
+.nf
+17                                                                                                                         {
+18     macroReaderThread = new MacroReaderThread(macroNumber, macroPath, macBox, macText);
+19     connect(macroReaderThread, &MacroReaderThread::finished, macroReaderThread, &QObject::deleteLater);
+20     macroReaderThread->start();
+21 }
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "\fBMacroReaderThread\fP* MacroReader::macroReaderThread\fC [private]\fP"
+
+.PP
+Definition at line 123 of file macroreader\&.h\&.
+.PP
+Referenced by startWorkInAThread()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

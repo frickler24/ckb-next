@@ -1,0 +1,304 @@
+.TH "ColorButton" 3 "Tue May 16 2017" "Version beta-v0.2.7 at branch testing" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ColorButton \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/colorbutton\&.h>\fP
+.PP
+Inherits \fBQPushButton\fP\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBcolorChanged\fP (QColor newColor)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBColorButton\fP (\fBQWidget\fP *parent=0, bool \fBallowAlpha\fP=false)"
+.br
+.ti -1c
+.RI "const QColor & \fBcolor\fP () const "
+.br
+.ti -1c
+.RI "void \fBcolor\fP (const QColor &newColor)"
+.br
+.ti -1c
+.RI "bool \fBallowAlpha\fP () const "
+.br
+.ti -1c
+.RI "void \fBallowAlpha\fP (bool newAllowAlpha)"
+.br
+.ti -1c
+.RI "bool \fBsetLabel\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetLabel\fP (bool newSetLabel)"
+.br
+.ti -1c
+.RI "bool \fBbigIcons\fP () const "
+.br
+.ti -1c
+.RI "void \fBbigIcons\fP (bool newBigIcons)"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBpickColor\fP ()"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBupdateImage\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QColor \fB_color\fP"
+.br
+.ti -1c
+.RI "bool \fB_alpha\fP"
+.br
+.ti -1c
+.RI "bool \fB_setLabel\fP"
+.br
+.ti -1c
+.RI "bool \fB_bigIcons\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 6 of file colorbutton\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ColorButton::ColorButton (\fBQWidget\fP *parent = \fC0\fP, boolallowAlpha = \fCfalse\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 5 of file colorbutton\&.cpp\&.
+.PP
+References pickColor(), and updateImage()\&.
+.PP
+.nf
+5                                                          :
+6     QPushButton(parent), _alpha(allowAlpha), _setLabel(true), _bigIcons(false)
+7 {
+8     setAutoDefault(false);
+9     setDefault(false);
+10     updateImage();
+11     // Pick color on click (use queued connection so that any on_*_clicked() events can be processed first)
+12     connect(this, SIGNAL(clicked()), this, SLOT(pickColor()), Qt::QueuedConnection);
+13 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "bool ColorButton::allowAlpha () const\fC [inline]\fP"
+
+.PP
+Definition at line 17 of file colorbutton\&.h\&.
+.PP
+References _alpha\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), and MPerfWidget::MPerfWidget()\&.
+.PP
+.nf
+17 { return _alpha; }
+.fi
+.SS "void ColorButton::allowAlpha (boolnewAllowAlpha)"
+
+.PP
+Definition at line 22 of file colorbutton\&.cpp\&.
+.PP
+References _alpha, and updateImage()\&.
+.PP
+.nf
+22                                               {
+23     _alpha = newAllowAlpha;
+24     updateImage();
+25 }
+.fi
+.SS "bool ColorButton::bigIcons () const\fC [inline]\fP"
+
+.PP
+Definition at line 23 of file colorbutton\&.h\&.
+.PP
+References _bigIcons\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), and MPerfWidget::MPerfWidget()\&.
+.PP
+.nf
+23 { return _bigIcons; }
+.fi
+.SS "void ColorButton::bigIcons (boolnewBigIcons)"
+
+.PP
+Definition at line 27 of file colorbutton\&.cpp\&.
+.PP
+References _bigIcons, and updateImage()\&.
+.PP
+.nf
+27                                           {
+28     _bigIcons = newBigIcons;
+29     updateImage();
+30 }
+.fi
+.SS "const QColor& ColorButton::color () const\fC [inline]\fP"
+
+.PP
+Definition at line 13 of file colorbutton\&.h\&.
+.PP
+References _color\&.
+.PP
+Referenced by MPerfWidget::colorChanged(), GradientDialog::currentChanged(), KbLightWidget::newSelection(), GradientDialog::on_stopOpacity_valueChanged(), KPerfWidget::setPerf(), MPerfWidget::setPerf(), KPerfWidget::uiUpdated(), and AnimSettingDialog::updateParam()\&.
+.PP
+.nf
+13 { return _color; }
+.fi
+.SS "void ColorButton::color (const QColor &newColor)"
+
+.PP
+Definition at line 15 of file colorbutton\&.cpp\&.
+.PP
+References _alpha, _color, and updateImage()\&.
+.PP
+.nf
+15                                              {
+16     _color = newColor;
+17     if(!_alpha)
+18         _color\&.setAlpha(255);
+19     updateImage();
+20 }
+.fi
+.SS "void ColorButton::colorChanged (QColornewColor)\fC [signal]\fP"
+
+.PP
+Definition at line 132 of file moc_colorbutton\&.cpp\&.
+.PP
+Referenced by pickColor()\&.
+.PP
+.nf
+133 {
+134     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+135     QMetaObject::activate(this, &staticMetaObject, 0, _a);
+136 }
+.fi
+.SS "void ColorButton::pickColor ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 60 of file colorbutton\&.cpp\&.
+.PP
+References _alpha, _color, colorChanged(), and updateImage()\&.
+.PP
+Referenced by ColorButton()\&.
+.PP
+.nf
+60                            {
+61     QColor newColor = QColorDialog::getColor(_color, this, QString(), QColorDialog::ColorDialogOptions(_alpha ? QColorDialog::ShowAlphaChannel : 0));
+62     if(newColor\&.isValid()){
+63         _color = newColor;
+64         updateImage();
+65         emit colorChanged(_color);
+66     }
+67 }
+.fi
+.SS "bool ColorButton::setLabel () const\fC [inline]\fP"
+
+.PP
+Definition at line 20 of file colorbutton\&.h\&.
+.PP
+References _setLabel\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), and MPerfWidget::MPerfWidget()\&.
+.PP
+.nf
+20 { return _setLabel; }
+.fi
+.SS "void ColorButton::setLabel (boolnewSetLabel)\fC [inline]\fP"
+
+.PP
+Definition at line 21 of file colorbutton\&.h\&.
+.PP
+References _setLabel\&.
+.PP
+.nf
+21 { _setLabel = newSetLabel; }
+.fi
+.SS "void ColorButton::updateImage ()\fC [private]\fP"
+
+.PP
+Definition at line 32 of file colorbutton\&.cpp\&.
+.PP
+References _alpha, _bigIcons, _color, and _setLabel\&.
+.PP
+Referenced by allowAlpha(), bigIcons(), color(), ColorButton(), and pickColor()\&.
+.PP
+.nf
+32                              {
+33     if(!_color\&.isValid()){
+34         setIcon(QIcon());
+35         if(_setLabel)
+36             setText("Change color\&.\&.\&.");
+37         return;
+38     }
+39     const int w = 24, h = _bigIcons ? 24 : 12;
+40     QImage image(w, h, QImage::Format_RGB888);
+41     QPainter painter(&image);
+42     painter\&.setPen(Qt::NoPen);
+43     painter\&.fillRect(0, 0, w, h, QColor(0, 0, 0));
+44     if(_alpha && _color\&.alpha() != 255){
+45         painter\&.fillRect(1, 1, w / 2 - 1, h / 2 - 1, QColor(255, 255, 255));
+46         painter\&.fillRect(w / 2, 1, w / 2 - 1, h / 2 - 1, QColor(192, 192, 192));
+47         painter\&.fillRect(1, h / 2, w / 2 - 1, h / 2 - 1, QColor(192, 192, 192));
+48         painter\&.fillRect(w / 2, h / 2, w / 2 - 1, h / 2 - 1, QColor(255, 255, 255));
+49     }
+50     painter\&.fillRect(1, 1, w - 2, h - 2, _color);
+51     setIcon(QIcon(QPixmap::fromImage(image)));
+52     if(_setLabel){
+53         QString text = QString(" (%1, %2, %3)")\&.arg(_color\&.red())\&.arg(_color\&.green())\&.arg(_color\&.blue());
+54         if(_alpha)
+55             text += QString(", %4%")\&.arg(QString::number(_color\&.alphaF() * 100\&., 'f', 0));
+56         setText(text);
+57     }
+58 }
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "bool ColorButton::_alpha\fC [private]\fP"
+
+.PP
+Definition at line 34 of file colorbutton\&.h\&.
+.PP
+Referenced by allowAlpha(), color(), pickColor(), and updateImage()\&.
+.SS "bool ColorButton::_bigIcons\fC [private]\fP"
+
+.PP
+Definition at line 34 of file colorbutton\&.h\&.
+.PP
+Referenced by bigIcons(), and updateImage()\&.
+.SS "QColor ColorButton::_color\fC [private]\fP"
+
+.PP
+Definition at line 33 of file colorbutton\&.h\&.
+.PP
+Referenced by color(), pickColor(), and updateImage()\&.
+.SS "bool ColorButton::_setLabel\fC [private]\fP"
+
+.PP
+Definition at line 34 of file colorbutton\&.h\&.
+.PP
+Referenced by setLabel(), and updateImage()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

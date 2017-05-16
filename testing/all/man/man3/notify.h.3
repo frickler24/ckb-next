@@ -1,0 +1,170 @@
+.TH "src/ckb-daemon/notify.h" 3 "Tue May 16 2017" "Version beta-v0.2.7 at branch testing" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb-daemon/notify.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'includes\&.h'\fP
+.br
+\fC#include 'device\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBnprintf\fP (\fBusbdevice\fP *kb, int nodenumber, \fBusbmode\fP *mode, const char *format,\&.\&.\&.)"
+.br
+.ti -1c
+.RI "void \fBnprintkey\fP (\fBusbdevice\fP *kb, int nnumber, int keyindex, int down)"
+.br
+.ti -1c
+.RI "void \fBnprintind\fP (\fBusbdevice\fP *kb, int nnumber, int led, int on)"
+.br
+.ti -1c
+.RI "void \fBcmd_notify\fP (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, int nnumber, int keyindex, const char *toggle)"
+.br
+.ti -1c
+.RI "void \fBcmd_get\fP (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, int nnumber, int dummy, const char *setting)"
+.br
+.ti -1c
+.RI "void \fBcmd_restart\fP (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, int nnumber, int dummy, const char *content)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void cmd_get (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, intnnumber, intdummy, const char *setting)"
+
+.PP
+Definition at line 215 of file notify\&.c\&.
+.PP
+References _cmd_get(), and imutex\&.
+.PP
+.nf
+215                                                                                        {
+216     pthread_mutex_lock(imutex(kb));
+217     _cmd_get(kb, mode, nnumber, setting);
+218     pthread_mutex_unlock(imutex(kb));
+219 }
+.fi
+.SS "void cmd_notify (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, intnnumber, intkeyindex, const char *toggle)"
+
+.PP
+Definition at line 61 of file notify\&.c\&.
+.PP
+References CLEAR_KEYBIT, imutex, N_KEYS_INPUT, usbmode::notify, and SET_KEYBIT\&.
+.PP
+.nf
+61                                                                                             {
+62     if(keyindex >= N_KEYS_INPUT)
+63         return;
+64     pthread_mutex_lock(imutex(kb));
+65     if(!strcmp(toggle, "on") || *toggle == 0)
+66         SET_KEYBIT(mode->notify[nnumber], keyindex);
+67     else if(!strcmp(toggle, "off"))
+68         CLEAR_KEYBIT(mode->notify[nnumber], keyindex);
+69     pthread_mutex_unlock(imutex(kb));
+70 }
+.fi
+.SS "void cmd_restart (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, intnnumber, intdummy, const char *content)"
+
+.PP
+Definition at line 223 of file notify\&.c\&.
+.PP
+References ckb_info, nprintf(), and restart()\&.
+.PP
+.nf
+223                                                                                             {
+224     ckb_info("RESTART called with %s\n", content);
+225     nprintf(kb, -1, 0, "RESTART called with %s\n", content);
+226     restart();
+227 }
+.fi
+.SS "void nprintf (\fBusbdevice\fP *kb, intnodenumber, \fBusbmode\fP *mode, const char *format, \&.\&.\&.)"
+
+.PP
+Definition at line 8 of file notify\&.c\&.
+.PP
+References INDEX_OF, usbprofile::mode, usbdevice::outfifo, OUTFIFO_MAX, and usbdevice::profile\&.
+.PP
+Referenced by _cmd_get(), cmd_fwupdate(), cmd_restart(), fwupdate(), nprintind(), and nprintkey()\&.
+.PP
+.nf
+8                                                                                    {
+9     if(!kb)
+10         return;
+11     usbprofile* profile = kb->profile;
+12     va_list va_args;
+13     int fifo;
+14     if(nodenumber >= 0){
+15         // If node number was given, print to that node (if open)
+16         if((fifo = kb->outfifo[nodenumber] - 1) != -1){
+17             va_start(va_args, format);
+18             if(mode)
+19                 dprintf(fifo, "mode %d ", INDEX_OF(mode, profile->mode) + 1);
+20             vdprintf(fifo, format, va_args);
+21         }
+22         return;
+23     }
+24     // Otherwise, print to all nodes
+25     for(int i = 0; i < OUTFIFO_MAX; i++){
+26         if((fifo = kb->outfifo[i] - 1) != -1){
+27             va_start(va_args, format);
+28             if(mode)
+29                 dprintf(fifo, "mode %d ", INDEX_OF(mode, profile->mode) + 1);
+30             vdprintf(fifo, format, va_args);
+31         }
+32     }
+33 }
+.fi
+.SS "void nprintind (\fBusbdevice\fP *kb, intnnumber, intled, inton)"
+
+.PP
+Definition at line 43 of file notify\&.c\&.
+.PP
+References I_CAPS, I_NUM, I_SCROLL, and nprintf()\&.
+.PP
+Referenced by _cmd_get(), and updateindicators_kb()\&.
+.PP
+.nf
+43                                                            {
+44     const char* name = 0;
+45     switch(led){
+46     case I_NUM:
+47         name = "num";
+48         break;
+49     case I_CAPS:
+50         name = "caps";
+51         break;
+52     case I_SCROLL:
+53         name = "scroll";
+54         break;
+55     default:
+56         return;
+57     }
+58     nprintf(kb, nnumber, 0, "i %c%s\n", on ? '+' : '-', name);
+59 }
+.fi
+.SS "void nprintkey (\fBusbdevice\fP *kb, intnnumber, intkeyindex, intdown)"
+
+.PP
+Definition at line 35 of file notify\&.c\&.
+.PP
+References keymap, key::name, and nprintf()\&.
+.PP
+Referenced by _cmd_get(), and inputupdate_keys()\&.
+.PP
+.nf
+35                                                                   {
+36     const key* map = keymap + keyindex;
+37     if(map->name)
+38         nprintf(kb, nnumber, 0, "key %c%s\n", down ? '+' : '-', map->name);
+39     else
+40         nprintf(kb, nnumber, 0, "key %c#%d\n", down ? '+' : '-', keyindex);
+41 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

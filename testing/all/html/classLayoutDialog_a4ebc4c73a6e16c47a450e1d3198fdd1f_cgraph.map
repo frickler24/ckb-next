@@ -1,0 +1,6 @@
+<map id="LayoutDialog::LayoutDialog" name="LayoutDialog::LayoutDialog">
+<area shape="rect" id="node2" href="$classKb.html#ab1d41482983adcca737f7a61d74f5c90" title="Kb::layout" alt="" coords="282,5,363,32"/>
+<area shape="rect" id="node3" href="$classKeyMap.html#a984ea9213f2abdcaca633a4235d1c713" title="KeyMap::layoutNames" alt="" coords="245,56,400,83"/>
+<area shape="rect" id="node4" href="$classUi__LayoutDialog.html#a89645b249a1541eb33f548ab462f7763" title="Ui_LayoutDialog::setupUi" alt="" coords="237,107,408,133"/>
+<area shape="rect" id="node5" href="$classUi__LayoutDialog.html#aae5adee0d0d6be445a32690a7db99ee6" title="Ui_LayoutDialog::retranslateUi" alt="" coords="456,107,656,133"/>
+</map>

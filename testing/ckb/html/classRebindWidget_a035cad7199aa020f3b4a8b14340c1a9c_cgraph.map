@@ -1,0 +1,8 @@
+<map id="RebindWidget::on_resetButton_clicked" name="RebindWidget::on_resetButton_clicked">
+<area shape="rect" id="node2" href="$classKbBind.html#a9a3abe6f6aeb707c3e1f691c0e3e5e1b" title="KbBind::resetAction" alt="" coords="253,81,392,108"/>
+<area shape="rect" id="node3" href="$classKbBind.html#ab140ce3e9ab0c94d5b23129729234bfb" title="KbBind::action" alt="" coords="440,56,547,83"/>
+<area shape="rect" id="node6" href="$classKbBind.html#a195e520e9f7ee76718ca8ca8927b1d3b" title="KbBind::globalRemap" alt="" coords="595,107,743,133"/>
+<area shape="rect" id="node4" href="$classKbBind.html#a116916d2451ee7dcfe69cd816eb6d255" title="KbBind::bindAction" alt="" coords="603,5,736,32"/>
+<area shape="rect" id="node7" href="$classKeyAction.html#a67bbf6dd422e76ef20ed858f28bb4b21" title="KeyAction::value" alt="" coords="609,56,730,83"/>
+<area shape="rect" id="node5" href="$classKeyAction.html#ae744da2dd239b7d6596a341ea63b0e88" title="KeyAction::defaultAction" alt="" coords="793,5,959,32"/>
+</map>

@@ -1,0 +1,150 @@
+.TH "ModeSelectDialog" 3 "Tue May 16 2017" "Version beta-v0.2.7 at branch testing" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ModeSelectDialog \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/modeselectdialog\&.h>\fP
+.PP
+Inherits \fBQDialog\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBModeSelectDialog\fP (\fBQWidget\fP *parent, \fBKbMode\fP *currentMode, QList< \fBKbMode\fP * > modeList, const QString &textLabel)"
+.br
+.ti -1c
+.RI "\fB~ModeSelectDialog\fP ()"
+.br
+.ti -1c
+.RI "QList< \fBKbMode\fP * > \fBselection\fP ()"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBon_selAllButton_clicked\fP ()"
+.br
+.ti -1c
+.RI "void \fBon_selNoneButton_clicked\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUi::ModeSelectDialog\fP * \fBui\fP"
+.br
+.ti -1c
+.RI "QList< \fBKbMode\fP * > \fB_modeList\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 13 of file modeselectdialog\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ModeSelectDialog::ModeSelectDialog (\fBQWidget\fP *parent, \fBKbMode\fP *currentMode, QList< \fBKbMode\fP * >modeList, const QString &textLabel)"
+
+.PP
+Definition at line 4 of file modeselectdialog\&.cpp\&.
+.PP
+References _modeList, Ui_ModeSelectDialog::label, Ui_ModeSelectDialog::modeList, KbMode::name(), Ui_ModeSelectDialog::setupUi(), and ui\&.
+.PP
+.nf
+4                                                                                                                           :
+5     QDialog(parent), ui(new Ui::ModeSelectDialog),
+6     _modeList(modeList)
+7 {
+8     ui->setupUi(this);
+9     _modeList\&.removeAll(currentMode);
+10     ui->label->setText(textLabel);
+11     // Populate list
+12     foreach(KbMode* mode, _modeList)
+13         ui->modeList->addItem(mode->name());
+14 }
+.fi
+.SS "ModeSelectDialog::~ModeSelectDialog ()"
+
+.PP
+Definition at line 16 of file modeselectdialog\&.cpp\&.
+.PP
+References ui\&.
+.PP
+.nf
+16                                    {
+17     delete ui;
+18 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void ModeSelectDialog::on_selAllButton_clicked ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 30 of file modeselectdialog\&.cpp\&.
+.PP
+References Ui_ModeSelectDialog::modeList, and ui\&.
+.PP
+.nf
+30                                               {
+31     int count = ui->modeList->count();
+32     for(int i = 0; i < count; i++)
+33         ui->modeList->item(i)->setSelected(true);
+34 }
+.fi
+.SS "void ModeSelectDialog::on_selNoneButton_clicked ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 36 of file modeselectdialog\&.cpp\&.
+.PP
+References Ui_ModeSelectDialog::modeList, and ui\&.
+.PP
+.nf
+36                                                {
+37     int count = ui->modeList->count();
+38     for(int i = 0; i < count; i++)
+39         ui->modeList->item(i)->setSelected(false);
+40 }
+.fi
+.SS "QList< \fBKbMode\fP * > ModeSelectDialog::selection ()"
+
+.PP
+Definition at line 20 of file modeselectdialog\&.cpp\&.
+.PP
+References _modeList, Ui_ModeSelectDialog::modeList, and ui\&.
+.PP
+Referenced by KbBindWidget::on_copyButton_clicked(), KPerfWidget::on_copyButton_clicked(), and MPerfWidget::on_copyButton_clicked()\&.
+.PP
+.nf
+20                                           {
+21     QList<KbMode*> res;
+22     int count = ui->modeList->count();
+23     for(int i = 0; i < count; i++){
+24         if(ui->modeList->item(i)->isSelected())
+25             res\&.append(_modeList[i]);
+26     }
+27     return res;
+28 }
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "QList<\fBKbMode\fP*> ModeSelectDialog::_modeList\fC [private]\fP"
+
+.PP
+Definition at line 31 of file modeselectdialog\&.h\&.
+.PP
+Referenced by ModeSelectDialog(), and selection()\&.
+.SS "\fBUi::ModeSelectDialog\fP* ModeSelectDialog::ui\fC [private]\fP"
+
+.PP
+Definition at line 30 of file modeselectdialog\&.h\&.
+.PP
+Referenced by ModeSelectDialog(), on_selAllButton_clicked(), on_selNoneButton_clicked(), selection(), and ~ModeSelectDialog()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

@@ -1,0 +1,35 @@
+.TH "src/ckb/colormap.cpp" 3 "Tue May 16 2017" "Version beta-v0.2.7 at branch testing" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb/colormap.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'colormap\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "static int \fBqs_strcmp\fP (const void *lhs, const void *rhs)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "static int qs_strcmp (const void *lhs, const void *rhs)\fC [static]\fP"
+
+.PP
+Definition at line 49 of file colormap\&.cpp\&.
+.PP
+Referenced by ColorMap::colorForName(), and ColorMap::init()\&.
+.PP
+.nf
+49                                                       {
+50     return strcmp(*(const char**)lhs, *(const char**)rhs);
+51 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

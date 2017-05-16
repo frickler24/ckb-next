@@ -1,0 +1,132 @@
+.TH "src/ckb-daemon/device_mouse.c" 3 "Tue May 16 2017" "Version beta-v0.2.7 at branch testing" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb-daemon/device_mouse.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'command\&.h'\fP
+.br
+\fC#include 'device\&.h'\fP
+.br
+\fC#include 'devnode\&.h'\fP
+.br
+\fC#include 'firmware\&.h'\fP
+.br
+\fC#include 'input\&.h'\fP
+.br
+\fC#include 'profile\&.h'\fP
+.br
+\fC#include 'usb\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBsetactive_mouse\fP (\fBusbdevice\fP *kb, int active)"
+.br
+.ti -1c
+.RI "int \fBcmd_active_mouse\fP (\fBusbdevice\fP *kb, \fBusbmode\fP *dummy1, int dummy2, int dummy3, const char *dummy4)"
+.br
+.ti -1c
+.RI "int \fBcmd_idle_mouse\fP (\fBusbdevice\fP *kb, \fBusbmode\fP *dummy1, int dummy2, int dummy3, const char *dummy4)"
+.br
+.ti -1c
+.RI "int \fBcmd_pollrate\fP (\fBusbdevice\fP *kb, \fBusbmode\fP *dummy1, int dummy2, int rate, const char *dummy3)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int cmd_active_mouse (\fBusbdevice\fP *kb, \fBusbmode\fP *dummy1, intdummy2, intdummy3, const char *dummy4)"
+
+.PP
+Definition at line 44 of file device_mouse\&.c\&.
+.PP
+References setactive_mouse()\&.
+.PP
+.nf
+44                                                                                                 {
+45     return setactive_mouse(kb, 1);
+46 }
+.fi
+.SS "int cmd_idle_mouse (\fBusbdevice\fP *kb, \fBusbmode\fP *dummy1, intdummy2, intdummy3, const char *dummy4)"
+
+.PP
+Definition at line 48 of file device_mouse\&.c\&.
+.PP
+References setactive_mouse()\&.
+.PP
+.nf
+48                                                                                               {
+49     return setactive_mouse(kb, 0);
+50 }
+.fi
+.SS "int cmd_pollrate (\fBusbdevice\fP *kb, \fBusbmode\fP *dummy1, intdummy2, intrate, const char *dummy3)"
+
+.PP
+Definition at line 52 of file device_mouse\&.c\&.
+.PP
+References MSG_SIZE, usbdevice::pollrate, and usbsend\&.
+.PP
+.nf
+52                                                                                           {
+53     uchar msg[MSG_SIZE] = {
+54         0x07, 0x0a, 0, 0, (uchar)rate
+55     };
+56     if(!usbsend(kb, msg, 1))
+57         return -1;
+58     // Device should disconnect+reconnect, but update the poll rate field in case it doesn't
+59     kb->pollrate = rate;
+60     return 0;
+61 }
+.fi
+.SS "int setactive_mouse (\fBusbdevice\fP *kb, intactive)"
+
+.PP
+Definition at line 9 of file device_mouse\&.c\&.
+.PP
+References usbdevice::active, lighting::forceupdate, imutex, IN_CORSAIR, IN_HID, usbdevice::input, inputupdate(), usbinput::keys, usbprofile::lastlight, MSG_SIZE, NEEDS_FW_UPDATE, usbdevice::profile, and usbsend\&.
+.PP
+Referenced by cmd_active_mouse(), and cmd_idle_mouse()\&.
+.PP
+.nf
+9                                               {
+10     if(NEEDS_FW_UPDATE(kb))
+11         return 0;
+12     const int keycount = 20;
+13     uchar msg[2][MSG_SIZE] = {
+14         { 0x07, 0x04, 0 },                  // Disables or enables HW control for DPI and Sniper button
+15         { 0x07, 0x40, keycount, 0 },        // Select button input (simlilar to the packet sent to keyboards, but lacks a commit packet)
+16     };
+17     if(active)
+18         // Put the mouse into SW mode
+19         msg[0][2] = 2;
+20     else
+21         // Restore HW mode
+22         msg[0][2] = 1;
+23     pthread_mutex_lock(imutex(kb));
+24     kb->active = !!active;
+25     kb->profile->lastlight\&.forceupdate = 1;
+26     // Clear input
+27     memset(&kb->input\&.keys, 0, sizeof(kb->input\&.keys));
+28     inputupdate(kb);
+29     pthread_mutex_unlock(imutex(kb));
+30     if(!usbsend(kb, msg[0], 1))
+31         return -1;
+32     if(active){
+33         // Set up key input
+34         if(!usbsend(kb, msg[1], 1))
+35             return -1;
+36         for(int i = 0; i < keycount; i++){
+37             msg[1][i * 2 + 4] = i + 1;
+38             msg[1][i * 2 + 5] = (i < 6 ? IN_HID : IN_CORSAIR);
+39         }
+40     }
+41     return 0;
+42 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

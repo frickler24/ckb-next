@@ -1,0 +1,2119 @@
+.TH "src/ckb-daemon/usb.h" 3 "Tue May 16 2017" "Version beta-v0.2.7 at branch testing" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb-daemon/usb.h \- 
+.PP
+Definitions for using USB interface\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'includes\&.h'\fP
+.br
+\fC#include 'keymap\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBV_CORSAIR\fP   0x1b1c"
+.br
+.RI "\fIFor the following Defines please see 'Detailed Description'\&. \fP"
+.ti -1c
+.RI "#define \fBV_CORSAIR_STR\fP   '1b1c'"
+.br
+.ti -1c
+.RI "#define \fBP_K65\fP   0x1b17"
+.br
+.ti -1c
+.RI "#define \fBP_K65_STR\fP   '1b17'"
+.br
+.ti -1c
+.RI "#define \fBP_K65_NRGB\fP   0x1b07"
+.br
+.ti -1c
+.RI "#define \fBP_K65_NRGB_STR\fP   '1b07'"
+.br
+.ti -1c
+.RI "#define \fBP_K65_LUX\fP   0x1b37"
+.br
+.ti -1c
+.RI "#define \fBP_K65_LUX_STR\fP   '1b37'"
+.br
+.ti -1c
+.RI "#define \fBP_K65_RFIRE\fP   0x1b39"
+.br
+.ti -1c
+.RI "#define \fBP_K65_RFIRE_STR\fP   '1b39'"
+.br
+.ti -1c
+.RI "#define \fBIS_K65\fP(kb)   ((kb)->vendor == \fBV_CORSAIR\fP && ((kb)->product == \fBP_K65\fP || (kb)->product == \fBP_K65_NRGB\fP || (kb)->product == \fBP_K65_LUX\fP || (kb)->product == \fBP_K65_RFIRE\fP))"
+.br
+.ti -1c
+.RI "#define \fBP_K70\fP   0x1b13"
+.br
+.ti -1c
+.RI "#define \fBP_K70_STR\fP   '1b13'"
+.br
+.ti -1c
+.RI "#define \fBP_K70_NRGB\fP   0x1b09"
+.br
+.ti -1c
+.RI "#define \fBP_K70_NRGB_STR\fP   '1b09'"
+.br
+.ti -1c
+.RI "#define \fBP_K70_LUX\fP   0x1b33"
+.br
+.ti -1c
+.RI "#define \fBP_K70_LUX_STR\fP   '1b33'"
+.br
+.ti -1c
+.RI "#define \fBP_K70_LUX_NRGB\fP   0x1b36"
+.br
+.ti -1c
+.RI "#define \fBP_K70_LUX_NRGB_STR\fP   '1b36'"
+.br
+.ti -1c
+.RI "#define \fBP_K70_RFIRE\fP   0x1b38"
+.br
+.ti -1c
+.RI "#define \fBP_K70_RFIRE_STR\fP   '1b38'"
+.br
+.ti -1c
+.RI "#define \fBP_K70_RFIRE_NRGB\fP   0x1b3a"
+.br
+.ti -1c
+.RI "#define \fBP_K70_RFIRE_NRGB_STR\fP   '1b3a'"
+.br
+.ti -1c
+.RI "#define \fBIS_K70\fP(kb)   ((kb)->vendor == \fBV_CORSAIR\fP && ((kb)->product == \fBP_K70\fP || (kb)->product == \fBP_K70_NRGB\fP || (kb)->product == \fBP_K70_RFIRE\fP || (kb)->product == \fBP_K70_RFIRE_NRGB\fP || (kb)->product == \fBP_K70_LUX\fP || (kb)->product == \fBP_K70_LUX_NRGB\fP))"
+.br
+.ti -1c
+.RI "#define \fBP_K95\fP   0x1b11"
+.br
+.ti -1c
+.RI "#define \fBP_K95_STR\fP   '1b11'"
+.br
+.ti -1c
+.RI "#define \fBP_K95_NRGB\fP   0x1b08"
+.br
+.ti -1c
+.RI "#define \fBP_K95_NRGB_STR\fP   '1b08'"
+.br
+.ti -1c
+.RI "#define \fBP_K95_PLATINUM\fP   0x1b2d"
+.br
+.ti -1c
+.RI "#define \fBP_K95_PLATINUM_STR\fP   '1b2d'"
+.br
+.ti -1c
+.RI "#define \fBIS_K95\fP(kb)   ((kb)->vendor == \fBV_CORSAIR\fP && ((kb)->product == \fBP_K95\fP || (kb)->product == \fBP_K95_NRGB\fP || (kb)->product == \fBP_K95_PLATINUM\fP))"
+.br
+.ti -1c
+.RI "#define \fBP_STRAFE\fP   0x1b20"
+.br
+.ti -1c
+.RI "#define \fBP_STRAFE_STR\fP   '1b20'"
+.br
+.ti -1c
+.RI "#define \fBP_STRAFE_NRGB\fP   0x1b15"
+.br
+.ti -1c
+.RI "#define \fBP_STRAFE_NRGB_STR\fP   '1b15'"
+.br
+.ti -1c
+.RI "#define \fBIS_STRAFE\fP(kb)   ((kb)->vendor == \fBV_CORSAIR\fP && ((kb)->product == \fBP_STRAFE\fP || (kb)->product == \fBP_STRAFE_NRGB\fP))"
+.br
+.ti -1c
+.RI "#define \fBP_M65\fP   0x1b12"
+.br
+.ti -1c
+.RI "#define \fBP_M65_STR\fP   '1b12'"
+.br
+.ti -1c
+.RI "#define \fBP_M65_PRO\fP   0x1b2e"
+.br
+.ti -1c
+.RI "#define \fBP_M65_PRO_STR\fP   '1b2e'"
+.br
+.ti -1c
+.RI "#define \fBIS_M65\fP(kb)   ((kb)->vendor == \fBV_CORSAIR\fP && ((kb)->product == \fBP_M65\fP || (kb)->product == \fBP_M65_PRO\fP))"
+.br
+.ti -1c
+.RI "#define \fBP_SABRE_O\fP   0x1b14  /* optical */"
+.br
+.ti -1c
+.RI "#define \fBP_SABRE_O_STR\fP   '1b14'"
+.br
+.ti -1c
+.RI "#define \fBP_SABRE_L\fP   0x1b19  /* laser */"
+.br
+.ti -1c
+.RI "#define \fBP_SABRE_L_STR\fP   '1b19'"
+.br
+.ti -1c
+.RI "#define \fBP_SABRE_N\fP   0x1b2f  /* new? */"
+.br
+.ti -1c
+.RI "#define \fBP_SABRE_N_STR\fP   '1b2f'"
+.br
+.ti -1c
+.RI "#define \fBP_SABRE_O2\fP   0x1b32 /* Observed on a CH-9000111-EU model SABRE */"
+.br
+.ti -1c
+.RI "#define \fBP_SABRE_O2_STR\fP   '1b32'"
+.br
+.ti -1c
+.RI "#define \fBIS_SABRE\fP(kb)   ((kb)->vendor == \fBV_CORSAIR\fP && ((kb)->product == \fBP_SABRE_O\fP || (kb)->product == \fBP_SABRE_L\fP || (kb)->product == \fBP_SABRE_N\fP || (kb)->product == \fBP_SABRE_O2\fP))"
+.br
+.ti -1c
+.RI "#define \fBP_SCIMITAR\fP   0x1b1e"
+.br
+.ti -1c
+.RI "#define \fBP_SCIMITAR_STR\fP   '1b1e'"
+.br
+.ti -1c
+.RI "#define \fBP_SCIMITAR_PRO\fP   0x1b3e"
+.br
+.ti -1c
+.RI "#define \fBP_SCIMITAR_PRO_STR\fP   '1b3e'"
+.br
+.ti -1c
+.RI "#define \fBIS_SCIMITAR\fP(kb)   ((kb)->vendor == \fBV_CORSAIR\fP && ((kb)->product == \fBP_SCIMITAR\fP || (kb)->product == \fBP_SCIMITAR_PRO\fP))"
+.br
+.ti -1c
+.RI "#define \fBIS_RGB\fP(vendor, product)   ((vendor) == (\fBV_CORSAIR\fP) && (product) != (\fBP_K65_NRGB\fP) && (product) != (\fBP_K70_NRGB\fP) && (product) != (\fBP_K95_NRGB\fP))"
+.br
+.RI "\fIRGB vs non-RGB test (note: non-RGB Strafe is still considered 'RGB' in that it shares the same protocol\&. The difference is denoted with the 'monochrome' feature)\&. \fP"
+.ti -1c
+.RI "#define \fBIS_MONOCHROME\fP(vendor, product)   ((vendor) == (\fBV_CORSAIR\fP) && (product) == (\fBP_STRAFE_NRGB\fP))"
+.br
+.RI "\fIThe difference between non RGB and monochrome is, that monochrome has lights, but just in one color\&. nonRGB has no lights\&. Change this if new \fBmonochrome\fP devices are added\&. \fP"
+.ti -1c
+.RI "#define \fBIS_RGB_DEV\fP(kb)   \fBIS_RGB\fP((kb)->vendor, (kb)->product)"
+.br
+.RI "\fIFor calling with a usbdevice*, vendor and product are extracted and \fBIS_RGB()\fP is returned\&. \fP"
+.ti -1c
+.RI "#define \fBIS_MONOCHROME_DEV\fP(kb)   \fBIS_MONOCHROME\fP((kb)->vendor, (kb)->product)"
+.br
+.RI "\fIFor calling with a usbdevice*, vendor and product are extracted and \fBIS_MONOCHROME()\fP is returned\&. \fP"
+.ti -1c
+.RI "#define \fBIS_FULLRANGE\fP(kb)   (\fBIS_RGB\fP((kb)->vendor, (kb)->product) && (kb)->product != \fBP_K65\fP && (kb)->product != \fBP_K70\fP && (kb)->product != \fBP_K95\fP)"
+.br
+.RI "\fIFull color range (16\&.8M) vs partial color range (512) \fP"
+.ti -1c
+.RI "#define \fBIS_MOUSE\fP(vendor, product)   ((vendor) == (\fBV_CORSAIR\fP) && ((product) == (\fBP_M65\fP) || (product) == (\fBP_M65_PRO\fP) || (product) == (\fBP_SABRE_O\fP) || (product) == (\fBP_SABRE_L\fP) || (product) == (\fBP_SABRE_N\fP) || (product) == (\fBP_SCIMITAR\fP) || (product) == (\fBP_SCIMITAR_PRO\fP) || (product) == (\fBP_SABRE_O2\fP)))"
+.br
+.RI "\fIMouse vs keyboard test\&. \fP"
+.ti -1c
+.RI "#define \fBIS_MOUSE_DEV\fP(kb)   \fBIS_MOUSE\fP((kb)->vendor, (kb)->product)"
+.br
+.RI "\fIFor calling with a usbdevice*, vendor and product are extracted and \fBIS_MOUSE()\fP is returned\&. \fP"
+.ti -1c
+.RI "#define \fBDELAY_SHORT\fP(kb)   usleep((int)(kb)->usbdelay * 1000)"
+.br
+.RI "\fIUSB delays for when the keyboards get picky about timing That was the original comment, but it is used anytime\&. The short delay is used before any send or receive\&. \fP"
+.ti -1c
+.RI "#define \fBDELAY_MEDIUM\fP(kb)   usleep((int)(kb)->usbdelay * 10000)"
+.br
+.RI "\fIthe medium delay is used after sending a command before waiting for the answer\&. \fP"
+.ti -1c
+.RI "#define \fBDELAY_LONG\fP(kb)   usleep(100000)"
+.br
+.RI "\fIThe longest delay takes place where something went wrong (eg when resetting the device) \fP"
+.ti -1c
+.RI "#define \fBUSB_DELAY_DEFAULT\fP   5"
+.br
+.RI "\fIThis constant is used to initialize \fBkb->usbdelay\fP\&. It is used in many places (see macros above) but often also overwritten to the fixed value of 10\&. Pure Hacker code\&. \fP"
+.ti -1c
+.RI "#define \fBresetusb\fP(kb)   \fB_resetusb\fP(kb, \fB__FILE_NOPATH__\fP, __LINE__)"
+.br
+.RI "\fI\fBresetusb()\fP is just a macro to call \fB_resetusb()\fP with debuggin constants (file, lineno) \fP"
+.ti -1c
+.RI "#define \fBusbsend\fP(kb, messages, count)   \fB_usbsend\fP(kb, messages, count, \fB__FILE_NOPATH__\fP, __LINE__)"
+.br
+.RI "\fIusbsend macro is used to wrap \fB_usbsend()\fP with debugging information (file and lineno) \fP"
+.ti -1c
+.RI "#define \fBusbrecv\fP(kb, out_msg, in_msg)   \fB_usbrecv\fP(kb, out_msg, in_msg, \fB__FILE_NOPATH__\fP, __LINE__)"
+.br
+.RI "\fIusbrecv macro is used to wrap \fB_usbrecv()\fP with debugging information (file and lineno) \fP"
+.ti -1c
+.RI "#define \fBnk95cmd\fP(kb, command)   \fB_nk95cmd\fP(kb, (command) >> 16 & 0xFF, (command) & 0xFFFF, __FILE_NOPATH__, __LINE__)"
+.br
+.RI "\fI\fBnk95cmd()\fP macro is used to wrap \fB_nk95cmd()\fP with debugging information (file and lineno)\&. the command structure is different: 
+.br
+ Just the bits 23\&.\&.16 are used as bits 7\&.\&.0 for bRequest 
+.br
+ Bits 15\&.\&.0 are used as wValue \fP"
+.ti -1c
+.RI "#define \fBNK95_HWOFF\fP   0x020030"
+.br
+.RI "\fIHardware-specific commands for the K95 nonRGB,\&. \fP"
+.ti -1c
+.RI "#define \fBNK95_HWON\fP   0x020001"
+.br
+.RI "\fIHardware playback on\&. \fP"
+.ti -1c
+.RI "#define \fBNK95_M1\fP   0x140001"
+.br
+.RI "\fISwitch to mode 1\&. \fP"
+.ti -1c
+.RI "#define \fBNK95_M2\fP   0x140002"
+.br
+.RI "\fISwitch to mode 2\&. \fP"
+.ti -1c
+.RI "#define \fBNK95_M3\fP   0x140003"
+.br
+.RI "\fISwitch to mode 3\&. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "const char * \fBvendor_str\fP (short vendor)"
+.br
+.RI "\fIuncomment the following Define to see USB packets sent to the device \fP"
+.ti -1c
+.RI "const char * \fBproduct_str\fP (short product)"
+.br
+.RI "\fIproduct_str returns a condensed view on what type of device we have\&. \fP"
+.ti -1c
+.RI "int \fBusbmain\fP ()"
+.br
+.RI "\fIStart the USB main loop\&. Returns program exit code when finished\&. \fP"
+.ti -1c
+.RI "void \fBusbkill\fP ()"
+.br
+.RI "\fIStop the USB system\&. \fP"
+.ti -1c
+.RI "void \fBsetupusb\fP (\fBusbdevice\fP *kb)"
+.br
+.RI "\fIsetupusb starts a thread with kb as parameter and \fB_setupusb()\fP as entrypoint\&. \fP"
+.ti -1c
+.RI "int \fBos_setupusb\fP (\fBusbdevice\fP *kb)"
+.br
+.RI "\fIos_setupusb OS-specific setup for a specific usb device\&. \fP"
+.ti -1c
+.RI "void * \fBos_inputmain\fP (void *context)"
+.br
+.RI "\fIos_inputmain is run in a separate thread and will be detached from the main thread, so it needs to clean up its own resources\&. \fP"
+.ti -1c
+.RI "int \fBrevertusb\fP (\fBusbdevice\fP *kb)"
+.br
+.RI "\fIrevertusb sets a given device to inactive (hardware controlled) mode if not a fw-ugrade is indicated \fP"
+.ti -1c
+.RI "int \fBcloseusb\fP (\fBusbdevice\fP *kb)"
+.br
+.RI "\fIcloseusb Close a USB device and remove device entry\&. \fP"
+.ti -1c
+.RI "void \fBos_closeusb\fP (\fBusbdevice\fP *kb)"
+.br
+.RI "\fIos_closeusb unclaim it, destroy the udev device and clear data structures at kb \fP"
+.ti -1c
+.RI "int \fB_resetusb\fP (\fBusbdevice\fP *kb, const char *file, int line)"
+.br
+.RI "\fI_resetusb Reset a USB device\&. \fP"
+.ti -1c
+.RI "int \fBos_resetusb\fP (\fBusbdevice\fP *kb, const char *file, int line)"
+.br
+.RI "\fIos_resetusb is the os specific implementation for resetting usb \fP"
+.ti -1c
+.RI "int \fB_usbsend\fP (\fBusbdevice\fP *kb, const \fBuchar\fP *messages, int count, const char *file, int line)"
+.br
+.RI "\fI_usbsend send a logical message completely to the given device \fP"
+.ti -1c
+.RI "int \fB_usbrecv\fP (\fBusbdevice\fP *kb, const \fBuchar\fP *out_msg, \fBuchar\fP *in_msg, const char *file, int line)"
+.br
+.RI "\fI_usbrecv Request data from a USB device by first sending an output packet and then reading the response\&. \fP"
+.ti -1c
+.RI "int \fBos_usbsend\fP (\fBusbdevice\fP *kb, const \fBuchar\fP *out_msg, int is_recv, const char *file, int line)"
+.br
+.RI "\fIos_usbsend sends a data packet (MSG_SIZE = 64) Bytes long \fP"
+.ti -1c
+.RI "int \fBos_usbrecv\fP (\fBusbdevice\fP *kb, \fBuchar\fP *in_msg, const char *file, int line)"
+.br
+.RI "\fIos_usbrecv receives a max MSGSIZE long buffer from usb device \fP"
+.ti -1c
+.RI "void \fBos_sendindicators\fP (\fBusbdevice\fP *kb)"
+.br
+.RI "\fIos_sendindicators update the indicators for the special keys (Numlock, Capslock and what else?) \fP"
+.ti -1c
+.RI "int \fB_nk95cmd\fP (\fBusbdevice\fP *kb, \fBuchar\fP bRequest, \fBushort\fP wValue, const char *file, int line)"
+.br
+.RI "\fI_nk95cmd If we control a non RGB keyboard, set the keyboard via ioctl with usbdevfs_ctrltransfer \fP"
+.ti -1c
+.RI "int \fBusb_tryreset\fP (\fBusbdevice\fP *kb)"
+.br
+.RI "\fIusb_tryreset does what the name means: Try to reset the usb via \fBresetusb()\fP \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Vendor/product codes
+.PP
+The list of defines in the first part of the file describes the various types of equipment from Corsair and summarizes them according to specific characteristics\&. 
+.br
+ Each device type is described with two defines:
+.IP "\(bu" 2
+On the one hand the device ID with which the device can be recognized on the USB as a short
+.IP "\(bu" 2
+and on the other hand the same representation as a string, but without leading '0x'\&.
+.PP
+.PP
+First entry-pair is the Provider ID (vendorID) from Corsair\&.
+.PP
+Block No\&. contains Devices are bundled via  1 The first block contains the K65-like keyboards, regardless of their properties (RGB, \&.\&.\&.)\&. In summary, they can be queried using the macro \fBIS_K65()\fP\&. 2 the K70-like Keyboards with all their configuration types summarized by \fBIS_K70()\fP\&. 3 the K95 series keyboards collected with the macro \fBIS_K95()\fP\&. 4 strafe keyboards \fBIS_STRAFE()\fP 5 M65 mice with and without RGB \fBIS_M65()\fP 6 The SABRE and HARPOON mice\&.
+.br
+ Maybe this will be divided int two different blocks later because of different nummber of special keys \fBIS_SABRE()\fP 7 The Scimitar mouse devices \fBIS_SCIMITAR()\fP 
+.PP
+Definition in file \fBusb\&.h\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DELAY_LONG(kb)   usleep(100000)"
+
+.PP
+Definition at line 151 of file usb\&.h\&.
+.PP
+Referenced by _resetusb(), _setupusb(), _usbrecv(), _usbsend(), cmd_hwload_kb(), cmd_hwload_mouse(), cmd_hwsave_kb(), and cmd_hwsave_mouse()\&.
+.SS "#define DELAY_MEDIUM(kb)   usleep((int)(kb)->usbdelay * 10000)"
+
+.PP
+Definition at line 148 of file usb\&.h\&.
+.PP
+Referenced by _usbrecv(), and setactive_kb()\&.
+.SS "#define DELAY_SHORT(kb)   usleep((int)(kb)->usbdelay * 1000)"
+
+.PP
+Definition at line 145 of file usb\&.h\&.
+.PP
+Referenced by _usbrecv(), _usbsend(), and updateindicators_kb()\&.
+.SS "#define IS_FULLRANGE(kb)   (\fBIS_RGB\fP((kb)->vendor, (kb)->product) && (kb)->product != \fBP_K65\fP && (kb)->product != \fBP_K70\fP && (kb)->product != \fBP_K95\fP)"
+
+.PP
+Definition at line 134 of file usb\&.h\&.
+.PP
+Referenced by readcmd(), and updatergb_kb()\&.
+.SS "#define IS_K65(kb)   ((kb)->vendor == \fBV_CORSAIR\fP && ((kb)->product == \fBP_K65\fP || (kb)->product == \fBP_K65_NRGB\fP || (kb)->product == \fBP_K65_LUX\fP || (kb)->product == \fBP_K65_RFIRE\fP))"
+
+.PP
+Definition at line 49 of file usb\&.h\&.
+.PP
+Referenced by has_key()\&.
+.SS "#define IS_K70(kb)   ((kb)->vendor == \fBV_CORSAIR\fP && ((kb)->product == \fBP_K70\fP || (kb)->product == \fBP_K70_NRGB\fP || (kb)->product == \fBP_K70_RFIRE\fP || (kb)->product == \fBP_K70_RFIRE_NRGB\fP || (kb)->product == \fBP_K70_LUX\fP || (kb)->product == \fBP_K70_LUX_NRGB\fP))"
+
+.PP
+Definition at line 63 of file usb\&.h\&.
+.SS "#define IS_K95(kb)   ((kb)->vendor == \fBV_CORSAIR\fP && ((kb)->product == \fBP_K95\fP || (kb)->product == \fBP_K95_NRGB\fP || (kb)->product == \fBP_K95_PLATINUM\fP))"
+
+.PP
+Definition at line 71 of file usb\&.h\&.
+.PP
+Referenced by cmd_hwload_kb(), cmd_hwsave_kb(), and has_key()\&.
+.SS "#define IS_M65(kb)   ((kb)->vendor == \fBV_CORSAIR\fP && ((kb)->product == \fBP_M65\fP || (kb)->product == \fBP_M65_PRO\fP))"
+
+.PP
+Definition at line 83 of file usb\&.h\&.
+.PP
+Referenced by isblack()\&.
+.SS "#define IS_MONOCHROME(vendor, product)   ((vendor) == (\fBV_CORSAIR\fP) && (product) == (\fBP_STRAFE_NRGB\fP))"
+
+.PP
+Definition at line 125 of file usb\&.h\&.
+.PP
+Referenced by _setupusb()\&.
+.SS "#define IS_MONOCHROME_DEV(kb)   \fBIS_MONOCHROME\fP((kb)->vendor, (kb)->product)"
+
+.PP
+Definition at line 131 of file usb\&.h\&.
+.SS "#define IS_MOUSE(vendor, product)   ((vendor) == (\fBV_CORSAIR\fP) && ((product) == (\fBP_M65\fP) || (product) == (\fBP_M65_PRO\fP) || (product) == (\fBP_SABRE_O\fP) || (product) == (\fBP_SABRE_L\fP) || (product) == (\fBP_SABRE_N\fP) || (product) == (\fBP_SCIMITAR\fP) || (product) == (\fBP_SCIMITAR_PRO\fP) || (product) == (\fBP_SABRE_O2\fP)))"
+
+.PP
+Definition at line 137 of file usb\&.h\&.
+.PP
+Referenced by _setupusb(), get_vtable(), has_key(), and os_inputmain()\&.
+.SS "#define IS_MOUSE_DEV(kb)   \fBIS_MOUSE\fP((kb)->vendor, (kb)->product)"
+
+.PP
+Definition at line 140 of file usb\&.h\&.
+.PP
+Referenced by readcmd()\&.
+.SS "#define IS_RGB(vendor, product)   ((vendor) == (\fBV_CORSAIR\fP) && (product) != (\fBP_K65_NRGB\fP) && (product) != (\fBP_K70_NRGB\fP) && (product) != (\fBP_K95_NRGB\fP))"
+
+.PP
+Definition at line 120 of file usb\&.h\&.
+.PP
+Referenced by _setupusb(), get_vtable(), and os_inputmain()\&.
+.SS "#define IS_RGB_DEV(kb)   \fBIS_RGB\fP((kb)->vendor, (kb)->product)"
+
+.PP
+Definition at line 128 of file usb\&.h\&.
+.SS "#define IS_SABRE(kb)   ((kb)->vendor == \fBV_CORSAIR\fP && ((kb)->product == \fBP_SABRE_O\fP || (kb)->product == \fBP_SABRE_L\fP || (kb)->product == \fBP_SABRE_N\fP || (kb)->product == \fBP_SABRE_O2\fP))"
+
+.PP
+Definition at line 93 of file usb\&.h\&.
+.PP
+Referenced by has_key(), loadrgb_mouse(), and savergb_mouse()\&.
+.SS "#define IS_SCIMITAR(kb)   ((kb)->vendor == \fBV_CORSAIR\fP && ((kb)->product == \fBP_SCIMITAR\fP || (kb)->product == \fBP_SCIMITAR_PRO\fP))"
+
+.PP
+Definition at line 99 of file usb\&.h\&.
+.PP
+Referenced by has_key(), loadrgb_mouse(), and savergb_mouse()\&.
+.SS "#define IS_STRAFE(kb)   ((kb)->vendor == \fBV_CORSAIR\fP && ((kb)->product == \fBP_STRAFE\fP || (kb)->product == \fBP_STRAFE_NRGB\fP))"
+
+.PP
+Definition at line 77 of file usb\&.h\&.
+.PP
+Referenced by savergb_kb()\&.
+.SS "#define NK95_HWOFF   0x020030"
+
+.PP
+\fBSee Also:\fP
+.RS 4
+\fCusb2\&.0 documentation for details\fP\&. Set Hardware playback off 
+.RE
+.PP
+
+.PP
+Definition at line 297 of file usb\&.h\&.
+.PP
+Referenced by start_kb_nrgb()\&.
+.SS "#define NK95_HWON   0x020001"
+
+.PP
+Definition at line 300 of file usb\&.h\&.
+.PP
+Referenced by revertusb()\&.
+.SS "#define NK95_M1   0x140001"
+
+.PP
+Definition at line 303 of file usb\&.h\&.
+.PP
+Referenced by setmodeindex_nrgb()\&.
+.SS "#define NK95_M2   0x140002"
+
+.PP
+Definition at line 306 of file usb\&.h\&.
+.PP
+Referenced by setmodeindex_nrgb()\&.
+.SS "#define NK95_M3   0x140003"
+
+.PP
+Definition at line 309 of file usb\&.h\&.
+.PP
+Referenced by setmodeindex_nrgb()\&.
+.SS "#define nk95cmd(kb, command)   \fB_nk95cmd\fP(kb, (command) >> 16 & 0xFF, (command) & 0xFFFF, __FILE_NOPATH__, __LINE__)"
+
+.PP
+Definition at line 292 of file usb\&.h\&.
+.PP
+Referenced by revertusb(), setmodeindex_nrgb(), and start_kb_nrgb()\&.
+.SS "#define P_K65   0x1b17"
+
+.PP
+Definition at line 41 of file usb\&.h\&.
+.PP
+Referenced by product_str()\&.
+.SS "#define P_K65_LUX   0x1b37"
+
+.PP
+Definition at line 45 of file usb\&.h\&.
+.PP
+Referenced by product_str()\&.
+.SS "#define P_K65_LUX_STR   '1b37'"
+
+.PP
+Definition at line 46 of file usb\&.h\&.
+.SS "#define P_K65_NRGB   0x1b07"
+
+.PP
+Definition at line 43 of file usb\&.h\&.
+.PP
+Referenced by product_str()\&.
+.SS "#define P_K65_NRGB_STR   '1b07'"
+
+.PP
+Definition at line 44 of file usb\&.h\&.
+.SS "#define P_K65_RFIRE   0x1b39"
+
+.PP
+Definition at line 47 of file usb\&.h\&.
+.PP
+Referenced by product_str()\&.
+.SS "#define P_K65_RFIRE_STR   '1b39'"
+
+.PP
+Definition at line 48 of file usb\&.h\&.
+.SS "#define P_K65_STR   '1b17'"
+
+.PP
+Definition at line 42 of file usb\&.h\&.
+.SS "#define P_K70   0x1b13"
+
+.PP
+Definition at line 51 of file usb\&.h\&.
+.PP
+Referenced by product_str()\&.
+.SS "#define P_K70_LUX   0x1b33"
+
+.PP
+Definition at line 55 of file usb\&.h\&.
+.PP
+Referenced by loadrgb_kb(), and product_str()\&.
+.SS "#define P_K70_LUX_NRGB   0x1b36"
+
+.PP
+Definition at line 57 of file usb\&.h\&.
+.PP
+Referenced by loadrgb_kb(), and product_str()\&.
+.SS "#define P_K70_LUX_NRGB_STR   '1b36'"
+
+.PP
+Definition at line 58 of file usb\&.h\&.
+.SS "#define P_K70_LUX_STR   '1b33'"
+
+.PP
+Definition at line 56 of file usb\&.h\&.
+.SS "#define P_K70_NRGB   0x1b09"
+
+.PP
+Definition at line 53 of file usb\&.h\&.
+.PP
+Referenced by product_str()\&.
+.SS "#define P_K70_NRGB_STR   '1b09'"
+
+.PP
+Definition at line 54 of file usb\&.h\&.
+.SS "#define P_K70_RFIRE   0x1b38"
+
+.PP
+Definition at line 59 of file usb\&.h\&.
+.PP
+Referenced by product_str()\&.
+.SS "#define P_K70_RFIRE_NRGB   0x1b3a"
+
+.PP
+Definition at line 61 of file usb\&.h\&.
+.PP
+Referenced by product_str()\&.
+.SS "#define P_K70_RFIRE_NRGB_STR   '1b3a'"
+
+.PP
+Definition at line 62 of file usb\&.h\&.
+.SS "#define P_K70_RFIRE_STR   '1b38'"
+
+.PP
+Definition at line 60 of file usb\&.h\&.
+.SS "#define P_K70_STR   '1b13'"
+
+.PP
+Definition at line 52 of file usb\&.h\&.
+.SS "#define P_K95   0x1b11"
+
+.PP
+Definition at line 65 of file usb\&.h\&.
+.PP
+Referenced by product_str()\&.
+.SS "#define P_K95_NRGB   0x1b08"
+
+.PP
+Definition at line 67 of file usb\&.h\&.
+.PP
+Referenced by _nk95cmd(), and product_str()\&.
+.SS "#define P_K95_NRGB_STR   '1b08'"
+
+.PP
+Definition at line 68 of file usb\&.h\&.
+.SS "#define P_K95_PLATINUM   0x1b2d"
+
+.PP
+Definition at line 69 of file usb\&.h\&.
+.PP
+Referenced by product_str()\&.
+.SS "#define P_K95_PLATINUM_STR   '1b2d'"
+
+.PP
+Definition at line 70 of file usb\&.h\&.
+.SS "#define P_K95_STR   '1b11'"
+
+.PP
+Definition at line 66 of file usb\&.h\&.
+.SS "#define P_M65   0x1b12"
+
+.PP
+Definition at line 79 of file usb\&.h\&.
+.PP
+Referenced by product_str()\&.
+.SS "#define P_M65_PRO   0x1b2e"
+
+.PP
+Definition at line 81 of file usb\&.h\&.
+.PP
+Referenced by product_str()\&.
+.SS "#define P_M65_PRO_STR   '1b2e'"
+
+.PP
+Definition at line 82 of file usb\&.h\&.
+.SS "#define P_M65_STR   '1b12'"
+
+.PP
+Definition at line 80 of file usb\&.h\&.
+.SS "#define P_SABRE_L   0x1b19  /* laser */"
+
+.PP
+Definition at line 87 of file usb\&.h\&.
+.PP
+Referenced by product_str()\&.
+.SS "#define P_SABRE_L_STR   '1b19'"
+
+.PP
+Definition at line 88 of file usb\&.h\&.
+.SS "#define P_SABRE_N   0x1b2f  /* new? */"
+
+.PP
+Definition at line 89 of file usb\&.h\&.
+.PP
+Referenced by product_str()\&.
+.SS "#define P_SABRE_N_STR   '1b2f'"
+
+.PP
+Definition at line 90 of file usb\&.h\&.
+.SS "#define P_SABRE_O   0x1b14  /* optical */"
+
+.PP
+Definition at line 85 of file usb\&.h\&.
+.PP
+Referenced by product_str()\&.
+.SS "#define P_SABRE_O2   0x1b32 /* Observed on a CH-9000111-EU model SABRE */"
+
+.PP
+Definition at line 91 of file usb\&.h\&.
+.PP
+Referenced by product_str()\&.
+.SS "#define P_SABRE_O2_STR   '1b32'"
+
+.PP
+Definition at line 92 of file usb\&.h\&.
+.SS "#define P_SABRE_O_STR   '1b14'"
+
+.PP
+Definition at line 86 of file usb\&.h\&.
+.SS "#define P_SCIMITAR   0x1b1e"
+
+.PP
+Definition at line 95 of file usb\&.h\&.
+.PP
+Referenced by product_str()\&.
+.SS "#define P_SCIMITAR_PRO   0x1b3e"
+
+.PP
+Definition at line 97 of file usb\&.h\&.
+.PP
+Referenced by product_str()\&.
+.SS "#define P_SCIMITAR_PRO_STR   '1b3e'"
+
+.PP
+Definition at line 98 of file usb\&.h\&.
+.SS "#define P_SCIMITAR_STR   '1b1e'"
+
+.PP
+Definition at line 96 of file usb\&.h\&.
+.SS "#define P_STRAFE   0x1b20"
+
+.PP
+Definition at line 73 of file usb\&.h\&.
+.PP
+Referenced by product_str()\&.
+.SS "#define P_STRAFE_NRGB   0x1b15"
+
+.PP
+Definition at line 75 of file usb\&.h\&.
+.PP
+Referenced by product_str()\&.
+.SS "#define P_STRAFE_NRGB_STR   '1b15'"
+
+.PP
+Definition at line 76 of file usb\&.h\&.
+.SS "#define P_STRAFE_STR   '1b20'"
+
+.PP
+Definition at line 74 of file usb\&.h\&.
+.SS "#define resetusb(kb)   \fB_resetusb\fP(kb, \fB__FILE_NOPATH__\fP, __LINE__)"
+
+.PP
+Definition at line 210 of file usb\&.h\&.
+.PP
+Referenced by usb_tryreset()\&.
+.SS "#define USB_DELAY_DEFAULT   5"
+
+.PP
+Definition at line 156 of file usb\&.h\&.
+.PP
+Referenced by _setupusb(), and start_dev()\&.
+.SS "#define usbrecv(kb, out_msg, in_msg)   \fB_usbrecv\fP(kb, out_msg, in_msg, \fB__FILE_NOPATH__\fP, __LINE__)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkb\fP THE usbdevice* 
+.br
+\fIIN]\fP out_msg What information does the caller want from the device? 
+.br
+\fIOUT]\fP in_msg Here comes the answer; The names represent the usb view, not the view of this function! So INput from usb is OUTput of this function\&. 
+.RE
+.PP
+
+.PP
+Definition at line 252 of file usb\&.h\&.
+.PP
+Referenced by cmd_hwload_kb(), cmd_hwload_mouse(), getfwversion(), hwloadmode(), loaddpi(), loadrgb_kb(), and loadrgb_mouse()\&.
+.SS "#define usbsend(kb, messages, count)   \fB_usbsend\fP(kb, messages, count, \fB__FILE_NOPATH__\fP, __LINE__)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkb\fP THE usbdevice* 
+.br
+\fIIN]\fP messages a Pointer to the first byte of the logical message 
+.br
+\fIIN]\fP count how many MSG_SIZE buffers is the logical message long? 
+.RE
+.PP
+
+.PP
+Definition at line 235 of file usb\&.h\&.
+.PP
+Referenced by cmd_hwsave_kb(), cmd_hwsave_mouse(), cmd_pollrate(), fwupdate(), loadrgb_kb(), savedpi(), savergb_kb(), savergb_mouse(), setactive_kb(), setactive_mouse(), updatedpi(), updatergb_kb(), and updatergb_mouse()\&.
+.SS "#define V_CORSAIR   0x1b1c"
+
+.PP
+\fBWarning:\fP
+.RS 4
+When adding new devices please update \fBsrc/ckb/fwupgradedialog\&.cpp\fP as well\&. 
+.br
+ It should contain the same vendor/product IDs for any devices supporting firmware updates\&. 
+.br
+ In the same way, all other corresponding files have to be supplemented or modified: Currently known for this are \fB\fBusb_linux\&.c\fP\fP and \fB\fBusb_mac\&.c\fP\fP 
+.RE
+.PP
+
+.PP
+Definition at line 38 of file usb\&.h\&.
+.PP
+Referenced by usb_add_device(), and vendor_str()\&.
+.SS "#define V_CORSAIR_STR   '1b1c'"
+
+.PP
+Definition at line 39 of file usb\&.h\&.
+.PP
+Referenced by udev_enum(), and usb_add_device()\&.
+.SH "Function Documentation"
+.PP 
+.SS "int _nk95cmd (\fBusbdevice\fP *kb, \fBuchar\fPbRequest, \fBushort\fPwValue, const char *file, intline)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkb\fP THE usbdevice* 
+.br
+\fIbRequest\fP the byte array with the usb request 
+.br
+\fIwValue\fP a usb wValue 
+.br
+\fIfile\fP for error message 
+.br
+\fIline\fP for error message 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+1 (true) on failure, 0 (false) on success\&.
+.RE
+.PP
+To send control packets to a non RGB non color K95 Keyboard, use this function\&. Normally it is called via the \fBnk95cmd()\fP macro\&.
+.PP
+If it is the wrong device for which the function is called, 0 is returned and nothing done\&. Otherwise a usbdevfs_ctrltransfer structure is filled and an USBDEVFS_CONTROL ioctl() called\&.
+.PP
+bRequestType bRequest wValue EP size Timeout data  0x40 see table below to switch hardware-modus at Keyboard wValue device MSG_SIZE 5ms the message buffer pointer Host to Device, Type=Vendor, Recipient=Device bRequest parameter given wValue Parameter device 0 0 data to write 5000 null If a 0 or a negative error number is returned by the ioctl, an error message is shown depending on the errno or 'No data written' if retval was 0\&. In either case 1 is returned to indicate the error\&. If the ioctl returned a value > 0, 0 is returned to indicate no error\&.
+.PP
+Currently the following combinations for bRequest and wValue are used: Device what it might to do constant bRequest wValue  non RGB Keyboard set HW-modus on (leave the ckb driver) HWON 0x0002 0x0030 non RGB Keyboard set HW-modus off (initialize the ckb driver) HWOFF 0x0002 0x0001 non RGB Keyboard set light modus M1 in single-color keyboards NK95_M1 0x0014 0x0001 non RGB Keyboard set light modus M2 in single-color keyboards NK95_M2 0x0014 0x0002 non RGB Keyboard set light modus M3 in single-color keyboards NK95_M3 0x0014 0x0003 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBusb\&.h\fP 
+.RE
+.PP
+
+.PP
+Definition at line 189 of file usb_linux\&.c\&.
+.PP
+References ckb_err_fn, usbdevice::handle, P_K95_NRGB, and usbdevice::product\&.
+.PP
+.nf
+189                                                                                       {
+190     if(kb->product != P_K95_NRGB)
+191         return 0;
+192     struct usbdevfs_ctrltransfer transfer = { 0x40, bRequest, wValue, 0, 0, 5000, 0 };
+193     int res = ioctl(kb->handle - 1, USBDEVFS_CONTROL, &transfer);
+194     if(res <= 0){
+195         ckb_err_fn("%s\n", file, line, res ? strerror(errno) : "No data written");
+196         return 1;
+197     }
+198     return 0;
+199 }
+.fi
+.SS "int _resetusb (\fBusbdevice\fP *kb, const char *file, intline)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkb\fP THE usbdevice* 
+.br
+\fIfile\fP filename for error messages 
+.br
+\fIline\fP line where it is called for error messages 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns 0 on success, -1 if device should be removed
+.RE
+.PP
+_resetusb Reset a USB device\&.
+.PP
+First reset the device via \fBos_resetusb()\fP after a long delay (it may send something to the host)\&. If this worked (retval == 0), give the device another long delay Then perform the initialization via the device specific start() function entry in kb->vtable and if this is successful also, return the result of the device depenten updatergb() with force=true\&. 
+.PP
+Definition at line 426 of file usb\&.c\&.
+.PP
+References usbdevice::active, DELAY_LONG, os_resetusb(), and usbdevice::vtable\&.
+.PP
+.nf
+426                                                         {
+427     // Perform a USB reset
+428     DELAY_LONG(kb);
+429     int res = os_resetusb(kb, file, line);
+430     if(res)
+431         return res;
+432     DELAY_LONG(kb);
+433     // Re-initialize the device
+434     if(kb->vtable->start(kb, kb->active) != 0)
+435         return -1;
+436     if(kb->vtable->updatergb(kb, 1) != 0)
+437         return -1;
+438     return 0;
+439 }
+.fi
+.SS "int _usbrecv (\fBusbdevice\fP *kb, const \fBuchar\fP *out_msg, \fBuchar\fP *in_msg, const char *file, intline)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkb\fP THE usbdevice* 
+.br
+\fIIN]\fP out_msg What information does the caller want from the device? 
+.br
+\fIOUT]\fP in_msg Here comes the answer; The names represent the usb view, not the view of this function! So INput from usb is OUTput of this function\&. 
+.br
+\fIIN]\fP file for debugging 
+.br
+\fIIN]\fP line for debugging 
+.br
+\fIIN]\fP reset_stop global variable is read 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+number of bytes read or zero on failure\&.
+.RE
+.PP
+_usbrecv Request data from a USB device by first sending an output packet and then reading the response\&.
+.PP
+To fully understand this, you need to know about usb: All control is at the usb host (the CPU)\&. If the device wants to communicate something to the host, it must wait for the host to ask\&. The usb protocol defines the cycles and periods in which actions are to be taken\&.
+.PP
+So in order to receive a data packet from the device, the host must first send a send request\&. 
+.br
+ This is done by \fB_usbrecv()\fP in the first block by sending the MSG_SIZE large data block from \fBout_msg\fP via \fBos_usbsend()\fP as it is a machine depending implementation\&. The usb target device is as always determined over kb\&.
+.PP
+For \fBos_usbsend()\fP to know that it is a receive request, the \fBis_recv\fP parameter is set to true (1)\&. With this, os_usbsend () generates a control package for the hardware, not a data packet\&.
+.PP
+If sending of the control package is not successful, a maximum of 5 times the transmission is repeated (including the first attempt)\&. If a non-cancelable error is signaled or the drive is stopped via reset_stop, \fB_usbrecv()\fP immediately returns 0\&.
+.PP
+After this, the function waits for the requested response from the device using os_usbrecv ()\&.
+.PP
+\fBos_usbrecv()\fP returns 0, -1 or something else\&. 
+.br
+ Zero signals a serious error which is not treatable and \fB_usbrecv()\fP also returns 0\&. 
+.br
+ -1 means that it is a treatable error - a timeout for example - and therefore the next transfer attempt is started after a long pause (DELAY_LONG) if not reset_stop or the wrong hwload_mode require a termination with a return value of 0\&.
+.PP
+After 5 attempts, _usbrecv () returns and returns 0 as well as an error message\&.
+.PP
+When data is received, the number of received bytes is returned\&. This should always be MSG_SIZE, but \fBos_usbrecv()\fP can also return less\&. It should not be more, because then there would be an unhandled buffer overflow, but it could be less\&. This would be signaled in os_usbrecv () with a message\&.
+.PP
+The buffers behind \fBout_msg\fP and \fBin_msg\fP are MSG_SIZE at least (currently 64 Bytes)\&. More is ok but useless, less brings unpredictable behavior\&. 
+.PP
+Definition at line 599 of file usb\&.c\&.
+.PP
+References ckb_err_fn, DELAY_LONG, DELAY_MEDIUM, DELAY_SHORT, hwload_mode, os_usbrecv(), os_usbsend(), and reset_stop\&.
+.PP
+.nf
+599                                                                                             {
+600     // Try a maximum of 5 times
+601     for(int try = 0; try < 5; try++){
+602         // Send the output message
+603         DELAY_SHORT(kb);
+604         int res = os_usbsend(kb, out_msg, 1, file, line);
+605         if(res == 0)
+606             return 0;
+607         else if(res == -1){
+608             // Retry on temporary failure
+609             if(reset_stop)
+610                 return 0;
+611             DELAY_LONG(kb);
+612             continue;
+613         }
+614         // Wait for the response
+615         DELAY_MEDIUM(kb);
+616         res = os_usbrecv(kb, in_msg, file, line);
+617         if(res == 0)
+618             return 0;
+619         else if(res != -1)
+620             return res;
+621         if(reset_stop || hwload_mode != 2)
+622             return 0;
+623         DELAY_LONG(kb);
+624     }
+625     // Give up
+626     ckb_err_fn("Too many send/recv failures\&. Dropping\&.\n", file, line);
+627     return 0;
+628 }
+.fi
+.SS "int _usbsend (\fBusbdevice\fP *kb, const \fBuchar\fP *messages, intcount, const char *file, intline)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkb\fP THE usbdevice* 
+.br
+\fIIN]\fP messages a Pointer to the first byte of the logical message 
+.br
+\fIIN]\fP count how many MSG_SIZE buffers is the logical message long? 
+.br
+\fIIN]\fP file for debugging 
+.br
+\fIIN]\fP line for debugging 
+.br
+\fIreset_stop\fP global variable is read 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+number of Bytes sent (ideal == count * MSG_SIZE);
+.br
+ 0 if a block could not be sent and it was not a timeout OR \fBreset_stop\fP was required or \fBhwload_mode\fP is not set to 'always'
+.RE
+.PP
+_usbsend send a logical message completely to the given device
+.PP
+\fBTodo\fP
+.RS 4
+A lot of different conditions are combined in this code\&. Don't think, it is good in every combination\&.\&.\&.
+.RE
+.PP
+.PP
+The main task of _usbsend () is to transfer the complete logical message from the buffer beginning with \fImessages\fP to \fBcount * MSG_SIZE\fP\&. 
+.br
+ According to usb 2\&.0 specification, a USB transmits a maximum of 64 byte user data packets\&. For the transmission of longer messages we need a segmentation\&. And that is exactly what happens here\&.
+.PP
+The message is given one by one to \fBos_usbsend()\fP in MSG_SIZE (= 64) byte large bites\&. 
+.PP
+\fBAttention:\fP
+.RS 4
+This means that the buffer given as argument must be n * MSG_SIZE Byte long\&.
+.RE
+.PP
+An essential constant parameter which is relevant for \fBos_usbsend()\fP only is is_recv = 0, which means sending\&.
+.PP
+Now it gets a little complicated again:
+.IP "\(bu" 2
+If \fBos_usbsend()\fP returns 0, only zero bytes could be sent in one of the packets, or it was an error (-1 from the systemcall), but not a timeout\&. How many Bytes were sent in total from earlier calls does not seem to matter, \fB_usbsend()\fP returns a total of 0\&.
+.IP "\(bu" 2
+Returns \fBos_usbsend()\fP -1, first check if \fBreset_stop\fP is set globally or (incomprehensible) hwload_mode is not set to 'always'\&. In either case, \fB_usbsend()\fP returns 0, otherwise it is assumed to be a temporary transfer error and it simply retransmits the physical packet after a long delay\&.
+.IP "\(bu" 2
+If the return value of \fBos_usbsend()\fP was neither 0 nor -1, it specifies the numer of bytes transferred\&. 
+.br
+ Here is an information hiding conflict with \fBos_usbsend()\fP (at least in the Linux version): 
+.br
+ If \fBos_usbsend()\fP can not transfer the entire packet, errors are thrown and the number of bytes sent is returned\&. \fB_usbsend()\fP interprets this as well and remembers the total number of bytes transferred in the local variable \fBtotal_sent\fP\&. Subsequently, however, transmission is continued with the next complete MSG_SIZE block and not with the first of the possibly missing bytes\&. 
+.PP
+\fBTodo\fP
+.RS 4
+Check whether this is the same in the macOS variant\&. It is not dramatic, but if errors occur, it can certainly irritate the devices completely if they receive incomplete data streams\&. Do we have errors with the messages 'Wrote YY bytes (expected 64)' in the system logs? If not, we do not need to look any further\&.
+.RE
+.PP
+
+.PP
+.PP
+When the last packet is transferred, \fB_usbsend()\fP returns the effectively counted set of bytes (from \fBtotal_sent\fP)\&. This at least gives the caller the opportunity to check whether something has been lost in the middle\&.
+.PP
+A bit strange is the structure of the program: Handling the \fBcount\fP MSG_SIZE blocks to be transferred is done in the outer for (\&.\&.\&.) loop\&. Repeating the transfer with a treatable error is managed by the inner while(1) loop\&. 
+.br
+ This must be considered when reading the code; The 'break' on successful block transfer leaves the inner while, not the for (\&.\&.\&.)\&. 
+.PP
+Definition at line 532 of file usb\&.c\&.
+.PP
+References DELAY_LONG, DELAY_SHORT, hwload_mode, MSG_SIZE, os_usbsend(), and reset_stop\&.
+.PP
+.nf
+532                                                                                          {
+533     int total_sent = 0;
+534     for(int i = 0; i < count; i++){
+535         // Send each message via the OS function
+536         while(1){
+537             DELAY_SHORT(kb);
+538             int res = os_usbsend(kb, messages + i * MSG_SIZE, 0, file, line);
+539             if(res == 0)
+540                 return 0;
+541             else if(res != -1){
+542                 total_sent += res;
+543                 break;
+544             }
+545             // Stop immediately if the program is shutting down or hardware load is set to tryonce
+546             if(reset_stop || hwload_mode != 2)
+547                 return 0;
+548             // Retry as long as the result is temporary failure
+549             DELAY_LONG(kb);
+550         }
+551     }
+552     return total_sent;
+553 }
+.fi
+.SS "int closeusb (\fBusbdevice\fP *kb)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIIN,OUT]\fP kb 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns 0 (everytime\&. No error handling is done!)
+.RE
+.PP
+closeusb Close a USB device and remove device entry\&.
+.PP
+An imutex lock ensures first of all, that no communication is currently running from the viewpoint of the driver to the user input device (ie the virtual driver with which characters or mouse movements are sent from the daemon to the operating system as inputs)\&.
+.PP
+If the \fBkb\fP has an acceptable value = 0, the index of the device is looked for and with this index \fBos_inputclose()\fP is called\&. After this no more characters can be sent to the operating system\&.
+.PP
+Then the connection to the usb device is capped by \fBos_closeusb()\fP\&. 
+.PP
+\fBTodo\fP
+.RS 4
+What is not yet comprehensible is the call to \fBupdateconnected()\fP BEFORE \fBos_closeusb()\fP\&. Should that be in the other sequence? Or is \fBupdateconnected()\fP not displaying the connected usb devices, but the representation which uinput devices are loaded? Questions about questions \&.\&.\&.
+.RE
+.PP
+.PP
+If there is no valid \fBhandle\fP, only \fBupdateconnected()\fP is called\&. We are probably trying to disconnect a connection under construction\&. Not clear\&.
+.PP
+The cmd pipe as well as all open notify pipes are deleted via rmdevpath ()\&. 
+.br
+ This means that nothing can happen to the input path - so the device-specific imutex is unlocked again and remains unlocked\&.
+.PP
+Also the dmutex is unlocked now, but only to join the thread, which was originally taken under \fBkb->thread\fP (which started with \fB_setupusb()\fP) with pthread_join() again\&. Because of the closed devices that thread would have to quit sometime 
+.PP
+\fBSee Also:\fP
+.RS 4
+the hack note with \fBrmdevpath()\fP)
+.RE
+.PP
+As soon as the thread is caught, the dmutex is locked again, which is what I do not understand yet: What other thread can do usb communication now? 
+.br
+ If the vtabel exists for the given kb (why not? It seems to have race conditions here!!), via the vtable the actually device-specific, but still everywhere identical \fBfreeprofile()\fP is called\&. This frees areas that are no longer needed\&. Then the \fBusbdevice\fP structure in its array is set to zero completely\&.
+.PP
+Error handling is rather unusual in \fBcloseusb()\fP; Everything works (no matter what the called functions return), and \fBcloseusb()\fP always returns zero (success)\&. 
+.PP
+Definition at line 673 of file usb\&.c\&.
+.PP
+References ckb_info, devpath, dmutex, usbdevice::handle, imutex, INDEX_OF, keyboard, os_closeusb(), os_inputclose(), rmdevpath(), usbdevice::thread, updateconnected(), and usbdevice::vtable\&.
+.PP
+Referenced by _setupusb(), devmain(), quitWithLock(), and usb_rm_device()\&.
+.PP
+.nf
+673                            {
+674     pthread_mutex_lock(imutex(kb));
+675     if(kb->handle){
+676         int index = INDEX_OF(kb, keyboard);
+677         ckb_info("Disconnecting %s%d\n", devpath, index);
+678         os_inputclose(kb);
+679         updateconnected();
+680         // Close USB device
+681         os_closeusb(kb);
+682     } else
+683         updateconnected();
+684     rmdevpath(kb);
+685 
+686     // Wait for thread to close
+687     pthread_mutex_unlock(imutex(kb));
+688     pthread_mutex_unlock(dmutex(kb));
+689     pthread_join(kb->thread, 0);
+690     pthread_mutex_lock(dmutex(kb));
+691 
+692     // Delete the profile and the control path
+693     if(!kb->vtable)
+694         return 0;
+695     kb->vtable->freeprofile(kb);
+696     memset(kb, 0, sizeof(usbdevice));
+697     return 0;
+698 }
+.fi
+.SS "void os_closeusb (\fBusbdevice\fP *kb)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIIN,OUT]\fP kb THE usbdevice*
+.RE
+.PP
+os_closeusb unclaim it, destroy the udev device and clear data structures at kb
+.PP
+os_closeusb is the linux specific implementation for closing an active usb port\&. 
+.br
+ If a valid handle is given in the kb structure, the usb port is unclaimed (\fBusbunclaim()\fP)\&. 
+.br
+ The device in unrefenced via library function udev_device_unref()\&. 
+.br
+ handle, udev and the first char of kbsyspath are cleared to 0 (empty string for kbsyspath)\&. 
+.PP
+Definition at line 433 of file usb_linux\&.c\&.
+.PP
+References usbdevice::handle, INDEX_OF, kbsyspath, keyboard, usbdevice::udev, and usbunclaim()\&.
+.PP
+Referenced by closeusb()\&.
+.PP
+.nf
+433                                {
+434     if(kb->handle){
+435         usbunclaim(kb, 0);
+436         close(kb->handle - 1);
+437     }
+438     if(kb->udev)
+439         udev_device_unref(kb->udev);
+440     kb->handle = 0;
+441     kb->udev = 0;
+442     kbsyspath[INDEX_OF(kb, keyboard)][0] = 0;
+443 }
+.fi
+.SS "void* os_inputmain (void *context)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcontext\fP THE usbdevice* ; Because \fBos_inputmain()\fP is started as a new thread, its formal parameter is named 'context'\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+null
+.RE
+.PP
+os_inputmain is run in a separate thread and will be detached from the main thread, so it needs to clean up its own resources\&.
+.PP
+\fBTodo\fP
+.RS 4
+This function is a collection of many tasks\&. It should be divided into several sub-functions for the sake of greater convenience:
+.RE
+.PP
+.PP
+.IP "1." 4
+set up an URB (Userspace Ressource Buffer) to communicate with the USBDEVFS_* ioctl()s
+.IP "2." 4
+perform the ioctl()
+.IP "3." 4
+interpretate the information got into the URB buffer or handle error situations and retry operation or leave the endless loop
+.IP "4." 4
+inform the os about the data
+.IP "5." 4
+loop endless via 2\&.
+.IP "6." 4
+if endless loop has gone, deinitalize the interface, free buffers etc\&.
+.IP "7." 4
+return null 
+.PP
+Here the actions in detail:
+.PP
+Monitor input transfers on all endpoints for non-RGB devices For RGB, monitor all but the last, as it's used for input/output
+.PP
+Get an usbdevfs_urb data structure and clear it via memset()
+.PP
+Hopefully the buffer lengths are equal for all devices with congruent types\&. You can find out the correctness for your device with lsusb --v or similar on macOS\&. Currently the following combinations are known and implemented:
+.PP
+device detect with macro combination endpoint # buffer-length  each none 0 8 RGB Mouse IS_RGB && IS_MOUSE 1 10 RGB Keyboard IS_RGB && !IS_MOUSE 1 21 RGB Mouse or Keyboard IS_RGB 2 MSG_SIZE (64) non RGB Mouse or Keyboard !IS_RGB 1 4 non RGB Mouse or Keyboard !IS_RGB 2 15 
+.PP
+Now submit all the URBs via ioctl(USBDEVFS_SUBMITURB) with type USBDEVFS_URB_TYPE_INTERRUPT (the endpoints are defined as type interrupt)\&. Endpoint number is 0x80\&.\&.0x82 or 0x83, depending on the model\&.
+.PP
+The userSpaceFS knows the URBs now, so start monitoring input
+.PP
+if the ioctl returns something != 0, let's have a deeper look what happened\&. Broken devices or shutting down the entire system leads to closing the device and finishing this thread\&.
+.PP
+If just an EPIPE ocurred, give the device a CLEAR_HALT and resubmit the URB\&.
+.PP
+A correct REAPURB returns a Pointer to the URB which we now have a closer look into\&. Lock all following actions with imutex\&.
+.PP
+Process the input depending on type of device\&. Interprete the actual size of the URB buffer
+.PP
+device detect with macro combination seems to be endpoint # actual buffer-length function called  mouse (RGB and non RGB) IS_MOUSE nA 8, 10 or 11 \fBhid_mouse_translate()\fP mouse (RGB and non RGB) IS_MOUSE nA MSG_SIZE (64) \fBcorsair_mousecopy()\fP RGB Keyboard IS_RGB && !IS_MOUSE 1 8 (BIOS Mode) \fBhid_kb_translate()\fP RGB Keyboard IS_RGB && !IS_MOUSE 2 5 or 21, KB inactive! \fBhid_kb_translate()\fP RGB Keyboard IS_RGB && !IS_MOUSE 3? MSG_SIZE \fBcorsair_kbcopy()\fP non RGB Keyboard !IS_RGB && !IS_MOUSE nA nA \fBhid_kb_translate()\fP 
+.PP
+The input data is transformed and copied to the kb structure\&. Now give it to the OS and unlock the imutex afterwards\&.
+.PP
+Re-submit the URB for the next run\&.
+.PP
+If the endless loop is terminated, clean up by discarding the URBs via ioctl(USBDEVFS_DISCARDURB), free the URB buffers and return a null pointer as thread exit code\&. 
+.PP
+Definition at line 239 of file usb_linux\&.c\&.
+.PP
+References usbdevice::active, ckb_err, ckb_info, corsair_kbcopy(), corsair_mousecopy(), devpath, usbdevice::epcount, usbdevice::handle, hid_kb_translate(), hid_mouse_translate(), imutex, INDEX_OF, usbdevice::input, inputupdate(), IS_MOUSE, IS_RGB, keyboard, usbinput::keys, MSG_SIZE, usbdevice::product, usbinput::rel_x, usbinput::rel_y, and usbdevice::vendor\&.
+.PP
+Referenced by _setupusb()\&.
+.PP
+.nf
+239                                  {
+240     usbdevice* kb = context;
+241     int fd = kb->handle - 1;
+242     short vendor = kb->vendor, product = kb->product;
+243     int index = INDEX_OF(kb, keyboard);
+244     ckb_info("Starting input thread for %s%d\n", devpath, index);
+245 
+250     int urbcount = IS_RGB(vendor, product) ? (kb->epcount - 1) : kb->epcount;
+251     if (urbcount == 0) {
+252         ckb_err("urbcount = 0, so there is nothing to claim in os_inputmain()\n");
+253         return 0;
+254     }
+255 
+257     struct usbdevfs_urb urbs[urbcount];
+258     memset(urbs, 0, sizeof(urbs));
+259 
+273     urbs[0]\&.buffer_length = 8;
+274     if(urbcount > 1 && IS_RGB(vendor, product)) {
+275         if(IS_MOUSE(vendor, product))
+276             urbs[1]\&.buffer_length = 10;
+277         else
+278             urbs[1]\&.buffer_length = 21;
+279         urbs[2]\&.buffer_length = MSG_SIZE;
+280         if(urbcount != 3)
+281             urbs[urbcount - 1]\&.buffer_length = MSG_SIZE;
+282     } else {
+283         urbs[1]\&.buffer_length = 4;
+284         urbs[2]\&.buffer_length = 15;
+285     }
+286 
+289     for(int i = 0; i < urbcount; i++){
+290         urbs[i]\&.type = USBDEVFS_URB_TYPE_INTERRUPT;
+291         urbs[i]\&.endpoint = 0x80 | (i + 1);
+292         urbs[i]\&.buffer = malloc(urbs[i]\&.buffer_length);
+293         ioctl(fd, USBDEVFS_SUBMITURB, urbs + i);
+294     }
+295 
+297     while (1) {
+298         struct usbdevfs_urb* urb = 0;
+299 
+302         if (ioctl(fd, USBDEVFS_REAPURB, &urb)){
+303             if (errno == ENODEV || errno == ENOENT || errno == ESHUTDOWN)
+304                 // Stop the thread if the handle closes
+305                 break;
+306             else if(errno == EPIPE && urb){
+308                 ioctl(fd, USBDEVFS_CLEAR_HALT, &urb->endpoint);
+309                 // Re-submit the URB
+310                 if(urb)
+311                     ioctl(fd, USBDEVFS_SUBMITURB, urb);
+312                 urb = 0;
+313             }
+314         }
+315 
+319         if (urb) {
+331             pthread_mutex_lock(imutex(kb));
+332             if(IS_MOUSE(vendor, product)){
+333                 switch(urb->actual_length){
+334                 case 8:
+335                 case 10:
+336                 case 11:
+337                     // HID mouse input
+338                     hid_mouse_translate(kb->input\&.keys, &kb->input\&.rel_x, &kb->input\&.rel_y, -(urb->endpoint & 0xF), urb->actual_length, urb->buffer);
+339                     break;
+340                 case MSG_SIZE:
+341                     // Corsair mouse input
+342                     corsair_mousecopy(kb->input\&.keys, -(urb->endpoint & 0xF), urb->buffer);
+343                     break;
+344                 }
+345             } else if(IS_RGB(vendor, product)){
+346                 switch(urb->actual_length){
+347                 case 8:
+348                     // RGB EP 1: 6KRO (BIOS mode) input
+349                     hid_kb_translate(kb->input\&.keys, -1, urb->actual_length, urb->buffer);
+350                     break;
+351                 case 21:
+352                 case 5:
+353                     // RGB EP 2: NKRO (non-BIOS) input\&. Accept only if keyboard is inactive
+354                     if(!kb->active)
+355                         hid_kb_translate(kb->input\&.keys, -2, urb->actual_length, urb->buffer);
+356                     break;
+357                 case MSG_SIZE:
+358                     // RGB EP 3: Corsair input
+359                     corsair_kbcopy(kb->input\&.keys, -(urb->endpoint & 0xF), urb->buffer);
+360                     break;
+361                 }
+362             } else {
+363                 // Non-RGB input
+364                 hid_kb_translate(kb->input\&.keys, urb->endpoint & 0xF, urb->actual_length, urb->buffer);
+365             }
+368             inputupdate(kb);
+369             pthread_mutex_unlock(imutex(kb));
+371             ioctl(fd, USBDEVFS_SUBMITURB, urb);
+372             urb = 0;
+373         }
+374     }
+375 
+379     ckb_info("Stopping input thread for %s%d\n", devpath, index);
+380     for(int i = 0; i < urbcount; i++){
+381         ioctl(fd, USBDEVFS_DISCARDURB, urbs + i);
+382         free(urbs[i]\&.buffer);
+383     }
+384     return 0;
+385 }
+.fi
+.SS "int os_resetusb (\fBusbdevice\fP *kb, const char *file, intline)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkb\fP THE usbdevice* 
+.br
+\fIfile\fP filename for error messages 
+.br
+\fIline\fP line where it is called for error messages 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns 0 on success, -2 if device should be removed and -1 if reset should by tried again
+.RE
+.PP
+os_resetusb is the os specific implementation for resetting usb
+.PP
+Try to reset an usb device in a linux user space driver\&.
+.IP "1." 4
+unclaim the device, but do not reconnect the system driver (second param resetting = true)
+.IP "2." 4
+reset the device via USBDEVFS_RESET command
+.IP "3." 4
+claim the device again\&. Returns 0 on success, -2 if device should be removed and -1 if reset should by tried again
+.PP
+.PP
+\fBTodo\fP
+.RS 4
+it seems that no one wants to try the reset again\&. But I'v seen it somewhere\&.\&.\&. 
+.RE
+.PP
+
+.PP
+Definition at line 495 of file usb_linux\&.c\&.
+.PP
+References usbdevice::handle, TEST_RESET, usbclaim(), and usbunclaim()\&.
+.PP
+Referenced by _resetusb()\&.
+.PP
+.nf
+495                                                            {
+496     TEST_RESET(usbunclaim(kb, 1));
+497     TEST_RESET(ioctl(kb->handle - 1, USBDEVFS_RESET));
+498     TEST_RESET(usbclaim(kb));
+499     // Success!
+500     return 0;
+501 }
+.fi
+.SS "void os_sendindicators (\fBusbdevice\fP *kb)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkb\fP THE usbdevice*
+.RE
+.PP
+os_sendindicators update the indicators for the special keys (Numlock, Capslock and what else?)
+.PP
+os_sendindicators update the indicators for the special keys (Numlock, Capslock and what else?)
+.PP
+Read the data from kb->ileds ans send them via ioctl() to the keyboard\&.
+.PP
+bRequestType bRequest wValue EP size Timeout data  0x21 0x09 0x0200 Interface 0 MSG_SIZE 1 Byte timeout 0,5ms the message buffer pointer Host to Device, Type=Class, Recipient=Interface (why not endpoint?) 9 = SEND? specific 0 1 500 struct* kb->ileds 
+.br
+ The ioctl command is USBDEVFS_CONTROL\&. 
+.PP
+Definition at line 214 of file usb_linux\&.c\&.
+.PP
+References ckb_err, usbdevice::handle, usbdevice::ileds, and usb_tryreset()\&.
+.PP
+Referenced by updateindicators_kb()\&.
+.PP
+.nf
+214                                       {
+215     static int countForReset = 0;
+216     struct usbdevfs_ctrltransfer transfer = { 0x21, 0x09, 0x0200, 0x00, 1, 500, &kb->ileds };
+217     int res = ioctl(kb->handle - 1, USBDEVFS_CONTROL, &transfer);
+218     if(res <= 0) {
+219         ckb_err("%s\n", res ? strerror(errno) : "No data written");
+220         if (usb_tryreset(kb) == 0 && countForReset++ < 3) {
+221             os_sendindicators(kb);
+222         }
+223     }
+224 }
+.fi
+.SS "int os_setupusb (\fBusbdevice\fP *kb)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkb\fP THE usbdevice* 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+0 on success, -1 otherwise\&.
+.RE
+.PP
+os_setupusb OS-specific setup for a specific usb device\&.
+.PP
+Perform the operating system-specific opening of the interface in \fBos_setupusb()\fP\&. As a result, some parameters should be set in kb (name, serial, fwversion, epcount = number of usb endpoints), and all endpoints should be claimed with \fBusbclaim()\fP\&. Claiming is the only point where \fBos_setupusb()\fP can produce an error (-1)\&. 
+.IP "\(bu" 2
+Copy device description and serial
+.IP "\(bu" 2
+Copy firmware version (needed to determine USB protocol)
+.IP "\(bu" 2
+Do some output abaout connecting interfaces
+.IP "\(bu" 2
+Claim the USB interfaces
+.PP
+.PP
+\fBTodo\fP
+.RS 4
+in these modules a pullrequest is outstanding 
+.RE
+.PP
+.PP
+< Try to reset the device and recall the function
+.PP
+< Don't do this endless in recursion
+.PP
+< \fBos_setupusb()\fP has a return value (used as boolean) 
+.PP
+Definition at line 533 of file usb_linux\&.c\&.
+.PP
+References ckb_err, ckb_info, devpath, usbdevice::epcount, usbdevice::fwversion, INDEX_OF, KB_NAME_LEN, keyboard, usbdevice::name, usbdevice::serial, SERIAL_LEN, strtrim(), usbdevice::udev, usb_tryreset(), and usbclaim()\&.
+.PP
+Referenced by _setupusb()\&.
+.PP
+.nf
+533                                {
+536     struct udev_device* dev = kb->udev;
+537     const char* name = udev_device_get_sysattr_value(dev, "product");
+538     if(name)
+539         strncpy(kb->name, name, KB_NAME_LEN);
+540     strtrim(kb->name);
+541     const char* serial = udev_device_get_sysattr_value(dev, "serial");
+542     if(serial)
+543         strncpy(kb->serial, serial, SERIAL_LEN);
+544     strtrim(kb->serial);
+547     const char* firmware = udev_device_get_sysattr_value(dev, "bcdDevice");
+548     if(firmware)
+549         sscanf(firmware, "%hx", &kb->fwversion);
+550     else
+551         kb->fwversion = 0;
+552     int index = INDEX_OF(kb, keyboard);
+555     ckb_info("Connecting %s at %s%d\n", kb->name, devpath, index);
+556 
+562     const char* ep_str = udev_device_get_sysattr_value(dev, "bNumInterfaces");
+563 #ifdef DEBUG
+564     ckb_info("Connecting %s at %s%d\n", kb->name, devpath, index);
+565     ckb_info("claiming interfaces\&. name=%s, serial=%s, firmware=%s; Got >>%s<< as ep_str\n", name, serial, firmware, ep_str);
+566 #endif //DEBUG
+567     kb->epcount = 0;
+568     if(ep_str)
+569         sscanf(ep_str, "%d", &kb->epcount);
+570     if(kb->epcount < 2){
+571         // IF we have an RGB KB with 0 or 1 endpoints, it will be in BIOS mode\&.
+572         ckb_err("Unable to read endpoint count from udev, assuming %d and reading >>%s<< or device is in BIOS mode\n", kb->epcount, ep_str);
+573         if (usb_tryreset(kb) == 0) { 
+574             static int retryCount = 0; 
+575             if (retryCount++ < 5) {
+576                 return os_setupusb(kb); 
+577             }
+578         }
+579         return -1;
+580         // ToDo are there special versions we have to detect? If there are, that was the old code to handle it:
+581         // This shouldn't happen, but if it does, assume EP count based onckb_warn what the device is supposed to have
+582         // kb->epcount = (HAS_FEATURES(kb, FEAT_RGB) ? 4 : 3);
+583         // ckb_warn("Unable to read endpoint count from udev, assuming %d and reading >>%s<<\&.\&.\&.\n", kb->epcount, ep_str);
+584     }
+585     if(usbclaim(kb)){
+586         ckb_err("Failed to claim interfaces: %s\n", strerror(errno));
+587         return -1;
+588     }
+589     return 0;
+590 }
+.fi
+.SS "int os_usbrecv (\fBusbdevice\fP *kb, \fBuchar\fP *in_msg, const char *file, intline)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkb\fP THE usbdevice* 
+.br
+\fIin_msg\fP the buffer to fill with the message received 
+.br
+\fIfile\fP for debugging 
+.br
+\fIline\fP for debugging 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+-1 on timeout, 0 on hard error, numer of bytes received otherwise
+.RE
+.PP
+os_usbrecv does what its name says:
+.PP
+The comment at the beginning of the procedure causes the suspicion that the firmware versionspecific distinction is missing for receiving from usb endpoint 3 or 4\&. The commented code contains only the reception from EP4, but this may be wrong for a software version 2\&.0 or higher (see the code for os-usbsend ())\&.
+.PP
+
+.br
+ So all the receiving is done via an ioctl() like in os_usbsend\&. The ioctl() is given a struct usbdevfs_ctrltransfer, in which the relevant parameters are entered:
+.PP
+bRequestType bRequest wValue EP size Timeout data  0xA1 0x01 0x0200 endpoint to be addressed from epcount - 1 MSG_SIZE 5ms the message buffer pointer Device to Host, Type=Class, Recipient=Interface 1 = RECEIVE? specific Interface # 64 5000 in_msg The ioctl() returns the number of bytes received\&. Here is the usual check again:
+.IP "\(bu" 2
+If the return value is -1 AND the error is a timeout (ETIMEOUT), \fBos_usbrecv()\fP will return -1 to indicate that it is probably a recoverable problem and a retry is recommended\&.
+.IP "\(bu" 2
+For another negative value or other error identifier OR 0 bytes are received, 0 is returned as an identifier for a heavy error\&.
+.IP "\(bu" 2
+In all other cases, the function returns the number of bytes received\&.
+.PP
+.PP
+If this is not the entire blocksize (MSG_SIZE bytes), an error message is issued on the standard error channel [warning 'Read YY bytes (expected 64)']\&. 
+.PP
+Definition at line 129 of file usb_linux\&.c\&.
+.PP
+References ckb_err_fn, ckb_warn_fn, usbdevice::epcount, usbdevice::handle, and MSG_SIZE\&.
+.PP
+Referenced by _usbrecv()\&.
+.PP
+.nf
+129                                                                         {
+130     int res;
+131     // This is what CUE does, but it doesn't seem to work on linux\&.
+132     /*if(kb->fwversion >= 0x130){
+133         struct usbdevfs_bulktransfer transfer;
+134         memset(&transfer, 0, sizeof(transfer));
+135         transfer\&.ep = 0x84;
+136         transfer\&.len = MSG_SIZE;
+137         transfer\&.timeout = 5000;
+138         transfer\&.data = in_msg;
+139         res = ioctl(kb->handle - 1, USBDEVFS_BULK, &transfer);
+140     } else {*/
+141         struct usbdevfs_ctrltransfer transfer = { 0xa1, 0x01, 0x0300, kb->epcount - 1, MSG_SIZE, 5000, in_msg };
+142         res = ioctl(kb->handle - 1, USBDEVFS_CONTROL, &transfer);
+143     //}
+144     if(res <= 0){
+145         ckb_err_fn("%s\n", file, line, res ? strerror(errno) : "No data read");
+146         if(res == -1 && errno == ETIMEDOUT)
+147             return -1;
+148         else
+149             return 0;
+150     } else if(res != MSG_SIZE)
+151         ckb_warn_fn("Read %d bytes (expected %d)\n", file, line, res, MSG_SIZE);
+152 #ifdef DEBUG_USB_RECV
+153     char converted[MSG_SIZE*3 + 1];
+154     for(int i=0;i<MSG_SIZE;i++)
+155         sprintf(&converted[i*3], "%02x ", in_msg[i]);
+156     ckb_warn_fn("Recv %s\n", file, line, converted);
+157 #endif
+158     return res;
+159 }
+.fi
+.SS "int os_usbsend (\fBusbdevice\fP *kb, const \fBuchar\fP *out_msg, intis_recv, const char *file, intline)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkb\fP THE usbdevice* 
+.br
+\fIout_msg\fP the MSGSIZE char long buffer to send 
+.br
+\fIis_recv\fP if true, just send an ioctl for further reading packets\&. If false, send the data at \fBout_msg\fP\&. 
+.br
+\fIfile\fP for debugging 
+.br
+\fIline\fP for debugging 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+-1 on timeout (try again), 0 on hard error, numer of bytes sent otherwise
+.RE
+.PP
+os_usbsend has two functions:
+.IP "\(bu" 2
+if is_recv == false, it tries to send a given MSG_SIZE buffer via the usb interface given with kb\&.
+.IP "\(bu" 2
+otherwise a request is sent via the usb device to initiate the receiving of a message from the remote device\&.
+.PP
+.PP
+The functionality for sending distinguishes two cases, depending on the version number of the firmware of the connected device: 
+.br
+ If the firmware is less or equal 1\&.2, the transmission is done via an ioctl()\&. The ioctl() is given a struct usbdevfs_ctrltransfer, in which the relevant parameters are entered:
+.PP
+bRequestType bRequest wValue EP size Timeout data  0x21 0x09 0x0200 endpoint / IF to be addressed from epcount-1 MSG_SIZE 5000 (=5ms) the message buffer pointer Host to Device, Type=Class, Recipient=Interface 9 = Send data? specific last or pre-last device # 64 5000 out_msg 
+.br
+ The ioctl command is USBDEVFS_CONTROL\&.
+.PP
+The same constellation is used if the device is requested to send its data (is_recv = true)\&.
+.PP
+For a more recent firmware and is_recv = false, the ioctl command USBDEVFS_CONTROL is not used (this tells the bus to enter the control mode), but the bulk method is used: USBDEVFS_BULK\&. This is astonishing, because all of the endpoints are type Interrupt, not bulk\&.
+.PP
+Anyhow, forthis purpose a different structure is used for the ioctl() (struct \fBusbdevfs_bulktransfer\fP) and this is also initialized differently: 
+.br
+ The length and timeout parameters are given the same values as above\&. The formal parameter out_msg is also passed as a buffer pointer\&. For the endpoints, the firmware version is differentiated again: 
+.br
+ For a firmware version between 1\&.3 and <2\&.0 endpoint 4 is used, otherwise (it can only be >=2\&.0) endpoint 3 is used\&.
+.PP
+\fBTodo\fP
+.RS 4
+Since the handling of endpoints has already led to problems elsewhere, this implementation is extremely hardware-dependent and critical! 
+.br
+ Eg\&. the new keyboard K95PLATINUMRGB has a version number significantly less than 2\&.0 - will it run with this implementation?
+.RE
+.PP
+.PP
+The ioctl() - no matter what type - returns the number of bytes sent\&. Now comes the usual check:
+.IP "\(bu" 2
+If the return value is -1 AND the error is a timeout (ETIMEOUT), \fBos_usbsend()\fP will return -1 to indicate that it is probably a recoverable problem and a retry is recommended\&.
+.IP "\(bu" 2
+For another negative value or other error identifier OR 0 bytes sent, 0 is returned as a heavy error identifier\&.
+.IP "\(bu" 2
+In all other cases, the function returns the number of bytes sent\&.
+.PP
+.PP
+If this is not the entire blocksize (MSG_SIZE bytes), an error message is issued on the standard error channel [warning 'Wrote YY bytes (expected 64)']\&.
+.PP
+If DEBUG_USB is set during compilation, the number of bytes sent and their representation are logged to the error channel\&. 
+.PP
+Definition at line 68 of file usb_linux\&.c\&.
+.PP
+References ckb_err_fn, ckb_warn_fn, usbdevice::epcount, usbdevice::fwversion, usbdevice::handle, and MSG_SIZE\&.
+.PP
+Referenced by _usbrecv(), and _usbsend()\&.
+.PP
+.nf
+68                                                                                             {
+69     int res;
+70     if(kb->fwversion >= 0x120 && !is_recv){
+71         struct usbdevfs_bulktransfer transfer;
+72         memset(&transfer, 0, sizeof(transfer));
+73         transfer\&.ep = (kb->fwversion >= 0x130 && kb->fwversion < 0x200) ? 4 : 3;
+74         transfer\&.len = MSG_SIZE;
+75         transfer\&.timeout = 5000;
+76         transfer\&.data = (void*)out_msg;
+77         res = ioctl(kb->handle - 1, USBDEVFS_BULK, &transfer);
+78     } else {
+79         struct usbdevfs_ctrltransfer transfer = { 0x21, 0x09, 0x0200, kb->epcount - 1, MSG_SIZE, 5000, (void*)out_msg };
+80         res = ioctl(kb->handle - 1, USBDEVFS_CONTROL, &transfer);
+81     }
+82     if(res <= 0){
+83         ckb_err_fn("%s\n", file, line, res ? strerror(errno) : "No data written");
+84         if(res == -1 && errno == ETIMEDOUT)
+85             return -1;
+86         else
+87             return 0;
+88     } else if(res != MSG_SIZE)
+89         ckb_warn_fn("Wrote %d bytes (expected %d)\n", file, line, res, MSG_SIZE);
+90 #ifdef DEBUG_USB
+91     char converted[MSG_SIZE*3 + 1];
+92     for(int i=0;i<MSG_SIZE;i++)
+93         sprintf(&converted[i*3], "%02x ", out_msg[i]);
+94     ckb_warn_fn("Sent %s\n", file, line, converted);
+95 #endif
+96     return res;
+97 }
+.fi
+.SS "const char* product_str (shortproduct)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIproduct\fP is the \fIshort\fP USB device product ID 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+string to identify a type of device (see below)
+.RE
+.PP
+product_str returns a condensed view on what type of device we have\&.
+.PP
+At present, various models and their properties are known from corsair products\&. Some models differ in principle (mice and keyboards), others differ in the way they function (for example, RGB and non RGB), but they are very similar\&.
+.PP
+Here, only the first point is taken into consideration and we return a unified model string\&. If the model is not known with its number, \fIproduct_str\fP returns an empty string\&.
+.PP
+The model numbers and corresponding strings wwith the numbers in hex-string are defined in \fC\fBusb\&.h\fP\fP 
+.PP
+At present, this function is used to initialize \fCkb->name\fP and to give information in debug strings\&.
+.PP
+\fBAttention:\fP
+.RS 4
+The combinations below have to fit to the combinations in the macros mentioned above\&. So if you add a device with a new number, change both\&.
+.RE
+.PP
+\fBTodo\fP
+.RS 4
+There are macros defined in \fBusb\&.h\fP to detect all the combinations below\&. the only difference is the parameter: The macros need the \fIkb*\fP, \fBproduct_str()\fP needs the \fIproduct\fP \fIID\fP 
+.RE
+.PP
+
+.PP
+Definition at line 70 of file usb\&.c\&.
+.PP
+References P_K65, P_K65_LUX, P_K65_NRGB, P_K65_RFIRE, P_K70, P_K70_LUX, P_K70_LUX_NRGB, P_K70_NRGB, P_K70_RFIRE, P_K70_RFIRE_NRGB, P_K95, P_K95_NRGB, P_K95_PLATINUM, P_M65, P_M65_PRO, P_SABRE_L, P_SABRE_N, P_SABRE_O, P_SABRE_O2, P_SCIMITAR, P_SCIMITAR_PRO, P_STRAFE, and P_STRAFE_NRGB\&.
+.PP
+Referenced by _mkdevpath(), and _setupusb()\&.
+.PP
+.nf
+70                                       {
+71     if(product == P_K95 || product == P_K95_NRGB || product == P_K95_PLATINUM)
+72         return "k95";
+73     if(product == P_K70 || product == P_K70_NRGB || product == P_K70_LUX || product == P_K70_LUX_NRGB || product == P_K70_RFIRE || product == P_K70_RFIRE_NRGB)
+74         return "k70";
+75     if(product == P_K65 || product == P_K65_NRGB || product == P_K65_LUX || product == P_K65_RFIRE)
+76         return "k65";
+77     if(product == P_STRAFE || product == P_STRAFE_NRGB)
+78         return "strafe";
+79     if(product == P_M65 || product == P_M65_PRO)
+80         return "m65";
+81     if(product == P_SABRE_O || product == P_SABRE_L || product == P_SABRE_N || product == P_SABRE_O2)
+82         return "sabre";
+83     if(product == P_SCIMITAR || product == P_SCIMITAR_PRO)
+84         return "scimitar";
+85     return "";
+86 }
+.fi
+.SS "int revertusb (\fBusbdevice\fP *kb)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkb\fP THE usbdevice* 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+0 on success or if device needs firmware upgrade, -1 otherwise
+.RE
+.PP
+revertusb sets a given device to inactive (hardware controlled) mode if not a fw-ugrade is indicated
+.PP
+First is checked, whether a firmware-upgrade is indicated for the device\&. If so, \fBrevertusb()\fP returns 0\&. 
+.PP
+\fBTodo\fP
+.RS 4
+Why is this useful? Are there problems seen with deactivating a device with older fw-version??? Why isn't this an error indicating reason and we return success (0)?
+.RE
+.PP
+.PP
+Anyway, the following steps are similar to some other procs, dealing with low level usb handling:
+.IP "\(bu" 2
+If we do not have an RGB device, a simple setting to Hardware-mode (NK95_HWON) is sent to the device via n95cmd()\&. 
+.PP
+\fBTodo\fP
+.RS 4
+The return value of \fBnk95cmd()\fP is ignored (but sending the ioctl may produce an error and _nk95_cmd will indicate this), instead \fBrevertusb()\fP returns success in any case\&.
+.RE
+.PP
+
+.IP "\(bu" 2
+If we have an RGB device, \fBsetactive()\fP is called with second param active = false\&. That function will have a look on differences between keyboards and mice\&. 
+.br
+ More precisely \fBsetactive()\fP is just a macro to call via the kb->vtable enties either the active() or the idle() function where the vtable points to\&. \fBsetactive()\fP may return error indications\&. If so, \fBrevertusb()\fP returns -1, otherwise 0 in any other case\&. 
+.PP
+
+.PP
+Definition at line 407 of file usb\&.c\&.
+.PP
+References FEAT_RGB, HAS_FEATURES, NEEDS_FW_UPDATE, NK95_HWON, nk95cmd, and setactive\&.
+.PP
+Referenced by quitWithLock()\&.
+.PP
+.nf
+407                             {
+408     if(NEEDS_FW_UPDATE(kb))
+409         return 0;
+410     if(!HAS_FEATURES(kb, FEAT_RGB)){
+411         nk95cmd(kb, NK95_HWON);
+412         return 0;
+413     }
+414     if(setactive(kb, 0))
+415         return -1;
+416     return 0;
+417 }
+.fi
+.SS "void setupusb (\fBusbdevice\fP *kb)"
+
+.PP
+\fBAttention:\fP
+.RS 4
+Lock a device's dmutex (see \fBdevice\&.h\fP) before accessing the USB interface\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkb\fP THE usbdevice* used everywhere 
+.br
+\fIOUT]\fP kb->thread is used to store the thread ID of the fresh created thread\&.
+.RE
+.PP
+setupusb starts a thread with kb as parameter and \fB_setupusb()\fP as entrypoint\&.
+.PP
+Set up a USB device after its handle is open\&. Spawns a new thread \fB_setupusb()\fP with standard parameter kb\&. dmutex must be locked prior to calling this function\&. The function will unlock it when finished\&. In kb->thread the thread id is mentioned, because \fBcloseusb()\fP needs this info for joining that thread again\&. 
+.PP
+Definition at line 386 of file usb\&.c\&.
+.PP
+References _setupusb(), ckb_err, imutex, and usbdevice::thread\&.
+.PP
+Referenced by usbadd()\&.
+.PP
+.nf
+386                             {
+387     pthread_mutex_lock(imutex(kb));
+388     if(pthread_create(&kb->thread, 0, _setupusb, kb))
+389         ckb_err("Failed to create USB thread\n");
+390 }
+.fi
+.SS "int usb_tryreset (\fBusbdevice\fP *kb)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkb\fP THE usbdevice* 
+.br
+\fIreset_stop\fP global variable is read 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+0 on success, -1 otherwise
+.RE
+.PP
+usb_tryreset does what the name means: Try to reset the usb via \fBresetusb()\fP
+.PP
+This function is called if an usb command ran into an error in case of one of the following two situations:
+.IP "\(bu" 2
+When setting up a new usb device and the start() function got an error (
+.PP
+\fBSee Also:\fP
+.RS 4
+\fB_setupusb()\fP)
+.RE
+.PP
+
+.IP "\(bu" 2
+If upgrading to a new firmware gets an error (
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBcmd_fwupdate()\fP)\&.
+.RE
+.PP
+The previous action which got the error will NOT be re-attempted\&.
+.PP
+.PP
+In an endless loop \fBusb_tryreset()\fP tries to reset the given usb device via the macro \fBresetusb()\fP\&. 
+.br
+ This macro calls \fB_resetusb()\fP with debugging information\&. 
+.br
+ \fB_resetusb()\fP sends a command via the operating system dependent function \fBos_resetusb()\fP and - if successful - reinitializes the device\&. \fBos_resetusb()\fP returns -2 to indicate a broken device and all structures should be removed for it\&. 
+.br
+ In that case, the loop is terminated, an error message is produced and \fBusb_tryreset()\fP returns -1\&.
+.PP
+In case \fBresetusb()\fP has success, the endless loop is left via a return 0 (success)\&. 
+.br
+ If the return value from \fBresetusb()\fP is -1, the loop is continued with the next try\&.
+.PP
+If the global variable \fBreset_stop\fP is set directly when the function is called or after each try, \fBusb_tryreset()\fP stops working and returns -1\&.
+.PP
+\fBTodo\fP
+.RS 4
+Why does \fBusb_tryreset()\fP hide the information returned from \fBresetusb()\fP? Isn't it needed by the callers? 
+.RE
+.PP
+
+.PP
+Definition at line 465 of file usb\&.c\&.
+.PP
+References ckb_err, ckb_info, reset_stop, and resetusb\&.
+.PP
+Referenced by _setupusb(), cmd_fwupdate(), os_sendindicators(), and os_setupusb()\&.
+.PP
+.nf
+465                                {
+466     if(reset_stop)
+467         return -1;
+468     ckb_info("Attempting reset\&.\&.\&.\n");
+469     while(1){
+470         int res = resetusb(kb);
+471         if(!res){
+472             ckb_info("Reset success\n");
+473             return 0;
+474         }
+475         if(res == -2 || reset_stop)
+476             break;
+477     }
+478     ckb_err("Reset failed\&. Disconnecting\&.\n");
+479     return -1;
+480 }
+.fi
+.SS "void usbkill ()"
+
+.PP
+Definition at line 834 of file usb_linux\&.c\&.
+.PP
+Referenced by quitWithLock()\&.
+.PP
+.nf
+834               {
+835     udev_unref(udev);
+836     udev = 0;
+837 }
+.fi
+.SS "int usbmain ()"
+Start the USB main loop\&. Returns program exit code when finished\&.
+.PP
+usbmain is called by \fBmain()\fP after setting up all other stuff\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+0 normally or -1 if fatal error occurs (up to now only if no new devices are available) 
+.RE
+.PP
+First check whether the uinput module is loaded by the kernel\&. 
+.PP
+\fBTodo\fP
+.RS 4
+Why isn't missing of uinput a fatal error? 
+.RE
+.PP
+.PP
+Create the udev object with udev_new() (is a function from libudev\&.h) terminate -1 if error
+.PP
+Enumerate all currently connected devices
+.PP
+\fBTodo\fP
+.RS 4
+lae\&. here the work has to go on\&.\&.\&. 
+.RE
+.PP
+
+.PP
+Definition at line 774 of file usb_linux\&.c\&.
+.PP
+References ckb_fatal, ckb_warn, udev_enum(), usb_add_device(), and usb_rm_device()\&.
+.PP
+Referenced by main()\&.
+.PP
+.nf
+774              {
+779     // Load the uinput module (if it's not loaded already)
+780     if(system("modprobe uinput") != 0)
+781         ckb_warn("Failed to load uinput module\n");
+782 
+786     if(!(udev = udev_new())) {
+787         ckb_fatal("Failed to initialize udev in usbmain(), usb_linux\&.c\n");
+788         return -1;
+789     }
+790 
+793     udev_enum();
+794 
+797     // Done scanning\&. Enter a loop to poll for device updates
+798     struct udev_monitor* monitor = udev_monitor_new_from_netlink(udev, "udev");
+799     udev_monitor_filter_add_match_subsystem_devtype(monitor, "usb", 0);
+800     udev_monitor_enable_receiving(monitor);
+801     // Get an fd for the monitor
+802     int fd = udev_monitor_get_fd(monitor);
+803     fd_set fds;
+804     while(udev){
+805         FD_ZERO(&fds);
+806         FD_SET(fd, &fds);
+807         // Block until an event is read
+808         if(select(fd + 1, &fds, 0, 0, 0) > 0 && FD_ISSET(fd, &fds)){
+809             struct udev_device* dev = udev_monitor_receive_device(monitor);
+810             if(!dev)
+811                 continue;
+812             const char* action = udev_device_get_action(dev);
+813             if(!action){
+814                 udev_device_unref(dev);
+815                 continue;
+816             }
+817             // Add/remove device
+818             if(!strcmp(action, "add")){
+819                 int res = usb_add_device(dev);
+820                 if(res == 0)
+821                     continue;
+822                 // If the device matched but the handle wasn't opened correctly, re-enumerate (this sometimes solves the problem)
+823                 if(res == -1)
+824                     udev_enum();
+825             } else if(!strcmp(action, "remove"))
+826                 usb_rm_device(dev);
+827             udev_device_unref(dev);
+828         }
+829     }
+830     udev_monitor_unref(monitor);
+831     return 0;
+832 }
+.fi
+.SS "const char* vendor_str (shortvendor)"
+vendor_str Vendor/product string representations 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvendor\fP \fIshort\fP vendor ID 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+a string: either '' or 'corsair'
+.RE
+.PP
+uncomment the following Define to see USB packets sent to the device
+.PP
+vendor_str returns 'corsair' iff the given \fIvendor\fP argument is equal to \fIV_CORSAIR\fP \fC\fP(0x1bc) else it returns ''
+.PP
+\fBAttention:\fP
+.RS 4
+There is also a string defined V_CORSAIR_STR, which returns the device number as string in hex '1b1c'\&. 
+.RE
+.PP
+
+.PP
+Definition at line 43 of file usb\&.c\&.
+.PP
+References V_CORSAIR\&.
+.PP
+Referenced by _mkdevpath(), and _setupusb()\&.
+.PP
+.nf
+43                                     {
+44     if(vendor == V_CORSAIR)
+45         return "corsair";
+46     return "";
+47 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

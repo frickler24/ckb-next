@@ -1,0 +1,51 @@
+<map id="KbBindWidget::newLayout" name="KbBindWidget::newLayout">
+<area shape="rect" id="node2" href="$classKeyWidget.html#adbbd21e7039fd0f642d0d3b0bcca0b60" title="KeyWidget::map" alt="" coords="278,5,397,32"/>
+<area shape="rect" id="node3" href="$classKbBind.html#af876f15671f6088e6f37f99dac79d298" title="KbBind::map" alt="" coords="538,56,635,83"/>
+<area shape="rect" id="node4" href="$classRebindWidget.html#a6a68ae3d9abc935dbba8e2ce187337ce" title="RebindWidget::setBind" alt="" coords="259,639,415,665"/>
+<area shape="rect" id="node49" href="$classKbBindWidget.html#ab8b3fe0117d2cab59e8342153efc0eb0" title="KbBindWidget::updateSelDisplay" alt="" coords="230,107,445,133"/>
+<area shape="rect" id="node5" href="$classRebindWidget.html#a0edad41d578028bea3ea0e327fc4c203" title="RebindWidget::setSelection" alt="" coords="495,563,679,589"/>
+<area shape="rect" id="node21" href="$classKeyAction.html#aeb94cb31b33753ccb50c30a136f66090" title="KeyAction::isNormal" alt="" coords="982,208,1125,235"/>
+<area shape="rect" id="node36" href="$classKeyMap.html#a554a0f5a25bd4cd5c3678234f5935677" title="KeyMap::layout" alt="" coords="530,613,643,640"/>
+<area shape="rect" id="node37" href="$classKeyMap.html#a2483b120b355a93530e7a7df76ee0b12" title="KeyMap::byPosition" alt="" coords="517,664,656,691"/>
+<area shape="rect" id="node38" href="$classKbBind.html#adc0b3a203d2f9604799d2f7513241f91" title="KbBind::defaultAction" alt="" coords="513,715,661,741"/>
+<area shape="rect" id="node40" href="$structKey.html#a70ac5b7c5186fbef61f62f4c04c8db62" title="Key::friendlyName" alt="" coords="521,107,652,133"/>
+<area shape="rect" id="node41" href="$classKeyMap.html#a9d4e25612de20d81ca1f60fbd1d7bc15" title="KeyMap::isISO" alt="" coords="531,765,642,792"/>
+<area shape="rect" id="node42" href="$classKbProfile.html#a84a8f4428749f8ac37d8b34393856a32" title="KbProfile::modes" alt="" coords="525,816,648,843"/>
+<area shape="rect" id="node43" href="$classKbMode.html#adfd90af39233d8c1431566859a21af1c" title="KbMode::name" alt="" coords="531,867,642,893"/>
+<area shape="rect" id="node44" href="$classKbBind.html#abd94dfb3d7ffa68b94ac08b0c1c10970" title="KbBind::isMouse" alt="" coords="526,157,647,184"/>
+<area shape="rect" id="node46" href="$classKbBind.html#a536a0b3feea7a79438ac526f257dca0c" title="KbBind::perf" alt="" coords="539,1272,634,1299"/>
+<area shape="rect" id="node48" href="$classKbPerf.html#a33c43da2bc90e6fac30c4ca65b585efa" title="KbPerf::dpi" alt="" coords="543,917,630,944"/>
+<area shape="rect" id="node6" href="$classKbBind.html#a5ec162b416f0ffad926348db02db3084" title="KbBind::light" alt="" coords="1005,499,1101,525"/>
+<area shape="rect" id="node9" href="$classKbLight.html#a0d37ba50d07c949db3d9714f9b559e6b" title="KbLight::animList" alt="" coords="992,803,1115,829"/>
+<area shape="rect" id="node10" href="$classKbAnim.html#aacd458fb1f1a853a483ec2798370ba87" title="KbAnim::name" alt="" coords="771,968,879,995"/>
+<area shape="rect" id="node11" href="$classRebindWidget.html#a7f4ff1d01115ce47182c52b51347e719" title="RebindWidget::applyChanges" alt="" coords="728,613,923,640"/>
+<area shape="rect" id="node18" href="$classKbBind.html#ab140ce3e9ab0c94d5b23129729234bfb" title="KbBind::action" alt="" coords="772,5,879,32"/>
+<area shape="rect" id="node19" href="$classRebindWidget.html#a6d1e8736f7bcc5b74c9baf22503759b1" title="RebindWidget::setBox" alt="" coords="749,1019,902,1045"/>
+<area shape="rect" id="node20" href="$classKeyAction.html#a92beb058c9ce60917688762b341b6184" title="KeyAction::isMouse" alt="" coords="756,259,895,285"/>
+<area shape="rect" id="node23" href="$classKeyAction.html#af7568ca87a4590b3978eae0dad280bbe" title="KeyAction::isDPI" alt="" coords="992,309,1115,336"/>
+<area shape="rect" id="node24" href="$classKeyAction.html#a186027e75647f80551f1a045193ee2e9" title="KeyAction::dpiInfo" alt="" coords="761,360,890,387"/>
+<area shape="rect" id="node25" href="$classKeyAction.html#a631abc9880b982c218a0da90912bb826" title="KeyAction::isProgram" alt="" coords="979,436,1128,463"/>
+<area shape="rect" id="node26" href="$classKeyAction.html#aad370323e98b85cc75124884b133d7a5" title="KeyAction::programInfo" alt="" coords="746,461,905,488"/>
+<area shape="rect" id="node27" href="$classKeyAction.html#a47168d924395b6cbddee9d171e9705e7" title="KeyAction::isAnim" alt="" coords="988,1095,1119,1121"/>
+<area shape="rect" id="node28" href="$classKeyAction.html#ac5eebd69fc7897b1c37cf3484b8268df" title="KeyAction::animInfo" alt="" coords="755,1069,895,1096"/>
+<area shape="rect" id="node29" href="$classKbLight.html#afc31bb8970f598aa20c1012c330cd8bf" title="KbLight::findAnimIdx" alt="" coords="754,563,897,589"/>
+<area shape="rect" id="node30" href="$classKeyAction.html#ad393200d82796ade359ae0e1959dbca8" title="KeyAction::isSpecial" alt="" coords="982,107,1125,133"/>
+<area shape="rect" id="node31" href="$classKeyAction.html#af79fe655405a66e7135170cfe57dafd5" title="KeyAction::specialInfo" alt="" coords="749,715,902,741"/>
+<area shape="rect" id="node32" href="$classKeyAction.html#ae657d934ff312fb11e306472472b31ef" title="isValidMacro checks whether a keyAction contains a valid macro. This is done easily: If the macro act..." alt="" coords="971,860,1136,887"/>
+<area shape="rect" id="node33" href="$classKeyAction.html#ac72be90499e81c76ae9f908e2a17d1c0" title="macroContent returns the macro key definition only (the second part of the macro action). " alt="" coords="739,816,911,843"/>
+<area shape="rect" id="node34" href="$classKeyAction.html#ac6f54c2e553b6ab11b086f734eac819d" title="macroLine returns all interresting content for a macro definition. " alt="" coords="750,867,901,893"/>
+<area shape="rect" id="node35" href="$classKeyAction.html#aa5db7ed889913fde947cfba128c7d80b" title="Debug output for invalid macro Definitions. " alt="" coords="740,917,911,944"/>
+<area shape="rect" id="node7" href="$classKbMode.html#afdfc0cdec0315dd3b2ab6506f6ef43f9" title="KbMode::light" alt="" coords="1207,499,1310,525"/>
+<area shape="rect" id="node8" href="$classKbBind.html#a92923d9f4643d368f70e54c7f409261c" title="KbBind::modeParent" alt="" coords="1187,1063,1330,1089"/>
+<area shape="rect" id="node12" href="$classKbBind.html#a6c16c7cd34f6166cf078564a08959d81" title="KbBind::setAction" alt="" coords="990,752,1117,779"/>
+<area shape="rect" id="node14" href="$classKeyAction.html#ac6ca2711aabf19331099ae5203ff315c" title="KeyAction::dpiAction" alt="" coords="981,600,1125,627"/>
+<area shape="rect" id="node15" href="$classKeyAction.html#a2932bd638ecc7ae59178c50153b82b79" title="KeyAction::modeAction" alt="" coords="974,651,1133,677"/>
+<area shape="rect" id="node16" href="$classKeyAction.html#adfa57ca3b8e177861faac0d0e69304da" title="KeyAction::lightAction" alt="" coords="978,701,1129,728"/>
+<area shape="rect" id="node17" href="$classKeyAction.html#ab8196204b95731d7effd9f52b44fb014" title="KeyAction::lockAction" alt="" coords="978,549,1129,576"/>
+<area shape="rect" id="node13" href="$classKbBind.html#a195e520e9f7ee76718ca8ca8927b1d3b" title="KbBind::globalRemap" alt="" coords="1185,752,1333,779"/>
+<area shape="rect" id="node22" href="$classKeyAction.html#a30d7a2f7f10bead67f56dc2d5c8babe3" title="KeyAction::type" alt="" coords="1201,157,1316,184"/>
+<area shape="rect" id="node39" href="$classKeyAction.html#ae744da2dd239b7d6596a341ea63b0e88" title="KeyAction::defaultAction" alt="" coords="742,1221,909,1248"/>
+<area shape="rect" id="node45" href="$classKeyMap.html#af4921437c3e6729e82ae05f4f049a5f0" title="KeyMap::isMouse" alt="" coords="762,56,889,83"/>
+<area shape="rect" id="node47" href="$classKbMode.html#afd90aa9cce9846da60a1ccc862b5a2ee" title="KbMode::perf" alt="" coords="775,1272,875,1299"/>
+<area shape="rect" id="node50" href="$classKbBind.html#a610e348fc6762607c0c4b17ce0fcc88f" title="KbBind::friendlyActionName" alt="" coords="493,5,680,32"/>
+</map>

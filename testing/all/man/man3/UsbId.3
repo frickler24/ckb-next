@@ -1,0 +1,205 @@
+.TH "UsbId" 3 "Tue May 16 2017" "Version beta-v0.2.7 at branch testing" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UsbId \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/kbmode\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUsbId\fP (const QString &_guid, quint32 _modified)"
+.br
+.ti -1c
+.RI "\fBUsbId\fP (const QString &_guid, const QString &_modified)"
+.br
+.ti -1c
+.RI "\fBUsbId\fP ()"
+.br
+.ti -1c
+.RI "QString \fBguidString\fP () const "
+.br
+.ti -1c
+.RI "void \fBguidString\fP (const QString &\fBnewGuid\fP)"
+.br
+.ti -1c
+.RI "QString \fBmodifiedString\fP () const "
+.br
+.ti -1c
+.RI "void \fBmodifiedString\fP (const QString &\fBnewModified\fP)"
+.br
+.ti -1c
+.RI "QString \fBhwModifiedString\fP () const "
+.br
+.ti -1c
+.RI "void \fBhwModifiedString\fP (const QString &\fBnewModified\fP)"
+.br
+.ti -1c
+.RI "void \fBnewGuid\fP ()"
+.br
+.ti -1c
+.RI "void \fBnewModified\fP ()"
+.br
+.in -1c
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "QUuid \fBguid\fP"
+.br
+.ti -1c
+.RI "quint32 \fBmodified\fP"
+.br
+.ti -1c
+.RI "quint32 \fBhwModified\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 11 of file kbmode\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "UsbId::UsbId (const QString &_guid, quint32_modified)\fC [inline]\fP"
+
+.PP
+Definition at line 16 of file kbmode\&.h\&.
+.PP
+.nf
+16 : guid(_guid), modified(_modified), hwModified(_modified) {}
+.fi
+.SS "UsbId::UsbId (const QString &_guid, const QString &_modified)\fC [inline]\fP"
+
+.PP
+Definition at line 17 of file kbmode\&.h\&.
+.PP
+.nf
+17 : guid(_guid), modified(_modified\&.toUInt(0, 16)), hwModified(modified) {}
+.fi
+.SS "UsbId::UsbId ()\fC [inline]\fP"
+
+.PP
+Definition at line 18 of file kbmode\&.h\&.
+.PP
+.nf
+18 : guid(QUuid::createUuid()),modified(0) {}
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "QString UsbId::guidString () const\fC [inline]\fP"
+
+.PP
+Definition at line 20 of file kbmode\&.h\&.
+.PP
+References guid\&.
+.PP
+Referenced by Kb::hwSave(), KbProfile::save(), KbMode::save(), Kb::save(), and Kb::writeProfileHeader()\&.
+.PP
+.nf
+20 { return guid\&.toString()\&.toUpper(); }
+.fi
+.SS "void UsbId::guidString (const QString &newGuid)\fC [inline]\fP"
+
+.PP
+Definition at line 21 of file kbmode\&.h\&.
+.PP
+References guid, and newGuid()\&.
+.PP
+.nf
+21 { guid = newGuid; }
+.fi
+.SS "QString UsbId::hwModifiedString () const\fC [inline]\fP"
+
+.PP
+Definition at line 24 of file kbmode\&.h\&.
+.PP
+References hwModified\&.
+.PP
+Referenced by KbMode::KbMode(), KbProfile::KbProfile(), Kb::readNotify(), KbProfile::save(), and KbMode::save()\&.
+.PP
+.nf
+24 { return QString::number(hwModified, 16); }
+.fi
+.SS "void UsbId::hwModifiedString (const QString &newModified)\fC [inline]\fP"
+
+.PP
+Definition at line 25 of file kbmode\&.h\&.
+.PP
+References hwModified\&.
+.PP
+.nf
+25 { hwModified = newModified\&.toUInt(0, 16); }
+.fi
+.SS "QString UsbId::modifiedString () const\fC [inline]\fP"
+
+.PP
+Definition at line 22 of file kbmode\&.h\&.
+.PP
+References modified\&.
+.PP
+Referenced by Kb::hwSave(), KbProfile::KbProfile(), Kb::readNotify(), KbProfile::save(), KbMode::save(), and Kb::writeProfileHeader()\&.
+.PP
+.nf
+22 { return QString::number(modified, 16); }
+.fi
+.SS "void UsbId::modifiedString (const QString &newModified)\fC [inline]\fP"
+
+.PP
+Definition at line 23 of file kbmode\&.h\&.
+.PP
+References modified\&.
+.PP
+.nf
+23 { modified = newModified\&.toUInt(0, 16); }
+.fi
+.SS "void UsbId::newGuid ()\fC [inline]\fP"
+
+.PP
+Definition at line 28 of file kbmode\&.h\&.
+.PP
+References guid\&.
+.PP
+Referenced by guidString()\&.
+.PP
+.nf
+28 { guid = QUuid::createUuid(); }
+.fi
+.SS "void UsbId::newModified ()\fC [inline]\fP"
+
+.PP
+Definition at line 29 of file kbmode\&.h\&.
+.PP
+References modified\&.
+.PP
+Referenced by KbProfile::save(), and KbMode::save()\&.
+.PP
+.nf
+29 { quint32 newMod; do { newMod = qrand(); } while(newMod == modified); modified = newMod; }
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "QUuid UsbId::guid"
+
+.PP
+Definition at line 12 of file kbmode\&.h\&.
+.PP
+Referenced by KbProfile::find(), Kb::find(), guidString(), KbMode::KbMode(), KbProfile::KbProfile(), newGuid(), KbWidget::on_modesList_customContextMenuRequested(), KbWidget::on_modesList_itemChanged(), KbWidget::on_modesList_itemClicked(), KbProfileDialog::on_profileList_customContextMenuRequested(), KbProfileDialog::on_profileList_itemChanged(), KbProfileDialog::on_profileList_itemClicked(), KbWidget::profileChanged(), Kb::readNotify(), and KbProfileDialog::repopulate()\&.
+.SS "quint32 UsbId::hwModified"
+
+.PP
+Definition at line 14 of file kbmode\&.h\&.
+.PP
+Referenced by hwModifiedString(), Kb::hwSave(), KbMode::KbMode(), and KbProfile::KbProfile()\&.
+.SS "quint32 UsbId::modified"
+
+.PP
+Definition at line 13 of file kbmode\&.h\&.
+.PP
+Referenced by Kb::hwSave(), KbMode::KbMode(), KbProfile::KbProfile(), modifiedString(), and newModified()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

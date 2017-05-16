@@ -1,0 +1,324 @@
+.TH "QuaGzipFile" 3 "Tue May 16 2017" "Version beta-v0.2.7 at branch testing" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QuaGzipFile \- 
+.PP
+GZIP file\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/quazip/quagzipfile\&.h>\fP
+.PP
+Inherits \fBQIODevice\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQuaGzipFile\fP ()"
+.br
+.RI "\fIEmpty constructor\&. \fP"
+.ti -1c
+.RI "\fBQuaGzipFile\fP (\fBQObject\fP *parent)"
+.br
+.RI "\fIEmpty constructor with a parent\&. \fP"
+.ti -1c
+.RI "\fBQuaGzipFile\fP (const QString &fileName, \fBQObject\fP *parent=NULL)"
+.br
+.RI "\fIConstructor\&. \fP"
+.ti -1c
+.RI "virtual \fB~QuaGzipFile\fP ()"
+.br
+.RI "\fIDestructor\&. \fP"
+.ti -1c
+.RI "void \fBsetFileName\fP (const QString &fileName)"
+.br
+.RI "\fISets the name of the GZIP file to be opened\&. \fP"
+.ti -1c
+.RI "QString \fBgetFileName\fP () const "
+.br
+.RI "\fIReturns the name of the GZIP file\&. \fP"
+.ti -1c
+.RI "virtual bool \fBisSequential\fP () const "
+.br
+.RI "\fIReturns true\&. \fP"
+.ti -1c
+.RI "virtual bool \fBopen\fP (QIODevice::OpenMode mode)"
+.br
+.RI "\fIOpens the file\&. \fP"
+.ti -1c
+.RI "virtual bool \fBopen\fP (int fd, QIODevice::OpenMode mode)"
+.br
+.RI "\fIOpens the file\&. \fP"
+.ti -1c
+.RI "virtual bool \fBflush\fP ()"
+.br
+.RI "\fIFlushes data to file\&. \fP"
+.ti -1c
+.RI "virtual void \fBclose\fP ()"
+.br
+.RI "\fICloses the file\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual qint64 \fBreadData\fP (char *data, qint64 maxSize)"
+.br
+.RI "\fIImplementation of QIODevice::readData()\&. \fP"
+.ti -1c
+.RI "virtual qint64 \fBwriteData\fP (const char *data, qint64 maxSize)"
+.br
+.RI "\fIImplementation of QIODevice::writeData()\&. \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQuaGzipFile\fP (const \fBQuaGzipFile\fP &that)"
+.br
+.ti -1c
+.RI "\fBQuaGzipFile\fP & \fBoperator=\fP (const \fBQuaGzipFile\fP &that)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QuaGzipFilePrivate * \fBd\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class is a wrapper around GZIP file access functions in zlib\&. Unlike \fBQuaZip\fP classes, it doesn't allow reading from a GZIP file opened as \fBQIODevice\fP, for example, if your GZIP file is in QBuffer\&. It only provides \fBQIODevice\fP access to a GZIP file contents, but the GZIP file itself must be identified by its name on disk or by descriptor id\&. 
+.PP
+Definition at line 39 of file quagzipfile\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QuaGzipFile::QuaGzipFile ()"
+Must call \fBsetFileName()\fP before trying to open\&. 
+.PP
+Definition at line 87 of file quagzipfile\&.cpp\&.
+.PP
+.nf
+87                         :
+88 d(new QuaGzipFilePrivate())
+89 {
+90 }
+.fi
+.SS "QuaGzipFile::QuaGzipFile (\fBQObject\fP *parent)"
+Must call \fBsetFileName()\fP before trying to open\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparent\fP The parent object, as per \fBQObject\fP logic\&. 
+.RE
+.PP
+
+.PP
+Definition at line 92 of file quagzipfile\&.cpp\&.
+.PP
+.nf
+92                                        :
+93 QIODevice(parent),
+94 d(new QuaGzipFilePrivate())
+95 {
+96 }
+.fi
+.SS "QuaGzipFile::QuaGzipFile (const QString &fileName, \fBQObject\fP *parent = \fCNULL\fP)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfileName\fP The name of the GZIP file\&. 
+.br
+\fIparent\fP The parent object, as per \fBQObject\fP logic\&. 
+.RE
+.PP
+
+.PP
+Definition at line 98 of file quagzipfile\&.cpp\&.
+.PP
+.nf
+98                                                                 :
+99   QIODevice(parent),
+100 d(new QuaGzipFilePrivate(fileName))
+101 {
+102 }
+.fi
+.SS "QuaGzipFile::~QuaGzipFile ()\fC [virtual]\fP"
+
+.PP
+Definition at line 104 of file quagzipfile\&.cpp\&.
+.PP
+References close(), and d\&.
+.PP
+.nf
+105 {
+106   if (isOpen()) {
+107     close();
+108   }
+109   delete d;
+110 }
+.fi
+.SS "QuaGzipFile::QuaGzipFile (const \fBQuaGzipFile\fP &that)\fC [private]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void QuaGzipFile::close ()\fC [virtual]\fP"
+
+.PP
+Definition at line 152 of file quagzipfile\&.cpp\&.
+.PP
+References d\&.
+.PP
+Referenced by ~QuaGzipFile()\&.
+.PP
+.nf
+153 {
+154   QIODevice::close();
+155   gzclose(d->gzd);
+156 }
+.fi
+.SS "bool QuaGzipFile::flush ()\fC [virtual]\fP"
+The data is written using Z_SYNC_FLUSH mode\&. Doesn't make any sense when reading\&. 
+.PP
+Definition at line 147 of file quagzipfile\&.cpp\&.
+.PP
+References d\&.
+.PP
+.nf
+148 {
+149     return gzflush(d->gzd, Z_SYNC_FLUSH) == Z_OK;
+150 }
+.fi
+.SS "QString QuaGzipFile::getFileName () const"
+
+.PP
+Definition at line 117 of file quagzipfile\&.cpp\&.
+.PP
+References d\&.
+.PP
+.nf
+118 {
+119     return d->fileName;
+120 }
+.fi
+.SS "bool QuaGzipFile::isSequential () const\fC [virtual]\fP"
+Strictly speaking, zlib supports seeking for GZIP files, but it is poorly implemented, because there is no way to implement it properly\&. For reading, seeking backwards is very slow, and for writing, it is downright impossible\&. Therefore, \fBQuaGzipFile\fP does not support seeking at all\&. 
+.PP
+Definition at line 122 of file quagzipfile\&.cpp\&.
+.PP
+.nf
+123 {
+124   return true;
+125 }
+.fi
+.SS "bool QuaGzipFile::open (QIODevice::OpenModemode)\fC [virtual]\fP"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fImode\fP Can be either QIODevice::Write or QIODevice::Read\&. ReadWrite and Append aren't supported\&. 
+.RE
+.PP
+
+.PP
+Definition at line 127 of file quagzipfile\&.cpp\&.
+.PP
+References d\&.
+.PP
+.nf
+128 {
+129     QString error;
+130     if (!d->open(d->fileName, mode, error)) {
+131         setErrorString(error);
+132         return false;
+133     }
+134     return QIODevice::open(mode);
+135 }
+.fi
+.SS "bool QuaGzipFile::open (intfd, QIODevice::OpenModemode)\fC [virtual]\fP"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfd\fP The file descriptor to read/write the GZIP file from/to\&. 
+.br
+\fImode\fP Can be either QIODevice::Write or QIODevice::Read\&. ReadWrite and Append aren't supported\&. 
+.RE
+.PP
+
+.PP
+Definition at line 137 of file quagzipfile\&.cpp\&.
+.PP
+References d\&.
+.PP
+.nf
+138 {
+139     QString error;
+140     if (!d->open(fd, mode, error)) {
+141         setErrorString(error);
+142         return false;
+143     }
+144     return QIODevice::open(mode);
+145 }
+.fi
+.SS "\fBQuaGzipFile\fP& QuaGzipFile::operator= (const \fBQuaGzipFile\fP &that)\fC [private]\fP"
+
+.SS "qint64 QuaGzipFile::readData (char *data, qint64maxSize)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 158 of file quagzipfile\&.cpp\&.
+.PP
+References d\&.
+.PP
+.nf
+159 {
+160     return gzread(d->gzd, (voidp)data, (unsigned)maxSize);
+161 }
+.fi
+.SS "void QuaGzipFile::setFileName (const QString &fileName)"
+
+.PP
+Definition at line 112 of file quagzipfile\&.cpp\&.
+.PP
+References d\&.
+.PP
+.nf
+113 {
+114     d->fileName = fileName;
+115 }
+.fi
+.SS "qint64 QuaGzipFile::writeData (const char *data, qint64maxSize)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 163 of file quagzipfile\&.cpp\&.
+.PP
+References d\&.
+.PP
+.nf
+164 {
+165     if (maxSize == 0)
+166         return 0;
+167     int written = gzwrite(d->gzd, (voidp)data, (unsigned)maxSize);
+168     if (written == 0)
+169         return -1;
+170     else
+171         return written;
+172 }
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "QuaGzipFilePrivate* QuaGzipFile::d\fC [private]\fP"
+
+.PP
+Definition at line 105 of file quagzipfile\&.h\&.
+.PP
+Referenced by close(), flush(), getFileName(), open(), readData(), setFileName(), writeData(), and ~QuaGzipFile()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

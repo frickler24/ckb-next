@@ -1,0 +1,203 @@
+.TH "MacroReaderThread" 3 "Tue May 16 2017" "Version beta-v0.2.7 at branch testing" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MacroReaderThread \- 
+.PP
+The \fBMacroReaderThread\fP class is responsible for reading Macro \fBKey\fP Values\&. It is created as a separate thread (worker thread) for reading macro commands from an fresh opened notify channel\&. Standard notify channel for macro definitions is number 2\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/macroreader\&.h>\fP
+.PP
+Inherits \fBQThread\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMacroReaderThread\fP (int macNum, QString macPath, QPlainTextEdit *macBox, QPlainTextEdit *macText)"
+.br
+.RI "\fI\fBMacroReaderThread\fP saves the four params to local vars with similar varNames\&. \fP"
+.ti -1c
+.RI "void \fBrun\fP () Q_DECL_OVERRIDE"
+.br
+.RI "\fIrun is the notification reader main loop\&. \fP"
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBreadMacro\fP (QString line)"
+.br
+.RI "\fIreadMacro is called for each line received by the worker thread\&. The method ist called via signal (metaObject) from the worker thread, which reads the keyboard input\&. Just display the key code in the macroBox Widget without he trailing newline and reposition the cursor in the macro pane\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBmacroNumber\fP"
+.br
+.RI "\fImacroNumber Filenames of nofity channels have the structure <input-device-path>/ckb1/notify<number> First part is hold in macroPath, the number is hold in macroNumber\&. macroNumber may range from 0 to 9\&. \fP"
+.ti -1c
+.RI "QString \fBmacroPath\fP"
+.br
+.RI "\fImacroPath holds the path for the notify channel \fP"
+.ti -1c
+.RI "QPlainTextEdit * \fBmacroBox\fP"
+.br
+.RI "\fImacroBox will receive the Macro \fBKey\fP Values sent from the keyboard while defining a new macro\&. \fP"
+.ti -1c
+.RI "QPlainTextEdit * \fBmacroText\fP"
+.br
+.RI "\fImacroText is the other textpane used in the UI while typing new macros\&. That variable is used for setting the focus to that textpane and to set the cursor at EOT\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+While the worker Thread gets input from the keyboard, the lines are sent via signalling (metaobject) to run a member function in the context of the Qt UI manager\&.
+.PP
+When the notify channel is closed (that's normally done by pressing 'Stop'-Button in the UI), the worker thread closes the channelFile and leaves\&. 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBMacroReaderThread()\fP, ~MacroReaderThread(), readMaco(), \fBrun()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 22 of file macroreader\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MacroReaderThread::MacroReaderThread (intmacNum, QStringmacPath, QPlainTextEdit *macBox, QPlainTextEdit *macText)\fC [inline]\fP"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fImacNum\fP 
+.br
+\fImacPath\fP 
+.br
+\fImacBox\fP 
+.br
+\fImacText\fP 
+.RE
+.PP
+
+.PP
+Definition at line 55 of file macroreader\&.h\&.
+.PP
+References macroBox, macroNumber, macroPath, and macroText\&.
+.PP
+.nf
+55                                                                                                     {
+56         macroNumber = macNum;
+57         macroPath = macPath;
+58         macroBox = macBox;
+59         macroText = macText;
+60     }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void MacroReaderThread::readMacro (QStringline)\fC [private]\fP, \fC [slot]\fP"
+This is used, because the worker thread shouldn't get access to the UI elements (and normally has none, because the pointers macroBox and macroText remain on the stack)\&. That mechanism guarantees, that the UI does not freeze if it happens something magic to the reading function\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIline\fP holds the line just got from keyboard 
+.RE
+.PP
+We want to see the keys as they appear in the macroText Widget\&.
+.PP
+Because it is possible to change the Focus via keyboard, we must set the focus on each call\&. 
+.PP
+Definition at line 26 of file macroreader\&.cpp\&.
+.PP
+References macroBox, and macroText\&.
+.PP
+.nf
+26                                               {
+31     macroText->setFocus();
+32     QTextCursor c = macroText->textCursor();
+33     c\&.setPosition(macroText->toPlainText()\&.length());
+34     macroText->setTextCursor(c);
+35     macroBox->appendPlainText(line\&.left(line\&.size()-1));
+36 }
+.fi
+.SS "void MacroReaderThread::run ()"
+\fBMacroReaderThread::run\fP is the standard main function for a thread\&. Tries to open a file <macroPath><macroNumber> several times (in this case, it should be possible the first time (the code was recycled from \fBkb\&.cpp\fP)\&.
+.PP
+While the file is open, read lines an signal them via metaObject() to the main thread\&. When the file is closed by the sender, close it as reader and terminate\&. 
+.PP
+Definition at line 46 of file macroreader\&.cpp\&.
+.PP
+References macroBox, macroNumber, macroPath, and macroText\&.
+.PP
+.nf
+46                             {
+47     qDebug() << "MacroReader::run() started with" << macroNumber << "and" << macroPath << "and" << macroBox << "and" << macroText;
+48 
+49     QFile macroFile(macroPath);
+50     // Wait a small amount of time for the node to open (100ms) (code reused from kb\&.cpp)
+51     QThread::usleep(100000);
+52     if(!macroFile\&.open(QIODevice::ReadOnly)){
+53         // If it's still not open, try again before giving up (1s at a time, 10s total)
+54         QThread::usleep(900000);
+55         for(int i = 1; i < 10; i++){
+56             if(macroFile\&.open(QIODevice::ReadOnly))
+57                 break;
+58             QThread::sleep(1);
+59         }
+60         if(!macroFile\&.isOpen()) {
+61             qDebug() << QString("unable to open macroFile (%1)")\&.arg(macroPath);
+62             return;
+63         }
+64     }
+65     // Read data from notification node macroPath
+66     QByteArray line;
+67     while(macroFile\&.isOpen() && (line = macroFile\&.readLine())\&.length() > 0){
+68         QString text = QString::fromUtf8(line);
+69         metaObject()->invokeMethod(this, "readMacro", Qt::QueuedConnection, Q_ARG(QString, text));
+70     }
+71     qDebug() << "MacroReader::run() ends\&.";
+72     macroFile\&.close();
+73     QThread::exit ();
+74 }
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "QPlainTextEdit* MacroReaderThread::macroBox\fC [private]\fP"
+
+.PP
+Definition at line 40 of file macroreader\&.h\&.
+.PP
+Referenced by MacroReaderThread(), readMacro(), and run()\&.
+.SS "int MacroReaderThread::macroNumber\fC [private]\fP"
+
+.PP
+Definition at line 31 of file macroreader\&.h\&.
+.PP
+Referenced by MacroReaderThread(), and run()\&.
+.SS "QString MacroReaderThread::macroPath\fC [private]\fP"
+
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBmacroNumber\fP 
+.RE
+.PP
+
+.PP
+Definition at line 36 of file macroreader\&.h\&.
+.PP
+Referenced by MacroReaderThread(), and run()\&.
+.SS "QPlainTextEdit* MacroReaderThread::macroText\fC [private]\fP"
+
+.PP
+Definition at line 45 of file macroreader\&.h\&.
+.PP
+Referenced by MacroReaderThread(), readMacro(), and run()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

@@ -1,0 +1,12 @@
+<map id="GradientDialog::on_stopOpacity_valueChanged" name="GradientDialog::on_stopOpacity_valueChanged">
+<area shape="rect" id="node2" href="$classColorButton.html#a05e0cfb49a76a67227a36353640a8282" title="ColorButton::color" alt="" coords="278,5,405,32"/>
+<area shape="rect" id="node3" href="$classGradientDialog.html#a263478b8c373d0eed0f2b8d2a53b9bec" title="GradientDialog::colorChanged" alt="" coords="243,56,439,83"/>
+<area shape="rect" id="node9" href="$classGradientDialog.html#ac9561fdcb1499ee945b4a6e45a80c1eb" title="GradientDialog::setPreset" alt="" coords="489,107,661,133"/>
+<area shape="rect" id="node4" href="$classGradientDialogWidget.html#a16ba02684ff21c58e196118e2c57ae94" title="GradientDialogWidget\l::setCurrentColor" alt="" coords="500,38,649,79"/>
+<area shape="rect" id="node5" href="$classGradientDialogWidget.html#aaf55c79604bdd3dedcb7694f67177100" title="GradientDialogWidget\l::makeStops" alt="" coords="709,35,859,77"/>
+<area shape="rect" id="node6" href="$classGradientDialogWidget.html#a2e381c4968d6f8f7ba3b8f545b00afb1" title="GradientDialogWidget\l::selectionColors" alt="" coords="907,35,1056,77"/>
+<area shape="rect" id="node7" href="$classGradientDialogWidget.html#ad55fe18f14aeff1ebd4ee67d4cc84e5f" title="GradientDialogWidget\l::selectedStop" alt="" coords="1104,35,1253,77"/>
+<area shape="rect" id="node8" href="$classGradientDialogWidget.html#a826228a88795cc41bbc3c5be4da87e6f" title="GradientDialogWidget\l::fillRect" alt="" coords="1301,35,1451,77"/>
+<area shape="rect" id="node10" href="$classGradientDialogWidget.html#a084f13e7bb85c4eac663517aece064be" title="GradientDialogWidget\l::setStops" alt="" coords="709,101,859,142"/>
+<area shape="rect" id="node11" href="$classGradientDialogWidget.html#a86c8f4efd74732ef510dd887417b2e6c" title="GradientDialogWidget\l::stops" alt="" coords="907,101,1056,142"/>
+</map>

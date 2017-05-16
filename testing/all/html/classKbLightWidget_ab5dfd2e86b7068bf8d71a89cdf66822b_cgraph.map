@@ -1,0 +1,7 @@
+<map id="KbLightWidget::updateLight" name="KbLightWidget::updateLight">
+<area shape="rect" id="node2" href="$classKeyWidget.html#ab35a6745c40defa3cc7a13928590ce6f" title="KeyWidget::colorMap" alt="" coords="237,5,384,32"/>
+<area shape="rect" id="node3" href="$classKbLight.html#a5bca9ce0f937639f207872b37323b5e5" title="KbLight::colorMap" alt="" coords="247,56,374,83"/>
+<area shape="rect" id="node4" href="$classKbLight.html#a51a035fad76d2b31a593ec2b25a8d8af" title="KbLight::dimming" alt="" coords="249,107,372,133"/>
+<area shape="rect" id="node5" href="$classKeyWidget.html#adbbd21e7039fd0f642d0d3b0bcca0b60" title="KeyWidget::map" alt="" coords="251,157,370,184"/>
+<area shape="rect" id="node6" href="$classKbLight.html#ae682f44cb55d99f70f6516c76f322c80" title="KbLight::map" alt="" coords="261,208,360,235"/>
+</map>

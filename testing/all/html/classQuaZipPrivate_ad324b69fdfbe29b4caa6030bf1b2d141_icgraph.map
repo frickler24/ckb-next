@@ -1,0 +1,17 @@
+<map id="QuaZipPrivate::clearDirectoryMap" name="QuaZipPrivate::clearDirectoryMap">
+<area shape="rect" id="node2" href="$classQuaZip.html#a7a4323b73e12f3b4470109f200728f9f" title="Closes ZIP file. " alt="" coords="273,373,375,400"/>
+<area shape="rect" id="node3" href="$classQuaZipFile.html#a42a39b12619bccd3d419ee60bbb3fcf6" title="Closes the file. " alt="" coords="442,272,566,298"/>
+<area shape="rect" id="node5" href="$classJlCompress.html#a4a4de9c62ecf161bb658d4d80495ea97" title="Compress a single file. " alt="" coords="868,69,1047,96"/>
+<area shape="rect" id="node6" href="$classJlCompress.html#a9cdb92d29a94c6b13a718a3249685846" title="Compress a list of files. " alt="" coords="865,120,1050,146"/>
+<area shape="rect" id="node8" href="$classJlCompress.html#a8708eafcadc5c192a1d492e784cfc98f" title="Compress a whole directory. " alt="" coords="1105,94,1279,121"/>
+<area shape="rect" id="node10" href="$classJlCompress.html#a365a153baa4c11812d93cbca60b6a293" title="Extract a whole archive. " alt="" coords="879,336,1036,362"/>
+<area shape="rect" id="node11" href="$classJlCompress.html#a38c0d58bfe3bbbcb3cf4e98d126633a3" title="Extract a single file. " alt="" coords="877,412,1038,438"/>
+<area shape="rect" id="node12" href="$classJlCompress.html#a309e9ee366719a4d8aa28f837fab73ae" title="Extract a list of files. " alt="" coords="873,474,1041,501"/>
+<area shape="rect" id="node14" href="$classJlCompress.html#ab42422be913f817d7e04c1b1cd5d0156" title="Get the file list. " alt="" coords="424,525,584,552"/>
+<area shape="rect" id="node15" href="$classQuaZipFile.html#aed75bace51f2bb4c3e4f656ab4493aac" title="Opens a file for reading. " alt="" coords="443,576,565,602"/>
+<area shape="rect" id="node16" href="$classQuaZip.html#af60a2d3930b90f3b25a3148baecad81e" title="Destroys QuaZip object. " alt="" coords="443,626,565,653"/>
+<area shape="rect" id="node4" href="$classJlCompress.html#a78c6f547384208cfa4fc7079c677522d" title="Compress a single file. " alt="" coords="632,170,811,197"/>
+<area shape="rect" id="node7" href="$classJlCompress.html#a8c581f5f8a692fc598ea98cb5fa53d37" title="Compress a subdirectory. " alt="" coords="859,170,1056,197"/>
+<area shape="rect" id="node9" href="$classJlCompress.html#a522739a65b382a9838ed69812340dd40" title="Extract a single file. " alt="" coords="641,373,802,400"/>
+<area shape="rect" id="node13" href="$classQuaZipFile.html#aa1e5a0cf491bafae6cc73e649caa97fc" title="Destroys a QuaZipFile instance. " alt="" coords="639,221,803,248"/>
+</map>
