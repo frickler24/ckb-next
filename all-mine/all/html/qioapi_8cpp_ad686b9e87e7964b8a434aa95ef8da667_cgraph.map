@@ -1,0 +1,9 @@
+<map id="fill_qiodevice_filefunc" name="fill_qiodevice_filefunc">
+<area shape="rect" id="node2" href="$qioapi_8cpp.html#a5c1872cbc73a6107a59983cf68a7eb71" title="qiodevice_close_file_func" alt="" coords="200,5,371,32"/>
+<area shape="rect" id="node3" href="$qioapi_8cpp.html#aa28e993bb89e141777695b5ed3908e5f" title="qiodevice_error_file_func" alt="" coords="202,56,369,83"/>
+<area shape="rect" id="node4" href="$qioapi_8cpp.html#a32af99f13f6baf9617565716780ae818" title="qiodevice_open_file_func" alt="" coords="201,107,369,133"/>
+<area shape="rect" id="node5" href="$qioapi_8cpp.html#ae865403be09e32051ca7a36fc6b0da3d" title="qiodevice_read_file_func" alt="" coords="203,157,368,184"/>
+<area shape="rect" id="node6" href="$qioapi_8cpp.html#a04ec190ea924a608ba5f01b4644221e6" title="qiodevice_seek_file_func" alt="" coords="201,208,369,235"/>
+<area shape="rect" id="node7" href="$qioapi_8cpp.html#a82896126bd6f1e3197b6012f0248d484" title="qiodevice_tell_file_func" alt="" coords="207,259,364,285"/>
+<area shape="rect" id="node8" href="$qioapi_8cpp.html#aa7c1be5bc23d2d6730884f16b1cbe991" title="qiodevice_write_file_func" alt="" coords="201,309,369,336"/>
+</map>

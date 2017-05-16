@@ -1,0 +1,37 @@
+<map id="RebindWidget::helpStatus" name="RebindWidget::helpStatus">
+<area shape="rect" id="node2" href="$classRebindWidget.html#a6913b3c8755765b3a14a51f48328bb44" title="RebindWidget::on_btnClearMacro_clicked changes the help info an the panel. The job of clearing the in..." alt="" coords="230,259,413,301"/>
+<area shape="rect" id="node3" href="$classRebindWidget.html#acb9a8c9aaf8a5e80601f53033d628364" title="RebindWidget::on_btnStartMacro_clicked starts macro recording. A new notification channel and MacroRe..." alt="" coords="232,325,411,366"/>
+<area shape="rect" id="node4" href="$classRebindWidget.html#ab9171f1383dc31d4cb2083fae6cbcca0" title="RebindWidget::on_btnStopMacro_clicked ends the macro recording. Notify channel ist closed..." alt="" coords="232,390,411,431"/>
+<area shape="rect" id="node6" href="$classRebindWidget.html#a6d1e8736f7bcc5b74c9baf22503759b1" title="RebindWidget::setBox" alt="" coords="245,747,398,773"/>
+<area shape="rect" id="node5" href="$classRebindWidget.html#a9d18655d9f8160c70e2bc237c1f732b5" title="RebindWidget::on_applyButton\l_clicked" alt="" coords="461,131,664,173"/>
+<area shape="rect" id="node7" href="$classRebindWidget.html#a0edad41d578028bea3ea0e327fc4c203" title="RebindWidget::setSelection" alt="" coords="471,197,655,224"/>
+<area shape="rect" id="node19" href="$classRebindWidget.html#a108c9682d994cf095c5c4e602fcde02e" title="RebindWidget::on_typingBox\l_currentIndexChanged" alt="" coords="467,249,658,290"/>
+<area shape="rect" id="node20" href="$classRebindWidget.html#a6876a78835b215cf65490fdb58e9bfc7" title="RebindWidget::on_pteMacro\lBox_textChanged" alt="" coords="469,314,656,355"/>
+<area shape="rect" id="node21" href="$classRebindWidget.html#affa2fbada8c0753920a1ebd064669c64" title="RebindWidget::on_modBox\l_currentIndexChanged" alt="" coords="472,379,653,421"/>
+<area shape="rect" id="node22" href="$classRebindWidget.html#a5164376c1d4cbd95c014fb06c10f8ace" title="RebindWidget::on_fnBox\l_currentIndexChanged" alt="" coords="479,445,646,486"/>
+<area shape="rect" id="node23" href="$classRebindWidget.html#a78bf932fa3f9d754db78bae3f08c90b3" title="RebindWidget::on_numBox\l_currentIndexChanged" alt="" coords="472,510,653,551"/>
+<area shape="rect" id="node24" href="$classRebindWidget.html#a9a8ab64c8a6538e7ac4623fc203760f9" title="RebindWidget::on_mediaBox\l_currentIndexChanged" alt="" coords="467,575,658,617"/>
+<area shape="rect" id="node25" href="$classRebindWidget.html#a506d74a818d04823ec29f111505c3ca7" title="RebindWidget::on_mbBox\l_currentIndexChanged" alt="" coords="475,641,650,682"/>
+<area shape="rect" id="node26" href="$classRebindWidget.html#a979305584d6ae130ff9c1ea6fced5b93" title="RebindWidget::on_mb2Box\l_currentIndexChanged" alt="" coords="472,706,653,747"/>
+<area shape="rect" id="node27" href="$classRebindWidget.html#a4f198d8d64870ebb62b629024d1b95c9" title="RebindWidget::on_wheelBox\l_currentIndexChanged" alt="" coords="467,771,658,813"/>
+<area shape="rect" id="node28" href="$classRebindWidget.html#a77ab083c921f930b29c01d58953de2dd" title="RebindWidget::on_dpiBox\l_currentIndexChanged" alt="" coords="476,837,649,878"/>
+<area shape="rect" id="node29" href="$classRebindWidget.html#a3284575a948ec85211a9326134c995b9" title="RebindWidget::on_modeBox\l_currentIndexChanged" alt="" coords="469,902,657,943"/>
+<area shape="rect" id="node30" href="$classRebindWidget.html#ab7db014141bab0078dbfa6d30051934e" title="RebindWidget::on_lightBox\l_currentIndexChanged" alt="" coords="473,967,653,1009"/>
+<area shape="rect" id="node31" href="$classRebindWidget.html#a23a99e4d75d0f5e0519de02eaba7ef47" title="RebindWidget::on_lockBox\l_currentIndexChanged" alt="" coords="473,1033,653,1074"/>
+<area shape="rect" id="node32" href="$classRebindWidget.html#ae2c30fe28b2a3e0829067fd61ab15fa4" title="RebindWidget::on_program\lKpBox_textChanged" alt="" coords="473,1098,653,1139"/>
+<area shape="rect" id="node33" href="$classRebindWidget.html#a3f15f53264a124fbbbc46a869fcf2757" title="RebindWidget::on_program\lKrBox_textChanged" alt="" coords="473,1163,653,1205"/>
+<area shape="rect" id="node34" href="$classRebindWidget.html#af8df26a120d9714f4f7a0f83d2a33692" title="RebindWidget::on_animBox\l_currentIndexChanged" alt="" coords="471,1229,655,1270"/>
+<area shape="rect" id="node35" href="$classRebindWidget.html#a4195017eb0aff1994fe71ac94a0e8199" title="RebindWidget::on_program\lKpButton_clicked" alt="" coords="473,1294,653,1335"/>
+<area shape="rect" id="node36" href="$classRebindWidget.html#a8bada1684b0368f2a3440dc81c8e2f5c" title="RebindWidget::on_program\lKrButton_clicked" alt="" coords="473,1359,653,1401"/>
+<area shape="rect" id="node8" href="$classKbBindWidget.html#a3274fb51d224f0ca111bd714ed524a59" title="KbBindWidget::updateBind" alt="" coords="728,71,907,97"/>
+<area shape="rect" id="node14" href="$classKbBindWidget.html#ad1ce63ee68f21c7857ca8b24b7bb8309" title="KbBindWidget::newSelection" alt="" coords="722,172,913,199"/>
+<area shape="rect" id="node16" href="$classRebindWidget.html#a6a68ae3d9abc935dbba8e2ce187337ce" title="RebindWidget::setBind" alt="" coords="739,223,895,249"/>
+<area shape="rect" id="node18" href="$classRebindWidget.html#a8cb2e54e8bbd17cae8e152132a7a1ddf" title="RebindWidget::on_cancelButton\l_clicked" alt="" coords="713,274,922,315"/>
+<area shape="rect" id="node9" href="$classKbBindWidget.html#a1ac20b99c822f65c7a2c8c61a5a1f029" title="KbBindWidget::on_resetButton\l_clicked" alt="" coords="971,5,1173,46"/>
+<area shape="rect" id="node10" href="$classKbBindWidget.html#ae06c7e036759eb9a1ae7224cdba30b0b" title="KbBindWidget::setBind" alt="" coords="1221,172,1379,199"/>
+<area shape="rect" id="node11" href="$classKbWidget.html#aae4a00bb180d711b5df7df6443c8bf36" title="KbWidget::modeChanged" alt="" coords="1427,172,1597,199"/>
+<area shape="rect" id="node12" href="$classKbWidget.html#a848a21f1fd112e13ca5fcf25da4592c6" title="KbWidget::KbWidget" alt="" coords="1680,143,1824,169"/>
+<area shape="rect" id="node13" href="$classKbWidget.html#add5eb15a399c87faf80db9fdfc2e868f" title="KbWidget::on_modesList_customContextMenuRequested. " alt="" coords="1645,194,1859,235"/>
+<area shape="rect" id="node15" href="$classKbBindWidget.html#ab41173324ff2873e36dbebb96951ed8b" title="KbBindWidget::KbBindWidget" alt="" coords="974,172,1170,199"/>
+<area shape="rect" id="node17" href="$classKbBindWidget.html#ad052b9ce7166f5a1c46ee7a01f3457dc" title="KbBindWidget::newLayout" alt="" coords="984,273,1160,300"/>
+</map>

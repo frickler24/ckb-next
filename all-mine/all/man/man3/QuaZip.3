@@ -1,0 +1,1512 @@
+.TH "QuaZip" 3 "Tue May 16 2017" "Version beta-v0.2.7 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QuaZip \- 
+.PP
+ZIP archive\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <quazip/quazip\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBConstants\fP { \fBMAX_FILE_NAME_LENGTH\fP =256 }"
+.br
+.RI "\fIUseful constants\&. \fP"
+.ti -1c
+.RI "enum \fBMode\fP { \fBmdNotOpen\fP, \fBmdUnzip\fP, \fBmdCreate\fP, \fBmdAppend\fP, \fBmdAdd\fP }"
+.br
+.RI "\fIOpen mode of the ZIP file\&. \fP"
+.ti -1c
+.RI "enum \fBCaseSensitivity\fP { \fBcsDefault\fP =0, \fBcsSensitive\fP =1, \fBcsInsensitive\fP =2 }"
+.br
+.RI "\fICase sensitivity for the file names\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQuaZip\fP ()"
+.br
+.RI "\fIConstructs \fBQuaZip\fP object\&. \fP"
+.ti -1c
+.RI "\fBQuaZip\fP (const QString &zipName)"
+.br
+.RI "\fIConstructs \fBQuaZip\fP object associated with ZIP file \fIzipName\fP\&. \fP"
+.ti -1c
+.RI "\fBQuaZip\fP (\fBQIODevice\fP *ioDevice)"
+.br
+.RI "\fIConstructs \fBQuaZip\fP object associated with ZIP file represented by \fIioDevice\fP\&. \fP"
+.ti -1c
+.RI "\fB~QuaZip\fP ()"
+.br
+.RI "\fIDestroys \fBQuaZip\fP object\&. \fP"
+.ti -1c
+.RI "bool \fBopen\fP (\fBMode\fP mode, \fBzlib_filefunc_def\fP *ioApi=NULL)"
+.br
+.RI "\fIOpens ZIP file\&. \fP"
+.ti -1c
+.RI "void \fBclose\fP ()"
+.br
+.RI "\fICloses ZIP file\&. \fP"
+.ti -1c
+.RI "void \fBsetFileNameCodec\fP (QTextCodec *fileNameCodec)"
+.br
+.RI "\fISets the codec used to encode/decode file names inside archive\&. \fP"
+.ti -1c
+.RI "void \fBsetFileNameCodec\fP (const char *fileNameCodecName)"
+.br
+.RI "\fISets the codec used to encode/decode file names inside archive\&. \fP"
+.ti -1c
+.RI "QTextCodec * \fBgetFileNameCodec\fP () const "
+.br
+.RI "\fIReturns the codec used to encode/decode comments inside archive\&. \fP"
+.ti -1c
+.RI "void \fBsetCommentCodec\fP (QTextCodec *commentCodec)"
+.br
+.RI "\fISets the codec used to encode/decode comments inside archive\&. \fP"
+.ti -1c
+.RI "void \fBsetCommentCodec\fP (const char *commentCodecName)"
+.br
+.RI "\fISets the codec used to encode/decode comments inside archive\&. \fP"
+.ti -1c
+.RI "QTextCodec * \fBgetCommentCodec\fP () const "
+.br
+.RI "\fIReturns the codec used to encode/decode comments inside archive\&. \fP"
+.ti -1c
+.RI "QString \fBgetZipName\fP () const "
+.br
+.RI "\fIReturns the name of the ZIP file\&. \fP"
+.ti -1c
+.RI "void \fBsetZipName\fP (const QString &zipName)"
+.br
+.RI "\fISets the name of the ZIP file\&. \fP"
+.ti -1c
+.RI "\fBQIODevice\fP * \fBgetIoDevice\fP () const "
+.br
+.RI "\fIReturns the device representing this ZIP file\&. \fP"
+.ti -1c
+.RI "void \fBsetIoDevice\fP (\fBQIODevice\fP *ioDevice)"
+.br
+.RI "\fISets the device representing the ZIP file\&. \fP"
+.ti -1c
+.RI "\fBMode\fP \fBgetMode\fP () const "
+.br
+.RI "\fIReturns the mode in which ZIP file was opened\&. \fP"
+.ti -1c
+.RI "bool \fBisOpen\fP () const "
+.br
+.RI "\fIReturns \fCtrue\fP if ZIP file is open, \fCfalse\fP otherwise\&. \fP"
+.ti -1c
+.RI "int \fBgetZipError\fP () const "
+.br
+.RI "\fIReturns the error code of the last operation\&. \fP"
+.ti -1c
+.RI "int \fBgetEntriesCount\fP () const "
+.br
+.RI "\fIReturns number of the entries in the ZIP central directory\&. \fP"
+.ti -1c
+.RI "QString \fBgetComment\fP () const "
+.br
+.RI "\fIReturns global comment in the ZIP file\&. \fP"
+.ti -1c
+.RI "void \fBsetComment\fP (const QString &comment)"
+.br
+.RI "\fISets the global comment in the ZIP file\&. \fP"
+.ti -1c
+.RI "bool \fBgoToFirstFile\fP ()"
+.br
+.RI "\fISets the current file to the first file in the archive\&. \fP"
+.ti -1c
+.RI "bool \fBgoToNextFile\fP ()"
+.br
+.RI "\fISets the current file to the next file in the archive\&. \fP"
+.ti -1c
+.RI "bool \fBsetCurrentFile\fP (const QString &fileName, \fBCaseSensitivity\fP cs=\fBcsDefault\fP)"
+.br
+.RI "\fISets current file by its name\&. \fP"
+.ti -1c
+.RI "bool \fBhasCurrentFile\fP () const "
+.br
+.RI "\fIReturns \fCtrue\fP if the current file has been set\&. \fP"
+.ti -1c
+.RI "bool \fBgetCurrentFileInfo\fP (\fBQuaZipFileInfo\fP *info) const "
+.br
+.RI "\fIRetrieves information about the current file\&. \fP"
+.ti -1c
+.RI "bool \fBgetCurrentFileInfo\fP (\fBQuaZipFileInfo64\fP *info) const "
+.br
+.RI "\fIRetrieves information about the current file\&. \fP"
+.ti -1c
+.RI "QString \fBgetCurrentFileName\fP () const "
+.br
+.RI "\fIReturns the current file name\&. \fP"
+.ti -1c
+.RI "\fBunzFile\fP \fBgetUnzFile\fP ()"
+.br
+.RI "\fIReturns \fCunzFile\fP handle\&. \fP"
+.ti -1c
+.RI "\fBzipFile\fP \fBgetZipFile\fP ()"
+.br
+.RI "\fIReturns \fCzipFile\fP handle\&. \fP"
+.ti -1c
+.RI "void \fBsetDataDescriptorWritingEnabled\fP (bool enabled)"
+.br
+.RI "\fIChanges the data descriptor writing mode\&. \fP"
+.ti -1c
+.RI "bool \fBisDataDescriptorWritingEnabled\fP () const "
+.br
+.RI "\fIReturns the data descriptor default writing mode\&. \fP"
+.ti -1c
+.RI "QStringList \fBgetFileNameList\fP () const "
+.br
+.RI "\fIReturns a list of files inside the archive\&. \fP"
+.ti -1c
+.RI "QList< \fBQuaZipFileInfo\fP > \fBgetFileInfoList\fP () const "
+.br
+.RI "\fIReturns information list about all files inside the archive\&. \fP"
+.ti -1c
+.RI "QList< \fBQuaZipFileInfo64\fP > \fBgetFileInfoList64\fP () const "
+.br
+.RI "\fIReturns information list about all files inside the archive\&. \fP"
+.ti -1c
+.RI "void \fBsetZip64Enabled\fP (bool zip64)"
+.br
+.RI "\fIEnables the zip64 mode\&. \fP"
+.ti -1c
+.RI "bool \fBisZip64Enabled\fP () const "
+.br
+.RI "\fIReturns whether the zip64 mode is enabled\&. \fP"
+.ti -1c
+.RI "bool \fBisAutoClose\fP () const "
+.br
+.RI "\fIReturns the auto-close flag\&. \fP"
+.ti -1c
+.RI "void \fBsetAutoClose\fP (bool autoClose) const "
+.br
+.RI "\fISets or unsets the auto-close flag\&. \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static Qt::CaseSensitivity \fBconvertCaseSensitivity\fP (\fBCaseSensitivity\fP cs)"
+.br
+.RI "\fIReturns the actual case sensitivity for the specified QuaZIP one\&. \fP"
+.ti -1c
+.RI "static void \fBsetDefaultFileNameCodec\fP (QTextCodec *codec)"
+.br
+.RI "\fISets the default file name codec to use\&. \fP"
+.ti -1c
+.RI "static void \fBsetDefaultFileNameCodec\fP (const char *codecName)"
+.br
+.RI "\fIThis is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&. Equivalent to calling setDefltFileNameCodec(QTextCodec::codecForName(codecName))\&. \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQuaZip\fP (const \fBQuaZip\fP &that)"
+.br
+.ti -1c
+.RI "\fBQuaZip\fP & \fBoperator=\fP (const \fBQuaZip\fP &that)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBQuaZipPrivate\fP * \fBp\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBQuaZipPrivate\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class implements basic interface to the ZIP archive\&. It can be used to read table contents of the ZIP archive and retreiving information about the files inside it\&.
+.PP
+You can also use this class to open files inside archive by passing pointer to the instance of this class to the constructor of the \fBQuaZipFile\fP class\&. But see \fBQuaZipFile::QuaZipFile(QuaZip*, QObject*)\fP for the possible pitfalls\&.
+.PP
+This class is indended to provide interface to the ZIP subpackage of the ZIP/UNZIP package as well as to the UNZIP subpackage\&. But currently it supports only UNZIP\&.
+.PP
+The use of this class is simple - just create instance using constructor, then set ZIP archive file name using setFile() function (if you did not passed the name to the constructor), then \fBopen()\fP and then use different functions to work with it! Well, if you are paranoid, you may also wish to call close before destructing the instance, to check for errors on close\&.
+.PP
+You may also use \fBgetUnzFile()\fP and \fBgetZipFile()\fP functions to get the ZIP archive handle and use it with ZIP/UNZIP package API directly\&.
+.PP
+This class supports localized file names inside ZIP archive, but you have to set up proper codec with setCodec() function\&. By default, locale codec will be used, which is probably ok for UNIX systems, but will almost certainly fail with ZIP archives created in Windows\&. This is because Windows ZIP programs have strange habit of using DOS encoding for file names in ZIP archives\&. For example, ZIP archive with cyrillic names created in Windows will have file names in \fCIBM866\fP encoding instead of \fCWINDOWS-1251\fP\&. I think that calling one function is not much trouble, but for true platform independency it would be nice to have some mechanism for file name encoding auto detection using locale information\&. Does anyone know a good way to do it? 
+.PP
+Definition at line 84 of file quazip\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBQuaZip::CaseSensitivity\fP"
+This is what you specify when accessing files in the archive\&. Works perfectly fine with any characters thanks to Qt's great unicode support\&. This is different from ZIP/UNZIP API, where only US-ASCII characters was supported\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIcsDefault \fP\fP
+Default for platform\&. Case sensitive for UNIX, not for Windows\&. 
+.TP
+\fB\fIcsSensitive \fP\fP
+Case sensitive\&. 
+.TP
+\fB\fIcsInsensitive \fP\fP
+Case insensitive\&. 
+.PP
+Definition at line 114 of file quazip\&.h\&.
+.PP
+.nf
+114                          {
+115       csDefault=0, 
+116       csSensitive=1, 
+117       csInsensitive=2 
+118     };
+.fi
+.SS "enum \fBQuaZip::Constants\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIMAX_FILE_NAME_LENGTH \fP\fP
+Maximum file name length\&. Taken from \fCUNZ_MAXFILENAMEINZIP\fP constant in \fBunzip\&.c\fP\&. 
+.PP
+Definition at line 88 of file quazip\&.h\&.
+.PP
+.nf
+88                    {
+89       MAX_FILE_NAME_LENGTH=256 
+92     };
+.fi
+.SS "enum \fBQuaZip::Mode\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fImdNotOpen \fP\fP
+ZIP file is not open\&. This is the initial mode\&. 
+.TP
+\fB\fImdUnzip \fP\fP
+ZIP file is open for reading files inside it\&. 
+.TP
+\fB\fImdCreate \fP\fP
+ZIP file was created with \fBopen()\fP call\&. 
+.TP
+\fB\fImdAppend \fP\fP
+ZIP file was opened in append mode\&. This refers to \fCAPPEND_STATUS_CREATEAFTER\fP mode in ZIP/UNZIP package and means that zip is appended to some existing file what is useful when that file contains self-extractor code\&. This is obviously \fInot\fP what you whant to use to add files to the existing ZIP archive\&. 
+.TP
+\fB\fImdAdd \fP\fP
+ZIP file was opened for adding files in the archive\&. 
+.PP
+Definition at line 94 of file quazip\&.h\&.
+.PP
+.nf
+94               {
+95       mdNotOpen, 
+96       mdUnzip, 
+97       mdCreate, 
+98       mdAppend, 
+106       mdAdd 
+107     };
+.fi
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QuaZip::QuaZip (const \fBQuaZip\fP &that)\fC [private]\fP"
+
+.SS "QuaZip::QuaZip ()"
+Call setName() before opening constructed object\&. 
+.PP
+Definition at line 193 of file quazip\&.cpp\&.
+.PP
+.nf
+193               :
+194   p(new QuaZipPrivate(this))
+195 {
+196 }
+.fi
+.SS "QuaZip::QuaZip (const QString &zipName)"
+
+.PP
+Definition at line 198 of file quazip\&.cpp\&.
+.PP
+.nf
+198                                     :
+199   p(new QuaZipPrivate(this, zipName))
+200 {
+201 }
+.fi
+.SS "QuaZip::QuaZip (\fBQIODevice\fP *ioDevice)"
+The IO device must be seekable, otherwise an error will occur when opening\&. 
+.PP
+Definition at line 203 of file quazip\&.cpp\&.
+.PP
+.nf
+203                                  :
+204   p(new QuaZipPrivate(this, ioDevice))
+205 {
+206 }
+.fi
+.SS "QuaZip::~QuaZip ()"
+Calls \fBclose()\fP if necessary\&. 
+.PP
+Definition at line 208 of file quazip\&.cpp\&.
+.PP
+References close(), isOpen(), and p\&.
+.PP
+.nf
+209 {
+210   if(isOpen())
+211     close();
+212   delete p;
+213 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void QuaZip::close ()"
+Call \fBgetZipError()\fP to determine if the close was successful\&.
+.PP
+If the file was opened by name, then the underlying \fBQIODevice\fP is closed and deleted\&.
+.PP
+If the underlying \fBQIODevice\fP was set explicitly using \fBsetIoDevice()\fP or the appropriate constructor, then it is closed if the auto-close flag is set (which it is by default)\&. Call \fBsetAutoClose()\fP to clear the auto-close flag if this behavior is undesirable\&.
+.PP
+Since Qt 5\&.1, the QSaveFile was introduced\&. It breaks the \fBQIODevice\fP API by making \fBclose()\fP private and crashing the application if it is called from the base class where it is public\&. It is an excellent example of poor design that illustrates why you should never ever break an is-a relationship between the base class and a subclass\&. QuaZIP works around this bug by checking if the \fBQIODevice\fP is an instance of QSaveFile, using qobject_cast<>, and if it is, calls QSaveFile::commit() instead of \fBclose()\fP\&. It is a really ugly hack, but at least it makes your programs work instead of crashing\&. Note that if the auto-close flag is cleared, then this is a non-issue, and commit() isn't called\&. 
+.PP
+Definition at line 324 of file quazip\&.cpp\&.
+.PP
+References QuaZipPrivate::clearDirectoryMap(), QuaZipPrivate::comment, QuaZipPrivate::commentCodec, QuaZipPrivate::ioDevice, mdAdd, mdAppend, mdCreate, mdNotOpen, mdUnzip, QuaZipPrivate::mode, p, UNZ_OK, unzClose(), zipClose(), QuaZipPrivate::zipError, and QuaZipPrivate::zipName\&.
+.PP
+Referenced by QuaZipFile::close(), JlCompress::compressDir(), JlCompress::compressFile(), JlCompress::compressFiles(), JlCompress::extractDir(), JlCompress::extractFile(), JlCompress::extractFiles(), JlCompress::getFileList(), QuaZipFile::open(), and ~QuaZip()\&.
+.PP
+.nf
+325 {
+326   p->zipError=UNZ_OK;
+327   switch(p->mode) {
+328     case mdNotOpen:
+329       qWarning("QuaZip::close(): ZIP is not open");
+330       return;
+331     case mdUnzip:
+332       p->zipError=unzClose(p->unzFile_f);
+333       break;
+334     case mdCreate:
+335     case mdAppend:
+336     case mdAdd:
+337       p->zipError=zipClose(p->zipFile_f, 
+338           p->comment\&.isNull() ? NULL
+339           : p->commentCodec->fromUnicode(p->comment)\&.constData());
+340       break;
+341     default:
+342       qWarning("QuaZip::close(): unknown mode: %d", (int)p->mode);
+343       return;
+344   }
+345   // opened by name, need to delete the internal IO device
+346   if (!p->zipName\&.isEmpty()) {
+347       delete p->ioDevice;
+348       p->ioDevice = NULL;
+349   }
+350   p->clearDirectoryMap();
+351   if(p->zipError==UNZ_OK)
+352     p->mode=mdNotOpen;
+353 }
+.fi
+.SS "Qt::CaseSensitivity QuaZip::convertCaseSensitivity (\fBQuaZip::CaseSensitivity\fPcs)\fC [static]\fP"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcs\fP The value to convert\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+If CaseSensitivity::csDefault, then returns the default file name case sensitivity for the platform\&. Otherwise, just returns the appropriate value from the Qt::CaseSensitivity enum\&. 
+.RE
+.PP
+
+.PP
+Definition at line 747 of file quazip\&.cpp\&.
+.PP
+References csDefault, and csSensitive\&.
+.PP
+Referenced by QuaZipDir::exists(), and setCurrentFile()\&.
+.PP
+.nf
+748 {
+749   if (cs == csDefault) {
+750 #ifdef Q_WS_WIN
+751       return Qt::CaseInsensitive;
+752 #else
+753       return Qt::CaseSensitive;
+754 #endif
+755   } else {
+756       return cs == csSensitive ? Qt::CaseSensitive : Qt::CaseInsensitive;
+757   }
+758 }
+.fi
+.SS "QString QuaZip::getComment () const"
+
+.PP
+Definition at line 389 of file quazip\&.cpp\&.
+.PP
+References QuaZipPrivate::commentCodec, mdUnzip, QuaZipPrivate::mode, p, unz_global_info64_s::size_comment, UNZ_OK, unzGetGlobalComment(), unzGetGlobalInfo64(), and QuaZipPrivate::zipError\&.
+.PP
+.nf
+390 {
+391   QuaZip *fakeThis=(QuaZip*)this; // non-const
+392   fakeThis->p->zipError=UNZ_OK;
+393   if(p->mode!=mdUnzip) {
+394     qWarning("QuaZip::getComment(): ZIP is not open in mdUnzip mode");
+395     return QString();
+396   }
+397   unz_global_info64 globalInfo;
+398   QByteArray comment;
+399   if((fakeThis->p->zipError=unzGetGlobalInfo64(p->unzFile_f, &globalInfo))!=UNZ_OK)
+400     return QString();
+401   comment\&.resize(globalInfo\&.size_comment);
+402   if((fakeThis->p->zipError=unzGetGlobalComment(p->unzFile_f, comment\&.data(), comment\&.size())) < 0)
+403     return QString();
+404   fakeThis->p->zipError = UNZ_OK;
+405   return p->commentCodec->toUnicode(comment);
+406 }
+.fi
+.SS "QTextCodec * QuaZip::getCommentCodec () const"
+
+.PP
+Definition at line 597 of file quazip\&.cpp\&.
+.PP
+References QuaZipPrivate::commentCodec, and p\&.
+.PP
+Referenced by QuaZipFile::open()\&.
+.PP
+.nf
+598 {
+599   return p->commentCodec;
+600 }
+.fi
+.SS "bool QuaZip::getCurrentFileInfo (\fBQuaZipFileInfo\fP *info) const"
+Fills the structure pointed by \fIinfo\fP\&. Returns \fCtrue\fP on success, \fCfalse\fP otherwise\&. In the latter case structure pointed by \fIinfo\fP remains untouched\&. If there was an error, \fBgetZipError()\fP returns error code\&.
+.PP
+Should be used only in \fBQuaZip::mdUnzip\fP mode\&.
+.PP
+Does nothing and returns \fCfalse\fP in any of the following cases\&.
+.IP "\(bu" 2
+ZIP is not open;
+.IP "\(bu" 2
+ZIP does not have current file\&.
+.PP
+.PP
+In both cases \fBgetZipError()\fP returns \fCUNZ_OK\fP since there is no ZIP/UNZIP API call\&.
+.PP
+This overload doesn't support zip64, but will work OK on zip64 archives except that if one of the sizes (compressed or uncompressed) is greater than 0xFFFFFFFFu, it will be set to exactly 0xFFFFFFFFu\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBgetCurrentFileInfo(QuaZipFileInfo64* info)const\fP 
+.PP
+\fBQuaZipFileInfo64::toQuaZipFileInfo(QuaZipFileInfo&)const\fP 
+.RE
+.PP
+
+.PP
+Definition at line 492 of file quazip\&.cpp\&.
+.PP
+References QuaZipFileInfo64::toQuaZipFileInfo()\&.
+.PP
+Referenced by JlCompress::extractFile(), QuaZipFile::getFileInfo(), JlCompress::getFileList(), QuaZip_getFileInfo(), and QuaZipDir_getFileInfo()\&.
+.PP
+.nf
+493 {
+494     QuaZipFileInfo64 info64;
+495     if (info == NULL) { // Very unlikely because of the overloads
+496         return false;
+497     }
+498     if (getCurrentFileInfo(&info64)) {
+499         info64\&.toQuaZipFileInfo(*info);
+500         return true;
+501     } else {
+502         return false;
+503     }
+504 }
+.fi
+.SS "bool QuaZip::getCurrentFileInfo (\fBQuaZipFileInfo64\fP *info) const"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+This function supports zip64\&. If the archive doesn't use zip64, it is completely equivalent to getCurrentFileInfo(QuaZipFileInfo* info) except for the argument type\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+.RE
+.PP
+
+.PP
+Definition at line 506 of file quazip\&.cpp\&.
+.PP
+References QuaZipPrivate::addCurrentFileToDirectoryMap(), QuaZipFileInfo64::comment, QuaZipPrivate::commentCodec, unz_file_info64_s::compressed_size, QuaZipFileInfo64::compressedSize, unz_file_info64_s::compression_method, QuaZipFileInfo64::crc, unz_file_info64_s::crc, QuaZipFileInfo64::dateTime, unz_file_info64_s::disk_num_start, QuaZipFileInfo64::diskNumberStart, unz_file_info64_s::external_fa, QuaZipFileInfo64::externalAttr, QuaZipFileInfo64::extra, QuaZipPrivate::fileNameCodec, unz_file_info64_s::flag, QuaZipFileInfo64::flags, hasCurrentFile(), unz_file_info64_s::internal_fa, QuaZipFileInfo64::internalAttr, isOpen(), mdUnzip, QuaZipFileInfo64::method, QuaZipPrivate::mode, QuaZipFileInfo64::name, p, unz_file_info64_s::size_file_comment, unz_file_info64_s::size_file_extra, unz_file_info64_s::size_filename, tm_unz_s::tm_hour, tm_unz_s::tm_mday, tm_unz_s::tm_min, tm_unz_s::tm_mon, tm_unz_s::tm_sec, tm_unz_s::tm_year, unz_file_info64_s::tmu_date, unz_file_info64_s::uncompressed_size, QuaZipFileInfo64::uncompressedSize, UNZ_OK, unzGetCurrentFileInfo64(), unz_file_info64_s::version, unz_file_info64_s::version_needed, QuaZipFileInfo64::versionCreated, QuaZipFileInfo64::versionNeeded, and QuaZipPrivate::zipError\&.
+.PP
+.nf
+507 {
+508   QuaZip *fakeThis=(QuaZip*)this; // non-const
+509   fakeThis->p->zipError=UNZ_OK;
+510   if(p->mode!=mdUnzip) {
+511     qWarning("QuaZip::getCurrentFileInfo(): ZIP is not open in mdUnzip mode");
+512     return false;
+513   }
+514   unz_file_info64 info_z;
+515   QByteArray fileName;
+516   QByteArray extra;
+517   QByteArray comment;
+518   if(info==NULL) return false;
+519   if(!isOpen()||!hasCurrentFile()) return false;
+520   if((fakeThis->p->zipError=unzGetCurrentFileInfo64(p->unzFile_f, &info_z, NULL, 0, NULL, 0, NULL, 0))!=UNZ_OK)
+521     return false;
+522   fileName\&.resize(info_z\&.size_filename);
+523   extra\&.resize(info_z\&.size_file_extra);
+524   comment\&.resize(info_z\&.size_file_comment);
+525   if((fakeThis->p->zipError=unzGetCurrentFileInfo64(p->unzFile_f, NULL,
+526       fileName\&.data(), fileName\&.size(),
+527       extra\&.data(), extra\&.size(),
+528       comment\&.data(), comment\&.size()))!=UNZ_OK)
+529     return false;
+530   info->versionCreated=info_z\&.version;
+531   info->versionNeeded=info_z\&.version_needed;
+532   info->flags=info_z\&.flag;
+533   info->method=info_z\&.compression_method;
+534   info->crc=info_z\&.crc;
+535   info->compressedSize=info_z\&.compressed_size;
+536   info->uncompressedSize=info_z\&.uncompressed_size;
+537   info->diskNumberStart=info_z\&.disk_num_start;
+538   info->internalAttr=info_z\&.internal_fa;
+539   info->externalAttr=info_z\&.external_fa;
+540   info->name=p->fileNameCodec->toUnicode(fileName);
+541   info->comment=p->commentCodec->toUnicode(comment);
+542   info->extra=extra;
+543   info->dateTime=QDateTime(
+544       QDate(info_z\&.tmu_date\&.tm_year, info_z\&.tmu_date\&.tm_mon+1, info_z\&.tmu_date\&.tm_mday),
+545       QTime(info_z\&.tmu_date\&.tm_hour, info_z\&.tmu_date\&.tm_min, info_z\&.tmu_date\&.tm_sec));
+546   // Add to directory map
+547   p->addCurrentFileToDirectoryMap(info->name);
+548   return true;
+549 }
+.fi
+.SS "QString QuaZip::getCurrentFileName () const"
+Equivalent to calling \fBgetCurrentFileInfo()\fP and then getting \fCname\fP field of the \fBQuaZipFileInfo\fP structure, but faster and more convenient\&.
+.PP
+Should be used only in \fBQuaZip::mdUnzip\fP mode\&. 
+.PP
+Definition at line 551 of file quazip\&.cpp\&.
+.PP
+References QuaZipPrivate::addCurrentFileToDirectoryMap(), QuaZipPrivate::fileNameCodec, hasCurrentFile(), isOpen(), MAX_FILE_NAME_LENGTH, mdUnzip, QuaZipPrivate::mode, p, UNZ_OK, unzGetCurrentFileInfo64(), and QuaZipPrivate::zipError\&.
+.PP
+Referenced by JlCompress::extractDir(), QuaZipFile::getActualFileName(), QuaZipPrivate::getFileInfoList(), QuaZip_getFileInfo(), and setCurrentFile()\&.
+.PP
+.nf
+552 {
+553   QuaZip *fakeThis=(QuaZip*)this; // non-const
+554   fakeThis->p->zipError=UNZ_OK;
+555   if(p->mode!=mdUnzip) {
+556     qWarning("QuaZip::getCurrentFileName(): ZIP is not open in mdUnzip mode");
+557     return QString();
+558   }
+559   if(!isOpen()||!hasCurrentFile()) return QString();
+560   QByteArray fileName(MAX_FILE_NAME_LENGTH, 0);
+561   if((fakeThis->p->zipError=unzGetCurrentFileInfo64(p->unzFile_f, NULL, fileName\&.data(), fileName\&.size(),
+562       NULL, 0, NULL, 0))!=UNZ_OK)
+563     return QString();
+564   QString result = p->fileNameCodec->toUnicode(fileName\&.constData());
+565   if (result\&.isEmpty())
+566       return result;
+567   // Add to directory map
+568   p->addCurrentFileToDirectoryMap(result);
+569   return result;
+570 }
+.fi
+.SS "int QuaZip::getEntriesCount () const"
+Returns negative error code in the case of error\&. The same error code will be returned by subsequent \fBgetZipError()\fP call\&. 
+.PP
+Definition at line 375 of file quazip\&.cpp\&.
+.PP
+References mdUnzip, QuaZipPrivate::mode, unz_global_info64_s::number_entry, p, UNZ_OK, unzGetGlobalInfo64(), and QuaZipPrivate::zipError\&.
+.PP
+.nf
+376 {
+377   QuaZip *fakeThis=(QuaZip*)this; // non-const
+378   fakeThis->p->zipError=UNZ_OK;
+379   if(p->mode!=mdUnzip) {
+380     qWarning("QuaZip::getEntriesCount(): ZIP is not open in mdUnzip mode");
+381     return -1;
+382   }
+383   unz_global_info64 globalInfo;
+384   if((fakeThis->p->zipError=unzGetGlobalInfo64(p->unzFile_f, &globalInfo))!=UNZ_OK)
+385     return p->zipError;
+386   return (int)globalInfo\&.number_entry;
+387 }
+.fi
+.SS "QList< \fBQuaZipFileInfo\fP > QuaZip::getFileInfoList () const"
+
+.PP
+\fBReturns:\fP
+.RS 4
+A list of \fBQuaZipFileInfo\fP objects or an empty list if there was an error or if the archive is empty (call \fBgetZipError()\fP to figure out which)\&.
+.RE
+.PP
+This function doesn't support zip64, but will still work with zip64 archives, converting results using \fBQuaZipFileInfo64::toQuaZipFileInfo()\fP\&. If all file sizes are below 4 GB, it will work just fine\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBgetFileNameList()\fP 
+.PP
+\fBgetFileInfoList64()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 729 of file quazip\&.cpp\&.
+.PP
+References QuaZipPrivate::getFileInfoList(), and p\&.
+.PP
+.nf
+730 {
+731     QList<QuaZipFileInfo> list;
+732     if (p->getFileInfoList(&list))
+733         return list;
+734     else
+735         return QList<QuaZipFileInfo>();
+736 }
+.fi
+.SS "QList< \fBQuaZipFileInfo64\fP > QuaZip::getFileInfoList64 () const"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+This function supports zip64\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBgetFileNameList()\fP 
+.PP
+\fBgetFileInfoList()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 738 of file quazip\&.cpp\&.
+.PP
+References QuaZipPrivate::getFileInfoList(), and p\&.
+.PP
+.nf
+739 {
+740     QList<QuaZipFileInfo64> list;
+741     if (p->getFileInfoList(&list))
+742         return list;
+743     else
+744         return QList<QuaZipFileInfo64>();
+745 }
+.fi
+.SS "QTextCodec * QuaZip::getFileNameCodec () const"
+
+.PP
+Definition at line 582 of file quazip\&.cpp\&.
+.PP
+References QuaZipPrivate::fileNameCodec, and p\&.
+.PP
+Referenced by QuaZipFile::open()\&.
+.PP
+.nf
+583 {
+584   return p->fileNameCodec;
+585 }
+.fi
+.SS "QStringList QuaZip::getFileNameList () const"
+
+.PP
+\fBReturns:\fP
+.RS 4
+A list of file names or an empty list if there was an error or if the archive is empty (call \fBgetZipError()\fP to figure out which)\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBgetFileInfoList()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 720 of file quazip\&.cpp\&.
+.PP
+References QuaZipPrivate::getFileInfoList(), and p\&.
+.PP
+.nf
+721 {
+722     QStringList list;
+723     if (p->getFileInfoList(&list))
+724         return list;
+725     else
+726         return QStringList();
+727 }
+.fi
+.SS "\fBQIODevice\fP * QuaZip::getIoDevice () const"
+Returns null string if no device has been set explicitly, for example when opening a ZIP file by name\&. 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBsetIoDevice()\fP, \fBgetZipName()\fP, \fBsetZipName()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 607 of file quazip\&.cpp\&.
+.PP
+References QuaZipPrivate::ioDevice, p, and QuaZipPrivate::zipName\&.
+.PP
+.nf
+608 {
+609   if (!p->zipName\&.isEmpty()) // opened by name, using an internal QIODevice
+610     return NULL;
+611   return p->ioDevice;
+612 }
+.fi
+.SS "\fBQuaZip::Mode\fP QuaZip::getMode () const"
+
+.PP
+Definition at line 614 of file quazip\&.cpp\&.
+.PP
+References QuaZipPrivate::mode, and p\&.
+.PP
+Referenced by JlCompress::compressFile(), JlCompress::compressSubDir(), QuaZipFile::csize(), JlCompress::extractFile(), QuaZipFile::getFileInfo(), QuaZipFile::open(), and QuaZipFile::usize()\&.
+.PP
+.nf
+615 {
+616   return p->mode;
+617 }
+.fi
+.SS "\fBunzFile\fP QuaZip::getUnzFile ()"
+You can use this handle to directly call UNZIP part of the ZIP/UNZIP package functions (see \fBunzip\&.h\fP)\&.
+.PP
+\fBWarning:\fP
+.RS 4
+When using the handle returned by this function, please keep in mind that \fBQuaZip\fP class is unable to detect any changes you make in the ZIP file state (e\&. g\&. changing current file, or closing the handle)\&. So please do not do anything with this handle that is possible to do with the functions of this class\&. Or at least return the handle in the original state before calling some another function of this class (including implicit destructor calls and calls from the \fBQuaZipFile\fP objects that refer to this \fBQuaZip\fP instance!)\&. So if you have changed the current file in the ZIP archive - then change it back or you may experience some strange behavior or even crashes\&. 
+.RE
+.PP
+
+.PP
+Definition at line 639 of file quazip\&.cpp\&.
+.PP
+References p\&.
+.PP
+Referenced by QuaZipFile::atEnd(), QuaZipFile::close(), QuaZipFile::csize(), QuaZipFile::open(), QuaZipFile::pos(), QuaZipFile::readData(), and QuaZipFile::usize()\&.
+.PP
+.nf
+640 {
+641   return p->unzFile_f;
+642 }
+.fi
+.SS "int QuaZip::getZipError () const"
+Returns \fCUNZ_OK\fP if the last operation was successful\&.
+.PP
+Error code resets to \fCUNZ_OK\fP every time you call any function that accesses something inside ZIP archive, even if it is \fCconst\fP (like \fBgetEntriesCount()\fP)\&. \fBopen()\fP and \fBclose()\fP calls reset error code too\&. See documentation for the specific functions for details on error detection\&. 
+.PP
+Definition at line 624 of file quazip\&.cpp\&.
+.PP
+References p, and QuaZipPrivate::zipError\&.
+.PP
+Referenced by QuaZipFile::close(), JlCompress::compressDir(), JlCompress::compressFile(), JlCompress::compressFiles(), JlCompress::extractDir(), JlCompress::extractFile(), JlCompress::extractFiles(), QuaZipFile::getActualFileName(), QuaZipFile::getFileInfo(), JlCompress::getFileList(), and QuaZipFile::open()\&.
+.PP
+.nf
+625 {
+626   return p->zipError;
+627 }
+.fi
+.SS "\fBzipFile\fP QuaZip::getZipFile ()"
+You can use this handle to directly call ZIP part of the ZIP/UNZIP package functions (see \fBzip\&.h\fP)\&. Warnings about the \fBgetUnzFile()\fP function also apply to this function\&. 
+.PP
+Definition at line 644 of file quazip\&.cpp\&.
+.PP
+References p\&.
+.PP
+Referenced by QuaZipFile::close(), QuaZipFile::open(), and QuaZipFile::writeData()\&.
+.PP
+.nf
+645 {
+646   return p->zipFile_f;
+647 }
+.fi
+.SS "QString QuaZip::getZipName () const"
+Returns null string if no ZIP file name has been set, for example when the \fBQuaZip\fP instance is set up to use a \fBQIODevice\fP instead\&. 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBsetZipName()\fP, \fBsetIoDevice()\fP, \fBgetIoDevice()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 602 of file quazip\&.cpp\&.
+.PP
+References p, and QuaZipPrivate::zipName\&.
+.PP
+Referenced by JlCompress::compressSubDir(), and QuaZipFile::getZipName()\&.
+.PP
+.nf
+603 {
+604   return p->zipName;
+605 }
+.fi
+.SS "bool QuaZip::goToFirstFile ()"
+Returns \fCtrue\fP on success, \fCfalse\fP otherwise\&. Call \fBgetZipError()\fP to get the error code\&. 
+.PP
+Definition at line 466 of file quazip\&.cpp\&.
+.PP
+References QuaZipPrivate::hasCurrentFile_f, mdUnzip, QuaZipPrivate::mode, p, UNZ_OK, unzGoToFirstFile(), and QuaZipPrivate::zipError\&.
+.PP
+Referenced by JlCompress::extractDir(), QuaZipPrivate::getFileInfoList(), and JlCompress::getFileList()\&.
+.PP
+.nf
+467 {
+468   p->zipError=UNZ_OK;
+469   if(p->mode!=mdUnzip) {
+470     qWarning("QuaZip::goToFirstFile(): ZIP is not open in mdUnzip mode");
+471     return false;
+472   }
+473   p->zipError=unzGoToFirstFile(p->unzFile_f);
+474   p->hasCurrentFile_f=p->zipError==UNZ_OK;
+475   return p->hasCurrentFile_f;
+476 }
+.fi
+.SS "bool QuaZip::goToNextFile ()"
+Returns \fCtrue\fP on success, \fCfalse\fP otherwise\&. Call \fBgetZipError()\fP to determine if there was an error\&.
+.PP
+Should be used only in \fBQuaZip::mdUnzip\fP mode\&.
+.PP
+\fBNote:\fP
+.RS 4
+If the end of file was reached, \fBgetZipError()\fP will return \fCUNZ_OK\fP instead of \fCUNZ_END_OF_LIST_OF_FILE\fP\&. This is to make things like this easier: 
+.PP
+.nf
+for(bool more=zip\&.goToFirstFile(); more; more=zip\&.goToNextFile()) {
+  // do something
+}
+if(zip\&.getZipError()==UNZ_OK) {
+  // ok, there was no error
+}
+
+.fi
+.PP
+ 
+.RE
+.PP
+
+.PP
+Definition at line 478 of file quazip\&.cpp\&.
+.PP
+References QuaZipPrivate::hasCurrentFile_f, mdUnzip, QuaZipPrivate::mode, p, UNZ_END_OF_LIST_OF_FILE, UNZ_OK, unzGoToNextFile(), and QuaZipPrivate::zipError\&.
+.PP
+Referenced by JlCompress::extractDir(), QuaZipPrivate::getFileInfoList(), JlCompress::getFileList(), and setCurrentFile()\&.
+.PP
+.nf
+479 {
+480   p->zipError=UNZ_OK;
+481   if(p->mode!=mdUnzip) {
+482     qWarning("QuaZip::goToFirstFile(): ZIP is not open in mdUnzip mode");
+483     return false;
+484   }
+485   p->zipError=unzGoToNextFile(p->unzFile_f);
+486   p->hasCurrentFile_f=p->zipError==UNZ_OK;
+487   if(p->zipError==UNZ_END_OF_LIST_OF_FILE)
+488     p->zipError=UNZ_OK;
+489   return p->hasCurrentFile_f;
+490 }
+.fi
+.SS "bool QuaZip::hasCurrentFile () const"
+
+.PP
+Definition at line 634 of file quazip\&.cpp\&.
+.PP
+References QuaZipPrivate::hasCurrentFile_f, and p\&.
+.PP
+Referenced by getCurrentFileInfo(), getCurrentFileName(), QuaZipPrivate::getFileInfoList(), and QuaZipFile::open()\&.
+.PP
+.nf
+635 {
+636   return p->hasCurrentFile_f;
+637 }
+.fi
+.SS "bool QuaZip::isAutoClose () const"
+
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBsetAutoClose()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 780 of file quazip\&.cpp\&.
+.PP
+References QuaZipPrivate::autoClose, and p\&.
+.PP
+.nf
+781 {
+782     return p->autoClose;
+783 }
+.fi
+.SS "bool QuaZip::isDataDescriptorWritingEnabled () const"
+
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBsetDataDescriptorWritingEnabled()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 654 of file quazip\&.cpp\&.
+.PP
+References QuaZipPrivate::dataDescriptorWritingEnabled, and p\&.
+.PP
+Referenced by QuaZipFile::open()\&.
+.PP
+.nf
+655 {
+656     return p->dataDescriptorWritingEnabled;
+657 }
+.fi
+.SS "bool QuaZip::isOpen () const"
+
+.PP
+Definition at line 619 of file quazip\&.cpp\&.
+.PP
+References mdNotOpen, QuaZipPrivate::mode, and p\&.
+.PP
+Referenced by QuaZipFile::close(), getCurrentFileInfo(), getCurrentFileName(), open(), setIoDevice(), setZipName(), and ~QuaZip()\&.
+.PP
+.nf
+620 {
+621   return p->mode!=mdNotOpen;
+622 }
+.fi
+.SS "bool QuaZip::isZip64Enabled () const"
+
+.PP
+\fBReturns:\fP
+.RS 4
+\fCtrue\fP if and only if the zip64 mode is enabled\&.
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBsetZip64Enabled()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 775 of file quazip\&.cpp\&.
+.PP
+References p, and QuaZipPrivate::zip64\&.
+.PP
+Referenced by QuaZipFile::open()\&.
+.PP
+.nf
+776 {
+777     return p->zip64;
+778 }
+.fi
+.SS "bool QuaZip::open (\fBMode\fPmode, \fBzlib_filefunc_def\fP *ioApi = \fCNULL\fP)"
+Argument \fImode\fP specifies open mode of the ZIP archive\&. See Mode for details\&. Note that there is \fBzipOpen2()\fP function in the ZIP/UNZIP API which accepts \fIglobalcomment\fP argument, but it does not use it anywhere, so this \fBopen()\fP function does not have this argument\&. See \fBsetComment()\fP if you need to set global comment\&.
+.PP
+If the ZIP file is accessed via explicitly set \fBQIODevice\fP, then this device is opened in the necessary mode\&. If the device was already opened by some other means, then QuaZIP checks if the open mode is compatible to the mode needed for the requested operation\&. If necessary, seeking is performed to position the device properly\&.
+.PP
+\fBReturns:\fP
+.RS 4
+\fCtrue\fP if successful, \fCfalse\fP otherwise\&.
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+ZIP/UNZIP API open calls do not return error code - they just return \fCNULL\fP indicating an error\&. But to make things easier, \fBquazip\&.h\fP header defines additional error code \fCUNZ_ERROROPEN\fP and \fBgetZipError()\fP will return it if the open call of the ZIP/UNZIP API returns \fCNULL\fP\&.
+.RE
+.PP
+Argument \fIioApi\fP specifies IO function set for ZIP/UNZIP package to use\&. See \fBunzip\&.h\fP, \fBzip\&.h\fP and \fBioapi\&.h\fP for details\&. Note that IO API for \fBQuaZip\fP is different from the original package\&. The file path argument was changed to be of type \fCvoidpf\fP, and \fBQuaZip\fP passes a \fBQIODevice\fP pointer there\&. This \fBQIODevice\fP is either set explicitly via \fBsetIoDevice()\fP or the \fBQuaZip(QIODevice*)\fP constructor, or it is created internally when opening the archive by its file name\&. The default API (\fBqioapi\&.cpp\fP) just delegates everything to the \fBQIODevice\fP API\&. Not only this allows to use a \fBQIODevice\fP instead of file name, but also has a nice side effect of raising the file size limit from 2G to 4G (in non-zip64 archives)\&.
+.PP
+\fBNote:\fP
+.RS 4
+If the zip64 support is needed, the ioApi argument \fImust\fP be NULL because due to the backwards compatibility issues it can be used to provide a 32-bit API only\&.
+.PP
+If the \fBno-auto-close\fP feature is used, then the \fIioApi\fP argument \fIshould\fP be NULL because the old API doesn't support the 'fake close' operation, causing slight memory leaks and other possible troubles (like closing the output device in case when an error occurs during opening)\&.
+.RE
+.PP
+In short: just forget about the \fIioApi\fP argument and you'll be fine\&. 
+.PP
+Definition at line 215 of file quazip\&.cpp\&.
+.PP
+References APPEND_STATUS_ADDINZIP, APPEND_STATUS_CREATE, APPEND_STATUS_CREATEAFTER, QuaZipPrivate::autoClose, QuaZipPrivate::dataDescriptorWritingEnabled, QuaZipPrivate::ioDevice, isOpen(), mdAdd, mdAppend, mdCreate, mdUnzip, QuaZipPrivate::mode, p, UNZ_AUTO_CLOSE, UNZ_OK, UNZ_OPENERROR, unzClearFlags(), unzClose(), unzOpen2(), unzOpenInternal(), unzSetFlags(), ZIP_AUTO_CLOSE, ZIP_SEQUENTIAL, ZIP_WRITE_DATA_DESCRIPTOR, zipClose(), QuaZipPrivate::zipError, QuaZipPrivate::zipName, zipOpen2(), zipOpen3(), and zipSetFlags()\&.
+.PP
+Referenced by KbFirmware::_fileForBoard(), JlCompress::compressDir(), JlCompress::compressFile(), JlCompress::compressFiles(), JlCompress::extractDir(), JlCompress::extractFile(), JlCompress::extractFiles(), JlCompress::getFileList(), and QuaZipFile::open()\&.
+.PP
+.nf
+216 {
+217   p->zipError=UNZ_OK;
+218   if(isOpen()) {
+219     qWarning("QuaZip::open(): ZIP already opened");
+220     return false;
+221   }
+222   QIODevice *ioDevice = p->ioDevice;
+223   if (ioDevice == NULL) {
+224     if (p->zipName\&.isEmpty()) {
+225       qWarning("QuaZip::open(): set either ZIP file name or IO device first");
+226       return false;
+227     } else {
+228       ioDevice = new QFile(p->zipName);
+229     }
+230   }
+231   unsigned flags = 0;
+232   switch(mode) {
+233     case mdUnzip:
+234       if (ioApi == NULL) {
+235           if (p->autoClose)
+236               flags |= UNZ_AUTO_CLOSE;
+237           p->unzFile_f=unzOpenInternal(ioDevice, NULL, 1, flags);
+238       } else {
+239           // QuaZIP pre-zip64 compatibility mode
+240           p->unzFile_f=unzOpen2(ioDevice, ioApi);
+241           if (p->unzFile_f != NULL) {
+242               if (p->autoClose) {
+243                   unzSetFlags(p->unzFile_f, UNZ_AUTO_CLOSE);
+244               } else {
+245                   unzClearFlags(p->unzFile_f, UNZ_AUTO_CLOSE);
+246               }
+247           }
+248       }
+249       if(p->unzFile_f!=NULL) {
+250         if (ioDevice->isSequential()) {
+251             unzClose(p->unzFile_f);
+252             if (!p->zipName\&.isEmpty())
+253                 delete ioDevice;
+254             qWarning("QuaZip::open(): "
+255                      "only mdCreate can be used with "
+256                      "sequential devices");
+257             return false;
+258         }
+259         p->mode=mode;
+260         p->ioDevice = ioDevice;
+261         return true;
+262       } else {
+263         p->zipError=UNZ_OPENERROR;
+264         if (!p->zipName\&.isEmpty())
+265           delete ioDevice;
+266         return false;
+267       }
+268     case mdCreate:
+269     case mdAppend:
+270     case mdAdd:
+271       if (ioApi == NULL) {
+272           if (p->autoClose)
+273               flags |= ZIP_AUTO_CLOSE;
+274           if (p->dataDescriptorWritingEnabled)
+275               flags |= ZIP_WRITE_DATA_DESCRIPTOR;
+276           p->zipFile_f=zipOpen3(ioDevice,
+277               mode==mdCreate?APPEND_STATUS_CREATE:
+278               mode==mdAppend?APPEND_STATUS_CREATEAFTER:
+279               APPEND_STATUS_ADDINZIP,
+280               NULL, NULL, flags);
+281       } else {
+282           // QuaZIP pre-zip64 compatibility mode
+283           p->zipFile_f=zipOpen2(ioDevice,
+284               mode==mdCreate?APPEND_STATUS_CREATE:
+285               mode==mdAppend?APPEND_STATUS_CREATEAFTER:
+286               APPEND_STATUS_ADDINZIP,
+287               NULL,
+288               ioApi);
+289           if (p->zipFile_f != NULL) {
+290               zipSetFlags(p->zipFile_f, flags);
+291           }
+292       }
+293       if(p->zipFile_f!=NULL) {
+294         if (ioDevice->isSequential()) {
+295             if (mode != mdCreate) {
+296                 zipClose(p->zipFile_f, NULL);
+297                 qWarning("QuaZip::open(): "
+298                         "only mdCreate can be used with "
+299                          "sequential devices");
+300                 if (!p->zipName\&.isEmpty())
+301                     delete ioDevice;
+302                 return false;
+303             }
+304             zipSetFlags(p->zipFile_f, ZIP_SEQUENTIAL);
+305         }
+306         p->mode=mode;
+307         p->ioDevice = ioDevice;
+308         return true;
+309       } else {
+310         p->zipError=UNZ_OPENERROR;
+311         if (!p->zipName\&.isEmpty())
+312           delete ioDevice;
+313         return false;
+314       }
+315     default:
+316       qWarning("QuaZip::open(): unknown mode: %d", (int)mode);
+317       if (!p->zipName\&.isEmpty())
+318         delete ioDevice;
+319       return false;
+320       break;
+321   }
+322 }
+.fi
+.SS "\fBQuaZip\fP& QuaZip::operator= (const \fBQuaZip\fP &that)\fC [private]\fP"
+
+.SS "void QuaZip::setAutoClose (boolautoClose) const"
+By default, QuaZIP opens the underlying \fBQIODevice\fP when \fBopen()\fP is called, and closes it when \fBclose()\fP is called\&. In some cases, when the device is set explicitly using \fBsetIoDevice()\fP, it may be desirable to leave the device open\&. If the auto-close flag is unset using this method, then the device isn't closed automatically if it was set explicitly\&.
+.PP
+If it is needed to clear this flag, it is recommended to do so before opening the archive because otherwise QuaZIP may close the device during the \fBopen()\fP call if an error is encountered after the device is opened\&.
+.PP
+If the device was not set explicitly, but rather the \fBsetZipName()\fP or the appropriate constructor was used to set the ZIP file name instead, then the auto-close flag has no effect, and the internal device is closed nevertheless because there is no other way to close it\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBisAutoClose()\fP 
+.PP
+\fBsetIoDevice()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 785 of file quazip\&.cpp\&.
+.PP
+References QuaZipPrivate::autoClose, and p\&.
+.PP
+.nf
+786 {
+787     p->autoClose = autoClose;
+788 }
+.fi
+.SS "void QuaZip::setComment (const QString &comment)"
+The comment will be written to the archive on close operation\&. \fBQuaZip\fP makes a distinction between a null QByteArray() comment and an empty "" comment in the \fBQuaZip::mdAdd\fP mode\&. A null comment is the default and it means "don't change the comment"\&. An empty comment removes the original comment\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBopen()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 629 of file quazip\&.cpp\&.
+.PP
+References QuaZipPrivate::comment, and p\&.
+.PP
+.nf
+630 {
+631   p->comment=comment;
+632 }
+.fi
+.SS "void QuaZip::setCommentCodec (QTextCodec *commentCodec)"
+This codec defaults to locale codec, which is probably ok\&. 
+.PP
+Definition at line 587 of file quazip\&.cpp\&.
+.PP
+References QuaZipPrivate::commentCodec, and p\&.
+.PP
+.nf
+588 {
+589   p->commentCodec=commentCodec;
+590 }
+.fi
+.SS "void QuaZip::setCommentCodec (const char *commentCodecName)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&. Equivalent to calling setCommentCodec(QTextCodec::codecForName(codecName)); 
+.PP
+Definition at line 592 of file quazip\&.cpp\&.
+.PP
+References QuaZipPrivate::commentCodec, and p\&.
+.PP
+.nf
+593 {
+594   p->commentCodec=QTextCodec::codecForName(commentCodecName);
+595 }
+.fi
+.SS "bool QuaZip::setCurrentFile (const QString &fileName, \fBCaseSensitivity\fPcs = \fC\fBcsDefault\fP\fP)"
+Returns \fCtrue\fP if successful, \fCfalse\fP otherwise\&. Argument \fIcs\fP specifies case sensitivity of the file name\&. Call \fBgetZipError()\fP in the case of a failure to get error code\&.
+.PP
+This is not a wrapper to \fBunzLocateFile()\fP function\&. That is because I had to implement locale-specific case-insensitive comparison\&.
+.PP
+Here are the differences from the original implementation:
+.PP
+.IP "\(bu" 2
+If the file was not found, error code is \fCUNZ_OK\fP, not \fCUNZ_END_OF_LIST_OF_FILE\fP (see also \fBgoToNextFile()\fP)\&.
+.IP "\(bu" 2
+If this function fails, it unsets the current file rather than resetting it back to what it was before the call\&.
+.PP
+.PP
+If \fIfileName\fP is null string then this function unsets the current file and return \fCtrue\fP\&. Note that you should close the file first if it is open! See \fBQuaZipFile::QuaZipFile(QuaZip*,QObject*)\fP for the details\&.
+.PP
+Should be used only in \fBQuaZip::mdUnzip\fP mode\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBsetFileNameCodec()\fP, \fBCaseSensitivity\fP 
+.RE
+.PP
+
+.PP
+Definition at line 408 of file quazip\&.cpp\&.
+.PP
+References convertCaseSensitivity(), current, QuaZipPrivate::directoryCaseInsensitive, QuaZipPrivate::directoryCaseSensitive, getCurrentFileName(), QuaZipPrivate::goToFirstUnmappedFile(), goToNextFile(), QuaZipPrivate::hasCurrentFile_f, MAX_FILE_NAME_LENGTH, mdUnzip, QuaZipPrivate::mode, p, unz64_file_pos_s::pos_in_zip_directory, UNZ_OK, UNZ_PARAMERROR, unzGoToFilePos64(), and QuaZipPrivate::zipError\&.
+.PP
+Referenced by KbFirmware::_fileForBoard(), JlCompress::extractFile(), QuaZipPrivate::getFileInfoList(), and QuaZipFile::open()\&.
+.PP
+.nf
+409 {
+410   p->zipError=UNZ_OK;
+411   if(p->mode!=mdUnzip) {
+412     qWarning("QuaZip::setCurrentFile(): ZIP is not open in mdUnzip mode");
+413     return false;
+414   }
+415   if(fileName\&.isEmpty()) {
+416     p->hasCurrentFile_f=false;
+417     return true;
+418   }
+419   // Unicode-aware reimplementation of the unzLocateFile function
+420   if(p->unzFile_f==NULL) {
+421     p->zipError=UNZ_PARAMERROR;
+422     return false;
+423   }
+424   if(fileName\&.length()>MAX_FILE_NAME_LENGTH) {
+425     p->zipError=UNZ_PARAMERROR;
+426     return false;
+427   }
+428   // Find the file by name
+429   bool sens = convertCaseSensitivity(cs) == Qt::CaseSensitive;
+430   QString lower, current;
+431   if(!sens) lower=fileName\&.toLower();
+432   p->hasCurrentFile_f=false;
+433 
+434   // Check the appropriate Map
+435   unz64_file_pos fileDirPos;
+436   fileDirPos\&.pos_in_zip_directory = 0;
+437   if (sens) {
+438       if (p->directoryCaseSensitive\&.contains(fileName))
+439           fileDirPos = p->directoryCaseSensitive\&.value(fileName);
+440   } else {
+441       if (p->directoryCaseInsensitive\&.contains(lower))
+442           fileDirPos = p->directoryCaseInsensitive\&.value(lower);
+443   }
+444 
+445   if (fileDirPos\&.pos_in_zip_directory != 0) {
+446       p->zipError = unzGoToFilePos64(p->unzFile_f, &fileDirPos);
+447       p->hasCurrentFile_f = p->zipError == UNZ_OK;
+448   }
+449 
+450   if (p->hasCurrentFile_f)
+451       return p->hasCurrentFile_f;
+452 
+453   // Not mapped yet, start from where we have got to so far
+454   for(bool more=p->goToFirstUnmappedFile(); more; more=goToNextFile()) {
+455     current=getCurrentFileName();
+456     if(current\&.isEmpty()) return false;
+457     if(sens) {
+458       if(current==fileName) break;
+459     } else {
+460       if(current\&.toLower()==lower) break;
+461     }
+462   }
+463   return p->hasCurrentFile_f;
+464 }
+.fi
+.SS "void QuaZip::setDataDescriptorWritingEnabled (boolenabled)"
+According to the ZIP format specification, a file inside archive may have a data descriptor immediately following the file data\&. This is reflected by a special flag in the local file header and in the central directory\&. By default, QuaZIP sets this flag and writes the data descriptor unless both method and level were set to 0, in which case it operates in 1\&.0-compatible mode and never writes data descriptors\&.
+.PP
+By setting this flag to false, it is possible to disable data descriptor writing, thus increasing compatibility with archive readers that don't understand this feature of the ZIP file format\&.
+.PP
+Setting this flag affects all the \fBQuaZipFile\fP instances that are opened after this flag is set\&.
+.PP
+The data descriptor writing mode is enabled by default\&.
+.PP
+Note that if the ZIP archive is written into a \fBQIODevice\fP for which QIODevice::isSequential() returns \fCtrue\fP, then the data descriptor is mandatory and will be written even if this flag is set to false\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIenabled\fP If \fCtrue\fP, enable local descriptor writing, disable it otherwise\&.
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+QuaZipFile::isDataDescriptorWritingEnabled() 
+.RE
+.PP
+
+.PP
+Definition at line 649 of file quazip\&.cpp\&.
+.PP
+References QuaZipPrivate::dataDescriptorWritingEnabled, and p\&.
+.PP
+.nf
+650 {
+651     p->dataDescriptorWritingEnabled = enabled;
+652 }
+.fi
+.SS "void QuaZip::setDefaultFileNameCodec (QTextCodec *codec)\fC [static]\fP"
+The default codec is used by the constructors, so calling this function won't affect the \fBQuaZip\fP instances already created at that moment\&.
+.PP
+The codec specified here can be overriden by calling \fBsetFileNameCodec()\fP\&. If neither function is called, QTextCodec::codecForLocale() will be used to decode or encode file names\&. Use this function with caution if the application uses other libraries that depend on QuaZIP\&. Those libraries can either call this function by themselves, thus overriding your setting or can rely on the default encoding, thus failing mysteriously if you change it\&. For these reasons, it isn't recommended to use this function if you are developing a library, not an application\&. Instead, ask your library users to call it in case they need specific encoding\&.
+.PP
+In most cases, using \fBsetFileNameCodec()\fP instead is the right choice\&. However, if you depend on third-party code that uses QuaZIP, then the reasons stated above can actually become a reason to use this function in case the third-party code in question fails because it doesn't understand the encoding you need and doesn't provide a way to specify it\&. This applies to the \fBJlCompress\fP class as well, as it was contributed and doesn't support explicit encoding parameters\&.
+.PP
+In short: use \fBsetFileNameCodec()\fP when you can, resort to \fBsetDefaultFileNameCodec()\fP when you don't have access to the \fBQuaZip\fP instance\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcodec\fP The codec to use by default\&. If NULL, resets to default\&. 
+.RE
+.PP
+
+.PP
+Definition at line 760 of file quazip\&.cpp\&.
+.PP
+References QuaZipPrivate::defaultFileNameCodec\&.
+.PP
+Referenced by setDefaultFileNameCodec()\&.
+.PP
+.nf
+761 {
+762     QuaZipPrivate::defaultFileNameCodec = codec;
+763 }
+.fi
+.SS "void QuaZip::setDefaultFileNameCodec (const char *codecName)\fC [static]\fP"
+
+.PP
+Definition at line 765 of file quazip\&.cpp\&.
+.PP
+References setDefaultFileNameCodec()\&.
+.PP
+.nf
+766 {
+767     setDefaultFileNameCodec(QTextCodec::codecForName(codecName));
+768 }
+.fi
+.SS "void QuaZip::setFileNameCodec (QTextCodec *fileNameCodec)"
+This is necessary to access files in the ZIP archive created under Windows with non-latin characters in file names\&. For example, file names with cyrillic letters will be in \fCIBM866\fP encoding\&. 
+.PP
+Definition at line 572 of file quazip\&.cpp\&.
+.PP
+References QuaZipPrivate::fileNameCodec, and p\&.
+.PP
+.nf
+573 {
+574   p->fileNameCodec=fileNameCodec;
+575 }
+.fi
+.SS "void QuaZip::setFileNameCodec (const char *fileNameCodecName)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&. Equivalent to calling setFileNameCodec(QTextCodec::codecForName(codecName)); 
+.PP
+Definition at line 577 of file quazip\&.cpp\&.
+.PP
+References QuaZipPrivate::fileNameCodec, and p\&.
+.PP
+.nf
+578 {
+579   p->fileNameCodec=QTextCodec::codecForName(fileNameCodecName);
+580 }
+.fi
+.SS "void QuaZip::setIoDevice (\fBQIODevice\fP *ioDevice)"
+Does nothing if the ZIP file is open\&.
+.PP
+Does not reset error code returned by \fBgetZipError()\fP\&. 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBgetIoDevice()\fP, \fBgetZipName()\fP, \fBsetZipName()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 365 of file quazip\&.cpp\&.
+.PP
+References QuaZipPrivate::ioDevice, isOpen(), p, and QuaZipPrivate::zipName\&.
+.PP
+.nf
+366 {
+367   if(isOpen()) {
+368     qWarning("QuaZip::setIoDevice(): ZIP is already open!");
+369     return;
+370   }
+371   p->ioDevice = ioDevice;
+372   p->zipName = QString();
+373 }
+.fi
+.SS "void QuaZip::setZip64Enabled (boolzip64)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIzip64\fP If \fCtrue\fP, the zip64 mode is enabled, disabled otherwise\&.
+.RE
+.PP
+Once this is enabled, all new files (until the mode is disabled again) will be created in the zip64 mode, thus enabling the ability to write files larger than 4 GB\&. By default, the zip64 mode is off due to compatibility reasons\&.
+.PP
+Note that this does not affect the ability to read zip64 archives in any way\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBisZip64Enabled()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 770 of file quazip\&.cpp\&.
+.PP
+References p, and QuaZipPrivate::zip64\&.
+.PP
+.nf
+771 {
+772     p->zip64 = zip64;
+773 }
+.fi
+.SS "void QuaZip::setZipName (const QString &zipName)"
+Does nothing if the ZIP file is open\&.
+.PP
+Does not reset error code returned by \fBgetZipError()\fP\&. 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBsetIoDevice()\fP, \fBgetIoDevice()\fP, \fBgetZipName()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 355 of file quazip\&.cpp\&.
+.PP
+References QuaZipPrivate::ioDevice, isOpen(), p, and QuaZipPrivate::zipName\&.
+.PP
+.nf
+356 {
+357   if(isOpen()) {
+358     qWarning("QuaZip::setZipName(): ZIP is already open!");
+359     return;
+360   }
+361   p->zipName=zipName;
+362   p->ioDevice = NULL;
+363 }
+.fi
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBQuaZipPrivate\fP\fC [friend]\fP"
+
+.PP
+Definition at line 85 of file quazip\&.h\&.
+.SH "Field Documentation"
+.PP 
+.SS "\fBQuaZipPrivate\fP* QuaZip::p\fC [private]\fP"
+
+.PP
+Definition at line 129 of file quazip\&.h\&.
+.PP
+Referenced by close(), getComment(), getCommentCodec(), getCurrentFileInfo(), getCurrentFileName(), getEntriesCount(), getFileInfoList(), getFileInfoList64(), getFileNameCodec(), getFileNameList(), getIoDevice(), getMode(), getUnzFile(), getZipError(), getZipFile(), getZipName(), goToFirstFile(), goToNextFile(), hasCurrentFile(), isAutoClose(), isDataDescriptorWritingEnabled(), isOpen(), isZip64Enabled(), open(), setAutoClose(), setComment(), setCommentCodec(), setCurrentFile(), setDataDescriptorWritingEnabled(), setFileNameCodec(), setIoDevice(), setZip64Enabled(), setZipName(), and ~QuaZip()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

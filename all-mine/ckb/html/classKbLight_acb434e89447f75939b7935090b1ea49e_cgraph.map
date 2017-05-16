@@ -1,0 +1,5 @@
+<map id="KbLight::rebuildBaseMap" name="KbLight::rebuildBaseMap">
+<area shape="rect" id="node2" href="$classKbLight.html#a539f8ef1f120055aca4fc5892e08ae9a" title="KbLight::color" alt="" coords="222,5,325,32"/>
+<area shape="rect" id="node3" href="$classColorMap.html#a206bfd8a9465e856c16a71bb908772fe" title="ColorMap::colorForName" alt="" coords="373,31,541,57"/>
+<area shape="rect" id="node4" href="$colormap_8cpp.html#aadd858d434ca6f9507ef897c2e4c12ab" title="qs_strcmp" alt="" coords="589,31,672,57"/>
+</map>

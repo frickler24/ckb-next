@@ -1,0 +1,279 @@
+.TH "src/ckb-daemon/firmware.c" 3 "Tue May 16 2017" "Version beta-v0.2.7 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb-daemon/firmware.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'devnode\&.h'\fP
+.br
+\fC#include 'firmware\&.h'\fP
+.br
+\fC#include 'notify\&.h'\fP
+.br
+\fC#include 'usb\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBFW_OK\fP   0"
+.br
+.ti -1c
+.RI "#define \fBFW_NOFILE\fP   -1"
+.br
+.ti -1c
+.RI "#define \fBFW_WRONGDEV\fP   -2"
+.br
+.ti -1c
+.RI "#define \fBFW_USBFAIL\fP   -3"
+.br
+.ti -1c
+.RI "#define \fBFW_MAXSIZE\fP   (255 * 256)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBgetfwversion\fP (\fBusbdevice\fP *kb)"
+.br
+.ti -1c
+.RI "int \fBfwupdate\fP (\fBusbdevice\fP *kb, const char *path, int nnumber)"
+.br
+.ti -1c
+.RI "int \fBcmd_fwupdate\fP (\fBusbdevice\fP *kb, \fBusbmode\fP *dummy1, int nnumber, int dummy2, const char *path)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define FW_MAXSIZE   (255 * 256)"
+
+.PP
+Definition at line 51 of file firmware\&.c\&.
+.PP
+Referenced by fwupdate()\&.
+.SS "#define FW_NOFILE   -1"
+
+.PP
+Definition at line 7 of file firmware\&.c\&.
+.PP
+Referenced by cmd_fwupdate(), and fwupdate()\&.
+.SS "#define FW_OK   0"
+
+.PP
+Definition at line 6 of file firmware\&.c\&.
+.PP
+Referenced by cmd_fwupdate(), and fwupdate()\&.
+.SS "#define FW_USBFAIL   -3"
+
+.PP
+Definition at line 9 of file firmware\&.c\&.
+.PP
+Referenced by cmd_fwupdate(), and fwupdate()\&.
+.SS "#define FW_WRONGDEV   -2"
+
+.PP
+Definition at line 8 of file firmware\&.c\&.
+.PP
+Referenced by cmd_fwupdate(), and fwupdate()\&.
+.SH "Function Documentation"
+.PP 
+.SS "int cmd_fwupdate (\fBusbdevice\fP *kb, \fBusbmode\fP *dummy1, intnnumber, intdummy2, const char *path)"
+
+.PP
+Definition at line 154 of file firmware\&.c\&.
+.PP
+References FEAT_FWUPDATE, FW_NOFILE, FW_OK, FW_USBFAIL, FW_WRONGDEV, fwupdate(), HAS_FEATURES, nprintf(), and usb_tryreset()\&.
+.PP
+.nf
+154                                                                                            {
+155     if(!HAS_FEATURES(kb, FEAT_FWUPDATE))
+156         return 0;
+157     // Update the firmware
+158     int ret = fwupdate(kb, path, nnumber);
+159     while(ret == FW_USBFAIL){
+160         // Try to reset the device if it fails
+161         if(usb_tryreset(kb))
+162             break;
+163         ret = fwupdate(kb, path, nnumber);
+164     }
+165     switch(ret){
+166     case FW_OK:
+167         nprintf(kb, nnumber, 0, "fwupdate %s ok\n", path);
+168         break;
+169     case FW_NOFILE:
+170     case FW_WRONGDEV:
+171         nprintf(kb, nnumber, 0, "fwupdate %s invalid\n", path);
+172         break;
+173     case FW_USBFAIL:
+174         nprintf(kb, nnumber, 0, "fwupdate %s fail\n", path);
+175         return -1;
+176     }
+177     return 0;
+178 }
+.fi
+.SS "int fwupdate (\fBusbdevice\fP *kb, const char *path, intnnumber)"
+
+.PP
+Definition at line 55 of file firmware\&.c\&.
+.PP
+References ckb_err, ckb_info, FW_MAXSIZE, FW_NOFILE, FW_OK, FW_USBFAIL, FW_WRONGDEV, usbdevice::fwversion, mkfwnode(), MSG_SIZE, nprintf(), usbdevice::product, usbdevice::usbdelay, usbsend, and usbdevice::vendor\&.
+.PP
+Referenced by cmd_fwupdate()\&.
+.PP
+.nf
+55                                                           {
+56     // Read the firmware from the given path
+57     char* fwdata = calloc(1, FW_MAXSIZE + 256);
+58     int fd = open(path, O_RDONLY);
+59     if(fd == -1){
+60         ckb_err("Failed to open firmware file %s: %s\n", path, strerror(errno));
+61         return FW_NOFILE;
+62     }
+63     ssize_t length = read(fd, fwdata, FW_MAXSIZE + 1);
+64     if(length <= 0x108 || length > FW_MAXSIZE){
+65         ckb_err("Failed to read firmware file %s: %s\n", path, length <= 0 ? strerror(errno) : "Wrong size");
+66         close(fd);
+67         return FW_NOFILE;
+68     }
+69     close(fd);
+70 
+71     short vendor, product, version;
+72     // Copy the vendor ID, product ID, and version from the firmware file
+73     memcpy(&vendor, fwdata + 0x102, 2);
+74     memcpy(&product, fwdata + 0x104, 2);
+75     memcpy(&version, fwdata + 0x106, 2);
+76     // Check against the actual device
+77     if(vendor != kb->vendor || product != kb->product){
+78         ckb_err("Firmware file %s doesn't match device (V: %04x P: %04x)\n", path, vendor, product);
+79         return FW_WRONGDEV;
+80     }
+81     ckb_info("Loading firmware version %04x from %s\n", version, path);
+82     nprintf(kb, nnumber, 0, "fwupdate %s 0/%d\n", path, (int)length);
+83     // Force the device to 10ms delay (we need to deliver packets very slowly to make sure it doesn't get overwhelmed)
+84     kb->usbdelay = 10;
+85     // Send the firmware messages (256 bytes at a time)
+86     uchar data_pkt[7][MSG_SIZE] = {
+87         { 0x07, 0x0c, 0xf0, 0x01, 0 },
+88         { 0x07, 0x0d, 0xf0, 0 },
+89         { 0x7f, 0x01, 0x3c, 0 },
+90         { 0x7f, 0x02, 0x3c, 0 },
+91         { 0x7f, 0x03, 0x3c, 0 },
+92         { 0x7f, 0x04, 0x3c, 0 },
+93         { 0x7f, 0x05, 0x10, 0 }
+94     };
+95     int output = 0, last = 0;
+96     int index = 0;
+97     while(output < length){
+98         int npackets = 1;
+99         // Packet 1: data position
+100         data_pkt[1][6] = index++;
+101         while(output < length){
+102             npackets++;
+103             if(npackets != 6){
+104                 // Packets 2-5: 60 bytes of data
+105                 memcpy(data_pkt[npackets] + 4, fwdata + output, 60);
+106                 last = output;
+107                 output += 60;
+108             } else {
+109                 // Packet 6: 16 bytes
+110                 memcpy(data_pkt[npackets] + 4, fwdata + output, 16);
+111                 last = output;
+112                 output += 16;
+113                 break;
+114             }
+115         }
+116         if(index == 1){
+117             if(!usbsend(kb, data_pkt[0], 1)){
+118                 ckb_err("Firmware update failed\n");
+119                 return FW_USBFAIL;
+120             }
+121             // The above packet can take a lot longer to process, so wait for a while
+122             sleep(3);
+123             if(!usbsend(kb, data_pkt[2], npackets - 1)){
+124                 ckb_err("Firmware update failed\n");
+125                 return FW_USBFAIL;
+126             }
+127         } else {
+128             // If the output ends here, set the length byte appropriately
+129             if(output >= length)
+130                 data_pkt[npackets][2] = length - last;
+131             if(!usbsend(kb, data_pkt[1], npackets)){
+132                 ckb_err("Firmware update failed\n");
+133                 return FW_USBFAIL;
+134             }
+135         }
+136         nprintf(kb, nnumber, 0, "fwupdate %s %d/%d\n", path, output, (int)length);
+137     }
+138     // Send the final pair of messages
+139     uchar data_pkt2[2][MSG_SIZE] = {
+140         { 0x07, 0x0d, 0xf0, 0x00, 0x00, 0x00, index },
+141         { 0x07, 0x02, 0xf0, 0 }
+142     };
+143     if(!usbsend(kb, data_pkt2[0], 2)){
+144         ckb_err("Firmware update failed\n");
+145         return FW_USBFAIL;
+146     }
+147     // Updated successfully
+148     kb->fwversion = version;
+149     mkfwnode(kb);
+150     ckb_info("Firmware update complete\n");
+151     return FW_OK;
+152 }
+.fi
+.SS "int getfwversion (\fBusbdevice\fP *kb)"
+
+.PP
+Definition at line 11 of file firmware\&.c\&.
+.PP
+References ckb_err, ckb_warn, FEAT_POLLRATE, usbdevice::features, usbdevice::fwversion, MSG_SIZE, usbdevice::pollrate, usbdevice::product, usbrecv, and usbdevice::vendor\&.
+.PP
+Referenced by _start_dev()\&.
+.PP
+.nf
+11                                {
+12     // Ask board for firmware info
+13     uchar data_pkt[MSG_SIZE] = { 0x0e, 0x01, 0 };
+14     uchar in_pkt[MSG_SIZE];
+15     if(!usbrecv(kb, data_pkt, in_pkt))
+16         return -1;
+17     if(in_pkt[0] != 0x0e || in_pkt[1] != 0x01){
+18         ckb_err("Bad input header\n");
+19         return -1;
+20     }
+21     short vendor, product, version, bootloader;
+22     // Copy the vendor ID, product ID, version, and poll rate from the firmware data
+23     memcpy(&version, in_pkt + 8, 2);
+24     memcpy(&bootloader, in_pkt + 10, 2);
+25     memcpy(&vendor, in_pkt + 12, 2);
+26     memcpy(&product, in_pkt + 14, 2);
+27     char poll = in_pkt[16];
+28     if(poll <= 0){
+29         poll = -1;
+30         kb->features &= ~FEAT_POLLRATE;
+31     }
+32     // Print a warning if the message didn't match the expected data
+33     if(vendor != kb->vendor)
+34         ckb_warn("Got vendor ID %04x (expected %04x)\n", vendor, kb->vendor);
+35     if(product != kb->product)
+36         ckb_warn("Got product ID %04x (expected %04x)\n", product, kb->product);
+37     // Set firmware version and poll rate
+38     if(version == 0 || bootloader == 0){
+39         // Needs firmware update
+40         kb->fwversion = 0;
+41         kb->pollrate = -1;
+42     } else {
+43         if(version != kb->fwversion && kb->fwversion != 0)
+44             ckb_warn("Got firmware version %04x (expected %04x)\n", version, kb->fwversion);
+45         kb->fwversion = version;
+46         kb->pollrate = poll;
+47     }
+48     return 0;
+49 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

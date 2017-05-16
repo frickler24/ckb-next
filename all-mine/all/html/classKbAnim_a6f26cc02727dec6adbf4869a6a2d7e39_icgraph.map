@@ -1,0 +1,11 @@
+<map id="KbAnim::newId" name="KbAnim::newId">
+<area shape="rect" id="node2" href="$classKbLight.html#affb65d8409e708480a8fb2611d51ba07" title="KbLight::duplicateAnim" alt="" coords="166,25,322,52"/>
+<area shape="rect" id="node5" href="$classKbMode.html#a2de09f5bf1fb02eeaf795a65b3baea81" title="KbMode::newId" alt="" coords="187,101,301,128"/>
+<area shape="rect" id="node3" href="$classKbAnimWidget.html#aa49c33f3e673b9521ab812df554dec93" title="KbAnimWidget::duplicateAnim" alt="" coords="378,12,577,39"/>
+<area shape="rect" id="node4" href="$classKbAnimWidget.html#a8fefdad4f8ee8082890159438c78e911" title="KbAnimWidget::on_animList\l_customContextMenuRequested" alt="" coords="632,5,845,46"/>
+<area shape="rect" id="node6" href="$classKbMode.html#ac315d57f007bb10901566fb32a3fdd93" title="KbMode::id" alt="" coords="433,63,521,89"/>
+<area shape="rect" id="node7" href="$classKbProfile.html#a052b67c9808cb671e065dbb54701e8a1" title="KbProfile::newId" alt="" coords="418,113,537,140"/>
+<area shape="rect" id="node10" href="$classKbWidget.html#add5eb15a399c87faf80db9fdfc2e868f" title="KbWidget::on_modesList_customContextMenuRequested. " alt="" coords="371,165,584,206"/>
+<area shape="rect" id="node8" href="$classKbProfile.html#ac71a91f5ec60278895b841cba6d2ab68" title="KbProfile::id" alt="" coords="692,92,785,119"/>
+<area shape="rect" id="node9" href="$classKbProfileDialog.html#aac105b06b0a29e39c05cb70f01c37fcd" title="KbProfileDialog::on\l_profileList_customContext\lMenuRequested" alt="" coords="648,143,829,199"/>
+</map>

@@ -1,0 +1,1005 @@
+.TH "KbBind" 3 "Tue May 16 2017" "Version beta-v0.2.7 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+KbBind \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/kbbind\&.h>\fP
+.PP
+Inherits \fBQObject\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBkeyEvent\fP (const QString &\fBkey\fP, bool down)"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBdidLoad\fP ()"
+.br
+.ti -1c
+.RI "void \fBlayoutChanged\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdated\fP ()"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBKbBind\fP (\fBKbMode\fP *\fBmodeParent\fP, \fBKb\fP *\fBdevParent\fP, const \fBKeyMap\fP &keyMap)"
+.br
+.ti -1c
+.RI "\fBKbBind\fP (\fBKbMode\fP *\fBmodeParent\fP, \fBKb\fP *\fBdevParent\fP, const \fBKeyMap\fP &keyMap, const \fBKbBind\fP &other)"
+.br
+.RI "\fI\fBKbBind\fP\&. \fP"
+.ti -1c
+.RI "void \fBload\fP (\fBCkbSettings\fP &settings)"
+.br
+.ti -1c
+.RI "void \fBsave\fP (\fBCkbSettings\fP &settings)"
+.br
+.ti -1c
+.RI "bool \fBneedsSave\fP () const "
+.br
+.ti -1c
+.RI "const \fBKeyMap\fP & \fBmap\fP ()"
+.br
+.ti -1c
+.RI "void \fBmap\fP (const \fBKeyMap\fP &map)"
+.br
+.ti -1c
+.RI "bool \fBisISO\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisKeyboard\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisMouse\fP () const "
+.br
+.ti -1c
+.RI "\fBKbPerf\fP * \fBperf\fP ()"
+.br
+.ti -1c
+.RI "\fBKbLight\fP * \fBlight\fP ()"
+.br
+.ti -1c
+.RI "QString \fBaction\fP (const QString &\fBkey\fP)"
+.br
+.ti -1c
+.RI "QString \fBfriendlyName\fP (const QString &\fBkey\fP)"
+.br
+.ti -1c
+.RI "QString \fBfriendlyActionName\fP (const QString &\fBkey\fP)"
+.br
+.ti -1c
+.RI "void \fBsetAction\fP (const QString &\fBkey\fP, const QString &\fBaction\fP)"
+.br
+.ti -1c
+.RI "void \fBsetAction\fP (const QStringList &keys, const QString &\fBaction\fP)"
+.br
+.ti -1c
+.RI "void \fBresetAction\fP (const QString &\fBkey\fP)"
+.br
+.ti -1c
+.RI "void \fBresetAction\fP (const QStringList &keys)"
+.br
+.ti -1c
+.RI "void \fBnoAction\fP (const QString &\fBkey\fP)"
+.br
+.ti -1c
+.RI "void \fBnoAction\fP (const QStringList &keys)"
+.br
+.ti -1c
+.RI "bool \fBwinLock\fP ()"
+.br
+.ti -1c
+.RI "void \fBwinLock\fP (bool newWinLock)"
+.br
+.ti -1c
+.RI "void \fBupdate\fP (QFile &\fBcmd\fP, bool force=false)"
+.br
+.ti -1c
+.RI "void \fBsetNeedsUpdate\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetMacroNumber\fP ()"
+.br
+.RI "\fI\fBKbBind::getMacroNumber\fP\&. \fP"
+.ti -1c
+.RI "QString \fBgetMacroPath\fP ()"
+.br
+.RI "\fI\fBKbBind::getMacroPath\fP\&. \fP"
+.ti -1c
+.RI "void \fBhandleNotificationChannel\fP (bool start)"
+.br
+.RI "\fIhandleNotificationChannel sends commands to ckb-daemon for (de-) activating the notify channel\&. Send a notify cmd to the keyboard to set or clear notification for reading macro definition\&. The file handle for the cmd pipe is stored in lastCmd\&. \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static QString \fBglobalRemap\fP (const QString &\fBkey\fP)"
+.br
+.ti -1c
+.RI "static void \fBsetGlobalRemap\fP (const QHash< QString, QString > keyToActual)"
+.br
+.ti -1c
+.RI "static void \fBloadGlobalRemap\fP ()"
+.br
+.ti -1c
+.RI "static void \fBsaveGlobalRemap\fP ()"
+.br
+.ti -1c
+.RI "static QString \fBdefaultAction\fP (const QString &\fBkey\fP)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBKb\fP * \fBdevParent\fP () const "
+.br
+.ti -1c
+.RI "\fBKbMode\fP * \fBmodeParent\fP () const "
+.br
+.ti -1c
+.RI "\fBKeyAction\fP * \fBbindAction\fP (const QString &\fBkey\fP)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBKb\fP * \fB_devParent\fP"
+.br
+.ti -1c
+.RI "quint64 \fBlastGlobalRemapTime\fP"
+.br
+.ti -1c
+.RI "QFile * \fBlastCmd\fP"
+.br
+.RI "\fIlastCmd is a cache-hack\&. Because the QFile ist opened in \fBKb\fP, and we need it in the macro processing functions, we cache the value her in lastCmd\&. \fP"
+.ti -1c
+.RI "\fBKeyMap\fP \fB_map\fP"
+.br
+.ti -1c
+.RI "QHash< QString, \fBKeyAction\fP * > \fB_bind\fP"
+.br
+.ti -1c
+.RI "bool \fB_winLock\fP"
+.br
+.ti -1c
+.RI "bool \fB_needsUpdate\fP"
+.br
+.ti -1c
+.RI "bool \fB_needsSave\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static QHash< QString, QString > \fB_globalRemap\fP"
+.br
+.ti -1c
+.RI "static quint64 \fBglobalRemapTime\fP = 0"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBKeyAction\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 20 of file kbbind\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "KbBind::KbBind (\fBKbMode\fP *modeParent, \fBKb\fP *devParent, const \fBKeyMap\fP &keyMap)\fC [explicit]\fP"
+
+.PP
+Definition at line 12 of file kbbind\&.cpp\&.
+.PP
+.nf
+12                                                                         :
+13     QObject(modeParent), _devParent(parentBoard), lastGlobalRemapTime(globalRemapTime), _map(keyMap),
+14     _winLock(false), _needsUpdate(true), _needsSave(true) {
+15 }
+.fi
+.SS "KbBind::KbBind (\fBKbMode\fP *modeParent, \fBKb\fP *parentBoard, const \fBKeyMap\fP &keyMap, const \fBKbBind\fP &other)"
+\fBKbBind::KbBind\fP // copy all existing \fBKey\fP bindings\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fImodeParent\fP 
+.br
+\fIdevParent\fP 
+.br
+\fIkeyMap\fP 
+.br
+\fIother\fP This is the \fBKbBind\fP object to copy from Use this constructor to copy an existing Binding
+.br
+\fImodeParent\fP 
+.br
+\fIparentBoard\fP 
+.br
+\fIkeyMap\fP 
+.br
+\fIother\fP 
+.RE
+.PP
+Create a new Hash table and copy all entries
+.PP
+clear the destination list (there are the original KeyActions as references, so do not delete them)
+.PP
+and move the KeyActions we just created 
+.PP
+Definition at line 24 of file kbbind\&.cpp\&.
+.PP
+References _bind, KeyAction, map(), and KeyAction::value()\&.
+.PP
+.nf
+24                                                                                              :
+25     QObject(modeParent), _devParent(parentBoard), lastGlobalRemapTime(globalRemapTime), _bind(other\&._bind),
+26     _winLock(false), _needsUpdate(true), _needsSave(true) {
+27     map(keyMap);
+28 
+30     QHash<QString, KeyAction*> newBind;
+31     foreach(QString key, _bind\&.keys()) {
+32         KeyAction* act = _bind\&.value(key);
+33         if(act) {
+34             newBind[key] = new KeyAction(act->value(), this);
+35         }
+36     }
+37 
+39     _bind\&.clear();
+40     foreach(QString key, newBind\&.keys()) {
+41         KeyAction* act = newBind\&.value(key);
+42         if(act) {
+44             _bind[key] = new KeyAction(act->value(), this);
+45         }
+46     }
+47     newBind\&.clear();      // here we *must not* delete the KeyActions, because they are referenced by _bind now
+48 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "QString KbBind::action (const QString &key)"
+
+.PP
+Definition at line 140 of file kbbind\&.cpp\&.
+.PP
+References bindAction(), globalRemap(), and KeyAction::value()\&.
+.PP
+Referenced by friendlyActionName(), KbBindWidget::on_copyButton_clicked(), resetAction(), RebindWidget::setSelection(), and KbBindWidget::updateBind()\&.
+.PP
+.nf
+140                                         {
+141     QString rKey = globalRemap(key);
+142     return bindAction(rKey)->value();
+143 }
+.fi
+.SS "\fBKeyAction\fP* KbBind::bindAction (const QString &key)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 117 of file kbbind\&.h\&.
+.PP
+References _bind, KeyAction::defaultAction(), and KeyAction\&.
+.PP
+Referenced by action(), keyEvent(), and update()\&.
+.PP
+.nf
+117 { if(!_bind\&.contains(key)) return _bind[key] = new KeyAction(KeyAction::defaultAction(key), this); return _bind[key]; }
+.fi
+.SS "QString KbBind::defaultAction (const QString &key)\fC [static]\fP"
+
+.PP
+Definition at line 145 of file kbbind\&.cpp\&.
+.PP
+References KeyAction::defaultAction(), and globalRemap()\&.
+.PP
+Referenced by KeyWidget::paintEvent(), and RebindWidget::setBind()\&.
+.PP
+.nf
+145                                                {
+146     QString rKey = globalRemap(key);
+147     return KeyAction::defaultAction(rKey);
+148 }
+.fi
+.SS "\fBKb\fP* KbBind::devParent () const\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 114 of file kbbind\&.h\&.
+.PP
+References _devParent\&.
+.PP
+Referenced by getMacroNumber(), getMacroPath(), and KeyAction::keyEvent()\&.
+.PP
+.nf
+114 { return _devParent; }
+.fi
+.SS "void KbBind::didLoad ()\fC [signal]\fP"
+
+.PP
+Definition at line 155 of file moc_kbbind\&.cpp\&.
+.PP
+Referenced by load()\&.
+.PP
+.nf
+156 {
+157     QMetaObject::activate(this, &staticMetaObject, 0, Q_NULLPTR);
+158 }
+.fi
+.SS "QString KbBind::friendlyActionName (const QString &key)"
+
+.PP
+Definition at line 157 of file kbbind\&.cpp\&.
+.PP
+References _map, action(), and KeyAction\&.
+.PP
+Referenced by KbBindWidget::updateSelDisplay()\&.
+.PP
+.nf
+157                                                     {
+158     QString act = action(key);
+159     return KeyAction(act)\&.friendlyName(_map);
+160 }
+.fi
+.SS "QString KbBind::friendlyName (const QString &key)"
+
+.PP
+Definition at line 150 of file kbbind\&.cpp\&.
+.PP
+References _map, Key::friendlyName(), and globalRemap()\&.
+.PP
+.nf
+150                                               {
+151     const Key& pos = _map[globalRemap(key)];
+152     if(!pos)
+153         return "(Unknown)";
+154     return pos\&.friendlyName();
+155 }
+.fi
+.SS "int KbBind::getMacroNumber ()"
+
+.PP
+\fBReturns:\fP
+.RS 4
+number of notification channel\&. Use it in combination with notifyon/off-Statement 
+.RE
+.PP
+
+.PP
+Definition at line 257 of file kbbind\&.cpp\&.
+.PP
+References devParent(), and Kb::getMacroNumber()\&.
+.PP
+Referenced by handleNotificationChannel(), and RebindWidget::on_btnStartMacro_clicked()\&.
+.PP
+.nf
+257                            {
+258     return devParent()->getMacroNumber();
+259 }
+.fi
+.SS "QString KbBind::getMacroPath ()"
+
+.PP
+\fBReturns:\fP
+.RS 4
+Filepath of macro notification pipe\&. If not set, returns initial value '' 
+.RE
+.PP
+
+.PP
+Definition at line 265 of file kbbind\&.cpp\&.
+.PP
+References devParent(), and Kb::getMacroPath()\&.
+.PP
+Referenced by RebindWidget::on_btnStartMacro_clicked()\&.
+.PP
+.nf
+265                              {
+266     return devParent()->getMacroPath();
+267 }
+.fi
+.SS "QString KbBind::globalRemap (const QString &key)\fC [static]\fP"
+
+.PP
+Definition at line 98 of file kbbind\&.cpp\&.
+.PP
+References _globalRemap\&.
+.PP
+Referenced by action(), defaultAction(), friendlyName(), keyEvent(), noAction(), KeyWidget::paintEvent(), resetAction(), setAction(), and SettingsWidget::SettingsWidget()\&.
+.PP
+.nf
+98                                              {
+99     if(!_globalRemap\&.contains(key))
+100         return key;
+101     return _globalRemap\&.value(key);
+102 }
+.fi
+.SS "void KbBind::handleNotificationChannel (boolstart)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstart\fP is boolean\&. If true, notification channel is opened for all keys, otherwise channel ist closed\&.
+.br
+\fIstart\fP If true, notification channel is opened for all keys, otherwise channel ist closed\&. 
+.RE
+.PP
+
+.PP
+Definition at line 275 of file kbbind\&.cpp\&.
+.PP
+References getMacroNumber(), and lastCmd\&.
+.PP
+Referenced by RebindWidget::on_btnStartMacro_clicked(), and RebindWidget::on_btnStopMacro_clicked()\&.
+.PP
+.nf
+275                                                  {
+276     if (getMacroNumber() > 0 && lastCmd) {
+277         if (start) {
+278             lastCmd->write (QString("\nnotifyon %1\n@%1 notify all:on\n")\&.arg(getMacroNumber())\&.toLatin1());
+279         } else {
+280             lastCmd->write (QString("\n@%1 notify all:off\nnotifyoff %1\n")\&.arg(getMacroNumber())\&.toLatin1());
+281         }
+282         lastCmd->flush();
+283     } else qDebug() << QString("No cmd or valid handle for notification found, macroNumber = %1, lastCmd = %2")
+284                        \&.arg(getMacroNumber())\&.arg(lastCmd? "set" : "unset");
+285 }
+.fi
+.SS "bool KbBind::isISO () const\fC [inline]\fP"
+
+.PP
+Definition at line 43 of file kbbind\&.h\&.
+.PP
+References _map, and KeyMap::isISO()\&.
+.PP
+.nf
+43 { return _map\&.isISO(); }
+.fi
+.SS "bool KbBind::isKeyboard () const\fC [inline]\fP"
+
+.PP
+Definition at line 44 of file kbbind\&.h\&.
+.PP
+References _map, and KeyMap::isKeyboard()\&.
+.PP
+.nf
+44 { return _map\&.isKeyboard(); }
+.fi
+.SS "bool KbBind::isMouse () const\fC [inline]\fP"
+
+.PP
+Definition at line 45 of file kbbind\&.h\&.
+.PP
+References _map, and KeyMap::isMouse()\&.
+.PP
+Referenced by KbBindWidget::on_copyButton_clicked(), KbBindWidget::on_resetButton_clicked(), RebindWidget::setBind(), and KbBindWidget::updateSelDisplay()\&.
+.PP
+.nf
+45 { return _map\&.isMouse(); }
+.fi
+.SS "void KbBind::keyEvent (const QString &key, booldown)\fC [slot]\fP"
+
+.PP
+Definition at line 287 of file kbbind\&.cpp\&.
+.PP
+References bindAction(), globalRemap(), and KeyAction::keyEvent()\&.
+.PP
+Referenced by Kb::readNotify()\&.
+.PP
+.nf
+287                                                   {
+288     QString rKey = globalRemap(key);
+289     KeyAction* act = bindAction(rKey);
+290     if(act)
+291         act->keyEvent(this, down);
+292 }
+.fi
+.SS "void KbBind::layoutChanged ()\fC [signal]\fP"
+
+.PP
+Definition at line 161 of file moc_kbbind\&.cpp\&.
+.PP
+Referenced by map()\&.
+.PP
+.nf
+162 {
+163     QMetaObject::activate(this, &staticMetaObject, 1, Q_NULLPTR);
+164 }
+.fi
+.SS "\fBKbLight\fP * KbBind::light ()"
+
+.PP
+Definition at line 54 of file kbbind\&.cpp\&.
+.PP
+References KbMode::light(), and modeParent()\&.
+.PP
+Referenced by RebindWidget::applyChanges(), KeyAction::keyEvent(), and RebindWidget::setSelection()\&.
+.PP
+.nf
+54                       {
+55     return modeParent()->light();
+56 }
+.fi
+.SS "void KbBind::load (\fBCkbSettings\fP &settings)"
+
+.PP
+Definition at line 58 of file kbbind\&.cpp\&.
+.PP
+References _bind, _map, _needsSave, _winLock, CkbSettings::childKeys(), didLoad(), KeyMap::fromName(), KeyMap::fromStorage(), KeyAction, map(), and CkbSettings::value()\&.
+.PP
+Referenced by KbMode::KbMode()\&.
+.PP
+.nf
+58                                       {
+59     _needsSave = false;
+60     SGroup group(settings, "Binding");
+61     KeyMap currentMap = _map;
+62     _map = KeyMap::fromName(settings\&.value("KeyMap")\&.toString());
+63     // Load key settings
+64     bool useReal = settings\&.value("UseRealNames")\&.toBool();
+65     _bind\&.clear();
+66     {
+67         SGroup group(settings, "Keys");
+68         foreach(QString key, settings\&.childKeys()){
+69             QString name = key\&.toLower();
+70             if(!useReal)
+71                 name = _map\&.fromStorage(name);
+72             QString bind = settings\&.value(key)\&.toString();
+73             _bind[name] = new KeyAction(bind, this);
+74         }
+75     }
+76     _winLock = settings\&.value("WinLock")\&.toBool();
+77     emit didLoad();
+78     map(currentMap);
+79 }
+.fi
+.SS "void KbBind::loadGlobalRemap ()\fC [static]\fP"
+
+.PP
+Definition at line 116 of file kbbind\&.cpp\&.
+.PP
+References _globalRemap, CkbSettings::childKeys(), globalRemapTime, and CkbSettings::value()\&.
+.PP
+Referenced by SettingsWidget::SettingsWidget()\&.
+.PP
+.nf
+116                             {
+117     _globalRemap\&.clear();
+118     CkbSettings settings("Program/GlobalRemap");
+119     foreach(const QString& key, settings\&.childKeys())
+120         _globalRemap[key] = settings\&.value(key)\&.toString();
+121     globalRemapTime = QDateTime::currentMSecsSinceEpoch();
+122 }
+.fi
+.SS "const \fBKeyMap\fP& KbBind::map ()\fC [inline]\fP"
+
+.PP
+Definition at line 41 of file kbbind\&.h\&.
+.PP
+References _map\&.
+.PP
+Referenced by KbBind(), KbMode::keyMap(), load(), map(), KbBindWidget::newLayout(), KbBindWidget::on_copyButton_clicked(), KbBindWidget::on_resetButton_clicked(), RebindWidget::setBind(), KbBindWidget::updateBind(), and KbBindWidget::updateSelDisplay()\&.
+.PP
+.nf
+41 { return _map; }
+.fi
+.SS "void KbBind::map (const \fBKeyMap\fP &map)"
+
+.PP
+Definition at line 133 of file kbbind\&.cpp\&.
+.PP
+References _map, _needsSave, _needsUpdate, layoutChanged(), and map()\&.
+.PP
+.nf
+133                                  {
+134     _map = map;
+135     _needsUpdate = true;
+136     _needsSave = true;
+137     emit layoutChanged();
+138 }
+.fi
+.SS "\fBKbMode\fP* KbBind::modeParent () const\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 115 of file kbbind\&.h\&.
+.PP
+Referenced by light(), and perf()\&.
+.PP
+.nf
+115 { return (KbMode*)parent(); }
+.fi
+.SS "bool KbBind::needsSave () const\fC [inline]\fP"
+
+.PP
+Definition at line 38 of file kbbind\&.h\&.
+.PP
+References _needsSave\&.
+.PP
+Referenced by KbMode::needsSave()\&.
+.PP
+.nf
+38 { return _needsSave; }
+.fi
+.SS "void KbBind::noAction (const QString &key)"
+
+.PP
+Definition at line 172 of file kbbind\&.cpp\&.
+.PP
+References _bind, _map, globalRemap(), KeyMap::key(), KeyAction, and resetAction()\&.
+.PP
+Referenced by RebindWidget::applyChanges(), and RebindWidget::on_unbindButton_clicked()\&.
+.PP
+.nf
+172                                        {
+173     resetAction(key);
+174     QString rKey = globalRemap(key);
+175     if(!_map\&.key(rKey))
+176         return;
+177     _bind[rKey] = new KeyAction(this);
+178 }
+.fi
+.SS "void KbBind::noAction (const QStringList &keys)\fC [inline]\fP"
+
+.PP
+Definition at line 75 of file kbbind\&.h\&.
+.PP
+References noAction()\&.
+.PP
+Referenced by noAction()\&.
+.PP
+.nf
+75 { foreach(const QString& key, keys) noAction(key); }
+.fi
+.SS "\fBKbPerf\fP * KbBind::perf ()"
+
+.PP
+Definition at line 50 of file kbbind\&.cpp\&.
+.PP
+References modeParent(), and KbMode::perf()\&.
+.PP
+Referenced by KeyAction::keyEvent(), and RebindWidget::setBind()\&.
+.PP
+.nf
+50                     {
+51     return modeParent()->perf();
+52 }
+.fi
+.SS "void KbBind::resetAction (const QString &key)"
+
+.PP
+Definition at line 162 of file kbbind\&.cpp\&.
+.PP
+References _bind, _needsSave, _needsUpdate, action(), and globalRemap()\&.
+.PP
+Referenced by noAction(), KbBindWidget::on_resetButton_clicked(), RebindWidget::on_resetButton_clicked(), and setAction()\&.
+.PP
+.nf
+162                                           {
+163     QString rKey = globalRemap(key);
+164     // Clean up existing action (if any)
+165     KeyAction* action = _bind\&.value(rKey);
+166     delete action;
+167     _bind\&.remove(rKey);
+168     _needsUpdate = true;
+169     _needsSave = true;
+170 }
+.fi
+.SS "void KbBind::resetAction (const QStringList &keys)\fC [inline]\fP"
+
+.PP
+Definition at line 72 of file kbbind\&.h\&.
+.PP
+References resetAction()\&.
+.PP
+Referenced by resetAction()\&.
+.PP
+.nf
+72 { foreach(const QString& key, keys) resetAction(key); }
+.fi
+.SS "void KbBind::save (\fBCkbSettings\fP &settings)"
+
+.PP
+Definition at line 81 of file kbbind\&.cpp\&.
+.PP
+References _bind, _map, _needsSave, _winLock, KeyAction::defaultAction(), KeyMap::name(), CkbSettings::setValue(), and KeyAction::value()\&.
+.PP
+Referenced by KbMode::save()\&.
+.PP
+.nf
+81                                       {
+82     _needsSave = false;
+83     SGroup group(settings, "Binding");
+84     settings\&.setValue("KeyMap", _map\&.name());
+85     // Save key settings
+86     settings\&.setValue("UseRealNames", true);
+87     {
+88         SGroup group(settings, "Keys");
+89         foreach(QString key, _bind\&.keys()){
+90             KeyAction* act = _bind\&.value(key);
+91             if(act && act->value() != KeyAction::defaultAction(key))
+92                 settings\&.setValue(key, act->value());
+93         }
+94     }
+95     settings\&.setValue("WinLock", _winLock);
+96 }
+.fi
+.SS "void KbBind::saveGlobalRemap ()\fC [static]\fP"
+
+.PP
+Definition at line 124 of file kbbind\&.cpp\&.
+.PP
+References _globalRemap, and CkbSettings::setValue()\&.
+.PP
+Referenced by SettingsWidget::updateModifiers()\&.
+.PP
+.nf
+124                             {
+125     CkbSettings settings("Program/GlobalRemap", true);
+126     QHashIterator<QString, QString> i(_globalRemap);
+127     while(i\&.hasNext()){
+128         i\&.next();
+129         settings\&.setValue(i\&.key(), i\&.value());
+130     }
+131 }
+.fi
+.SS "void KbBind::setAction (const QString &key, const QString &action)"
+
+.PP
+Definition at line 180 of file kbbind\&.cpp\&.
+.PP
+References _bind, _map, globalRemap(), KeyMap::key(), KeyAction, and resetAction()\&.
+.PP
+Referenced by RebindWidget::applyChanges(), and KbBindWidget::on_copyButton_clicked()\&.
+.PP
+.nf
+180                                                                {
+181     resetAction(key);
+182     QString rKey = globalRemap(key);
+183     if(!_map\&.key(rKey))
+184         return;
+185     _bind[rKey] = new KeyAction(action, this);
+186 }
+.fi
+.SS "void KbBind::setAction (const QStringList &keys, const QString &action)\fC [inline]\fP"
+
+.PP
+Definition at line 69 of file kbbind\&.h\&.
+.PP
+References setAction()\&.
+.PP
+Referenced by setAction()\&.
+.PP
+.nf
+69 { foreach(const QString& key, keys) setAction(key, action); }
+.fi
+.SS "void KbBind::setGlobalRemap (const QHash< QString, QString >keyToActual)\fC [static]\fP"
+
+.PP
+Definition at line 104 of file kbbind\&.cpp\&.
+.PP
+References _globalRemap, and globalRemapTime\&.
+.PP
+Referenced by SettingsWidget::updateModifiers()\&.
+.PP
+.nf
+104                                                                     {
+105     _globalRemap\&.clear();
+106     // Ignore any keys with the standard binding
+107     QHashIterator<QString, QString> i(keyToActual);
+108     while(i\&.hasNext()){
+109         i\&.next();
+110         if(i\&.key() != i\&.value())
+111             _globalRemap[i\&.key()] = i\&.value();
+112     }
+113     globalRemapTime = QDateTime::currentMSecsSinceEpoch();
+114 }
+.fi
+.SS "void KbBind::setNeedsUpdate ()\fC [inline]\fP"
+
+.PP
+Definition at line 84 of file kbbind\&.h\&.
+.PP
+References _needsUpdate\&.
+.PP
+Referenced by KbMode::setNeedsUpdate()\&.
+.PP
+.nf
+84 { _needsUpdate = true; }
+.fi
+.SS "void KbBind::update (QFile &cmd, boolforce = \fCfalse\fP)"
+
+.PP
+Definition at line 188 of file kbbind\&.cpp\&.
+.PP
+References _bind, _globalRemap, _needsUpdate, _winLock, bindAction(), KeyAction::driverName(), globalRemapTime, KeyAction::isValidMacro(), lastCmd, lastGlobalRemapTime, KeyAction::macroContent(), updated(), and KeyAction::value()\&.
+.PP
+Referenced by Kb::frameUpdate()\&.
+.PP
+.nf
+188                                          {
+189     if(!force && !_needsUpdate && lastGlobalRemapTime == globalRemapTime)
+190         return;
+191     lastGlobalRemapTime = globalRemapTime;
+192     emit updated();
+193     _needsUpdate = false;
+194     // Reset all keys and enable notifications for all
+195     cmd\&.write("rebind all notify all");
+196     // Make sure modifier keys are included as they may be remapped globally
+197     QHash<QString, KeyAction*> bind(_bind);
+198     if(!_bind\&.contains("caps")) bind["caps"] = 0;
+199     if(!_bind\&.contains("lshift")) bind["lshift"] = 0;
+200     if(!_bind\&.contains("rshift")) bind["rshift"] = 0;
+201     if(!_bind\&.contains("lctrl")) bind["lctrl"] = 0;
+202     if(!_bind\&.contains("rctrl")) bind["rctrl"] = 0;
+203     if(!_bind\&.contains("lwin")) bind["lwin"] = 0;
+204     if(!_bind\&.contains("rwin")) bind["rwin"] = 0;
+205     if(!_bind\&.contains("lalt")) bind["lalt"] = 0;
+206     if(!_bind\&.contains("ralt")) bind["ralt"] = 0;
+207     if(!_bind\&.contains("fn")) bind["fn"] = 0;
+208     QHashIterator<QString, KeyAction*> i(bind);
+209 
+210     // Initialize String buffer for macro Key definitions (G-keys)
+211     // "macro clear" is neccessary, if an older definition is unbound\&.
+212     QString macros = "\nmacro clear\n";
+213 
+214     // Write out rebound keys and collect infos for macro definitions
+215     while(i\&.hasNext()){
+216         i\&.next();
+217         QString key = i\&.key();
+218         KeyAction* act = i\&.value();
+219         if(_globalRemap\&.contains(key))
+220             act = bindAction(_globalRemap\&.value(key));
+221         if(!act)
+222             continue;
+223         QString value = act->driverName();
+224         if(value\&.isEmpty()){
+225             // If the key is unbound or is a special action, unbind it
+226             cmd\&.write(" unbind ");
+227             cmd\&.write(key\&.toLatin1());
+228             // if a macro definiton for the key is given,
+229             // add the converted string to key-buffer "macro"
+230             if (act->isValidMacro()) {
+231                 if (act->macroContent()\&.length() > 0) {
+232                     macros\&.append("macro " + key\&.toLatin1() + ":" + act->macroContent()\&.toLatin1() + "\n");
+233                 }
+234             }
+235         } else {
+236             // Otherwise, write the binding
+237             cmd\&.write(" bind ");
+238             cmd\&.write(key\&.toLatin1());
+239             cmd\&.write(":");
+240             cmd\&.write(value\&.toLatin1());
+241         }
+242     }
+243     // If win lock is enabled, unbind windows keys
+244     if(_winLock)
+245         cmd\&.write(" unbind lwin rwin");
+246 
+247     // At last, send Macro definitions if avalilable\&.
+248     // If no definitions are made, clear macro will be sent only to reset all macros,
+249     cmd\&.write(macros\&.toLatin1());
+250     lastCmd = &cmd;
+251 }
+.fi
+.SS "void KbBind::updated ()\fC [signal]\fP"
+
+.PP
+Definition at line 167 of file moc_kbbind\&.cpp\&.
+.PP
+Referenced by update()\&.
+.PP
+.nf
+168 {
+169     QMetaObject::activate(this, &staticMetaObject, 2, Q_NULLPTR);
+170 }
+.fi
+.SS "bool KbBind::winLock ()\fC [inline]\fP"
+
+.PP
+Definition at line 78 of file kbbind\&.h\&.
+.PP
+References _winLock\&.
+.PP
+Referenced by KeyAction::keyEvent()\&.
+.PP
+.nf
+78 { return _winLock; }
+.fi
+.SS "void KbBind::winLock (boolnewWinLock)\fC [inline]\fP"
+
+.PP
+Definition at line 79 of file kbbind\&.h\&.
+.PP
+References _needsUpdate, and _winLock\&.
+.PP
+.nf
+79 { _winLock = newWinLock; _needsUpdate = true; }
+.fi
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBKeyAction\fP\fC [friend]\fP"
+
+.PP
+Definition at line 136 of file kbbind\&.h\&.
+.PP
+Referenced by bindAction(), friendlyActionName(), KbBind(), load(), noAction(), and setAction()\&.
+.SH "Field Documentation"
+.PP 
+.SS "QHash<QString, \fBKeyAction\fP*> KbBind::_bind\fC [private]\fP"
+
+.PP
+Definition at line 131 of file kbbind\&.h\&.
+.PP
+Referenced by bindAction(), KbBind(), load(), noAction(), resetAction(), save(), setAction(), and update()\&.
+.SS "\fBKb\fP* KbBind::_devParent\fC [private]\fP"
+
+.PP
+Definition at line 113 of file kbbind\&.h\&.
+.PP
+Referenced by devParent()\&.
+.SS "QHash< QString, QString > KbBind::_globalRemap\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 119 of file kbbind\&.h\&.
+.PP
+Referenced by globalRemap(), loadGlobalRemap(), saveGlobalRemap(), setGlobalRemap(), and update()\&.
+.SS "\fBKeyMap\fP KbBind::_map\fC [private]\fP"
+
+.PP
+Definition at line 129 of file kbbind\&.h\&.
+.PP
+Referenced by friendlyActionName(), friendlyName(), isISO(), isKeyboard(), isMouse(), load(), map(), noAction(), save(), and setAction()\&.
+.SS "bool KbBind::_needsSave\fC [private]\fP"
+
+.PP
+Definition at line 135 of file kbbind\&.h\&.
+.PP
+Referenced by load(), map(), needsSave(), resetAction(), and save()\&.
+.SS "bool KbBind::_needsUpdate\fC [private]\fP"
+
+.PP
+Definition at line 134 of file kbbind\&.h\&.
+.PP
+Referenced by map(), resetAction(), setNeedsUpdate(), update(), and winLock()\&.
+.SS "bool KbBind::_winLock\fC [private]\fP"
+
+.PP
+Definition at line 133 of file kbbind\&.h\&.
+.PP
+Referenced by load(), save(), update(), and winLock()\&.
+.SS "quint64 KbBind::globalRemapTime = 0\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 120 of file kbbind\&.h\&.
+.PP
+Referenced by loadGlobalRemap(), setGlobalRemap(), and update()\&.
+.SS "QFile* KbBind::lastCmd\fC [private]\fP"
+
+.PP
+Definition at line 127 of file kbbind\&.h\&.
+.PP
+Referenced by handleNotificationChannel(), and update()\&.
+.SS "quint64 KbBind::lastGlobalRemapTime\fC [private]\fP"
+
+.PP
+Definition at line 121 of file kbbind\&.h\&.
+.PP
+Referenced by update()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

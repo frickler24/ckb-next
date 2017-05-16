@@ -1,0 +1,127 @@
+.TH "AutoRun" 3 "Tue May 16 2017" "Version beta-v0.2.7 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AutoRun \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/autorun\&.h>\fP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBavailable\fP ()"
+.br
+.ti -1c
+.RI "static bool \fBonce\fP ()"
+.br
+.ti -1c
+.RI "static bool \fBisEnabled\fP ()"
+.br
+.ti -1c
+.RI "static void \fBenable\fP ()"
+.br
+.ti -1c
+.RI "static void \fBdisable\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 8 of file autorun\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool AutoRun::available ()\fC [static]\fP"
+
+.PP
+Definition at line 20 of file autorun\&.cpp\&.
+.PP
+Referenced by disable(), enable(), and SettingsWidget::SettingsWidget()\&.
+.PP
+.nf
+20                        {
+21     // Allow autostart if the program is located in a system path
+22 #ifdef Q_OS_LINUX
+23     return QDir::root()\&.absoluteFilePath(QStandardPaths::findExecutable("ckb")) == qApp->applicationFilePath();
+24 #elif defined(Q_OS_MACX)
+25     return qApp->applicationFilePath()\&.startsWith("/Applications/ckb\&.app", Qt::CaseInsensitive);
+26 #endif
+27 }
+.fi
+.SS "void AutoRun::disable ()\fC [static]\fP"
+
+.PP
+Definition at line 53 of file autorun\&.cpp\&.
+.PP
+References available()\&.
+.PP
+Referenced by SettingsWidget::on_loginItemBox_clicked()\&.
+.PP
+.nf
+53                      {
+54     if(!available())
+55         return;
+56     // Remove file
+57     QFile::remove(path\&.absoluteFilePath(file));
+58 }
+.fi
+.SS "void AutoRun::enable ()\fC [static]\fP"
+
+.PP
+Definition at line 42 of file autorun\&.cpp\&.
+.PP
+References available(), and CkbSettings::set()\&.
+.PP
+Referenced by SettingsWidget::on_loginItemBox_clicked(), and SettingsWidget::SettingsWidget()\&.
+.PP
+.nf
+42                     {
+43     if(!available())
+44         return;
+45     // Copy file into place
+46     if(!path\&.exists())
+47         QDir::home()\&.mkpath(path\&.absolutePath());
+48     QFile::copy(internalFile, path\&.absoluteFilePath(file));
+49     // Mark once() as done
+50     CkbSettings::set(settingPath, true);
+51 }
+.fi
+.SS "bool AutoRun::isEnabled ()\fC [static]\fP"
+
+.PP
+Definition at line 33 of file autorun\&.cpp\&.
+.PP
+References CkbSettings::set()\&.
+.PP
+Referenced by SettingsWidget::SettingsWidget()\&.
+.PP
+.nf
+33                        {
+34     // Check if the file exists\&. If not, autostart is disabled\&.
+35     if(!path\&.exists() || !path\&.exists(file))
+36         return false;
+37     // If autostart is enabled, set the flag from once() (in case it hasn't been done yet)
+38     CkbSettings::set(settingPath, true);
+39     return true;
+40 }
+.fi
+.SS "bool AutoRun::once ()\fC [static]\fP"
+
+.PP
+Definition at line 29 of file autorun\&.cpp\&.
+.PP
+References CkbSettings::get()\&.
+.PP
+Referenced by SettingsWidget::SettingsWidget()\&.
+.PP
+.nf
+29                   {
+30     return CkbSettings::get(settingPath)\&.toBool();
+31 }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

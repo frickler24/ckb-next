@@ -1,0 +1,509 @@
+.TH "Ui::KbLightWidget" 3 "Tue May 16 2017" "Version beta-v0.2.7 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ui::KbLightWidget \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/ui_kblightwidget\&.h>\fP
+.PP
+Inherits \fBUi_KbLightWidget\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetupUi\fP (\fBQWidget\fP *\fBKbLightWidget\fP)"
+.br
+.ti -1c
+.RI "void \fBretranslateUi\fP (\fBQWidget\fP *\fBKbLightWidget\fP)"
+.br
+.in -1c
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "QVBoxLayout * \fBverticalLayout\fP"
+.br
+.ti -1c
+.RI "QHBoxLayout * \fBhorizontalLayout_3\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_3\fP"
+.br
+.ti -1c
+.RI "QCheckBox * \fBshowAnimBox\fP"
+.br
+.ti -1c
+.RI "QFrame * \fBline_2\fP"
+.br
+.ti -1c
+.RI "QHBoxLayout * \fBhorizontalLayout_2\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer_5\fP"
+.br
+.ti -1c
+.RI "QGridLayout * \fBgridLayout\fP"
+.br
+.ti -1c
+.RI "\fBKeyWidget\fP * \fBkeyWidget\fP"
+.br
+.ti -1c
+.RI "QHBoxLayout * \fBhorizontalLayout\fP"
+.br
+.ti -1c
+.RI "\fBColorButton\fP * \fBbgButton\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBselLabel\fP"
+.br
+.ti -1c
+.RI "\fBQPushButton\fP * \fBanimButton\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBverticalSpacer\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer_6\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBverticalSpacer_2\fP"
+.br
+.ti -1c
+.RI "QGridLayout * \fBgridLayout_2\fP"
+.br
+.ti -1c
+.RI "QComboBox * \fBbrightnessBox\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer_3\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer_4\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBverticalSpacer_3\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_2\fP"
+.br
+.ti -1c
+.RI "QFrame * \fBline\fP"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBwidget\fP"
+.br
+.ti -1c
+.RI "QGridLayout * \fBgridLayout_4\fP"
+.br
+.ti -1c
+.RI "\fBKbAnimWidget\fP * \fBanimWidget\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 278 of file ui_kblightwidget\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Ui_KbLightWidget::retranslateUi (\fBQWidget\fP *KbLightWidget)\fC [inline]\fP, \fC [inherited]\fP"
+
+.PP
+Definition at line 253 of file ui_kblightwidget\&.h\&.
+.PP
+References Ui_KbLightWidget::animButton, Ui_KbLightWidget::bgButton, Ui_KbLightWidget::brightnessBox, Ui_KbLightWidget::label, Ui_KbLightWidget::label_2, Ui_KbLightWidget::label_3, Ui_KbLightWidget::selLabel, and Ui_KbLightWidget::showAnimBox\&.
+.PP
+Referenced by Ui_KbLightWidget::setupUi()\&.
+.PP
+.nf
+254     {
+255         KbLightWidget->setWindowTitle(QApplication::translate("KbLightWidget", "Form", Q_NULLPTR));
+256         label_3->setText(QApplication::translate("KbLightWidget", "Colors", Q_NULLPTR));
+257 #ifndef QT_NO_TOOLTIP
+258         showAnimBox->setToolTip(QApplication::translate("KbLightWidget", "If enabled, the same colors will be displayed here as on the keyboard\&. If disabled, the base colors will be shown\&.", Q_NULLPTR));
+259 #endif // QT_NO_TOOLTIP
+260         showAnimBox->setText(QApplication::translate("KbLightWidget", "Show animated", Q_NULLPTR));
+261         bgButton->setText(QApplication::translate("KbLightWidget", "Change color\&.\&.\&.", Q_NULLPTR));
+262         selLabel->setText(QApplication::translate("KbLightWidget", "Click to select", Q_NULLPTR));
+263         animButton->setText(QApplication::translate("KbLightWidget", "New animation\&.\&.\&.", Q_NULLPTR));
+264         brightnessBox->clear();
+265         brightnessBox->insertItems(0, QStringList()
+266          << QApplication::translate("KbLightWidget", "100%", Q_NULLPTR)
+267          << QApplication::translate("KbLightWidget", "67%", Q_NULLPTR)
+268          << QApplication::translate("KbLightWidget", "33%", Q_NULLPTR)
+269          << QApplication::translate("KbLightWidget", "Off", Q_NULLPTR)
+270         );
+271         label->setText(QApplication::translate("KbLightWidget", "\342\230\274", Q_NULLPTR));
+272         label_2->setText(QApplication::translate("KbLightWidget", "Animations", Q_NULLPTR));
+273     } // retranslateUi
+.fi
+.SS "void Ui_KbLightWidget::setupUi (\fBQWidget\fP *KbLightWidget)\fC [inline]\fP, \fC [inherited]\fP"
+
+.PP
+Definition at line 64 of file ui_kblightwidget\&.h\&.
+.PP
+References Ui_KbLightWidget::animButton, Ui_KbLightWidget::animWidget, Ui_KbLightWidget::bgButton, Ui_KbLightWidget::brightnessBox, Ui_KbLightWidget::gridLayout, Ui_KbLightWidget::gridLayout_2, Ui_KbLightWidget::gridLayout_4, Ui_KbLightWidget::horizontalLayout, Ui_KbLightWidget::horizontalLayout_2, Ui_KbLightWidget::horizontalLayout_3, Ui_KbLightWidget::horizontalSpacer_3, Ui_KbLightWidget::horizontalSpacer_4, Ui_KbLightWidget::horizontalSpacer_5, Ui_KbLightWidget::horizontalSpacer_6, Ui_KbLightWidget::keyWidget, Ui_KbLightWidget::label, Ui_KbLightWidget::label_2, Ui_KbLightWidget::label_3, Ui_KbLightWidget::line, Ui_KbLightWidget::line_2, Ui_KbLightWidget::retranslateUi(), Ui_KbLightWidget::selLabel, Ui_KbLightWidget::showAnimBox, Ui_KbLightWidget::verticalLayout, Ui_KbLightWidget::verticalSpacer, Ui_KbLightWidget::verticalSpacer_2, Ui_KbLightWidget::verticalSpacer_3, and Ui_KbLightWidget::widget\&.
+.PP
+Referenced by KbLightWidget::KbLightWidget()\&.
+.PP
+.nf
+65     {
+66         if (KbLightWidget->objectName()\&.isEmpty())
+67             KbLightWidget->setObjectName(QStringLiteral("KbLightWidget"));
+68         KbLightWidget->resize(596, 450);
+69         KbLightWidget->setFocusPolicy(Qt::ClickFocus);
+70         verticalLayout = new QVBoxLayout(KbLightWidget);
+71         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+72         verticalLayout->setContentsMargins(0, 0, 0, -1);
+73         horizontalLayout_3 = new QHBoxLayout();
+74         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+75         label_3 = new QLabel(KbLightWidget);
+76         label_3->setObjectName(QStringLiteral("label_3"));
+77         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+78         sizePolicy\&.setHorizontalStretch(0);
+79         sizePolicy\&.setVerticalStretch(0);
+80         sizePolicy\&.setHeightForWidth(label_3->sizePolicy()\&.hasHeightForWidth());
+81         label_3->setSizePolicy(sizePolicy);
+82         QFont font;
+83         font\&.setBold(true);
+84         font\&.setWeight(75);
+85         label_3->setFont(font);
+86 
+87         horizontalLayout_3->addWidget(label_3);
+88 
+89         showAnimBox = new QCheckBox(KbLightWidget);
+90         showAnimBox->setObjectName(QStringLiteral("showAnimBox"));
+91         showAnimBox->setChecked(true);
+92 
+93         horizontalLayout_3->addWidget(showAnimBox);
+94 
+95 
+96         verticalLayout->addLayout(horizontalLayout_3);
+97 
+98         line_2 = new QFrame(KbLightWidget);
+99         line_2->setObjectName(QStringLiteral("line_2"));
+100         line_2->setFrameShape(QFrame::HLine);
+101         line_2->setFrameShadow(QFrame::Sunken);
+102 
+103         verticalLayout->addWidget(line_2);
+104 
+105         horizontalLayout_2 = new QHBoxLayout();
+106         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+107         horizontalLayout_2->setSizeConstraint(QLayout::SetDefaultConstraint);
+108         horizontalSpacer_5 = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
+109 
+110         horizontalLayout_2->addItem(horizontalSpacer_5);
+111 
+112         gridLayout = new QGridLayout();
+113         gridLayout->setObjectName(QStringLiteral("gridLayout"));
+114         keyWidget = new KeyWidget(KbLightWidget);
+115         keyWidget->setObjectName(QStringLiteral("keyWidget"));
+116         QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Expanding);
+117         sizePolicy1\&.setHorizontalStretch(0);
+118         sizePolicy1\&.setVerticalStretch(0);
+119         sizePolicy1\&.setHeightForWidth(keyWidget->sizePolicy()\&.hasHeightForWidth());
+120         keyWidget->setSizePolicy(sizePolicy1);
+121         keyWidget->setMinimumSize(QSize(100, 100));
+122         keyWidget->setFocusPolicy(Qt::ClickFocus);
+123 
+124         gridLayout->addWidget(keyWidget, 0, 0, 1, 3);
+125 
+126         horizontalLayout = new QHBoxLayout();
+127         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+128         bgButton = new ColorButton(KbLightWidget);
+129         bgButton->setObjectName(QStringLiteral("bgButton"));
+130         QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Fixed);
+131         sizePolicy2\&.setHorizontalStretch(0);
+132         sizePolicy2\&.setVerticalStretch(0);
+133         sizePolicy2\&.setHeightForWidth(bgButton->sizePolicy()\&.hasHeightForWidth());
+134         bgButton->setSizePolicy(sizePolicy2);
+135 
+136         horizontalLayout->addWidget(bgButton);
+137 
+138         selLabel = new QLabel(KbLightWidget);
+139         selLabel->setObjectName(QStringLiteral("selLabel"));
+140         sizePolicy2\&.setHeightForWidth(selLabel->sizePolicy()\&.hasHeightForWidth());
+141         selLabel->setSizePolicy(sizePolicy2);
+142         selLabel->setAlignment(Qt::AlignCenter);
+143 
+144         horizontalLayout->addWidget(selLabel);
+145 
+146         animButton = new QPushButton(KbLightWidget);
+147         animButton->setObjectName(QStringLiteral("animButton"));
+148         sizePolicy2\&.setHeightForWidth(animButton->sizePolicy()\&.hasHeightForWidth());
+149         animButton->setSizePolicy(sizePolicy2);
+150 
+151         horizontalLayout->addWidget(animButton);
+152 
+153 
+154         gridLayout->addLayout(horizontalLayout, 2, 0, 1, 3);
+155 
+156         verticalSpacer = new QSpacerItem(0, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
+157 
+158         gridLayout->addItem(verticalSpacer, 1, 0, 1, 1);
+159 
+160 
+161         horizontalLayout_2->addLayout(gridLayout);
+162 
+163         horizontalSpacer_6 = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
+164 
+165         horizontalLayout_2->addItem(horizontalSpacer_6);
+166 
+167 
+168         verticalLayout->addLayout(horizontalLayout_2);
+169 
+170         verticalSpacer_2 = new QSpacerItem(0, 20, QSizePolicy::Minimum, QSizePolicy::Minimum);
+171 
+172         verticalLayout->addItem(verticalSpacer_2);
+173 
+174         gridLayout_2 = new QGridLayout();
+175         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+176         brightnessBox = new QComboBox(KbLightWidget);
+177         brightnessBox->setObjectName(QStringLiteral("brightnessBox"));
+178         QSizePolicy sizePolicy3(QSizePolicy::Minimum, QSizePolicy::Minimum);
+179         sizePolicy3\&.setHorizontalStretch(0);
+180         sizePolicy3\&.setVerticalStretch(0);
+181         sizePolicy3\&.setHeightForWidth(brightnessBox->sizePolicy()\&.hasHeightForWidth());
+182         brightnessBox->setSizePolicy(sizePolicy3);
+183 
+184         gridLayout_2->addWidget(brightnessBox, 1, 3, 1, 1);
+185 
+186         label = new QLabel(KbLightWidget);
+187         label->setObjectName(QStringLiteral("label"));
+188         sizePolicy3\&.setHeightForWidth(label->sizePolicy()\&.hasHeightForWidth());
+189         label->setSizePolicy(sizePolicy3);
+190         QFont font1;
+191         font1\&.setPointSize(20);
+192         label->setFont(font1);
+193         label->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+194 
+195         gridLayout_2->addWidget(label, 1, 2, 1, 1);
+196 
+197         horizontalSpacer_3 = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
+198 
+199         gridLayout_2->addItem(horizontalSpacer_3, 0, 4, 1, 1);
+200 
+201         horizontalSpacer_4 = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
+202 
+203         gridLayout_2->addItem(horizontalSpacer_4, 0, 2, 1, 1);
+204 
+205 
+206         verticalLayout->addLayout(gridLayout_2);
+207 
+208         verticalSpacer_3 = new QSpacerItem(0, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
+209 
+210         verticalLayout->addItem(verticalSpacer_3);
+211 
+212         label_2 = new QLabel(KbLightWidget);
+213         label_2->setObjectName(QStringLiteral("label_2"));
+214         QSizePolicy sizePolicy4(QSizePolicy::Expanding, QSizePolicy::Minimum);
+215         sizePolicy4\&.setHorizontalStretch(0);
+216         sizePolicy4\&.setVerticalStretch(0);
+217         sizePolicy4\&.setHeightForWidth(label_2->sizePolicy()\&.hasHeightForWidth());
+218         label_2->setSizePolicy(sizePolicy4);
+219         label_2->setFont(font);
+220 
+221         verticalLayout->addWidget(label_2);
+222 
+223         line = new QFrame(KbLightWidget);
+224         line->setObjectName(QStringLiteral("line"));
+225         line->setFrameShape(QFrame::HLine);
+226         line->setFrameShadow(QFrame::Sunken);
+227 
+228         verticalLayout->addWidget(line);
+229 
+230         widget = new QWidget(KbLightWidget);
+231         widget->setObjectName(QStringLiteral("widget"));
+232         sizePolicy1\&.setHeightForWidth(widget->sizePolicy()\&.hasHeightForWidth());
+233         widget->setSizePolicy(sizePolicy1);
+234         gridLayout_4 = new QGridLayout(widget);
+235         gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
+236         gridLayout_4->setContentsMargins(-1, 0, -1, 0);
+237         animWidget = new KbAnimWidget(widget);
+238         animWidget->setObjectName(QStringLiteral("animWidget"));
+239         sizePolicy1\&.setHeightForWidth(animWidget->sizePolicy()\&.hasHeightForWidth());
+240         animWidget->setSizePolicy(sizePolicy1);
+241 
+242         gridLayout_4->addWidget(animWidget, 0, 0, 1, 1);
+243 
+244 
+245         verticalLayout->addWidget(widget);
+246 
+247 
+248         retranslateUi(KbLightWidget);
+249 
+250         QMetaObject::connectSlotsByName(KbLightWidget);
+251     } // setupUi
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "\fBQPushButton\fP* Ui_KbLightWidget::animButton\fC [inherited]\fP"
+
+.PP
+Definition at line 48 of file ui_kblightwidget\&.h\&.
+.PP
+Referenced by KbLightWidget::KbLightWidget(), Ui_KbLightWidget::retranslateUi(), and Ui_KbLightWidget::setupUi()\&.
+.SS "\fBKbAnimWidget\fP* Ui_KbLightWidget::animWidget\fC [inherited]\fP"
+
+.PP
+Definition at line 62 of file ui_kblightwidget\&.h\&.
+.PP
+Referenced by KbLightWidget::KbLightWidget(), KbLightWidget::newSelection(), KbLightWidget::on_animButton_clicked(), KbLightWidget::setLight(), and Ui_KbLightWidget::setupUi()\&.
+.SS "\fBColorButton\fP* Ui_KbLightWidget::bgButton\fC [inherited]\fP"
+
+.PP
+Definition at line 46 of file ui_kblightwidget\&.h\&.
+.PP
+Referenced by KbLightWidget::KbLightWidget(), KbLightWidget::newSelection(), Ui_KbLightWidget::retranslateUi(), and Ui_KbLightWidget::setupUi()\&.
+.SS "QComboBox* Ui_KbLightWidget::brightnessBox\fC [inherited]\fP"
+
+.PP
+Definition at line 53 of file ui_kblightwidget\&.h\&.
+.PP
+Referenced by Ui_KbLightWidget::retranslateUi(), Ui_KbLightWidget::setupUi(), and KbLightWidget::updateLight()\&.
+.SS "QGridLayout* Ui_KbLightWidget::gridLayout\fC [inherited]\fP"
+
+.PP
+Definition at line 43 of file ui_kblightwidget\&.h\&.
+.PP
+Referenced by Ui_KbLightWidget::setupUi()\&.
+.SS "QGridLayout* Ui_KbLightWidget::gridLayout_2\fC [inherited]\fP"
+
+.PP
+Definition at line 52 of file ui_kblightwidget\&.h\&.
+.PP
+Referenced by Ui_KbLightWidget::setupUi()\&.
+.SS "QGridLayout* Ui_KbLightWidget::gridLayout_4\fC [inherited]\fP"
+
+.PP
+Definition at line 61 of file ui_kblightwidget\&.h\&.
+.PP
+Referenced by Ui_KbLightWidget::setupUi()\&.
+.SS "QHBoxLayout* Ui_KbLightWidget::horizontalLayout\fC [inherited]\fP"
+
+.PP
+Definition at line 45 of file ui_kblightwidget\&.h\&.
+.PP
+Referenced by Ui_KbLightWidget::setupUi()\&.
+.SS "QHBoxLayout* Ui_KbLightWidget::horizontalLayout_2\fC [inherited]\fP"
+
+.PP
+Definition at line 41 of file ui_kblightwidget\&.h\&.
+.PP
+Referenced by Ui_KbLightWidget::setupUi()\&.
+.SS "QHBoxLayout* Ui_KbLightWidget::horizontalLayout_3\fC [inherited]\fP"
+
+.PP
+Definition at line 37 of file ui_kblightwidget\&.h\&.
+.PP
+Referenced by Ui_KbLightWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KbLightWidget::horizontalSpacer_3\fC [inherited]\fP"
+
+.PP
+Definition at line 55 of file ui_kblightwidget\&.h\&.
+.PP
+Referenced by Ui_KbLightWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KbLightWidget::horizontalSpacer_4\fC [inherited]\fP"
+
+.PP
+Definition at line 56 of file ui_kblightwidget\&.h\&.
+.PP
+Referenced by Ui_KbLightWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KbLightWidget::horizontalSpacer_5\fC [inherited]\fP"
+
+.PP
+Definition at line 42 of file ui_kblightwidget\&.h\&.
+.PP
+Referenced by Ui_KbLightWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KbLightWidget::horizontalSpacer_6\fC [inherited]\fP"
+
+.PP
+Definition at line 50 of file ui_kblightwidget\&.h\&.
+.PP
+Referenced by Ui_KbLightWidget::setupUi()\&.
+.SS "\fBKeyWidget\fP* Ui_KbLightWidget::keyWidget\fC [inherited]\fP"
+
+.PP
+Definition at line 44 of file ui_kblightwidget\&.h\&.
+.PP
+Referenced by KbLightWidget::changeAnim(), KbLightWidget::changeAnimKeys(), KbLightWidget::changeColor(), KbLightWidget::KbLightWidget(), KbLightWidget::on_animButton_clicked(), KbLightWidget::on_bgButton_clicked(), KbLightWidget::on_showAnimBox_clicked(), KbLightWidget::setLight(), KbLightWidget::setMonochrome(), Ui_KbLightWidget::setupUi(), KbLightWidget::toggleSidelight(), and KbLightWidget::updateLight()\&.
+.SS "QLabel* Ui_KbLightWidget::label\fC [inherited]\fP"
+
+.PP
+Definition at line 54 of file ui_kblightwidget\&.h\&.
+.PP
+Referenced by Ui_KbLightWidget::retranslateUi(), and Ui_KbLightWidget::setupUi()\&.
+.SS "QLabel* Ui_KbLightWidget::label_2\fC [inherited]\fP"
+
+.PP
+Definition at line 58 of file ui_kblightwidget\&.h\&.
+.PP
+Referenced by Ui_KbLightWidget::retranslateUi(), and Ui_KbLightWidget::setupUi()\&.
+.SS "QLabel* Ui_KbLightWidget::label_3\fC [inherited]\fP"
+
+.PP
+Definition at line 38 of file ui_kblightwidget\&.h\&.
+.PP
+Referenced by Ui_KbLightWidget::retranslateUi(), and Ui_KbLightWidget::setupUi()\&.
+.SS "QFrame* Ui_KbLightWidget::line\fC [inherited]\fP"
+
+.PP
+Definition at line 59 of file ui_kblightwidget\&.h\&.
+.PP
+Referenced by Ui_KbLightWidget::setupUi()\&.
+.SS "QFrame* Ui_KbLightWidget::line_2\fC [inherited]\fP"
+
+.PP
+Definition at line 40 of file ui_kblightwidget\&.h\&.
+.PP
+Referenced by Ui_KbLightWidget::setupUi()\&.
+.SS "QLabel* Ui_KbLightWidget::selLabel\fC [inherited]\fP"
+
+.PP
+Definition at line 47 of file ui_kblightwidget\&.h\&.
+.PP
+Referenced by KbLightWidget::newSelection(), Ui_KbLightWidget::retranslateUi(), and Ui_KbLightWidget::setupUi()\&.
+.SS "QCheckBox* Ui_KbLightWidget::showAnimBox\fC [inherited]\fP"
+
+.PP
+Definition at line 39 of file ui_kblightwidget\&.h\&.
+.PP
+Referenced by KbLightWidget::KbLightWidget(), Ui_KbLightWidget::retranslateUi(), KbLightWidget::setLight(), and Ui_KbLightWidget::setupUi()\&.
+.SS "QVBoxLayout* Ui_KbLightWidget::verticalLayout\fC [inherited]\fP"
+
+.PP
+Definition at line 36 of file ui_kblightwidget\&.h\&.
+.PP
+Referenced by Ui_KbLightWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KbLightWidget::verticalSpacer\fC [inherited]\fP"
+
+.PP
+Definition at line 49 of file ui_kblightwidget\&.h\&.
+.PP
+Referenced by Ui_KbLightWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KbLightWidget::verticalSpacer_2\fC [inherited]\fP"
+
+.PP
+Definition at line 51 of file ui_kblightwidget\&.h\&.
+.PP
+Referenced by Ui_KbLightWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KbLightWidget::verticalSpacer_3\fC [inherited]\fP"
+
+.PP
+Definition at line 57 of file ui_kblightwidget\&.h\&.
+.PP
+Referenced by Ui_KbLightWidget::setupUi()\&.
+.SS "\fBQWidget\fP* Ui_KbLightWidget::widget\fC [inherited]\fP"
+
+.PP
+Definition at line 60 of file ui_kblightwidget\&.h\&.
+.PP
+Referenced by Ui_KbLightWidget::setupUi()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

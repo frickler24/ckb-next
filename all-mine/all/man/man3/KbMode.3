@@ -1,0 +1,440 @@
+.TH "KbMode" 3 "Tue May 16 2017" "Version beta-v0.2.7 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+KbMode \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/kbmode\&.h>\fP
+.PP
+Inherits \fBQObject\fP\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBupdated\fP ()"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBKbMode\fP (\fBKb\fP *parent, const \fBKeyMap\fP &\fBkeyMap\fP, const QString &guid='', const QString &modified='')"
+.br
+.ti -1c
+.RI "\fBKbMode\fP (\fBKb\fP *parent, const \fBKeyMap\fP &\fBkeyMap\fP, \fBCkbSettings\fP &settings)"
+.br
+.ti -1c
+.RI "\fBKbMode\fP (\fBKb\fP *parent, const \fBKeyMap\fP &\fBkeyMap\fP, const \fBKbMode\fP &other)"
+.br
+.RI "\fI\fBKbMode::KbMode\fP\&. \fP"
+.ti -1c
+.RI "\fB~KbMode\fP ()"
+.br
+.RI "\fI\fBKbMode::~KbMode\fP Destructor may be used for Debugging (issue #38 with SIGSEGV)\&. Insert qDebug-statement\&. \fP"
+.ti -1c
+.RI "const QString & \fBname\fP () const "
+.br
+.ti -1c
+.RI "void \fBname\fP (const QString &newName)"
+.br
+.ti -1c
+.RI "\fBUsbId\fP & \fBid\fP ()"
+.br
+.ti -1c
+.RI "void \fBid\fP (const \fBUsbId\fP &\fBnewId\fP)"
+.br
+.ti -1c
+.RI "void \fBnewId\fP ()"
+.br
+.ti -1c
+.RI "void \fBkeyMap\fP (const \fBKeyMap\fP &keyMap)"
+.br
+.ti -1c
+.RI "\fBKbLight\fP * \fBlight\fP ()"
+.br
+.ti -1c
+.RI "\fBKbBind\fP * \fBbind\fP ()"
+.br
+.ti -1c
+.RI "\fBKbPerf\fP * \fBperf\fP ()"
+.br
+.ti -1c
+.RI "void \fBsave\fP (\fBCkbSettings\fP &settings)"
+.br
+.ti -1c
+.RI "bool \fBneedsSave\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetNeedsSave\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetNeedsUpdate\fP ()"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBdoUpdate\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fB_name\fP"
+.br
+.ti -1c
+.RI "\fBUsbId\fP \fB_id\fP"
+.br
+.ti -1c
+.RI "\fBKbLight\fP * \fB_light\fP"
+.br
+.ti -1c
+.RI "\fBKbBind\fP * \fB_bind\fP"
+.br
+.ti -1c
+.RI "\fBKbPerf\fP * \fB_perf\fP"
+.br
+.ti -1c
+.RI "bool \fB_needsSave\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 36 of file kbmode\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "KbMode::KbMode (\fBKb\fP *parent, const \fBKeyMap\fP &keyMap, const QString &guid = \fC''\fP, const QString &modified = \fC''\fP)"
+
+.PP
+Definition at line 4 of file kbmode\&.cpp\&.
+.PP
+References _id, _light, doUpdate(), UsbId::guid, and updated()\&.
+.PP
+.nf
+4                                                                                              :
+5     QObject(parent),
+6     _name("Unnamed"), _id(guid, modified),
+7     _light(new KbLight(this, keyMap)), _bind(new KbBind(this, parent, keyMap)), _perf(new KbPerf(this)),
+8     _needsSave(true)
+9 {
+10     connect(_light, SIGNAL(updated()), this, SLOT(doUpdate()));
+11     if(_id\&.guid\&.isNull())
+12         _id\&.guid = QUuid::createUuid();
+13 }
+.fi
+.SS "KbMode::KbMode (\fBKb\fP *parent, const \fBKeyMap\fP &keyMap, \fBCkbSettings\fP &settings)"
+
+.PP
+Definition at line 30 of file kbmode\&.cpp\&.
+.PP
+References _bind, _id, _light, _name, _perf, CkbSettings::contains(), doUpdate(), UsbId::guid, UsbId::hwModified, UsbId::hwModifiedString(), KbPerf::load(), KbBind::load(), KbLight::load(), UsbId::modified, updated(), and CkbSettings::value()\&.
+.PP
+.nf
+30                                                                       :
+31     QObject(parent),
+32     _name(settings\&.value("Name")\&.toString()\&.trimmed()),
+33     _id(settings\&.value("GUID")\&.toString()\&.trimmed(), settings\&.value("Modified")\&.toString()\&.trimmed()),
+34     _light(new KbLight(this, keyMap)), _bind(new KbBind(this, parent, keyMap)), _perf(new KbPerf(this)),
+35     _needsSave(false)
+36 {
+37     if(settings\&.contains("HwModified"))
+38         _id\&.hwModifiedString(settings\&.value("HwModified")\&.toString());
+39     else
+40         _id\&.hwModified = _id\&.modified;
+41 
+42     connect(_light, SIGNAL(updated()), this, SLOT(doUpdate()));
+43     if(_id\&.guid\&.isNull())
+44         _id\&.guid = QUuid::createUuid();
+45     if(_name == "")
+46         _name = "Unnamed";
+47     _light->load(settings);
+48     _bind->load(settings);
+49     _perf->load(settings);
+50 }
+.fi
+.SS "KbMode::KbMode (\fBKb\fP *parent, const \fBKeyMap\fP &keyMap, const \fBKbMode\fP &other)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparent\fP \fBKb\fP as parent (append to the Keyboard list 
+.br
+\fIkeyMap\fP Map to copy from 
+.br
+\fIother\fP Mode to copy from Constructor to copy an existing Keyboard-Mode \fBKbMode\fP &other 
+.RE
+.PP
+
+.PP
+Definition at line 21 of file kbmode\&.cpp\&.
+.PP
+References _light, doUpdate(), and updated()\&.
+.PP
+.nf
+21                                                                     :
+22     QObject(parent),
+23     _name(other\&._name), _id(other\&._id),
+24     _light(new KbLight(this, keyMap, *other\&._light)), _bind(new KbBind(this, parent, keyMap, *other\&._bind)), _perf(new KbPerf(this, *other\&._perf)),
+25     _needsSave(true)
+26 {
+27     connect(_light, SIGNAL(updated()), this, SLOT(doUpdate()));
+28 }
+.fi
+.SS "KbMode::~KbMode ()"
+
+.PP
+Definition at line 89 of file kbmode\&.cpp\&.
+.PP
+.nf
+89                 {
+90 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBKbBind\fP* KbMode::bind ()\fC [inline]\fP"
+
+.PP
+Definition at line 61 of file kbmode\&.h\&.
+.PP
+References _bind\&.
+.PP
+Referenced by KbPerf::bind(), Kb::currentBind(), Kb::frameUpdate(), KbBindWidget::on_copyButton_clicked(), and Kb::readNotify()\&.
+.PP
+.nf
+61 { return _bind; }
+.fi
+.SS "void KbMode::doUpdate ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 82 of file kbmode\&.cpp\&.
+.PP
+References updated()\&.
+.PP
+Referenced by KbMode()\&.
+.PP
+.nf
+82                      {
+83     emit updated();
+84 }
+.fi
+.SS "\fBUsbId\fP& KbMode::id ()\fC [inline]\fP"
+
+.PP
+Definition at line 52 of file kbmode\&.h\&.
+.PP
+References _id\&.
+.PP
+Referenced by KbProfile::find(), Kb::hwSave(), KbProfile::KbProfile(), KbWidget::on_modesList_customContextMenuRequested(), KbWidget::on_modesList_itemChanged(), KbWidget::on_modesList_itemClicked(), KbWidget::profileChanged(), Kb::readNotify(), and KbProfile::save()\&.
+.PP
+.nf
+52 { return _id; }
+.fi
+.SS "void KbMode::id (const \fBUsbId\fP &newId)\fC [inline]\fP"
+
+.PP
+Definition at line 53 of file kbmode\&.h\&.
+.PP
+References _id, _needsSave, and newId()\&.
+.PP
+.nf
+53 { _needsSave = true; _id = newId; }
+.fi
+.SS "void KbMode::keyMap (const \fBKeyMap\fP &keyMap)"
+
+.PP
+Definition at line 60 of file kbmode\&.cpp\&.
+.PP
+References _bind, _light, _needsSave, KbLight::map(), and KbBind::map()\&.
+.PP
+Referenced by KbProfile::keyMap()\&.
+.PP
+.nf
+60                                        {
+61     _needsSave = true;
+62     _light->map(keyMap);
+63     _bind->map(keyMap);
+64 }
+.fi
+.SS "\fBKbLight\fP* KbMode::light ()\fC [inline]\fP"
+
+.PP
+Definition at line 60 of file kbmode\&.h\&.
+.PP
+References _light\&.
+.PP
+Referenced by Kb::currentLight(), Kb::frameUpdate(), Kb::hwSave(), KbBind::light(), KbPerf::light(), Kb::readNotify(), and Kb::updateLayout()\&.
+.PP
+.nf
+60 { return _light; }
+.fi
+.SS "const QString& KbMode::name () const\fC [inline]\fP"
+
+.PP
+Definition at line 50 of file kbmode\&.h\&.
+.PP
+References _name\&.
+.PP
+Referenced by Kb::hwSave(), ModeSelectDialog::ModeSelectDialog(), KbWidget::on_modesList_itemChanged(), KbWidget::profileChanged(), Kb::readNotify(), and RebindWidget::setBind()\&.
+.PP
+.nf
+50 { return _name; }
+.fi
+.SS "void KbMode::name (const QString &newName)\fC [inline]\fP"
+
+.PP
+Definition at line 51 of file kbmode\&.h\&.
+.PP
+References _name, and _needsSave\&.
+.PP
+.nf
+51 { _needsSave = true; _name = newName\&.trimmed(); if(_name == "") _name = "Unnamed"; }
+.fi
+.SS "bool KbMode::needsSave () const"
+
+.PP
+Definition at line 78 of file kbmode\&.cpp\&.
+.PP
+References _bind, _light, _needsSave, _perf, KbPerf::needsSave(), KbBind::needsSave(), and KbLight::needsSave()\&.
+.PP
+Referenced by KbProfile::needsSave()\&.
+.PP
+.nf
+78                              {
+79     return _needsSave || _light->needsSave() || _bind->needsSave() || _perf->needsSave();
+80 }
+.fi
+.SS "void KbMode::newId ()"
+
+.PP
+Definition at line 52 of file kbmode\&.cpp\&.
+.PP
+References _id, _light, _needsSave, anim, KbLight::animList(), and KbAnim::newId()\&.
+.PP
+Referenced by id(), KbProfile::newId(), and KbWidget::on_modesList_customContextMenuRequested()\&.
+.PP
+.nf
+52                   {
+53     _needsSave = true;
+54     _id = UsbId();
+55     // Create new IDs for animations
+56     foreach(KbAnim* anim, _light->animList())
+57         anim->newId();
+58 }
+.fi
+.SS "\fBKbPerf\fP* KbMode::perf ()\fC [inline]\fP"
+
+.PP
+Definition at line 62 of file kbmode\&.h\&.
+.PP
+References _perf\&.
+.PP
+Referenced by Kb::currentPerf(), Kb::frameUpdate(), Kb::hwSave(), KPerfWidget::on_copyButton_clicked(), MPerfWidget::on_copyButton_clicked(), KbBind::perf(), and Kb::readNotify()\&.
+.PP
+.nf
+62 { return _perf; }
+.fi
+.SS "void KbMode::save (\fBCkbSettings\fP &settings)"
+
+.PP
+Definition at line 66 of file kbmode\&.cpp\&.
+.PP
+References _bind, _id, _light, _name, _needsSave, _perf, UsbId::guidString(), UsbId::hwModifiedString(), UsbId::modifiedString(), UsbId::newModified(), KbPerf::save(), KbBind::save(), KbLight::save(), and CkbSettings::setValue()\&.
+.PP
+Referenced by KbProfile::save()\&.
+.PP
+.nf
+66                                       {
+67     _needsSave = false;
+68     _id\&.newModified();
+69     settings\&.setValue("GUID", _id\&.guidString());
+70     settings\&.setValue("Modified", _id\&.modifiedString());
+71     settings\&.setValue("HwModified", _id\&.hwModifiedString());
+72     settings\&.setValue("Name", _name);
+73     _light->save(settings);
+74     _bind->save(settings);
+75     _perf->save(settings);
+76 }
+.fi
+.SS "void KbMode::setNeedsSave ()\fC [inline]\fP"
+
+.PP
+Definition at line 67 of file kbmode\&.h\&.
+.PP
+References _needsSave\&.
+.PP
+Referenced by Kb::hwSave(), and Kb::readNotify()\&.
+.PP
+.nf
+67 { _needsSave = true; }
+.fi
+.SS "void KbMode::setNeedsUpdate ()\fC [inline]\fP"
+
+.PP
+Definition at line 68 of file kbmode\&.h\&.
+.PP
+References _bind, _perf, KbBind::setNeedsUpdate(), and KbPerf::setNeedsUpdate()\&.
+.PP
+Referenced by KbProfile::setNeedsUpdate()\&.
+.PP
+.nf
+68 { _bind->setNeedsUpdate(); _perf->setNeedsUpdate(); }
+.fi
+.SS "void KbMode::updated ()\fC [signal]\fP"
+
+.PP
+Definition at line 131 of file moc_kbmode\&.cpp\&.
+.PP
+Referenced by doUpdate(), and KbMode()\&.
+.PP
+.nf
+132 {
+133     QMetaObject::activate(this, &staticMetaObject, 0, Q_NULLPTR);
+134 }
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "\fBKbBind\fP* KbMode::_bind\fC [private]\fP"
+
+.PP
+Definition at line 78 of file kbmode\&.h\&.
+.PP
+Referenced by bind(), KbMode(), keyMap(), needsSave(), save(), and setNeedsUpdate()\&.
+.SS "\fBUsbId\fP KbMode::_id\fC [private]\fP"
+
+.PP
+Definition at line 75 of file kbmode\&.h\&.
+.PP
+Referenced by id(), KbMode(), newId(), and save()\&.
+.SS "\fBKbLight\fP* KbMode::_light\fC [private]\fP"
+
+.PP
+Definition at line 77 of file kbmode\&.h\&.
+.PP
+Referenced by KbMode(), keyMap(), light(), needsSave(), newId(), and save()\&.
+.SS "QString KbMode::_name\fC [private]\fP"
+
+.PP
+Definition at line 74 of file kbmode\&.h\&.
+.PP
+Referenced by KbMode(), name(), and save()\&.
+.SS "bool KbMode::_needsSave\fC [private]\fP"
+
+.PP
+Definition at line 81 of file kbmode\&.h\&.
+.PP
+Referenced by id(), keyMap(), name(), needsSave(), newId(), save(), and setNeedsSave()\&.
+.SS "\fBKbPerf\fP* KbMode::_perf\fC [private]\fP"
+
+.PP
+Definition at line 79 of file kbmode\&.h\&.
+.PP
+Referenced by KbMode(), needsSave(), perf(), save(), and setNeedsUpdate()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

@@ -1,0 +1,5 @@
+<map id="LayoutDialog" name="LayoutDialog">
+<area shape="rect" id="node2" href="$classQDialog.html" title="{QDialog\n||}" alt="" coords="147,392,216,469"/>
+<area shape="rect" id="node3" href="$classUi_1_1LayoutDialog.html" title="{Ui::LayoutDialog\n||}" alt="" coords="241,392,359,469"/>
+<area shape="rect" id="node4" href="$classUi__LayoutDialog.html" title="{Ui_LayoutDialog\n||+ setupUi()\l+ retranslateUi()\l}" alt="" coords="241,249,359,341"/>
+</map>

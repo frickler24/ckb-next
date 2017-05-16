@@ -1,0 +1,325 @@
+.TH "src/ckb-daemon/input_linux.c" 3 "Tue May 16 2017" "Version beta-v0.2.7 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb-daemon/input_linux.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'command\&.h'\fP
+.br
+\fC#include 'device\&.h'\fP
+.br
+\fC#include 'input\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBuinputopen\fP (struct uinput_user_dev *indev, int mouse)"
+.br
+.ti -1c
+.RI "int \fBos_inputopen\fP (\fBusbdevice\fP *kb)"
+.br
+.RI "\fIos_inputopen \fP"
+.ti -1c
+.RI "void \fBos_inputclose\fP (\fBusbdevice\fP *kb)"
+.br
+.ti -1c
+.RI "static void \fBisync\fP (\fBusbdevice\fP *kb)"
+.br
+.ti -1c
+.RI "void \fBos_keypress\fP (\fBusbdevice\fP *kb, int scancode, int down)"
+.br
+.ti -1c
+.RI "void \fBos_mousemove\fP (\fBusbdevice\fP *kb, int \fBx\fP, int \fBy\fP)"
+.br
+.ti -1c
+.RI "void * \fB_ledthread\fP (void *ctx)"
+.br
+.ti -1c
+.RI "int \fBos_setupindicators\fP (\fBusbdevice\fP *kb)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void* _ledthread (void *ctx)"
+
+.PP
+Definition at line 165 of file input_linux\&.c\&.
+.PP
+References dmutex, usbdevice::hw_ileds, usbdevice::uinput_kb, and usbdevice::vtable\&.
+.PP
+Referenced by os_setupindicators()\&.
+.PP
+.nf
+165                            {
+166     usbdevice* kb = ctx;
+167     uchar ileds = 0;
+168     // Read LED events from the uinput device
+169     struct input_event event;
+170     while (read(kb->uinput_kb - 1, &event, sizeof(event)) > 0) {
+171         if (event\&.type == EV_LED && event\&.code < 8){
+172             char which = 1 << event\&.code;
+173             if(event\&.value)
+174                 ileds |= which;
+175             else
+176                 ileds &= ~which;
+177         }
+178         // Update them if needed
+179         pthread_mutex_lock(dmutex(kb));
+180         if(kb->hw_ileds != ileds){
+181             kb->hw_ileds = ileds;
+182             kb->vtable->updateindicators(kb, 0);
+183         }
+184         pthread_mutex_unlock(dmutex(kb));
+185     }
+186     return 0;
+187 }
+.fi
+.SS "static void isync (\fBusbdevice\fP *kb)\fC [static]\fP"
+
+.PP
+Definition at line 107 of file input_linux\&.c\&.
+.PP
+References ckb_warn, usbdevice::uinput_kb, and usbdevice::uinput_mouse\&.
+.PP
+Referenced by os_keypress(), and os_mousemove()\&.
+.PP
+.nf
+107                                 {
+108     struct input_event event;
+109     memset(&event, 0, sizeof(event));
+110     event\&.type = EV_SYN;
+111     event\&.code = SYN_REPORT;
+112     if(write(kb->uinput_kb - 1, &event, sizeof(event)) <= 0)
+113         ckb_warn("uinput write failed: %s\n", strerror(errno));
+114     if(write(kb->uinput_mouse - 1, &event, sizeof(event)) <= 0)
+115         ckb_warn("uinput write failed: %s\n", strerror(errno));
+116 }
+.fi
+.SS "void os_inputclose (\fBusbdevice\fP *kb)"
+
+.PP
+Definition at line 76 of file input_linux\&.c\&.
+.PP
+References ckb_warn, usbdevice::uinput_kb, and usbdevice::uinput_mouse\&.
+.PP
+Referenced by closeusb()\&.
+.PP
+.nf
+76                                  {
+77     if(kb->uinput_kb <= 0 || kb->uinput_mouse <= 0)
+78         return;
+79     // Set all keys released
+80     struct input_event event;
+81     memset(&event, 0, sizeof(event));
+82     event\&.type = EV_KEY;
+83     for(int key = 0; key < KEY_CNT; key++){
+84         event\&.code = key;
+85         if(write(kb->uinput_kb - 1, &event, sizeof(event)) <= 0)
+86             ckb_warn("uinput write failed: %s\n", strerror(errno));
+87         if(write(kb->uinput_mouse - 1, &event, sizeof(event)) <= 0)
+88             ckb_warn("uinput write failed: %s\n", strerror(errno));
+89     }
+90     event\&.type = EV_SYN;
+91     event\&.code = SYN_REPORT;
+92     if(write(kb->uinput_kb - 1, &event, sizeof(event)) <= 0)
+93         ckb_warn("uinput write failed: %s\n", strerror(errno));
+94     if(write(kb->uinput_mouse - 1, &event, sizeof(event)) <= 0)
+95         ckb_warn("uinput write failed: %s\n", strerror(errno));
+96     // Close the keyboard
+97     ioctl(kb->uinput_kb - 1, UI_DEV_DESTROY);
+98     close(kb->uinput_kb - 1);
+99     kb->uinput_kb = 0;
+100     // Close the mouse
+101     ioctl(kb->uinput_mouse - 1, UI_DEV_DESTROY);
+102     close(kb->uinput_mouse - 1);
+103     kb->uinput_mouse = 0;
+104 }
+.fi
+.SS "int os_inputopen (\fBusbdevice\fP *kb)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkb\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.RE
+.PP
+Some tips on using \fCuinput_user_dev in\fP 
+.PP
+Definition at line 55 of file input_linux\&.c\&.
+.PP
+References usbdevice::fwversion, INDEX_OF, keyboard, usbdevice::name, usbdevice::product, usbdevice::uinput_kb, usbdevice::uinput_mouse, uinputopen(), and usbdevice::vendor\&.
+.PP
+Referenced by _setupusb()\&.
+.PP
+.nf
+55                                {
+56     // Create the new input device
+57     int index = INDEX_OF(kb, keyboard);
+58     struct uinput_user_dev indev;
+59     memset(&indev, 0, sizeof(indev));
+60     snprintf(indev\&.name, UINPUT_MAX_NAME_SIZE, "ckb%d: %s", index, kb->name);
+61     indev\&.id\&.bustype = BUS_USB;
+62     indev\&.id\&.vendor = kb->vendor;
+63     indev\&.id\&.product = kb->product;
+64     indev\&.id\&.version = kb->fwversion;
+65     // Open keyboard
+66     int fd = uinputopen(&indev, 0);
+67     kb->uinput_kb = fd;
+68     if(fd <= 0)
+69         return 0;
+70     // Open mouse
+71     fd = uinputopen(&indev, 1);
+72     kb->uinput_mouse = fd;
+73     return fd <= 0;
+74 }
+.fi
+.SS "void os_keypress (\fBusbdevice\fP *kb, intscancode, intdown)"
+
+.PP
+Definition at line 118 of file input_linux\&.c\&.
+.PP
+References BTN_WHEELDOWN, BTN_WHEELUP, ckb_warn, isync(), SCAN_MOUSE, usbdevice::uinput_kb, and usbdevice::uinput_mouse\&.
+.PP
+Referenced by inputupdate_keys()\&.
+.PP
+.nf
+118                                                        {
+119     struct input_event event;
+120     memset(&event, 0, sizeof(event));
+121     int is_mouse = 0;
+122     if(scancode == BTN_WHEELUP || scancode == BTN_WHEELDOWN){
+123         // The mouse wheel is a relative axis
+124         if(!down)
+125             return;
+126         event\&.type = EV_REL;
+127         event\&.code = REL_WHEEL;
+128         event\&.value = (scancode == BTN_WHEELUP ? 1 : -1);
+129         is_mouse = 1;
+130     } else {
+131         // Mouse buttons and key events are both EV_KEY\&. The scancodes are already correct, just remove the ckb bit
+132         event\&.type = EV_KEY;
+133         event\&.code = scancode & ~SCAN_MOUSE;
+134         event\&.value = down;
+135         is_mouse = !!(scancode & SCAN_MOUSE);
+136     }
+137     if(write((is_mouse ? kb->uinput_mouse : kb->uinput_kb) - 1, &event, sizeof(event)) <= 0)
+138         ckb_warn("uinput write failed: %s\n", strerror(errno));
+139     else
+140         isync(kb);
+141 }
+.fi
+.SS "void os_mousemove (\fBusbdevice\fP *kb, intx, inty)"
+
+.PP
+Definition at line 143 of file input_linux\&.c\&.
+.PP
+References ckb_warn, isync(), usbdevice::uinput_mouse, x, and y\&.
+.PP
+Referenced by inputupdate(), and inputupdate_keys()\&.
+.PP
+.nf
+143                                               {
+144     struct input_event event;
+145     memset(&event, 0, sizeof(event));
+146     event\&.type = EV_REL;
+147     if(x != 0){
+148         event\&.code = REL_X;
+149         event\&.value = x;
+150         if(write(kb->uinput_mouse - 1, &event, sizeof(event)) <= 0)
+151             ckb_warn("uinput write failed: %s\n", strerror(errno));
+152         else
+153             isync(kb);
+154     }
+155     if(y != 0){
+156         event\&.code = REL_Y;
+157         event\&.value = y;
+158         if(write(kb->uinput_mouse - 1, &event, sizeof(event)) <= 0)
+159             ckb_warn("uinput write failed: %s\n", strerror(errno));
+160         else
+161             isync(kb);
+162     }
+163 }
+.fi
+.SS "int os_setupindicators (\fBusbdevice\fP *kb)"
+
+.PP
+Definition at line 189 of file input_linux\&.c\&.
+.PP
+References _ledthread(), usbdevice::hw_ileds, usbdevice::hw_ileds_old, and usbdevice::ileds\&.
+.PP
+Referenced by _setupusb()\&.
+.PP
+.nf
+189                                      {
+190     // Initialize LEDs to all off
+191     kb->hw_ileds = kb->hw_ileds_old = kb->ileds = 0;
+192     // Create and detach thread to read LED events
+193     pthread_t thread;
+194     int err = pthread_create(&thread, 0, _ledthread, kb);
+195     if(err != 0)
+196         return err;
+197     pthread_detach(thread);
+198     return 0;
+199 }
+.fi
+.SS "int uinputopen (struct uinput_user_dev *indev, intmouse)"
+
+.PP
+Definition at line 9 of file input_linux\&.c\&.
+.PP
+References ckb_err, and ckb_warn\&.
+.PP
+Referenced by os_inputopen()\&.
+.PP
+.nf
+9                                                         {
+10     int fd = open("/dev/uinput", O_RDWR);
+11     if(fd < 0){
+12         // If that didn't work, try /dev/input/uinput instead
+13         fd = open("/dev/input/uinput", O_RDWR);
+14         if(fd < 0){
+15             ckb_err("Failed to open uinput: %s\n", strerror(errno));
+16             return 0;
+17         }
+18     }
+19     // Enable all keys and mouse buttons
+20     ioctl(fd, UI_SET_EVBIT, EV_KEY);
+21     for(int i = 0; i < KEY_CNT; i++)
+22         ioctl(fd, UI_SET_KEYBIT, i);
+23     if(mouse){
+24         // Enable mouse axes
+25         ioctl(fd, UI_SET_EVBIT, EV_REL);
+26         for(int i = 0; i < REL_CNT; i++)
+27             ioctl(fd, UI_SET_RELBIT, i);
+28     } else {
+29         // Enable LEDs
+30         ioctl(fd, UI_SET_EVBIT, EV_LED);
+31         for(int i = 0; i < LED_CNT; i++)
+32             ioctl(fd, UI_SET_LEDBIT, i);
+33         // Eanble autorepeat
+34         ioctl(fd, UI_SET_EVBIT, EV_REP);
+35     }
+36     // Enable sychronization
+37     ioctl(fd, UI_SET_EVBIT, EV_SYN);
+38     // Create the device
+39     if(write(fd, indev, sizeof(*indev)) <= 0)
+40         ckb_warn("uinput write failed: %s\n", strerror(errno));
+41     if(ioctl(fd, UI_DEV_CREATE)){
+42         ckb_err("Failed to create uinput device: %s\n", strerror(errno));
+43         close(fd);
+44         return 0;
+45     }
+46     return fd + 1;
+47 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

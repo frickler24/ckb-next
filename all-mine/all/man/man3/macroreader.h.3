@@ -1,0 +1,32 @@
+.TH "src/ckb/macroreader.h" 3 "Tue May 16 2017" "Version beta-v0.2.7 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb/macroreader.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <QObject>\fP
+.br
+\fC#include <QFile>\fP
+.br
+\fC#include <QThread>\fP
+.br
+\fC#include <QPlainTextEdit>\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "class \fBMacroReaderThread\fP"
+.br
+.RI "\fIThe \fBMacroReaderThread\fP class is responsible for reading Macro \fBKey\fP Values\&. It is created as a separate thread (worker thread) for reading macro commands from an fresh opened notify channel\&. Standard notify channel for macro definitions is number 2\&. \fP"
+.ti -1c
+.RI "class \fBMacroReader\fP"
+.br
+.RI "\fIThe \fBMacroReader\fP class creates a worker thread object\&. It does a connect do delayed deletion of thread local variables in the case the worker thread terminates\&. \fP"
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

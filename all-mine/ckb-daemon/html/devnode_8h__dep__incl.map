@@ -1,0 +1,12 @@
+<map id="src/ckb&#45;daemon/devnode.h" name="src/ckb&#45;daemon/devnode.h">
+<area shape="rect" id="node2" href="$command_8c.html" title="src/ckb&#45;daemon/command.c" alt="" coords="5,88,192,115"/>
+<area shape="rect" id="node3" href="$device__keyboard_8c.html" title="src/ckb&#45;daemon/device\l_keyboard.c" alt="" coords="216,81,373,122"/>
+<area shape="rect" id="node4" href="$device__mouse_8c.html" title="src/ckb&#45;daemon/device\l_mouse.c" alt="" coords="397,81,555,122"/>
+<area shape="rect" id="node5" href="$devnode_8c.html" title="src/ckb&#45;daemon/devnode.c" alt="" coords="579,88,757,115"/>
+<area shape="rect" id="node6" href="$firmware_8c.html" title="src/ckb&#45;daemon/firmware.c" alt="" coords="782,88,961,115"/>
+<area shape="rect" id="node7" href="$main_8c.html" title="src/ckb&#45;daemon/main.c" alt="" coords="986,88,1144,115"/>
+<area shape="rect" id="node8" href="$notify_8c.html" title="src/ckb&#45;daemon/notify.c" alt="" coords="1169,88,1332,115"/>
+<area shape="rect" id="node9" href="$usb_8c.html" title="src/ckb&#45;daemon/usb.c" alt="" coords="1357,88,1507,115"/>
+<area shape="rect" id="node10" href="$usb__linux_8c.html" title="src/ckb&#45;daemon/usb\l_linux.c" alt="" coords="1531,81,1671,122"/>
+<area shape="rect" id="node11" href="$usb__mac_8c.html" title="src/ckb&#45;daemon/usb\l_mac.c" alt="" coords="1695,81,1835,122"/>
+</map>

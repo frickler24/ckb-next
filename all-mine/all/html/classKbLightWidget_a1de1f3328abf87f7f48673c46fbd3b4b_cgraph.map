@@ -1,0 +1,34 @@
+<map id="KbLightWidget::setLight" name="KbLightWidget::setLight">
+<area shape="rect" id="node2" href="$classKeyWidget.html#ae975180a8735230d0cf710eaa5589289" title="KeyWidget::clearAnimation" alt="" coords="226,243,406,269"/>
+<area shape="rect" id="node3" href="$classKbAnimWidget.html#adcd31f32f63db310da51fe32c53caeb6" title="KbAnimWidget::clearSelection" alt="" coords="217,293,415,320"/>
+<area shape="rect" id="node14" href="$classKeyWidget.html#a8d40c82dcb72b2ab97be866b8f95fe75" title="KeyWidget::clearSelection" alt="" coords="228,395,404,421"/>
+<area shape="rect" id="node15" href="$classKbLightWidget.html#a8b5c1e209022f8f74d8f10cea6fe4805" title="KbLightWidget::on_showAnim\lBox_clicked" alt="" coords="217,446,415,487"/>
+<area shape="rect" id="node22" href="$classKeyWidget.html#a894d8299425b4c78e14d8b832d1571a1" title="KeyWidget::setAnimation" alt="" coords="231,512,401,539"/>
+<area shape="rect" id="node24" href="$classKbAnimWidget.html#a986780d15107d5aaf661b578db7703af" title="KbAnimWidget::setLight" alt="" coords="235,344,397,371"/>
+<area shape="rect" id="node28" href="$classKbLightWidget.html#ab5dfd2e86b7068bf8d71a89cdf66822b" title="KbLightWidget::updateLight" alt="" coords="225,639,407,665"/>
+<area shape="rect" id="node4" href="$classKbAnimWidget.html#a810aaafb80b34c3f03345b9a265da1c2" title="KbAnimWidget::setCurrent" alt="" coords="704,259,883,285"/>
+<area shape="rect" id="node5" href="$classAnimScript.html#a9c35c39aa82523625e47cac84d17a53e" title="AnimScript::copyright" alt="" coords="941,5,1088,32"/>
+<area shape="rect" id="node6" href="$classKbAnim.html#aebfd6f4cc51099a1de64eae4929c6bb5" title="KbAnim::keys" alt="" coords="963,56,1067,83"/>
+<area shape="rect" id="node7" href="$classKbAnim.html#a0885e61a08cd8e539096abffeeed87df" title="KbAnim::mode" alt="" coords="961,107,1069,133"/>
+<area shape="rect" id="node8" href="$classAnimScript.html#afe1509ae396bf2924318580974db487c" title="AnimScript::name" alt="" coords="951,157,1078,184"/>
+<area shape="rect" id="node9" href="$classKbAnim.html#aacd458fb1f1a853a483ec2798370ba87" title="KbAnim::name" alt="" coords="961,411,1069,437"/>
+<area shape="rect" id="node10" href="$classKbAnim.html#a9808617e6f8d91a74cafa3de8b618df8" title="KbAnim::opacity" alt="" coords="955,208,1074,235"/>
+<area shape="rect" id="node11" href="$classKbAnim.html#a20ce294b015ed0fc649e92ba3995ef18" title="KbAnim::script" alt="" coords="961,259,1069,285"/>
+<area shape="rect" id="node12" href="$classKbAnim.html#a5faf8aacc2d4b61cc75ea4bff12d7617" title="KbAnim::scriptName" alt="" coords="943,309,1086,336"/>
+<area shape="rect" id="node13" href="$classAnimScript.html#abda7a757d5a7d80d73ab02ccfc91c248" title="AnimScript::version" alt="" coords="947,360,1083,387"/>
+<area shape="rect" id="node16" href="$classKeyWidget.html#a6023d3b1235a737991de16156d30a6b7" title="KeyWidget::displayColorMap" alt="" coords="465,411,655,437"/>
+<area shape="rect" id="node17" href="$classCkbSettings.html#a65c4f3ff1f75e5a554759040fb76044e" title="CkbSettings::set" alt="" coords="500,461,620,488"/>
+<area shape="rect" id="node18" href="$ckbsettings_8cpp.html#aa405e58960532b36ddb38251775238fd" title="globalSettings " alt="" coords="741,461,845,488"/>
+<area shape="rect" id="node20" href="$classCkbSettings.html#a3793106d98878f170f9f9734bf39409b" title="CkbSettings::value" alt="" coords="727,512,860,539"/>
+<area shape="rect" id="node19" href="$classCkbSettings.html#a378a1793dae116fbea4a801396fa4fbb" title="CkbSettings::setWritable Remember if the config files are writable (setter) " alt="" coords="931,461,1099,488"/>
+<area shape="rect" id="node21" href="$classCkbSettings.html#a29695ed0012617ba943a1878d4abc71c" title="CkbSettings::pwd" alt="" coords="951,512,1078,539"/>
+<area shape="rect" id="node23" href="$classKeyMap.html#a405d537637046a2437f7089f36ed4834" title="KeyMap::keys" alt="" coords="507,512,613,539"/>
+<area shape="rect" id="node25" href="$classKbAnimWidget.html#a096921d8224cc5d7580a9e5a46305061" title="KbAnimWidget::refreshList" alt="" coords="471,344,649,371"/>
+<area shape="rect" id="node26" href="$classKbLight.html#a0d37ba50d07c949db3d9714f9b559e6b" title="KbLight::animList" alt="" coords="732,360,855,387"/>
+<area shape="rect" id="node27" href="$classKbAnim.html#ab3f14ad52f306a4714642e5decb4db36" title="KbAnim::guid" alt="" coords="743,411,843,437"/>
+<area shape="rect" id="node29" href="$classKeyWidget.html#adbbd21e7039fd0f642d0d3b0bcca0b60" title="KeyWidget::map" alt="" coords="501,563,619,589"/>
+<area shape="rect" id="node30" href="$classKbLight.html#ae682f44cb55d99f70f6516c76f322c80" title="KbLight::map" alt="" coords="511,613,609,640"/>
+<area shape="rect" id="node31" href="$classKeyWidget.html#ab35a6745c40defa3cc7a13928590ce6f" title="KeyWidget::colorMap" alt="" coords="487,664,633,691"/>
+<area shape="rect" id="node32" href="$classKbLight.html#a5bca9ce0f937639f207872b37323b5e5" title="KbLight::colorMap" alt="" coords="497,715,623,741"/>
+<area shape="rect" id="node33" href="$classKbLight.html#a51a035fad76d2b31a593ec2b25a8d8af" title="KbLight::dimming" alt="" coords="499,765,621,792"/>
+</map>

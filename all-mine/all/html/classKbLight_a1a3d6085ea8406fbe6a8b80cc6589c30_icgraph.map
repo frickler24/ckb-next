@@ -1,0 +1,8 @@
+<map id="KbLight::printRGB" name="KbLight::printRGB">
+<area shape="rect" id="node2" href="$classKbLight.html#a6bc366191c38d327b82b8d0acd741cea" title="KbLight::base" alt="" coords="205,48,307,75"/>
+<area shape="rect" id="node6" href="$classKbLight.html#aaf2d348ef39cc9fbbf198e7105a72f35" title="KbLight::frameUpdate" alt="" coords="181,99,331,125"/>
+<area shape="rect" id="node3" href="$classKb.html#abd5f5fc526541fd9fe41a4755e6b42f2" title="Kb::hwSave" alt="" coords="393,48,487,75"/>
+<area shape="rect" id="node4" href="$classKbWidget.html#a65f38c3fc88b4e1a8fbabc7a27946c49" title="KbWidget::on_hwSaveButton\l_clicked" alt="" coords="550,5,743,46"/>
+<area shape="rect" id="node5" href="$classKbProfileDialog.html#aac105b06b0a29e39c05cb70f01c37fcd" title="KbProfileDialog::on\l_profileList_customContext\lMenuRequested" alt="" coords="556,69,737,125"/>
+<area shape="rect" id="node7" href="$classKb.html#a97694a4cd55681adca7b972fb5722049" title="Kb::frameUpdate" alt="" coords="379,99,501,125"/>
+</map>

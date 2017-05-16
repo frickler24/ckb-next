@@ -1,0 +1,240 @@
+.TH "RListWidget" 3 "Tue May 16 2017" "Version beta-v0.2.7 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RListWidget \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/rlistwidget\&.h>\fP
+.PP
+Inherits \fBQListWidget\fP\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBorderChanged\fP ()"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRListWidget\fP (\fBQWidget\fP *parent=0)"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBtimerTick\fP ()"
+.br
+.ti -1c
+.RI "void \fBenter\fP (QListWidgetItem *item)"
+.br
+.ti -1c
+.RI "void \fBchange\fP (QListWidgetItem *item)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBrescanItems\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QVariant \fBcurrentData\fP"
+.br
+.ti -1c
+.RI "QList< QVariant > \fBpreviousItems\fP"
+.br
+.ti -1c
+.RI "QVariant \fBdragged\fP"
+.br
+.ti -1c
+.RI "QTimer \fBreorderTimer\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const int \fBDATA_ROLE\fP = Qt::UserRole + 100"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 9 of file rlistwidget\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RListWidget::RListWidget (\fBQWidget\fP *parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 4 of file rlistwidget\&.cpp\&.
+.PP
+References change(), enter(), reorderTimer, and timerTick()\&.
+.PP
+.nf
+4                                         :
+5     QListWidget(parent)
+6 {
+7     setDragDropMode(QAbstractItemView::InternalMove);
+8     setMovement(QListView::Snap);
+9 
+10     reorderTimer\&.setSingleShot(true);
+11     reorderTimer\&.setInterval(100);
+12     connect(&reorderTimer, SIGNAL(timeout()), this, SLOT(timerTick()));
+13 
+14     connect(this, SIGNAL(itemEntered(QListWidgetItem*)), this, SLOT(enter(QListWidgetItem*)));
+15     connect(this, SIGNAL(itemChanged(QListWidgetItem*)), this, SLOT(change(QListWidgetItem*)));
+16 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void RListWidget::change (QListWidgetItem *item)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 54 of file rlistwidget\&.cpp\&.
+.PP
+References reorderTimer\&.
+.PP
+Referenced by RListWidget()\&.
+.PP
+.nf
+54                                              {
+55     reorderTimer\&.stop();
+56     reorderTimer\&.start();
+57 }
+.fi
+.SS "void RListWidget::enter (QListWidgetItem *item)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 47 of file rlistwidget\&.cpp\&.
+.PP
+References DATA_ROLE, dragged, and rescanItems()\&.
+.PP
+Referenced by RListWidget()\&.
+.PP
+.nf
+47                                             {
+48     rescanItems();
+49     // Check for drag+drop setup
+50     if(item)
+51         dragged = item->data(DATA_ROLE);
+52 }
+.fi
+.SS "void RListWidget::orderChanged ()\fC [signal]\fP"
+
+.PP
+Definition at line 141 of file moc_rlistwidget\&.cpp\&.
+.PP
+Referenced by timerTick()\&.
+.PP
+.nf
+142 {
+143     QMetaObject::activate(this, &staticMetaObject, 0, Q_NULLPTR);
+144 }
+.fi
+.SS "void RListWidget::rescanItems ()\fC [private]\fP"
+
+.PP
+Definition at line 59 of file rlistwidget\&.cpp\&.
+.PP
+References DATA_ROLE, and previousItems\&.
+.PP
+Referenced by enter()\&.
+.PP
+.nf
+59                              {
+60     QList<QVariant> newItems;
+61     int c = count();
+62     for(int i = 0; i < c; i++){
+63         QVariant data = this->item(i)->data(DATA_ROLE);
+64         if(data\&.isNull()){
+65             // Generate the ID for this item if it doesn't already exist
+66             data = QUuid::createUuid();
+67             this->item(i)->setData(DATA_ROLE, data);
+68         }
+69         newItems\&.append(data);
+70     }
+71     previousItems = newItems;
+72 }
+.fi
+.SS "void RListWidget::timerTick ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 18 of file rlistwidget\&.cpp\&.
+.PP
+References DATA_ROLE, dragged, orderChanged(), and previousItems\&.
+.PP
+Referenced by RListWidget()\&.
+.PP
+.nf
+18                            {
+19     bool reordered = false;
+20     QListWidgetItem* reselect = 0;
+21     QList<QVariant> newItems;
+22     // Scan the item list to see if they changed
+23     int c = count();
+24     for(int i = 0; i < c; i++){
+25         QListWidgetItem* itm = item(i);
+26         QVariant data = itm->data(DATA_ROLE);
+27         newItems\&.append(data);
+28         if(i >= previousItems\&.count() || data != previousItems[i])
+29             reordered = true;
+30         // Re-select the dragged item (if any)
+31         if(data == dragged)
+32             reselect = itm;
+33     }
+34     if(previousItems\&.length() != newItems\&.length())
+35         return;
+36     if(reordered){
+37         previousItems = newItems;
+38         emit orderChanged();
+39         if(reselect){
+40             reselect->setSelected(true);
+41             setCurrentItem(reselect);
+42             dragged = QVariant();
+43         }
+44     }
+45 }
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "QVariant RListWidget::currentData\fC [private]\fP"
+
+.PP
+Definition at line 24 of file rlistwidget\&.h\&.
+.SS "const int RListWidget::DATA_ROLE = Qt::UserRole + 100\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 29 of file rlistwidget\&.h\&.
+.PP
+Referenced by enter(), rescanItems(), and timerTick()\&.
+.SS "QVariant RListWidget::dragged\fC [private]\fP"
+
+.PP
+Definition at line 26 of file rlistwidget\&.h\&.
+.PP
+Referenced by enter(), and timerTick()\&.
+.SS "QList<QVariant> RListWidget::previousItems\fC [private]\fP"
+
+.PP
+Definition at line 25 of file rlistwidget\&.h\&.
+.PP
+Referenced by rescanItems(), and timerTick()\&.
+.SS "QTimer RListWidget::reorderTimer\fC [private]\fP"
+
+.PP
+Definition at line 27 of file rlistwidget\&.h\&.
+.PP
+Referenced by change(), and RListWidget()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

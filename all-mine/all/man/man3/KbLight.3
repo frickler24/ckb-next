@@ -1,0 +1,1112 @@
+.TH "KbLight" 3 "Tue May 16 2017" "Version beta-v0.2.7 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+KbLight \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/kblight\&.h>\fP
+.PP
+Inherits \fBQObject\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef QList< \fBKbAnim\fP * > \fBAnimList\fP"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBdidLoad\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdated\fP ()"
+.br
+.ti -1c
+.RI "void \fBframeDisplayed\fP (const \fBColorMap\fP &animatedColors, const QSet< QString > &indicatorList)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBKbLight\fP (\fBKbMode\fP *parent, const \fBKeyMap\fP &keyMap)"
+.br
+.ti -1c
+.RI "\fBKbLight\fP (\fBKbMode\fP *parent, const \fBKeyMap\fP &keyMap, const \fBKbLight\fP &other)"
+.br
+.ti -1c
+.RI "\fB~KbLight\fP ()"
+.br
+.ti -1c
+.RI "const \fBKeyMap\fP & \fBmap\fP ()"
+.br
+.ti -1c
+.RI "void \fBmap\fP (const \fBKeyMap\fP &map)"
+.br
+.ti -1c
+.RI "const \fBQColorMap\fP & \fBcolorMap\fP ()"
+.br
+.ti -1c
+.RI "void \fBcolor\fP (const QString &\fBkey\fP, const QColor &newColor)"
+.br
+.ti -1c
+.RI "void \fBcolor\fP (const QColor &newColor)"
+.br
+.ti -1c
+.RI "int \fBdimming\fP ()"
+.br
+.ti -1c
+.RI "void \fBdimming\fP (int newDimming)"
+.br
+.ti -1c
+.RI "\fBKbAnim\fP * \fBaddAnim\fP (const \fBAnimScript\fP *\fBbase\fP, const QStringList &keys, const QString &name, const QMap< QString, QVariant > &preset)"
+.br
+.ti -1c
+.RI "\fBKbAnim\fP * \fBduplicateAnim\fP (\fBKbAnim\fP *oldAnim)"
+.br
+.ti -1c
+.RI "const \fBAnimList\fP & \fBanimList\fP ()"
+.br
+.ti -1c
+.RI "void \fBanimList\fP (const \fBAnimList\fP &newAnimList)"
+.br
+.ti -1c
+.RI "\fBKbAnim\fP * \fBfindAnim\fP (const QUuid &guid) const "
+.br
+.ti -1c
+.RI "int \fBfindAnimIdx\fP (const QUuid &guid) const "
+.br
+.ti -1c
+.RI "void \fBpreviewAnim\fP (const \fBAnimScript\fP *\fBbase\fP, const QStringList &keys, const QMap< QString, QVariant > &preset)"
+.br
+.ti -1c
+.RI "void \fBstopPreview\fP ()"
+.br
+.ti -1c
+.RI "void \fBrestartAnimation\fP ()"
+.br
+.ti -1c
+.RI "void \fBanimKeypress\fP (const QString &\fBkey\fP, bool down)"
+.br
+.ti -1c
+.RI "void \fBopen\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisStarted\fP ()"
+.br
+.ti -1c
+.RI "void \fBclose\fP ()"
+.br
+.ti -1c
+.RI "void \fBresetIndicators\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetIndicator\fP (const char *name, QRgb argb)"
+.br
+.ti -1c
+.RI "void \fBframeUpdate\fP (QFile &\fBcmd\fP, bool monochrome=false)"
+.br
+.ti -1c
+.RI "void \fBbase\fP (QFile &\fBcmd\fP, bool ignoreDim=false, bool monochrome=false)"
+.br
+.ti -1c
+.RI "void \fBload\fP (\fBCkbSettings\fP &settings)"
+.br
+.ti -1c
+.RI "void \fBsave\fP (\fBCkbSettings\fP &settings)"
+.br
+.ti -1c
+.RI "bool \fBneedsSave\fP () const "
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static int \fBshareDimming\fP ()"
+.br
+.ti -1c
+.RI "static void \fBshareDimming\fP (int newShareDimming)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const int \fBMAX_DIM\fP = 3"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBrebuildBaseMap\fP ()"
+.br
+.ti -1c
+.RI "void \fBprintRGB\fP (QFile &\fBcmd\fP, const \fBColorMap\fP &animMap)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBAnimList\fP \fB_animList\fP"
+.br
+.ti -1c
+.RI "\fBKbAnim\fP * \fB_previewAnim\fP"
+.br
+.ti -1c
+.RI "\fBKeyMap\fP \fB_map\fP"
+.br
+.ti -1c
+.RI "\fBQColorMap\fP \fB_qColorMap\fP"
+.br
+.ti -1c
+.RI "\fBColorMap\fP \fB_colorMap\fP"
+.br
+.ti -1c
+.RI "\fBColorMap\fP \fB_animMap\fP"
+.br
+.ti -1c
+.RI "\fBColorMap\fP \fB_indicatorMap\fP"
+.br
+.ti -1c
+.RI "QSet< QString > \fB_indicatorList\fP"
+.br
+.ti -1c
+.RI "quint64 \fBlastFrameSignal\fP"
+.br
+.ti -1c
+.RI "int \fB_dimming\fP"
+.br
+.ti -1c
+.RI "bool \fB_start\fP"
+.br
+.ti -1c
+.RI "bool \fB_needsSave\fP"
+.br
+.ti -1c
+.RI "bool \fB_needsMapRefresh\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 17 of file kblight\&.h\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef QList<\fBKbAnim\fP*> \fBKbLight::AnimList\fP"
+
+.PP
+Definition at line 46 of file kblight\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "KbLight::KbLight (\fBKbMode\fP *parent, const \fBKeyMap\fP &keyMap)"
+
+.PP
+Definition at line 10 of file kblight\&.cpp\&.
+.PP
+References map()\&.
+.PP
+.nf
+10                                                      :
+11     QObject(parent), _previewAnim(0), lastFrameSignal(0), _dimming(0), _start(false), _needsSave(true), _needsMapRefresh(true)
+12 {
+13     map(keyMap);
+14 }
+.fi
+.SS "KbLight::KbLight (\fBKbMode\fP *parent, const \fBKeyMap\fP &keyMap, const \fBKbLight\fP &other)"
+
+.PP
+Definition at line 16 of file kblight\&.cpp\&.
+.PP
+References _animList, and map()\&.
+.PP
+.nf
+16                                                                            :
+17     QObject(parent), _previewAnim(0), _map(other\&._map), _qColorMap(other\&._qColorMap), lastFrameSignal(0), _dimming(other\&._dimming), _start(false), _needsSave(true), _needsMapRefresh(true)
+18 {
+19     map(keyMap);
+20     // Duplicate animations
+21     foreach(KbAnim* animation, other\&._animList)
+22         _animList\&.append(new KbAnim(this, keyMap, *animation));
+23 }
+.fi
+.SS "KbLight::~KbLight ()"
+
+.PP
+Definition at line 45 of file kblight\&.cpp\&.
+.PP
+References activeLights\&.
+.PP
+.nf
+45                  {
+46     activeLights\&.remove(this);
+47 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBKbAnim\fP * KbLight::addAnim (const \fBAnimScript\fP *base, const QStringList &keys, const QString &name, const QMap< QString, QVariant > &preset)"
+
+.PP
+Definition at line 100 of file kblight\&.cpp\&.
+.PP
+References _animList, _map, _needsSave, _start, anim, KbAnim::commitParams(), KbAnim::parameter(), KbAnim::stop(), stopPreview(), and KbAnim::trigger()\&.
+.PP
+Referenced by KbAnimWidget::addAnim()\&.
+.PP
+.nf
+100                                                                                                                                    {
+101     // Stop and restart all existing animations
+102     stopPreview();
+103     quint64 timestamp = QDateTime::currentMSecsSinceEpoch();
+104     foreach(KbAnim* anim, _animList){
+105         anim->stop();
+106         anim->trigger(timestamp);
+107     }
+108     // Load the new animation and set preset parameters
+109     KbAnim* anim = new KbAnim(this, _map, name, keys, base);
+110     QMapIterator<QString, QVariant> i(preset);
+111     while(i\&.hasNext()){
+112         i\&.next();
+113         anim->parameter(i\&.key(), i\&.value());
+114     }
+115     anim->commitParams();
+116     // Add the animation and start it
+117     _animList\&.append(anim);
+118     anim->trigger(timestamp);
+119     _start = true;
+120     _needsSave = true;
+121     return anim;
+122 }
+.fi
+.SS "void KbLight::animKeypress (const QString &key, booldown)"
+
+.PP
+Definition at line 189 of file kblight\&.cpp\&.
+.PP
+References _animList, _previewAnim, anim, KbAnim::keypress(), and KbAnim::keys()\&.
+.PP
+Referenced by Kb::readNotify()\&.
+.PP
+.nf
+189                                                        {
+190     foreach(KbAnim* anim, _animList){
+191         if(anim->keys()\&.contains(key))
+192             anim->keypress(key, down, QDateTime::currentMSecsSinceEpoch());
+193     }
+194     if(_previewAnim){
+195         if(_previewAnim->keys()\&.contains(key))
+196             _previewAnim->keypress(key, down, QDateTime::currentMSecsSinceEpoch());
+197     }
+198 }
+.fi
+.SS "const \fBAnimList\fP& KbLight::animList ()\fC [inline]\fP"
+
+.PP
+Definition at line 49 of file kblight\&.h\&.
+.PP
+References _animList\&.
+.PP
+Referenced by RebindWidget::applyChanges(), KbAnimWidget::duplicateAnim(), KbMode::newId(), KbAnimWidget::on_deleteButton_clicked(), KbAnimWidget::refreshList(), KbAnimWidget::reorderAnims(), and RebindWidget::setSelection()\&.
+.PP
+.nf
+49 { return _animList; }
+.fi
+.SS "void KbLight::animList (const \fBAnimList\fP &newAnimList)\fC [inline]\fP"
+
+.PP
+Definition at line 50 of file kblight\&.h\&.
+.PP
+References _animList, and _needsSave\&.
+.PP
+.nf
+50 { _needsSave = true; _animList = newAnimList; }
+.fi
+.SS "void KbLight::base (QFile &cmd, boolignoreDim = \fCfalse\fP, boolmonochrome = \fCfalse\fP)"
+
+.PP
+Definition at line 371 of file kblight\&.cpp\&.
+.PP
+References _animMap, _colorMap, _dimming, close(), ColorMap::colorForName(), ColorMap::colors(), ColorMap::count(), MAX_DIM, monoRgb(), printRGB(), and rebuildBaseMap()\&.
+.PP
+Referenced by Kb::hwSave()\&.
+.PP
+.nf
+371                                                              {
+372     close();
+373     if(_dimming == MAX_DIM && !ignoreDim){
+374         cmd\&.write(QString()\&.sprintf("rgb 000000")\&.toLatin1());
+375         return;
+376     }
+377     // Set just the background color, ignoring any animation
+378     rebuildBaseMap();
+379     _animMap = _colorMap;
+380     // If monochrome is active, create grayscale
+381     if(monochrome){
+382         int count = _animMap\&.count();
+383         QRgb* colors = _animMap\&.colors();
+384         for(int i = 0; i < count; i++){
+385             QRgb& rgb = colors[i];
+386             rgb = monoRgb(qRed(rgb), qGreen(rgb), qBlue(rgb));
+387         }
+388     }
+389     // Set a few indicators to black as the hardware handles them differently
+390     QRgb* mr = _animMap\&.colorForName("mr"), *m1 = _animMap\&.colorForName("m1"), *m2 = _animMap\&.colorForName("m2"), *m3 = _animMap\&.colorForName("m3"), *lock = _animMap\&.colorForName("lock");
+391     if(mr) *mr = 0;
+392     if(m1) *m1 = 0;
+393     if(m2) *m2 = 0;
+394     if(m3) *m3 = 0;
+395     if(lock) *lock = 0;
+396     // Send to driver
+397     cmd\&.write("rgb");
+398     printRGB(cmd, _animMap);
+399 }
+.fi
+.SS "void KbLight::close ()"
+
+.PP
+Definition at line 215 of file kblight\&.cpp\&.
+.PP
+References _animList, _start, activeLights, anim, KbAnim::stop(), and stopPreview()\&.
+.PP
+Referenced by base(), Kb::frameUpdate(), Kb::hwSave(), and Kb::updateLayout()\&.
+.PP
+.nf
+215                    {
+216     activeLights\&.remove(this);
+217     foreach(KbAnim* anim, _animList)
+218         anim->stop();
+219     stopPreview();
+220     _start = false;
+221 }
+.fi
+.SS "void KbLight::color (const QString &key, const QColor &newColor)"
+
+.PP
+Definition at line 49 of file kblight\&.cpp\&.
+.PP
+References _colorMap, _needsMapRefresh, _needsSave, _qColorMap, and ColorMap::colorForName()\&.
+.PP
+Referenced by KbLightWidget::changeColor(), load(), printRGB(), Kb::readNotify(), rebuildBaseMap(), and KbLightWidget::toggleSidelight()\&.
+.PP
+.nf
+49                                                              {
+50     QRgb newRgb = newColor\&.rgb();
+51     _qColorMap[key] = newRgb;
+52     _needsSave = true;
+53     if(!_needsMapRefresh){
+54         // Update flat map if we're not scheduled to rebuild it
+55         QByteArray rawName = key\&.toLatin1();
+56         QRgb* rawRgb = _colorMap\&.colorForName(rawName\&.data());
+57         if(rawRgb)
+58             *rawRgb = newRgb;
+59     }
+60 }
+.fi
+.SS "void KbLight::color (const QColor &newColor)"
+
+.PP
+Definition at line 62 of file kblight\&.cpp\&.
+.PP
+References _colorMap, _needsMapRefresh, _needsSave, _qColorMap, ColorMap::colors(), and ColorMap::count()\&.
+.PP
+.nf
+62                                          {
+63     QRgb newRgb = newColor\&.rgb();
+64     QMutableColorMapIterator i(_qColorMap);
+65     while(i\&.hasNext()){
+66         i\&.next();
+67         i\&.value() = newRgb;
+68     }
+69     _needsSave = true;
+70     // Reset flat map
+71     _needsMapRefresh = false;
+72     int mapCount = _colorMap\&.count();
+73     QRgb* flat = _colorMap\&.colors();
+74     for(int i = 0; i < mapCount; i++)
+75         flat[i] = mapCount;
+76 }
+.fi
+.SS "const \fBQColorMap\fP& KbLight::colorMap ()\fC [inline]\fP"
+
+.PP
+Definition at line 31 of file kblight\&.h\&.
+.PP
+References _qColorMap\&.
+.PP
+Referenced by KbLightWidget::changeColor(), KbLightWidget::newSelection(), KbLightWidget::toggleSidelight(), and KbLightWidget::updateLight()\&.
+.PP
+.nf
+31 { return _qColorMap; }
+.fi
+.SS "void KbLight::didLoad ()\fC [signal]\fP"
+
+.PP
+Definition at line 162 of file moc_kblight\&.cpp\&.
+.PP
+Referenced by load()\&.
+.PP
+.nf
+163 {
+164     QMetaObject::activate(this, &staticMetaObject, 0, Q_NULLPTR);
+165 }
+.fi
+.SS "int KbLight::dimming ()\fC [inline]\fP"
+
+.PP
+Definition at line 39 of file kblight\&.h\&.
+.PP
+References _dimming\&.
+.PP
+Referenced by KeyAction::keyEvent(), KbLightWidget::on_brightnessBox_activated(), open(), shareDimming(), and KbLightWidget::updateLight()\&.
+.PP
+.nf
+39 { return _dimming; }
+.fi
+.SS "void KbLight::dimming (intnewDimming)"
+
+.PP
+Definition at line 92 of file kblight\&.cpp\&.
+.PP
+References _dimming, _needsSave, _shareDimming, shareDimming(), and updated()\&.
+.PP
+.nf
+92                                    {
+93     if(_shareDimming != -1)
+94         shareDimming(newDimming);
+95     _needsSave = true;
+96     _dimming = newDimming;
+97     emit updated();
+98 }
+.fi
+.SS "\fBKbAnim\fP * KbLight::duplicateAnim (\fBKbAnim\fP *oldAnim)"
+
+.PP
+Definition at line 148 of file kblight\&.cpp\&.
+.PP
+References _animList, _map, _needsSave, _start, anim, KbAnim::newId(), KbAnim::stop(), and KbAnim::trigger()\&.
+.PP
+Referenced by KbAnimWidget::duplicateAnim()\&.
+.PP
+.nf
+148                                              {
+149     // Stop and restart all existing animations
+150     quint64 timestamp = QDateTime::currentMSecsSinceEpoch();
+151     foreach(KbAnim* anim, _animList){
+152         anim->stop();
+153         anim->trigger(timestamp);
+154     }
+155     // Same as addAnim, just duplicate the existing one
+156     KbAnim* anim = new KbAnim(this, _map, *oldAnim);
+157     anim->newId();
+158     int index = _animList\&.indexOf(oldAnim);
+159     if(index < 0)
+160         _animList\&.append(anim);
+161     else
+162         _animList\&.insert(index + 1, anim);
+163     anim->trigger(timestamp);
+164     _start = true;
+165     _needsSave = true;
+166     return anim;
+167 }
+.fi
+.SS "\fBKbAnim\fP* KbLight::findAnim (const QUuid &guid) const\fC [inline]\fP"
+
+.PP
+Definition at line 51 of file kblight\&.h\&.
+.PP
+References _animList, anim, and KbAnim::guid()\&.
+.PP
+Referenced by findAnimIdx(), and KeyAction::keyEvent()\&.
+.PP
+.nf
+51 { foreach(KbAnim* anim, _animList) { if(anim->guid() == guid) return anim; } return 0; }
+.fi
+.SS "int KbLight::findAnimIdx (const QUuid &guid) const\fC [inline]\fP"
+
+.PP
+Definition at line 52 of file kblight\&.h\&.
+.PP
+References _animList, and findAnim()\&.
+.PP
+Referenced by RebindWidget::setSelection()\&.
+.PP
+.nf
+52 { return _animList\&.indexOf(findAnim(guid)); }
+.fi
+.SS "void KbLight::frameDisplayed (const \fBColorMap\fP &animatedColors, const QSet< QString > &indicatorList)\fC [signal]\fP"
+
+.PP
+Definition at line 174 of file moc_kblight\&.cpp\&.
+.PP
+Referenced by frameUpdate()\&.
+.PP
+.nf
+175 {
+176     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+177     QMetaObject::activate(this, &staticMetaObject, 2, _a);
+178 }
+.fi
+.SS "void KbLight::frameUpdate (QFile &cmd, boolmonochrome = \fCfalse\fP)"
+
+.PP
+Definition at line 296 of file kblight\&.cpp\&.
+.PP
+References _animList, _animMap, _colorMap, _dimming, _indicatorList, _indicatorMap, _previewAnim, anim, KbAnim::blend(), ColorMap::colors(), ColorMap::count(), frameDisplayed(), lastFrameSignal, lToS(), monoRgb(), printRGB(), rebuildBaseMap(), and sToL()\&.
+.PP
+Referenced by Kb::frameUpdate()\&.
+.PP
+.nf
+296                                                     {
+297     rebuildBaseMap();
+298     _animMap = _colorMap;
+299     // Advance animations
+300     quint64 timestamp = QDateTime::currentMSecsSinceEpoch();
+301     foreach(KbAnim* anim, _animList)
+302         anim->blend(_animMap, timestamp);
+303     if(_previewAnim)
+304         _previewAnim->blend(_animMap, timestamp);
+305 
+306     int count = _animMap\&.count();
+307     QRgb* colors = _animMap\&.colors();
+308     // Apply active indicators and/or perform monochrome conversion
+309     if(monochrome || !_indicatorList\&.isEmpty()){
+310         QRgb* indicators = _indicatorMap\&.colors();
+311         for(int i = 0; i < count; i++){
+312             QRgb& rgb = colors[i];
+313             float r = qRed(rgb);
+314             float g = qGreen(rgb);
+315             float b = qBlue(rgb);
+316             // Apply indicators
+317             QRgb rgb2 = indicators[i];
+318             if(qAlpha(rgb2) != 0){
+319                 float r2 = qRed(rgb2);
+320                 float g2 = qGreen(rgb2);
+321                 float b2 = qBlue(rgb2);
+322                 float a2 = qAlpha(rgb2) / 255\&.f;
+323                 r = round(r2 * a2 + r * (1\&.f - a2));
+324                 g = round(g2 * a2 + g * (1\&.f - a2));
+325                 b = round(b2 * a2 + b * (1\&.f - a2));
+326             }
+327             // If monochrome mode is active, average the channels to get a grayscale image
+328             if(monochrome)
+329                 rgb = monoRgb(r, g, b);
+330             else
+331                 rgb = qRgb(r, g, b);
+332         }
+333     }
+334 
+335     // Emit signals for the animation (only do this every 50ms - it can cause a lot of CPU usage)
+336     if(timestamp >= lastFrameSignal + 50){
+337         emit frameDisplayed(_animMap, _indicatorList);
+338         lastFrameSignal = timestamp;
+339     }
+340 
+341     // If brightness is at 0%, turn off lighting entirely
+342     if(_dimming == 3){
+343         cmd\&.write("rgb 000000");
+344         return;
+345     }
+346 
+347     float light = (3 - _dimming) / 3\&.f;
+348     // Apply global dimming
+349     if(light != 1\&.f || monochrome){
+350         for(int i = 0; i < count; i++){
+351             QRgb& rgb = colors[i];
+352             // Like the monochrome conversion, this should be done in a linear colorspace
+353             float r = sToL(qRed(rgb));
+354             float g = sToL(qGreen(rgb));
+355             float b = sToL(qBlue(rgb));
+356             r *= light;
+357             g *= light;
+358             b *= light;
+359             r = round(lToS(r));
+360             g = round(lToS(g));
+361             b = round(lToS(b));
+362             rgb = qRgb(r, g, b);
+363         }
+364     }
+365 
+366     // Apply light
+367     cmd\&.write("rgb");
+368     printRGB(cmd, _animMap);
+369 }
+.fi
+.SS "bool KbLight::isStarted ()"
+
+.PP
+Definition at line 169 of file kblight\&.cpp\&.
+.PP
+References _animList, _start, and KbAnim::isRunning()\&.
+.PP
+Referenced by Kb::frameUpdate()\&.
+.PP
+.nf
+169                        {
+170     if(!_start)
+171         return false;
+172     foreach(KbAnim* animation, _animList){
+173         if(!animation->isRunning())
+174             return false;
+175     }
+176     return true;
+177 }
+.fi
+.SS "void KbLight::load (\fBCkbSettings\fP &settings)"
+
+.PP
+Definition at line 401 of file kblight\&.cpp\&.
+.PP
+References _animList, _dimming, _map, _needsMapRefresh, _needsSave, _qColorMap, anim, CkbSettings::childKeys(), color(), didLoad(), KeyMap::fromName(), KeyMap::fromStorage(), map(), MAX_DIM, and CkbSettings::value()\&.
+.PP
+Referenced by KbMode::KbMode()\&.
+.PP
+.nf
+401                                        {
+402     // Load light settings
+403     _needsSave = false;
+404     SGroup group(settings, "Lighting");
+405     KeyMap currentMap = _map;
+406     _map = KeyMap::fromName(settings\&.value("KeyMap")\&.toString());
+407     _dimming = settings\&.value("Brightness")\&.toUInt();
+408     if(_dimming > MAX_DIM)
+409         _dimming = MAX_DIM;
+410     // Load RGB settings
+411     bool useReal = settings\&.value("UseRealNames")\&.toBool();
+412     {
+413         SGroup group(settings, "Keys");
+414         foreach(QString key, settings\&.childKeys()){
+415             QString name = key\&.toLower();
+416             if(!useReal)
+417                 name = _map\&.fromStorage(name);
+418             QColor color = settings\&.value(key)\&.toString();
+419             if(!color\&.isValid())
+420                 color = QColor(255, 255, 255);
+421             _qColorMap[name] = color\&.rgb();
+422         }
+423         _needsMapRefresh = true;
+424     }
+425     // Load animations
+426     foreach(KbAnim* anim, _animList)
+427         anim->deleteLater();
+428     _animList\&.clear();
+429     {
+430         SGroup group(settings, "Animations");
+431         foreach(QString anim, settings\&.value("List")\&.toStringList()){
+432             QUuid id = anim;
+433             _animList\&.append(new KbAnim(this, _map, id, settings));
+434         }
+435     }
+436     emit didLoad();
+437     map(currentMap);
+438 }
+.fi
+.SS "const \fBKeyMap\fP& KbLight::map ()\fC [inline]\fP"
+
+.PP
+Definition at line 28 of file kblight\&.h\&.
+.PP
+References _map\&.
+.PP
+Referenced by KbLight(), KbMode::keyMap(), load(), map(), KbLightWidget::newSelection(), KbAnimWidget::on_keyButton_clicked(), and KbLightWidget::updateLight()\&.
+.PP
+.nf
+28 { return _map; }
+.fi
+.SS "void KbLight::map (const \fBKeyMap\fP &map)"
+
+.PP
+Definition at line 25 of file kblight\&.cpp\&.
+.PP
+References _animList, _animMap, _colorMap, _indicatorMap, _map, _needsMapRefresh, _needsSave, _qColorMap, anim, ColorMap::init(), map(), KbAnim::map(), and updated()\&.
+.PP
+.nf
+25                                   {
+26     // If any of the keys are missing from the color map, set them to white
+27     QHashIterator<QString, Key> i(map);
+28     while(i\&.hasNext()){
+29         i\&.next();
+30         const QString& key = i\&.key();
+31         if(!_qColorMap\&.contains(key))
+32             _qColorMap[key] = 0xFFFFFFFF;
+33     }
+34     // Set the new map
+35     _map = map;
+36     foreach(KbAnim* anim, _animList)
+37         anim->map(map);
+38     _colorMap\&.init(_map);
+39     _animMap\&.init(_map);
+40     _indicatorMap\&.init(_map);
+41     _needsSave = _needsMapRefresh = true;
+42     emit updated();
+43 }
+.fi
+.SS "bool KbLight::needsSave () const"
+
+.PP
+Definition at line 467 of file kblight\&.cpp\&.
+.PP
+References _animList, _needsSave, anim, and KbAnim::needsSave()\&.
+.PP
+Referenced by KbMode::needsSave()\&.
+.PP
+.nf
+467                               {
+468     if(_needsSave)
+469         return true;
+470     foreach(KbAnim* anim, _animList){
+471         if(anim->needsSave())
+472             return true;
+473     }
+474     return false;
+475 }
+.fi
+.SS "void KbLight::open ()"
+
+.PP
+Definition at line 200 of file kblight\&.cpp\&.
+.PP
+References _animList, _dimming, _previewAnim, _shareDimming, _start, activeLights, anim, dimming(), and KbAnim::trigger()\&.
+.PP
+Referenced by Kb::frameUpdate()\&.
+.PP
+.nf
+200                   {
+201     // Apply shared dimming if needed
+202     if(_shareDimming != -1 && _shareDimming != _dimming)
+203         dimming(_shareDimming);
+204     activeLights\&.insert(this);
+205     if(_start)
+206         return;
+207     quint64 timestamp = QDateTime::currentMSecsSinceEpoch();
+208     foreach(KbAnim* anim, _animList)
+209         anim->trigger(timestamp);
+210     if(_previewAnim)
+211         _previewAnim->trigger(timestamp);
+212     _start = true;
+213 }
+.fi
+.SS "void KbLight::previewAnim (const \fBAnimScript\fP *base, const QStringList &keys, const QMap< QString, QVariant > &preset)"
+
+.PP
+Definition at line 124 of file kblight\&.cpp\&.
+.PP
+References _map, _previewAnim, _start, anim, KbAnim::commitParams(), KbAnim::parameter(), KbAnim::reInit(), stopPreview(), and KbAnim::trigger()\&.
+.PP
+Referenced by AnimAddDialog::on_presetBox_activated()\&.
+.PP
+.nf
+124                                                                                                                {
+125     if(_previewAnim)
+126         stopPreview();
+127     quint64 timestamp = QDateTime::currentMSecsSinceEpoch();
+128     // Load the new animation and set preset parameters
+129     KbAnim* anim = new KbAnim(this, _map, "", keys, base);
+130     QMapIterator<QString, QVariant> i(preset);
+131     while(i\&.hasNext()){
+132         i\&.next();
+133         anim->parameter(i\&.key(), i\&.value());
+134     }
+135     anim->commitParams();
+136     anim->reInit();
+137     // Add the animation and start it
+138     _previewAnim = anim;
+139     anim->trigger(timestamp);
+140     _start = true;
+141 }
+.fi
+.SS "void KbLight::printRGB (QFile &cmd, const \fBColorMap\fP &animMap)\fC [private]\fP"
+
+.PP
+Definition at line 223 of file kblight\&.cpp\&.
+.PP
+References color(), ColorMap::colors(), ColorMap::count(), and ColorMap::keyNames()\&.
+.PP
+Referenced by base(), and frameUpdate()\&.
+.PP
+.nf
+223                                                          {
+224     int count = animMap\&.count();
+225     const char* const* names = animMap\&.keyNames();
+226     const QRgb* colors = animMap\&.colors();
+227     // Print each color and the corresponding RGB value
+228     for(int i = 0; i < count; i++){
+229         cmd\&.write(" ");
+230         cmd\&.write(names[i]);
+231         char output[8];
+232         QRgb color = colors[i];
+233         snprintf(output, sizeof(output), ":%02x%02x%02x", qRed(color), qGreen(color), qBlue(color));
+234         cmd\&.write(output);
+235     }
+236 }
+.fi
+.SS "void KbLight::rebuildBaseMap ()\fC [private]\fP"
+
+.PP
+Definition at line 238 of file kblight\&.cpp\&.
+.PP
+References _colorMap, _needsMapRefresh, _qColorMap, color(), and ColorMap::colorForName()\&.
+.PP
+Referenced by base(), and frameUpdate()\&.
+.PP
+.nf
+238                             {
+239     if(!_needsMapRefresh)
+240         return;
+241     _needsMapRefresh = false;
+242     // Copy RGB values from QColorMap to ColorMap
+243     QColorMapIterator i(_qColorMap);
+244     while(i\&.hasNext()){
+245         i\&.next();
+246         QByteArray rawName = i\&.key()\&.toLatin1();
+247         QRgb color = i\&.value();
+248         QRgb* rawColor = _colorMap\&.colorForName(rawName\&.data());
+249         if(rawColor)
+250             *rawColor = color;
+251     }
+252 }
+.fi
+.SS "void KbLight::resetIndicators ()"
+
+.PP
+Definition at line 254 of file kblight\&.cpp\&.
+.PP
+References _indicatorList, _indicatorMap, and ColorMap::clear()\&.
+.PP
+Referenced by KbPerf::applyIndicators()\&.
+.PP
+.nf
+254                              {
+255     _indicatorMap\&.clear();
+256     _indicatorList\&.clear();
+257 }
+.fi
+.SS "void KbLight::restartAnimation ()"
+
+.PP
+Definition at line 179 of file kblight\&.cpp\&.
+.PP
+References _animList, _start, anim, KbAnim::stop(), stopPreview(), and KbAnim::trigger()\&.
+.PP
+Referenced by KbLightWidget::on_animButton_clicked(), KbAnimWidget::on_deleteButton_clicked(), KbAnimWidget::on_keyButton_clicked(), and KbAnimWidget::on_propertyButton_clicked()\&.
+.PP
+.nf
+179                               {
+180     quint64 timestamp = QDateTime::currentMSecsSinceEpoch();
+181     foreach(KbAnim* anim, _animList){
+182         anim->stop();
+183         anim->trigger(timestamp);
+184     }
+185     stopPreview();
+186     _start = true;
+187 }
+.fi
+.SS "void KbLight::save (\fBCkbSettings\fP &settings)"
+
+.PP
+Definition at line 440 of file kblight\&.cpp\&.
+.PP
+References _animList, _dimming, _map, _needsSave, _qColorMap, anim, KbAnim::guid(), KeyMap::name(), KbAnim::save(), and CkbSettings::setValue()\&.
+.PP
+Referenced by KbMode::save()\&.
+.PP
+.nf
+440                                        {
+441     _needsSave = false;
+442     SGroup group(settings, "Lighting");
+443     settings\&.setValue("KeyMap", _map\&.name());
+444     settings\&.setValue("Brightness", _dimming);
+445     settings\&.setValue("UseRealNames", true);
+446     {
+447         // Save RGB settings
+448         SGroup group(settings, "Keys");
+449         QMutableColorMapIterator i(_qColorMap);
+450         while(i\&.hasNext()){
+451             i\&.next();
+452             settings\&.setValue(i\&.key(), QColor(i\&.value())\&.name());
+453         }
+454     }
+455     {
+456         // Save animations
+457         SGroup group(settings, "Animations");
+458         QStringList aList;
+459         foreach(KbAnim* anim, _animList){
+460             aList << anim->guid()\&.toString()\&.toUpper();
+461             anim->save(settings);
+462         }
+463         settings\&.setValue("List", aList);
+464     }
+465 }
+.fi
+.SS "void KbLight::setIndicator (const char *name, QRgbargb)"
+
+.PP
+Definition at line 259 of file kblight\&.cpp\&.
+.PP
+References _indicatorList, _indicatorMap, and ColorMap::colorForName()\&.
+.PP
+Referenced by KbPerf::lightIndicator()\&.
+.PP
+.nf
+259                                                      {
+260     QRgb* dest = _indicatorMap\&.colorForName(name);
+261     if(dest){
+262         *dest = argb;
+263         _indicatorList\&.insert(name);
+264     }
+265 }
+.fi
+.SS "int KbLight::shareDimming ()\fC [static]\fP"
+
+.PP
+Definition at line 78 of file kblight\&.cpp\&.
+.PP
+References _shareDimming\&.
+.PP
+Referenced by dimming(), ExtraSettingsWidget::ExtraSettingsWidget(), ExtraSettingsWidget::on_brightnessBox_clicked(), and ExtraSettingsWidget::pollUpdates()\&.
+.PP
+.nf
+78                          {
+79     return _shareDimming;
+80 }
+.fi
+.SS "void KbLight::shareDimming (intnewShareDimming)\fC [static]\fP"
+
+.PP
+Definition at line 82 of file kblight\&.cpp\&.
+.PP
+References _shareDimming, activeLights, and dimming()\&.
+.PP
+.nf
+82                                              {
+83     if(_shareDimming == newShareDimming)
+84         return;
+85     _shareDimming = newShareDimming;
+86     if(newShareDimming != -1){
+87         foreach(KbLight* light, activeLights)
+88             light->dimming(newShareDimming);
+89     }
+90 }
+.fi
+.SS "void KbLight::stopPreview ()"
+
+.PP
+Definition at line 143 of file kblight\&.cpp\&.
+.PP
+References _previewAnim\&.
+.PP
+Referenced by addAnim(), close(), AnimAddDialog::on_previewBox_clicked(), previewAnim(), restartAnimation(), and AnimAddDialog::~AnimAddDialog()\&.
+.PP
+.nf
+143                          {
+144     delete _previewAnim;
+145     _previewAnim = 0;
+146 }
+.fi
+.SS "void KbLight::updated ()\fC [signal]\fP"
+
+.PP
+Definition at line 168 of file moc_kblight\&.cpp\&.
+.PP
+Referenced by dimming(), and map()\&.
+.PP
+.nf
+169 {
+170     QMetaObject::activate(this, &staticMetaObject, 1, Q_NULLPTR);
+171 }
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "\fBAnimList\fP KbLight::_animList\fC [private]\fP"
+
+.PP
+Definition at line 89 of file kblight\&.h\&.
+.PP
+Referenced by addAnim(), animKeypress(), animList(), close(), duplicateAnim(), findAnim(), findAnimIdx(), frameUpdate(), isStarted(), KbLight(), load(), map(), needsSave(), open(), restartAnimation(), and save()\&.
+.SS "\fBColorMap\fP KbLight::_animMap\fC [private]\fP"
+
+.PP
+Definition at line 93 of file kblight\&.h\&.
+.PP
+Referenced by base(), frameUpdate(), and map()\&.
+.SS "\fBColorMap\fP KbLight::_colorMap\fC [private]\fP"
+
+.PP
+Definition at line 93 of file kblight\&.h\&.
+.PP
+Referenced by base(), color(), frameUpdate(), map(), and rebuildBaseMap()\&.
+.SS "int KbLight::_dimming\fC [private]\fP"
+
+.PP
+Definition at line 96 of file kblight\&.h\&.
+.PP
+Referenced by base(), dimming(), frameUpdate(), load(), open(), and save()\&.
+.SS "QSet<QString> KbLight::_indicatorList\fC [private]\fP"
+
+.PP
+Definition at line 94 of file kblight\&.h\&.
+.PP
+Referenced by frameUpdate(), resetIndicators(), and setIndicator()\&.
+.SS "\fBColorMap\fP KbLight::_indicatorMap\fC [private]\fP"
+
+.PP
+Definition at line 93 of file kblight\&.h\&.
+.PP
+Referenced by frameUpdate(), map(), resetIndicators(), and setIndicator()\&.
+.SS "\fBKeyMap\fP KbLight::_map\fC [private]\fP"
+
+.PP
+Definition at line 91 of file kblight\&.h\&.
+.PP
+Referenced by addAnim(), duplicateAnim(), load(), map(), previewAnim(), and save()\&.
+.SS "bool KbLight::_needsMapRefresh\fC [private]\fP"
+
+.PP
+Definition at line 98 of file kblight\&.h\&.
+.PP
+Referenced by color(), load(), map(), and rebuildBaseMap()\&.
+.SS "bool KbLight::_needsSave\fC [private]\fP"
+
+.PP
+Definition at line 98 of file kblight\&.h\&.
+.PP
+Referenced by addAnim(), animList(), color(), dimming(), duplicateAnim(), load(), map(), needsSave(), and save()\&.
+.SS "\fBKbAnim\fP* KbLight::_previewAnim\fC [private]\fP"
+
+.PP
+Definition at line 90 of file kblight\&.h\&.
+.PP
+Referenced by animKeypress(), frameUpdate(), open(), previewAnim(), and stopPreview()\&.
+.SS "\fBQColorMap\fP KbLight::_qColorMap\fC [private]\fP"
+
+.PP
+Definition at line 92 of file kblight\&.h\&.
+.PP
+Referenced by color(), colorMap(), load(), map(), rebuildBaseMap(), and save()\&.
+.SS "bool KbLight::_start\fC [private]\fP"
+
+.PP
+Definition at line 97 of file kblight\&.h\&.
+.PP
+Referenced by addAnim(), close(), duplicateAnim(), isStarted(), open(), previewAnim(), and restartAnimation()\&.
+.SS "quint64 KbLight::lastFrameSignal\fC [private]\fP"
+
+.PP
+Definition at line 95 of file kblight\&.h\&.
+.PP
+Referenced by frameUpdate()\&.
+.SS "const int KbLight::MAX_DIM = 3\fC [static]\fP"
+
+.PP
+Definition at line 38 of file kblight\&.h\&.
+.PP
+Referenced by base(), ExtraSettingsWidget::ExtraSettingsWidget(), KeyAction::keyEvent(), and load()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

@@ -1,0 +1,9 @@
+<map id="KbPerf::dpiEnabled" name="KbPerf::dpiEnabled">
+<area shape="rect" id="node2" href="$classMPerfWidget.html#ad0a0610ab8bf3de9418c54fb2dc2bac2" title="MPerfWidget::enableChanged" alt="" coords="190,5,386,32"/>
+<area shape="rect" id="node4" href="$classKb.html#afa36635dcc1cd9512f372594c57c546c" title="Kb::readNotify" alt="" coords="235,56,341,83"/>
+<area shape="rect" id="node5" href="$classMPerfWidget.html#ac0cf0ff2a6c0de5e888eae1288433a7f" title="MPerfWidget::setPerf" alt="" coords="214,107,362,133"/>
+<area shape="rect" id="node3" href="$classMPerfWidget.html#a8c4d1f6edcab7c9c5c416c620a337cfd" title="MPerfWidget::MPerfWidget" alt="" coords="435,5,618,32"/>
+<area shape="rect" id="node6" href="$classKbWidget.html#aae4a00bb180d711b5df7df6443c8bf36" title="KbWidget::modeChanged" alt="" coords="441,107,612,133"/>
+<area shape="rect" id="node7" href="$classKbWidget.html#a848a21f1fd112e13ca5fcf25da4592c6" title="KbWidget::KbWidget" alt="" coords="701,77,845,104"/>
+<area shape="rect" id="node8" href="$classKbWidget.html#add5eb15a399c87faf80db9fdfc2e868f" title="KbWidget::on_modesList_customContextMenuRequested. " alt="" coords="667,129,880,170"/>
+</map>

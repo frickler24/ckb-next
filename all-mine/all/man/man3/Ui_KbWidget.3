@@ -1,0 +1,571 @@
+.TH "Ui::KbWidget" 3 "Tue May 16 2017" "Version beta-v0.2.7 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ui::KbWidget \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/ui_kbwidget\&.h>\fP
+.PP
+Inherits \fBUi_KbWidget\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetupUi\fP (\fBQWidget\fP *\fBKbWidget\fP)"
+.br
+.ti -1c
+.RI "void \fBretranslateUi\fP (\fBQWidget\fP *\fBKbWidget\fP)"
+.br
+.in -1c
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "QGridLayout * \fBgridLayout\fP"
+.br
+.ti -1c
+.RI "QComboBox * \fBprofileBox\fP"
+.br
+.ti -1c
+.RI "QTabWidget * \fBtabWidget\fP"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBlightTab\fP"
+.br
+.ti -1c
+.RI "QGridLayout * \fBgridLayout_2\fP"
+.br
+.ti -1c
+.RI "\fBKbLightWidget\fP * \fBlightWidget\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_3\fP"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBbindTab\fP"
+.br
+.ti -1c
+.RI "QGridLayout * \fBgridLayout_5\fP"
+.br
+.ti -1c
+.RI "\fBKbBindWidget\fP * \fBbindWidget\fP"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBkPerfTab\fP"
+.br
+.ti -1c
+.RI "QGridLayout * \fBgridLayout_4\fP"
+.br
+.ti -1c
+.RI "\fBKPerfWidget\fP * \fBkPerfWidget\fP"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBmPerfTab\fP"
+.br
+.ti -1c
+.RI "QGridLayout * \fBgridLayout_7\fP"
+.br
+.ti -1c
+.RI "\fBMPerfWidget\fP * \fBmPerfWidget\fP"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBdevTab\fP"
+.br
+.ti -1c
+.RI "QGridLayout * \fBgridLayout_3\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBfwUpdLabel\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBverticalSpacer\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBfwLabel\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_4\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer_2\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_9\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBserialLabel\fP"
+.br
+.ti -1c
+.RI "QHBoxLayout * \fBfwUpdLayout\fP"
+.br
+.ti -1c
+.RI "\fBQPushButton\fP * \fBfwUpdButton\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer_3\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBpollLabel2\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBpollLabel\fP"
+.br
+.ti -1c
+.RI "\fBRListWidget\fP * \fBmodesList\fP"
+.br
+.ti -1c
+.RI "\fBQPushButton\fP * \fBhwSaveButton\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 300 of file ui_kbwidget\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Ui_KbWidget::retranslateUi (\fBQWidget\fP *KbWidget)\fC [inline]\fP, \fC [inherited]\fP"
+
+.PP
+Definition at line 277 of file ui_kbwidget\&.h\&.
+.PP
+References Ui_KbWidget::bindTab, Ui_KbWidget::devTab, Ui_KbWidget::fwLabel, Ui_KbWidget::fwUpdButton, Ui_KbWidget::fwUpdLabel, Ui_KbWidget::hwSaveButton, Ui_KbWidget::kPerfTab, Ui_KbWidget::label_3, Ui_KbWidget::label_4, Ui_KbWidget::label_9, Ui_KbWidget::lightTab, Ui_KbWidget::mPerfTab, Ui_KbWidget::pollLabel, Ui_KbWidget::pollLabel2, Ui_KbWidget::serialLabel, and Ui_KbWidget::tabWidget\&.
+.PP
+Referenced by Ui_KbWidget::setupUi()\&.
+.PP
+.nf
+278     {
+279         KbWidget->setWindowTitle(QApplication::translate("KbWidget", "Form", Q_NULLPTR));
+280         label_3->setText(QApplication::translate("KbWidget", "Tip: Drag+drop items to reorder\&. Right-click for menu\&.", Q_NULLPTR));
+281         tabWidget->setTabText(tabWidget->indexOf(lightTab), QApplication::translate("KbWidget", "Lighting", Q_NULLPTR));
+282         tabWidget->setTabText(tabWidget->indexOf(bindTab), QApplication::translate("KbWidget", "Binding", Q_NULLPTR));
+283         tabWidget->setTabText(tabWidget->indexOf(kPerfTab), QApplication::translate("KbWidget", "Performance", Q_NULLPTR));
+284         tabWidget->setTabText(tabWidget->indexOf(mPerfTab), QApplication::translate("KbWidget", "Performance", Q_NULLPTR));
+285         fwUpdLabel->setText(QApplication::translate("KbWidget", "Status:", Q_NULLPTR));
+286         fwLabel->setText(QApplication::translate("KbWidget", "N/A", Q_NULLPTR));
+287         label_4->setText(QApplication::translate("KbWidget", "USB device ID:", Q_NULLPTR));
+288         label_9->setText(QApplication::translate("KbWidget", "Firmware version:", Q_NULLPTR));
+289         serialLabel->setText(QApplication::translate("KbWidget", "N/A", Q_NULLPTR));
+290         fwUpdButton->setText(QApplication::translate("KbWidget", "Check for updates", Q_NULLPTR));
+291         pollLabel2->setText(QApplication::translate("KbWidget", "Poll rate:", Q_NULLPTR));
+292         pollLabel->setText(QApplication::translate("KbWidget", "N/A", Q_NULLPTR));
+293         tabWidget->setTabText(tabWidget->indexOf(devTab), QApplication::translate("KbWidget", "Device", Q_NULLPTR));
+294         hwSaveButton->setText(QApplication::translate("KbWidget", "Save to hardware", Q_NULLPTR));
+295     } // retranslateUi
+.fi
+.SS "void Ui_KbWidget::setupUi (\fBQWidget\fP *KbWidget)\fC [inline]\fP, \fC [inherited]\fP"
+
+.PP
+Definition at line 69 of file ui_kbwidget\&.h\&.
+.PP
+References Ui_KbWidget::bindTab, Ui_KbWidget::bindWidget, Ui_KbWidget::devTab, Ui_KbWidget::fwLabel, Ui_KbWidget::fwUpdButton, Ui_KbWidget::fwUpdLabel, Ui_KbWidget::fwUpdLayout, Ui_KbWidget::gridLayout, Ui_KbWidget::gridLayout_2, Ui_KbWidget::gridLayout_3, Ui_KbWidget::gridLayout_4, Ui_KbWidget::gridLayout_5, Ui_KbWidget::gridLayout_7, Ui_KbWidget::horizontalSpacer_2, Ui_KbWidget::horizontalSpacer_3, Ui_KbWidget::hwSaveButton, Ui_KbWidget::kPerfTab, Ui_KbWidget::kPerfWidget, Ui_KbWidget::label_3, Ui_KbWidget::label_4, Ui_KbWidget::label_9, Ui_KbWidget::lightTab, Ui_KbWidget::lightWidget, Ui_KbWidget::modesList, Ui_KbWidget::mPerfTab, Ui_KbWidget::mPerfWidget, Ui_KbWidget::pollLabel, Ui_KbWidget::pollLabel2, Ui_KbWidget::profileBox, Ui_KbWidget::retranslateUi(), Ui_KbWidget::serialLabel, Ui_KbWidget::tabWidget, and Ui_KbWidget::verticalSpacer\&.
+.PP
+Referenced by KbWidget::KbWidget()\&.
+.PP
+.nf
+70     {
+71         if (KbWidget->objectName()\&.isEmpty())
+72             KbWidget->setObjectName(QStringLiteral("KbWidget"));
+73         KbWidget->resize(933, 323);
+74         QSizePolicy sizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
+75         sizePolicy\&.setHorizontalStretch(0);
+76         sizePolicy\&.setVerticalStretch(0);
+77         sizePolicy\&.setHeightForWidth(KbWidget->sizePolicy()\&.hasHeightForWidth());
+78         KbWidget->setSizePolicy(sizePolicy);
+79         gridLayout = new QGridLayout(KbWidget);
+80         gridLayout->setSpacing(9);
+81         gridLayout->setObjectName(QStringLiteral("gridLayout"));
+82         gridLayout->setContentsMargins(9, -1, 9, 9);
+83         profileBox = new QComboBox(KbWidget);
+84         profileBox->setObjectName(QStringLiteral("profileBox"));
+85         QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Fixed);
+86         sizePolicy1\&.setHorizontalStretch(18);
+87         sizePolicy1\&.setVerticalStretch(0);
+88         sizePolicy1\&.setHeightForWidth(profileBox->sizePolicy()\&.hasHeightForWidth());
+89         profileBox->setSizePolicy(sizePolicy1);
+90         profileBox->setIconSize(QSize(24, 24));
+91 
+92         gridLayout->addWidget(profileBox, 0, 0, 1, 1);
+93 
+94         tabWidget = new QTabWidget(KbWidget);
+95         tabWidget->setObjectName(QStringLiteral("tabWidget"));
+96         QSizePolicy sizePolicy2(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
+97         sizePolicy2\&.setHorizontalStretch(82);
+98         sizePolicy2\&.setVerticalStretch(0);
+99         sizePolicy2\&.setHeightForWidth(tabWidget->sizePolicy()\&.hasHeightForWidth());
+100         tabWidget->setSizePolicy(sizePolicy2);
+101         lightTab = new QWidget();
+102         lightTab->setObjectName(QStringLiteral("lightTab"));
+103         gridLayout_2 = new QGridLayout(lightTab);
+104         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+105         gridLayout_2->setHorizontalSpacing(0);
+106         gridLayout_2->setVerticalSpacing(6);
+107         gridLayout_2->setContentsMargins(6, 6, 6, 6);
+108         lightWidget = new KbLightWidget(lightTab);
+109         lightWidget->setObjectName(QStringLiteral("lightWidget"));
+110         sizePolicy\&.setHeightForWidth(lightWidget->sizePolicy()\&.hasHeightForWidth());
+111         lightWidget->setSizePolicy(sizePolicy);
+112 
+113         gridLayout_2->addWidget(lightWidget, 0, 0, 1, 1);
+114 
+115         label_3 = new QLabel(lightTab);
+116         label_3->setObjectName(QStringLiteral("label_3"));
+117         QSizePolicy sizePolicy3(QSizePolicy::Preferred, QSizePolicy::Minimum);
+118         sizePolicy3\&.setHorizontalStretch(0);
+119         sizePolicy3\&.setVerticalStretch(0);
+120         sizePolicy3\&.setHeightForWidth(label_3->sizePolicy()\&.hasHeightForWidth());
+121         label_3->setSizePolicy(sizePolicy3);
+122 
+123         gridLayout_2->addWidget(label_3, 1, 0, 1, 1);
+124 
+125         tabWidget->addTab(lightTab, QString());
+126         bindTab = new QWidget();
+127         bindTab->setObjectName(QStringLiteral("bindTab"));
+128         gridLayout_5 = new QGridLayout(bindTab);
+129         gridLayout_5->setSpacing(0);
+130         gridLayout_5->setObjectName(QStringLiteral("gridLayout_5"));
+131         gridLayout_5->setContentsMargins(6, 6, 6, 6);
+132         bindWidget = new KbBindWidget(bindTab);
+133         bindWidget->setObjectName(QStringLiteral("bindWidget"));
+134         sizePolicy\&.setHeightForWidth(bindWidget->sizePolicy()\&.hasHeightForWidth());
+135         bindWidget->setSizePolicy(sizePolicy);
+136 
+137         gridLayout_5->addWidget(bindWidget, 0, 0, 1, 1);
+138 
+139         tabWidget->addTab(bindTab, QString());
+140         kPerfTab = new QWidget();
+141         kPerfTab->setObjectName(QStringLiteral("kPerfTab"));
+142         gridLayout_4 = new QGridLayout(kPerfTab);
+143         gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
+144         gridLayout_4->setContentsMargins(6, 6, 6, 6);
+145         kPerfWidget = new KPerfWidget(kPerfTab);
+146         kPerfWidget->setObjectName(QStringLiteral("kPerfWidget"));
+147         QSizePolicy sizePolicy4(QSizePolicy::Expanding, QSizePolicy::Expanding);
+148         sizePolicy4\&.setHorizontalStretch(0);
+149         sizePolicy4\&.setVerticalStretch(0);
+150         sizePolicy4\&.setHeightForWidth(kPerfWidget->sizePolicy()\&.hasHeightForWidth());
+151         kPerfWidget->setSizePolicy(sizePolicy4);
+152 
+153         gridLayout_4->addWidget(kPerfWidget, 0, 0, 1, 1);
+154 
+155         tabWidget->addTab(kPerfTab, QString());
+156         mPerfTab = new QWidget();
+157         mPerfTab->setObjectName(QStringLiteral("mPerfTab"));
+158         gridLayout_7 = new QGridLayout(mPerfTab);
+159         gridLayout_7->setObjectName(QStringLiteral("gridLayout_7"));
+160         gridLayout_7->setContentsMargins(6, 6, 6, 6);
+161         mPerfWidget = new MPerfWidget(mPerfTab);
+162         mPerfWidget->setObjectName(QStringLiteral("mPerfWidget"));
+163         sizePolicy4\&.setHeightForWidth(mPerfWidget->sizePolicy()\&.hasHeightForWidth());
+164         mPerfWidget->setSizePolicy(sizePolicy4);
+165 
+166         gridLayout_7->addWidget(mPerfWidget, 0, 0, 1, 1);
+167 
+168         tabWidget->addTab(mPerfTab, QString());
+169         devTab = new QWidget();
+170         devTab->setObjectName(QStringLiteral("devTab"));
+171         gridLayout_3 = new QGridLayout(devTab);
+172         gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
+173         gridLayout_3->setContentsMargins(6, 6, 6, 6);
+174         fwUpdLabel = new QLabel(devTab);
+175         fwUpdLabel->setObjectName(QStringLiteral("fwUpdLabel"));
+176         fwUpdLabel->setMinimumSize(QSize(0, 34));
+177 
+178         gridLayout_3->addWidget(fwUpdLabel, 4, 0, 1, 1);
+179 
+180         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+181 
+182         gridLayout_3->addItem(verticalSpacer, 6, 2, 1, 1);
+183 
+184         fwLabel = new QLabel(devTab);
+185         fwLabel->setObjectName(QStringLiteral("fwLabel"));
+186         fwLabel->setCursor(QCursor(Qt::IBeamCursor));
+187         fwLabel->setTextInteractionFlags(Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse);
+188 
+189         gridLayout_3->addWidget(fwLabel, 2, 2, 1, 1);
+190 
+191         label_4 = new QLabel(devTab);
+192         label_4->setObjectName(QStringLiteral("label_4"));
+193         label_4->setMinimumSize(QSize(0, 34));
+194 
+195         gridLayout_3->addWidget(label_4, 0, 0, 1, 1);
+196 
+197         horizontalSpacer_2 = new QSpacerItem(40, 1, QSizePolicy::Fixed, QSizePolicy::Minimum);
+198 
+199         gridLayout_3->addItem(horizontalSpacer_2, 2, 1, 1, 1);
+200 
+201         label_9 = new QLabel(devTab);
+202         label_9->setObjectName(QStringLiteral("label_9"));
+203         label_9->setMinimumSize(QSize(0, 34));
+204 
+205         gridLayout_3->addWidget(label_9, 2, 0, 1, 1);
+206 
+207         serialLabel = new QLabel(devTab);
+208         serialLabel->setObjectName(QStringLiteral("serialLabel"));
+209         serialLabel->setCursor(QCursor(Qt::IBeamCursor));
+210         serialLabel->setTextInteractionFlags(Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse);
+211 
+212         gridLayout_3->addWidget(serialLabel, 0, 2, 1, 1);
+213 
+214         fwUpdLayout = new QHBoxLayout();
+215         fwUpdLayout->setObjectName(QStringLiteral("fwUpdLayout"));
+216         fwUpdButton = new QPushButton(devTab);
+217         fwUpdButton->setObjectName(QStringLiteral("fwUpdButton"));
+218 
+219         fwUpdLayout->addWidget(fwUpdButton);
+220 
+221         horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+222 
+223         fwUpdLayout->addItem(horizontalSpacer_3);
+224 
+225 
+226         gridLayout_3->addLayout(fwUpdLayout, 4, 2, 1, 1);
+227 
+228         pollLabel2 = new QLabel(devTab);
+229         pollLabel2->setObjectName(QStringLiteral("pollLabel2"));
+230         pollLabel2->setMinimumSize(QSize(0, 34));
+231 
+232         gridLayout_3->addWidget(pollLabel2, 1, 0, 1, 1);
+233 
+234         pollLabel = new QLabel(devTab);
+235         pollLabel->setObjectName(QStringLiteral("pollLabel"));
+236 
+237         gridLayout_3->addWidget(pollLabel, 1, 2, 1, 1);
+238 
+239         tabWidget->addTab(devTab, QString());
+240 
+241         gridLayout->addWidget(tabWidget, 0, 1, 3, 1);
+242 
+243         modesList = new RListWidget(KbWidget);
+244         modesList->setObjectName(QStringLiteral("modesList"));
+245         QSizePolicy sizePolicy5(QSizePolicy::Expanding, QSizePolicy::Expanding);
+246         sizePolicy5\&.setHorizontalStretch(18);
+247         sizePolicy5\&.setVerticalStretch(0);
+248         sizePolicy5\&.setHeightForWidth(modesList->sizePolicy()\&.hasHeightForWidth());
+249         modesList->setSizePolicy(sizePolicy5);
+250         modesList->setContextMenuPolicy(Qt::CustomContextMenu);
+251         modesList->setFrameShadow(QFrame::Plain);
+252         modesList->setDragDropMode(QAbstractItemView::InternalMove);
+253         modesList->setIconSize(QSize(24, 24));
+254         modesList->setMovement(QListView::Snap);
+255 
+256         gridLayout->addWidget(modesList, 1, 0, 1, 1);
+257 
+258         hwSaveButton = new QPushButton(KbWidget);
+259         hwSaveButton->setObjectName(QStringLiteral("hwSaveButton"));
+260         QSizePolicy sizePolicy6(QSizePolicy::Minimum, QSizePolicy::Fixed);
+261         sizePolicy6\&.setHorizontalStretch(18);
+262         sizePolicy6\&.setVerticalStretch(0);
+263         sizePolicy6\&.setHeightForWidth(hwSaveButton->sizePolicy()\&.hasHeightForWidth());
+264         hwSaveButton->setSizePolicy(sizePolicy6);
+265 
+266         gridLayout->addWidget(hwSaveButton, 2, 0, 1, 1);
+267 
+268 
+269         retranslateUi(KbWidget);
+270 
+271         tabWidget->setCurrentIndex(0);
+272 
+273 
+274         QMetaObject::connectSlotsByName(KbWidget);
+275     } // setupUi
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "\fBQWidget\fP* Ui_KbWidget::bindTab\fC [inherited]\fP"
+
+.PP
+Definition at line 43 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by Ui_KbWidget::retranslateUi(), and Ui_KbWidget::setupUi()\&.
+.SS "\fBKbBindWidget\fP* Ui_KbWidget::bindWidget\fC [inherited]\fP"
+
+.PP
+Definition at line 45 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by KbWidget::modeChanged(), and Ui_KbWidget::setupUi()\&.
+.SS "\fBQWidget\fP* Ui_KbWidget::devTab\fC [inherited]\fP"
+
+.PP
+Definition at line 52 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by Ui_KbWidget::retranslateUi(), and Ui_KbWidget::setupUi()\&.
+.SS "QLabel* Ui_KbWidget::fwLabel\fC [inherited]\fP"
+
+.PP
+Definition at line 56 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by KbWidget::devUpdate(), Ui_KbWidget::retranslateUi(), and Ui_KbWidget::setupUi()\&.
+.SS "\fBQPushButton\fP* Ui_KbWidget::fwUpdButton\fC [inherited]\fP"
+
+.PP
+Definition at line 62 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by KbWidget::KbWidget(), KbWidget::on_fwUpdButton_clicked(), Ui_KbWidget::retranslateUi(), Ui_KbWidget::setupUi(), and KbWidget::updateFwButton()\&.
+.SS "QLabel* Ui_KbWidget::fwUpdLabel\fC [inherited]\fP"
+
+.PP
+Definition at line 54 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by KbWidget::KbWidget(), Ui_KbWidget::retranslateUi(), and Ui_KbWidget::setupUi()\&.
+.SS "QHBoxLayout* Ui_KbWidget::fwUpdLayout\fC [inherited]\fP"
+
+.PP
+Definition at line 61 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by KbWidget::KbWidget(), and Ui_KbWidget::setupUi()\&.
+.SS "QGridLayout* Ui_KbWidget::gridLayout\fC [inherited]\fP"
+
+.PP
+Definition at line 36 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by Ui_KbWidget::setupUi()\&.
+.SS "QGridLayout* Ui_KbWidget::gridLayout_2\fC [inherited]\fP"
+
+.PP
+Definition at line 40 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by Ui_KbWidget::setupUi()\&.
+.SS "QGridLayout* Ui_KbWidget::gridLayout_3\fC [inherited]\fP"
+
+.PP
+Definition at line 53 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by Ui_KbWidget::setupUi()\&.
+.SS "QGridLayout* Ui_KbWidget::gridLayout_4\fC [inherited]\fP"
+
+.PP
+Definition at line 47 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by Ui_KbWidget::setupUi()\&.
+.SS "QGridLayout* Ui_KbWidget::gridLayout_5\fC [inherited]\fP"
+
+.PP
+Definition at line 44 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by Ui_KbWidget::setupUi()\&.
+.SS "QGridLayout* Ui_KbWidget::gridLayout_7\fC [inherited]\fP"
+
+.PP
+Definition at line 50 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by Ui_KbWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KbWidget::horizontalSpacer_2\fC [inherited]\fP"
+
+.PP
+Definition at line 58 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by Ui_KbWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KbWidget::horizontalSpacer_3\fC [inherited]\fP"
+
+.PP
+Definition at line 63 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by Ui_KbWidget::setupUi()\&.
+.SS "\fBQPushButton\fP* Ui_KbWidget::hwSaveButton\fC [inherited]\fP"
+
+.PP
+Definition at line 67 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by Ui_KbWidget::retranslateUi(), and Ui_KbWidget::setupUi()\&.
+.SS "\fBQWidget\fP* Ui_KbWidget::kPerfTab\fC [inherited]\fP"
+
+.PP
+Definition at line 46 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by KbWidget::KbWidget(), Ui_KbWidget::retranslateUi(), and Ui_KbWidget::setupUi()\&.
+.SS "\fBKPerfWidget\fP* Ui_KbWidget::kPerfWidget\fC [inherited]\fP"
+
+.PP
+Definition at line 48 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by KbWidget::modeChanged(), and Ui_KbWidget::setupUi()\&.
+.SS "QLabel* Ui_KbWidget::label_3\fC [inherited]\fP"
+
+.PP
+Definition at line 42 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by Ui_KbWidget::retranslateUi(), and Ui_KbWidget::setupUi()\&.
+.SS "QLabel* Ui_KbWidget::label_4\fC [inherited]\fP"
+
+.PP
+Definition at line 57 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by Ui_KbWidget::retranslateUi(), and Ui_KbWidget::setupUi()\&.
+.SS "QLabel* Ui_KbWidget::label_9\fC [inherited]\fP"
+
+.PP
+Definition at line 59 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by Ui_KbWidget::retranslateUi(), and Ui_KbWidget::setupUi()\&.
+.SS "\fBQWidget\fP* Ui_KbWidget::lightTab\fC [inherited]\fP"
+
+.PP
+Definition at line 39 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by KbWidget::KbWidget(), Ui_KbWidget::retranslateUi(), and Ui_KbWidget::setupUi()\&.
+.SS "\fBKbLightWidget\fP* Ui_KbWidget::lightWidget\fC [inherited]\fP"
+
+.PP
+Definition at line 41 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by KbWidget::KbWidget(), KbWidget::modeChanged(), and Ui_KbWidget::setupUi()\&.
+.SS "\fBRListWidget\fP* Ui_KbWidget::modesList\fC [inherited]\fP"
+
+.PP
+Definition at line 66 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by KbWidget::addNewModeItem(), KbWidget::KbWidget(), KbWidget::modeChanged(), KbWidget::modesList_reordered(), KbWidget::on_modesList_customContextMenuRequested(), KbWidget::on_modesList_itemClicked(), KbWidget::profileChanged(), and Ui_KbWidget::setupUi()\&.
+.SS "\fBQWidget\fP* Ui_KbWidget::mPerfTab\fC [inherited]\fP"
+
+.PP
+Definition at line 49 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by KbWidget::KbWidget(), Ui_KbWidget::retranslateUi(), and Ui_KbWidget::setupUi()\&.
+.SS "\fBMPerfWidget\fP* Ui_KbWidget::mPerfWidget\fC [inherited]\fP"
+
+.PP
+Definition at line 51 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by KbWidget::modeChanged(), and Ui_KbWidget::setupUi()\&.
+.SS "QLabel* Ui_KbWidget::pollLabel\fC [inherited]\fP"
+
+.PP
+Definition at line 65 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by KbWidget::devUpdate(), KbWidget::KbWidget(), Ui_KbWidget::retranslateUi(), and Ui_KbWidget::setupUi()\&.
+.SS "QLabel* Ui_KbWidget::pollLabel2\fC [inherited]\fP"
+
+.PP
+Definition at line 64 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by KbWidget::KbWidget(), Ui_KbWidget::retranslateUi(), and Ui_KbWidget::setupUi()\&.
+.SS "QComboBox* Ui_KbWidget::profileBox\fC [inherited]\fP"
+
+.PP
+Definition at line 37 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by Ui_KbWidget::setupUi(), and KbWidget::updateProfileList()\&.
+.SS "QLabel* Ui_KbWidget::serialLabel\fC [inherited]\fP"
+
+.PP
+Definition at line 60 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by KbWidget::devUpdate(), Ui_KbWidget::retranslateUi(), and Ui_KbWidget::setupUi()\&.
+.SS "QTabWidget* Ui_KbWidget::tabWidget\fC [inherited]\fP"
+
+.PP
+Definition at line 38 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by KbWidget::KbWidget(), KbWidget::on_tabWidget_currentChanged(), Ui_KbWidget::retranslateUi(), Ui_KbWidget::setupUi(), KbWidget::showFirstTab(), and KbWidget::showLastTab()\&.
+.SS "QSpacerItem* Ui_KbWidget::verticalSpacer\fC [inherited]\fP"
+
+.PP
+Definition at line 55 of file ui_kbwidget\&.h\&.
+.PP
+Referenced by Ui_KbWidget::setupUi()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

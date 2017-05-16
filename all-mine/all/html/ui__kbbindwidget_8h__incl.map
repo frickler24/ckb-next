@@ -1,0 +1,16 @@
+<map id="src/ckb/ui_kbbindwidget.h" name="src/ckb/ui_kbbindwidget.h">
+<area shape="rect" id="node15" href="$keywidget_8h.html" title="keywidget.h" alt="" coords="2663,80,2755,107"/>
+<area shape="rect" id="node25" href="$rebindwidget_8h.html" title="rebindwidget.h" alt="" coords="2313,80,2420,107"/>
+<area shape="rect" id="node20" href="$keymap_8h.html" title="keymap.h" alt="" coords="2414,603,2492,629"/>
+<area shape="rect" id="node23" href="$colormap_8h.html" title="colormap.h" alt="" coords="2862,528,2948,555"/>
+<area shape="rect" id="node26" href="$kbbind_8h.html" title="kbbind.h" alt="" coords="1791,379,1861,405"/>
+<area shape="rect" id="node37" href="$kbprofile_8h.html" title="kbprofile.h" alt="" coords="2325,155,2407,181"/>
+<area shape="rect" id="node48" href="$macroreader_8h.html" title="macroreader.h" alt="" coords="1662,379,1767,405"/>
+<area shape="rect" id="node30" href="$ckbsettings_8h.html" title="ckbsettings.h" alt="" coords="2282,453,2381,480"/>
+<area shape="rect" id="node36" href="$keyaction_8h.html" title="keyaction.h" alt="" coords="1583,453,1672,480"/>
+<area shape="rect" id="node41" href="$kbmode_8h.html" title="kbmode.h" alt="" coords="2230,229,2308,256"/>
+<area shape="rect" id="node42" href="$kblight_8h.html" title="kblight.h" alt="" coords="2161,304,2231,331"/>
+<area shape="rect" id="node46" href="$kbperf_8h.html" title="kbperf.h" alt="" coords="2497,379,2567,405"/>
+<area shape="rect" id="node44" href="$animscript_8h.html" title="animscript.h" alt="" coords="2407,453,2500,480"/>
+<area shape="rect" id="node45" href="$kbanim_8h.html" title="kbanim.h" alt="" coords="2307,379,2380,405"/>
+</map>

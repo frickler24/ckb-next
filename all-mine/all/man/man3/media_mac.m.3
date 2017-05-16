@@ -1,0 +1,81 @@
+.TH "src/ckb/media_mac.m" 3 "Tue May 16 2017" "Version beta-v0.2.7 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb/media_mac.m \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#import <AudioToolbox/AudioServices\&.h>\fP
+.br
+\fC#import <Foundation/Foundation\&.h>\fP
+.br
+\fC#include 'media\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBmuteState\fP \fBgetMuteState\fP ()"
+.br
+.ti -1c
+.RI "void \fBdisableAppNap\fP ()"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void disableAppNap ()"
+
+.PP
+Definition at line 34 of file media_mac\&.m\&.
+.PP
+Referenced by main()\&.
+.PP
+.nf
+34                     {
+35     [[NSProcessInfo processInfo] beginActivityWithOptions:NSActivityUserInitiatedAllowingIdleSystemSleep reason:@"Keyboard animation"];
+36 }
+.fi
+.SS "\fBmuteState\fP getMuteState ()"
+
+.PP
+Definition at line 5 of file media_mac\&.m\&.
+.PP
+References MUTED, UNKNOWN, and UNMUTED\&.
+.PP
+Referenced by KbPerf::applyIndicators()\&.
+.PP
+.nf
+5                         {
+6     // Get the system's default audio device
+7     AudioObjectPropertyAddress propertyAddress = {
+8         kAudioHardwarePropertyDefaultOutputDevice,
+9         kAudioObjectPropertyScopeGlobal,
+10         kAudioObjectPropertyElementMaster
+11     };
+12     AudioDeviceID deviceID = 0;
+13     UInt32 dataSize = sizeof(deviceID);
+14     if(AudioHardwareServiceGetPropertyData(kAudioObjectSystemObject, &propertyAddress, 0, NULL, &dataSize, &deviceID)
+15             != kAudioHardwareNoError){
+16         return UNKNOWN;
+17     }
+18     // Grab the mute property
+19     AudioObjectPropertyAddress propertyAddress2 = {
+20         kAudioDevicePropertyMute,
+21         kAudioDevicePropertyScopeOutput,
+22         kAudioObjectPropertyElementMaster
+23     };
+24     if(!AudioHardwareServiceHasProperty(deviceID, &propertyAddress2))
+25         return UNKNOWN;
+26     bool state = 0;
+27     dataSize = sizeof(state);
+28     if(AudioHardwareServiceGetPropertyData(deviceID, &propertyAddress2, 0, NULL, &dataSize, &state)
+29             != kAudioHardwareNoError)
+30         return UNKNOWN;
+31     return state ? MUTED : UNMUTED;
+32 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

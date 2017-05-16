@@ -1,0 +1,802 @@
+.TH "Ui::AnimSettingDialog" 3 "Tue May 16 2017" "Version beta-v0.2.7 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ui::AnimSettingDialog \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/ui_animsettingdialog\&.h>\fP
+.PP
+Inherits \fBUi_AnimSettingDialog\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetupUi\fP (\fBQDialog\fP *\fBAnimSettingDialog\fP)"
+.br
+.ti -1c
+.RI "void \fBretranslateUi\fP (\fBQDialog\fP *\fBAnimSettingDialog\fP)"
+.br
+.in -1c
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "QGridLayout * \fBgridLayout\fP"
+.br
+.ti -1c
+.RI "QDialogButtonBox * \fBbuttonBox\fP"
+.br
+.ti -1c
+.RI "QTabWidget * \fBtabWidget\fP"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBsettingTab\fP"
+.br
+.ti -1c
+.RI "QGridLayout * \fBsettingsGrid\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_2\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer_3\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBanimName\fP"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBtimeTab\fP"
+.br
+.ti -1c
+.RI "QGridLayout * \fBtimeGrid\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer_5\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBkpRepeatLabel\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBrepeatLabel\fP"
+.br
+.ti -1c
+.RI "QDoubleSpinBox * \fBrepeatBox\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBrepeatLabel_2\fP"
+.br
+.ti -1c
+.RI "QFrame * \fBline\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBkpRepeatLabel_2\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_4\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_8\fP"
+.br
+.ti -1c
+.RI "QDoubleSpinBox * \fBkpDelayBox\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_13\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_12\fP"
+.br
+.ti -1c
+.RI "QDoubleSpinBox * \fBdelayBox\fP"
+.br
+.ti -1c
+.RI "QCheckBox * \fBkpModeStopBox\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_10\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBverticalSpacer_3\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer_4\fP"
+.br
+.ti -1c
+.RI "QCheckBox * \fBkpReleaseBox\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_6\fP"
+.br
+.ti -1c
+.RI "QDoubleSpinBox * \fBkpRepeatBox\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBverticalSpacer_2\fP"
+.br
+.ti -1c
+.RI "QFrame * \fBline_2\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer_6\fP"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBinfoTab\fP"
+.br
+.ti -1c
+.RI "QGridLayout * \fBgridLayout_2\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBsNameLabel\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_7\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_11\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBsAuthorLabel\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_9\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_5\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBsYearLabel\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_3\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer_2\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBsVerLabel\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBsLicenseLabel\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBverticalSpacer\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBsDescLabel\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 385 of file ui_animsettingdialog\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Ui_AnimSettingDialog::retranslateUi (\fBQDialog\fP *AnimSettingDialog)\fC [inline]\fP, \fC [inherited]\fP"
+
+.PP
+Definition at line 349 of file ui_animsettingdialog\&.h\&.
+.PP
+References Ui_AnimSettingDialog::infoTab, Ui_AnimSettingDialog::kpModeStopBox, Ui_AnimSettingDialog::kpReleaseBox, Ui_AnimSettingDialog::kpRepeatLabel, Ui_AnimSettingDialog::kpRepeatLabel_2, Ui_AnimSettingDialog::label, Ui_AnimSettingDialog::label_10, Ui_AnimSettingDialog::label_11, Ui_AnimSettingDialog::label_12, Ui_AnimSettingDialog::label_13, Ui_AnimSettingDialog::label_2, Ui_AnimSettingDialog::label_3, Ui_AnimSettingDialog::label_4, Ui_AnimSettingDialog::label_5, Ui_AnimSettingDialog::label_6, Ui_AnimSettingDialog::label_7, Ui_AnimSettingDialog::label_8, Ui_AnimSettingDialog::label_9, Ui_AnimSettingDialog::repeatLabel, Ui_AnimSettingDialog::repeatLabel_2, Ui_AnimSettingDialog::sAuthorLabel, Ui_AnimSettingDialog::sDescLabel, Ui_AnimSettingDialog::settingTab, Ui_AnimSettingDialog::sLicenseLabel, Ui_AnimSettingDialog::sNameLabel, Ui_AnimSettingDialog::sVerLabel, Ui_AnimSettingDialog::sYearLabel, Ui_AnimSettingDialog::tabWidget, and Ui_AnimSettingDialog::timeTab\&.
+.PP
+Referenced by Ui_AnimSettingDialog::setupUi()\&.
+.PP
+.nf
+350     {
+351         AnimSettingDialog->setWindowTitle(QApplication::translate("AnimSettingDialog", "Dialog", Q_NULLPTR));
+352         label_2->setText(QApplication::translate("AnimSettingDialog", "Name:", Q_NULLPTR));
+353         tabWidget->setTabText(tabWidget->indexOf(settingTab), QApplication::translate("AnimSettingDialog", "Settings", Q_NULLPTR));
+354         kpRepeatLabel->setText(QApplication::translate("AnimSettingDialog", "Repeat every:", Q_NULLPTR));
+355         repeatLabel->setText(QApplication::translate("AnimSettingDialog", "Repeat every:", Q_NULLPTR));
+356         repeatLabel_2->setText(QApplication::translate("AnimSettingDialog", "seconds", Q_NULLPTR));
+357         kpRepeatLabel_2->setText(QApplication::translate("AnimSettingDialog", "seconds", Q_NULLPTR));
+358         label_4->setText(QApplication::translate("AnimSettingDialog", "<b>On mode start</b>", Q_NULLPTR));
+359         label_8->setText(QApplication::translate("AnimSettingDialog", "seconds", Q_NULLPTR));
+360         label_13->setText(QApplication::translate("AnimSettingDialog", "seconds", Q_NULLPTR));
+361         label_12->setText(QApplication::translate("AnimSettingDialog", "Start delay:", Q_NULLPTR));
+362         kpModeStopBox->setText(QApplication::translate("AnimSettingDialog", "Stop on key press", Q_NULLPTR));
+363         label_10->setText(QApplication::translate("AnimSettingDialog", "Start delay:", Q_NULLPTR));
+364         kpReleaseBox->setText(QApplication::translate("AnimSettingDialog", "Stop on key release", Q_NULLPTR));
+365         label_6->setText(QApplication::translate("AnimSettingDialog", "<b>On key press</b>", Q_NULLPTR));
+366         tabWidget->setTabText(tabWidget->indexOf(timeTab), QApplication::translate("AnimSettingDialog", "Timing", Q_NULLPTR));
+367         sNameLabel->setText(QApplication::translate("AnimSettingDialog", "Name", Q_NULLPTR));
+368         label_7->setText(QApplication::translate("AnimSettingDialog", "Year:", Q_NULLPTR));
+369         label_11->setText(QApplication::translate("AnimSettingDialog", "Description:", Q_NULLPTR));
+370         sAuthorLabel->setText(QApplication::translate("AnimSettingDialog", "Author", Q_NULLPTR));
+371         label_9->setText(QApplication::translate("AnimSettingDialog", "License:", Q_NULLPTR));
+372         label_5->setText(QApplication::translate("AnimSettingDialog", "Version:", Q_NULLPTR));
+373         sYearLabel->setText(QApplication::translate("AnimSettingDialog", "Year", Q_NULLPTR));
+374         label_3->setText(QApplication::translate("AnimSettingDialog", "Author:", Q_NULLPTR));
+375         sVerLabel->setText(QApplication::translate("AnimSettingDialog", "Version", Q_NULLPTR));
+376         sLicenseLabel->setText(QApplication::translate("AnimSettingDialog", "License", Q_NULLPTR));
+377         label->setText(QApplication::translate("AnimSettingDialog", "Script name:", Q_NULLPTR));
+378         sDescLabel->setText(QApplication::translate("AnimSettingDialog", "Description", Q_NULLPTR));
+379         tabWidget->setTabText(tabWidget->indexOf(infoTab), QApplication::translate("AnimSettingDialog", "About", Q_NULLPTR));
+380     } // retranslateUi
+.fi
+.SS "void Ui_AnimSettingDialog::setupUi (\fBQDialog\fP *AnimSettingDialog)\fC [inline]\fP, \fC [inherited]\fP"
+
+.PP
+Definition at line 85 of file ui_animsettingdialog\&.h\&.
+.PP
+References Ui_AnimSettingDialog::animName, Ui_AnimSettingDialog::buttonBox, Ui_AnimSettingDialog::delayBox, Ui_AnimSettingDialog::gridLayout, Ui_AnimSettingDialog::gridLayout_2, Ui_AnimSettingDialog::horizontalSpacer, Ui_AnimSettingDialog::horizontalSpacer_2, Ui_AnimSettingDialog::horizontalSpacer_3, Ui_AnimSettingDialog::horizontalSpacer_4, Ui_AnimSettingDialog::horizontalSpacer_5, Ui_AnimSettingDialog::horizontalSpacer_6, Ui_AnimSettingDialog::infoTab, Ui_AnimSettingDialog::kpDelayBox, Ui_AnimSettingDialog::kpModeStopBox, Ui_AnimSettingDialog::kpReleaseBox, Ui_AnimSettingDialog::kpRepeatBox, Ui_AnimSettingDialog::kpRepeatLabel, Ui_AnimSettingDialog::kpRepeatLabel_2, Ui_AnimSettingDialog::label, Ui_AnimSettingDialog::label_10, Ui_AnimSettingDialog::label_11, Ui_AnimSettingDialog::label_12, Ui_AnimSettingDialog::label_13, Ui_AnimSettingDialog::label_2, Ui_AnimSettingDialog::label_3, Ui_AnimSettingDialog::label_4, Ui_AnimSettingDialog::label_5, Ui_AnimSettingDialog::label_6, Ui_AnimSettingDialog::label_7, Ui_AnimSettingDialog::label_8, Ui_AnimSettingDialog::label_9, Ui_AnimSettingDialog::line, Ui_AnimSettingDialog::line_2, Ui_AnimSettingDialog::repeatBox, Ui_AnimSettingDialog::repeatLabel, Ui_AnimSettingDialog::repeatLabel_2, Ui_AnimSettingDialog::retranslateUi(), Ui_AnimSettingDialog::sAuthorLabel, Ui_AnimSettingDialog::sDescLabel, Ui_AnimSettingDialog::settingsGrid, Ui_AnimSettingDialog::settingTab, Ui_AnimSettingDialog::sLicenseLabel, Ui_AnimSettingDialog::sNameLabel, Ui_AnimSettingDialog::sVerLabel, Ui_AnimSettingDialog::sYearLabel, Ui_AnimSettingDialog::tabWidget, Ui_AnimSettingDialog::timeGrid, Ui_AnimSettingDialog::timeTab, Ui_AnimSettingDialog::verticalSpacer, Ui_AnimSettingDialog::verticalSpacer_2, and Ui_AnimSettingDialog::verticalSpacer_3\&.
+.PP
+Referenced by AnimSettingDialog::AnimSettingDialog()\&.
+.PP
+.nf
+86     {
+87         if (AnimSettingDialog->objectName()\&.isEmpty())
+88             AnimSettingDialog->setObjectName(QStringLiteral("AnimSettingDialog"));
+89         AnimSettingDialog->resize(480, 457);
+90         AnimSettingDialog->setMinimumSize(QSize(480, 0));
+91         AnimSettingDialog->setFocusPolicy(Qt::ClickFocus);
+92         gridLayout = new QGridLayout(AnimSettingDialog);
+93         gridLayout->setObjectName(QStringLiteral("gridLayout"));
+94         buttonBox = new QDialogButtonBox(AnimSettingDialog);
+95         buttonBox->setObjectName(QStringLiteral("buttonBox"));
+96         buttonBox->setOrientation(Qt::Horizontal);
+97         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
+98 
+99         gridLayout->addWidget(buttonBox, 2, 0, 1, 1);
+100 
+101         tabWidget = new QTabWidget(AnimSettingDialog);
+102         tabWidget->setObjectName(QStringLiteral("tabWidget"));
+103         settingTab = new QWidget();
+104         settingTab->setObjectName(QStringLiteral("settingTab"));
+105         settingsGrid = new QGridLayout(settingTab);
+106         settingsGrid->setSpacing(12);
+107         settingsGrid->setObjectName(QStringLiteral("settingsGrid"));
+108         settingsGrid->setContentsMargins(12, 12, 12, 12);
+109         label_2 = new QLabel(settingTab);
+110         label_2->setObjectName(QStringLiteral("label_2"));
+111 
+112         settingsGrid->addWidget(label_2, 0, 1, 1, 1);
+113 
+114         horizontalSpacer_3 = new QSpacerItem(5, 0, QSizePolicy::Fixed, QSizePolicy::Minimum);
+115 
+116         settingsGrid->addItem(horizontalSpacer_3, 0, 2, 1, 1);
+117 
+118         animName = new QLineEdit(settingTab);
+119         animName->setObjectName(QStringLiteral("animName"));
+120 
+121         settingsGrid->addWidget(animName, 0, 3, 1, 3);
+122 
+123         tabWidget->addTab(settingTab, QString());
+124         timeTab = new QWidget();
+125         timeTab->setObjectName(QStringLiteral("timeTab"));
+126         timeGrid = new QGridLayout(timeTab);
+127         timeGrid->setSpacing(12);
+128         timeGrid->setObjectName(QStringLiteral("timeGrid"));
+129         timeGrid->setContentsMargins(12, 12, 12, 12);
+130         horizontalSpacer_5 = new QSpacerItem(15, 0, QSizePolicy::Fixed, QSizePolicy::Minimum);
+131 
+132         timeGrid->addItem(horizontalSpacer_5, 3, 2, 1, 1);
+133 
+134         kpRepeatLabel = new QLabel(timeTab);
+135         kpRepeatLabel->setObjectName(QStringLiteral("kpRepeatLabel"));
+136 
+137         timeGrid->addWidget(kpRepeatLabel, 11, 1, 1, 1);
+138 
+139         repeatLabel = new QLabel(timeTab);
+140         repeatLabel->setObjectName(QStringLiteral("repeatLabel"));
+141 
+142         timeGrid->addWidget(repeatLabel, 3, 1, 1, 1);
+143 
+144         repeatBox = new QDoubleSpinBox(timeTab);
+145         repeatBox->setObjectName(QStringLiteral("repeatBox"));
+146         repeatBox->setDecimals(1);
+147         repeatBox->setMinimum(0\&.1);
+148         repeatBox->setMaximum(86400);
+149 
+150         timeGrid->addWidget(repeatBox, 3, 3, 1, 1);
+151 
+152         repeatLabel_2 = new QLabel(timeTab);
+153         repeatLabel_2->setObjectName(QStringLiteral("repeatLabel_2"));
+154 
+155         timeGrid->addWidget(repeatLabel_2, 3, 4, 1, 1);
+156 
+157         line = new QFrame(timeTab);
+158         line->setObjectName(QStringLiteral("line"));
+159         line->setFrameShape(QFrame::HLine);
+160         line->setFrameShadow(QFrame::Sunken);
+161 
+162         timeGrid->addWidget(line, 1, 0, 1, 6);
+163 
+164         kpRepeatLabel_2 = new QLabel(timeTab);
+165         kpRepeatLabel_2->setObjectName(QStringLiteral("kpRepeatLabel_2"));
+166 
+167         timeGrid->addWidget(kpRepeatLabel_2, 11, 4, 1, 1);
+168 
+169         label_4 = new QLabel(timeTab);
+170         label_4->setObjectName(QStringLiteral("label_4"));
+171 
+172         timeGrid->addWidget(label_4, 0, 0, 1, 6);
+173 
+174         label_8 = new QLabel(timeTab);
+175         label_8->setObjectName(QStringLiteral("label_8"));
+176 
+177         timeGrid->addWidget(label_8, 2, 4, 1, 1);
+178 
+179         kpDelayBox = new QDoubleSpinBox(timeTab);
+180         kpDelayBox->setObjectName(QStringLiteral("kpDelayBox"));
+181         kpDelayBox->setDecimals(1);
+182         kpDelayBox->setMaximum(86400);
+183 
+184         timeGrid->addWidget(kpDelayBox, 10, 3, 1, 1);
+185 
+186         label_13 = new QLabel(timeTab);
+187         label_13->setObjectName(QStringLiteral("label_13"));
+188 
+189         timeGrid->addWidget(label_13, 10, 4, 1, 1);
+190 
+191         label_12 = new QLabel(timeTab);
+192         label_12->setObjectName(QStringLiteral("label_12"));
+193 
+194         timeGrid->addWidget(label_12, 10, 1, 1, 1);
+195 
+196         delayBox = new QDoubleSpinBox(timeTab);
+197         delayBox->setObjectName(QStringLiteral("delayBox"));
+198         delayBox->setDecimals(1);
+199         delayBox->setMaximum(86400);
+200 
+201         timeGrid->addWidget(delayBox, 2, 3, 1, 1);
+202 
+203         kpModeStopBox = new QCheckBox(timeTab);
+204         kpModeStopBox->setObjectName(QStringLiteral("kpModeStopBox"));
+205 
+206         timeGrid->addWidget(kpModeStopBox, 5, 1, 1, 3);
+207 
+208         label_10 = new QLabel(timeTab);
+209         label_10->setObjectName(QStringLiteral("label_10"));
+210 
+211         timeGrid->addWidget(label_10, 2, 1, 1, 1);
+212 
+213         verticalSpacer_3 = new QSpacerItem(0, 10, QSizePolicy::Minimum, QSizePolicy::Fixed);
+214 
+215         timeGrid->addItem(verticalSpacer_3, 7, 1, 1, 1);
+216 
+217         horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+218 
+219         timeGrid->addItem(horizontalSpacer_4, 2, 5, 1, 1);
+220 
+221         kpReleaseBox = new QCheckBox(timeTab);
+222         kpReleaseBox->setObjectName(QStringLiteral("kpReleaseBox"));
+223 
+224         timeGrid->addWidget(kpReleaseBox, 14, 1, 1, 3);
+225 
+226         label_6 = new QLabel(timeTab);
+227         label_6->setObjectName(QStringLiteral("label_6"));
+228 
+229         timeGrid->addWidget(label_6, 8, 0, 1, 6);
+230 
+231         kpRepeatBox = new QDoubleSpinBox(timeTab);
+232         kpRepeatBox->setObjectName(QStringLiteral("kpRepeatBox"));
+233         kpRepeatBox->setDecimals(1);
+234         kpRepeatBox->setMinimum(0\&.1);
+235         kpRepeatBox->setMaximum(86400);
+236 
+237         timeGrid->addWidget(kpRepeatBox, 11, 3, 1, 1);
+238 
+239         verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+240 
+241         timeGrid->addItem(verticalSpacer_2, 15, 1, 1, 1);
+242 
+243         line_2 = new QFrame(timeTab);
+244         line_2->setObjectName(QStringLiteral("line_2"));
+245         line_2->setFrameShape(QFrame::HLine);
+246         line_2->setFrameShadow(QFrame::Sunken);
+247 
+248         timeGrid->addWidget(line_2, 9, 0, 1, 6);
+249 
+250         horizontalSpacer_6 = new QSpacerItem(0, 0, QSizePolicy::Fixed, QSizePolicy::Minimum);
+251 
+252         timeGrid->addItem(horizontalSpacer_6, 12, 2, 1, 1);
+253 
+254         tabWidget->addTab(timeTab, QString());
+255         infoTab = new QWidget();
+256         infoTab->setObjectName(QStringLiteral("infoTab"));
+257         gridLayout_2 = new QGridLayout(infoTab);
+258         gridLayout_2->setSpacing(12);
+259         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+260         gridLayout_2->setContentsMargins(12, 12, 12, 12);
+261         sNameLabel = new QLabel(infoTab);
+262         sNameLabel->setObjectName(QStringLiteral("sNameLabel"));
+263 
+264         gridLayout_2->addWidget(sNameLabel, 0, 2, 1, 1);
+265 
+266         label_7 = new QLabel(infoTab);
+267         label_7->setObjectName(QStringLiteral("label_7"));
+268 
+269         gridLayout_2->addWidget(label_7, 3, 0, 1, 1);
+270 
+271         label_11 = new QLabel(infoTab);
+272         label_11->setObjectName(QStringLiteral("label_11"));
+273 
+274         gridLayout_2->addWidget(label_11, 5, 0, 1, 1);
+275 
+276         sAuthorLabel = new QLabel(infoTab);
+277         sAuthorLabel->setObjectName(QStringLiteral("sAuthorLabel"));
+278 
+279         gridLayout_2->addWidget(sAuthorLabel, 2, 2, 1, 1);
+280 
+281         label_9 = new QLabel(infoTab);
+282         label_9->setObjectName(QStringLiteral("label_9"));
+283 
+284         gridLayout_2->addWidget(label_9, 4, 0, 1, 1);
+285 
+286         label_5 = new QLabel(infoTab);
+287         label_5->setObjectName(QStringLiteral("label_5"));
+288 
+289         gridLayout_2->addWidget(label_5, 1, 0, 1, 1);
+290 
+291         sYearLabel = new QLabel(infoTab);
+292         sYearLabel->setObjectName(QStringLiteral("sYearLabel"));
+293 
+294         gridLayout_2->addWidget(sYearLabel, 3, 2, 1, 1);
+295 
+296         label_3 = new QLabel(infoTab);
+297         label_3->setObjectName(QStringLiteral("label_3"));
+298 
+299         gridLayout_2->addWidget(label_3, 2, 0, 1, 1);
+300 
+301         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+302 
+303         gridLayout_2->addItem(horizontalSpacer, 0, 3, 1, 1);
+304 
+305         horizontalSpacer_2 = new QSpacerItem(20, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+306 
+307         gridLayout_2->addItem(horizontalSpacer_2, 0, 1, 1, 1);
+308 
+309         sVerLabel = new QLabel(infoTab);
+310         sVerLabel->setObjectName(QStringLiteral("sVerLabel"));
+311 
+312         gridLayout_2->addWidget(sVerLabel, 1, 2, 1, 1);
+313 
+314         sLicenseLabel = new QLabel(infoTab);
+315         sLicenseLabel->setObjectName(QStringLiteral("sLicenseLabel"));
+316 
+317         gridLayout_2->addWidget(sLicenseLabel, 4, 2, 1, 1);
+318 
+319         label = new QLabel(infoTab);
+320         label->setObjectName(QStringLiteral("label"));
+321 
+322         gridLayout_2->addWidget(label, 0, 0, 1, 1);
+323 
+324         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+325 
+326         gridLayout_2->addItem(verticalSpacer, 6, 0, 1, 1);
+327 
+328         sDescLabel = new QLabel(infoTab);
+329         sDescLabel->setObjectName(QStringLiteral("sDescLabel"));
+330         sDescLabel->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+331 
+332         gridLayout_2->addWidget(sDescLabel, 5, 2, 2, 2);
+333 
+334         tabWidget->addTab(infoTab, QString());
+335 
+336         gridLayout->addWidget(tabWidget, 0, 0, 1, 1);
+337 
+338 
+339         retranslateUi(AnimSettingDialog);
+340         QObject::connect(buttonBox, SIGNAL(accepted()), AnimSettingDialog, SLOT(accept()));
+341         QObject::connect(buttonBox, SIGNAL(rejected()), AnimSettingDialog, SLOT(reject()));
+342 
+343         tabWidget->setCurrentIndex(0);
+344 
+345 
+346         QMetaObject::connectSlotsByName(AnimSettingDialog);
+347     } // setupUi
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "QLineEdit* Ui_AnimSettingDialog::animName\fC [inherited]\fP"
+
+.PP
+Definition at line 41 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by AnimSettingDialog::AnimSettingDialog(), AnimSettingDialog::name(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QDialogButtonBox* Ui_AnimSettingDialog::buttonBox\fC [inherited]\fP"
+
+.PP
+Definition at line 35 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::setupUi()\&.
+.SS "QDoubleSpinBox* Ui_AnimSettingDialog::delayBox\fC [inherited]\fP"
+
+.PP
+Definition at line 56 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by AnimSettingDialog::AnimSettingDialog(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QGridLayout* Ui_AnimSettingDialog::gridLayout\fC [inherited]\fP"
+
+.PP
+Definition at line 34 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::setupUi()\&.
+.SS "QGridLayout* Ui_AnimSettingDialog::gridLayout_2\fC [inherited]\fP"
+
+.PP
+Definition at line 68 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::setupUi()\&.
+.SS "QSpacerItem* Ui_AnimSettingDialog::horizontalSpacer\fC [inherited]\fP"
+
+.PP
+Definition at line 77 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::setupUi()\&.
+.SS "QSpacerItem* Ui_AnimSettingDialog::horizontalSpacer_2\fC [inherited]\fP"
+
+.PP
+Definition at line 78 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::setupUi()\&.
+.SS "QSpacerItem* Ui_AnimSettingDialog::horizontalSpacer_3\fC [inherited]\fP"
+
+.PP
+Definition at line 40 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::setupUi()\&.
+.SS "QSpacerItem* Ui_AnimSettingDialog::horizontalSpacer_4\fC [inherited]\fP"
+
+.PP
+Definition at line 60 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::setupUi()\&.
+.SS "QSpacerItem* Ui_AnimSettingDialog::horizontalSpacer_5\fC [inherited]\fP"
+
+.PP
+Definition at line 44 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::setupUi()\&.
+.SS "QSpacerItem* Ui_AnimSettingDialog::horizontalSpacer_6\fC [inherited]\fP"
+
+.PP
+Definition at line 66 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::setupUi()\&.
+.SS "\fBQWidget\fP* Ui_AnimSettingDialog::infoTab\fC [inherited]\fP"
+
+.PP
+Definition at line 67 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QDoubleSpinBox* Ui_AnimSettingDialog::kpDelayBox\fC [inherited]\fP"
+
+.PP
+Definition at line 53 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by AnimSettingDialog::AnimSettingDialog(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QCheckBox* Ui_AnimSettingDialog::kpModeStopBox\fC [inherited]\fP"
+
+.PP
+Definition at line 57 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by AnimSettingDialog::AnimSettingDialog(), Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QCheckBox* Ui_AnimSettingDialog::kpReleaseBox\fC [inherited]\fP"
+
+.PP
+Definition at line 61 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by AnimSettingDialog::AnimSettingDialog(), Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QDoubleSpinBox* Ui_AnimSettingDialog::kpRepeatBox\fC [inherited]\fP"
+
+.PP
+Definition at line 63 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by AnimSettingDialog::AnimSettingDialog(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QLabel* Ui_AnimSettingDialog::kpRepeatLabel\fC [inherited]\fP"
+
+.PP
+Definition at line 45 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by AnimSettingDialog::AnimSettingDialog(), Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QLabel* Ui_AnimSettingDialog::kpRepeatLabel_2\fC [inherited]\fP"
+
+.PP
+Definition at line 50 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by AnimSettingDialog::AnimSettingDialog(), Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QLabel* Ui_AnimSettingDialog::label\fC [inherited]\fP"
+
+.PP
+Definition at line 81 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QLabel* Ui_AnimSettingDialog::label_10\fC [inherited]\fP"
+
+.PP
+Definition at line 58 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QLabel* Ui_AnimSettingDialog::label_11\fC [inherited]\fP"
+
+.PP
+Definition at line 71 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QLabel* Ui_AnimSettingDialog::label_12\fC [inherited]\fP"
+
+.PP
+Definition at line 55 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QLabel* Ui_AnimSettingDialog::label_13\fC [inherited]\fP"
+
+.PP
+Definition at line 54 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QLabel* Ui_AnimSettingDialog::label_2\fC [inherited]\fP"
+
+.PP
+Definition at line 39 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QLabel* Ui_AnimSettingDialog::label_3\fC [inherited]\fP"
+
+.PP
+Definition at line 76 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QLabel* Ui_AnimSettingDialog::label_4\fC [inherited]\fP"
+
+.PP
+Definition at line 51 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QLabel* Ui_AnimSettingDialog::label_5\fC [inherited]\fP"
+
+.PP
+Definition at line 74 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QLabel* Ui_AnimSettingDialog::label_6\fC [inherited]\fP"
+
+.PP
+Definition at line 62 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QLabel* Ui_AnimSettingDialog::label_7\fC [inherited]\fP"
+
+.PP
+Definition at line 70 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QLabel* Ui_AnimSettingDialog::label_8\fC [inherited]\fP"
+
+.PP
+Definition at line 52 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QLabel* Ui_AnimSettingDialog::label_9\fC [inherited]\fP"
+
+.PP
+Definition at line 73 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QFrame* Ui_AnimSettingDialog::line\fC [inherited]\fP"
+
+.PP
+Definition at line 49 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::setupUi()\&.
+.SS "QFrame* Ui_AnimSettingDialog::line_2\fC [inherited]\fP"
+
+.PP
+Definition at line 65 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::setupUi()\&.
+.SS "QDoubleSpinBox* Ui_AnimSettingDialog::repeatBox\fC [inherited]\fP"
+
+.PP
+Definition at line 47 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by AnimSettingDialog::AnimSettingDialog(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QLabel* Ui_AnimSettingDialog::repeatLabel\fC [inherited]\fP"
+
+.PP
+Definition at line 46 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by AnimSettingDialog::AnimSettingDialog(), Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QLabel* Ui_AnimSettingDialog::repeatLabel_2\fC [inherited]\fP"
+
+.PP
+Definition at line 48 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by AnimSettingDialog::AnimSettingDialog(), Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QLabel* Ui_AnimSettingDialog::sAuthorLabel\fC [inherited]\fP"
+
+.PP
+Definition at line 72 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by AnimSettingDialog::AnimSettingDialog(), Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QLabel* Ui_AnimSettingDialog::sDescLabel\fC [inherited]\fP"
+
+.PP
+Definition at line 83 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by AnimSettingDialog::AnimSettingDialog(), Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QGridLayout* Ui_AnimSettingDialog::settingsGrid\fC [inherited]\fP"
+
+.PP
+Definition at line 38 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by AnimSettingDialog::AnimSettingDialog(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "\fBQWidget\fP* Ui_AnimSettingDialog::settingTab\fC [inherited]\fP"
+
+.PP
+Definition at line 37 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QLabel* Ui_AnimSettingDialog::sLicenseLabel\fC [inherited]\fP"
+
+.PP
+Definition at line 80 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by AnimSettingDialog::AnimSettingDialog(), Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QLabel* Ui_AnimSettingDialog::sNameLabel\fC [inherited]\fP"
+
+.PP
+Definition at line 69 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by AnimSettingDialog::AnimSettingDialog(), Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QLabel* Ui_AnimSettingDialog::sVerLabel\fC [inherited]\fP"
+
+.PP
+Definition at line 79 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by AnimSettingDialog::AnimSettingDialog(), Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QLabel* Ui_AnimSettingDialog::sYearLabel\fC [inherited]\fP"
+
+.PP
+Definition at line 75 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by AnimSettingDialog::AnimSettingDialog(), Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QTabWidget* Ui_AnimSettingDialog::tabWidget\fC [inherited]\fP"
+
+.PP
+Definition at line 36 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QGridLayout* Ui_AnimSettingDialog::timeGrid\fC [inherited]\fP"
+
+.PP
+Definition at line 43 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by AnimSettingDialog::AnimSettingDialog(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "\fBQWidget\fP* Ui_AnimSettingDialog::timeTab\fC [inherited]\fP"
+
+.PP
+Definition at line 42 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::retranslateUi(), and Ui_AnimSettingDialog::setupUi()\&.
+.SS "QSpacerItem* Ui_AnimSettingDialog::verticalSpacer\fC [inherited]\fP"
+
+.PP
+Definition at line 82 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::setupUi()\&.
+.SS "QSpacerItem* Ui_AnimSettingDialog::verticalSpacer_2\fC [inherited]\fP"
+
+.PP
+Definition at line 64 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::setupUi()\&.
+.SS "QSpacerItem* Ui_AnimSettingDialog::verticalSpacer_3\fC [inherited]\fP"
+
+.PP
+Definition at line 59 of file ui_animsettingdialog\&.h\&.
+.PP
+Referenced by Ui_AnimSettingDialog::setupUi()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

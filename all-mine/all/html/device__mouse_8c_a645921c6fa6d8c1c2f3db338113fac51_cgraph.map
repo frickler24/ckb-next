@@ -1,0 +1,11 @@
+<map id="cmd_active_mouse" name="cmd_active_mouse">
+<area shape="rect" id="node2" href="$device__mouse_8c.html#a78f463c19ce586845e80094c949beda2" title="setactive_mouse" alt="" coords="190,31,311,57"/>
+<area shape="rect" id="node3" href="$input_8c.html#ae360d0b9a764a1d38c5be5464be8b70a" title="inputupdate" alt="" coords="361,31,450,57"/>
+<area shape="rect" id="node4" href="$input_8c.html#aed8e9842ed5750c1d328c5dc4c1ba2bd" title="inputupdate_keys" alt="" coords="499,56,623,83"/>
+<area shape="rect" id="node6" href="$input_8h.html#a9f2cfb2d883ae4a3732047fe3f3da683" title="os_mousemove" alt="" coords="672,5,787,32"/>
+<area shape="rect" id="node5" href="$input_8c.html#abd38419ce56379559481f51d9491adeb" title="macromask" alt="" coords="684,56,775,83"/>
+<area shape="rect" id="node8" href="$input_8h.html#af0d3401f317f3214dadad7d1a3378c58" title="os_keypress" alt="" coords="681,107,777,133"/>
+<area shape="rect" id="node9" href="$notify_8c.html#ac2411c0997dfdbefdebd45f2584a5d04" title="nprintkey" alt="" coords="692,157,767,184"/>
+<area shape="rect" id="node7" href="$input__linux_8c.html#a14ff0fdf147e3702197db2cadb878460" title="isync" alt="" coords="837,56,891,83"/>
+<area shape="rect" id="node10" href="$notify_8c.html#a7ac88f15243030290e4d57c3c9ac7c98" title="nprintf" alt="" coords="835,157,893,184"/>
+</map>

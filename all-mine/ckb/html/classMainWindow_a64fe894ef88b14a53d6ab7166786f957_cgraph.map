@@ -1,0 +1,9 @@
+<map id="MainWindow::addDevice" name="MainWindow::addDevice">
+<area shape="rect" id="node2" href="$classKbWidget.html#a39c099b274841f8e44a8cb9d994703dd" title="KbWidget::name" alt="" coords="257,31,375,57"/>
+<area shape="rect" id="node3" href="$classMainWindow.html#af8adffe48835b0d1f5356e7209b5207b" title="MainWindow::updateVersion" alt="" coords="222,81,410,108"/>
+<area shape="rect" id="node4" href="$classKbManager.html#af15aca180d0e60fd27d1484fdbc0f605" title="KbManager::ckbDaemonVersion" alt="" coords="463,5,673,32"/>
+<area shape="rect" id="node5" href="$classSettingsWidget.html#ada6f8e321e7ca9ff79dcb3c2b58c13e9" title="SettingsWidget::setStatus" alt="" coords="481,56,655,83"/>
+<area shape="rect" id="node6" href="$classKbManager.html#ad22cd8487923dc938a925a6941ed6f3d" title="KbManager::ckbDaemonVersionF" alt="" coords="459,107,677,133"/>
+<area shape="rect" id="node8" href="$classKbManager.html#a444f0c8ab29309aad704e07a9aaaee05" title="KbManager::ckbGuiVersionF" alt="" coords="473,157,663,184"/>
+<area shape="rect" id="node7" href="$classKbManager.html#a4ce88ef95a35d0cd5a3ac67a0bc076ea" title="KbManager::parseVersionString" alt="" coords="726,132,933,159"/>
+</map>

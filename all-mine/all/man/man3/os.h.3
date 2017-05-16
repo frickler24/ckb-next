@@ -1,0 +1,65 @@
+.TH "src/ckb-daemon/os.h" 3 "Tue May 16 2017" "Version beta-v0.2.7 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb-daemon/os.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <features\&.h>\fP
+.br
+\fC#include <libudev\&.h>\fP
+.br
+\fC#include <linux/uinput\&.h>\fP
+.br
+\fC#include <linux/usbdevice_fs\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fB_DEFAULT_SOURCE\fP"
+.br
+.ti -1c
+.RI "#define \fB_GNU_SOURCE\fP"
+.br
+.ti -1c
+.RI "#define \fBUINPUT_VERSION\fP   2"
+.br
+.ti -1c
+.RI "#define \fBeuid_guard_start\fP"
+.br
+.ti -1c
+.RI "#define \fBeuid_guard_stop\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define _DEFAULT_SOURCE"
+
+.PP
+Definition at line 22 of file os\&.h\&.
+.SS "#define _GNU_SOURCE"
+
+.PP
+Definition at line 26 of file os\&.h\&.
+.SS "#define euid_guard_start"
+
+.PP
+Definition at line 40 of file os\&.h\&.
+.PP
+Referenced by mkdevpath(), mknotifynode(), rmdevpath(), rmnotifynode(), and updateconnected()\&.
+.SS "#define euid_guard_stop"
+
+.PP
+Definition at line 41 of file os\&.h\&.
+.PP
+Referenced by mkdevpath(), mknotifynode(), rmdevpath(), rmnotifynode(), and updateconnected()\&.
+.SS "#define UINPUT_VERSION   2"
+
+.PP
+Definition at line 35 of file os\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

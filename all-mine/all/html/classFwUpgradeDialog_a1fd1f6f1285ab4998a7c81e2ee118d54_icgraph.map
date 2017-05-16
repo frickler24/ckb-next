@@ -1,0 +1,5 @@
+<map id="FwUpgradeDialog::exec" name="FwUpgradeDialog::exec">
+<area shape="rect" id="node2" href="$classKbWidget.html#a38c9f29a5d8f1edfcb5f8040de3dadb9" title="KbWidget::on_fwUpdButton\l_clicked" alt="" coords="216,5,400,46"/>
+<area shape="rect" id="node3" href="$classKbWidget.html#a428930086336c668e8a1055c21c938d9" title="KbWidget::showFwUpdate" alt="" coords="448,12,627,39"/>
+<area shape="rect" id="node4" href="$classMainWindow.html#ae50767c4ed6029f63ebacfffde4bc802" title="MainWindow::showFwUpdate\lNotification" alt="" coords="675,5,871,46"/>
+</map>

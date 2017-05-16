@@ -1,0 +1,3 @@
+<map id="Ui::AnimAddDialog" name="Ui::AnimAddDialog">
+<area shape="rect" id="node2" href="$classUi__AnimAddDialog.html" title="{Ui_AnimAddDialog\n|+ gridLayout\l+ horizontalLayout\l+ buttonBox\l+ horizontalSpacer_2\l+ animBox\l+ label_2\l+ verticalSpacer_2\l+ label\l+ verticalSpacer_3\l+ presetBox\l+ horizontalSpacer\l+ previewBox\l|+ setupUi()\l+ retranslateUi()\l}" alt="" coords="5,5,149,259"/>
+</map>

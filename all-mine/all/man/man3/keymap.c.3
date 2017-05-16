@@ -1,0 +1,300 @@
+.TH "src/ckb-daemon/keymap.c" 3 "Tue May 16 2017" "Version beta-v0.2.7 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb-daemon/keymap.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'device\&.h'\fP
+.br
+\fC#include 'includes\&.h'\fP
+.br
+\fC#include 'keymap\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBBUTTON_HID_COUNT\fP   5"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBhid_kb_translate\fP (unsigned char *kbinput, int endpoint, int length, const unsigned char *urbinput)"
+.br
+.ti -1c
+.RI "void \fBhid_mouse_translate\fP (unsigned char *kbinput, short *xaxis, short *yaxis, int endpoint, int length, const unsigned char *urbinput)"
+.br
+.ti -1c
+.RI "void \fBcorsair_kbcopy\fP (unsigned char *kbinput, int endpoint, const unsigned char *urbinput)"
+.br
+.ti -1c
+.RI "void \fBcorsair_mousecopy\fP (unsigned char *kbinput, int endpoint, const unsigned char *urbinput)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const \fBkey\fP \fBkeymap\fP [(((152+3+12)+25)+11)]"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define BUTTON_HID_COUNT   5"
+
+.PP
+Definition at line 364 of file keymap\&.c\&.
+.PP
+Referenced by corsair_mousecopy(), and hid_mouse_translate()\&.
+.SH "Function Documentation"
+.PP 
+.SS "void corsair_kbcopy (unsigned char *kbinput, intendpoint, const unsigned char *urbinput)"
+
+.PP
+Definition at line 394 of file keymap\&.c\&.
+.PP
+References N_KEYBYTES_HW\&.
+.PP
+Referenced by os_inputmain()\&.
+.PP
+.nf
+394                                                                                         {
+395     if(endpoint == 2 || endpoint == -2){
+396         if(urbinput[0] != 3)
+397             return;
+398         urbinput++;
+399     }
+400     memcpy(kbinput, urbinput, N_KEYBYTES_HW);
+401 }
+.fi
+.SS "void corsair_mousecopy (unsigned char *kbinput, intendpoint, const unsigned char *urbinput)"
+
+.PP
+Definition at line 403 of file keymap\&.c\&.
+.PP
+References BUTTON_HID_COUNT, CLEAR_KEYBIT, MOUSE_BUTTON_FIRST, N_BUTTONS_HW, and SET_KEYBIT\&.
+.PP
+Referenced by os_inputmain()\&.
+.PP
+.nf
+403                                                                                            {
+404     if(endpoint == 2 || endpoint == -2){
+405         if(urbinput[0] != 3)
+406             return;
+407         urbinput++;
+408     }
+409     for(int bit = BUTTON_HID_COUNT; bit < N_BUTTONS_HW; bit++){
+410         int byte = bit / 8;
+411         uchar test = 1 << (bit % 8);
+412         if(urbinput[byte] & test)
+413             SET_KEYBIT(kbinput, MOUSE_BUTTON_FIRST + bit);
+414         else
+415             CLEAR_KEYBIT(kbinput, MOUSE_BUTTON_FIRST + bit);
+416     }
+417 }
+.fi
+.SS "void hid_kb_translate (unsigned char *kbinput, intendpoint, intlength, const unsigned char *urbinput)"
+
+.PP
+Definition at line 223 of file keymap\&.c\&.
+.PP
+References ckb_warn, CLEAR_KEYBIT, and SET_KEYBIT\&.
+.PP
+Referenced by os_inputmain()\&.
+.PP
+.nf
+223                                                                                                       {
+224     if(length < 1)
+225         return;
+226     // LUT for HID -> Corsair scancodes (-1 for no scan code, -2 for currently unsupported)
+227     // Modified from Linux drivers/hid/usbhid/usbkbd\&.c, key codes replaced with array indices and K95 keys added
+228     static const short hid_codes[256] = {
+229         -1,  -1,  -1,  -1,  37,  54,  52,  39,  27,  40,  41,  42,  32,  43,  44,  45,
+230         56,  55,  33,  34,  25,  28,  38,  29,  31,  53,  26,  51,  30,  50,  13,  14,
+231         15,  16,  17,  18,  19,  20,  21,  22,  82,   0,  86,  24,  64,  23,  84,  35,
+232         79,  80,  81,  46,  47,  12,  57,  58,  59,  36,   1,   2,   3,   4,   5,   6,
+233          7,   8,   9,  10,  11,  72,  73,  74,  75,  76,  77,  78,  87,  88,  89,  95,
+234         93,  94,  92, 102, 103, 104, 105, 106, 107, 115, 116, 117, 112, 113, 114, 108,
+235        109, 110, 118, 119,  49,  69,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,
+236         -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  98,  -2,  -2,  -2,  -2,  -2,  -2,  97,
+237        130, 131,  -1,  -1,  -1,  -2,  -1,  -2,  -2,  -2,  -2,  -2,  -2,  -1,  -1,  -1,
+238         -2,  -2,  -2,  -2,  -2,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,
+239         -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,
+240         -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,
+241         -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -3,  -1,  -1,  -1,  // <- -3 = non-RGB program key
+242        120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 136, 137, 138, 139, 140, 141,
+243         60,  48,  62,  61,  91,  90,  67,  68, 142, 143,  99, 101,  -2, 130, 131,  97,
+244         -2, 133, 134, 135,  -2,  96,  -2, 132,  -2,  -2,  71,  71,  71,  71,  -1,  -1,
+245     };
+246     switch(endpoint){
+247     case 1:
+248     case -1:
+249         // EP 1: 6KRO input (RGB and non-RGB)
+250         // Clear previous input
+251         for(int i = 0; i < 256; i++){
+252             if(hid_codes[i] >= 0)
+253                 CLEAR_KEYBIT(kbinput, hid_codes[i]);
+254         }
+255         // Set new input
+256         for(int i = 0; i < 8; i++){
+257             if((urbinput[0] >> i) & 1)
+258                 SET_KEYBIT(kbinput, hid_codes[i + 224]);
+259         }
+260         for(int i = 2; i < length; i++){
+261             if(urbinput[i] > 3){
+262                 int scan = hid_codes[urbinput[i]];
+263                 if(scan >= 0)
+264                     SET_KEYBIT(kbinput, scan);
+265                 else
+266                     ckb_warn("Got unknown key press %d on EP 1\n", urbinput[i]);
+267             }
+268         }
+269         break;
+270     case -2:
+271         // EP 2 RGB: NKRO input
+272         if(urbinput[0] == 1){
+273             // Type 1: standard key
+274             if(length != 21)
+275                 return;
+276             for(int bit = 0; bit < 8; bit++){
+277                 if((urbinput[1] >> bit) & 1)
+278                     SET_KEYBIT(kbinput, hid_codes[bit + 224]);
+279                 else
+280                     CLEAR_KEYBIT(kbinput, hid_codes[bit + 224]);
+281             }
+282             for(int byte = 0; byte < 19; byte++){
+283                 char input = urbinput[byte + 2];
+284                 for(int bit = 0; bit < 8; bit++){
+285                     int keybit = byte * 8 + bit;
+286                     int scan = hid_codes[keybit];
+287                     if((input >> bit) & 1){
+288                         if(scan >= 0)
+289                             SET_KEYBIT(kbinput, hid_codes[keybit]);
+290                         else
+291                             ckb_warn("Got unknown key press %d on EP 2\n", keybit);
+292                     } else if(scan >= 0)
+293                         CLEAR_KEYBIT(kbinput, hid_codes[keybit]);
+294                 }
+295             }
+296             break;
+297         } else if(urbinput[0] == 2)
+298             ;       // Type 2: media key (fall through)
+299         else
+300             break;  // No other known types
+301     case 2:
+302         // EP 2 Non-RGB: media keys
+303         CLEAR_KEYBIT(kbinput, 97);          // mute
+304         CLEAR_KEYBIT(kbinput, 98);          // stop
+305         CLEAR_KEYBIT(kbinput, 99);          // prev
+306         CLEAR_KEYBIT(kbinput, 100);         // play
+307         CLEAR_KEYBIT(kbinput, 101);         // next
+308         CLEAR_KEYBIT(kbinput, 130);         // volup
+309         CLEAR_KEYBIT(kbinput, 131);         // voldn
+310         for(int i = 0; i < length; i++){
+311             switch(urbinput[i]){
+312             case 181:
+313                 SET_KEYBIT(kbinput, 101);   // next
+314                 break;
+315             case 182:
+316                 SET_KEYBIT(kbinput, 99);    // prev
+317                 break;
+318             case 183:
+319                 SET_KEYBIT(kbinput, 98);    // stop
+320                 break;
+321             case 205:
+322                 SET_KEYBIT(kbinput, 100);   // play
+323                 break;
+324             case 226:
+325                 SET_KEYBIT(kbinput, 97);    // mute
+326                 break;
+327             case 233:
+328                 SET_KEYBIT(kbinput, 130);   // volup
+329                 break;
+330             case 234:
+331                 SET_KEYBIT(kbinput, 131);   // voldn
+332                 break;
+333             }
+334         }
+335         break;
+336     case 3:
+337         // EP 3 non-RGB: NKRO input
+338         if(length != 15)
+339             return;
+340         for(int bit = 0; bit < 8; bit++){
+341             if((urbinput[0] >> bit) & 1)
+342                 SET_KEYBIT(kbinput, hid_codes[bit + 224]);
+343             else
+344                 CLEAR_KEYBIT(kbinput, hid_codes[bit + 224]);
+345         }
+346         for(int byte = 0; byte < 14; byte++){
+347             char input = urbinput[byte + 1];
+348             for(int bit = 0; bit < 8; bit++){
+349                 int keybit = byte * 8 + bit;
+350                 int scan = hid_codes[keybit];
+351                 if((input >> bit) & 1){
+352                     if(scan >= 0)
+353                         SET_KEYBIT(kbinput, hid_codes[keybit]);
+354                     else
+355                         ckb_warn("Got unknown key press %d on EP 3\n", keybit);
+356                 } else if(scan >= 0)
+357                     CLEAR_KEYBIT(kbinput, hid_codes[keybit]);
+358             }
+359         }
+360         break;
+361     }
+362 }
+.fi
+.SS "void hid_mouse_translate (unsigned char *kbinput, short *xaxis, short *yaxis, intendpoint, intlength, const unsigned char *urbinput)"
+
+.PP
+Definition at line 366 of file keymap\&.c\&.
+.PP
+References BUTTON_HID_COUNT, CLEAR_KEYBIT, MOUSE_BUTTON_FIRST, MOUSE_EXTRA_FIRST, and SET_KEYBIT\&.
+.PP
+Referenced by os_inputmain()\&.
+.PP
+.nf
+366                                                                                                                                      {
+367     if((endpoint != 2 && endpoint != -2) || length < 10)
+368         return;
+369     // EP 2: mouse input
+370     if(urbinput[0] != 1)
+371         return;
+372     // Byte 1 = mouse buttons (bitfield)
+373     for(int bit = 0; bit < BUTTON_HID_COUNT; bit++){
+374         if(urbinput[1] & (1 << bit))
+375             SET_KEYBIT(kbinput, MOUSE_BUTTON_FIRST + bit);
+376         else
+377             CLEAR_KEYBIT(kbinput, MOUSE_BUTTON_FIRST + bit);
+378     }
+379     // Bytes 5 - 8: movement
+380     *xaxis += *(short*)(urbinput + 5);
+381     *yaxis += *(short*)(urbinput + 7);
+382     // Byte 9: wheel
+383     char wheel = urbinput[9];
+384     if(wheel > 0)
+385         SET_KEYBIT(kbinput, MOUSE_EXTRA_FIRST);         // wheelup
+386     else
+387         CLEAR_KEYBIT(kbinput, MOUSE_EXTRA_FIRST);
+388     if(wheel < 0)
+389         SET_KEYBIT(kbinput, MOUSE_EXTRA_FIRST + 1);     // wheeldn
+390     else
+391         CLEAR_KEYBIT(kbinput, MOUSE_EXTRA_FIRST + 1);
+392 }
+.fi
+.SH "Variable Documentation"
+.PP 
+.SS "const \fBkey\fP keymap[(((152+3+12)+25)+11)]"
+
+.PP
+Definition at line 5 of file keymap\&.c\&.
+.PP
+Referenced by _cmd_get(), _cmd_macro(), cmd_bind(), cmd_rebind(), cmd_rgb(), initbind(), inputupdate_keys(), nprintkey(), printrgb(), readcmd(), and setactive_kb()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.
