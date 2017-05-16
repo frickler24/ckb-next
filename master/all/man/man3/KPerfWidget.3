@@ -1,0 +1,498 @@
+.TH "KPerfWidget" 3 "Tue May 16 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+KPerfWidget \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/kperfwidget\&.h>\fP
+.PP
+Inherits \fBQWidget\fP\&.
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBIndicatorUi\fP"
+.br
+.in -1c
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBKbPerf::indicator\fP \fBindicator\fP"
+.br
+.ti -1c
+.RI "typedef \fBKbPerf::i_hw\fP \fBi_hw\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBKPerfWidget\fP (\fBQWidget\fP *parent=0)"
+.br
+.ti -1c
+.RI "\fB~KPerfWidget\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetPerf\fP (\fBKbPerf\fP *newPerf, \fBKbProfile\fP *newProfile)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const int \fBI_COUNT\fP = KbPerf::I_COUNT"
+.br
+.ti -1c
+.RI "static const int \fBHW_I_COUNT\fP = KbPerf::HW_I_COUNT"
+.br
+.in -1c
+.SS "Private Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBHwMode\fP { \fBNORMAL\fP, \fBALWAYS_ON\fP, \fBALWAYS_OFF\fP, \fBRGB\fP, \fBBOTH\fP }"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBuiUpdated\fP (int index)"
+.br
+.ti -1c
+.RI "void \fBon_intensityBox_valueChanged\fP (int arg1)"
+.br
+.ti -1c
+.RI "void \fBon_copyButton_clicked\fP ()"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHwMode\fP \fBraw2Mode\fP (bool sw_enable, \fBi_hw\fP hw_enable)"
+.br
+.ti -1c
+.RI "void \fBmode2Raw\fP (\fBHwMode\fP mode, bool &sw_enable, \fBi_hw\fP &hw_enable)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUi::KPerfWidget\fP * \fBui\fP"
+.br
+.ti -1c
+.RI "\fBKbPerf\fP * \fBperf\fP"
+.br
+.ti -1c
+.RI "\fBKbProfile\fP * \fBprofile\fP"
+.br
+.ti -1c
+.RI "\fBIndicatorUi\fP \fBindicators\fP [\fBI_COUNT\fP]"
+.br
+.ti -1c
+.RI "QList< \fBQWidget\fP * > \fBk95Widgets\fP"
+.br
+.ti -1c
+.RI "QSignalMapper \fBupdateMapper\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 16 of file kperfwidget\&.h\&.
+.SH "Data Structure Documentation"
+.PP 
+.SH "struct KPerfWidget::IndicatorUi"
+.PP 
+Definition at line 48 of file kperfwidget\&.h\&.
+.PP
+\fBData Fields:\fP
+.RS 4
+\fBColorButton\fP * \fIcolor1\fP 
+.br
+.PP
+\fBColorButton\fP * \fIcolor2\fP 
+.br
+.PP
+\fBColorButton\fP * \fIcolor3\fP 
+.br
+.PP
+QCheckBox * \fIenable\fP 
+.br
+.PP
+QComboBox * \fIhwEnable\fP 
+.br
+.PP
+.RE
+.PP
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef \fBKbPerf::i_hw\fP \fBKPerfWidget::i_hw\fP"
+
+.PP
+Definition at line 29 of file kperfwidget\&.h\&.
+.SS "typedef \fBKbPerf::indicator\fP \fBKPerfWidget::indicator\fP"
+
+.PP
+Definition at line 28 of file kperfwidget\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBKPerfWidget::HwMode\fP\fC [private]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINORMAL \fP\fP
+.TP
+\fB\fIALWAYS_ON \fP\fP
+.TP
+\fB\fIALWAYS_OFF \fP\fP
+.TP
+\fB\fIRGB \fP\fP
+.TP
+\fB\fIBOTH \fP\fP
+.PP
+Definition at line 38 of file kperfwidget\&.h\&.
+.PP
+.nf
+38                 {
+39         NORMAL,
+40         ALWAYS_ON,
+41         ALWAYS_OFF,
+42         RGB,
+43         BOTH
+44     };
+.fi
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "KPerfWidget::KPerfWidget (\fBQWidget\fP *parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 6 of file kperfwidget\&.cpp\&.
+.PP
+References ColorButton::allowAlpha(), ColorButton::bigIcons(), Ui_KPerfWidget::capsBox, Ui_KPerfWidget::capsColorOff, Ui_KPerfWidget::capsColorOn, KPerfWidget::IndicatorUi::color1, KPerfWidget::IndicatorUi::color2, KPerfWidget::IndicatorUi::color3, KPerfWidget::IndicatorUi::enable, KPerfWidget::IndicatorUi::hwEnable, I_COUNT, indicators, Ui_KPerfWidget::k95Label1, Ui_KPerfWidget::k95Label2, Ui_KPerfWidget::k95Label3, Ui_KPerfWidget::k95Label4, Ui_KPerfWidget::k95Label5, Ui_KPerfWidget::k95Label6, Ui_KPerfWidget::k95Line, Ui_KPerfWidget::k95Spacer, k95Widgets, Ui_KPerfWidget::lightBox, Ui_KPerfWidget::lightColor1, Ui_KPerfWidget::lightColor2, Ui_KPerfWidget::lightColor3, Ui_KPerfWidget::lockBox, Ui_KPerfWidget::lockColorOff, Ui_KPerfWidget::lockColorOn, Ui_KPerfWidget::macroBox, Ui_KPerfWidget::macroColorOff, Ui_KPerfWidget::macroColorOn, Ui_KPerfWidget::modeBox, Ui_KPerfWidget::modeColorOff, Ui_KPerfWidget::modeColorOn, Ui_KPerfWidget::muteBox, Ui_KPerfWidget::muteColorNA, Ui_KPerfWidget::muteColorOff, Ui_KPerfWidget::muteColorOn, Ui_KPerfWidget::numBox, Ui_KPerfWidget::numColorOff, Ui_KPerfWidget::numColorOn, Ui_KPerfWidget::scrollBox, Ui_KPerfWidget::scrollColorOff, Ui_KPerfWidget::scrollColorOn, ColorButton::setLabel(), Ui_KPerfWidget::setupUi(), ui, uiUpdated(), and updateMapper\&.
+.PP
+.nf
+6                                         :
+7     QWidget(parent),
+8     ui(new Ui::KPerfWidget)
+9 {
+10     ui->setupUi(this);
+11     // Set up indicators
+12     indicators[0]\&.enable = 0; indicators[0]\&.hwEnable = ui->numBox; indicators[0]\&.color1 = ui->numColorOn; indicators[0]\&.color2 = ui->numColorOff; indicators[0]\&.color3 = 0;
+13     indicators[1]\&.enable = 0; indicators[1]\&.hwEnable = ui->capsBox; indicators[1]\&.color1 = ui->capsColorOn; indicators[1]\&.color2 = ui->capsColorOff; indicators[1]\&.color3 = 0;
+14     indicators[2]\&.enable = 0; indicators[2]\&.hwEnable = ui->scrollBox; indicators[2]\&.color1 = ui->scrollColorOn; indicators[2]\&.color2 = ui->scrollColorOff; indicators[2]\&.color3 = 0;
+15     indicators[3]\&.enable = ui->modeBox; indicators[3]\&.hwEnable = 0; indicators[3]\&.color1 = ui->modeColorOn; indicators[3]\&.color2 = ui->modeColorOff; indicators[3]\&.color3 = 0;
+16     indicators[4]\&.enable = ui->macroBox; indicators[4]\&.hwEnable = 0; indicators[4]\&.color1 = ui->macroColorOn; indicators[4]\&.color2 = ui->macroColorOff; indicators[4]\&.color3 = 0;
+17     indicators[5]\&.enable = ui->lightBox; indicators[5]\&.hwEnable = 0; indicators[5]\&.color1 = ui->lightColor1; indicators[5]\&.color2 = ui->lightColor2; indicators[5]\&.color3 = ui->lightColor3;
+18     indicators[6]\&.enable = ui->lockBox; indicators[6]\&.hwEnable = 0; indicators[6]\&.color1 = ui->lockColorOn; indicators[6]\&.color2 = ui->lockColorOff; indicators[6]\&.color3 = 0;
+19     indicators[7]\&.enable = ui->muteBox; indicators[7]\&.hwEnable = 0; indicators[7]\&.color1 = ui->muteColorOn; indicators[7]\&.color2 = ui->muteColorOff; indicators[7]\&.color3 = ui->muteColorNA;
+20     for(int i = 0; i < I_COUNT; i++){
+21         indicators[i]\&.color1->setLabel(false);
+22         indicators[i]\&.color1->bigIcons(true);
+23         indicators[i]\&.color1->allowAlpha(true);
+24         indicators[i]\&.color2->setLabel(false);
+25         indicators[i]\&.color2->bigIcons(true);
+26         indicators[i]\&.color2->allowAlpha(true);
+27         if(indicators[i]\&.color3){
+28             indicators[i]\&.color3->setLabel(false);
+29             indicators[i]\&.color3->bigIcons(true);
+30             indicators[i]\&.color3->allowAlpha(true);
+31         }
+32         // Map signals
+33         if(indicators[i]\&.enable){
+34             connect(indicators[i]\&.enable, SIGNAL(clicked(bool)), &updateMapper, SLOT(map()));
+35             updateMapper\&.setMapping(indicators[i]\&.enable, i);
+36         }
+37         if(indicators[i]\&.hwEnable){
+38             connect(indicators[i]\&.hwEnable, SIGNAL(activated(int)), &updateMapper, SLOT(map()));
+39             updateMapper\&.setMapping(indicators[i]\&.hwEnable, i);
+40         }
+41         connect(indicators[i]\&.color1, SIGNAL(colorChanged(QColor)), &updateMapper, SLOT(map()));
+42         updateMapper\&.setMapping(indicators[i]\&.color1, i);
+43         connect(indicators[i]\&.color2, SIGNAL(colorChanged(QColor)), &updateMapper, SLOT(map()));
+44         updateMapper\&.setMapping(indicators[i]\&.color2, i);
+45         if(indicators[i]\&.color3){
+46             connect(indicators[i]\&.color3, SIGNAL(colorChanged(QColor)), &updateMapper, SLOT(map()));
+47             updateMapper\&.setMapping(indicators[i]\&.color3, i);
+48         }
+49     }
+50     connect(&updateMapper, SIGNAL(mapped(int)), this, SLOT(uiUpdated(int)));
+51     k95Widgets << ui->modeBox << ui->modeColorOn << ui->modeColorOff << ui->macroBox << ui->macroColorOn << ui->macroColorOff << ui->k95Label1 << ui->k95Label2 << ui->k95Label3 << ui->k95Label4 << ui->k95Label5 << ui->k95Label6 << ui->k95Line << ui->k95Spacer;
+52 }
+.fi
+.SS "KPerfWidget::~KPerfWidget ()"
+
+.PP
+Definition at line 54 of file kperfwidget\&.cpp\&.
+.PP
+References ui\&.
+.PP
+.nf
+54                          {
+55     delete ui;
+56 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void KPerfWidget::mode2Raw (\fBHwMode\fPmode, bool &sw_enable, \fBi_hw\fP &hw_enable)\fC [private]\fP"
+
+.PP
+Definition at line 72 of file kperfwidget\&.cpp\&.
+.PP
+References ALWAYS_OFF, ALWAYS_ON, BOTH, NORMAL, KbPerf::NORMAL, KbPerf::OFF, KbPerf::ON, and RGB\&.
+.PP
+Referenced by uiUpdated()\&.
+.PP
+.nf
+72                                                                        {
+73     switch(mode){
+74     case NORMAL:
+75         sw_enable = false;
+76         hw_enable = KbPerf::NORMAL;
+77         break;
+78     case ALWAYS_ON:
+79         sw_enable = false;
+80         hw_enable = KbPerf::ON;
+81         break;
+82     case ALWAYS_OFF:
+83         sw_enable = false;
+84         hw_enable = KbPerf::OFF;
+85         break;
+86     case RGB:
+87         sw_enable = true;
+88         hw_enable = KbPerf::OFF;
+89         break;
+90     case BOTH:
+91         sw_enable = true;
+92         hw_enable = KbPerf::NORMAL;
+93         break;
+94     }
+95 }
+.fi
+.SS "void KPerfWidget::on_copyButton_clicked ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 193 of file kperfwidget\&.cpp\&.
+.PP
+References KbProfile::currentMode(), KbProfile::modes(), perf, KbMode::perf(), profile, and ModeSelectDialog::selection()\&.
+.PP
+.nf
+193                                        {
+194     ModeSelectDialog dialog(this, profile->currentMode(), profile->modes(), "Copy performance settings to:");
+195     if(dialog\&.exec() != QDialog::Accepted)
+196         return;
+197     QList<KbMode*> selectedModes = dialog\&.selection();
+198     foreach(KbMode* mode, selectedModes){
+199         *mode->perf() = *perf;
+200     }
+201 }
+.fi
+.SS "void KPerfWidget::on_intensityBox_valueChanged (intarg1)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 187 of file kperfwidget\&.cpp\&.
+.PP
+References KbPerf::iOpacity(), and perf\&.
+.PP
+.nf
+187                                                       {
+188     if(!perf)
+189         return;
+190     perf->iOpacity(arg1 / 100\&.f);
+191 }
+.fi
+.SS "\fBKPerfWidget::HwMode\fP KPerfWidget::raw2Mode (boolsw_enable, \fBi_hw\fPhw_enable)\fC [private]\fP"
+
+.PP
+Definition at line 58 of file kperfwidget\&.cpp\&.
+.PP
+References ALWAYS_OFF, ALWAYS_ON, BOTH, NORMAL, KbPerf::NORMAL, KbPerf::OFF, KbPerf::ON, and RGB\&.
+.PP
+Referenced by setPerf()\&.
+.PP
+.nf
+58                                                                      {
+59     if(sw_enable){
+60         if(hw_enable == KbPerf::NORMAL)
+61             return BOTH;
+62         return RGB;
+63     } else {
+64         if(hw_enable == KbPerf::ON)
+65             return ALWAYS_ON;
+66         else if(hw_enable == KbPerf::OFF)
+67             return ALWAYS_OFF;
+68         return NORMAL;
+69     }
+70 }
+.fi
+.SS "void KPerfWidget::setPerf (\fBKbPerf\fP *newPerf, \fBKbProfile\fP *newProfile)"
+
+.PP
+Definition at line 97 of file kperfwidget\&.cpp\&.
+.PP
+References BOTH, ColorButton::color(), KPerfWidget::IndicatorUi::color1, KPerfWidget::IndicatorUi::color2, KPerfWidget::IndicatorUi::color3, KPerfWidget::IndicatorUi::enable, KbPerf::getIndicator(), HW_I_COUNT, KPerfWidget::IndicatorUi::hwEnable, I_COUNT, indicators, Ui_KPerfWidget::intensityBox, KbPerf::iOpacity(), KeyMap::K95, k95Widgets, KbProfile::keyMap(), Ui_KPerfWidget::label_12, Ui_KPerfWidget::label_14, Ui_KPerfWidget::label_17, KeyMap::model(), Ui_KPerfWidget::muteBox, Ui_KPerfWidget::muteColorNA, Ui_KPerfWidget::muteColorOff, Ui_KPerfWidget::muteColorOn, perf, profile, raw2Mode(), RGB, KeyMap::STRAFE, and ui\&.
+.PP
+Referenced by KbWidget::modeChanged()\&.
+.PP
+.nf
+97                                                                {
+98     perf = newPerf;
+99     profile = newProfile;
+100     // Set intensity
+101     ui->intensityBox->setValue(round(perf->iOpacity() * 100\&.f));
+102     // Set hardware indicator values
+103     for(int i = 0; i < HW_I_COUNT; i++){
+104         QColor c1, c2, c3;
+105         bool software;
+106         i_hw hardware;
+107         perf->getIndicator((indicator)i, c1, c2, c3, software, hardware);
+108         HwMode mode = raw2Mode(software, hardware);
+109         indicators[i]\&.hwEnable->setCurrentIndex((int)mode);
+110         indicators[i]\&.color1->color(c1);
+111         indicators[i]\&.color2->color(c2);
+112         if(mode == RGB || mode == BOTH){
+113             indicators[i]\&.color1->setEnabled(true);
+114             indicators[i]\&.color2->setEnabled(true);
+115         } else {
+116             indicators[i]\&.color1->setEnabled(false);
+117             indicators[i]\&.color2->setEnabled(false);
+118         }
+119     }
+120     // Set software indicators
+121     for(int i = HW_I_COUNT; i < I_COUNT; i++){
+122         QColor c1, c2, c3;
+123         bool software;
+124         i_hw hardware;
+125         perf->getIndicator((indicator)i, c1, c2, c3, software, hardware);
+126         indicators[i]\&.enable->setChecked(software);
+127         indicators[i]\&.color1->color(c1);
+128         indicators[i]\&.color2->color(c2);
+129         if(indicators[i]\&.color3) indicators[i]\&.color3->color(c3);
+130         if(software){
+131             indicators[i]\&.color1->setEnabled(true);
+132             indicators[i]\&.color2->setEnabled(true);
+133             if(indicators[i]\&.color3) indicators[i]\&.color3->setEnabled(true);
+134         } else {
+135             indicators[i]\&.color1->setEnabled(false);
+136             indicators[i]\&.color2->setEnabled(false);
+137             if(indicators[i]\&.color3) indicators[i]\&.color3->setEnabled(false);
+138         }
+139     }
+140     // Hide K95 indicators on non-K95s
+141     if(profile->keyMap()\&.model() == KeyMap::K95){
+142         foreach(QWidget* w, k95Widgets)
+143             w->show();
+144     } else {
+145         foreach(QWidget* w, k95Widgets)
+146             w->hide();
+147         if(profile->keyMap()\&.model() == KeyMap::STRAFE) { // hide indicators unsupported by STRAFE
+148             ui->muteBox->hide();
+149             ui->muteColorOn->hide();
+150             ui->muteColorOff->hide();
+151             ui->muteColorNA->hide();
+152             ui->label_12->hide();
+153             ui->label_14->hide();
+154             ui->label_17->hide();
+155        }
+156     }
+157 }
+.fi
+.SS "void KPerfWidget::uiUpdated (intindex)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 159 of file kperfwidget\&.cpp\&.
+.PP
+References ColorButton::color(), KPerfWidget::IndicatorUi::color1, KPerfWidget::IndicatorUi::color2, KPerfWidget::IndicatorUi::color3, KPerfWidget::IndicatorUi::enable, indicators, mode2Raw(), KbPerf::NONE, perf, and KbPerf::setIndicator()\&.
+.PP
+Referenced by KPerfWidget()\&.
+.PP
+.nf
+159                                     {
+160     if(!perf)
+161         return;
+162     // Read HW/SW enable state
+163     bool software;
+164     i_hw hardware;
+165     if(indicators[index]\&.enable){
+166         software = indicators[index]\&.enable->isChecked();
+167         hardware = KbPerf::NONE;
+168     } else {
+169         mode2Raw((HwMode)indicators[index]\&.hwEnable->currentIndex(), software, hardware);
+170     }
+171     // Enable/disable color buttons based on whether or not the indicator is turned on
+172     if(software){
+173         indicators[index]\&.color1->setEnabled(true);
+174         indicators[index]\&.color2->setEnabled(true);
+175         if(indicators[index]\&.color3) indicators[index]\&.color3->setEnabled(true);
+176     } else {
+177         indicators[index]\&.color1->setEnabled(false);
+178         indicators[index]\&.color2->setEnabled(false);
+179         if(indicators[index]\&.color3) indicators[index]\&.color3->setEnabled(false);
+180     }
+181     QColor c1 = indicators[index]\&.color1->color();
+182     QColor c2 = indicators[index]\&.color2->color();
+183     QColor c3 = indicators[index]\&.color3 ? indicators[index]\&.color3->color() : QColor();
+184     perf->setIndicator((indicator)index, c1, c2, c3, software, hardware);
+185 }
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "const int KPerfWidget::HW_I_COUNT = KbPerf::HW_I_COUNT\fC [static]\fP"
+
+.PP
+Definition at line 27 of file kperfwidget\&.h\&.
+.PP
+Referenced by setPerf()\&.
+.SS "const int KPerfWidget::I_COUNT = KbPerf::I_COUNT\fC [static]\fP"
+
+.PP
+Definition at line 26 of file kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget(), and setPerf()\&.
+.SS "\fBIndicatorUi\fP KPerfWidget::indicators[\fBI_COUNT\fP]\fC [private]\fP"
+
+.PP
+Definition at line 53 of file kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget(), setPerf(), and uiUpdated()\&.
+.SS "QList<\fBQWidget\fP*> KPerfWidget::k95Widgets\fC [private]\fP"
+
+.PP
+Definition at line 54 of file kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget(), and setPerf()\&.
+.SS "\fBKbPerf\fP* KPerfWidget::perf\fC [private]\fP"
+
+.PP
+Definition at line 34 of file kperfwidget\&.h\&.
+.PP
+Referenced by on_copyButton_clicked(), on_intensityBox_valueChanged(), setPerf(), and uiUpdated()\&.
+.SS "\fBKbProfile\fP* KPerfWidget::profile\fC [private]\fP"
+
+.PP
+Definition at line 35 of file kperfwidget\&.h\&.
+.PP
+Referenced by on_copyButton_clicked(), and setPerf()\&.
+.SS "\fBUi::KPerfWidget\fP* KPerfWidget::ui\fC [private]\fP"
+
+.PP
+Definition at line 32 of file kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget(), setPerf(), and ~KPerfWidget()\&.
+.SS "QSignalMapper KPerfWidget::updateMapper\fC [private]\fP"
+
+.PP
+Definition at line 56 of file kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

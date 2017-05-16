@@ -1,0 +1,146 @@
+.TH "src/ckb-daemon/profile_keyboard.c" 3 "Tue May 16 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb-daemon/profile_keyboard.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'profile\&.h'\fP
+.br
+\fC#include 'usb\&.h'\fP
+.br
+\fC#include 'led\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "static int \fBhwloadmode\fP (\fBusbdevice\fP *kb, \fBhwprofile\fP *hw, int mode)"
+.br
+.ti -1c
+.RI "int \fBcmd_hwload_kb\fP (\fBusbdevice\fP *kb, \fBusbmode\fP *dummy1, int dummy2, int apply, const char *dummy3)"
+.br
+.ti -1c
+.RI "int \fBcmd_hwsave_kb\fP (\fBusbdevice\fP *kb, \fBusbmode\fP *dummy1, int dummy2, int dummy3, const char *dummy4)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int cmd_hwload_kb (\fBusbdevice\fP *kb, \fBusbmode\fP *dummy1, intdummy2, intapply, const char *dummy3)"
+
+.PP
+Definition at line 16 of file profile_keyboard\&.c\&.
+.PP
+References DELAY_LONG, usbdevice::hw, hwloadmode(), HWMODE_K70, HWMODE_K95, hwtonative(), hwprofile::id, IS_K95, MSG_SIZE, hwprofile::name, PR_NAME_LEN, usbdevice::profile, and usbrecv\&.
+.PP
+.nf
+16                                                                                             {
+17     DELAY_LONG(kb);
+18     hwprofile* hw = calloc(1, sizeof(hwprofile));
+19     // Ask for profile and mode IDs
+20     uchar data_pkt[2][MSG_SIZE] = {
+21         { 0x0e, 0x15, 0x01, 0 },
+22         { 0x0e, 0x16, 0x01, 0 }
+23     };
+24     uchar in_pkt[MSG_SIZE];
+25     int modes = (IS_K95(kb) ? HWMODE_K95 : HWMODE_K70);
+26     for(int i = 0; i <= modes; i++){
+27         data_pkt[0][3] = i;
+28         if(!usbrecv(kb, data_pkt[0], in_pkt)){
+29             free(hw);
+30             return -1;
+31         }
+32         memcpy(hw->id + i, in_pkt + 4, sizeof(usbid));
+33     }
+34     // Ask for profile name
+35     if(!usbrecv(kb, data_pkt[1], in_pkt)){
+36         free(hw);
+37         return -1;
+38     }
+39     memcpy(hw->name[0], in_pkt + 4, PR_NAME_LEN * 2);
+40     // Load modes
+41     for(int i = 0; i < modes; i++){
+42         if(hwloadmode(kb, hw, i)){
+43             free(hw);
+44             return -1;
+45         }
+46     }
+47     // Make the profile active (if requested)
+48     if(apply)
+49         hwtonative(kb->profile, hw, modes);
+50     // Free the existing profile (if any)
+51     free(kb->hw);
+52     kb->hw = hw;
+53     DELAY_LONG(kb);
+54     return 0;
+55 }
+.fi
+.SS "int cmd_hwsave_kb (\fBusbdevice\fP *kb, \fBusbmode\fP *dummy1, intdummy2, intdummy3, const char *dummy4)"
+
+.PP
+Definition at line 57 of file profile_keyboard\&.c\&.
+.PP
+References DELAY_LONG, usbdevice::hw, HWMODE_K70, HWMODE_K95, hwprofile::id, IS_K95, hwprofile::light, MD_NAME_LEN, MSG_SIZE, hwprofile::name, nativetohw(), usbdevice::profile, savergb_kb(), and usbsend\&.
+.PP
+.nf
+57                                                                                              {
+58     DELAY_LONG(kb);
+59     hwprofile* hw = kb->hw;
+60     if(!hw)
+61         hw = kb->hw = calloc(1, sizeof(hwprofile));
+62     int modes = (IS_K95(kb) ? HWMODE_K95 : HWMODE_K70);
+63     nativetohw(kb->profile, hw, modes);
+64     // Save the profile and mode names
+65     uchar data_pkt[2][MSG_SIZE] = {
+66         { 0x07, 0x16, 0x01, 0 },
+67         { 0x07, 0x15, 0x01, 0 },
+68     };
+69     // Save the mode names
+70     for(int i = 0; i <= modes; i++){
+71         data_pkt[0][3] = i;
+72         memcpy(data_pkt[0] + 4, hw->name[i], MD_NAME_LEN * 2);
+73         if(!usbsend(kb, data_pkt[0], 1))
+74             return -1;
+75     }
+76     // Save the IDs
+77     for(int i = 0; i <= modes; i++){
+78         data_pkt[1][3] = i;
+79         memcpy(data_pkt[1] + 4, hw->id + i, sizeof(usbid));
+80         if(!usbsend(kb, data_pkt[1], 1))
+81             return -1;
+82     }
+83     // Save the RGB data
+84     for(int i = 0; i < modes; i++){
+85         if(savergb_kb(kb, hw->light + i, i))
+86             return -1;
+87     }
+88     DELAY_LONG(kb);
+89     return 0;
+90 }
+.fi
+.SS "static int hwloadmode (\fBusbdevice\fP *kb, \fBhwprofile\fP *hw, intmode)\fC [static]\fP"
+
+.PP
+Definition at line 5 of file profile_keyboard\&.c\&.
+.PP
+References hwprofile::light, loadrgb_kb(), MD_NAME_LEN, MSG_SIZE, hwprofile::name, and usbrecv\&.
+.PP
+Referenced by cmd_hwload_kb()\&.
+.PP
+.nf
+5                                                              {
+6     // Ask for mode's name
+7     uchar data_pkt[MSG_SIZE] = { 0x0e, 0x16, 0x01, mode + 1, 0 };
+8     uchar in_pkt[MSG_SIZE];
+9     if(!usbrecv(kb, data_pkt, in_pkt))
+10         return -1;
+11     memcpy(hw->name[mode + 1], in_pkt + 4, MD_NAME_LEN * 2);
+12     // Load the RGB setting
+13     return loadrgb_kb(kb, hw->light + mode, mode);
+14 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

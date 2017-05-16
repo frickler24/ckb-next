@@ -1,0 +1,12 @@
+<map id="_mkdevpath" name="_mkdevpath">
+<area shape="rect" id="node2" href="$devnode_8h.html#a0c3d1e3cd90f43a9b5ee0793f4a75041" title="mkdevpath" alt="" coords="147,17,234,44"/>
+<area shape="rect" id="node3" href="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1072,17,1123,44"/>
+<area shape="rect" id="node6" href="$usb_8c.html#a10ad381abfe51e67e341c882c92bb9ac" title="_setupusb" alt="" coords="283,43,365,69"/>
+<area shape="rect" id="node4" href="$notify_8c.html#ae246359e104d63520158c26329caac80" title="restart" alt="" coords="1171,17,1229,44"/>
+<area shape="rect" id="node5" href="$notify_8h.html#a700b520b9eb9a3698af8f8ebf547a9ab" title="cmd_restart" alt="" coords="1277,17,1368,44"/>
+<area shape="rect" id="node7" href="$usb_8h.html#a1ab9d61dd894466125283465201161cd" title="setupusb" alt="" coords="413,43,488,69"/>
+<area shape="rect" id="node8" href="$usb__linux_8c.html#a3185d6da36c8b0f8b862a8479ae82034" title="usbadd" alt="" coords="536,43,600,69"/>
+<area shape="rect" id="node9" href="$usb__linux_8c.html#a50efc8ee0ffcb6f201735d1a3bb08779" title="usb_add_device" alt="" coords="649,43,765,69"/>
+<area shape="rect" id="node10" href="$usb__linux_8c.html#ad56c1e4ec53bbd6b947cb535590328ea" title="udev_enum" alt="" coords="814,43,903,69"/>
+<area shape="rect" id="node11" href="$usb__linux_8c.html#a0859efad3739abe2ec61af4f3bb983ff" title="usbmain" alt="" coords="953,43,1023,69"/>
+</map>

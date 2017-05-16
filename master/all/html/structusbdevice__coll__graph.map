@@ -1,0 +1,13 @@
+<map id="usbdevice" name="usbdevice">
+<area shape="rect" id="node17" href="$command_8h.html#uniondevcmd" title="{devcmd\n||}" alt="" coords="898,1267,966,1344"/>
+<area shape="rect" id="node2" href="$structures_8h.html#structusbprofile" title="{usbprofile\n||}" alt="" coords="637,955,715,1032"/>
+<area shape="rect" id="node3" href="$structures_8h.html#structlighting" title="{lighting\n||}" alt="" coords="544,573,606,651"/>
+<area shape="rect" id="node6" href="$structures_8h.html#structusbmode" title="{usbmode\n||}" alt="" coords="706,800,779,877"/>
+<area shape="rect" id="node16" href="$structures_8h.html#structhwprofile" title="{hwprofile\n||}" alt="" coords="339,800,412,877"/>
+<area shape="rect" id="node5" href="$structures_8h.html#structdpiset" title="{dpiset\n||}" alt="" coords="396,573,452,651"/>
+<area shape="rect" id="node20" href="$structures_8h.html#structusbinput" title="{usbinput\n||}" alt="" coords="126,573,196,651"/>
+<area shape="rect" id="node11" href="$structures_8h.html#structkeymacro" title="{keymacro\n||}" alt="" coords="774,331,852,408"/>
+<area shape="rect" id="node12" href="$structures_8h.html#structmacroaction" title="{macroaction\n||}" alt="" coords="746,176,839,253"/>
+<area shape="rect" id="node14" href="$structures_8h.html#structusbid" title="{usbid\n||}" alt="" coords="959,573,1012,651"/>
+<area shape="rect" id="node9" href="$structures_8h.html#structbinding" title="{binding\n||}" alt="" coords="788,573,850,651"/>
+</map>

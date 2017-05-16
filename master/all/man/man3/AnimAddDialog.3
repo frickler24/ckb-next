@@ -1,0 +1,214 @@
+.TH "AnimAddDialog" 3 "Tue May 16 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AnimAddDialog \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/animadddialog\&.h>\fP
+.PP
+Inherits \fBQDialog\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAnimAddDialog\fP (\fBQWidget\fP *parent, \fBKbLight\fP *light, const QStringList &keys)"
+.br
+.ti -1c
+.RI "\fB~AnimAddDialog\fP ()"
+.br
+.ti -1c
+.RI "const \fBAnimScript\fP * \fBchosenScript\fP ()"
+.br
+.ti -1c
+.RI "int \fBchosenPreset\fP ()"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBon_animBox_activated\fP (int index)"
+.br
+.ti -1c
+.RI "void \fBon_presetBox_activated\fP (int index)"
+.br
+.ti -1c
+.RI "void \fBon_previewBox_clicked\fP (bool checked)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUi::AnimAddDialog\fP * \fBui\fP"
+.br
+.ti -1c
+.RI "QList< const \fBAnimScript\fP * > \fBscripts\fP"
+.br
+.ti -1c
+.RI "\fBKbLight\fP * \fB_light\fP"
+.br
+.ti -1c
+.RI "QStringList \fB_keys\fP"
+.br
+.ti -1c
+.RI "bool \fBshowPreview\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 12 of file animadddialog\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AnimAddDialog::AnimAddDialog (\fBQWidget\fP *parent, \fBKbLight\fP *light, const QStringList &keys)\fC [explicit]\fP"
+
+.PP
+Definition at line 4 of file animadddialog\&.cpp\&.
+.PP
+References Ui_AnimAddDialog::animBox, AnimScript::list(), AnimScript::name(), on_animBox_activated(), scripts, Ui_AnimAddDialog::setupUi(), and ui\&.
+.PP
+.nf
+4                                                                                      :
+5     QDialog(parent),
+6     ui(new Ui::AnimAddDialog), _light(light), _keys(keys), showPreview(true)
+7 {
+8     ui->setupUi(this);
+9     scripts = AnimScript::list();
+10     foreach(const AnimScript* script, scripts)
+11         ui->animBox->addItem(script->name());
+12     on_animBox_activated(0);
+13 }
+.fi
+.SS "AnimAddDialog::~AnimAddDialog ()"
+
+.PP
+Definition at line 15 of file animadddialog\&.cpp\&.
+.PP
+References _light, KbLight::stopPreview(), and ui\&.
+.PP
+.nf
+15                              {
+16     delete ui;
+17     _light->stopPreview();
+18 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "int AnimAddDialog::chosenPreset ()"
+
+.PP
+Definition at line 24 of file animadddialog\&.cpp\&.
+.PP
+References Ui_AnimAddDialog::presetBox, and ui\&.
+.PP
+Referenced by KbLightWidget::on_animButton_clicked()\&.
+.PP
+.nf
+24                                {
+25     return ui->presetBox->currentIndex();
+26 }
+.fi
+.SS "const \fBAnimScript\fP * AnimAddDialog::chosenScript ()"
+
+.PP
+Definition at line 20 of file animadddialog\&.cpp\&.
+.PP
+References Ui_AnimAddDialog::animBox, scripts, and ui\&.
+.PP
+Referenced by on_animBox_activated(), KbLightWidget::on_animButton_clicked(), and on_presetBox_activated()\&.
+.PP
+.nf
+20                                              {
+21     return scripts[ui->animBox->currentIndex()];
+22 }
+.fi
+.SS "void AnimAddDialog::on_animBox_activated (intindex)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 28 of file animadddialog\&.cpp\&.
+.PP
+References chosenScript(), on_presetBox_activated(), Ui_AnimAddDialog::presetBox, and ui\&.
+.PP
+Referenced by AnimAddDialog()\&.
+.PP
+.nf
+28                                                  {
+29     // Update preset list
+30     ui->presetBox->clear();
+31     foreach(const QString& preset, chosenScript()->presets())
+32         ui->presetBox->addItem(preset);
+33     ui->presetBox->setCurrentIndex(0);
+34     on_presetBox_activated(0);
+35 }
+.fi
+.SS "void AnimAddDialog::on_presetBox_activated (intindex)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 37 of file animadddialog\&.cpp\&.
+.PP
+References _keys, _light, chosenScript(), KbLight::previewAnim(), and showPreview\&.
+.PP
+Referenced by on_animBox_activated(), and on_previewBox_clicked()\&.
+.PP
+.nf
+37                                                    {
+38     // Update preview
+39     if(showPreview)
+40         _light->previewAnim(chosenScript(), _keys, chosenScript()->preset(index));
+41 }
+.fi
+.SS "void AnimAddDialog::on_previewBox_clicked (boolchecked)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 43 of file animadddialog\&.cpp\&.
+.PP
+References _light, on_presetBox_activated(), Ui_AnimAddDialog::presetBox, showPreview, KbLight::stopPreview(), and ui\&.
+.PP
+.nf
+43                                                      {
+44     showPreview = checked;
+45     if(showPreview)
+46         on_presetBox_activated(ui->presetBox->currentIndex());
+47     else
+48         _light->stopPreview();
+49 }
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "QStringList AnimAddDialog::_keys\fC [private]\fP"
+
+.PP
+Definition at line 33 of file animadddialog\&.h\&.
+.PP
+Referenced by on_presetBox_activated()\&.
+.SS "\fBKbLight\fP* AnimAddDialog::_light\fC [private]\fP"
+
+.PP
+Definition at line 32 of file animadddialog\&.h\&.
+.PP
+Referenced by on_presetBox_activated(), on_previewBox_clicked(), and ~AnimAddDialog()\&.
+.SS "QList<const \fBAnimScript\fP*> AnimAddDialog::scripts\fC [private]\fP"
+
+.PP
+Definition at line 30 of file animadddialog\&.h\&.
+.PP
+Referenced by AnimAddDialog(), and chosenScript()\&.
+.SS "bool AnimAddDialog::showPreview\fC [private]\fP"
+
+.PP
+Definition at line 34 of file animadddialog\&.h\&.
+.PP
+Referenced by on_presetBox_activated(), and on_previewBox_clicked()\&.
+.SS "\fBUi::AnimAddDialog\fP* AnimAddDialog::ui\fC [private]\fP"
+
+.PP
+Definition at line 29 of file animadddialog\&.h\&.
+.PP
+Referenced by AnimAddDialog(), chosenPreset(), chosenScript(), on_animBox_activated(), on_previewBox_clicked(), and ~AnimAddDialog()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

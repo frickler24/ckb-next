@@ -1,0 +1,9 @@
+<map id="inputupdate" name="inputupdate">
+<area shape="rect" id="node2" href="$input_8c.html#aed8e9842ed5750c1d328c5dc4c1ba2bd" title="inputupdate_keys" alt="" coords="145,56,269,83"/>
+<area shape="rect" id="node4" href="$input_8h.html#a9f2cfb2d883ae4a3732047fe3f3da683" title="os_mousemove" alt="" coords="317,5,432,32"/>
+<area shape="rect" id="node3" href="$input_8c.html#abd38419ce56379559481f51d9491adeb" title="macromask" alt="" coords="329,56,420,83"/>
+<area shape="rect" id="node6" href="$input_8h.html#af0d3401f317f3214dadad7d1a3378c58" title="os_keypress" alt="" coords="327,107,423,133"/>
+<area shape="rect" id="node7" href="$notify_8c.html#ac2411c0997dfdbefdebd45f2584a5d04" title="nprintkey" alt="" coords="337,157,412,184"/>
+<area shape="rect" id="node5" href="$input__linux_8c.html#a14ff0fdf147e3702197db2cadb878460" title="isync" alt="" coords="483,56,536,83"/>
+<area shape="rect" id="node8" href="$notify_8c.html#a7ac88f15243030290e4d57c3c9ac7c98" title="nprintf" alt="" coords="480,157,539,184"/>
+</map>

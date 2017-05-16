@@ -1,0 +1,5 @@
+<map id="_resetusb" name="_resetusb">
+<area shape="rect" id="node2" href="$usb_8h.html#a0fd9533617cdae390dc65aa4594e33d2" title="os_resetusb" alt="" coords="133,31,227,57"/>
+<area shape="rect" id="node3" href="$usb__linux_8c.html#a49df4aa42759b30c67b6298ddbcadf59" title="usbunclaim" alt="" coords="275,5,363,32"/>
+<area shape="rect" id="node4" href="$usb__linux_8c.html#ad84834f083685c7d124985e30458c8f9" title="usbclaim" alt="" coords="281,56,356,83"/>
+</map>

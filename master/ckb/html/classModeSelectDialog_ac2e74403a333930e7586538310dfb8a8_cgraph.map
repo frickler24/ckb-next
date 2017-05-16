@@ -1,0 +1,5 @@
+<map id="ModeSelectDialog::ModeSelectDialog" name="ModeSelectDialog::ModeSelectDialog">
+<area shape="rect" id="node2" href="$classKbMode.html#adfd90af39233d8c1431566859a21af1c" title="KbMode::name" alt="" coords="278,5,389,32"/>
+<area shape="rect" id="node3" href="$classUi__ModeSelectDialog.html#a4c2d9c7267e1ee65e91bea1e6362c1f3" title="Ui_ModeSelectDialog\l::setupUi" alt="" coords="259,57,407,98"/>
+<area shape="rect" id="node4" href="$classUi__ModeSelectDialog.html#acae66aef2e2449acc4c92b2142441be4" title="Ui_ModeSelectDialog\l::retranslateUi" alt="" coords="457,57,605,98"/>
+</map>

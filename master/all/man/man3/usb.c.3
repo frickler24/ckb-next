@@ -1,0 +1,466 @@
+.TH "src/ckb-daemon/usb.c" 3 "Tue May 16 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb-daemon/usb.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'command\&.h'\fP
+.br
+\fC#include 'device\&.h'\fP
+.br
+\fC#include 'devnode\&.h'\fP
+.br
+\fC#include 'firmware\&.h'\fP
+.br
+\fC#include 'input\&.h'\fP
+.br
+\fC#include 'led\&.h'\fP
+.br
+\fC#include 'notify\&.h'\fP
+.br
+\fC#include 'profile\&.h'\fP
+.br
+\fC#include 'usb\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "const char * \fBvendor_str\fP (short vendor)"
+.br
+.ti -1c
+.RI "const char * \fBproduct_str\fP (short product)"
+.br
+.ti -1c
+.RI "static const \fBdevcmd\fP * \fBget_vtable\fP (short vendor, short product)"
+.br
+.ti -1c
+.RI "static void * \fBdevmain\fP (\fBusbdevice\fP *kb)"
+.br
+.ti -1c
+.RI "static void * \fB_setupusb\fP (void *context)"
+.br
+.ti -1c
+.RI "void \fBsetupusb\fP (\fBusbdevice\fP *kb)"
+.br
+.ti -1c
+.RI "int \fBrevertusb\fP (\fBusbdevice\fP *kb)"
+.br
+.ti -1c
+.RI "int \fB_resetusb\fP (\fBusbdevice\fP *kb, const char *file, int line)"
+.br
+.ti -1c
+.RI "int \fBusb_tryreset\fP (\fBusbdevice\fP *kb)"
+.br
+.ti -1c
+.RI "int \fB_usbsend\fP (\fBusbdevice\fP *kb, const \fBuchar\fP *messages, int count, const char *file, int line)"
+.br
+.ti -1c
+.RI "int \fB_usbrecv\fP (\fBusbdevice\fP *kb, const \fBuchar\fP *out_msg, \fBuchar\fP *in_msg, const char *file, int line)"
+.br
+.ti -1c
+.RI "int \fBcloseusb\fP (\fBusbdevice\fP *kb)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "pthread_mutex_t \fBusbmutex\fP = PTHREAD_MUTEX_INITIALIZER"
+.br
+.ti -1c
+.RI "volatile int \fBreset_stop\fP = 0"
+.br
+.ti -1c
+.RI "int \fBfeatures_mask\fP = -1"
+.br
+.ti -1c
+.RI "int \fBhwload_mode\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int _resetusb (\fBusbdevice\fP *kb, const char *file, intline)"
+
+.PP
+Definition at line 149 of file usb\&.c\&.
+.PP
+References usbdevice::active, DELAY_LONG, os_resetusb(), and usbdevice::vtable\&.
+.PP
+.nf
+149                                                         {
+150     // Perform a USB reset
+151     DELAY_LONG(kb);
+152     int res = os_resetusb(kb, file, line);
+153     if(res)
+154         return res;
+155     DELAY_LONG(kb);
+156     // Re-initialize the device
+157     if(kb->vtable->start(kb, kb->active) != 0)
+158         return -1;
+159     if(kb->vtable->updatergb(kb, 1) != 0)
+160         return -1;
+161     return 0;
+162 }
+.fi
+.SS "static void* _setupusb (void *context)\fC [static]\fP"
+
+.PP
+Definition at line 77 of file usb\&.c\&.
+.PP
+References ckb_info, closeusb(), DELAY_LONG, devmain(), devpath, dmutex, FEAT_ADJRATE, FEAT_MONOCHROME, FEAT_STD_NRGB, FEAT_STD_RGB, usbdevice::features, features_mask, get_vtable(), imutex, INDEX_OF, usbdevice::inputthread, IS_MONOCHROME, IS_MOUSE, IS_RGB, KB_NAME_LEN, keyboard, mkdevpath(), usbdevice::name, os_inputmain(), os_inputopen(), os_setupindicators(), os_setupusb(), usbdevice::product, product_str(), usbdevice::serial, SERIAL_LEN, updateconnected(), USB_DELAY_DEFAULT, usb_tryreset(), usbdevice::usbdelay, usbdevice::vendor, vendor_str(), and usbdevice::vtable\&.
+.PP
+Referenced by setupusb()\&.
+.PP
+.nf
+77                                      {
+78     usbdevice* kb = context;
+79     // Set standard fields
+80     short vendor = kb->vendor, product = kb->product;
+81     const devcmd* vt = kb->vtable = get_vtable(vendor, product);
+82     kb->features = (IS_RGB(vendor, product) ? FEAT_STD_RGB : FEAT_STD_NRGB) & features_mask;
+83     if(IS_MOUSE(vendor, product)) kb->features |= FEAT_ADJRATE;
+84     if(IS_MONOCHROME(vendor, product)) kb->features |= FEAT_MONOCHROME;
+85     kb->usbdelay = USB_DELAY_DEFAULT;
+86 
+87     // Perform OS-specific setup
+88     DELAY_LONG(kb);
+89     if(os_setupusb(kb))
+90         goto fail;
+91     // Make up a device name and serial if they weren't assigned
+92     if(!kb->serial[0])
+93         snprintf(kb->serial, SERIAL_LEN, "%04x:%04x-NoID", kb->vendor, kb->product);
+94     if(!kb->name[0])
+95         snprintf(kb->name, KB_NAME_LEN, "%s %s", vendor_str(kb->vendor), product_str(kb->product));
+96 
+97     // Set up an input device for key events
+98     if(os_inputopen(kb))
+99         goto fail;
+100     if(pthread_create(&kb->inputthread, 0, os_inputmain, kb))
+101         goto fail;
+102     pthread_detach(kb->inputthread);
+103     if(os_setupindicators(kb))
+104         goto fail;
+105 
+106     // Set up device
+107     vt->allocprofile(kb);
+108     vt->updateindicators(kb, 1);
+109     pthread_mutex_unlock(imutex(kb));
+110     if(vt->start(kb, 0) && usb_tryreset(kb))
+111         goto fail_noinput;
+112 
+113     // Make /dev path
+114     if(mkdevpath(kb))
+115         goto fail_noinput;
+116 
+117     // Finished\&. Enter main loop
+118     int index = INDEX_OF(kb, keyboard);
+119     ckb_info("Setup finished for %s%d\n", devpath, index);
+120     updateconnected();
+121     return devmain(kb);
+122 
+123     fail:
+124     pthread_mutex_unlock(imutex(kb));
+125     fail_noinput:
+126     closeusb(kb);
+127     pthread_mutex_unlock(dmutex(kb));
+128     return 0;
+129 }
+.fi
+.SS "int _usbrecv (\fBusbdevice\fP *kb, const \fBuchar\fP *out_msg, \fBuchar\fP *in_msg, const char *file, intline)"
+
+.PP
+Definition at line 207 of file usb\&.c\&.
+.PP
+References ckb_err_fn, DELAY_LONG, DELAY_MEDIUM, DELAY_SHORT, hwload_mode, os_usbrecv(), os_usbsend(), and reset_stop\&.
+.PP
+.nf
+207                                                                                             {
+208     // Try a maximum of 3 times
+209     for(int try = 0; try < 5; try++){
+210         // Send the output message
+211         DELAY_SHORT(kb);
+212         int res = os_usbsend(kb, out_msg, 1, file, line);
+213         if(res == 0)
+214             return 0;
+215         else if(res == -1){
+216             // Retry on temporary failure
+217             if(reset_stop)
+218                 return 0;
+219             DELAY_LONG(kb);
+220             continue;
+221         }
+222         // Wait for the response
+223         DELAY_MEDIUM(kb);
+224         res = os_usbrecv(kb, in_msg, file, line);
+225         if(res == 0)
+226             return 0;
+227         else if(res != -1)
+228             return res;
+229         if(reset_stop || hwload_mode != 2)
+230             return 0;
+231         DELAY_LONG(kb);
+232     }
+233     // Give up
+234     ckb_err_fn("Too many send/recv failures\&. Dropping\&.\n", file, line);
+235     return 0;
+236 }
+.fi
+.SS "int _usbsend (\fBusbdevice\fP *kb, const \fBuchar\fP *messages, intcount, const char *file, intline)"
+
+.PP
+Definition at line 184 of file usb\&.c\&.
+.PP
+References DELAY_LONG, DELAY_SHORT, hwload_mode, MSG_SIZE, os_usbsend(), and reset_stop\&.
+.PP
+.nf
+184                                                                                          {
+185     int total_sent = 0;
+186     for(int i = 0; i < count; i++){
+187         // Send each message via the OS function
+188         while(1){
+189             DELAY_SHORT(kb);
+190             int res = os_usbsend(kb, messages + i * MSG_SIZE, 0, file, line);
+191             if(res == 0)
+192                 return 0;
+193             else if(res != -1){
+194                 total_sent += res;
+195                 break;
+196             }
+197             // Stop immediately if the program is shutting down or hardware load is set to tryonce
+198             if(reset_stop || hwload_mode != 2)
+199                 return 0;
+200             // Retry as long as the result is temporary failure
+201             DELAY_LONG(kb);
+202         }
+203     }
+204     return total_sent;
+205 }
+.fi
+.SS "int closeusb (\fBusbdevice\fP *kb)"
+
+.PP
+Definition at line 238 of file usb\&.c\&.
+.PP
+References ckb_info, devpath, dmutex, usbdevice::handle, imutex, INDEX_OF, keyboard, os_closeusb(), os_inputclose(), rmdevpath(), usbdevice::thread, updateconnected(), and usbdevice::vtable\&.
+.PP
+Referenced by _setupusb(), devmain(), quitWithLock(), and usb_rm_device()\&.
+.PP
+.nf
+238                            {
+239     pthread_mutex_lock(imutex(kb));
+240     if(kb->handle){
+241         int index = INDEX_OF(kb, keyboard);
+242         ckb_info("Disconnecting %s%d\n", devpath, index);
+243         os_inputclose(kb);
+244         updateconnected();
+245         // Close USB device
+246         os_closeusb(kb);
+247     } else
+248         updateconnected();
+249     rmdevpath(kb);
+250 
+251     // Wait for thread to close
+252     pthread_mutex_unlock(imutex(kb));
+253     pthread_mutex_unlock(dmutex(kb));
+254     pthread_join(kb->thread, 0);
+255     pthread_mutex_lock(dmutex(kb));
+256 
+257     // Delete the profile and the control path
+258     if(!kb->vtable)
+259         return 0;
+260     kb->vtable->freeprofile(kb);
+261     memset(kb, 0, sizeof(usbdevice));
+262     return 0;
+263 }
+.fi
+.SS "static void* devmain (\fBusbdevice\fP *kb)\fC [static]\fP"
+
+.PP
+Definition at line 50 of file usb\&.c\&.
+.PP
+References closeusb(), dmutex, usbdevice::infifo, IS_CONNECTED, readcmd(), readlines(), readlines_ctx_free(), and readlines_ctx_init()\&.
+.PP
+Referenced by _setupusb()\&.
+.PP
+.nf
+50                                    {
+51     // dmutex should still be locked when this is called
+52     int kbfifo = kb->infifo - 1;
+53     readlines_ctx linectx;
+54     readlines_ctx_init(&linectx);
+55     while(1){
+56         pthread_mutex_unlock(dmutex(kb));
+57         // Read from FIFO
+58         const char* line;
+59         int lines = readlines(kbfifo, linectx, &line);
+60         pthread_mutex_lock(dmutex(kb));
+61         // End thread when the handle is removed
+62         if(!IS_CONNECTED(kb))
+63             break;
+64         if(lines){
+65             if(readcmd(kb, line)){
+66                 // USB transfer failed; destroy device
+67                 closeusb(kb);
+68                 break;
+69             }
+70         }
+71     }
+72     pthread_mutex_unlock(dmutex(kb));
+73     readlines_ctx_free(linectx);
+74     return 0;
+75 }
+.fi
+.SS "static const \fBdevcmd\fP* get_vtable (shortvendor, shortproduct)\fC [static]\fP"
+
+.PP
+Definition at line 45 of file usb\&.c\&.
+.PP
+References IS_MOUSE, IS_RGB, vtable_keyboard, vtable_keyboard_nonrgb, and vtable_mouse\&.
+.PP
+Referenced by _setupusb()\&.
+.PP
+.nf
+45                                                             {
+46     return IS_MOUSE(vendor, product) ? &vtable_mouse : IS_RGB(vendor, product) ? &vtable_keyboard : &vtable_keyboard_nonrgb;
+47 }
+.fi
+.SS "const char* product_str (shortproduct)"
+
+.PP
+Definition at line 26 of file usb\&.c\&.
+.PP
+References P_K65, P_K65_LUX, P_K65_NRGB, P_K65_RFIRE, P_K70, P_K70_LUX, P_K70_LUX_NRGB, P_K70_NRGB, P_K70_RFIRE, P_K70_RFIRE_NRGB, P_K95, P_K95_NRGB, P_K95_PLATINUM, P_M65, P_M65_PRO, P_SABRE_L, P_SABRE_N, P_SABRE_O, P_SABRE_O2, P_SCIMITAR, P_SCIMITAR_PRO, P_STRAFE, and P_STRAFE_NRGB\&.
+.PP
+Referenced by _mkdevpath(), and _setupusb()\&.
+.PP
+.nf
+26                                       {
+27     if(product == P_K95 || product == P_K95_NRGB || product == P_K95_PLATINUM)
+28         return "k95";
+29     if(product == P_K70 || product == P_K70_NRGB || product == P_K70_LUX || product == P_K70_LUX_NRGB || product == P_K70_RFIRE || product == P_K70_RFIRE_NRGB)
+30         return "k70";
+31     if(product == P_K65 || product == P_K65_NRGB || product == P_K65_LUX || product == P_K65_RFIRE)
+32         return "k65";
+33     if(product == P_STRAFE || product == P_STRAFE_NRGB)
+34         return "strafe";
+35     if(product == P_M65 || product == P_M65_PRO)
+36         return "m65";
+37     if(product == P_SABRE_O || product == P_SABRE_L || product == P_SABRE_N || product == P_SABRE_O2)
+38         return "sabre";
+39     if(product == P_SCIMITAR || product == P_SCIMITAR_PRO)
+40         return "scimitar";
+41     return "";
+42 }
+.fi
+.SS "int revertusb (\fBusbdevice\fP *kb)"
+
+.PP
+Definition at line 137 of file usb\&.c\&.
+.PP
+References FEAT_RGB, HAS_FEATURES, NEEDS_FW_UPDATE, NK95_HWON, nk95cmd, and setactive\&.
+.PP
+Referenced by quitWithLock()\&.
+.PP
+.nf
+137                             {
+138     if(NEEDS_FW_UPDATE(kb))
+139         return 0;
+140     if(!HAS_FEATURES(kb, FEAT_RGB)){
+141         nk95cmd(kb, NK95_HWON);
+142         return 0;
+143     }
+144     if(setactive(kb, 0))
+145         return -1;
+146     return 0;
+147 }
+.fi
+.SS "void setupusb (\fBusbdevice\fP *kb)"
+
+.PP
+Definition at line 131 of file usb\&.c\&.
+.PP
+References _setupusb(), ckb_err, imutex, and usbdevice::thread\&.
+.PP
+Referenced by usbadd()\&.
+.PP
+.nf
+131                             {
+132     pthread_mutex_lock(imutex(kb));
+133     if(pthread_create(&kb->thread, 0, _setupusb, kb))
+134         ckb_err("Failed to create USB thread\n");
+135 }
+.fi
+.SS "int usb_tryreset (\fBusbdevice\fP *kb)"
+
+.PP
+Definition at line 164 of file usb\&.c\&.
+.PP
+References ckb_err, ckb_info, reset_stop, and resetusb\&.
+.PP
+Referenced by _setupusb(), and cmd_fwupdate()\&.
+.PP
+.nf
+164                                {
+165     if(reset_stop)
+166         return -1;
+167     ckb_info("Attempting reset\&.\&.\&.\n");
+168     while(1){
+169         int res = resetusb(kb);
+170         if(!res){
+171             ckb_info("Reset success\n");
+172             return 0;
+173         }
+174         if(res == -2 || reset_stop)
+175             break;
+176     }
+177     ckb_err("Reset failed\&. Disconnecting\&.\n");
+178     return -1;
+179 }
+.fi
+.SS "const char* vendor_str (shortvendor)"
+
+.PP
+Definition at line 20 of file usb\&.c\&.
+.PP
+References V_CORSAIR\&.
+.PP
+Referenced by _mkdevpath(), and _setupusb()\&.
+.PP
+.nf
+20                                     {
+21     if(vendor == V_CORSAIR)
+22         return "corsair";
+23     return "";
+24 }
+.fi
+.SH "Variable Documentation"
+.PP 
+.SS "int features_mask = -1"
+
+.PP
+Definition at line 17 of file usb\&.c\&.
+.PP
+Referenced by _setupusb(), and main()\&.
+.SS "int hwload_mode"
+
+.PP
+Definition at line 7 of file device\&.c\&.
+.PP
+Referenced by _start_dev(), _usbrecv(), and _usbsend()\&.
+.SS "volatile int reset_stop = 0"
+
+.PP
+Definition at line 14 of file usb\&.c\&.
+.PP
+Referenced by _usbrecv(), _usbsend(), quitWithLock(), and usb_tryreset()\&.
+.SS "pthread_mutex_t usbmutex = PTHREAD_MUTEX_INITIALIZER"
+
+.PP
+Definition at line 11 of file usb\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

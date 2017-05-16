@@ -1,0 +1,469 @@
+.TH "src/ckb/quazip/zip.h" 3 "Tue May 16 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb/quazip/zip.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'zlib\&.h'\fP
+.br
+\fC#include 'ioapi\&.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBtm_zip_s\fP"
+.br
+.ti -1c
+.RI "struct \fBzip_fileinfo\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBZ_BZIP2ED\fP   12"
+.br
+.ti -1c
+.RI "#define \fBZIP_OK\fP   (0)"
+.br
+.ti -1c
+.RI "#define \fBZIP_EOF\fP   (0)"
+.br
+.ti -1c
+.RI "#define \fBZIP_ERRNO\fP   (Z_ERRNO)"
+.br
+.ti -1c
+.RI "#define \fBZIP_PARAMERROR\fP   (-102)"
+.br
+.ti -1c
+.RI "#define \fBZIP_BADZIPFILE\fP   (-103)"
+.br
+.ti -1c
+.RI "#define \fBZIP_INTERNALERROR\fP   (-104)"
+.br
+.ti -1c
+.RI "#define \fBZIP_WRITE_DATA_DESCRIPTOR\fP   0x8u"
+.br
+.ti -1c
+.RI "#define \fBZIP_AUTO_CLOSE\fP   0x1u"
+.br
+.ti -1c
+.RI "#define \fBZIP_SEQUENTIAL\fP   0x2u"
+.br
+.ti -1c
+.RI "#define \fBZIP_DEFAULT_FLAGS\fP   (\fBZIP_AUTO_CLOSE\fP | \fBZIP_WRITE_DATA_DESCRIPTOR\fP)"
+.br
+.ti -1c
+.RI "#define \fBDEF_MEM_LEVEL\fP   MAX_MEM_LEVEL"
+.br
+.ti -1c
+.RI "#define \fBAPPEND_STATUS_CREATE\fP   (0)"
+.br
+.ti -1c
+.RI "#define \fBAPPEND_STATUS_CREATEAFTER\fP   (1)"
+.br
+.ti -1c
+.RI "#define \fBAPPEND_STATUS_ADDINZIP\fP   (2)"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef voidp \fBzipFile\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBtm_zip_s\fP \fBtm_zip\fP"
+.br
+.ti -1c
+.RI "typedef const char * \fBzipcharpc\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBzipFile\fP ZEXPORT \fBzipOpen\fP \fB_Z_OF\fP ((voidpf file, int append))"
+.br
+.ti -1c
+.RI "\fBzipFile\fP ZEXPORT \fBzipOpen2\fP \fB_Z_OF\fP ((voidpf file, int append, \fBzipcharpc\fP *globalcomment, \fBzlib_filefunc_def\fP *pzlib_filefunc_def))"
+.br
+.ti -1c
+.RI "\fBzipFile\fP ZEXPORT \fBzipOpen2_64\fP \fB_Z_OF\fP ((voidpf file, int append, \fBzipcharpc\fP *globalcomment, \fBzlib_filefunc64_def\fP *pzlib_filefunc_def))"
+.br
+.ti -1c
+.RI "\fBzipFile\fP ZEXPORT \fBzipOpen3\fP (voidpf file, int append, \fBzipcharpc\fP *globalcomment, \fBzlib_filefunc64_32_def\fP *pzlib_filefunc64_32_def, unsigned flags)"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBzipOpenNewFileInZip\fP \fB_Z_OF\fP ((\fBzipFile\fP file, const char *filename, const \fBzip_fileinfo\fP *zipfi, const void *extrafield_local, uInt size_extrafield_local, const void *extrafield_global, uInt size_extrafield_global, const char *comment, int method, int level))"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBzipOpenNewFileInZip64\fP \fB_Z_OF\fP ((\fBzipFile\fP file, const char *filename, const \fBzip_fileinfo\fP *zipfi, const void *extrafield_local, uInt size_extrafield_local, const void *extrafield_global, uInt size_extrafield_global, const char *comment, int method, int level, int zip64))"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBzipOpenNewFileInZip2\fP \fB_Z_OF\fP ((\fBzipFile\fP file, const char *filename, const \fBzip_fileinfo\fP *zipfi, const void *extrafield_local, uInt size_extrafield_local, const void *extrafield_global, uInt size_extrafield_global, const char *comment, int method, int level, int raw))"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBzipOpenNewFileInZip2_64\fP \fB_Z_OF\fP ((\fBzipFile\fP file, const char *filename, const \fBzip_fileinfo\fP *zipfi, const void *extrafield_local, uInt size_extrafield_local, const void *extrafield_global, uInt size_extrafield_global, const char *comment, int method, int level, int raw, int zip64))"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBzipOpenNewFileInZip3\fP \fB_Z_OF\fP ((\fBzipFile\fP file, const char *filename, const \fBzip_fileinfo\fP *zipfi, const void *extrafield_local, uInt size_extrafield_local, const void *extrafield_global, uInt size_extrafield_global, const char *comment, int method, int level, int raw, int windowBits, int memLevel, int strategy, const char *password, uLong crcForCrypting))"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBzipOpenNewFileInZip3_64\fP \fB_Z_OF\fP ((\fBzipFile\fP file, const char *filename, const \fBzip_fileinfo\fP *zipfi, const void *extrafield_local, uInt size_extrafield_local, const void *extrafield_global, uInt size_extrafield_global, const char *comment, int method, int level, int raw, int windowBits, int memLevel, int strategy, const char *password, uLong crcForCrypting, int zip64))"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBzipOpenNewFileInZip4\fP \fB_Z_OF\fP ((\fBzipFile\fP file, const char *filename, const \fBzip_fileinfo\fP *zipfi, const void *extrafield_local, uInt size_extrafield_local, const void *extrafield_global, uInt size_extrafield_global, const char *comment, int method, int level, int raw, int windowBits, int memLevel, int strategy, const char *password, uLong crcForCrypting, uLong versionMadeBy, uLong flagBase))"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBzipOpenNewFileInZip4_64\fP \fB_Z_OF\fP ((\fBzipFile\fP file, const char *filename, const \fBzip_fileinfo\fP *zipfi, const void *extrafield_local, uInt size_extrafield_local, const void *extrafield_global, uInt size_extrafield_global, const char *comment, int method, int level, int raw, int windowBits, int memLevel, int strategy, const char *password, uLong crcForCrypting, uLong versionMadeBy, uLong flagBase, int zip64))"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBzipWriteInFileInZip\fP \fB_Z_OF\fP ((\fBzipFile\fP file, const void *buf, unsigned len))"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBzipCloseFileInZip\fP \fB_Z_OF\fP ((\fBzipFile\fP file))"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBzipCloseFileInZipRaw\fP \fB_Z_OF\fP ((\fBzipFile\fP file, uLong uncompressed_size, uLong crc32))"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBzipCloseFileInZipRaw64\fP \fB_Z_OF\fP ((\fBzipFile\fP file, \fBZPOS64_T\fP uncompressed_size, uLong crc32))"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBzipClose\fP \fB_Z_OF\fP ((\fBzipFile\fP file, const char *global_comment))"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBzipRemoveExtraInfoBlock\fP \fB_Z_OF\fP ((char *pData, int *dataLen, short sHeader))"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBzipSetFlags\fP (\fBzipFile\fP file, unsigned flags)"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBzipClearFlags\fP (\fBzipFile\fP file, unsigned flags)"
+.br
+.in -1c
+.SH "Data Structure Documentation"
+.PP 
+.SH "struct tm_zip_s"
+.PP 
+Definition at line 100 of file zip\&.h\&.
+.PP
+\fBData Fields:\fP
+.RS 4
+uInt \fItm_hour\fP 
+.br
+.PP
+uInt \fItm_mday\fP 
+.br
+.PP
+uInt \fItm_min\fP 
+.br
+.PP
+uInt \fItm_mon\fP 
+.br
+.PP
+uInt \fItm_sec\fP 
+.br
+.PP
+uInt \fItm_year\fP 
+.br
+.PP
+.RE
+.PP
+.SH "struct zip_fileinfo"
+.PP 
+Definition at line 110 of file zip\&.h\&.
+.PP
+\fBData Fields:\fP
+.RS 4
+uLong \fIdosDate\fP 
+.br
+.PP
+uLong \fIexternal_fa\fP 
+.br
+.PP
+uLong \fIinternal_fa\fP 
+.br
+.PP
+\fBtm_zip\fP \fItmz_date\fP 
+.br
+.PP
+.RE
+.PP
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define APPEND_STATUS_ADDINZIP   (2)"
+
+.PP
+Definition at line 125 of file zip\&.h\&.
+.PP
+Referenced by QuaZip::open(), and zipOpen3()\&.
+.SS "#define APPEND_STATUS_CREATE   (0)"
+
+.PP
+Definition at line 123 of file zip\&.h\&.
+.PP
+Referenced by QuaZip::open(), and zipOpen3()\&.
+.SS "#define APPEND_STATUS_CREATEAFTER   (1)"
+
+.PP
+Definition at line 124 of file zip\&.h\&.
+.PP
+Referenced by QuaZip::open(), and zipOpen3()\&.
+.SS "#define DEF_MEM_LEVEL   MAX_MEM_LEVEL"
+
+.PP
+Definition at line 94 of file zip\&.h\&.
+.PP
+Referenced by zipOpenNewFileInZip(), zipOpenNewFileInZip2(), zipOpenNewFileInZip2_64(), and zipOpenNewFileInZip64()\&.
+.SS "#define Z_BZIP2ED   12"
+
+.PP
+Definition at line 67 of file zip\&.h\&.
+.SS "#define ZIP_AUTO_CLOSE   0x1u"
+
+.PP
+Definition at line 86 of file zip\&.h\&.
+.PP
+Referenced by LoadCentralDirectoryRecord(), QuaZip::open(), zipClose(), and zipOpen3()\&.
+.SS "#define ZIP_BADZIPFILE   (-103)"
+
+.PP
+Definition at line 82 of file zip\&.h\&.
+.PP
+Referenced by LoadCentralDirectoryRecord(), and zipCloseFileInZipRaw64()\&.
+.SS "#define ZIP_DEFAULT_FLAGS   (\fBZIP_AUTO_CLOSE\fP | \fBZIP_WRITE_DATA_DESCRIPTOR\fP)"
+
+.PP
+Definition at line 88 of file zip\&.h\&.
+.PP
+Referenced by zipOpen(), zipOpen2(), zipOpen2_64(), and zipOpen64()\&.
+.SS "#define ZIP_EOF   (0)"
+
+.PP
+Definition at line 79 of file zip\&.h\&.
+.PP
+Referenced by zip64local_getByte()\&.
+.SS "#define ZIP_ERRNO   (Z_ERRNO)"
+
+.PP
+Definition at line 80 of file zip\&.h\&.
+.PP
+Referenced by LoadCentralDirectoryRecord(), Write_GlobalComment(), Write_LocalFileHeader(), zip64FlushWriteBuffer(), zip64local_getByte(), zip64local_putValue(), zipClose(), zipCloseFileInZipRaw64(), zipOpenNewFileInZip4_64(), zipRemoveExtraInfoBlock(), and zipWriteInFileInZip()\&.
+.SS "#define ZIP_INTERNALERROR   (-104)"
+
+.PP
+Definition at line 83 of file zip\&.h\&.
+.PP
+Referenced by add_data_in_datablock(), and zipOpenNewFileInZip4_64()\&.
+.SS "#define ZIP_OK   (0)"
+
+.PP
+Definition at line 78 of file zip\&.h\&.
+.PP
+Referenced by add_data_in_datablock(), LoadCentralDirectoryRecord(), Write_EndOfCentralDirectoryRecord(), Write_GlobalComment(), Write_LocalFileHeader(), Write_Zip64EndOfCentralDirectoryLocator(), Write_Zip64EndOfCentralDirectoryRecord(), QuaZipFile::writeData(), zip64FlushWriteBuffer(), zip64local_getByte(), zip64local_getLong(), zip64local_getLong64(), zip64local_getShort(), zip64local_putValue(), zip64local_SearchCentralDir64(), zipClearFlags(), zipClose(), zipCloseFileInZipRaw64(), zipOpen3(), zipOpenNewFileInZip4_64(), zipRemoveExtraInfoBlock(), zipSetFlags(), and zipWriteInFileInZip()\&.
+.SS "#define ZIP_PARAMERROR   (-102)"
+
+.PP
+Definition at line 81 of file zip\&.h\&.
+.PP
+Referenced by zipClearFlags(), zipClose(), zipCloseFileInZipRaw64(), zipOpenNewFileInZip4_64(), zipRemoveExtraInfoBlock(), zipSetFlags(), and zipWriteInFileInZip()\&.
+.SS "#define ZIP_SEQUENTIAL   0x2u"
+
+.PP
+Definition at line 87 of file zip\&.h\&.
+.PP
+Referenced by QuaZip::open(), zipClearFlags(), zipCloseFileInZipRaw64(), zipOpenNewFileInZip4_64(), and zipSetFlags()\&.
+.SS "#define ZIP_WRITE_DATA_DESCRIPTOR   0x8u"
+
+.PP
+Definition at line 85 of file zip\&.h\&.
+.PP
+Referenced by QuaZip::open(), QuaZipFile::open(), zipClearFlags(), zipOpenNewFileInZip4_64(), and zipSetFlags()\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBtm_zip_s\fP  \fBtm_zip\fP"
+
+.SS "typedef const char* \fBzipcharpc\fP"
+
+.PP
+Definition at line 120 of file zip\&.h\&.
+.SS "typedef voidp \fBzipFile\fP"
+
+.PP
+Definition at line 75 of file zip\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "\fBzipFile\fP ZEXPORT \fBzipOpen\fP _Z_OF ((voidpf file, int append))"
+
+.SS "\fBzipFile\fP ZEXPORT \fBzipOpen2\fP _Z_OF ((voidpf file, int append, \fBzipcharpc\fP *globalcomment, \fBzlib_filefunc_def\fP *pzlib_filefunc_def))"
+
+.SS "\fBzipFile\fP ZEXPORT \fBzipOpen2_64\fP _Z_OF ((voidpf file, int append, \fBzipcharpc\fP *globalcomment, \fBzlib_filefunc64_def\fP *pzlib_filefunc_def))"
+
+.SS "int ZEXPORT \fBzipOpenNewFileInZip\fP _Z_OF ((\fBzipFile\fP file, const char *filename, const \fBzip_fileinfo\fP *zipfi, const void *extrafield_local, uInt size_extrafield_local, const void *extrafield_global, uInt size_extrafield_global, const char *comment, int method, int level))"
+
+.SS "int ZEXPORT \fBzipOpenNewFileInZip64\fP _Z_OF ((\fBzipFile\fP file, const char *filename, const \fBzip_fileinfo\fP *zipfi, const void *extrafield_local, uInt size_extrafield_local, const void *extrafield_global, uInt size_extrafield_global, const char *comment, int method, int level, int zip64))"
+
+.SS "int ZEXPORT \fBzipOpenNewFileInZip2\fP _Z_OF ((\fBzipFile\fP file, const char *filename, const \fBzip_fileinfo\fP *zipfi, const void *extrafield_local, uInt size_extrafield_local, const void *extrafield_global, uInt size_extrafield_global, const char *comment, int method, int level, int raw))"
+
+.SS "int ZEXPORT \fBzipOpenNewFileInZip2_64\fP _Z_OF ((\fBzipFile\fP file, const char *filename, const \fBzip_fileinfo\fP *zipfi, const void *extrafield_local, uInt size_extrafield_local, const void *extrafield_global, uInt size_extrafield_global, const char *comment, int method, int level, int raw, int zip64))"
+
+.SS "int ZEXPORT \fBzipOpenNewFileInZip3\fP _Z_OF ((\fBzipFile\fP file, const char *filename, const \fBzip_fileinfo\fP *zipfi, const void *extrafield_local, uInt size_extrafield_local, const void *extrafield_global, uInt size_extrafield_global, const char *comment, int method, int level, int raw, int windowBits, int memLevel, int strategy, const char *password, uLong crcForCrypting))"
+
+.SS "int ZEXPORT \fBzipOpenNewFileInZip3_64\fP _Z_OF ((\fBzipFile\fP file, const char *filename, const \fBzip_fileinfo\fP *zipfi, const void *extrafield_local, uInt size_extrafield_local, const void *extrafield_global, uInt size_extrafield_global, const char *comment, int method, int level, int raw, int windowBits, int memLevel, int strategy, const char *password, uLong crcForCrypting, int zip64))"
+
+.SS "int ZEXPORT \fBzipOpenNewFileInZip4\fP _Z_OF ((\fBzipFile\fP file, const char *filename, const \fBzip_fileinfo\fP *zipfi, const void *extrafield_local, uInt size_extrafield_local, const void *extrafield_global, uInt size_extrafield_global, const char *comment, int method, int level, int raw, int windowBits, int memLevel, int strategy, const char *password, uLong crcForCrypting, uLong versionMadeBy, uLong flagBase))"
+
+.SS "int ZEXPORT \fBzipOpenNewFileInZip4_64\fP _Z_OF ((\fBzipFile\fP file, const char *filename, const \fBzip_fileinfo\fP *zipfi, const void *extrafield_local, uInt size_extrafield_local, const void *extrafield_global, uInt size_extrafield_global, const char *comment, int method, int level, int raw, int windowBits, int memLevel, int strategy, const char *password, uLong crcForCrypting, uLong versionMadeBy, uLong flagBase, int zip64))"
+
+.SS "int ZEXPORT \fBzipWriteInFileInZip\fP _Z_OF ((\fBzipFile\fP file, const void *buf, unsigned len))"
+
+.SS "int ZEXPORT \fBzipCloseFileInZip\fP _Z_OF ((\fBzipFile\fP file))"
+
+.SS "int ZEXPORT \fBzipCloseFileInZipRaw\fP _Z_OF ((\fBzipFile\fP file, uLong uncompressed_size, uLong crc32))"
+
+.SS "int ZEXPORT \fBzipCloseFileInZipRaw64\fP _Z_OF ((\fBzipFile\fP file, \fBZPOS64_T\fP uncompressed_size, uLong crc32))"
+
+.SS "int ZEXPORT \fBzipClose\fP _Z_OF ((\fBzipFile\fP file, const char *global_comment))"
+
+.SS "int ZEXPORT \fBzipRemoveExtraInfoBlock\fP _Z_OF ((char *pData, int *dataLen, short sHeader))"
+
+.SS "int ZEXPORT zipClearFlags (\fBzipFile\fPfile, unsignedflags)"
+
+.PP
+Definition at line 2091 of file zip\&.c\&.
+.PP
+References zip64_internal::flags, ZIP_OK, ZIP_PARAMERROR, ZIP_SEQUENTIAL, and ZIP_WRITE_DATA_DESCRIPTOR\&.
+.PP
+Referenced by QuaZipFile::open()\&.
+.PP
+.nf
+2092 {
+2093     zip64_internal* zi;
+2094     if (file == NULL)
+2095         return ZIP_PARAMERROR;
+2096     zi = (zip64_internal*)file;
+2097     zi->flags &= ~flags;
+2098     // If the data descriptor is not written, we can't use a non-seekable output\&.
+2099     if ((zi->flags & ZIP_WRITE_DATA_DESCRIPTOR) == 0) {
+2100         zi->flags &= ~ZIP_SEQUENTIAL;
+2101     }
+2102     return ZIP_OK;
+2103 }
+.fi
+.SS "\fBzipFile\fP ZEXPORT zipOpen3 (voidpffile, intappend, \fBzipcharpc\fP *globalcomment, \fBzlib_filefunc64_32_def\fP *pzlib_filefunc64_32_def, unsignedflags)"
+
+.PP
+Definition at line 862 of file zip\&.c\&.
+.PP
+References zip64_internal::add_position_when_writting_offset, ALLOC, APPEND_STATUS_ADDINZIP, APPEND_STATUS_CREATE, APPEND_STATUS_CREATEAFTER, zip64_internal::begin_pos, zip64_internal::central_dir, zip64_internal::ci, zip64_internal::filestream, fill_qiodevice64_filefunc(), zip64_internal::flags, zip64_internal::globalcomment, zip64_internal::in_opened_file_inzip, init_linkedlist(), LoadCentralDirectoryRecord(), zip64_internal::number_entry, SEEK_END, curfile64_info::stream_initialised, TRYFREE, zip64_internal::z_filefunc, ZCLOSE64, ZFAKECLOSE64, zlib_filefunc64_32_def_s::zfile_func64, ZIP_AUTO_CLOSE, ZIP_OK, ZLIB_FILEFUNC_MODE_CREATE, ZLIB_FILEFUNC_MODE_EXISTING, ZLIB_FILEFUNC_MODE_READ, ZLIB_FILEFUNC_MODE_WRITE, ZOPEN64, zlib_filefunc64_32_def_s::zseek32_file, ZSEEK64, zlib_filefunc64_32_def_s::ztell32_file, and ZTELL64\&.
+.PP
+Referenced by QuaZip::open(), zipOpen(), zipOpen2(), zipOpen2_64(), and zipOpen64()\&.
+.PP
+.nf
+864 {
+865     zip64_internal ziinit;
+866     zip64_internal* zi;
+867     int err=ZIP_OK;
+868 
+869     ziinit\&.flags = flags;
+870     ziinit\&.z_filefunc\&.zseek32_file = NULL;
+871     ziinit\&.z_filefunc\&.ztell32_file = NULL;
+872     if (pzlib_filefunc64_32_def==NULL)
+873         fill_qiodevice64_filefunc(&ziinit\&.z_filefunc\&.zfile_func64);
+874     else
+875         ziinit\&.z_filefunc = *pzlib_filefunc64_32_def;
+876 
+877     ziinit\&.filestream = ZOPEN64(ziinit\&.z_filefunc,
+878                   file,
+879                   (append == APPEND_STATUS_CREATE) ?
+880                   (ZLIB_FILEFUNC_MODE_READ | ZLIB_FILEFUNC_MODE_WRITE | ZLIB_FILEFUNC_MODE_CREATE) :
+881                     (ZLIB_FILEFUNC_MODE_READ | ZLIB_FILEFUNC_MODE_WRITE | ZLIB_FILEFUNC_MODE_EXISTING));
+882 
+883     if (ziinit\&.filestream == NULL)
+884         return NULL;
+885 
+886     if (append == APPEND_STATUS_CREATEAFTER)
+887         ZSEEK64(ziinit\&.z_filefunc,ziinit\&.filestream,0,SEEK_END);
+888 
+889     ziinit\&.begin_pos = ZTELL64(ziinit\&.z_filefunc,ziinit\&.filestream);
+890     ziinit\&.in_opened_file_inzip = 0;
+891     ziinit\&.ci\&.stream_initialised = 0;
+892     ziinit\&.number_entry = 0;
+893     ziinit\&.add_position_when_writting_offset = 0;
+894     init_linkedlist(&(ziinit\&.central_dir));
+895 
+896 
+897 
+898     zi = (zip64_internal*)ALLOC(sizeof(zip64_internal));
+899     if (zi==NULL)
+900     {
+901         if ((ziinit\&.flags & ZIP_AUTO_CLOSE) != 0) {
+902             ZCLOSE64(ziinit\&.z_filefunc,ziinit\&.filestream);
+903         } else {
+904             ZFAKECLOSE64(ziinit\&.z_filefunc,ziinit\&.filestream);
+905         }
+906         return NULL;
+907     }
+908 
+909     /* now we add file in a zipfile */
+910 #    ifndef NO_ADDFILEINEXISTINGZIP
+911     ziinit\&.globalcomment = NULL;
+912     if (append == APPEND_STATUS_ADDINZIP)
+913     {
+914       /* Read and Cache Central Directory Records */
+915       err = LoadCentralDirectoryRecord(&ziinit);
+916     }
+917 
+918     if (globalcomment)
+919     {
+920       *globalcomment = ziinit\&.globalcomment;
+921     }
+922 #    endif /* !NO_ADDFILEINEXISTINGZIP*/
+923 
+924     if (err != ZIP_OK)
+925     {
+926 #    ifndef NO_ADDFILEINEXISTINGZIP
+927         TRYFREE(ziinit\&.globalcomment);
+928 #    endif /* !NO_ADDFILEINEXISTINGZIP*/
+929         TRYFREE(zi);
+930         return NULL;
+931     }
+932     else
+933     {
+934         *zi = ziinit;
+935         return (zipFile)zi;
+936     }
+937 }
+.fi
+.SS "int ZEXPORT zipSetFlags (\fBzipFile\fPfile, unsignedflags)"
+
+.PP
+Definition at line 2077 of file zip\&.c\&.
+.PP
+References zip64_internal::flags, ZIP_OK, ZIP_PARAMERROR, ZIP_SEQUENTIAL, and ZIP_WRITE_DATA_DESCRIPTOR\&.
+.PP
+Referenced by QuaZip::open(), and QuaZipFile::open()\&.
+.PP
+.nf
+2078 {
+2079     zip64_internal* zi;
+2080     if (file == NULL)
+2081         return ZIP_PARAMERROR;
+2082     zi = (zip64_internal*)file;
+2083     zi->flags |= flags;
+2084     // If the output is non-seekable, the data descriptor is needed\&.
+2085     if ((zi->flags & ZIP_SEQUENTIAL) != 0) {
+2086         zi->flags |= ZIP_WRITE_DATA_DESCRIPTOR;
+2087     }
+2088     return ZIP_OK;
+2089 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

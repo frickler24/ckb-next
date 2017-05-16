@@ -1,0 +1,68 @@
+.TH "src/ckb/kbfirmware.cpp" 3 "Tue May 16 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb/kbfirmware.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'kbfirmware\&.h'\fP
+.br
+\fC#include 'kbmanager\&.h'\fP
+.br
+\fC#include 'quazip/quazip\&.h'\fP
+.br
+\fC#include 'quazip/quazipfile\&.h'\fP
+.br
+\fC#include <QDateTime>\fP
+.br
+\fC#include <QDebug>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "static QString \fBtableName\fP (const QString &features)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static const quint64 \fBAUTO_CHECK_TIME\fP = 60 * 60 * 1000"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "static QString tableName (const QString &features)\fC [static]\fP"
+
+.PP
+Definition at line 153 of file kbfirmware\&.cpp\&.
+.PP
+Referenced by KbFirmware::_fileForBoard(), and KbFirmware::_latestForBoard()\&.
+.PP
+.nf
+153                                                  {
+154     QStringList components = features\&.split(" ");
+155     if(components\&.length() < 2)
+156         return "";
+157     // First two components are vendor and model
+158     QString vendorModel = components[0]\&.toUpper() + "-" + components[1]\&.toUpper();
+159     // Add "RGB" on RGB boards
+160     if(features\&.contains("rgb") && !features\&.contains("monochrome"))
+161         vendorModel += "RGB";
+162     return vendorModel;
+163 }
+.fi
+.SH "Variable Documentation"
+.PP 
+.SS "const quint64 AUTO_CHECK_TIME = 60 * 60 * 1000\fC [static]\fP"
+
+.PP
+Definition at line 9 of file kbfirmware\&.cpp\&.
+.PP
+Referenced by KbFirmware::_checkUpdates()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

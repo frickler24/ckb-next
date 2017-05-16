@@ -1,0 +1,11 @@
+<map id="KbLight::close" name="KbLight::close">
+<area shape="rect" id="node2" href="$classKbAnim.html#af677549787e3b3890586a4839c514890" title="KbAnim::stop" alt="" coords="183,31,284,57"/>
+<area shape="rect" id="node10" href="$classKbLight.html#ac7f5ab4fe6e8fc41e3e292ee744dc5fd" title="KbLight::stopPreview" alt="" coords="160,81,307,108"/>
+<area shape="rect" id="node3" href="$classAnimScript.html#a8e7d2398dbd2ac258db9bf1cfbd4b007" title="AnimScript::end" alt="" coords="355,31,469,57"/>
+<area shape="rect" id="node4" href="$classColorMap.html#a229d3bb3a24ab7e10ef38a7847dd3519" title="ColorMap::clear" alt="" coords="544,5,659,32"/>
+<area shape="rect" id="node5" href="$classAnimScript.html#a879fc5eba58a3ba08623bc4064501c38" title="AnimScript::readProcess" alt="" coords="518,56,685,83"/>
+<area shape="rect" id="node6" href="$classColorMap.html#a206bfd8a9465e856c16a71bb908772fe" title="ColorMap::colorForName" alt="" coords="733,5,901,32"/>
+<area shape="rect" id="node8" href="$classColorMap.html#a177f4fe41f3a085128d563aaf32a24ad" title="ColorMap::colors" alt="" coords="757,56,878,83"/>
+<area shape="rect" id="node9" href="$classColorMap.html#a0755e3891edd1e0d2dce1491f5b06ba7" title="ColorMap::count" alt="" coords="758,107,877,133"/>
+<area shape="rect" id="node7" href="$colormap_8cpp.html#aadd858d434ca6f9507ef897c2e4c12ab" title="qs_strcmp" alt="" coords="949,5,1032,32"/>
+</map>

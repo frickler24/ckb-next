@@ -1,0 +1,147 @@
+.TH "src/ckb-daemon/device.c" 3 "Tue May 16 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb-daemon/device.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'command\&.h'\fP
+.br
+\fC#include 'device\&.h'\fP
+.br
+\fC#include 'firmware\&.h'\fP
+.br
+\fC#include 'profile\&.h'\fP
+.br
+\fC#include 'usb\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fB_start_dev\fP (\fBusbdevice\fP *kb, int makeactive)"
+.br
+.ti -1c
+.RI "int \fBstart_dev\fP (\fBusbdevice\fP *kb, int makeactive)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBhwload_mode\fP = 1"
+.br
+.ti -1c
+.RI "\fBusbdevice\fP \fBkeyboard\fP [9]"
+.br
+.ti -1c
+.RI "pthread_mutex_t \fBdevlistmutex\fP = PTHREAD_MUTEX_INITIALIZER"
+.br
+.ti -1c
+.RI "pthread_mutex_t \fBdevmutex\fP [9] = { [0 \&.\&.\&. 9 -1] = PTHREAD_MUTEX_INITIALIZER }"
+.br
+.ti -1c
+.RI "pthread_mutex_t \fBinputmutex\fP [9] = { [0 \&.\&.\&. 9 -1] = PTHREAD_MUTEX_INITIALIZER }"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int _start_dev (\fBusbdevice\fP *kb, intmakeactive)"
+
+.PP
+Definition at line 15 of file device\&.c\&.
+.PP
+References usbdevice::active, ckb_info, ckb_warn, FEAT_ADJRATE, FEAT_FWUPDATE, FEAT_FWVERSION, FEAT_HWLOAD, FEAT_POLLRATE, FEAT_RGB, usbdevice::features, usbdevice::fwversion, getfwversion(), HAS_FEATURES, usbdevice::hw, hwload_mode, hwloadprofile, NEEDS_FW_UPDATE, usbdevice::pollrate, and setactive\&.
+.PP
+Referenced by start_dev()\&.
+.PP
+.nf
+15                                              {
+16     // Get the firmware version from the device
+17     if(kb->pollrate == 0){
+18         if(!hwload_mode || (HAS_FEATURES(kb, FEAT_HWLOAD) && getfwversion(kb))){
+19             if(hwload_mode == 2)
+20                 // hwload=always\&. Report setup failure\&.
+21                 return -1;
+22             else if(hwload_mode){
+23                 // hwload=once\&. Log failure, prevent trying again, and continue\&.
+24                 ckb_warn("Unable to load firmware version/poll rate\n");
+25                 kb->features &= ~FEAT_HWLOAD;
+26             }
+27             kb->pollrate = 0;
+28             kb->features &= ~(FEAT_POLLRATE | FEAT_ADJRATE);
+29             if(kb->fwversion == 0)
+30                 kb->features &= ~(FEAT_FWVERSION | FEAT_FWUPDATE);
+31         }
+32     }
+33     if(NEEDS_FW_UPDATE(kb)){
+34         // Device needs a firmware update\&. Finish setting up but don't do anything\&.
+35         ckb_info("Device needs a firmware update\&. Please issue a fwupdate command\&.\n");
+36         kb->features = FEAT_RGB | FEAT_FWVERSION | FEAT_FWUPDATE;
+37         kb->active = 1;
+38         return 0;
+39     }
+40     // Load profile from device
+41     if(!kb->hw && hwload_mode && HAS_FEATURES(kb, FEAT_HWLOAD)){
+42         if(hwloadprofile(kb, 1)){
+43             if(hwload_mode == 2)
+44                 return -1;
+45             ckb_warn("Unable to load hardware profile\n");
+46             kb->features &= ~FEAT_HWLOAD;
+47         }
+48     }
+49     // Active software mode if requested
+50     if(makeactive)
+51         return setactive(kb, 1);
+52     return 0;
+53 }
+.fi
+.SS "int start_dev (\fBusbdevice\fP *kb, intmakeactive)"
+
+.PP
+Definition at line 55 of file device\&.c\&.
+.PP
+References _start_dev(), USB_DELAY_DEFAULT, and usbdevice::usbdelay\&.
+.PP
+.nf
+55                                             {
+56     // Force USB interval to 10ms during initial setup phase; return to nominal 5ms after setup completes\&.
+57     kb->usbdelay = 10;
+58     int res = _start_dev(kb, makeactive);
+59     kb->usbdelay = USB_DELAY_DEFAULT;
+60     return res;
+61 }
+.fi
+.SH "Variable Documentation"
+.PP 
+.SS "pthread_mutex_t devlistmutex = PTHREAD_MUTEX_INITIALIZER"
+
+.PP
+Definition at line 11 of file device\&.c\&.
+.SS "pthread_mutex_t devmutex[9] = { [0 \&.\&.\&. 9 -1] = PTHREAD_MUTEX_INITIALIZER }"
+
+.PP
+Definition at line 12 of file device\&.c\&.
+.PP
+Referenced by _updateconnected(), quitWithLock(), and usb_rm_device()\&.
+.SS "int hwload_mode = 1"
+
+.PP
+Definition at line 7 of file device\&.c\&.
+.PP
+Referenced by _start_dev(), _usbrecv(), _usbsend(), and main()\&.
+.SS "pthread_mutex_t inputmutex[9] = { [0 \&.\&.\&. 9 -1] = PTHREAD_MUTEX_INITIALIZER }"
+
+.PP
+Definition at line 13 of file device\&.c\&.
+.SS "\fBusbdevice\fP keyboard[9]"
+
+.PP
+Definition at line 10 of file device\&.c\&.
+.PP
+Referenced by _mkdevpath(), _mknotifynode(), _rmnotifynode(), _setupusb(), _updateconnected(), closeusb(), main(), mkfwnode(), os_closeusb(), os_inputmain(), os_inputopen(), os_setupusb(), quitWithLock(), rmdevpath(), usb_rm_device(), and usbadd()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

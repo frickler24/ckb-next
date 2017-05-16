@@ -1,0 +1,458 @@
+.TH "QuaZipPrivate" 3 "Tue May 16 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QuaZipPrivate \- 
+.PP
+All the internal stuff for the \fBQuaZip\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "QTextCodec * \fBgetDefaultFileNameCodec\fP ()"
+.br
+.ti -1c
+.RI "\fBQuaZipPrivate\fP (\fBQuaZip\fP *\fBq\fP)"
+.br
+.RI "\fIThe constructor for the corresponding \fBQuaZip\fP constructor\&. \fP"
+.ti -1c
+.RI "\fBQuaZipPrivate\fP (\fBQuaZip\fP *\fBq\fP, const QString &\fBzipName\fP)"
+.br
+.RI "\fIThe constructor for the corresponding \fBQuaZip\fP constructor\&. \fP"
+.ti -1c
+.RI "\fBQuaZipPrivate\fP (\fBQuaZip\fP *\fBq\fP, \fBQIODevice\fP *\fBioDevice\fP)"
+.br
+.RI "\fIThe constructor for the corresponding \fBQuaZip\fP constructor\&. \fP"
+.ti -1c
+.RI "template<typename TFileInfo > bool \fBgetFileInfoList\fP (QList< TFileInfo > *result) const "
+.br
+.RI "\fIReturns either a list of file names or a list of \fBQuaZipFileInfo\fP\&. \fP"
+.ti -1c
+.RI "void \fBclearDirectoryMap\fP ()"
+.br
+.RI "\fIStores map of filenames and file locations for unzipping\&. \fP"
+.ti -1c
+.RI "void \fBaddCurrentFileToDirectoryMap\fP (const QString &fileName)"
+.br
+.ti -1c
+.RI "bool \fBgoToFirstUnmappedFile\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBQuaZip\fP * \fBq\fP"
+.br
+.RI "\fIThe pointer to the corresponding \fBQuaZip\fP instance\&. \fP"
+.ti -1c
+.RI "QTextCodec * \fBfileNameCodec\fP"
+.br
+.RI "\fIThe codec for file names\&. \fP"
+.ti -1c
+.RI "QTextCodec * \fBcommentCodec\fP"
+.br
+.RI "\fIThe codec for comments\&. \fP"
+.ti -1c
+.RI "QString \fBzipName\fP"
+.br
+.RI "\fIThe archive file name\&. \fP"
+.ti -1c
+.RI "\fBQIODevice\fP * \fBioDevice\fP"
+.br
+.RI "\fIThe device to access the archive\&. \fP"
+.ti -1c
+.RI "QString \fBcomment\fP"
+.br
+.RI "\fIThe global comment\&. \fP"
+.ti -1c
+.RI "\fBQuaZip::Mode\fP \fBmode\fP"
+.br
+.RI "\fIThe open mode\&. \fP"
+.ti -1c
+.RI "union {"
+.br
+.ti -1c
+.RI "\fBunzFile\fP \fBunzFile_f\fP"
+.br
+.RI "\fIThe internal handle for UNZIP modes\&. \fP"
+.ti -1c
+.RI "\fBzipFile\fP \fBzipFile_f\fP"
+.br
+.RI "\fIThe internal handle for ZIP modes\&. \fP"
+.ti -1c
+.RI "}; "
+.br
+.ti -1c
+.RI "bool \fBhasCurrentFile_f\fP"
+.br
+.RI "\fIWhether a current file is set\&. \fP"
+.ti -1c
+.RI "int \fBzipError\fP"
+.br
+.RI "\fIThe last error\&. \fP"
+.ti -1c
+.RI "bool \fBdataDescriptorWritingEnabled\fP"
+.br
+.RI "\fIWhether \fBthe data descriptor writing mode\fP is enabled\&. \fP"
+.ti -1c
+.RI "bool \fBzip64\fP"
+.br
+.RI "\fIThe zip64 mode\&. \fP"
+.ti -1c
+.RI "bool \fBautoClose\fP"
+.br
+.RI "\fIThe auto-close flag\&. \fP"
+.ti -1c
+.RI "QHash< QString, \fBunz64_file_pos\fP > \fBdirectoryCaseSensitive\fP"
+.br
+.ti -1c
+.RI "QHash< QString, \fBunz64_file_pos\fP > \fBdirectoryCaseInsensitive\fP"
+.br
+.ti -1c
+.RI "\fBunz64_file_pos\fP \fBlastMappedDirectoryEntry\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static QTextCodec * \fBdefaultFileNameCodec\fP = NULL"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBQuaZip\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class keeps all the private stuff for the \fBQuaZip\fP class so it can be changed without breaking binary compatibility, according to the Pimpl idiom\&. 
+.PP
+Definition at line 39 of file quazip\&.cpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QuaZipPrivate::QuaZipPrivate (\fBQuaZip\fP *q)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 81 of file quazip\&.cpp\&.
+.PP
+References lastMappedDirectoryEntry, unz64_file_pos_s::num_of_file, and unz64_file_pos_s::pos_in_zip_directory\&.
+.PP
+.nf
+81                                    :
+82       q(q),
+83       fileNameCodec(getDefaultFileNameCodec()),
+84       commentCodec(QTextCodec::codecForLocale()),
+85       ioDevice(NULL),
+86       mode(QuaZip::mdNotOpen),
+87       hasCurrentFile_f(false),
+88       zipError(UNZ_OK),
+89       dataDescriptorWritingEnabled(true),
+90       zip64(false),
+91       autoClose(true)
+92     {
+93         lastMappedDirectoryEntry\&.num_of_file = 0;
+94         lastMappedDirectoryEntry\&.pos_in_zip_directory = 0;
+95     }
+.fi
+.SS "QuaZipPrivate::QuaZipPrivate (\fBQuaZip\fP *q, const QString &zipName)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 97 of file quazip\&.cpp\&.
+.PP
+References lastMappedDirectoryEntry, unz64_file_pos_s::num_of_file, and unz64_file_pos_s::pos_in_zip_directory\&.
+.PP
+.nf
+97                                                            :
+98       q(q),
+99       fileNameCodec(getDefaultFileNameCodec()),
+100       commentCodec(QTextCodec::codecForLocale()),
+101       zipName(zipName),
+102       ioDevice(NULL),
+103       mode(QuaZip::mdNotOpen),
+104       hasCurrentFile_f(false),
+105       zipError(UNZ_OK),
+106       dataDescriptorWritingEnabled(true),
+107       zip64(false),
+108       autoClose(true)
+109     {
+110         lastMappedDirectoryEntry\&.num_of_file = 0;
+111         lastMappedDirectoryEntry\&.pos_in_zip_directory = 0;
+112     }
+.fi
+.SS "QuaZipPrivate::QuaZipPrivate (\fBQuaZip\fP *q, \fBQIODevice\fP *ioDevice)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 114 of file quazip\&.cpp\&.
+.PP
+References lastMappedDirectoryEntry, unz64_file_pos_s::num_of_file, and unz64_file_pos_s::pos_in_zip_directory\&.
+.PP
+.nf
+114                                                         :
+115         q(q),
+116       fileNameCodec(getDefaultFileNameCodec()),
+117       commentCodec(QTextCodec::codecForLocale()),
+118       ioDevice(ioDevice),
+119       mode(QuaZip::mdNotOpen),
+120       hasCurrentFile_f(false),
+121       zipError(UNZ_OK),
+122       dataDescriptorWritingEnabled(true),
+123       zip64(false),
+124       autoClose(true)
+125     {
+126         lastMappedDirectoryEntry\&.num_of_file = 0;
+127         lastMappedDirectoryEntry\&.pos_in_zip_directory = 0;
+128     }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void QuaZipPrivate::addCurrentFileToDirectoryMap (const QString &fileName)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 153 of file quazip\&.cpp\&.
+.PP
+References directoryCaseInsensitive, directoryCaseSensitive, hasCurrentFile_f, lastMappedDirectoryEntry, unz64_file_pos_s::pos_in_zip_directory, and unzGetFilePos64()\&.
+.PP
+Referenced by QuaZip::getCurrentFileInfo(), and QuaZip::getCurrentFileName()\&.
+.PP
+.nf
+154 {
+155     if (!hasCurrentFile_f || fileName\&.isEmpty()) {
+156         return;
+157     }
+158     // Adds current file to filename map as fileName
+159     unz64_file_pos fileDirectoryPos;
+160     unzGetFilePos64(unzFile_f, &fileDirectoryPos);
+161     directoryCaseSensitive\&.insert(fileName, fileDirectoryPos);
+162     // Only add lowercase to directory map if not already there
+163     // ensures only map the first one seen
+164     QString lower = fileName\&.toLower();
+165     if (!directoryCaseInsensitive\&.contains(lower))
+166         directoryCaseInsensitive\&.insert(lower, fileDirectoryPos);
+167     // Mark last one
+168     if (fileDirectoryPos\&.pos_in_zip_directory > lastMappedDirectoryEntry\&.pos_in_zip_directory)
+169         lastMappedDirectoryEntry = fileDirectoryPos;
+170 }
+.fi
+.SS "void QuaZipPrivate::clearDirectoryMap ()\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 145 of file quazip\&.cpp\&.
+.PP
+References directoryCaseInsensitive, directoryCaseSensitive, lastMappedDirectoryEntry, unz64_file_pos_s::num_of_file, and unz64_file_pos_s::pos_in_zip_directory\&.
+.PP
+Referenced by QuaZip::close()\&.
+.PP
+.nf
+146 {
+147     directoryCaseInsensitive\&.clear();
+148     directoryCaseSensitive\&.clear();
+149     lastMappedDirectoryEntry\&.num_of_file = 0;
+150     lastMappedDirectoryEntry\&.pos_in_zip_directory = 0;
+151 }
+.fi
+.SS "QTextCodec* QuaZipPrivate::getDefaultFileNameCodec ()\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 72 of file quazip\&.cpp\&.
+.PP
+References defaultFileNameCodec\&.
+.PP
+.nf
+73     {
+74         if (defaultFileNameCodec == NULL) {
+75             return QTextCodec::codecForLocale();
+76         } else {
+77             return defaultFileNameCodec;
+78         }
+79     }
+.fi
+.SS "template<typename TFileInfo > bool QuaZipPrivate::getFileInfoList (QList< TFileInfo > *result) const\fC [private]\fP"
+
+.PP
+Definition at line 687 of file quazip\&.cpp\&.
+.PP
+References QuaZip::getCurrentFileName(), QuaZip::goToFirstFile(), QuaZip::goToNextFile(), QuaZip::hasCurrentFile(), QuaZip::mdUnzip, mode, q, QuaZip::setCurrentFile(), UNZ_OK, and zipError\&.
+.PP
+Referenced by QuaZip::getFileInfoList(), QuaZip::getFileInfoList64(), and QuaZip::getFileNameList()\&.
+.PP
+.nf
+688 {
+689   QuaZipPrivate *fakeThis=const_cast<QuaZipPrivate*>(this);
+690   fakeThis->zipError=UNZ_OK;
+691   if (mode!=QuaZip::mdUnzip) {
+692     qWarning("QuaZip::getFileNameList/getFileInfoList(): "
+693             "ZIP is not open in mdUnzip mode");
+694     return false;
+695   }
+696   QString currentFile;
+697   if (q->hasCurrentFile()) {
+698       currentFile = q->getCurrentFileName();
+699   }
+700   if (q->goToFirstFile()) {
+701       do {
+702           bool ok;
+703           result->append(QuaZip_getFileInfo<TFileInfo>(q, &ok));
+704           if (!ok)
+705               return false;
+706       } while (q->goToNextFile());
+707   }
+708   if (zipError != UNZ_OK)
+709       return false;
+710   if (currentFile\&.isEmpty()) {
+711       if (!q->goToFirstFile())
+712           return false;
+713   } else {
+714       if (!q->setCurrentFile(currentFile))
+715           return false;
+716   }
+717   return true;
+718 }
+.fi
+.SS "bool QuaZipPrivate::goToFirstUnmappedFile ()\fC [private]\fP"
+
+.PP
+Definition at line 172 of file quazip\&.cpp\&.
+.PP
+References hasCurrentFile_f, lastMappedDirectoryEntry, QuaZip::mdUnzip, mode, unz64_file_pos_s::pos_in_zip_directory, UNZ_END_OF_LIST_OF_FILE, UNZ_OK, unzGoToFilePos64(), unzGoToFirstFile(), unzGoToNextFile(), and zipError\&.
+.PP
+Referenced by QuaZip::setCurrentFile()\&.
+.PP
+.nf
+173 {
+174     zipError = UNZ_OK;
+175     if (mode != QuaZip::mdUnzip) {
+176         qWarning("QuaZipPrivate::goToNextUnmappedFile(): ZIP is not open in mdUnzip mode");
+177         return false;
+178     }
+179     // If not mapped anything, go to beginning
+180     if (lastMappedDirectoryEntry\&.pos_in_zip_directory == 0) {
+181         unzGoToFirstFile(unzFile_f);
+182     } else {
+183         // Goto the last one mapped, plus one
+184         unzGoToFilePos64(unzFile_f, &lastMappedDirectoryEntry);
+185         unzGoToNextFile(unzFile_f);
+186     }
+187     hasCurrentFile_f=zipError==UNZ_OK;
+188     if(zipError==UNZ_END_OF_LIST_OF_FILE)
+189       zipError=UNZ_OK;
+190     return hasCurrentFile_f;
+191 }
+.fi
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBQuaZip\fP\fC [friend]\fP"
+
+.PP
+Definition at line 40 of file quazip\&.cpp\&.
+.SH "Field Documentation"
+.PP 
+.SS "union { \&.\&.\&. } \fC [private]\fP"
+
+.SS "bool QuaZipPrivate::autoClose\fC [private]\fP"
+
+.PP
+Definition at line 71 of file quazip\&.cpp\&.
+.PP
+Referenced by QuaZip::isAutoClose(), QuaZip::open(), and QuaZip::setAutoClose()\&.
+.SS "QString QuaZipPrivate::comment\fC [private]\fP"
+
+.PP
+Definition at line 53 of file quazip\&.cpp\&.
+.PP
+Referenced by QuaZip::close(), and QuaZip::setComment()\&.
+.SS "QTextCodec* QuaZipPrivate::commentCodec\fC [private]\fP"
+
+.PP
+Definition at line 47 of file quazip\&.cpp\&.
+.PP
+Referenced by QuaZip::close(), QuaZip::getComment(), QuaZip::getCommentCodec(), QuaZip::getCurrentFileInfo(), and QuaZip::setCommentCodec()\&.
+.SS "bool QuaZipPrivate::dataDescriptorWritingEnabled\fC [private]\fP"
+
+.PP
+Definition at line 67 of file quazip\&.cpp\&.
+.PP
+Referenced by QuaZip::isDataDescriptorWritingEnabled(), QuaZip::open(), and QuaZip::setDataDescriptorWritingEnabled()\&.
+.SS "QTextCodec * QuaZipPrivate::defaultFileNameCodec = NULL\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 140 of file quazip\&.cpp\&.
+.PP
+Referenced by getDefaultFileNameCodec(), and QuaZip::setDefaultFileNameCodec()\&.
+.SS "QHash<QString, \fBunz64_file_pos\fP> QuaZipPrivate::directoryCaseInsensitive\fC [private]\fP"
+
+.PP
+Definition at line 138 of file quazip\&.cpp\&.
+.PP
+Referenced by addCurrentFileToDirectoryMap(), clearDirectoryMap(), and QuaZip::setCurrentFile()\&.
+.SS "QHash<QString, \fBunz64_file_pos\fP> QuaZipPrivate::directoryCaseSensitive\fC [private]\fP"
+
+.PP
+Definition at line 137 of file quazip\&.cpp\&.
+.PP
+Referenced by addCurrentFileToDirectoryMap(), clearDirectoryMap(), and QuaZip::setCurrentFile()\&.
+.SS "QTextCodec* QuaZipPrivate::fileNameCodec\fC [private]\fP"
+
+.PP
+Definition at line 45 of file quazip\&.cpp\&.
+.PP
+Referenced by QuaZip::getCurrentFileInfo(), QuaZip::getCurrentFileName(), QuaZip::getFileNameCodec(), and QuaZip::setFileNameCodec()\&.
+.SS "bool QuaZipPrivate::hasCurrentFile_f\fC [private]\fP"
+
+.PP
+Definition at line 63 of file quazip\&.cpp\&.
+.PP
+Referenced by addCurrentFileToDirectoryMap(), QuaZip::goToFirstFile(), goToFirstUnmappedFile(), QuaZip::goToNextFile(), QuaZip::hasCurrentFile(), and QuaZip::setCurrentFile()\&.
+.SS "\fBQIODevice\fP* QuaZipPrivate::ioDevice\fC [private]\fP"
+
+.PP
+Definition at line 51 of file quazip\&.cpp\&.
+.PP
+Referenced by QuaZip::close(), QuaZip::getIoDevice(), QuaZip::open(), QuaZip::setIoDevice(), and QuaZip::setZipName()\&.
+.SS "\fBunz64_file_pos\fP QuaZipPrivate::lastMappedDirectoryEntry\fC [private]\fP"
+
+.PP
+Definition at line 139 of file quazip\&.cpp\&.
+.PP
+Referenced by addCurrentFileToDirectoryMap(), clearDirectoryMap(), goToFirstUnmappedFile(), and QuaZipPrivate()\&.
+.SS "\fBQuaZip::Mode\fP QuaZipPrivate::mode\fC [private]\fP"
+
+.PP
+Definition at line 55 of file quazip\&.cpp\&.
+.PP
+Referenced by QuaZip::close(), QuaZip::getComment(), QuaZip::getCurrentFileInfo(), QuaZip::getCurrentFileName(), QuaZip::getEntriesCount(), getFileInfoList(), QuaZip::getMode(), QuaZip::goToFirstFile(), goToFirstUnmappedFile(), QuaZip::goToNextFile(), QuaZip::isOpen(), QuaZip::open(), and QuaZip::setCurrentFile()\&.
+.SS "\fBQuaZip\fP* QuaZipPrivate::q\fC [private]\fP"
+
+.PP
+Definition at line 43 of file quazip\&.cpp\&.
+.PP
+Referenced by getFileInfoList()\&.
+.SS "bool QuaZipPrivate::zip64\fC [private]\fP"
+
+.PP
+Definition at line 69 of file quazip\&.cpp\&.
+.PP
+Referenced by QuaZip::isZip64Enabled(), and QuaZip::setZip64Enabled()\&.
+.SS "int QuaZipPrivate::zipError\fC [private]\fP"
+
+.PP
+Definition at line 65 of file quazip\&.cpp\&.
+.PP
+Referenced by QuaZip::close(), QuaZip::getComment(), QuaZip::getCurrentFileInfo(), QuaZip::getCurrentFileName(), QuaZip::getEntriesCount(), getFileInfoList(), QuaZip::getZipError(), QuaZip::goToFirstFile(), goToFirstUnmappedFile(), QuaZip::goToNextFile(), QuaZip::open(), and QuaZip::setCurrentFile()\&.
+.SS "QString QuaZipPrivate::zipName\fC [private]\fP"
+
+.PP
+Definition at line 49 of file quazip\&.cpp\&.
+.PP
+Referenced by QuaZip::close(), QuaZip::getIoDevice(), QuaZip::getZipName(), QuaZip::open(), QuaZip::setIoDevice(), and QuaZip::setZipName()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

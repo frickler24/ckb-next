@@ -1,0 +1,1302 @@
+.TH "Ui::KPerfWidget" 3 "Tue May 16 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ui::KPerfWidget \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/ui_kperfwidget\&.h>\fP
+.PP
+Inherits \fBUi_KPerfWidget\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetupUi\fP (\fBQWidget\fP *\fBKPerfWidget\fP)"
+.br
+.ti -1c
+.RI "void \fBretranslateUi\fP (\fBQWidget\fP *\fBKPerfWidget\fP)"
+.br
+.in -1c
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "QGridLayout * \fBgridLayout\fP"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBk95Spacer\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_10\fP"
+.br
+.ti -1c
+.RI "\fBColorButton\fP * \fBlockColorOff\fP"
+.br
+.ti -1c
+.RI "QFrame * \fBline\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer_5\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBk95Label2\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_12\fP"
+.br
+.ti -1c
+.RI "\fBColorButton\fP * \fBmodeColorOff\fP"
+.br
+.ti -1c
+.RI "\fBColorButton\fP * \fBlightColor3\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer\fP"
+.br
+.ti -1c
+.RI "QCheckBox * \fBlockBox\fP"
+.br
+.ti -1c
+.RI "\fBColorButton\fP * \fBmodeColorOn\fP"
+.br
+.ti -1c
+.RI "QCheckBox * \fBmacroBox\fP"
+.br
+.ti -1c
+.RI "\fBColorButton\fP * \fBnumColorOn\fP"
+.br
+.ti -1c
+.RI "QComboBox * \fBnumBox\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_5\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBverticalSpacer_2\fP"
+.br
+.ti -1c
+.RI "\fBColorButton\fP * \fBlightColor2\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer_7\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_8\fP"
+.br
+.ti -1c
+.RI "QCheckBox * \fBlightBox\fP"
+.br
+.ti -1c
+.RI "\fBColorButton\fP * \fBlightColor1\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBverticalSpacer_4\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_6\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer_6\fP"
+.br
+.ti -1c
+.RI "\fBColorButton\fP * \fBlockColorOn\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_4\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBverticalSpacer\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBverticalSpacer_3\fP"
+.br
+.ti -1c
+.RI "QCheckBox * \fBmodeBox\fP"
+.br
+.ti -1c
+.RI "\fBColorButton\fP * \fBcapsColorOff\fP"
+.br
+.ti -1c
+.RI "\fBColorButton\fP * \fBnumColorOff\fP"
+.br
+.ti -1c
+.RI "\fBColorButton\fP * \fBcapsColorOn\fP"
+.br
+.ti -1c
+.RI "QFrame * \fBline_3\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_22\fP"
+.br
+.ti -1c
+.RI "QComboBox * \fBscrollBox\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_7\fP"
+.br
+.ti -1c
+.RI "\fBColorButton\fP * \fBscrollColorOn\fP"
+.br
+.ti -1c
+.RI "QComboBox * \fBcapsBox\fP"
+.br
+.ti -1c
+.RI "\fBColorButton\fP * \fBscrollColorOff\fP"
+.br
+.ti -1c
+.RI "QCheckBox * \fBmuteBox\fP"
+.br
+.ti -1c
+.RI "\fBColorButton\fP * \fBmuteColorOn\fP"
+.br
+.ti -1c
+.RI "\fBColorButton\fP * \fBmacroColorOff\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_3\fP"
+.br
+.ti -1c
+.RI "\fBColorButton\fP * \fBmuteColorOff\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBk95Label3\fP"
+.br
+.ti -1c
+.RI "\fBColorButton\fP * \fBmacroColorOn\fP"
+.br
+.ti -1c
+.RI "\fBColorButton\fP * \fBmuteColorNA\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_19\fP"
+.br
+.ti -1c
+.RI "QFrame * \fBk95Line\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_21\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_24\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_20\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_16\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_14\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_18\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer_2\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_15\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBk95Label4\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_17\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_11\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_23\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBk95Label1\fP"
+.br
+.ti -1c
+.RI "QHBoxLayout * \fBhorizontalLayout_2\fP"
+.br
+.ti -1c
+.RI "\fBQPushButton\fP * \fBcopyButton\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer_8\fP"
+.br
+.ti -1c
+.RI "QHBoxLayout * \fBhorizontalLayout\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_2\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer_4\fP"
+.br
+.ti -1c
+.RI "QSpinBox * \fBintensityBox\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer_3\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBk95Label5\fP"
+.br
+.ti -1c
+.RI "QFrame * \fBline_2\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBk95Label6\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 677 of file ui_kperfwidget\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Ui_KPerfWidget::retranslateUi (\fBQWidget\fP *KPerfWidget)\fC [inline]\fP, \fC [inherited]\fP"
+
+.PP
+Definition at line 589 of file ui_kperfwidget\&.h\&.
+.PP
+References Ui_KPerfWidget::capsBox, Ui_KPerfWidget::capsColorOff, Ui_KPerfWidget::capsColorOn, Ui_KPerfWidget::copyButton, Ui_KPerfWidget::intensityBox, Ui_KPerfWidget::k95Label1, Ui_KPerfWidget::k95Label2, Ui_KPerfWidget::k95Label3, Ui_KPerfWidget::k95Label4, Ui_KPerfWidget::k95Label5, Ui_KPerfWidget::k95Label6, Ui_KPerfWidget::label, Ui_KPerfWidget::label_10, Ui_KPerfWidget::label_11, Ui_KPerfWidget::label_12, Ui_KPerfWidget::label_14, Ui_KPerfWidget::label_15, Ui_KPerfWidget::label_16, Ui_KPerfWidget::label_17, Ui_KPerfWidget::label_18, Ui_KPerfWidget::label_19, Ui_KPerfWidget::label_2, Ui_KPerfWidget::label_20, Ui_KPerfWidget::label_21, Ui_KPerfWidget::label_22, Ui_KPerfWidget::label_23, Ui_KPerfWidget::label_24, Ui_KPerfWidget::label_3, Ui_KPerfWidget::label_4, Ui_KPerfWidget::label_5, Ui_KPerfWidget::label_6, Ui_KPerfWidget::label_7, Ui_KPerfWidget::label_8, Ui_KPerfWidget::lightBox, Ui_KPerfWidget::lightColor1, Ui_KPerfWidget::lightColor2, Ui_KPerfWidget::lightColor3, Ui_KPerfWidget::lockBox, Ui_KPerfWidget::lockColorOff, Ui_KPerfWidget::lockColorOn, Ui_KPerfWidget::macroBox, Ui_KPerfWidget::macroColorOff, Ui_KPerfWidget::macroColorOn, Ui_KPerfWidget::modeBox, Ui_KPerfWidget::modeColorOff, Ui_KPerfWidget::modeColorOn, Ui_KPerfWidget::muteBox, Ui_KPerfWidget::muteColorNA, Ui_KPerfWidget::muteColorOff, Ui_KPerfWidget::muteColorOn, Ui_KPerfWidget::numBox, Ui_KPerfWidget::numColorOff, Ui_KPerfWidget::numColorOn, Ui_KPerfWidget::scrollBox, Ui_KPerfWidget::scrollColorOff, and Ui_KPerfWidget::scrollColorOn\&.
+.PP
+Referenced by Ui_KPerfWidget::setupUi()\&.
+.PP
+.nf
+590     {
+591         KPerfWidget->setWindowTitle(QApplication::translate("KPerfWidget", "Form", Q_NULLPTR));
+592         label_10->setText(QApplication::translate("KPerfWidget", "100%", Q_NULLPTR));
+593         lockColorOff->setText(QString());
+594         k95Label2->setText(QApplication::translate("KPerfWidget", "On", Q_NULLPTR));
+595         label_12->setText(QApplication::translate("KPerfWidget", "On", Q_NULLPTR));
+596         modeColorOff->setText(QString());
+597         lightColor3->setText(QString());
+598         lockBox->setText(QApplication::translate("KPerfWidget", "Indicate Windows Lock:", Q_NULLPTR));
+599         modeColorOn->setText(QString());
+600         macroBox->setText(QApplication::translate("KPerfWidget", "Indicate macro recording:", Q_NULLPTR));
+601         numColorOn->setText(QString());
+602         numBox->clear();
+603         numBox->insertItems(0, QStringList()
+604          << QApplication::translate("KPerfWidget", "Normal", Q_NULLPTR)
+605          << QApplication::translate("KPerfWidget", "Always on", Q_NULLPTR)
+606          << QApplication::translate("KPerfWidget", "Always off", Q_NULLPTR)
+607          << QApplication::translate("KPerfWidget", "RGB indicator", Q_NULLPTR)
+608          << QApplication::translate("KPerfWidget", "RGB + normal", Q_NULLPTR)
+609         );
+610         label_5->setText(QApplication::translate("KPerfWidget", "Num lock:", Q_NULLPTR));
+611         lightColor2->setText(QString());
+612         label_8->setText(QApplication::translate("KPerfWidget", "Note: many desktop environments do not use scroll lock\&. The indicator may not turn on even when enabled\&.", Q_NULLPTR));
+613         lightBox->setText(QApplication::translate("KPerfWidget", "Indicate brightness:", Q_NULLPTR));
+614         lightColor1->setText(QString());
+615         label_6->setText(QApplication::translate("KPerfWidget", "Caps lock:", Q_NULLPTR));
+616         label->setText(QApplication::translate("KPerfWidget", "Miscellaneous", Q_NULLPTR));
+617         lockColorOn->setText(QString());
+618         label_4->setText(QApplication::translate("KPerfWidget", "Lock lights", Q_NULLPTR));
+619         modeBox->setText(QApplication::translate("KPerfWidget", "Indicate current mode:", Q_NULLPTR));
+620         capsColorOff->setText(QString());
+621         numColorOff->setText(QString());
+622         capsColorOn->setText(QString());
+623         label_22->setText(QApplication::translate("KPerfWidget", "Off", Q_NULLPTR));
+624         scrollBox->clear();
+625         scrollBox->insertItems(0, QStringList()
+626          << QApplication::translate("KPerfWidget", "Normal", Q_NULLPTR)
+627          << QApplication::translate("KPerfWidget", "Always on", Q_NULLPTR)
+628          << QApplication::translate("KPerfWidget", "Always off", Q_NULLPTR)
+629          << QApplication::translate("KPerfWidget", "RGB indicator", Q_NULLPTR)
+630          << QApplication::translate("KPerfWidget", "RGB + normal", Q_NULLPTR)
+631         );
+632         label_7->setText(QApplication::translate("KPerfWidget", "Scroll lock:", Q_NULLPTR));
+633         scrollColorOn->setText(QString());
+634         capsBox->clear();
+635         capsBox->insertItems(0, QStringList()
+636          << QApplication::translate("KPerfWidget", "Normal", Q_NULLPTR)
+637          << QApplication::translate("KPerfWidget", "Always on", Q_NULLPTR)
+638          << QApplication::translate("KPerfWidget", "Always off", Q_NULLPTR)
+639          << QApplication::translate("KPerfWidget", "RGB indicator", Q_NULLPTR)
+640          << QApplication::translate("KPerfWidget", "RGB + normal", Q_NULLPTR)
+641         );
+642         scrollColorOff->setText(QString());
+643         muteBox->setText(QApplication::translate("KPerfWidget", "Indicate mute:", Q_NULLPTR));
+644         muteColorOn->setText(QString());
+645         macroColorOff->setText(QString());
+646         label_3->setText(QApplication::translate("KPerfWidget", "Top row", Q_NULLPTR));
+647         muteColorOff->setText(QString());
+648         k95Label3->setText(QApplication::translate("KPerfWidget", "Off", Q_NULLPTR));
+649         macroColorOn->setText(QString());
+650 #ifndef QT_NO_TOOLTIP
+651         muteColorNA->setToolTip(QApplication::translate("KPerfWidget", "If the sound device does not support muting, or if mute status is unknown, this color will be displayed\&.", Q_NULLPTR));
+652 #endif // QT_NO_TOOLTIP
+653         muteColorNA->setText(QString());
+654         label_19->setText(QApplication::translate("KPerfWidget", "On", Q_NULLPTR));
+655         label_21->setText(QApplication::translate("KPerfWidget", "On", Q_NULLPTR));
+656         label_24->setText(QApplication::translate("KPerfWidget", "Off", Q_NULLPTR));
+657         label_20->setText(QApplication::translate("KPerfWidget", "On", Q_NULLPTR));
+658         label_16->setText(QApplication::translate("KPerfWidget", "67%", Q_NULLPTR));
+659         label_14->setText(QApplication::translate("KPerfWidget", "Off", Q_NULLPTR));
+660         label_18->setText(QApplication::translate("KPerfWidget", "33%", Q_NULLPTR));
+661         label_15->setText(QApplication::translate("KPerfWidget", "Off", Q_NULLPTR));
+662         k95Label4->setText(QApplication::translate("KPerfWidget", "On", Q_NULLPTR));
+663         label_17->setText(QApplication::translate("KPerfWidget", "Unknown", Q_NULLPTR));
+664         label_11->setText(QApplication::translate("KPerfWidget", "On", Q_NULLPTR));
+665         label_23->setText(QApplication::translate("KPerfWidget", "Off", Q_NULLPTR));
+666         k95Label1->setText(QApplication::translate("KPerfWidget", "K95 buttons", Q_NULLPTR));
+667         copyButton->setText(QApplication::translate("KPerfWidget", "Copy to mode\&.\&.\&.", Q_NULLPTR));
+668         label_2->setText(QApplication::translate("KPerfWidget", "Indicator intensity:", Q_NULLPTR));
+669         intensityBox->setSuffix(QApplication::translate("KPerfWidget", "%", Q_NULLPTR));
+670         k95Label5->setText(QApplication::translate("KPerfWidget", "Off", Q_NULLPTR));
+671         k95Label6->setText(QApplication::translate("KPerfWidget", "Note: macro recording not yet implemented\&. Indicator will always display \"off\"\&.", Q_NULLPTR));
+672     } // retranslateUi
+.fi
+.SS "void Ui_KPerfWidget::setupUi (\fBQWidget\fP *KPerfWidget)\fC [inline]\fP, \fC [inherited]\fP"
+
+.PP
+Definition at line 111 of file ui_kperfwidget\&.h\&.
+.PP
+References Ui_KPerfWidget::capsBox, Ui_KPerfWidget::capsColorOff, Ui_KPerfWidget::capsColorOn, Ui_KPerfWidget::copyButton, Ui_KPerfWidget::gridLayout, Ui_KPerfWidget::horizontalLayout, Ui_KPerfWidget::horizontalLayout_2, Ui_KPerfWidget::horizontalSpacer, Ui_KPerfWidget::horizontalSpacer_2, Ui_KPerfWidget::horizontalSpacer_3, Ui_KPerfWidget::horizontalSpacer_4, Ui_KPerfWidget::horizontalSpacer_5, Ui_KPerfWidget::horizontalSpacer_6, Ui_KPerfWidget::horizontalSpacer_7, Ui_KPerfWidget::horizontalSpacer_8, Ui_KPerfWidget::intensityBox, Ui_KPerfWidget::k95Label1, Ui_KPerfWidget::k95Label2, Ui_KPerfWidget::k95Label3, Ui_KPerfWidget::k95Label4, Ui_KPerfWidget::k95Label5, Ui_KPerfWidget::k95Label6, Ui_KPerfWidget::k95Line, Ui_KPerfWidget::k95Spacer, Ui_KPerfWidget::label, Ui_KPerfWidget::label_10, Ui_KPerfWidget::label_11, Ui_KPerfWidget::label_12, Ui_KPerfWidget::label_14, Ui_KPerfWidget::label_15, Ui_KPerfWidget::label_16, Ui_KPerfWidget::label_17, Ui_KPerfWidget::label_18, Ui_KPerfWidget::label_19, Ui_KPerfWidget::label_2, Ui_KPerfWidget::label_20, Ui_KPerfWidget::label_21, Ui_KPerfWidget::label_22, Ui_KPerfWidget::label_23, Ui_KPerfWidget::label_24, Ui_KPerfWidget::label_3, Ui_KPerfWidget::label_4, Ui_KPerfWidget::label_5, Ui_KPerfWidget::label_6, Ui_KPerfWidget::label_7, Ui_KPerfWidget::label_8, Ui_KPerfWidget::lightBox, Ui_KPerfWidget::lightColor1, Ui_KPerfWidget::lightColor2, Ui_KPerfWidget::lightColor3, Ui_KPerfWidget::line, Ui_KPerfWidget::line_2, Ui_KPerfWidget::line_3, Ui_KPerfWidget::lockBox, Ui_KPerfWidget::lockColorOff, Ui_KPerfWidget::lockColorOn, Ui_KPerfWidget::macroBox, Ui_KPerfWidget::macroColorOff, Ui_KPerfWidget::macroColorOn, Ui_KPerfWidget::modeBox, Ui_KPerfWidget::modeColorOff, Ui_KPerfWidget::modeColorOn, Ui_KPerfWidget::muteBox, Ui_KPerfWidget::muteColorNA, Ui_KPerfWidget::muteColorOff, Ui_KPerfWidget::muteColorOn, Ui_KPerfWidget::numBox, Ui_KPerfWidget::numColorOff, Ui_KPerfWidget::numColorOn, Ui_KPerfWidget::retranslateUi(), Ui_KPerfWidget::scrollBox, Ui_KPerfWidget::scrollColorOff, Ui_KPerfWidget::scrollColorOn, Ui_KPerfWidget::verticalSpacer, Ui_KPerfWidget::verticalSpacer_2, Ui_KPerfWidget::verticalSpacer_3, and Ui_KPerfWidget::verticalSpacer_4\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget()\&.
+.PP
+.nf
+112     {
+113         if (KPerfWidget->objectName()\&.isEmpty())
+114             KPerfWidget->setObjectName(QStringLiteral("KPerfWidget"));
+115         KPerfWidget->resize(840, 679);
+116         gridLayout = new QGridLayout(KPerfWidget);
+117         gridLayout->setObjectName(QStringLiteral("gridLayout"));
+118         k95Spacer = new QWidget(KPerfWidget);
+119         k95Spacer->setObjectName(QStringLiteral("k95Spacer"));
+120         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+121         sizePolicy\&.setHorizontalStretch(0);
+122         sizePolicy\&.setVerticalStretch(0);
+123         sizePolicy\&.setHeightForWidth(k95Spacer->sizePolicy()\&.hasHeightForWidth());
+124         k95Spacer->setSizePolicy(sizePolicy);
+125         k95Spacer->setMinimumSize(QSize(15, 10));
+126         k95Spacer->setMaximumSize(QSize(15, 10));
+127 
+128         gridLayout->addWidget(k95Spacer, 12, 4, 1, 1);
+129 
+130         label_10 = new QLabel(KPerfWidget);
+131         label_10->setObjectName(QStringLiteral("label_10"));
+132 
+133         gridLayout->addWidget(label_10, 15, 5, 1, 1);
+134 
+135         lockColorOff = new ColorButton(KPerfWidget);
+136         lockColorOff->setObjectName(QStringLiteral("lockColorOff"));
+137         sizePolicy\&.setHeightForWidth(lockColorOff->sizePolicy()\&.hasHeightForWidth());
+138         lockColorOff->setSizePolicy(sizePolicy);
+139         lockColorOff->setMinimumSize(QSize(0, 40));
+140         lockColorOff->setMaximumSize(QSize(16777215, 40));
+141 
+142         gridLayout->addWidget(lockColorOff, 16, 7, 1, 1);
+143 
+144         line = new QFrame(KPerfWidget);
+145         line->setObjectName(QStringLiteral("line"));
+146         line->setFrameShape(QFrame::HLine);
+147         line->setFrameShadow(QFrame::Sunken);
+148 
+149         gridLayout->addWidget(line, 2, 0, 1, 13);
+150 
+151         horizontalSpacer_5 = new QSpacerItem(10, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+152 
+153         gridLayout->addItem(horizontalSpacer_5, 17, 6, 1, 1);
+154 
+155         k95Label2 = new QLabel(KPerfWidget);
+156         k95Label2->setObjectName(QStringLiteral("k95Label2"));
+157 
+158         gridLayout->addWidget(k95Label2, 9, 5, 1, 1);
+159 
+160         label_12 = new QLabel(KPerfWidget);
+161         label_12->setObjectName(QStringLiteral("label_12"));
+162 
+163         gridLayout->addWidget(label_12, 17, 5, 1, 1);
+164 
+165         modeColorOff = new ColorButton(KPerfWidget);
+166         modeColorOff->setObjectName(QStringLiteral("modeColorOff"));
+167         sizePolicy\&.setHeightForWidth(modeColorOff->sizePolicy()\&.hasHeightForWidth());
+168         modeColorOff->setSizePolicy(sizePolicy);
+169         modeColorOff->setMinimumSize(QSize(0, 40));
+170         modeColorOff->setMaximumSize(QSize(16777215, 40));
+171 
+172         gridLayout->addWidget(modeColorOff, 9, 7, 1, 1);
+173 
+174         lightColor3 = new ColorButton(KPerfWidget);
+175         lightColor3->setObjectName(QStringLiteral("lightColor3"));
+176         sizePolicy\&.setHeightForWidth(lightColor3->sizePolicy()\&.hasHeightForWidth());
+177         lightColor3->setSizePolicy(sizePolicy);
+178         lightColor3->setMinimumSize(QSize(0, 40));
+179         lightColor3->setMaximumSize(QSize(16777215, 40));
+180 
+181         gridLayout->addWidget(lightColor3, 15, 4, 1, 1);
+182 
+183         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+184 
+185         gridLayout->addItem(horizontalSpacer, 15, 12, 1, 1);
+186 
+187         lockBox = new QCheckBox(KPerfWidget);
+188         lockBox->setObjectName(QStringLiteral("lockBox"));
+189 
+190         gridLayout->addWidget(lockBox, 16, 1, 1, 2);
+191 
+192         modeColorOn = new ColorButton(KPerfWidget);
+193         modeColorOn->setObjectName(QStringLiteral("modeColorOn"));
+194         sizePolicy\&.setHeightForWidth(modeColorOn->sizePolicy()\&.hasHeightForWidth());
+195         modeColorOn->setSizePolicy(sizePolicy);
+196         modeColorOn->setMinimumSize(QSize(0, 40));
+197         modeColorOn->setMaximumSize(QSize(16777215, 40));
+198 
+199         gridLayout->addWidget(modeColorOn, 9, 4, 1, 1);
+200 
+201         macroBox = new QCheckBox(KPerfWidget);
+202         macroBox->setObjectName(QStringLiteral("macroBox"));
+203 
+204         gridLayout->addWidget(macroBox, 10, 1, 1, 2);
+205 
+206         numColorOn = new ColorButton(KPerfWidget);
+207         numColorOn->setObjectName(QStringLiteral("numColorOn"));
+208         sizePolicy\&.setHeightForWidth(numColorOn->sizePolicy()\&.hasHeightForWidth());
+209         numColorOn->setSizePolicy(sizePolicy);
+210         numColorOn->setMinimumSize(QSize(0, 40));
+211         numColorOn->setMaximumSize(QSize(16777215, 40));
+212 
+213         gridLayout->addWidget(numColorOn, 21, 4, 1, 1);
+214 
+215         numBox = new QComboBox(KPerfWidget);
+216         numBox->setObjectName(QStringLiteral("numBox"));
+217 
+218         gridLayout->addWidget(numBox, 21, 2, 1, 1);
+219 
+220         label_5 = new QLabel(KPerfWidget);
+221         label_5->setObjectName(QStringLiteral("label_5"));
+222 
+223         gridLayout->addWidget(label_5, 21, 1, 1, 1);
+224 
+225         verticalSpacer_2 = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
+226 
+227         gridLayout->addItem(verticalSpacer_2, 4, 1, 1, 1);
+228 
+229         lightColor2 = new ColorButton(KPerfWidget);
+230         lightColor2->setObjectName(QStringLiteral("lightColor2"));
+231         sizePolicy\&.setHeightForWidth(lightColor2->sizePolicy()\&.hasHeightForWidth());
+232         lightColor2->setSizePolicy(sizePolicy);
+233         lightColor2->setMinimumSize(QSize(0, 40));
+234         lightColor2->setMaximumSize(QSize(16777215, 40));
+235 
+236         gridLayout->addWidget(lightColor2, 15, 7, 1, 1);
+237 
+238         horizontalSpacer_7 = new QSpacerItem(10, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+239 
+240         gridLayout->addItem(horizontalSpacer_7, 17, 3, 1, 1);
+241 
+242         label_8 = new QLabel(KPerfWidget);
+243         label_8->setObjectName(QStringLiteral("label_8"));
+244         QFont font;
+245         font\&.setPointSize(8);
+246         font\&.setItalic(true);
+247         label_8->setFont(font);
+248 
+249         gridLayout->addWidget(label_8, 25, 1, 1, 12);
+250 
+251         lightBox = new QCheckBox(KPerfWidget);
+252         lightBox->setObjectName(QStringLiteral("lightBox"));
+253 
+254         gridLayout->addWidget(lightBox, 15, 1, 1, 2);
+255 
+256         lightColor1 = new ColorButton(KPerfWidget);
+257         lightColor1->setObjectName(QStringLiteral("lightColor1"));
+258         sizePolicy\&.setHeightForWidth(lightColor1->sizePolicy()\&.hasHeightForWidth());
+259         lightColor1->setSizePolicy(sizePolicy);
+260         lightColor1->setMinimumSize(QSize(0, 40));
+261         lightColor1->setMaximumSize(QSize(16777215, 40));
+262 
+263         gridLayout->addWidget(lightColor1, 15, 10, 1, 1);
+264 
+265         verticalSpacer_4 = new QSpacerItem(0, 5, QSizePolicy::Minimum, QSizePolicy::Fixed);
+266 
+267         gridLayout->addItem(verticalSpacer_4, 24, 4, 1, 1);
+268 
+269         label_6 = new QLabel(KPerfWidget);
+270         label_6->setObjectName(QStringLiteral("label_6"));
+271 
+272         gridLayout->addWidget(label_6, 22, 1, 1, 1);
+273 
+274         label = new QLabel(KPerfWidget);
+275         label->setObjectName(QStringLiteral("label"));
+276         QFont font1;
+277         font1\&.setBold(true);
+278         font1\&.setWeight(75);
+279         label->setFont(font1);
+280 
+281         gridLayout->addWidget(label, 1, 0, 1, 13);
+282 
+283         horizontalSpacer_6 = new QSpacerItem(10, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+284 
+285         gridLayout->addItem(horizontalSpacer_6, 17, 9, 1, 1);
+286 
+287         lockColorOn = new ColorButton(KPerfWidget);
+288         lockColorOn->setObjectName(QStringLiteral("lockColorOn"));
+289         sizePolicy\&.setHeightForWidth(lockColorOn->sizePolicy()\&.hasHeightForWidth());
+290         lockColorOn->setSizePolicy(sizePolicy);
+291         lockColorOn->setMinimumSize(QSize(0, 40));
+292         lockColorOn->setMaximumSize(QSize(16777215, 40));
+293 
+294         gridLayout->addWidget(lockColorOn, 16, 4, 1, 1);
+295 
+296         label_4 = new QLabel(KPerfWidget);
+297         label_4->setObjectName(QStringLiteral("label_4"));
+298         label_4->setFont(font1);
+299 
+300         gridLayout->addWidget(label_4, 19, 0, 1, 13);
+301 
+302         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+303 
+304         gridLayout->addItem(verticalSpacer, 26, 2, 1, 1);
+305 
+306         verticalSpacer_3 = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
+307 
+308         gridLayout->addItem(verticalSpacer_3, 18, 4, 1, 1);
+309 
+310         modeBox = new QCheckBox(KPerfWidget);
+311         modeBox->setObjectName(QStringLiteral("modeBox"));
+312 
+313         gridLayout->addWidget(modeBox, 9, 1, 1, 2);
+314 
+315         capsColorOff = new ColorButton(KPerfWidget);
+316         capsColorOff->setObjectName(QStringLiteral("capsColorOff"));
+317         sizePolicy\&.setHeightForWidth(capsColorOff->sizePolicy()\&.hasHeightForWidth());
+318         capsColorOff->setSizePolicy(sizePolicy);
+319         capsColorOff->setMinimumSize(QSize(0, 40));
+320         capsColorOff->setMaximumSize(QSize(16777215, 40));
+321 
+322         gridLayout->addWidget(capsColorOff, 22, 7, 1, 1);
+323 
+324         numColorOff = new ColorButton(KPerfWidget);
+325         numColorOff->setObjectName(QStringLiteral("numColorOff"));
+326         QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Fixed);
+327         sizePolicy1\&.setHorizontalStretch(0);
+328         sizePolicy1\&.setVerticalStretch(40);
+329         sizePolicy1\&.setHeightForWidth(numColorOff->sizePolicy()\&.hasHeightForWidth());
+330         numColorOff->setSizePolicy(sizePolicy1);
+331         numColorOff->setMaximumSize(QSize(16777215, 40));
+332 
+333         gridLayout->addWidget(numColorOff, 21, 7, 1, 1);
+334 
+335         capsColorOn = new ColorButton(KPerfWidget);
+336         capsColorOn->setObjectName(QStringLiteral("capsColorOn"));
+337         sizePolicy\&.setHeightForWidth(capsColorOn->sizePolicy()\&.hasHeightForWidth());
+338         capsColorOn->setSizePolicy(sizePolicy);
+339         capsColorOn->setMinimumSize(QSize(0, 40));
+340         capsColorOn->setMaximumSize(QSize(16777215, 40));
+341 
+342         gridLayout->addWidget(capsColorOn, 22, 4, 1, 1);
+343 
+344         line_3 = new QFrame(KPerfWidget);
+345         line_3->setObjectName(QStringLiteral("line_3"));
+346         line_3->setFrameShape(QFrame::HLine);
+347         line_3->setFrameShadow(QFrame::Sunken);
+348 
+349         gridLayout->addWidget(line_3, 20, 0, 1, 13);
+350 
+351         label_22 = new QLabel(KPerfWidget);
+352         label_22->setObjectName(QStringLiteral("label_22"));
+353 
+354         gridLayout->addWidget(label_22, 21, 8, 1, 1);
+355 
+356         scrollBox = new QComboBox(KPerfWidget);
+357         scrollBox->setObjectName(QStringLiteral("scrollBox"));
+358 
+359         gridLayout->addWidget(scrollBox, 23, 2, 1, 1);
+360 
+361         label_7 = new QLabel(KPerfWidget);
+362         label_7->setObjectName(QStringLiteral("label_7"));
+363 
+364         gridLayout->addWidget(label_7, 23, 1, 1, 1);
+365 
+366         scrollColorOn = new ColorButton(KPerfWidget);
+367         scrollColorOn->setObjectName(QStringLiteral("scrollColorOn"));
+368         sizePolicy\&.setHeightForWidth(scrollColorOn->sizePolicy()\&.hasHeightForWidth());
+369         scrollColorOn->setSizePolicy(sizePolicy);
+370         scrollColorOn->setMinimumSize(QSize(0, 40));
+371         scrollColorOn->setMaximumSize(QSize(16777215, 40));
+372 
+373         gridLayout->addWidget(scrollColorOn, 23, 4, 1, 1);
+374 
+375         capsBox = new QComboBox(KPerfWidget);
+376         capsBox->setObjectName(QStringLiteral("capsBox"));
+377 
+378         gridLayout->addWidget(capsBox, 22, 2, 1, 1);
+379 
+380         scrollColorOff = new ColorButton(KPerfWidget);
+381         scrollColorOff->setObjectName(QStringLiteral("scrollColorOff"));
+382         sizePolicy\&.setHeightForWidth(scrollColorOff->sizePolicy()\&.hasHeightForWidth());
+383         scrollColorOff->setSizePolicy(sizePolicy);
+384         scrollColorOff->setMinimumSize(QSize(0, 40));
+385         scrollColorOff->setMaximumSize(QSize(16777215, 40));
+386 
+387         gridLayout->addWidget(scrollColorOff, 23, 7, 1, 1);
+388 
+389         muteBox = new QCheckBox(KPerfWidget);
+390         muteBox->setObjectName(QStringLiteral("muteBox"));
+391 
+392         gridLayout->addWidget(muteBox, 17, 1, 1, 2);
+393 
+394         muteColorOn = new ColorButton(KPerfWidget);
+395         muteColorOn->setObjectName(QStringLiteral("muteColorOn"));
+396         sizePolicy\&.setHeightForWidth(muteColorOn->sizePolicy()\&.hasHeightForWidth());
+397         muteColorOn->setSizePolicy(sizePolicy);
+398         muteColorOn->setMinimumSize(QSize(0, 40));
+399         muteColorOn->setMaximumSize(QSize(16777215, 40));
+400 
+401         gridLayout->addWidget(muteColorOn, 17, 4, 1, 1);
+402 
+403         macroColorOff = new ColorButton(KPerfWidget);
+404         macroColorOff->setObjectName(QStringLiteral("macroColorOff"));
+405         QSizePolicy sizePolicy2(QSizePolicy::Minimum, QSizePolicy::Fixed);
+406         sizePolicy2\&.setHorizontalStretch(0);
+407         sizePolicy2\&.setVerticalStretch(40);
+408         sizePolicy2\&.setHeightForWidth(macroColorOff->sizePolicy()\&.hasHeightForWidth());
+409         macroColorOff->setSizePolicy(sizePolicy2);
+410         macroColorOff->setMinimumSize(QSize(0, 40));
+411 
+412         gridLayout->addWidget(macroColorOff, 10, 7, 1, 1);
+413 
+414         label_3 = new QLabel(KPerfWidget);
+415         label_3->setObjectName(QStringLiteral("label_3"));
+416         label_3->setFont(font1);
+417 
+418         gridLayout->addWidget(label_3, 13, 0, 1, 3);
+419 
+420         muteColorOff = new ColorButton(KPerfWidget);
+421         muteColorOff->setObjectName(QStringLiteral("muteColorOff"));
+422         sizePolicy\&.setHeightForWidth(muteColorOff->sizePolicy()\&.hasHeightForWidth());
+423         muteColorOff->setSizePolicy(sizePolicy);
+424         muteColorOff->setMinimumSize(QSize(0, 40));
+425         muteColorOff->setMaximumSize(QSize(16777215, 40));
+426 
+427         gridLayout->addWidget(muteColorOff, 17, 7, 1, 1);
+428 
+429         k95Label3 = new QLabel(KPerfWidget);
+430         k95Label3->setObjectName(QStringLiteral("k95Label3"));
+431 
+432         gridLayout->addWidget(k95Label3, 9, 8, 1, 1);
+433 
+434         macroColorOn = new ColorButton(KPerfWidget);
+435         macroColorOn->setObjectName(QStringLiteral("macroColorOn"));
+436         sizePolicy2\&.setHeightForWidth(macroColorOn->sizePolicy()\&.hasHeightForWidth());
+437         macroColorOn->setSizePolicy(sizePolicy2);
+438         macroColorOn->setMinimumSize(QSize(0, 40));
+439 
+440         gridLayout->addWidget(macroColorOn, 10, 4, 1, 1);
+441 
+442         muteColorNA = new ColorButton(KPerfWidget);
+443         muteColorNA->setObjectName(QStringLiteral("muteColorNA"));
+444         muteColorNA->setMinimumSize(QSize(0, 40));
+445         muteColorNA->setMaximumSize(QSize(16777215, 40));
+446 
+447         gridLayout->addWidget(muteColorNA, 17, 10, 1, 1);
+448 
+449         label_19 = new QLabel(KPerfWidget);
+450         label_19->setObjectName(QStringLiteral("label_19"));
+451 
+452         gridLayout->addWidget(label_19, 21, 5, 1, 1);
+453 
+454         k95Line = new QFrame(KPerfWidget);
+455         k95Line->setObjectName(QStringLiteral("k95Line"));
+456         k95Line->setFrameShape(QFrame::HLine);
+457         k95Line->setFrameShadow(QFrame::Sunken);
+458 
+459         gridLayout->addWidget(k95Line, 8, 0, 1, 13);
+460 
+461         label_21 = new QLabel(KPerfWidget);
+462         label_21->setObjectName(QStringLiteral("label_21"));
+463 
+464         gridLayout->addWidget(label_21, 23, 5, 1, 1);
+465 
+466         label_24 = new QLabel(KPerfWidget);
+467         label_24->setObjectName(QStringLiteral("label_24"));
+468 
+469         gridLayout->addWidget(label_24, 23, 8, 1, 1);
+470 
+471         label_20 = new QLabel(KPerfWidget);
+472         label_20->setObjectName(QStringLiteral("label_20"));
+473 
+474         gridLayout->addWidget(label_20, 22, 5, 1, 1);
+475 
+476         label_16 = new QLabel(KPerfWidget);
+477         label_16->setObjectName(QStringLiteral("label_16"));
+478 
+479         gridLayout->addWidget(label_16, 15, 8, 1, 1);
+480 
+481         label_14 = new QLabel(KPerfWidget);
+482         label_14->setObjectName(QStringLiteral("label_14"));
+483 
+484         gridLayout->addWidget(label_14, 17, 8, 1, 1);
+485 
+486         label_18 = new QLabel(KPerfWidget);
+487         label_18->setObjectName(QStringLiteral("label_18"));
+488 
+489         gridLayout->addWidget(label_18, 15, 11, 1, 1);
+490 
+491         horizontalSpacer_2 = new QSpacerItem(5, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+492 
+493         gridLayout->addItem(horizontalSpacer_2, 15, 0, 1, 1);
+494 
+495         label_15 = new QLabel(KPerfWidget);
+496         label_15->setObjectName(QStringLiteral("label_15"));
+497 
+498         gridLayout->addWidget(label_15, 16, 8, 1, 1);
+499 
+500         k95Label4 = new QLabel(KPerfWidget);
+501         k95Label4->setObjectName(QStringLiteral("k95Label4"));
+502 
+503         gridLayout->addWidget(k95Label4, 10, 5, 1, 1);
+504 
+505         label_17 = new QLabel(KPerfWidget);
+506         label_17->setObjectName(QStringLiteral("label_17"));
+507 
+508         gridLayout->addWidget(label_17, 17, 11, 1, 1);
+509 
+510         label_11 = new QLabel(KPerfWidget);
+511         label_11->setObjectName(QStringLiteral("label_11"));
+512 
+513         gridLayout->addWidget(label_11, 16, 5, 1, 1);
+514 
+515         label_23 = new QLabel(KPerfWidget);
+516         label_23->setObjectName(QStringLiteral("label_23"));
+517 
+518         gridLayout->addWidget(label_23, 22, 8, 1, 1);
+519 
+520         k95Label1 = new QLabel(KPerfWidget);
+521         k95Label1->setObjectName(QStringLiteral("k95Label1"));
+522         k95Label1->setFont(font1);
+523 
+524         gridLayout->addWidget(k95Label1, 7, 0, 1, 5);
+525 
+526         horizontalLayout_2 = new QHBoxLayout();
+527         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+528         copyButton = new QPushButton(KPerfWidget);
+529         copyButton->setObjectName(QStringLiteral("copyButton"));
+530 
+531         horizontalLayout_2->addWidget(copyButton);
+532 
+533         horizontalSpacer_8 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+534 
+535         horizontalLayout_2->addItem(horizontalSpacer_8);
+536 
+537 
+538         gridLayout->addLayout(horizontalLayout_2, 3, 10, 1, 3);
+539 
+540         horizontalLayout = new QHBoxLayout();
+541         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+542         label_2 = new QLabel(KPerfWidget);
+543         label_2->setObjectName(QStringLiteral("label_2"));
+544 
+545         horizontalLayout->addWidget(label_2);
+546 
+547         horizontalSpacer_4 = new QSpacerItem(10, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+548 
+549         horizontalLayout->addItem(horizontalSpacer_4);
+550 
+551         intensityBox = new QSpinBox(KPerfWidget);
+552         intensityBox->setObjectName(QStringLiteral("intensityBox"));
+553         intensityBox->setMaximum(100);
+554         intensityBox->setValue(100);
+555 
+556         horizontalLayout->addWidget(intensityBox);
+557 
+558         horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+559 
+560         horizontalLayout->addItem(horizontalSpacer_3);
+561 
+562 
+563         gridLayout->addLayout(horizontalLayout, 3, 1, 1, 9);
+564 
+565         k95Label5 = new QLabel(KPerfWidget);
+566         k95Label5->setObjectName(QStringLiteral("k95Label5"));
+567 
+568         gridLayout->addWidget(k95Label5, 10, 8, 1, 1);
+569 
+570         line_2 = new QFrame(KPerfWidget);
+571         line_2->setObjectName(QStringLiteral("line_2"));
+572         line_2->setFrameShape(QFrame::HLine);
+573         line_2->setFrameShadow(QFrame::Sunken);
+574 
+575         gridLayout->addWidget(line_2, 14, 0, 1, 13);
+576 
+577         k95Label6 = new QLabel(KPerfWidget);
+578         k95Label6->setObjectName(QStringLiteral("k95Label6"));
+579         k95Label6->setFont(font);
+580 
+581         gridLayout->addWidget(k95Label6, 11, 1, 1, 10);
+582 
+583 
+584         retranslateUi(KPerfWidget);
+585 
+586         QMetaObject::connectSlotsByName(KPerfWidget);
+587     } // setupUi
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "QComboBox* Ui_KPerfWidget::capsBox\fC [inherited]\fP"
+
+.PP
+Definition at line 74 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "\fBColorButton\fP* Ui_KPerfWidget::capsColorOff\fC [inherited]\fP"
+
+.PP
+Definition at line 66 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "\fBColorButton\fP* Ui_KPerfWidget::capsColorOn\fC [inherited]\fP"
+
+.PP
+Definition at line 68 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "\fBQPushButton\fP* Ui_KPerfWidget::copyButton\fC [inherited]\fP"
+
+.PP
+Definition at line 100 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QGridLayout* Ui_KPerfWidget::gridLayout\fC [inherited]\fP"
+
+.PP
+Definition at line 34 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::setupUi()\&.
+.SS "QHBoxLayout* Ui_KPerfWidget::horizontalLayout\fC [inherited]\fP"
+
+.PP
+Definition at line 102 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::setupUi()\&.
+.SS "QHBoxLayout* Ui_KPerfWidget::horizontalLayout_2\fC [inherited]\fP"
+
+.PP
+Definition at line 99 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KPerfWidget::horizontalSpacer\fC [inherited]\fP"
+
+.PP
+Definition at line 44 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KPerfWidget::horizontalSpacer_2\fC [inherited]\fP"
+
+.PP
+Definition at line 92 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KPerfWidget::horizontalSpacer_3\fC [inherited]\fP"
+
+.PP
+Definition at line 106 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KPerfWidget::horizontalSpacer_4\fC [inherited]\fP"
+
+.PP
+Definition at line 104 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KPerfWidget::horizontalSpacer_5\fC [inherited]\fP"
+
+.PP
+Definition at line 39 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KPerfWidget::horizontalSpacer_6\fC [inherited]\fP"
+
+.PP
+Definition at line 60 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KPerfWidget::horizontalSpacer_7\fC [inherited]\fP"
+
+.PP
+Definition at line 53 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KPerfWidget::horizontalSpacer_8\fC [inherited]\fP"
+
+.PP
+Definition at line 101 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::setupUi()\&.
+.SS "QSpinBox* Ui_KPerfWidget::intensityBox\fC [inherited]\fP"
+
+.PP
+Definition at line 105 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::retranslateUi(), KPerfWidget::setPerf(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QLabel* Ui_KPerfWidget::k95Label1\fC [inherited]\fP"
+
+.PP
+Definition at line 98 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QLabel* Ui_KPerfWidget::k95Label2\fC [inherited]\fP"
+
+.PP
+Definition at line 40 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QLabel* Ui_KPerfWidget::k95Label3\fC [inherited]\fP"
+
+.PP
+Definition at line 81 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QLabel* Ui_KPerfWidget::k95Label4\fC [inherited]\fP"
+
+.PP
+Definition at line 94 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QLabel* Ui_KPerfWidget::k95Label5\fC [inherited]\fP"
+
+.PP
+Definition at line 107 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QLabel* Ui_KPerfWidget::k95Label6\fC [inherited]\fP"
+
+.PP
+Definition at line 109 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QFrame* Ui_KPerfWidget::k95Line\fC [inherited]\fP"
+
+.PP
+Definition at line 85 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), and Ui_KPerfWidget::setupUi()\&.
+.SS "\fBQWidget\fP* Ui_KPerfWidget::k95Spacer\fC [inherited]\fP"
+
+.PP
+Definition at line 35 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QLabel* Ui_KPerfWidget::label\fC [inherited]\fP"
+
+.PP
+Definition at line 59 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QLabel* Ui_KPerfWidget::label_10\fC [inherited]\fP"
+
+.PP
+Definition at line 36 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QLabel* Ui_KPerfWidget::label_11\fC [inherited]\fP"
+
+.PP
+Definition at line 96 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QLabel* Ui_KPerfWidget::label_12\fC [inherited]\fP"
+
+.PP
+Definition at line 41 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::retranslateUi(), KPerfWidget::setPerf(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QLabel* Ui_KPerfWidget::label_14\fC [inherited]\fP"
+
+.PP
+Definition at line 90 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::retranslateUi(), KPerfWidget::setPerf(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QLabel* Ui_KPerfWidget::label_15\fC [inherited]\fP"
+
+.PP
+Definition at line 93 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QLabel* Ui_KPerfWidget::label_16\fC [inherited]\fP"
+
+.PP
+Definition at line 89 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QLabel* Ui_KPerfWidget::label_17\fC [inherited]\fP"
+
+.PP
+Definition at line 95 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::retranslateUi(), KPerfWidget::setPerf(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QLabel* Ui_KPerfWidget::label_18\fC [inherited]\fP"
+
+.PP
+Definition at line 91 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QLabel* Ui_KPerfWidget::label_19\fC [inherited]\fP"
+
+.PP
+Definition at line 84 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QLabel* Ui_KPerfWidget::label_2\fC [inherited]\fP"
+
+.PP
+Definition at line 103 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QLabel* Ui_KPerfWidget::label_20\fC [inherited]\fP"
+
+.PP
+Definition at line 88 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QLabel* Ui_KPerfWidget::label_21\fC [inherited]\fP"
+
+.PP
+Definition at line 86 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QLabel* Ui_KPerfWidget::label_22\fC [inherited]\fP"
+
+.PP
+Definition at line 70 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QLabel* Ui_KPerfWidget::label_23\fC [inherited]\fP"
+
+.PP
+Definition at line 97 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QLabel* Ui_KPerfWidget::label_24\fC [inherited]\fP"
+
+.PP
+Definition at line 87 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QLabel* Ui_KPerfWidget::label_3\fC [inherited]\fP"
+
+.PP
+Definition at line 79 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QLabel* Ui_KPerfWidget::label_4\fC [inherited]\fP"
+
+.PP
+Definition at line 62 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QLabel* Ui_KPerfWidget::label_5\fC [inherited]\fP"
+
+.PP
+Definition at line 50 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QLabel* Ui_KPerfWidget::label_6\fC [inherited]\fP"
+
+.PP
+Definition at line 58 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QLabel* Ui_KPerfWidget::label_7\fC [inherited]\fP"
+
+.PP
+Definition at line 72 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QLabel* Ui_KPerfWidget::label_8\fC [inherited]\fP"
+
+.PP
+Definition at line 54 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QCheckBox* Ui_KPerfWidget::lightBox\fC [inherited]\fP"
+
+.PP
+Definition at line 55 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "\fBColorButton\fP* Ui_KPerfWidget::lightColor1\fC [inherited]\fP"
+
+.PP
+Definition at line 56 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "\fBColorButton\fP* Ui_KPerfWidget::lightColor2\fC [inherited]\fP"
+
+.PP
+Definition at line 52 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "\fBColorButton\fP* Ui_KPerfWidget::lightColor3\fC [inherited]\fP"
+
+.PP
+Definition at line 43 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QFrame* Ui_KPerfWidget::line\fC [inherited]\fP"
+
+.PP
+Definition at line 38 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::setupUi()\&.
+.SS "QFrame* Ui_KPerfWidget::line_2\fC [inherited]\fP"
+
+.PP
+Definition at line 108 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::setupUi()\&.
+.SS "QFrame* Ui_KPerfWidget::line_3\fC [inherited]\fP"
+
+.PP
+Definition at line 69 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::setupUi()\&.
+.SS "QCheckBox* Ui_KPerfWidget::lockBox\fC [inherited]\fP"
+
+.PP
+Definition at line 45 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "\fBColorButton\fP* Ui_KPerfWidget::lockColorOff\fC [inherited]\fP"
+
+.PP
+Definition at line 37 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "\fBColorButton\fP* Ui_KPerfWidget::lockColorOn\fC [inherited]\fP"
+
+.PP
+Definition at line 61 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QCheckBox* Ui_KPerfWidget::macroBox\fC [inherited]\fP"
+
+.PP
+Definition at line 47 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "\fBColorButton\fP* Ui_KPerfWidget::macroColorOff\fC [inherited]\fP"
+
+.PP
+Definition at line 78 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "\fBColorButton\fP* Ui_KPerfWidget::macroColorOn\fC [inherited]\fP"
+
+.PP
+Definition at line 82 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QCheckBox* Ui_KPerfWidget::modeBox\fC [inherited]\fP"
+
+.PP
+Definition at line 65 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "\fBColorButton\fP* Ui_KPerfWidget::modeColorOff\fC [inherited]\fP"
+
+.PP
+Definition at line 42 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "\fBColorButton\fP* Ui_KPerfWidget::modeColorOn\fC [inherited]\fP"
+
+.PP
+Definition at line 46 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QCheckBox* Ui_KPerfWidget::muteBox\fC [inherited]\fP"
+
+.PP
+Definition at line 76 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), KPerfWidget::setPerf(), and Ui_KPerfWidget::setupUi()\&.
+.SS "\fBColorButton\fP* Ui_KPerfWidget::muteColorNA\fC [inherited]\fP"
+
+.PP
+Definition at line 83 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), KPerfWidget::setPerf(), and Ui_KPerfWidget::setupUi()\&.
+.SS "\fBColorButton\fP* Ui_KPerfWidget::muteColorOff\fC [inherited]\fP"
+
+.PP
+Definition at line 80 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), KPerfWidget::setPerf(), and Ui_KPerfWidget::setupUi()\&.
+.SS "\fBColorButton\fP* Ui_KPerfWidget::muteColorOn\fC [inherited]\fP"
+
+.PP
+Definition at line 77 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), KPerfWidget::setPerf(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QComboBox* Ui_KPerfWidget::numBox\fC [inherited]\fP"
+
+.PP
+Definition at line 49 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "\fBColorButton\fP* Ui_KPerfWidget::numColorOff\fC [inherited]\fP"
+
+.PP
+Definition at line 67 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "\fBColorButton\fP* Ui_KPerfWidget::numColorOn\fC [inherited]\fP"
+
+.PP
+Definition at line 48 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QComboBox* Ui_KPerfWidget::scrollBox\fC [inherited]\fP"
+
+.PP
+Definition at line 71 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "\fBColorButton\fP* Ui_KPerfWidget::scrollColorOff\fC [inherited]\fP"
+
+.PP
+Definition at line 75 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "\fBColorButton\fP* Ui_KPerfWidget::scrollColorOn\fC [inherited]\fP"
+
+.PP
+Definition at line 73 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by KPerfWidget::KPerfWidget(), Ui_KPerfWidget::retranslateUi(), and Ui_KPerfWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KPerfWidget::verticalSpacer\fC [inherited]\fP"
+
+.PP
+Definition at line 63 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KPerfWidget::verticalSpacer_2\fC [inherited]\fP"
+
+.PP
+Definition at line 51 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KPerfWidget::verticalSpacer_3\fC [inherited]\fP"
+
+.PP
+Definition at line 64 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KPerfWidget::verticalSpacer_4\fC [inherited]\fP"
+
+.PP
+Definition at line 57 of file ui_kperfwidget\&.h\&.
+.PP
+Referenced by Ui_KPerfWidget::setupUi()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

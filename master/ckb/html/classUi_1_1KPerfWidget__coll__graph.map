@@ -1,0 +1,5 @@
+<map id="Ui::KPerfWidget" name="Ui::KPerfWidget">
+<area shape="rect" id="node2" href="$classUi__KPerfWidget.html" title="{Ui_KPerfWidget\n|+ k95Label2\l+ lightColor3\l+ label_5\l+ verticalSpacer_2\l+ lightColor2\l+ lightColor1\l+ label\l+ label_4\l+ verticalSpacer_3\l+ scrollColorOn\land 18 more...\l|+ setupUi()\l+ retranslateUi()\l}" alt="" coords="613,713,743,951"/>
+<area shape="rect" id="node7" href="$classColorButton.html" title="{ColorButton\n||+ ColorButton()\l+ color()\l+ color()\l+ allowAlpha()\l+ allowAlpha()\l+ setLabel()\l+ setLabel()\l+ bigIcons()\l+ bigIcons()\l&#45; updateImage()\l&#45; pickColor()\l}" alt="" coords="489,176,601,400"/>
+<area shape="rect" id="node8" href="$classQPushButton.html" title="{QPushButton\n||}" alt="" coords="390,5,489,83"/>
+</map>

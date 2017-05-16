@@ -1,0 +1,36 @@
+<map id="usbunclaim" name="usbunclaim">
+<area shape="rect" id="node2" href="$usb__linux_8c.html#a6a62575e9073fae15efb58f24fbfe5b8" title="os_closeusb" alt="" coords="142,401,237,428"/>
+<area shape="rect" id="node34" href="$usb__linux_8c.html#a0fd9533617cdae390dc65aa4594e33d2" title="os_resetusb" alt="" coords="143,452,236,479"/>
+<area shape="rect" id="node3" href="$usb_8h.html#a8732b3ade76da4ae362996232ef95431" title="closeusb" alt="" coords="288,401,363,428"/>
+<area shape="rect" id="node4" href="$usb_8c.html#a10ad381abfe51e67e341c882c92bb9ac" title="_setupusb" alt="" coords="548,427,631,453"/>
+<area shape="rect" id="node13" href="$usb_8c.html#ab8c22b4f7012c6d9fe1a0d5e2a93df65" title="devmain" alt="" coords="414,427,485,453"/>
+<area shape="rect" id="node14" href="$ckb-daemon_2main_8c.html#a24a012c29e291fef5fa13f4a07fffd33" title="quitWithLock " alt="" coords="937,325,1036,352"/>
+<area shape="rect" id="node33" href="$usb__linux_8c.html#adeffaa2b04d01b15c8623255719420ef" title="usb_rm_device" alt="" coords="534,477,645,504"/>
+<area shape="rect" id="node5" href="$usb_8h.html#a1ab9d61dd894466125283465201161cd" title="setupusb" alt="" coords="693,427,768,453"/>
+<area shape="rect" id="node6" href="$usb__linux_8c.html#a3185d6da36c8b0f8b862a8479ae82034" title="usbadd" alt="" coords="816,427,880,453"/>
+<area shape="rect" id="node7" href="$usb__linux_8c.html#a50efc8ee0ffcb6f201735d1a3bb08779" title="usb_add_device" alt="" coords="929,427,1045,453"/>
+<area shape="rect" id="node8" href="$usb__linux_8c.html#ad56c1e4ec53bbd6b947cb535590328ea" title="udev_enum" alt="" coords="1094,427,1183,453"/>
+<area shape="rect" id="node9" href="$usb__linux_8c.html#a0859efad3739abe2ec61af4f3bb983ff" title="usbmain" alt="" coords="1293,401,1363,428"/>
+<area shape="rect" id="node10" href="$ckb-daemon_2main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1548,275,1599,301"/>
+<area shape="rect" id="node11" href="$notify_8c.html#ae246359e104d63520158c26329caac80" title="restart" alt="" coords="1795,275,1853,301"/>
+<area shape="rect" id="node12" href="$notify_8h.html#a700b520b9eb9a3698af8f8ebf547a9ab" title="cmd_restart" alt="" coords="2032,275,2123,301"/>
+<area shape="rect" id="node15" href="$ckb-daemon_2main_8c.html#acd1527386a48875050e637e4bb872f11" title="quit Stop working the daemon. function is called if the daemon received a sigterm In this case..." alt="" coords="1117,195,1160,221"/>
+<area shape="rect" id="node16" href="$classKbFirmware.html#ae5f3c91fcf3fe8fe55e2c1e3cea877eb" title="KbFirmware::_fileForBoard" alt="" coords="1239,43,1417,69"/>
+<area shape="rect" id="node22" href="$classKbFirmware.html#aa68b2e0aed9074c60eba72e9fa60a6b5" title="KbFirmware::_latestForBoard" alt="" coords="1232,107,1424,133"/>
+<area shape="rect" id="node29" href="$classFwUpgradeDialog.html#a72dac03aca9395d1d440f0edcd1bb1da" title="FwUpgradeDialog::fwUpdate\lFinished" alt="" coords="1233,158,1423,199"/>
+<area shape="rect" id="node32" href="$ckb-daemon_2main_8c.html#a05f9b9989842b986a26caf9e4c66a4c7" title="sighandler" alt="" coords="1287,224,1369,251"/>
+<area shape="rect" id="node17" href="$classKbFirmware.html#a1cc600d07217f327a1541a44d353004c" title="KbFirmware::dataForBoard" alt="" coords="1484,31,1663,57"/>
+<area shape="rect" id="node18" href="$classFwUpgradeDialog.html#a1fd1f6f1285ab4998a7c81e2ee118d54" title="FwUpgradeDialog::exec" alt="" coords="1743,5,1905,32"/>
+<area shape="rect" id="node19" href="$classKbWidget.html#a38c9f29a5d8f1edfcb5f8040de3dadb9" title="KbWidget::on_fwUpdButton\l_clicked" alt="" coords="1985,30,2169,71"/>
+<area shape="rect" id="node20" href="$classKbWidget.html#a428930086336c668e8a1055c21c938d9" title="KbWidget::showFwUpdate" alt="" coords="2229,37,2408,64"/>
+<area shape="rect" id="node21" href="$classMainWindow.html#ae50767c4ed6029f63ebacfffde4bc802" title="MainWindow::showFwUpdate\lNotification" alt="" coords="2457,30,2653,71"/>
+<area shape="rect" id="node23" href="$classKbFirmware.html#adf60ed5d7553a8c3f362ce5ae29ce965" title="KbFirmware::versionForBoard" alt="" coords="1476,107,1671,133"/>
+<area shape="rect" id="node24" href="$classKbWidget.html#adabed0db911bef8b3c0157372fb4e21a" title="KbWidget::updateFwButton" alt="" coords="1733,107,1915,133"/>
+<area shape="rect" id="node26" href="$classMainWindow.html#a7bd3f729676a76651d4852d03d1cfb8e" title="MainWindow::checkFwUpdates" alt="" coords="1974,161,2181,188"/>
+<area shape="rect" id="node25" href="$classKbWidget.html#a16381b1ae59f8e1649d7d06232dadc1d" title="KbWidget::on_tabWidget\l_currentChanged" alt="" coords="1994,95,2161,137"/>
+<area shape="rect" id="node27" href="$classMainWindow.html#a888ae1a192a5ca93d0d8bddd104ae953" title="MainWindow::timerTick" alt="" coords="2239,161,2398,188"/>
+<area shape="rect" id="node28" href="$classMainWindow.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow" alt="" coords="2465,161,2645,188"/>
+<area shape="rect" id="node30" href="$classFwUpgradeDialog.html#ae785587a6678240a0a6f47ef79808ad7" title="FwUpgradeDialog::FwUpgrade\lDialog" alt="" coords="1723,209,1925,250"/>
+<area shape="rect" id="node31" href="$classFwUpgradeDialog.html#a8f4e424ecf62240c666836a8d5425f50" title="FwUpgradeDialog::removeDev" alt="" coords="1473,165,1674,192"/>
+<area shape="rect" id="node35" href="$usb_8h.html#a9ea008b77417f82b177117dce9a50b48" title="_resetusb" alt="" coords="286,452,365,479"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="ExtraSettingsWidget::on_fpsBox_valueChanged" name="ExtraSettingsWidget::on_fpsBox_valueChanged">
+<area shape="rect" id="node2" href="$classKb.html#ad31c0469bf328f2dc4154c2c86611783" title="Kb::frameRate" alt="" coords="261,5,368,32"/>
+<area shape="rect" id="node3" href="$classCkbSettings.html#a7b5f9dcfd7582a42655a5635f52d46fb" title="CkbSettings::setValue" alt="" coords="238,56,391,83"/>
+<area shape="rect" id="node4" href="$classCkbSettings.html#a29695ed0012617ba943a1878d4abc71c" title="CkbSettings::pwd" alt="" coords="622,56,749,83"/>
+<area shape="rect" id="node5" href="$classCkbSettings.html#a3793106d98878f170f9f9734bf39409b" title="CkbSettings::value" alt="" coords="440,81,573,108"/>
+</map>

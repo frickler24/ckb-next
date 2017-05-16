@@ -1,0 +1,13 @@
+<map id="RebindWidget::setSelection" name="RebindWidget::setSelection">
+<area shape="rect" id="node2" href="$classKbBindWidget.html#ad1ce63ee68f21c7857ca8b24b7bb8309" title="KbBindWidget::newSelection" alt="" coords="247,40,438,67"/>
+<area shape="rect" id="node8" href="$classRebindWidget.html#a8cb2e54e8bbd17cae8e152132a7a1ddf" title="RebindWidget::on_cancelButton\l_clicked" alt="" coords="238,91,447,133"/>
+<area shape="rect" id="node9" href="$classRebindWidget.html#a6a68ae3d9abc935dbba8e2ce187337ce" title="RebindWidget::setBind" alt="" coords="265,157,421,184"/>
+<area shape="rect" id="node11" href="$classKbBindWidget.html#a3274fb51d224f0ca111bd714ed524a59" title="KbBindWidget::updateBind" alt="" coords="253,208,432,235"/>
+<area shape="rect" id="node3" href="$classKbBindWidget.html#ab41173324ff2873e36dbebb96951ed8b" title="KbBindWidget::KbBindWidget" alt="" coords="499,5,695,32"/>
+<area shape="rect" id="node4" href="$classKbBindWidget.html#ae06c7e036759eb9a1ae7224cdba30b0b" title="KbBindWidget::setBind" alt="" coords="747,132,904,159"/>
+<area shape="rect" id="node5" href="$classKbWidget.html#aae4a00bb180d711b5df7df6443c8bf36" title="KbWidget::modeChanged" alt="" coords="952,132,1123,159"/>
+<area shape="rect" id="node6" href="$classKbWidget.html#a848a21f1fd112e13ca5fcf25da4592c6" title="KbWidget::KbWidget" alt="" coords="1205,103,1349,129"/>
+<area shape="rect" id="node7" href="$classKbWidget.html#add5eb15a399c87faf80db9fdfc2e868f" title="KbWidget::on_modesList_customContextMenuRequested. " alt="" coords="1171,154,1384,195"/>
+<area shape="rect" id="node10" href="$classKbBindWidget.html#ad052b9ce7166f5a1c46ee7a01f3457dc" title="KbBindWidget::newLayout" alt="" coords="509,157,685,184"/>
+<area shape="rect" id="node12" href="$classKbBindWidget.html#a1ac20b99c822f65c7a2c8c61a5a1f029" title="KbBindWidget::on_resetButton\l_clicked" alt="" coords="497,259,698,301"/>
+</map>

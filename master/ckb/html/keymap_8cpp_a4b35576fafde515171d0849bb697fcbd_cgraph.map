@@ -1,0 +1,5 @@
+<map id="getMap" name="getMap">
+<area shape="rect" id="node2" href="$classKeyMap.html#a13c21fb411c85a70fcd28379f4f46a83" title="KeyMap::isISO" alt="" coords="121,29,231,56"/>
+<area shape="rect" id="node3" href="$keymap_8cpp.html#a8566b65d2b1a5c8e614b3ee8dab76b0c" title="patchANSI" alt="" coords="133,80,219,107"/>
+<area shape="rect" id="node4" href="$keymap_8cpp.html#a8f0991f950f9a010301225bbf10094a8" title="patchISO" alt="" coords="137,131,215,157"/>
+</map>

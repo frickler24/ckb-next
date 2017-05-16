@@ -1,0 +1,148 @@
+.TH "QuaCrc32" 3 "Tue May 16 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QuaCrc32 \- 
+.PP
+CRC32 checksum\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <quazip/quacrc32\&.h>\fP
+.PP
+Inherits \fBQuaChecksum32\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQuaCrc32\fP ()"
+.br
+.ti -1c
+.RI "quint32 \fBcalculate\fP (const QByteArray &data)"
+.br
+.RI "\fICalculates the checksum for data\&. \fP"
+.ti -1c
+.RI "void \fBreset\fP ()"
+.br
+.RI "\fIResets the calculation on a checksun for a stream\&. \fP"
+.ti -1c
+.RI "void \fBupdate\fP (const QByteArray &buf)"
+.br
+.RI "\fIUpdates the calculated checksum for the stream\&. \fP"
+.ti -1c
+.RI "quint32 \fBvalue\fP ()"
+.br
+.RI "\fIValue of the checksum calculated for the stream passed throw \fBupdate()\fP\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "quint32 \fBchecksum\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class wrappers the crc32 function with the \fBQuaChecksum32\fP interface\&. See \fBQuaChecksum32\fP for more info\&. 
+.PP
+Definition at line 35 of file quacrc32\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QuaCrc32::QuaCrc32 ()"
+
+.PP
+Definition at line 29 of file quacrc32\&.cpp\&.
+.PP
+References reset()\&.
+.PP
+.nf
+30 {
+31     reset();
+32 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "quint32 QuaCrc32::calculate (const QByteArray &data)\fC [virtual]\fP"
+\fIdata\fP source data 
+.PP
+\fBReturns:\fP
+.RS 4
+data checksum
+.RE
+.PP
+This function has no efect on the value returned by \fBvalue()\fP\&. 
+.PP
+Implements \fBQuaChecksum32\fP\&.
+.PP
+Definition at line 34 of file quacrc32\&.cpp\&.
+.PP
+.nf
+35 {
+36     return crc32( crc32(0L, Z_NULL, 0), (const Bytef*)data\&.data(), data\&.size() );
+37 }
+.fi
+.SS "void QuaCrc32::reset ()\fC [virtual]\fP"
+
+.PP
+Implements \fBQuaChecksum32\fP\&.
+.PP
+Definition at line 39 of file quacrc32\&.cpp\&.
+.PP
+References checksum\&.
+.PP
+Referenced by QuaCrc32()\&.
+.PP
+.nf
+40 {
+41     checksum = crc32(0L, Z_NULL, 0);
+42 }
+.fi
+.SS "void QuaCrc32::update (const QByteArray &buf)\fC [virtual]\fP"
+\fIbuf\fP next portion of data from the stream 
+.PP
+Implements \fBQuaChecksum32\fP\&.
+.PP
+Definition at line 44 of file quacrc32\&.cpp\&.
+.PP
+References checksum\&.
+.PP
+.nf
+45 {
+46     checksum = crc32( checksum, (const Bytef*)buf\&.data(), buf\&.size() );
+47 }
+.fi
+.SS "quint32 QuaCrc32::value ()\fC [virtual]\fP"
+
+.PP
+\fBReturns:\fP
+.RS 4
+checksum 
+.RE
+.PP
+
+.PP
+Implements \fBQuaChecksum32\fP\&.
+.PP
+Definition at line 49 of file quacrc32\&.cpp\&.
+.PP
+References checksum\&.
+.PP
+.nf
+50 {
+51     return checksum;
+52 }
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "quint32 QuaCrc32::checksum\fC [private]\fP"
+
+.PP
+Definition at line 47 of file quacrc32\&.h\&.
+.PP
+Referenced by reset(), update(), and value()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

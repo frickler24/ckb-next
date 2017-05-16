@@ -1,0 +1,7 @@
+<map id="usb_add_device" name="usb_add_device">
+<area shape="rect" id="node2" href="$usb__linux_8c.html#ad56c1e4ec53bbd6b947cb535590328ea" title="udev_enum" alt="" coords="171,5,261,32"/>
+<area shape="rect" id="node3" href="$usb__linux_8c.html#a0859efad3739abe2ec61af4f3bb983ff" title="usbmain" alt="" coords="310,31,381,57"/>
+<area shape="rect" id="node4" href="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="429,31,480,57"/>
+<area shape="rect" id="node5" href="$notify_8c.html#ae246359e104d63520158c26329caac80" title="restart" alt="" coords="528,31,587,57"/>
+<area shape="rect" id="node6" href="$notify_8h.html#a700b520b9eb9a3698af8f8ebf547a9ab" title="cmd_restart" alt="" coords="635,31,725,57"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="AnimScript::colors" name="AnimScript::colors">
+<area shape="rect" id="node2" href="$classKbAnim.html#a3d7705163511aec5a5651bfd6ada1410" title="KbAnim::blend" alt="" coords="184,5,291,32"/>
+<area shape="rect" id="node3" href="$classKbLight.html#aaf2d348ef39cc9fbbf198e7105a72f35" title="KbLight::frameUpdate" alt="" coords="339,5,488,32"/>
+<area shape="rect" id="node4" href="$classKb.html#a97694a4cd55681adca7b972fb5722049" title="Kb::frameUpdate" alt="" coords="537,5,658,32"/>
+</map>

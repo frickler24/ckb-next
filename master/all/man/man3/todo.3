@@ -1,0 +1,12 @@
+.TH "todo" 3 "Tue May 16 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+todo \- Todo List 
+
+.IP "\fBGlobal \fBKb::Kb\fP (\fBQObject\fP *parent, const QString &path)\fP" 1c
+Is adding notify2 to the notifypaths neccessary?  
+.IP "\fBGlobal \fBKb::~Kb\fP ()\fP" 1c
+I don't think, that notifypaths is used somewhere\&. So why do we have it? If we do not need it, searching for an ununsed notify channel can easy be refactored to a private member function\&. 
+.PP
+

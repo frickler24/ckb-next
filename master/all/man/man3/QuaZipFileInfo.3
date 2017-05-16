@@ -1,0 +1,198 @@
+.TH "QuaZipFileInfo" 3 "Tue May 16 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QuaZipFileInfo \- 
+.PP
+Information about a file inside archive\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/quazip/quazipfileinfo\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "QFile::Permissions \fBgetPermissions\fP () const "
+.br
+.RI "\fIGet the file permissions\&. \fP"
+.in -1c
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "QString \fBname\fP"
+.br
+.RI "\fIFile name\&. \fP"
+.ti -1c
+.RI "quint16 \fBversionCreated\fP"
+.br
+.RI "\fIVersion created by\&. \fP"
+.ti -1c
+.RI "quint16 \fBversionNeeded\fP"
+.br
+.RI "\fIVersion needed to extract\&. \fP"
+.ti -1c
+.RI "quint16 \fBflags\fP"
+.br
+.RI "\fIGeneral purpose flags\&. \fP"
+.ti -1c
+.RI "quint16 \fBmethod\fP"
+.br
+.RI "\fICompression method\&. \fP"
+.ti -1c
+.RI "QDateTime \fBdateTime\fP"
+.br
+.RI "\fILast modification date and time\&. \fP"
+.ti -1c
+.RI "quint32 \fBcrc\fP"
+.br
+.RI "\fICRC\&. \fP"
+.ti -1c
+.RI "quint32 \fBcompressedSize\fP"
+.br
+.RI "\fICompressed file size\&. \fP"
+.ti -1c
+.RI "quint32 \fBuncompressedSize\fP"
+.br
+.RI "\fIUncompressed file size\&. \fP"
+.ti -1c
+.RI "quint16 \fBdiskNumberStart\fP"
+.br
+.RI "\fIDisk number start\&. \fP"
+.ti -1c
+.RI "quint16 \fBinternalAttr\fP"
+.br
+.RI "\fIInternal file attributes\&. \fP"
+.ti -1c
+.RI "quint32 \fBexternalAttr\fP"
+.br
+.RI "\fIExternal file attributes\&. \fP"
+.ti -1c
+.RI "QString \fBcomment\fP"
+.br
+.RI "\fIComment\&. \fP"
+.ti -1c
+.RI "QByteArray \fBextra\fP"
+.br
+.RI "\fIExtra field\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+\fBDeprecated\fP
+.RS 4
+Use \fBQuaZipFileInfo64\fP instead\&. Not only it supports large files, but also more convenience methods as well\&.
+.RE
+.PP
+.PP
+Call \fBQuaZip::getCurrentFileInfo()\fP or \fBQuaZipFile::getFileInfo()\fP to fill this structure\&. 
+.PP
+Definition at line 41 of file quazipfileinfo\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QFile::Permissions QuaZipFileInfo::getPermissions () const"
+Returns the high 16 bits of external attributes converted to QFile::Permissions\&. 
+.PP
+Definition at line 52 of file quazipfileinfo\&.cpp\&.
+.PP
+References externalAttr, and permissionsFromExternalAttr()\&.
+.PP
+.nf
+53 {
+54     return permissionsFromExternalAttr(externalAttr);
+55 }
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "QString QuaZipFileInfo::comment"
+
+.PP
+Definition at line 67 of file quazipfileinfo\&.h\&.
+.PP
+Referenced by QuaZipFileInfo64::toQuaZipFileInfo()\&.
+.SS "quint32 QuaZipFileInfo::compressedSize"
+
+.PP
+Definition at line 57 of file quazipfileinfo\&.h\&.
+.PP
+Referenced by QuaZipFileInfo64::toQuaZipFileInfo()\&.
+.SS "quint32 QuaZipFileInfo::crc"
+
+.PP
+Definition at line 55 of file quazipfileinfo\&.h\&.
+.PP
+Referenced by QuaZipFileInfo64::toQuaZipFileInfo()\&.
+.SS "QDateTime QuaZipFileInfo::dateTime"
+
+.PP
+Definition at line 53 of file quazipfileinfo\&.h\&.
+.PP
+Referenced by QuaZipFileInfo64::toQuaZipFileInfo()\&.
+.SS "quint16 QuaZipFileInfo::diskNumberStart"
+
+.PP
+Definition at line 61 of file quazipfileinfo\&.h\&.
+.PP
+Referenced by QuaZipFileInfo64::toQuaZipFileInfo()\&.
+.SS "quint32 QuaZipFileInfo::externalAttr"
+
+.PP
+Definition at line 65 of file quazipfileinfo\&.h\&.
+.PP
+Referenced by getPermissions(), and QuaZipFileInfo64::toQuaZipFileInfo()\&.
+.SS "QByteArray QuaZipFileInfo::extra"
+
+.PP
+Definition at line 69 of file quazipfileinfo\&.h\&.
+.PP
+Referenced by QuaZipFileInfo64::toQuaZipFileInfo()\&.
+.SS "quint16 QuaZipFileInfo::flags"
+
+.PP
+Definition at line 49 of file quazipfileinfo\&.h\&.
+.PP
+Referenced by QuaZipFileInfo64::toQuaZipFileInfo()\&.
+.SS "quint16 QuaZipFileInfo::internalAttr"
+
+.PP
+Definition at line 63 of file quazipfileinfo\&.h\&.
+.PP
+Referenced by QuaZipFileInfo64::toQuaZipFileInfo()\&.
+.SS "quint16 QuaZipFileInfo::method"
+
+.PP
+Definition at line 51 of file quazipfileinfo\&.h\&.
+.PP
+Referenced by QuaZipFileInfo64::toQuaZipFileInfo()\&.
+.SS "QString QuaZipFileInfo::name"
+
+.PP
+Definition at line 43 of file quazipfileinfo\&.h\&.
+.PP
+Referenced by QuaZipFileInfo64::toQuaZipFileInfo()\&.
+.SS "quint32 QuaZipFileInfo::uncompressedSize"
+
+.PP
+Definition at line 59 of file quazipfileinfo\&.h\&.
+.PP
+Referenced by QuaZipFileInfo64::toQuaZipFileInfo()\&.
+.SS "quint16 QuaZipFileInfo::versionCreated"
+
+.PP
+Definition at line 45 of file quazipfileinfo\&.h\&.
+.PP
+Referenced by QuaZipFileInfo64::toQuaZipFileInfo()\&.
+.SS "quint16 QuaZipFileInfo::versionNeeded"
+
+.PP
+Definition at line 47 of file quazipfileinfo\&.h\&.
+.PP
+Referenced by QuaZipFileInfo64::toQuaZipFileInfo()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

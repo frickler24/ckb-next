@@ -1,0 +1,143 @@
+.TH "Ui::MainWindow" 3 "Tue May 16 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ui::MainWindow \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/ui_mainwindow\&.h>\fP
+.PP
+Inherits \fBUi_MainWindow\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetupUi\fP (\fBQMainWindow\fP *\fBMainWindow\fP)"
+.br
+.ti -1c
+.RI "void \fBretranslateUi\fP (\fBQMainWindow\fP *\fBMainWindow\fP)"
+.br
+.in -1c
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "QAction * \fBactionExit\fP"
+.br
+.ti -1c
+.RI "QAction * \fBactionAbout\fP"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBcentralWidget\fP"
+.br
+.ti -1c
+.RI "QGridLayout * \fBgridLayout\fP"
+.br
+.ti -1c
+.RI "QTabWidget * \fBtabWidget\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 79 of file ui_mainwindow\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Ui_MainWindow::retranslateUi (\fBQMainWindow\fP *MainWindow)\fC [inline]\fP, \fC [inherited]\fP"
+
+.PP
+Definition at line 68 of file ui_mainwindow\&.h\&.
+.PP
+References Ui_MainWindow::actionAbout, and Ui_MainWindow::actionExit\&.
+.PP
+Referenced by Ui_MainWindow::setupUi()\&.
+.PP
+.nf
+69     {
+70         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "ckb-next", Q_NULLPTR));
+71         actionExit->setText(QApplication::translate("MainWindow", "Exit", Q_NULLPTR));
+72         actionExit->setShortcut(QApplication::translate("MainWindow", "Ctrl+Q", Q_NULLPTR));
+73         actionAbout->setText(QApplication::translate("MainWindow", "About", Q_NULLPTR));
+74     } // retranslateUi
+.fi
+.SS "void Ui_MainWindow::setupUi (\fBQMainWindow\fP *MainWindow)\fC [inline]\fP, \fC [inherited]\fP"
+
+.PP
+Definition at line 33 of file ui_mainwindow\&.h\&.
+.PP
+References Ui_MainWindow::actionAbout, Ui_MainWindow::actionExit, Ui_MainWindow::centralWidget, Ui_MainWindow::gridLayout, Ui_MainWindow::retranslateUi(), and Ui_MainWindow::tabWidget\&.
+.PP
+Referenced by MainWindow::MainWindow()\&.
+.PP
+.nf
+34     {
+35         if (MainWindow->objectName()\&.isEmpty())
+36             MainWindow->setObjectName(QStringLiteral("MainWindow"));
+37         MainWindow->resize(1000, 750);
+38         MainWindow->setMinimumSize(QSize(1000, 750));
+39         QIcon icon;
+40         icon\&.addFile(QStringLiteral(":/img/ckb-logo\&.png"), QSize(), QIcon::Normal, QIcon::Off);
+41         MainWindow->setWindowIcon(icon);
+42         MainWindow->setUnifiedTitleAndToolBarOnMac(true);
+43         actionExit = new QAction(MainWindow);
+44         actionExit->setObjectName(QStringLiteral("actionExit"));
+45         actionAbout = new QAction(MainWindow);
+46         actionAbout->setObjectName(QStringLiteral("actionAbout"));
+47         centralWidget = new QWidget(MainWindow);
+48         centralWidget->setObjectName(QStringLiteral("centralWidget"));
+49         gridLayout = new QGridLayout(centralWidget);
+50         gridLayout->setSpacing(6);
+51         gridLayout->setContentsMargins(11, 11, 11, 11);
+52         gridLayout->setObjectName(QStringLiteral("gridLayout"));
+53         tabWidget = new QTabWidget(centralWidget);
+54         tabWidget->setObjectName(QStringLiteral("tabWidget"));
+55 
+56         gridLayout->addWidget(tabWidget, 0, 0, 1, 1);
+57 
+58         MainWindow->setCentralWidget(centralWidget);
+59 
+60         retranslateUi(MainWindow);
+61 
+62         tabWidget->setCurrentIndex(-1);
+63 
+64 
+65         QMetaObject::connectSlotsByName(MainWindow);
+66     } // setupUi
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "QAction* Ui_MainWindow::actionAbout\fC [inherited]\fP"
+
+.PP
+Definition at line 28 of file ui_mainwindow\&.h\&.
+.PP
+Referenced by Ui_MainWindow::retranslateUi(), and Ui_MainWindow::setupUi()\&.
+.SS "QAction* Ui_MainWindow::actionExit\fC [inherited]\fP"
+
+.PP
+Definition at line 27 of file ui_mainwindow\&.h\&.
+.PP
+Referenced by MainWindow::MainWindow(), Ui_MainWindow::retranslateUi(), and Ui_MainWindow::setupUi()\&.
+.SS "\fBQWidget\fP* Ui_MainWindow::centralWidget\fC [inherited]\fP"
+
+.PP
+Definition at line 29 of file ui_mainwindow\&.h\&.
+.PP
+Referenced by Ui_MainWindow::setupUi()\&.
+.SS "QGridLayout* Ui_MainWindow::gridLayout\fC [inherited]\fP"
+
+.PP
+Definition at line 30 of file ui_mainwindow\&.h\&.
+.PP
+Referenced by Ui_MainWindow::setupUi()\&.
+.SS "QTabWidget* Ui_MainWindow::tabWidget\fC [inherited]\fP"
+
+.PP
+Definition at line 31 of file ui_mainwindow\&.h\&.
+.PP
+Referenced by MainWindow::addDevice(), MainWindow::MainWindow(), MainWindow::removeDevice(), Ui_MainWindow::setupUi(), and MainWindow::showFwUpdateNotification()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

@@ -1,0 +1,106 @@
+.TH "src/ckb/quazip/quazipdir.cpp" 3 "Tue May 16 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb/quazip/quazipdir.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'quazipdir\&.h'\fP
+.br
+\fC#include <QSet>\fP
+.br
+\fC#include <QSharedData>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQuaZipFileInfo64\fP \fBQuaZipDir_getFileInfo\fP (\fBQuaZip\fP *zip, bool *ok, const QString &relativeName, bool isReal)"
+.br
+.ti -1c
+.RI "static void \fBQuaZipDir_convertInfoList\fP (const QList< \fBQuaZipFileInfo64\fP > &from, QList< \fBQuaZipFileInfo64\fP > &to)"
+.br
+.ti -1c
+.RI "static void \fBQuaZipDir_convertInfoList\fP (const QList< \fBQuaZipFileInfo64\fP > &from, QStringList &to)"
+.br
+.ti -1c
+.RI "static void \fBQuaZipDir_convertInfoList\fP (const QList< \fBQuaZipFileInfo64\fP > &from, QList< \fBQuaZipFileInfo\fP > &to)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "static void QuaZipDir_convertInfoList (const QList< \fBQuaZipFileInfo64\fP > &from, QList< \fBQuaZipFileInfo64\fP > &to)\fC [static]\fP"
+
+.PP
+Definition at line 188 of file quazipdir\&.cpp\&.
+.PP
+.nf
+190 {
+191     to = from;
+192 }
+.fi
+.SS "static void QuaZipDir_convertInfoList (const QList< \fBQuaZipFileInfo64\fP > &from, QStringList &to)\fC [static]\fP"
+
+.PP
+Definition at line 194 of file quazipdir\&.cpp\&.
+.PP
+.nf
+196 {
+197     to\&.clear();
+198     for (QList<QuaZipFileInfo64>::const_iterator i = from\&.constBegin();
+199             i != from\&.constEnd();
+200             ++i) {
+201         to\&.append(i->name);
+202     }
+203 }
+.fi
+.SS "static void QuaZipDir_convertInfoList (const QList< \fBQuaZipFileInfo64\fP > &from, QList< \fBQuaZipFileInfo\fP > &to)\fC [static]\fP"
+
+.PP
+Definition at line 205 of file quazipdir\&.cpp\&.
+.PP
+.nf
+207 {
+208     to\&.clear();
+209     for (QList<QuaZipFileInfo64>::const_iterator i = from\&.constBegin();
+210             i != from\&.constEnd();
+211             ++i) {
+212         QuaZipFileInfo info32;
+213         i->toQuaZipFileInfo(info32);
+214         to\&.append(info32);
+215     }
+216 }
+.fi
+.SS "\fBQuaZipFileInfo64\fP QuaZipDir_getFileInfo (\fBQuaZip\fP *zip, bool *ok, const QString &relativeName, boolisReal)"
+
+.PP
+Definition at line 165 of file quazipdir\&.cpp\&.
+.PP
+References QuaZipFileInfo64::compressedSize, QuaZipFileInfo64::crc, QuaZipFileInfo64::diskNumberStart, QuaZipFileInfo64::externalAttr, QuaZipFileInfo64::flags, QuaZip::getCurrentFileInfo(), QuaZipFileInfo64::internalAttr, QuaZipFileInfo64::method, QuaZipFileInfo64::name, QuaZipFileInfo64::uncompressedSize, QuaZipFileInfo64::versionCreated, and QuaZipFileInfo64::versionNeeded\&.
+.PP
+.nf
+168 {
+169     QuaZipFileInfo64 info;
+170     if (isReal) {
+171         *ok = zip->getCurrentFileInfo(&info);
+172     } else {
+173         *ok = true;
+174         info\&.compressedSize = 0;
+175         info\&.crc = 0;
+176         info\&.diskNumberStart = 0;
+177         info\&.externalAttr = 0;
+178         info\&.flags = 0;
+179         info\&.internalAttr = 0;
+180         info\&.method = 0;
+181         info\&.uncompressedSize = 0;
+182         info\&.versionCreated = info\&.versionNeeded = 0;
+183     }
+184     info\&.name = relativeName;
+185     return info;
+186 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

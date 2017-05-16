@@ -1,0 +1,360 @@
+.TH "Ui::KbBindWidget" 3 "Tue May 16 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ui::KbBindWidget \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/ui_kbbindwidget\&.h>\fP
+.PP
+Inherits \fBUi_KbBindWidget\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetupUi\fP (\fBQWidget\fP *\fBKbBindWidget\fP)"
+.br
+.ti -1c
+.RI "void \fBretranslateUi\fP (\fBQWidget\fP *\fBKbBindWidget\fP)"
+.br
+.in -1c
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "QVBoxLayout * \fBverticalLayout\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel\fP"
+.br
+.ti -1c
+.RI "QFrame * \fBline\fP"
+.br
+.ti -1c
+.RI "QGridLayout * \fBgridLayout\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer_2\fP"
+.br
+.ti -1c
+.RI "\fBKeyWidget\fP * \fBkeyWidget\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer\fP"
+.br
+.ti -1c
+.RI "QHBoxLayout * \fBhorizontalLayout_2\fP"
+.br
+.ti -1c
+.RI "\fBQPushButton\fP * \fBcopyButton\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBselectLabel\fP"
+.br
+.ti -1c
+.RI "\fBQPushButton\fP * \fBresetButton\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBverticalSpacer\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_2\fP"
+.br
+.ti -1c
+.RI "QFrame * \fBline_2\fP"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBwidget\fP"
+.br
+.ti -1c
+.RI "QGridLayout * \fBgridLayout_2\fP"
+.br
+.ti -1c
+.RI "\fBRebindWidget\fP * \fBrbWidget\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 206 of file ui_kbbindwidget\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Ui_KbBindWidget::retranslateUi (\fBQWidget\fP *KbBindWidget)\fC [inline]\fP, \fC [inherited]\fP"
+
+.PP
+Definition at line 193 of file ui_kbbindwidget\&.h\&.
+.PP
+References Ui_KbBindWidget::copyButton, Ui_KbBindWidget::label, Ui_KbBindWidget::label_2, Ui_KbBindWidget::resetButton, and Ui_KbBindWidget::selectLabel\&.
+.PP
+Referenced by Ui_KbBindWidget::setupUi()\&.
+.PP
+.nf
+194     {
+195         KbBindWidget->setWindowTitle(QApplication::translate("KbBindWidget", "Form", Q_NULLPTR));
+196         label->setText(QApplication::translate("KbBindWidget", "Keys", Q_NULLPTR));
+197         copyButton->setText(QApplication::translate("KbBindWidget", "Copy to mode\&.\&.\&.", Q_NULLPTR));
+198         selectLabel->setText(QApplication::translate("KbBindWidget", "Click to select keys", Q_NULLPTR));
+199         resetButton->setText(QApplication::translate("KbBindWidget", "Reset", Q_NULLPTR));
+200         label_2->setText(QApplication::translate("KbBindWidget", "Binding", Q_NULLPTR));
+201     } // retranslateUi
+.fi
+.SS "void Ui_KbBindWidget::setupUi (\fBQWidget\fP *KbBindWidget)\fC [inline]\fP, \fC [inherited]\fP"
+
+.PP
+Definition at line 51 of file ui_kbbindwidget\&.h\&.
+.PP
+References Ui_KbBindWidget::copyButton, Ui_KbBindWidget::gridLayout, Ui_KbBindWidget::gridLayout_2, Ui_KbBindWidget::horizontalLayout_2, Ui_KbBindWidget::horizontalSpacer, Ui_KbBindWidget::horizontalSpacer_2, Ui_KbBindWidget::keyWidget, Ui_KbBindWidget::label, Ui_KbBindWidget::label_2, Ui_KbBindWidget::line, Ui_KbBindWidget::line_2, Ui_KbBindWidget::rbWidget, Ui_KbBindWidget::resetButton, Ui_KbBindWidget::retranslateUi(), Ui_KbBindWidget::selectLabel, Ui_KbBindWidget::verticalLayout, Ui_KbBindWidget::verticalSpacer, and Ui_KbBindWidget::widget\&.
+.PP
+Referenced by KbBindWidget::KbBindWidget()\&.
+.PP
+.nf
+52     {
+53         if (KbBindWidget->objectName()\&.isEmpty())
+54             KbBindWidget->setObjectName(QStringLiteral("KbBindWidget"));
+55         KbBindWidget->resize(581, 473);
+56         verticalLayout = new QVBoxLayout(KbBindWidget);
+57         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+58         verticalLayout->setContentsMargins(0, 0, 0, -1);
+59         label = new QLabel(KbBindWidget);
+60         label->setObjectName(QStringLiteral("label"));
+61         QFont font;
+62         font\&.setBold(true);
+63         font\&.setWeight(75);
+64         label->setFont(font);
+65 
+66         verticalLayout->addWidget(label);
+67 
+68         line = new QFrame(KbBindWidget);
+69         line->setObjectName(QStringLiteral("line"));
+70         line->setFrameShape(QFrame::HLine);
+71         line->setFrameShadow(QFrame::Sunken);
+72 
+73         verticalLayout->addWidget(line);
+74 
+75         gridLayout = new QGridLayout();
+76         gridLayout->setObjectName(QStringLiteral("gridLayout"));
+77         horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+78 
+79         gridLayout->addItem(horizontalSpacer_2, 0, 4, 1, 1);
+80 
+81         keyWidget = new KeyWidget(KbBindWidget);
+82         keyWidget->setObjectName(QStringLiteral("keyWidget"));
+83         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+84         sizePolicy\&.setHorizontalStretch(0);
+85         sizePolicy\&.setVerticalStretch(0);
+86         sizePolicy\&.setHeightForWidth(keyWidget->sizePolicy()\&.hasHeightForWidth());
+87         keyWidget->setSizePolicy(sizePolicy);
+88 
+89         gridLayout->addWidget(keyWidget, 0, 1, 1, 3);
+90 
+91         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+92 
+93         gridLayout->addItem(horizontalSpacer, 0, 0, 1, 1);
+94 
+95         horizontalLayout_2 = new QHBoxLayout();
+96         horizontalLayout_2->setSpacing(0);
+97         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+98         copyButton = new QPushButton(KbBindWidget);
+99         copyButton->setObjectName(QStringLiteral("copyButton"));
+100         QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Fixed);
+101         sizePolicy1\&.setHorizontalStretch(0);
+102         sizePolicy1\&.setVerticalStretch(0);
+103         sizePolicy1\&.setHeightForWidth(copyButton->sizePolicy()\&.hasHeightForWidth());
+104         copyButton->setSizePolicy(sizePolicy1);
+105         copyButton->setMinimumSize(QSize(140, 0));
+106         copyButton->setMaximumSize(QSize(140, 16777215));
+107 
+108         horizontalLayout_2->addWidget(copyButton);
+109 
+110         selectLabel = new QLabel(KbBindWidget);
+111         selectLabel->setObjectName(QStringLiteral("selectLabel"));
+112         QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Preferred);
+113         sizePolicy2\&.setHorizontalStretch(0);
+114         sizePolicy2\&.setVerticalStretch(0);
+115         sizePolicy2\&.setHeightForWidth(selectLabel->sizePolicy()\&.hasHeightForWidth());
+116         selectLabel->setSizePolicy(sizePolicy2);
+117         selectLabel->setAlignment(Qt::AlignCenter);
+118 
+119         horizontalLayout_2->addWidget(selectLabel);
+120 
+121         resetButton = new QPushButton(KbBindWidget);
+122         resetButton->setObjectName(QStringLiteral("resetButton"));
+123         QSizePolicy sizePolicy3(QSizePolicy::Expanding, QSizePolicy::Fixed);
+124         sizePolicy3\&.setHorizontalStretch(0);
+125         sizePolicy3\&.setVerticalStretch(0);
+126         sizePolicy3\&.setHeightForWidth(resetButton->sizePolicy()\&.hasHeightForWidth());
+127         resetButton->setSizePolicy(sizePolicy3);
+128         resetButton->setMinimumSize(QSize(140, 0));
+129         resetButton->setMaximumSize(QSize(140, 16777215));
+130 
+131         horizontalLayout_2->addWidget(resetButton);
+132 
+133 
+134         gridLayout->addLayout(horizontalLayout_2, 1, 1, 1, 3);
+135 
+136 
+137         verticalLayout->addLayout(gridLayout);
+138 
+139         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+140 
+141         verticalLayout->addItem(verticalSpacer);
+142 
+143         label_2 = new QLabel(KbBindWidget);
+144         label_2->setObjectName(QStringLiteral("label_2"));
+145         label_2->setFont(font);
+146 
+147         verticalLayout->addWidget(label_2);
+148 
+149         line_2 = new QFrame(KbBindWidget);
+150         line_2->setObjectName(QStringLiteral("line_2"));
+151         line_2->setFrameShape(QFrame::HLine);
+152         line_2->setFrameShadow(QFrame::Sunken);
+153 
+154         verticalLayout->addWidget(line_2);
+155 
+156         widget = new QWidget(KbBindWidget);
+157         widget->setObjectName(QStringLiteral("widget"));
+158         QSizePolicy sizePolicy4(QSizePolicy::Preferred, QSizePolicy::Fixed);
+159         sizePolicy4\&.setHorizontalStretch(0);
+160         sizePolicy4\&.setVerticalStretch(0);
+161         sizePolicy4\&.setHeightForWidth(widget->sizePolicy()\&.hasHeightForWidth());
+162         widget->setSizePolicy(sizePolicy4);
+163         widget->setMinimumSize(QSize(0, 280));
+164         widget->setMaximumSize(QSize(16777215, 280));
+165         gridLayout_2 = new QGridLayout(widget);
+166         gridLayout_2->setSpacing(0);
+167         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+168         gridLayout_2->setContentsMargins(0, 0, 0, 0);
+169         rbWidget = new RebindWidget(widget);
+170         rbWidget->setObjectName(QStringLiteral("rbWidget"));
+171         QSizePolicy sizePolicy5(QSizePolicy::Expanding, QSizePolicy::Expanding);
+172         sizePolicy5\&.setHorizontalStretch(0);
+173         sizePolicy5\&.setVerticalStretch(0);
+174         sizePolicy5\&.setHeightForWidth(rbWidget->sizePolicy()\&.hasHeightForWidth());
+175         rbWidget->setSizePolicy(sizePolicy5);
+176 
+177         gridLayout_2->addWidget(rbWidget, 0, 0, 1, 1);
+178 
+179 
+180         verticalLayout->addWidget(widget);
+181 
+182         label->raise();
+183         line->raise();
+184         label_2->raise();
+185         line_2->raise();
+186         widget->raise();
+187 
+188         retranslateUi(KbBindWidget);
+189 
+190         QMetaObject::connectSlotsByName(KbBindWidget);
+191     } // setupUi
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "\fBQPushButton\fP* Ui_KbBindWidget::copyButton\fC [inherited]\fP"
+
+.PP
+Definition at line 41 of file ui_kbbindwidget\&.h\&.
+.PP
+Referenced by Ui_KbBindWidget::retranslateUi(), and Ui_KbBindWidget::setupUi()\&.
+.SS "QGridLayout* Ui_KbBindWidget::gridLayout\fC [inherited]\fP"
+
+.PP
+Definition at line 36 of file ui_kbbindwidget\&.h\&.
+.PP
+Referenced by Ui_KbBindWidget::setupUi()\&.
+.SS "QGridLayout* Ui_KbBindWidget::gridLayout_2\fC [inherited]\fP"
+
+.PP
+Definition at line 48 of file ui_kbbindwidget\&.h\&.
+.PP
+Referenced by Ui_KbBindWidget::setupUi()\&.
+.SS "QHBoxLayout* Ui_KbBindWidget::horizontalLayout_2\fC [inherited]\fP"
+
+.PP
+Definition at line 40 of file ui_kbbindwidget\&.h\&.
+.PP
+Referenced by Ui_KbBindWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KbBindWidget::horizontalSpacer\fC [inherited]\fP"
+
+.PP
+Definition at line 39 of file ui_kbbindwidget\&.h\&.
+.PP
+Referenced by Ui_KbBindWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KbBindWidget::horizontalSpacer_2\fC [inherited]\fP"
+
+.PP
+Definition at line 37 of file ui_kbbindwidget\&.h\&.
+.PP
+Referenced by Ui_KbBindWidget::setupUi()\&.
+.SS "\fBKeyWidget\fP* Ui_KbBindWidget::keyWidget\fC [inherited]\fP"
+
+.PP
+Definition at line 38 of file ui_kbbindwidget\&.h\&.
+.PP
+Referenced by KbBindWidget::KbBindWidget(), KbBindWidget::newLayout(), KbBindWidget::setBind(), Ui_KbBindWidget::setupUi(), and KbBindWidget::updateBind()\&.
+.SS "QLabel* Ui_KbBindWidget::label\fC [inherited]\fP"
+
+.PP
+Definition at line 34 of file ui_kbbindwidget\&.h\&.
+.PP
+Referenced by Ui_KbBindWidget::retranslateUi(), and Ui_KbBindWidget::setupUi()\&.
+.SS "QLabel* Ui_KbBindWidget::label_2\fC [inherited]\fP"
+
+.PP
+Definition at line 45 of file ui_kbbindwidget\&.h\&.
+.PP
+Referenced by Ui_KbBindWidget::retranslateUi(), and Ui_KbBindWidget::setupUi()\&.
+.SS "QFrame* Ui_KbBindWidget::line\fC [inherited]\fP"
+
+.PP
+Definition at line 35 of file ui_kbbindwidget\&.h\&.
+.PP
+Referenced by Ui_KbBindWidget::setupUi()\&.
+.SS "QFrame* Ui_KbBindWidget::line_2\fC [inherited]\fP"
+
+.PP
+Definition at line 46 of file ui_kbbindwidget\&.h\&.
+.PP
+Referenced by Ui_KbBindWidget::setupUi()\&.
+.SS "\fBRebindWidget\fP* Ui_KbBindWidget::rbWidget\fC [inherited]\fP"
+
+.PP
+Definition at line 49 of file ui_kbbindwidget\&.h\&.
+.PP
+Referenced by KbBindWidget::newLayout(), KbBindWidget::newSelection(), KbBindWidget::setBind(), Ui_KbBindWidget::setupUi(), and KbBindWidget::updateBind()\&.
+.SS "\fBQPushButton\fP* Ui_KbBindWidget::resetButton\fC [inherited]\fP"
+
+.PP
+Definition at line 43 of file ui_kbbindwidget\&.h\&.
+.PP
+Referenced by Ui_KbBindWidget::retranslateUi(), and Ui_KbBindWidget::setupUi()\&.
+.SS "QLabel* Ui_KbBindWidget::selectLabel\fC [inherited]\fP"
+
+.PP
+Definition at line 42 of file ui_kbbindwidget\&.h\&.
+.PP
+Referenced by Ui_KbBindWidget::retranslateUi(), Ui_KbBindWidget::setupUi(), and KbBindWidget::updateSelDisplay()\&.
+.SS "QVBoxLayout* Ui_KbBindWidget::verticalLayout\fC [inherited]\fP"
+
+.PP
+Definition at line 33 of file ui_kbbindwidget\&.h\&.
+.PP
+Referenced by Ui_KbBindWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KbBindWidget::verticalSpacer\fC [inherited]\fP"
+
+.PP
+Definition at line 44 of file ui_kbbindwidget\&.h\&.
+.PP
+Referenced by Ui_KbBindWidget::setupUi()\&.
+.SS "\fBQWidget\fP* Ui_KbBindWidget::widget\fC [inherited]\fP"
+
+.PP
+Definition at line 47 of file ui_kbbindwidget\&.h\&.
+.PP
+Referenced by Ui_KbBindWidget::setupUi()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

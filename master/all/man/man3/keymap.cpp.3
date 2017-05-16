@@ -1,0 +1,847 @@
+.TH "src/ckb/keymap.cpp" 3 "Tue May 16 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb/keymap.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <clocale>\fP
+.br
+\fC#include <QMap>\fP
+.br
+\fC#include 'keymap\&.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBKeyPatch\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBNS\fP   12, 12"
+.br
+.ti -1c
+.RI "#define \fBKEYCOUNT_K95\fP   (sizeof(\fBK95Keys\fP) / sizeof(\fBKey\fP))"
+.br
+.ti -1c
+.RI "#define \fBANSI_ENTER_X\fP   199"
+.br
+.ti -1c
+.RI "#define \fBANSI_ENTER_Y\fP   51"
+.br
+.ti -1c
+.RI "#define \fBANSI_ENTER_W\fP   26"
+.br
+.ti -1c
+.RI "#define \fBANSI_ENTER_H\fP   12"
+.br
+.ti -1c
+.RI "#define \fBANSI_LSHIFT_X\fP   45"
+.br
+.ti -1c
+.RI "#define \fBANSI_LSHIFT_W\fP   26"
+.br
+.ti -1c
+.RI "#define \fBPATCH_COUNT\fP(\fBpatch\fP)   (sizeof(\fBpatch\fP) / sizeof(\fBKeyPatch\fP))"
+.br
+.ti -1c
+.RI "#define \fBpatch\fP(map, patches)   \fB_patch\fP(map, patches, \fBPATCH_COUNT\fP(patches))"
+.br
+.ti -1c
+.RI "#define \fBK95_WIDTH\fP   298"
+.br
+.ti -1c
+.RI "#define \fBK95_HEIGHT\fP   76"
+.br
+.ti -1c
+.RI "#define \fBK70_X_START\fP   38"
+.br
+.ti -1c
+.RI "#define \fBK70_WIDTH\fP   (\fBK95_WIDTH\fP - \fBK70_X_START\fP)"
+.br
+.ti -1c
+.RI "#define \fBK70_HEIGHT\fP   \fBK95_HEIGHT\fP"
+.br
+.ti -1c
+.RI "#define \fBK65_WIDTH\fP   209"
+.br
+.ti -1c
+.RI "#define \fBK65_HEIGHT\fP   \fBK70_HEIGHT\fP"
+.br
+.ti -1c
+.RI "#define \fBK65_TOP_COUNT\fP   (sizeof(\fBK65TopRow\fP) / sizeof(\fBKey\fP))"
+.br
+.ti -1c
+.RI "#define \fBKSTRAFE_X_START\fP   12"
+.br
+.ti -1c
+.RI "#define \fBKSTRAFE_WIDTH\fP   (\fBK70_WIDTH\fP + (\fBKSTRAFE_X_START\fP * 2))"
+.br
+.ti -1c
+.RI "#define \fBKSTRAFE_HEIGHT\fP   \fBK95_HEIGHT\fP"
+.br
+.ti -1c
+.RI "#define \fBKEYCOUNT_M65\fP   (sizeof(\fBM65Keys\fP) / sizeof(\fBKey\fP))"
+.br
+.ti -1c
+.RI "#define \fBM65_WIDTH\fP   52"
+.br
+.ti -1c
+.RI "#define \fBM65_HEIGHT\fP   67"
+.br
+.ti -1c
+.RI "#define \fBKEYCOUNT_SABRE\fP   (sizeof(\fBSabreKeys\fP) / sizeof(\fBKey\fP))"
+.br
+.ti -1c
+.RI "#define \fBSABRE_WIDTH\fP   \fBM65_WIDTH\fP"
+.br
+.ti -1c
+.RI "#define \fBSABRE_HEIGHT\fP   \fBM65_HEIGHT\fP"
+.br
+.ti -1c
+.RI "#define \fBKEYCOUNT_SCIM\fP   (sizeof(\fBScimKeys\fP) / sizeof(\fBKey\fP))"
+.br
+.ti -1c
+.RI "#define \fBSCIM_WIDTH\fP   \fBM65_WIDTH\fP"
+.br
+.ti -1c
+.RI "#define \fBSCIM_HEIGHT\fP   \fBM65_HEIGHT\fP"
+.br
+.ti -1c
+.RI "#define \fBN_MODELS\fP   \fBKeyMap::_MODEL_MAX\fP"
+.br
+.ti -1c
+.RI "#define \fBN_LAYOUTS\fP   \fBKeyMap::_LAYOUT_MAX\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fB_patch\fP (QHash< QString, \fBKey\fP > &map, const \fBKeyPatch\fP *patches, int patchCount)"
+.br
+.ti -1c
+.RI "static void \fBpatchISO\fP (QHash< QString, \fBKey\fP > &map)"
+.br
+.ti -1c
+.RI "static void \fBpatchANSI\fP (QHash< QString, \fBKey\fP > &map)"
+.br
+.ti -1c
+.RI "static QHash< QString, \fBKey\fP > \fBgetMap\fP (\fBKeyMap::Model\fP model, \fBKeyMap::Layout\fP layout)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static const \fBKey\fP \fBK95Keys\fP []"
+.br
+.ti -1c
+.RI "static const \fBKeyPatch\fP \fBpatchDK\fP []"
+.br
+.ti -1c
+.RI "static const \fBKeyPatch\fP \fBpatchEU\fP []"
+.br
+.ti -1c
+.RI "static const \fBKeyPatch\fP \fBpatchFR\fP []"
+.br
+.ti -1c
+.RI "static const \fBKeyPatch\fP \fBpatchDE\fP []"
+.br
+.ti -1c
+.RI "static const \fBKeyPatch\fP \fBpatchIT\fP []"
+.br
+.ti -1c
+.RI "static const \fBKeyPatch\fP \fBpatchNO\fP []"
+.br
+.ti -1c
+.RI "static const \fBKeyPatch\fP \fBpatchMX\fP []"
+.br
+.ti -1c
+.RI "static const \fBKeyPatch\fP \fBpatchES\fP []"
+.br
+.ti -1c
+.RI "static const \fBKeyPatch\fP \fBpatchSE\fP []"
+.br
+.ti -1c
+.RI "static const \fBKeyPatch\fP \fBpatchDvorak\fP []"
+.br
+.ti -1c
+.RI "static const \fBKey\fP \fBK65TopRow\fP []"
+.br
+.ti -1c
+.RI "static const \fBKey\fP \fBKStrafeKeys\fP []"
+.br
+.ti -1c
+.RI "static const \fBKey\fP \fBM65Keys\fP []"
+.br
+.ti -1c
+.RI "static const \fBKey\fP \fBSabreKeys\fP []"
+.br
+.ti -1c
+.RI "static const \fBKey\fP \fBScimKeys\fP []"
+.br
+.ti -1c
+.RI "static QHash< QString, \fBKey\fP > \fBK95BaseMap\fP"
+.br
+.ti -1c
+.RI "static QHash< QString, \fBKey\fP > \fBstandardMaps\fP [\fBKeyMap::_MODEL_MAX\fP][\fBKeyMap::_LAYOUT_MAX\fP]"
+.br
+.in -1c
+.SH "Data Structure Documentation"
+.PP 
+.SH "struct KeyPatch"
+.PP 
+Definition at line 30 of file keymap\&.cpp\&.
+.PP
+\fBData Fields:\fP
+.RS 4
+const char * \fI_friendlyName\fP 
+.br
+.PP
+const char * \fI_storageName\fP 
+.br
+.PP
+const char * \fIname\fP 
+.br
+.PP
+.RE
+.PP
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ANSI_ENTER_H   12"
+
+.PP
+Definition at line 25 of file keymap\&.cpp\&.
+.PP
+Referenced by patchANSI()\&.
+.SS "#define ANSI_ENTER_W   26"
+
+.PP
+Definition at line 24 of file keymap\&.cpp\&.
+.PP
+Referenced by patchANSI()\&.
+.SS "#define ANSI_ENTER_X   199"
+
+.PP
+Definition at line 22 of file keymap\&.cpp\&.
+.PP
+Referenced by patchANSI()\&.
+.SS "#define ANSI_ENTER_Y   51"
+
+.PP
+Definition at line 23 of file keymap\&.cpp\&.
+.PP
+Referenced by patchANSI()\&.
+.SS "#define ANSI_LSHIFT_W   26"
+
+.PP
+Definition at line 27 of file keymap\&.cpp\&.
+.PP
+Referenced by patchANSI()\&.
+.SS "#define ANSI_LSHIFT_X   45"
+
+.PP
+Definition at line 26 of file keymap\&.cpp\&.
+.PP
+Referenced by patchANSI()\&.
+.SS "#define K65_HEIGHT   \fBK70_HEIGHT\fP"
+
+.PP
+Definition at line 143 of file keymap\&.cpp\&.
+.SS "#define K65_TOP_COUNT   (sizeof(\fBK65TopRow\fP) / sizeof(\fBKey\fP))"
+
+.PP
+Definition at line 148 of file keymap\&.cpp\&.
+.PP
+Referenced by getMap()\&.
+.SS "#define K65_WIDTH   209"
+
+.PP
+Definition at line 142 of file keymap\&.cpp\&.
+.PP
+Referenced by getMap(), and KeyMap::modelWidth()\&.
+.SS "#define K70_HEIGHT   \fBK95_HEIGHT\fP"
+
+.PP
+Definition at line 139 of file keymap\&.cpp\&.
+.SS "#define K70_WIDTH   (\fBK95_WIDTH\fP - \fBK70_X_START\fP)"
+
+.PP
+Definition at line 138 of file keymap\&.cpp\&.
+.PP
+Referenced by KeyMap::modelWidth()\&.
+.SS "#define K70_X_START   38"
+
+.PP
+Definition at line 137 of file keymap\&.cpp\&.
+.PP
+Referenced by getMap()\&.
+.SS "#define K95_HEIGHT   76"
+
+.PP
+Definition at line 134 of file keymap\&.cpp\&.
+.PP
+Referenced by KeyMap::modelHeight()\&.
+.SS "#define K95_WIDTH   298"
+
+.PP
+Definition at line 133 of file keymap\&.cpp\&.
+.PP
+Referenced by KeyMap::modelWidth()\&.
+.SS "#define KEYCOUNT_K95   (sizeof(\fBK95Keys\fP) / sizeof(\fBKey\fP))"
+
+.PP
+Definition at line 19 of file keymap\&.cpp\&.
+.PP
+Referenced by getMap()\&.
+.SS "#define KEYCOUNT_M65   (sizeof(\fBM65Keys\fP) / sizeof(\fBKey\fP))"
+
+.PP
+Definition at line 170 of file keymap\&.cpp\&.
+.PP
+Referenced by getMap()\&.
+.SS "#define KEYCOUNT_SABRE   (sizeof(\fBSabreKeys\fP) / sizeof(\fBKey\fP))"
+
+.PP
+Definition at line 183 of file keymap\&.cpp\&.
+.PP
+Referenced by getMap()\&.
+.SS "#define KEYCOUNT_SCIM   (sizeof(\fBScimKeys\fP) / sizeof(\fBKey\fP))"
+
+.PP
+Definition at line 200 of file keymap\&.cpp\&.
+.PP
+Referenced by getMap()\&.
+.SS "#define KSTRAFE_HEIGHT   \fBK95_HEIGHT\fP"
+
+.PP
+Definition at line 153 of file keymap\&.cpp\&.
+.SS "#define KSTRAFE_WIDTH   (\fBK70_WIDTH\fP + (\fBKSTRAFE_X_START\fP * 2))"
+
+.PP
+Definition at line 152 of file keymap\&.cpp\&.
+.PP
+Referenced by KeyMap::modelWidth()\&.
+.SS "#define KSTRAFE_X_START   12"
+
+.PP
+Definition at line 151 of file keymap\&.cpp\&.
+.PP
+Referenced by getMap()\&.
+.SS "#define M65_HEIGHT   67"
+
+.PP
+Definition at line 173 of file keymap\&.cpp\&.
+.PP
+Referenced by KeyMap::modelHeight()\&.
+.SS "#define M65_WIDTH   52"
+
+.PP
+Definition at line 172 of file keymap\&.cpp\&.
+.PP
+Referenced by KeyMap::modelWidth()\&.
+.SS "#define N_LAYOUTS   \fBKeyMap::_LAYOUT_MAX\fP"
+
+.PP
+Definition at line 207 of file keymap\&.cpp\&.
+.PP
+Referenced by getMap()\&.
+.SS "#define N_MODELS   \fBKeyMap::_MODEL_MAX\fP"
+
+.PP
+Definition at line 206 of file keymap\&.cpp\&.
+.PP
+Referenced by getMap()\&.
+.SS "#define NS   12, 12"
+
+.PP
+Definition at line 6 of file keymap\&.cpp\&.
+.SS "#define patch(map, patches)   \fB_patch\fP(map, patches, \fBPATCH_COUNT\fP(patches))"
+
+.PP
+Definition at line 106 of file keymap\&.cpp\&.
+.PP
+Referenced by getMap()\&.
+.SS "#define PATCH_COUNT(\fBpatch\fP)   (sizeof(\fBpatch\fP) / sizeof(\fBKeyPatch\fP))"
+
+.PP
+Definition at line 105 of file keymap\&.cpp\&.
+.SS "#define SABRE_HEIGHT   \fBM65_HEIGHT\fP"
+
+.PP
+Definition at line 186 of file keymap\&.cpp\&.
+.SS "#define SABRE_WIDTH   \fBM65_WIDTH\fP"
+
+.PP
+Definition at line 185 of file keymap\&.cpp\&.
+.SS "#define SCIM_HEIGHT   \fBM65_HEIGHT\fP"
+
+.PP
+Definition at line 203 of file keymap\&.cpp\&.
+.SS "#define SCIM_WIDTH   \fBM65_WIDTH\fP"
+
+.PP
+Definition at line 202 of file keymap\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "static void _patch (QHash< QString, \fBKey\fP > &map, const \fBKeyPatch\fP *patches, intpatchCount)\fC [static]\fP"
+
+.PP
+Definition at line 107 of file keymap\&.cpp\&.
+.PP
+References Key::_friendlyName, and Key::_storageName\&.
+.PP
+.nf
+107                                                                                      {
+108     for(const KeyPatch* p = patches; p < patches + patchCount; p++){
+109         Key& key = map[p->name];
+110         key\&._storageName = p->_storageName;
+111         key\&._friendlyName = p->_friendlyName;
+112     }
+113 }
+.fi
+.SS "static QHash<QString, \fBKey\fP> getMap (\fBKeyMap::Model\fPmodel, \fBKeyMap::Layout\fPlayout)\fC [static]\fP"
+
+.PP
+Definition at line 210 of file keymap\&.cpp\&.
+.PP
+References KeyMap::DE, KeyMap::DK, KeyMap::ES, KeyMap::EU, KeyMap::EU_DVORAK, KeyMap::FR, KeyMap::GB_DVORAK, Key::height, KeyMap::isISO(), KeyMap::IT, KeyMap::K65, K65_TOP_COUNT, K65_WIDTH, KeyMap::K70, K70_X_START, KeyMap::K95, K95BaseMap, KEYCOUNT_K95, KEYCOUNT_M65, KEYCOUNT_SABRE, KEYCOUNT_SCIM, KSTRAFE_X_START, KeyMap::M65, KeyMap::MX, N_LAYOUTS, N_MODELS, key::name, KeyMap::NO, patch, patchANSI(), patchISO(), KeyMap::SABRE, KeyMap::SCIMITAR, KeyMap::SE, standardMaps, KeyMap::STRAFE, KeyMap::US_DVORAK, Key::width, Key::x, and Key::y\&.
+.PP
+.nf
+210                                                                          {
+211     if(model < 0 || layout < 0 || model >= N_MODELS || layout >= N_LAYOUTS)
+212         return QHash<QString, Key>();
+213     // Return the map if it's already filled out
+214     QHash<QString, Key>& map = standardMaps[model][layout];
+215     if(!map\&.empty())
+216         return map;
+217     // Otherwise, create it
+218     switch(model){
+219     case KeyMap::K95:{
+220         // The K95 maps serve as bases for all the other keyboards
+221         // Fetch the master map, or create it if not yet done
+222         if(K95BaseMap\&.empty()){
+223             for(const Key* key = K95Keys; key < K95Keys + KEYCOUNT_K95; key++)
+224                 K95BaseMap[key->name] = *key;
+225         }
+226         map = K95BaseMap;
+227         // Patch the map for the layout
+228         switch(layout){
+229         case KeyMap::DK:
+230             patch(map, patchDK);
+231             break;
+232         case KeyMap::EU_DVORAK:
+233             patch(map, patchDvorak);    // fall through
+234         case KeyMap::EU:
+235             patch(map, patchEU);
+236             break;
+237         case KeyMap::GB_DVORAK:
+238         case KeyMap::US_DVORAK:
+239             patch(map, patchDvorak);
+240             break;
+241         case KeyMap::FR:
+242             patch(map, patchFR);
+243             break;
+244         case KeyMap::DE:
+245             patch(map, patchDE);
+246             break;
+247         case KeyMap::IT:
+248             patch(map, patchIT);
+249             break;
+250         case KeyMap::NO:
+251             patch(map, patchNO);
+252             break;
+253         case KeyMap::MX:
+254             patch(map, patchMX);
+255             break;
+256         case KeyMap::ES:
+257             patch(map, patchES);
+258             break;
+259         case KeyMap::SE:
+260             patch(map, patchSE);
+261             break;
+262         default:;
+263             // English QWERTY - no patch needed
+264         }
+265         if(KeyMap::isISO(layout))
+266             patchISO(map);
+267         else
+268             patchANSI(map);
+269         // Done! return the map
+270         break;
+271     }
+272     case KeyMap::K70:{
+273         // The K70 maps are based on the K95 maps\&. However all the keys are shifted left and the G keys are removed
+274         map = getMap(KeyMap::K95, layout);
+275         QMutableHashIterator<QString, Key> i(map);
+276         while(i\&.hasNext()){
+277             i\&.next();
+278             // Move key to left\&. Remove it if it fell off the edge
+279             if((i\&.value()\&.x -= K70_X_START) < 0)
+280                 i\&.remove();
+281         }
+282         // Remove the M buttons as well
+283         map\&.remove("mr");
+284         map\&.remove("m1");
+285         map\&.remove("m2");
+286         map\&.remove("m3");
+287         // Done!
+288         break;
+289     }
+290     case KeyMap::K65:{
+291         // The K65 maps additionally remove the numpad and have a modified top row
+292         map = getMap(KeyMap::K70, layout);
+293         QMutableHashIterator<QString, Key> i(map);
+294         while(i\&.hasNext()){
+295             i\&.next();
+296             if(i\&.value()\&.x >= K65_WIDTH)
+297                 i\&.remove();
+298         }
+299         for(const Key* key = K65TopRow; key < K65TopRow + K65_TOP_COUNT; key++)
+300             map[key->name] = *key;
+301         // Done!
+302         break;
+303     }
+304     case KeyMap::STRAFE:{
+305         // The Strafe RGB maps are based on the K70 map minus the media keys
+306         map = getMap(KeyMap::K70, layout);
+307         //move light and lock right
+308         map["light"]\&.x=285 - K70_X_START;
+309         //map["light"]\&.hasLed=false;
+310         map["lock"]\&.x=297 - K70_X_START;
+311         //map["lock"]\&.hasLed=false;
+312         // move everything right to make the space for the left sidelight
+313         QMutableHashIterator<QString, Key> i(map);
+314         while(i\&.hasNext()){
+315             i\&.next();
+316             i\&.value()\&.x += KSTRAFE_X_START;
+317         }
+318         // Add Strafe lights and keys
+319         map["lsidel"] = KStrafeKeys[0];
+320         map["rsidel"] = KStrafeKeys[1];
+321         map["logo"] = KStrafeKeys[2];
+322         map["fn"] = KStrafeKeys[3];
+323         map\&.remove("rwin");
+324         // remove media controls
+325         map\&.remove("mute");
+326         map\&.remove("volup");
+327         map\&.remove("voldn");
+328         map\&.remove("stop");
+329         map\&.remove("prev");
+330         map\&.remove("play");
+331         map\&.remove("next");
+332         // Done!
+333         break;
+334     }
+335     case KeyMap::M65:{
+336         // M65 isn't a keyboard; all mouse maps are unique\&.
+337         for(const Key* key = M65Keys; key < M65Keys + KEYCOUNT_M65; key++){
+338             // Keyboard keys are written from the center because that's where the LEDs are, but the mouse buttons are odd shapes so they're
+339             // written from the upper left
+340             Key translatedKey = *key;
+341             translatedKey\&.x += translatedKey\&.width / 2;
+342             translatedKey\&.y += translatedKey\&.height / 2;
+343             map[key->name] = translatedKey;
+344         }
+345         // Mice also have no layout patches - no other changes necessary
+346         break;
+347     }
+348     case KeyMap::SABRE:{
+349         // Scimitar mouse
+350         for(const Key* key = SabreKeys; key < SabreKeys + KEYCOUNT_SABRE; key++){
+351             // Like the M65, the keys are upper-left justified
+352             Key translatedKey = *key;
+353             translatedKey\&.x += translatedKey\&.width / 2;
+354             translatedKey\&.y += translatedKey\&.height / 2;
+355             map[key->name] = translatedKey;
+356         }
+357         break;
+358     }
+359     case KeyMap::SCIMITAR:{
+360         // Scimitar mouse
+361         for(const Key* key = ScimKeys; key < ScimKeys + KEYCOUNT_SCIM; key++){
+362             Key translatedKey = *key;
+363             translatedKey\&.x += translatedKey\&.width / 2;
+364             translatedKey\&.y += translatedKey\&.height / 2;
+365             map[key->name] = translatedKey;
+366         }
+367         break;
+368     }
+369     default:;    // <- stop GCC from complaining
+370     }
+371     // Map is finished, return result
+372     return map;
+373 }
+.fi
+.SS "static void patchANSI (QHash< QString, \fBKey\fP > &map)\fC [static]\fP"
+
+.PP
+Definition at line 119 of file keymap\&.cpp\&.
+.PP
+References ANSI_ENTER_H, ANSI_ENTER_W, ANSI_ENTER_X, ANSI_ENTER_Y, ANSI_LSHIFT_W, ANSI_LSHIFT_X, Key::height, Key::width, Key::x, and Key::y\&.
+.PP
+Referenced by getMap()\&.
+.PP
+.nf
+119                                                {
+120     map\&.remove("bslash_iso");
+121     map\&.remove("hash");
+122     Key& enter = map["enter"];
+123     enter\&.x = ANSI_ENTER_X;
+124     enter\&.y = ANSI_ENTER_Y;
+125     enter\&.width = ANSI_ENTER_W;
+126     enter\&.height = ANSI_ENTER_H;
+127     Key& lshift = map["lshift"];
+128     lshift\&.x = ANSI_LSHIFT_X;
+129     lshift\&.width = ANSI_LSHIFT_W;
+130 }
+.fi
+.SS "static void patchISO (QHash< QString, \fBKey\fP > &map)\fC [static]\fP"
+
+.PP
+Definition at line 116 of file keymap\&.cpp\&.
+.PP
+Referenced by getMap()\&.
+.PP
+.nf
+116                                               {
+117     map\&.remove("bslash");
+118 }
+.fi
+.SH "Variable Documentation"
+.PP 
+.SS "const \fBKey\fP K65TopRow[]\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+    {0, "Brightness", "light", 164 -  38 , 0, 12, 12, true, true}, {0, "Mute", "mute", 176 -  38 , 0, 12, 12, true, true}, {0, "Volume Down", "voldn", 192 -  38 , 0, 14, 8, true, true}, {0, "Volume Up", "volup", 205 -  38 , 0, 14, 8, true, true}, {0, "Windows Lock", "lock", 222 -  38 , 0, 12, 12, true, true}
+}
+.fi
+.PP
+Definition at line 145 of file keymap\&.cpp\&.
+.SS "QHash<QString, \fBKey\fP> K95BaseMap\fC [static]\fP"
+
+.PP
+Definition at line 208 of file keymap\&.cpp\&.
+.PP
+Referenced by getMap()\&.
+.SS "const \fBKey\fP K95Keys[]\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+    {0, 0, "mr", 38, 0,  12, 12 , true, true}, {0, 0, "m1", 50, 0,  12, 12 , true, true}, {0, 0, "m2", 62, 0,  12, 12 , true, true}, {0, 0, "m3", 74, 0,  12, 12 , true, true}, {0, "Brightness", "light", 222, 0,  12, 12 , true, true}, {0, "Windows Lock", "lock", 234, 0,  12, 12 , true, true}, {0, "Mute", "mute", 273, 0, 13, 8, true, true}, {0, "Volume Up", "volup", 290, -2, 18, 6, false, true}, {0, "Volume down", "voldn", 290, 2, 18, 6, false, true},
+    {0, 0, "g1", 0, 14,  12, 12 , true, true}, {0, 0, "g2", 11, 14,  12, 12 , true, true}, {0, 0, "g3", 22, 14,  12, 12 , true, true}, {0, "Esc", "esc", 38, 14,  12, 12 , true, true}, {0, 0, "f1", 58, 14,  12, 12 , true, true}, {0, 0, "f2", 70, 14,  12, 12 , true, true}, {0, 0, "f3", 82, 14,  12, 12 , true, true}, {0, 0, "f4", 94, 14,  12, 12 , true, true}, {0, 0, "f5", 114, 14,  12, 12 , true, true}, {0, 0, "f6", 126, 14,  12, 12 , true, true}, {0, 0, "f7", 138, 14,  12, 12 , true, true}, {0, 0, "f8", 150, 14,  12, 12 , true, true}, {0, 0, "f9", 170, 14,  12, 12 , true, true}, {0, 0, "f10", 182, 14,  12, 12 , true, true}, {0, 0, "f11", 194, 14,  12, 12 , true, true}, {0, 0, "f12", 206, 14,  12, 12 , true, true}, {0, "Print Screen\nSysRq", "prtscn", 222, 14,  12, 12 , true, true}, {0, "Scroll Lock", "scroll", 234, 14,  12, 12 , true, true}, {0, "Pause\nBreak", "pause", 246, 14,  12, 12 , true, true}, {0, "Stop", "stop", 262, 14, 12, 8, true, true}, {0, "Previous", "prev", 273, 14, 13, 8, true, true}, {0, "Play/Pause", "play", 285, 14, 13, 8, true, true}, {0, "Next", "next", 296, 14, 12, 8, true, true},
+    {0, 0, "g4", 0, 25,  12, 12 , true, true}, {0, 0, "g5", 11, 25,  12, 12 , true, true}, {0, 0, "g6", 22, 25,  12, 12 , true, true}, {0, "`", "grave", 38, 27,  12, 12 , true, true}, {0, 0, "1", 50, 27,  12, 12 , true, true}, {0, 0, "2", 62, 27,  12, 12 , true, true}, {0, 0, "3", 74, 27,  12, 12 , true, true}, {0, 0, "4", 86, 27,  12, 12 , true, true}, {0, 0, "5", 98, 27,  12, 12 , true, true}, {0, 0, "6", 110, 27,  12, 12 , true, true}, {0, 0, "7", 122, 27,  12, 12 , true, true}, {0, 0, "8", 134, 27,  12, 12 , true, true}, {0, 0, "9", 146, 27,  12, 12 , true, true}, {0, 0, "0", 158, 27,  12, 12 , true, true}, {0, "-", "minus", 170, 27,  12, 12 , true, true}, {0, "=", "equal", 182, 27,  12, 12 , true, true}, {0, "Backspace", "bspace", 200, 27, 24, 12, true, true}, {0, "Insert", "ins", 222, 27,  12, 12 , true, true}, {0, "Home", "home", 234, 27,  12, 12 , true, true}, {0, "Page Up", "pgup", 246, 27,  12, 12 , true, true}, {0, "Num Lock", "numlock", 261, 27,  12, 12 , true, true}, {0, "NumPad /", "numslash", 273, 27,  12, 12 , true, true}, {0, "NumPad *", "numstar", 285, 27,  12, 12 , true, true}, {0, "NumPad -", "numminus", 297, 27,  12, 12 , true, true},
+    {0, 0, "g7", 0, 39,  12, 12 , true, true}, {0, 0, "g8", 11, 39,  12, 12 , true, true}, {0, 0, "g9", 22, 39,  12, 12 , true, true}, {0, "Tab", "tab", 41, 39, 18, 12, true, true}, {0, 0, "q", 56, 39,  12, 12 , true, true}, {0, 0, "w", 68, 39,  12, 12 , true, true}, {0, 0, "e", 80, 39,  12, 12 , true, true}, {0, 0, "r", 92, 39,  12, 12 , true, true}, {0, 0, "t", 104, 39,  12, 12 , true, true}, {0, 0, "y", 116, 39,  12, 12 , true, true}, {0, 0, "u", 128, 39,  12, 12 , true, true}, {0, 0, "i", 140, 39,  12, 12 , true, true}, {0, 0, "o", 152, 39,  12, 12 , true, true}, {0, 0, "p", 164, 39,  12, 12 , true, true}, {0, "[", "lbrace", 176, 39,  12, 12 , true, true}, {0, "]", "rbrace", 188, 39,  12, 12 , true, true}, {0, "\\", "bslash", 203, 39, 18, 12, true, true}, {0, "Enter", "enter", 203, 39, 18, 24, true, true}, {0, "Delete", "del", 222, 39,  12, 12 , true, true}, {0, "End", "end", 234, 39,  12, 12 , true, true}, {0, "Page Down", "pgdn", 246, 39,  12, 12 , true, true}, {0, "NumPad 7", "num7", 261, 39,  12, 12 , true, true}, {0, "NumPad 8", "num8", 273, 39,  12, 12 , true, true}, {0, "NumPad 9", "num9", 285, 39,  12, 12 , true, true}, {0, "NumPad +", "numplus", 297, 45, 12, 24, true, true},
+    {0, 0, "g10", 0, 50,  12, 12 , true, true}, {0, 0, "g11", 11, 50,  12, 12 , true, true}, {0, 0, "g12", 22, 50,  12, 12 , true, true}, {0, "Caps Lock", "caps", 42, 51, 20, 12, true, true}, {0, 0, "a", 59, 51,  12, 12 , true, true}, {0, 0, "s", 71, 51,  12, 12 , true, true}, {0, 0, "d", 83, 51,  12, 12 , true, true}, {0, 0, "f", 95, 51,  12, 12 , true, true}, {0, 0, "g", 107, 51,  12, 12 , true, true}, {0, 0, "h", 119, 51,  12, 12 , true, true}, {0, 0, "j", 131, 51,  12, 12 , true, true}, {0, 0, "k", 143, 51,  12, 12 , true, true}, {0, 0, "l", 155, 51,  12, 12 , true, true}, {0, ";", "colon", 167, 51,  12, 12 , true, true}, {0, "'", "quote", 179, 51,  12, 12 , true, true}, {0, "#", "hash", 191, 51,  12, 12 , true, true}, {0, "NumPad 4", "num4", 261, 51,  12, 12 , true, true}, {0, "NumPad 5", "num5", 273, 51,  12, 12 , true, true}, {0, "NumPad 6", "num6", 285, 51,  12, 12 , true, true},
+    {0, 0, "g13", 0, 64,  12, 12 , true, true}, {0, 0, "g14", 11, 64,  12, 12 , true, true}, {0, 0, "g15", 22, 64,  12, 12 , true, true}, {0, "Left Shift", "lshift", 39, 63, 14, 12, true, true}, {"bslash", "\\", "bslash_iso", 53, 63,  12, 12 , true, true}, {0, 0, "z", 65, 63,  12, 12 , true, true}, {0, 0, "x", 77, 63,  12, 12 , true, true}, {0, 0, "c", 89, 63,  12, 12 , true, true}, {0, 0, "v", 101, 63,  12, 12 , true, true}, {0, 0, "b", 113, 63,  12, 12 , true, true}, {0, 0, "n", 125, 63,  12, 12 , true, true}, {0, 0, "m", 137, 63,  12, 12 , true, true}, {0, ",", "comma", 149, 63,  12, 12 , true, true}, {0, "\&.", "dot", 161, 63,  12, 12 , true, true}, {0, "/", "slash", 173, 63,  12, 12 , true, true}, {0, "Right Shift", "rshift", 196, 63, 32, 12, true, true}, {0, "Up", "up", 234, 63,  12, 12 , true, true}, {0, "NumPad 1", "num1", 261, 63,  12, 12 , true, true}, {0, "NumPad 2", "num2", 273, 63,  12, 12 , true, true}, {0, "NumPad 3", "num3", 285, 63,  12, 12 , true, true}, {0, "NumPad Enter", "numenter", 297, 69, 12, 24, true, true},
+    {0, 0, "g16", 0, 75,  12, 12 , true, true}, {0, 0, "g17", 11, 75,  12, 12 , true, true}, {0, 0, "g18", 22, 75,  12, 12 , true, true}, {0, "Left Ctrl", "lctrl", 40, 75, 16, 12, true, true}, {0, "Left Windows", "lwin", 54, 75,  12, 12 , true, true}, {0, "Left Alt", "lalt", 67, 75, 14, 12, true, true}, {0, "Space", "space", 116, 75, 84, 12, true, true}, {0, "Right Alt", "ralt", 165, 75, 14, 12, true, true}, {0, "Right Windows", "rwin", 178, 75,  12, 12 , true, true}, {0, "Menu", "rmenu", 190, 75,  12, 12 , true, true}, {0, "Right Ctrl", "rctrl", 204, 75, 16, 12, true, true}, {0, "Left", "left", 222, 75,  12, 12 , true, true}, {0, "Down", "down", 234, 75,  12, 12 , true, true}, {0, "Right", "right", 246, 75,  12, 12 , true, true}, {0, "NumPad 0", "num0", 267, 75, 24, 12, true, true}, {0, "NumPad \&.", "numdot", 285, 75,  12, 12 , true, true}
+}
+.fi
+.PP
+Definition at line 10 of file keymap\&.cpp\&.
+.SS "const \fBKey\fP KStrafeKeys[]\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+    {0, "Sidelight", "lsidel", 0,   76  /2,  12 ,   76  , true, false},
+    {0, "Sidelight", "rsidel",  ( ( 298  -  38 )  + ( 12  * 2)) ,   76  /2,  12 ,   76  , true, false},
+    {0, "Logo", "logo",  12 , 0,  12, 12 , true, false},
+    {0, "Function", "fn", 152, 75,  12, 12 , true, true}
+}
+.fi
+.PP
+Definition at line 155 of file keymap\&.cpp\&.
+.SS "const \fBKey\fP M65Keys[]\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+    {0, "Left Mouse", "mouse1", 8, 0, 14, 32, false, true}, {0, "Right Mouse", "mouse2", 30, 0, 14, 32, false, true}, {0, "Middle Mouse", "mouse3", 22, 8, 8, 7, false, true},
+    {0, "Wheel Up", "wheelup", 22, 4, 8, 5, false, true}, {0, "Wheel Down", "wheeldn", 22, 14, 8, 5, false, true}, {0, "Wheel Light", "front", 22, 15, 8, 8, true, false},
+    {0, "DPI Up", "dpiup", 22, 19, 8, 6, false, true}, {0, "DPI Light", "dpi", 22, 24, 8, 8, true, false}, {0, "DPI Down", "dpidn", 22, 31, 8, 6, false, true},
+    {0, "Forward", "mouse5", 5, 24, 5, 9, false, true}, {0, "Back", "mouse4", 5, 33, 5, 10, false, true}, {0, "Sniper", "sniper", 0, 25, 5, 15, false, true},
+    {0, "Logo", "back", 14, 55, 24, 12, true, false}
+}
+.fi
+.PP
+Definition at line 163 of file keymap\&.cpp\&.
+.SS "const \fBKeyPatch\fP patchDE[]\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+    {"caret", "^", "grave"}, {"ss", "ß", "minus"}, {"grave", "´", "equal"},
+    {"z", "Z", "y"}, {"ue", "Ü", "lbrace"}, {"plus", "+", "rbrace"},
+    {"oe", "Ö", "colon"}, {"ae", "Ä", "quote"},
+    {"angle", "<", "bslash_iso"}, {"y", "Y", "z"}, {"minus", "-", "slash"}
+}
+.fi
+.PP
+Definition at line 55 of file keymap\&.cpp\&.
+.SS "const \fBKeyPatch\fP patchDK[]\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+    {0, "§", "grave"}, {0, "+", "minus"}, {0, "´", "equal"},
+    {0, "Å", "lbrace"}, {0, "¨", "rbrace"},
+    {0, "Æ", "colon"}, {0, "Ø", "quote"}, {0, "'", "hash"},
+    {0, "<", "bslash_iso"}, {0, "-", "slash"},
+}
+.fi
+.PP
+Definition at line 36 of file keymap\&.cpp\&.
+.SS "const \fBKeyPatch\fP patchDvorak[]\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+    {0, "[", "minus"}, {0, "]", "equal"},
+    {0, "'", "q"}, {0, ",", "w"}, {0, "\&.", "e"}, {0, "P", "r"}, {0, "Y", "t"}, {0, "F", "y"}, {0, "G", "u"}, {0, "C", "i"}, {0, "R", "o"}, {0, "L", "p"}, {0, "/", "lbrace"}, {0, "=", "rbrace"},
+    {0, "O", "s"}, {0, "E", "d"}, {0, "U", "f"}, {0, "I", "g"}, {0, "D", "h"}, {0, "H", "j"}, {0, "T", "k"}, {0, "N", "l"}, {0, "S", "colon"}, {0, "-", "quote"},
+    {0, ";", "z"}, {0, "Q", "x"}, {0, "J", "c"}, {0, "K", "v"}, {0, "X", "b"}, {0, "B", "n"}, {0, "W", "comma"}, {0, "V", "dot"}, {0, "Z", "slash"},
+}
+.fi
+.PP
+Definition at line 97 of file keymap\&.cpp\&.
+.SS "const \fBKeyPatch\fP patchES[]\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+    {"oa", "º", "grave"}, {"quote", "'", "minus"}, {"lexclam", "¡", "equal"},
+    {"grave", "`", "lbrace"}, {"plus", "+", "rbrace"},
+    {"nn", "Ñ", "colon"}, {"accent", "´", "quote"}, {"cc", "Ç", "hash"},
+    {"angle", "<", "bslash_iso"}, {"minus", "-", "slash"},
+}
+.fi
+.PP
+Definition at line 83 of file keymap\&.cpp\&.
+.SS "const \fBKeyPatch\fP patchEU[]\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+    {0, "\\ (R)", "hash"},
+    {0, "\\ (L)", "bslash_iso"}
+}
+.fi
+.PP
+Definition at line 43 of file keymap\&.cpp\&.
+.SS "const \fBKeyPatch\fP patchFR[]\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+    {"sup2", "²", "grave"}, {0, "&", "1"}, {0, "É", "2"}, {0, "\"", "3"}, {0, "'", "4"}, {0, "(", "5"}, {0, "-", "6"}, {0, "È", "7"}, {0, "_", "8"}, {0, "Ç", "9"}, {0, "À", "0"}, {"rparen", ")", "minus"},
+    {"a", "A", "q"}, {"z", "Z", "w"}, {"caret", "^", "lbrace"}, {"dollar", "$", "rbrace"},
+    {"q", "Q", "a"}, {"m", "M", "colon"}, {"percent", "Ù", "quote"}, {"star", "*", "hash"},
+    {"angle", "<", "bslash_iso"}, {"w", "W", "z"}, {"comma", ",", "m"}, {"semicolon", ";", "comma"}, {"colon", ":", "dot"}, {"exclam", "!", "slash"},
+}
+.fi
+.PP
+Definition at line 48 of file keymap\&.cpp\&.
+.SS "const \fBKeyPatch\fP patchIT[]\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+    {0, "\\", "grave"}, {0, "'", "minus"}, {0, "Ì", "equal"},
+    {0, "È", "lbrace"}, {0, "+", "rbrace"},
+    {0, "Ò", "colon"}, {0, "À", "quote"}, {0, "Ù", "hash"},
+    {0, "<", "bslash_iso"}, {0, "-", "slash"},
+}
+.fi
+.PP
+Definition at line 62 of file keymap\&.cpp\&.
+.SS "const \fBKeyPatch\fP patchMX[]\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+    {0, "|", "grave"}, {0, "'", "minus"}, {0, "¿", "equal"},
+    {0, "´", "lbrace"}, {0, "+", "rbrace"},
+    {0, "Ñ", "colon"}, {0, "{", "quote"}, {0, "}", "hash"},
+    {0, "<", "bslash_iso"}, {0, "-", "slash"},
+}
+.fi
+.PP
+Definition at line 76 of file keymap\&.cpp\&.
+.SS "const \fBKeyPatch\fP patchNO[]\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+    {0, "§", "grave"}, {0, "+", "minus"}, {0, "´", "equal"},
+    {0, "Å", "lbrace"}, {0, "¨", "rbrace"},
+    {0, "Ø", "colon"}, {0, "Æ", "quote"}, {0, "'", "hash"},
+    {0, "<", "bslash_iso"}, {0, "-", "slash"},
+}
+.fi
+.PP
+Definition at line 69 of file keymap\&.cpp\&.
+.SS "const \fBKeyPatch\fP patchSE[]\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+    {"section", "§", "grave"}, {"plus", "+", "minus"}, {"grave", "´", "equal"},
+    {"aa", "Å", "lbrace"}, {"umlaut", "¨", "rbrace"},
+    {"oe", "Ö", "colon"}, {"ae", "Ä", "quote"}, {"quote", "'", "hash"},
+    {"angle", "<", "bslash_iso"}, {"minus", "-", "slash"},
+}
+.fi
+.PP
+Definition at line 90 of file keymap\&.cpp\&.
+.SS "const \fBKey\fP SabreKeys[]\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+    {0, "Left Mouse", "mouse1", 8, 0, 14, 32, false, true}, {0, "Right Mouse", "mouse2", 30, 0, 14, 32, false, true}, {0, "Middle Mouse", "mouse3", 22, 9, 8, 7, false, true}, {0, "Front light", "front", 8, -2, 14, 8, true, false },
+    {0, "Wheel Up", "wheelup", 22, 5, 8, 5, false, true}, {0, "Wheel Down", "wheeldn", 22, 15, 8, 5, false, true}, {0, "Wheel Light", "wheel", 22, 5, 8, 15, true, false}, {0, "Extra button", "thumb1", 22, 20, 8, 18, false, true},
+    {0, "DPI Up", "dpiup", 5, 3, 5, 7, false, true}, {0, "DPI Down", "dpidn", 5, 10, 5, 7, false, true}, {0, "DPI Light", "dpi", 5, 4, 5, 12, true, false},
+    {0, "Forward", "mouse5", 5, 24, 5, 9, false, true}, {0, "Back", "mouse4", 5, 33, 5, 10, false, true},
+    {0, "Logo", "back", 14, 50, 24, 12, true, false}
+}
+.fi
+.PP
+Definition at line 176 of file keymap\&.cpp\&.
+.SS "const \fBKey\fP ScimKeys[]\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+    {0, "Left Mouse", "mouse1", 8, 0, 14, 32, false, true}, {0, "Right Mouse", "mouse2", 30, 0, 12, 32, false, true}, {0, "Middle Mouse", "mouse3", 22, 9, 8, 6, false, true}, {0, "Front light", "front", 30, 0, 12, 8, true, false },
+    {0, "Wheel Up", "wheelup", 22, 3, 8, 6, false, true}, {0, "Wheel Down", "wheeldn", 22, 14, 8, 6, false, true}, {0, "Wheel Light", "wheel", 22, 3, 8, 17, true, false},
+    {0, "DPI Up", "dpiup", 22, 19, 8, 9, false, true}, {0, "DPI Light", "dpi", 1, 12, 8, 4, true, false}, {0, "DPI Down", "dpidn", 22, 28, 8, 9, false, true},
+    {0, "Thumb light", "thumb", 0, 21, 10, 24, true, false},
+    {0, "1", "thumb1", -13, 18, 7, 7, false, true}, {0, "2", "thumb2", -6, 18, 7, 7, false, true}, {0, "3", "thumb3", 1, 18, 7, 7, false, true},
+    {0, "4", "thumb4", -13, 25, 7, 7, false, true}, {0, "5", "thumb5", -6, 25, 7, 7, false, true}, {0, "6", "thumb6", 1, 25, 7, 7, false, true},
+    {0, "7", "thumb7", -13, 32, 7, 7, false, true}, {0, "8", "thumb8", -6, 32, 7, 7, false, true}, {0, "9", "thumb9", 1, 32, 7, 7, false, true},
+    {0, "10", "thumb10", -13, 39, 7, 7, false, true}, {0, "11", "thumb11", -6, 39, 7, 7, false, true}, {0, "12", "thumb12", 1, 39, 7, 7, false, true},
+    {0, "Logo", "back", 14, 50, 24, 16, true, false}
+}
+.fi
+.PP
+Definition at line 189 of file keymap\&.cpp\&.
+.SS "QHash<QString, \fBKey\fP> standardMaps[\fBKeyMap::_MODEL_MAX\fP][\fBKeyMap::_LAYOUT_MAX\fP]\fC [static]\fP"
+
+.PP
+Definition at line 209 of file keymap\&.cpp\&.
+.PP
+Referenced by getMap()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

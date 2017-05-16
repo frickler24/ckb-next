@@ -1,0 +1,262 @@
+.TH "Ui::AnimAddDialog" 3 "Tue May 16 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ui::AnimAddDialog \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/ui_animadddialog\&.h>\fP
+.PP
+Inherits \fBUi_AnimAddDialog\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetupUi\fP (\fBQDialog\fP *\fBAnimAddDialog\fP)"
+.br
+.ti -1c
+.RI "void \fBretranslateUi\fP (\fBQDialog\fP *\fBAnimAddDialog\fP)"
+.br
+.in -1c
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "QGridLayout * \fBgridLayout\fP"
+.br
+.ti -1c
+.RI "QHBoxLayout * \fBhorizontalLayout\fP"
+.br
+.ti -1c
+.RI "QDialogButtonBox * \fBbuttonBox\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer_2\fP"
+.br
+.ti -1c
+.RI "QComboBox * \fBanimBox\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_2\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBverticalSpacer_2\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBverticalSpacer_3\fP"
+.br
+.ti -1c
+.RI "QComboBox * \fBpresetBox\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer\fP"
+.br
+.ti -1c
+.RI "QCheckBox * \fBpreviewBox\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 146 of file ui_animadddialog\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Ui_AnimAddDialog::retranslateUi (\fBQDialog\fP *AnimAddDialog)\fC [inline]\fP, \fC [inherited]\fP"
+
+.PP
+Definition at line 135 of file ui_animadddialog\&.h\&.
+.PP
+References Ui_AnimAddDialog::label, Ui_AnimAddDialog::label_2, and Ui_AnimAddDialog::previewBox\&.
+.PP
+Referenced by Ui_AnimAddDialog::setupUi()\&.
+.PP
+.nf
+136     {
+137         AnimAddDialog->setWindowTitle(QApplication::translate("AnimAddDialog", "Add Animation", Q_NULLPTR));
+138         label_2->setText(QApplication::translate("AnimAddDialog", "Preset:", Q_NULLPTR));
+139         label->setText(QApplication::translate("AnimAddDialog", "Animation:", Q_NULLPTR));
+140         previewBox->setText(QApplication::translate("AnimAddDialog", "Show preview", Q_NULLPTR));
+141     } // retranslateUi
+.fi
+.SS "void Ui_AnimAddDialog::setupUi (\fBQDialog\fP *AnimAddDialog)\fC [inline]\fP, \fC [inherited]\fP"
+
+.PP
+Definition at line 44 of file ui_animadddialog\&.h\&.
+.PP
+References Ui_AnimAddDialog::animBox, Ui_AnimAddDialog::buttonBox, Ui_AnimAddDialog::gridLayout, Ui_AnimAddDialog::horizontalLayout, Ui_AnimAddDialog::horizontalSpacer, Ui_AnimAddDialog::horizontalSpacer_2, Ui_AnimAddDialog::label, Ui_AnimAddDialog::label_2, Ui_AnimAddDialog::presetBox, Ui_AnimAddDialog::previewBox, Ui_AnimAddDialog::retranslateUi(), Ui_AnimAddDialog::verticalSpacer_2, and Ui_AnimAddDialog::verticalSpacer_3\&.
+.PP
+Referenced by AnimAddDialog::AnimAddDialog()\&.
+.PP
+.nf
+45     {
+46         if (AnimAddDialog->objectName()\&.isEmpty())
+47             AnimAddDialog->setObjectName(QStringLiteral("AnimAddDialog"));
+48         AnimAddDialog->resize(350, 205);
+49         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+50         sizePolicy\&.setHorizontalStretch(0);
+51         sizePolicy\&.setVerticalStretch(0);
+52         sizePolicy\&.setHeightForWidth(AnimAddDialog->sizePolicy()\&.hasHeightForWidth());
+53         AnimAddDialog->setSizePolicy(sizePolicy);
+54         gridLayout = new QGridLayout(AnimAddDialog);
+55         gridLayout->setObjectName(QStringLiteral("gridLayout"));
+56         horizontalLayout = new QHBoxLayout();
+57         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+58         buttonBox = new QDialogButtonBox(AnimAddDialog);
+59         buttonBox->setObjectName(QStringLiteral("buttonBox"));
+60         buttonBox->setOrientation(Qt::Horizontal);
+61         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
+62         buttonBox->setCenterButtons(false);
+63 
+64         horizontalLayout->addWidget(buttonBox);
+65 
+66 
+67         gridLayout->addLayout(horizontalLayout, 5, 0, 1, 4);
+68 
+69         horizontalSpacer_2 = new QSpacerItem(50, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+70 
+71         gridLayout->addItem(horizontalSpacer_2, 1, 3, 1, 1);
+72 
+73         animBox = new QComboBox(AnimAddDialog);
+74         animBox->setObjectName(QStringLiteral("animBox"));
+75         QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Fixed);
+76         sizePolicy1\&.setHorizontalStretch(0);
+77         sizePolicy1\&.setVerticalStretch(0);
+78         sizePolicy1\&.setHeightForWidth(animBox->sizePolicy()\&.hasHeightForWidth());
+79         animBox->setSizePolicy(sizePolicy1);
+80 
+81         gridLayout->addWidget(animBox, 1, 2, 1, 1);
+82 
+83         label_2 = new QLabel(AnimAddDialog);
+84         label_2->setObjectName(QStringLiteral("label_2"));
+85         QSizePolicy sizePolicy2(QSizePolicy::Preferred, QSizePolicy::Preferred);
+86         sizePolicy2\&.setHorizontalStretch(0);
+87         sizePolicy2\&.setVerticalStretch(0);
+88         sizePolicy2\&.setHeightForWidth(label_2->sizePolicy()\&.hasHeightForWidth());
+89         label_2->setSizePolicy(sizePolicy2);
+90         label_2->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+91 
+92         gridLayout->addWidget(label_2, 2, 1, 1, 1);
+93 
+94         verticalSpacer_2 = new QSpacerItem(20, 0, QSizePolicy::Minimum, QSizePolicy::Expanding);
+95 
+96         gridLayout->addItem(verticalSpacer_2, 4, 2, 1, 1);
+97 
+98         label = new QLabel(AnimAddDialog);
+99         label->setObjectName(QStringLiteral("label"));
+100         sizePolicy2\&.setHeightForWidth(label->sizePolicy()\&.hasHeightForWidth());
+101         label->setSizePolicy(sizePolicy2);
+102         label->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+103 
+104         gridLayout->addWidget(label, 1, 1, 1, 1);
+105 
+106         verticalSpacer_3 = new QSpacerItem(20, 0, QSizePolicy::Minimum, QSizePolicy::Expanding);
+107 
+108         gridLayout->addItem(verticalSpacer_3, 0, 2, 1, 1);
+109 
+110         presetBox = new QComboBox(AnimAddDialog);
+111         presetBox->setObjectName(QStringLiteral("presetBox"));
+112         sizePolicy1\&.setHeightForWidth(presetBox->sizePolicy()\&.hasHeightForWidth());
+113         presetBox->setSizePolicy(sizePolicy1);
+114 
+115         gridLayout->addWidget(presetBox, 2, 2, 1, 1);
+116 
+117         horizontalSpacer = new QSpacerItem(50, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+118 
+119         gridLayout->addItem(horizontalSpacer, 1, 0, 1, 1);
+120 
+121         previewBox = new QCheckBox(AnimAddDialog);
+122         previewBox->setObjectName(QStringLiteral("previewBox"));
+123         previewBox->setChecked(true);
+124 
+125         gridLayout->addWidget(previewBox, 3, 2, 1, 1);
+126 
+127 
+128         retranslateUi(AnimAddDialog);
+129         QObject::connect(buttonBox, SIGNAL(accepted()), AnimAddDialog, SLOT(accept()));
+130         QObject::connect(buttonBox, SIGNAL(rejected()), AnimAddDialog, SLOT(reject()));
+131 
+132         QMetaObject::connectSlotsByName(AnimAddDialog);
+133     } // setupUi
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "QComboBox* Ui_AnimAddDialog::animBox\fC [inherited]\fP"
+
+.PP
+Definition at line 35 of file ui_animadddialog\&.h\&.
+.PP
+Referenced by AnimAddDialog::AnimAddDialog(), AnimAddDialog::chosenScript(), and Ui_AnimAddDialog::setupUi()\&.
+.SS "QDialogButtonBox* Ui_AnimAddDialog::buttonBox\fC [inherited]\fP"
+
+.PP
+Definition at line 33 of file ui_animadddialog\&.h\&.
+.PP
+Referenced by Ui_AnimAddDialog::setupUi()\&.
+.SS "QGridLayout* Ui_AnimAddDialog::gridLayout\fC [inherited]\fP"
+
+.PP
+Definition at line 31 of file ui_animadddialog\&.h\&.
+.PP
+Referenced by Ui_AnimAddDialog::setupUi()\&.
+.SS "QHBoxLayout* Ui_AnimAddDialog::horizontalLayout\fC [inherited]\fP"
+
+.PP
+Definition at line 32 of file ui_animadddialog\&.h\&.
+.PP
+Referenced by Ui_AnimAddDialog::setupUi()\&.
+.SS "QSpacerItem* Ui_AnimAddDialog::horizontalSpacer\fC [inherited]\fP"
+
+.PP
+Definition at line 41 of file ui_animadddialog\&.h\&.
+.PP
+Referenced by Ui_AnimAddDialog::setupUi()\&.
+.SS "QSpacerItem* Ui_AnimAddDialog::horizontalSpacer_2\fC [inherited]\fP"
+
+.PP
+Definition at line 34 of file ui_animadddialog\&.h\&.
+.PP
+Referenced by Ui_AnimAddDialog::setupUi()\&.
+.SS "QLabel* Ui_AnimAddDialog::label\fC [inherited]\fP"
+
+.PP
+Definition at line 38 of file ui_animadddialog\&.h\&.
+.PP
+Referenced by Ui_AnimAddDialog::retranslateUi(), and Ui_AnimAddDialog::setupUi()\&.
+.SS "QLabel* Ui_AnimAddDialog::label_2\fC [inherited]\fP"
+
+.PP
+Definition at line 36 of file ui_animadddialog\&.h\&.
+.PP
+Referenced by Ui_AnimAddDialog::retranslateUi(), and Ui_AnimAddDialog::setupUi()\&.
+.SS "QComboBox* Ui_AnimAddDialog::presetBox\fC [inherited]\fP"
+
+.PP
+Definition at line 40 of file ui_animadddialog\&.h\&.
+.PP
+Referenced by AnimAddDialog::chosenPreset(), AnimAddDialog::on_animBox_activated(), AnimAddDialog::on_previewBox_clicked(), and Ui_AnimAddDialog::setupUi()\&.
+.SS "QCheckBox* Ui_AnimAddDialog::previewBox\fC [inherited]\fP"
+
+.PP
+Definition at line 42 of file ui_animadddialog\&.h\&.
+.PP
+Referenced by Ui_AnimAddDialog::retranslateUi(), and Ui_AnimAddDialog::setupUi()\&.
+.SS "QSpacerItem* Ui_AnimAddDialog::verticalSpacer_2\fC [inherited]\fP"
+
+.PP
+Definition at line 37 of file ui_animadddialog\&.h\&.
+.PP
+Referenced by Ui_AnimAddDialog::setupUi()\&.
+.SS "QSpacerItem* Ui_AnimAddDialog::verticalSpacer_3\fC [inherited]\fP"
+
+.PP
+Definition at line 39 of file ui_animadddialog\&.h\&.
+.PP
+Referenced by Ui_AnimAddDialog::setupUi()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

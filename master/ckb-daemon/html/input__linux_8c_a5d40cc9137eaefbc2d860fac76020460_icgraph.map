@@ -1,0 +1,12 @@
+<map id="_ledthread" name="_ledthread">
+<area shape="rect" id="node2" href="$input__linux_8c.html#a081bbacaa312d4a1a63bc1cab5d3520f" title="os_setupindicators" alt="" coords="136,31,267,57"/>
+<area shape="rect" id="node3" href="$usb_8c.html#a10ad381abfe51e67e341c882c92bb9ac" title="_setupusb" alt="" coords="315,31,397,57"/>
+<area shape="rect" id="node4" href="$usb_8h.html#a1ab9d61dd894466125283465201161cd" title="setupusb" alt="" coords="445,31,520,57"/>
+<area shape="rect" id="node5" href="$usb__linux_8c.html#a3185d6da36c8b0f8b862a8479ae82034" title="usbadd" alt="" coords="568,31,632,57"/>
+<area shape="rect" id="node6" href="$usb__linux_8c.html#a50efc8ee0ffcb6f201735d1a3bb08779" title="usb_add_device" alt="" coords="681,31,797,57"/>
+<area shape="rect" id="node7" href="$usb__linux_8c.html#ad56c1e4ec53bbd6b947cb535590328ea" title="udev_enum" alt="" coords="846,5,935,32"/>
+<area shape="rect" id="node8" href="$usb__linux_8c.html#a0859efad3739abe2ec61af4f3bb983ff" title="usbmain" alt="" coords="985,31,1055,57"/>
+<area shape="rect" id="node9" href="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1104,31,1155,57"/>
+<area shape="rect" id="node10" href="$notify_8c.html#ae246359e104d63520158c26329caac80" title="restart" alt="" coords="1203,31,1261,57"/>
+<area shape="rect" id="node11" href="$notify_8h.html#a700b520b9eb9a3698af8f8ebf547a9ab" title="cmd_restart" alt="" coords="1309,31,1400,57"/>
+</map>

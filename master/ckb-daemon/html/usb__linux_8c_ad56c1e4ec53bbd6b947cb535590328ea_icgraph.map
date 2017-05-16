@@ -1,0 +1,6 @@
+<map id="udev_enum" name="udev_enum">
+<area shape="rect" id="node2" href="$usb__linux_8c.html#a0859efad3739abe2ec61af4f3bb983ff" title="usbmain" alt="" coords="145,5,215,32"/>
+<area shape="rect" id="node3" href="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="264,5,315,32"/>
+<area shape="rect" id="node4" href="$notify_8c.html#ae246359e104d63520158c26329caac80" title="restart" alt="" coords="363,5,421,32"/>
+<area shape="rect" id="node5" href="$notify_8h.html#a700b520b9eb9a3698af8f8ebf547a9ab" title="cmd_restart" alt="" coords="469,5,560,32"/>
+</map>

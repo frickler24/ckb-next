@@ -1,0 +1,22 @@
+<map id="nprintkey" name="nprintkey">
+<area shape="rect" id="node2" href="$notify_8c.html#a43f4edf3463eff4979c3ad361ca40306" title="_cmd_get" alt="" coords="151,56,230,83"/>
+<area shape="rect" id="node4" href="$input_8c.html#aed8e9842ed5750c1d328c5dc4c1ba2bd" title="inputupdate_keys" alt="" coords="129,107,253,133"/>
+<area shape="rect" id="node3" href="$notify_8h.html#a49d278b14d646bfbd4b466b0fff80aae" title="cmd_get" alt="" coords="311,56,383,83"/>
+<area shape="rect" id="node5" href="$input_8h.html#ae360d0b9a764a1d38c5be5464be8b70a" title="inputupdate" alt="" coords="302,107,391,133"/>
+<area shape="rect" id="node6" href="$usb__linux_8c.html#a9e5784bfca2e4612f498ce67c7dab275" title="os_inputmain" alt="" coords="452,44,551,71"/>
+<area shape="rect" id="node16" href="$device__keyboard_8c.html#aeb1b886efdcfce59e4ee8977ba2fd135" title="setactive_kb" alt="" coords="453,107,549,133"/>
+<area shape="rect" id="node19" href="$device__mouse_8c.html#a78f463c19ce586845e80094c949beda2" title="setactive_mouse" alt="" coords="441,183,562,209"/>
+<area shape="rect" id="node7" href="$usb_8c.html#a10ad381abfe51e67e341c882c92bb9ac" title="_setupusb" alt="" coords="637,31,720,57"/>
+<area shape="rect" id="node8" href="$usb_8h.html#a1ab9d61dd894466125283465201161cd" title="setupusb" alt="" coords="795,31,869,57"/>
+<area shape="rect" id="node9" href="$usb__linux_8c.html#a3185d6da36c8b0f8b862a8479ae82034" title="usbadd" alt="" coords="917,31,981,57"/>
+<area shape="rect" id="node10" href="$usb__linux_8c.html#a50efc8ee0ffcb6f201735d1a3bb08779" title="usb_add_device" alt="" coords="1030,31,1146,57"/>
+<area shape="rect" id="node11" href="$usb__linux_8c.html#ad56c1e4ec53bbd6b947cb535590328ea" title="udev_enum" alt="" coords="1195,5,1285,32"/>
+<area shape="rect" id="node12" href="$usb__linux_8c.html#a0859efad3739abe2ec61af4f3bb983ff" title="usbmain" alt="" coords="1334,31,1405,57"/>
+<area shape="rect" id="node13" href="$ckb-daemon_2main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1453,31,1504,57"/>
+<area shape="rect" id="node14" href="$notify_8c.html#ae246359e104d63520158c26329caac80" title="restart" alt="" coords="1552,31,1611,57"/>
+<area shape="rect" id="node15" href="$notify_8h.html#a700b520b9eb9a3698af8f8ebf547a9ab" title="cmd_restart" alt="" coords="1659,31,1749,57"/>
+<area shape="rect" id="node17" href="$device__keyboard_8c.html#ac520b855af37b199562c5d6e2d4b8c80" title="cmd_active_kb" alt="" coords="623,81,734,108"/>
+<area shape="rect" id="node18" href="$device__keyboard_8c.html#ae904b92525c5e59de06c92a95120bdeb" title="cmd_idle_kb" alt="" coords="631,132,726,159"/>
+<area shape="rect" id="node20" href="$device__mouse_8c.html#a645921c6fa6d8c1c2f3db338113fac51" title="cmd_active_mouse" alt="" coords="611,183,746,209"/>
+<area shape="rect" id="node21" href="$device__mouse_8c.html#ac071786fa2b1fb41f79c7876666f686c" title="cmd_idle_mouse" alt="" coords="619,233,739,260"/>
+</map>

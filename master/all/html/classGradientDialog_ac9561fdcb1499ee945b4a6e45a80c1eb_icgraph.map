@@ -1,0 +1,9 @@
+<map id="GradientDialog::setPreset" name="GradientDialog::setPreset">
+<area shape="rect" id="node2" href="$classGradientDialog.html#a263478b8c373d0eed0f2b8d2a53b9bec" title="GradientDialog::colorChanged" alt="" coords="234,56,430,83"/>
+<area shape="rect" id="node4" href="$classGradientDialog.html#a388a0cb46cc7acbd7bd43680d751637b" title="GradientDialog::on\l_stopOpacity_valueChanged" alt="" coords="485,82,675,123"/>
+<area shape="rect" id="node5" href="$classGradientDialog.html#a99cd3a6a06c21682583fd80c0a3659ec" title="GradientDialog::currentChanged" alt="" coords="228,5,436,32"/>
+<area shape="rect" id="node6" href="$classGradientDialog.html#a9ee33a9fba6f225c0eb99d6fd004ab79" title="GradientDialog::on\l_presetList_currentItemChanged" alt="" coords="227,158,437,199"/>
+<area shape="rect" id="node7" href="$classGradientDialog.html#a8430bc7ef4178a1fd9beae6e4752522d" title="GradientDialog::on\l_presetName_textEdited" alt="" coords="249,223,415,265"/>
+<area shape="rect" id="node8" href="$classGradientDialog.html#a70a7b923e062d8ed0f3721585df4bc55" title="GradientDialog::on\l_stopPos_valueChanged" alt="" coords="249,289,415,330"/>
+<area shape="rect" id="node3" href="$classGradientDialog.html#a30a03b6ef4aaa3fe4968699a76cc9a00" title="GradientDialog::Gradient\lDialog" alt="" coords="497,7,663,49"/>
+</map>

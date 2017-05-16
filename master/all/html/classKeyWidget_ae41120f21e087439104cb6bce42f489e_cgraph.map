@@ -1,0 +1,17 @@
+<map id="KeyWidget::paintEvent" name="KeyWidget::paintEvent">
+<area shape="rect" id="node2" href="$classColorMap.html#a206bfd8a9465e856c16a71bb908772fe" title="ColorMap::colorForName" alt="" coords="211,5,379,32"/>
+<area shape="rect" id="node4" href="$classKbBind.html#adc0b3a203d2f9604799d2f7513241f91" title="KbBind::defaultAction" alt="" coords="221,56,369,83"/>
+<area shape="rect" id="node6" href="$classKbBind.html#a195e520e9f7ee76718ca8ca8927b1d3b" title="KbBind::globalRemap" alt="" coords="437,107,585,133"/>
+<area shape="rect" id="node7" href="$classKeyWidget.html#aff83b1dc2248b02552ad9c3a1e70d97c" title="KeyWidget::drawInfo" alt="" coords="223,157,367,184"/>
+<area shape="rect" id="node10" href="$structKey.html#a70ac5b7c5186fbef61f62f4c04c8db62" title="Key::friendlyName" alt="" coords="229,208,360,235"/>
+<area shape="rect" id="node11" href="$classKeyMap.html#af4921437c3e6729e82ae05f4f049a5f0" title="KeyMap::isMouse" alt="" coords="231,259,358,285"/>
+<area shape="rect" id="node12" href="$classKeyMap.html#a554a0f5a25bd4cd5c3678234f5935677" title="KeyMap::layout" alt="" coords="238,309,351,336"/>
+<area shape="rect" id="node13" href="$classKeyMap.html#a72ab32524b88e5a6bce86b1d9eafde48" title="KeyMap::model" alt="" coords="238,360,351,387"/>
+<area shape="rect" id="node14" href="$keywidget_8cpp.html#a7b60353791945e82d8d75d4198c81146" title="monoRgb" alt="" coords="255,411,334,437"/>
+<area shape="rect" id="node3" href="$colormap_8cpp.html#aadd858d434ca6f9507ef897c2e4c12ab" title="qs_strcmp" alt="" coords="469,5,552,32"/>
+<area shape="rect" id="node5" href="$classKeyAction.html#ae744da2dd239b7d6596a341ea63b0e88" title="KeyAction::defaultAction" alt="" coords="427,56,594,83"/>
+<area shape="rect" id="node8" href="$classKeyMap.html#a451d641449fbd38bb7c0f0656531d7ad" title="KeyMap::height" alt="" coords="454,157,567,184"/>
+<area shape="rect" id="node9" href="$classKeyMap.html#aac028a47f67d63edff5ed67eec2c31e2" title="KeyMap::width" alt="" coords="456,208,565,235"/>
+<area shape="rect" id="node15" href="$kblight_8cpp.html#a1b369974db04cf9b57e096d8caff10b8" title="lToS" alt="" coords="486,385,535,412"/>
+<area shape="rect" id="node16" href="$kblight_8cpp.html#ab3d9177de800e5cfedeb6c43b27f06da" title="sToL" alt="" coords="485,436,536,463"/>
+</map>

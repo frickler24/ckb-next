@@ -1,0 +1,5 @@
+<map id="Kb::scrollSpeed" name="Kb::scrollSpeed">
+<area shape="rect" id="node2" href="$classExtraSettingsWidget.html#acde7ec134d1094521001d4512edbbe92" title="ExtraSettingsWidget\l::ExtraSettingsWidget" alt="" coords="197,5,347,46"/>
+<area shape="rect" id="node3" href="$classExtraSettingsWidget.html#a0ece3d8102a140ee7cba1310ba0fe8cf" title="ExtraSettingsWidget\l::on_sAccelBox_clicked" alt="" coords="191,70,353,111"/>
+<area shape="rect" id="node4" href="$classExtraSettingsWidget.html#a776c9b008825378b4a61cd70b5d684d1" title="ExtraSettingsWidget\l::on_sSpeedBox_valueChanged" alt="" coords="168,135,376,177"/>
+</map>

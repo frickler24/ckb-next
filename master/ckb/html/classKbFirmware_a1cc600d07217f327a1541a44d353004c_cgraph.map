@@ -1,0 +1,51 @@
+<map id="KbFirmware::dataForBoard" name="KbFirmware::dataForBoard">
+<area shape="rect" id="node2" href="$classKbFirmware.html#ae5f3c91fcf3fe8fe55e2c1e3cea877eb" title="KbFirmware::_fileForBoard" alt="" coords="233,789,410,816"/>
+<area shape="rect" id="node3" href="$classQuaZip.html#abfa4e6018b2964a3d10a4c54e5ab3962" title="Opens ZIP file. " alt="" coords="470,764,570,791"/>
+<area shape="rect" id="node39" href="$classQuaZipFile.html#a4c20c0ef00ae79c9a59eafe2906c9384" title="Opens a file for reading. " alt="" coords="459,815,581,841"/>
+<area shape="rect" id="node40" href="$classQuaZip.html#a6c657bfcfccb59d728e0da24c677d899" title="Sets current file by its name. " alt="" coords="629,275,784,301"/>
+<area shape="rect" id="node50" href="$kbfirmware_8cpp.html#a61af340d454a04e7657e67151cd5ae2e" title="tableName" alt="" coords="477,865,563,892"/>
+<area shape="rect" id="node4" href="$classQuaZip.html#a5b869a9c0d4f49955b759592fec08888" title="Returns true if ZIP file is open, false otherwise. " alt="" coords="1143,173,1257,200"/>
+<area shape="rect" id="node5" href="$unzip_8c.html#af1c890ff2c8e5173ded0af79a64f8b0a" title="unzOpenInternal" alt="" coords="885,815,1003,841"/>
+<area shape="rect" id="node21" href="$unzip_8c.html#a24b14e9aa3110ed982718ba061eec60a" title="unzOpen2" alt="" coords="666,815,747,841"/>
+<area shape="rect" id="node23" href="$unzip_8c.html#a9455ce696340a474a2dc57623e6d5f72" title="unzSetFlags" alt="" coords="659,967,754,993"/>
+<area shape="rect" id="node24" href="$unzip_8c.html#a57edd6ce767edb60441e3d260089ab9b" title="unzClearFlags" alt="" coords="653,1017,760,1044"/>
+<area shape="rect" id="node25" href="$unzip_8c.html#af6ab0ba88ab5da62747df8f9336f1bb3" title="unzClose" alt="" coords="668,513,745,540"/>
+<area shape="rect" id="node27" href="$zip_8c.html#a6cb26503b56121bf3b5779b4df561b24" title="zipOpen3" alt="" coords="905,932,983,959"/>
+<area shape="rect" id="node30" href="$zip_8c.html#a67ab4da81787241b90623ab2dfb5f64a" title="zipOpen2" alt="" coords="668,865,745,892"/>
+<area shape="rect" id="node31" href="$zip_8c.html#a697bb6dde7f8267f764a85a4367d75dd" title="zipSetFlags" alt="" coords="661,633,752,660"/>
+<area shape="rect" id="node32" href="$zip_8c.html#a4fda7a41fa2f57d105ffc7d1cbcf53cc" title="zipClose" alt="" coords="670,684,743,711"/>
+<area shape="rect" id="node6" href="$qioapi_8cpp.html#a791fffcedf2d2c9dabd67232dafe447b" title="fill_qiodevice64_filefunc" alt="" coords="1120,881,1280,908"/>
+<area shape="rect" id="node14" href="$unzip_8c.html#aadf5d3516ffd4262012ddfbd80a34863" title="unz64local_getLong" alt="" coords="1583,655,1721,681"/>
+<area shape="rect" id="node15" href="$unzip_8c.html#aba9b9b69240930610d4c80e5fdf30e68" title="unz64local_getLong64" alt="" coords="1577,596,1727,623"/>
+<area shape="rect" id="node16" href="$unzip_8c.html#a3c9da06aac7eccb3e336ba0f56c1f1a3" title="unz64local_getShort" alt="" coords="1582,523,1722,549"/>
+<area shape="rect" id="node17" href="$unzip_8c.html#a98491b7ec49c27be6d228e22e40030d6" title="unz64local_SearchCentralDir" alt="" coords="1105,815,1295,841"/>
+<area shape="rect" id="node18" href="$unzip_8c.html#a49b29cfd0534f5b0881c833e1c8295c2" title="unz64local_SearchCentral\lDir64" alt="" coords="1349,647,1523,689"/>
+<area shape="rect" id="node19" href="$unzip_8c.html#a54821c0b6da683800164a56f2ae14f33" title="unzGoToFirstFile" alt="" coords="1139,431,1261,457"/>
+<area shape="rect" id="node7" href="$qioapi_8cpp.html#ab64e25237ce8d0748a8e63552c811a6c" title="qiodevice64_seek_file_func" alt="" coords="1345,1084,1527,1111"/>
+<area shape="rect" id="node8" href="$qioapi_8cpp.html#ab23e0bdd92f6df922a97e865ca5e9030" title="qiodevice64_tell_file_func" alt="" coords="1351,764,1521,791"/>
+<area shape="rect" id="node9" href="$qioapi_8cpp.html#a5c1872cbc73a6107a59983cf68a7eb71" title="qiodevice_close_file_func" alt="" coords="1351,815,1521,841"/>
+<area shape="rect" id="node10" href="$qioapi_8cpp.html#aa28e993bb89e141777695b5ed3908e5f" title="qiodevice_error_file_func" alt="" coords="1353,865,1519,892"/>
+<area shape="rect" id="node11" href="$qioapi_8cpp.html#af65a39ff0265a40151e9c15bead60db8" title="qiodevice_fakeclose\l_file_func" alt="" coords="1366,917,1506,958"/>
+<area shape="rect" id="node12" href="$qioapi_8cpp.html#a32af99f13f6baf9617565716780ae818" title="qiodevice_open_file_func" alt="" coords="1352,983,1520,1009"/>
+<area shape="rect" id="node13" href="$qioapi_8cpp.html#ae865403be09e32051ca7a36fc6b0da3d" title="qiodevice_read_file_func" alt="" coords="1353,1033,1519,1060"/>
+<area shape="rect" id="node20" href="$unzip_8c.html#a33e149842497fe83f96ef95e71ba4973" title="unz64local_GetCurrentFile\lInfoInternal" alt="" coords="1348,423,1524,465"/>
+<area shape="rect" id="node22" href="$ioapi_8h.html#a0c90747a8b732158bc3666411776affe" title="fill_zlib_filefunc64\l_32_def_from_filefunc32" alt="" coords="862,866,1026,907"/>
+<area shape="rect" id="node26" href="$unzip_8c.html#ac48279e5325cfdabbc67a312b1d32700" title="unzCloseCurrentFile" alt="" coords="873,413,1015,440"/>
+<area shape="rect" id="node28" href="$zip_8c.html#a6c2a1e974d3ab6f326b743af32e53794" title="init_linkedlist" alt="" coords="1151,983,1249,1009"/>
+<area shape="rect" id="node29" href="$zip_8c.html#a44da2707a5a0031b9c263f9373918f29" title="LoadCentralDirectoryRecord" alt="" coords="1107,932,1293,959"/>
+<area shape="rect" id="node33" href="$zip_8c.html#afdf0486190c480fc1cc3b194ec0c0956" title="free_linkedlist" alt="" coords="893,764,995,791"/>
+<area shape="rect" id="node34" href="$zip_8c.html#a26acf4764f6b8c19f0feb18ac5315438" title="Write_EndOfCentralDirectory\lRecord" alt="" coords="848,465,1040,506"/>
+<area shape="rect" id="node35" href="$zip_8c.html#afe52628c128fa6397329f43e60420142" title="Write_GlobalComment" alt="" coords="867,531,1021,557"/>
+<area shape="rect" id="node36" href="$zip_8c.html#a9c440209ccea3275591d82ef1170caec" title="Write_Zip64EndOfCentralDirectory\lLocator" alt="" coords="832,582,1056,623"/>
+<area shape="rect" id="node37" href="$zip_8c.html#a3e803b9de3378b55508de949f9725480" title="Write_Zip64EndOfCentralDirectory\lRecord" alt="" coords="832,647,1056,689"/>
+<area shape="rect" id="node38" href="$zip_8c.html#ae470f753aef4cffe4f77a5ec2bcfbde1" title="zipCloseFileInZip" alt="" coords="883,713,1005,740"/>
+<area shape="rect" id="node41" href="$classQuaZip.html#a1d3fbd445a8e9d3449ded7371931c6b3" title="Returns the actual case sensitivity for the specified QuaZIP one. " alt="" coords="841,195,1047,221"/>
+<area shape="rect" id="node42" href="$unzip_8c.html#a667afaf715015b8195e2f6f22390202d" title="unzGoToFilePos64" alt="" coords="1133,363,1267,389"/>
+<area shape="rect" id="node43" href="$classQuaZipPrivate.html#a7eddafdcdfc540f25e98d6df03fed1a7" title="QuaZipPrivate::goToFirst\lUnmappedFile" alt="" coords="860,297,1028,338"/>
+<area shape="rect" id="node45" href="$classQuaZip.html#aee6779b6cd338420c2e8c5655fa8ba97" title="Sets the current file to the next file in the archive. " alt="" coords="869,245,1019,272"/>
+<area shape="rect" id="node46" href="$classQuaZip.html#a9783f8b4f39cd55e71e975aea78fd54a" title="Returns the current file name. " alt="" coords="849,93,1039,120"/>
+<area shape="rect" id="node44" href="$unzip_8c.html#acb457ebeaee7cb850c11a4a3d4b58201" title="unzGoToNextFile" alt="" coords="1138,304,1262,331"/>
+<area shape="rect" id="node47" href="$classQuaZip.html#a00b237d926648f45da86db25e7cfb697" title="Returns true if the current file has been set. " alt="" coords="1121,5,1279,32"/>
+<area shape="rect" id="node48" href="$unzip_8c.html#a530654c7abbcd1c432942eb41f613d48" title="unzGetCurrentFileInfo64" alt="" coords="1118,123,1282,149"/>
+<area shape="rect" id="node49" href="$classQuaZipPrivate.html#aaffe963507cb17b2848bc9546c740bb2" title="QuaZipPrivate::addCurrent\lFileToDirectoryMap" alt="" coords="1111,57,1289,98"/>
+</map>

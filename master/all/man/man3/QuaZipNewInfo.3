@@ -1,0 +1,401 @@
+.TH "QuaZipNewInfo" 3 "Tue May 16 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QuaZipNewInfo \- 
+.PP
+Information about a file to be created\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/quazip/quazipnewinfo\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQuaZipNewInfo\fP (const QString &\fBname\fP)"
+.br
+.RI "\fIConstructs \fBQuaZipNewInfo\fP instance\&. \fP"
+.ti -1c
+.RI "\fBQuaZipNewInfo\fP (const QString &\fBname\fP, const QString &file)"
+.br
+.RI "\fIConstructs \fBQuaZipNewInfo\fP instance\&. \fP"
+.ti -1c
+.RI "\fBQuaZipNewInfo\fP (const \fBQuaZipFileInfo\fP &existing)"
+.br
+.RI "\fIInitializes the new instance from existing file info\&. \fP"
+.ti -1c
+.RI "\fBQuaZipNewInfo\fP (const \fBQuaZipFileInfo64\fP &existing)"
+.br
+.RI "\fIInitializes the new instance from existing file info\&. \fP"
+.ti -1c
+.RI "void \fBsetFileDateTime\fP (const QString &file)"
+.br
+.RI "\fISets the file timestamp from the existing file\&. \fP"
+.ti -1c
+.RI "void \fBsetFilePermissions\fP (const QString &file)"
+.br
+.RI "\fISets the file permissions from the existing file\&. \fP"
+.ti -1c
+.RI "void \fBsetPermissions\fP (QFile::Permissions permissions)"
+.br
+.RI "\fISets the file permissions\&. \fP"
+.ti -1c
+.RI "void \fBsetFileNTFSTimes\fP (const QString &fileName)"
+.br
+.RI "\fISets the NTFS times from an existing file\&. \fP"
+.ti -1c
+.RI "void \fBsetFileNTFSmTime\fP (const QDateTime &mTime, int fineTicks=0)"
+.br
+.RI "\fISets the NTFS modification time\&. \fP"
+.ti -1c
+.RI "void \fBsetFileNTFSaTime\fP (const QDateTime &aTime, int fineTicks=0)"
+.br
+.RI "\fISets the NTFS access time\&. \fP"
+.ti -1c
+.RI "void \fBsetFileNTFScTime\fP (const QDateTime &cTime, int fineTicks=0)"
+.br
+.RI "\fISets the NTFS creation time\&. \fP"
+.in -1c
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "QString \fBname\fP"
+.br
+.RI "\fIFile name\&. \fP"
+.ti -1c
+.RI "QDateTime \fBdateTime\fP"
+.br
+.RI "\fIFile timestamp\&. \fP"
+.ti -1c
+.RI "quint16 \fBinternalAttr\fP"
+.br
+.RI "\fIFile internal attributes\&. \fP"
+.ti -1c
+.RI "quint32 \fBexternalAttr\fP"
+.br
+.RI "\fIFile external attributes\&. \fP"
+.ti -1c
+.RI "QString \fBcomment\fP"
+.br
+.RI "\fIFile comment\&. \fP"
+.ti -1c
+.RI "QByteArray \fBextraLocal\fP"
+.br
+.RI "\fIFile local extra field\&. \fP"
+.ti -1c
+.RI "QByteArray \fBextraGlobal\fP"
+.br
+.RI "\fIFile global extra field\&. \fP"
+.ti -1c
+.RI "ulong \fBuncompressedSize\fP"
+.br
+.RI "\fIUncompressed file size\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+This structure holds information about a file to be created inside ZIP archive\&. At least name should be set to something correct before passing this structure to QuaZipFile::open(OpenMode,const QuaZipNewInfo&,int,int,bool)\&.
+.PP
+Zip64 support of this structure is slightly limited: in the raw mode (when a pre-compressed file is written into a ZIP file as-is), it is necessary to specify the uncompressed file size and the appropriate field is 32 bit\&. Since the raw mode is used extremely rare, there is no real need to have a separate QuaZipNewInfo64 structure like \fBQuaZipFileInfo64\fP\&. It may be added in the future though, if there is a demand for the raw mode with zip64 archives\&. 
+.PP
+Definition at line 50 of file quazipnewinfo\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QuaZipNewInfo::QuaZipNewInfo (const QString &name)"
+Initializes name with \fIname\fP, dateTime with current date and time\&. Attributes are initialized with zeros, comment and extra field with null values\&. 
+.PP
+Definition at line 79 of file quazipnewinfo\&.cpp\&.
+.PP
+.nf
+79                                                :
+80   name(name), dateTime(QDateTime::currentDateTime()), internalAttr(0), externalAttr(0),
+81   uncompressedSize(0)
+82 {
+83 }
+.fi
+.SS "QuaZipNewInfo::QuaZipNewInfo (const QString &name, const QString &file)"
+Initializes name with \fIname\fP\&. Timestamp and permissions are taken from the specified file\&. If the \fIfile\fP does not exists or its timestamp is inaccessible (e\&. g\&. you do not have read permission for the directory file in), uses current time and zero permissions\&. Other attributes are initialized with zeros, comment and extra field with null values\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBsetFileDateTime()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 85 of file quazipnewinfo\&.cpp\&.
+.PP
+References dateTime, and QuaZipNewInfo_setPermissions()\&.
+.PP
+.nf
+85                                                                     :
+86   name(name), internalAttr(0), externalAttr(0), uncompressedSize(0)
+87 {
+88   QFileInfo info(file);
+89   QDateTime lm = info\&.lastModified();
+90   if (!info\&.exists()) {
+91     dateTime = QDateTime::currentDateTime();
+92   } else {
+93     dateTime = lm;
+94     QuaZipNewInfo_setPermissions(this, info\&.permissions(), info\&.isDir());
+95   }
+96 }
+.fi
+.SS "QuaZipNewInfo::QuaZipNewInfo (const \fBQuaZipFileInfo\fP &existing)"
+Mainly used when copying files between archives\&.
+.PP
+Both extra fields are initialized to existing\&.extra\&. \fBQuaZipNewInfo\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIexisting\fP 
+.RE
+.PP
+
+.PP
+Definition at line 69 of file quazipnewinfo\&.cpp\&.
+.PP
+References QuaZipNewInfo_init()\&.
+.PP
+.nf
+70 {
+71     QuaZipNewInfo_init(*this, existing);
+72 }
+.fi
+.SS "QuaZipNewInfo::QuaZipNewInfo (const \fBQuaZipFileInfo64\fP &existing)"
+Mainly used when copying files between archives\&.
+.PP
+Both extra fields are initialized to existing\&.extra\&. \fBQuaZipNewInfo\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIexisting\fP 
+.RE
+.PP
+
+.PP
+Definition at line 74 of file quazipnewinfo\&.cpp\&.
+.PP
+References QuaZipNewInfo_init()\&.
+.PP
+.nf
+75 {
+76     QuaZipNewInfo_init(*this, existing);
+77 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void QuaZipNewInfo::setFileDateTime (const QString &file)"
+Use this function to set the file timestamp from the existing file\&. Use it like this: 
+.PP
+.nf
+QuaZipFile zipFile(&zip);
+QFile file("file-to-add");
+file\&.open(QIODevice::ReadOnly);
+QuaZipNewInfo info("file-name-in-archive");
+info\&.setFileDateTime("file-to-add"); // take the timestamp from file
+zipFile\&.open(QIODevice::WriteOnly, info);
+
+.fi
+.PP
+.PP
+This function does not change dateTime if some error occured (e\&. g\&. file is inaccessible)\&. 
+.PP
+Definition at line 98 of file quazipnewinfo\&.cpp\&.
+.PP
+References dateTime\&.
+.PP
+.nf
+99 {
+100   QFileInfo info(file);
+101   QDateTime lm = info\&.lastModified();
+102   if (info\&.exists())
+103     dateTime = lm;
+104 }
+.fi
+.SS "void QuaZipNewInfo::setFileNTFSaTime (const QDateTime &aTime, intfineTicks = \fC0\fP)"
+The time is written into the NTFS record in both the local and the global extra fields, updating the existing record if there is one, or creating a new one and appending it to the end of each extra field\&. When updating an existing record, all other fields are left intact\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIaTime\fP The new access time\&. 
+.br
+\fIfineTicks\fP The fractional part of milliseconds, in 100-nanosecond ticks (i\&. e\&. 9999 ticks = 999\&.9 microsecond)\&. Values greater than 9999 will add milliseconds or even seconds, but this can be confusing and therefore is discouraged\&. 
+.RE
+.PP
+
+.PP
+Definition at line 267 of file quazipnewinfo\&.cpp\&.
+.PP
+References extraGlobal, extraLocal, and setNTFSTime()\&.
+.PP
+Referenced by setFileNTFSTimes()\&.
+.PP
+.nf
+268 {
+269     setNTFSTime(extraLocal, aTime, 8, fineTicks);
+270     setNTFSTime(extraGlobal, aTime, 8, fineTicks);
+271 }
+.fi
+.SS "void QuaZipNewInfo::setFileNTFScTime (const QDateTime &cTime, intfineTicks = \fC0\fP)"
+The time is written into the NTFS record in both the local and the global extra fields, updating the existing record if there is one, or creating a new one and appending it to the end of each extra field\&. When updating an existing record, all other fields are left intact\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcTime\fP The new creation time\&. 
+.br
+\fIfineTicks\fP The fractional part of milliseconds, in 100-nanosecond ticks (i\&. e\&. 9999 ticks = 999\&.9 microsecond)\&. Values greater than 9999 will add milliseconds or even seconds, but this can be confusing and therefore is discouraged\&. 
+.RE
+.PP
+
+.PP
+Definition at line 273 of file quazipnewinfo\&.cpp\&.
+.PP
+References extraGlobal, extraLocal, and setNTFSTime()\&.
+.PP
+Referenced by setFileNTFSTimes()\&.
+.PP
+.nf
+274 {
+275     setNTFSTime(extraLocal, cTime, 16, fineTicks);
+276     setNTFSTime(extraGlobal, cTime, 16, fineTicks);
+277 }
+.fi
+.SS "void QuaZipNewInfo::setFileNTFSmTime (const QDateTime &mTime, intfineTicks = \fC0\fP)"
+The time is written into the NTFS record in both the local and the global extra fields, updating the existing record if there is one, or creating a new one and appending it to the end of each extra field\&. When updating an existing record, all other fields are left intact\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImTime\fP The new modification time\&. 
+.br
+\fIfineTicks\fP The fractional part of milliseconds, in 100-nanosecond ticks (i\&. e\&. 9999 ticks = 999\&.9 microsecond)\&. Values greater than 9999 will add milliseconds or even seconds, but this can be confusing and therefore is discouraged\&. 
+.RE
+.PP
+
+.PP
+Definition at line 261 of file quazipnewinfo\&.cpp\&.
+.PP
+References extraGlobal, extraLocal, and setNTFSTime()\&.
+.PP
+Referenced by setFileNTFSTimes()\&.
+.PP
+.nf
+262 {
+263     setNTFSTime(extraLocal, mTime, 0, fineTicks);
+264     setNTFSTime(extraGlobal, mTime, 0, fineTicks);
+265 }
+.fi
+.SS "void QuaZipNewInfo::setFileNTFSTimes (const QString &fileName)"
+If the file doesn't exist, a warning is printed to the stderr and nothing is done\&. Otherwise, all three times, as reported by QFileInfo::lastModified(), QFileInfo::lastRead() and QFileInfo::created(), are written to the NTFS extra field record\&.
+.PP
+The NTFS record is written to both the local and the global extra fields, updating the existing record if there is one, or creating a new one and appending it to the end of each extra field\&.
+.PP
+The microseconds will be zero, as they aren't reported by QFileInfo\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfileName\fP 
+.RE
+.PP
+
+.PP
+Definition at line 118 of file quazipnewinfo\&.cpp\&.
+.PP
+References setFileNTFSaTime(), setFileNTFScTime(), and setFileNTFSmTime()\&.
+.PP
+.nf
+119 {
+120     QFileInfo fi(fileName);
+121     if (!fi\&.exists()) {
+122         qWarning("QuaZipNewInfo::setFileNTFSTimes(): '%s' doesn't exist",
+123                  fileName\&.toUtf8()\&.constData());
+124         return;
+125     }
+126     setFileNTFSmTime(fi\&.lastModified());
+127     setFileNTFSaTime(fi\&.lastRead());
+128     setFileNTFScTime(fi\&.created());
+129 }
+.fi
+.SS "void QuaZipNewInfo::setFilePermissions (const QString &file)"
+Takes permissions from the file and sets the high 16 bits of external attributes\&. Uses QFileInfo to get permissions on all platforms\&. 
+.PP
+Definition at line 106 of file quazipnewinfo\&.cpp\&.
+.PP
+References QuaZipNewInfo_setPermissions()\&.
+.PP
+.nf
+107 {
+108     QFileInfo info = QFileInfo(file);
+109     QFile::Permissions perm = info\&.permissions();
+110     QuaZipNewInfo_setPermissions(this, perm, info\&.isDir());
+111 }
+.fi
+.SS "void QuaZipNewInfo::setPermissions (QFile::Permissionspermissions)"
+Modifies the highest 16 bits of external attributes\&. The type part is set to dir if the name ends with a slash, and to regular file otherwise\&. 
+.PP
+Definition at line 113 of file quazipnewinfo\&.cpp\&.
+.PP
+References name, and QuaZipNewInfo_setPermissions()\&.
+.PP
+.nf
+114 {
+115     QuaZipNewInfo_setPermissions(this, permissions, name\&.endsWith('/'));
+116 }
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "QString QuaZipNewInfo::comment"
+Will be encoded using \fBQuaZip::getCommentCodec()\fP\&. 
+.PP
+Definition at line 75 of file quazipnewinfo\&.h\&.
+.PP
+Referenced by QuaZipFile::open()\&.
+.SS "QDateTime QuaZipNewInfo::dateTime"
+This is the last file modification date and time\&. Will be stored in the archive central directory\&. It is a good practice to set it to the source file timestamp instead of archive creating time\&. Use \fBsetFileDateTime()\fP or \fBQuaZipNewInfo(const QString&, const QString&)\fP\&. 
+.PP
+Definition at line 62 of file quazipnewinfo\&.h\&.
+.PP
+Referenced by QuaZipFile::open(), QuaZipNewInfo(), and setFileDateTime()\&.
+.SS "quint32 QuaZipNewInfo::externalAttr"
+The highest 16 bits contain Unix file permissions and type (dir or file)\&. The constructor \fBQuaZipNewInfo(const QString&, const QString&)\fP takes permissions from the provided file\&. 
+.PP
+Definition at line 71 of file quazipnewinfo\&.h\&.
+.PP
+Referenced by QuaZipFile::open(), and QuaZipNewInfo_setPermissions()\&.
+.SS "QByteArray QuaZipNewInfo::extraGlobal"
+
+.PP
+Definition at line 79 of file quazipnewinfo\&.h\&.
+.PP
+Referenced by QuaZipFile::open(), setFileNTFSaTime(), setFileNTFScTime(), and setFileNTFSmTime()\&.
+.SS "QByteArray QuaZipNewInfo::extraLocal"
+
+.PP
+Definition at line 77 of file quazipnewinfo\&.h\&.
+.PP
+Referenced by QuaZipFile::open(), setFileNTFSaTime(), setFileNTFScTime(), and setFileNTFSmTime()\&.
+.SS "quint16 QuaZipNewInfo::internalAttr"
+
+.PP
+Definition at line 64 of file quazipnewinfo\&.h\&.
+.PP
+Referenced by QuaZipFile::open()\&.
+.SS "QString QuaZipNewInfo::name"
+This field holds file name inside archive, including path relative to archive root\&. 
+.PP
+Definition at line 55 of file quazipnewinfo\&.h\&.
+.PP
+Referenced by QuaZipFile::open(), and setPermissions()\&.
+.SS "ulong QuaZipNewInfo::uncompressedSize"
+This is only needed if you are using raw file zipping mode, i\&. e\&. adding precompressed file in the zip archive\&. 
+.PP
+Definition at line 84 of file quazipnewinfo\&.h\&.
+.PP
+Referenced by QuaZipFile::open()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

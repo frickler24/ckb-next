@@ -1,0 +1,102 @@
+.TH "src/ckb/quazip/quazip.cpp" 3 "Tue May 16 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb/quazip/quazip.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <QFile>\fP
+.br
+\fC#include <QFlags>\fP
+.br
+\fC#include <QHash>\fP
+.br
+\fC#include 'quazip\&.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "class \fBQuaZipPrivate\fP"
+.br
+.RI "\fIAll the internal stuff for the \fBQuaZip\fP class\&. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename TFileInfo > TFileInfo \fBQuaZip_getFileInfo\fP (\fBQuaZip\fP *zip, bool *ok)"
+.br
+.ti -1c
+.RI "template<> \fBQuaZipFileInfo\fP \fBQuaZip_getFileInfo\fP (\fBQuaZip\fP *zip, bool *ok)"
+.br
+.ti -1c
+.RI "template<> \fBQuaZipFileInfo64\fP \fBQuaZip_getFileInfo\fP (\fBQuaZip\fP *zip, bool *ok)"
+.br
+.ti -1c
+.RI "template<> QString \fBQuaZip_getFileInfo\fP (\fBQuaZip\fP *zip, bool *ok)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "template<typename TFileInfo > TFileInfo QuaZip_getFileInfo (\fBQuaZip\fP *zip, bool *ok)"
+
+.PP
+Definition at line 663 of file quazip\&.cpp\&.
+.PP
+References QuaZip::getCurrentFileInfo(), and QuaZip::getCurrentFileName()\&.
+.PP
+.nf
+664 {
+665     QuaZipFileInfo info;
+666     *ok = zip->getCurrentFileInfo(&info);
+667     return info;
+668 }
+.fi
+.SS "template<> \fBQuaZipFileInfo\fP QuaZip_getFileInfo (\fBQuaZip\fP *zip, bool *ok)"
+
+.PP
+Definition at line 663 of file quazip\&.cpp\&.
+.PP
+References QuaZip::getCurrentFileInfo()\&.
+.PP
+.nf
+664 {
+665     QuaZipFileInfo info;
+666     *ok = zip->getCurrentFileInfo(&info);
+667     return info;
+668 }
+.fi
+.SS "template<> \fBQuaZipFileInfo64\fP QuaZip_getFileInfo (\fBQuaZip\fP *zip, bool *ok)"
+
+.PP
+Definition at line 671 of file quazip\&.cpp\&.
+.PP
+References QuaZip::getCurrentFileInfo()\&.
+.PP
+.nf
+672 {
+673     QuaZipFileInfo64 info;
+674     *ok = zip->getCurrentFileInfo(&info);
+675     return info;
+676 }
+.fi
+.SS "template<> QString QuaZip_getFileInfo (\fBQuaZip\fP *zip, bool *ok)"
+
+.PP
+Definition at line 679 of file quazip\&.cpp\&.
+.PP
+References QuaZip::getCurrentFileName()\&.
+.PP
+.nf
+680 {
+681     QString name = zip->getCurrentFileName();
+682     *ok = !name\&.isEmpty();
+683     return name;
+684 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

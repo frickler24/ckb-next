@@ -1,0 +1,17 @@
+<map id="QuaZip::getMode" name="QuaZip::getMode">
+<area shape="rect" id="node2" href="$classJlCompress.html#a78c6f547384208cfa4fc7079c677522d" title="Compress a single file. " alt="" coords="176,56,355,83"/>
+<area shape="rect" id="node5" href="$classJlCompress.html#a8c581f5f8a692fc598ea98cb5fa53d37" title="Compress a subdirectory. " alt="" coords="403,107,600,133"/>
+<area shape="rect" id="node7" href="$classQuaZipFile.html#ac4da08e5cdec368a2a686775f7dc5639" title="Returns compressed file size. " alt="" coords="203,208,327,235"/>
+<area shape="rect" id="node10" href="$classJlCompress.html#a522739a65b382a9838ed69812340dd40" title="Extract a single file. " alt="" coords="185,157,346,184"/>
+<area shape="rect" id="node14" href="$classQuaZipFile.html#af35876a5ac6e9c35234275a9e503110d" title="Gets information about current file with zip64 support. " alt="" coords="188,259,343,285"/>
+<area shape="rect" id="node15" href="$classQuaZipFile.html#aed75bace51f2bb4c3e4f656ab4493aac" title="Opens a file for reading. " alt="" coords="205,309,326,336"/>
+<area shape="rect" id="node16" href="$classQuaZipFile.html#a4814b5e6e39fb254737b81ea10964f50" title="Returns uncompressed file size. " alt="" coords="203,360,327,387"/>
+<area shape="rect" id="node3" href="$classJlCompress.html#a4a4de9c62ecf161bb658d4d80495ea97" title="Compress a single file. " alt="" coords="412,56,591,83"/>
+<area shape="rect" id="node4" href="$classJlCompress.html#a9cdb92d29a94c6b13a718a3249685846" title="Compress a list of files. " alt="" coords="409,5,594,32"/>
+<area shape="rect" id="node6" href="$classJlCompress.html#a8708eafcadc5c192a1d492e784cfc98f" title="Compress a whole directory. " alt="" coords="650,107,825,133"/>
+<area shape="rect" id="node8" href="$classQuaZipFile.html#ad1a17cc690a01c3edfb82984c3a4c8f0" title="Returns file size. " alt="" coords="443,335,560,361"/>
+<area shape="rect" id="node9" href="$classQuaZipFile.html#a29fbfb34677f69394ae7c986ffd3a0c1" title="Returns the number of bytes available for reading. " alt="" coords="648,335,827,361"/>
+<area shape="rect" id="node11" href="$classJlCompress.html#a365a153baa4c11812d93cbca60b6a293" title="Extract a whole archive. " alt="" coords="423,208,580,235"/>
+<area shape="rect" id="node12" href="$classJlCompress.html#a38c0d58bfe3bbbcb3cf4e98d126633a3" title="Extract a single file. " alt="" coords="421,259,582,285"/>
+<area shape="rect" id="node13" href="$classJlCompress.html#a309e9ee366719a4d8aa28f837fab73ae" title="Extract a list of files. " alt="" coords="417,157,585,184"/>
+</map>

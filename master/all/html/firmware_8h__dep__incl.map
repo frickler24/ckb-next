@@ -1,0 +1,9 @@
+<map id="src/ckb&#45;daemon/firmware.h" name="src/ckb&#45;daemon/firmware.h">
+<area shape="rect" id="node2" href="$device_8c.html" title="src/ckb&#45;daemon/device.c" alt="" coords="5,88,173,115"/>
+<area shape="rect" id="node3" href="$device__keyboard_8c.html" title="src/ckb&#45;daemon/device\l_keyboard.c" alt="" coords="197,81,355,122"/>
+<area shape="rect" id="node4" href="$device__mouse_8c.html" title="src/ckb&#45;daemon/device\l_mouse.c" alt="" coords="379,81,536,122"/>
+<area shape="rect" id="node5" href="$device__vtable_8c.html" title="src/ckb&#45;daemon/device\l_vtable.c" alt="" coords="560,81,717,122"/>
+<area shape="rect" id="node6" href="$devnode_8c.html" title="src/ckb&#45;daemon/devnode.c" alt="" coords="741,88,920,115"/>
+<area shape="rect" id="node7" href="$firmware_8c.html" title="src/ckb&#45;daemon/firmware.c" alt="" coords="945,88,1124,115"/>
+<area shape="rect" id="node8" href="$usb_8c.html" title="src/ckb&#45;daemon/usb.c" alt="" coords="1149,88,1299,115"/>
+</map>

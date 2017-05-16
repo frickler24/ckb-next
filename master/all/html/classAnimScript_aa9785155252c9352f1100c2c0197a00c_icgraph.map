@@ -1,0 +1,8 @@
+<map id="AnimScript::guid" name="AnimScript::guid">
+<area shape="rect" id="node2" href="$classKbAnim.html#aaf7613395cdffab6a9b1e37e24a446d9" title="KbAnim::KbAnim" alt="" coords="173,5,296,32"/>
+<area shape="rect" id="node3" href="$classAnimScript.html#a0b8712c5df0d17e987db13143ab9a987" title="AnimScript::list" alt="" coords="179,56,290,83"/>
+<area shape="rect" id="node5" href="$classAnimScript.html#ae59ff1932ad97696fcaf244bb9d7a537" title="AnimScript::scan" alt="" coords="173,111,296,137"/>
+<area shape="rect" id="node4" href="$classAnimAddDialog.html#acb4f77d3ae8265e8ce69b0c38d57d5e1" title="AnimAddDialog::AnimAddDialog" alt="" coords="344,52,555,79"/>
+<area shape="rect" id="node6" href="$classExtraSettingsWidget.html#a59868422fbecc72b233ad472be99bb54" title="ExtraSettingsWidget\l::on_animScanButton\l_clicked" alt="" coords="376,103,523,159"/>
+<area shape="rect" id="node7" href="$classExtraSettingsWidget.html#acde7ec134d1094521001d4512edbbe92" title="ExtraSettingsWidget\l::ExtraSettingsWidget" alt="" coords="603,110,754,151"/>
+</map>

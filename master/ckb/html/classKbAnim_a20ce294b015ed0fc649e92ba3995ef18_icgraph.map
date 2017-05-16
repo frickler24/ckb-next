@@ -1,0 +1,28 @@
+<map id="KbAnim::script" name="KbAnim::script">
+<area shape="rect" id="node2" href="$classAnimSettingDialog.html#ae8882ea2cc60e89a446b763cc212a605" title="AnimSettingDialog::\lAnimSettingDialog" alt="" coords="689,581,828,622"/>
+<area shape="rect" id="node3" href="$classKbAnimWidget.html#a810aaafb80b34c3f03345b9a265da1c2" title="KbAnimWidget::setCurrent" alt="" coords="163,239,341,265"/>
+<area shape="rect" id="node18" href="$classAnimSettingDialog.html#ad8c12a644ef80b8ea56a70f0e30da4c7" title="AnimSettingDialog::\lupdateParam" alt="" coords="183,741,321,782"/>
+<area shape="rect" id="node4" href="$classKbAnimWidget.html#a7f694bfa406d2f1fdab7a7169f837efb" title="KbAnimWidget::KbAnimWidget" alt="" coords="395,239,599,265"/>
+<area shape="rect" id="node5" href="$classKbAnimWidget.html#a096921d8224cc5d7580a9e5a46305061" title="KbAnimWidget::refreshList" alt="" coords="408,340,587,367"/>
+<area shape="rect" id="node11" href="$classKbAnimWidget.html#aa49c33f3e673b9521ab812df554dec93" title="KbAnimWidget::duplicateAnim" alt="" coords="659,289,858,316"/>
+<area shape="rect" id="node12" href="$classKbAnimWidget.html#a8fefdad4f8ee8082890159438c78e911" title="KbAnimWidget::on_animList\l_customContextMenuRequested" alt="" coords="912,181,1125,222"/>
+<area shape="rect" id="node13" href="$classKbAnimWidget.html#adcd31f32f63db310da51fe32c53caeb6" title="KbAnimWidget::clearSelection" alt="" coords="659,391,858,417"/>
+<area shape="rect" id="node14" href="$classKbAnimWidget.html#aec38d76f8f14709e03526c9f4b2782e8" title="KbAnimWidget::addAnim" alt="" coords="413,16,581,43"/>
+<area shape="rect" id="node16" href="$classKbAnimWidget.html#a3983ad58852303bd0a8643cf1a610880" title="KbAnimWidget::on_animList\l_currentItemChanged" alt="" coords="404,122,591,163"/>
+<area shape="rect" id="node17" href="$classKbAnimWidget.html#a5d00279a905a85a5e702f266ca84f6ef" title="KbAnimWidget::on_deleteButton\l_clicked" alt="" coords="653,181,864,222"/>
+<area shape="rect" id="node6" href="$classKbAnimWidget.html#a986780d15107d5aaf661b578db7703af" title="KbAnimWidget::setLight" alt="" coords="677,340,840,367"/>
+<area shape="rect" id="node7" href="$classKbLightWidget.html#a1de1f3328abf87f7f48673c46fbd3b4b" title="KbLightWidget::setLight" alt="" coords="938,365,1099,392"/>
+<area shape="rect" id="node8" href="$classKbWidget.html#aae4a00bb180d711b5df7df6443c8bf36" title="KbWidget::modeChanged" alt="" coords="1173,365,1344,392"/>
+<area shape="rect" id="node9" href="$classKbWidget.html#a848a21f1fd112e13ca5fcf25da4592c6" title="KbWidget::KbWidget" alt="" coords="1427,336,1571,363"/>
+<area shape="rect" id="node10" href="$classKbWidget.html#add5eb15a399c87faf80db9fdfc2e868f" title="KbWidget::on_modesList_customContextMenuRequested. " alt="" coords="1392,387,1605,429"/>
+<area shape="rect" id="node15" href="$classKbLightWidget.html#a854d8332999f4b2337d198199661d405" title="KbLightWidget::on_animButton\l_clicked" alt="" coords="657,5,860,46"/>
+<area shape="rect" id="node19" href="$classAnimSettingDialog.html#a0027d136ee0ad97cddd73d601c677e3a" title="AnimSettingDialog::\langleDialChanged" alt="" coords="428,610,567,651"/>
+<area shape="rect" id="node20" href="$classAnimSettingDialog.html#a96a59bcf494a19b74c4142e0c5813478" title="AnimSettingDialog::\langleSpinnerChanged" alt="" coords="423,1002,572,1043"/>
+<area shape="rect" id="node21" href="$classAnimSettingDialog.html#a5a1bb832c90f20c4f796c28da2a400cf" title="AnimSettingDialog::\lnewDuration" alt="" coords="428,1067,567,1109"/>
+<area shape="rect" id="node22" href="$classAnimSettingDialog.html#a6e4af505a9e7d05b5925a1aa82dbe752" title="AnimSettingDialog::\lon_delayBox_valueChanged" alt="" coords="404,675,591,717"/>
+<area shape="rect" id="node23" href="$classAnimSettingDialog.html#a6377bcd58b61efeadd787c9c03bb0b42" title="AnimSettingDialog::\lon_kpDelayBox_valueChanged" alt="" coords="395,741,599,782"/>
+<area shape="rect" id="node24" href="$classAnimSettingDialog.html#afda1103b7d55b806ee53dbaf9b5f3a14" title="AnimSettingDialog::\lon_kpReleaseBox_stateChanged" alt="" coords="389,806,605,847"/>
+<area shape="rect" id="node25" href="$classAnimSettingDialog.html#ace471d6a4e51cc70bd99a7888da1f3b6" title="AnimSettingDialog::\lon_kpRepeatBox_valueChanged" alt="" coords="391,871,603,913"/>
+<area shape="rect" id="node26" href="$classAnimSettingDialog.html#a507012b01eb96fba3be108d6ea774d69" title="AnimSettingDialog::\lon_repeatBox_valueChanged" alt="" coords="401,937,593,978"/>
+<area shape="rect" id="node27" href="$classAnimSettingDialog.html#a386b53c7d82aa7ae29676d404ad115d0" title="AnimSettingDialog::\lupdateStops" alt="" coords="428,493,567,534"/>
+</map>

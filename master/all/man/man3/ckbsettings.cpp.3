@@ -1,0 +1,148 @@
+.TH "src/ckb/ckbsettings.cpp" 3 "Tue May 16 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb/ckbsettings.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'ckbsettings\&.h'\fP
+.br
+\fC#include 'ckbsettingswriter\&.h'\fP
+.br
+\fC#include <QThread>\fP
+.br
+\fC#include <QMutex>\fP
+.br
+\fC#include <QDebug>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBlockMutex\fP   QMutexLocker locker(backing == \fB_globalSettings\fP ? &\fBsettingsMutex\fP : 0)"
+.br
+.ti -1c
+.RI "#define \fBlockMutexStatic\fP   QMutexLocker locker(&\fBsettingsMutex\fP)"
+.br
+.ti -1c
+.RI "#define \fBlockMutexStatic2\fP   QMutexLocker locker2(&\fBsettingsMutex\fP)"
+.br
+.ti -1c
+.RI "#define \fBlockMutexCache\fP   QMutexLocker locker(&\fBsettingsCacheMutex\fP)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "QAtomicInt \fBcacheWritesInProgress\fP (0)"
+.br
+.ti -1c
+.RI "QMutex \fBsettingsMutex\fP (QMutex::Recursive)"
+.br
+.ti -1c
+.RI "QMutex \fBsettingsCacheMutex\fP (QMutex::Recursive)"
+.br
+.ti -1c
+.RI "static QSettings * \fBglobalSettings\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static QSettings * \fB_globalSettings\fP = 0"
+.br
+.ti -1c
+.RI "static \fBQThread\fP * \fBglobalThread\fP = 0"
+.br
+.ti -1c
+.RI "static QMap< QString, QVariant > \fBglobalCache\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define lockMutex   QMutexLocker locker(backing == \fB_globalSettings\fP ? &\fBsettingsMutex\fP : 0)"
+
+.PP
+Definition at line 15 of file ckbsettings\&.cpp\&.
+.PP
+Referenced by CkbSettings::childGroups(), CkbSettings::childKeys(), CkbSettings::contains(), and CkbSettings::value()\&.
+.SS "#define lockMutexCache   QMutexLocker locker(&\fBsettingsCacheMutex\fP)"
+
+.PP
+Definition at line 18 of file ckbsettings\&.cpp\&.
+.PP
+Referenced by CkbSettings::get(), CkbSettings::set(), and CkbSettings::setValue()\&.
+.SS "#define lockMutexStatic   QMutexLocker locker(&\fBsettingsMutex\fP)"
+
+.PP
+Definition at line 16 of file ckbsettings\&.cpp\&.
+.PP
+Referenced by globalSettings(), and CkbSettings::set()\&.
+.SS "#define lockMutexStatic2   QMutexLocker locker2(&\fBsettingsMutex\fP)"
+
+.PP
+Definition at line 17 of file ckbsettings\&.cpp\&.
+.PP
+Referenced by CkbSettings::get()\&.
+.SH "Function Documentation"
+.PP 
+.SS "QAtomicInt cacheWritesInProgress (0)"
+
+.PP
+Referenced by CkbSettings::cleanUp(), and CkbSettings::isBusy()\&.
+.SS "static QSettings* globalSettings ()\fC [static]\fP"
+
+.PP
+Definition at line 27 of file ckbsettings\&.cpp\&.
+.PP
+References _globalSettings, and lockMutexStatic\&.
+.PP
+Referenced by CkbSettings::get(), and CkbSettings::set()\&.
+.PP
+.nf
+27                                   {
+28     if(!_globalSettings){
+29         lockMutexStatic;
+30         if(!(volatile QSettings*)_globalSettings){   // Check again after locking mutex in case another thread created the object
+31             // Put the settings object in a separate thread so that it won't lock up the GUI when it syncs
+32             globalThread = new QThread;
+33             globalThread->start();
+34             _globalSettings = new QSettings;
+35             qInfo() << "Path  to settings is" << _globalSettings->fileName();
+36             _globalSettings->moveToThread(globalThread);
+37         }
+38     }
+39     return _globalSettings;
+40 }
+.fi
+.SS "QMutex settingsCacheMutex (QMutex::Recursive)"
+
+.SS "QMutex settingsMutex (QMutex::Recursive)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "QSettings* _globalSettings = 0\fC [static]\fP"
+
+.PP
+Definition at line 8 of file ckbsettings\&.cpp\&.
+.PP
+Referenced by CkbSettings::cleanUp(), and globalSettings()\&.
+.SS "QMap<QString, QVariant> globalCache\fC [static]\fP"
+
+.PP
+Definition at line 12 of file ckbsettings\&.cpp\&.
+.PP
+Referenced by CkbSettings::get(), CkbSettings::set(), and CkbSettings::setValue()\&.
+.SS "\fBQThread\fP* globalThread = 0\fC [static]\fP"
+
+.PP
+Definition at line 9 of file ckbsettings\&.cpp\&.
+.PP
+Referenced by CkbSettings::cleanUp()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.
