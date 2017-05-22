@@ -10,6 +10,8 @@
 
 /// \details
 /// \brief all open usb devices have their system path names here in this array.
+#define DEBUG
+
 static char kbsyspath[DEV_MAX][FILENAME_MAX];
 
 ////
@@ -211,11 +213,16 @@ int _nk95cmd(usbdevice* kb, uchar bRequest, ushort wValue, const char* file, int
 ///
 /// \n The ioctl command is USBDEVFS_CONTROL.
 ///
-void os_sendindicators(usbdevice* kb){
+void os_sendindicators(usbdevice* kb) {
+    static int countForReset = 0;
     struct usbdevfs_ctrltransfer transfer = { 0x21, 0x09, 0x0200, 0x00, 1, 500, &kb->ileds };
     int res = ioctl(kb->handle - 1, USBDEVFS_CONTROL, &transfer);
-    if(res <= 0)
+    if(res <= 0) {
         ckb_err("%s\n", res ? strerror(errno) : "No data written");
+        if (usb_tryreset(kb) == 0 && countForReset++ < 3) {
+            os_sendindicators(kb);
+        }
+    }
 }
 
 ///
@@ -455,7 +462,7 @@ static int usbclaim(usbdevice* kb){
     ckb_info("claiming %d endpoints\n", count);
 #endif // DEBUG
 
-    for(int i = 0; i < count; i++) {
+    for (int i = 0; i < count; i++) {
         struct usbdevfs_ioctl ctl = { i, USBDEVFS_DISCONNECT, 0 };
         ioctl(kb->handle - 1, USBDEVFS_IOCTL, &ctl);
         if(ioctl(kb->handle - 1, USBDEVFS_CLAIMINTERFACE, &i)) {
@@ -564,7 +571,13 @@ int os_setupusb(usbdevice* kb) {
         sscanf(ep_str, "%d", &kb->epcount);
     if(kb->epcount < 2){
         // IF we have an RGB KB with 0 or 1 endpoints, it will be in BIOS mode.
-        ckb_err("Possibly unable to read endpoint count from udev, assuming %d and reading >>%s<<...\n", kb->epcount, ep_str);
+        ckb_err("Unable to read endpoint count from udev, assuming %d and reading >>%s<< or device is in BIOS mode\n", kb->epcount, ep_str);
+        if (usb_tryreset(kb) == 0) { ///< Try to reset the device and recall the function
+            static int retryCount = 0; ///< Don't do this endless in recursion
+            if (retryCount++ < 5) {
+                return os_setupusb(kb); ///< os_setupusb() has a return value (used as boolean)
+            }
+        }
         return -1;
         // ToDo are there special versions we have to detect? If there are, that was the old code to handle it:
         // This shouldn't happen, but if it does, assume EP count based onckb_warn what the device is supposed to have
