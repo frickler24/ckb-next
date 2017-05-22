@@ -2073,6 +2073,16 @@ Generating call graph for function KeyMap::QGDict::hashAsciiKey: Invalid null ke
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
+/home/travis/build/frickler24/ckb-next/src/ckb/kperfwidget.cpp:88: warning: argument 'IN' of command @param is not found in the argument list of KPerfWidget::mode2Raw(HwMode mode, bool &sw_enable, i_hw &hw_enable)
+/home/travis/build/frickler24/ckb-next/src/ckb/kperfwidget.cpp:88: warning: argument 'OUT' of command @param is not found in the argument list of KPerfWidget::mode2Raw(HwMode mode, bool &sw_enable, i_hw &hw_enable)
+/home/travis/build/frickler24/ckb-next/src/ckb/kperfwidget.cpp:88: warning: argument 'OUT' of command @param is not found in the argument list of KPerfWidget::mode2Raw(HwMode mode, bool &sw_enable, i_hw &hw_enable)
+/home/travis/build/frickler24/ckb-next/src/ckb/kperfwidget.cpp:88: warning: argument 'IN' of command @param is not found in the argument list of KPerfWidget::mode2Raw(HwMode mode, bool &sw_enable, i_hw &hw_enable)
+/home/travis/build/frickler24/ckb-next/src/ckb/kperfwidget.cpp:88: warning: argument 'OUT' of command @param is not found in the argument list of KPerfWidget::mode2Raw(HwMode mode, bool &sw_enable, i_hw &hw_enable)
+/home/travis/build/frickler24/ckb-next/src/ckb/kperfwidget.cpp:88: warning: argument 'OUT' of command @param is not found in the argument list of KPerfWidget::mode2Raw(HwMode mode, bool &sw_enable, i_hw &hw_enable)
+/home/travis/build/frickler24/ckb-next/src/ckb/kperfwidget.cpp:88: warning: The following parameters of KPerfWidget::mode2Raw(HwMode mode, bool &sw_enable, i_hw &hw_enable) are not documented:
+  parameter 'mode'
+  parameter 'sw_enable'
+  parameter 'hw_enable'
 isMouse
 Generating caller graph for function KeyMap::isMouse
 Generating caller graph for function KeyMap::key
@@ -7102,5 +7112,5 @@ Patching output file 558/561
 Patching output file 559/561
 Patching output file 560/561
 Patching output file 561/561
-lookup cache used 8612/65536 hits=125616 misses=8871
+lookup cache used 8613/65536 hits=125649 misses=8872
 finished...

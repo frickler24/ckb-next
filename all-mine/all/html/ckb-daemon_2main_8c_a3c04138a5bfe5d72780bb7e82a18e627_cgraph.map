@@ -1,51 +1,51 @@
 <map id="main" name="main">
 <area shape="rect" id="node2" href="$ckb-gradient_2main_8c.html#aa27d72ffe1172dde09660dd920e47e6e" title="ckb_info" alt="" coords="542,5,613,32"/>
-<area shape="rect" id="node3" href="$devnode_8c.html#a0c3d1e3cd90f43a9b5ee0793f4a75041" title="Create a dev path for the keyboard at index. Returns 0 on success. " alt="" coords="977,1019,1063,1045"/>
+<area shape="rect" id="node3" href="$devnode_8c.html#a0c3d1e3cd90f43a9b5ee0793f4a75041" title="Create a dev path for the keyboard at index. Returns 0 on success. " alt="" coords="977,1069,1063,1096"/>
 <area shape="rect" id="node11" href="$ckb-daemon_2main_8c.html#acd1527386a48875050e637e4bb872f11" title="quit Stop working the daemon. function is called if the daemon received a sigterm In this case..." alt="" coords="259,107,301,133"/>
 <area shape="rect" id="node22" href="$ckb-daemon_2main_8c.html#ae246359e104d63520158c26329caac80" title="restart" alt="" coords="116,208,175,235"/>
 <area shape="rect" id="node23" href="$ckb-daemon_2main_8c.html#a05f9b9989842b986a26caf9e4c66a4c7" title="sighandler" alt="" coords="105,157,186,184"/>
 <area shape="rect" id="node25" href="$usb_8h.html#a0859efad3739abe2ec61af4f3bb983ff" title="Start the USB main loop. Returns program exit code when finished. " alt="" coords="110,284,181,311"/>
 <area shape="rect" id="node4" href="$devnode_8c.html#a81c81014b2dfa89e326dd61769842953" title="_mkdevpath" alt="" coords="1159,1069,1252,1096"/>
-<area shape="rect" id="node5" href="$devnode_8c.html#a38fcf6ff044f9249ae04234340ee8e7b" title="_mknotifynode" alt="" coords="1333,1171,1440,1197"/>
-<area shape="rect" id="node6" href="$devnode_8c.html#acc36eaba5eb854461ab3c0a4d146e9c9" title="_updateconnected Update the list of connected devices. " alt="" coords="1496,968,1624,995"/>
+<area shape="rect" id="node5" href="$devnode_8c.html#a38fcf6ff044f9249ae04234340ee8e7b" title="_mknotifynode" alt="" coords="1333,1019,1440,1045"/>
+<area shape="rect" id="node6" href="$devnode_8c.html#acc36eaba5eb854461ab3c0a4d146e9c9" title="_updateconnected Update the list of connected devices. " alt="" coords="1496,931,1624,957"/>
 <area shape="rect" id="node7" href="$devnode_8c.html#ad130425a617cf973b28603a72607a057" title="Writes a keyboard&#39;s firmware version and poll rate to its device node. " alt="" coords="1345,1120,1428,1147"/>
 <area shape="rect" id="node8" href="$usb_8c.html#af87f830e031d8f63d2d1c3fc14fdad20" title="brief . " alt="" coords="1343,917,1430,944"/>
-<area shape="rect" id="node9" href="$devnode_8c.html#aac8f6f936a0ff6c16adc677622b226c4" title="rm_recursive" alt="" coords="1511,221,1609,248"/>
-<area shape="rect" id="node10" href="$usb_8c.html#a8e6389e8183a834fedb6ed317dd26f94" title="brief . " alt="" coords="1345,968,1428,995"/>
+<area shape="rect" id="node9" href="$devnode_8c.html#aac8f6f936a0ff6c16adc677622b226c4" title="rm_recursive" alt="" coords="1511,855,1609,881"/>
+<area shape="rect" id="node10" href="$usb_8c.html#a8e6389e8183a834fedb6ed317dd26f94" title="brief . " alt="" coords="1345,867,1428,893"/>
 <area shape="rect" id="node12" href="$ckb-daemon_2main_8c.html#a24a012c29e291fef5fa13f4a07fffd33" title="quitWithLock " alt="" coords="383,107,481,133"/>
 <area shape="rect" id="node13" href="$usb_8c.html#ae30a52968bb209e98461f48ffb2ee82f" title="revertusb" alt="" coords="539,56,615,83"/>
-<area shape="rect" id="node14" href="$usb_8c.html#a8732b3ade76da4ae362996232ef95431" title="closeusb" alt="" coords="1168,259,1243,285"/>
-<area shape="rect" id="node19" href="$devnode_8c.html#a8d0aeeebb364608943b78573adb85c7f" title="Remove the dev path for the keyboard at index. Returns 0 on success. " alt="" coords="1345,183,1428,209"/>
+<area shape="rect" id="node14" href="$usb_8c.html#a8732b3ade76da4ae362996232ef95431" title="closeusb" alt="" coords="1168,208,1243,235"/>
+<area shape="rect" id="node19" href="$devnode_8c.html#a8d0aeeebb364608943b78573adb85c7f" title="Remove the dev path for the keyboard at index. Returns 0 on success. " alt="" coords="1345,157,1428,184"/>
 <area shape="rect" id="node21" href="$usb_8h.html#a41aa3e13beb593c91a5410200b4dd8d2" title="Stop the USB system. " alt="" coords="548,157,607,184"/>
-<area shape="rect" id="node15" href="$input_8h.html#a44df5105a6a3f2eda5bc39a88201bd1a" title="os_inputclose" alt="" coords="1335,309,1438,336"/>
-<area shape="rect" id="node16" href="$devnode_8c.html#a4f2642e0c38280a1516fbe153c9fa18f" title="Update the list of connected devices. " alt="" coords="1326,867,1447,893"/>
+<area shape="rect" id="node15" href="$input_8h.html#a44df5105a6a3f2eda5bc39a88201bd1a" title="os_inputclose" alt="" coords="1335,208,1438,235"/>
+<area shape="rect" id="node16" href="$devnode_8c.html#a4f2642e0c38280a1516fbe153c9fa18f" title="Update the list of connected devices. " alt="" coords="1326,816,1447,843"/>
 <area shape="rect" id="node17" href="$usb_8h.html#a6a62575e9073fae15efb58f24fbfe5b8" title="os_closeusb unclaim it, destroy the udev device and clear data structures at kb " alt="" coords="1339,259,1434,285"/>
-<area shape="rect" id="node18" href="$usb__linux_8c.html#afe1111f494da4776633be32fecaba44b" title="usbunclaim" alt="" coords="1516,272,1604,299"/>
-<area shape="rect" id="node20" href="$devnode_8c.html#a9d97ede033e4f6c6bdd1c66fc82aa15e" title="_rmnotifynode" alt="" coords="1508,171,1612,197"/>
+<area shape="rect" id="node18" href="$usb__linux_8c.html#afe1111f494da4776633be32fecaba44b" title="usbunclaim" alt="" coords="1516,259,1604,285"/>
+<area shape="rect" id="node20" href="$devnode_8c.html#a9d97ede033e4f6c6bdd1c66fc82aa15e" title="_rmnotifynode" alt="" coords="1508,157,1612,184"/>
 <area shape="rect" id="node24" href="$ckb-daemon_2main_8c.html#ab4d4cbf8f99b0f793e2e2bc8ec50517e" title="sighandler2" alt="" coords="236,157,324,184"/>
-<area shape="rect" id="node26" href="$usb__linux_8c.html#ad56c1e4ec53bbd6b947cb535590328ea" title="udev_enum use the udev_enumerate_add_match_subsystem() to get all you need but only that..." alt="" coords="235,360,325,387"/>
+<area shape="rect" id="node26" href="$usb__linux_8c.html#ad56c1e4ec53bbd6b947cb535590328ea" title="udev_enum use the udev_enumerate_add_match_subsystem() to get all you need but only that..." alt="" coords="235,309,325,336"/>
 <area shape="rect" id="node27" href="$usb__linux_8c.html#a50efc8ee0ffcb6f201735d1a3bb08779" title="Add a udev device. Returns 0 if device was recognized/added. " alt="" coords="374,360,490,387"/>
 <area shape="rect" id="node50" href="$usb__linux_8c.html#adeffaa2b04d01b15c8623255719420ef" title="usb_rm_device find the usb port to remove and close it via closeusb(). " alt="" coords="665,259,775,285"/>
-<area shape="rect" id="node28" href="$usb__linux_8c.html#a3185d6da36c8b0f8b862a8479ae82034" title="usbadd" alt="" coords="545,512,609,539"/>
-<area shape="rect" id="node29" href="$usb_8c.html#a1ab9d61dd894466125283465201161cd" title="setupusb" alt="" coords="683,588,757,615"/>
-<area shape="rect" id="node30" href="$usb_8c.html#a10ad381abfe51e67e341c882c92bb9ac" title="brief . " alt="" coords="824,689,907,716"/>
-<area shape="rect" id="node31" href="$usb_8c.html#a25ded61622ec9349905b5aa2ed2cb48b" title="brief . " alt="" coords="979,639,1061,665"/>
-<area shape="rect" id="node32" href="$usb_8h.html#a39442715182933b93172de60cdb66e8f" title="os_setupusb OS&#45;specific setup for a specific usb device. " alt="" coords="972,563,1068,589"/>
-<area shape="rect" id="node35" href="$input_8h.html#ac73b3c2c38b916b901b4cca6b350a863" title="os_inputopen " alt="" coords="971,689,1069,716"/>
-<area shape="rect" id="node37" href="$usb_8h.html#a9e5784bfca2e4612f498ce67c7dab275" title="os_inputmain is run in a separate thread and will be detached from the main thread, so it needs to clean up its own resources. " alt="" coords="971,753,1069,780"/>
-<area shape="rect" id="node43" href="$input_8h.html#a081bbacaa312d4a1a63bc1cab5d3520f" title="os_setupindicators" alt="" coords="955,804,1085,831"/>
-<area shape="rect" id="node45" href="$usb_8c.html#a8a1c88df5e127732cb63f1a8be180926" title="usb_tryreset" alt="" coords="973,917,1067,944"/>
+<area shape="rect" id="node28" href="$usb__linux_8c.html#a3185d6da36c8b0f8b862a8479ae82034" title="usbadd" alt="" coords="545,461,609,488"/>
+<area shape="rect" id="node29" href="$usb_8c.html#a1ab9d61dd894466125283465201161cd" title="setupusb" alt="" coords="683,512,757,539"/>
+<area shape="rect" id="node30" href="$usb_8c.html#a10ad381abfe51e67e341c882c92bb9ac" title="brief . " alt="" coords="824,563,907,589"/>
+<area shape="rect" id="node31" href="$usb_8c.html#a25ded61622ec9349905b5aa2ed2cb48b" title="brief . " alt="" coords="979,563,1061,589"/>
+<area shape="rect" id="node32" href="$usb_8h.html#a39442715182933b93172de60cdb66e8f" title="os_setupusb OS&#45;specific setup for a specific usb device. " alt="" coords="972,512,1068,539"/>
+<area shape="rect" id="node34" href="$usb_8c.html#a8a1c88df5e127732cb63f1a8be180926" title="usb_tryreset" alt="" coords="1158,613,1253,640"/>
+<area shape="rect" id="node36" href="$input_8h.html#ac73b3c2c38b916b901b4cca6b350a863" title="os_inputopen " alt="" coords="971,715,1069,741"/>
+<area shape="rect" id="node38" href="$usb_8h.html#a9e5784bfca2e4612f498ce67c7dab275" title="os_inputmain is run in a separate thread and will be detached from the main thread, so it needs to clean up its own resources. " alt="" coords="971,841,1069,868"/>
+<area shape="rect" id="node44" href="$input_8h.html#a081bbacaa312d4a1a63bc1cab5d3520f" title="os_setupindicators" alt="" coords="955,360,1085,387"/>
 <area shape="rect" id="node46" href="$usb_8c.html#ab8c22b4f7012c6d9fe1a0d5e2a93df65" title="brief . " alt="" coords="985,411,1055,437"/>
-<area shape="rect" id="node33" href="$usb__linux_8c.html#ab694a2ac859b16b5af802b4484f5ba0b" title="strtrim" alt="" coords="1176,512,1235,539"/>
-<area shape="rect" id="node34" href="$usb__linux_8c.html#a309cab8bf65221b01dc320f247abf626" title="usbclaim" alt="" coords="1168,563,1243,589"/>
-<area shape="rect" id="node36" href="$input__linux_8c.html#a5f050529d49f8cb5e8dda4617c5984b7" title="uinputopen" alt="" coords="1163,613,1248,640"/>
-<area shape="rect" id="node38" href="$keymap_8c.html#a092f675ff366b5823c73b25f83d513f9" title="hid_mouse_translate" alt="" coords="1134,664,1277,691"/>
-<area shape="rect" id="node39" href="$keymap_8c.html#a0dc9a16564cc51b35a35d28af1a96fb0" title="corsair_mousecopy" alt="" coords="1138,715,1273,741"/>
-<area shape="rect" id="node40" href="$keymap_8c.html#a6f4afd134546237416b271d9cefd2889" title="hid_kb_translate" alt="" coords="1147,765,1264,792"/>
-<area shape="rect" id="node41" href="$keymap_8c.html#ad39ede76abd657f5123fa331853db017" title="corsair_kbcopy" alt="" coords="1150,816,1261,843"/>
-<area shape="rect" id="node42" href="$input_8c.html#ae360d0b9a764a1d38c5be5464be8b70a" title="inputupdate" alt="" coords="1161,867,1250,893"/>
-<area shape="rect" id="node44" href="$input__linux_8c.html#a5d40cc9137eaefbc2d860fac76020460" title="_ledthread" alt="" coords="1164,917,1247,944"/>
-<area shape="rect" id="node47" href="$devnode_8c.html#ac118005c75badc2028b4921be8d9bdd0" title="readlines_ctx_init" alt="" coords="1144,411,1267,437"/>
-<area shape="rect" id="node48" href="$devnode_8c.html#a1062ed70d4ea0310fbf5eeee928b58b7" title="readlines" alt="" coords="1168,461,1243,488"/>
-<area shape="rect" id="node49" href="$command_8c.html#ad7239680e0942b0b85a6cd3e9fff25a9" title="readcmd" alt="" coords="1169,360,1241,387"/>
+<area shape="rect" id="node33" href="$usb__linux_8c.html#ab694a2ac859b16b5af802b4484f5ba0b" title="strtrim" alt="" coords="1176,563,1235,589"/>
+<area shape="rect" id="node35" href="$usb__linux_8c.html#a309cab8bf65221b01dc320f247abf626" title="usbclaim" alt="" coords="1168,512,1243,539"/>
+<area shape="rect" id="node37" href="$input__linux_8c.html#a5f050529d49f8cb5e8dda4617c5984b7" title="uinputopen" alt="" coords="1163,715,1248,741"/>
+<area shape="rect" id="node39" href="$keymap_8c.html#a092f675ff366b5823c73b25f83d513f9" title="hid_mouse_translate" alt="" coords="1134,816,1277,843"/>
+<area shape="rect" id="node40" href="$keymap_8c.html#a0dc9a16564cc51b35a35d28af1a96fb0" title="corsair_mousecopy" alt="" coords="1138,867,1273,893"/>
+<area shape="rect" id="node41" href="$keymap_8c.html#a6f4afd134546237416b271d9cefd2889" title="hid_kb_translate" alt="" coords="1147,917,1264,944"/>
+<area shape="rect" id="node42" href="$keymap_8c.html#ad39ede76abd657f5123fa331853db017" title="corsair_kbcopy" alt="" coords="1150,968,1261,995"/>
+<area shape="rect" id="node43" href="$input_8c.html#ae360d0b9a764a1d38c5be5464be8b70a" title="inputupdate" alt="" coords="1161,765,1250,792"/>
+<area shape="rect" id="node45" href="$input__linux_8c.html#a5d40cc9137eaefbc2d860fac76020460" title="_ledthread" alt="" coords="1164,259,1247,285"/>
+<area shape="rect" id="node47" href="$devnode_8c.html#ac118005c75badc2028b4921be8d9bdd0" title="readlines_ctx_init" alt="" coords="1144,309,1267,336"/>
+<area shape="rect" id="node48" href="$devnode_8c.html#a1062ed70d4ea0310fbf5eeee928b58b7" title="readlines" alt="" coords="1168,360,1243,387"/>
+<area shape="rect" id="node49" href="$command_8c.html#ad7239680e0942b0b85a6cd3e9fff25a9" title="readcmd" alt="" coords="1169,411,1241,437"/>
 </map>

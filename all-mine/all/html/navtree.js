@@ -63,7 +63,7 @@ var NAVTREEINDEX =
 "structQuaZipNewInfo.html#a663a37c5a7a2d18900ba8b0199617eff",
 "unzip_8c.html#a24b14e9aa3110ed982718ba061eec60a",
 "usb_8h.html#a7fea7ba58b4bb6a7def7c380ab695110",
-"zip_8h.html#structzip__fileinfo"
+"zip_8h.html#structtm__zip__s"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
