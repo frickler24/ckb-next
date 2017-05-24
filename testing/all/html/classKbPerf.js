@@ -70,7 +70,7 @@ var classKbPerf =
     [ "sniperDpi", "classKbPerf.html#ae95bd67dfd73315a2d0a4f828fe5330b", null ],
     [ "sniperDpi", "classKbPerf.html#ae5a375abb27b09a3ef8e66b9482a7a96", null ],
     [ "sniperDpi", "classKbPerf.html#a8e5bde5908b01691e23be3146a928654", null ],
-    [ "update", "classKbPerf.html#aa5bceb4eb364e56e9e55a2b33595514c", null ],
+    [ "update", "classKbPerf.html#a7bb048e1bf496e146d7187faa19becc1", null ],
     [ "_angleSnap", "classKbPerf.html#a6573522dba36c2bbe9b170a13be08df4", null ],
     [ "_dpiIndicator", "classKbPerf.html#ae888036dde2d00e11bc9c25430c1ed95", null ],
     [ "_iOpacity", "classKbPerf.html#a51df4a99bc30a58c30311764c7fff554", null ],

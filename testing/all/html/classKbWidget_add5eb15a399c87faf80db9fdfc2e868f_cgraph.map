@@ -40,7 +40,7 @@
 <area shape="rect" id="node32" href="$classKbLightWidget.html#ab5dfd2e86b7068bf8d71a89cdf66822b" title="KbLightWidget::updateLight" alt="" coords="742,224,925,251"/>
 <area shape="rect" id="node34" href="$classKbPerf.html#ad1982e00dcad4b29302c7c441fd9d781" title="KbPerf::iOpacity" alt="" coords="774,832,893,859"/>
 <area shape="rect" id="node35" href="$classKbPerf.html#a7be882c94deece28a04579048039b7b2" title="KbPerf::getIndicator" alt="" coords="764,731,903,757"/>
-<area shape="rect" id="node36" href="$classKPerfWidget.html#a64b9a4645b42ef8341d5f6a5a8541a09" title="KPerfWidget::raw2Mode" alt="" coords="751,781,915,808"/>
+<area shape="rect" id="node36" href="$classKPerfWidget.html#a64b9a4645b42ef8341d5f6a5a8541a09" title="KPerfWidget::raw2Mode return hardware mode depending on setiings in sw_enable and hw_enable..." alt="" coords="751,781,915,808"/>
 <area shape="rect" id="node37" href="$classColorButton.html#a05e0cfb49a76a67227a36353640a8282" title="ColorButton::color" alt="" coords="770,883,897,909"/>
 <area shape="rect" id="node41" href="$classKbLight.html#a0d37ba50d07c949db3d9714f9b559e6b" title="KbLight::animList" alt="" coords="527,1440,649,1467"/>
 <area shape="rect" id="node42" href="$classKbAnim.html#a6f26cc02727dec6adbf4869a6a2d7e39" title="KbAnim::newId" alt="" coords="533,1491,643,1517"/>

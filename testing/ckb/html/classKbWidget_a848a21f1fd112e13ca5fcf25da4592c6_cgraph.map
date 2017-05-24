@@ -38,7 +38,7 @@
 <area shape="rect" id="node29" href="$classKbMode.html#aa90c7537a90e0a960a5eb327f3a2cdbb" title="KbMode::bind" alt="" coords="745,1488,847,1515"/>
 <area shape="rect" id="node31" href="$classKbPerf.html#ad1982e00dcad4b29302c7c441fd9d781" title="KbPerf::iOpacity" alt="" coords="737,1387,855,1413"/>
 <area shape="rect" id="node32" href="$classKbPerf.html#a7be882c94deece28a04579048039b7b2" title="KbPerf::getIndicator" alt="" coords="727,1285,865,1312"/>
-<area shape="rect" id="node33" href="$classKPerfWidget.html#a64b9a4645b42ef8341d5f6a5a8541a09" title="KPerfWidget::raw2Mode" alt="" coords="714,1336,878,1363"/>
+<area shape="rect" id="node33" href="$classKPerfWidget.html#a64b9a4645b42ef8341d5f6a5a8541a09" title="KPerfWidget::raw2Mode return hardware mode depending on setiings in sw_enable and hw_enable..." alt="" coords="714,1336,878,1363"/>
 <area shape="rect" id="node38" href="$classKbProfile.html#a3b50f802caaced0964e6c304c656b75c" title="KbProfile::find" alt="" coords="499,256,603,283"/>
 <area shape="rect" id="node40" href="$classKbWidget.html#ae0406fb1288b3ef1c9ed5e2457ca805a" title="KbWidget::modeIcon" alt="" coords="479,307,623,333"/>
 <area shape="rect" id="node39" href="$classKbMode.html#a7f9aa60df1f6adabad5d6b6314546c57" title="KbMode::id" alt="" coords="752,281,840,308"/>

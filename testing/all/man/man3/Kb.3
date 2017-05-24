@@ -1,4 +1,4 @@
-.TH "Kb" 3 "Tue May 16 2017" "Version beta-v0.2.7 at branch testing" "ckb-next" \" -*- nroff -*-
+.TH "Kb" 3 "Wed May 24 2017" "Version beta-v0.2.8+testing at branch testing" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -781,7 +781,7 @@ References _currentMode, _currentProfile, KbPerf::applyIndicators(), KbMode::bin
 418     cmd\&.write(QString("\n@%1 ")\&.arg(notifyNumber)\&.toLatin1());
 419     bind->update(cmd, changed);
 420     cmd\&.write(" ");
-421     perf->update(cmd, changed);
+421     perf->update(cmd, notifyNumber, changed);
 422     cmd\&.write("\n");
 423     cmd\&.flush();
 424 }
