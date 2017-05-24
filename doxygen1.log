@@ -1,6 +1,6 @@
 Warning: ignoring unsupported tag `ALLOW_UNICODE_NAMES    =' at line 79, file /home/travis/build/frickler24/ckb-next/documentation/Doxy-ckb-daemon
 Warning: ignoring unsupported tag `MAN_SUBDIR             =' at line 1782, file /home/travis/build/frickler24/ckb-next/documentation/Doxy-ckb-daemon
-Notice: Output directory `all-mine/ckb-daemon' does not exist. I have created it for you.
+Notice: Output directory `master/ckb-daemon' does not exist. I have created it for you.
 Searching for include files...
 Searching for example files...
 Searching for images...
@@ -126,41 +126,9 @@ Search for main page...
 Computing page relations...
 Determining the scope of groups...
 Sorting lists...
-Freei/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:17: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:558: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:420: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:488: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:204: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:448: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:488: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:429: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:506: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:529: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
+FreeingQGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-QGDict::hashAsciiKey: Invalid null key
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:17: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:17: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:17: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-ng entry tree
+ entry tree
 Determining which enums are documented
 Computing member relations...
 Building full member lists recursively...
@@ -250,43 +218,7 @@ Generating call graph for function cmd_idle_mouse
 Generating call graph for function setactive_kb
 Generating caller graph for function setactive_kb
 Generating call graph for function setactive_mouse
-Generating caller /home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:17: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:17: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:17: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:17: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-graph for function setactive_mouse
+Generating caller graph for function setactive_mouse
 Generating call graph for function start_dev
 Generating docs for file src/ckb-daemon/device_keyboard.c...
 Generating call graph for function cmd_active_kb
@@ -369,51 +301,7 @@ Generating call graph for function cmd_macro
 Generating caller graph for function freebind
 Generating caller graph for function initbind
 Generating call graph for function inputupdate
-Genera/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:506: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:448: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:506: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:448: warning: End of list marker found without any preceding list items
-ting caller graph for function inputupdate
+Generating caller graph for function inputupdate
 Generating caller graph for function os_inputclose
 Generating call graph for function os_inputopen
 Generating caller graph for function os_inputopen
@@ -496,35 +384,7 @@ Generating call graph for function quit
 Generating caller graph for function quit
 Generating call graph for function quitWithLock
 Generating caller graph for function quitWithLock
-Generating call /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:506: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:448: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:506: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:448: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:506: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:448: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-graph for function restart
+Generating call graph for function restart
 Generating caller graph for function restart
 Generating call graph for function sighandler
 Generating caller graph for function sighandler
@@ -610,233 +470,18 @@ Generating caller graph for function getprofilename
 Generating caller graph for function hwtonative
 Generating caller graph for function nativetohw
 Generating caller graph for function setid
-Generating docs for filQGDict::hashAsciiKey: Invalid null key
+Generating docs for file QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:420: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:488: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:558: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:448: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:448: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:17: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:17: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:506: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:448: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:506: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:448: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:204: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:529: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:252: warning: expected whitespace after [ command
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:251: warning: argument 'IN' of command @param is not found in the argument list of usbrecv(kb, out_msg, in_msg)
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:253: warning: expected whitespace after [ command
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:251: warning: argument 'OUT' of command @param is not found in the argument list of usbrecv(kb, out_msg, in_msg)
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:251: warning: The following parameters of usbrecv(kb, out_msg, in_msg) are not documented:
-  parameter 'out_msg'
-  parameter 'in_msg'
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:235: warning: expected whitespace after [ command
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:234: warning: argument 'IN' of command @param is not found in the argument list of usbsend(kb, messages, count)
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:236: warning: expected whitespace after [ command
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:234: warning: argument 'IN' of command @param is not found in the argument list of usbsend(kb, messages, count)
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:234: warning: The following parameters of usbsend(kb, messages, count) are not documented:
-  parameter 'messages'
-  parameter 'count'
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:448: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:240: warning: expected whitespace after [ command
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:239: warning: argument 'IN' of command @param is not found in the argument list of _usbrecv(usbdevice *kb, const uchar *out_msg, uchar *in_msg, const char *file, int line)
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:241: warning: expected whitespace after [ command
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:239: warning: argument 'OUT' of command @param is not found in the argument list of _usbrecv(usbdevice *kb, const uchar *out_msg, uchar *in_msg, const char *file, int line)
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:242: warning: expected whitespace after [ command
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:239: warning: argument 'IN' of command @param is not found in the argument list of _usbrecv(usbdevice *kb, const uchar *out_msg, uchar *in_msg, const char *file, int line)
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:243: warning: expected whitespace after [ command
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:239: warning: argument 'IN' of command @param is not found in the argument list of _usbrecv(usbdevice *kb, const uchar *out_msg, uchar *in_msg, const char *file, int line)
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:244: warning: expected whitespace after [ command
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:239: warning: argument 'IN' of command @param is not found in the argument list of _usbrecv(usbdevice *kb, const uchar *out_msg, uchar *in_msg, const char *file, int line)
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:239: warning: The following parameters of _usbrecv(usbdevice *kb, const uchar *out_msg, uchar *in_msg, const char *file, int line) are not documented:
-  parameter 'out_msg'
-  parameter 'in_msg'
-  parameter 'file'
-  parameter 'line'
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:223: warning: expected whitespace after [ command
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:222: warning: argument 'IN' of command @param is not found in the argument list of _usbsend(usbdevice *kb, const uchar *messages, int count, const char *file, int line)
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:224: warning: expected whitespace after [ command
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:222: warning: argument 'IN' of command @param is not found in the argument list of _usbsend(usbdevice *kb, const uchar *messages, int count, const char *file, int line)
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:225: warning: expected whitespace after [ command
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:222: warning: argument 'IN' of command @param is not found in the argument list of _usbsend(usbdevice *kb, const uchar *messages, int count, const char *file, int line)
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:226: warning: expected whitespace after [ command
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:222: warning: argument 'IN' of command @param is not found in the argument list of _usbsend(usbdevice *kb, const uchar *messages, int count, const char *file, int line)
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:222: warning: argument 'reset_stop' of command @param is not found in the argument list of _usbsend(usbdevice *kb, const uchar *messages, int count, const char *file, int line)
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:222: warning: The following parameters of _usbsend(usbdevice *kb, const uchar *messages, int count, const char *file, int line) are not documented:
-  parameter 'messages'
-  parameter 'count'
-  parameter 'file'
-  parameter 'line'
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:191: warning: expected whitespace after [ command
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:191: warning: argument 'IN' of command @param is not found in the argument list of closeusb(usbdevice *kb)
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:191: warning: argument 'OUT' of command @param is not found in the argument list of closeusb(usbdevice *kb)
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:191: warning: The following parameters of closeusb(usbdevice *kb) are not documented:
-  parameter 'kb'
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:197: warning: expected whitespace after [ command
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:197: warning: argument 'IN' of command @param is not found in the argument list of os_closeusb(usbdevice *kb)
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:197: warning: argument 'OUT' of command @param is not found in the argument list of os_closeusb(usbdevice *kb)
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:197: warning: The following parameters of os_closeusb(usbdevice *kb) are not documented:
-  parameter 'kb'
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:448: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:448: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:204: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:448: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:529: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:448: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:506: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:529: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:506: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:448: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:169: warning: expected whitespace after [ command
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:166: warning: argument 'OUT' of command @param is not found in the argument list of setupusb(usbdevice *kb)
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:506: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:448: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:313: warning: argument 'reset_stop' of command @param is not found in the argument list of usb_tryreset(usbdevice *kb)
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:204: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:529: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:506: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:448: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:204: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:429: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:448: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:488: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:506: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:529: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:448: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:448: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:204: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:448: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:529: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:448: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:506: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:529: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:506: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:448: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:529: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:506: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:448: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:506: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:448: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:506: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:448: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:488: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:529: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:390: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:506: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:448: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:429: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:772: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:488: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/README.md:4: warning: Unexpected html tag <img> found within <a href=...> context
-/home/travis/build/frickler24/ckb-next/README.md:34: warning: unable to resolve reference to `https:' for \ref command
-/home/travis/build/frickler24/ckb-next/README.md:72: warning: Illegal command hevanaa as part of a <a>..</a> block
-/home/travis/build/frickler24/ckb-next/README.md:79: warning: Illegal command light2yellow as part of a <a>..</a> block
-/home/travis/build/frickler24/ckb-next/README.md:82: warning: Illegal command mrueg as part of a <a>..</a> block
-/home/travis/build/frickler24/ckb-next/README.md:101: warning: unable to resolve reference to `https:' for \ref command
-/home/travis/build/frickler24/ckb-next/README.md:152: warning: unable to resolve reference to `https:' for \ref command
-/home/travis/build/frickler24/ckb-next/README.md:251: warning: explicit link request to 'c3474d2' could not be resolved
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-e src/ckb-daemon/profile_keyboard.c...
+/home/travis/build/frickler24/ckb-next/README.md:49: warning: unable to resolve reference to `https:' for \ref command
+/home/travis/build/frickler24/ckb-next/README.md:84: warning: Illegal command hevanaa as part of a <a>..</a> block
+/home/travis/build/frickler24/ckb-next/README.md:86: warning: Illegal command makz27 as part of a <a>..</a> block
+/home/travis/build/frickler24/ckb-next/README.md:86: warning: Illegal command light2yellow as part of a <a>..</a> block
+/home/travis/build/frickler24/ckb-next/README.md:107: warning: unable to resolve reference to `https:' for \ref command
+/home/travis/build/frickler24/ckb-next/README.md:155: warning: unable to resolve reference to `https:' for \ref command
+/home/travis/build/frickler24/ckb-next/README.md:259: warning: explicit link request to 'c3474d2' could not be resolved
+/home/travis/build/frickler24/ckb-next/README.md:302: warning: explicit link request to 'ckb' could not be resolved
+/home/travis/build/frickler24/ckb-next/README.md:302: warning: Unexpected html tag <img> found within <a href=...> context
+src/ckb-daemon/profile_keyboard.c...
 Generating call graph for function cmd_hwload_kb
 Generating call graph for function cmd_hwsave_kb
 Generating call graph for function hwloadmode
@@ -874,7 +519,6 @@ Generating call graph for function os_inputmain
 Generating caller graph for function os_inputmain
 Generating call graph for function os_resetusb
 Generating caller graph for function os_resetusb
-Generating call graph for function os_sendindicators
 Generating caller graph for function os_sendindicators
 Generating call graph for function os_setupusb
 Generating caller graph for function os_setupusb
@@ -896,7 +540,6 @@ Generating call graph for function os_inputmain
 Generating caller graph for function os_inputmain
 Generating call graph for function os_resetusb
 Generating caller graph for function os_resetusb
-Generating call graph for function os_sendindicators
 Generating caller graph for function os_sendindicators
 Generating call graph for function os_setupusb
 Generating caller graph for function os_setupusb
@@ -922,7 +565,6 @@ Generating docs for page md_README...
 Generating docs for page md_BUILD...
 Generating docs for page md_ROADMAP...
 Generating docs for page md_DAEMON...
-Generating docs for page todo...
 Generating group documentation...
 Generating class documentation...
 Generating docs for compound devcmd.__unnamed__...
@@ -947,775 +589,771 @@ Generating example index...
 finalizing index lists...
 Running dot...
 Generating dot graphs using 3 parallel threads...
-Running dot for graph 1/769
-Running dot for graph 2/769
-Running dot for graph 3/769
-Running dot for graph 4/769
-Running dot for graph 5/769
-Running dot for graph 6/769
-Running dot for graph 7/769
-Running dot for graph 8/769
-Running dot for graph 9/769
-Running dot for graph 10/769
-Running dot for graph 11/769
-Running dot for graph 12/769
-Running dot for graph 13/769
-Running dot for graph 14/769
-Running dot for graph 15/769
-Running dot for graph 16/769
-Running dot for graph 17/769
-Running dot for graph 18/769
-Running dot for graph 19/769
-Running dot for graph 20/769
-Running dot for graph 21/769
-Running dot for graph 22/769
-Running dot for graph 23/769
-Running dot for graph 24/769
-Running dot for graph 25/769
-Running dot for graph 26/769
-Running dot for graph 27/769
-Running dot for graph 28/769
-Running dot for graph 29/769
-Running dot for graph 30/769
-Running dot for graph 31/769
-Running dot for graph 32/769
-Running dot for graph 33/769
-Running dot for graph 34/769
-Running dot for graph 35/769
-Running dot for graph 36/769
-Running dot for graph 37/769
-Running dot for graph 38/769
-Running dot for graph 39/769
-Running dot for graph 40/769
-Running dot for graph 41/769
-Running dot for graph 42/769
-Running dot for graph 43/769
-Running dot for graph 44/769
-Running dot for graph 45/769
-Running dot for graph 46/769
-Running dot for graph 47/769
-Running dot for graph 48/769
-Running dot for graph 49/769
-Running dot for graph 50/769
-Running dot for graph 51/769
-Running dot for graph 52/769
-Running dot for graph 53/769
-Running dot for graph 54/769
-Running dot for graph 55/769
-Running dot for graph 56/769
-Running dot for graph 57/769
-Running dot for graph 58/769
-Running dot for graph 59/769
-Running dot for graph 60/769
-Running dot for graph 61/769
-Running dot for graph 62/769
-Running dot for graph 63/769
-Running dot for graph 64/769
-Running dot for graph 65/769
-Running dot for graph 66/769
-Running dot for graph 67/769
-Running dot for graph 68/769
-Running dot for graph 69/769
-Running dot for graph 70/769
-Running dot for graph 71/769
-Running dot for graph 72/769
-Running dot for graph 73/769
-Running dot for graph 74/769
-Running dot for graph 75/769
-Running dot for graph 76/769
-Running dot for graph 77/769
-Running dot for graph 78/769
-Running dot for graph 79/769
-Running dot for graph 80/769
-Running dot for graph 81/769
-Running dot for graph 82/769
-Running dot for graph 83/769
-Running dot for graph 84/769
-Running dot for graph 85/769
-Running dot for graph 86/769
-Running dot for graph 87/769
-Running dot for graph 88/769
-Running dot for graph 89/769
-Running dot for graph 90/769
-Running dot for graph 91/769
-Running dot for graph 92/769
-Running dot for graph 93/769
-Running dot for graph 94/769
-Running dot for graph 95/769
-Running dot for graph 96/769
-Running dot for graph 97/769
-Running dot for graph 98/769
-Running dot for graph 99/769
-Running dot for graph 100/769
-Running dot for graph 101/769
-Running dot for graph 102/769
-Running dot for graph 103/769
-Running dot for graph 104/769
-Running dot for graph 105/769
-Running dot for graph 106/769
-Running dot for graph 107/769
-Running dot for graph 108/769
-Running dot for graph 109/769
-Running dot for graph 110/769
-Running dot for graph 111/769
-Running dot for graph 112/769
-Running dot for graph 113/769
-Running dot for graph 114/769
-Running dot for graph 115/769
-Running dot for graph 116/769
-Running dot for graph 117/769
-Running dot for graph 118/769
-Running dot for graph 119/769
-Running dot for graph 120/769
-Running dot for graph 121/769
-Running dot for graph 122/769
-Running dot for graph 123/769
-Running dot for graph 124/769
-Running dot for graph 125/769
-Running dot for graph 126/769
-Running dot for graph 127/769
-Running dot for graph 128/769
-Running dot for graph 129/769
-Running dot for graph 130/769
-Running dot for graph 131/769
-Running dot for graph 132/769
-Running dot for graph 133/769
-Running dot for graph 134/769
-Running dot for graph 135/769
-Running dot for graph 136/769
-Running dot for graph 137/769
-Running dot for graph 138/769
-Running dot for graph 139/769
-Running dot for graph 140/769
-Running dot for graph 141/769
-Running dot for graph 142/769
-Running dot for graph 143/769
-Running dot for graph 144/769
-Running dot for graph 145/769
-Running dot for graph 146/769
-Running dot for graph 147/769
-Running dot for graph 148/769
-Running dot for graph 149/769
-Running dot for graph 150/769
-Running dot for graph 151/769
-Running dot for graph 152/769
-Running dot for graph 153/769
-Running dot for graph 154/769
-Running dot for graph 155/769
-Running dot for graph 156/769
-Running dot for graph 157/769
-Running dot for graph 158/769
-Running dot for graph 159/769
-Running dot for graph 160/769
-Running dot for graph 161/769
-Running dot for graph 162/769
-Running dot for graph 163/769
-Running dot for graph 164/769
-Running dot for graph 165/769
-Running dot for graph 166/769
-Running dot for graph 167/769
-Running dot for graph 168/769
-Running dot for graph 169/769
-Running dot for graph 170/769
-Running dot for graph 171/769
-Running dot for graph 172/769
-Running dot for graph 173/769
-Running dot for graph 174/769
-Running dot for graph 175/769
-Running dot for graph 176/769
-Running dot for graph 177/769
-Running dot for graph 178/769
-Running dot for graph 179/769
-Running dot for graph 180/769
-Running dot for graph 181/769
-Running dot for graph 182/769
-Running dot for graph 183/769
-Running dot for graph 184/769
-Running dot for graph 185/769
-Running dot for graph 186/769
-Running dot for graph 187/769
-Running dot for graph 188/769
-Running dot for graph 189/769
-Running dot for graph 190/769
-Running dot for graph 191/769
-Running dot for graph 192/769
-Running dot for graph 193/769
-Running dot for graph 194/769
-Running dot for graph 195/769
-Running dot for graph 196/769
-Running dot for graph 197/769
-Running dot for graph 198/769
-Running dot for graph 199/769
-Running dot for graph 200/769
-Running dot for graph 201/769
-Running dot for graph 202/769
-Running dot for graph 203/769
-Running dot for graph 204/769
-Running dot for graph 205/769
-Running dot for graph 206/769
-Running dot for graph 207/769
-Running dot for graph 208/769
-Running dot for graph 209/769
-Running dot for graph 210/769
-Running dot for graph 211/769
-Running dot for graph 212/769
-Running dot for graph 213/769
-Running dot for graph 214/769
-Running dot for graph 215/769
-Running dot for graph 216/769
-Running dot for graph 217/769
-Running dot for graph 218/769
-Running dot for graph 219/769
-Running dot for graph 220/769
-Running dot for graph 221/769
-Running dot for graph 222/769
-Running dot for graph 223/769
-Running dot for graph 224/769
-Running dot for graph 225/769
-Running dot for graph 226/769
-Running dot for graph 227/769
-Running dot for graph 228/769
-Running dot for graph 229/769
-Running dot for graph 230/769
-Running dot for graph 231/769
-Running dot for graph 232/769
-Running dot for graph 233/769
-Running dot for graph 234/769
-Running dot for graph 235/769
-Running dot for graph 236/769
-Running dot for graph 237/769
-Running dot for graph 238/769
-Running dot for graph 239/769
-Running dot for graph 240/769
-Running dot for graph 241/769
-Running dot for graph 242/769
-Running dot for graph 243/769
-Running dot for graph 244/769
-Running dot for graph 245/769
-Running dot for graph 246/769
-Running dot for graph 247/769
-Running dot for graph 248/769
-Running dot for graph 249/769
-Running dot for graph 250/769
-Running dot for graph 251/769
-Running dot for graph 252/769
-Running dot for graph 253/769
-Running dot for graph 254/769
-Running dot for graph 255/769
-Running dot for graph 256/769
-Running dot for graph 257/769
-Running dot for graph 258/769
-Running dot for graph 259/769
-Running dot for graph 260/769
-Running dot for graph 261/769
-Running dot for graph 262/769
-Running dot for graph 263/769
-Running dot for graph 264/769
-Running dot for graph 265/769
-Running dot for graph 266/769
-Running dot for graph 267/769
-Running dot for graph 268/769
-Running dot for graph 269/769
-Running dot for graph 270/769
-Running dot for graph 271/769
-Running dot for graph 272/769
-Running dot for graph 273/769
-Running dot for graph 274/769
-Running dot for graph 275/769
-Running dot for graph 276/769
-Running dot for graph 277/769
-Running dot for graph 278/769
-Running dot for graph 279/769
-Running dot for graph 280/769
-Running dot for graph 281/769
-Running dot for graph 282/769
-Running dot for graph 283/769
-Running dot for graph 284/769
-Running dot for graph 285/769
-Running dot for graph 286/769
-Running dot for graph 287/769
-Running dot for graph 288/769
-Running dot for graph 289/769
-Running dot for graph 290/769
-Running dot for graph 291/769
-Running dot for graph 292/769
-Running dot for graph 293/769
-Running dot for graph 294/769
-Running dot for graph 295/769
-Running dot for graph 296/769
-Running dot for graph 297/769
-Running dot for graph 298/769
-Running dot for graph 299/769
-Running dot for graph 300/769
-Running dot for graph 301/769
-Running dot for graph 302/769
-Running dot for graph 303/769
-Running dot for graph 304/769
-Running dot for graph 305/769
-Running dot for graph 306/769
-Running dot for graph 307/769
-Running dot for graph 308/769
-Running dot for graph 309/769
-Running dot for graph 310/769
-Running dot for graph 311/769
-Running dot for graph 312/769
-Running dot for graph 313/769
-Running dot for graph 314/769
-Running dot for graph 315/769
-Running dot for graph 316/769
-Running dot for graph 317/769
-Running dot for graph 318/769
-Running dot for graph 319/769
-Running dot for graph 320/769
-Running dot for graph 321/769
-Running dot for graph 322/769
-Running dot for graph 323/769
-Running dot for graph 324/769
-Running dot for graph 325/769
-Running dot for graph 326/769
-Running dot for graph 327/769
-Running dot for graph 328/769
-Running dot for graph 329/769
-Running dot for graph 330/769
-Running dot for graph 331/769
-Running dot for graph 332/769
-Running dot for graph 333/769
-Running dot for graph 334/769
-Running dot for graph 335/769
-Running dot for graph 336/769
-Running dot for graph 337/769
-Running dot for graph 338/769
-Running dot for graph 339/769
-Running dot for graph 340/769
-Running dot for graph 341/769
-Running dot for graph 342/769
-Running dot for graph 343/769
-Running dot for graph 344/769
-Running dot for graph 345/769
-Running dot for graph 346/769
-Running dot for graph 347/769
-Running dot for graph 348/769
-Running dot for graph 349/769
-Running dot for graph 350/769
-Running dot for graph 351/769
-Running dot for graph 352/769
-Running dot for graph 353/769
-Running dot for graph 354/769
-Running dot for graph 355/769
-Running dot for graph 356/769
-Running dot for graph 357/769
-Running dot for graph 358/769
-Running dot for graph 359/769
-Running dot for graph 360/769
-Running dot for graph 361/769
-Running dot for graph 362/769
-Running dot for graph 363/769
-Running dot for graph 364/769
-Running dot for graph 365/769
-Running dot for graph 366/769
-Running dot for graph 367/769
-Running dot for graph 368/769
-Running dot for graph 369/769
-Running dot for graph 370/769
-Running dot for graph 371/769
-Running dot for graph 372/769
-Running dot for graph 373/769
-Running dot for graph 374/769
-Running dot for graph 375/769
-Running dot for graph 376/769
-Running dot for graph 377/769
-Running dot for graph 378/769
-Running dot for graph 379/769
-Running dot for graph 380/769
-Running dot for graph 381/769
-Running dot for graph 382/769
-Running dot for graph 383/769
-Running dot for graph 384/769
-Running dot for graph 385/769
-Running dot for graph 386/769
-Running dot for graph 387/769
-Running dot for graph 388/769
-Running dot for graph 389/769
-Running dot for graph 390/769
-Running dot for graph 391/769
-Running dot for graph 392/769
-Running dot for graph 393/769
-Running dot for graph 394/769
-Running dot for graph 395/769
-Running dot for graph 396/769
-Running dot for graph 397/769
-Running dot for graph 398/769
-Running dot for graph 399/769
-Running dot for graph 400/769
-Running dot for graph 401/769
-Running dot for graph 402/769
-Running dot for graph 403/769
-Running dot for graph 404/769
-Running dot for graph 405/769
-Running dot for graph 406/769
-Running dot for graph 407/769
-Running dot for graph 408/769
-Running dot for graph 409/769
-Running dot for graph 410/769
-Running dot for graph 411/769
-Running dot for graph 412/769
-Running dot for graph 413/769
-Running dot for graph 414/769
-Running dot for graph 415/769
-Running dot for graph 416/769
-Running dot for graph 417/769
-Running dot for graph 418/769
-Running dot for graph 419/769
-Running dot for graph 420/769
-Running dot for graph 421/769
-Running dot for graph 422/769
-Running dot for graph 423/769
-Running dot for graph 424/769
-Running dot for graph 425/769
-Running dot for graph 426/769
-Running dot for graph 427/769
-Running dot for graph 428/769
-Running dot for graph 429/769
-Running dot for graph 430/769
-Running dot for graph 431/769
-Running dot for graph 432/769
-Running dot for graph 433/769
-Running dot for graph 434/769
-Running dot for graph 435/769
-Running dot for graph 436/769
-Running dot for graph 437/769
-Running dot for graph 438/769
-Running dot for graph 439/769
-Running dot for graph 440/769
-Running dot for graph 441/769
-Running dot for graph 442/769
-Running dot for graph 443/769
-Running dot for graph 444/769
-Running dot for graph 445/769
-Running dot for graph 446/769
-Running dot for graph 447/769
-Running dot for graph 448/769
-Running dot for graph 449/769
-Running dot for graph 450/769
-Running dot for graph 451/769
-Running dot for graph 452/769
-Running dot for graph 453/769
-Running dot for graph 454/769
-Running dot for graph 455/769
-Running dot for graph 456/769
-Running dot for graph 457/769
-Running dot for graph 458/769
-Running dot for graph 459/769
-Running dot for graph 460/769
-Running dot for graph 461/769
-Running dot for graph 462/769
-Running dot for graph 463/769
-Running dot for graph 464/769
-Running dot for graph 465/769
-Running dot for graph 466/769
-Running dot for graph 467/769
-Running dot for graph 468/769
-Running dot for graph 469/769
-Running dot for graph 470/769
-Running dot for graph 471/769
-Running dot for graph 472/769
-Running dot for graph 473/769
-Running dot for graph 474/769
-Running dot for graph 475/769
-Running dot for graph 476/769
-Running dot for graph 477/769
-Running dot for graph 478/769
-Running dot for graph 479/769
-Running dot for graph 480/769
-Running dot for graph 481/769
-Running dot for graph 482/769
-Running dot for graph 483/769
-Running dot for graph 484/769
-Running dot for graph 485/769
-Running dot for graph 486/769
-Running dot for graph 487/769
-Running dot for graph 488/769
-Running dot for graph 489/769
-Running dot for graph 490/769
-Running dot for graph 491/769
-Running dot for graph 492/769
-Running dot for graph 493/769
-Running dot for graph 494/769
-Running dot for graph 495/769
-Running dot for graph 496/769
-Running dot for graph 497/769
-Running dot for graph 498/769
-Running dot for graph 499/769
-Running dot for graph 500/769
-Running dot for graph 501/769
-Running dot for graph 502/769
-Running dot for graph 503/769
-Running dot for graph 504/769
-Running dot for graph 505/769
-Running dot for graph 506/769
-Running dot for graph 507/769
-Running dot for graph 508/769
-Running dot for graph 509/769
-Running dot for graph 510/769
-Running dot for graph 511/769
-Running dot for graph 512/769
-Running dot for graph 513/769
-Running dot for graph 514/769
-Running dot for graph 515/769
-Running dot for graph 516/769
-Running dot for graph 517/769
-Running dot for graph 518/769
-Running dot for graph 519/769
-Running dot for graph 520/769
-Running dot for graph 521/769
-Running dot for graph 522/769
-Running dot for graph 523/769
-Running dot for graph 524/769
-Running dot for graph 525/769
-Running dot for graph 526/769
-Running dot for graph 527/769
-Running dot for graph 528/769
-Running dot for graph 529/769
-Running dot for graph 530/769
-Running dot for graph 531/769
-Running dot for graph 532/769
-Running dot for graph 533/769
-Running dot for graph 534/769
-Running dot for graph 535/769
-Running dot for graph 536/769
-Running dot for graph 537/769
-Running dot for graph 538/769
-Running dot for graph 539/769
-Running dot for graph 540/769
-Running dot for graph 541/769
-Running dot for graph 542/769
-Running dot for graph 543/769
-Running dot for graph 544/769
-Running dot for graph 545/769
-Running dot for graph 546/769
-Running dot for graph 547/769
-Running dot for graph 548/769
-Running dot for graph 549/769
-Running dot for graph 550/769
-Running dot for graph 551/769
-Running dot for graph 552/769
-Running dot for graph 553/769
-Running dot for graph 554/769
-Running dot for graph 555/769
-Running dot for graph 556/769
-Running dot for graph 557/769
-Running dot for graph 558/769
-Running dot for graph 559/769
-Running dot for graph 560/769
-Running dot for graph 561/769
-Running dot for graph 562/769
-Running dot for graph 563/769
-Running dot for graph 564/769
-Running dot for graph 565/769
-Running dot for graph 566/769
-Running dot for graph 567/769
-Running dot for graph 568/769
-Running dot for graph 569/769
-Running dot for graph 570/769
-Running dot for graph 571/769
-Running dot for graph 572/769
-Running dot for graph 573/769
-Running dot for graph 574/769
-Running dot for graph 575/769
-Running dot for graph 576/769
-Running dot for graph 577/769
-Running dot for graph 578/769
-Running dot for graph 579/769
-Running dot for graph 580/769
-Running dot for graph 581/769
-Running dot for graph 582/769
-Running dot for graph 583/769
-Running dot for graph 584/769
-Running dot for graph 585/769
-Running dot for graph 586/769
-Running dot for graph 587/769
-Running dot for graph 588/769
-Running dot for graph 589/769
-Running dot for graph 590/769
-Running dot for graph 591/769
-Running dot for graph 592/769
-Running dot for graph 593/769
-Running dot for graph 594/769
-Running dot for graph 595/769
-Running dot for graph 596/769
-Running dot for graph 597/769
-Running dot for graph 598/769
-Running dot for graph 599/769
-Running dot for graph 600/769
-Running dot for graph 601/769
-Running dot for graph 602/769
-Running dot for graph 603/769
-Running dot for graph 604/769
-Running dot for graph 605/769
-Running dot for graph 606/769
-Running dot for graph 607/769
-Running dot for graph 608/769
-Running dot for graph 609/769
-Running dot for graph 610/769
-Running dot for graph 611/769
-Running dot for graph 612/769
-Running dot for graph 613/769
-Running dot for graph 614/769
-Running dot for graph 615/769
-Running dot for graph 616/769
-Running dot for graph 617/769
-Running dot for graph 618/769
-Running dot for graph 619/769
-Running dot for graph 620/769
-Running dot for graph 621/769
-Running dot for graph 622/769
-Running dot for graph 623/769
-Running dot for graph 624/769
-Running dot for graph 625/769
-Running dot for graph 626/769
-Running dot for graph 627/769
-Running dot for graph 628/769
-Running dot for graph 629/769
-Running dot for graph 630/769
-Running dot for graph 631/769
-Running dot for graph 632/769
-Running dot for graph 633/769
-Running dot for graph 634/769
-Running dot for graph 635/769
-Running dot for graph 636/769
-Running dot for graph 637/769
-Running dot for graph 638/769
-Running dot for graph 639/769
-Running dot for graph 640/769
-Running dot for graph 641/769
-Running dot for graph 642/769
-Running dot for graph 643/769
-Running dot for graph 644/769
-Running dot for graph 645/769
-Running dot for graph 646/769
-Running dot for graph 647/769
-Running dot for graph 648/769
-Running dot for graph 649/769
-Running dot for graph 650/769
-Running dot for graph 651/769
-Running dot for graph 652/769
-Running dot for graph 653/769
-Running dot for graph 654/769
-Running dot for graph 655/769
-Running dot for graph 656/769
-Running dot for graph 657/769
-Running dot for graph 658/769
-Running dot for graph 659/769
-Running dot for graph 660/769
-Running dot for graph 661/769
-Running dot for graph 662/769
-Running dot for graph 663/769
-Running dot for graph 664/769
-Running dot for graph 665/769
-Running dot for graph 666/769
-Running dot for graph 667/769
-Running dot for graph 668/769
-Running dot for graph 669/769
-Running dot for graph 670/769
-Running dot for graph 671/769
-Running dot for graph 672/769
-Running dot for graph 673/769
-Running dot for graph 674/769
-Running dot for graph 675/769
-Running dot for graph 676/769
-Running dot for graph 677/769
-Running dot for graph 678/769
-Running dot for graph 679/769
-Running dot for graph 680/769
-Running dot for graph 681/769
-Running dot for graph 682/769
-Running dot for graph 683/769
-Running dot for graph 684/769
-Running dot for graph 685/769
-Running dot for graph 686/769
-Running dot for graph 687/769
-Running dot for graph 688/769
-Running dot for graph 689/769
-Running dot for graph 690/769
-Running dot for graph 691/769
-Running dot for graph 692/769
-Running dot for graph 693/769
-Running dot for graph 694/769
-Running dot for graph 695/769
-Running dot for graph 696/769
-Running dot for graph 697/769
-Running dot for graph 698/769
-Running dot for graph 699/769
-Running dot for graph 700/769
-Running dot for graph 701/769
-Running dot for graph 702/769
-Running dot for graph 703/769
-Running dot for graph 704/769
-Running dot for graph 705/769
-Running dot for graph 706/769
-Running dot for graph 707/769
-Running dot for graph 708/769
-Running dot for graph 709/769
-Running dot for graph 710/769
-Running dot for graph 711/769
-Running dot for graph 712/769
-Running dot for graph 713/769
-Running dot for graph 714/769
-Running dot for graph 715/769
-Running dot for graph 716/769
-Running dot for graph 717/769
-Running dot for graph 718/769
-Running dot for graph 719/769
-Running dot for graph 720/769
-Running dot for graph 721/769
-Running dot for graph 722/769
-Running dot for graph 723/769
-Running dot for graph 724/769
-Running dot for graph 725/769
-Running dot for graph 726/769
-Running dot for graph 727/769
-Running dot for graph 728/769
-Running dot for graph 729/769
-Running dot for graph 730/769
-Running dot for graph 731/769
-Running dot for graph 732/769
-Running dot for graph 733/769
-Running dot for graph 734/769
-Running dot for graph 735/769
-Running dot for graph 736/769
-Running dot for graph 737/769
-Running dot for graph 738/769
-Running dot for graph 739/769
-Running dot for graph 740/769
-Running dot for graph 741/769
-Running dot for graph 742/769
-Running dot for graph 743/769
-Running dot for graph 744/769
-Running dot for graph 745/769
-Running dot for graph 746/769
-Running dot for graph 747/769
-Running dot for graph 748/769
-Running dot for graph 749/769
-Running dot for graph 750/769
-Running dot for graph 751/769
-Running dot for graph 752/769
-Running dot for graph 753/769
-Running dot for graph 754/769
-Running dot for graph 755/769
-Running dot for graph 756/769
-Running dot for graph 757/769
-Running dot for graph 758/769
-Running dot for graph 759/769
-Running dot for graph 760/769
-Running dot for graph 761/769
-Running dot for graph 762/769
-Running dot for graph 763/769
-Running dot for graph 764/769
-Running dot for graph 765/769
-Running dot for graph 766/769
-Running dot for graph 767/769
-Running dot for graph 768/769
-Running dot for graph 769/769
+Running dot for graph 1/765
+Running dot for graph 2/765
+Running dot for graph 3/765
+Running dot for graph 4/765
+Running dot for graph 5/765
+Running dot for graph 6/765
+Running dot for graph 7/765
+Running dot for graph 8/765
+Running dot for graph 9/765
+Running dot for graph 10/765
+Running dot for graph 11/765
+Running dot for graph 12/765
+Running dot for graph 13/765
+Running dot for graph 14/765
+Running dot for graph 15/765
+Running dot for graph 16/765
+Running dot for graph 17/765
+Running dot for graph 18/765
+Running dot for graph 19/765
+Running dot for graph 20/765
+Running dot for graph 21/765
+Running dot for graph 22/765
+Running dot for graph 23/765
+Running dot for graph 24/765
+Running dot for graph 25/765
+Running dot for graph 26/765
+Running dot for graph 27/765
+Running dot for graph 28/765
+Running dot for graph 29/765
+Running dot for graph 30/765
+Running dot for graph 31/765
+Running dot for graph 32/765
+Running dot for graph 33/765
+Running dot for graph 34/765
+Running dot for graph 35/765
+Running dot for graph 36/765
+Running dot for graph 37/765
+Running dot for graph 38/765
+Running dot for graph 39/765
+Running dot for graph 40/765
+Running dot for graph 41/765
+Running dot for graph 42/765
+Running dot for graph 43/765
+Running dot for graph 44/765
+Running dot for graph 45/765
+Running dot for graph 46/765
+Running dot for graph 47/765
+Running dot for graph 48/765
+Running dot for graph 49/765
+Running dot for graph 50/765
+Running dot for graph 51/765
+Running dot for graph 52/765
+Running dot for graph 53/765
+Running dot for graph 54/765
+Running dot for graph 55/765
+Running dot for graph 56/765
+Running dot for graph 57/765
+Running dot for graph 58/765
+Running dot for graph 59/765
+Running dot for graph 60/765
+Running dot for graph 61/765
+Running dot for graph 62/765
+Running dot for graph 63/765
+Running dot for graph 64/765
+Running dot for graph 65/765
+Running dot for graph 66/765
+Running dot for graph 67/765
+Running dot for graph 68/765
+Running dot for graph 69/765
+Running dot for graph 70/765
+Running dot for graph 71/765
+Running dot for graph 72/765
+Running dot for graph 73/765
+Running dot for graph 74/765
+Running dot for graph 75/765
+Running dot for graph 76/765
+Running dot for graph 77/765
+Running dot for graph 78/765
+Running dot for graph 79/765
+Running dot for graph 80/765
+Running dot for graph 81/765
+Running dot for graph 82/765
+Running dot for graph 83/765
+Running dot for graph 84/765
+Running dot for graph 85/765
+Running dot for graph 86/765
+Running dot for graph 87/765
+Running dot for graph 88/765
+Running dot for graph 89/765
+Running dot for graph 90/765
+Running dot for graph 91/765
+Running dot for graph 92/765
+Running dot for graph 93/765
+Running dot for graph 94/765
+Running dot for graph 95/765
+Running dot for graph 96/765
+Running dot for graph 97/765
+Running dot for graph 98/765
+Running dot for graph 99/765
+Running dot for graph 100/765
+Running dot for graph 101/765
+Running dot for graph 102/765
+Running dot for graph 103/765
+Running dot for graph 104/765
+Running dot for graph 105/765
+Running dot for graph 106/765
+Running dot for graph 107/765
+Running dot for graph 108/765
+Running dot for graph 109/765
+Running dot for graph 110/765
+Running dot for graph 111/765
+Running dot for graph 112/765
+Running dot for graph 113/765
+Running dot for graph 114/765
+Running dot for graph 115/765
+Running dot for graph 116/765
+Running dot for graph 117/765
+Running dot for graph 118/765
+Running dot for graph 119/765
+Running dot for graph 120/765
+Running dot for graph 121/765
+Running dot for graph 122/765
+Running dot for graph 123/765
+Running dot for graph 124/765
+Running dot for graph 125/765
+Running dot for graph 126/765
+Running dot for graph 127/765
+Running dot for graph 128/765
+Running dot for graph 129/765
+Running dot for graph 130/765
+Running dot for graph 131/765
+Running dot for graph 132/765
+Running dot for graph 133/765
+Running dot for graph 134/765
+Running dot for graph 135/765
+Running dot for graph 136/765
+Running dot for graph 137/765
+Running dot for graph 138/765
+Running dot for graph 139/765
+Running dot for graph 140/765
+Running dot for graph 141/765
+Running dot for graph 142/765
+Running dot for graph 143/765
+Running dot for graph 144/765
+Running dot for graph 145/765
+Running dot for graph 146/765
+Running dot for graph 147/765
+Running dot for graph 148/765
+Running dot for graph 149/765
+Running dot for graph 150/765
+Running dot for graph 151/765
+Running dot for graph 152/765
+Running dot for graph 153/765
+Running dot for graph 154/765
+Running dot for graph 155/765
+Running dot for graph 156/765
+Running dot for graph 157/765
+Running dot for graph 158/765
+Running dot for graph 159/765
+Running dot for graph 160/765
+Running dot for graph 161/765
+Running dot for graph 162/765
+Running dot for graph 163/765
+Running dot for graph 164/765
+Running dot for graph 165/765
+Running dot for graph 166/765
+Running dot for graph 167/765
+Running dot for graph 168/765
+Running dot for graph 169/765
+Running dot for graph 170/765
+Running dot for graph 171/765
+Running dot for graph 172/765
+Running dot for graph 173/765
+Running dot for graph 174/765
+Running dot for graph 175/765
+Running dot for graph 176/765
+Running dot for graph 177/765
+Running dot for graph 178/765
+Running dot for graph 179/765
+Running dot for graph 180/765
+Running dot for graph 181/765
+Running dot for graph 182/765
+Running dot for graph 183/765
+Running dot for graph 184/765
+Running dot for graph 185/765
+Running dot for graph 186/765
+Running dot for graph 187/765
+Running dot for graph 188/765
+Running dot for graph 189/765
+Running dot for graph 190/765
+Running dot for graph 191/765
+Running dot for graph 192/765
+Running dot for graph 193/765
+Running dot for graph 194/765
+Running dot for graph 195/765
+Running dot for graph 196/765
+Running dot for graph 197/765
+Running dot for graph 198/765
+Running dot for graph 199/765
+Running dot for graph 200/765
+Running dot for graph 201/765
+Running dot for graph 202/765
+Running dot for graph 203/765
+Running dot for graph 204/765
+Running dot for graph 205/765
+Running dot for graph 206/765
+Running dot for graph 207/765
+Running dot for graph 208/765
+Running dot for graph 209/765
+Running dot for graph 210/765
+Running dot for graph 211/765
+Running dot for graph 212/765
+Running dot for graph 213/765
+Running dot for graph 214/765
+Running dot for graph 215/765
+Running dot for graph 216/765
+Running dot for graph 217/765
+Running dot for graph 218/765
+Running dot for graph 219/765
+Running dot for graph 220/765
+Running dot for graph 221/765
+Running dot for graph 222/765
+Running dot for graph 223/765
+Running dot for graph 224/765
+Running dot for graph 225/765
+Running dot for graph 226/765
+Running dot for graph 227/765
+Running dot for graph 228/765
+Running dot for graph 229/765
+Running dot for graph 230/765
+Running dot for graph 231/765
+Running dot for graph 232/765
+Running dot for graph 233/765
+Running dot for graph 234/765
+Running dot for graph 235/765
+Running dot for graph 236/765
+Running dot for graph 237/765
+Running dot for graph 238/765
+Running dot for graph 239/765
+Running dot for graph 240/765
+Running dot for graph 241/765
+Running dot for graph 242/765
+Running dot for graph 243/765
+Running dot for graph 244/765
+Running dot for graph 245/765
+Running dot for graph 246/765
+Running dot for graph 247/765
+Running dot for graph 248/765
+Running dot for graph 249/765
+Running dot for graph 250/765
+Running dot for graph 251/765
+Running dot for graph 252/765
+Running dot for graph 253/765
+Running dot for graph 254/765
+Running dot for graph 255/765
+Running dot for graph 256/765
+Running dot for graph 257/765
+Running dot for graph 258/765
+Running dot for graph 259/765
+Running dot for graph 260/765
+Running dot for graph 261/765
+Running dot for graph 262/765
+Running dot for graph 263/765
+Running dot for graph 264/765
+Running dot for graph 265/765
+Running dot for graph 266/765
+Running dot for graph 267/765
+Running dot for graph 268/765
+Running dot for graph 269/765
+Running dot for graph 270/765
+Running dot for graph 271/765
+Running dot for graph 272/765
+Running dot for graph 273/765
+Running dot for graph 274/765
+Running dot for graph 275/765
+Running dot for graph 276/765
+Running dot for graph 277/765
+Running dot for graph 278/765
+Running dot for graph 279/765
+Running dot for graph 280/765
+Running dot for graph 281/765
+Running dot for graph 282/765
+Running dot for graph 283/765
+Running dot for graph 284/765
+Running dot for graph 285/765
+Running dot for graph 286/765
+Running dot for graph 287/765
+Running dot for graph 288/765
+Running dot for graph 289/765
+Running dot for graph 290/765
+Running dot for graph 291/765
+Running dot for graph 292/765
+Running dot for graph 293/765
+Running dot for graph 294/765
+Running dot for graph 295/765
+Running dot for graph 296/765
+Running dot for graph 297/765
+Running dot for graph 298/765
+Running dot for graph 299/765
+Running dot for graph 300/765
+Running dot for graph 301/765
+Running dot for graph 302/765
+Running dot for graph 303/765
+Running dot for graph 304/765
+Running dot for graph 305/765
+Running dot for graph 306/765
+Running dot for graph 307/765
+Running dot for graph 308/765
+Running dot for graph 309/765
+Running dot for graph 310/765
+Running dot for graph 311/765
+Running dot for graph 312/765
+Running dot for graph 313/765
+Running dot for graph 314/765
+Running dot for graph 315/765
+Running dot for graph 316/765
+Running dot for graph 317/765
+Running dot for graph 318/765
+Running dot for graph 319/765
+Running dot for graph 320/765
+Running dot for graph 321/765
+Running dot for graph 322/765
+Running dot for graph 323/765
+Running dot for graph 324/765
+Running dot for graph 325/765
+Running dot for graph 326/765
+Running dot for graph 327/765
+Running dot for graph 328/765
+Running dot for graph 329/765
+Running dot for graph 330/765
+Running dot for graph 331/765
+Running dot for graph 332/765
+Running dot for graph 333/765
+Running dot for graph 334/765
+Running dot for graph 335/765
+Running dot for graph 336/765
+Running dot for graph 337/765
+Running dot for graph 338/765
+Running dot for graph 339/765
+Running dot for graph 340/765
+Running dot for graph 341/765
+Running dot for graph 342/765
+Running dot for graph 343/765
+Running dot for graph 344/765
+Running dot for graph 345/765
+Running dot for graph 346/765
+Running dot for graph 347/765
+Running dot for graph 348/765
+Running dot for graph 349/765
+Running dot for graph 350/765
+Running dot for graph 351/765
+Running dot for graph 352/765
+Running dot for graph 353/765
+Running dot for graph 354/765
+Running dot for graph 355/765
+Running dot for graph 356/765
+Running dot for graph 357/765
+Running dot for graph 358/765
+Running dot for graph 359/765
+Running dot for graph 360/765
+Running dot for graph 361/765
+Running dot for graph 362/765
+Running dot for graph 363/765
+Running dot for graph 364/765
+Running dot for graph 365/765
+Running dot for graph 366/765
+Running dot for graph 367/765
+Running dot for graph 368/765
+Running dot for graph 369/765
+Running dot for graph 370/765
+Running dot for graph 371/765
+Running dot for graph 372/765
+Running dot for graph 373/765
+Running dot for graph 374/765
+Running dot for graph 375/765
+Running dot for graph 376/765
+Running dot for graph 377/765
+Running dot for graph 378/765
+Running dot for graph 379/765
+Running dot for graph 380/765
+Running dot for graph 381/765
+Running dot for graph 382/765
+Running dot for graph 383/765
+Running dot for graph 384/765
+Running dot for graph 385/765
+Running dot for graph 386/765
+Running dot for graph 387/765
+Running dot for graph 388/765
+Running dot for graph 389/765
+Running dot for graph 390/765
+Running dot for graph 391/765
+Running dot for graph 392/765
+Running dot for graph 393/765
+Running dot for graph 394/765
+Running dot for graph 395/765
+Running dot for graph 396/765
+Running dot for graph 397/765
+Running dot for graph 398/765
+Running dot for graph 399/765
+Running dot for graph 400/765
+Running dot for graph 401/765
+Running dot for graph 402/765
+Running dot for graph 403/765
+Running dot for graph 404/765
+Running dot for graph 405/765
+Running dot for graph 406/765
+Running dot for graph 407/765
+Running dot for graph 408/765
+Running dot for graph 409/765
+Running dot for graph 410/765
+Running dot for graph 411/765
+Running dot for graph 412/765
+Running dot for graph 413/765
+Running dot for graph 414/765
+Running dot for graph 415/765
+Running dot for graph 416/765
+Running dot for graph 417/765
+Running dot for graph 418/765
+Running dot for graph 419/765
+Running dot for graph 420/765
+Running dot for graph 421/765
+Running dot for graph 422/765
+Running dot for graph 423/765
+Running dot for graph 424/765
+Running dot for graph 425/765
+Running dot for graph 426/765
+Running dot for graph 427/765
+Running dot for graph 428/765
+Running dot for graph 429/765
+Running dot for graph 430/765
+Running dot for graph 431/765
+Running dot for graph 432/765
+Running dot for graph 433/765
+Running dot for graph 434/765
+Running dot for graph 435/765
+Running dot for graph 436/765
+Running dot for graph 437/765
+Running dot for graph 438/765
+Running dot for graph 439/765
+Running dot for graph 440/765
+Running dot for graph 441/765
+Running dot for graph 442/765
+Running dot for graph 443/765
+Running dot for graph 444/765
+Running dot for graph 445/765
+Running dot for graph 446/765
+Running dot for graph 447/765
+Running dot for graph 448/765
+Running dot for graph 449/765
+Running dot for graph 450/765
+Running dot for graph 451/765
+Running dot for graph 452/765
+Running dot for graph 453/765
+Running dot for graph 454/765
+Running dot for graph 455/765
+Running dot for graph 456/765
+Running dot for graph 457/765
+Running dot for graph 458/765
+Running dot for graph 459/765
+Running dot for graph 460/765
+Running dot for graph 461/765
+Running dot for graph 462/765
+Running dot for graph 463/765
+Running dot for graph 464/765
+Running dot for graph 465/765
+Running dot for graph 466/765
+Running dot for graph 467/765
+Running dot for graph 468/765
+Running dot for graph 469/765
+Running dot for graph 470/765
+Running dot for graph 471/765
+Running dot for graph 472/765
+Running dot for graph 473/765
+Running dot for graph 474/765
+Running dot for graph 475/765
+Running dot for graph 476/765
+Running dot for graph 477/765
+Running dot for graph 478/765
+Running dot for graph 479/765
+Running dot for graph 480/765
+Running dot for graph 481/765
+Running dot for graph 482/765
+Running dot for graph 483/765
+Running dot for graph 484/765
+Running dot for graph 485/765
+Running dot for graph 486/765
+Running dot for graph 487/765
+Running dot for graph 488/765
+Running dot for graph 489/765
+Running dot for graph 490/765
+Running dot for graph 491/765
+Running dot for graph 492/765
+Running dot for graph 493/765
+Running dot for graph 494/765
+Running dot for graph 495/765
+Running dot for graph 496/765
+Running dot for graph 497/765
+Running dot for graph 498/765
+Running dot for graph 499/765
+Running dot for graph 500/765
+Running dot for graph 501/765
+Running dot for graph 502/765
+Running dot for graph 503/765
+Running dot for graph 504/765
+Running dot for graph 505/765
+Running dot for graph 506/765
+Running dot for graph 507/765
+Running dot for graph 508/765
+Running dot for graph 509/765
+Running dot for graph 510/765
+Running dot for graph 511/765
+Running dot for graph 512/765
+Running dot for graph 513/765
+Running dot for graph 514/765
+Running dot for graph 515/765
+Running dot for graph 516/765
+Running dot for graph 517/765
+Running dot for graph 518/765
+Running dot for graph 519/765
+Running dot for graph 520/765
+Running dot for graph 521/765
+Running dot for graph 522/765
+Running dot for graph 523/765
+Running dot for graph 524/765
+Running dot for graph 525/765
+Running dot for graph 526/765
+Running dot for graph 527/765
+Running dot for graph 528/765
+Running dot for graph 529/765
+Running dot for graph 530/765
+Running dot for graph 531/765
+Running dot for graph 532/765
+Running dot for graph 533/765
+Running dot for graph 534/765
+Running dot for graph 535/765
+Running dot for graph 536/765
+Running dot for graph 537/765
+Running dot for graph 538/765
+Running dot for graph 539/765
+Running dot for graph 540/765
+Running dot for graph 541/765
+Running dot for graph 542/765
+Running dot for graph 543/765
+Running dot for graph 544/765
+Running dot for graph 545/765
+Running dot for graph 546/765
+Running dot for graph 547/765
+Running dot for graph 548/765
+Running dot for graph 549/765
+Running dot for graph 550/765
+Running dot for graph 551/765
+Running dot for graph 552/765
+Running dot for graph 553/765
+Running dot for graph 554/765
+Running dot for graph 555/765
+Running dot for graph 556/765
+Running dot for graph 557/765
+Running dot for graph 558/765
+Running dot for graph 559/765
+Running dot for graph 560/765
+Running dot for graph 561/765
+Running dot for graph 562/765
+Running dot for graph 563/765
+Running dot for graph 564/765
+Running dot for graph 565/765
+Running dot for graph 566/765
+Running dot for graph 567/765
+Running dot for graph 568/765
+Running dot for graph 569/765
+Running dot for graph 570/765
+Running dot for graph 571/765
+Running dot for graph 572/765
+Running dot for graph 573/765
+Running dot for graph 574/765
+Running dot for graph 575/765
+Running dot for graph 576/765
+Running dot for graph 577/765
+Running dot for graph 578/765
+Running dot for graph 579/765
+Running dot for graph 580/765
+Running dot for graph 581/765
+Running dot for graph 582/765
+Running dot for graph 583/765
+Running dot for graph 584/765
+Running dot for graph 585/765
+Running dot for graph 586/765
+Running dot for graph 587/765
+Running dot for graph 588/765
+Running dot for graph 589/765
+Running dot for graph 590/765
+Running dot for graph 591/765
+Running dot for graph 592/765
+Running dot for graph 593/765
+Running dot for graph 594/765
+Running dot for graph 595/765
+Running dot for graph 596/765
+Running dot for graph 597/765
+Running dot for graph 598/765
+Running dot for graph 599/765
+Running dot for graph 600/765
+Running dot for graph 601/765
+Running dot for graph 602/765
+Running dot for graph 603/765
+Running dot for graph 604/765
+Running dot for graph 605/765
+Running dot for graph 606/765
+Running dot for graph 607/765
+Running dot for graph 608/765
+Running dot for graph 609/765
+Running dot for graph 610/765
+Running dot for graph 611/765
+Running dot for graph 612/765
+Running dot for graph 613/765
+Running dot for graph 614/765
+Running dot for graph 615/765
+Running dot for graph 616/765
+Running dot for graph 617/765
+Running dot for graph 618/765
+Running dot for graph 619/765
+Running dot for graph 620/765
+Running dot for graph 621/765
+Running dot for graph 622/765
+Running dot for graph 623/765
+Running dot for graph 624/765
+Running dot for graph 625/765
+Running dot for graph 626/765
+Running dot for graph 627/765
+Running dot for graph 628/765
+Running dot for graph 629/765
+Running dot for graph 630/765
+Running dot for graph 631/765
+Running dot for graph 632/765
+Running dot for graph 633/765
+Running dot for graph 634/765
+Running dot for graph 635/765
+Running dot for graph 636/765
+Running dot for graph 637/765
+Running dot for graph 638/765
+Running dot for graph 639/765
+Running dot for graph 640/765
+Running dot for graph 641/765
+Running dot for graph 642/765
+Running dot for graph 643/765
+Running dot for graph 644/765
+Running dot for graph 645/765
+Running dot for graph 646/765
+Running dot for graph 647/765
+Running dot for graph 648/765
+Running dot for graph 649/765
+Running dot for graph 650/765
+Running dot for graph 651/765
+Running dot for graph 652/765
+Running dot for graph 653/765
+Running dot for graph 654/765
+Running dot for graph 655/765
+Running dot for graph 656/765
+Running dot for graph 657/765
+Running dot for graph 658/765
+Running dot for graph 659/765
+Running dot for graph 660/765
+Running dot for graph 661/765
+Running dot for graph 662/765
+Running dot for graph 663/765
+Running dot for graph 664/765
+Running dot for graph 665/765
+Running dot for graph 666/765
+Running dot for graph 667/765
+Running dot for graph 668/765
+Running dot for graph 669/765
+Running dot for graph 670/765
+Running dot for graph 671/765
+Running dot for graph 672/765
+Running dot for graph 673/765
+Running dot for graph 674/765
+Running dot for graph 675/765
+Running dot for graph 676/765
+Running dot for graph 677/765
+Running dot for graph 678/765
+Running dot for graph 679/765
+Running dot for graph 680/765
+Running dot for graph 681/765
+Running dot for graph 682/765
+Running dot for graph 683/765
+Running dot for graph 684/765
+Running dot for graph 685/765
+Running dot for graph 686/765
+Running dot for graph 687/765
+Running dot for graph 688/765
+Running dot for graph 689/765
+Running dot for graph 690/765
+Running dot for graph 691/765
+Running dot for graph 692/765
+Running dot for graph 693/765
+Running dot for graph 694/765
+Running dot for graph 695/765
+Running dot for graph 696/765
+Running dot for graph 697/765
+Running dot for graph 698/765
+Running dot for graph 699/765
+Running dot for graph 700/765
+Running dot for graph 701/765
+Running dot for graph 702/765
+Running dot for graph 703/765
+Running dot for graph 704/765
+Running dot for graph 705/765
+Running dot for graph 706/765
+Running dot for graph 707/765
+Running dot for graph 708/765
+Running dot for graph 709/765
+Running dot for graph 710/765
+Running dot for graph 711/765
+Running dot for graph 712/765
+Running dot for graph 713/765
+Running dot for graph 714/765
+Running dot for graph 715/765
+Running dot for graph 716/765
+Running dot for graph 717/765
+Running dot for graph 718/765
+Running dot for graph 719/765
+Running dot for graph 720/765
+Running dot for graph 721/765
+Running dot for graph 722/765
+Running dot for graph 723/765
+Running dot for graph 724/765
+Running dot for graph 725/765
+Running dot for graph 726/765
+Running dot for graph 727/765
+Running dot for graph 728/765
+Running dot for graph 729/765
+Running dot for graph 730/765
+Running dot for graph 731/765
+Running dot for graph 732/765
+Running dot for graph 733/765
+Running dot for graph 734/765
+Running dot for graph 735/765
+Running dot for graph 736/765
+Running dot for graph 737/765
+Running dot for graph 738/765
+Running dot for graph 739/765
+Running dot for graph 740/765
+Running dot for graph 741/765
+Running dot for graph 742/765
+Running dot for graph 743/765
+Running dot for graph 744/765
+Running dot for graph 745/765
+Running dot for graph 746/765
+Running dot for graph 747/765
+Running dot for graph 748/765
+Running dot for graph 749/765
+Running dot for graph 750/765
+Running dot for graph 751/765
+Running dot for graph 752/765
+Running dot for graph 753/765
+Running dot for graph 754/765
+Running dot for graph 755/765
+Running dot for graph 756/765
+Running dot for graph 757/765
+Running dot for graph 758/765
+Running dot for graph 759/765
+Running dot for graph 760/765
+Running dot for graph 761/765
+Running dot for graph 762/765
+Running dot for graph 763/765
+Running dot for graph 764/765
+Running dot for graph 765/765
 Patching output file 1/86
 Patching output file 2/86
 Patching output file 3/86
@@ -1802,5 +1440,5 @@ Patching output file 83/86
 Patching output file 84/86
 Patching output file 85/86
 Patching output file 86/86
-lookup cache used 697/65536 hits=14059 misses=727
+lookup cache used 694/65536 hits=13946 misses=723
 finished...

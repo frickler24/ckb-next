@@ -1,4 +1,4 @@
-.TH "KbPerf" 3 "Tue May 16 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "KbPerf" 3 "Wed May 24 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -148,7 +148,7 @@ Inherits \fBQObject\fP\&.
 .RI "void \fBsetIndicator\fP (\fBindicator\fP index, const QColor &color1, const QColor &color2, const QColor &color3=QColor(), bool software_enable=true, \fBi_hw\fP hardware_enable=\fBNORMAL\fP)"
 .br
 .ti -1c
-.RI "void \fBupdate\fP (QFile &\fBcmd\fP, bool force=false, bool saveCustomDpi=true)"
+.RI "void \fBupdate\fP (QFile &\fBcmd\fP, int notifyNumber, bool force=false, bool saveCustomDpi=true)"
 .br
 .ti -1c
 .RI "void \fBsetNeedsUpdate\fP ()"
@@ -1285,7 +1285,7 @@ Referenced by sniperDpi()\&.
 .nf
 54 { sniperDpi(QPoint(newValue, newValue)); }
 .fi
-.SS "void KbPerf::update (QFile &cmd, boolforce = \fCfalse\fP, boolsaveCustomDpi = \fCtrue\fP)"
+.SS "void KbPerf::update (QFile &cmd, intnotifyNumber, boolforce = \fCfalse\fP, boolsaveCustomDpi = \fCtrue\fP)"
 
 .PP
 Definition at line 373 of file kbperf\&.cpp\&.
@@ -1295,7 +1295,7 @@ References _angleSnap, _liftHeight, _needsUpdate, DPI_COUNT, dpiColor(), dpiCurI
 Referenced by Kb::frameUpdate(), and Kb::hwSave()\&.
 .PP
 .nf
-373                                                              {
+373                                                                                {
 374     if(!force && !_needsUpdate)
 375         return;
 376     emit settingsUpdated();
@@ -1333,7 +1333,7 @@ Referenced by Kb::frameUpdate(), and Kb::hwSave()\&.
 408         cmd\&.write(output);
 409     }
 410     // Enable indicator notifications
-411     cmd\&.write(" inotify all");
+411     cmd\&.write(QString("\n@%1 inotify all")\&.arg(notifyNumber)\&.toLatin1());
 412     // Set indicator state
 413     const char* iNames[HW_I_COUNT] = { "num", "caps", "scroll" };
 414     for(int i = 0; i < HW_I_COUNT; i++){

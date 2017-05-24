@@ -13,7 +13,7 @@
 <area shape="rect" id="node10" href="$classKbWidget.html#aae4a00bb180d711b5df7df6443c8bf36" title="KbWidget::modeChanged" alt="" coords="460,244,631,271"/>
 <area shape="rect" id="node11" href="$classKbWidget.html#a848a21f1fd112e13ca5fcf25da4592c6" title="KbWidget::KbWidget" alt="" coords="736,215,880,241"/>
 <area shape="rect" id="node12" href="$classKbWidget.html#add5eb15a399c87faf80db9fdfc2e868f" title="KbWidget::on_modesList_customContextMenuRequested. " alt="" coords="701,266,915,307"/>
-<area shape="rect" id="node15" href="$classKPerfWidget.html#afe3ef56d5262dbb3e5ea5ce9d77e124e" title="KPerfWidget::KPerfWidget" alt="" coords="456,320,635,347"/>
+<area shape="rect" id="node15" href="$classKPerfWidget.html#afe3ef56d5262dbb3e5ea5ce9d77e124e" title="KPerfWidget::KPerfWidget sets up the UI for Keyboard Performace panel. " alt="" coords="456,320,635,347"/>
 <area shape="rect" id="node17" href="$classAnimSettingDialog.html#a0027d136ee0ad97cddd73d601c677e3a" title="AnimSettingDialog::\langleDialChanged" alt="" coords="476,371,615,413"/>
 <area shape="rect" id="node18" href="$classAnimSettingDialog.html#ae8882ea2cc60e89a446b763cc212a605" title="AnimSettingDialog::\lAnimSettingDialog" alt="" coords="739,489,877,530"/>
 <area shape="rect" id="node19" href="$classAnimSettingDialog.html#a96a59bcf494a19b74c4142e0c5813478" title="AnimSettingDialog::\langleSpinnerChanged" alt="" coords="471,489,620,530"/>
