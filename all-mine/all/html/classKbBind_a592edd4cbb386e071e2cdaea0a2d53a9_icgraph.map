@@ -1,3 +1,6 @@
 <map id="KbBind::getMacroPath" name="KbBind::getMacroPath">
 <area shape="rect" id="node2" href="$classRebindWidget.html#acb9a8c9aaf8a5e80601f53033d628364" title="RebindWidget::on_btnStartMacro_clicked starts macro recording. A new notification channel and MacroRe..." alt="" coords="208,5,387,46"/>
+<area shape="rect" id="node3" href="$classRebindWidget.html#ab9171f1383dc31d4cb2083fae6cbcca0" title="RebindWidget::on_btnStopMacro_clicked ends the macro recording. Notify channel ist closed..." alt="" coords="208,70,387,111"/>
+<area shape="rect" id="node4" href="$classRebindWidget.html#a9d18655d9f8160c70e2bc237c1f732b5" title="RebindWidget::on_applyButton\l_clicked" alt="" coords="439,37,641,78"/>
+<area shape="rect" id="node5" href="$classRebindWidget.html#a8cb2e54e8bbd17cae8e152132a7a1ddf" title="RebindWidget::on_cancelButton\l_clicked" alt="" coords="435,102,645,143"/>
 </map>

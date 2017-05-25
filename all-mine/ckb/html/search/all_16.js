@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['v_5fcorsair',['V_CORSAIR',['../firmware__special_8h.html#a2aa27325e30aac7dcec6203d4f11e996',1,'firmware_special.h']]],
   ['value',['value',['../classCkbSettings.html#a3793106d98878f170f9f9734bf39409b',1,'CkbSettings::value()'],['../classKeyAction.html#a67bbf6dd422e76ef20ed858f28bb4b21',1,'KeyAction::value()'],['../classQuaAdler32.html#a2022e1db95c23cef220b335e44d74fb1',1,'QuaAdler32::value()'],['../classQuaChecksum32.html#afd836e7534194fce08356be6a8336da7',1,'QuaChecksum32::value()'],['../classQuaCrc32.html#a957ce46a53862f75c89d6a3ac4f73389',1,'QuaCrc32::value()']]],
   ['vendor',['vendor',['../fwupgradedialog_8cpp.html#a7ee73ddef65cc7851394429f088b0547',1,'KbId']]],
   ['verifyfw',['verifyFw',['../fwupgradedialog_8cpp.html#a5e7a9e214e385fe74d87e784a4f043a2',1,'fwupgradedialog.cpp']]],

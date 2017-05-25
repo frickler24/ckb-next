@@ -1,4 +1,6 @@
 <map id="Kb::Kb" name="Kb::Kb">
-<area shape="rect" id="node2" href="$classKeyMap.html#ab582e08cb56076aa3ae89ec3d09bab6d" title="KeyMap::getModel get the KeyMap::Model from the vendor / product special table. Use this function fir..." alt="" coords="117,5,248,32"/>
+<area shape="rect" id="node2" href="$classKeyMap.html#a8e8adef86b4f4723b46a82df9fd2a4f7" title="KeyMap::getModel" alt="" coords="117,5,248,32"/>
 <area shape="rect" id="node3" href="$classKeyMap.html#a13c21fb411c85a70fcd28379f4f46a83" title="KeyMap::isISO" alt="" coords="127,80,238,107"/>
+<area shape="rect" id="node4" href="$classKb.html#a21057c05509d3e7cb90c8f509b025d8f" title="Kb::isKeyboard" alt="" coords="127,131,238,157"/>
+<area shape="rect" id="node5" href="$classKeyMap.html#af9a63ba290c87d6250156407561cfc98" title="KeyMap::isKeyboard" alt="" coords="297,131,439,157"/>
 </map>

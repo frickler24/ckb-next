@@ -31,7 +31,7 @@
   <td id="projectlogo"><img alt="Logo" src="ckb-128.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">ckb-next
-   &#160;<span id="projectnumber">beta-v0.2.7 at branch all-mine</span>
+   &#160;<span id="projectnumber">v0.2.8 at branch all-mine</span>
    </div>
    <div id="projectbrief">ckb-next driver for corsair devices</div>
   </td>
@@ -312,7 +312,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="device_8c_source.html#l00078">78</a> of file <a class="el" href="device_8c_source.html">device.c</a>.</p>
 
-<p>References <a class="el" href="device_8c_source.html#l00023">_start_dev()</a>, <a class="el" href="usb_8h_source.html#l00158">USB_DELAY_DEFAULT</a>, and <a class="el" href="structures_8h_source.html#l00243">usbdevice::usbdelay</a>.</p>
+<p>References <a class="el" href="device_8c_source.html#l00023">_start_dev()</a>, <a class="el" href="usb_8h_source.html#l00156">USB_DELAY_DEFAULT</a>, and <a class="el" href="structures_8h_source.html#l00243">usbdevice::usbdelay</a>.</p>
 <div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                            {</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// Force USB interval to 10ms during initial setup phase; return to nominal 5ms after setup completes.</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    kb-&gt;<a class="code" href="structures_8h.html#a0b79f63d24a3653b071b9e295f3b15fc">usbdelay</a> = 10;</div>
@@ -320,7 +320,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    kb-&gt;<a class="code" href="structures_8h.html#a0b79f63d24a3653b071b9e295f3b15fc">usbdelay</a> = <a class="code" href="usb_8h.html#a099563afe2cc26cafb14b788b03d218e">USB_DELAY_DEFAULT</a>;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span> res;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
-<div class="ttc" id="usb_8h_html_a099563afe2cc26cafb14b788b03d218e"><div class="ttname"><a href="usb_8h.html#a099563afe2cc26cafb14b788b03d218e">USB_DELAY_DEFAULT</a></div><div class="ttdeci">#define USB_DELAY_DEFAULT</div><div class="ttdoc">This constant is used to initialize kb-&gt;usbdelay. It is used in many places (see macros above) but of...</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00158">usb.h:158</a></div></div>
+<div class="ttc" id="usb_8h_html_a099563afe2cc26cafb14b788b03d218e"><div class="ttname"><a href="usb_8h.html#a099563afe2cc26cafb14b788b03d218e">USB_DELAY_DEFAULT</a></div><div class="ttdeci">#define USB_DELAY_DEFAULT</div><div class="ttdoc">This constant is used to initialize kb-&gt;usbdelay. It is used in many places (see macros above) but of...</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00156">usb.h:156</a></div></div>
 <div class="ttc" id="device_8c_html_a96ee4de97d66a995084757151f4ed150"><div class="ttname"><a href="device_8c.html#a96ee4de97d66a995084757151f4ed150">_start_dev</a></div><div class="ttdeci">int _start_dev(usbdevice *kb, int makeactive)</div><div class="ttdef"><b>Definition:</b> <a href="device_8c_source.html#l00023">device.c:23</a></div></div>
 <div class="ttc" id="structures_8h_html_a0b79f63d24a3653b071b9e295f3b15fc"><div class="ttname"><a href="structures_8h.html#a0b79f63d24a3653b071b9e295f3b15fc">usbdevice::usbdelay</a></div><div class="ttdeci">char usbdelay</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00243">structures.h:243</a></div></div>
 </div><!-- fragment -->
@@ -364,7 +364,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="device_8c_source.html#l00012">12</a> of file <a class="el" href="device_8c_source.html">device.c</a>.</p>
 
-<p>Referenced by <a class="el" href="devnode_8c_source.html#l00055">_updateconnected()</a>, <a class="el" href="ckb-daemon_2main_8c_source.html#l00040">quitWithLock()</a>, and <a class="el" href="usb__linux_8c_source.html#l00721">usb_rm_device()</a>.</p>
+<p>Referenced by <a class="el" href="devnode_8c_source.html#l00055">_updateconnected()</a>, <a class="el" href="ckb-daemon_2main_8c_source.html#l00040">quitWithLock()</a>, and <a class="el" href="usb__linux_8c_source.html#l00719">usb_rm_device()</a>.</p>
 
 </div>
 </div>
@@ -411,7 +411,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="device_8c_source.html#l00010">10</a> of file <a class="el" href="device_8c_source.html">device.c</a>.</p>
 
-<p>Referenced by <a class="el" href="devnode_8c_source.html#l00136">_mkdevpath()</a>, <a class="el" href="devnode_8c_source.html#l00087">_mknotifynode()</a>, <a class="el" href="devnode_8c_source.html#l00115">_rmnotifynode()</a>, <a class="el" href="usb_8c_source.html#l00214">_setupusb()</a>, <a class="el" href="devnode_8c_source.html#l00055">_updateconnected()</a>, <a class="el" href="usb_8c_source.html#l00675">closeusb()</a>, <a class="el" href="ckb-daemon_2main_8c_source.html#l00088">main()</a>, <a class="el" href="devnode_8c_source.html#l00299">mkfwnode()</a>, <a class="el" href="usb__linux_8c_source.html#l00435">os_closeusb()</a>, <a class="el" href="usb__linux_8c_source.html#l00241">os_inputmain()</a>, <a class="el" href="input__linux_8c_source.html#l00055">os_inputopen()</a>, <a class="el" href="usb__linux_8c_source.html#l00535">os_setupusb()</a>, <a class="el" href="ckb-daemon_2main_8c_source.html#l00040">quitWithLock()</a>, <a class="el" href="devnode_8c_source.html#l00275">rmdevpath()</a>, <a class="el" href="usb__linux_8c_source.html#l00721">usb_rm_device()</a>, and <a class="el" href="usb__linux_8c_source.html#l00594">usbadd()</a>.</p>
+<p>Referenced by <a class="el" href="devnode_8c_source.html#l00136">_mkdevpath()</a>, <a class="el" href="devnode_8c_source.html#l00087">_mknotifynode()</a>, <a class="el" href="devnode_8c_source.html#l00115">_rmnotifynode()</a>, <a class="el" href="usb_8c_source.html#l00214">_setupusb()</a>, <a class="el" href="devnode_8c_source.html#l00055">_updateconnected()</a>, <a class="el" href="usb_8c_source.html#l00675">closeusb()</a>, <a class="el" href="ckb-daemon_2main_8c_source.html#l00088">main()</a>, <a class="el" href="devnode_8c_source.html#l00299">mkfwnode()</a>, <a class="el" href="usb__linux_8c_source.html#l00433">os_closeusb()</a>, <a class="el" href="usb__linux_8c_source.html#l00239">os_inputmain()</a>, <a class="el" href="input__linux_8c_source.html#l00055">os_inputopen()</a>, <a class="el" href="usb__linux_8c_source.html#l00533">os_setupusb()</a>, <a class="el" href="ckb-daemon_2main_8c_source.html#l00040">quitWithLock()</a>, <a class="el" href="devnode_8c_source.html#l00275">rmdevpath()</a>, <a class="el" href="usb__linux_8c_source.html#l00719">usb_rm_device()</a>, and <a class="el" href="usb__linux_8c_source.html#l00592">usbadd()</a>.</p>
 
 </div>
 </div>
@@ -435,7 +435,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c663af95b3406af676444e819a47854e.html">ckb-daemon</a></li><li class="navelem"><a class="el" href="device_8c.html">device.c</a></li>
-    <li class="footer">Generated on Mon May 22 2017 11:33:48 for ckb-next by
+    <li class="footer">Generated on Thu May 25 2017 22:06:24 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

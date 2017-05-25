@@ -1,6 +1,7 @@
 <map id="KbBind::getMacroNumber" name="KbBind::getMacroNumber">
-<area shape="rect" id="node2" href="$classKbBind.html#a4bb7a8b9bdf99bbdbdf6edba08c7d248" title="handleNotificationChannel sends commands to ckb&#45;daemon for (de&#45;) activating the notify channel..." alt="" coords="227,63,403,105"/>
+<area shape="rect" id="node2" href="$classKbBind.html#ab27322709a40e2d244b714d260c05928" title="handleNotificationChannel sends commands to ckb&#45;daemon for (de&#45;) activating the notify channel..." alt="" coords="227,63,403,105"/>
 <area shape="rect" id="node3" href="$classRebindWidget.html#acb9a8c9aaf8a5e80601f53033d628364" title="RebindWidget::on_btnStartMacro_clicked starts macro recording. A new notification channel and MacroRe..." alt="" coords="451,5,629,46"/>
 <area shape="rect" id="node4" href="$classRebindWidget.html#ab9171f1383dc31d4cb2083fae6cbcca0" title="RebindWidget::on_btnStopMacro_clicked ends the macro recording. Notify channel ist closed..." alt="" coords="451,70,629,111"/>
-<area shape="rect" id="node5" href="$classRebindWidget.html#a9d18655d9f8160c70e2bc237c1f732b5" title="RebindWidget::on_applyButton\l_clicked" alt="" coords="677,70,880,111"/>
+<area shape="rect" id="node5" href="$classRebindWidget.html#a9d18655d9f8160c70e2bc237c1f732b5" title="RebindWidget::on_applyButton\l_clicked" alt="" coords="681,37,884,78"/>
+<area shape="rect" id="node6" href="$classRebindWidget.html#a8cb2e54e8bbd17cae8e152132a7a1ddf" title="RebindWidget::on_cancelButton\l_clicked" alt="" coords="678,102,887,143"/>
 </map>

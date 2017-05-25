@@ -27,7 +27,7 @@
 <area shape="rect" id="node22" href="$classKbAnimWidget.html#a79f0a97b24005a54981e66d8c9e43e62" title="KbAnimWidget::on_keyButton\l_clicked" alt="" coords="871,225,1068,266"/>
 <area shape="rect" id="node23" href="$classKbAnimWidget.html#a5d00279a905a85a5e702f266ca84f6ef" title="KbAnimWidget::on_deleteButton\l_clicked" alt="" coords="864,107,1075,149"/>
 <area shape="rect" id="node24" href="$classKbAnimWidget.html#aed385da23edc78f5a407d26f191eb110" title="KbAnimWidget::on_property\lButton_clicked" alt="" coords="877,443,1062,485"/>
-<area shape="rect" id="node27" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent" alt="" coords="906,291,1033,317"/>
+<area shape="rect" id="node27" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent. " alt="" coords="906,291,1033,317"/>
 <area shape="rect" id="node30" href="$classKbAnim.html#ad3776cc0c82156dcfce84f5275b839f8" title="KbAnim::KbAnim" alt="" coords="669,715,792,741"/>
 <area shape="rect" id="node31" href="$classKbAnim.html#a6ecc476394069c03a043883bcb48f827" title="KbAnim::map" alt="" coords="680,613,781,640"/>
 <area shape="rect" id="node32" href="$classKbAnim.html#a7f7fab7b134dacb633946d1976af3921" title="KbAnim::keys" alt="" coords="679,664,783,691"/>

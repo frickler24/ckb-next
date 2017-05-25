@@ -31,7 +31,7 @@
   <td id="projectlogo"><img alt="Logo" src="ckb-128.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">ckb-next
-   &#160;<span id="projectnumber">beta-v0.2.7 at branch all-mine</span>
+   &#160;<span id="projectnumber">v0.2.8 at branch all-mine</span>
    </div>
    <div id="projectbrief">ckb-next driver for corsair devices</div>
   </td>
@@ -141,6 +141,8 @@ Data Fields</h2></td></tr>
 <tr class="separator:a0e5b3f4d8f56d9d9eb9b08ba0ad33889"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c289c2e71adf040b427406b81fc76d9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structKbFirmware_1_1FW.html#a8c289c2e71adf040b427406b81fc76d9">ckbVersion</a></td></tr>
 <tr class="separator:a8c289c2e71adf040b427406b81fc76d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86f53f40934de7e00236c69ca4317cea"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structKbFirmware_1_1FW.html#a86f53f40934de7e00236c69ca4317cea">forProductID</a></td></tr>
+<tr class="separator:a86f53f40934de7e00236c69ca4317cea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -159,8 +161,8 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="kbfirmware_8cpp_source.html#l00012">12</a> of file <a class="el" href="kbfirmware_8cpp_source.html">kbfirmware.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;: <a class="code" href="structKbFirmware_1_1FW.html#a0e5b3f4d8f56d9d9eb9b08ba0ad33889">fwVersion</a>(0.f), <a class="code" href="structKbFirmware_1_1FW.html#a8c289c2e71adf040b427406b81fc76d9">ckbVersion</a>(0.f) {}</div>
+<p>Definition at line <a class="el" href="kbfirmware_8cpp_source.html#l00014">14</a> of file <a class="el" href="kbfirmware_8cpp_source.html">kbfirmware.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;: <a class="code" href="structKbFirmware_1_1FW.html#a0e5b3f4d8f56d9d9eb9b08ba0ad33889">fwVersion</a>(0.f), <a class="code" href="structKbFirmware_1_1FW.html#a8c289c2e71adf040b427406b81fc76d9">ckbVersion</a>(0.f) {}</div>
 <div class="ttc" id="structKbFirmware_1_1FW_html_a0e5b3f4d8f56d9d9eb9b08ba0ad33889"><div class="ttname"><a href="structKbFirmware_1_1FW.html#a0e5b3f4d8f56d9d9eb9b08ba0ad33889">KbFirmware::FW::fwVersion</a></div><div class="ttdeci">float fwVersion</div><div class="ttdef"><b>Definition:</b> <a href="kbfirmware_8h_source.html#l00037">kbfirmware.h:37</a></div></div>
 <div class="ttc" id="structKbFirmware_1_1FW_html_a8c289c2e71adf040b427406b81fc76d9"><div class="ttname"><a href="structKbFirmware_1_1FW.html#a8c289c2e71adf040b427406b81fc76d9">KbFirmware::FW::ckbVersion</a></div><div class="ttdeci">float ckbVersion</div><div class="ttdef"><b>Definition:</b> <a href="kbfirmware_8h_source.html#l00037">kbfirmware.h:37</a></div></div>
 </div><!-- fragment -->
@@ -179,7 +181,7 @@ Data Fields</h2></td></tr>
 
 <p>Definition at line <a class="el" href="kbfirmware_8h_source.html#l00037">37</a> of file <a class="el" href="kbfirmware_8h_source.html">kbfirmware.h</a>.</p>
 
-<p>Referenced by <a class="el" href="kbfirmware_8cpp_source.html#l00165">KbFirmware::_latestForBoard()</a>, and <a class="el" href="kbfirmware_8cpp_source.html#l00044">KbFirmware::processDownload()</a>.</p>
+<p>Referenced by <a class="el" href="kbfirmware_8cpp_source.html#l00170">KbFirmware::_latestForBoard()</a>, and <a class="el" href="kbfirmware_8cpp_source.html#l00046">KbFirmware::processDownload()</a>.</p>
 
 </div>
 </div>
@@ -195,7 +197,23 @@ Data Fields</h2></td></tr>
 
 <p>Definition at line <a class="el" href="kbfirmware_8h_source.html#l00035">35</a> of file <a class="el" href="kbfirmware_8h_source.html">kbfirmware.h</a>.</p>
 
-<p>Referenced by <a class="el" href="kbfirmware_8cpp_source.html#l00183">KbFirmware::_fileForBoard()</a>, and <a class="el" href="kbfirmware_8cpp_source.html#l00044">KbFirmware::processDownload()</a>.</p>
+<p>Referenced by <a class="el" href="kbfirmware_8cpp_source.html#l00188">KbFirmware::_fileForBoard()</a>, and <a class="el" href="kbfirmware_8cpp_source.html#l00046">KbFirmware::processDownload()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a86f53f40934de7e00236c69ca4317cea"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t KbFirmware::FW::forProductID</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="kbfirmware_8h_source.html#l00038">38</a> of file <a class="el" href="kbfirmware_8h_source.html">kbfirmware.h</a>.</p>
+
+<p>Referenced by <a class="el" href="kbfirmware_8cpp_source.html#l00046">KbFirmware::processDownload()</a>.</p>
 
 </div>
 </div>
@@ -211,7 +229,7 @@ Data Fields</h2></td></tr>
 
 <p>Definition at line <a class="el" href="kbfirmware_8h_source.html#l00037">37</a> of file <a class="el" href="kbfirmware_8h_source.html">kbfirmware.h</a>.</p>
 
-<p>Referenced by <a class="el" href="kbfirmware_8cpp_source.html#l00165">KbFirmware::_latestForBoard()</a>, and <a class="el" href="kbfirmware_8cpp_source.html#l00044">KbFirmware::processDownload()</a>.</p>
+<p>Referenced by <a class="el" href="kbfirmware_8cpp_source.html#l00170">KbFirmware::_latestForBoard()</a>, and <a class="el" href="kbfirmware_8cpp_source.html#l00046">KbFirmware::processDownload()</a>.</p>
 
 </div>
 </div>
@@ -227,7 +245,7 @@ Data Fields</h2></td></tr>
 
 <p>Definition at line <a class="el" href="kbfirmware_8h_source.html#l00036">36</a> of file <a class="el" href="kbfirmware_8h_source.html">kbfirmware.h</a>.</p>
 
-<p>Referenced by <a class="el" href="kbfirmware_8cpp_source.html#l00183">KbFirmware::_fileForBoard()</a>, <a class="el" href="kbfirmware_8cpp_source.html#l00165">KbFirmware::_latestForBoard()</a>, and <a class="el" href="kbfirmware_8cpp_source.html#l00044">KbFirmware::processDownload()</a>.</p>
+<p>Referenced by <a class="el" href="kbfirmware_8cpp_source.html#l00188">KbFirmware::_fileForBoard()</a>, <a class="el" href="kbfirmware_8cpp_source.html#l00170">KbFirmware::_latestForBoard()</a>, and <a class="el" href="kbfirmware_8cpp_source.html#l00046">KbFirmware::processDownload()</a>.</p>
 
 </div>
 </div>
@@ -243,7 +261,7 @@ Data Fields</h2></td></tr>
 
 <p>Definition at line <a class="el" href="kbfirmware_8h_source.html#l00035">35</a> of file <a class="el" href="kbfirmware_8h_source.html">kbfirmware.h</a>.</p>
 
-<p>Referenced by <a class="el" href="kbfirmware_8cpp_source.html#l00183">KbFirmware::_fileForBoard()</a>, and <a class="el" href="kbfirmware_8cpp_source.html#l00044">KbFirmware::processDownload()</a>.</p>
+<p>Referenced by <a class="el" href="kbfirmware_8cpp_source.html#l00188">KbFirmware::_fileForBoard()</a>, and <a class="el" href="kbfirmware_8cpp_source.html#l00046">KbFirmware::processDownload()</a>.</p>
 
 </div>
 </div>
@@ -257,7 +275,7 @@ Data Fields</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classKbFirmware.html">KbFirmware</a></li><li class="navelem"><a class="el" href="structKbFirmware_1_1FW.html">FW</a></li>
-    <li class="footer">Generated on Mon May 22 2017 11:33:46 for ckb-next by
+    <li class="footer">Generated on Thu May 25 2017 22:06:21 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

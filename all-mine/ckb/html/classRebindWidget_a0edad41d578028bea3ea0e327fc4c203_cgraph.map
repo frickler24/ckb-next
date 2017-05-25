@@ -13,7 +13,7 @@
 <area shape="rect" id="node33" href="$classKeyAction.html#a631abc9880b982c218a0da90912bb826" title="KeyAction::isProgram" alt="" coords="493,1025,643,1052"/>
 <area shape="rect" id="node34" href="$classKeyAction.html#ad393200d82796ade359ae0e1959dbca8" title="KeyAction::isSpecial" alt="" coords="263,949,406,976"/>
 <area shape="rect" id="node35" href="$classKeyAction.html#ae657d934ff312fb11e306472472b31ef" title="isValidMacro checks whether a keyAction contains a valid macro. This is done easily: If the macro act..." alt="" coords="485,1228,651,1255"/>
-<area shape="rect" id="node37" href="$classKeyAction.html#ac72be90499e81c76ae9f908e2a17d1c0" title="macroContent returns the macro key definition only (the second part of the macro action). " alt="" coords="249,1253,421,1280"/>
+<area shape="rect" id="node37" href="$classKeyAction.html#ac72be90499e81c76ae9f908e2a17d1c0" title="macroContent returns the macro key definition only (the second part of the macro action). In this Implementation, strip the delay information. " alt="" coords="249,1253,421,1280"/>
 <area shape="rect" id="node38" href="$classKeyAction.html#aa5db7ed889913fde947cfba128c7d80b" title="Debug output for invalid macro Definitions. " alt="" coords="249,1304,420,1331"/>
 <area shape="rect" id="node39" href="$classKeyAction.html#ac6f54c2e553b6ab11b086f734eac819d" title="macroLine returns all interresting content for a macro definition. " alt="" coords="259,1101,410,1128"/>
 <area shape="rect" id="node40" href="$classKeyAction.html#a1182588fa5f3158d72830a4b064dfa2d" title="macroTiming returns the macro key definition with original timing infos (the fifth and up to now last..." alt="" coords="252,1152,417,1179"/>

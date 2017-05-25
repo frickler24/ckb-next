@@ -31,7 +31,7 @@
   <td id="projectlogo"><img alt="Logo" src="ckb-128.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">ckb-next
-   &#160;<span id="projectnumber">beta-v0.2.7 at branch all-mine</span>
+   &#160;<span id="projectnumber">v0.2.8 at branch all-mine</span>
    </div>
    <div id="projectbrief">ckb-next driver for corsair devices</div>
   </td>
@@ -106,6 +106,7 @@ $(document).ready(function(){initNavTree('kbfirmware_8cpp.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -130,6 +131,11 @@ $(document).ready(function(){initNavTree('kbfirmware_8cpp.html','');});
 </div>
 <p><a href="kbfirmware_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a61dffaa40bb4ed3c0e65eb36d4115df1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kbfirmware_8cpp.html#a61dffaa40bb4ed3c0e65eb36d4115df1">CHECKFORGPG</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a61dffaa40bb4ed3c0e65eb36d4115df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a61af340d454a04e7657e67151cd5ae2e"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kbfirmware_8cpp.html#a61af340d454a04e7657e67151cd5ae2e">tableName</a> (const QString &amp;features)</td></tr>
@@ -140,6 +146,23 @@ Variables</h2></td></tr>
 <tr class="memitem:af5820866c9cb9d498d5902da887184e2"><td class="memItemLeft" align="right" valign="top">static const quint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kbfirmware_8cpp.html#af5820866c9cb9d498d5902da887184e2">AUTO_CHECK_TIME</a> = 60 * 60 * 1000</td></tr>
 <tr class="separator:af5820866c9cb9d498d5902da887184e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="a61dffaa40bb4ed3c0e65eb36d4115df1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CHECKFORGPG&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="kbfirmware_8cpp_source.html#l00008">8</a> of file <a class="el" href="kbfirmware_8cpp_source.html">kbfirmware.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="kbfirmware_8cpp_source.html#l00046">KbFirmware::processDownload()</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a61af340d454a04e7657e67151cd5ae2e"></a>
 <div class="memitem">
@@ -163,20 +186,20 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="kbfirmware_8cpp_source.html#l00153">153</a> of file <a class="el" href="kbfirmware_8cpp_source.html">kbfirmware.cpp</a>.</p>
+<p>Definition at line <a class="el" href="kbfirmware_8cpp_source.html#l00158">158</a> of file <a class="el" href="kbfirmware_8cpp_source.html">kbfirmware.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="kbfirmware_8cpp_source.html#l00183">KbFirmware::_fileForBoard()</a>, and <a class="el" href="kbfirmware_8cpp_source.html#l00165">KbFirmware::_latestForBoard()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                                                 {</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    QStringList components = features.split(<span class="stringliteral">&quot; &quot;</span>);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">if</span>(components.length() &lt; 2)</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="comment">// First two components are vendor and model</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    QString vendorModel = components[0].toUpper() + <span class="stringliteral">&quot;-&quot;</span> + components[1].toUpper();</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="comment">// Add &quot;RGB&quot; on RGB boards</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">if</span>(features.contains(<span class="stringliteral">&quot;rgb&quot;</span>) &amp;&amp; !features.contains(<span class="stringliteral">&quot;monochrome&quot;</span>))</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        vendorModel += <span class="stringliteral">&quot;RGB&quot;</span>;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">return</span> vendorModel;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div>
+<p>Referenced by <a class="el" href="kbfirmware_8cpp_source.html#l00188">KbFirmware::_fileForBoard()</a>, and <a class="el" href="kbfirmware_8cpp_source.html#l00170">KbFirmware::_latestForBoard()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                                                 {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    QStringList components = features.split(<span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">if</span>(components.length() &lt; 2)</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="comment">// First two components are vendor and model</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    QString vendorModel = components[0].toUpper() + <span class="stringliteral">&quot;-&quot;</span> + components[1].toUpper();</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="comment">// Add &quot;RGB&quot; on RGB boards</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">if</span>(features.contains(<span class="stringliteral">&quot;rgb&quot;</span>) &amp;&amp; !features.contains(<span class="stringliteral">&quot;monochrome&quot;</span>))</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        vendorModel += <span class="stringliteral">&quot;RGB&quot;</span>;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">return</span> vendorModel;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -210,9 +233,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="kbfirmware_8cpp_source.html#l00009">9</a> of file <a class="el" href="kbfirmware_8cpp_source.html">kbfirmware.cpp</a>.</p>
+<p>Definition at line <a class="el" href="kbfirmware_8cpp_source.html#l00011">11</a> of file <a class="el" href="kbfirmware_8cpp_source.html">kbfirmware.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="kbfirmware_8cpp_source.html#l00030">KbFirmware::_checkUpdates()</a>.</p>
+<p>Referenced by <a class="el" href="kbfirmware_8cpp_source.html#l00032">KbFirmware::_checkUpdates()</a>.</p>
 
 </div>
 </div>
@@ -222,7 +245,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_77b5d46a1bc2c75b90444f394c5858ea.html">ckb</a></li><li class="navelem"><a class="el" href="kbfirmware_8cpp.html">kbfirmware.cpp</a></li>
-    <li class="footer">Generated on Mon May 22 2017 11:33:44 for ckb-next by
+    <li class="footer">Generated on Thu May 25 2017 22:06:18 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

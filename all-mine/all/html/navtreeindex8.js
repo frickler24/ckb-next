@@ -1,9 +1,5 @@
 var NAVTREEINDEX8 =
 {
-"classUi_1_1GradientDialog.html":[7,0,0,4],
-"classUi_1_1GradientDialog.html#a0019299067027260d2e1191ebe9fe260":[7,0,0,4,10],
-"classUi_1_1GradientDialog.html#a020fb1fcc32bb7b0ae587fc0aa791d1c":[7,0,0,4,14],
-"classUi_1_1GradientDialog.html#a05b17ae474888665862cbb4cd590a563":[7,0,0,4,24],
 "classUi_1_1GradientDialog.html#a1abbb1e4f5ca33de95a40d0cd4ff89f5":[7,0,0,4,9],
 "classUi_1_1GradientDialog.html#a1f0bb5f745117b6ad09291589ef5edfd":[7,0,0,4,18],
 "classUi_1_1GradientDialog.html#a341f38c3857c7b8d2ad4ed060d4f1668":[7,0,0,4,4],
@@ -249,5 +245,9 @@ var NAVTREEINDEX8 =
 "classUi_1_1LayoutDialog.html#ae344e09760c2d7a51809b66c71ca1359":[7,0,0,11,11],
 "classUi_1_1LayoutDialog.html#af7130ecd5790b8ff72c99c1d6052b271":[7,0,0,11,6],
 "classUi_1_1MPerfWidget.html":[7,0,0,14],
-"classUi_1_1MPerfWidget.html#a01cbc19b74e660084a13553075377190":[7,0,0,14,44]
+"classUi_1_1MPerfWidget.html#a01cbc19b74e660084a13553075377190":[7,0,0,14,44],
+"classUi_1_1MPerfWidget.html#a070566abbe0271ec3eed42178465943e":[7,0,0,14,14],
+"classUi_1_1MPerfWidget.html#a07eee5b9c94611e799301df5cb4c0219":[7,0,0,14,20],
+"classUi_1_1MPerfWidget.html#a086bc91422e67f5374cd49d4d02ccf87":[7,0,0,14,4],
+"classUi_1_1MPerfWidget.html#a1b90773be6f771846ddde511cba88b24":[7,0,0,14,62]
 };

@@ -49,7 +49,6 @@ var searchData=
   ['snamelabel',['sNameLabel',['../classUi__AnimSettingDialog.html#aa0a89c6d0bafc824f1eaba9991419e94',1,'Ui_AnimSettingDialog']]],
   ['sniper',['SNIPER',['../classKbPerf.html#ac945f209da6ec18bc6a654bef8bc8094',1,'KbPerf']]],
   ['snipervalue',['sniperValue',['../classKeyAction.html#a2010276d5349d7dcc6b3477c20d13160',1,'KeyAction']]],
-  ['specials',['specials',['../firmware__special_8h.html#ab961354ac207225078800180ecac6eb7',1,'firmware_special.h']]],
   ['spinbox',['spinBox',['../classUi__MPerfWidget.html#a50e5bf0557d9de22c069f58a49530476',1,'Ui_MPerfWidget']]],
   ['sspeedbox',['sSpeedBox',['../classUi__ExtraSettingsWidget.html#ac652e55249419a2ee7c8e54efd50ebd9',1,'Ui_ExtraSettingsWidget']]],
   ['sspeedwidget',['sSpeedWidget',['../classUi__ExtraSettingsWidget.html#aed56984844a1f39664666942bd8c6332',1,'Ui_ExtraSettingsWidget']]],

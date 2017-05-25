@@ -1,4 +1,5 @@
 <map id="KeyMap::isKeyboard" name="KeyMap::isKeyboard">
-<area shape="rect" id="node2" href="$classKb.html#a21057c05509d3e7cb90c8f509b025d8f" title="Kb::isKeyboard" alt="" coords="198,29,309,56"/>
-<area shape="rect" id="node3" href="$classKbWidget.html#a848a21f1fd112e13ca5fcf25da4592c6" title="KbWidget::KbWidget" alt="" coords="357,29,501,56"/>
+<area shape="rect" id="node2" href="$classKb.html#a21057c05509d3e7cb90c8f509b025d8f" title="Kb::isKeyboard" alt="" coords="198,31,309,57"/>
+<area shape="rect" id="node3" href="$classKb.html#a2ac268b01a79e71c56ad07b35efe8ecf" title="is invalid also. " alt="" coords="398,5,461,32"/>
+<area shape="rect" id="node4" href="$classKbWidget.html#a848a21f1fd112e13ca5fcf25da4592c6" title="KbWidget::KbWidget" alt="" coords="357,56,501,83"/>
 </map>

@@ -5,7 +5,7 @@
 <area shape="rect" id="node3" href="$classKbBind.html#abc1d7d434d4e38e0db04f8fba5d90a2d" title="KbBind::update" alt="" coords="666,20,777,47"/>
 <area shape="rect" id="node6" href="$classRebindWidget.html#a0edad41d578028bea3ea0e327fc4c203" title="RebindWidget::setSelection" alt="" coords="629,172,813,199"/>
 <area shape="rect" id="node18" href="$classKeyAction.html#ac6f54c2e553b6ab11b086f734eac819d" title="macroLine returns all interresting content for a macro definition. " alt="" coords="419,172,570,199"/>
-<area shape="rect" id="node19" href="$classKeyAction.html#ac72be90499e81c76ae9f908e2a17d1c0" title="macroContent returns the macro key definition only (the second part of the macro action). " alt="" coords="409,71,581,97"/>
+<area shape="rect" id="node19" href="$classKeyAction.html#ac72be90499e81c76ae9f908e2a17d1c0" title="macroContent returns the macro key definition only (the second part of the macro action). In this Implementation, strip the delay information. " alt="" coords="409,71,581,97"/>
 <area shape="rect" id="node20" href="$classKeyAction.html#a1182588fa5f3158d72830a4b064dfa2d" title="macroTiming returns the macro key definition with original timing infos (the fifth and up to now last..." alt="" coords="412,223,577,249"/>
 <area shape="rect" id="node4" href="$classKb.html#a97694a4cd55681adca7b972fb5722049" title="Kb::frameUpdate" alt="" coords="906,20,1027,47"/>
 <area shape="rect" id="node7" href="$classKbBindWidget.html#a3274fb51d224f0ca111bd714ed524a59" title="KbBindWidget::updateBind" alt="" coords="877,71,1056,97"/>

@@ -1,4 +1,4 @@
-.TH "src/ckb/main.cpp" 3 "Mon May 22 2017" "Version beta-v0.2.7 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.TH "src/ckb/main.cpp" 3 "Thu May 25 2017" "Version v0.2.8 at branch all-mine" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -168,7 +168,7 @@ Referenced by main()\&.
 .PP
 Definition at line 148 of file main\&.cpp\&.
 .PP
-References CommandLineBackground, CommandLineClose, CommandLineError, CommandLineHelpRequested, CommandLineOK, CommandLineVersionRequested, disableAppNap(), isRunning(), CkbSettings::isWritable(), and parseCommandLine()\&.
+References CommandLineBackground, CommandLineClose, CommandLineError, CommandLineHelpRequested, CommandLineOK, CommandLineVersionRequested, disableAppNap(), isRunning(), and parseCommandLine()\&.
 .PP
 .nf
 148                                 {
@@ -245,9 +245,8 @@ References CommandLineBackground, CommandLineClose, CommandLineError, CommandLin
 219     if(!background)
 220         w\&.show();
 221 
-222     if (CkbSettings::isWritable())
-223         return a\&.exec();
-224 }
+222     return a\&.exec();
+223 }
 .fi
 .SS "\fBCommandLineParseResults\fP parseCommandLine (QCommandLineParser &parser, QString *errorMessage)"
 

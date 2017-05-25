@@ -1,9 +1,9 @@
 <map id="src/ckb/release/moc_animadddialog.cpp" name="src/ckb/release/moc_animadddialog.cpp">
-<area shape="rect" id="node2" href="$animadddialog_8h.html" title="../animadddialog.h" alt="" coords="168,96,296,123"/>
-<area shape="rect" id="node4" href="$animscript_8h.html" title="animscript.h" alt="" coords="320,320,413,347"/>
-<area shape="rect" id="node15" href="$kblight_8h.html" title="kblight.h" alt="" coords="455,171,525,197"/>
-<area shape="rect" id="node11" href="$keymap_8h.html" title="keymap.h" alt="" coords="327,469,405,496"/>
-<area shape="rect" id="node13" href="$colormap_8h.html" title="colormap.h" alt="" coords="5,395,91,421"/>
-<area shape="rect" id="node19" href="$kbanim_8h.html" title="kbanim.h" alt="" coords="592,245,665,272"/>
-<area shape="rect" id="node20" href="$ckbsettings_8h.html" title="ckbsettings.h" alt="" coords="730,320,829,347"/>
+<area shape="rect" id="node2" href="$animadddialog_8h.html" title="../animadddialog.h" alt="" coords="332,96,460,123"/>
+<area shape="rect" id="node4" href="$animscript_8h.html" title="animscript.h" alt="" coords="312,320,405,347"/>
+<area shape="rect" id="node15" href="$kblight_8h.html" title="kblight.h" alt="" coords="434,171,504,197"/>
+<area shape="rect" id="node11" href="$keymap_8h.html" title="keymap.h" alt="" coords="106,469,184,496"/>
+<area shape="rect" id="node13" href="$colormap_8h.html" title="colormap.h" alt="" coords="710,395,796,421"/>
+<area shape="rect" id="node19" href="$kbanim_8h.html" title="kbanim.h" alt="" coords="284,245,357,272"/>
+<area shape="rect" id="node20" href="$ckbsettings_8h.html" title="ckbsettings.h" alt="" coords="430,320,529,347"/>
 </map>

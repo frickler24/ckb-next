@@ -15,7 +15,7 @@
 <area shape="rect" id="node17" href="$classKeyMap.html#a96509a3511a15b9099fe7c254827a5c6" title="KeyMap::fromStorage" alt="" coords="413,360,563,387"/>
 <area shape="rect" id="node18" href="$classKbBind.html#af876f15671f6088e6f37f99dac79d298" title="KbBind::map" alt="" coords="439,208,537,235"/>
 <area shape="rect" id="node14" href="$classKeyMap.html#aece933ff97b9583f2e431a1fb3a699d7" title="KeyMap::KeyMap" alt="" coords="651,259,778,285"/>
-<area shape="rect" id="node15" href="$classKeyMap.html#ab582e08cb56076aa3ae89ec3d09bab6d" title="KeyMap::getModel get the KeyMap::Model from the vendor / product special table. Use this function fir..." alt="" coords="649,309,780,336"/>
+<area shape="rect" id="node15" href="$classKeyMap.html#a8e8adef86b4f4723b46a82df9fd2a4f7" title="KeyMap::getModel" alt="" coords="649,309,780,336"/>
 <area shape="rect" id="node16" href="$classKeyMap.html#a6701f6dab76262beb388d5a6f053b721" title="KeyMap::getLayout" alt="" coords="647,360,782,387"/>
 <area shape="rect" id="node20" href="$classKbLight.html#a539f8ef1f120055aca4fc5892e08ae9a" title="KbLight::color" alt="" coords="437,411,539,437"/>
 <area shape="rect" id="node23" href="$classKbLight.html#ae682f44cb55d99f70f6516c76f322c80" title="KbLight::map" alt="" coords="439,461,537,488"/>

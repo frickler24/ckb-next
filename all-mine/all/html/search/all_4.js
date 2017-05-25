@@ -10,7 +10,7 @@ var searchData=
   ['datetime',['dateTime',['../structQuaZipFileInfo.html#ad6993d099436813a27fd31aebe42911a',1,'QuaZipFileInfo::dateTime()'],['../structQuaZipFileInfo64.html#a4d77c6aa6076703e858c938efeb551e4',1,'QuaZipFileInfo64::dateTime()'],['../structQuaZipNewInfo.html#aec7f3ac72c72a2e10b82ad64c2fa3453',1,'QuaZipNewInfo::dateTime()']]],
   ['de',['DE',['../classKeyMap.html#ad1d282278b1b6a408e75ec29f06a546cacfeacff71c3a6cbb6cebf61d3c8b06ce',1,'KeyMap']]],
   ['dealloc',['deAlloc',['../classColorMap.html#a5b1a2380ceed6ea2981c5d1928fc3a1e',1,'ColorMap']]],
-  ['debug',['DEBUG',['../usb__linux_8c.html#ad72dbcf6d0153db1b8d8a58001feed83',1,'DEBUG():&#160;usb_linux.c'],['../usb__linux_8c.html#ad72dbcf6d0153db1b8d8a58001feed83',1,'DEBUG():&#160;usb_linux.c']]],
+  ['debug',['DEBUG',['../usb__linux_8c.html#ad72dbcf6d0153db1b8d8a58001feed83',1,'usb_linux.c']]],
   ['decrypt_5fbyte',['decrypt_byte',['../crypt_8h.html#a3d049bf9296cf72cff8a07cff388bb1d',1,'crypt.h']]],
   ['def_5fmem_5flevel',['DEF_MEM_LEVEL',['../zip_8h.html#a19c8e60fa32d4ddf303ce988ba97af61',1,'zip.h']]],
   ['defaultaction',['defaultAction',['../classKbBind.html#adc0b3a203d2f9604799d2f7513241f91',1,'KbBind::defaultAction()'],['../classKeyAction.html#ae744da2dd239b7d6596a341ea63b0e88',1,'KeyAction::defaultAction()']]],

@@ -48,7 +48,7 @@ var searchData=
   ['prevmode',['prevMode',['../classKb.html#a98f8f34c717b24934c542be252380da1',1,'Kb']]],
   ['prevprofile',['prevProfile',['../classKb.html#a6020e4bb32cefb2fee38d4c27bce2c90',1,'Kb']]],
   ['process',['process',['../classAnimScript.html#a7b41b82f32c3836d53e1719a60b6f060',1,'AnimScript']]],
-  ['product',['product',['../firmware__special_8h.html#a50dc6fabdce8310c24cb73e86812185f',1,'firmwareSpecial::product()'],['../fwupgradedialog_8cpp.html#a22497a5feedb6978a831f3224161c320',1,'KbId::product()'],['../structures_8h.html#a045b6c91e3f04e54f25d39da9bda105b',1,'usbdevice::product()']]],
+  ['product',['product',['../fwupgradedialog_8cpp.html#a22497a5feedb6978a831f3224161c320',1,'KbId::product()'],['../structures_8h.html#a045b6c91e3f04e54f25d39da9bda105b',1,'usbdevice::product()']]],
   ['profile',['profile',['../classKbBindWidget.html#af2481f98127f624321febf56c3c1869a',1,'KbBindWidget::profile()'],['../classKPerfWidget.html#a4488dd2e2fa02b4f61bc9ec7c0163c5c',1,'KPerfWidget::profile()'],['../classMPerfWidget.html#a4b2f745bd5acaba0dd7a6fd7ed08061a',1,'MPerfWidget::profile()'],['../classRebindWidget.html#a9831b61dfc7fa1ed91e5cc6f853dffa6',1,'RebindWidget::profile()'],['../structures_8h.html#a9601fc030cb4b69d9e05997a44a3a89c',1,'usbdevice::profile()']]],
   ['profilebox',['profileBox',['../classUi__KbWidget.html#a55ad1ccc1db619ac7b0d3cb61678a002',1,'Ui_KbWidget']]],
   ['profilelist',['profileList',['../classUi__KbProfileDialog.html#af41d68c1f42960e8733b663463398643',1,'Ui_KbProfileDialog']]],

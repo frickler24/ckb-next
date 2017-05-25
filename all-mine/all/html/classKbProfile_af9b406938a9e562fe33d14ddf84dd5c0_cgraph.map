@@ -18,7 +18,7 @@
 <area shape="rect" id="node21" href="$classKeyAction.html#a67bbf6dd422e76ef20ed858f28bb4b21" title="KeyAction::value" alt="" coords="602,233,723,260"/>
 <area shape="rect" id="node17" href="$classKeyMap.html#a2131ccd550f0875acd0cabc33bce6ea1" title="KeyMap::strModel" alt="" coords="815,120,943,147"/>
 <area shape="rect" id="node19" href="$classKeyMap.html#a27282ed1f29e14b9a5c836b9abb8f9b6" title="KeyMap::strLayout" alt="" coords="813,171,945,197"/>
-<area shape="rect" id="node18" href="$classKeyMap.html#ab582e08cb56076aa3ae89ec3d09bab6d" title="KeyMap::getModel get the KeyMap::Model from the vendor / product special table. Use this function fir..." alt="" coords="1013,120,1144,147"/>
+<area shape="rect" id="node18" href="$classKeyMap.html#a8e8adef86b4f4723b46a82df9fd2a4f7" title="KeyMap::getModel" alt="" coords="1013,120,1144,147"/>
 <area shape="rect" id="node20" href="$classKeyMap.html#a6701f6dab76262beb388d5a6f053b721" title="KeyMap::getLayout" alt="" coords="1011,171,1146,197"/>
 <area shape="rect" id="node23" href="$classKbAnim.html#ab3f14ad52f306a4714642e5decb4db36" title="KbAnim::guid" alt="" coords="613,81,713,108"/>
 <area shape="rect" id="node24" href="$classKbAnim.html#ab8f39227653c418f06695cca87f9e00f" title="KbAnim::save" alt="" coords="611,31,715,57"/>

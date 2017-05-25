@@ -1,4 +1,4 @@
-.TH "KeyAction" 3 "Mon May 22 2017" "Version beta-v0.2.7 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.TH "KeyAction" 3 "Thu May 25 2017" "Version v0.2.8 at branch all-mine" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -53,7 +53,7 @@ Inherits \fBQObject\fP\&.
 .ti -1c
 .RI "QString \fBmacroContent\fP () const "
 .br
-.RI "\fImacroContent returns the macro key definition only (the second part of the macro action)\&. \fP"
+.RI "\fImacroContent returns the macro key definition only (the second part of the macro action)\&. In this Implementation, strip the delay information\&. \fP"
 .ti -1c
 .RI "QString \fBmacroTiming\fP () const "
 .br
@@ -263,14 +263,14 @@ Definition at line 13 of file keyaction\&.h\&.
 .TP
 \fB\fISPECIAL \fP\fP
 .PP
-Definition at line 145 of file keyaction\&.h\&.
+Definition at line 146 of file keyaction\&.h\&.
 .PP
 .nf
-145               {
-146         UNBOUND,
-147         NORMAL,
-148         SPECIAL,
-149     };
+146               {
+147         UNBOUND,
+148         NORMAL,
+149         SPECIAL,
+150     };
 .fi
 .SH "Constructor & Destructor Documentation"
 .PP 
@@ -317,10 +317,10 @@ References preProgram, and relProgram\&.
 .SS "KeyAction::KeyAction (const \fBKeyAction\fP &rhs)\fC [inline]\fP, \fC [private]\fP"
 
 .PP
-Definition at line 186 of file keyaction\&.h\&.
+Definition at line 187 of file keyaction\&.h\&.
 .PP
 .nf
-186 : QObject() {}
+187 : QObject() {}
 .fi
 .SH "Member Function Documentation"
 .PP 
@@ -603,106 +603,106 @@ References _value, DPI_CUSTOM, DPI_DOWN, DPI_SNIPER, DPI_UP, dpiInfo(), KeyMap::
 .SS "bool KeyAction::isAnim () const\fC [inline]\fP"
 
 .PP
-Definition at line 158 of file keyaction\&.h\&.
+Definition at line 159 of file keyaction\&.h\&.
 .PP
 References _value\&.
 .PP
 Referenced by animInfo(), and RebindWidget::setSelection()\&.
 .PP
 .nf
-158 { return _value\&.startsWith("$anim:"); }
+159 { return _value\&.startsWith("$anim:"); }
 .fi
 .SS "bool KeyAction::isDPI () const\fC [inline]\fP"
 
 .PP
-Definition at line 161 of file keyaction\&.h\&.
+Definition at line 162 of file keyaction\&.h\&.
 .PP
 References _value\&.
 .PP
 Referenced by dpiInfo(), isMouse(), and RebindWidget::setSelection()\&.
 .PP
 .nf
-161 { return _value\&.startsWith("$dpi:"); }
+162 { return _value\&.startsWith("$dpi:"); }
 .fi
 .SS "bool KeyAction::isMacro () const\fC [inline]\fP"
 
 .PP
-Definition at line 159 of file keyaction\&.h\&.
+Definition at line 160 of file keyaction\&.h\&.
 .PP
 References _value\&.
 .PP
 Referenced by isValidMacro(), macroDisplay(), and macroFullLine()\&.
 .PP
 .nf
-159 { return _value\&.startsWith("$macro:"); }
+160 { return _value\&.startsWith("$macro:"); }
 .fi
 .SS "bool KeyAction::isMedia () const\fC [inline]\fP"
 
 .PP
-Definition at line 155 of file keyaction\&.h\&.
+Definition at line 156 of file keyaction\&.h\&.
 .PP
 References _value\&.
 .PP
 .nf
-155 { return _value == "mute" || _value == "volup" || _value == "voldn" || _value == "stop" || _value == "prev" || _value == "play" || _value == "next"; }
+156 { return _value == "mute" || _value == "volup" || _value == "voldn" || _value == "stop" || _value == "prev" || _value == "play" || _value == "next"; }
 .fi
 .SS "bool KeyAction::isMouse () const\fC [inline]\fP"
 
 .PP
-Definition at line 162 of file keyaction\&.h\&.
+Definition at line 163 of file keyaction\&.h\&.
 .PP
 References _value, isDPI(), and isNormal()\&.
 .PP
 Referenced by RebindWidget::setSelection()\&.
 .PP
 .nf
-162 { return (isNormal() && (_value\&.startsWith("mouse") || _value\&.startsWith("wheel"))) || isDPI(); }
+163 { return (isNormal() && (_value\&.startsWith("mouse") || _value\&.startsWith("wheel"))) || isDPI(); }
 .fi
 .SS "bool KeyAction::isNormal () const\fC [inline]\fP"
 
 .PP
-Definition at line 152 of file keyaction\&.h\&.
+Definition at line 153 of file keyaction\&.h\&.
 .PP
 References NORMAL, and type()\&.
 .PP
 Referenced by isMouse(), RebindWidget::setBind(), and RebindWidget::setSelection()\&.
 .PP
 .nf
-152 { return type() == NORMAL; }
+153 { return type() == NORMAL; }
 .fi
 .SS "bool KeyAction::isProgram () const\fC [inline]\fP"
 
 .PP
-Definition at line 157 of file keyaction\&.h\&.
+Definition at line 158 of file keyaction\&.h\&.
 .PP
 References _value\&.
 .PP
 Referenced by programInfo(), and RebindWidget::setSelection()\&.
 .PP
 .nf
-157 { return _value\&.startsWith("$program:"); }
+158 { return _value\&.startsWith("$program:"); }
 .fi
 .SS "bool KeyAction::isSpecial () const\fC [inline]\fP"
 
 .PP
-Definition at line 153 of file keyaction\&.h\&.
+Definition at line 154 of file keyaction\&.h\&.
 .PP
 References SPECIAL, and type()\&.
 .PP
 Referenced by driverName(), keyEvent(), and RebindWidget::setSelection()\&.
 .PP
 .nf
-153 { return type() == SPECIAL; }
+154 { return type() == SPECIAL; }
 .fi
 .SS "bool KeyAction::isUnbound () const\fC [inline]\fP"
 
 .PP
-Definition at line 151 of file keyaction\&.h\&.
+Definition at line 152 of file keyaction\&.h\&.
 .PP
 References type(), and UNBOUND\&.
 .PP
 .nf
-151 { return type() == UNBOUND; }
+152 { return type() == UNBOUND; }
 .fi
 .SS "bool KeyAction::isValidMacro () const\fC [inline]\fP"
 
@@ -712,7 +712,7 @@ References type(), and UNBOUND\&.
 bool as true iff the macro definition contains all four elements\&. 
 .RE
 .PP
-
+< a macro definition may have 4 or 5 elements\&. Later might be more\&. 
 .PP
 Definition at line 55 of file keyaction\&.h\&.
 .PP
@@ -725,7 +725,7 @@ Referenced by macroContent(), macroDisplay(), macroLine(), macroTiming(), Rebind
 56         if (isMacro()) {
 57             QStringList ret;
 58             ret =_value\&.split(":");
-59             return ((ret\&.count() >= 4) && (ret\&.count() <= 5));
+59             return ((ret\&.count() >= 4) && (ret\&.count() <= 5));  
 60         } else {
 61             return false;
 62         }
@@ -999,17 +999,17 @@ QString macroContent
 .PP
 
 .PP
-Definition at line 86 of file keyaction\&.h\&.
+Definition at line 87 of file keyaction\&.h\&.
 .PP
 References _value, and isValidMacro()\&.
 .PP
 Referenced by RebindWidget::setSelection(), and KbBind::update()\&.
 .PP
 .nf
-86                                         {
-87         // return isValidMacro() ? _value\&.split(":")[1]\&.replace(QRegExp("=\\d+"), "") : ""; ///> Is used if we have ckb without delay handling
-88         return isValidMacro() ? _value\&.split(":")[1] : "";
-89     }
+87                                         {
+88         // return isValidMacro() ? _value\&.split(":")[1]\&.replace(QRegExp("=\\d+"), "") : ""; ///< Is used if we have ckb without delay handling
+89         return isValidMacro() ? _value\&.split(":")[1] : "";
+90     }
 .fi
 .SS "void KeyAction::macroDisplay ()"
 \fBKeyAction::macroDisplay\fP is just for debugging\&. It shows the content of the key action and some other info\&.
@@ -1048,7 +1048,7 @@ Referenced by RebindWidget::setSelection()\&.
 .PP
 \fBReturns:\fP
 .RS 4
-QString All 5 parts are returned in one QString\&. If no definition exists, return '' 
+QString All 4 or 5 parts are returned in one QString\&. If no definition exists, return '' 
 .RE
 .PP
 
@@ -1067,7 +1067,7 @@ References _value, and isMacro()\&.
 .PP
 \fBReturns:\fP
 .RS 4
-QStringList returns the Macro \fBKey\fP Definition, Readble Macro String, Readable Macro Comment and the original timing information (if it exists as a 5th part) as QStringList\&. 
+QStringList returns the Macro \fBKey\fP Definition, Readble Macro String Readable Macro Comment and the original timing information (if it exists as a 5th part) as QStringList\&. 
 .RE
 .PP
 
@@ -1097,20 +1097,20 @@ QString macroTiming
 .PP
 
 .PP
-Definition at line 98 of file keyaction\&.h\&.
+Definition at line 99 of file keyaction\&.h\&.
 .PP
 References _value, and isValidMacro()\&.
 .PP
 Referenced by RebindWidget::setSelection()\&.
 .PP
 .nf
-98                                        {
-99         if (isValidMacro()) {
-100             QStringList rval = _value\&.split(":");
-101             return (rval\&.length() == 4)? rval[1] : rval[4];
-102         }
-103         return QString("");
-104     }
+99                                        {
+100         if (isValidMacro()) {
+101             QStringList rval = _value\&.split(":");
+102             return (rval\&.length() == 4)? rval[1] : rval[4];
+103         }
+104         return QString("");
+105     }
 .fi
 .SS "QString KeyAction::modeAction (intmode)\fC [static]\fP"
 
@@ -1145,10 +1145,10 @@ References _value\&.
 .SS "void KeyAction::operator= (const \fBKeyAction\fP &rhs)\fC [inline]\fP, \fC [private]\fP"
 
 .PP
-Definition at line 185 of file keyaction\&.h\&.
+Definition at line 186 of file keyaction\&.h\&.
 .PP
 .nf
-185 {}
+186 {}
 .fi
 .SS "QString KeyAction::programAction (const QString &onPress, const QString &onRelease, intstop)\fC [static]\fP"
 
@@ -1240,155 +1240,155 @@ Referenced by KbBind::action(), KbBind::KbBind(), KbBind::save(), and KbBind::up
 .SS "QString KeyAction::_value\fC [private]\fP"
 
 .PP
-Definition at line 188 of file keyaction\&.h\&.
+Definition at line 189 of file keyaction\&.h\&.
 .PP
 Referenced by animInfo(), dpiInfo(), driverName(), friendlyName(), isAnim(), isDPI(), isMacro(), isMedia(), isMouse(), isProgram(), isValidMacro(), keyEvent(), macroContent(), macroDisplay(), macroFullLine(), macroLine(), macroTiming(), operator QString(), programInfo(), specialInfo(), type(), and value()\&.
 .SS "const int KeyAction::DPI_CUSTOM = 6\fC [static]\fP"
 
 .PP
-Definition at line 127 of file keyaction\&.h\&.
+Definition at line 128 of file keyaction\&.h\&.
 .PP
 Referenced by dpiAction(), dpiInfo(), friendlyName(), keyEvent(), and RebindWidget::setSelection()\&.
 .SS "const int KeyAction::DPI_DOWN = -1\fC [static]\fP"
 
 .PP
-Definition at line 126 of file keyaction\&.h\&.
+Definition at line 127 of file keyaction\&.h\&.
 .PP
 Referenced by friendlyName(), and keyEvent()\&.
 .SS "const int KeyAction::DPI_SNIPER = 0\fC [static]\fP"
 
 .PP
-Definition at line 127 of file keyaction\&.h\&.
+Definition at line 128 of file keyaction\&.h\&.
 .PP
 Referenced by friendlyName(), and keyEvent()\&.
 .SS "const int KeyAction::DPI_UP = -2\fC [static]\fP"
 
 .PP
-Definition at line 126 of file keyaction\&.h\&.
+Definition at line 127 of file keyaction\&.h\&.
 .PP
 Referenced by friendlyName(), and keyEvent()\&.
 .SS "const int KeyAction::LIGHT_DOWN = 1\fC [static]\fP"
 
 .PP
-Definition at line 130 of file keyaction\&.h\&.
+Definition at line 131 of file keyaction\&.h\&.
 .PP
 Referenced by friendlyName(), keyEvent(), and RebindWidget::setSelection()\&.
 .SS "const int KeyAction::LIGHT_DOWN_WRAP = 3\fC [static]\fP"
 
 .PP
-Definition at line 131 of file keyaction\&.h\&.
+Definition at line 132 of file keyaction\&.h\&.
 .PP
 Referenced by friendlyName(), keyEvent(), and RebindWidget::setSelection()\&.
 .SS "const int KeyAction::LIGHT_UP = 0\fC [static]\fP"
 
 .PP
-Definition at line 130 of file keyaction\&.h\&.
+Definition at line 131 of file keyaction\&.h\&.
 .PP
 Referenced by friendlyName(), keyEvent(), and RebindWidget::setSelection()\&.
 .SS "const int KeyAction::LIGHT_UP_WRAP = 2\fC [static]\fP"
 
 .PP
-Definition at line 131 of file keyaction\&.h\&.
+Definition at line 132 of file keyaction\&.h\&.
 .PP
 Referenced by friendlyName(), keyEvent(), and RebindWidget::setSelection()\&.
 .SS "const int KeyAction::LOCK_OFF = 2\fC [static]\fP"
 
 .PP
-Definition at line 134 of file keyaction\&.h\&.
+Definition at line 135 of file keyaction\&.h\&.
 .PP
 Referenced by friendlyName(), and keyEvent()\&.
 .SS "const int KeyAction::LOCK_ON = 1\fC [static]\fP"
 
 .PP
-Definition at line 134 of file keyaction\&.h\&.
+Definition at line 135 of file keyaction\&.h\&.
 .PP
 Referenced by friendlyName(), and keyEvent()\&.
 .SS "const int KeyAction::LOCK_TOGGLE = 0\fC [static]\fP"
 
 .PP
-Definition at line 134 of file keyaction\&.h\&.
+Definition at line 135 of file keyaction\&.h\&.
 .PP
 Referenced by friendlyName(), and keyEvent()\&.
 .SS "const int KeyAction::MODE_NEXT = -1\fC [static]\fP"
 
 .PP
-Definition at line 122 of file keyaction\&.h\&.
+Definition at line 123 of file keyaction\&.h\&.
 .PP
 Referenced by friendlyName(), keyEvent(), and RebindWidget::setSelection()\&.
 .SS "const int KeyAction::MODE_NEXT_WRAP = -3\fC [static]\fP"
 
 .PP
-Definition at line 123 of file keyaction\&.h\&.
+Definition at line 124 of file keyaction\&.h\&.
 .PP
 Referenced by friendlyName(), keyEvent(), and RebindWidget::setSelection()\&.
 .SS "const int KeyAction::MODE_PREV = -2\fC [static]\fP"
 
 .PP
-Definition at line 122 of file keyaction\&.h\&.
+Definition at line 123 of file keyaction\&.h\&.
 .PP
 Referenced by friendlyName(), keyEvent(), and RebindWidget::setSelection()\&.
 .SS "const int KeyAction::MODE_PREV_WRAP = -4\fC [static]\fP"
 
 .PP
-Definition at line 123 of file keyaction\&.h\&.
+Definition at line 124 of file keyaction\&.h\&.
 .PP
 Referenced by friendlyName(), keyEvent(), and RebindWidget::setSelection()\&.
 .SS "QProcess* KeyAction::preProgram\fC [private]\fP"
 
 .PP
-Definition at line 191 of file keyaction\&.h\&.
+Definition at line 192 of file keyaction\&.h\&.
 .PP
 Referenced by keyEvent(), and ~KeyAction()\&.
 .SS "const int KeyAction::PROGRAM_PR_INDEF = 0x00\fC [static]\fP"
 
 .PP
-Definition at line 137 of file keyaction\&.h\&.
+Definition at line 138 of file keyaction\&.h\&.
 .SS "const int KeyAction::PROGRAM_PR_KPSTOP = 0x02\fC [static]\fP"
 
 .PP
-Definition at line 137 of file keyaction\&.h\&.
+Definition at line 138 of file keyaction\&.h\&.
 .PP
 Referenced by keyEvent()\&.
 .SS "const int KeyAction::PROGRAM_PR_KRSTOP = 0x01\fC [static]\fP"
 
 .PP
-Definition at line 137 of file keyaction\&.h\&.
+Definition at line 138 of file keyaction\&.h\&.
 .PP
 Referenced by keyEvent()\&.
 .SS "const int KeyAction::PROGRAM_PR_MULTI = 0x04\fC [static]\fP"
 
 .PP
-Definition at line 137 of file keyaction\&.h\&.
+Definition at line 138 of file keyaction\&.h\&.
 .PP
 Referenced by RebindWidget::applyChanges(), keyEvent(), and RebindWidget::setSelection()\&.
 .SS "const int KeyAction::PROGRAM_RE_INDEF = 0x00\fC [static]\fP"
 
 .PP
-Definition at line 138 of file keyaction\&.h\&.
+Definition at line 139 of file keyaction\&.h\&.
 .PP
 Referenced by RebindWidget::applyChanges(), and RebindWidget::setSelection()\&.
 .SS "const int KeyAction::PROGRAM_RE_KPSTOP = 0x20\fC [static]\fP"
 
 .PP
-Definition at line 138 of file keyaction\&.h\&.
+Definition at line 139 of file keyaction\&.h\&.
 .PP
 Referenced by RebindWidget::applyChanges(), keyEvent(), and RebindWidget::setSelection()\&.
 .SS "const int KeyAction::PROGRAM_RE_MULTI = 0x40\fC [static]\fP"
 
 .PP
-Definition at line 138 of file keyaction\&.h\&.
+Definition at line 139 of file keyaction\&.h\&.
 .PP
 Referenced by RebindWidget::applyChanges(), keyEvent(), and RebindWidget::setSelection()\&.
 .SS "QProcess* KeyAction::relProgram\fC [private]\fP"
 
 .PP
-Definition at line 192 of file keyaction\&.h\&.
+Definition at line 193 of file keyaction\&.h\&.
 .PP
 Referenced by keyEvent(), and ~KeyAction()\&.
 .SS "quint64 KeyAction::sniperValue\fC [private]\fP"
 
 .PP
-Definition at line 195 of file keyaction\&.h\&.
+Definition at line 196 of file keyaction\&.h\&.
 .PP
 Referenced by keyEvent()\&.
 

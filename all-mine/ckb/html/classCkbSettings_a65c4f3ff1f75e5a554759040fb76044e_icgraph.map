@@ -15,7 +15,7 @@
 <area shape="rect" id="node22" href="$classExtraSettingsWidget.html#a77ded97e5f5097c29da0e6fe1a969ee7" title="ExtraSettingsWidget\l::pollUpdates" alt="" coords="206,811,349,853"/>
 <area shape="rect" id="node4" href="$classSettingsWidget.html#ade14962822a9beef6bf826c62fe6dac1" title="SettingsWidget::on\l_loginItemBox_clicked" alt="" coords="447,19,601,61"/>
 <area shape="rect" id="node5" href="$classSettingsWidget.html#ab381a630fcf24d7fe49ab7bd2896c052" title="SettingsWidget::Settings\lWidget" alt="" coords="669,129,835,170"/>
-<area shape="rect" id="node11" href="$classSettingsWidget.html#a11ec2a7f0f7896520f4135f2c1035a96" title="SettingsWidget::showLayoutDialog pops up a modal window to select the keyboard layout. Before the modal windows is created, look for a popssible open info&#45;window about read only config file. If showLayoutDialog() finds an info window, it waits with creating the keyboard&#45;selection until the info window has gone. " alt="" coords="429,255,619,297"/>
+<area shape="rect" id="node11" href="$classSettingsWidget.html#a11ec2a7f0f7896520f4135f2c1035a96" title="SettingsWidget::showLayout\lDialog" alt="" coords="429,255,619,297"/>
 <area shape="rect" id="node15" href="$classKbLightWidget.html#a1de1f3328abf87f7f48673c46fbd3b4b" title="KbLightWidget::setLight" alt="" coords="443,557,605,584"/>
 <area shape="rect" id="node16" href="$classKbWidget.html#aae4a00bb180d711b5df7df6443c8bf36" title="KbWidget::modeChanged" alt="" coords="667,557,837,584"/>
 <area shape="rect" id="node17" href="$classKbWidget.html#a848a21f1fd112e13ca5fcf25da4592c6" title="KbWidget::KbWidget" alt="" coords="920,528,1064,555"/>

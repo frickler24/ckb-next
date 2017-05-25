@@ -1,4 +1,4 @@
-.TH "KbFirmware::FW" 3 "Mon May 22 2017" "Version beta-v0.2.7 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.TH "KbFirmware::FW" 3 "Thu May 25 2017" "Version v0.2.8 at branch all-mine" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -31,6 +31,9 @@ KbFirmware::FW \-
 .ti -1c
 .RI "float \fBckbVersion\fP"
 .br
+.ti -1c
+.RI "uint16_t \fBforProductID\fP"
+.br
 .in -1c
 .SH "Detailed Description"
 .PP 
@@ -40,10 +43,10 @@ Definition at line 34 of file kbfirmware\&.h\&.
 .SS "KbFirmware::FW::FW ()"
 
 .PP
-Definition at line 12 of file kbfirmware\&.cpp\&.
+Definition at line 14 of file kbfirmware\&.cpp\&.
 .PP
 .nf
-12 : fwVersion(0\&.f), ckbVersion(0\&.f) {}
+14 : fwVersion(0\&.f), ckbVersion(0\&.f) {}
 .fi
 .SH "Field Documentation"
 .PP 
@@ -59,6 +62,12 @@ Referenced by KbFirmware::_latestForBoard(), and KbFirmware::processDownload()\&
 Definition at line 35 of file kbfirmware\&.h\&.
 .PP
 Referenced by KbFirmware::_fileForBoard(), and KbFirmware::processDownload()\&.
+.SS "uint16_t KbFirmware::FW::forProductID"
+
+.PP
+Definition at line 38 of file kbfirmware\&.h\&.
+.PP
+Referenced by KbFirmware::processDownload()\&.
 .SS "float KbFirmware::FW::fwVersion"
 
 .PP

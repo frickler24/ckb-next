@@ -31,7 +31,7 @@
   <td id="projectlogo"><img alt="Logo" src="ckb-128.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">ckb-next
-   &#160;<span id="projectnumber">beta-v0.2.7 at branch all-mine</span>
+   &#160;<span id="projectnumber">v0.2.8 at branch all-mine</span>
    </div>
    <div id="projectbrief">ckb-next driver for corsair devices</div>
   </td>
@@ -486,7 +486,7 @@ $(document).ready(function(){initNavTree('input_8c_source.html','');});
 <div class="ttc" id="structures_8h_html_aff8e43d6fa31f862313abbd82dd904ee"><div class="ttname"><a href="structures_8h.html#aff8e43d6fa31f862313abbd82dd904ee">usbdevice::uinput_kb</a></div><div class="ttdeci">int uinput_kb</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00189">structures.h:189</a></div></div>
 <div class="ttc" id="structures_8h_html_a3dfdb1f843ec3df0f2aeca70ee6f011a"><div class="ttname"><a href="structures_8h.html#a3dfdb1f843ec3df0f2aeca70ee6f011a">usbdevice::input</a></div><div class="ttdeci">usbinput input</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00245">structures.h:245</a></div></div>
 <div class="ttc" id="structures_8h_html_a5646d61c7780a87a21b70209396ff605"><div class="ttname"><a href="structures_8h.html#a5646d61c7780a87a21b70209396ff605">usbprofile::currentmode</a></div><div class="ttdeci">usbmode * currentmode</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00105">structures.h:105</a></div></div>
-<div class="ttc" id="usb_8h_html_a73130b0fe3277a0fd9481eceb4f0e483"><div class="ttname"><a href="usb_8h.html#a73130b0fe3277a0fd9481eceb4f0e483">DELAY_SHORT</a></div><div class="ttdeci">#define DELAY_SHORT(kb)</div><div class="ttdoc">USB delays for when the keyboards get picky about timing That was the original comment, but it is used anytime. The short delay is used before any send or receive. </div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00147">usb.h:147</a></div></div>
+<div class="ttc" id="usb_8h_html_a73130b0fe3277a0fd9481eceb4f0e483"><div class="ttname"><a href="usb_8h.html#a73130b0fe3277a0fd9481eceb4f0e483">DELAY_SHORT</a></div><div class="ttdeci">#define DELAY_SHORT(kb)</div><div class="ttdoc">USB delays for when the keyboards get picky about timing That was the original comment, but it is used anytime. The short delay is used before any send or receive. </div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00145">usb.h:145</a></div></div>
 <div class="ttc" id="input_8c_html_a7627527f18b9e615c9a9d5ff2a4b2b32"><div class="ttname"><a href="input_8c.html#a7627527f18b9e615c9a9d5ff2a4b2b32">IS_WHEEL</a></div><div class="ttdeci">#define IS_WHEEL(scan, kb)</div></div>
 <div class="ttc" id="input_8h_html_a4c2dfa1ea0b9801f9f554a9d01ba03e8"><div class="ttname"><a href="input_8h.html#a4c2dfa1ea0b9801f9f554a9d01ba03e8">IS_MOD</a></div><div class="ttdeci">#define IS_MOD(s)</div><div class="ttdef"><b>Definition:</b> <a href="input_8h_source.html#l00034">input.h:34</a></div></div>
 <div class="ttc" id="structures_8h_html_ad7a1e9ce4d47ec7219ab389d85e113f6"><div class="ttname"><a href="structures_8h.html#ad7a1e9ce4d47ec7219ab389d85e113f6">macroaction::rel_y</a></div><div class="ttdeci">short rel_y</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00029">structures.h:29</a></div></div>
@@ -534,7 +534,7 @@ $(document).ready(function(){initNavTree('input_8c_source.html','');});
 <div class="ttc" id="keymap_8h_html_a91f9df4a74bc03cbe6fe42e3dd110cb0"><div class="ttname"><a href="keymap_8h.html#a91f9df4a74bc03cbe6fe42e3dd110cb0">SCAN_SILENT</a></div><div class="ttdeci">#define SCAN_SILENT</div><div class="ttdef"><b>Definition:</b> <a href="keymap_8h_source.html#l00056">keymap.h:56</a></div></div>
 <div class="ttc" id="structures_8h_html_a847250183c4b8ebeb7959006df503e18"><div class="ttname"><a href="structures_8h.html#a847250183c4b8ebeb7959006df503e18">usbdevice::hw_ileds</a></div><div class="ttdeci">uchar hw_ileds</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00247">structures.h:247</a></div></div>
 <div class="ttc" id="keymap_8c_html_a5972a715b26e6b792acc53ad946e1fbb"><div class="ttname"><a href="keymap_8c.html#a5972a715b26e6b792acc53ad946e1fbb">keymap</a></div><div class="ttdeci">const key keymap[(((152+3+12)+25)+11)]</div><div class="ttdef"><b>Definition:</b> <a href="keymap_8c_source.html#l00005">keymap.c:5</a></div></div>
-<div class="ttc" id="usb_8h_html_afa51c505c8f442f49ea2d712c61faea2"><div class="ttname"><a href="usb_8h.html#afa51c505c8f442f49ea2d712c61faea2">os_sendindicators</a></div><div class="ttdeci">void os_sendindicators(usbdevice *kb)</div><div class="ttdoc">os_sendindicators update the indicators for the special keys (Numlock, Capslock and what else...</div><div class="ttdef"><b>Definition:</b> <a href="usb__linux_8c_source.html#l00216">usb_linux.c:216</a></div></div>
+<div class="ttc" id="usb_8h_html_afa51c505c8f442f49ea2d712c61faea2"><div class="ttname"><a href="usb_8h.html#afa51c505c8f442f49ea2d712c61faea2">os_sendindicators</a></div><div class="ttdeci">void os_sendindicators(usbdevice *kb)</div><div class="ttdoc">os_sendindicators update the indicators for the special keys (Numlock, Capslock and what else...</div><div class="ttdef"><b>Definition:</b> <a href="usb__linux_8c_source.html#l00214">usb_linux.c:214</a></div></div>
 <div class="ttc" id="device_8h_html"><div class="ttname"><a href="device_8h.html">device.h</a></div></div>
 <div class="ttc" id="structures_8h_html_structusbmode"><div class="ttname"><a href="structures_8h.html#structusbmode">usbmode</a></div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00083">structures.h:83</a></div></div>
 <div class="ttc" id="structures_8h_html_a07ad87dd79741d47cabf12da5c03bf4c"><div class="ttname"><a href="structures_8h.html#a07ad87dd79741d47cabf12da5c03bf4c">binding::macros</a></div><div class="ttdeci">keymacro * macros</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00047">structures.h:47</a></div></div>
@@ -552,7 +552,7 @@ $(document).ready(function(){initNavTree('input_8c_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c663af95b3406af676444e819a47854e.html">ckb-daemon</a></li><li class="navelem"><a class="el" href="input_8c.html">input.c</a></li>
-    <li class="footer">Generated on Mon May 22 2017 11:33:44 for ckb-next by
+    <li class="footer">Generated on Thu May 25 2017 22:06:20 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

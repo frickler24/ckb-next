@@ -2,7 +2,7 @@ var searchData=
 [
   ['half_5fof',['HALF_OF',['../__kiss__fft__guts_8h.html#a0b812a30fdb0c530a90a18d1692fab6c',1,'_kiss_fft_guts.h']]],
   ['handle',['handle',['../structures_8h.html#a1e1d8c37298aa076d30ba95dd97465ef',1,'usbdevice']]],
-  ['handlenotificationchannel',['handleNotificationChannel',['../classKbBind.html#a4bb7a8b9bdf99bbdbdf6edba08c7d248',1,'KbBind']]],
+  ['handlenotificationchannel',['handleNotificationChannel',['../classKbBind.html#ab27322709a40e2d244b714d260c05928',1,'KbBind']]],
   ['has_5fany_5ffeature',['HAS_ANY_FEATURE',['../structures_8h.html#a743945561bb497b48e375cc09a93a09c',1,'structures.h']]],
   ['has_5ffeatures',['HAS_FEATURES',['../structures_8h.html#ac5ce9f3f886e327076d6fa5393e7aa69',1,'structures.h']]],
   ['has_5fkey',['has_key',['../led_8c.html#a97b59f7ad581a5fdd8e2becec0b7725b',1,'led.c']]],

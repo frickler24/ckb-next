@@ -2,7 +2,7 @@
 <area shape="rect" id="node2" href="$classKeyAction.html#ac5eebd69fc7897b1c37cf3484b8268df" title="KeyAction::animInfo" alt="" coords="185,148,325,175"/>
 <area shape="rect" id="node6" href="$classRebindWidget.html#a0edad41d578028bea3ea0e327fc4c203" title="RebindWidget::setSelection" alt="" coords="373,199,557,225"/>
 <area shape="rect" id="node3" href="$classKeyAction.html#a1fd7bef50c828e25299d514222d5b5a4" title="KeyAction::keyEvent" alt="" coords="393,97,538,124"/>
-<area shape="rect" id="node4" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent" alt="" coords="647,39,774,65"/>
+<area shape="rect" id="node4" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent. " alt="" coords="647,39,774,65"/>
 <area shape="rect" id="node5" href="$classKb.html#afa36635dcc1cd9512f372594c57c546c" title="Kb::readNotify" alt="" coords="912,5,1019,32"/>
 <area shape="rect" id="node7" href="$classKbBindWidget.html#a3274fb51d224f0ca111bd714ed524a59" title="KbBindWidget::updateBind" alt="" coords="621,123,800,149"/>
 <area shape="rect" id="node13" href="$classKbBindWidget.html#ad1ce63ee68f21c7857ca8b24b7bb8309" title="KbBindWidget::newSelection" alt="" coords="615,199,806,225"/>

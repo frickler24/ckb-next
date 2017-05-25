@@ -1,4 +1,4 @@
-.TH "src/ckb/kb.cpp" 3 "Mon May 22 2017" "Version beta-v0.2.7 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.TH "src/ckb/kb.cpp" 3 "Thu May 25 2017" "Version v0.2.8 at branch all-mine" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -16,11 +16,11 @@ src/ckb/kb.cpp \-
 .br
 \fC#include <QDateTime>\fP
 .br
+\fC#include <QDebug>\fP
+.br
 \fC#include 'kb\&.h'\fP
 .br
 \fC#include 'kbmanager\&.h'\fP
-.br
-\fC#include <qdebug\&.h>\fP
 .br
 
 .SS "Variables"
@@ -41,19 +41,19 @@ src/ckb/kb.cpp \-
 .SS "QSet<\fBKb\fP*> activeDevices\fC [static]\fP"
 
 .PP
-Definition at line 18 of file kb\&.cpp\&.
+Definition at line 11 of file kb\&.cpp\&.
 .PP
 Referenced by Kb::dither(), Kb::frameRate(), Kb::Kb(), Kb::layout(), Kb::macroDelay(), Kb::mouseAccel(), Kb::scrollSpeed(), and Kb::~Kb()\&.
 .SS "QMutex notifyPathMutex\fC [static]\fP"
 
 .PP
-Definition at line 21 of file kb\&.cpp\&.
+Definition at line 14 of file kb\&.cpp\&.
 .PP
 Referenced by Kb::Kb(), and Kb::run()\&.
 .SS "QSet<QString> notifyPaths\fC [static]\fP"
 
 .PP
-Definition at line 20 of file kb\&.cpp\&.
+Definition at line 13 of file kb\&.cpp\&.
 .PP
 Referenced by Kb::Kb(), Kb::run(), and Kb::~Kb()\&.
 .SH "Author"

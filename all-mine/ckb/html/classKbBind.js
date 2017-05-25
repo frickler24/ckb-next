@@ -12,7 +12,7 @@ var classKbBind =
     [ "getMacroNumber", "classKbBind.html#af0e5585cdc241e42c60fff16985429a0", null ],
     [ "getMacroPath", "classKbBind.html#a592edd4cbb386e071e2cdaea0a2d53a9", null ],
     [ "globalRemap", "classKbBind.html#a195e520e9f7ee76718ca8ca8927b1d3b", null ],
-    [ "handleNotificationChannel", "classKbBind.html#a4bb7a8b9bdf99bbdbdf6edba08c7d248", null ],
+    [ "handleNotificationChannel", "classKbBind.html#ab27322709a40e2d244b714d260c05928", null ],
     [ "isISO", "classKbBind.html#a1e03ab37a136a311225d4b66a1cd9f51", null ],
     [ "isKeyboard", "classKbBind.html#a742281f5fabab1923101e941b4ec3599", null ],
     [ "isMouse", "classKbBind.html#abd94dfb3d7ffa68b94ac08b0c1c10970", null ],

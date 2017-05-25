@@ -1,6 +1,6 @@
 Warning: ignoring unsupported tag `ALLOW_UNICODE_NAMES    =' at line 79, file /home/travis/build/frickler24/ckb-next/documentation/Doxy-ckb-daemon
 Warning: ignoring unsupported tag `MAN_SUBDIR             =' at line 1782, file /home/travis/build/frickler24/ckb-next/documentation/Doxy-ckb-daemon
-Notice: Output directory `testing/ckb-daemon' does not exist. I have created it for you.
+Notice: Output directory `all-mine/ckb-daemon' does not exist. I have created it for you.
 Searching for include files...
 Searching for example files...
 Searching for images...
@@ -126,16 +126,16 @@ Search for main page...
 Computing page relations...
 Determining the scope of groups...
 Sorting lists...
-Freein/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:16: warning: End of list marker found without any preceding list items
+Freei/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:17: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:556: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:558: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:420: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:488: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
@@ -146,21 +146,21 @@ Freein/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:16: warning
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:427: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:504: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:527: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:16: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:16: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:16: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
-g entry tree
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:17: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:17: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:17: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
+ng entry tree
 Determining which enums are documented
 Computing member relations...
 Building full member lists recursively...
@@ -250,8 +250,8 @@ Generating call graph for function cmd_idle_mouse
 Generating call graph for function setactive_kb
 Generating caller graph for function setactive_kb
 Generating call graph for function setactive_mouse
-Generating caller g/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:16: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:16: warning: End of list marker found without any preceding list items
+Generating caller /home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:17: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:17: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
@@ -277,16 +277,16 @@ Generating caller g/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:16: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:17: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:16: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:17: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
-raph for function setactive_mouse
+graph for function setactive_mouse
 Generating call graph for function start_dev
 Generating docs for file src/ckb-daemon/device_keyboard.c...
 Generating call graph for function cmd_active_kb
@@ -369,7 +369,7 @@ Generating call graph for function cmd_macro
 Generating caller graph for function freebind
 Generating caller graph for function initbind
 Generating call graph for function inputupdate
-Generat/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
+Genera/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
@@ -392,28 +392,28 @@ Generat/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: wa
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:388: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:504: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:446: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:388: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:388: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:388: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:504: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:446: warning: End of list marker found without any preceding list items
-ing caller graph for function inputupdate
+ting caller graph for function inputupdate
 Generating caller graph for function os_inputclose
 Generating call graph for function os_inputopen
 Generating caller graph for function os_inputopen
@@ -496,26 +496,10 @@ Generating call graph for function quit
 Generating caller graph for function quit
 Generating call graph for function quitWithLock
 Generating caller graph for function quitWithLock
-Generating call g/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
+Generating call /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:388: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:388: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:504: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:446: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:388: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:504: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:446: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:388: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
@@ -524,7 +508,23 @@ Generating call g/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:446: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
-raph for function restart
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:388: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:504: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:446: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:388: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:504: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:446: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
+graph for function restart
 Generating caller graph for function restart
 Generating call graph for function sighandler
 Generating caller graph for function sighandler
@@ -610,25 +610,25 @@ Generating caller graph for function getprofilename
 Generating caller graph for function hwtonative
 Generating caller graph for function nativetohw
 Generating caller graph for function setid
-Generating docs for fileQGDict::hashAsciiKey: Invalid null key
+Generating docs for filQGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:420: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:488: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:556: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:558: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:388: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:446: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:446: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:16: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:16: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:17: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:17: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:388: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:504: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
@@ -638,14 +638,14 @@ QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:388: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:388: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:504: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
@@ -737,7 +737,7 @@ QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:167: warning: expected whitespace after [ command
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.h:164: warning: argument 'OUT' of command @param is not found in the argument list of setupusb(usbdevice *kb)
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:388: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:504: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
@@ -748,7 +748,7 @@ QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:202: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:527: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:388: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:504: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
@@ -761,7 +761,7 @@ QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:486: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:504: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:527: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:388: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:388: warning: End of list marker found without any preceding list items
@@ -788,27 +788,27 @@ QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:527: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:388: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:504: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:446: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:388: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:504: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:446: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:388: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:388: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:504: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
@@ -818,7 +818,7 @@ QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:527: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:631: warning: End of list marker found without any preceding list items
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:633: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:388: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:504: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
@@ -826,17 +826,18 @@ QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:427: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:770: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:486: warning: End of list marker found without any preceding list items
-/home/travis/build/frickler24/ckb-next/README.md:4: warning: Unexpected html tag <img> found within <a href=...> context
-/home/travis/build/frickler24/ckb-next/README.md:34: warning: unable to resolve reference to `https:' for \ref command
-/home/travis/build/frickler24/ckb-next/README.md:72: warning: Illegal command hevanaa as part of a <a>..</a> block
-/home/travis/build/frickler24/ckb-next/README.md:79: warning: Illegal command light2yellow as part of a <a>..</a> block
-/home/travis/build/frickler24/ckb-next/README.md:82: warning: Illegal command mrueg as part of a <a>..</a> block
-/home/travis/build/frickler24/ckb-next/README.md:101: warning: unable to resolve reference to `https:' for \ref command
-/home/travis/build/frickler24/ckb-next/README.md:152: warning: unable to resolve reference to `https:' for \ref command
-/home/travis/build/frickler24/ckb-next/README.md:250: warning: explicit link request to 'c3474d2' could not be resolved
+/home/travis/build/frickler24/ckb-next/README.md:49: warning: unable to resolve reference to `https:' for \ref command
+/home/travis/build/frickler24/ckb-next/README.md:84: warning: Illegal command hevanaa as part of a <a>..</a> block
+/home/travis/build/frickler24/ckb-next/README.md:86: warning: Illegal command makz27 as part of a <a>..</a> block
+/home/travis/build/frickler24/ckb-next/README.md:86: warning: Illegal command light2yellow as part of a <a>..</a> block
+/home/travis/build/frickler24/ckb-next/README.md:107: warning: unable to resolve reference to `https:' for \ref command
+/home/travis/build/frickler24/ckb-next/README.md:155: warning: unable to resolve reference to `https:' for \ref command
+/home/travis/build/frickler24/ckb-next/README.md:260: warning: explicit link request to 'c3474d2' could not be resolved
+/home/travis/build/frickler24/ckb-next/README.md:303: warning: explicit link request to 'ckb' could not be resolved
+/home/travis/build/frickler24/ckb-next/README.md:303: warning: Unexpected html tag <img> found within <a href=...> context
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
- src/ckb-daemon/profile_keyboard.c...
+e src/ckb-daemon/profile_keyboard.c...
 Generating call graph for function cmd_hwload_kb
 Generating call graph for function cmd_hwsave_kb
 Generating call graph for function hwloadmode
@@ -1802,5 +1803,5 @@ Patching output file 83/86
 Patching output file 84/86
 Patching output file 85/86
 Patching output file 86/86
-lookup cache used 695/65536 hits=14052 misses=724
+lookup cache used 697/65536 hits=14029 misses=727
 finished...

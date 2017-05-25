@@ -1,4 +1,4 @@
-.TH "Ui::RebindWidget" 3 "Mon May 22 2017" "Version beta-v0.2.7 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.TH "Ui::RebindWidget" 3 "Thu May 25 2017" "Version v0.2.8 at branch all-mine" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -383,173 +383,173 @@ Inherits \fBUi_RebindWidget\fP\&.
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 1070 of file ui_rebindwidget\&.h\&.
+Definition at line 1068 of file ui_rebindwidget\&.h\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "void Ui_RebindWidget::retranslateUi (\fBQWidget\fP *RebindWidget)\fC [inline]\fP, \fC [inherited]\fP"
 
 .PP
-Definition at line 911 of file ui_rebindwidget\&.h\&.
+Definition at line 909 of file ui_rebindwidget\&.h\&.
 .PP
 References Ui_RebindWidget::actionTab, Ui_RebindWidget::animBox, Ui_RebindWidget::animButton, Ui_RebindWidget::animKrBox, Ui_RebindWidget::animOnceBox, Ui_RebindWidget::animTab, Ui_RebindWidget::applyButton, Ui_RebindWidget::btnClearMacro, Ui_RebindWidget::btnStartMacro, Ui_RebindWidget::btnStopMacro, Ui_RebindWidget::cancelButton, Ui_RebindWidget::dpiBox, Ui_RebindWidget::dpiButton, Ui_RebindWidget::dpiCustLabel, Ui_RebindWidget::dpiWarning, Ui_RebindWidget::fnBox, Ui_RebindWidget::fnButton, Ui_RebindWidget::groupBox, Ui_RebindWidget::groupBox_2, Ui_RebindWidget::groupBox_3, Ui_RebindWidget::groupBox_4, Ui_RebindWidget::keyTab, Ui_RebindWidget::lbl_macro, Ui_RebindWidget::lightBox, Ui_RebindWidget::lightButton, Ui_RebindWidget::lightWrapBox, Ui_RebindWidget::lockBox, Ui_RebindWidget::lockButton, Ui_RebindWidget::macroTab, Ui_RebindWidget::mb2Box, Ui_RebindWidget::mb2Button, Ui_RebindWidget::mbBox, Ui_RebindWidget::mbButton, Ui_RebindWidget::mediaBox, Ui_RebindWidget::mediaButton, Ui_RebindWidget::modBox, Ui_RebindWidget::modButton, Ui_RebindWidget::modeBox, Ui_RebindWidget::modeButton, Ui_RebindWidget::modeWrapBox, Ui_RebindWidget::mouseTab, Ui_RebindWidget::numBox, Ui_RebindWidget::numButton, Ui_RebindWidget::programKpButton, Ui_RebindWidget::programKpModeBox, Ui_RebindWidget::programKpSIBox, Ui_RebindWidget::programKrButton, Ui_RebindWidget::programKrModeBox, Ui_RebindWidget::programKrSIBox, Ui_RebindWidget::programTab, Ui_RebindWidget::progTipLabel, Ui_RebindWidget::pteMacroComment, Ui_RebindWidget::pteMacroText, Ui_RebindWidget::rb_delay_asTyped, Ui_RebindWidget::rb_delay_default, Ui_RebindWidget::rb_delay_no, Ui_RebindWidget::resetButton, Ui_RebindWidget::tabWidget, Ui_RebindWidget::txtBuffer, Ui_RebindWidget::typingBox, Ui_RebindWidget::typingButton, Ui_RebindWidget::unbindButton, Ui_RebindWidget::wheelBox, and Ui_RebindWidget::wheelButton\&.
 .PP
 Referenced by Ui_RebindWidget::setupUi()\&.
 .PP
 .nf
-912     {
-913         numBox->clear();
-914         numBox->insertItems(0, QStringList()
-915          << QString()
-916         );
-917         typingBox->clear();
-918         typingBox->insertItems(0, QStringList()
-919          << QString()
-920         );
-921         fnBox->clear();
-922         fnBox->insertItems(0, QStringList()
-923          << QString()
-924         );
-925         typingButton->setText(QApplication::translate("RebindWidget", "T&yping:", Q_NULLPTR));
-926         modBox->clear();
-927         modBox->insertItems(0, QStringList()
-928          << QString()
-929         );
-930         mediaButton->setText(QApplication::translate("RebindWidget", "&Media:", Q_NULLPTR));
-931         modButton->setText(QApplication::translate("RebindWidget", "Modifier:", Q_NULLPTR));
-932         fnButton->setText(QApplication::translate("RebindWidget", "Misce&llaneous:", Q_NULLPTR));
-933         mediaBox->clear();
-934         mediaBox->insertItems(0, QStringList()
-935          << QString()
-936         );
-937         numButton->setText(QApplication::translate("RebindWidget", "Number pad:", Q_NULLPTR));
-938         tabWidget->setTabText(tabWidget->indexOf(keyTab), QApplication::translate("RebindWidget", "Keyboard", Q_NULLPTR));
-939         dpiButton->setText(QApplication::translate("RebindWidget", "Change DPI:", Q_NULLPTR));
-940         mb2Box->clear();
-941         mb2Box->insertItems(0, QStringList()
-942          << QString()
-943          << QApplication::translate("RebindWidget", "4 (Back)", Q_NULLPTR)
-944          << QApplication::translate("RebindWidget", "5 (Forward)", Q_NULLPTR)
-945          << QApplication::translate("RebindWidget", "6", Q_NULLPTR)
-946          << QApplication::translate("RebindWidget", "7", Q_NULLPTR)
-947          << QApplication::translate("RebindWidget", "8", Q_NULLPTR)
-948         );
-949         dpiBox->clear();
-950         dpiBox->insertItems(0, QStringList()
-951          << QString()
-952          << QApplication::translate("RebindWidget", "(Up)", Q_NULLPTR)
-953          << QApplication::translate("RebindWidget", "(Down)", Q_NULLPTR)
-954          << QApplication::translate("RebindWidget", "Sniper", Q_NULLPTR)
-955          << QApplication::translate("RebindWidget", "1:", Q_NULLPTR)
-956          << QApplication::translate("RebindWidget", "2:", Q_NULLPTR)
-957          << QApplication::translate("RebindWidget", "3:", Q_NULLPTR)
-958          << QApplication::translate("RebindWidget", "4:", Q_NULLPTR)
-959          << QApplication::translate("RebindWidget", "5:", Q_NULLPTR)
-960          << QApplication::translate("RebindWidget", "Custom:", Q_NULLPTR)
-961         );
-962         mbBox->clear();
-963         mbBox->insertItems(0, QStringList()
-964          << QString()
-965          << QApplication::translate("RebindWidget", "Left", Q_NULLPTR)
-966          << QApplication::translate("RebindWidget", "Right", Q_NULLPTR)
-967          << QApplication::translate("RebindWidget", "Middle", Q_NULLPTR)
-968         );
-969         wheelBox->clear();
-970         wheelBox->insertItems(0, QStringList()
-971          << QString()
-972          << QApplication::translate("RebindWidget", "Up", Q_NULLPTR)
-973          << QApplication::translate("RebindWidget", "Down", Q_NULLPTR)
-974         );
-975         mbButton->setText(QApplication::translate("RebindWidget", "Standard button:", Q_NULLPTR));
-976         dpiWarning->setText(QApplication::translate("RebindWidget", "DPI is only available for mice\&.", Q_NULLPTR));
-977         wheelButton->setText(QApplication::translate("RebindWidget", "Whee&l:", Q_NULLPTR));
-978         mb2Button->setText(QApplication::translate("RebindWidget", "Special button:", Q_NULLPTR));
-979         dpiCustLabel->setText(QApplication::translate("RebindWidget", "x", Q_NULLPTR));
-980         tabWidget->setTabText(tabWidget->indexOf(mouseTab), QApplication::translate("RebindWidget", "Mouse", Q_NULLPTR));
-981         animBox->clear();
-982         animBox->insertItems(0, QStringList()
-983          << QString()
-984         );
-985         animKrBox->setText(QApplication::translate("RebindWidget", "Stop on key release", Q_NULLPTR));
-986         animOnceBox->setText(QApplication::translate("RebindWidget", "Restart every time", Q_NULLPTR));
-987         animButton->setText(QApplication::translate("RebindWidget", "Start animation on keypress:", Q_NULLPTR));
-988         tabWidget->setTabText(tabWidget->indexOf(animTab), QApplication::translate("RebindWidget", "Animation", Q_NULLPTR));
-989         modeButton->setText(QApplication::translate("RebindWidget", "Switch to mode:", Q_NULLPTR));
-990         modeWrapBox->setText(QApplication::translate("RebindWidget", "Wrap-around", Q_NULLPTR));
-991         lightWrapBox->setText(QApplication::translate("RebindWidget", "Wrap-around", Q_NULLPTR));
-992         lockButton->setText(QApplication::translate("RebindWidget", "Windows lock:", Q_NULLPTR));
-993         lightBox->clear();
-994         lightBox->insertItems(0, QStringList()
-995          << QString()
-996          << QApplication::translate("RebindWidget", "Up", Q_NULLPTR)
-997          << QApplication::translate("RebindWidget", "Down", Q_NULLPTR)
-998         );
-999         lockBox->clear();
-1000         lockBox->insertItems(0, QStringList()
-1001          << QString()
-1002          << QApplication::translate("RebindWidget", "Toggle", Q_NULLPTR)
-1003          << QApplication::translate("RebindWidget", "On", Q_NULLPTR)
-1004          << QApplication::translate("RebindWidget", "Off", Q_NULLPTR)
-1005         );
-1006         lightButton->setText(QApplication::translate("RebindWidget", "Brightness:", Q_NULLPTR));
-1007         modeBox->clear();
-1008         modeBox->insertItems(0, QStringList()
-1009          << QString()
-1010          << QApplication::translate("RebindWidget", "(Previous)", Q_NULLPTR)
-1011          << QApplication::translate("RebindWidget", "(Next)", Q_NULLPTR)
-1012         );
-1013         tabWidget->setTabText(tabWidget->indexOf(actionTab), QApplication::translate("RebindWidget", "Special", Q_NULLPTR));
-1014         programKpButton->setText(QApplication::translate("RebindWidget", "Launch program on key press:", Q_NULLPTR));
-1015         programKrButton->setText(QApplication::translate("RebindWidget", "Launch program on key release:", Q_NULLPTR));
-1016         programKpSIBox->setText(QApplication::translate("RebindWidget", "Single instance", Q_NULLPTR));
-1017         programKpModeBox->clear();
-1018         programKpModeBox->insertItems(0, QStringList()
-1019          << QApplication::translate("RebindWidget", "Run indefinitely", Q_NULLPTR)
-1020          << QApplication::translate("RebindWidget", "Stop on release", Q_NULLPTR)
-1021          << QApplication::translate("RebindWidget", "Stop on re-press", Q_NULLPTR)
-1022         );
-1023         programKrSIBox->setText(QApplication::translate("RebindWidget", "Single instance", Q_NULLPTR));
-1024         programKrModeBox->clear();
-1025         programKrModeBox->insertItems(0, QStringList()
-1026          << QApplication::translate("RebindWidget", "Run indefinitely", Q_NULLPTR)
-1027          << QApplication::translate("RebindWidget", "Stop on re-press", Q_NULLPTR)
-1028         );
-1029         progTipLabel->setText(QApplication::translate("RebindWidget", "Tip", Q_NULLPTR));
-1030         tabWidget->setTabText(tabWidget->indexOf(programTab), QApplication::translate("RebindWidget", "Program", Q_NULLPTR));
-1031         groupBox_2->setTitle(QApplication::translate("RebindWidget", "Macro Key Actions", Q_NULLPTR));
-1032 #ifndef QT_NO_TOOLTIP
-1033         pteMacroComment->setToolTip(QApplication::translate("RebindWidget", "What is this macro for?", Q_NULLPTR));
-1034 #endif // QT_NO_TOOLTIP
-1035         pteMacroComment->setDocumentTitle(QString());
-1036         pteMacroComment->setPlainText(QString());
-1037         pteMacroText->setDocumentTitle(QString());
-1038         pteMacroText->setPlainText(QString());
-1039         groupBox_3->setTitle(QApplication::translate("RebindWidget", "Macro Comment", Q_NULLPTR));
-1040         groupBox_4->setTitle(QApplication::translate("RebindWidget", "Macro Text", Q_NULLPTR));
-1041         btnStopMacro->setText(QApplication::translate("RebindWidget", "Stop", Q_NULLPTR));
-1042         btnClearMacro->setText(QApplication::translate("RebindWidget", "Clear", Q_NULLPTR));
-1043         btnStartMacro->setText(QApplication::translate("RebindWidget", "Start", Q_NULLPTR));
-1044         groupBox->setTitle(QApplication::translate("RebindWidget", "Macro recording", Q_NULLPTR));
-1045         lbl_macro->setText(QApplication::translate("RebindWidget", "Comment label for help", Q_NULLPTR));
-1046         txtBuffer->setText(QString());
-1047 #ifndef QT_NO_WHATSTHIS
-1048         rb_delay_asTyped->setWhatsThis(QApplication::translate("RebindWidget", "configure delays between keystrokes: Remember delays as they had been typed while the macro definition process", Q_NULLPTR));
-1049 #endif // QT_NO_WHATSTHIS
-1050         rb_delay_asTyped->setText(QApplication::translate("RebindWidget", "as typed", Q_NULLPTR));
-1051 #ifndef QT_NO_WHATSTHIS
-1052         rb_delay_default->setWhatsThis(QApplication::translate("RebindWidget", "configure delays between keystrokes: Set delay to default values: 20us up to 15 chars, 200us above", Q_NULLPTR));
-1053 #endif // QT_NO_WHATSTHIS
-1054         rb_delay_default->setText(QApplication::translate("RebindWidget", "default", Q_NULLPTR));
-1055 #ifndef QT_NO_WHATSTHIS
-1056         rb_delay_no->setWhatsThis(QApplication::translate("RebindWidget", "configure delays between keystrokes: Disable delay", Q_NULLPTR));
-1057 #endif // QT_NO_WHATSTHIS
-1058         rb_delay_no->setText(QApplication::translate("RebindWidget", "No delay", Q_NULLPTR));
-1059         tabWidget->setTabText(tabWidget->indexOf(macroTab), QApplication::translate("RebindWidget", "Macro", Q_NULLPTR));
-1060         unbindButton->setText(QApplication::translate("RebindWidget", "Unbind", Q_NULLPTR));
-1061         resetButton->setText(QApplication::translate("RebindWidget", "Reset to Default", Q_NULLPTR));
-1062         cancelButton->setText(QApplication::translate("RebindWidget", "Cancel", Q_NULLPTR));
-1063         applyButton->setText(QApplication::translate("RebindWidget", "Apply", Q_NULLPTR));
-1064         Q_UNUSED(RebindWidget);
-1065     } // retranslateUi
+910     {
+911         numBox->clear();
+912         numBox->insertItems(0, QStringList()
+913          << QString()
+914         );
+915         typingBox->clear();
+916         typingBox->insertItems(0, QStringList()
+917          << QString()
+918         );
+919         fnBox->clear();
+920         fnBox->insertItems(0, QStringList()
+921          << QString()
+922         );
+923         typingButton->setText(QApplication::translate("RebindWidget", "T&yping:", Q_NULLPTR));
+924         modBox->clear();
+925         modBox->insertItems(0, QStringList()
+926          << QString()
+927         );
+928         mediaButton->setText(QApplication::translate("RebindWidget", "&Media:", Q_NULLPTR));
+929         modButton->setText(QApplication::translate("RebindWidget", "Modifier:", Q_NULLPTR));
+930         fnButton->setText(QApplication::translate("RebindWidget", "Misce&llaneous:", Q_NULLPTR));
+931         mediaBox->clear();
+932         mediaBox->insertItems(0, QStringList()
+933          << QString()
+934         );
+935         numButton->setText(QApplication::translate("RebindWidget", "Number pad:", Q_NULLPTR));
+936         tabWidget->setTabText(tabWidget->indexOf(keyTab), QApplication::translate("RebindWidget", "Keyboard", Q_NULLPTR));
+937         dpiButton->setText(QApplication::translate("RebindWidget", "Change DPI:", Q_NULLPTR));
+938         mb2Box->clear();
+939         mb2Box->insertItems(0, QStringList()
+940          << QString()
+941          << QApplication::translate("RebindWidget", "4 (Back)", Q_NULLPTR)
+942          << QApplication::translate("RebindWidget", "5 (Forward)", Q_NULLPTR)
+943          << QApplication::translate("RebindWidget", "6", Q_NULLPTR)
+944          << QApplication::translate("RebindWidget", "7", Q_NULLPTR)
+945          << QApplication::translate("RebindWidget", "8", Q_NULLPTR)
+946         );
+947         dpiBox->clear();
+948         dpiBox->insertItems(0, QStringList()
+949          << QString()
+950          << QApplication::translate("RebindWidget", "(Up)", Q_NULLPTR)
+951          << QApplication::translate("RebindWidget", "(Down)", Q_NULLPTR)
+952          << QApplication::translate("RebindWidget", "Sniper", Q_NULLPTR)
+953          << QApplication::translate("RebindWidget", "1:", Q_NULLPTR)
+954          << QApplication::translate("RebindWidget", "2:", Q_NULLPTR)
+955          << QApplication::translate("RebindWidget", "3:", Q_NULLPTR)
+956          << QApplication::translate("RebindWidget", "4:", Q_NULLPTR)
+957          << QApplication::translate("RebindWidget", "5:", Q_NULLPTR)
+958          << QApplication::translate("RebindWidget", "Custom:", Q_NULLPTR)
+959         );
+960         mbBox->clear();
+961         mbBox->insertItems(0, QStringList()
+962          << QString()
+963          << QApplication::translate("RebindWidget", "Left", Q_NULLPTR)
+964          << QApplication::translate("RebindWidget", "Right", Q_NULLPTR)
+965          << QApplication::translate("RebindWidget", "Middle", Q_NULLPTR)
+966         );
+967         wheelBox->clear();
+968         wheelBox->insertItems(0, QStringList()
+969          << QString()
+970          << QApplication::translate("RebindWidget", "Up", Q_NULLPTR)
+971          << QApplication::translate("RebindWidget", "Down", Q_NULLPTR)
+972         );
+973         mbButton->setText(QApplication::translate("RebindWidget", "Standard button:", Q_NULLPTR));
+974         dpiWarning->setText(QApplication::translate("RebindWidget", "DPI is only available for mice\&.", Q_NULLPTR));
+975         wheelButton->setText(QApplication::translate("RebindWidget", "Whee&l:", Q_NULLPTR));
+976         mb2Button->setText(QApplication::translate("RebindWidget", "Special button:", Q_NULLPTR));
+977         dpiCustLabel->setText(QApplication::translate("RebindWidget", "x", Q_NULLPTR));
+978         tabWidget->setTabText(tabWidget->indexOf(mouseTab), QApplication::translate("RebindWidget", "Mouse", Q_NULLPTR));
+979         animBox->clear();
+980         animBox->insertItems(0, QStringList()
+981          << QString()
+982         );
+983         animKrBox->setText(QApplication::translate("RebindWidget", "Stop on key release", Q_NULLPTR));
+984         animOnceBox->setText(QApplication::translate("RebindWidget", "Restart every time", Q_NULLPTR));
+985         animButton->setText(QApplication::translate("RebindWidget", "Start animation on keypress:", Q_NULLPTR));
+986         tabWidget->setTabText(tabWidget->indexOf(animTab), QApplication::translate("RebindWidget", "Animation", Q_NULLPTR));
+987         modeButton->setText(QApplication::translate("RebindWidget", "Switch to mode:", Q_NULLPTR));
+988         modeWrapBox->setText(QApplication::translate("RebindWidget", "Wrap-around", Q_NULLPTR));
+989         lightWrapBox->setText(QApplication::translate("RebindWidget", "Wrap-around", Q_NULLPTR));
+990         lockButton->setText(QApplication::translate("RebindWidget", "Windows lock:", Q_NULLPTR));
+991         lightBox->clear();
+992         lightBox->insertItems(0, QStringList()
+993          << QString()
+994          << QApplication::translate("RebindWidget", "Up", Q_NULLPTR)
+995          << QApplication::translate("RebindWidget", "Down", Q_NULLPTR)
+996         );
+997         lockBox->clear();
+998         lockBox->insertItems(0, QStringList()
+999          << QString()
+1000          << QApplication::translate("RebindWidget", "Toggle", Q_NULLPTR)
+1001          << QApplication::translate("RebindWidget", "On", Q_NULLPTR)
+1002          << QApplication::translate("RebindWidget", "Off", Q_NULLPTR)
+1003         );
+1004         lightButton->setText(QApplication::translate("RebindWidget", "Brightness:", Q_NULLPTR));
+1005         modeBox->clear();
+1006         modeBox->insertItems(0, QStringList()
+1007          << QString()
+1008          << QApplication::translate("RebindWidget", "(Previous)", Q_NULLPTR)
+1009          << QApplication::translate("RebindWidget", "(Next)", Q_NULLPTR)
+1010         );
+1011         tabWidget->setTabText(tabWidget->indexOf(actionTab), QApplication::translate("RebindWidget", "Special", Q_NULLPTR));
+1012         programKpButton->setText(QApplication::translate("RebindWidget", "Launch program on key press:", Q_NULLPTR));
+1013         programKrButton->setText(QApplication::translate("RebindWidget", "Launch program on key release:", Q_NULLPTR));
+1014         programKpSIBox->setText(QApplication::translate("RebindWidget", "Single instance", Q_NULLPTR));
+1015         programKpModeBox->clear();
+1016         programKpModeBox->insertItems(0, QStringList()
+1017          << QApplication::translate("RebindWidget", "Run indefinitely", Q_NULLPTR)
+1018          << QApplication::translate("RebindWidget", "Stop on release", Q_NULLPTR)
+1019          << QApplication::translate("RebindWidget", "Stop on re-press", Q_NULLPTR)
+1020         );
+1021         programKrSIBox->setText(QApplication::translate("RebindWidget", "Single instance", Q_NULLPTR));
+1022         programKrModeBox->clear();
+1023         programKrModeBox->insertItems(0, QStringList()
+1024          << QApplication::translate("RebindWidget", "Run indefinitely", Q_NULLPTR)
+1025          << QApplication::translate("RebindWidget", "Stop on re-press", Q_NULLPTR)
+1026         );
+1027         progTipLabel->setText(QApplication::translate("RebindWidget", "Tip", Q_NULLPTR));
+1028         tabWidget->setTabText(tabWidget->indexOf(programTab), QApplication::translate("RebindWidget", "Program", Q_NULLPTR));
+1029         groupBox_2->setTitle(QApplication::translate("RebindWidget", "Macro Key Actions", Q_NULLPTR));
+1030 #ifndef QT_NO_TOOLTIP
+1031         pteMacroComment->setToolTip(QApplication::translate("RebindWidget", "What is this macro for?", Q_NULLPTR));
+1032 #endif // QT_NO_TOOLTIP
+1033         pteMacroComment->setDocumentTitle(QString());
+1034         pteMacroComment->setPlainText(QString());
+1035         pteMacroText->setDocumentTitle(QString());
+1036         pteMacroText->setPlainText(QString());
+1037         groupBox_3->setTitle(QApplication::translate("RebindWidget", "Macro Comment", Q_NULLPTR));
+1038         groupBox_4->setTitle(QApplication::translate("RebindWidget", "Macro Text", Q_NULLPTR));
+1039         btnStopMacro->setText(QApplication::translate("RebindWidget", "Stop", Q_NULLPTR));
+1040         btnClearMacro->setText(QApplication::translate("RebindWidget", "Clear", Q_NULLPTR));
+1041         btnStartMacro->setText(QApplication::translate("RebindWidget", "Start", Q_NULLPTR));
+1042         groupBox->setTitle(QApplication::translate("RebindWidget", "Macro recording", Q_NULLPTR));
+1043         lbl_macro->setText(QApplication::translate("RebindWidget", "Comment label for help", Q_NULLPTR));
+1044         txtBuffer->setText(QString());
+1045 #ifndef QT_NO_WHATSTHIS
+1046         rb_delay_asTyped->setWhatsThis(QApplication::translate("RebindWidget", "configure delays between keystrokes: Remember delays as they had been typed while the macro definition process", Q_NULLPTR));
+1047 #endif // QT_NO_WHATSTHIS
+1048         rb_delay_asTyped->setText(QApplication::translate("RebindWidget", "as typed", Q_NULLPTR));
+1049 #ifndef QT_NO_WHATSTHIS
+1050         rb_delay_default->setWhatsThis(QApplication::translate("RebindWidget", "configure delays between keystrokes: Set delay to default values: 20us up to 15 chars, 200us above", Q_NULLPTR));
+1051 #endif // QT_NO_WHATSTHIS
+1052         rb_delay_default->setText(QApplication::translate("RebindWidget", "default", Q_NULLPTR));
+1053 #ifndef QT_NO_WHATSTHIS
+1054         rb_delay_no->setWhatsThis(QApplication::translate("RebindWidget", "configure delays between keystrokes: Disable delay", Q_NULLPTR));
+1055 #endif // QT_NO_WHATSTHIS
+1056         rb_delay_no->setText(QApplication::translate("RebindWidget", "No delay", Q_NULLPTR));
+1057         tabWidget->setTabText(tabWidget->indexOf(macroTab), QApplication::translate("RebindWidget", "Macro", Q_NULLPTR));
+1058         unbindButton->setText(QApplication::translate("RebindWidget", "Unbind", Q_NULLPTR));
+1059         resetButton->setText(QApplication::translate("RebindWidget", "Reset to Default", Q_NULLPTR));
+1060         cancelButton->setText(QApplication::translate("RebindWidget", "Cancel", Q_NULLPTR));
+1061         applyButton->setText(QApplication::translate("RebindWidget", "Apply", Q_NULLPTR));
+1062         Q_UNUSED(RebindWidget);
+1063     } // retranslateUi
 .fi
 .SS "void Ui_RebindWidget::setupUi (\fBQWidget\fP *RebindWidget)\fC [inline]\fP, \fC [inherited]\fP"
 
@@ -576,742 +576,740 @@ Referenced by RebindWidget::RebindWidget()\&.
 171         tabWidget->setObjectName(QStringLiteral("tabWidget"));
 172         sizePolicy\&.setHeightForWidth(tabWidget->sizePolicy()\&.hasHeightForWidth());
 173         tabWidget->setSizePolicy(sizePolicy);
-174         tabWidget->setUsesScrollButtons(true);
-175         keyTab = new QWidget();
-176         keyTab->setObjectName(QStringLiteral("keyTab"));
-177         QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Expanding);
-178         sizePolicy1\&.setHorizontalStretch(0);
-179         sizePolicy1\&.setVerticalStretch(0);
-180         sizePolicy1\&.setHeightForWidth(keyTab->sizePolicy()\&.hasHeightForWidth());
-181         keyTab->setSizePolicy(sizePolicy1);
-182         gridLayout_2 = new QGridLayout(keyTab);
-183         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
-184         gridLayout_2->setContentsMargins(-1, -1, -1, 6);
-185         numBox = new QComboBox(keyTab);
-186         numBox->setObjectName(QStringLiteral("numBox"));
-187         QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Fixed);
-188         sizePolicy2\&.setHorizontalStretch(0);
-189         sizePolicy2\&.setVerticalStretch(0);
-190         sizePolicy2\&.setHeightForWidth(numBox->sizePolicy()\&.hasHeightForWidth());
-191         numBox->setSizePolicy(sizePolicy2);
-192 
-193         gridLayout_2->addWidget(numBox, 6, 4, 1, 1);
-194 
-195         typingBox = new QComboBox(keyTab);
-196         typingBox->setObjectName(QStringLiteral("typingBox"));
-197         sizePolicy2\&.setHeightForWidth(typingBox->sizePolicy()\&.hasHeightForWidth());
-198         typingBox->setSizePolicy(sizePolicy2);
-199 
-200         gridLayout_2->addWidget(typingBox, 1, 1, 1, 1);
-201 
-202         fnBox = new QComboBox(keyTab);
-203         fnBox->setObjectName(QStringLiteral("fnBox"));
-204         sizePolicy2\&.setHeightForWidth(fnBox->sizePolicy()\&.hasHeightForWidth());
-205         fnBox->setSizePolicy(sizePolicy2);
-206 
-207         gridLayout_2->addWidget(fnBox, 6, 1, 1, 1);
-208 
-209         verticalSpacer_10 = new QSpacerItem(0, 5, QSizePolicy::Minimum, QSizePolicy::Fixed);
-210 
-211         gridLayout_2->addItem(verticalSpacer_10, 9, 1, 1, 1);
-212 
-213         horizontalSpacer_4 = new QSpacerItem(0, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-214 
-215         gridLayout_2->addItem(horizontalSpacer_4, 1, 2, 1, 1);
-216 
-217         verticalSpacer_3 = new QSpacerItem(20, 50, QSizePolicy::Minimum, QSizePolicy::Expanding);
-218 
-219         gridLayout_2->addItem(verticalSpacer_3, 15, 2, 1, 1);
-220 
-221         typingButton = new QRadioButton(keyTab);
-222         typingButton->setObjectName(QStringLiteral("typingButton"));
-223         typingButton->setAutoExclusive(false);
-224 
-225         gridLayout_2->addWidget(typingButton, 0, 0, 1, 2);
-226 
-227         modBox = new QComboBox(keyTab);
-228         modBox->setObjectName(QStringLiteral("modBox"));
-229         sizePolicy2\&.setHeightForWidth(modBox->sizePolicy()\&.hasHeightForWidth());
-230         modBox->setSizePolicy(sizePolicy2);
-231 
-232         gridLayout_2->addWidget(modBox, 1, 4, 1, 1);
-233 
-234         horizontalSpacer_3 = new QSpacerItem(5, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
-235 
-236         gridLayout_2->addItem(horizontalSpacer_3, 1, 0, 1, 1);
-237 
-238         mediaButton = new QRadioButton(keyTab);
-239         mediaButton->setObjectName(QStringLiteral("mediaButton"));
-240         mediaButton->setAutoExclusive(false);
-241 
-242         gridLayout_2->addWidget(mediaButton, 10, 0, 1, 2);
-243 
-244         verticalSpacer_4 = new QSpacerItem(20, 5, QSizePolicy::Minimum, QSizePolicy::Fixed);
-245 
-246         gridLayout_2->addItem(verticalSpacer_4, 2, 1, 1, 1);
-247 
-248         modButton = new QRadioButton(keyTab);
-249         modButton->setObjectName(QStringLiteral("modButton"));
-250 
-251         gridLayout_2->addWidget(modButton, 0, 3, 1, 2);
-252 
-253         fnButton = new QRadioButton(keyTab);
-254         fnButton->setObjectName(QStringLiteral("fnButton"));
-255         fnButton->setAutoExclusive(false);
-256 
-257         gridLayout_2->addWidget(fnButton, 5, 0, 1, 2);
-258 
-259         mediaBox = new QComboBox(keyTab);
-260         mediaBox->setObjectName(QStringLiteral("mediaBox"));
-261         sizePolicy2\&.setHeightForWidth(mediaBox->sizePolicy()\&.hasHeightForWidth());
-262         mediaBox->setSizePolicy(sizePolicy2);
-263 
-264         gridLayout_2->addWidget(mediaBox, 11, 1, 1, 1);
-265 
-266         numButton = new QRadioButton(keyTab);
-267         numButton->setObjectName(QStringLiteral("numButton"));
-268         numButton->setAutoExclusive(false);
-269 
-270         gridLayout_2->addWidget(numButton, 5, 3, 1, 2);
-271 
-272         horizontalSpacer_17 = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
-273 
-274         gridLayout_2->addItem(horizontalSpacer_17, 1, 5, 1, 1);
-275 
-276         tabWidget->addTab(keyTab, QString());
-277         mouseTab = new QWidget();
-278         mouseTab->setObjectName(QStringLiteral("mouseTab"));
-279         sizePolicy1\&.setHeightForWidth(mouseTab->sizePolicy()\&.hasHeightForWidth());
-280         mouseTab->setSizePolicy(sizePolicy1);
-281         gridLayout = new QGridLayout(mouseTab);
-282         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-283         dpiButton = new QRadioButton(mouseTab);
-284         dpiButton->setObjectName(QStringLiteral("dpiButton"));
-285         dpiButton->setAutoExclusive(false);
-286 
-287         gridLayout->addWidget(dpiButton, 3, 3, 1, 5);
-288 
-289         verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-290 
-291         gridLayout->addItem(verticalSpacer_2, 5, 1, 1, 1);
-292 
-293         verticalSpacer_8 = new QSpacerItem(20, 5, QSizePolicy::Minimum, QSizePolicy::Fixed);
-294 
-295         gridLayout->addItem(verticalSpacer_8, 2, 1, 1, 1);
-296 
-297         horizontalSpacer_18 = new QSpacerItem(5, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
-298 
-299         gridLayout->addItem(horizontalSpacer_18, 1, 0, 1, 1);
-300 
-301         horizontalSpacer_20 = new QSpacerItem(5, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
-302 
-303         gridLayout->addItem(horizontalSpacer_20, 1, 3, 1, 1);
-304 
-305         mb2Box = new QComboBox(mouseTab);
-306         mb2Box->setObjectName(QStringLiteral("mb2Box"));
-307         sizePolicy2\&.setHeightForWidth(mb2Box->sizePolicy()\&.hasHeightForWidth());
-308         mb2Box->setSizePolicy(sizePolicy2);
-309 
-310         gridLayout->addWidget(mb2Box, 1, 4, 1, 4);
-311 
-312         dpiBox = new QComboBox(mouseTab);
-313         dpiBox->setObjectName(QStringLiteral("dpiBox"));
-314 
-315         gridLayout->addWidget(dpiBox, 4, 4, 1, 1);
-316 
-317         dpiCustYBox = new QSpinBox(mouseTab);
-318         dpiCustYBox->setObjectName(QStringLiteral("dpiCustYBox"));
-319         dpiCustYBox->setMinimum(400);
-320         dpiCustYBox->setMaximum(8500);
-321         dpiCustYBox->setSingleStep(50);
-322 
-323         gridLayout->addWidget(dpiCustYBox, 4, 7, 1, 1);
-324 
-325         mbBox = new QComboBox(mouseTab);
-326         mbBox->setObjectName(QStringLiteral("mbBox"));
-327         sizePolicy2\&.setHeightForWidth(mbBox->sizePolicy()\&.hasHeightForWidth());
-328         mbBox->setSizePolicy(sizePolicy2);
-329 
-330         gridLayout->addWidget(mbBox, 1, 1, 1, 1);
-331 
-332         wheelBox = new QComboBox(mouseTab);
-333         wheelBox->setObjectName(QStringLiteral("wheelBox"));
-334 
-335         gridLayout->addWidget(wheelBox, 4, 1, 1, 1);
-336 
-337         mbButton = new QRadioButton(mouseTab);
-338         mbButton->setObjectName(QStringLiteral("mbButton"));
-339         mbButton->setAutoExclusive(false);
-340 
-341         gridLayout->addWidget(mbButton, 0, 0, 1, 2);
-342 
-343         dpiCustXBox = new QSpinBox(mouseTab);
-344         dpiCustXBox->setObjectName(QStringLiteral("dpiCustXBox"));
-345         dpiCustXBox->setMinimum(400);
-346         dpiCustXBox->setMaximum(8500);
-347         dpiCustXBox->setSingleStep(50);
-348 
-349         gridLayout->addWidget(dpiCustXBox, 4, 5, 1, 1);
-350 
-351         dpiWarning = new QLabel(mouseTab);
-352         dpiWarning->setObjectName(QStringLiteral("dpiWarning"));
-353         QSizePolicy sizePolicy3(QSizePolicy::Preferred, QSizePolicy::Fixed);
-354         sizePolicy3\&.setHorizontalStretch(0);
-355         sizePolicy3\&.setVerticalStretch(0);
-356         sizePolicy3\&.setHeightForWidth(dpiWarning->sizePolicy()\&.hasHeightForWidth());
-357         dpiWarning->setSizePolicy(sizePolicy3);
-358 
-359         gridLayout->addWidget(dpiWarning, 6, 0, 1, 10);
-360 
-361         wheelButton = new QRadioButton(mouseTab);
-362         wheelButton->setObjectName(QStringLiteral("wheelButton"));
-363 
-364         gridLayout->addWidget(wheelButton, 3, 0, 1, 2);
-365 
-366         horizontalSpacer_22 = new QSpacerItem(5, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
-367 
-368         gridLayout->addItem(horizontalSpacer_22, 1, 8, 1, 1);
-369 
-370         mb2Button = new QRadioButton(mouseTab);
-371         mb2Button->setObjectName(QStringLiteral("mb2Button"));
-372         mb2Button->setAutoExclusive(false);
-373 
-374         gridLayout->addWidget(mb2Button, 0, 3, 1, 5);
-375 
-376         dpiCustLabel = new QLabel(mouseTab);
-377         dpiCustLabel->setObjectName(QStringLiteral("dpiCustLabel"));
-378 
-379         gridLayout->addWidget(dpiCustLabel, 4, 6, 1, 1);
-380 
-381         horizontalSpacer_19 = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
-382 
-383         gridLayout->addItem(horizontalSpacer_19, 1, 2, 1, 1);
-384 
-385         horizontalSpacer_21 = new QSpacerItem(0, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-386 
-387         gridLayout->addItem(horizontalSpacer_21, 1, 9, 1, 1);
-388 
-389         tabWidget->addTab(mouseTab, QString());
-390         animTab = new QWidget();
-391         animTab->setObjectName(QStringLiteral("animTab"));
-392         sizePolicy1\&.setHeightForWidth(animTab->sizePolicy()\&.hasHeightForWidth());
-393         animTab->setSizePolicy(sizePolicy1);
-394         gridLayout_5 = new QGridLayout(animTab);
-395         gridLayout_5->setObjectName(QStringLiteral("gridLayout_5"));
-396         verticalSpacer_11 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-397 
-398         gridLayout_5->addItem(verticalSpacer_11, 6, 2, 1, 1);
-399 
-400         animBox = new QComboBox(animTab);
-401         animBox->setObjectName(QStringLiteral("animBox"));
-402         sizePolicy2\&.setHeightForWidth(animBox->sizePolicy()\&.hasHeightForWidth());
-403         animBox->setSizePolicy(sizePolicy2);
-404 
-405         gridLayout_5->addWidget(animBox, 4, 2, 1, 1);
-406 
-407         horizontalSpacer_24 = new QSpacerItem(20, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
-408 
-409         gridLayout_5->addItem(horizontalSpacer_24, 4, 3, 1, 1);
-410 
-411         horizontalSpacer_25 = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
-412 
-413         gridLayout_5->addItem(horizontalSpacer_25, 4, 7, 1, 1);
-414 
-415         animKrBox = new QCheckBox(animTab);
-416         animKrBox->setObjectName(QStringLiteral("animKrBox"));
-417 
-418         gridLayout_5->addWidget(animKrBox, 4, 6, 1, 1);
-419 
-420         animOnceBox = new QCheckBox(animTab);
-421         animOnceBox->setObjectName(QStringLiteral("animOnceBox"));
-422 
-423         gridLayout_5->addWidget(animOnceBox, 4, 4, 1, 1);
-424 
-425         horizontalSpacer_26 = new QSpacerItem(20, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
-426 
-427         gridLayout_5->addItem(horizontalSpacer_26, 4, 5, 1, 1);
-428 
-429         animButton = new QRadioButton(animTab);
-430         animButton->setObjectName(QStringLiteral("animButton"));
-431         sizePolicy2\&.setHeightForWidth(animButton->sizePolicy()\&.hasHeightForWidth());
-432         animButton->setSizePolicy(sizePolicy2);
-433 
-434         gridLayout_5->addWidget(animButton, 0, 1, 1, 2);
-435 
-436         horizontalSpacer_23 = new QSpacerItem(5, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
-437 
-438         gridLayout_5->addItem(horizontalSpacer_23, 4, 1, 1, 1);
-439 
-440         tabWidget->addTab(animTab, QString());
-441         actionTab = new QWidget();
-442         actionTab->setObjectName(QStringLiteral("actionTab"));
-443         sizePolicy1\&.setHeightForWidth(actionTab->sizePolicy()\&.hasHeightForWidth());
-444         actionTab->setSizePolicy(sizePolicy1);
-445         gridLayout_3 = new QGridLayout(actionTab);
-446         gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
-447         gridLayout_3->setContentsMargins(-1, -1, -1, 6);
-448         horizontalSpacer_5 = new QSpacerItem(5, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
-449 
-450         gridLayout_3->addItem(horizontalSpacer_5, 1, 0, 1, 1);
-451 
-452         modeButton = new QRadioButton(actionTab);
-453         modeButton->setObjectName(QStringLiteral("modeButton"));
-454         modeButton->setAutoExclusive(false);
-455 
-456         gridLayout_3->addWidget(modeButton, 0, 0, 1, 2);
-457 
-458         modeWrapBox = new QCheckBox(actionTab);
-459         modeWrapBox->setObjectName(QStringLiteral("modeWrapBox"));
-460         modeWrapBox->setChecked(true);
-461 
-462         gridLayout_3->addWidget(modeWrapBox, 1, 3, 1, 1);
-463 
-464         lightWrapBox = new QCheckBox(actionTab);
-465         lightWrapBox->setObjectName(QStringLiteral("lightWrapBox"));
-466         lightWrapBox->setChecked(true);
-467 
-468         gridLayout_3->addWidget(lightWrapBox, 4, 3, 1, 1);
-469 
-470         verticalSpacer_7 = new QSpacerItem(20, 5, QSizePolicy::Minimum, QSizePolicy::Fixed);
-471 
-472         gridLayout_3->addItem(verticalSpacer_7, 2, 1, 1, 1);
-473 
-474         verticalSpacer_6 = new QSpacerItem(20, 5, QSizePolicy::Minimum, QSizePolicy::Fixed);
-475 
-476         gridLayout_3->addItem(verticalSpacer_6, 5, 1, 1, 1);
-477 
-478         lockButton = new QRadioButton(actionTab);
-479         lockButton->setObjectName(QStringLiteral("lockButton"));
-480         lockButton->setAutoExclusive(false);
-481 
-482         gridLayout_3->addWidget(lockButton, 6, 0, 1, 2);
-483 
-484         verticalSpacer_5 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-485 
-486         gridLayout_3->addItem(verticalSpacer_5, 8, 1, 1, 1);
-487 
-488         lightBox = new QComboBox(actionTab);
-489         lightBox->setObjectName(QStringLiteral("lightBox"));
-490         sizePolicy2\&.setHeightForWidth(lightBox->sizePolicy()\&.hasHeightForWidth());
-491         lightBox->setSizePolicy(sizePolicy2);
-492 
-493         gridLayout_3->addWidget(lightBox, 4, 1, 1, 1);
-494 
-495         lockBox = new QComboBox(actionTab);
-496         lockBox->setObjectName(QStringLiteral("lockBox"));
-497         sizePolicy2\&.setHeightForWidth(lockBox->sizePolicy()\&.hasHeightForWidth());
-498         lockBox->setSizePolicy(sizePolicy2);
-499 
-500         gridLayout_3->addWidget(lockBox, 7, 1, 1, 1);
-501 
-502         lightButton = new QRadioButton(actionTab);
-503         lightButton->setObjectName(QStringLiteral("lightButton"));
-504         lightButton->setAutoExclusive(false);
-505 
-506         gridLayout_3->addWidget(lightButton, 3, 0, 1, 2);
-507 
-508         modeBox = new QComboBox(actionTab);
-509         modeBox->setObjectName(QStringLiteral("modeBox"));
-510         sizePolicy2\&.setHeightForWidth(modeBox->sizePolicy()\&.hasHeightForWidth());
-511         modeBox->setSizePolicy(sizePolicy2);
-512 
-513         gridLayout_3->addWidget(modeBox, 1, 1, 1, 1);
-514 
-515         horizontalSpacer_8 = new QSpacerItem(5, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
-516 
-517         gridLayout_3->addItem(horizontalSpacer_8, 1, 2, 1, 1);
-518 
-519         horizontalSpacer_10 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-520 
-521         gridLayout_3->addItem(horizontalSpacer_10, 7, 3, 1, 1);
-522 
-523         tabWidget->addTab(actionTab, QString());
-524         programTab = new QWidget();
-525         programTab->setObjectName(QStringLiteral("programTab"));
-526         sizePolicy1\&.setHeightForWidth(programTab->sizePolicy()\&.hasHeightForWidth());
-527         programTab->setSizePolicy(sizePolicy1);
-528         gridLayout_4 = new QGridLayout(programTab);
-529         gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
-530         verticalSpacer = new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Fixed);
-531 
-532         gridLayout_4->addItem(verticalSpacer, 2, 1, 1, 1);
-533 
-534         horizontalSpacer = new QSpacerItem(0, 0, QSizePolicy::Preferred, QSizePolicy::Minimum);
-535 
-536         gridLayout_4->addItem(horizontalSpacer, 1, 0, 1, 1);
-537 
-538         programKpButton = new QCheckBox(programTab);
-539         programKpButton->setObjectName(QStringLiteral("programKpButton"));
-540         sizePolicy2\&.setHeightForWidth(programKpButton->sizePolicy()\&.hasHeightForWidth());
-541         programKpButton->setSizePolicy(sizePolicy2);
-542 
-543         gridLayout_4->addWidget(programKpButton, 0, 0, 1, 2);
-544 
-545         programKpBox = new QLineEdit(programTab);
-546         programKpBox->setObjectName(QStringLiteral("programKpBox"));
-547 
-548         gridLayout_4->addWidget(programKpBox, 1, 1, 1, 1);
-549 
-550         horizontalSpacer_11 = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
-551 
-552         gridLayout_4->addItem(horizontalSpacer_11, 0, 2, 1, 2);
-553 
-554         horizontalSpacer_13 = new QSpacerItem(20, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
-555 
-556         gridLayout_4->addItem(horizontalSpacer_13, 1, 2, 1, 1);
-557 
-558         programKrBox = new QLineEdit(programTab);
-559         programKrBox->setObjectName(QStringLiteral("programKrBox"));
-560 
-561         gridLayout_4->addWidget(programKrBox, 4, 1, 1, 1);
-562 
-563         programKrButton = new QCheckBox(programTab);
-564         programKrButton->setObjectName(QStringLiteral("programKrButton"));
-565 
-566         gridLayout_4->addWidget(programKrButton, 3, 0, 1, 2);
-567 
-568         horizontalSpacer_12 = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
-569 
-570         gridLayout_4->addItem(horizontalSpacer_12, 0, 4, 1, 1);
-571 
-572         programKpExtra = new QWidget(programTab);
-573         programKpExtra->setObjectName(QStringLiteral("programKpExtra"));
-574         horizontalLayout_2 = new QHBoxLayout(programKpExtra);
-575         horizontalLayout_2->setSpacing(12);
-576         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-577         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-578         programKpSIBox = new QCheckBox(programKpExtra);
-579         programKpSIBox->setObjectName(QStringLiteral("programKpSIBox"));
-580         sizePolicy2\&.setHeightForWidth(programKpSIBox->sizePolicy()\&.hasHeightForWidth());
-581         programKpSIBox->setSizePolicy(sizePolicy2);
-582 
-583         horizontalLayout_2->addWidget(programKpSIBox);
-584 
-585         programKpModeBox = new QComboBox(programKpExtra);
-586         programKpModeBox->setObjectName(QStringLiteral("programKpModeBox"));
-587         sizePolicy2\&.setHeightForWidth(programKpModeBox->sizePolicy()\&.hasHeightForWidth());
-588         programKpModeBox->setSizePolicy(sizePolicy2);
-589 
-590         horizontalLayout_2->addWidget(programKpModeBox);
-591 
-592         horizontalSpacer_15 = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
-593 
-594         horizontalLayout_2->addItem(horizontalSpacer_15);
+174         keyTab = new QWidget();
+175         keyTab->setObjectName(QStringLiteral("keyTab"));
+176         QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Expanding);
+177         sizePolicy1\&.setHorizontalStretch(0);
+178         sizePolicy1\&.setVerticalStretch(0);
+179         sizePolicy1\&.setHeightForWidth(keyTab->sizePolicy()\&.hasHeightForWidth());
+180         keyTab->setSizePolicy(sizePolicy1);
+181         gridLayout_2 = new QGridLayout(keyTab);
+182         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+183         gridLayout_2->setContentsMargins(-1, -1, -1, 6);
+184         numBox = new QComboBox(keyTab);
+185         numBox->setObjectName(QStringLiteral("numBox"));
+186         QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Fixed);
+187         sizePolicy2\&.setHorizontalStretch(0);
+188         sizePolicy2\&.setVerticalStretch(0);
+189         sizePolicy2\&.setHeightForWidth(numBox->sizePolicy()\&.hasHeightForWidth());
+190         numBox->setSizePolicy(sizePolicy2);
+191 
+192         gridLayout_2->addWidget(numBox, 6, 4, 1, 1);
+193 
+194         typingBox = new QComboBox(keyTab);
+195         typingBox->setObjectName(QStringLiteral("typingBox"));
+196         sizePolicy2\&.setHeightForWidth(typingBox->sizePolicy()\&.hasHeightForWidth());
+197         typingBox->setSizePolicy(sizePolicy2);
+198 
+199         gridLayout_2->addWidget(typingBox, 1, 1, 1, 1);
+200 
+201         fnBox = new QComboBox(keyTab);
+202         fnBox->setObjectName(QStringLiteral("fnBox"));
+203         sizePolicy2\&.setHeightForWidth(fnBox->sizePolicy()\&.hasHeightForWidth());
+204         fnBox->setSizePolicy(sizePolicy2);
+205 
+206         gridLayout_2->addWidget(fnBox, 6, 1, 1, 1);
+207 
+208         verticalSpacer_10 = new QSpacerItem(0, 5, QSizePolicy::Minimum, QSizePolicy::Fixed);
+209 
+210         gridLayout_2->addItem(verticalSpacer_10, 9, 1, 1, 1);
+211 
+212         horizontalSpacer_4 = new QSpacerItem(0, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+213 
+214         gridLayout_2->addItem(horizontalSpacer_4, 1, 2, 1, 1);
+215 
+216         verticalSpacer_3 = new QSpacerItem(20, 50, QSizePolicy::Minimum, QSizePolicy::Expanding);
+217 
+218         gridLayout_2->addItem(verticalSpacer_3, 15, 2, 1, 1);
+219 
+220         typingButton = new QRadioButton(keyTab);
+221         typingButton->setObjectName(QStringLiteral("typingButton"));
+222         typingButton->setAutoExclusive(false);
+223 
+224         gridLayout_2->addWidget(typingButton, 0, 0, 1, 2);
+225 
+226         modBox = new QComboBox(keyTab);
+227         modBox->setObjectName(QStringLiteral("modBox"));
+228         sizePolicy2\&.setHeightForWidth(modBox->sizePolicy()\&.hasHeightForWidth());
+229         modBox->setSizePolicy(sizePolicy2);
+230 
+231         gridLayout_2->addWidget(modBox, 1, 4, 1, 1);
+232 
+233         horizontalSpacer_3 = new QSpacerItem(5, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+234 
+235         gridLayout_2->addItem(horizontalSpacer_3, 1, 0, 1, 1);
+236 
+237         mediaButton = new QRadioButton(keyTab);
+238         mediaButton->setObjectName(QStringLiteral("mediaButton"));
+239         mediaButton->setAutoExclusive(false);
+240 
+241         gridLayout_2->addWidget(mediaButton, 10, 0, 1, 2);
+242 
+243         verticalSpacer_4 = new QSpacerItem(20, 5, QSizePolicy::Minimum, QSizePolicy::Fixed);
+244 
+245         gridLayout_2->addItem(verticalSpacer_4, 2, 1, 1, 1);
+246 
+247         modButton = new QRadioButton(keyTab);
+248         modButton->setObjectName(QStringLiteral("modButton"));
+249 
+250         gridLayout_2->addWidget(modButton, 0, 3, 1, 2);
+251 
+252         fnButton = new QRadioButton(keyTab);
+253         fnButton->setObjectName(QStringLiteral("fnButton"));
+254         fnButton->setAutoExclusive(false);
+255 
+256         gridLayout_2->addWidget(fnButton, 5, 0, 1, 2);
+257 
+258         mediaBox = new QComboBox(keyTab);
+259         mediaBox->setObjectName(QStringLiteral("mediaBox"));
+260         sizePolicy2\&.setHeightForWidth(mediaBox->sizePolicy()\&.hasHeightForWidth());
+261         mediaBox->setSizePolicy(sizePolicy2);
+262 
+263         gridLayout_2->addWidget(mediaBox, 11, 1, 1, 1);
+264 
+265         numButton = new QRadioButton(keyTab);
+266         numButton->setObjectName(QStringLiteral("numButton"));
+267         numButton->setAutoExclusive(false);
+268 
+269         gridLayout_2->addWidget(numButton, 5, 3, 1, 2);
+270 
+271         horizontalSpacer_17 = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
+272 
+273         gridLayout_2->addItem(horizontalSpacer_17, 1, 5, 1, 1);
+274 
+275         tabWidget->addTab(keyTab, QString());
+276         mouseTab = new QWidget();
+277         mouseTab->setObjectName(QStringLiteral("mouseTab"));
+278         sizePolicy1\&.setHeightForWidth(mouseTab->sizePolicy()\&.hasHeightForWidth());
+279         mouseTab->setSizePolicy(sizePolicy1);
+280         gridLayout = new QGridLayout(mouseTab);
+281         gridLayout->setObjectName(QStringLiteral("gridLayout"));
+282         dpiButton = new QRadioButton(mouseTab);
+283         dpiButton->setObjectName(QStringLiteral("dpiButton"));
+284         dpiButton->setAutoExclusive(false);
+285 
+286         gridLayout->addWidget(dpiButton, 3, 3, 1, 5);
+287 
+288         verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+289 
+290         gridLayout->addItem(verticalSpacer_2, 5, 1, 1, 1);
+291 
+292         verticalSpacer_8 = new QSpacerItem(20, 5, QSizePolicy::Minimum, QSizePolicy::Fixed);
+293 
+294         gridLayout->addItem(verticalSpacer_8, 2, 1, 1, 1);
+295 
+296         horizontalSpacer_18 = new QSpacerItem(5, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+297 
+298         gridLayout->addItem(horizontalSpacer_18, 1, 0, 1, 1);
+299 
+300         horizontalSpacer_20 = new QSpacerItem(5, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+301 
+302         gridLayout->addItem(horizontalSpacer_20, 1, 3, 1, 1);
+303 
+304         mb2Box = new QComboBox(mouseTab);
+305         mb2Box->setObjectName(QStringLiteral("mb2Box"));
+306         sizePolicy2\&.setHeightForWidth(mb2Box->sizePolicy()\&.hasHeightForWidth());
+307         mb2Box->setSizePolicy(sizePolicy2);
+308 
+309         gridLayout->addWidget(mb2Box, 1, 4, 1, 4);
+310 
+311         dpiBox = new QComboBox(mouseTab);
+312         dpiBox->setObjectName(QStringLiteral("dpiBox"));
+313 
+314         gridLayout->addWidget(dpiBox, 4, 4, 1, 1);
+315 
+316         dpiCustYBox = new QSpinBox(mouseTab);
+317         dpiCustYBox->setObjectName(QStringLiteral("dpiCustYBox"));
+318         dpiCustYBox->setMinimum(400);
+319         dpiCustYBox->setMaximum(8500);
+320         dpiCustYBox->setSingleStep(50);
+321 
+322         gridLayout->addWidget(dpiCustYBox, 4, 7, 1, 1);
+323 
+324         mbBox = new QComboBox(mouseTab);
+325         mbBox->setObjectName(QStringLiteral("mbBox"));
+326         sizePolicy2\&.setHeightForWidth(mbBox->sizePolicy()\&.hasHeightForWidth());
+327         mbBox->setSizePolicy(sizePolicy2);
+328 
+329         gridLayout->addWidget(mbBox, 1, 1, 1, 1);
+330 
+331         wheelBox = new QComboBox(mouseTab);
+332         wheelBox->setObjectName(QStringLiteral("wheelBox"));
+333 
+334         gridLayout->addWidget(wheelBox, 4, 1, 1, 1);
+335 
+336         mbButton = new QRadioButton(mouseTab);
+337         mbButton->setObjectName(QStringLiteral("mbButton"));
+338         mbButton->setAutoExclusive(false);
+339 
+340         gridLayout->addWidget(mbButton, 0, 0, 1, 2);
+341 
+342         dpiCustXBox = new QSpinBox(mouseTab);
+343         dpiCustXBox->setObjectName(QStringLiteral("dpiCustXBox"));
+344         dpiCustXBox->setMinimum(400);
+345         dpiCustXBox->setMaximum(8500);
+346         dpiCustXBox->setSingleStep(50);
+347 
+348         gridLayout->addWidget(dpiCustXBox, 4, 5, 1, 1);
+349 
+350         dpiWarning = new QLabel(mouseTab);
+351         dpiWarning->setObjectName(QStringLiteral("dpiWarning"));
+352         QSizePolicy sizePolicy3(QSizePolicy::Preferred, QSizePolicy::Fixed);
+353         sizePolicy3\&.setHorizontalStretch(0);
+354         sizePolicy3\&.setVerticalStretch(0);
+355         sizePolicy3\&.setHeightForWidth(dpiWarning->sizePolicy()\&.hasHeightForWidth());
+356         dpiWarning->setSizePolicy(sizePolicy3);
+357 
+358         gridLayout->addWidget(dpiWarning, 6, 0, 1, 10);
+359 
+360         wheelButton = new QRadioButton(mouseTab);
+361         wheelButton->setObjectName(QStringLiteral("wheelButton"));
+362 
+363         gridLayout->addWidget(wheelButton, 3, 0, 1, 2);
+364 
+365         horizontalSpacer_22 = new QSpacerItem(5, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+366 
+367         gridLayout->addItem(horizontalSpacer_22, 1, 8, 1, 1);
+368 
+369         mb2Button = new QRadioButton(mouseTab);
+370         mb2Button->setObjectName(QStringLiteral("mb2Button"));
+371         mb2Button->setAutoExclusive(false);
+372 
+373         gridLayout->addWidget(mb2Button, 0, 3, 1, 5);
+374 
+375         dpiCustLabel = new QLabel(mouseTab);
+376         dpiCustLabel->setObjectName(QStringLiteral("dpiCustLabel"));
+377 
+378         gridLayout->addWidget(dpiCustLabel, 4, 6, 1, 1);
+379 
+380         horizontalSpacer_19 = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
+381 
+382         gridLayout->addItem(horizontalSpacer_19, 1, 2, 1, 1);
+383 
+384         horizontalSpacer_21 = new QSpacerItem(0, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+385 
+386         gridLayout->addItem(horizontalSpacer_21, 1, 9, 1, 1);
+387 
+388         tabWidget->addTab(mouseTab, QString());
+389         animTab = new QWidget();
+390         animTab->setObjectName(QStringLiteral("animTab"));
+391         sizePolicy1\&.setHeightForWidth(animTab->sizePolicy()\&.hasHeightForWidth());
+392         animTab->setSizePolicy(sizePolicy1);
+393         gridLayout_5 = new QGridLayout(animTab);
+394         gridLayout_5->setObjectName(QStringLiteral("gridLayout_5"));
+395         verticalSpacer_11 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+396 
+397         gridLayout_5->addItem(verticalSpacer_11, 6, 2, 1, 1);
+398 
+399         animBox = new QComboBox(animTab);
+400         animBox->setObjectName(QStringLiteral("animBox"));
+401         sizePolicy2\&.setHeightForWidth(animBox->sizePolicy()\&.hasHeightForWidth());
+402         animBox->setSizePolicy(sizePolicy2);
+403 
+404         gridLayout_5->addWidget(animBox, 4, 2, 1, 1);
+405 
+406         horizontalSpacer_24 = new QSpacerItem(20, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+407 
+408         gridLayout_5->addItem(horizontalSpacer_24, 4, 3, 1, 1);
+409 
+410         horizontalSpacer_25 = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
+411 
+412         gridLayout_5->addItem(horizontalSpacer_25, 4, 7, 1, 1);
+413 
+414         animKrBox = new QCheckBox(animTab);
+415         animKrBox->setObjectName(QStringLiteral("animKrBox"));
+416 
+417         gridLayout_5->addWidget(animKrBox, 4, 6, 1, 1);
+418 
+419         animOnceBox = new QCheckBox(animTab);
+420         animOnceBox->setObjectName(QStringLiteral("animOnceBox"));
+421 
+422         gridLayout_5->addWidget(animOnceBox, 4, 4, 1, 1);
+423 
+424         horizontalSpacer_26 = new QSpacerItem(20, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+425 
+426         gridLayout_5->addItem(horizontalSpacer_26, 4, 5, 1, 1);
+427 
+428         animButton = new QRadioButton(animTab);
+429         animButton->setObjectName(QStringLiteral("animButton"));
+430         sizePolicy2\&.setHeightForWidth(animButton->sizePolicy()\&.hasHeightForWidth());
+431         animButton->setSizePolicy(sizePolicy2);
+432 
+433         gridLayout_5->addWidget(animButton, 0, 1, 1, 2);
+434 
+435         horizontalSpacer_23 = new QSpacerItem(5, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+436 
+437         gridLayout_5->addItem(horizontalSpacer_23, 4, 1, 1, 1);
+438 
+439         tabWidget->addTab(animTab, QString());
+440         actionTab = new QWidget();
+441         actionTab->setObjectName(QStringLiteral("actionTab"));
+442         sizePolicy1\&.setHeightForWidth(actionTab->sizePolicy()\&.hasHeightForWidth());
+443         actionTab->setSizePolicy(sizePolicy1);
+444         gridLayout_3 = new QGridLayout(actionTab);
+445         gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
+446         gridLayout_3->setContentsMargins(-1, -1, -1, 6);
+447         horizontalSpacer_5 = new QSpacerItem(5, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+448 
+449         gridLayout_3->addItem(horizontalSpacer_5, 1, 0, 1, 1);
+450 
+451         modeButton = new QRadioButton(actionTab);
+452         modeButton->setObjectName(QStringLiteral("modeButton"));
+453         modeButton->setAutoExclusive(false);
+454 
+455         gridLayout_3->addWidget(modeButton, 0, 0, 1, 2);
+456 
+457         modeWrapBox = new QCheckBox(actionTab);
+458         modeWrapBox->setObjectName(QStringLiteral("modeWrapBox"));
+459         modeWrapBox->setChecked(true);
+460 
+461         gridLayout_3->addWidget(modeWrapBox, 1, 3, 1, 1);
+462 
+463         lightWrapBox = new QCheckBox(actionTab);
+464         lightWrapBox->setObjectName(QStringLiteral("lightWrapBox"));
+465         lightWrapBox->setChecked(true);
+466 
+467         gridLayout_3->addWidget(lightWrapBox, 4, 3, 1, 1);
+468 
+469         verticalSpacer_7 = new QSpacerItem(20, 5, QSizePolicy::Minimum, QSizePolicy::Fixed);
+470 
+471         gridLayout_3->addItem(verticalSpacer_7, 2, 1, 1, 1);
+472 
+473         verticalSpacer_6 = new QSpacerItem(20, 5, QSizePolicy::Minimum, QSizePolicy::Fixed);
+474 
+475         gridLayout_3->addItem(verticalSpacer_6, 5, 1, 1, 1);
+476 
+477         lockButton = new QRadioButton(actionTab);
+478         lockButton->setObjectName(QStringLiteral("lockButton"));
+479         lockButton->setAutoExclusive(false);
+480 
+481         gridLayout_3->addWidget(lockButton, 6, 0, 1, 2);
+482 
+483         verticalSpacer_5 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+484 
+485         gridLayout_3->addItem(verticalSpacer_5, 8, 1, 1, 1);
+486 
+487         lightBox = new QComboBox(actionTab);
+488         lightBox->setObjectName(QStringLiteral("lightBox"));
+489         sizePolicy2\&.setHeightForWidth(lightBox->sizePolicy()\&.hasHeightForWidth());
+490         lightBox->setSizePolicy(sizePolicy2);
+491 
+492         gridLayout_3->addWidget(lightBox, 4, 1, 1, 1);
+493 
+494         lockBox = new QComboBox(actionTab);
+495         lockBox->setObjectName(QStringLiteral("lockBox"));
+496         sizePolicy2\&.setHeightForWidth(lockBox->sizePolicy()\&.hasHeightForWidth());
+497         lockBox->setSizePolicy(sizePolicy2);
+498 
+499         gridLayout_3->addWidget(lockBox, 7, 1, 1, 1);
+500 
+501         lightButton = new QRadioButton(actionTab);
+502         lightButton->setObjectName(QStringLiteral("lightButton"));
+503         lightButton->setAutoExclusive(false);
+504 
+505         gridLayout_3->addWidget(lightButton, 3, 0, 1, 2);
+506 
+507         modeBox = new QComboBox(actionTab);
+508         modeBox->setObjectName(QStringLiteral("modeBox"));
+509         sizePolicy2\&.setHeightForWidth(modeBox->sizePolicy()\&.hasHeightForWidth());
+510         modeBox->setSizePolicy(sizePolicy2);
+511 
+512         gridLayout_3->addWidget(modeBox, 1, 1, 1, 1);
+513 
+514         horizontalSpacer_8 = new QSpacerItem(5, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+515 
+516         gridLayout_3->addItem(horizontalSpacer_8, 1, 2, 1, 1);
+517 
+518         horizontalSpacer_10 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+519 
+520         gridLayout_3->addItem(horizontalSpacer_10, 7, 3, 1, 1);
+521 
+522         tabWidget->addTab(actionTab, QString());
+523         programTab = new QWidget();
+524         programTab->setObjectName(QStringLiteral("programTab"));
+525         sizePolicy1\&.setHeightForWidth(programTab->sizePolicy()\&.hasHeightForWidth());
+526         programTab->setSizePolicy(sizePolicy1);
+527         gridLayout_4 = new QGridLayout(programTab);
+528         gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
+529         verticalSpacer = new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Fixed);
+530 
+531         gridLayout_4->addItem(verticalSpacer, 2, 1, 1, 1);
+532 
+533         horizontalSpacer = new QSpacerItem(0, 0, QSizePolicy::Preferred, QSizePolicy::Minimum);
+534 
+535         gridLayout_4->addItem(horizontalSpacer, 1, 0, 1, 1);
+536 
+537         programKpButton = new QCheckBox(programTab);
+538         programKpButton->setObjectName(QStringLiteral("programKpButton"));
+539         sizePolicy2\&.setHeightForWidth(programKpButton->sizePolicy()\&.hasHeightForWidth());
+540         programKpButton->setSizePolicy(sizePolicy2);
+541 
+542         gridLayout_4->addWidget(programKpButton, 0, 0, 1, 2);
+543 
+544         programKpBox = new QLineEdit(programTab);
+545         programKpBox->setObjectName(QStringLiteral("programKpBox"));
+546 
+547         gridLayout_4->addWidget(programKpBox, 1, 1, 1, 1);
+548 
+549         horizontalSpacer_11 = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
+550 
+551         gridLayout_4->addItem(horizontalSpacer_11, 0, 2, 1, 2);
+552 
+553         horizontalSpacer_13 = new QSpacerItem(20, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+554 
+555         gridLayout_4->addItem(horizontalSpacer_13, 1, 2, 1, 1);
+556 
+557         programKrBox = new QLineEdit(programTab);
+558         programKrBox->setObjectName(QStringLiteral("programKrBox"));
+559 
+560         gridLayout_4->addWidget(programKrBox, 4, 1, 1, 1);
+561 
+562         programKrButton = new QCheckBox(programTab);
+563         programKrButton->setObjectName(QStringLiteral("programKrButton"));
+564 
+565         gridLayout_4->addWidget(programKrButton, 3, 0, 1, 2);
+566 
+567         horizontalSpacer_12 = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
+568 
+569         gridLayout_4->addItem(horizontalSpacer_12, 0, 4, 1, 1);
+570 
+571         programKpExtra = new QWidget(programTab);
+572         programKpExtra->setObjectName(QStringLiteral("programKpExtra"));
+573         horizontalLayout_2 = new QHBoxLayout(programKpExtra);
+574         horizontalLayout_2->setSpacing(12);
+575         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+576         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
+577         programKpSIBox = new QCheckBox(programKpExtra);
+578         programKpSIBox->setObjectName(QStringLiteral("programKpSIBox"));
+579         sizePolicy2\&.setHeightForWidth(programKpSIBox->sizePolicy()\&.hasHeightForWidth());
+580         programKpSIBox->setSizePolicy(sizePolicy2);
+581 
+582         horizontalLayout_2->addWidget(programKpSIBox);
+583 
+584         programKpModeBox = new QComboBox(programKpExtra);
+585         programKpModeBox->setObjectName(QStringLiteral("programKpModeBox"));
+586         sizePolicy2\&.setHeightForWidth(programKpModeBox->sizePolicy()\&.hasHeightForWidth());
+587         programKpModeBox->setSizePolicy(sizePolicy2);
+588 
+589         horizontalLayout_2->addWidget(programKpModeBox);
+590 
+591         horizontalSpacer_15 = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
+592 
+593         horizontalLayout_2->addItem(horizontalSpacer_15);
+594 
 595 
-596 
-597         gridLayout_4->addWidget(programKpExtra, 1, 3, 1, 2);
-598 
-599         programKrExtra = new QWidget(programTab);
-600         programKrExtra->setObjectName(QStringLiteral("programKrExtra"));
-601         horizontalLayout_3 = new QHBoxLayout(programKrExtra);
-602         horizontalLayout_3->setSpacing(12);
-603         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-604         horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
-605         programKrSIBox = new QCheckBox(programKrExtra);
-606         programKrSIBox->setObjectName(QStringLiteral("programKrSIBox"));
-607         sizePolicy2\&.setHeightForWidth(programKrSIBox->sizePolicy()\&.hasHeightForWidth());
-608         programKrSIBox->setSizePolicy(sizePolicy2);
-609 
-610         horizontalLayout_3->addWidget(programKrSIBox);
-611 
-612         programKrModeBox = new QComboBox(programKrExtra);
-613         programKrModeBox->setObjectName(QStringLiteral("programKrModeBox"));
-614         sizePolicy2\&.setHeightForWidth(programKrModeBox->sizePolicy()\&.hasHeightForWidth());
-615         programKrModeBox->setSizePolicy(sizePolicy2);
-616 
-617         horizontalLayout_3->addWidget(programKrModeBox);
-618 
-619         horizontalSpacer_16 = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
-620 
-621         horizontalLayout_3->addItem(horizontalSpacer_16);
+596         gridLayout_4->addWidget(programKpExtra, 1, 3, 1, 2);
+597 
+598         programKrExtra = new QWidget(programTab);
+599         programKrExtra->setObjectName(QStringLiteral("programKrExtra"));
+600         horizontalLayout_3 = new QHBoxLayout(programKrExtra);
+601         horizontalLayout_3->setSpacing(12);
+602         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+603         horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
+604         programKrSIBox = new QCheckBox(programKrExtra);
+605         programKrSIBox->setObjectName(QStringLiteral("programKrSIBox"));
+606         sizePolicy2\&.setHeightForWidth(programKrSIBox->sizePolicy()\&.hasHeightForWidth());
+607         programKrSIBox->setSizePolicy(sizePolicy2);
+608 
+609         horizontalLayout_3->addWidget(programKrSIBox);
+610 
+611         programKrModeBox = new QComboBox(programKrExtra);
+612         programKrModeBox->setObjectName(QStringLiteral("programKrModeBox"));
+613         sizePolicy2\&.setHeightForWidth(programKrModeBox->sizePolicy()\&.hasHeightForWidth());
+614         programKrModeBox->setSizePolicy(sizePolicy2);
+615 
+616         horizontalLayout_3->addWidget(programKrModeBox);
+617 
+618         horizontalSpacer_16 = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
+619 
+620         horizontalLayout_3->addItem(horizontalSpacer_16);
+621 
 622 
-623 
-624         gridLayout_4->addWidget(programKrExtra, 4, 3, 1, 2);
-625 
-626         progTipLabel = new QLabel(programTab);
-627         progTipLabel->setObjectName(QStringLiteral("progTipLabel"));
-628         sizePolicy1\&.setHeightForWidth(progTipLabel->sizePolicy()\&.hasHeightForWidth());
-629         progTipLabel->setSizePolicy(sizePolicy1);
-630         progTipLabel->setTextInteractionFlags(Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse);
-631 
-632         gridLayout_4->addWidget(progTipLabel, 5, 1, 1, 4);
-633 
-634         tabWidget->addTab(programTab, QString());
-635         macroTab = new QWidget();
-636         macroTab->setObjectName(QStringLiteral("macroTab"));
-637         sizePolicy1\&.setHeightForWidth(macroTab->sizePolicy()\&.hasHeightForWidth());
-638         macroTab->setSizePolicy(sizePolicy1);
-639         layoutWidget1 = new QWidget(macroTab);
-640         layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
-641         layoutWidget1->setGeometry(QRect(40, 12, 239, 36));
-642         gridLayout_8 = new QGridLayout(layoutWidget1);
-643         gridLayout_8->setObjectName(QStringLiteral("gridLayout_8"));
-644         gridLayout_8->setSizeConstraint(QLayout::SetNoConstraint);
-645         gridLayout_8->setContentsMargins(0, 0, 0, 0);
-646         groupBox_2 = new QGroupBox(layoutWidget1);
-647         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
-648 
-649         gridLayout_8->addWidget(groupBox_2, 0, 0, 1, 1);
-650 
-651         pteMacroComment = new QPlainTextEdit(macroTab);
-652         pteMacroComment->setObjectName(QStringLiteral("pteMacroComment"));
-653         pteMacroComment->setEnabled(true);
-654         pteMacroComment->setGeometry(QRect(450, 20, 311, 41));
-655         pteMacroComment->setFocusPolicy(Qt::WheelFocus);
-656         pteMacroComment->setContextMenuPolicy(Qt::NoContextMenu);
-657         pteMacroComment->setAcceptDrops(true);
-658         pteMacroComment->setToolTipDuration(1);
-659         pteMacroComment->setInputMethodHints(Qt::ImhNone);
-660         pteMacroComment->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-661         pteMacroComment->setTabChangesFocus(true);
-662         pteMacroComment->setUndoRedoEnabled(true);
-663         pteMacroComment->setReadOnly(false);
-664         pteMacroComment->setTabStopWidth(1);
-665         pteMacroText = new QPlainTextEdit(macroTab);
-666         pteMacroText->setObjectName(QStringLiteral("pteMacroText"));
-667         pteMacroText->setGeometry(QRect(450, 70, 311, 121));
-668         pteMacroText->setFocusPolicy(Qt::StrongFocus);
-669         pteMacroText->setContextMenuPolicy(Qt::NoContextMenu);
-670         pteMacroText->setAcceptDrops(false);
-671         pteMacroText->setInputMethodHints(Qt::ImhNoAutoUppercase);
-672         pteMacroText->setUndoRedoEnabled(false);
-673         pteMacroText->setReadOnly(false);
-674         pteMacroText->setTabStopWidth(1);
-675         layoutWidget = new QWidget(macroTab);
-676         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-677         layoutWidget->setGeometry(QRect(310, 20, 131, 101));
-678         verticalLayout_2 = new QVBoxLayout(layoutWidget);
-679         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-680         verticalLayout_2->setSizeConstraint(QLayout::SetDefaultConstraint);
-681         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-682         groupBox_3 = new QGroupBox(layoutWidget);
-683         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
-684         sizePolicy\&.setHeightForWidth(groupBox_3->sizePolicy()\&.hasHeightForWidth());
-685         groupBox_3->setSizePolicy(sizePolicy);
-686 
-687         verticalLayout_2->addWidget(groupBox_3);
-688 
-689         groupBox_4 = new QGroupBox(layoutWidget);
-690         groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
-691         sizePolicy\&.setHeightForWidth(groupBox_4->sizePolicy()\&.hasHeightForWidth());
-692         groupBox_4->setSizePolicy(sizePolicy);
-693         QFont font;
-694         font\&.setPointSize(8);
-695         groupBox_4->setFont(font);
-696 
-697         verticalLayout_2->addWidget(groupBox_4);
-698 
-699         layoutWidget_2 = new QWidget(macroTab);
-700         layoutWidget_2->setObjectName(QStringLiteral("layoutWidget_2"));
-701         layoutWidget_2->setGeometry(QRect(300, 230, 461, 33));
-702         gridLayout_10 = new QGridLayout(layoutWidget_2);
-703         gridLayout_10->setObjectName(QStringLiteral("gridLayout_10"));
-704         gridLayout_10->setContentsMargins(0, 0, 0, 0);
-705         btnStopMacro = new QPushButton(layoutWidget_2);
-706         btnStopMacro->setObjectName(QStringLiteral("btnStopMacro"));
-707         btnStopMacro->setEnabled(false);
-708         sizePolicy\&.setHeightForWidth(btnStopMacro->sizePolicy()\&.hasHeightForWidth());
-709         btnStopMacro->setSizePolicy(sizePolicy);
-710 
-711         gridLayout_10->addWidget(btnStopMacro, 0, 2, 1, 1);
-712 
-713         btnClearMacro = new QPushButton(layoutWidget_2);
-714         btnClearMacro->setObjectName(QStringLiteral("btnClearMacro"));
-715         sizePolicy\&.setHeightForWidth(btnClearMacro->sizePolicy()\&.hasHeightForWidth());
-716         btnClearMacro->setSizePolicy(sizePolicy);
-717 
-718         gridLayout_10->addWidget(btnClearMacro, 0, 3, 1, 1);
-719 
-720         btnStartMacro = new QPushButton(layoutWidget_2);
-721         btnStartMacro->setObjectName(QStringLiteral("btnStartMacro"));
-722         sizePolicy\&.setHeightForWidth(btnStartMacro->sizePolicy()\&.hasHeightForWidth());
-723         btnStartMacro->setSizePolicy(sizePolicy);
-724 
-725         gridLayout_10->addWidget(btnStartMacro, 0, 1, 1, 1);
-726 
-727         groupBox = new QGroupBox(layoutWidget_2);
-728         groupBox->setObjectName(QStringLiteral("groupBox"));
-729         sizePolicy\&.setHeightForWidth(groupBox->sizePolicy()\&.hasHeightForWidth());
-730         groupBox->setSizePolicy(sizePolicy);
-731 
-732         gridLayout_10->addWidget(groupBox, 0, 0, 1, 1);
-733 
-734         lbl_macro = new QLabel(macroTab);
-735         lbl_macro->setObjectName(QStringLiteral("lbl_macro"));
-736         lbl_macro->setGeometry(QRect(50, 200, 711, 21));
-737         QSizePolicy sizePolicy4(QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
-738         sizePolicy4\&.setHorizontalStretch(0);
-739         sizePolicy4\&.setVerticalStretch(0);
-740         sizePolicy4\&.setHeightForWidth(lbl_macro->sizePolicy()\&.hasHeightForWidth());
-741         lbl_macro->setSizePolicy(sizePolicy4);
-742         pteMacroBox = new QPlainTextEdit(macroTab);
-743         pteMacroBox->setObjectName(QStringLiteral("pteMacroBox"));
-744         pteMacroBox->setGeometry(QRect(40, 50, 239, 101));
-745         delayButtons = new QHBoxLayout(pteMacroBox);
-746         delayButtons->setSpacing(0);
-747         delayButtons->setObjectName(QStringLiteral("delayButtons"));
-748         delayButtons->setSizeConstraint(QLayout::SetMinimumSize);
-749         txtBuffer = new QLabel(macroTab);
-750         txtBuffer->setObjectName(QStringLiteral("txtBuffer"));
-751         txtBuffer->setEnabled(false);
-752         txtBuffer->setGeometry(QRect(40, 30, 0, 0));
-753         sizePolicy1\&.setHeightForWidth(txtBuffer->sizePolicy()\&.hasHeightForWidth());
-754         txtBuffer->setSizePolicy(sizePolicy1);
-755         txtBuffer->setMaximumSize(QSize(0, 0));
-756         txtBuffer->setContextMenuPolicy(Qt::NoContextMenu);
-757 #ifndef QT_NO_TOOLTIP
-758         txtBuffer->setToolTip(QStringLiteral(""));
-759 #endif // QT_NO_TOOLTIP
-760         txtBuffer->setToolTipDuration(0);
-761 #ifndef QT_NO_STATUSTIP
-762         txtBuffer->setStatusTip(QStringLiteral(""));
-763 #endif // QT_NO_STATUSTIP
-764 #ifndef QT_NO_WHATSTHIS
-765         txtBuffer->setWhatsThis(QStringLiteral(""));
-766 #endif // QT_NO_WHATSTHIS
-767         txtBuffer->setFrameShadow(QFrame::Plain);
-768         txtBuffer->setLineWidth(0);
-769         txtBuffer->setTextFormat(Qt::PlainText);
-770         txtBuffer->setIndent(0);
-771         txtBuffer->setTextInteractionFlags(Qt::NoTextInteraction);
-772         rb_delay_asTyped = new QRadioButton(macroTab);
-773         rb_delay_asTyped->setObjectName(QStringLiteral("rb_delay_asTyped"));
-774         rb_delay_asTyped->setGeometry(QRect(210, 170, 91, 21));
-775         rb_delay_asTyped->setStyleSheet(QStringLiteral("font: 10pt ; color:  green;"));
-776         rb_delay_asTyped->setChecked(true);
-777         rb_delay_default = new QRadioButton(macroTab);
-778         rb_delay_default->setObjectName(QStringLiteral("rb_delay_default"));
-779         rb_delay_default->setGeometry(QRect(129, 170, 71, 21));
-780         rb_delay_default->setStyleSheet(QStringLiteral("font: 10pt ; color:  green;"));
-781         rb_delay_default->setChecked(false);
-782         rb_delay_default->setAutoExclusive(true);
-783         rb_delay_no = new QRadioButton(macroTab);
-784         rb_delay_no->setObjectName(QStringLiteral("rb_delay_no"));
-785         rb_delay_no->setGeometry(QRect(45, 170, 74, 21));
-786         rb_delay_no->setStyleSheet(QStringLiteral("font: 10pt ; color:  green;"));
-787         tabWidget->addTab(macroTab, QString());
+623         gridLayout_4->addWidget(programKrExtra, 4, 3, 1, 2);
+624 
+625         progTipLabel = new QLabel(programTab);
+626         progTipLabel->setObjectName(QStringLiteral("progTipLabel"));
+627         sizePolicy1\&.setHeightForWidth(progTipLabel->sizePolicy()\&.hasHeightForWidth());
+628         progTipLabel->setSizePolicy(sizePolicy1);
+629         progTipLabel->setTextInteractionFlags(Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse);
+630 
+631         gridLayout_4->addWidget(progTipLabel, 5, 1, 1, 4);
+632 
+633         tabWidget->addTab(programTab, QString());
+634         macroTab = new QWidget();
+635         macroTab->setObjectName(QStringLiteral("macroTab"));
+636         sizePolicy1\&.setHeightForWidth(macroTab->sizePolicy()\&.hasHeightForWidth());
+637         macroTab->setSizePolicy(sizePolicy1);
+638         layoutWidget1 = new QWidget(macroTab);
+639         layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
+640         layoutWidget1->setGeometry(QRect(40, 12, 239, 36));
+641         gridLayout_8 = new QGridLayout(layoutWidget1);
+642         gridLayout_8->setObjectName(QStringLiteral("gridLayout_8"));
+643         gridLayout_8->setSizeConstraint(QLayout::SetNoConstraint);
+644         gridLayout_8->setContentsMargins(0, 0, 0, 0);
+645         groupBox_2 = new QGroupBox(layoutWidget1);
+646         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
+647 
+648         gridLayout_8->addWidget(groupBox_2, 0, 0, 1, 1);
+649 
+650         pteMacroComment = new QPlainTextEdit(macroTab);
+651         pteMacroComment->setObjectName(QStringLiteral("pteMacroComment"));
+652         pteMacroComment->setEnabled(true);
+653         pteMacroComment->setGeometry(QRect(450, 20, 311, 41));
+654         pteMacroComment->setFocusPolicy(Qt::WheelFocus);
+655         pteMacroComment->setContextMenuPolicy(Qt::NoContextMenu);
+656         pteMacroComment->setAcceptDrops(true);
+657         pteMacroComment->setToolTipDuration(1);
+658         pteMacroComment->setInputMethodHints(Qt::ImhNone);
+659         pteMacroComment->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+660         pteMacroComment->setTabChangesFocus(true);
+661         pteMacroComment->setUndoRedoEnabled(true);
+662         pteMacroComment->setReadOnly(false);
+663         pteMacroComment->setTabStopWidth(1);
+664         pteMacroText = new QPlainTextEdit(macroTab);
+665         pteMacroText->setObjectName(QStringLiteral("pteMacroText"));
+666         pteMacroText->setGeometry(QRect(450, 70, 311, 121));
+667         pteMacroText->setFocusPolicy(Qt::StrongFocus);
+668         pteMacroText->setContextMenuPolicy(Qt::NoContextMenu);
+669         pteMacroText->setAcceptDrops(false);
+670         pteMacroText->setInputMethodHints(Qt::ImhNoAutoUppercase);
+671         pteMacroText->setUndoRedoEnabled(false);
+672         pteMacroText->setReadOnly(false);
+673         pteMacroText->setTabStopWidth(1);
+674         layoutWidget = new QWidget(macroTab);
+675         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+676         layoutWidget->setGeometry(QRect(310, 20, 131, 81));
+677         verticalLayout_2 = new QVBoxLayout(layoutWidget);
+678         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+679         verticalLayout_2->setSizeConstraint(QLayout::SetDefaultConstraint);
+680         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
+681         groupBox_3 = new QGroupBox(layoutWidget);
+682         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
+683         sizePolicy\&.setHeightForWidth(groupBox_3->sizePolicy()\&.hasHeightForWidth());
+684         groupBox_3->setSizePolicy(sizePolicy);
+685 
+686         verticalLayout_2->addWidget(groupBox_3);
+687 
+688         groupBox_4 = new QGroupBox(layoutWidget);
+689         groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
+690         sizePolicy\&.setHeightForWidth(groupBox_4->sizePolicy()\&.hasHeightForWidth());
+691         groupBox_4->setSizePolicy(sizePolicy);
+692         QFont font;
+693         font\&.setPointSize(8);
+694         groupBox_4->setFont(font);
+695 
+696         verticalLayout_2->addWidget(groupBox_4);
+697 
+698         layoutWidget_2 = new QWidget(macroTab);
+699         layoutWidget_2->setObjectName(QStringLiteral("layoutWidget_2"));
+700         layoutWidget_2->setGeometry(QRect(300, 160, 436, 33));
+701         gridLayout_10 = new QGridLayout(layoutWidget_2);
+702         gridLayout_10->setObjectName(QStringLiteral("gridLayout_10"));
+703         gridLayout_10->setContentsMargins(0, 0, 0, 0);
+704         btnStopMacro = new QPushButton(layoutWidget_2);
+705         btnStopMacro->setObjectName(QStringLiteral("btnStopMacro"));
+706         btnStopMacro->setEnabled(false);
+707         sizePolicy\&.setHeightForWidth(btnStopMacro->sizePolicy()\&.hasHeightForWidth());
+708         btnStopMacro->setSizePolicy(sizePolicy);
+709 
+710         gridLayout_10->addWidget(btnStopMacro, 0, 2, 1, 1);
+711 
+712         btnClearMacro = new QPushButton(layoutWidget_2);
+713         btnClearMacro->setObjectName(QStringLiteral("btnClearMacro"));
+714         sizePolicy\&.setHeightForWidth(btnClearMacro->sizePolicy()\&.hasHeightForWidth());
+715         btnClearMacro->setSizePolicy(sizePolicy);
+716 
+717         gridLayout_10->addWidget(btnClearMacro, 0, 3, 1, 1);
+718 
+719         btnStartMacro = new QPushButton(layoutWidget_2);
+720         btnStartMacro->setObjectName(QStringLiteral("btnStartMacro"));
+721         sizePolicy\&.setHeightForWidth(btnStartMacro->sizePolicy()\&.hasHeightForWidth());
+722         btnStartMacro->setSizePolicy(sizePolicy);
+723 
+724         gridLayout_10->addWidget(btnStartMacro, 0, 1, 1, 1);
+725 
+726         groupBox = new QGroupBox(layoutWidget_2);
+727         groupBox->setObjectName(QStringLiteral("groupBox"));
+728         sizePolicy\&.setHeightForWidth(groupBox->sizePolicy()\&.hasHeightForWidth());
+729         groupBox->setSizePolicy(sizePolicy);
+730 
+731         gridLayout_10->addWidget(groupBox, 0, 0, 1, 1);
+732 
+733         lbl_macro = new QLabel(macroTab);
+734         lbl_macro->setObjectName(QStringLiteral("lbl_macro"));
+735         lbl_macro->setGeometry(QRect(50, 200, 711, 21));
+736         QSizePolicy sizePolicy4(QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
+737         sizePolicy4\&.setHorizontalStretch(0);
+738         sizePolicy4\&.setVerticalStretch(0);
+739         sizePolicy4\&.setHeightForWidth(lbl_macro->sizePolicy()\&.hasHeightForWidth());
+740         lbl_macro->setSizePolicy(sizePolicy4);
+741         pteMacroBox = new QPlainTextEdit(macroTab);
+742         pteMacroBox->setObjectName(QStringLiteral("pteMacroBox"));
+743         pteMacroBox->setGeometry(QRect(40, 50, 239, 101));
+744         delayButtons = new QHBoxLayout(pteMacroBox);
+745         delayButtons->setSpacing(0);
+746         delayButtons->setObjectName(QStringLiteral("delayButtons"));
+747         delayButtons->setSizeConstraint(QLayout::SetMinimumSize);
+748         txtBuffer = new QLabel(macroTab);
+749         txtBuffer->setObjectName(QStringLiteral("txtBuffer"));
+750         txtBuffer->setEnabled(false);
+751         txtBuffer->setGeometry(QRect(40, 30, 0, 0));
+752         sizePolicy1\&.setHeightForWidth(txtBuffer->sizePolicy()\&.hasHeightForWidth());
+753         txtBuffer->setSizePolicy(sizePolicy1);
+754         txtBuffer->setMaximumSize(QSize(0, 0));
+755         txtBuffer->setContextMenuPolicy(Qt::NoContextMenu);
+756 #ifndef QT_NO_TOOLTIP
+757         txtBuffer->setToolTip(QStringLiteral(""));
+758 #endif // QT_NO_TOOLTIP
+759         txtBuffer->setToolTipDuration(0);
+760 #ifndef QT_NO_STATUSTIP
+761         txtBuffer->setStatusTip(QStringLiteral(""));
+762 #endif // QT_NO_STATUSTIP
+763 #ifndef QT_NO_WHATSTHIS
+764         txtBuffer->setWhatsThis(QStringLiteral(""));
+765 #endif // QT_NO_WHATSTHIS
+766         txtBuffer->setFrameShadow(QFrame::Plain);
+767         txtBuffer->setLineWidth(0);
+768         txtBuffer->setTextFormat(Qt::PlainText);
+769         txtBuffer->setIndent(0);
+770         txtBuffer->setTextInteractionFlags(Qt::NoTextInteraction);
+771         rb_delay_asTyped = new QRadioButton(macroTab);
+772         rb_delay_asTyped->setObjectName(QStringLiteral("rb_delay_asTyped"));
+773         rb_delay_asTyped->setGeometry(QRect(210, 170, 91, 21));
+774         rb_delay_asTyped->setStyleSheet(QStringLiteral("font: 10pt ; color:  green;"));
+775         rb_delay_asTyped->setChecked(true);
+776         rb_delay_default = new QRadioButton(macroTab);
+777         rb_delay_default->setObjectName(QStringLiteral("rb_delay_default"));
+778         rb_delay_default->setGeometry(QRect(129, 170, 71, 21));
+779         rb_delay_default->setStyleSheet(QStringLiteral("font: 10pt ; color:  green;"));
+780         rb_delay_default->setChecked(false);
+781         rb_delay_default->setAutoExclusive(true);
+782         rb_delay_no = new QRadioButton(macroTab);
+783         rb_delay_no->setObjectName(QStringLiteral("rb_delay_no"));
+784         rb_delay_no->setGeometry(QRect(45, 170, 74, 21));
+785         rb_delay_no->setStyleSheet(QStringLiteral("font: 10pt ; color:  green;"));
+786         tabWidget->addTab(macroTab, QString());
+787         txtBuffer->raise();
 788         pteMacroComment->raise();
-789         layoutWidget->raise();
-790         txtBuffer->raise();
-791         pteMacroComment->raise();
-792         layoutWidget1->raise();
-793         pteMacroText->raise();
-794         layoutWidget_2->raise();
-795         lbl_macro->raise();
-796         pteMacroBox->raise();
-797         rb_delay_asTyped->raise();
-798         rb_delay_default->raise();
-799         rb_delay_no->raise();
+789         layoutWidget1->raise();
+790         layoutWidget->raise();
+791         pteMacroText->raise();
+792         layoutWidget_2->raise();
+793         lbl_macro->raise();
+794         pteMacroBox->raise();
+795         rb_delay_asTyped->raise();
+796         rb_delay_default->raise();
+797         rb_delay_no->raise();
+798 
+799         verticalLayout->addWidget(tabWidget);
 800 
-801         verticalLayout->addWidget(tabWidget);
-802 
-803         horizontalLayout = new QHBoxLayout();
-804         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-805         horizontalSpacer_14 = new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Minimum);
+801         horizontalLayout = new QHBoxLayout();
+802         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+803         horizontalSpacer_14 = new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Minimum);
+804 
+805         horizontalLayout->addItem(horizontalSpacer_14);
 806 
-807         horizontalLayout->addItem(horizontalSpacer_14);
-808 
-809         unbindButton = new QPushButton(RebindWidget);
-810         unbindButton->setObjectName(QStringLiteral("unbindButton"));
-811         QSizePolicy sizePolicy5(QSizePolicy::Minimum, QSizePolicy::Minimum);
-812         sizePolicy5\&.setHorizontalStretch(0);
-813         sizePolicy5\&.setVerticalStretch(0);
-814         sizePolicy5\&.setHeightForWidth(unbindButton->sizePolicy()\&.hasHeightForWidth());
-815         unbindButton->setSizePolicy(sizePolicy5);
+807         unbindButton = new QPushButton(RebindWidget);
+808         unbindButton->setObjectName(QStringLiteral("unbindButton"));
+809         QSizePolicy sizePolicy5(QSizePolicy::Minimum, QSizePolicy::Minimum);
+810         sizePolicy5\&.setHorizontalStretch(0);
+811         sizePolicy5\&.setVerticalStretch(0);
+812         sizePolicy5\&.setHeightForWidth(unbindButton->sizePolicy()\&.hasHeightForWidth());
+813         unbindButton->setSizePolicy(sizePolicy5);
+814 
+815         horizontalLayout->addWidget(unbindButton);
 816 
-817         horizontalLayout->addWidget(unbindButton);
-818 
-819         resetButton = new QPushButton(RebindWidget);
-820         resetButton->setObjectName(QStringLiteral("resetButton"));
-821         sizePolicy5\&.setHeightForWidth(resetButton->sizePolicy()\&.hasHeightForWidth());
-822         resetButton->setSizePolicy(sizePolicy5);
+817         resetButton = new QPushButton(RebindWidget);
+818         resetButton->setObjectName(QStringLiteral("resetButton"));
+819         sizePolicy5\&.setHeightForWidth(resetButton->sizePolicy()\&.hasHeightForWidth());
+820         resetButton->setSizePolicy(sizePolicy5);
+821 
+822         horizontalLayout->addWidget(resetButton);
 823 
-824         horizontalLayout->addWidget(resetButton);
-825 
-826         cancelButton = new QPushButton(RebindWidget);
-827         cancelButton->setObjectName(QStringLiteral("cancelButton"));
-828         sizePolicy5\&.setHeightForWidth(cancelButton->sizePolicy()\&.hasHeightForWidth());
-829         cancelButton->setSizePolicy(sizePolicy5);
+824         cancelButton = new QPushButton(RebindWidget);
+825         cancelButton->setObjectName(QStringLiteral("cancelButton"));
+826         sizePolicy5\&.setHeightForWidth(cancelButton->sizePolicy()\&.hasHeightForWidth());
+827         cancelButton->setSizePolicy(sizePolicy5);
+828 
+829         horizontalLayout->addWidget(cancelButton);
 830 
-831         horizontalLayout->addWidget(cancelButton);
-832 
-833         applyButton = new QPushButton(RebindWidget);
-834         applyButton->setObjectName(QStringLiteral("applyButton"));
-835         sizePolicy5\&.setHeightForWidth(applyButton->sizePolicy()\&.hasHeightForWidth());
-836         applyButton->setSizePolicy(sizePolicy5);
+831         applyButton = new QPushButton(RebindWidget);
+832         applyButton->setObjectName(QStringLiteral("applyButton"));
+833         sizePolicy5\&.setHeightForWidth(applyButton->sizePolicy()\&.hasHeightForWidth());
+834         applyButton->setSizePolicy(sizePolicy5);
+835 
+836         horizontalLayout->addWidget(applyButton);
 837 
-838         horizontalLayout->addWidget(applyButton);
-839 
+838 
+839         verticalLayout->addLayout(horizontalLayout);
 840 
-841         verticalLayout->addLayout(horizontalLayout);
-842 
-843         QWidget::setTabOrder(tabWidget, pteMacroComment);
-844         QWidget::setTabOrder(pteMacroComment, pteMacroBox);
-845         QWidget::setTabOrder(pteMacroBox, dpiButton);
-846         QWidget::setTabOrder(dpiButton, mb2Box);
-847         QWidget::setTabOrder(mb2Box, btnStartMacro);
-848         QWidget::setTabOrder(btnStartMacro, fnBox);
-849         QWidget::setTabOrder(fnBox, dpiCustYBox);
-850         QWidget::setTabOrder(dpiCustYBox, dpiBox);
-851         QWidget::setTabOrder(dpiBox, applyButton);
-852         QWidget::setTabOrder(applyButton, mbBox);
-853         QWidget::setTabOrder(mbBox, cancelButton);
-854         QWidget::setTabOrder(cancelButton, wheelBox);
-855         QWidget::setTabOrder(wheelBox, btnStopMacro);
-856         QWidget::setTabOrder(btnStopMacro, mbButton);
-857         QWidget::setTabOrder(mbButton, dpiCustXBox);
-858         QWidget::setTabOrder(dpiCustXBox, btnClearMacro);
-859         QWidget::setTabOrder(btnClearMacro, wheelButton);
-860         QWidget::setTabOrder(wheelButton, mb2Button);
-861         QWidget::setTabOrder(mb2Button, animBox);
-862         QWidget::setTabOrder(animBox, animKrBox);
-863         QWidget::setTabOrder(animKrBox, animOnceBox);
-864         QWidget::setTabOrder(animOnceBox, animButton);
-865         QWidget::setTabOrder(animButton, modeButton);
-866         QWidget::setTabOrder(modeButton, modeWrapBox);
-867         QWidget::setTabOrder(modeWrapBox, lightWrapBox);
-868         QWidget::setTabOrder(lightWrapBox, lockButton);
-869         QWidget::setTabOrder(lockButton, lightBox);
-870         QWidget::setTabOrder(lightBox, resetButton);
-871         QWidget::setTabOrder(resetButton, lockBox);
-872         QWidget::setTabOrder(lockBox, lightButton);
-873         QWidget::setTabOrder(lightButton, modeBox);
-874         QWidget::setTabOrder(modeBox, unbindButton);
-875         QWidget::setTabOrder(unbindButton, programKpButton);
-876         QWidget::setTabOrder(programKpButton, programKpBox);
-877         QWidget::setTabOrder(programKpBox, programKrBox);
-878         QWidget::setTabOrder(programKrBox, programKrButton);
-879         QWidget::setTabOrder(programKrButton, programKpSIBox);
-880         QWidget::setTabOrder(programKpSIBox, programKpModeBox);
-881         QWidget::setTabOrder(programKpModeBox, programKrSIBox);
-882         QWidget::setTabOrder(programKrSIBox, programKrModeBox);
-883         QWidget::setTabOrder(programKrModeBox, typingBox);
-884         QWidget::setTabOrder(typingBox, numBox);
-885         QWidget::setTabOrder(numBox, pteMacroText);
-886         QWidget::setTabOrder(pteMacroText, typingButton);
-887         QWidget::setTabOrder(typingButton, mediaButton);
-888         QWidget::setTabOrder(mediaButton, modBox);
-889         QWidget::setTabOrder(modBox, modButton);
-890         QWidget::setTabOrder(modButton, fnButton);
-891         QWidget::setTabOrder(fnButton, mediaBox);
-892         QWidget::setTabOrder(mediaBox, numButton);
-893 
-894         retranslateUi(RebindWidget);
-895         QObject::connect(btnClearMacro, SIGNAL(clicked()), pteMacroText, SLOT(clear()));
-896         QObject::connect(btnClearMacro, SIGNAL(clicked()), pteMacroComment, SLOT(clear()));
-897         QObject::connect(btnClearMacro, SIGNAL(clicked()), btnStopMacro, SLOT(animateClick()));
-898         QObject::connect(cancelButton, SIGNAL(clicked()), txtBuffer, SLOT(clear()));
-899         QObject::connect(btnClearMacro, SIGNAL(clicked()), txtBuffer, SLOT(clear()));
-900         QObject::connect(btnStartMacro, SIGNAL(clicked()), txtBuffer, SLOT(clear()));
-901         QObject::connect(unbindButton, SIGNAL(clicked()), txtBuffer, SLOT(clear()));
-902         QObject::connect(resetButton, SIGNAL(clicked()), txtBuffer, SLOT(clear()));
-903 
-904         tabWidget->setCurrentIndex(5);
-905         applyButton->setDefault(true);
-906 
-907 
-908         QMetaObject::connectSlotsByName(RebindWidget);
-909     } // setupUi
+841         QWidget::setTabOrder(tabWidget, pteMacroComment);
+842         QWidget::setTabOrder(pteMacroComment, pteMacroBox);
+843         QWidget::setTabOrder(pteMacroBox, dpiButton);
+844         QWidget::setTabOrder(dpiButton, mb2Box);
+845         QWidget::setTabOrder(mb2Box, btnStartMacro);
+846         QWidget::setTabOrder(btnStartMacro, fnBox);
+847         QWidget::setTabOrder(fnBox, dpiCustYBox);
+848         QWidget::setTabOrder(dpiCustYBox, dpiBox);
+849         QWidget::setTabOrder(dpiBox, applyButton);
+850         QWidget::setTabOrder(applyButton, mbBox);
+851         QWidget::setTabOrder(mbBox, cancelButton);
+852         QWidget::setTabOrder(cancelButton, wheelBox);
+853         QWidget::setTabOrder(wheelBox, btnStopMacro);
+854         QWidget::setTabOrder(btnStopMacro, mbButton);
+855         QWidget::setTabOrder(mbButton, dpiCustXBox);
+856         QWidget::setTabOrder(dpiCustXBox, btnClearMacro);
+857         QWidget::setTabOrder(btnClearMacro, wheelButton);
+858         QWidget::setTabOrder(wheelButton, mb2Button);
+859         QWidget::setTabOrder(mb2Button, animBox);
+860         QWidget::setTabOrder(animBox, animKrBox);
+861         QWidget::setTabOrder(animKrBox, animOnceBox);
+862         QWidget::setTabOrder(animOnceBox, animButton);
+863         QWidget::setTabOrder(animButton, modeButton);
+864         QWidget::setTabOrder(modeButton, modeWrapBox);
+865         QWidget::setTabOrder(modeWrapBox, lightWrapBox);
+866         QWidget::setTabOrder(lightWrapBox, lockButton);
+867         QWidget::setTabOrder(lockButton, lightBox);
+868         QWidget::setTabOrder(lightBox, resetButton);
+869         QWidget::setTabOrder(resetButton, lockBox);
+870         QWidget::setTabOrder(lockBox, lightButton);
+871         QWidget::setTabOrder(lightButton, modeBox);
+872         QWidget::setTabOrder(modeBox, unbindButton);
+873         QWidget::setTabOrder(unbindButton, programKpButton);
+874         QWidget::setTabOrder(programKpButton, programKpBox);
+875         QWidget::setTabOrder(programKpBox, programKrBox);
+876         QWidget::setTabOrder(programKrBox, programKrButton);
+877         QWidget::setTabOrder(programKrButton, programKpSIBox);
+878         QWidget::setTabOrder(programKpSIBox, programKpModeBox);
+879         QWidget::setTabOrder(programKpModeBox, programKrSIBox);
+880         QWidget::setTabOrder(programKrSIBox, programKrModeBox);
+881         QWidget::setTabOrder(programKrModeBox, typingBox);
+882         QWidget::setTabOrder(typingBox, numBox);
+883         QWidget::setTabOrder(numBox, pteMacroText);
+884         QWidget::setTabOrder(pteMacroText, typingButton);
+885         QWidget::setTabOrder(typingButton, mediaButton);
+886         QWidget::setTabOrder(mediaButton, modBox);
+887         QWidget::setTabOrder(modBox, modButton);
+888         QWidget::setTabOrder(modButton, fnButton);
+889         QWidget::setTabOrder(fnButton, mediaBox);
+890         QWidget::setTabOrder(mediaBox, numButton);
+891 
+892         retranslateUi(RebindWidget);
+893         QObject::connect(btnClearMacro, SIGNAL(clicked()), pteMacroComment, SLOT(clear()));
+894         QObject::connect(btnClearMacro, SIGNAL(clicked()), btnStopMacro, SLOT(animateClick()));
+895         QObject::connect(cancelButton, SIGNAL(clicked()), txtBuffer, SLOT(clear()));
+896         QObject::connect(btnClearMacro, SIGNAL(clicked()), txtBuffer, SLOT(clear()));
+897         QObject::connect(btnStartMacro, SIGNAL(clicked()), txtBuffer, SLOT(clear()));
+898         QObject::connect(unbindButton, SIGNAL(clicked()), txtBuffer, SLOT(clear()));
+899         QObject::connect(resetButton, SIGNAL(clicked()), txtBuffer, SLOT(clear()));
+900         QObject::connect(cancelButton, SIGNAL(clicked()), pteMacroBox, SLOT(clear()));
+901 
+902         tabWidget->setCurrentIndex(5);
+903         applyButton->setDefault(true);
+904 
+905 
+906         QMetaObject::connectSlotsByName(RebindWidget);
+907     } // setupUi
 .fi
 .SH "Field Documentation"
 .PP 

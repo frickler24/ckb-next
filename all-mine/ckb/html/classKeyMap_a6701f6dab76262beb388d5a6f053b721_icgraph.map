@@ -6,7 +6,7 @@
 <area shape="rect" id="node3" href="$classKbBind.html#a25670999ed5a452b7df6c16633d197b5" title="KbBind::load" alt="" coords="431,5,527,32"/>
 <area shape="rect" id="node5" href="$classKbLight.html#a82d4feddc998442f245b562b7637de5d" title="KbLight::load" alt="" coords="429,56,528,83"/>
 <area shape="rect" id="node4" href="$classKbMode.html#a399519dd076e0231fd636023f6479436" title="KbMode::KbMode" alt="" coords="642,31,769,57"/>
-<area shape="rect" id="node7" href="$classSettingsWidget.html#a11ec2a7f0f7896520f4135f2c1035a96" title="SettingsWidget::showLayoutDialog pops up a modal window to select the keyboard layout. Before the modal windows is created, look for a popssible open info&#45;window about read only config file. If showLayoutDialog() finds an info window, it waits with creating the keyboard&#45;selection until the info window has gone. " alt="" coords="384,107,573,149"/>
+<area shape="rect" id="node7" href="$classSettingsWidget.html#a11ec2a7f0f7896520f4135f2c1035a96" title="SettingsWidget::showLayout\lDialog" alt="" coords="384,107,573,149"/>
 <area shape="rect" id="node10" href="$classKeyMap.html#a0c5ed88364ea162fb45fa32c196a0161" title="KeyMap::name" alt="" coords="423,224,534,251"/>
 <area shape="rect" id="node11" href="$classKbBind.html#ad5557fad088d9b6981203fabdf86cafc" title="KbBind::save" alt="" coords="655,173,755,200"/>
 <area shape="rect" id="node22" href="$classKbLight.html#af88059e91ea519346ae6769ac3d6188f" title="KbLight::save" alt="" coords="654,224,757,251"/>

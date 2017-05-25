@@ -60,7 +60,6 @@ var dir_77b5d46a1bc2c75b90444f394c5858ea =
     [ "extrasettingswidget.h", "extrasettingswidget_8h.html", [
       [ "ExtraSettingsWidget", "classExtraSettingsWidget.html", "classExtraSettingsWidget" ]
     ] ],
-    [ "firmware_special.h", "firmware__special_8h.html", "firmware__special_8h" ],
     [ "fwupgradedialog.cpp", "fwupgradedialog_8cpp.html", "fwupgradedialog_8cpp" ],
     [ "fwupgradedialog.h", "fwupgradedialog_8h.html", [
       [ "FwUpgradeDialog", "classFwUpgradeDialog.html", "classFwUpgradeDialog" ]
@@ -161,10 +160,6 @@ var dir_77b5d46a1bc2c75b90444f394c5858ea =
     [ "layoutdialog.cpp", "layoutdialog_8cpp.html", null ],
     [ "layoutdialog.h", "layoutdialog_8h.html", [
       [ "LayoutDialog", "classLayoutDialog.html", "classLayoutDialog" ]
-    ] ],
-    [ "macromigrationtip.cpp", "macromigrationtip_8cpp.html", null ],
-    [ "macromigrationtip.h", "macromigrationtip_8h.html", [
-      [ "macroMigrationTip", "classmacroMigrationTip.html", "classmacroMigrationTip" ]
     ] ],
     [ "macroreader.cpp", "macroreader_8cpp.html", null ],
     [ "macroreader.h", "macroreader_8h.html", [

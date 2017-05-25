@@ -1,31 +1,33 @@
 <map id="RebindWidget::on_applyButton_clicked" name="RebindWidget::on_applyButton_clicked">
 <area shape="rect" id="node2" href="$classRebindWidget.html#a7f4ff1d01115ce47182c52b51347e719" title="RebindWidget::applyChanges" alt="" coords="256,309,451,336"/>
-<area shape="rect" id="node24" href="$classRebindWidget.html#ab9171f1383dc31d4cb2083fae6cbcca0" title="RebindWidget::on_btnStopMacro_clicked ends the macro recording. Notify channel ist closed..." alt="" coords="264,643,443,685"/>
-<area shape="rect" id="node3" href="$classKeyAction.html#a7a2b4890c18242420439ac5689be88b0" title="KeyAction::animAction" alt="" coords="529,461,684,488"/>
-<area shape="rect" id="node4" href="$classKbLight.html#a0d37ba50d07c949db3d9714f9b559e6b" title="KbLight::animList" alt="" coords="545,512,668,539"/>
-<area shape="rect" id="node5" href="$classKeyAction.html#ac6ca2711aabf19331099ae5203ff315c" title="KeyAction::dpiAction" alt="" coords="535,563,679,589"/>
-<area shape="rect" id="node6" href="$classKbAnim.html#ab3f14ad52f306a4714642e5decb4db36" title="KbAnim::guid" alt="" coords="557,5,657,32"/>
-<area shape="rect" id="node7" href="$classKbBind.html#a5ec162b416f0ffad926348db02db3084" title="KbBind::light" alt="" coords="559,56,655,83"/>
-<area shape="rect" id="node10" href="$classKeyAction.html#adfa57ca3b8e177861faac0d0e69304da" title="KeyAction::lightAction" alt="" coords="531,107,682,133"/>
-<area shape="rect" id="node11" href="$classKeyAction.html#ab8196204b95731d7effd9f52b44fb014" title="KeyAction::lockAction" alt="" coords="531,157,682,184"/>
-<area shape="rect" id="node12" href="$classKeyAction.html#aae0da6c8f1c3bf409c35c6ab21a1115d" title="well documented in cpp file " alt="" coords="525,208,688,235"/>
-<area shape="rect" id="node13" href="$classKeyAction.html#a2932bd638ecc7ae59178c50153b82b79" title="KeyAction::modeAction" alt="" coords="527,259,686,285"/>
-<area shape="rect" id="node14" href="$classKbBind.html#a1d547649389b10379aff0e7bcbb009ec" title="KbBind::noAction" alt="" coords="545,309,668,336"/>
-<area shape="rect" id="node22" href="$classKeyAction.html#a633d7230c3e357788b6c60ad83feca54" title="KeyAction::programAction" alt="" coords="519,411,694,437"/>
-<area shape="rect" id="node23" href="$classKbBind.html#a6c16c7cd34f6166cf078564a08959d81" title="KbBind::setAction" alt="" coords="543,360,670,387"/>
-<area shape="rect" id="node8" href="$classKbMode.html#afdfc0cdec0315dd3b2ab6506f6ef43f9" title="KbMode::light" alt="" coords="798,81,901,108"/>
-<area shape="rect" id="node9" href="$classKbBind.html#a92923d9f4643d368f70e54c7f409261c" title="KbBind::modeParent" alt="" coords="778,31,921,57"/>
-<area shape="rect" id="node15" href="$classKbBind.html#a195e520e9f7ee76718ca8ca8927b1d3b" title="KbBind::globalRemap" alt="" coords="1179,385,1327,412"/>
-<area shape="rect" id="node16" href="$classKeyMap.html#a0748b06120f93ad61d90c360dafbb59c" title="KeyMap::key" alt="" coords="800,360,899,387"/>
-<area shape="rect" id="node17" href="$classKbBind.html#a9a3abe6f6aeb707c3e1f691c0e3e5e1b" title="KbBind::resetAction" alt="" coords="780,309,919,336"/>
-<area shape="rect" id="node18" href="$classKbBind.html#ab140ce3e9ab0c94d5b23129729234bfb" title="KbBind::action" alt="" coords="1004,461,1111,488"/>
-<area shape="rect" id="node19" href="$classKbBind.html#a116916d2451ee7dcfe69cd816eb6d255" title="KbBind::bindAction" alt="" coords="1187,499,1320,525"/>
-<area shape="rect" id="node21" href="$classKeyAction.html#a67bbf6dd422e76ef20ed858f28bb4b21" title="KeyAction::value" alt="" coords="1193,448,1314,475"/>
-<area shape="rect" id="node20" href="$classKeyAction.html#ae744da2dd239b7d6596a341ea63b0e88" title="KeyAction::defaultAction" alt="" coords="1377,499,1543,525"/>
-<area shape="rect" id="node25" href="$classKbBind.html#a4bb7a8b9bdf99bbdbdf6edba08c7d248" title="handleNotificationChannel sends commands to ckb&#45;daemon for (de&#45;) activating the notify channel..." alt="" coords="519,614,695,655"/>
-<area shape="rect" id="node29" href="$classRebindWidget.html#a45bb9f2a31ec2a5a0eacf7dff4f09c8b" title="RebindWidget::convertMacroBox converts the macroBox content. The KB sends each keypress as &quot;key [+|&#45;]..." alt="" coords="499,680,714,707"/>
-<area shape="rect" id="node30" href="$classRebindWidget.html#a09097e3ff4182f8238e47edabbadf930" title="RebindWidget::helpStatus shows a help line in the ui. " alt="" coords="519,731,694,757"/>
-<area shape="rect" id="node26" href="$classKbBind.html#af0e5585cdc241e42c60fff16985429a0" title="KbBind::getMacroNumber. " alt="" coords="763,621,935,648"/>
-<area shape="rect" id="node27" href="$classKbBind.html#ac4dc2ffee7d967975b8f13c75d52c5a3" title="KbBind::devParent" alt="" coords="992,596,1123,623"/>
-<area shape="rect" id="node28" href="$classKb.html#af98eaf3596f7f10fe817362f86abf90a" title="For usage with macro definions, these two params must only be readable. So there are no setters..." alt="" coords="984,647,1131,673"/>
+<area shape="rect" id="node24" href="$classRebindWidget.html#ab9171f1383dc31d4cb2083fae6cbcca0" title="RebindWidget::on_btnStopMacro_clicked ends the macro recording. Notify channel ist closed..." alt="" coords="264,691,443,733"/>
+<area shape="rect" id="node3" href="$classKeyAction.html#a7a2b4890c18242420439ac5689be88b0" title="KeyAction::animAction" alt="" coords="529,5,684,32"/>
+<area shape="rect" id="node4" href="$classKbLight.html#a0d37ba50d07c949db3d9714f9b559e6b" title="KbLight::animList" alt="" coords="545,56,668,83"/>
+<area shape="rect" id="node5" href="$classKeyAction.html#ac6ca2711aabf19331099ae5203ff315c" title="KeyAction::dpiAction" alt="" coords="535,107,679,133"/>
+<area shape="rect" id="node6" href="$classKbAnim.html#ab3f14ad52f306a4714642e5decb4db36" title="KbAnim::guid" alt="" coords="557,157,657,184"/>
+<area shape="rect" id="node7" href="$classKbBind.html#a5ec162b416f0ffad926348db02db3084" title="KbBind::light" alt="" coords="559,208,655,235"/>
+<area shape="rect" id="node10" href="$classKeyAction.html#adfa57ca3b8e177861faac0d0e69304da" title="KeyAction::lightAction" alt="" coords="531,259,682,285"/>
+<area shape="rect" id="node11" href="$classKeyAction.html#ab8196204b95731d7effd9f52b44fb014" title="KeyAction::lockAction" alt="" coords="531,309,682,336"/>
+<area shape="rect" id="node12" href="$classKeyAction.html#aae0da6c8f1c3bf409c35c6ab21a1115d" title="well documented in cpp file " alt="" coords="525,360,688,387"/>
+<area shape="rect" id="node13" href="$classKeyAction.html#a2932bd638ecc7ae59178c50153b82b79" title="KeyAction::modeAction" alt="" coords="527,411,686,437"/>
+<area shape="rect" id="node14" href="$classKbBind.html#a1d547649389b10379aff0e7bcbb009ec" title="KbBind::noAction" alt="" coords="545,461,668,488"/>
+<area shape="rect" id="node22" href="$classKeyAction.html#a633d7230c3e357788b6c60ad83feca54" title="KeyAction::programAction" alt="" coords="519,563,694,589"/>
+<area shape="rect" id="node23" href="$classKbBind.html#a6c16c7cd34f6166cf078564a08959d81" title="KbBind::setAction" alt="" coords="543,512,670,539"/>
+<area shape="rect" id="node8" href="$classKbMode.html#afdfc0cdec0315dd3b2ab6506f6ef43f9" title="KbMode::light" alt="" coords="798,233,901,260"/>
+<area shape="rect" id="node9" href="$classKbBind.html#a92923d9f4643d368f70e54c7f409261c" title="KbBind::modeParent" alt="" coords="778,183,921,209"/>
+<area shape="rect" id="node15" href="$classKbBind.html#a195e520e9f7ee76718ca8ca8927b1d3b" title="KbBind::globalRemap" alt="" coords="1179,507,1327,533"/>
+<area shape="rect" id="node16" href="$classKeyMap.html#a0748b06120f93ad61d90c360dafbb59c" title="KeyMap::key" alt="" coords="800,512,899,539"/>
+<area shape="rect" id="node17" href="$classKbBind.html#a9a3abe6f6aeb707c3e1f691c0e3e5e1b" title="KbBind::resetAction" alt="" coords="780,461,919,488"/>
+<area shape="rect" id="node18" href="$classKbBind.html#ab140ce3e9ab0c94d5b23129729234bfb" title="KbBind::action" alt="" coords="1004,603,1111,629"/>
+<area shape="rect" id="node19" href="$classKbBind.html#a116916d2451ee7dcfe69cd816eb6d255" title="KbBind::bindAction" alt="" coords="1187,617,1320,644"/>
+<area shape="rect" id="node21" href="$classKeyAction.html#a67bbf6dd422e76ef20ed858f28bb4b21" title="KeyAction::value" alt="" coords="1193,567,1314,593"/>
+<area shape="rect" id="node20" href="$classKeyAction.html#ae744da2dd239b7d6596a341ea63b0e88" title="KeyAction::defaultAction" alt="" coords="1377,617,1543,644"/>
+<area shape="rect" id="node25" href="$classKbBind.html#ab27322709a40e2d244b714d260c05928" title="handleNotificationChannel sends commands to ckb&#45;daemon for (de&#45;) activating the notify channel..." alt="" coords="519,633,695,674"/>
+<area shape="rect" id="node29" href="$classKbBind.html#a592edd4cbb386e071e2cdaea0a2d53a9" title="KbBind::getMacroPath. " alt="" coords="530,699,683,725"/>
+<area shape="rect" id="node31" href="$classRebindWidget.html#a45bb9f2a31ec2a5a0eacf7dff4f09c8b" title="RebindWidget::convertMacroBox converts the macroBox content. The KB sends each keypress as &quot;key [+|&#45;]..." alt="" coords="499,749,714,776"/>
+<area shape="rect" id="node32" href="$classRebindWidget.html#a09097e3ff4182f8238e47edabbadf930" title="RebindWidget::helpStatus shows a help line in the ui. " alt="" coords="519,800,694,827"/>
+<area shape="rect" id="node26" href="$classKbBind.html#af0e5585cdc241e42c60fff16985429a0" title="KbBind::getMacroNumber. " alt="" coords="763,644,935,671"/>
+<area shape="rect" id="node27" href="$classKbBind.html#ac4dc2ffee7d967975b8f13c75d52c5a3" title="KbBind::devParent" alt="" coords="992,725,1123,752"/>
+<area shape="rect" id="node28" href="$classKb.html#af98eaf3596f7f10fe817362f86abf90a" title="For usage with macro definions, these two params must only be readable. So there are no setters..." alt="" coords="984,653,1131,680"/>
+<area shape="rect" id="node30" href="$classKb.html#a9ac09cc0fa78de17de22d7ffb13da09e" title="getMacroPath returns the macroPath (e.g. /dev/input/ckb1/notify), which we have saved in the construc..." alt="" coords="786,695,913,721"/>
 </map>

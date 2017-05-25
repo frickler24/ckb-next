@@ -1,7 +1,7 @@
 var searchData=
 [
   ['daemon_2emd',['DAEMON.md',['../DAEMON_8md.html',1,'']]],
-  ['debug',['DEBUG',['../usb__linux_8c.html#ad72dbcf6d0153db1b8d8a58001feed83',1,'DEBUG():&#160;usb_linux.c'],['../usb__linux_8c.html#ad72dbcf6d0153db1b8d8a58001feed83',1,'DEBUG():&#160;usb_linux.c']]],
+  ['debug',['DEBUG',['../usb__linux_8c.html#ad72dbcf6d0153db1b8d8a58001feed83',1,'usb_linux.c']]],
   ['delay',['delay',['../structures_8h.html#a7a7c9896ceca4a73765ff73c08e0716c',1,'macroaction::delay()'],['../structures_8h.html#ac3f3ab5bda85925648ff834ba7afcacd',1,'usbdevice::delay()'],['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3a1debdb60dab652d8ee4ab62c6129f487',1,'DELAY():&#160;command.h']]],
   ['delay_5flong',['DELAY_LONG',['../usb_8h.html#a8de6458e3d59d88350ef3e73359c3526',1,'usb.h']]],
   ['delay_5fmedium',['DELAY_MEDIUM',['../usb_8h.html#aff3be8eafb827438a28c97b8f9d2ddcc',1,'usb.h']]],

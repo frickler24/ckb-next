@@ -21,7 +21,7 @@
 <area shape="rect" id="node17" href="$classKbAnimWidget.html#a5d00279a905a85a5e702f266ca84f6ef" title="KbAnimWidget::on_deleteButton\l_clicked" alt="" coords="771,239,981,281"/>
 <area shape="rect" id="node18" href="$classKbAnimWidget.html#aed385da23edc78f5a407d26f191eb110" title="KbAnimWidget::on_property\lButton_clicked" alt="" coords="783,57,969,98"/>
 <area shape="rect" id="node20" href="$classKb.html#a97694a4cd55681adca7b972fb5722049" title="Kb::frameUpdate" alt="" coords="815,440,937,467"/>
-<area shape="rect" id="node22" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent" alt="" coords="813,499,939,525"/>
+<area shape="rect" id="node22" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent. " alt="" coords="813,499,939,525"/>
 <area shape="rect" id="node23" href="$classKb.html#afa36635dcc1cd9512f372594c57c546c" title="Kb::readNotify" alt="" coords="1083,524,1189,551"/>
 <area shape="rect" id="node25" href="$classKbLight.html#a3b5164c00802de7aaa083dbded740b14" title="KbLight::animKeypress" alt="" coords="559,549,716,576"/>
 <area shape="rect" id="node27" href="$classKbLight.html#aaf2d348ef39cc9fbbf198e7105a72f35" title="KbLight::frameUpdate" alt="" coords="563,448,712,475"/>

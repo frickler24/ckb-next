@@ -1,4 +1,4 @@
-.TH "src/ckb-daemon/command.c" 3 "Mon May 22 2017" "Version beta-v0.2.7 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.TH "src/ckb-daemon/command.c" 3 "Thu May 25 2017" "Version v0.2.8 at branch all-mine" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -305,60 +305,57 @@ Referenced by devmain()\&.
 298                 continue;
 299             }
 300             break;
-301         case RESTART:
-302             vt->do_cmd[command](kb, mode, notifynumber, 0, word);
-303             break;
-304         default:;
-305         }
-306         // For anything else, split the parameter at the colon
-307         int left = -1;
-308         sscanf(word, "%*[^:]%n", &left);
-309         if(left <= 0)
-310             continue;
-311         const char* right = word + left;
-312         if(right[0] == ':')
-313             right++;
-314         // Macros and DPI have a separate left-side handler
-315         if(command == MACRO || command == DPI){
-316             word[left] = 0;
-317             vt->do_macro[command](kb, mode, notifynumber, word, right);
-318             continue;
-319         }
-320         // Scan the left side for key names and run the requested command
-321         int position = 0, field = 0;
-322         char keyname[11];
-323         while(position < left && sscanf(word + position, "%10[^:,]%n", keyname, &field) == 1){
-324             int keycode;
-325             if(!strcmp(keyname, "all")){
-326                 // Set all keys
-327                 for(int i = 0; i < N_KEYS_EXTENDED; i++)
-328                     vt->do_cmd[command](kb, mode, notifynumber, i, right);
-329             } else if((sscanf(keyname, "#%d", &keycode) && keycode >= 0 && keycode < N_KEYS_EXTENDED)
-330                       || (sscanf(keyname, "#x%x", &keycode) && keycode >= 0 && keycode < N_KEYS_EXTENDED)){
-331                 // Set a key numerically
-332                 vt->do_cmd[command](kb, mode, notifynumber, keycode, right);
-333             } else {
-334                 // Find this key in the keymap
-335                 for(unsigned i = 0; i < N_KEYS_EXTENDED; i++){
-336                     if(keymap[i]\&.name && !strcmp(keyname, keymap[i]\&.name)){
-337                         vt->do_cmd[command](kb, mode, notifynumber, i, right);
-338                         break;
-339                     }
-340                 }
-341             }
-342             if(word[position += field] == ',')
-343                 position++;
-344         }
-345     }
-346 
-347     // Finish up
-348     if(!NEEDS_FW_UPDATE(kb)){
-349         TRY_WITH_RESET(vt->updatergb(kb, 0));
-350         TRY_WITH_RESET(vt->updatedpi(kb, 0));
-351     }
-352     free(word);
-353     return 0;
-354 }
+301         default:;
+302         }
+303         // For anything else, split the parameter at the colon
+304         int left = -1;
+305         sscanf(word, "%*[^:]%n", &left);
+306         if(left <= 0)
+307             continue;
+308         const char* right = word + left;
+309         if(right[0] == ':')
+310             right++;
+311         // Macros and DPI have a separate left-side handler
+312         if(command == MACRO || command == DPI){
+313             word[left] = 0;
+314             vt->do_macro[command](kb, mode, notifynumber, word, right);
+315             continue;
+316         }
+317         // Scan the left side for key names and run the requested command
+318         int position = 0, field = 0;
+319         char keyname[11];
+320         while(position < left && sscanf(word + position, "%10[^:,]%n", keyname, &field) == 1){
+321             int keycode;
+322             if(!strcmp(keyname, "all")){
+323                 // Set all keys
+324                 for(int i = 0; i < N_KEYS_EXTENDED; i++)
+325                     vt->do_cmd[command](kb, mode, notifynumber, i, right);
+326             } else if((sscanf(keyname, "#%d", &keycode) && keycode >= 0 && keycode < N_KEYS_EXTENDED)
+327                       || (sscanf(keyname, "#x%x", &keycode) && keycode >= 0 && keycode < N_KEYS_EXTENDED)){
+328                 // Set a key numerically
+329                 vt->do_cmd[command](kb, mode, notifynumber, keycode, right);
+330             } else {
+331                 // Find this key in the keymap
+332                 for(unsigned i = 0; i < N_KEYS_EXTENDED; i++){
+333                     if(keymap[i]\&.name && !strcmp(keyname, keymap[i]\&.name)){
+334                         vt->do_cmd[command](kb, mode, notifynumber, i, right);
+335                         break;
+336                     }
+337                 }
+338             }
+339             if(word[position += field] == ',')
+340                 position++;
+341         }
+342     }
+343 
+344     // Finish up
+345     if(!NEEDS_FW_UPDATE(kb)){
+346         TRY_WITH_RESET(vt->updatergb(kb, 0));
+347         TRY_WITH_RESET(vt->updatedpi(kb, 0));
+348     }
+349     free(word);
+350     return 0;
+351 }
 .fi
 .SH "Variable Documentation"
 .PP 
