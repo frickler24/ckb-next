@@ -556,7 +556,7 @@ Private Attributes</h2></td></tr>
 
 <p>References <a class="el" href="kblight_8h_source.html#l00089">_animList</a>, <a class="el" href="kblight_8h_source.html#l00090">_previewAnim</a>, <a class="el" href="kbanim_8cpp_source.html#l00250">KbAnim::keypress()</a>, and <a class="el" href="kbanim_8h_source.html#l00040">KbAnim::keys()</a>.</p>
 
-<p>Referenced by <a class="el" href="kb_8cpp_source.html#l00522">Kb::readNotify()</a>.</p>
+<p>Referenced by <a class="el" href="kb_8cpp_source.html#l00528">Kb::readNotify()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                                                       {</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">foreach</span>(<a class="code" href="classKbAnim.html">KbAnim</a>* anim, <a class="code" href="classKbLight.html#a026b7aba0a71c4f43e3663153d2dc3da">_animList</a>){</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keywordflow">if</span>(anim-&gt;<a class="code" href="classKbAnim.html#aebfd6f4cc51099a1de64eae4929c6bb5">keys</a>().contains(key))</div>
@@ -704,7 +704,7 @@ Private Attributes</h2></td></tr>
 
 <p>References <a class="el" href="kblight_8h_source.html#l00093">_animMap</a>, <a class="el" href="kblight_8h_source.html#l00093">_colorMap</a>, <a class="el" href="kblight_8h_source.html#l00096">_dimming</a>, <a class="el" href="kblight_8cpp_source.html#l00215">close()</a>, <a class="el" href="colormap_8cpp_source.html#l00072">ColorMap::colorForName()</a>, <a class="el" href="colormap_8h_source.html#l00032">ColorMap::colors()</a>, <a class="el" href="colormap_8h_source.html#l00030">ColorMap::count()</a>, <a class="el" href="kblight_8h_source.html#l00038">MAX_DIM</a>, <a class="el" href="kblight_8cpp_source.html#l00284">monoRgb()</a>, <a class="el" href="kblight_8cpp_source.html#l00223">printRGB()</a>, and <a class="el" href="kblight_8cpp_source.html#l00238">rebuildBaseMap()</a>.</p>
 
-<p>Referenced by <a class="el" href="kb_8cpp_source.html#l00348">Kb::hwSave()</a>.</p>
+<p>Referenced by <a class="el" href="kb_8cpp_source.html#l00354">Kb::hwSave()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                                                             {</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <a class="code" href="classKbLight.html#a36f6c6c9e9574abe93b49b1b7e0996d0">close</a>();</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="classKbLight.html#a1c91a9e493a7f6546c7aff4830d7b3bb">_dimming</a> == <a class="code" href="classKbLight.html#a576f0dcb8d3647e70691bf743c4b5721">MAX_DIM</a> &amp;&amp; !ignoreDim){</div>
@@ -787,7 +787,7 @@ Private Attributes</h2></td></tr>
 
 <p>References <a class="el" href="kblight_8h_source.html#l00089">_animList</a>, <a class="el" href="kblight_8h_source.html#l00097">_start</a>, <a class="el" href="kblight_8cpp_source.html#l00008">activeLights</a>, <a class="el" href="kbanim_8cpp_source.html#l00312">KbAnim::stop()</a>, and <a class="el" href="kblight_8cpp_source.html#l00143">stopPreview()</a>.</p>
 
-<p>Referenced by <a class="el" href="kblight_8cpp_source.html#l00371">base()</a>, <a class="el" href="kb_8cpp_source.html#l00426">Kb::frameUpdate()</a>, <a class="el" href="kb_8cpp_source.html#l00348">Kb::hwSave()</a>, and <a class="el" href="kb_8cpp_source.html#l00237">Kb::updateLayout()</a>.</p>
+<p>Referenced by <a class="el" href="kblight_8cpp_source.html#l00371">base()</a>, <a class="el" href="kb_8cpp_source.html#l00432">Kb::frameUpdate()</a>, <a class="el" href="kb_8cpp_source.html#l00354">Kb::hwSave()</a>, and <a class="el" href="kb_8cpp_source.html#l00243">Kb::updateLayout()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                   {</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <a class="code" href="kblight_8cpp.html#a7bf7602ffc876d3b61a6f0b80422d930">activeLights</a>.remove(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordflow">foreach</span>(<a class="code" href="classKbAnim.html">KbAnim</a>* anim, <a class="code" href="classKbLight.html#a026b7aba0a71c4f43e3663153d2dc3da">_animList</a>)</div>
@@ -854,7 +854,7 @@ Private Attributes</h2></td></tr>
 
 <p>References <a class="el" href="kblight_8h_source.html#l00093">_colorMap</a>, <a class="el" href="kblight_8h_source.html#l00098">_needsMapRefresh</a>, <a class="el" href="kblight_8h_source.html#l00098">_needsSave</a>, <a class="el" href="kblight_8h_source.html#l00092">_qColorMap</a>, and <a class="el" href="colormap_8cpp_source.html#l00072">ColorMap::colorForName()</a>.</p>
 
-<p>Referenced by <a class="el" href="kblightwidget_8cpp_source.html#l00099">KbLightWidget::changeColor()</a>, <a class="el" href="kblight_8cpp_source.html#l00401">load()</a>, <a class="el" href="kblight_8cpp_source.html#l00223">printRGB()</a>, <a class="el" href="kb_8cpp_source.html#l00522">Kb::readNotify()</a>, <a class="el" href="kblight_8cpp_source.html#l00238">rebuildBaseMap()</a>, and <a class="el" href="kblightwidget_8cpp_source.html#l00107">KbLightWidget::toggleSidelight()</a>.</p>
+<p>Referenced by <a class="el" href="kblightwidget_8cpp_source.html#l00099">KbLightWidget::changeColor()</a>, <a class="el" href="kblight_8cpp_source.html#l00401">load()</a>, <a class="el" href="kblight_8cpp_source.html#l00223">printRGB()</a>, <a class="el" href="kb_8cpp_source.html#l00528">Kb::readNotify()</a>, <a class="el" href="kblight_8cpp_source.html#l00238">rebuildBaseMap()</a>, and <a class="el" href="kblightwidget_8cpp_source.html#l00107">KbLightWidget::toggleSidelight()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                                             {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    QRgb newRgb = newColor.rgb();</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="classKbLight.html#a03123a9927b59db991e6183a63003271">_qColorMap</a>[key] = newRgb;</div>
@@ -1382,7 +1382,7 @@ Private Attributes</h2></td></tr>
 
 <p>References <a class="el" href="kblight_8h_source.html#l00089">_animList</a>, <a class="el" href="kblight_8h_source.html#l00093">_animMap</a>, <a class="el" href="kblight_8h_source.html#l00093">_colorMap</a>, <a class="el" href="kblight_8h_source.html#l00096">_dimming</a>, <a class="el" href="kblight_8h_source.html#l00094">_indicatorList</a>, <a class="el" href="kblight_8h_source.html#l00093">_indicatorMap</a>, <a class="el" href="kblight_8h_source.html#l00090">_previewAnim</a>, <a class="el" href="kbanim_8cpp_source.html#l00365">KbAnim::blend()</a>, <a class="el" href="colormap_8h_source.html#l00032">ColorMap::colors()</a>, <a class="el" href="colormap_8h_source.html#l00030">ColorMap::count()</a>, <a class="el" href="moc__kblight_8cpp_source.html#l00174">frameDisplayed()</a>, <a class="el" href="kblight_8h_source.html#l00095">lastFrameSignal</a>, <a class="el" href="kblight_8cpp_source.html#l00277">lToS()</a>, <a class="el" href="kblight_8cpp_source.html#l00284">monoRgb()</a>, <a class="el" href="kblight_8cpp_source.html#l00223">printRGB()</a>, <a class="el" href="kblight_8cpp_source.html#l00238">rebuildBaseMap()</a>, and <a class="el" href="kblight_8cpp_source.html#l00270">sToL()</a>.</p>
 
-<p>Referenced by <a class="el" href="kb_8cpp_source.html#l00426">Kb::frameUpdate()</a>.</p>
+<p>Referenced by <a class="el" href="kb_8cpp_source.html#l00432">Kb::frameUpdate()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                                                    {</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <a class="code" href="classKbLight.html#acb434e89447f75939b7935090b1ea49e">rebuildBaseMap</a>();</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <a class="code" href="classKbLight.html#a88f9b5eb2b9dfd4a10715778fa6cfc47">_animMap</a> = <a class="code" href="classKbLight.html#a4142f7a25d86e9bf1b4899de5315661b">_colorMap</a>;</div>
@@ -1517,7 +1517,7 @@ Private Attributes</h2></td></tr>
 
 <p>References <a class="el" href="kblight_8h_source.html#l00089">_animList</a>, <a class="el" href="kblight_8h_source.html#l00097">_start</a>, and <a class="el" href="kbanim_8cpp_source.html#l00325">KbAnim::isRunning()</a>.</p>
 
-<p>Referenced by <a class="el" href="kb_8cpp_source.html#l00426">Kb::frameUpdate()</a>.</p>
+<p>Referenced by <a class="el" href="kb_8cpp_source.html#l00432">Kb::frameUpdate()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                       {</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">if</span>(!<a class="code" href="classKbLight.html#a4d7596b838f4193adf5c534ff5e7640f">_start</a>)</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -1833,7 +1833,7 @@ Private Attributes</h2></td></tr>
 
 <p>References <a class="el" href="kblight_8h_source.html#l00089">_animList</a>, <a class="el" href="kblight_8h_source.html#l00096">_dimming</a>, <a class="el" href="kblight_8h_source.html#l00090">_previewAnim</a>, <a class="el" href="kblight_8cpp_source.html#l00007">_shareDimming</a>, <a class="el" href="kblight_8h_source.html#l00097">_start</a>, <a class="el" href="kblight_8cpp_source.html#l00008">activeLights</a>, <a class="el" href="kblight_8h_source.html#l00039">dimming()</a>, and <a class="el" href="kbanim_8cpp_source.html#l00209">KbAnim::trigger()</a>.</p>
 
-<p>Referenced by <a class="el" href="kb_8cpp_source.html#l00426">Kb::frameUpdate()</a>.</p>
+<p>Referenced by <a class="el" href="kb_8cpp_source.html#l00432">Kb::frameUpdate()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                  {</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="comment">// Apply shared dimming if needed</span></div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="kblight_8cpp.html#a9bba6c264703f82c00484d728a542473">_shareDimming</a> != -1 &amp;&amp; <a class="code" href="kblight_8cpp.html#a9bba6c264703f82c00484d728a542473">_shareDimming</a> != <a class="code" href="classKbLight.html#a1c91a9e493a7f6546c7aff4830d7b3bb">_dimming</a>)</div>
@@ -2897,7 +2897,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classKbLight.html">KbLight</a></li>
-    <li class="footer">Generated on Sat May 27 2017 17:42:26 for ckb-next by
+    <li class="footer">Generated on Sat May 27 2017 21:13:59 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
