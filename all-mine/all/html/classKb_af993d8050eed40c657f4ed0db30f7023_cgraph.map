@@ -30,7 +30,7 @@
 <area shape="rect" id="node32" href="$classKbAnim.html#ab8f39227653c418f06695cca87f9e00f" title="KbAnim::save" alt="" coords="1000,259,1104,285"/>
 <area shape="rect" id="node27" href="$classKeyMap.html#a2131ccd550f0875acd0cabc33bce6ea1" title="KeyMap::strModel" alt="" coords="1204,208,1332,235"/>
 <area shape="rect" id="node29" href="$classKeyMap.html#a27282ed1f29e14b9a5c836b9abb8f9b6" title="KeyMap::strLayout" alt="" coords="1202,157,1334,184"/>
-<area shape="rect" id="node28" href="$classKeyMap.html#a8e8adef86b4f4723b46a82df9fd2a4f7" title="KeyMap::getModel" alt="" coords="1403,208,1533,235"/>
+<area shape="rect" id="node28" href="$classKeyMap.html#ab582e08cb56076aa3ae89ec3d09bab6d" title="KeyMap::getModel get the KeyMap::Model from the vendor / product special table. Use this function fir..." alt="" coords="1403,208,1533,235"/>
 <area shape="rect" id="node30" href="$classKeyMap.html#a6701f6dab76262beb388d5a6f053b721" title="KeyMap::getLayout" alt="" coords="1401,157,1535,184"/>
 <area shape="rect" id="node33" href="$classCkbSettings.html#ac85a6fbc7250b71a05f38201c47abc69" title="CkbSettings::beginGroup" alt="" coords="1184,259,1352,285"/>
 <area shape="rect" id="node34" href="$classCkbSettings.html#a7abda112cfde5b5ad44d6ba94b2c37cb" title="CkbSettings::endGroup" alt="" coords="1189,309,1347,336"/>

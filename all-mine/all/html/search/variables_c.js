@@ -44,6 +44,7 @@ var searchData=
   ['modebutton',['modeButton',['../classUi__RebindWidget.html#a51bb78cc030d65218c104d2b2b4c01f1',1,'Ui_RebindWidget']]],
   ['modecoloroff',['modeColorOff',['../classUi__KPerfWidget.html#a91ead06ff39810d22182d56049eef179',1,'Ui_KPerfWidget']]],
   ['modecoloron',['modeColorOn',['../classUi__KPerfWidget.html#ac126b981f58f25236d51f35ec58df53d',1,'Ui_KPerfWidget']]],
+  ['model',['model',['../firmware__special_8h.html#a72a94e8be76837727acd9235dbffba09',1,'firmwareSpecial']]],
   ['modelist',['modeList',['../classUi__ModeSelectDialog.html#ab5f1a2bc2df2077e73660b291b2c136a',1,'Ui_ModeSelectDialog']]],
   ['models',['models',['../usb__linux_8c.html#ac1888fdd0cb519fd7ff5768437629b8b',1,'usb_linux.c']]],
   ['modeslist',['modesList',['../classUi__KbWidget.html#a8015ba036712f0654f9c60b91bca15b0',1,'Ui_KbWidget']]],

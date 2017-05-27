@@ -1,7 +1,8 @@
 <map id="KbLightWidget::on_showAnimBox_clicked" name="KbLightWidget::on_showAnimBox_clicked">
 <area shape="rect" id="node2" href="$classKeyWidget.html#a6023d3b1235a737991de16156d30a6b7" title="KeyWidget::displayColorMap" alt="" coords="251,5,442,32"/>
 <area shape="rect" id="node3" href="$classCkbSettings.html#a65c4f3ff1f75e5a554759040fb76044e" title="CkbSettings::set" alt="" coords="287,56,407,83"/>
-<area shape="rect" id="node4" href="$ckbsettings_8cpp.html#aa405e58960532b36ddb38251775238fd" title="globalSettings" alt="" coords="505,31,609,57"/>
-<area shape="rect" id="node5" href="$classCkbSettings.html#a3793106d98878f170f9f9734bf39409b" title="CkbSettings::value" alt="" coords="491,81,624,108"/>
-<area shape="rect" id="node6" href="$classCkbSettings.html#a29695ed0012617ba943a1878d4abc71c" title="CkbSettings::pwd" alt="" coords="673,81,799,108"/>
+<area shape="rect" id="node4" href="$ckbsettings_8cpp.html#aa405e58960532b36ddb38251775238fd" title="globalSettings " alt="" coords="505,31,609,57"/>
+<area shape="rect" id="node6" href="$classCkbSettings.html#a3793106d98878f170f9f9734bf39409b" title="CkbSettings::value" alt="" coords="491,81,624,108"/>
+<area shape="rect" id="node5" href="$classCkbSettings.html#a378a1793dae116fbea4a801396fa4fbb" title="CkbSettings::setWritable Remember if the config files are writable (setter) " alt="" coords="672,31,840,57"/>
+<area shape="rect" id="node7" href="$classCkbSettings.html#a29695ed0012617ba943a1878d4abc71c" title="CkbSettings::pwd" alt="" coords="693,81,819,108"/>
 </map>

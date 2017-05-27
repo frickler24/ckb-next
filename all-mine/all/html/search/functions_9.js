@@ -3,6 +3,7 @@ var searchData=
   ['iconclicked',['iconClicked',['../classMainWindow.html#a3e292f1ddb54b722c8270b1259c1f85a',1,'MainWindow']]],
   ['id',['id',['../classKbMode.html#a7f9aa60df1f6adabad5d6b6314546c57',1,'KbMode::id()'],['../classKbMode.html#ac315d57f007bb10901566fb32a3fdd93',1,'KbMode::id(const UsbId &amp;newId)'],['../classKbProfile.html#a868bdfbe3f9c00ce2708a1ed8f457ccf',1,'KbProfile::id()'],['../classKbProfile.html#ac71a91f5ec60278895b841cba6d2ab68',1,'KbProfile::id(const UsbId &amp;newId)']]],
   ['indexof',['indexOf',['../classKb.html#adbac57caeebafea9323f83ce6db6ebf2',1,'Kb::indexOf()'],['../classKbProfile.html#ad3533e835b9ea8dbf031ef57d8823eef',1,'KbProfile::indexOf()']]],
+  ['informifnonwritable',['informIfNonWritable',['../classCkbSettings.html#a6c5935f9ea0cc25bbb0b64929578d99b',1,'CkbSettings']]],
   ['infoupdated',['infoUpdated',['../classKb.html#a74c8333e28ae155c77b59865f4018c82',1,'Kb']]],
   ['init',['init',['../classAnimScript.html#a226572590c52210a0ec275b9b6e9eb94',1,'AnimScript::init()'],['../classColorMap.html#ad441372fc281a9555b3d3846a023ddf5',1,'ColorMap::init()'],['../classKbManager.html#add00fc7213f369bf50e8b069f9387206',1,'KbManager::init()']]],
   ['init_5fkeys',['init_keys',['../crypt_8h.html#a2112f577afc76bbadc62da9c9a04f570',1,'crypt.h']]],
@@ -42,6 +43,7 @@ var searchData=
   ['isstarted',['isStarted',['../classKbLight.html#a9c5da2fd5175d75bcac5c18a46362669',1,'KbLight']]],
   ['isunbound',['isUnbound',['../classKeyAction.html#a23c0536bbfe20712a1e998e692439d6e',1,'KeyAction']]],
   ['isvalidmacro',['isValidMacro',['../classKeyAction.html#ae657d934ff312fb11e306472472b31ef',1,'KeyAction']]],
+  ['iswritable',['isWritable',['../classCkbSettings.html#afbbe306ace70b296d30a56ab595e14bb',1,'CkbSettings']]],
   ['isync',['isync',['../input__linux_8c.html#a14ff0fdf147e3702197db2cadb878460',1,'input_linux.c']]],
   ['iszip64enabled',['isZip64Enabled',['../classQuaZip.html#a1b638566390d7599ba5982e844b151f4',1,'QuaZip']]]
 ];

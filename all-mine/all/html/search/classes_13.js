@@ -26,7 +26,7 @@ var searchData=
   ['unz_5fglobal_5finfo64_5fs',['unz_global_info64_s',['../unzip_8h.html#structunz__global__info64__s',1,'']]],
   ['unz_5fglobal_5finfo_5fs',['unz_global_info_s',['../unzip_8h.html#structunz__global__info__s',1,'']]],
   ['usbdevice',['usbdevice',['../structures_8h.html#structusbdevice',1,'']]],
-  ['usbid',['usbid',['../structures_8h.html#structusbid',1,'usbid'],['../structUsbId.html',1,'UsbId']]],
+  ['usbid',['UsbId',['../structUsbId.html',1,'UsbId'],['../structures_8h.html#structusbid',1,'usbid']]],
   ['usbinput',['usbinput',['../structures_8h.html#structusbinput',1,'']]],
   ['usbmode',['usbmode',['../structures_8h.html#structusbmode',1,'']]],
   ['usbprofile',['usbprofile',['../structures_8h.html#structusbprofile',1,'']]]

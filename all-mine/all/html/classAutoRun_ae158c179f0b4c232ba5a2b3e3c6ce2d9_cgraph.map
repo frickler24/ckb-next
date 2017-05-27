@@ -1,4 +1,5 @@
 <map id="AutoRun::once" name="AutoRun::once">
 <area shape="rect" id="node2" href="$classCkbSettings.html#a6945305e44cce23cc26785850637dbab" title="CkbSettings::get" alt="" coords="163,5,283,32"/>
-<area shape="rect" id="node3" href="$ckbsettings_8cpp.html#aa405e58960532b36ddb38251775238fd" title="globalSettings" alt="" coords="331,5,435,32"/>
+<area shape="rect" id="node3" href="$ckbsettings_8cpp.html#aa405e58960532b36ddb38251775238fd" title="globalSettings " alt="" coords="331,5,435,32"/>
+<area shape="rect" id="node4" href="$classCkbSettings.html#a378a1793dae116fbea4a801396fa4fbb" title="CkbSettings::setWritable Remember if the config files are writable (setter) " alt="" coords="483,5,651,32"/>
 </map>

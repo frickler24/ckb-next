@@ -9,6 +9,7 @@ var hierarchy =
     [ "curfile64_info", "zip_8c.html#structcurfile64__info", null ],
     [ "MPerfWidget::DpiUi", "classMPerfWidget.html#structMPerfWidget_1_1DpiUi", null ],
     [ "file_in_zip64_read_info_s", "unzip_8c.html#structfile__in__zip64__read__info__s", null ],
+    [ "firmwareSpecial", "firmware__special_8h.html#structfirmwareSpecial", null ],
     [ "KbFirmware::FW", "structKbFirmware_1_1FW.html", null ],
     [ "KPerfWidget::IndicatorUi", "classKPerfWidget.html#structKPerfWidget_1_1IndicatorUi", null ],
     [ "JlCompress", "classJlCompress.html", null ],

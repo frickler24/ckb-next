@@ -10,7 +10,7 @@ var searchData=
   ['p_5fk65_5fstr',['P_K65_STR',['../usb_8h.html#a68ad83cdaab7454132293dba6c28df23',1,'usb.h']]],
   ['p_5fk70',['P_K70',['../usb_8h.html#a3133fa57f7b2d7c888ffafeadc4476ab',1,'usb.h']]],
   ['p_5fk70_5flux',['P_K70_LUX',['../usb_8h.html#a3fc42f14fec81381ff8251ca6a85b363',1,'usb.h']]],
-  ['p_5fk70_5flux_5fnrgb',['P_K70_LUX_NRGB',['../usb_8h.html#aa0f89f20ca96ad159330a8d071a45352',1,'usb.h']]],
+  ['p_5fk70_5flux_5fnrgb',['P_K70_LUX_NRGB',['../firmware__special_8h.html#aa0f89f20ca96ad159330a8d071a45352',1,'P_K70_LUX_NRGB():&#160;firmware_special.h'],['../usb_8h.html#aa0f89f20ca96ad159330a8d071a45352',1,'P_K70_LUX_NRGB():&#160;usb.h']]],
   ['p_5fk70_5flux_5fnrgb_5fstr',['P_K70_LUX_NRGB_STR',['../usb_8h.html#a7015272c146f31745446a996c60d583c',1,'usb.h']]],
   ['p_5fk70_5flux_5fstr',['P_K70_LUX_STR',['../usb_8h.html#a325a794b2e7b06929d5fb9010963fd3f',1,'usb.h']]],
   ['p_5fk70_5fnrgb',['P_K70_NRGB',['../usb_8h.html#a7fea7ba58b4bb6a7def7c380ab695110',1,'usb.h']]],

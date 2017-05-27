@@ -40,6 +40,8 @@ var searchData=
   ['firmware',['firmware',['../classKb.html#a37b63c69e06668a651d30faf6738b286',1,'Kb']]],
   ['firmware_2ec',['firmware.c',['../firmware_8c.html',1,'']]],
   ['firmware_2eh',['firmware.h',['../firmware_8h.html',1,'']]],
+  ['firmware_5fspecial_2eh',['firmware_special.h',['../firmware__special_8h.html',1,'']]],
+  ['firmwarespecial',['firmwareSpecial',['../firmware__special_8h.html#structfirmwareSpecial',1,'']]],
   ['first_5fblock',['first_block',['../zip_8c.html#aa0a9c876ad4a05aa5969d8888fb57cdb',1,'linkedlist_data_s']]],
   ['firstcall',['firstCall',['../classRebindWidget.html#a5acf4f14a75363740c8414c8f7de7995',1,'RebindWidget']]],
   ['firstframe',['firstFrame',['../classAnimScript.html#afcd8e352bf8e8755eb67322ff5513d96',1,'AnimScript']]],

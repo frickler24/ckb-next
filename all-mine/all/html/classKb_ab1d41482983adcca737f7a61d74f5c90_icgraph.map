@@ -2,5 +2,5 @@
 <area shape="rect" id="node2" href="$classLayoutDialog.html#a4ebc4c73a6e16c47a450e1d3198fdd1f" title="LayoutDialog::LayoutDialog" alt="" coords="137,5,319,32"/>
 <area shape="rect" id="node3" href="$classSettingsWidget.html#a837182cce250d5b256efafe6c26d55e8" title="SettingsWidget::on\l_layoutBox_activated" alt="" coords="155,57,301,98"/>
 <area shape="rect" id="node5" href="$classSettingsWidget.html#ab381a630fcf24d7fe49ab7bd2896c052" title="SettingsWidget::Settings\lWidget" alt="" coords="606,86,773,127"/>
-<area shape="rect" id="node4" href="$classSettingsWidget.html#a11ec2a7f0f7896520f4135f2c1035a96" title="SettingsWidget::showLayout\lDialog" alt="" coords="368,57,557,98"/>
+<area shape="rect" id="node4" href="$classSettingsWidget.html#a11ec2a7f0f7896520f4135f2c1035a96" title="SettingsWidget::showLayoutDialog pops up a modal window to select the keyboard layout. Before the modal windows is created, look for a popssible open info&#45;window about read only config file. If showLayoutDialog() finds an info window, it waits with creating the keyboard&#45;selection until the info window has gone. " alt="" coords="368,57,557,98"/>
 </map>

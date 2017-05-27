@@ -2,5 +2,5 @@
 <area shape="rect" id="node2" href="$classKeyMap.html#a27282ed1f29e14b9a5c836b9abb8f9b6" title="KeyMap::strLayout" alt="" coords="166,5,298,32"/>
 <area shape="rect" id="node4" href="$classKeyMap.html#a2131ccd550f0875acd0cabc33bce6ea1" title="KeyMap::strModel" alt="" coords="168,56,296,83"/>
 <area shape="rect" id="node3" href="$classKeyMap.html#a6701f6dab76262beb388d5a6f053b721" title="KeyMap::getLayout" alt="" coords="347,5,482,32"/>
-<area shape="rect" id="node5" href="$classKeyMap.html#a8e8adef86b4f4723b46a82df9fd2a4f7" title="KeyMap::getModel" alt="" coords="349,56,480,83"/>
+<area shape="rect" id="node5" href="$classKeyMap.html#ab582e08cb56076aa3ae89ec3d09bab6d" title="KeyMap::getModel get the KeyMap::Model from the vendor / product special table. Use this function fir..." alt="" coords="349,56,480,83"/>
 </map>

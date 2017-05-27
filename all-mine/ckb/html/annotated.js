@@ -15,6 +15,7 @@ var annotated =
     [ "curfile64_info", "zip_8c.html#structcurfile64__info", "zip_8c_structcurfile64__info" ],
     [ "ExtraSettingsWidget", "classExtraSettingsWidget.html", "classExtraSettingsWidget" ],
     [ "file_in_zip64_read_info_s", "unzip_8c.html#structfile__in__zip64__read__info__s", "unzip_8c_structfile__in__zip64__read__info__s" ],
+    [ "firmwareSpecial", "firmware__special_8h.html#structfirmwareSpecial", "firmware__special_8h_structfirmwareSpecial" ],
     [ "FwUpgradeDialog", "classFwUpgradeDialog.html", "classFwUpgradeDialog" ],
     [ "GradientButton", "classGradientButton.html", "classGradientButton" ],
     [ "GradientDialog", "classGradientDialog.html", "classGradientDialog" ],

@@ -117,7 +117,7 @@ var searchData=
   ['modecoloron',['modeColorOn',['../classUi__KPerfWidget.html#ac126b981f58f25236d51f35ec58df53d',1,'Ui_KPerfWidget']]],
   ['modecount',['modeCount',['../classKbProfile.html#af2c3333da1d6cb937c6c679f08cf2bbd',1,'KbProfile']]],
   ['modeicon',['modeIcon',['../classKbWidget.html#ae0406fb1288b3ef1c9ed5e2457ca805a',1,'KbWidget']]],
-  ['model',['model',['../classKb.html#a92f4a1f6476d2de0a6bf9928e002b00a',1,'Kb::model()'],['../classKeyMap.html#a72ab32524b88e5a6bce86b1d9eafde48',1,'KeyMap::model() const '],['../classKeyMap.html#a6d29bbbb4d74908a0a1873d485d6769d',1,'KeyMap::Model()']]],
+  ['model',['Model',['../classKeyMap.html#a6d29bbbb4d74908a0a1873d485d6769d',1,'KeyMap::Model()'],['../firmware__special_8h.html#a72a94e8be76837727acd9235dbffba09',1,'firmwareSpecial::model()'],['../classKb.html#a92f4a1f6476d2de0a6bf9928e002b00a',1,'Kb::model()'],['../classKeyMap.html#a72ab32524b88e5a6bce86b1d9eafde48',1,'KeyMap::model()']]],
   ['modelheight',['modelHeight',['../classKeyMap.html#a2369994a79fdf46a6c5a9192c812f140',1,'KeyMap']]],
   ['modelist',['modeList',['../classUi__ModeSelectDialog.html#ab5f1a2bc2df2077e73660b291b2c136a',1,'Ui_ModeSelectDialog::modeList()'],['../classKbProfile.html#a7be0778488e338042ae1eff557e14c70',1,'KbProfile::ModeList()']]],
   ['modelwidth',['modelWidth',['../classKeyMap.html#aee4d4f9bf72d6e678f1ea57b24faead3',1,'KeyMap']]],

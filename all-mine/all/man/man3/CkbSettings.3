@@ -1,4 +1,4 @@
-.TH "CkbSettings" 3 "Thu May 25 2017" "Version v0.2.8 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.TH "CkbSettings" 3 "Sat May 27 2017" "Version v0.2.8 at branch all-mine" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -61,6 +61,18 @@ CkbSettings \-
 .RI "static void \fBset\fP (const QString &\fBkey\fP, const QVariant &\fBvalue\fP)"
 .br
 .ti -1c
+.RI "static bool \fBinformIfNonWritable\fP ()"
+.br
+.RI "\fIIf config files are writable, return false\&. Otherwise give the user a pop up and return true\&. \fP"
+.ti -1c
+.RI "static bool \fBisWritable\fP ()"
+.br
+.RI "\fISetter & getter for it\&. \fP"
+.ti -1c
+.RI "static void \fBsetWritable\fP (bool v)"
+.br
+.RI "\fI\fBCkbSettings::setWritable\fP Remember if the config files are writable (setter) \fP"
+.ti -1c
 .RI "static bool \fBisBusy\fP ()"
 .br
 .ti -1c
@@ -93,354 +105,430 @@ CkbSettings \-
 .RI "QMap< QString, QVariant > \fBwriteCache\fP"
 .br
 .in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static bool \fB_writable\fP = false"
+.br
+.RI "\fIRemember, whether the Config files are writable or not\&. \fP"
+.in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 11 of file ckbsettings\&.h\&.
+Definition at line 12 of file ckbsettings\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "CkbSettings::CkbSettings ()"
 
 .PP
-Definition at line 61 of file ckbsettings\&.cpp\&.
+Definition at line 146 of file ckbsettings\&.cpp\&.
 .PP
 .nf
-61                          :
-62     backing(globalSettings()) {
-63 }
+146                          :
+147     backing(globalSettings()) {
+148 }
 .fi
 .SS "CkbSettings::CkbSettings (const QString &basePath, booleraseExisting = \fCfalse\fP)"
 
 .PP
-Definition at line 65 of file ckbsettings\&.cpp\&.
+Definition at line 150 of file ckbsettings\&.cpp\&.
 .PP
 References beginGroup()\&.
 .PP
 .nf
-65                                                                     :
-66     backing(globalSettings()) {
-67     if(basePath\&.isEmpty()){
-68         if(eraseExisting)
-69             qDebug() << "CkbSettings created with basePath = \"\" and eraseExisting = true\&. This is a mistake\&.";
-70         return;
-71     }
-72     if(eraseExisting)
-73         remove(basePath);
-74     beginGroup(basePath);
-75 }
+150                                                                     :
+151     backing(globalSettings()) {
+152     if(basePath\&.isEmpty()){
+153         if(eraseExisting)
+154             qDebug() << "CkbSettings created with basePath = \"\" and eraseExisting = true\&. This is a mistake\&.";
+155         return;
+156     }
+157     if(eraseExisting)
+158         remove(basePath);
+159     beginGroup(basePath);
+160 }
 .fi
 .SS "CkbSettings::CkbSettings (QSettings &settings)"
 
 .PP
-Definition at line 77 of file ckbsettings\&.cpp\&.
+Definition at line 162 of file ckbsettings\&.cpp\&.
 .PP
 .nf
-77                                             :
-78     backing(&settings) {
-79 }
+162                                             :
+163     backing(&settings) {
+164 }
 .fi
 .SS "CkbSettings::~CkbSettings ()"
 
 .PP
-Definition at line 145 of file ckbsettings\&.cpp\&.
+Definition at line 230 of file ckbsettings\&.cpp\&.
 .PP
 References backing, removeCache, and writeCache\&.
 .PP
 .nf
-145                          {
-146     if(removeCache\&.isEmpty() && writeCache\&.isEmpty())
-147         return;
-148     // Save the settings from the settings thread\&.
-149     // They have to be saved from that thread specifically to avoid performance issues
-150     CkbSettingsWriter* writer = new CkbSettingsWriter(backing, removeCache, writeCache);
-151     writer->moveToThread(globalThread);
-152     QObject::staticMetaObject\&.invokeMethod(writer, "run", Qt::QueuedConnection);
-153 }
+230                          {
+231     if(removeCache\&.isEmpty() && writeCache\&.isEmpty())
+232         return;
+233     // Save the settings from the settings thread\&.
+234     // They have to be saved from that thread specifically to avoid performance issues
+235     CkbSettingsWriter* writer = new CkbSettingsWriter(backing, removeCache, writeCache);
+236     writer->moveToThread(globalThread);
+237     QObject::staticMetaObject\&.invokeMethod(writer, "run", Qt::QueuedConnection);
+238 }
 .fi
 .SH "Member Function Documentation"
 .PP 
 .SS "void CkbSettings::beginGroup (const QString &prefix)"
 
 .PP
-Definition at line 81 of file ckbsettings\&.cpp\&.
+Definition at line 166 of file ckbsettings\&.cpp\&.
 .PP
 References groups\&.
 .PP
 Referenced by CkbSettings(), KbAnim::save(), and SGroup::SGroup()\&.
 .PP
 .nf
-81                                                  {
-82     groups\&.append(prefix);
-83 }
+166                                                  {
+167     groups\&.append(prefix);
+168 }
 .fi
 .SS "QStringList CkbSettings::childGroups () const"
 
 .PP
-Definition at line 89 of file ckbsettings\&.cpp\&.
+Definition at line 174 of file ckbsettings\&.cpp\&.
 .PP
 References backing, current, lockMutex, and pwd()\&.
 .PP
 Referenced by containsGroup(), and GradientDialog::GradientDialog()\&.
 .PP
 .nf
-89                                            {
-90     QString current = pwd();
-91     lockMutex;
-92     if(!current\&.isEmpty())
-93         backing->beginGroup(current);
-94     QStringList res = backing->childGroups();
-95     if(!current\&.isEmpty())
-96         backing->endGroup();
-97     return res;
-98 }
+174                                            {
+175     QString current = pwd();
+176     lockMutex;
+177     if(!current\&.isEmpty())
+178         backing->beginGroup(current);
+179     QStringList res = backing->childGroups();
+180     if(!current\&.isEmpty())
+181         backing->endGroup();
+182     return res;
+183 }
 .fi
 .SS "QStringList CkbSettings::childKeys () const"
 
 .PP
-Definition at line 100 of file ckbsettings\&.cpp\&.
+Definition at line 185 of file ckbsettings\&.cpp\&.
 .PP
 References backing, current, lockMutex, and pwd()\&.
 .PP
 Referenced by GradientDialog::GradientDialog(), KbAnim::KbAnim(), KbBind::load(), KbLight::load(), and KbBind::loadGlobalRemap()\&.
 .PP
 .nf
-100                                          {
-101     QString current = pwd();
-102     lockMutex;
-103     if(!current\&.isEmpty())
-104         backing->beginGroup(current);
-105     QStringList res = backing->childKeys();
-106     if(!current\&.isEmpty())
-107         backing->endGroup();
-108     return res;
-109 }
+185                                          {
+186     QString current = pwd();
+187     lockMutex;
+188     if(!current\&.isEmpty())
+189         backing->beginGroup(current);
+190     QStringList res = backing->childKeys();
+191     if(!current\&.isEmpty())
+192         backing->endGroup();
+193     return res;
+194 }
 .fi
 .SS "void CkbSettings::cleanUp ()\fC [static]\fP"
 
 .PP
-Definition at line 46 of file ckbsettings\&.cpp\&.
+Definition at line 131 of file ckbsettings\&.cpp\&.
 .PP
 References _globalSettings, cacheWritesInProgress(), and globalThread\&.
 .PP
 Referenced by MainWindow::cleanup()\&.
 .PP
 .nf
-46                          {
-47     if(!_globalSettings)
-48         return;
-49     // Wait for all writers to finish
-50     while(cacheWritesInProgress\&.load() > 0)
-51         QThread::yieldCurrentThread();
-52     // Stop thread and delete objects
-53     globalThread->quit();
-54     globalThread->wait();
-55     delete globalThread;
-56     delete _globalSettings;
-57     globalThread = 0;
-58     _globalSettings = 0;
-59 }
+131                          {
+132     if(!_globalSettings)
+133         return;
+134     // Wait for all writers to finish
+135     while(cacheWritesInProgress\&.load() > 0)
+136         QThread::yieldCurrentThread();
+137     // Stop thread and delete objects
+138     globalThread->quit();
+139     globalThread->wait();
+140     delete globalThread;
+141     delete _globalSettings;
+142     globalThread = 0;
+143     _globalSettings = 0;
+144 }
 .fi
 .SS "bool CkbSettings::contains (const QString &key) const"
 
 .PP
-Definition at line 111 of file ckbsettings\&.cpp\&.
+Definition at line 196 of file ckbsettings\&.cpp\&.
 .PP
 References backing, lockMutex, and pwd()\&.
 .PP
 Referenced by KbMode::KbMode(), KbProfile::KbProfile(), and KbPerf::load()\&.
 .PP
 .nf
-111                                                    {
-112     lockMutex;
-113     return backing->contains(pwd(key));
-114 }
+196                                                    {
+197     lockMutex;
+198     return backing->contains(pwd(key));
+199 }
 .fi
 .SS "bool CkbSettings::containsGroup (const QString &group)"
 
 .PP
-Definition at line 116 of file ckbsettings\&.cpp\&.
+Definition at line 201 of file ckbsettings\&.cpp\&.
 .PP
 References childGroups()\&.
 .PP
 Referenced by KbPerf::load()\&.
 .PP
 .nf
-116                                                    {
-117     QStringList components = group\&.split("/");
-118     if(components\&.length() > 1){
-119         // Find sub-group
-120         SGroup group(*this, components[0]);
-121         return containsGroup(QStringList(components\&.mid(1))\&.join('/'));
-122     }
-123     return childGroups()\&.contains(group);
-124 }
+201                                                    {
+202     QStringList components = group\&.split("/");
+203     if(components\&.length() > 1){
+204         // Find sub-group
+205         SGroup group(*this, components[0]);
+206         return containsGroup(QStringList(components\&.mid(1))\&.join('/'));
+207     }
+208     return childGroups()\&.contains(group);
+209 }
 .fi
 .SS "void CkbSettings::endGroup ()"
 
 .PP
-Definition at line 85 of file ckbsettings\&.cpp\&.
+Definition at line 170 of file ckbsettings\&.cpp\&.
 .PP
 References groups\&.
 .PP
 Referenced by KbAnim::save(), and SGroup::~SGroup()\&.
 .PP
 .nf
-85                           {
-86     groups\&.removeLast();
-87 }
+170                           {
+171     groups\&.removeLast();
+172 }
 .fi
 .SS "QVariant CkbSettings::get (const QString &key, const QVariant &defaultValue = \fCQVariant()\fP)\fC [static]\fP"
 
 .PP
-Definition at line 155 of file ckbsettings\&.cpp\&.
+Definition at line 240 of file ckbsettings\&.cpp\&.
 .PP
 References globalCache, globalSettings(), lockMutexCache, and lockMutexStatic2\&.
 .PP
 Referenced by MainWindow::closeEvent(), KbLightWidget::KbLightWidget(), MainWindow::MainWindow(), AutoRun::once(), and MainWindow::timerTick()\&.
 .PP
 .nf
-155                                                                          {
-156     // Store these settings in a memory cache
-157     lockMutexCache;
-158     if(globalCache\&.contains(key))
-159         return globalCache\&.value(key);
-160     // If it wasn't found in the memory cache, look for it in QSettings
-161     lockMutexStatic2;
-162     QSettings* settings = globalSettings();
-163     return globalCache[key] = settings->value(key, defaultValue);
-164 }
+240                                                                          {
+241     // Store these settings in a memory cache
+242     lockMutexCache;
+243     if(globalCache\&.contains(key))
+244         return globalCache\&.value(key);
+245     // If it wasn't found in the memory cache, look for it in QSettings
+246     lockMutexStatic2;
+247     QSettings* settings = globalSettings();
+248     return globalCache[key] = settings->value(key, defaultValue);
+249 }
+.fi
+.SS "bool CkbSettings::informIfNonWritable ()\fC [static]\fP"
+CkbSettings::checkIfWritable If the local implementation of the config database is not yet writable, bring up a popup to the user to informhim about it\&. Bring up the information where he can find the info\&. 
+.PP
+Definition at line 112 of file ckbsettings\&.cpp\&.
+.PP
+References _globalSettings, and isWritable()\&.
+.PP
+Referenced by MainWindow::MainWindow()\&.
+.PP
+.nf
+112                                       {
+113     if (isWritable()) return false;
+114     QMessageBox msgBox;
+115     msgBox\&.setIcon(QMessageBox::Warning);
+116     msgBox\&.setProperty("Title", "Profile is read only");
+117     msgBox\&.setText("Your profile information for ckb-next is nonwritable\&.");
+118     QString info = "This might happen if you did start the ckb-next program with root privileges earlier\&.\n\nOr did you copy it from somewhere?\n\nPlease have a look at\n"
+119             + _globalSettings->fileName();
+120     msgBox\&.setInformativeText(info);
+121     msgBox\&.exec();
+122     qDebug() << "Profile information for ckb-next is nonwritable\&. It is located at" << _globalSettings->fileName();
+123     return true;
+124 }
 .fi
 .SS "bool CkbSettings::isBusy ()\fC [static]\fP"
 
 .PP
-Definition at line 42 of file ckbsettings\&.cpp\&.
+Definition at line 127 of file ckbsettings\&.cpp\&.
 .PP
 References cacheWritesInProgress()\&.
 .PP
 Referenced by Kb::autoSave(), and ExtraSettingsWidget::pollUpdates()\&.
 .PP
 .nf
-42                         {
-43     return cacheWritesInProgress\&.load() > 0;
-44 }
+127                         {
+128     return cacheWritesInProgress\&.load() > 0;
+129 }
+.fi
+.SS "bool CkbSettings::isWritable ()\fC [static]\fP"
+\fBCkbSettings::isWritable\fP Remember if the config files are writable (boolean getter)
+.PP
+\fBReturns:\fP
+.RS 4
+the value of CkbSettings::writable 
+.RE
+.PP
+
+.PP
+Definition at line 98 of file ckbsettings\&.cpp\&.
+.PP
+References _writable\&.
+.PP
+Referenced by informIfNonWritable(), and main()\&.
+.PP
+.nf
+98 { return _writable; }
 .fi
 .SS "QString CkbSettings::pwd () const\fC [inline]\fP, \fC [private]\fP"
 
 .PP
-Definition at line 51 of file ckbsettings\&.h\&.
+Definition at line 61 of file ckbsettings\&.h\&.
 .PP
 References groups\&.
 .PP
 Referenced by childGroups(), childKeys(), contains(), remove(), setValue(), and value()\&.
 .PP
 .nf
-51 { return groups\&.join("/"); }
+61 { return groups\&.join("/"); }
 .fi
 .SS "QString CkbSettings::pwd (const QString &key) const\fC [inline]\fP, \fC [private]\fP"
 
 .PP
-Definition at line 52 of file ckbsettings\&.h\&.
+Definition at line 62 of file ckbsettings\&.h\&.
 .PP
 References groups, and pwd()\&.
 .PP
 Referenced by pwd()\&.
 .PP
 .nf
-52 { return pwd() + (groups\&.isEmpty() ? "" : "/") + key; }
+62 { return pwd() + (groups\&.isEmpty() ? "" : "/") + key; }
 .fi
 .SS "void CkbSettings::remove (const QString &key)"
 
 .PP
-Definition at line 141 of file ckbsettings\&.cpp\&.
+Definition at line 226 of file ckbsettings\&.cpp\&.
 .PP
 References pwd(), and removeCache\&.
 .PP
 Referenced by SettingsWidget::SettingsWidget()\&.
 .PP
 .nf
-141                                           {
-142     removeCache\&.append(pwd(key));
-143 }
+226                                           {
+227     removeCache\&.append(pwd(key));
+228 }
 .fi
 .SS "void CkbSettings::set (const QString &key, const QVariant &value)\fC [static]\fP"
 
 .PP
-Definition at line 166 of file ckbsettings\&.cpp\&.
+Definition at line 251 of file ckbsettings\&.cpp\&.
 .PP
 References globalCache, globalSettings(), lockMutexCache, lockMutexStatic, and value()\&.
 .PP
 Referenced by MainWindow::closeEvent(), AutoRun::enable(), AutoRun::isEnabled(), SettingsWidget::on_autoFWBox_clicked(), ExtraSettingsWidget::on_delayBox_clicked(), ExtraSettingsWidget::on_ditherBox_clicked(), SettingsWidget::on_layoutBox_activated(), ExtraSettingsWidget::on_mAccelBox_clicked(), ExtraSettingsWidget::on_sAccelBox_clicked(), KbLightWidget::on_showAnimBox_clicked(), ExtraSettingsWidget::on_sSpeedBox_valueChanged(), ExtraSettingsWidget::on_trayBox_clicked(), MPerfWidget::on_xyBox_clicked(), and ExtraSettingsWidget::pollUpdates()\&.
 .PP
 .nf
-166                                                               {
-167     {
-168         lockMutexCache;
-169         if(globalCache\&.value(key) == value)
-170             return;
-171         globalCache[key] = value;
-172     }
-173     lockMutexStatic;
-174     globalSettings()->setValue(key, value);
-175 }
+251                                                               {
+252     {
+253         lockMutexCache;
+254         if(globalCache\&.value(key) == value)
+255             return;
+256         globalCache[key] = value;
+257     }
+258     lockMutexStatic;
+259     globalSettings()->setValue(key, value);
+260 }
 .fi
 .SS "void CkbSettings::setValue (const QString &key, const QVariant &value)"
 
 .PP
-Definition at line 131 of file ckbsettings\&.cpp\&.
+Definition at line 216 of file ckbsettings\&.cpp\&.
 .PP
 References globalCache, lockMutexCache, pwd(), value(), and writeCache\&.
 .PP
 Referenced by ExtraSettingsWidget::on_fpsBox_valueChanged(), KbProfile::save(), KbPerf::save(), KbAnim::save(), KbBind::save(), KbMode::save(), KbLight::save(), Kb::save(), KbBind::saveGlobalRemap(), SettingsWidget::SettingsWidget(), and GradientDialog::~GradientDialog()\&.
 .PP
 .nf
-131                                                                    {
-132     // Cache the write values, save them when the object is destroyed
-133     QString realKey = pwd(key);
-134     writeCache[realKey] = value;
-135     // Update global cache if needed
-136     lockMutexCache;
-137     if(globalCache\&.contains(realKey))
-138         globalCache[realKey] = value;
-139 }
+216                                                                    {
+217     // Cache the write values, save them when the object is destroyed
+218     QString realKey = pwd(key);
+219     writeCache[realKey] = value;
+220     // Update global cache if needed
+221     lockMutexCache;
+222     if(globalCache\&.contains(realKey))
+223         globalCache[realKey] = value;
+224 }
+.fi
+.SS "void CkbSettings::setWritable (boolv)\fC [static]\fP"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP Set the value of CkbSettings::writable 
+.RE
+.PP
+
+.PP
+Definition at line 105 of file ckbsettings\&.cpp\&.
+.PP
+References _writable\&.
+.PP
+Referenced by globalSettings()\&.
+.PP
+.nf
+105 { _writable = v; }
 .fi
 .SS "QVariant CkbSettings::value (const QString &key, const QVariant &defaultValue = \fCQVariant()\fP) const"
 
 .PP
-Definition at line 126 of file ckbsettings\&.cpp\&.
+Definition at line 211 of file ckbsettings\&.cpp\&.
 .PP
 References backing, lockMutex, and pwd()\&.
 .PP
 Referenced by ExtraSettingsWidget::ExtraSettingsWidget(), GradientDialog::GradientDialog(), KbAnim::KbAnim(), KbMode::KbMode(), KbProfile::KbProfile(), KbPerf::load(), KbBind::load(), KbLight::load(), Kb::load(), KbBind::loadGlobalRemap(), set(), SettingsWidget::SettingsWidget(), and setValue()\&.
 .PP
 .nf
-126                                                                                   {
-127     lockMutex;
-128     return backing->value(pwd(key), defaultValue);
-129 }
+211                                                                                   {
+212     lockMutex;
+213     return backing->value(pwd(key), defaultValue);
+214 }
 .fi
 .SH "Field Documentation"
 .PP 
+.SS "bool CkbSettings::_writable = false\fC [static]\fP, \fC [private]\fP"
+\fBCkbSettings::_writable\fP\&. 
+.PP
+Definition at line 59 of file ckbsettings\&.h\&.
+.PP
+Referenced by isWritable(), and setWritable()\&.
 .SS "QSettings* CkbSettings::backing\fC [private]\fP"
 
 .PP
-Definition at line 46 of file ckbsettings\&.h\&.
+Definition at line 54 of file ckbsettings\&.h\&.
 .PP
 Referenced by childGroups(), childKeys(), contains(), value(), and ~CkbSettings()\&.
 .SS "QStringList CkbSettings::groups\fC [private]\fP"
 
 .PP
-Definition at line 47 of file ckbsettings\&.h\&.
+Definition at line 55 of file ckbsettings\&.h\&.
 .PP
 Referenced by beginGroup(), endGroup(), and pwd()\&.
 .SS "QStringList CkbSettings::removeCache\fC [private]\fP"
 
 .PP
-Definition at line 48 of file ckbsettings\&.h\&.
+Definition at line 56 of file ckbsettings\&.h\&.
 .PP
 Referenced by remove(), and ~CkbSettings()\&.
 .SS "QMap<QString, QVariant> CkbSettings::writeCache\fC [private]\fP"
 
 .PP
-Definition at line 49 of file ckbsettings\&.h\&.
+Definition at line 57 of file ckbsettings\&.h\&.
 .PP
 Referenced by setValue(), and ~CkbSettings()\&.
 

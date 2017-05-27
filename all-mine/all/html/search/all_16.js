@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['v_5fcorsair',['V_CORSAIR',['../usb_8h.html#a2aa27325e30aac7dcec6203d4f11e996',1,'usb.h']]],
+  ['v_5fcorsair',['V_CORSAIR',['../firmware__special_8h.html#a2aa27325e30aac7dcec6203d4f11e996',1,'V_CORSAIR():&#160;firmware_special.h'],['../usb_8h.html#a2aa27325e30aac7dcec6203d4f11e996',1,'V_CORSAIR():&#160;usb.h']]],
   ['v_5fcorsair_5fstr',['V_CORSAIR_STR',['../usb_8h.html#a0a9288dd24752f04930cbf9e673e536c',1,'usb.h']]],
   ['value',['value',['../classCkbSettings.html#a3793106d98878f170f9f9734bf39409b',1,'CkbSettings::value()'],['../classKeyAction.html#a67bbf6dd422e76ef20ed858f28bb4b21',1,'KeyAction::value()'],['../classQuaAdler32.html#a2022e1db95c23cef220b335e44d74fb1',1,'QuaAdler32::value()'],['../classQuaChecksum32.html#afd836e7534194fce08356be6a8336da7',1,'QuaChecksum32::value()'],['../classQuaCrc32.html#a957ce46a53862f75c89d6a3ac4f73389',1,'QuaCrc32::value()']]],
   ['vendor',['vendor',['../fwupgradedialog_8cpp.html#a7ee73ddef65cc7851394429f088b0547',1,'KbId::vendor()'],['../structures_8h.html#a2fa713366249e2fdbb2539e5d65a1439',1,'usbdevice::vendor()']]],

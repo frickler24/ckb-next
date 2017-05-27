@@ -1,4 +1,4 @@
-.TH "src/ckb-daemon/devnode.h" 3 "Thu May 25 2017" "Version v0.2.8 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.TH "src/ckb-daemon/devnode.h" 3 "Sat May 27 2017" "Version v0.2.8 at branch all-mine" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -147,7 +147,7 @@ Referenced by _setupusb(), and main()\&.
 .PP
 Definition at line 299 of file devnode\&.c\&.
 .PP
-References ckb_warn, devpath, usbdevice::fwversion, gid, INDEX_OF, keyboard, usbdevice::pollrate, and S_GID_READ\&.
+References ckb_warn, devpath, usbdevice::fwversion, gid, INDEX_OF, keyboard, usbdevice::pollrate, usbdevice::product, S_GID_READ, and usbdevice::vendor\&.
 .PP
 Referenced by _mkdevpath(), and fwupdate()\&.
 .PP
@@ -158,7 +158,7 @@ Referenced by _mkdevpath(), and fwupdate()\&.
 302     snprintf(fwpath, sizeof(fwpath), "%s%d/fwversion", devpath, index);
 303     FILE* fwfile = fopen(fwpath, "w");
 304     if(fwfile){
-305         fprintf(fwfile, "%04x", kb->fwversion);
+305         fprintf(fwfile, "%04x:0x%04x:0x%04x", kb->fwversion, kb->vendor, kb->product);
 306         fputc('\n', fwfile);
 307         fclose(fwfile);
 308         chmod(fwpath, S_GID_READ);

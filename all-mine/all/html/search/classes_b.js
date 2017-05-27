@@ -22,7 +22,7 @@ var searchData=
   ['kbwidget',['KbWidget',['../classKbWidget.html',1,'']]],
   ['key',['Key',['../structKey.html',1,'Key'],['../daemon_2keymap_8h.html#structkey',1,'key']]],
   ['keyaction',['KeyAction',['../classKeyAction.html',1,'']]],
-  ['keyanim',['keyanim',['../ckb-heat_2main_8c.html#structkeyanim',1,'keyanim'],['../ckb-gradient_2main_8c.html#structkeyAnim',1,'keyAnim']]],
+  ['keyanim',['keyAnim',['../ckb-gradient_2main_8c.html#structkeyAnim',1,'keyAnim'],['../ckb-heat_2main_8c.html#structkeyanim',1,'keyanim']]],
   ['keymacro',['keymacro',['../structures_8h.html#structkeymacro',1,'']]],
   ['keymap',['KeyMap',['../classKeyMap.html',1,'']]],
   ['keypatch',['KeyPatch',['../keymap_8cpp.html#structKeyPatch',1,'']]],

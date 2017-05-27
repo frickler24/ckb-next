@@ -1369,7 +1369,7 @@ number</td>
 
 <p>Definition at line <a class="el" href="usb__linux_8c_source.html#l00694">694</a> of file <a class="el" href="usb__linux_8c_source.html">usb_linux.c</a>.</p>
 
-<p>References <a class="el" href="usb__linux_8c_source.html#l00681">N_MODELS</a>, <a class="el" href="usb__linux_8c_source.html#l00592">usbadd()</a>, <a class="el" href="usb_8h_source.html#l00038">V_CORSAIR</a>, and <a class="el" href="usb_8h_source.html#l00039">V_CORSAIR_STR</a>.</p>
+<p>References <a class="el" href="usb__linux_8c_source.html#l00681">N_MODELS</a>, <a class="el" href="usb__linux_8c_source.html#l00592">usbadd()</a>, <a class="el" href="firmware__special_8h_source.html#l00015">V_CORSAIR</a>, and <a class="el" href="usb_8h_source.html#l00039">V_CORSAIR_STR</a>.</p>
 
 <p>Referenced by <a class="el" href="usb__linux_8c_source.html#l00746">udev_enum()</a>, and <a class="el" href="usb__linux_8c_source.html#l00774">usbmain()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;                                                  {</div>
@@ -1379,19 +1379,19 @@ number</td>
 <div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;        <span class="keywordflow">if</span>(product){</div>
 <div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;            <span class="keywordflow">for</span>(<a class="code" href="usb__linux_8c.html#struct__model">_model</a>* model = <a class="code" href="usb__linux_8c.html#ac1888fdd0cb519fd7ff5768437629b8b">models</a>; model &lt; <a class="code" href="usb__linux_8c.html#ac1888fdd0cb519fd7ff5768437629b8b">models</a> + <a class="code" href="usb__linux_8c.html#a8d8cfcf715f178c0e85ce011e7a9bcbf">N_MODELS</a>; model++){</div>
 <div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;                <span class="keywordflow">if</span>(!strcmp(product, model-&gt;name)){</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;                    <span class="keywordflow">return</span> <a class="code" href="usb__linux_8c.html#a3185d6da36c8b0f8b862a8479ae82034">usbadd</a>(dev, <a class="code" href="usb_8h.html#a2aa27325e30aac7dcec6203d4f11e996">V_CORSAIR</a>, model-&gt;number);</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;                    <span class="keywordflow">return</span> <a class="code" href="usb__linux_8c.html#a3185d6da36c8b0f8b862a8479ae82034">usbadd</a>(dev, <a class="code" href="firmware__special_8h.html#a2aa27325e30aac7dcec6203d4f11e996">V_CORSAIR</a>, model-&gt;number);</div>
 <div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;                }</div>
 <div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;            }</div>
 <div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;        }</div>
 <div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;    }</div>
 <div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    <span class="keywordflow">return</span> 1;</div>
 <div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;}</div>
+<div class="ttc" id="firmware__special_8h_html_a2aa27325e30aac7dcec6203d4f11e996"><div class="ttname"><a href="firmware__special_8h.html#a2aa27325e30aac7dcec6203d4f11e996">V_CORSAIR</a></div><div class="ttdeci">#define V_CORSAIR</div><div class="ttdoc">To reduce effort, please insert these combinations only, which need really special treatment...</div><div class="ttdef"><b>Definition:</b> <a href="firmware__special_8h_source.html#l00015">firmware_special.h:15</a></div></div>
 <div class="ttc" id="usb__linux_8c_html_struct__model"><div class="ttname"><a href="usb__linux_8c.html#struct__model">_model</a></div><div class="ttdef"><b>Definition:</b> <a href="usb__linux_8c_source.html#l00644">usb_linux.c:644</a></div></div>
 <div class="ttc" id="usb__linux_8c_html_a3185d6da36c8b0f8b862a8479ae82034"><div class="ttname"><a href="usb__linux_8c.html#a3185d6da36c8b0f8b862a8479ae82034">usbadd</a></div><div class="ttdeci">int usbadd(struct udev_device *dev, short vendor, short product)</div><div class="ttdef"><b>Definition:</b> <a href="usb__linux_8c_source.html#l00592">usb_linux.c:592</a></div></div>
 <div class="ttc" id="usb__linux_8c_html_a8d8cfcf715f178c0e85ce011e7a9bcbf"><div class="ttname"><a href="usb__linux_8c.html#a8d8cfcf715f178c0e85ce011e7a9bcbf">N_MODELS</a></div><div class="ttdeci">#define N_MODELS</div><div class="ttdef"><b>Definition:</b> <a href="usb__linux_8c_source.html#l00681">usb_linux.c:681</a></div></div>
 <div class="ttc" id="usb__linux_8c_html_ac1888fdd0cb519fd7ff5768437629b8b"><div class="ttname"><a href="usb__linux_8c.html#ac1888fdd0cb519fd7ff5768437629b8b">models</a></div><div class="ttdeci">static _model models[]</div><div class="ttdef"><b>Definition:</b> <a href="usb__linux_8c_source.html#l00654">usb_linux.c:654</a></div></div>
 <div class="ttc" id="usb_8h_html_a0a9288dd24752f04930cbf9e673e536c"><div class="ttname"><a href="usb_8h.html#a0a9288dd24752f04930cbf9e673e536c">V_CORSAIR_STR</a></div><div class="ttdeci">#define V_CORSAIR_STR</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00039">usb.h:39</a></div></div>
-<div class="ttc" id="usb_8h_html_a2aa27325e30aac7dcec6203d4f11e996"><div class="ttname"><a href="usb_8h.html#a2aa27325e30aac7dcec6203d4f11e996">V_CORSAIR</a></div><div class="ttdeci">#define V_CORSAIR</div><div class="ttdoc">For the following Defines please see &quot;Detailed Description&quot;. </div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00038">usb.h:38</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-17-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -2044,7 +2044,7 @@ number</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c663af95b3406af676444e819a47854e.html">ckb-daemon</a></li><li class="navelem"><a class="el" href="usb__linux_8c.html">usb_linux.c</a></li>
-    <li class="footer">Generated on Thu May 25 2017 22:06:26 for ckb-next by
+    <li class="footer">Generated on Sat May 27 2017 17:07:03 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

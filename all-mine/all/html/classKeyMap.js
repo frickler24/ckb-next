@@ -40,6 +40,7 @@ var classKeyMap =
     [ "fromStorage", "classKeyMap.html#a96509a3511a15b9099fe7c254827a5c6", null ],
     [ "getLayout", "classKeyMap.html#a6701f6dab76262beb388d5a6f053b721", null ],
     [ "getLayout", "classKeyMap.html#ac6032917a18f738ae710015538605664", null ],
+    [ "getModel", "classKeyMap.html#ab582e08cb56076aa3ae89ec3d09bab6d", null ],
     [ "getModel", "classKeyMap.html#a8e8adef86b4f4723b46a82df9fd2a4f7", null ],
     [ "getModel", "classKeyMap.html#aab26d8ffd514347f12e981775ab12921", null ],
     [ "height", "classKeyMap.html#a451d641449fbd38bb7c0f0656531d7ad", null ],

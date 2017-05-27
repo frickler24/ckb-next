@@ -28,7 +28,7 @@ var searchData=
   ['getmacropath',['getMacroPath',['../classKb.html#a9ac09cc0fa78de17de22d7ffb13da09e',1,'Kb::getMacroPath()'],['../classKbBind.html#a592edd4cbb386e071e2cdaea0a2d53a9',1,'KbBind::getMacroPath()']]],
   ['getmap',['getMap',['../keymap_8cpp.html#a4b35576fafde515171d0849bb697fcbd',1,'keymap.cpp']]],
   ['getmode',['getMode',['../classQuaZip.html#a129ceff04d28fb00531f7bf7f9329664',1,'QuaZip']]],
-  ['getmodel',['getModel',['../classKeyMap.html#a8e8adef86b4f4723b46a82df9fd2a4f7',1,'KeyMap::getModel(const QString &amp;name)'],['../classKeyMap.html#aab26d8ffd514347f12e981775ab12921',1,'KeyMap::getModel(Model model)']]],
+  ['getmodel',['getModel',['../classKeyMap.html#ab582e08cb56076aa3ae89ec3d09bab6d',1,'KeyMap::getModel(const short vendor, const short product)'],['../classKeyMap.html#a8e8adef86b4f4723b46a82df9fd2a4f7',1,'KeyMap::getModel(const QString &amp;name)'],['../classKeyMap.html#aab26d8ffd514347f12e981775ab12921',1,'KeyMap::getModel(Model model)']]],
   ['getmutestate',['getMuteState',['../media_8h.html#a8f99ebffe2bdb182e2173c42f79ae732',1,'getMuteState():&#160;media_linux.cpp'],['../media__linux_8cpp.html#a8f99ebffe2bdb182e2173c42f79ae732',1,'getMuteState():&#160;media_linux.cpp'],['../media__mac_8m.html#a8f99ebffe2bdb182e2173c42f79ae732',1,'getMuteState():&#160;media_mac.m']]],
   ['getntfsatime',['getNTFSaTime',['../structQuaZipFileInfo64.html#afe4c454de7d067a0095da0223f0cbec2',1,'QuaZipFileInfo64']]],
   ['getntfsctime',['getNTFScTime',['../structQuaZipFileInfo64.html#a409dcbbe1ecd88dadb51be1aec48819d',1,'QuaZipFileInfo64']]],

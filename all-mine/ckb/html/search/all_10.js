@@ -1,6 +1,7 @@
 var searchData=
 [
   ['p',['p',['../classQuaZip.html#a31cb05e50ae5c735901e5c0419abf41c',1,'QuaZip::p()'],['../classQuaZipFile.html#af4c3a7361c2c298bf65edfdd9120a385',1,'QuaZipFile::p()']]],
+  ['p_5fk70_5flux_5fnrgb',['P_K70_LUX_NRGB',['../firmware__special_8h.html#aa0f89f20ca96ad159330a8d071a45352',1,'firmware_special.h']]],
   ['paintevent',['paintEvent',['../classGradientDialogWidget.html#a7bceb270730de4deb0a814e3649a153d',1,'GradientDialogWidget::paintEvent()'],['../classKeyWidget.html#ae41120f21e087439104cb6bce42f489e',1,'KeyWidget::paintEvent()']]],
   ['param',['param',['../classAnimScript.html#ab4d28f52e87a474053e5933a3c8dcbc8',1,'AnimScript']]],
   ['param',['Param',['../classAnimScript.html#structAnimScript_1_1Param',1,'AnimScript']]],
@@ -69,7 +70,7 @@ var searchData=
   ['printurl',['printurl',['../ckb-anim_8h.html#a4a8c87ce5add65eea0c9035a0771eefd',1,'ckb-anim.h']]],
   ['process',['process',['../classAnimScript.html#a7b41b82f32c3836d53e1719a60b6f060',1,'AnimScript']]],
   ['processdownload',['processDownload',['../classKbFirmware.html#ae2409af30da0ae6e8731623b2b68dfc9',1,'KbFirmware']]],
-  ['product',['product',['../fwupgradedialog_8cpp.html#a22497a5feedb6978a831f3224161c320',1,'KbId']]],
+  ['product',['product',['../firmware__special_8h.html#a50dc6fabdce8310c24cb73e86812185f',1,'firmwareSpecial::product()'],['../fwupgradedialog_8cpp.html#a22497a5feedb6978a831f3224161c320',1,'KbId::product()']]],
   ['profile',['profile',['../classKbBindWidget.html#af2481f98127f624321febf56c3c1869a',1,'KbBindWidget::profile()'],['../classKPerfWidget.html#a4488dd2e2fa02b4f61bc9ec7c0163c5c',1,'KPerfWidget::profile()'],['../classMPerfWidget.html#a4b2f745bd5acaba0dd7a6fd7ed08061a',1,'MPerfWidget::profile()'],['../classRebindWidget.html#a9831b61dfc7fa1ed91e5cc6f853dffa6',1,'RebindWidget::profile()']]],
   ['profileadded',['profileAdded',['../classKb.html#aaecbe189f5d8145e59e4d6747306e095',1,'Kb']]],
   ['profilebox',['profileBox',['../classUi__KbWidget.html#a55ad1ccc1db619ac7b0d3cb61678a002',1,'Ui_KbWidget']]],

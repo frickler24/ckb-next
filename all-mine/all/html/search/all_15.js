@@ -173,7 +173,7 @@ var searchData=
   ['usbclaim',['usbclaim',['../usb__linux_8c.html#a309cab8bf65221b01dc320f247abf626',1,'usb_linux.c']]],
   ['usbdelay',['usbdelay',['../structures_8h.html#a0b79f63d24a3653b071b9e295f3b15fc',1,'usbdevice']]],
   ['usbdevice',['usbdevice',['../structures_8h.html#structusbdevice',1,'']]],
-  ['usbid',['usbid',['../structures_8h.html#structusbid',1,'usbid'],['../structUsbId.html',1,'UsbId'],['../structUsbId.html#ab8dd6ba64eea7f252c6833f4ee9c9005',1,'UsbId::UsbId(const QString &amp;_guid, quint32 _modified)'],['../structUsbId.html#afca9626f575e53971a13f61e592247fe',1,'UsbId::UsbId(const QString &amp;_guid, const QString &amp;_modified)'],['../structUsbId.html#a20e86af722dbbf767d42db03f9c6822e',1,'UsbId::UsbId()']]],
+  ['usbid',['UsbId',['../structUsbId.html',1,'UsbId'],['../structures_8h.html#structusbid',1,'usbid'],['../structUsbId.html#ab8dd6ba64eea7f252c6833f4ee9c9005',1,'UsbId::UsbId(const QString &amp;_guid, quint32 _modified)'],['../structUsbId.html#afca9626f575e53971a13f61e592247fe',1,'UsbId::UsbId(const QString &amp;_guid, const QString &amp;_modified)'],['../structUsbId.html#a20e86af722dbbf767d42db03f9c6822e',1,'UsbId::UsbId()']]],
   ['usbinput',['usbinput',['../structures_8h.html#structusbinput',1,'']]],
   ['usbkill',['usbkill',['../usb_8h.html#a41aa3e13beb593c91a5410200b4dd8d2',1,'usbkill():&#160;usb_linux.c'],['../usb__linux_8c.html#a41aa3e13beb593c91a5410200b4dd8d2',1,'usbkill():&#160;usb_linux.c']]],
   ['usbmain',['usbmain',['../usb_8h.html#a0859efad3739abe2ec61af4f3bb983ff',1,'usbmain():&#160;usb_linux.c'],['../usb__linux_8c.html#a0859efad3739abe2ec61af4f3bb983ff',1,'usbmain():&#160;usb_linux.c']]],

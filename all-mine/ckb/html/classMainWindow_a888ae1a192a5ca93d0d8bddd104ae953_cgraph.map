@@ -1,27 +1,28 @@
 <map id="MainWindow::timerTick" name="MainWindow::timerTick">
-<area shape="rect" id="node2" href="$classMainWindow.html#a7bd3f729676a76651d4852d03d1cfb8e" title="MainWindow::checkFwUpdates" alt="" coords="214,95,421,121"/>
-<area shape="rect" id="node7" href="$classKbFirmware.html#ab4153173aa1b28cc9d58ede675f02627" title="KbFirmware::checkUpdates" alt="" coords="1184,145,1368,172"/>
-<area shape="rect" id="node16" href="$classCkbSettings.html#a6945305e44cce23cc26785850637dbab" title="CkbSettings::get" alt="" coords="501,196,621,223"/>
-<area shape="rect" id="node18" href="$classSettingsWidget.html#a6ae876420712dcb104ce3ef5cabb0f53" title="SettingsWidget::pollUpdates" alt="" coords="223,247,411,273"/>
-<area shape="rect" id="node26" href="$classMainWindow.html#a04d901dec193f723d5ab3c4a3231b6b8" title="MainWindow::showWindow" alt="" coords="226,297,409,324"/>
-<area shape="rect" id="node3" href="$classKbWidget.html#adabed0db911bef8b3c0157372fb4e21a" title="KbWidget::updateFwButton" alt="" coords="470,95,653,121"/>
-<area shape="rect" id="node5" href="$classKbFirmware.html#adf60ed5d7553a8c3f362ce5ae29ce965" title="KbFirmware::versionForBoard" alt="" coords="701,44,896,71"/>
-<area shape="rect" id="node4" href="$classKbFirmware.html#aa103350a5d980275e2abc86d4bd8b62b" title="KbFirmware::hasDownloaded" alt="" coords="702,95,895,121"/>
-<area shape="rect" id="node6" href="$classKbFirmware.html#aa68b2e0aed9074c60eba72e9fa60a6b5" title="KbFirmware::_latestForBoard" alt="" coords="944,44,1136,71"/>
-<area shape="rect" id="node13" href="$classKbManager.html#ad22cd8487923dc938a925a6941ed6f3d" title="KbManager::ckbDaemonVersionF" alt="" coords="1416,69,1635,96"/>
-<area shape="rect" id="node14" href="$classKbManager.html#a444f0c8ab29309aad704e07a9aaaee05" title="KbManager::ckbGuiVersionF" alt="" coords="1944,5,2133,32"/>
-<area shape="rect" id="node15" href="$kbfirmware_8cpp.html#a61af340d454a04e7657e67151cd5ae2e" title="tableName" alt="" coords="1233,44,1319,71"/>
-<area shape="rect" id="node8" href="$classKbFirmware.html#a21477524cbd3621323795f4f5757c77b" title="KbFirmware::_checkUpdates" alt="" coords="1430,145,1621,172"/>
-<area shape="rect" id="node9" href="$classKbFirmware.html#a70d1d734d61e1a5eebc5411e02de231f" title="KbFirmware::downloadFinished" alt="" coords="1683,113,1887,140"/>
-<area shape="rect" id="node12" href="$classKbFirmware.html#a87e8a9b76f27124df80d81f54c7cd1da" title="KbFirmware::initManager" alt="" coords="1702,164,1869,191"/>
-<area shape="rect" id="node10" href="$classKbFirmware.html#ae2409af30da0ae6e8731623b2b68dfc9" title="KbFirmware::processDownload" alt="" coords="1937,113,2141,140"/>
-<area shape="rect" id="node11" href="$classKbManager.html#a4ce88ef95a35d0cd5a3ac67a0bc076ea" title="KbManager::parseVersionString" alt="" coords="2190,63,2397,89"/>
-<area shape="rect" id="node17" href="$ckbsettings_8cpp.html#aa405e58960532b36ddb38251775238fd" title="globalSettings" alt="" coords="988,221,1092,248"/>
-<area shape="rect" id="node19" href="$classExtraSettingsWidget.html#a77ded97e5f5097c29da0e6fe1a969ee7" title="ExtraSettingsWidget\l::pollUpdates" alt="" coords="490,269,633,310"/>
-<area shape="rect" id="node20" href="$classCkbSettings.html#a9c6a37558344dc426dd222deec6792f8" title="CkbSettings::isBusy" alt="" coords="727,348,870,375"/>
-<area shape="rect" id="node22" href="$classCkbSettings.html#a65c4f3ff1f75e5a554759040fb76044e" title="CkbSettings::set" alt="" coords="739,297,859,324"/>
-<area shape="rect" id="node25" href="$classKbLight.html#ae077a5423a30ade9554ff6749247156c" title="KbLight::shareDimming" alt="" coords="719,247,878,273"/>
-<area shape="rect" id="node21" href="$ckbsettings_8cpp.html#a5565e801b9999658c773c544a98ad10f" title="cacheWritesInProgress" alt="" coords="961,348,1119,375"/>
-<area shape="rect" id="node23" href="$classCkbSettings.html#a3793106d98878f170f9f9734bf39409b" title="CkbSettings::value" alt="" coords="973,297,1107,324"/>
-<area shape="rect" id="node24" href="$classCkbSettings.html#a29695ed0012617ba943a1878d4abc71c" title="CkbSettings::pwd" alt="" coords="1213,297,1339,324"/>
+<area shape="rect" id="node2" href="$classMainWindow.html#a7bd3f729676a76651d4852d03d1cfb8e" title="MainWindow::checkFwUpdates" alt="" coords="214,107,421,133"/>
+<area shape="rect" id="node7" href="$classKbFirmware.html#ab4153173aa1b28cc9d58ede675f02627" title="KbFirmware::checkUpdates" alt="" coords="1184,157,1368,184"/>
+<area shape="rect" id="node16" href="$classCkbSettings.html#a6945305e44cce23cc26785850637dbab" title="CkbSettings::get" alt="" coords="501,208,621,235"/>
+<area shape="rect" id="node19" href="$classSettingsWidget.html#a6ae876420712dcb104ce3ef5cabb0f53" title="SettingsWidget::pollUpdates" alt="" coords="223,259,411,285"/>
+<area shape="rect" id="node27" href="$classMainWindow.html#a04d901dec193f723d5ab3c4a3231b6b8" title="MainWindow::showWindow" alt="" coords="226,309,409,336"/>
+<area shape="rect" id="node3" href="$classKbWidget.html#adabed0db911bef8b3c0157372fb4e21a" title="KbWidget::updateFwButton" alt="" coords="470,107,653,133"/>
+<area shape="rect" id="node5" href="$classKbFirmware.html#adf60ed5d7553a8c3f362ce5ae29ce965" title="KbFirmware::versionForBoard" alt="" coords="701,56,896,83"/>
+<area shape="rect" id="node4" href="$classKbFirmware.html#aa103350a5d980275e2abc86d4bd8b62b" title="KbFirmware::hasDownloaded" alt="" coords="702,107,895,133"/>
+<area shape="rect" id="node6" href="$classKbFirmware.html#aa68b2e0aed9074c60eba72e9fa60a6b5" title="KbFirmware::_latestForBoard" alt="" coords="944,56,1136,83"/>
+<area shape="rect" id="node13" href="$classKbManager.html#ad22cd8487923dc938a925a6941ed6f3d" title="KbManager::ckbDaemonVersionF" alt="" coords="1416,5,1635,32"/>
+<area shape="rect" id="node14" href="$classKbManager.html#a444f0c8ab29309aad704e07a9aaaee05" title="KbManager::ckbGuiVersionF" alt="" coords="1944,56,2133,83"/>
+<area shape="rect" id="node15" href="$kbfirmware_8cpp.html#a61af340d454a04e7657e67151cd5ae2e" title="tableName" alt="" coords="1233,107,1319,133"/>
+<area shape="rect" id="node8" href="$classKbFirmware.html#a21477524cbd3621323795f4f5757c77b" title="KbFirmware::_checkUpdates" alt="" coords="1430,157,1621,184"/>
+<area shape="rect" id="node9" href="$classKbFirmware.html#a70d1d734d61e1a5eebc5411e02de231f" title="KbFirmware::downloadFinished" alt="" coords="1683,107,1887,133"/>
+<area shape="rect" id="node12" href="$classKbFirmware.html#a87e8a9b76f27124df80d81f54c7cd1da" title="KbFirmware::initManager" alt="" coords="1702,157,1869,184"/>
+<area shape="rect" id="node10" href="$classKbFirmware.html#ae2409af30da0ae6e8731623b2b68dfc9" title="KbFirmware::processDownload" alt="" coords="1937,107,2141,133"/>
+<area shape="rect" id="node11" href="$classKbManager.html#a4ce88ef95a35d0cd5a3ac67a0bc076ea" title="KbManager::parseVersionString" alt="" coords="2190,56,2397,83"/>
+<area shape="rect" id="node17" href="$ckbsettings_8cpp.html#aa405e58960532b36ddb38251775238fd" title="globalSettings " alt="" coords="988,233,1092,260"/>
+<area shape="rect" id="node18" href="$classCkbSettings.html#a378a1793dae116fbea4a801396fa4fbb" title="CkbSettings::setWritable Remember if the config files are writable (setter) " alt="" coords="1192,233,1360,260"/>
+<area shape="rect" id="node20" href="$classExtraSettingsWidget.html#a77ded97e5f5097c29da0e6fe1a969ee7" title="ExtraSettingsWidget\l::pollUpdates" alt="" coords="490,281,633,322"/>
+<area shape="rect" id="node21" href="$classCkbSettings.html#a9c6a37558344dc426dd222deec6792f8" title="CkbSettings::isBusy" alt="" coords="727,360,870,387"/>
+<area shape="rect" id="node23" href="$classCkbSettings.html#a65c4f3ff1f75e5a554759040fb76044e" title="CkbSettings::set" alt="" coords="739,309,859,336"/>
+<area shape="rect" id="node26" href="$classKbLight.html#ae077a5423a30ade9554ff6749247156c" title="KbLight::shareDimming" alt="" coords="719,259,878,285"/>
+<area shape="rect" id="node22" href="$ckbsettings_8cpp.html#a5565e801b9999658c773c544a98ad10f" title="cacheWritesInProgress" alt="" coords="961,360,1119,387"/>
+<area shape="rect" id="node24" href="$classCkbSettings.html#a3793106d98878f170f9f9734bf39409b" title="CkbSettings::value" alt="" coords="973,309,1107,336"/>
+<area shape="rect" id="node25" href="$classCkbSettings.html#a29695ed0012617ba943a1878d4abc71c" title="CkbSettings::pwd" alt="" coords="1213,309,1339,336"/>
 </map>

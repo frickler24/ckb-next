@@ -87,5 +87,6 @@ var searchData=
   ['_5fupdates',['_updates',['../classCkbSettingsWriter.html#ad9f2b7cda74639c159be06aeface6538',1,'CkbSettingsWriter']]],
   ['_5fvalue',['_value',['../classKeyAction.html#ad9a7ee22470cce685942fea5f474594a',1,'KeyAction']]],
   ['_5fwinlock',['_winLock',['../classKbBind.html#a0b1211db7844d3c2cc7c9896cb489a7e',1,'KbBind']]],
+  ['_5fwritable',['_writable',['../classCkbSettings.html#a71382618227f871d4bd2bce364fb6f8e',1,'CkbSettings']]],
   ['_5fxylink',['_xyLink',['../classMPerfWidget.html#ae0e2a088787b32ddebf1395bf117008b',1,'MPerfWidget']]]
 ];

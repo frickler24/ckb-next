@@ -1,14 +1,14 @@
 <map id="src/ckb/kbwidget.h" name="src/ckb/kbwidget.h">
-<area shape="rect" id="node5" href="$kb_8h.html" title="kb.h" alt="" coords="499,80,545,107"/>
-<area shape="rect" id="node8" href="$kbprofile_8h.html" title="kbprofile.h" alt="" coords="977,155,1059,181"/>
-<area shape="rect" id="node13" href="$kbmode_8h.html" title="kbmode.h" alt="" coords="979,229,1057,256"/>
-<area shape="rect" id="node14" href="$kblight_8h.html" title="kblight.h" alt="" coords="933,304,1003,331"/>
-<area shape="rect" id="node28" href="$kbbind_8h.html" title="kbbind.h" alt="" coords="590,379,660,405"/>
-<area shape="rect" id="node30" href="$kbperf_8h.html" title="kbperf.h" alt="" coords="329,379,399,405"/>
-<area shape="rect" id="node16" href="$animscript_8h.html" title="animscript.h" alt="" coords="597,453,691,480"/>
-<area shape="rect" id="node21" href="$keymap_8h.html" title="keymap.h" alt="" coords="739,603,817,629"/>
-<area shape="rect" id="node23" href="$colormap_8h.html" title="colormap.h" alt="" coords="185,528,271,555"/>
-<area shape="rect" id="node25" href="$kbanim_8h.html" title="kbanim.h" alt="" coords="856,379,929,405"/>
-<area shape="rect" id="node26" href="$ckbsettings_8h.html" title="ckbsettings.h" alt="" coords="473,453,572,480"/>
-<area shape="rect" id="node29" href="$keyaction_8h.html" title="keyaction.h" alt="" coords="766,453,855,480"/>
+<area shape="rect" id="node5" href="$kb_8h.html" title="kb.h" alt="" coords="1455,80,1501,107"/>
+<area shape="rect" id="node8" href="$kbprofile_8h.html" title="kbprofile.h" alt="" coords="484,155,565,181"/>
+<area shape="rect" id="node13" href="$kbmode_8h.html" title="kbmode.h" alt="" coords="846,229,924,256"/>
+<area shape="rect" id="node14" href="$kblight_8h.html" title="kblight.h" alt="" coords="850,304,920,331"/>
+<area shape="rect" id="node29" href="$kbbind_8h.html" title="kbbind.h" alt="" coords="1054,379,1124,405"/>
+<area shape="rect" id="node31" href="$kbperf_8h.html" title="kbperf.h" alt="" coords="384,379,453,405"/>
+<area shape="rect" id="node16" href="$animscript_8h.html" title="animscript.h" alt="" coords="751,453,844,480"/>
+<area shape="rect" id="node21" href="$keymap_8h.html" title="keymap.h" alt="" coords="714,603,792,629"/>
+<area shape="rect" id="node23" href="$colormap_8h.html" title="colormap.h" alt="" coords="919,528,1005,555"/>
+<area shape="rect" id="node25" href="$kbanim_8h.html" title="kbanim.h" alt="" coords="601,379,675,405"/>
+<area shape="rect" id="node26" href="$ckbsettings_8h.html" title="ckbsettings.h" alt="" coords="458,453,557,480"/>
+<area shape="rect" id="node30" href="$keyaction_8h.html" title="keyaction.h" alt="" coords="970,453,1059,480"/>
 </map>
