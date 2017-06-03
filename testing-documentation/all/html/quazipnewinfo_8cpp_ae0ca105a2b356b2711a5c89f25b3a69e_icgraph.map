@@ -1,0 +1,6 @@
+<map id="setNTFSTime" name="setNTFSTime">
+<area shape="rect" id="node2" href="$structQuaZipNewInfo.html#a1042ac3d55a9deed760eb357aaa8284c" title="Sets the NTFS access time. " alt="" coords="159,5,390,32"/>
+<area shape="rect" id="node4" href="$structQuaZipNewInfo.html#a44675ac1e306eddefcaa35972c294d15" title="Sets the NTFS creation time. " alt="" coords="159,56,390,83"/>
+<area shape="rect" id="node5" href="$structQuaZipNewInfo.html#a3af07365df1d67502ab1d0ca0d45df79" title="Sets the NTFS modification time. " alt="" coords="157,107,392,133"/>
+<area shape="rect" id="node3" href="$structQuaZipNewInfo.html#a663a37c5a7a2d18900ba8b0199617eff" title="Sets the NTFS times from an existing file. " alt="" coords="441,56,671,83"/>
+</map>

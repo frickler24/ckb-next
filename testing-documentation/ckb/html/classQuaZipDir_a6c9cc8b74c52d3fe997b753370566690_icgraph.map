@@ -1,0 +1,5 @@
+<map id="QuaZipDir::QuaZipDir" name="QuaZipDir::QuaZipDir">
+<area shape="rect" id="node2" href="$classQuaZipDir.html#a22c8f63ce874f5c0e958ae5f42e6d004" title="Return true if the directory pointed by this QuaZipDir exists. " alt="" coords="203,29,327,56"/>
+<area shape="rect" id="node3" href="$classQuaZipDir.html#aa829afc0243f1d307302f1167edecc7b" title="Changes the &#39;current&#39; directory. " alt="" coords="377,29,479,56"/>
+<area shape="rect" id="node4" href="$classQuaZipDir.html#a62306db3f4c0866930fa35c7348b84b3" title="Goes up. " alt="" coords="528,29,648,56"/>
+</map>

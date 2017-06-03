@@ -1,0 +1,12 @@
+<map id="KeyAction::isMacro" name="KeyAction::isMacro">
+<area shape="rect" id="node2" href="$classKeyAction.html#ae657d934ff312fb11e306472472b31ef" title="isValidMacro checks whether a keyAction contains a valid macro. This is done easily: If the macro act..." alt="" coords="192,109,357,136"/>
+<area shape="rect" id="node5" href="$classKeyAction.html#aa5db7ed889913fde947cfba128c7d80b" title="Debug output for invalid macro Definitions. " alt="" coords="409,197,580,224"/>
+<area shape="rect" id="node11" href="$classKeyAction.html#a75cba10df0a1b17c079221879de8c88b" title="macroFullLine If a macro command and a macro definition exists for the given key, returns the complet..." alt="" coords="189,236,360,263"/>
+<area shape="rect" id="node3" href="$classKbBind.html#abc1d7d434d4e38e0db04f8fba5d90a2d" title="KbBind::update" alt="" coords="666,5,777,32"/>
+<area shape="rect" id="node6" href="$classRebindWidget.html#a0edad41d578028bea3ea0e327fc4c203" title="RebindWidget::setSelection" alt="" coords="629,136,813,163"/>
+<area shape="rect" id="node9" href="$classKeyAction.html#ac6f54c2e553b6ab11b086f734eac819d" title="macroLine returns all interresting content for a macro definition. " alt="" coords="419,96,570,123"/>
+<area shape="rect" id="node10" href="$classKeyAction.html#ac72be90499e81c76ae9f908e2a17d1c0" title="macroContent returns the macro key definition only (the second part of the macro action). " alt="" coords="409,45,581,72"/>
+<area shape="rect" id="node4" href="$classKb.html#a97694a4cd55681adca7b972fb5722049" title="Kb::frameUpdate" alt="" coords="906,5,1027,32"/>
+<area shape="rect" id="node7" href="$classRebindWidget.html#a6a68ae3d9abc935dbba8e2ce187337ce" title="RebindWidget::setBind" alt="" coords="889,144,1045,171"/>
+<area shape="rect" id="node8" href="$classRebindWidget.html#a8cb2e54e8bbd17cae8e152132a7a1ddf" title="RebindWidget::on_cancelButton\l_clicked" alt="" coords="862,78,1071,119"/>
+</map>

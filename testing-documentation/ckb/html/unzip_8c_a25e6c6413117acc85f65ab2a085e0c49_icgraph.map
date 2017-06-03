@@ -1,0 +1,51 @@
+<map id="unz64local_getByte" name="unz64local_getByte">
+<area shape="rect" id="node2" href="$unzip_8c.html#aadf5d3516ffd4262012ddfbd80a34863" title="unz64local_getLong" alt="" coords="197,223,334,249"/>
+<area shape="rect" id="node49" href="$unzip_8c.html#aba9b9b69240930610d4c80e5fdf30e68" title="unz64local_getLong64" alt="" coords="190,148,341,175"/>
+<area shape="rect" id="node50" href="$unzip_8c.html#a3c9da06aac7eccb3e336ba0f56c1f1a3" title="unz64local_getShort" alt="" coords="195,313,335,340"/>
+<area shape="rect" id="node3" href="$unzip_8c.html#a49b29cfd0534f5b0881c833e1c8295c2" title="unz64local_SearchCentral\lDir64" alt="" coords="399,129,574,170"/>
+<area shape="rect" id="node4" href="$unzip_8h.html#af1c890ff2c8e5173ded0af79a64f8b0a" title="unzOpenInternal" alt="" coords="885,161,1003,188"/>
+<area shape="rect" id="node21" href="$unzip_8c.html#a33e149842497fe83f96ef95e71ba4973" title="unz64local_GetCurrentFile\lInfoInternal" alt="" coords="399,318,575,359"/>
+<area shape="rect" id="node44" href="$unzip_8c.html#a266fc55611c8ef1d0a2883c7ad063532" title="unz64local_CheckCurrentFile\lCoherencyHeader" alt="" coords="390,383,583,425"/>
+<area shape="rect" id="node5" href="$classQuaZip.html#abfa4e6018b2964a3d10a4c54e5ab3962" title="Opens ZIP file. " alt="" coords="1391,259,1491,285"/>
+<area shape="rect" id="node17" href="$unzip_8c.html#a24b14e9aa3110ed982718ba061eec60a" title="unzOpen2" alt="" coords="1153,208,1234,235"/>
+<area shape="rect" id="node18" href="$unzip_8c.html#a08573067c5862374e960cad1868f156c" title="unzOpen2_64" alt="" coords="1142,56,1245,83"/>
+<area shape="rect" id="node19" href="$unzip_8c.html#a3b4c749c86f63c9b6db3c8880b21f080" title="unzOpen" alt="" coords="1156,107,1231,133"/>
+<area shape="rect" id="node20" href="$unzip_8c.html#ab0764dbb6152c85e7e9d34738525bf9b" title="unzOpen64" alt="" coords="1149,5,1237,32"/>
+<area shape="rect" id="node6" href="$classKbFirmware.html#ae5f3c91fcf3fe8fe55e2c1e3cea877eb" title="KbFirmware::_fileForBoard" alt="" coords="1591,360,1769,387"/>
+<area shape="rect" id="node9" href="$classJlCompress.html#a4a4de9c62ecf161bb658d4d80495ea97" title="Compress a single file. " alt="" coords="1591,208,1769,235"/>
+<area shape="rect" id="node10" href="$classJlCompress.html#a9cdb92d29a94c6b13a718a3249685846" title="Compress a list of files. " alt="" coords="1587,259,1773,285"/>
+<area shape="rect" id="node11" href="$classJlCompress.html#a8708eafcadc5c192a1d492e784cfc98f" title="Compress a whole directory. " alt="" coords="1593,309,1767,336"/>
+<area shape="rect" id="node12" href="$classJlCompress.html#a38c0d58bfe3bbbcb3cf4e98d126633a3" title="Extract a single file. " alt="" coords="1599,461,1761,488"/>
+<area shape="rect" id="node13" href="$classJlCompress.html#a309e9ee366719a4d8aa28f837fab73ae" title="Extract a list of files. " alt="" coords="1596,411,1764,437"/>
+<area shape="rect" id="node14" href="$classJlCompress.html#a365a153baa4c11812d93cbca60b6a293" title="Extract a whole archive. " alt="" coords="1601,512,1759,539"/>
+<area shape="rect" id="node15" href="$classJlCompress.html#ab42422be913f817d7e04c1b1cd5d0156" title="Get the file list. " alt="" coords="1600,157,1760,184"/>
+<area shape="rect" id="node16" href="$classQuaZipFile.html#aed75bace51f2bb4c3e4f656ab4493aac" title="Opens a file for reading. " alt="" coords="1619,664,1741,691"/>
+<area shape="rect" id="node7" href="$classKbFirmware.html#a1cc600d07217f327a1541a44d353004c" title="KbFirmware::dataForBoard" alt="" coords="1821,360,2000,387"/>
+<area shape="rect" id="node8" href="$classFwUpgradeDialog.html#a1fd1f6f1285ab4998a7c81e2ee118d54" title="FwUpgradeDialog::exec" alt="" coords="2048,360,2211,387"/>
+<area shape="rect" id="node22" href="$unzip_8c.html#a530654c7abbcd1c432942eb41f613d48" title="unzGetCurrentFileInfo64" alt="" coords="633,625,797,652"/>
+<area shape="rect" id="node34" href="$unzip_8c.html#ac99166540260b60340f4787af0a90029" title="unzGetCurrentFileInfo" alt="" coords="639,296,790,323"/>
+<area shape="rect" id="node35" href="$unzip_8c.html#a54821c0b6da683800164a56f2ae14f33" title="unzGoToFirstFile" alt="" coords="653,347,776,373"/>
+<area shape="rect" id="node38" href="$unzip_8c.html#acb457ebeaee7cb850c11a4a3d4b58201" title="unzGoToNextFile" alt="" coords="653,397,777,424"/>
+<area shape="rect" id="node40" href="$unzip_8h.html#a667afaf715015b8195e2f6f22390202d" title="unzGoToFilePos64" alt="" coords="648,448,781,475"/>
+<area shape="rect" id="node42" href="$unzip_8h.html#a9e2be3b57e0041c3da2c15277c4e85c1" title="unzSetOffset64" alt="" coords="658,524,771,551"/>
+<area shape="rect" id="node23" href="$classQuaZip.html#a7ba6daf39263c308c683e7f72f74e0ae" title="Retrieves information about the current file. " alt="" coords="856,600,1032,627"/>
+<area shape="rect" id="node24" href="$classQuaZip.html#a9783f8b4f39cd55e71e975aea78fd54a" title="Returns the current file name. " alt="" coords="849,651,1039,677"/>
+<area shape="rect" id="node30" href="$classQuaZipFile.html#ac4da08e5cdec368a2a686775f7dc5639" title="Returns compressed file size. " alt="" coords="882,752,1006,779"/>
+<area shape="rect" id="node32" href="$classQuaZipFile.html#a4814b5e6e39fb254737b81ea10964f50" title="Returns uncompressed file size. " alt="" coords="882,701,1006,728"/>
+<area shape="rect" id="node33" href="$unzip_8c.html#a22730edef5a8a98b367bb30a0d619608" title="unzLocateFile" alt="" coords="893,397,995,424"/>
+<area shape="rect" id="node25" href="$classQuaZip.html#a6c657bfcfccb59d728e0da24c677d899" title="Sets current file by its name. " alt="" coords="1116,512,1271,539"/>
+<area shape="rect" id="node27" href="$classQuaZipPrivate.html#af26e854d77203dbece23b60b59945383" title="Returns either a list of file names or a list of QuaZipFileInfo. " alt="" coords="1344,411,1539,437"/>
+<area shape="rect" id="node28" href="$quazip_8cpp.html#ae5589fb3c4c9bc0ef6d93415cf861446" title="QuaZip_getFileInfo" alt="" coords="1127,664,1259,691"/>
+<area shape="rect" id="node29" href="$classQuaZipFile.html#a7b8e3c39026855cd98661a1b2815c220" title="Returns the actual file name in the archive. " alt="" coords="1091,563,1295,589"/>
+<area shape="rect" id="node26" href="$classJlCompress.html#a522739a65b382a9838ed69812340dd40" title="Extract a single file. " alt="" coords="1361,512,1522,539"/>
+<area shape="rect" id="node31" href="$classQuaZipFile.html#ad1a17cc690a01c3edfb82984c3a4c8f0" title="Returns file size. " alt="" coords="1135,740,1252,767"/>
+<area shape="rect" id="node36" href="$classQuaZipPrivate.html#a7eddafdcdfc540f25e98d6df03fed1a7" title="QuaZipPrivate::goToFirst\lUnmappedFile" alt="" coords="860,331,1028,373"/>
+<area shape="rect" id="node37" href="$classQuaZip.html#a745488f9177bcec3cdb858587584e033" title="Sets the current file to the first file in the archive. " alt="" coords="1119,309,1267,336"/>
+<area shape="rect" id="node39" href="$classQuaZip.html#aee6779b6cd338420c2e8c5655fa8ba97" title="Sets the current file to the next file in the archive. " alt="" coords="869,280,1019,307"/>
+<area shape="rect" id="node41" href="$unzip_8h.html#a67559097ba938e4e85257da3fc6d827d" title="unzGoToFilePos" alt="" coords="885,448,1003,475"/>
+<area shape="rect" id="node43" href="$unzip_8h.html#a12c4062aa3dae4cddf7527c3caf8c519" title="unzSetOffset" alt="" coords="895,549,993,576"/>
+<area shape="rect" id="node45" href="$unzip_8c.html#a5eb86267fb9a5e4f52a123df606b2af5" title="unzOpenCurrentFile3" alt="" coords="642,853,787,880"/>
+<area shape="rect" id="node46" href="$unzip_8c.html#a65deebb4ecb3ba110c343c21a4cd9a75" title="unzOpenCurrentFile" alt="" coords="875,853,1013,880"/>
+<area shape="rect" id="node47" href="$unzip_8c.html#a0c26b010e6cf7e58cd558426f280fa98" title="unzOpenCurrentFilePassword" alt="" coords="846,904,1042,931"/>
+<area shape="rect" id="node48" href="$unzip_8c.html#a5881cddc4d4941ff604508ee4a564c25" title="unzOpenCurrentFile2" alt="" coords="871,955,1017,981"/>
+</map>

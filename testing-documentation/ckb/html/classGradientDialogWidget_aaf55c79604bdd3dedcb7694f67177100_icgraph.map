@@ -1,0 +1,7 @@
+<map id="GradientDialogWidget::makeStops" name="GradientDialogWidget::makeStops">
+<area shape="rect" id="node2" href="$classGradientDialogWidget.html#a33bf69c4986041618284ac5503bb6e30" title="GradientDialogWidget\l::mouseMoveEvent" alt="" coords="204,5,353,46"/>
+<area shape="rect" id="node3" href="$classGradientDialogWidget.html#a647fb7305ca1a45d88caa66801763096" title="GradientDialogWidget\l::mousePressEvent" alt="" coords="403,93,552,134"/>
+<area shape="rect" id="node4" href="$classGradientDialogWidget.html#a457a58a4b45444abcec60805b3b16766" title="GradientDialogWidget\l::mouseReleaseEvent" alt="" coords="203,122,354,163"/>
+<area shape="rect" id="node5" href="$classGradientDialogWidget.html#aaadf433fda87b79898178dbee8e32aa7" title="GradientDialogWidget\l::moveCurrent" alt="" coords="204,187,353,229"/>
+<area shape="rect" id="node6" href="$classGradientDialogWidget.html#a16ba02684ff21c58e196118e2c57ae94" title="GradientDialogWidget\l::setCurrentColor" alt="" coords="204,253,353,294"/>
+</map>

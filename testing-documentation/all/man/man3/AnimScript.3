@@ -1,0 +1,1321 @@
+.TH "AnimScript" 3 "Sat Jun 3 2017" "Version beta-v0.2.8+testing at branch testing-documentation" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AnimScript \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/animscript\&.h>\fP
+.PP
+Inherits \fBQObject\fP\&.
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBParam\fP"
+.br
+.in -1c
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef QMap< QString, QVariant > \fBPresetValue\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "const QUuid & \fBguid\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBname\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBversion\fP () const "
+.br
+.ti -1c
+.RI "QString \fBcopyright\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fByear\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBauthor\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBlicense\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBdescription\fP () const "
+.br
+.ti -1c
+.RI "bool \fBhasKeypress\fP () const "
+.br
+.ti -1c
+.RI "const QStringList & \fBpresets\fP () const "
+.br
+.ti -1c
+.RI "const \fBPresetValue\fP & \fBpreset\fP (int index) const "
+.br
+.ti -1c
+.RI "QListIterator< \fBParam\fP > \fBparamIterator\fP () const "
+.br
+.ti -1c
+.RI "\fBParam\fP \fBparam\fP (const QString &\fBname\fP) const "
+.br
+.ti -1c
+.RI "bool \fBhasParam\fP (const QString &\fBname\fP) const "
+.br
+.ti -1c
+.RI "void \fBinit\fP (const \fBKeyMap\fP &map, const QStringList &keys, const QMap< QString, QVariant > &paramValues)"
+.br
+.ti -1c
+.RI "void \fBparameters\fP (const QMap< QString, QVariant > &paramValues)"
+.br
+.ti -1c
+.RI "void \fBretrigger\fP (quint64 timestamp, bool allowPreempt=false)"
+.br
+.ti -1c
+.RI "void \fBstop\fP (quint64 timestamp)"
+.br
+.ti -1c
+.RI "void \fBkeypress\fP (const QString &\fBkey\fP, bool pressed, quint64 timestamp)"
+.br
+.ti -1c
+.RI "void \fBframe\fP (quint64 timestamp)"
+.br
+.ti -1c
+.RI "void \fBend\fP ()"
+.br
+.ti -1c
+.RI "bool \fBhasFrame\fP () const "
+.br
+.ti -1c
+.RI "const \fBColorMap\fP & \fBcolors\fP () const "
+.br
+.ti -1c
+.RI "\fB~AnimScript\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static QString \fBpath\fP ()"
+.br
+.ti -1c
+.RI "static void \fBscan\fP ()"
+.br
+.ti -1c
+.RI "static int \fBcount\fP ()"
+.br
+.ti -1c
+.RI "static QList< const \fBAnimScript\fP * > \fBlist\fP ()"
+.br
+.ti -1c
+.RI "static \fBAnimScript\fP * \fBcopy\fP (\fBQObject\fP *parent, const QUuid &id)"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBreadProcess\fP ()"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBload\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetDuration\fP ()"
+.br
+.ti -1c
+.RI "void \fBprintParams\fP ()"
+.br
+.ti -1c
+.RI "void \fBbegin\fP (quint64 timestamp)"
+.br
+.ti -1c
+.RI "void \fBadvance\fP (quint64 timestamp)"
+.br
+.ti -1c
+.RI "\fBAnimScript\fP (\fBQObject\fP *parent, const QString &\fBpath\fP)"
+.br
+.ti -1c
+.RI "\fBAnimScript\fP (\fBQObject\fP *parent, const \fBAnimScript\fP &base)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "QUuid \fBguid\fP"
+.br
+.ti -1c
+.RI "QString \fBname\fP"
+.br
+.ti -1c
+.RI "QString \fBversion\fP"
+.br
+.ti -1c
+.RI "QString \fByear\fP"
+.br
+.ti -1c
+.RI "QString \fBauthor\fP"
+.br
+.ti -1c
+.RI "QString \fBlicense\fP"
+.br
+.ti -1c
+.RI "QString \fBdescription\fP"
+.br
+.ti -1c
+.RI "QList< \fBParam\fP > \fBparams\fP"
+.br
+.ti -1c
+.RI "int \fBkpMode\fP:3"
+.br
+.ti -1c
+.RI "bool \fBabsoluteTime\fP:1"
+.br
+.ti -1c
+.RI "bool \fBrepeat\fP:1"
+.br
+.ti -1c
+.RI "bool \fBpreempt\fP:1"
+.br
+.ti -1c
+.RI "bool \fBliveParams\fP:1"
+.br
+.ti -1c
+.RI "} \fB_info\fP"
+.br
+.ti -1c
+.RI "QStringList \fB_presets\fP"
+.br
+.ti -1c
+.RI "QList< \fBPresetValue\fP > \fB_presetValues\fP"
+.br
+.ti -1c
+.RI "QString \fB_path\fP"
+.br
+.ti -1c
+.RI "\fBKeyMap\fP \fB_map\fP"
+.br
+.ti -1c
+.RI "int \fBminX\fP"
+.br
+.ti -1c
+.RI "int \fBminY\fP"
+.br
+.ti -1c
+.RI "QStringList \fB_keys\fP"
+.br
+.ti -1c
+.RI "\fBColorMap\fP \fB_colors\fP"
+.br
+.ti -1c
+.RI "\fBPresetValue\fP \fB_paramValues\fP"
+.br
+.ti -1c
+.RI "quint64 \fBlastFrame\fP"
+.br
+.ti -1c
+.RI "int \fBdurationMsec\fP"
+.br
+.ti -1c
+.RI "int \fBrepeatMsec\fP"
+.br
+.ti -1c
+.RI "bool \fBinitialized\fP:1"
+.br
+.ti -1c
+.RI "bool \fBfirstFrame\fP:1"
+.br
+.ti -1c
+.RI "bool \fBreadFrame\fP:1"
+.br
+.ti -1c
+.RI "bool \fBreadAnyFrame\fP:1"
+.br
+.ti -1c
+.RI "bool \fBstopped\fP:1"
+.br
+.ti -1c
+.RI "bool \fBinFrame\fP:1"
+.br
+.ti -1c
+.RI "QProcess * \fBprocess\fP"
+.br
+.ti -1c
+.RI "\fBColorMap\fP \fB_colorBuffer\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const int \fBKP_NONE\fP = 0"
+.br
+.ti -1c
+.RI "static const int \fBKP_NAME\fP = 1"
+.br
+.ti -1c
+.RI "static const int \fBKP_POSITION\fP = 2"
+.br
+.ti -1c
+.RI "static QHash< QUuid, \fBAnimScript\fP * > \fBscripts\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 16 of file animscript\&.h\&.
+.SH "Data Structure Documentation"
+.PP 
+.SH "struct AnimScript::Param"
+.PP 
+Definition at line 21 of file animscript\&.h\&.
+.PP
+\fBData Fields:\fP
+.RS 4
+ \fIType\fP 
+.br
+.PP
+.RE
+.PP
+\fBData Fields:\fP
+.RS 4
+QVariant \fIdefaultValue\fP 
+.br
+.PP
+QVariant \fImaximum\fP 
+.br
+.PP
+QVariant \fIminimum\fP 
+.br
+.PP
+QString \fIname\fP 
+.br
+.PP
+QString \fIpostfix\fP 
+.br
+.PP
+QString \fIprefix\fP 
+.br
+.PP
+\fBType\fP \fItype\fP 
+.br
+.PP
+.RE
+.PP
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef QMap<QString, QVariant> \fBAnimScript::PresetValue\fP"
+
+.PP
+Definition at line 58 of file animscript\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AnimScript::~AnimScript ()"
+
+.PP
+Definition at line 21 of file animscript\&.cpp\&.
+.PP
+References process\&.
+.PP
+.nf
+21                        {
+22     if(process){
+23         process->kill();
+24         process->waitForFinished(1000);
+25         delete process;
+26     }
+27 }
+.fi
+.SS "AnimScript::AnimScript (\fBQObject\fP *parent, const QString &path)\fC [private]\fP"
+
+.PP
+Definition at line 11 of file animscript\&.cpp\&.
+.PP
+Referenced by copy(), and scan()\&.
+.PP
+.nf
+11                                                            :
+12     QObject(parent), _path(path), initialized(false), process(0)
+13 {
+14 }
+.fi
+.SS "AnimScript::AnimScript (\fBQObject\fP *parent, const \fBAnimScript\fP &base)\fC [private]\fP"
+
+.PP
+Definition at line 16 of file animscript\&.cpp\&.
+.PP
+.nf
+16                                                               :
+17     QObject(parent), _info(base\&._info), _path(base\&._path), initialized(false), process(0)
+18 {
+19 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void AnimScript::advance (quint64timestamp)\fC [private]\fP"
+
+.PP
+Definition at line 445 of file animscript\&.cpp\&.
+.PP
+References _info, durationMsec, lastFrame, and process\&.
+.PP
+Referenced by frame(), keypress(), retrigger(), and stop()\&.
+.PP
+.nf
+445                                          {
+446     if(timestamp <= lastFrame || !process)
+447         // Don't do anything if the time hasn't actually advanced\&.
+448         return;
+449     double delta = (timestamp - lastFrame) / (double)durationMsec;
+450     if(!_info\&.absoluteTime){
+451         // Skip any complete durations
+452         while(delta > 1\&.){
+453             process->write("time 1\n");
+454             delta--;
+455         }
+456     }
+457     process->write(QString("time %1\n")\&.arg(delta)\&.toLatin1());
+458     lastFrame = timestamp;
+459 }
+.fi
+.SS "const QString& AnimScript::author () const\fC [inline]\fP"
+
+.PP
+Definition at line 64 of file animscript\&.h\&.
+.PP
+References _info\&.
+.PP
+Referenced by AnimSettingDialog::AnimSettingDialog()\&.
+.PP
+.nf
+64 { return _info\&.author; }
+.fi
+.SS "void AnimScript::begin (quint64timestamp)\fC [private]\fP"
+
+.PP
+Definition at line 287 of file animscript\&.cpp\&.
+.PP
+References _keys, _map, _path, end(), firstFrame, inFrame, initialized, KeyMap::key(), lastFrame, minX, minY, printParams(), process, readAnyFrame, readFrame, readProcess(), stopped, Key::x, and Key::y\&.
+.PP
+Referenced by frame(), keypress(), retrigger(), and stop()\&.
+.PP
+.nf
+287                                        {
+288     if(!initialized)
+289         return;
+290     end();
+291     stopped = firstFrame = readFrame = readAnyFrame = inFrame = false;
+292     // Determine the upper left corner of the given keys
+293     QStringList keysCopy = _keys;
+294     minX = INT_MAX;
+295     minY = INT_MAX;
+296     foreach(const QString& key, keysCopy){
+297         const Key& pos = _map\&.key(key);
+298         if(!pos){
+299             keysCopy\&.removeAll(key);
+300             continue;
+301         }
+302         if(pos\&.x < minX)
+303             minX = pos\&.x;
+304         if(pos\&.y < minY)
+305             minY = pos\&.y;
+306     }
+307     if(keysCopy\&.isEmpty()){
+308         // If the key list is empty, don't actually start the animation but pretend it's running anyway
+309         firstFrame = readFrame = readAnyFrame = true;
+310         return;
+311     }
+312     process = new QProcess(this);
+313     connect(process, SIGNAL(readyRead()), this, SLOT(readProcess()));
+314     process->start(_path, QStringList("--ckb-run"));
+315     qDebug() << "Starting " << _path;
+316     // Write the keymap to the process
+317     process->write("begin keymap\n");
+318     process->write(QString("keycount %1\n")\&.arg(keysCopy\&.count())\&.toLatin1());
+319     foreach(const QString& key, keysCopy){
+320         const Key& pos = _map\&.key(key);
+321         process->write(QString("key %1 %2,%3\n")\&.arg(key)\&.arg(pos\&.x - minX)\&.arg(pos\&.y - minY)\&.toLatin1());
+322     }
+323     process->write("end keymap\n");
+324     // Write parameters
+325     printParams();
+326     // Begin animating
+327     process->write("begin run\n");
+328     lastFrame = timestamp;
+329 }
+.fi
+.SS "const \fBColorMap\fP& AnimScript::colors () const\fC [inline]\fP"
+
+.PP
+Definition at line 99 of file animscript\&.h\&.
+.PP
+References _colors\&.
+.PP
+Referenced by KbAnim::blend()\&.
+.PP
+.nf
+99 { return _colors; }
+.fi
+.SS "\fBAnimScript\fP * AnimScript::copy (\fBQObject\fP *parent, const QUuid &id)\fC [static]\fP"
+
+.PP
+Definition at line 67 of file animscript\&.cpp\&.
+.PP
+References AnimScript(), and scripts\&.
+.PP
+Referenced by KbAnim::KbAnim()\&.
+.PP
+.nf
+67                                                             {
+68      return scripts\&.contains(id) ? new AnimScript(parent, *scripts\&.value(id)) : 0;
+69 }
+.fi
+.SS "QString AnimScript::copyright () const\fC [inline]\fP"
+
+.PP
+Definition at line 62 of file animscript\&.h\&.
+.PP
+References _info\&.
+.PP
+Referenced by KbAnimWidget::setCurrent()\&.
+.PP
+.nf
+62 { return "Copyright © " + _info\&.year + " " + _info\&.author; }
+.fi
+.SS "static int AnimScript::count ()\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line 54 of file animscript\&.h\&.
+.PP
+References scripts\&.
+.PP
+Referenced by KbLightWidget::KbLightWidget(), load(), KbLightWidget::on_animButton_clicked(), and ExtraSettingsWidget::on_animScanButton_clicked()\&.
+.PP
+.nf
+54 { return scripts\&.count(); }
+.fi
+.SS "const QString& AnimScript::description () const\fC [inline]\fP"
+
+.PP
+Definition at line 66 of file animscript\&.h\&.
+.PP
+References _info\&.
+.PP
+Referenced by AnimSettingDialog::AnimSettingDialog()\&.
+.PP
+.nf
+66 { return _info\&.description; }
+.fi
+.SS "void AnimScript::end ()"
+
+.PP
+Definition at line 387 of file animscript\&.cpp\&.
+.PP
+References _colors, ColorMap::clear(), process, and readProcess()\&.
+.PP
+Referenced by begin(), KbAnim::catchUp(), init(), and KbAnim::stop()\&.
+.PP
+.nf
+387                     {
+388     _colors\&.clear();
+389     if(process){
+390         process->kill();
+391         connect(process, SIGNAL(finished(int)), process, SLOT(deleteLater()));
+392         disconnect(process, SIGNAL(readyRead()), this, SLOT(readProcess()));
+393         process = 0;
+394     }
+395 }
+.fi
+.SS "void AnimScript::frame (quint64timestamp)"
+
+.PP
+Definition at line 430 of file animscript\&.cpp\&.
+.PP
+References advance(), begin(), firstFrame, initialized, process, readFrame, and stopped\&.
+.PP
+Referenced by KbAnim::blend(), KbAnim::keypress(), and KbAnim::trigger()\&.
+.PP
+.nf
+430                                        {
+431     if(!initialized || stopped)
+432         return;
+433     // Start the animation if it's not running yet
+434     if(!process)
+435         begin(timestamp);
+436 
+437     advance(timestamp);
+438     if((readFrame || !firstFrame) && process)
+439         // Don't ask for a new frame if the animation hasn't delivered the last one yet
+440         process->write("frame\n");
+441     firstFrame = true;
+442     readFrame = false;
+443 }
+.fi
+.SS "const QUuid& AnimScript::guid () const\fC [inline]\fP"
+
+.PP
+Definition at line 59 of file animscript\&.h\&.
+.PP
+References _info\&.
+.PP
+Referenced by KbAnim::KbAnim(), list(), and scan()\&.
+.PP
+.nf
+59 { return _info\&.guid; }
+.fi
+.SS "bool AnimScript::hasFrame () const\fC [inline]\fP"
+
+.PP
+Definition at line 96 of file animscript\&.h\&.
+.PP
+References initialized, and readAnyFrame\&.
+.PP
+Referenced by KbAnim::isRunning()\&.
+.PP
+.nf
+96 { return initialized && readAnyFrame; }
+.fi
+.SS "bool AnimScript::hasKeypress () const\fC [inline]\fP"
+
+.PP
+Definition at line 67 of file animscript\&.h\&.
+.PP
+References _info, and KP_NONE\&.
+.PP
+Referenced by AnimSettingDialog::AnimSettingDialog(), and AnimSettingDialog::updateParam()\&.
+.PP
+.nf
+67 { return _info\&.kpMode != KP_NONE; }
+.fi
+.SS "bool AnimScript::hasParam (const QString &name) const\fC [inline]\fP"
+
+.PP
+Definition at line 74 of file animscript\&.h\&.
+.PP
+References _info, and name()\&.
+.PP
+Referenced by AnimSettingDialog::AnimSettingDialog(), load(), and KbAnim::parameter()\&.
+.PP
+.nf
+74 { QListIterator<Param> i(_info\&.params); while(i\&.hasNext()){ if(i\&.next()\&.name == name) return true; } return false; }
+.fi
+.SS "void AnimScript::init (const \fBKeyMap\fP &map, const QStringList &keys, const QMap< QString, QVariant > &paramValues)"
+
+.PP
+Definition at line 239 of file animscript\&.cpp\&.
+.PP
+References _colorBuffer, _colors, _keys, _map, _paramValues, _path, end(), firstFrame, ColorMap::init(), initialized, setDuration(), and stopped\&.
+.PP
+Referenced by KbAnim::reInit()\&.
+.PP
+.nf
+239                                                                                                            {
+240     if(_path == "")
+241         return;
+242     end();
+243     _map = map;
+244     _colors\&.init(map);
+245     _colorBuffer\&.init(map);
+246     _keys = keys;
+247     _paramValues = paramValues;
+248     setDuration();
+249     stopped = firstFrame = false;
+250     initialized = true;
+251 }
+.fi
+.SS "void AnimScript::keypress (const QString &key, boolpressed, quint64timestamp)"
+
+.PP
+Definition at line 354 of file animscript\&.cpp\&.
+.PP
+References _info, _map, _paramValues, advance(), begin(), initialized, KeyMap::key(), KP_NAME, KP_NONE, KP_POSITION, minX, minY, process, retrigger(), stop(), Key::x, and Key::y\&.
+.PP
+Referenced by KbAnim::catchUp(), and KbAnim::keypress()\&.
+.PP
+.nf
+354                                                                             {
+355     if(!initialized)
+356         return;
+357     if(!process)
+358         begin(timestamp);
+359     int kpMode = _info\&.kpMode;
+360     if(_paramValues\&.value("kpmode", 0)\&.toInt() != 0)
+361         // Disable KP mode according to user preferences
+362         kpMode = KP_NONE;
+363     switch(kpMode){
+364     case KP_NONE:
+365         // If KPs aren't allowed, call retrigger/stop instead
+366         if(pressed)
+367             retrigger(timestamp);
+368         else if(_paramValues\&.value("kprelease", false)\&.toBool())
+369             stop(timestamp);
+370         break;
+371     case KP_NAME:
+372         // Print keypress by name
+373         advance(timestamp);
+374         process->write(("key " + key + (pressed ? " down\n" : " up\n"))\&.toLatin1());
+375         break;
+376     case KP_POSITION:
+377         // Print keypress by position
+378         const Key& kp = _map\&.key(key);
+379         if(!kp)
+380             return;
+381         advance(timestamp);
+382         process->write(("key " + QString("%1,%2")\&.arg(kp\&.x - minX)\&.arg(kp\&.y - minY) + (pressed ? " down\n" : " up\n"))\&.toLatin1());
+383         break;
+384     }
+385 }
+.fi
+.SS "const QString& AnimScript::license () const\fC [inline]\fP"
+
+.PP
+Definition at line 65 of file animscript\&.h\&.
+.PP
+References _info\&.
+.PP
+Referenced by AnimSettingDialog::AnimSettingDialog()\&.
+.PP
+.nf
+65 { return _info\&.license; }
+.fi
+.SS "QList< const \fBAnimScript\fP * > AnimScript::list ()\fC [static]\fP"
+
+.PP
+Definition at line 51 of file animscript\&.cpp\&.
+.PP
+References _info, guid(), name(), and scripts\&.
+.PP
+Referenced by AnimAddDialog::AnimAddDialog()\&.
+.PP
+.nf
+51                                          {
+52     // Gather the animations into an alphabetically-sorted list
+53     QMap<QString, const AnimScript*> result;
+54     foreach(AnimScript* script, scripts\&.values()){
+55         QString name = script->name();
+56         if(result\&.contains(name)){
+57             // If duplicate names exist, make them unique by including their GUIDs
+58             AnimScript* last = (AnimScript*)result[name];
+59             last->_info\&.name += " " + last->guid()\&.toString()\&.toUpper();
+60             script->_info\&.name += " " + script->guid()\&.toString()\&.toUpper();
+61         }
+62         result[script->name()] = script;
+63     }
+64     return result\&.values();
+65 }
+.fi
+.SS "bool AnimScript::load ()\fC [private]\fP"
+
+.PP
+Definition at line 77 of file animscript\&.cpp\&.
+.PP
+References _info, _path, _presets, _presetValues, AnimScript::Param::AGRADIENT, AnimScript::Param::ANGLE, AnimScript::Param::ARGB, AnimScript::Param::BOOL, count(), AnimScript::Param::defaultValue, AnimScript::Param::DOUBLE, AnimScript::Param::GRADIENT, hasParam(), AnimScript::Param::INVALID, KP_NAME, KP_NONE, KP_POSITION, kprelease, AnimScript::Param::LABEL, AnimScript::Param::LONG, name(), ONE_DAY, param(), preset(), AnimScript::Param::RGB, stop(), AnimScript::Param::STRING, and urlParam()\&.
+.PP
+Referenced by scan()\&.
+.PP
+.nf
+77                      {
+78     // Run the process to get script info
+79     QProcess infoProcess;
+80     infoProcess\&.start(_path, QStringList("--ckb-info"));
+81     qDebug() << "Scanning " << _path;
+82     infoProcess\&.waitForFinished(1000);
+83     if(infoProcess\&.state() == QProcess::Running){
+84         // Kill the process if it takes more than 1s
+85         infoProcess\&.kill();
+86         return false;
+87     }
+88     // Set defaults for performance info
+89     _info\&.kpMode = KP_NONE;
+90     _info\&.absoluteTime = _info\&.preempt = _info\&.liveParams = false;
+91     _info\&.repeat = true;
+92     // Read output
+93     QString line;
+94     while((line = infoProcess\&.readLine()) != ""){
+95         line = line\&.trimmed();
+96         QStringList components = line\&.split(" ");
+97         int count = components\&.count();
+98         if(count < 2)
+99             continue;
+100         QString param = components[0]\&.trimmed();
+101         if(param == "guid")
+102             _info\&.guid = QUuid(urlParam(components[1]));
+103         else if(param == "name")
+104             _info\&.name = urlParam(components[1]);
+105         else if(param == "version")
+106             _info\&.version = urlParam(components[1]);
+107         else if(param == "year")
+108             _info\&.year = urlParam(components[1]);
+109         else if(param == "author")
+110             _info\&.author = urlParam(components[1]);
+111         else if(param == "license")
+112             _info\&.license = urlParam(components[1]);
+113         else if(param == "description")
+114             _info\&.description = urlParam(components[1]);
+115         else if(param == "kpmode")
+116             _info\&.kpMode = (components[1] == "position") ? KP_POSITION : (components[1] == "name") ? KP_NAME : KP_NONE;
+117         else if(param == "time")
+118             _info\&.absoluteTime = (components[1] == "absolute");
+119         else if(param == "repeat")
+120             _info\&.repeat = (components[1] == "on");
+121         else if(param == "preempt")
+122             _info\&.preempt = (components[1] == "on");
+123         else if(param == "parammode")
+124             _info\&.liveParams = (components[1] == "live");
+125         else if(param == "param"){
+126             // Read parameter
+127             if(count < 3)
+128                 continue;
+129             while(components\&.count() < 8)
+130                 components\&.append("");
+131             Param::Type type = Param::INVALID;
+132             QString sType = components[1]\&.toLower();
+133             if(sType == "long")
+134                 type = Param::LONG;
+135             else if(sType == "double")
+136                 type = Param::DOUBLE;
+137             else if(sType == "bool")
+138                 type = Param::BOOL;
+139             else if(sType == "rgb")
+140                 type = Param::RGB;
+141             else if(sType == "argb")
+142                 type = Param::ARGB;
+143             else if(sType == "gradient")
+144                 type = Param::GRADIENT;
+145             else if(sType == "agradient")
+146                 type = Param::AGRADIENT;
+147             else if(sType == "angle")
+148                 type = Param::ANGLE;
+149             else if(sType == "string")
+150                 type = Param::STRING;
+151             else if(sType == "label")
+152                 type = Param::LABEL;
+153             else
+154                 continue;
+155             // "param <type> <name> <prefix> <postfix> <default>"
+156             QString name = components[2]\&.toLower();
+157             // Make sure it's not present already
+158             if(hasParam(name))
+159                 continue;
+160             QString prefix = urlParam(components[3]), postfix = urlParam(components[4]);
+161             QVariant def = urlParam(components[5]), minimum = urlParam(components[6]), maximum = urlParam(components[7]);
+162             // Don't allow predefined params
+163             if(name == "trigger" || name == "kptrigger" || name == "kpmode" || name == "duration" || name == "delay" || name == "kpdelay" || name == "repeat" || name == "kprepeat" || name == "stop" || name == "kpstop" || name == "kpmodestop" || name == "kprelease")
+164                 continue;
+165             Param param = { type, name, prefix, postfix, def, minimum, maximum };
+166             _info\&.params\&.append(param);
+167         } else if(param == "preset"){
+168             // Add preset
+169             QString name = urlParam(components\&.at(1));
+170             QMap<QString, QVariant> preset;
+171             for(int i = 2; i < count; i++){
+172                 // Scan name/value setting pairs
+173                 QString setting = components\&.at(i);
+174                 QStringList sComponents = setting\&.split("=");
+175                 if(sComponents\&.count() != 2)
+176                     continue;
+177                 QString param = sComponents\&.first()\&.trimmed();
+178                 QString value = urlParam(sComponents\&.last());
+179                 preset[param] = value;
+180             }
+181             // If the preset contains a duration, set the repeat time to the same value
+182             if(preset\&.contains("duration")){
+183                 QVariant duration = preset\&.value("duration");
+184                 preset["repeat"] = duration;
+185                 preset["kprepeat"] = duration;
+186             }
+187             _presets\&.append(name);
+188             _presetValues\&.append(preset);
+189         }
+190     }
+191     // Make sure the required parameters are filled out
+192     if(_info\&.guid\&.isNull() || _info\&.name == "" || _info\&.version == "" || _info\&.year == "" || _info\&.author == "" || _info\&.license == "")
+193         return false;
+194     // Add timing parameters
+195     double defaultDuration = -1\&.;
+196     if(!_info\&.absoluteTime){
+197         defaultDuration = 1\&.;
+198         Param duration = { Param::DOUBLE, "duration", "", "", defaultDuration, 0\&.1, ONE_DAY };
+199         _info\&.params\&.append(duration);
+200     }
+201     Param trigger = { Param::BOOL, "trigger", "", "", true, 0, 0 };
+202     _info\&.params\&.append(trigger);
+203     Param kptrigger = { Param::BOOL, "kptrigger", "", "", false, 0, 0 };
+204     _info\&.params\&.append(kptrigger);
+205     if(_info\&.absoluteTime || !_info\&.repeat)
+206         _info\&.preempt = false;
+207     Param kpmode = { Param::LONG, "kpmode", "", "", 1, 0, 0 };
+208     if(_info\&.kpMode)
+209         kpmode\&.defaultValue = 0;
+210     _info\&.params\&.append(kpmode);
+211     Param delay = { Param::DOUBLE, "delay", "", "", 0\&., 0\&., ONE_DAY };
+212     Param kpdelay = { Param::DOUBLE, "kpdelay", "", "", 0\&., 0\&., ONE_DAY };
+213     _info\&.params\&.append(delay);
+214     _info\&.params\&.append(kpdelay);
+215     Param kpmodestop = { Param::BOOL, "kpmodestop", "", "", false, 0, 0 };
+216     Param kprelease = { Param::BOOL, "kprelease", "", "", false, 0, 0 };
+217     _info\&.params\&.append(kpmodestop);
+218     _info\&.params\&.append(kprelease);
+219     if(_info\&.repeat){
+220         Param repeat = { Param::DOUBLE, "repeat", "", "", defaultDuration, 0\&.1, ONE_DAY };
+221         Param kprepeat = { Param::DOUBLE, "kprepeat", "", "", defaultDuration, 0\&.1, ONE_DAY };
+222         // When repeats are enabled, stop and kpstop are LONG values (number of repeats)
+223         Param stop = { Param::LONG, "stop", "", "", -1, 0, 1000 };
+224         Param kpstop = { Param::LONG, "kpstop", "", "", 0, 0, 1000 };
+225         _info\&.params\&.append(repeat);
+226         _info\&.params\&.append(kprepeat);
+227         _info\&.params\&.append(stop);
+228         _info\&.params\&.append(kpstop);
+229     } else {
+230         // When repeats are disabled, stop and kpstop are DOUBLE values (seconds)
+231         Param stop = { Param::DOUBLE, "stop", "", "", -1\&., 0\&.1, ONE_DAY };
+232         Param kpstop = { Param::DOUBLE, "kpstop", "", "", -1\&., 0\&.1, ONE_DAY };
+233         _info\&.params\&.append(stop);
+234         _info\&.params\&.append(kpstop);
+235     }
+236     return true;
+237 }
+.fi
+.SS "const QString& AnimScript::name () const\fC [inline]\fP"
+
+.PP
+Definition at line 60 of file animscript\&.h\&.
+.PP
+References _info\&.
+.PP
+Referenced by AnimAddDialog::AnimAddDialog(), AnimSettingDialog::AnimSettingDialog(), hasParam(), KbAnim::KbAnim(), list(), load(), and KbAnimWidget::setCurrent()\&.
+.PP
+.nf
+60 { return _info\&.name; }
+.fi
+.SS "\fBParam\fP AnimScript::param (const QString &name) const\fC [inline]\fP"
+
+.PP
+Definition at line 73 of file animscript\&.h\&.
+.PP
+References _info, AnimScript::Param::INVALID, and AnimScript::Param::name\&.
+.PP
+Referenced by KbAnim::KbAnim(), load(), and AnimSettingDialog::updateParam()\&.
+.PP
+.nf
+73 { QListIterator<Param> i(_info\&.params); while(i\&.hasNext()){ Param p = i\&.next(); if(p\&.name == name) return p; } return ((Param[]){ { Param::INVALID, "", "", "", 0, 0, 0 } })[0]; }
+.fi
+.SS "void AnimScript::parameters (const QMap< QString, QVariant > &paramValues)"
+
+.PP
+Definition at line 265 of file animscript\&.cpp\&.
+.PP
+References _info, _paramValues, initialized, printParams(), process, and setDuration()\&.
+.PP
+Referenced by KbAnim::updateParams()\&.
+.PP
+.nf
+265                                                                      {
+266     if(!initialized || !process || !_info\&.liveParams)
+267         return;
+268     _paramValues = paramValues;
+269     setDuration();
+270     printParams();
+271 }
+.fi
+.SS "QListIterator<\fBParam\fP> AnimScript::paramIterator () const\fC [inline]\fP"
+
+.PP
+Definition at line 72 of file animscript\&.h\&.
+.PP
+References _info\&.
+.PP
+Referenced by AnimSettingDialog::AnimSettingDialog(), and KbAnim::KbAnim()\&.
+.PP
+.nf
+72 { return _info\&.params; }
+.fi
+.SS "QString AnimScript::path ()\fC [static]\fP"
+
+.PP
+Definition at line 29 of file animscript\&.cpp\&.
+.PP
+Referenced by ExtraSettingsWidget::ExtraSettingsWidget(), and scan()\&.
+.PP
+.nf
+29                         {
+30 #ifdef __APPLE__
+31     return QDir(QApplication::applicationDirPath() + "/\&.\&./Resources")\&.absoluteFilePath("ckb-animations");
+32 #else
+33     return QDir("/usr/lib")\&.absoluteFilePath("ckb-animations");
+34 #endif
+35 }
+.fi
+.SS "const \fBPresetValue\fP& AnimScript::preset (intindex) const\fC [inline]\fP"
+
+.PP
+Definition at line 69 of file animscript\&.h\&.
+.PP
+References _presetValues\&.
+.PP
+Referenced by load(), and KbLightWidget::on_animButton_clicked()\&.
+.PP
+.nf
+69 { return _presetValues[index]; }
+.fi
+.SS "const QStringList& AnimScript::presets () const\fC [inline]\fP"
+
+.PP
+Definition at line 68 of file animscript\&.h\&.
+.PP
+References _presets\&.
+.PP
+Referenced by KbLightWidget::on_animButton_clicked()\&.
+.PP
+.nf
+68 { return _presets; }
+.fi
+.SS "void AnimScript::printParams ()\fC [private]\fP"
+
+.PP
+Definition at line 273 of file animscript\&.cpp\&.
+.PP
+References _paramValues, and process\&.
+.PP
+Referenced by begin(), and parameters()\&.
+.PP
+.nf
+273                             {
+274     process->write("begin params\n");
+275     QMapIterator<QString, QVariant> i(_paramValues);
+276     while(i\&.hasNext()){
+277         i\&.next();
+278         process->write("param ");
+279         process->write(i\&.key()\&.toLatin1());
+280         process->write(" ");
+281         process->write(QUrl::toPercentEncoding(i\&.value()\&.toString()));
+282         process->write("\n");
+283     }
+284     process->write("end params\n");
+285 }
+.fi
+.SS "void AnimScript::readProcess ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 397 of file animscript\&.cpp\&.
+.PP
+References _colorBuffer, _colors, ColorMap::colorForName(), ColorMap::colors(), ColorMap::count(), inFrame, process, readAnyFrame, readFrame, and stopped\&.
+.PP
+Referenced by begin(), and end()\&.
+.PP
+.nf
+397                             {
+398     while(process->canReadLine()){
+399         QByteArray line = process->readLine()\&.trimmed();
+400         if(!inFrame){
+401             // Ignore anything not between "begin frame" and "end frame", except for "end run", which indicates that the program is done\&.
+402             if(line == "begin frame")
+403                 inFrame = true;
+404             else if(line == "end run"){
+405                 stopped = true;
+406                 return;
+407             }
+408             continue;
+409         }
+410         if(line\&.startsWith("argb ")){
+411             // Add a color to the buffer
+412             char keyName[31];
+413             QRgb keyColor = 0;
+414             if(sscanf(line, "argb %30s %x", keyName, &keyColor) != 2)
+415                 continue;
+416             QRgb* inMap = _colorBuffer\&.colorForName(keyName);
+417             if(!inMap)
+418                 continue;
+419             *inMap = keyColor;
+420         }
+421         if(line == "end frame"){
+422             // Frame is finished\&. Copy color buffer back to the atomic map
+423             memcpy(_colors\&.colors(), _colorBuffer\&.colors(), sizeof(QRgb) * _colors\&.count());
+424             inFrame = false;
+425             readFrame = readAnyFrame = true;
+426         }
+427     }
+428 }
+.fi
+.SS "void AnimScript::retrigger (quint64timestamp, boolallowPreempt = \fCfalse\fP)"
+
+.PP
+Definition at line 331 of file animscript\&.cpp\&.
+.PP
+References _info, advance(), begin(), initialized, process, and repeatMsec\&.
+.PP
+Referenced by KbAnim::catchUp(), keypress(), and KbAnim::trigger()\&.
+.PP
+.nf
+331                                                               {
+332     if(!initialized)
+333         return;
+334     if(allowPreempt && _info\&.preempt && repeatMsec > 0)
+335         // If preemption is wanted, trigger the animation 1 duration in the past first
+336         retrigger(timestamp - repeatMsec);
+337     if(!process)
+338         begin(timestamp);
+339     advance(timestamp);
+340     if(process)
+341         process->write("start\n");
+342 }
+.fi
+.SS "void AnimScript::scan ()\fC [static]\fP"
+
+.PP
+Definition at line 37 of file animscript\&.cpp\&.
+.PP
+References _info, AnimScript(), guid(), load(), path(), and scripts\&.
+.PP
+Referenced by ExtraSettingsWidget::on_animScanButton_clicked()\&.
+.PP
+.nf
+37                      {
+38     QDir dir(path());
+39     foreach(AnimScript* script, scripts)
+40         delete script;
+41     scripts\&.clear();
+42     foreach(QString file, dir\&.entryList(QDir::Files | QDir::Executable)){
+43         AnimScript* script = new AnimScript(qApp, dir\&.absoluteFilePath(file));
+44         if(script->load() && !scripts\&.contains(script->_info\&.guid))
+45             scripts[script->_info\&.guid] = script;
+46         else
+47             delete script;
+48     }
+49 }
+.fi
+.SS "void AnimScript::setDuration ()\fC [private]\fP"
+
+.PP
+Definition at line 253 of file animscript\&.cpp\&.
+.PP
+References _info, _paramValues, durationMsec, and repeatMsec\&.
+.PP
+Referenced by init(), and parameters()\&.
+.PP
+.nf
+253                             {
+254     if(_info\&.absoluteTime){
+255         durationMsec = 1000;
+256         repeatMsec = 0;
+257     } else {
+258         durationMsec = round(_paramValues\&.value("duration")\&.toDouble() * 1000\&.);
+259         if(durationMsec <= 0)
+260             durationMsec = -1;
+261         repeatMsec = round(_paramValues\&.value("repeat")\&.toDouble() * 1000\&.);
+262     }
+263 }
+.fi
+.SS "void AnimScript::stop (quint64timestamp)"
+
+.PP
+Definition at line 344 of file animscript\&.cpp\&.
+.PP
+References advance(), begin(), initialized, and process\&.
+.PP
+Referenced by KbAnim::keypress(), keypress(), and load()\&.
+.PP
+.nf
+344                                       {
+345     if(!initialized)
+346         return;
+347     if(!process)
+348         begin(timestamp);
+349     advance(timestamp);
+350     if(process)
+351         process->write("stop\n");
+352 }
+.fi
+.SS "const QString& AnimScript::version () const\fC [inline]\fP"
+
+.PP
+Definition at line 61 of file animscript\&.h\&.
+.PP
+References _info\&.
+.PP
+Referenced by AnimSettingDialog::AnimSettingDialog(), and KbAnimWidget::setCurrent()\&.
+.PP
+.nf
+61 { return _info\&.version; }
+.fi
+.SS "const QString& AnimScript::year () const\fC [inline]\fP"
+
+.PP
+Definition at line 63 of file animscript\&.h\&.
+.PP
+References _info\&.
+.PP
+Referenced by AnimSettingDialog::AnimSettingDialog()\&.
+.PP
+.nf
+63 { return _info\&.year; }
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "\fBColorMap\fP AnimScript::_colorBuffer\fC [private]\fP"
+
+.PP
+Definition at line 143 of file animscript\&.h\&.
+.PP
+Referenced by init(), and readProcess()\&.
+.SS "\fBColorMap\fP AnimScript::_colors\fC [private]\fP"
+
+.PP
+Definition at line 135 of file animscript\&.h\&.
+.PP
+Referenced by colors(), end(), init(), and readProcess()\&.
+.SS "struct { \&.\&.\&. }   AnimScript::_info\fC [private]\fP"
+
+.PP
+Referenced by advance(), author(), copyright(), description(), guid(), hasKeypress(), hasParam(), keypress(), license(), list(), load(), name(), param(), parameters(), paramIterator(), retrigger(), scan(), setDuration(), version(), and year()\&.
+.SS "QStringList AnimScript::_keys\fC [private]\fP"
+
+.PP
+Definition at line 133 of file animscript\&.h\&.
+.PP
+Referenced by begin(), and init()\&.
+.SS "\fBKeyMap\fP AnimScript::_map\fC [private]\fP"
+
+.PP
+Definition at line 130 of file animscript\&.h\&.
+.PP
+Referenced by begin(), init(), and keypress()\&.
+.SS "\fBPresetValue\fP AnimScript::_paramValues\fC [private]\fP"
+
+.PP
+Definition at line 136 of file animscript\&.h\&.
+.PP
+Referenced by init(), keypress(), parameters(), printParams(), and setDuration()\&.
+.SS "QString AnimScript::_path\fC [private]\fP"
+
+.PP
+Definition at line 128 of file animscript\&.h\&.
+.PP
+Referenced by begin(), init(), and load()\&.
+.SS "QStringList AnimScript::_presets\fC [private]\fP"
+
+.PP
+Definition at line 125 of file animscript\&.h\&.
+.PP
+Referenced by load(), and presets()\&.
+.SS "QList<\fBPresetValue\fP> AnimScript::_presetValues\fC [private]\fP"
+
+.PP
+Definition at line 126 of file animscript\&.h\&.
+.PP
+Referenced by load(), and preset()\&.
+.SS "int AnimScript::durationMsec\fC [private]\fP"
+
+.PP
+Definition at line 140 of file animscript\&.h\&.
+.PP
+Referenced by advance(), and setDuration()\&.
+.SS "bool AnimScript::firstFrame\fC [private]\fP"
+
+.PP
+Definition at line 141 of file animscript\&.h\&.
+.PP
+Referenced by begin(), frame(), and init()\&.
+.SS "bool AnimScript::inFrame\fC [private]\fP"
+
+.PP
+Definition at line 141 of file animscript\&.h\&.
+.PP
+Referenced by begin(), and readProcess()\&.
+.SS "bool AnimScript::initialized\fC [private]\fP"
+
+.PP
+Definition at line 141 of file animscript\&.h\&.
+.PP
+Referenced by begin(), frame(), hasFrame(), init(), keypress(), parameters(), retrigger(), and stop()\&.
+.SS "const int AnimScript::KP_NAME = 1\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 124 of file animscript\&.h\&.
+.PP
+Referenced by keypress(), and load()\&.
+.SS "const int AnimScript::KP_NONE = 0\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 124 of file animscript\&.h\&.
+.PP
+Referenced by hasKeypress(), keypress(), and load()\&.
+.SS "const int AnimScript::KP_POSITION = 2\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 124 of file animscript\&.h\&.
+.PP
+Referenced by keypress(), and load()\&.
+.SS "quint64 AnimScript::lastFrame\fC [private]\fP"
+
+.PP
+Definition at line 139 of file animscript\&.h\&.
+.PP
+Referenced by advance(), and begin()\&.
+.SS "int AnimScript::minX\fC [private]\fP"
+
+.PP
+Definition at line 131 of file animscript\&.h\&.
+.PP
+Referenced by begin(), and keypress()\&.
+.SS "int AnimScript::minY\fC [private]\fP"
+
+.PP
+Definition at line 131 of file animscript\&.h\&.
+.PP
+Referenced by begin(), and keypress()\&.
+.SS "QProcess* AnimScript::process\fC [private]\fP"
+
+.PP
+Definition at line 142 of file animscript\&.h\&.
+.PP
+Referenced by advance(), begin(), end(), frame(), keypress(), parameters(), printParams(), readProcess(), retrigger(), stop(), and ~AnimScript()\&.
+.SS "bool AnimScript::readAnyFrame\fC [private]\fP"
+
+.PP
+Definition at line 141 of file animscript\&.h\&.
+.PP
+Referenced by begin(), hasFrame(), and readProcess()\&.
+.SS "bool AnimScript::readFrame\fC [private]\fP"
+
+.PP
+Definition at line 141 of file animscript\&.h\&.
+.PP
+Referenced by begin(), frame(), and readProcess()\&.
+.SS "int AnimScript::repeatMsec\fC [private]\fP"
+
+.PP
+Definition at line 140 of file animscript\&.h\&.
+.PP
+Referenced by retrigger(), and setDuration()\&.
+.SS "QHash< QUuid, \fBAnimScript\fP * > AnimScript::scripts\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 152 of file animscript\&.h\&.
+.PP
+Referenced by copy(), count(), list(), and scan()\&.
+.SS "bool AnimScript::stopped\fC [private]\fP"
+
+.PP
+Definition at line 141 of file animscript\&.h\&.
+.PP
+Referenced by begin(), frame(), init(), and readProcess()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

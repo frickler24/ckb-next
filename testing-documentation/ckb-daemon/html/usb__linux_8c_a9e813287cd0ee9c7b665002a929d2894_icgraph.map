@@ -1,0 +1,4 @@
+<map id="os_usbsend" name="os_usbsend">
+<area shape="rect" id="node2" href="$usb_8h.html#a5a548f93d4c1c56910b840cebe88d0c2" title="_usbrecv Request data from a USB device by first sending an output packet and then reading the respon..." alt="" coords="149,5,224,32"/>
+<area shape="rect" id="node3" href="$usb_8h.html#a992cce1d173047466101113bfff5d7a1" title="_usbsend send a logical message completely to the given device " alt="" coords="147,56,226,83"/>
+</map>

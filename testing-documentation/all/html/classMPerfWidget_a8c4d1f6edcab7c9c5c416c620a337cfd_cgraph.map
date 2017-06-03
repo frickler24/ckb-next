@@ -1,0 +1,20 @@
+<map id="MPerfWidget::MPerfWidget" name="MPerfWidget::MPerfWidget">
+<area shape="rect" id="node2" href="$classColorButton.html#a9072e24c4e331752b4f2e08ec7f4d638" title="ColorButton::allowAlpha" alt="" coords="255,5,417,32"/>
+<area shape="rect" id="node3" href="$classColorButton.html#a43607783d1c7adc27e444664b6543e2f" title="ColorButton::bigIcons" alt="" coords="262,56,410,83"/>
+<area shape="rect" id="node4" href="$classMPerfWidget.html#abcbe89c6afe331a0eaec2a502760b478" title="MPerfWidget::boxXChanged" alt="" coords="242,107,430,133"/>
+<area shape="rect" id="node7" href="$classMPerfWidget.html#a35cf46eda409a47447f9fee7be6ad4dc" title="MPerfWidget::boxYChanged" alt="" coords="242,157,430,184"/>
+<area shape="rect" id="node8" href="$classMPerfWidget.html#add7710ea702be93465319741e70b3956" title="MPerfWidget::colorChanged" alt="" coords="243,309,429,336"/>
+<area shape="rect" id="node11" href="$classMPerfWidget.html#a374ca3e67c662f18d12f7643f4da4bc1" title="MPerfWidget::colorClicked" alt="" coords="247,360,425,387"/>
+<area shape="rect" id="node12" href="$classMPerfWidget.html#ad0a0610ab8bf3de9418c54fb2dc2bac2" title="MPerfWidget::enableChanged" alt="" coords="238,411,434,437"/>
+<area shape="rect" id="node14" href="$classColorButton.html#a753f16f6f90193f5713db65d6189f562" title="ColorButton::setLabel" alt="" coords="262,461,410,488"/>
+<area shape="rect" id="node15" href="$classMPerfWidget.html#a71023bbc60b548d49012a8ef32598801" title="MPerfWidget::sliderXMoved" alt="" coords="243,208,429,235"/>
+<area shape="rect" id="node19" href="$classMPerfWidget.html#acce6803dbb46d69041f61d71d5d2e015" title="MPerfWidget::sliderYMoved" alt="" coords="243,259,429,285"/>
+<area shape="rect" id="node5" href="$mperfwidget_8cpp.html#aef3f1b1d3ce7aabfb7e97597f96fbe0f" title="dpiLog" alt="" coords="521,107,581,133"/>
+<area shape="rect" id="node6" href="$classKbPerf.html#a33c43da2bc90e6fac30c4ca65b585efa" title="KbPerf::dpi" alt="" coords="507,157,594,184"/>
+<area shape="rect" id="node9" href="$classColorButton.html#a05e0cfb49a76a67227a36353640a8282" title="ColorButton::color" alt="" coords="487,360,614,387"/>
+<area shape="rect" id="node10" href="$classKbPerf.html#a90cb73129925d74815aee5ff8d5d6720" title="KbPerf::dpiColor" alt="" coords="491,309,610,336"/>
+<area shape="rect" id="node13" href="$classKbPerf.html#af8d91b86cff4f5ba2dea609421aa37b3" title="KbPerf::dpiEnabled" alt="" coords="483,411,618,437"/>
+<area shape="rect" id="node16" href="$mperfwidget_8cpp.html#adf64fadf49c18060e6e751a3568a53aa" title="dpiRound" alt="" coords="512,259,589,285"/>
+<area shape="rect" id="node17" href="$mperfwidget_8cpp.html#aa89f1f573cbf855ae45dbd2894f59112" title="dpiExp" alt="" coords="519,208,582,235"/>
+<area shape="rect" id="node18" href="$ckb-mviz_2main_8c.html#abd8bbcfabb3ddef2ccaafb9928a37b95" title="min" alt="" coords="667,208,709,235"/>
+</map>

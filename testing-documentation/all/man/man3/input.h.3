@@ -1,0 +1,428 @@
+.TH "src/ckb-daemon/input.h" 3 "Sat Jun 3 2017" "Version beta-v0.2.8+testing at branch testing-documentation" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb-daemon/input.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'includes\&.h'\fP
+.br
+\fC#include 'usb\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBIS_MOD\fP(s)   ((s) == KEY_CAPSLOCK || (s) == KEY_NUMLOCK || (s) == KEY_SCROLLLOCK || (s) == KEY_LEFTSHIFT || (s) == KEY_RIGHTSHIFT || (s) == KEY_LEFTCTRL || (s) == KEY_RIGHTCTRL || (s) == KEY_LEFTMETA || (s) == KEY_RIGHTMETA || (s) == KEY_LEFTALT || (s) == KEY_RIGHTALT || (s) == KEY_FN)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBos_inputopen\fP (\fBusbdevice\fP *kb)"
+.br
+.RI "\fIos_inputopen \fP"
+.ti -1c
+.RI "void \fBos_inputclose\fP (\fBusbdevice\fP *kb)"
+.br
+.ti -1c
+.RI "void \fBinputupdate\fP (\fBusbdevice\fP *kb)"
+.br
+.ti -1c
+.RI "void \fBupdateindicators_kb\fP (\fBusbdevice\fP *kb, int force)"
+.br
+.ti -1c
+.RI "void \fBinitbind\fP (\fBbinding\fP *bind)"
+.br
+.ti -1c
+.RI "void \fBfreebind\fP (\fBbinding\fP *bind)"
+.br
+.ti -1c
+.RI "void \fBcmd_bind\fP (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, int dummy, int keyindex, const char *to)"
+.br
+.ti -1c
+.RI "void \fBcmd_unbind\fP (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, int dummy, int keyindex, const char *ignored)"
+.br
+.ti -1c
+.RI "void \fBcmd_rebind\fP (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, int dummy, int keyindex, const char *ignored)"
+.br
+.ti -1c
+.RI "void \fBcmd_macro\fP (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, const int notifynumber, const char *keys, const char *assignment)"
+.br
+.ti -1c
+.RI "void \fBos_keypress\fP (\fBusbdevice\fP *kb, int scancode, int down)"
+.br
+.ti -1c
+.RI "void \fBos_mousemove\fP (\fBusbdevice\fP *kb, int \fBx\fP, int \fBy\fP)"
+.br
+.ti -1c
+.RI "int \fBos_setupindicators\fP (\fBusbdevice\fP *kb)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define IS_MOD(s)   ((s) == KEY_CAPSLOCK || (s) == KEY_NUMLOCK || (s) == KEY_SCROLLLOCK || (s) == KEY_LEFTSHIFT || (s) == KEY_RIGHTSHIFT || (s) == KEY_LEFTCTRL || (s) == KEY_RIGHTCTRL || (s) == KEY_LEFTMETA || (s) == KEY_RIGHTMETA || (s) == KEY_LEFTALT || (s) == KEY_RIGHTALT || (s) == KEY_FN)"
+
+.PP
+Definition at line 34 of file input\&.h\&.
+.PP
+Referenced by inputupdate_keys()\&.
+.SH "Function Documentation"
+.PP 
+.SS "void cmd_bind (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, intdummy, intkeyindex, const char *to)"
+
+.PP
+Definition at line 188 of file input\&.c\&.
+.PP
+References binding::base, usbmode::bind, imutex, keymap, N_KEYS_INPUT, and key::scan\&.
+.PP
+.nf
+188                                                                                     {
+189     if(keyindex >= N_KEYS_INPUT)
+190         return;
+191     // Find the key to bind to
+192     int tocode = 0;
+193     if(sscanf(to, "#x%ux", &tocode) != 1 && sscanf(to, "#%u", &tocode) == 1 && tocode < N_KEYS_INPUT){
+194         pthread_mutex_lock(imutex(kb));
+195         mode->bind\&.base[keyindex] = tocode;
+196         pthread_mutex_unlock(imutex(kb));
+197         return;
+198     }
+199     // If not numeric, look it up
+200     for(int i = 0; i < N_KEYS_INPUT; i++){
+201         if(keymap[i]\&.name && !strcmp(to, keymap[i]\&.name)){
+202             pthread_mutex_lock(imutex(kb));
+203             mode->bind\&.base[keyindex] = keymap[i]\&.scan;
+204             pthread_mutex_unlock(imutex(kb));
+205             return;
+206         }
+207     }
+208 }
+.fi
+.SS "void cmd_macro (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, const intnotifynumber, const char *keys, const char *assignment)"
+
+.PP
+Definition at line 332 of file input\&.c\&.
+.PP
+References _cmd_macro(), and imutex\&.
+.PP
+.nf
+332                                                                                                               {
+333     pthread_mutex_lock(imutex(kb));
+334     _cmd_macro(mode, keys, assignment);
+335     pthread_mutex_unlock(imutex(kb));
+336 }
+.fi
+.SS "void cmd_rebind (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, intdummy, intkeyindex, const char *ignored)"
+
+.PP
+Definition at line 218 of file input\&.c\&.
+.PP
+References binding::base, usbmode::bind, imutex, keymap, N_KEYS_INPUT, and key::scan\&.
+.PP
+.nf
+218                                                                                       {
+219     if(keyindex >= N_KEYS_INPUT)
+220         return;
+221     pthread_mutex_lock(imutex(kb));
+222     mode->bind\&.base[keyindex] = keymap[keyindex]\&.scan;
+223     pthread_mutex_unlock(imutex(kb));
+224 }
+.fi
+.SS "void cmd_unbind (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, intdummy, intkeyindex, const char *ignored)"
+
+.PP
+Definition at line 210 of file input\&.c\&.
+.PP
+References binding::base, usbmode::bind, imutex, KEY_UNBOUND, and N_KEYS_INPUT\&.
+.PP
+.nf
+210                                                                                       {
+211     if(keyindex >= N_KEYS_INPUT)
+212         return;
+213     pthread_mutex_lock(imutex(kb));
+214     mode->bind\&.base[keyindex] = KEY_UNBOUND;
+215     pthread_mutex_unlock(imutex(kb));
+216 }
+.fi
+.SS "void freebind (\fBbinding\fP *bind)"
+
+.PP
+Definition at line 181 of file input\&.c\&.
+.PP
+References keymacro::actions, binding::macrocount, and binding::macros\&.
+.PP
+Referenced by freemode()\&.
+.PP
+.nf
+181                             {
+182     for(int i = 0; i < bind->macrocount; i++)
+183         free(bind->macros[i]\&.actions);
+184     free(bind->macros);
+185     memset(bind, 0, sizeof(*bind));
+186 }
+.fi
+.SS "void initbind (\fBbinding\fP *bind)"
+
+.PP
+Definition at line 173 of file input\&.c\&.
+.PP
+References binding::base, keymap, binding::macrocap, binding::macrocount, binding::macros, N_KEYS_INPUT, and key::scan\&.
+.PP
+Referenced by initmode()\&.
+.PP
+.nf
+173                             {
+174     for(int i = 0; i < N_KEYS_INPUT; i++)
+175         bind->base[i] = keymap[i]\&.scan;
+176     bind->macros = calloc(32, sizeof(keymacro));
+177     bind->macrocap = 32;
+178     bind->macrocount = 0;
+179 }
+.fi
+.SS "void inputupdate (\fBusbdevice\fP *kb)"
+
+.PP
+Definition at line 122 of file input\&.c\&.
+.PP
+References usbdevice::input, inputupdate_keys(), os_mousemove(), usbdevice::profile, usbinput::rel_x, usbinput::rel_y, usbdevice::uinput_kb, and usbdevice::uinput_mouse\&.
+.PP
+Referenced by os_inputmain(), setactive_kb(), and setactive_mouse()\&.
+.PP
+.nf
+122                                {
+123 #ifdef OS_LINUX
+124     if((!kb->uinput_kb || !kb->uinput_mouse)
+125 #else
+126     if(!kb->event
+127 #endif
+128             || !kb->profile)
+129         return;
+130     // Process key/button input
+131     inputupdate_keys(kb);
+132     // Process mouse movement
+133     usbinput* input = &kb->input;
+134     if(input->rel_x != 0 || input->rel_y != 0){
+135         os_mousemove(kb, input->rel_x, input->rel_y);
+136         input->rel_x = input->rel_y = 0;
+137     }
+138     // Finish up
+139     memcpy(input->prevkeys, input->keys, N_KEYBYTES_INPUT);
+140 }
+.fi
+.SS "void os_inputclose (\fBusbdevice\fP *kb)"
+
+.PP
+Definition at line 76 of file input_linux\&.c\&.
+.PP
+References ckb_warn, usbdevice::uinput_kb, and usbdevice::uinput_mouse\&.
+.PP
+Referenced by closeusb()\&.
+.PP
+.nf
+76                                  {
+77     if(kb->uinput_kb <= 0 || kb->uinput_mouse <= 0)
+78         return;
+79     // Set all keys released
+80     struct input_event event;
+81     memset(&event, 0, sizeof(event));
+82     event\&.type = EV_KEY;
+83     for(int key = 0; key < KEY_CNT; key++){
+84         event\&.code = key;
+85         if(write(kb->uinput_kb - 1, &event, sizeof(event)) <= 0)
+86             ckb_warn("uinput write failed: %s\n", strerror(errno));
+87         if(write(kb->uinput_mouse - 1, &event, sizeof(event)) <= 0)
+88             ckb_warn("uinput write failed: %s\n", strerror(errno));
+89     }
+90     event\&.type = EV_SYN;
+91     event\&.code = SYN_REPORT;
+92     if(write(kb->uinput_kb - 1, &event, sizeof(event)) <= 0)
+93         ckb_warn("uinput write failed: %s\n", strerror(errno));
+94     if(write(kb->uinput_mouse - 1, &event, sizeof(event)) <= 0)
+95         ckb_warn("uinput write failed: %s\n", strerror(errno));
+96     // Close the keyboard
+97     ioctl(kb->uinput_kb - 1, UI_DEV_DESTROY);
+98     close(kb->uinput_kb - 1);
+99     kb->uinput_kb = 0;
+100     // Close the mouse
+101     ioctl(kb->uinput_mouse - 1, UI_DEV_DESTROY);
+102     close(kb->uinput_mouse - 1);
+103     kb->uinput_mouse = 0;
+104 }
+.fi
+.SS "int os_inputopen (\fBusbdevice\fP *kb)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkb\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.RE
+.PP
+Some tips on using \fCuinput_user_dev in\fP 
+.PP
+Definition at line 55 of file input_linux\&.c\&.
+.PP
+References usbdevice::fwversion, INDEX_OF, keyboard, usbdevice::name, usbdevice::product, usbdevice::uinput_kb, usbdevice::uinput_mouse, uinputopen(), and usbdevice::vendor\&.
+.PP
+Referenced by _setupusb()\&.
+.PP
+.nf
+55                                {
+56     // Create the new input device
+57     int index = INDEX_OF(kb, keyboard);
+58     struct uinput_user_dev indev;
+59     memset(&indev, 0, sizeof(indev));
+60     snprintf(indev\&.name, UINPUT_MAX_NAME_SIZE, "ckb%d: %s", index, kb->name);
+61     indev\&.id\&.bustype = BUS_USB;
+62     indev\&.id\&.vendor = kb->vendor;
+63     indev\&.id\&.product = kb->product;
+64     indev\&.id\&.version = kb->fwversion;
+65     // Open keyboard
+66     int fd = uinputopen(&indev, 0);
+67     kb->uinput_kb = fd;
+68     if(fd <= 0)
+69         return 0;
+70     // Open mouse
+71     fd = uinputopen(&indev, 1);
+72     kb->uinput_mouse = fd;
+73     return fd <= 0;
+74 }
+.fi
+.SS "void os_keypress (\fBusbdevice\fP *kb, intscancode, intdown)"
+
+.PP
+Definition at line 118 of file input_linux\&.c\&.
+.PP
+References BTN_WHEELDOWN, BTN_WHEELUP, ckb_warn, isync(), SCAN_MOUSE, usbdevice::uinput_kb, and usbdevice::uinput_mouse\&.
+.PP
+Referenced by inputupdate_keys()\&.
+.PP
+.nf
+118                                                        {
+119     struct input_event event;
+120     memset(&event, 0, sizeof(event));
+121     int is_mouse = 0;
+122     if(scancode == BTN_WHEELUP || scancode == BTN_WHEELDOWN){
+123         // The mouse wheel is a relative axis
+124         if(!down)
+125             return;
+126         event\&.type = EV_REL;
+127         event\&.code = REL_WHEEL;
+128         event\&.value = (scancode == BTN_WHEELUP ? 1 : -1);
+129         is_mouse = 1;
+130     } else {
+131         // Mouse buttons and key events are both EV_KEY\&. The scancodes are already correct, just remove the ckb bit
+132         event\&.type = EV_KEY;
+133         event\&.code = scancode & ~SCAN_MOUSE;
+134         event\&.value = down;
+135         is_mouse = !!(scancode & SCAN_MOUSE);
+136     }
+137     if(write((is_mouse ? kb->uinput_mouse : kb->uinput_kb) - 1, &event, sizeof(event)) <= 0)
+138         ckb_warn("uinput write failed: %s\n", strerror(errno));
+139     else
+140         isync(kb);
+141 }
+.fi
+.SS "void os_mousemove (\fBusbdevice\fP *kb, intx, inty)"
+
+.PP
+Definition at line 143 of file input_linux\&.c\&.
+.PP
+References ckb_warn, isync(), usbdevice::uinput_mouse, x, and y\&.
+.PP
+Referenced by inputupdate(), and inputupdate_keys()\&.
+.PP
+.nf
+143                                               {
+144     struct input_event event;
+145     memset(&event, 0, sizeof(event));
+146     event\&.type = EV_REL;
+147     if(x != 0){
+148         event\&.code = REL_X;
+149         event\&.value = x;
+150         if(write(kb->uinput_mouse - 1, &event, sizeof(event)) <= 0)
+151             ckb_warn("uinput write failed: %s\n", strerror(errno));
+152         else
+153             isync(kb);
+154     }
+155     if(y != 0){
+156         event\&.code = REL_Y;
+157         event\&.value = y;
+158         if(write(kb->uinput_mouse - 1, &event, sizeof(event)) <= 0)
+159             ckb_warn("uinput write failed: %s\n", strerror(errno));
+160         else
+161             isync(kb);
+162     }
+163 }
+.fi
+.SS "int os_setupindicators (\fBusbdevice\fP *kb)"
+
+.PP
+Definition at line 189 of file input_linux\&.c\&.
+.PP
+References _ledthread(), usbdevice::hw_ileds, usbdevice::hw_ileds_old, and usbdevice::ileds\&.
+.PP
+Referenced by _setupusb()\&.
+.PP
+.nf
+189                                      {
+190     // Initialize LEDs to all off
+191     kb->hw_ileds = kb->hw_ileds_old = kb->ileds = 0;
+192     // Create and detach thread to read LED events
+193     pthread_t thread;
+194     int err = pthread_create(&thread, 0, _ledthread, kb);
+195     if(err != 0)
+196         return err;
+197     pthread_detach(thread);
+198     return 0;
+199 }
+.fi
+.SS "void updateindicators_kb (\fBusbdevice\fP *kb, intforce)"
+
+.PP
+Definition at line 142 of file input\&.c\&.
+.PP
+References usbdevice::active, usbprofile::currentmode, DELAY_SHORT, usbdevice::hw_ileds, usbdevice::hw_ileds_old, I_CAPS, I_NUM, I_SCROLL, usbdevice::ileds, usbmode::inotify, usbmode::ioff, usbmode::ion, nprintind(), os_sendindicators(), OUTFIFO_MAX, and usbdevice::profile\&.
+.PP
+.nf
+142                                                   {
+143     // Read current hardware indicator state (set externally)
+144     uchar old = kb->ileds, hw_old = kb->hw_ileds_old;
+145     uchar new = kb->hw_ileds, hw_new = new;
+146     // Update them if needed
+147     if(kb->active){
+148         usbmode* mode = kb->profile->currentmode;
+149         new = (new & ~mode->ioff) | mode->ion;
+150     }
+151     kb->ileds = new;
+152     kb->hw_ileds_old = hw_new;
+153     if(old != new || force){
+154         DELAY_SHORT(kb);
+155         os_sendindicators(kb);
+156     }
+157     // Print notifications if desired
+158     if(!kb->active)
+159         return;
+160     usbmode* mode = kb->profile->currentmode;
+161     uchar indicators[] = { I_NUM, I_CAPS, I_SCROLL };
+162     for(unsigned i = 0; i < sizeof(indicators) / sizeof(uchar); i++){
+163         uchar mask = indicators[i];
+164         if((hw_old & mask) == (hw_new & mask))
+165             continue;
+166         for(int notify = 0; notify < OUTFIFO_MAX; notify++){
+167             if(mode->inotify[notify] & mask)
+168                 nprintind(kb, notify, mask, hw_new & mask);
+169         }
+170     }
+171 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

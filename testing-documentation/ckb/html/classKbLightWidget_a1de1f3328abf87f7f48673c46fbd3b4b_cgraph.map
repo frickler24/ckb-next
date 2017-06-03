@@ -1,0 +1,11 @@
+<map id="KbLightWidget::setLight" name="KbLightWidget::setLight">
+<area shape="rect" id="node2" href="$classKbLightWidget.html#a8b5c1e209022f8f74d8f10cea6fe4805" title="KbLightWidget::on_showAnim\lBox_clicked" alt="" coords="216,34,413,75"/>
+<area shape="rect" id="node7" href="$classKbLightWidget.html#ab5dfd2e86b7068bf8d71a89cdf66822b" title="KbLightWidget::updateLight" alt="" coords="223,121,406,148"/>
+<area shape="rect" id="node3" href="$classCkbSettings.html#a65c4f3ff1f75e5a554759040fb76044e" title="CkbSettings::set" alt="" coords="465,31,585,57"/>
+<area shape="rect" id="node4" href="$ckbsettings_8cpp.html#aa405e58960532b36ddb38251775238fd" title="globalSettings" alt="" coords="652,5,756,32"/>
+<area shape="rect" id="node5" href="$classCkbSettings.html#a3793106d98878f170f9f9734bf39409b" title="CkbSettings::value" alt="" coords="637,56,771,83"/>
+<area shape="rect" id="node6" href="$classCkbSettings.html#a29695ed0012617ba943a1878d4abc71c" title="CkbSettings::pwd" alt="" coords="819,56,946,83"/>
+<area shape="rect" id="node8" href="$classKbLight.html#ae682f44cb55d99f70f6516c76f322c80" title="KbLight::map" alt="" coords="476,81,575,108"/>
+<area shape="rect" id="node9" href="$classKbLight.html#a5bca9ce0f937639f207872b37323b5e5" title="KbLight::colorMap" alt="" coords="462,132,589,159"/>
+<area shape="rect" id="node10" href="$classKbLight.html#a51a035fad76d2b31a593ec2b25a8d8af" title="KbLight::dimming" alt="" coords="464,183,587,209"/>
+</map>

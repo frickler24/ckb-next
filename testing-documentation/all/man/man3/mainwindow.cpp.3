@@ -1,0 +1,56 @@
+.TH "src/ckb/mainwindow.cpp" 3 "Sat Jun 3 2017" "Version beta-v0.2.8+testing at branch testing-documentation" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb/mainwindow.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'ckbsettings\&.h'\fP
+.br
+\fC#include 'kbmanager\&.h'\fP
+.br
+\fC#include 'kbfirmware\&.h'\fP
+.br
+\fC#include 'mainwindow\&.h'\fP
+.br
+\fC#include 'ui_mainwindow\&.h'\fP
+.br
+\fC#include <cstdlib>\fP
+.br
+\fC#include <QSharedMemory>\fP
+.br
+\fC#include <QShortcut>\fP
+.br
+\fC#include <QMessageBox>\fP
+.br
+\fC#include <QMenuBar>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "QSharedMemory \fBappShare\fP"
+.br
+.ti -1c
+.RI "static const QString \fBconfigLabel\fP = 'Settings'"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "QSharedMemory appShare"
+
+.PP
+Referenced by MainWindow::timerTick()\&.
+.SS "const QString configLabel = 'Settings'\fC [static]\fP"
+
+.PP
+Definition at line 15 of file mainwindow\&.cpp\&.
+.PP
+Referenced by MainWindow::MainWindow()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

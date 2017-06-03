@@ -1,0 +1,55 @@
+.TH "md_BUILD" 3 "Sat Jun 3 2017" "Version beta-v0.2.8+testing at branch testing-documentation" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md_BUILD \- Building ckb 
+
+.SS "Linux "
+.PP
+You can build the project by running \fC\&./qmake-auto && make\fP in a Terminal inside the ckb-master directory\&. The binaries will be placed in a new \fCbin\fP directory assuming they compile successfully\&. If you get a \fCNo suitable qmake found\fP error, make sure Qt5 is installed and up to date\&. You may have to invoke qmake manually, then run \fCmake\fP on its own\&. If you have Qt Creator installed, you can open \fCckb\&.pro\fP (when asked to configure the project, make sure 'Desktop' is checked) and use \fCBuild > Build Project 'ckb' (Ctrl+B)\fP to build the application instead\&.
+.PP
+.SS "Running as a service:"
+.PP
+First copy the binary and the service files to their system directories:
+.PP
+.IP "\(bu" 2
+Upstart (Ubuntu, prior to 15\&.04): \fCsudo cp -R bin/* /usr/bin && sudo cp service/upstart/ckb-daemon\&.conf /etc/init\fP
+.IP "\(bu" 2
+Systemd (Ubuntu 15\&.04 and later): \fCsudo cp -R bin/* /usr/bin && sudo cp service/systemd/ckb-daemon\&.service /usr/lib/systemd/system\fP
+.IP "\(bu" 2
+OpenRC: \fCsudo cp -R bin/* /usr/bin && sudo cp service/openrc/ckb-daemon /etc/init\&.d/\fP
+.PP
+.PP
+To launch the driver and enable it at start-up:
+.PP
+.IP "\(bu" 2
+Upstart: \fCsudo service ckb-daemon start\fP
+.IP "\(bu" 2
+Systemd: \fCsudo systemctl start ckb-daemon && sudo systemctl enable ckb-daemon\fP
+.IP "\(bu" 2
+OpenRC: \fCsudo rc-service ckb-daemon start && sudo rc-update add ckb-daemon default\fP
+.PP
+.PP
+Open the \fCbin\fP directory and double-click on \fCckb\fP to launch the user interface\&. If you want to run it at login, add \fCckb --background\fP to your Startup Applications\&.
+.PP
+.SS "Running manually:"
+.PP
+Open the \fCbin\fP directory in a Terminal and run \fCsudo \&./ckb-daemon\fP to start the driver\&. To start the user interface, run \fC\&./ckb\fP\&. Running the driver manually may be useful for testing/debugging purposes, but you must leave the terminal window open and you'll have to re-run it at every reboot, so installing it as a service is the best long-term solution\&.
+.PP
+.SS "OSX "
+.PP
+Open ckb\&.pro in Qt Creator\&. You should be prompted to configure the project (make sure the 'Desktop' configuration is selected and not iOS)\&. Once it's finished loading, press \fCCmd+B\fP or select \fCBuild > Build Project 'ckb'\fP from the menu bar\&. When it's done, you should see a newly-created \fCckb\&.app\fP in the project directory\&. Exit Qt Creator\&.
+.PP
+Alternatively, open a Terminal in the ckb-master directory and run \fC\&./qmake-auto && make\fP\&. It will detect Qt automatically if you installed it to one of the standard locations\&. You should see a newly created \fCckb\&.app\fP if the build is successful\&.
+.PP
+.SS "Running as a service:"
+.PP
+Copy \fCckb\&.app\fP to your Applications folder\&. Copy the file \fC`service/launchd/com\&.ckb\&.daemon\&.plist`\fP to your computer's \fC/Library/LaunchDaemons\fP folder (you can get to it by pressing \fCCmd+Shift+G\fP in Finder and typing the location)\&. Then open a Terminal and run the following commands to launch the driver:
+.PP
+``` sudo chown root:wheel /Library/LaunchDaemons/com\&.ckb\&.daemon\&.plist sudo chmod 0700 /Library/LaunchDaemons/com\&.ckb\&.daemon\&.plist sudo launchctl load /Library/LaunchDaemons/com\&.ckb\&.daemon\&.plist ```
+.PP
+After you're done, open \fCckb\&.app\fP to launch the user interface\&.
+.PP
+.SS "Running manually:"
+.PP
+Open a Terminal in the ckb directory and run \fCsudo ckb\&.app/Contents/Resources/ckb-daemon\fP to start the driver\&. Open \fCckb\&.app\fP to start the user interface\&. Note that you must leave the terminal window open and must re-launch the driver at every boot if you choose this; installing as a service is the better long term solution\&. 

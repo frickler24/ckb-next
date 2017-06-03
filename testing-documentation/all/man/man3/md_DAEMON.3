@@ -1,0 +1,311 @@
+.TH "md_DAEMON" 3 "Sat Jun 3 2017" "Version beta-v0.2.8+testing at branch testing-documentation" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md_DAEMON \- DAEMON 
+The daemon provides devices at \fC/dev/input/ckb*\fP, where * is the device number, starting at 1\&. Up to 9 devices may be connected at once and controlled independently\&. The daemon additionally provides \fC/dev/input/ckb0\fP, which stores driver information\&.
+.PP
+\fBMac note:\fP The devices on OSX are located at \fC/var/run/ckb*\fP and not \fC/dev/input/ckb*\fP\&. So wherever you see \fC/dev/input\fP in this document, replace it with \fC/var/run\fP\&.
+.PP
+\fC/dev/input/ckb0\fP contains the following files:
+.IP "\(bu" 2
+\fCconnected\fP: A list of all connected devices, one per line\&. Each line contains a device path followed by the device's serial number and its description\&.
+.IP "\(bu" 2
+\fCpid\fP: The process identifier of the daemon\&.
+.IP "\(bu" 2
+\fCversion\fP: The daemon version\&.
+.PP
+.PP
+Other \fCckb*\fP devices contain the following:
+.IP "\(bu" 2
+\fCcmd\fP: Keyboard controller\&.
+.IP "\(bu" 2
+\fCnotify0\fP: Keyboard notifications\&.
+.IP "\(bu" 2
+\fCfeatures\fP: Device features\&.
+.IP "\(bu" 2
+\fCfwversion\fP: Device firmware version (not present on all devices)\&.
+.IP "\(bu" 2
+\fCmodel\fP: Device description/model\&.
+.IP "\(bu" 2
+\fCpollrate\fP: Poll rate in milliseconds (not present on all devices)\&.
+.IP "\(bu" 2
+\fCserial\fP: Device serial number\&. \fCmodel\fP and \fCserial\fP will match the info found in \fCckb0/connected\fP
+.PP
+.PP
+.SS "Commands "
+.PP
+The \fC/dev/input/ckb*/cmd\fP nodes accept input in the form of text commands\&. They are normally accessible to all users on the system (see Security section)\&. Commands should be given in the following format: \fC[mode <n>] command1 [paramter1] [command2] [parameter2] [command3] [parameter3] \&.\&.\&.\fP
+.PP
+In a terminal shell, you can do this like \fCecho mycommand > /dev/input/ckb1/cmd\fP\&. Programmatically, you can open and write them as regular files\&. When programming, you must append a newline character and flush the output before your command(s) will actually be read\&.
+.PP
+The \fCmode\fP parameter is used to group settings\&. Most (but not all) settings are mode-specific; that is, changing mode 1 will not affect mode 2\&. By default, all commands affect the current mode\&. Use \fCmode <n> switch\fP to change the current mode\&.
+.PP
+When plugged in, all devices start in hardware-controlled mode (also known as idle mode) and will not respond to commands\&. Before issuing any other commands, write \fCactive\fP to the command node, like \fCecho active > /dev/input/ckb1/cmd\fP\&. To put the device back into hardware mode, issue the \fCidle\fP command\&.
+.PP
+.SS "Features "
+.PP
+The \fCfeatures\fP node describes features supported by the device, which may not be present on all devices\&. The first two words in the \fCfeatures\fP node are always \fC<vendor> <model>\fP, like \fCcorsair k70\fP\&. After that, any of the following features may appear:
+.IP "\(bu" 2
+\fCadjrate\fP: Device supports adjustable poll rate\&.
+.IP "\(bu" 2
+\fCbind\fP: Device supports key rebinding\&.
+.IP "\(bu" 2
+\fCfwupdate\fP: Device supports firmware updates\&.
+.IP "\(bu" 2
+\fCfwversion\fP: Device has a detectable firmware version (stored in the \fCfwversion\fP node)\&.
+.IP "\(bu" 2
+\fCnotify\fP: Device supports key notifications\&.
+.IP "\(bu" 2
+\fCpollrate\fP: Device has a detectable poll rate (stored in the \fCpollrate\fP node)\&.
+.IP "\(bu" 2
+\fCrgb\fP: Device supports RGB lighting\&.
+.PP
+.PP
+.SS "Keyboard layout "
+.PP
+The driver has no concept of keyboard layouts; all keys are referred to by their English names regardless of the underlying hardware\&. This means that, for instance, in an AZERTY layout the \fCq\fP key in ckb-daemon corresponds to A on the physical keyboard\&. Note that on UK/european (ISO) layouts, the backslash key (beside left shift) is called \fCbslash_iso\fP, while \fCbslash\fP refers to the backslash on the US keyboard\&. The key next to Enter on the ISO keyboard is known as \fChash\fP\&. See \fC\fBsrc/ckb-daemon/keymap\&.c\fP\fP for the full table of supported keys\&.
+.PP
+For technical reasons, the OSX driver may swap the \fCbslash_iso\fP and \fCgrave\fP keys if the keyboard layout is not set correctly\&. To compensate for this, write \fClayout iso\fP or \fClayout ansi\fP to the command node\&.
+.PP
+.SS "Poll rate "
+.PP
+A device's current poll rate can be read from its \fCpollrate\fP node, assuming it has one\&. Keyboards have a hardware switch to control poll rate and cannot be adjusted via software\&. However, mice have a software-controlled poll rate\&. You can change it by issuing \fCpollrate <interval>\fP to the command node, where \fCinterval\fP is the time in milliseconds\&. Valid poll rates are \fC1\fP, \fC2\fP, \fC4\fP, and \fC8\fP\&.
+.PP
+.SS "Profiles and modes "
+.PP
+Each mode has its own independent binding and lighting setup\&. When the daemon starts or a keyboard is plugged in, the profile will be loaded from the hardware\&. By default, all commands will update the currently selected mode\&. The \fCmode <n>\fP command may be used to change the settings for a different mode\&. Up to 6 modes are available\&. Each keyboard has one profile, which may be given a name\&. Mode 1 may be saved to the device hardware, or modes 1-3 in the case of the K95\&. Modes 4 through 6 are software-only\&. Profile management commands are as follows:
+.IP "\(bu" 2
+\fCprofilename <name>\fP sets the profile's name\&. The name must be written without spaces; to add a space, use \fC%20\fP\&.
+.IP "\(bu" 2
+\fCname <name>\fP sets the current mode's name\&. Use \fCmode <n> name <name>\fP to set a different mode's name\&.
+.IP "\(bu" 2
+\fCprofileid <guid> [<modification>]\fP sets a profile's ID\&. The GUID must be written in registry format, like \fC{12345678-ABCD-EF01-2345-6789ABCDEF01}\fP\&. The optional modification number must be written with 8 hex digits, like \fCABCDEF01\fP\&.
+.IP "\(bu" 2
+\fCid <guid> [<modification>]\fP sets a mode's ID\&.
+.IP "\(bu" 2
+\fCmode <n> switch\fP switches the keyboard to mode N\&. If the mode does not exist, it will be created with a blank ID, black lighting, and default bindings\&.
+.IP "\(bu" 2
+\fChwload\fP loads the RGB profile from the hardware\&. \fBKey\fP bindings and non-hardware RGB modes are unaffected\&.
+.IP "\(bu" 2
+\fChwsave\fP saves the RGB profile to the hardware\&.
+.IP "\(bu" 2
+\fCerase\fP erases the current mode, resetting its lighting and bindings\&. Use \fCmode <n> erase\fP to erase a different mode\&.
+.IP "\(bu" 2
+\fCeraseprofile\fP erases the entire profile, deleting its name, ID, and all of its modes\&.
+.PP
+.PP
+\fBExamples:\fP
+.IP "\(bu" 2
+\fCprofilename My%20Profile mode 1 name Mode%201 mode 2 name Mode%202 mode 3 name Mode%203\fP will name the profile 'My Profile' and name modes 1-3 'Mode 1', 'Mode 2', and 'Mode 3'\&.
+.IP "\(bu" 2
+\fCeraseprofile hwload\fP resets the entire profile to its hardware settings\&.
+.PP
+.PP
+.SS "LED commands "
+.PP
+The backlighting is controlled by the \fCrgb\fP commands\&.
+.IP "\(bu" 2
+\fCrgb <RRGGBB>\fP sets the entire keyboard to the color specified by the hex constant RRGGBB\&.
+.IP "\(bu" 2
+\fCrgb <key>:<RRGGBB>\fP sets the specified key to the specified hex color\&.
+.PP
+.PP
+\fBExamples:\fP
+.IP "\(bu" 2
+\fCrgb ffffff\fP makes the whole keyboard white\&.
+.IP "\(bu" 2
+\fCrgb 000000\fP makes the whole keyboard black\&.
+.IP "\(bu" 2
+\fCrgb esc:ff0000\fP sets the Esc key red but leaves the rest of the keyboard unchanged\&.
+.PP
+.PP
+Multiple keys may be changed to one color when separated with commas, for instance:
+.IP "\(bu" 2
+\fCrgb w,a,s,d:0000ff\fP sets the WASD keys to blue\&.
+.PP
+.PP
+Additionally, multiple commands may be combined into one, for instance:
+.IP "\(bu" 2
+\fCrgb ffffff esc:ff0000 w,a,s,d:0000ff\fP sets the Esc key red, the WASD keys blue, and the rest of the keyboard white (note the lack of a key name before \fCffffff\fP, implying the whole keyboard is to be set)\&.
+.PP
+.PP
+By default, the controller runs at 30 FPS, meaning that attempts to animate the LEDs faster than that will be ignored\&. If you wish to change it, send the command \fCfps <n>\fP\&. The maximum frame rate is 60\&.
+.PP
+For devices running in 512-color mode, color dithering can be enabled by sending the command \fCdither 1\fP\&. The command \fCdither 0\fP disables dithering\&.
+.PP
+.SS "Indicators "
+.PP
+The indicator LEDs (Num Lock, Caps Lock, Scroll Lock) are controlled with the \fCi\fP commands\&.
+.IP "\(bu" 2
+\fCioff <led>\fP turns an indicator off permanently\&. Valid LED names are \fCnum\fP, \fCcaps\fP, and \fCscroll\fP\&.
+.IP "\(bu" 2
+\fCion <led>\fP turns an indicator on permanently\&.
+.IP "\(bu" 2
+\fCiauto <led>\fP turns an indicator off or on automatically (default behavior)\&.
+.PP
+.PP
+.SS "Binding keys "
+.PP
+Keys may be rebound through use of the \fCbind\fP commands\&. Binding is a 1-to-1 operation that translates one keypress to a different keypress regardless of circumstance\&.
+.IP "\(bu" 2
+\fCbind <key1>:<key2>\fP remaps key1 to key2\&.
+.IP "\(bu" 2
+\fCunbind <key>\fP unbinds a key, causing it to lose all function\&.
+.IP "\(bu" 2
+\fCrebind <key>\fP resets a key, returning it to its default binding\&.
+.PP
+.PP
+\fBExamples:\fP
+.IP "\(bu" 2
+\fCbind g1:esc\fP makes G1 become an alternate Esc key (the actual Esc key is not changed)\&.
+.IP "\(bu" 2
+\fCbind caps:tab tab:caps\fP switches the functions of the Tab and Caps Lock keys\&.
+.IP "\(bu" 2
+\fCunbind lwin rwin\fP disables both Windows keys, even without using the keyboard's Windows Lock function\&.
+.IP "\(bu" 2
+\fCrebind all\fP resets the whole keyboard to its default bindings\&.
+.PP
+.PP
+.SS "\fBKey\fP macros "
+.PP
+Macros are a more advanced form of key binding, controlled with the \fCmacro\fP command\&.
+.IP "\(bu" 2
+\fCmacro <keys>:<command>\fP binds a key combination to a command, where the command is a series of key presses\&. To combine keys, separate them with \fC+\fP; for instance, \fClctrl+a\fP binds a macro to (left) Ctrl+A\&. In the command field, enter \fC+<key>\fP to trigger a key down or \fC-<key>\fP to trigger a key up\&. To simulate a key press, use \fC+<key>,-<key>\fP\&.
+.IP "\(bu" 2
+\fCmacro <keys>:clear\fP clears commands associated with a key combination\&. Only one macro may be assigned per combination; assigning a second one will overwrite the first\&.
+.IP "\(bu" 2
+\fCmacro clear\fP clears all macros\&.
+.PP
+.PP
+\fBExamples:\fP
+.IP "\(bu" 2
+\fCmacro g1:+lctrl,+a,-a,-lctrl\fP triggers a Ctrl+A when G1 is pressed\&.
+.IP "\(bu" 2
+\fCmacro g2+g3:+lalt,+f4,-f4,-lalt\fP triggers an Alt+F4 when G2 and G3 are pressed simultaneously\&.
+.PP
+.PP
+Assigning a macro to a key will cause its binding to be ignored; for instance, \fCmacro a:+b,-b\fP will cause A to generate a B character regardless of its binding\&. However, \fCmacro lctrl+a:+b,-b\fP will cause A to generate a B only when Ctrl is also held down\&.
+.PP
+.SS "DPI and mouse settings "
+.PP
+DPI settings are stored in a bank\&. They are controlled with the \fCdpi\fP command\&.
+.IP "\(bu" 2
+\fCdpi <stage>:<x>,<y>\fP sets the DPI for a given \fCstage\fP to \fCx\fP by \fCy\fP\&. Valid stages are \fC0\fP through \fC5\fP\&. In hardware, \fC1\fP is the first (lowest) stage and \fC5\fP is the highest\&. Stage \fC0\fP is used for Sniper mode\&.
+.IP "\(bu" 2
+\fCdpi <stage>:<xy>\fP sets both X and Y\&.
+.IP "\(bu" 2
+\fCdpi <stage>:off\fP disables a DPI stage\&.
+.IP "\(bu" 2
+\fCdpisel <stage>\fP sets the current stage selection\&.
+.PP
+.PP
+In order to change the mouse's current DPI, first update one of the stages with the value you want, then select that stage\&. For instance:
+.IP "\(bu" 2
+\fCdpi 1:1000 dpisel 1\fP sets the current DPI to 1000x1000\&.
+.PP
+.PP
+Additional mouse settings:
+.IP "\(bu" 2
+\fClift <height>\fP sets the lift height, from \fC1\fP (lowest) to \fC5\fP (highest)
+.IP "\(bu" 2
+\fCsnap <on|off>\fP enables or disables Angle Snap\&.
+.PP
+.PP
+.SS "Notifications "
+.PP
+The keyboard can be configured to generate user-readable notifications on keypress events\&. These are controlled with the \fCnotify\fP commands\&. In order to see events, read from \fC/dev/input/ckb*/notify0\fP\&. In a terminal, you can do this like \fCcat /dev/input/ckb1/notify0\fP\&. Programmatically, you can open it for reading like a regular file\&.
+.PP
+Note that the file can only reliably be read by one application: if you try to open it in two different programs, they may both fail to get data\&. Data will be buffered as long as no programs are reading, so you will receive all unread notifications as soon as you open the file\&. If you'd like to read notifications from two separate applications, send the command \fCnotifyon <n>\fP to the keyboard you wish to receive notifications from, where N is a number between 1 and 9\&. If \fC/dev/input/ckb*/notify<n>\fP does not already exist, it will be created, and you can read notifications from there without disrupting any other program\&. To close a notification node, send \fCnotifyoff <n>\fP\&.
+.PP
+\fCnotify0\fP is always open and will not be affected by \fCnotifyon\fP/\fCnotifyoff\fP commands\&. By default, all notifications are printed to \fCnotify0\fP\&. To print output to a different node, prefix your command with \fC@<node>\fP\&.
+.PP
+Notifications are printed with one notification per line\&. Commands are as follows:
+.IP "\(bu" 2
+\fCnotify <key>:on\fP or simply \fCnotify <key>\fP enables notifications for a key\&. Each key will generate two notifications: \fCkey +<key>\fP when the key is pressed, and \fCkey -<key>\fP when it is released\&.
+.IP "\(bu" 2
+\fCnotify <key>:off\fP turns notifications off for a key\&.
+.PP
+.PP
+\fBExamples:\fP
+.IP "\(bu" 2
+\fCnotify w a s d\fP sends notifications whenever W, A, S, or D is pressed\&.
+.IP "\(bu" 2
+\fCnotify g1 g2 g3 g4 g5 g6 g7 g8 g9 g10 g11 g12 g13 g14 g15 g16 g17 g18 mr m1 m2 m3 light lock\fP prints a notification whenever a non-standard key is pressed\&.
+.IP "\(bu" 2
+\fCnotify all:off\fP turns all key notifications off\&.
+.IP "\(bu" 2
+\fC@5 notify esc\fP prints Esc key notifications to \fCnotify5\fP\&.
+.PP
+.PP
+\fBNote:\fP \fBKey\fP notifications are \fInot\fP affected by bindings\&. For instance, if you run \fCecho bind a:b notify a > /dev/input/ckb1/cmd\fP and then press the A key, the notifications will read \fCkey +a\fP \fCkey -a\fP, despite the fact that the character printed on screen will be \fCb\fP\&. Likewise, unbinding a key or assigning a macro to a key does not affect the notifications\&.
+.PP
+.SS "Indicator notifications "
+.PP
+You can also choose to receive notifications for the indicator LEDs by using the \fCinotify\fP command\&. For instance, \fCinotify caps:on\fP or simply \fCinotify caps\fP will print notifications whenever the Caps Lock LED is toggled\&. The notifications will read \fCi +caps\fP when the light is turned on and \fCi -caps\fP when it is turned off\&. It is also possible to toggle all indicators at once using \fCinotify all\fP or \fCinotify all:off\fP\&.
+.PP
+Like key notifications, indicator notifications are not affected by bindings, nor by the \fCion\fP, \fCioff\fP, or \fCiauto\fP commands\&. The notifications will reflect the state of the LEDs as seen be the event device\&.
+.PP
+.SS "Getting parameters "
+.PP
+Parameters can be retrieved using the \fCget\fP command\&. The data will be sent out as a notification\&. Generally, the syntax to get the data associated with a command is \fCget :<command>\fP (note the colon), and the associated data will be returned in the form of \fC<command> <data>\fP\&. The following data may be gotten:
+.IP "\(bu" 2
+\fCget :mode\fP returns the current mode in the form of a \fCswitch\fP command\&. (Note: Do not use this in a line containing a \fCmode\fP command or it will return the mode that you selected, rather than the keyboard's current mode\&.)
+.IP "\(bu" 2
+\fCget :name\fP returns the current mode's name in the form of \fCmode <n> name <name>\fP\&. To see the name of another mode, use \fCmode <n> get :name\fP\&. The name is URL-encoded; spaces are written as %20\&. The name may be truncated, so \fCname <some long string> get :name\fP may return something shorter than what was entered\&.
+.IP "\(bu" 2
+\fCget :profilename\fP returns the profile's name, in the form of \fCprofilename <name>\fP\&. As above, it is URL-encoded and may be truncated\&.
+.IP "\(bu" 2
+\fCget :hwname\fP and \fCget :hwprofilename\fP return the same thing except taken from the current hardware profile instead of the in-memory profile\&. The output is identical but will read \fChwname\fP instead of \fCname\fP and \fChwprofilename\fP instead of \fCprofilename\fP\&.
+.IP "\(bu" 2
+\fCget :id\fP returns the current mode's ID and modification number in the form of \fCmode <n> id <guid> <modification>\fP\&.
+.IP "\(bu" 2
+\fCget :profileid\fP returns the current profile's ID and modification number in the form of \fCprofileid <guid> <modification>\fP\&.
+.IP "\(bu" 2
+\fCget :hwid\fP and \fCget :hwprofileid\fP return the same thing except from the current hardware profile/mode\&. As before, the ouput will be the same but with \fChwid\fP and \fChwprofileid\fP instead of \fCid\fP and \fCprofileid\fP\&.
+.IP "\(bu" 2
+\fCget :rgb\fP returns an \fCrgb\fP command equivalent to the current RGB state\&.
+.IP "\(bu" 2
+\fCget :hwrgb\fP does the same thing, but retrieves the colors currently stored in the hardware profile\&. The output will say \fChwrgb\fP instead of \fCrgb\fP\&.
+.IP "\(bu" 2
+\fCget :dpi\fP returns a \fCdpi\fP command equivalent to the current DPI bank\&.
+.IP "\(bu" 2
+\fCget :dpisel\fP returns a \fCdpisel\fP command for the currently-selected DPI stage\&.
+.IP "\(bu" 2
+\fCget :lift\fP returns a \fClift\fP command for the current lift height\&.
+.IP "\(bu" 2
+\fCget :snap\fP returns the current angle snap status\&.
+.IP "\(bu" 2
+\fCget :hwdpi\fP, \fCget :hwdpisel\fP, \fCget :hwlift\fP, and \fCget :hwsnap\fP return the same properties, but for the current hardware profile\&.
+.IP "\(bu" 2
+\fCget :keys\fP and \fCget :i\fP return the current keypress status and indicator status, respectively\&. They will indicate all currently pressed keys and all currently active indicators, like \fCkey +enter\fP and \fCi +num\fP\&.
+.PP
+.PP
+Like \fCnotify\fP, you must prefix your command with \fC@<node>\fP to get data printed to a node other than \fCnotify0\fP\&.
+.PP
+.SS "Firmware updates "
+.PP
+\fBWARNING:\fP Improper use of \fCfwupdate\fP may brick your device; use this command \fIat your own risk\fP\&. I accept no responsibility for broken keyboards\&.
+.PP
+The latest firmware versions and their URLs can be found in the \fCFIRMWARE\fP document\&. To update your keyboard's firmware, first extract the contents of the zip file and then issue the command \fCfwupdate /path/to/fw/file\&.bin\fP to the keyboard you wish to update\&. The path name must be absolute and must not include spaces\&. If it succeeded, you should see \fCfwupdate <path> ok\fP logged to the keyboard's notification node and then the device will disconnect and reconnect\&. If you see \fCfwupdate <path> invalid\fP it means that the firmware file was not valid for the device; more info may be available in the daemon's \fCstdout\fP\&. If you see \fCfwupdate <path> fail\fP it means that the file was valid but the update failed at a hardware level\&. The keyboard may disconnect/reconnect anyway or it may remain in operation\&.
+.PP
+When the device reconnects you should see the new firmware version in its \fCfwversion\fP node; if you see \fC0000\fP instead it means that the keyboard did not update successfully and will need another \fCfwupdate\fP command in order to function again\&. If the update fails repeatedly, try connecting the keyboard to a Windows PC and using the official firmware update in CUE\&.
+.PP
+.SS "Restart "
+.PP
+Because sometimes the communication between the daemon and the keyboard is corrupted after resuming from standby or suspend, a restart function is implemented\&. It first calls the \fBquit()\fP funtion, then it calls \fBmain()\fP again with the original parameter list\&.
+.PP
+There are two ways to restart the daemon:
+.IP "\(bu" 2
+send the string 'restart some-description-as-one-word' to the cmd-pipe (normally /dev/input/ckb1/cmd or /dev/input/ckb2/cmd, depending on what device gets which ID\&.
+.IP "\(bu" 2
+send SIGUSR1 to the daemon process (as root)\&.
+.PP
+.PP
+Later on, there may be a user interface in the client for the first method\&.
+.PP
+.SS "Security "
+.PP
+By default, all of the \fCckb*\fP nodes may be accessed by any user\&. For most single-user systems this should not present any security issues, since only one person will have access to the computer anyway\&. However, if you'd like to restrict the users that can write to the \fCcmd\fP nodes or read from the \fCnotify\fP nodes, you can specify the \fC--gid=<group>\fP option at start up\&. For instance, on most systems you could run \fCckb-daemon --gid=1000\fP to make them accessible only by the system's primary user\&. \fCckb-daemon\fP must still be run as root, regardless of which \fCgid\fP you specify\&. The \fCgid\fP option may be set only at startup and cannot be changed while the daemon is running\&.
+.PP
+The daemon additionally supports a \fC--nonotify\fP option to disable key notifications, to prevent unauthorized programs from logging key input\&. Note that this will interfere with some of \fCckb\fP's abilities\&. It is also highly unlikely to increase security unless you are using the program in a stripped down terminal environment without Xorg\&. For most use cases there are many other (more likely) ways that a keylogger program could compromise your system\&. Nevertheless, the option is provided for the sake of paranoia\&. If you'd like to disable key rebinding as well, launch the daemon with \fC--nobind\fP\&. \fC--nobind\fP implies \fC--nonotify\fP, so notifications will also be disabled\&. As with \fC--gid\fP, these options must be set at startup and cannot be changed while the daemon is running\&. 

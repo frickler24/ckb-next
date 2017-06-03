@@ -1,0 +1,8 @@
+<map id="KbLight::printRGB" name="KbLight::printRGB">
+<area shape="rect" id="node2" href="$classKbLight.html#a539f8ef1f120055aca4fc5892e08ae9a" title="KbLight::color" alt="" coords="205,5,307,32"/>
+<area shape="rect" id="node5" href="$classColorMap.html#a177f4fe41f3a085128d563aaf32a24ad" title="ColorMap::colors" alt="" coords="195,56,317,83"/>
+<area shape="rect" id="node6" href="$classColorMap.html#a0755e3891edd1e0d2dce1491f5b06ba7" title="ColorMap::count" alt="" coords="197,107,315,133"/>
+<area shape="rect" id="node7" href="$classColorMap.html#adaf17e1fca09c8170fb2c226be8317ec" title="ColorMap::keyNames" alt="" coords="181,157,331,184"/>
+<area shape="rect" id="node3" href="$classColorMap.html#a206bfd8a9465e856c16a71bb908772fe" title="ColorMap::colorForName" alt="" coords="379,5,547,32"/>
+<area shape="rect" id="node4" href="$colormap_8cpp.html#aadd858d434ca6f9507ef897c2e4c12ab" title="qs_strcmp" alt="" coords="595,5,677,32"/>
+</map>

@@ -1,0 +1,1505 @@
+.TH "KbPerf" 3 "Sat Jun 3 2017" "Version beta-v0.2.8+testing at branch testing-documentation" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+KbPerf \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/kbperf\&.h>\fP
+.PP
+Inherits \fBQObject\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBheight\fP { \fBLOW\fP = 1, \fBLOWMED\fP, \fBMEDIUM\fP, \fBMEDHIGH\fP, \fBHIGH\fP }"
+.br
+.ti -1c
+.RI "enum \fBindicator\fP { \fBNUM\fP, \fBCAPS\fP, \fBSCROLL\fP, \fBHW_IMAX\fP = SCROLL, \fBMODE\fP, \fBMACRO\fP, \fBLIGHT\fP, \fBLOCK\fP, \fBMUTE\fP }"
+.br
+.ti -1c
+.RI "enum \fBi_hw\fP { \fBNONE\fP = -1, \fBNORMAL\fP, \fBON\fP, \fBOFF\fP }"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBdidLoad\fP ()"
+.br
+.ti -1c
+.RI "void \fBsettingsUpdated\fP ()"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBKbPerf\fP (\fBKbMode\fP *parent)"
+.br
+.ti -1c
+.RI "\fBKbPerf\fP (\fBKbMode\fP *parent, const \fBKbPerf\fP &other)"
+.br
+.ti -1c
+.RI "const \fBKbPerf\fP & \fBoperator=\fP (const \fBKbPerf\fP &rhs)"
+.br
+.ti -1c
+.RI "void \fBload\fP (\fBCkbSettings\fP &settings)"
+.br
+.ti -1c
+.RI "void \fBsave\fP (\fBCkbSettings\fP &settings)"
+.br
+.ti -1c
+.RI "bool \fBneedsSave\fP () const "
+.br
+.ti -1c
+.RI "\fBheight\fP \fBliftHeight\fP () const "
+.br
+.ti -1c
+.RI "void \fBliftHeight\fP (\fBheight\fP newHeight)"
+.br
+.ti -1c
+.RI "bool \fBangleSnap\fP () const "
+.br
+.ti -1c
+.RI "void \fBangleSnap\fP (bool newAngleSnap)"
+.br
+.ti -1c
+.RI "QPoint \fBdpi\fP (int index) const "
+.br
+.ti -1c
+.RI "void \fBdpi\fP (int index, const QPoint &newValue)"
+.br
+.ti -1c
+.RI "QPoint \fBsniperDpi\fP () const "
+.br
+.ti -1c
+.RI "void \fBsniperDpi\fP (const QPoint &newValue)"
+.br
+.ti -1c
+.RI "void \fBdpi\fP (int index, int newValue)"
+.br
+.ti -1c
+.RI "void \fBsniperDpi\fP (int newValue)"
+.br
+.ti -1c
+.RI "QPoint \fBcurDpi\fP () const "
+.br
+.ti -1c
+.RI "void \fBcurDpi\fP (const QPoint &newDpi)"
+.br
+.ti -1c
+.RI "void \fBcurDpi\fP (int newDpi)"
+.br
+.ti -1c
+.RI "int \fBcurDpiIdx\fP () const "
+.br
+.ti -1c
+.RI "void \fBcurDpiIdx\fP (int newIdx)"
+.br
+.ti -1c
+.RI "void \fBdpiUp\fP ()"
+.br
+.ti -1c
+.RI "void \fBdpiDown\fP ()"
+.br
+.ti -1c
+.RI "bool \fBdpiEnabled\fP (int index) const "
+.br
+.ti -1c
+.RI "void \fBdpiEnabled\fP (int index, bool newEnabled)"
+.br
+.ti -1c
+.RI "quint64 \fBpushDpi\fP (const QPoint &newDpi)"
+.br
+.ti -1c
+.RI "quint64 \fBpushDpi\fP (int newDpi)"
+.br
+.ti -1c
+.RI "quint64 \fBpushSniper\fP ()"
+.br
+.ti -1c
+.RI "void \fBpopDpi\fP (quint64 pushIdx)"
+.br
+.ti -1c
+.RI "float \fBiOpacity\fP () const "
+.br
+.ti -1c
+.RI "void \fBiOpacity\fP (float newIOpacity)"
+.br
+.ti -1c
+.RI "bool \fBdpiIndicator\fP () const "
+.br
+.ti -1c
+.RI "void \fBdpiIndicator\fP (bool newDpiIndicator)"
+.br
+.ti -1c
+.RI "QColor \fBdpiColor\fP (int index) const "
+.br
+.ti -1c
+.RI "void \fBdpiColor\fP (int index, const QColor &newColor)"
+.br
+.ti -1c
+.RI "void \fBgetIndicator\fP (\fBindicator\fP index, QColor &color1, QColor &color2, QColor &color3, bool &software_enable, \fBi_hw\fP &hardware_enable)"
+.br
+.ti -1c
+.RI "void \fBsetIndicator\fP (\fBindicator\fP index, const QColor &color1, const QColor &color2, const QColor &color3=QColor(), bool software_enable=true, \fBi_hw\fP hardware_enable=\fBNORMAL\fP)"
+.br
+.ti -1c
+.RI "void \fBupdate\fP (QFile &\fBcmd\fP, int notifyNumber, bool force=false, bool saveCustomDpi=true)"
+.br
+.ti -1c
+.RI "void \fBsetNeedsUpdate\fP ()"
+.br
+.ti -1c
+.RI "void \fBapplyIndicators\fP (int modeIndex, const bool indicatorState[\fBHW_I_COUNT\fP])"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const int \fBDPI_COUNT\fP = 6"
+.br
+.ti -1c
+.RI "static const int \fBSNIPER\fP = 0"
+.br
+.ti -1c
+.RI "static const int \fBDPI_MIN\fP = 100"
+.br
+.ti -1c
+.RI "static const int \fBDPI_MAX\fP = 12000"
+.br
+.ti -1c
+.RI "static const int \fBOTHER\fP = \fBDPI_COUNT\fP"
+.br
+.ti -1c
+.RI "static const int \fBI_COUNT\fP = (int)\fBMUTE\fP + 1"
+.br
+.ti -1c
+.RI "static const int \fBHW_I_COUNT\fP = (int)\fBHW_IMAX\fP + 1"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBKbMode\fP * \fBmodeParent\fP () const "
+.br
+.ti -1c
+.RI "\fBKbBind\fP * \fBbind\fP () const "
+.br
+.ti -1c
+.RI "\fBKbLight\fP * \fBlight\fP () const "
+.br
+.ti -1c
+.RI "void \fBlightIndicator\fP (const char *name, QRgb rgba)"
+.br
+.ti -1c
+.RI "void \fB_curDpi\fP (const QPoint &newDpi)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBdpiX\fP [\fBDPI_COUNT\fP]"
+.br
+.ti -1c
+.RI "int \fBdpiY\fP [\fBDPI_COUNT\fP]"
+.br
+.ti -1c
+.RI "int \fBdpiCurX\fP"
+.br
+.ti -1c
+.RI "int \fBdpiCurY\fP"
+.br
+.ti -1c
+.RI "int \fBdpiCurIdx\fP"
+.br
+.ti -1c
+.RI "QColor \fBdpiClr\fP [\fBDPI_COUNT\fP+1]"
+.br
+.ti -1c
+.RI "bool \fBdpiOn\fP [\fBDPI_COUNT\fP]"
+.br
+.ti -1c
+.RI "int \fBdpiLastIdx\fP"
+.br
+.ti -1c
+.RI "QMap< quint64, QPoint > \fBpushedDpis\fP"
+.br
+.ti -1c
+.RI "uint \fBrunningPushIdx\fP"
+.br
+.ti -1c
+.RI "float \fB_iOpacity\fP"
+.br
+.ti -1c
+.RI "QColor \fBiColor\fP [\fBI_COUNT\fP][2]"
+.br
+.ti -1c
+.RI "QColor \fBlight100Color\fP"
+.br
+.ti -1c
+.RI "QColor \fBmuteNAColor\fP"
+.br
+.ti -1c
+.RI "bool \fBiEnable\fP [\fBI_COUNT\fP]"
+.br
+.ti -1c
+.RI "\fBi_hw\fP \fBhwIType\fP [\fBHW_I_COUNT\fP]"
+.br
+.ti -1c
+.RI "bool \fB_dpiIndicator\fP"
+.br
+.ti -1c
+.RI "\fBheight\fP \fB_liftHeight\fP"
+.br
+.ti -1c
+.RI "bool \fB_angleSnap\fP"
+.br
+.ti -1c
+.RI "bool \fB_needsUpdate\fP"
+.br
+.ti -1c
+.RI "bool \fB_needsSave\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 15 of file kbperf\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBKbPerf::height\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fILOW \fP\fP
+.TP
+\fB\fILOWMED \fP\fP
+.TP
+\fB\fIMEDIUM \fP\fP
+.TP
+\fB\fIMEDHIGH \fP\fP
+.TP
+\fB\fIHIGH \fP\fP
+.PP
+Definition at line 31 of file kbperf\&.h\&.
+.PP
+.nf
+31                 {
+32         LOW = 1,
+33         LOWMED,
+34         MEDIUM,
+35         MEDHIGH,
+36         HIGH
+37     };
+.fi
+.SS "enum \fBKbPerf::i_hw\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINONE \fP\fP
+.TP
+\fB\fINORMAL \fP\fP
+.TP
+\fB\fION \fP\fP
+.TP
+\fB\fIOFF \fP\fP
+.PP
+Definition at line 98 of file kbperf\&.h\&.
+.PP
+.nf
+98               {
+99         NONE = -1,  // For non-hardware indicators
+100         NORMAL,
+101         ON,
+102         OFF
+103     };
+.fi
+.SS "enum \fBKbPerf::indicator\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINUM \fP\fP
+.TP
+\fB\fICAPS \fP\fP
+.TP
+\fB\fISCROLL \fP\fP
+.TP
+\fB\fIHW_IMAX \fP\fP
+.TP
+\fB\fIMODE \fP\fP
+.TP
+\fB\fIMACRO \fP\fP
+.TP
+\fB\fILIGHT \fP\fP
+.TP
+\fB\fILOCK \fP\fP
+.TP
+\fB\fIMUTE \fP\fP
+.PP
+Definition at line 85 of file kbperf\&.h\&.
+.PP
+.nf
+85                    {
+86         // Hardware
+87         NUM,
+88         CAPS,
+89         SCROLL, HW_IMAX = SCROLL,
+90         // Software
+91         MODE,
+92         MACRO,
+93         LIGHT,
+94         LOCK,
+95         MUTE
+96     };
+.fi
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "KbPerf::KbPerf (\fBKbMode\fP *parent)\fC [explicit]\fP"
+
+.PP
+Definition at line 13 of file kbperf\&.cpp\&.
+.PP
+References CAPS, DPI_COUNT, dpiClr, dpiCurIdx, dpiCurX, dpiCurY, dpiLastIdx, dpiOn, dpiX, dpiY, HW_I_COUNT, hwIType, I_COUNT, iColor, iEnable, LIGHT, light100Color, LOCK, MACRO, MODE, MUTE, muteNAColor, NORMAL, NUM, and SCROLL\&.
+.PP
+.nf
+13                              :
+14     QObject(parent), runningPushIdx(1),
+15     _iOpacity(1\&.f), _dpiIndicator(true), _liftHeight(MEDIUM), _angleSnap(false),
+16     _needsUpdate(true), _needsSave(true) {
+17     // Default DPI settings
+18     dpiX[0] = dpiY[0] = 400;
+19     dpiX[1] = dpiY[1] = 450;
+20     dpiX[2] = dpiY[2] = 800;
+21     dpiX[3] = dpiY[3] = 1500;
+22     dpiX[4] = dpiY[4] = 3000;
+23     dpiX[5] = dpiY[5] = 6000;
+24     dpiClr[0] = QColor(255, 0, 0);
+25     dpiClr[1] = QColor(255, 192, 0);
+26     dpiClr[2] = QColor(255, 255, 0);
+27     dpiClr[3] = QColor(0, 255, 0);
+28     dpiClr[4] = QColor(0, 255, 255);
+29     dpiClr[5] = QColor(255, 255, 255);
+30     dpiClr[6] = QColor(192, 192, 192);
+31     for(int i = 0; i < DPI_COUNT; i++)
+32         dpiOn[i] = true;
+33     dpiLastIdx = dpiCurIdx = 3;
+34     dpiCurX = dpiX[dpiCurIdx];
+35     dpiCurY = dpiY[dpiCurIdx];
+36     // Default indicators
+37     iColor[NUM][0] = iColor[CAPS][0] = iColor[SCROLL][0] = QColor(0, 255, 0);   // Lock lights: on = green, off = black
+38     iColor[NUM][1] = iColor[CAPS][1] = iColor[SCROLL][1] = QColor(0, 0, 0);
+39     iColor[MACRO][0] = QColor(255, 0, 0);                                       // Macro: on = red, off = black
+40     iColor[LOCK][0] = QColor(255, 255, 255);                                    // Win lock: on = white, off = black
+41     iColor[MODE][0] = iColor[MUTE][0] = QColor(255, 255, 255, 0);               // Mode, mute: on = transparent, off = black
+42     iColor[MODE][1] = iColor[MACRO][1] = iColor[LOCK][1] = iColor[MUTE][1] = muteNAColor = QColor(0, 0, 0);
+43     iColor[LIGHT][0] = QColor(255, 0, 0);       // Brightness: red, yellow, white
+44     iColor[LIGHT][1] = QColor(255, 255, 0);
+45     light100Color = QColor(255, 255, 255);
+46     for(int i = 0; i < HW_I_COUNT; i++){
+47         // Set all lock lights to HW mode
+48         iEnable[i] = false;
+49         hwIType[i] = NORMAL;
+50     }
+51     for(int i = HW_I_COUNT; i < I_COUNT; i++){
+52         // Turn all other indicators on
+53         iEnable[i] = true;
+54     }
+55 }
+.fi
+.SS "KbPerf::KbPerf (\fBKbMode\fP *parent, const \fBKbPerf\fP &other)"
+
+.PP
+Definition at line 57 of file kbperf\&.cpp\&.
+.PP
+References curDpi(), DPI_COUNT, dpiClr, dpiOn, dpiX, dpiY, hwIType, I_COUNT, iColor, iEnable, and pushedDpis\&.
+.PP
+.nf
+57                                                   :
+58     QObject(parent), dpiCurX(other\&.dpiCurX), dpiCurY(other\&.dpiCurY), dpiCurIdx(other\&.dpiCurIdx), dpiLastIdx(other\&.dpiLastIdx), runningPushIdx(1),
+59     _iOpacity(other\&._iOpacity), light100Color(other\&.light100Color), muteNAColor(other\&.muteNAColor), _dpiIndicator(other\&._dpiIndicator),
+60     _liftHeight(other\&._liftHeight), _angleSnap(other\&._angleSnap),
+61     _needsUpdate(true), _needsSave(true) {
+62     memcpy(dpiX, other\&.dpiX, sizeof(dpiX));
+63     memcpy(dpiY, other\&.dpiY, sizeof(dpiY));
+64     for(int i = 0; i < DPI_COUNT + 1; i++)
+65         dpiClr[i] = other\&.dpiClr[i];
+66     memcpy(dpiOn, other\&.dpiOn, sizeof(dpiOn));
+67     for(int i = 0; i < I_COUNT; i++){
+68         iColor[i][0] = other\&.iColor[i][0];
+69         iColor[i][1] = other\&.iColor[i][1];
+70     }
+71     memcpy(iEnable, other\&.iEnable, sizeof(iEnable));
+72     memcpy(hwIType, other\&.hwIType, sizeof(hwIType));
+73     // Don't copy pushed DPI states\&. If the other mode has any, restore the original DPI
+74     if(!other\&.pushedDpis\&.isEmpty())
+75         curDpi(other\&.pushedDpis[0]);
+76 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void KbPerf::_curDpi (const QPoint &newDpi)\fC [private]\fP"
+
+.PP
+Definition at line 262 of file kbperf\&.cpp\&.
+.PP
+References _needsSave, _needsUpdate, DPI_COUNT, dpiCurIdx, dpiCurX, dpiCurY, dpiLastIdx, dpiX, and dpiY\&.
+.PP
+Referenced by curDpi(), popDpi(), and pushDpi()\&.
+.PP
+.nf
+262                                         {
+263     dpiCurX = newDpi\&.x();
+264     dpiCurY = newDpi\&.y();
+265     // Set current/last index
+266     dpiCurIdx = -1;
+267     for(int i = 0; i < DPI_COUNT; i++){
+268         if(dpiCurX == dpiX[i] && dpiCurY == dpiY[i]){
+269             dpiCurIdx = i;
+270             if(i != 0)
+271                 dpiLastIdx = i;
+272             break;
+273         }
+274     }
+275     _needsUpdate = _needsSave = true;
+276 }
+.fi
+.SS "bool KbPerf::angleSnap () const\fC [inline]\fP"
+
+.PP
+Definition at line 42 of file kbperf\&.h\&.
+.PP
+References _angleSnap\&.
+.PP
+Referenced by MPerfWidget::on_aSnapBox_clicked(), Kb::readNotify(), and MPerfWidget::setPerf()\&.
+.PP
+.nf
+42 { return _angleSnap; }
+.fi
+.SS "void KbPerf::angleSnap (boolnewAngleSnap)"
+
+.PP
+Definition at line 368 of file kbperf\&.cpp\&.
+.PP
+References _angleSnap, _needsSave, and _needsUpdate\&.
+.PP
+.nf
+368                                        {
+369     _angleSnap = newAngleSnap;
+370     _needsUpdate = _needsSave = true;
+371 }
+.fi
+.SS "void KbPerf::applyIndicators (intmodeIndex, const boolindicatorState[HW_I_COUNT])"
+
+.PP
+Definition at line 432 of file kbperf\&.cpp\&.
+.PP
+References _dpiIndicator, _iOpacity, bind(), CAPS, curDpiIdx(), dpiClr, getMuteState(), Kb::HWMODE_MAX, iColor, iEnable, LIGHT, light(), light100Color, lightIndicator(), LOCK, MACRO, MODE, MUTE, MUTED, muteNAColor, NUM, OTHER, KbLight::resetIndicators(), SCROLL, and UNMUTED\&.
+.PP
+Referenced by Kb::frameUpdate()\&.
+.PP
+.nf
+432                                                                       {
+433     light()->resetIndicators();
+434     if(_iOpacity <= 0\&.f)
+435         return;
+436     if(_dpiIndicator){
+437         // Set DPI indicator according to index
+438         int index = curDpiIdx();
+439         if(index == -1 || index > OTHER)
+440             index = OTHER;
+441         lightIndicator("dpi", dpiClr[index]\&.rgba());
+442     }
+443     // KB indicators
+444     if(iEnable[MODE]){
+445         for(int i = 0; i < Kb::HWMODE_MAX; i++){
+446             char name[4];
+447             snprintf(name, sizeof(name), "m%d", i + 1);
+448             if(modeIndex == i)
+449                 lightIndicator(name, iColor[MODE][0]\&.rgba());
+450             else
+451                 lightIndicator(name, iColor[MODE][1]\&.rgba());
+452         }
+453     }
+454     if(iEnable[MACRO])
+455         lightIndicator("mr", iColor[MUTE][1]\&.rgba());
+456     if(iEnable[LIGHT]){
+457         switch(light()->dimming()){
+458         case 0: // 100%
+459             lightIndicator("light", light100Color\&.rgba());
+460             break;
+461         case 1: // 67%
+462             lightIndicator("light", iColor[LIGHT][1]\&.rgba());
+463             break;
+464         case 2: // 33%
+465         case 3: // light off
+466             lightIndicator("light", iColor[LIGHT][0]\&.rgba());
+467             break;
+468         }
+469     }
+470     if(iEnable[LOCK]){
+471         if(bind()->winLock())
+472             lightIndicator("lock", iColor[LOCK][0]\&.rgba());
+473         else
+474             lightIndicator("lock", iColor[LOCK][1]\&.rgba());
+475     }
+476     if(iEnable[MUTE]){
+477         switch(getMuteState()){
+478         case MUTED:
+479             lightIndicator("mute", iColor[MUTE][0]\&.rgba());
+480             break;
+481         case UNMUTED:
+482             lightIndicator("mute", iColor[MUTE][1]\&.rgba());
+483             break;
+484         default:
+485             lightIndicator("mute", muteNAColor\&.rgba());
+486             break;
+487         }
+488     }
+489     // Lock lights
+490     if(iEnable[NUM])
+491         lightIndicator("numlock", indicatorState[0] ? iColor[NUM][0]\&.rgba() : iColor[NUM][1]\&.rgba());
+492     if(iEnable[CAPS])
+493         lightIndicator("caps", indicatorState[1] ? iColor[CAPS][0]\&.rgba() : iColor[CAPS][1]\&.rgba());
+494     if(iEnable[SCROLL])
+495         lightIndicator("scroll", indicatorState[2] ? iColor[SCROLL][0]\&.rgba() : iColor[SCROLL][1]\&.rgba());
+496 }
+.fi
+.SS "\fBKbBind\fP * KbPerf::bind () const\fC [private]\fP"
+
+.PP
+Definition at line 100 of file kbperf\&.cpp\&.
+.PP
+References KbMode::bind(), and modeParent()\&.
+.PP
+Referenced by applyIndicators()\&.
+.PP
+.nf
+100                            {
+101     return modeParent()->bind();
+102 }
+.fi
+.SS "QPoint KbPerf::curDpi () const\fC [inline]\fP"
+
+.PP
+Definition at line 57 of file kbperf\&.h\&.
+.PP
+References dpiCurX, and dpiCurY\&.
+.PP
+Referenced by curDpiIdx(), KbPerf(), load(), operator=(), and pushDpi()\&.
+.PP
+.nf
+57 { return QPoint(dpiCurX, dpiCurY); }
+.fi
+.SS "void KbPerf::curDpi (const QPoint &newDpi)"
+
+.PP
+Definition at line 278 of file kbperf\&.cpp\&.
+.PP
+References _curDpi(), popDpi(), and pushedDpis\&.
+.PP
+.nf
+278                                        {
+279     while(pushedDpis\&.count() > 0)
+280         popDpi(pushedDpis\&.keys()\&.last());
+281     _curDpi(newDpi);
+282 }
+.fi
+.SS "void KbPerf::curDpi (intnewDpi)\fC [inline]\fP"
+
+.PP
+Definition at line 59 of file kbperf\&.h\&.
+.PP
+References curDpi()\&.
+.PP
+Referenced by curDpi()\&.
+.PP
+.nf
+59 { curDpi(QPoint(newDpi, newDpi)); }
+.fi
+.SS "int KbPerf::curDpiIdx () const\fC [inline]\fP"
+
+.PP
+Definition at line 61 of file kbperf\&.h\&.
+.PP
+References dpiCurIdx\&.
+.PP
+Referenced by applyIndicators(), dpiDown(), dpiUp(), and Kb::readNotify()\&.
+.PP
+.nf
+61 { return dpiCurIdx; }
+.fi
+.SS "void KbPerf::curDpiIdx (intnewIdx)\fC [inline]\fP"
+
+.PP
+Definition at line 62 of file kbperf\&.h\&.
+.PP
+References curDpi(), and dpi()\&.
+.PP
+.nf
+62 { curDpi(dpi(newIdx)); }
+.fi
+.SS "void KbPerf::didLoad ()\fC [signal]\fP"
+
+.PP
+Referenced by load()\&.
+.SS "QPoint KbPerf::dpi (intindex) const\fC [inline]\fP"
+
+.PP
+Definition at line 48 of file kbperf\&.h\&.
+.PP
+References DPI_COUNT, dpiX, and dpiY\&.
+.PP
+Referenced by MPerfWidget::boxXChanged(), MPerfWidget::boxYChanged(), curDpiIdx(), KeyAction::keyEvent(), Kb::readNotify(), RebindWidget::setBind(), MPerfWidget::setPerf(), MPerfWidget::sliderXMoved(), MPerfWidget::sliderYMoved(), and sniperDpi()\&.
+.PP
+.nf
+48 { if(index < 0 || index >= DPI_COUNT) return QPoint(); return QPoint(dpiX[index], dpiY[index]); }
+.fi
+.SS "void KbPerf::dpi (intindex, const QPoint &newValue)"
+
+.PP
+Definition at line 249 of file kbperf\&.cpp\&.
+.PP
+References _needsSave, _needsUpdate, DPI_COUNT, dpiCurIdx, dpiCurX, dpiCurY, dpiX, and dpiY\&.
+.PP
+.nf
+249                                                  {
+250     if(index < 0 || index >= DPI_COUNT)
+251         return;
+252     dpiX[index] = newValue\&.x();
+253     dpiY[index] = newValue\&.y();
+254     // Update current DPI if needed
+255     if(dpiCurIdx == index){
+256         dpiCurX = newValue\&.x();
+257         dpiCurY = newValue\&.y();
+258     }
+259     _needsUpdate = _needsSave = true;
+260 }
+.fi
+.SS "void KbPerf::dpi (intindex, intnewValue)\fC [inline]\fP"
+
+.PP
+Definition at line 53 of file kbperf\&.h\&.
+.PP
+References dpi()\&.
+.PP
+Referenced by dpi()\&.
+.PP
+.nf
+53 { dpi(index, QPoint(newValue, newValue)); }
+.fi
+.SS "QColor KbPerf::dpiColor (intindex) const\fC [inline]\fP"
+
+.PP
+Definition at line 82 of file kbperf\&.h\&.
+.PP
+References dpiClr\&.
+.PP
+Referenced by MPerfWidget::colorChanged(), Kb::readNotify(), MPerfWidget::setPerf(), and update()\&.
+.PP
+.nf
+82 { return dpiClr[index]; }
+.fi
+.SS "void KbPerf::dpiColor (intindex, const QColor &newColor)\fC [inline]\fP"
+
+.PP
+Definition at line 83 of file kbperf\&.h\&.
+.PP
+References _needsSave, _needsUpdate, and dpiClr\&.
+.PP
+.nf
+83 { dpiClr[index] = newColor; _needsUpdate = _needsSave = true; }
+.fi
+.SS "void KbPerf::dpiDown ()"
+
+.PP
+Definition at line 319 of file kbperf\&.cpp\&.
+.PP
+References curDpiIdx(), dpiOn, and SNIPER\&.
+.PP
+Referenced by KeyAction::keyEvent()\&.
+.PP
+.nf
+319                     {
+320     int idx = curDpiIdx();
+321     do {
+322         idx--;
+323         if(idx <= SNIPER)
+324             return;
+325     } while(!dpiOn[idx]);
+326     curDpiIdx(idx);
+327 }
+.fi
+.SS "bool KbPerf::dpiEnabled (intindex) const\fC [inline]\fP"
+
+.PP
+Definition at line 66 of file kbperf\&.h\&.
+.PP
+References dpiOn\&.
+.PP
+Referenced by MPerfWidget::enableChanged(), Kb::readNotify(), and MPerfWidget::setPerf()\&.
+.PP
+.nf
+66 { return dpiOn[index]; }
+.fi
+.SS "void KbPerf::dpiEnabled (intindex, boolnewEnabled)\fC [inline]\fP"
+
+.PP
+Definition at line 67 of file kbperf\&.h\&.
+.PP
+References _needsSave, _needsUpdate, and dpiOn\&.
+.PP
+.nf
+67 { if(index <= 0) return; dpiOn[index] = newEnabled; _needsUpdate = _needsSave = true; }
+.fi
+.SS "bool KbPerf::dpiIndicator () const\fC [inline]\fP"
+
+.PP
+Definition at line 79 of file kbperf\&.h\&.
+.PP
+References _dpiIndicator\&.
+.PP
+Referenced by MPerfWidget::on_indicBox_clicked(), and MPerfWidget::setPerf()\&.
+.PP
+.nf
+79 { return _dpiIndicator; }
+.fi
+.SS "void KbPerf::dpiIndicator (boolnewDpiIndicator)\fC [inline]\fP"
+
+.PP
+Definition at line 80 of file kbperf\&.h\&.
+.PP
+References _dpiIndicator, and _needsSave\&.
+.PP
+.nf
+80 { _dpiIndicator = newDpiIndicator; _needsSave = true; }
+.fi
+.SS "void KbPerf::dpiUp ()"
+
+.PP
+Definition at line 308 of file kbperf\&.cpp\&.
+.PP
+References curDpiIdx(), DPI_COUNT, and dpiOn\&.
+.PP
+Referenced by KeyAction::keyEvent()\&.
+.PP
+.nf
+308                   {
+309     // Scroll past disabled DPIs and choose the next one up
+310     int idx = curDpiIdx();
+311     do {
+312         idx++;
+313         if(idx >= DPI_COUNT)
+314             return;
+315     } while(!dpiOn[idx]);
+316     curDpiIdx(idx);
+317 }
+.fi
+.SS "void KbPerf::getIndicator (\fBindicator\fPindex, QColor &color1, QColor &color2, QColor &color3, bool &software_enable, \fBi_hw\fP &hardware_enable)"
+
+.PP
+Definition at line 329 of file kbperf\&.cpp\&.
+.PP
+References HW_IMAX, hwIType, I_COUNT, iColor, iEnable, LIGHT, light100Color, MUTE, muteNAColor, and NONE\&.
+.PP
+Referenced by KPerfWidget::setPerf()\&.
+.PP
+.nf
+329                                                                                                                                       {
+330     if(index < 0 || index >= I_COUNT)
+331         return;
+332     color1 = iColor[index][0];
+333     color2 = iColor[index][1];
+334     if(index == LIGHT)
+335         color3 = light100Color;
+336     else if(index == MUTE)
+337         color3 = muteNAColor;
+338     else
+339         color3 = QColor();
+340     software_enable = iEnable[index];
+341     hardware_enable = (index <= HW_IMAX ? hwIType[index] : NONE);
+342 }
+.fi
+.SS "float KbPerf::iOpacity () const\fC [inline]\fP"
+
+.PP
+Definition at line 76 of file kbperf\&.h\&.
+.PP
+References _iOpacity\&.
+.PP
+Referenced by KPerfWidget::on_intensityBox_valueChanged(), MPerfWidget::on_spinBox_valueChanged(), KPerfWidget::setPerf(), and MPerfWidget::setPerf()\&.
+.PP
+.nf
+76 { return _iOpacity; }
+.fi
+.SS "void KbPerf::iOpacity (floatnewIOpacity)\fC [inline]\fP"
+
+.PP
+Definition at line 77 of file kbperf\&.h\&.
+.PP
+References _iOpacity, and _needsSave\&.
+.PP
+.nf
+77 { _iOpacity = newIOpacity; _needsSave = true; }
+.fi
+.SS "\fBheight\fP KbPerf::liftHeight () const\fC [inline]\fP"
+
+.PP
+Definition at line 38 of file kbperf\&.h\&.
+.PP
+References _liftHeight\&.
+.PP
+Referenced by MPerfWidget::on_lHeightBox_activated(), Kb::readNotify(), and MPerfWidget::setPerf()\&.
+.PP
+.nf
+38 { return _liftHeight; }
+.fi
+.SS "void KbPerf::liftHeight (\fBheight\fPnewHeight)"
+
+.PP
+Definition at line 361 of file kbperf\&.cpp\&.
+.PP
+References _liftHeight, _needsSave, _needsUpdate, and HIGH\&.
+.PP
+.nf
+361                                        {
+362     if(newHeight < LOW || newHeight > HIGH)
+363         return;
+364     _liftHeight = newHeight;
+365     _needsUpdate = _needsSave = true;
+366 }
+.fi
+.SS "\fBKbLight\fP * KbPerf::light () const\fC [private]\fP"
+
+.PP
+Definition at line 104 of file kbperf\&.cpp\&.
+.PP
+References KbMode::light(), and modeParent()\&.
+.PP
+Referenced by applyIndicators(), and lightIndicator()\&.
+.PP
+.nf
+104                              {
+105     return modeParent()->light();
+106 }
+.fi
+.SS "void KbPerf::lightIndicator (const char *name, QRgbrgba)\fC [private]\fP"
+
+.PP
+Definition at line 425 of file kbperf\&.cpp\&.
+.PP
+References _iOpacity, light(), and KbLight::setIndicator()\&.
+.PP
+Referenced by applyIndicators()\&.
+.PP
+.nf
+425                                                       {
+426     int a = round(qAlpha(rgba) * _iOpacity);
+427     if(a <= 0)
+428         return;
+429     light()->setIndicator(name, qRgba(qRed(rgba), qGreen(rgba), qBlue(rgba), a));
+430 }
+.fi
+.SS "void KbPerf::load (\fBCkbSettings\fP &settings)"
+
+.PP
+Definition at line 108 of file kbperf\&.cpp\&.
+.PP
+References _angleSnap, _dpiIndicator, _iOpacity, _liftHeight, _needsSave, CkbSettings::contains(), CkbSettings::containsGroup(), curDpi(), didLoad(), DPI_COUNT, dpiClr, dpiLastIdx, dpiOn, dpiX, dpiY, HIGH, HW_IMAX, hwIType, I_COUNT, iColor, iEnable, LIGHT, light100Color, LOCK, MACRO, MEDIUM, MODE, MUTE, muteNAColor, NORMAL, OTHER, pushedDpis, runningPushIdx, and CkbSettings::value()\&.
+.PP
+Referenced by KbMode::KbMode()\&.
+.PP
+.nf
+108                                       {
+109     pushedDpis\&.clear();
+110     runningPushIdx = 1;
+111     _needsSave = false;
+112     bool readIndicators = true;
+113     if(!settings\&.containsGroup("Performance/Indicators")){
+114         // Read old indicator settings from the lighting group, if present
+115         // (ckb <= v0\&.2\&.0)
+116         SGroup group(settings, "Lighting");
+117         if(settings\&.contains("InactiveIndicators")){
+118             bool inOk = false;
+119             int inactive = settings\&.value("InactiveIndicators")\&.toInt(&inOk);
+120             if(!inOk || inactive > 2)
+121                 inactive = 2;
+122             if(inactive == 1)
+123                 _iOpacity = 0\&.75f;
+124             else if(inactive == 0)
+125                 _iOpacity = 0\&.5f;
+126             else if(inactive < 0){
+127                 // Indicators disabled
+128                 iEnable[MODE] = iEnable[MACRO] = iEnable[LIGHT] = iEnable[LOCK]  = iEnable[MUTE] = false;
+129             }
+130             bool showMute = (settings\&.value("ShowMute")\&.toInt(&inOk) != 0);
+131             if(inOk && !showMute)
+132                 iEnable[MUTE] = false;
+133             readIndicators = false;
+134         }
+135     }
+136     SGroup group(settings, "Performance");
+137     // Read DPI settings
+138     {
+139         SGroup group(settings, "DPI");
+140         for(int i = 0; i < DPI_COUNT; i++){
+141             QString iStr = QString::number(i);
+142             QPoint value = settings\&.value(iStr)\&.toPoint();
+143             if(value\&.isNull())
+144                 continue;
+145             dpiX[i] = value\&.x(); dpiY[i] = value\&.y();
+146             QColor color = settings\&.value(iStr + "RGB")\&.toString();
+147             if(color\&.isValid())
+148                 dpiClr[i] = color;
+149             if(i != 0)
+150                 dpiOn[i] = !settings\&.value(iStr + "Disabled")\&.toBool();
+151         }
+152         QColor color = settings\&.value("6RGB")\&.toString();
+153         if(color\&.isValid())
+154             dpiClr[OTHER] = color;
+155         if(settings\&.contains("LastIdx")){
+156             dpiLastIdx = settings\&.value("LastIdx")\&.toInt();
+157             if(dpiLastIdx >= DPI_COUNT || dpiLastIdx < 0)
+158                 dpiLastIdx = 1;
+159         }
+160         QPoint value = settings\&.value("Current")\&.toPoint();
+161         if(!value\&.isNull())
+162             curDpi(value);
+163     }
+164     // Read misc\&. mouse settings
+165     _liftHeight = (height)settings\&.value("LiftHeight")\&.toInt();
+166     if(_liftHeight < LOW || _liftHeight > HIGH)
+167         _liftHeight = MEDIUM;
+168     _angleSnap = settings\&.value("AngleSnap")\&.toBool();
+169     if(settings\&.contains("NoIndicator")){
+170         // ckb <= v0\&.2\&.0
+171         _dpiIndicator = !settings\&.value("NoIndicator")\&.toBool();
+172     } else {
+173         _dpiIndicator = settings\&.value("Indicators/DPI", true)\&.toBool();
+174     }
+175     // Read indicator settings
+176     if(readIndicators){
+177         SGroup group(settings, "Indicators");
+178         _iOpacity = settings\&.value("Opacity", 100)\&.toInt() / 100\&.f;
+179         for(int i = 0; i < I_COUNT; i++){
+180             SGroup group(settings, QString::number(i));
+181             QColor color = settings\&.value("RGB0")\&.toString();
+182             if(color\&.isValid())
+183                 iColor[i][0] = color;
+184             color = settings\&.value("RGB1")\&.toString();
+185             if(color\&.isValid())
+186                 iColor[i][1] = color;
+187             if(i == LIGHT){
+188                 color = settings\&.value("RGB2")\&.toString();
+189                 if(color\&.isValid())
+190                     light100Color = color;
+191             } else if(i == MUTE){
+192                 color = settings\&.value("RGB2")\&.toString();
+193                 if(color\&.isValid())
+194                     muteNAColor = color;
+195             }
+196             if(i <= HW_IMAX){
+197                 iEnable[i] = settings\&.value("Enable", false)\&.toBool();
+198                 hwIType[i] = (i_hw)settings\&.value("Hardware", (int)NORMAL)\&.toInt();
+199             } else {
+200                 iEnable[i] = settings\&.value("Enable", true)\&.toBool();
+201             }
+202         }
+203     }
+204     emit didLoad();
+205 }
+.fi
+.SS "\fBKbMode\fP* KbPerf::modeParent () const\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 124 of file kbperf\&.h\&.
+.PP
+Referenced by bind(), and light()\&.
+.PP
+.nf
+124 { return (KbMode*)parent(); }
+.fi
+.SS "bool KbPerf::needsSave () const\fC [inline]\fP"
+
+.PP
+Definition at line 28 of file kbperf\&.h\&.
+.PP
+References _needsSave\&.
+.PP
+Referenced by KbMode::needsSave()\&.
+.PP
+.nf
+28 { return _needsSave; }
+.fi
+.SS "const \fBKbPerf\fP & KbPerf::operator= (const \fBKbPerf\fP &rhs)"
+
+.PP
+Definition at line 78 of file kbperf\&.cpp\&.
+.PP
+References _angleSnap, _dpiIndicator, _iOpacity, _liftHeight, _needsSave, _needsUpdate, curDpi(), DPI_COUNT, dpiClr, dpiCurIdx, dpiCurX, dpiCurY, dpiLastIdx, dpiOn, dpiX, dpiY, hwIType, I_COUNT, iColor, iEnable, light100Color, muteNAColor, pushedDpis, and runningPushIdx\&.
+.PP
+.nf
+78                                                    {
+79     dpiCurX = other\&.dpiCurX; dpiCurY = other\&.dpiCurY; dpiCurIdx = other\&.dpiCurIdx; dpiLastIdx = other\&.dpiLastIdx; runningPushIdx = 1;
+80     _iOpacity = other\&._iOpacity; light100Color = other\&.light100Color; muteNAColor = other\&.muteNAColor; _dpiIndicator = other\&._dpiIndicator;
+81     _liftHeight = other\&._liftHeight; _angleSnap = other\&._angleSnap;
+82     _needsUpdate = true; _needsSave = true;
+83     memcpy(dpiX, other\&.dpiX, sizeof(dpiX));
+84     memcpy(dpiY, other\&.dpiY, sizeof(dpiY));
+85     for(int i = 0; i < DPI_COUNT + 1; i++)
+86         dpiClr[i] = other\&.dpiClr[i];
+87     memcpy(dpiOn, other\&.dpiOn, sizeof(dpiOn));
+88     for(int i = 0; i < I_COUNT; i++){
+89         iColor[i][0] = other\&.iColor[i][0];
+90         iColor[i][1] = other\&.iColor[i][1];
+91     }
+92     memcpy(iEnable, other\&.iEnable, sizeof(iEnable));
+93     memcpy(hwIType, other\&.hwIType, sizeof(hwIType));
+94     // Don't copy pushed DPI states\&. If the other mode has any, restore the original DPI
+95     if(!other\&.pushedDpis\&.isEmpty())
+96         curDpi(other\&.pushedDpis[0]);
+97     return other;
+98 }
+.fi
+.SS "void KbPerf::popDpi (quint64pushIdx)"
+
+.PP
+Definition at line 296 of file kbperf\&.cpp\&.
+.PP
+References _curDpi(), _needsSave, _needsUpdate, map_last, and pushedDpis\&.
+.PP
+Referenced by curDpi(), and KeyAction::keyEvent()\&.
+.PP
+.nf
+296                                   {
+297     if(pushIdx == 0 || !pushedDpis\&.contains(pushIdx))
+298         return;
+299     pushedDpis\&.remove(pushIdx);
+300     // Set the DPI to the last-pushed value still on the stack
+301     _curDpi(map_last(pushedDpis));
+302     // If all values have been popped, remove the original DPI
+303     if(pushedDpis\&.count() == 1)
+304         pushedDpis\&.clear();
+305     _needsUpdate = _needsSave = true;
+306 }
+.fi
+.SS "quint64 KbPerf::pushDpi (const QPoint &newDpi)"
+
+.PP
+Definition at line 284 of file kbperf\&.cpp\&.
+.PP
+References _curDpi(), curDpi(), pushedDpis, and runningPushIdx\&.
+.PP
+Referenced by KeyAction::keyEvent(), and pushSniper()\&.
+.PP
+.nf
+284                                            {
+285     if(pushedDpis\&.isEmpty())
+286         // Push original DPI
+287         pushedDpis[0] = curDpi();
+288     quint64 index = runningPushIdx++;
+289     if(runningPushIdx == 0)
+290         runningPushIdx = 1;
+291     pushedDpis[index] = newDpi;
+292     _curDpi(newDpi);
+293     return index;
+294 }
+.fi
+.SS "quint64 KbPerf::pushDpi (intnewDpi)\fC [inline]\fP"
+
+.PP
+Definition at line 71 of file kbperf\&.h\&.
+.PP
+References pushDpi()\&.
+.PP
+Referenced by pushDpi()\&.
+.PP
+.nf
+71 { return pushDpi(QPoint(newDpi, newDpi)); }
+.fi
+.SS "quint64 KbPerf::pushSniper ()\fC [inline]\fP"
+
+.PP
+Definition at line 72 of file kbperf\&.h\&.
+.PP
+References pushDpi(), and sniperDpi()\&.
+.PP
+Referenced by KeyAction::keyEvent()\&.
+.PP
+.nf
+72 { return pushDpi(sniperDpi()); }
+.fi
+.SS "void KbPerf::save (\fBCkbSettings\fP &settings)"
+
+.PP
+Definition at line 207 of file kbperf\&.cpp\&.
+.PP
+References _angleSnap, _dpiIndicator, _liftHeight, _needsSave, DPI_COUNT, dpiClr, dpiCurX, dpiCurY, dpiLastIdx, dpiOn, dpiX, dpiY, HW_IMAX, hwIType, I_COUNT, iColor, iEnable, LIGHT, light100Color, MUTE, muteNAColor, OTHER, pushedDpis, and CkbSettings::setValue()\&.
+.PP
+Referenced by KbMode::save()\&.
+.PP
+.nf
+207                                       {
+208     _needsSave = false;
+209     SGroup group(settings, "Performance");
+210     {
+211         SGroup group(settings, "DPI");
+212         for(int i = 0; i < DPI_COUNT; i++){
+213             QString iStr = QString::number(i);
+214             settings\&.setValue(iStr, QPoint(dpiX[i], dpiY[i]));
+215             settings\&.setValue(iStr + "RGB", dpiClr[i]\&.name(QColor::HexArgb));
+216             if(i != 0)
+217                 settings\&.setValue(iStr + "Disabled", !dpiOn[i]);
+218         }
+219         settings\&.setValue("6RGB", dpiClr[OTHER]\&.name(QColor::HexArgb));
+220         settings\&.setValue("LastIdx", dpiLastIdx);
+221         int curX = dpiCurX, curY = dpiCurY;
+222         // Ignore any pushed modes
+223         if(pushedDpis\&.count() > 0){
+224             curX = pushedDpis\&.value(0)\&.x();
+225             curY = pushedDpis\&.value(0)\&.y();
+226         }
+227         settings\&.setValue("Current", QPoint(curX, curY));
+228     }
+229     settings\&.setValue("LiftHeight", _liftHeight);
+230     settings\&.setValue("AngleSnap", _angleSnap);
+231     {
+232         SGroup group(settings, "Indicators");
+233         settings\&.setValue("DPI", _dpiIndicator);
+234         for(int i = 0; i < I_COUNT; i++){
+235             SGroup group(settings, QString::number(i));
+236             settings\&.setValue("RGB0", iColor[i][0]\&.name(QColor::HexArgb));
+237             settings\&.setValue("RGB1", iColor[i][1]\&.name(QColor::HexArgb));
+238             if(i == LIGHT)
+239                 settings\&.setValue("RGB2", light100Color\&.name(QColor::HexArgb));
+240             else if(i == MUTE)
+241                 settings\&.setValue("RGB2", muteNAColor\&.name(QColor::HexArgb));
+242             settings\&.setValue("Enable", iEnable[i]);
+243             if(i <= HW_IMAX)
+244                 settings\&.setValue("Hardware", (int)hwIType[i]);
+245         }
+246     }
+247 }
+.fi
+.SS "void KbPerf::setIndicator (\fBindicator\fPindex, const QColor &color1, const QColor &color2, const QColor &color3 = \fCQColor()\fP, boolsoftware_enable = \fCtrue\fP, \fBi_hw\fPhardware_enable = \fC\fBNORMAL\fP\fP)"
+
+.PP
+Definition at line 344 of file kbperf\&.cpp\&.
+.PP
+References _needsSave, _needsUpdate, HW_IMAX, hwIType, I_COUNT, iColor, iEnable, LIGHT, light100Color, MUTE, muteNAColor, NONE, and NORMAL\&.
+.PP
+Referenced by KPerfWidget::uiUpdated()\&.
+.PP
+.nf
+344                                                                                                                                                       {
+345     if(index < 0 || index >= I_COUNT)
+346         return;
+347     iColor[index][0] = color1;
+348     iColor[index][1] = color2;
+349     if(index == LIGHT)
+350         light100Color = color3;
+351     else if(index == MUTE)
+352         muteNAColor = color3;
+353     iEnable[index] = software_enable;
+354     if(hardware_enable == NONE)
+355         hardware_enable = NORMAL;
+356     if(index <= HW_IMAX)
+357         hwIType[index] = hardware_enable;
+358     _needsUpdate = _needsSave = true;
+359 }
+.fi
+.SS "void KbPerf::setNeedsUpdate ()\fC [inline]\fP"
+
+.PP
+Definition at line 113 of file kbperf\&.h\&.
+.PP
+References _needsUpdate\&.
+.PP
+Referenced by KbMode::setNeedsUpdate()\&.
+.PP
+.nf
+113 { _needsUpdate = true; }
+.fi
+.SS "void KbPerf::settingsUpdated ()\fC [signal]\fP"
+
+.PP
+Referenced by update()\&.
+.SS "QPoint KbPerf::sniperDpi () const\fC [inline]\fP"
+
+.PP
+Definition at line 50 of file kbperf\&.h\&.
+.PP
+References dpi(), and SNIPER\&.
+.PP
+Referenced by pushSniper()\&.
+.PP
+.nf
+50 { return dpi(SNIPER); }
+.fi
+.SS "void KbPerf::sniperDpi (const QPoint &newValue)\fC [inline]\fP"
+
+.PP
+Definition at line 51 of file kbperf\&.h\&.
+.PP
+References dpi(), and SNIPER\&.
+.PP
+.nf
+51 { dpi(SNIPER, newValue); }
+.fi
+.SS "void KbPerf::sniperDpi (intnewValue)\fC [inline]\fP"
+
+.PP
+Definition at line 54 of file kbperf\&.h\&.
+.PP
+References sniperDpi()\&.
+.PP
+Referenced by sniperDpi()\&.
+.PP
+.nf
+54 { sniperDpi(QPoint(newValue, newValue)); }
+.fi
+.SS "void KbPerf::update (QFile &cmd, intnotifyNumber, boolforce = \fCfalse\fP, boolsaveCustomDpi = \fCtrue\fP)"
+
+.PP
+Definition at line 373 of file kbperf\&.cpp\&.
+.PP
+References _angleSnap, _liftHeight, _needsUpdate, DPI_COUNT, dpiColor(), dpiCurIdx, dpiCurX, dpiCurY, dpiOn, dpiX, dpiY, HW_I_COUNT, hwIType, OFF, ON, and settingsUpdated()\&.
+.PP
+Referenced by Kb::frameUpdate(), and Kb::hwSave()\&.
+.PP
+.nf
+373                                                                                {
+374     if(!force && !_needsUpdate)
+375         return;
+376     emit settingsUpdated();
+377     _needsUpdate = false;
+378     // Save DPI stage 0 (sniper)
+379     cmd\&.write(QString("dpi 0:%1,%2")\&.arg(dpiX[0])\&.arg(dpiY[0])\&.toLatin1());
+380     // If the mouse is set to a custom DPI, save it in stage 1
+381     int stage = dpiCurIdx;
+382     if(stage < 0 && saveCustomDpi){
+383         stage = 1;
+384         cmd\&.write(QString(" 1:%1,%2")\&.arg(dpiCurX)\&.arg(dpiCurY)\&.toLatin1());
+385     } else {
+386         // Otherwise, save stage 1 normally
+387         if(!dpiOn[1] && stage != 1)
+388             cmd\&.write(" 1:off");
+389         else
+390             cmd\&.write(QString(" 1:%1,%2")\&.arg(dpiX[1])\&.arg(dpiY[1])\&.toLatin1());
+391     }
+392     // Save stages 1 - 5
+393     for(int i = 2; i < DPI_COUNT; i++){
+394         if(!dpiOn[i] && stage != i)
+395             cmd\&.write(QString(" %1:off")\&.arg(i)\&.toLatin1());
+396         else
+397         cmd\&.write(QString(" %1:%2,%3")\&.arg(i)\&.arg(dpiX[i])\&.arg(dpiY[i])\&.toLatin1());
+398     }
+399     // Save stage selection, lift height, and angle snap
+400     cmd\&.write(QString(" dpisel %1 lift %2 snap %3")\&.arg(stage)\&.arg(_liftHeight)\&.arg(_angleSnap ? "on" : "off")\&.toLatin1());
+401     // Save DPI colors
+402     cmd\&.write(" rgb");
+403     for(int i = 0; i < DPI_COUNT; i++){
+404         QColor color = dpiColor(i);
+405         cmd\&.write(" dpi");
+406         char output[9];
+407         snprintf(output, sizeof(output), "%1d:%02x%02x%02x", i, color\&.red(), color\&.green(), color\&.blue());
+408         cmd\&.write(output);
+409     }
+410     // Enable indicator notifications
+411     cmd\&.write(QString("\n@%1 inotify all")\&.arg(notifyNumber)\&.toLatin1());
+412     // Set indicator state
+413     const char* iNames[HW_I_COUNT] = { "num", "caps", "scroll" };
+414     for(int i = 0; i < HW_I_COUNT; i++){
+415         if(hwIType[i] == ON)
+416             cmd\&.write(" ion ");
+417         else if(hwIType[i] == OFF)
+418             cmd\&.write(" ioff ");
+419         else
+420             cmd\&.write(" iauto ");
+421         cmd\&.write(iNames[i]);
+422     }
+423 }
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "bool KbPerf::_angleSnap\fC [private]\fP"
+
+.PP
+Definition at line 158 of file kbperf\&.h\&.
+.PP
+Referenced by angleSnap(), load(), operator=(), save(), and update()\&.
+.SS "bool KbPerf::_dpiIndicator\fC [private]\fP"
+
+.PP
+Definition at line 154 of file kbperf\&.h\&.
+.PP
+Referenced by applyIndicators(), dpiIndicator(), load(), operator=(), and save()\&.
+.SS "float KbPerf::_iOpacity\fC [private]\fP"
+
+.PP
+Definition at line 149 of file kbperf\&.h\&.
+.PP
+Referenced by applyIndicators(), iOpacity(), lightIndicator(), load(), and operator=()\&.
+.SS "\fBheight\fP KbPerf::_liftHeight\fC [private]\fP"
+
+.PP
+Definition at line 157 of file kbperf\&.h\&.
+.PP
+Referenced by liftHeight(), load(), operator=(), save(), and update()\&.
+.SS "bool KbPerf::_needsSave\fC [private]\fP"
+
+.PP
+Definition at line 160 of file kbperf\&.h\&.
+.PP
+Referenced by _curDpi(), angleSnap(), dpi(), dpiColor(), dpiEnabled(), dpiIndicator(), iOpacity(), liftHeight(), load(), needsSave(), operator=(), popDpi(), save(), and setIndicator()\&.
+.SS "bool KbPerf::_needsUpdate\fC [private]\fP"
+
+.PP
+Definition at line 160 of file kbperf\&.h\&.
+.PP
+Referenced by _curDpi(), angleSnap(), dpi(), dpiColor(), dpiEnabled(), liftHeight(), operator=(), popDpi(), setIndicator(), setNeedsUpdate(), and update()\&.
+.SS "const int KbPerf::DPI_COUNT = 6\fC [static]\fP"
+
+.PP
+Definition at line 46 of file kbperf\&.h\&.
+.PP
+Referenced by _curDpi(), dpi(), dpiUp(), KbPerf(), KeyAction::keyEvent(), load(), operator=(), Kb::readNotify(), save(), RebindWidget::setBind(), and update()\&.
+.SS "const int KbPerf::DPI_MAX = 12000\fC [static]\fP"
+
+.PP
+Definition at line 47 of file kbperf\&.h\&.
+.SS "const int KbPerf::DPI_MIN = 100\fC [static]\fP"
+
+.PP
+Definition at line 47 of file kbperf\&.h\&.
+.PP
+Referenced by dpiExp(), and dpiLog()\&.
+.SS "QColor KbPerf::dpiClr[\fBDPI_COUNT\fP+1]\fC [private]\fP"
+
+.PP
+Definition at line 135 of file kbperf\&.h\&.
+.PP
+Referenced by applyIndicators(), dpiColor(), KbPerf(), load(), operator=(), and save()\&.
+.SS "int KbPerf::dpiCurIdx\fC [private]\fP"
+
+.PP
+Definition at line 134 of file kbperf\&.h\&.
+.PP
+Referenced by _curDpi(), curDpiIdx(), dpi(), KbPerf(), operator=(), and update()\&.
+.SS "int KbPerf::dpiCurX\fC [private]\fP"
+
+.PP
+Definition at line 134 of file kbperf\&.h\&.
+.PP
+Referenced by _curDpi(), curDpi(), dpi(), KbPerf(), operator=(), save(), and update()\&.
+.SS "int KbPerf::dpiCurY\fC [private]\fP"
+
+.PP
+Definition at line 134 of file kbperf\&.h\&.
+.PP
+Referenced by _curDpi(), curDpi(), dpi(), KbPerf(), operator=(), save(), and update()\&.
+.SS "int KbPerf::dpiLastIdx\fC [private]\fP"
+
+.PP
+Definition at line 138 of file kbperf\&.h\&.
+.PP
+Referenced by _curDpi(), KbPerf(), load(), operator=(), and save()\&.
+.SS "bool KbPerf::dpiOn[\fBDPI_COUNT\fP]\fC [private]\fP"
+
+.PP
+Definition at line 136 of file kbperf\&.h\&.
+.PP
+Referenced by dpiDown(), dpiEnabled(), dpiUp(), KbPerf(), load(), operator=(), save(), and update()\&.
+.SS "int KbPerf::dpiX[\fBDPI_COUNT\fP]\fC [private]\fP"
+
+.PP
+Definition at line 132 of file kbperf\&.h\&.
+.PP
+Referenced by _curDpi(), dpi(), KbPerf(), load(), operator=(), save(), and update()\&.
+.SS "int KbPerf::dpiY[\fBDPI_COUNT\fP]\fC [private]\fP"
+
+.PP
+Definition at line 133 of file kbperf\&.h\&.
+.PP
+Referenced by _curDpi(), dpi(), KbPerf(), load(), operator=(), save(), and update()\&.
+.SS "const int KbPerf::HW_I_COUNT = (int)\fBHW_IMAX\fP + 1\fC [static]\fP"
+
+.PP
+Definition at line 104 of file kbperf\&.h\&.
+.PP
+Referenced by KbPerf(), and update()\&.
+.SS "\fBi_hw\fP KbPerf::hwIType[\fBHW_I_COUNT\fP]\fC [private]\fP"
+
+.PP
+Definition at line 153 of file kbperf\&.h\&.
+.PP
+Referenced by getIndicator(), KbPerf(), load(), operator=(), save(), setIndicator(), and update()\&.
+.SS "const int KbPerf::I_COUNT = (int)\fBMUTE\fP + 1\fC [static]\fP"
+
+.PP
+Definition at line 104 of file kbperf\&.h\&.
+.PP
+Referenced by getIndicator(), KbPerf(), load(), operator=(), save(), and setIndicator()\&.
+.SS "QColor KbPerf::iColor[\fBI_COUNT\fP][2]\fC [private]\fP"
+
+.PP
+Definition at line 150 of file kbperf\&.h\&.
+.PP
+Referenced by applyIndicators(), getIndicator(), KbPerf(), load(), operator=(), save(), and setIndicator()\&.
+.SS "bool KbPerf::iEnable[\fBI_COUNT\fP]\fC [private]\fP"
+
+.PP
+Definition at line 152 of file kbperf\&.h\&.
+.PP
+Referenced by applyIndicators(), getIndicator(), KbPerf(), load(), operator=(), save(), and setIndicator()\&.
+.SS "QColor KbPerf::light100Color\fC [private]\fP"
+
+.PP
+Definition at line 151 of file kbperf\&.h\&.
+.PP
+Referenced by applyIndicators(), getIndicator(), KbPerf(), load(), operator=(), save(), and setIndicator()\&.
+.SS "QColor KbPerf::muteNAColor\fC [private]\fP"
+
+.PP
+Definition at line 151 of file kbperf\&.h\&.
+.PP
+Referenced by applyIndicators(), getIndicator(), KbPerf(), load(), operator=(), save(), and setIndicator()\&.
+.SS "const int KbPerf::OTHER = \fBDPI_COUNT\fP\fC [static]\fP"
+
+.PP
+Definition at line 81 of file kbperf\&.h\&.
+.PP
+Referenced by applyIndicators(), MPerfWidget::colorChanged(), load(), save(), and MPerfWidget::setPerf()\&.
+.SS "QMap<quint64, QPoint> KbPerf::pushedDpis\fC [private]\fP"
+
+.PP
+Definition at line 142 of file kbperf\&.h\&.
+.PP
+Referenced by curDpi(), KbPerf(), load(), operator=(), popDpi(), pushDpi(), and save()\&.
+.SS "uint KbPerf::runningPushIdx\fC [private]\fP"
+
+.PP
+Definition at line 143 of file kbperf\&.h\&.
+.PP
+Referenced by load(), operator=(), and pushDpi()\&.
+.SS "const int KbPerf::SNIPER = 0\fC [static]\fP"
+
+.PP
+Definition at line 46 of file kbperf\&.h\&.
+.PP
+Referenced by dpiDown(), and sniperDpi()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

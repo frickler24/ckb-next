@@ -1,0 +1,7 @@
+<map id="QuaZipFile::getFileInfo" name="QuaZipFile::getFileInfo">
+<area shape="rect" id="node2" href="$classQuaZip.html#a9c91a53ed4c2038e153c64bdc097ebe8" title="Retrieves information about the current file. " alt="" coords="208,12,384,39"/>
+<area shape="rect" id="node4" href="$classQuaZip.html#a129ceff04d28fb00531f7bf7f9329664" title="Returns the mode in which ZIP file was opened. " alt="" coords="235,63,357,89"/>
+<area shape="rect" id="node5" href="$classQuaZip.html#a28b91a6282ddd9382c96a069572c6fb4" title="Returns the error code of the last operation. " alt="" coords="228,113,364,140"/>
+<area shape="rect" id="node6" href="$classQuaZipFilePrivate.html#ac5b22d3b5ccced847ddce1a6f971cc80" title="Sets the zip error. " alt="" coords="229,165,363,206"/>
+<area shape="rect" id="node3" href="$structQuaZipFileInfo64.html#ada29945c7ee4c9df6fbe95864793aade" title="Converts to QuaZipFileInfo. " alt="" coords="433,5,615,46"/>
+</map>

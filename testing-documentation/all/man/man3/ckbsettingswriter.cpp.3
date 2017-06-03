@@ -1,0 +1,75 @@
+.TH "src/ckb/ckbsettingswriter.cpp" 3 "Sat Jun 3 2017" "Version beta-v0.2.8+testing at branch testing-documentation" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb/ckbsettingswriter.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'ckbsettingswriter\&.h'\fP
+.br
+\fC#include <QMutex>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBlockMutex\fP   QMutexLocker locker(backing == \fB_globalSettings\fP ? &mutex : 0)"
+.br
+.ti -1c
+.RI "#define \fBlockMutexStatic\fP   QMutexLocker locker(&\fBsettingsMutex\fP)"
+.br
+.ti -1c
+.RI "#define \fBlockMutexStatic2\fP   QMutexLocker locker2(&\fBsettingsMutex\fP)"
+.br
+.ti -1c
+.RI "#define \fBlockMutexCache\fP   QMutexLocker locker(&\fBsettingsCacheMutex\fP)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "QAtomicInt \fBcacheWritesInProgress\fP"
+.br
+.ti -1c
+.RI "QMutex \fBsettingsMutex\fP"
+.br
+.ti -1c
+.RI "QMutex \fBsettingsCacheMutex\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define lockMutex   QMutexLocker locker(backing == \fB_globalSettings\fP ? &mutex : 0)"
+
+.PP
+Definition at line 7 of file ckbsettingswriter\&.cpp\&.
+.SS "#define lockMutexCache   QMutexLocker locker(&\fBsettingsCacheMutex\fP)"
+
+.PP
+Definition at line 10 of file ckbsettingswriter\&.cpp\&.
+.SS "#define lockMutexStatic   QMutexLocker locker(&\fBsettingsMutex\fP)"
+
+.PP
+Definition at line 8 of file ckbsettingswriter\&.cpp\&.
+.PP
+Referenced by CkbSettingsWriter::run()\&.
+.SS "#define lockMutexStatic2   QMutexLocker locker2(&\fBsettingsMutex\fP)"
+
+.PP
+Definition at line 9 of file ckbsettingswriter\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "QAtomicInt cacheWritesInProgress"
+
+.PP
+Referenced by CkbSettingsWriter::CkbSettingsWriter(), and CkbSettingsWriter::~CkbSettingsWriter()\&.
+.SS "QMutex settingsCacheMutex"
+
+.SS "QMutex settingsMutex"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

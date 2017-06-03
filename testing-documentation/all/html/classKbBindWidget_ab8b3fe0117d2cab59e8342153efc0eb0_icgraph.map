@@ -1,0 +1,8 @@
+<map id="KbBindWidget::updateSelDisplay" name="KbBindWidget::updateSelDisplay">
+<area shape="rect" id="node2" href="$classKbBindWidget.html#ad052b9ce7166f5a1c46ee7a01f3457dc" title="KbBindWidget::newLayout" alt="" coords="277,56,453,83"/>
+<area shape="rect" id="node4" href="$classKbBindWidget.html#ad1ce63ee68f21c7857ca8b24b7bb8309" title="KbBindWidget::newSelection" alt="" coords="270,5,461,32"/>
+<area shape="rect" id="node6" href="$classKbBindWidget.html#a3274fb51d224f0ca111bd714ed524a59" title="KbBindWidget::updateBind" alt="" coords="276,107,455,133"/>
+<area shape="rect" id="node3" href="$classKbBindWidget.html#ae06c7e036759eb9a1ae7224cdba30b0b" title="KbBindWidget::setBind" alt="" coords="532,56,689,83"/>
+<area shape="rect" id="node5" href="$classKbBindWidget.html#ab41173324ff2873e36dbebb96951ed8b" title="KbBindWidget::KbBindWidget" alt="" coords="513,5,709,32"/>
+<area shape="rect" id="node7" href="$classKbBindWidget.html#a1ac20b99c822f65c7a2c8c61a5a1f029" title="KbBindWidget::on_resetButton\l_clicked" alt="" coords="510,107,711,149"/>
+</map>

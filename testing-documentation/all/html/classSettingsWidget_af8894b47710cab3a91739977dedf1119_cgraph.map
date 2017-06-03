@@ -1,0 +1,9 @@
+<map id="SettingsWidget::on_capsBox_activated" name="SettingsWidget::on_capsBox_activated">
+<area shape="rect" id="node2" href="$classSettingsWidget.html#a68aeceaa2058598f7e6784c82c8397df" title="SettingsWidget::updateModifiers" alt="" coords="195,56,405,83"/>
+<area shape="rect" id="node3" href="$settingswidget_8cpp.html#a184e8402a94481ba2f47ba063272525b" title="right" alt="" coords="519,5,566,32"/>
+<area shape="rect" id="node4" href="$classKbBind.html#a070b6ad8caef322e2f16ba712b0fd242" title="KbBind::setGlobalRemap" alt="" coords="458,56,627,83"/>
+<area shape="rect" id="node5" href="$classKbBind.html#a360fe5af4b349d7aa30c6fd3fd03fd84" title="KbBind::saveGlobalRemap" alt="" coords="453,107,632,133"/>
+<area shape="rect" id="node6" href="$classCkbSettings.html#a7b5f9dcfd7582a42655a5635f52d46fb" title="CkbSettings::setValue" alt="" coords="681,107,834,133"/>
+<area shape="rect" id="node7" href="$classCkbSettings.html#a29695ed0012617ba943a1878d4abc71c" title="CkbSettings::pwd" alt="" coords="1065,107,1191,133"/>
+<area shape="rect" id="node8" href="$classCkbSettings.html#a3793106d98878f170f9f9734bf39409b" title="CkbSettings::value" alt="" coords="883,132,1016,159"/>
+</map>

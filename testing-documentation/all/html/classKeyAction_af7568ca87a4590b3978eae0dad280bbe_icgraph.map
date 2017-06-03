@@ -1,0 +1,11 @@
+<map id="KeyAction::isDPI" name="KeyAction::isDPI">
+<area shape="rect" id="node2" href="$classKeyAction.html#a186027e75647f80551f1a045193ee2e9" title="KeyAction::dpiInfo" alt="" coords="181,56,310,83"/>
+<area shape="rect" id="node7" href="$classRebindWidget.html#a0edad41d578028bea3ea0e327fc4c203" title="RebindWidget::setSelection" alt="" coords="363,107,547,133"/>
+<area shape="rect" id="node10" href="$classKeyAction.html#a92beb058c9ce60917688762b341b6184" title="KeyAction::isMouse" alt="" coords="176,157,315,184"/>
+<area shape="rect" id="node3" href="$classKeyAction.html#a835015a369d6ff00d65c1ee59a2fc8da" title="KeyAction::friendlyName" alt="" coords="371,5,538,32"/>
+<area shape="rect" id="node4" href="$classKeyAction.html#a1fd7bef50c828e25299d514222d5b5a4" title="KeyAction::keyEvent" alt="" coords="382,56,527,83"/>
+<area shape="rect" id="node5" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent" alt="" coords="637,56,763,83"/>
+<area shape="rect" id="node6" href="$classKb.html#afa36635dcc1cd9512f372594c57c546c" title="Kb::readNotify" alt="" coords="853,56,960,83"/>
+<area shape="rect" id="node8" href="$classRebindWidget.html#a6a68ae3d9abc935dbba8e2ce187337ce" title="RebindWidget::setBind" alt="" coords="622,107,778,133"/>
+<area shape="rect" id="node9" href="$classRebindWidget.html#a8cb2e54e8bbd17cae8e152132a7a1ddf" title="RebindWidget::on_cancelButton\l_clicked" alt="" coords="595,158,805,199"/>
+</map>

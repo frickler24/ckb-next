@@ -1,0 +1,8 @@
+<map id="KbLight::restartAnimation" name="KbLight::restartAnimation">
+<area shape="rect" id="node2" href="$classKbLightWidget.html#a854d8332999f4b2337d198199661d405" title="KbLightWidget::on_animButton\l_clicked" alt="" coords="228,5,431,46"/>
+<area shape="rect" id="node3" href="$classKbAnimWidget.html#a5d00279a905a85a5e702f266ca84f6ef" title="KbAnimWidget::on_deleteButton\l_clicked" alt="" coords="224,70,435,111"/>
+<area shape="rect" id="node5" href="$classKbAnimWidget.html#a79f0a97b24005a54981e66d8c9e43e62" title="KbAnimWidget::on_keyButton\l_clicked" alt="" coords="231,135,428,177"/>
+<area shape="rect" id="node6" href="$classKbAnimWidget.html#aed385da23edc78f5a407d26f191eb110" title="KbAnimWidget::on_property\lButton_clicked" alt="" coords="237,201,422,242"/>
+<area shape="rect" id="node4" href="$classKbAnimWidget.html#a8fefdad4f8ee8082890159438c78e911" title="KbAnimWidget::on_animList\l_customContextMenuRequested" alt="" coords="483,70,696,111"/>
+<area shape="rect" id="node7" href="$classKbAnimWidget.html#aec38d76f8f14709e03526c9f4b2782e8" title="KbAnimWidget::addAnim" alt="" coords="505,208,673,235"/>
+</map>

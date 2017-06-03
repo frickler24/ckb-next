@@ -1,0 +1,59 @@
+.TH "src/ckb/kb.cpp" 3 "Sat Jun 3 2017" "Version beta-v0.2.8+testing at branch testing-documentation" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb/kb.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <fcntl\&.h>\fP
+.br
+\fC#include <QSet>\fP
+.br
+\fC#include <QUrl>\fP
+.br
+\fC#include <QMutex>\fP
+.br
+\fC#include <QDateTime>\fP
+.br
+\fC#include 'kb\&.h'\fP
+.br
+\fC#include 'kbmanager\&.h'\fP
+.br
+
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static QSet< \fBKb\fP * > \fBactiveDevices\fP"
+.br
+.ti -1c
+.RI "static QSet< QString > \fBnotifyPaths\fP"
+.br
+.ti -1c
+.RI "static QMutex \fBnotifyPathMutex\fP"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "QSet<\fBKb\fP*> activeDevices\fC [static]\fP"
+
+.PP
+Definition at line 10 of file kb\&.cpp\&.
+.PP
+Referenced by Kb::dither(), Kb::frameRate(), Kb::Kb(), Kb::layout(), Kb::macroDelay(), Kb::mouseAccel(), Kb::scrollSpeed(), and Kb::~Kb()\&.
+.SS "QMutex notifyPathMutex\fC [static]\fP"
+
+.PP
+Definition at line 13 of file kb\&.cpp\&.
+.PP
+Referenced by Kb::Kb(), and Kb::run()\&.
+.SS "QSet<QString> notifyPaths\fC [static]\fP"
+
+.PP
+Definition at line 12 of file kb\&.cpp\&.
+.PP
+Referenced by Kb::Kb(), Kb::run(), and Kb::~Kb()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

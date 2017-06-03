@@ -1,0 +1,24 @@
+<map id="QuaZipFile::open" name="QuaZipFile::open">
+<area shape="rect" id="node2" href="$classQuaZip.html#a008260161781d8b5d2a0a28493fddaf4" title="Returns the codec used to encode/decode comments inside archive. " alt="" coords="177,5,362,32"/>
+<area shape="rect" id="node3" href="$classQuaZip.html#a27b866aa2c75ea6f9c438cbb6e32b43c" title="Returns the codec used to encode/decode comments inside archive. " alt="" coords="177,56,361,83"/>
+<area shape="rect" id="node4" href="$classQuaZip.html#a129ceff04d28fb00531f7bf7f9329664" title="Returns the mode in which ZIP file was opened. " alt="" coords="208,107,331,133"/>
+<area shape="rect" id="node5" href="$classQuaZip.html#a425043a4d7cc31e2fe2bba73d954f15c" title="Returns zipFile handle. " alt="" coords="205,157,334,184"/>
+<area shape="rect" id="node6" href="$classQuaZip.html#ae5c665a59447c2d30e63e9c6df48ebb7" title="Returns the data descriptor default writing mode. " alt="" coords="184,209,355,250"/>
+<area shape="rect" id="node7" href="$classQuaZip.html#a1b638566390d7599ba5982e844b151f4" title="Returns whether the zip64 mode is enabled. " alt="" coords="189,275,350,301"/>
+<area shape="rect" id="node8" href="$classQuaZipFilePrivate.html#af21b7605eff41b33d28fdf593c2fa9ea" title="Resets zipError. " alt="" coords="202,326,337,367"/>
+<area shape="rect" id="node9" href="$classQuaZipFilePrivate.html#ac5b22d3b5ccced847ddce1a6f971cc80" title="Sets the zip error. " alt="" coords="202,391,337,433"/>
+<area shape="rect" id="node10" href="$zip_8c.html#aee7e012c35c9b56e7623f8f7937ac5c1" title="zipClearFlags" alt="" coords="218,457,321,484"/>
+<area shape="rect" id="node11" href="$zip_8c.html#adef753bf5ddc5752d6069a2d4f3ca0e9" title="zipOpenNewFileInZip3_64" alt="" coords="182,508,357,535"/>
+<area shape="rect" id="node23" href="$zip_8c.html#a697bb6dde7f8267f764a85a4367d75dd" title="zipSetFlags" alt="" coords="224,559,315,585"/>
+<area shape="rect" id="node12" href="$zip_8c.html#a638e4d5a7305f25e1ef6c2f6f14e2861" title="zipOpenNewFileInZip4_64" alt="" coords="411,508,586,535"/>
+<area shape="rect" id="node13" href="$zip_8c.html#a1c9fb1f116f655bd474a19d383f9b89f" title="Write_LocalFileHeader" alt="" coords="891,432,1045,459"/>
+<area shape="rect" id="node15" href="$zip_8c.html#a7487c44c33a7aa8d29c640619575a144" title="zip64local_putValue\l_inmemory" alt="" coords="1315,559,1453,601"/>
+<area shape="rect" id="node16" href="$zip_8c.html#a037626935aca46ac3a5397dd61297783" title="zip64local_TmzDateToDosDate" alt="" coords="635,584,843,611"/>
+<area shape="rect" id="node17" href="$zip_8c.html#ae470f753aef4cffe4f77a5ec2bcfbde1" title="zipCloseFileInZip" alt="" coords="677,483,800,509"/>
+<area shape="rect" id="node14" href="$zip_8c.html#aed1106d32873a7959b923bbb5d444f8b" title="zip64local_putValue" alt="" coords="1315,407,1453,433"/>
+<area shape="rect" id="node18" href="$zip_8c.html#a43fe6f36cef62c7f34c0fdb4c8288b87" title="zipCloseFileInZipRaw" alt="" coords="893,483,1043,509"/>
+<area shape="rect" id="node19" href="$zip_8c.html#a3bed1cfe7ae981d2a433a1dbdb2cc436" title="zipCloseFileInZipRaw64" alt="" coords="1094,483,1258,509"/>
+<area shape="rect" id="node20" href="$zip_8c.html#af027310aec51b70ed53bc0bda4392ede" title="add_data_in_datablock" alt="" coords="1307,457,1461,484"/>
+<area shape="rect" id="node22" href="$zip_8c.html#a9c5b2c3f96ae2bf9006a86beb31eb659" title="zip64FlushWriteBuffer" alt="" coords="1309,508,1459,535"/>
+<area shape="rect" id="node21" href="$zip_8c.html#a904f85612fbfecc3a5238535e7a34cc6" title="allocate_new_datablock" alt="" coords="1510,457,1671,484"/>
+</map>

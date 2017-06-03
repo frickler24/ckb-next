@@ -1,0 +1,9 @@
+<map id="KPerfWidget::KPerfWidget" name="KPerfWidget::KPerfWidget">
+<area shape="rect" id="node2" href="$classColorButton.html#a9072e24c4e331752b4f2e08ec7f4d638" title="ColorButton::allowAlpha" alt="" coords="232,5,395,32"/>
+<area shape="rect" id="node3" href="$classColorButton.html#a43607783d1c7adc27e444664b6543e2f" title="ColorButton::bigIcons" alt="" coords="239,56,387,83"/>
+<area shape="rect" id="node4" href="$classColorButton.html#a753f16f6f90193f5713db65d6189f562" title="ColorButton::setLabel" alt="" coords="239,107,387,133"/>
+<area shape="rect" id="node5" href="$classKPerfWidget.html#aa316dea2d18d90e6b950cc3466ad26ed" title="KPerfWidget::uiUpdated" alt="" coords="232,157,395,184"/>
+<area shape="rect" id="node6" href="$classKPerfWidget.html#a20f7c31673b62d74e6e9b8715daec9d0" title="KPerfWidget::mode2Raw Set values of sw_enable and hw_enable to hte value corresponding to input var m..." alt="" coords="443,107,613,133"/>
+<area shape="rect" id="node7" href="$classColorButton.html#a05e0cfb49a76a67227a36353640a8282" title="ColorButton::color" alt="" coords="465,157,591,184"/>
+<area shape="rect" id="node8" href="$classKbPerf.html#a0815cc7e6de1dc0f802a49ea9c02c570" title="KbPerf::setIndicator" alt="" coords="459,208,597,235"/>
+</map>

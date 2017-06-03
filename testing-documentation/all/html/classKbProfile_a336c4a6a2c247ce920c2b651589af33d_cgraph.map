@@ -1,0 +1,10 @@
+<map id="KbProfile::keyMap" name="KbProfile::keyMap">
+<area shape="rect" id="node2" href="$classKbMode.html#a862db26792b2a99cc21c45cac07002ea" title="KbMode::keyMap" alt="" coords="213,56,337,83"/>
+<area shape="rect" id="node5" href="$classKbProfile.html#a6a35f6ecae0910a7a9b4cfc238b4c318" title="KbProfile::setNeedsUpdate" alt="" coords="184,107,365,133"/>
+<area shape="rect" id="node3" href="$classKbLight.html#ae682f44cb55d99f70f6516c76f322c80" title="KbLight::map" alt="" coords="452,5,551,32"/>
+<area shape="rect" id="node4" href="$classKbBind.html#af876f15671f6088e6f37f99dac79d298" title="KbBind::map" alt="" coords="453,56,550,83"/>
+<area shape="rect" id="node6" href="$classKbProfile.html#a30827cbf8720209464b7acd99d7b59e4" title="KbProfile::setNeedsSave" alt="" coords="417,107,586,133"/>
+<area shape="rect" id="node7" href="$classKbMode.html#abc86ed1b24f62f1d0056de7ed6668d70" title="KbMode::setNeedsUpdate" alt="" coords="413,157,589,184"/>
+<area shape="rect" id="node8" href="$classKbBind.html#ab4c4ec0863c0bc07a9f4e2d5a1a60436" title="KbBind::setNeedsUpdate" alt="" coords="637,132,808,159"/>
+<area shape="rect" id="node9" href="$classKbPerf.html#a7323c70a0794aa0fc8313bf2dc7a36c1" title="KbPerf::setNeedsUpdate" alt="" coords="639,183,807,209"/>
+</map>

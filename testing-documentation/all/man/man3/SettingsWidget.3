@@ -1,0 +1,432 @@
+.TH "SettingsWidget" 3 "Sat Jun 3 2017" "Version beta-v0.2.8+testing at branch testing-documentation" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SettingsWidget \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/settingswidget\&.h>\fP
+.PP
+Inherits \fBQWidget\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSettingsWidget\fP (\fBQWidget\fP *parent=0)"
+.br
+.ti -1c
+.RI "\fB~SettingsWidget\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetVersion\fP (const QString &version)"
+.br
+.ti -1c
+.RI "void \fBsetStatus\fP (const QString &text)"
+.br
+.ti -1c
+.RI "void \fBpollUpdates\fP ()"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBon_pushButton_clicked\fP ()"
+.br
+.ti -1c
+.RI "void \fBon_capsBox_activated\fP (int index)"
+.br
+.ti -1c
+.RI "void \fBon_shiftBox_activated\fP (int index)"
+.br
+.ti -1c
+.RI "void \fBon_ctrlBox_activated\fP (int index)"
+.br
+.ti -1c
+.RI "void \fBon_altBox_activated\fP (int index)"
+.br
+.ti -1c
+.RI "void \fBon_winBox_activated\fP (int index)"
+.br
+.ti -1c
+.RI "void \fBon_autoFWBox_clicked\fP (bool checked)"
+.br
+.ti -1c
+.RI "void \fBon_loginItemBox_clicked\fP (bool checked)"
+.br
+.ti -1c
+.RI "void \fBon_layoutBox_activated\fP (int index)"
+.br
+.ti -1c
+.RI "void \fBshowLayoutDialog\fP ()"
+.br
+.ti -1c
+.RI "void \fBon_extraButton_clicked\fP ()"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBupdateModifiers\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "Ui::SettingsWidget * \fBui\fP"
+.br
+.ti -1c
+.RI "\fBExtraSettingsWidget\fP * \fBextra\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBMainWindow\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 11 of file settingswidget\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SettingsWidget::SettingsWidget (\fBQWidget\fP *parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 15 of file settingswidget\&.cpp\&.
+.PP
+References AutoRun::available(), AutoRun::enable(), extra, KeyMap::getLayout(), KbBind::globalRemap(), AutoRun::isEnabled(), Kb::layout(), KeyMap::layoutNames(), KbBind::loadGlobalRemap(), KeyMap::locale(), modKeys, modNames, KeyMap::NO_LAYOUT, AutoRun::once(), CkbSettings::remove(), CkbSettings::setValue(), showLayoutDialog(), ui, updateModifiers(), and CkbSettings::value()\&.
+.PP
+.nf
+15                                               :
+16     QWidget(parent),
+17     ui(new Ui::SettingsWidget)
+18 {
+19     ui->setupUi(this);
+20     CkbSettings settings("Program");
+21 
+22     // Read keyboard layout
+23     ui->layoutBox->addItems(KeyMap::layoutNames());
+24     KeyMap::Layout layout = KeyMap::getLayout(settings\&.value("KbdLayout")\&.toString());
+25     if(layout == KeyMap::NO_LAYOUT){
+26         // If the layout hasn't been set yet, show a dialog to let the user choose it
+27         layout = KeyMap::locale();
+28         QTimer::singleShot(1000, this, SLOT(showLayoutDialog()));   // Run the function after a delay as the dialog may not appear correctly otherwise
+29         settings\&.setValue("KbdLayout", KeyMap::getLayout(layout));
+30     }
+31     Kb::layout(layout);
+32     ui->layoutBox->setCurrentIndex((int)layout);
+33 
+34     // Load modifier remap
+35     KbBind::loadGlobalRemap();
+36     if(modKeys\&.isEmpty()){
+37         modKeys << "caps" << "lshift" << "lctrl" << "lalt" << "lwin";
+38 #ifdef Q_OS_MACX
+39         modNames << "Caps Lock" << "Shift" << "Control (⌃)" << "Option (⌥)" << "Command (⌘)";
+40 #else
+41         modNames << "Caps Lock" << "Shift" << "Control" << "Alt" << "Super";
+42 #endif
+43     }
+44     foreach(const QString& name, modNames){
+45         ui->capsBox->addItem(name);
+46         ui->shiftBox->addItem(name);
+47         ui->ctrlBox->addItem(name);
+48         ui->altBox->addItem(name);
+49         ui->winBox->addItem(name);
+50     }
+51 
+52     int idx = modKeys\&.indexOf(KbBind::globalRemap("caps"));
+53     if(idx >= 0)
+54         ui->capsBox->setCurrentIndex(idx);
+55     idx = modKeys\&.indexOf(KbBind::globalRemap("lshift"));
+56     if(idx >= 0)
+57         ui->shiftBox->setCurrentIndex(idx);
+58     idx = modKeys\&.indexOf(KbBind::globalRemap("lctrl"));
+59     if(idx >= 0)
+60         ui->ctrlBox->setCurrentIndex(idx);
+61     idx = modKeys\&.indexOf(KbBind::globalRemap("lwin"));
+62     if(idx >= 0)
+63         ui->winBox->setCurrentIndex(idx);
+64     idx = modKeys\&.indexOf(KbBind::globalRemap("lalt"));
+65     if(idx >= 0)
+66         ui->altBox->setCurrentIndex(idx);
+67 #ifdef Q_OS_MACX
+68     if(settings\&.value("osxCmdSwap")\&.toBool()){
+69         // ckb <0\&.0\&.41
+70         settings\&.remove("osxCmdSwap");
+71         ui->ctrlBox->setCurrentIndex(modKeys\&.indexOf("lwin"));
+72         ui->winBox->setCurrentIndex(modKeys\&.indexOf("lctrl"));
+73         updateModifiers();
+74     }
+75 #endif
+76 
+77     // Read auto update settings
+78     ui->autoFWBox->setChecked(!settings\&.value("DisableAutoFWCheck")\&.toBool());
+79 
+80     // Read auto run settings
+81     if(!AutoRun::available())
+82         ui->loginItemBox->hide();
+83     else {
+84         if(!AutoRun::once())
+85             // If this is the first time running the app, enable auto run by default
+86             AutoRun::enable();
+87         ui->loginItemBox->setChecked(AutoRun::isEnabled());
+88     }
+89 
+90     // Prepare extra settings
+91     extra = new ExtraSettingsWidget(this);
+92 }
+.fi
+.SS "SettingsWidget::~SettingsWidget ()"
+
+.PP
+Definition at line 94 of file settingswidget\&.cpp\&.
+.PP
+References ui\&.
+.PP
+.nf
+94                                {
+95     delete ui;
+96 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void SettingsWidget::on_altBox_activated (intindex)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 155 of file settingswidget\&.cpp\&.
+.PP
+References updateModifiers()\&.
+.PP
+.nf
+155                                                  {
+156     updateModifiers();
+157 }
+.fi
+.SS "void SettingsWidget::on_autoFWBox_clicked (boolchecked)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 163 of file settingswidget\&.cpp\&.
+.PP
+References CkbSettings::set()\&.
+.PP
+.nf
+163                                                      {
+164     CkbSettings::set("Program/DisableAutoFWCheck", !checked);
+165 }
+.fi
+.SS "void SettingsWidget::on_capsBox_activated (intindex)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 143 of file settingswidget\&.cpp\&.
+.PP
+References updateModifiers()\&.
+.PP
+.nf
+143                                                   {
+144     updateModifiers();
+145 }
+.fi
+.SS "void SettingsWidget::on_ctrlBox_activated (intindex)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 151 of file settingswidget\&.cpp\&.
+.PP
+References updateModifiers()\&.
+.PP
+.nf
+151                                                   {
+152     updateModifiers();
+153 }
+.fi
+.SS "void SettingsWidget::on_extraButton_clicked ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 180 of file settingswidget\&.cpp\&.
+.PP
+References extra\&.
+.PP
+.nf
+180                                            {
+181     extra->exec();
+182 }
+.fi
+.SS "void SettingsWidget::on_layoutBox_activated (intindex)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 174 of file settingswidget\&.cpp\&.
+.PP
+References KeyMap::getLayout(), Kb::layout(), and CkbSettings::set()\&.
+.PP
+Referenced by showLayoutDialog()\&.
+.PP
+.nf
+174                                                     {
+175     KeyMap::Layout layout = (KeyMap::Layout)index;
+176     CkbSettings::set("Program/KbdLayout", KeyMap::getLayout(layout));
+177     Kb::layout(layout);
+178 }
+.fi
+.SS "void SettingsWidget::on_loginItemBox_clicked (boolchecked)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 167 of file settingswidget\&.cpp\&.
+.PP
+References AutoRun::disable(), and AutoRun::enable()\&.
+.PP
+.nf
+167                                                         {
+168     if(checked)
+169         AutoRun::enable();
+170     else
+171         AutoRun::disable();
+172 }
+.fi
+.SS "void SettingsWidget::on_pushButton_clicked ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 139 of file settingswidget\&.cpp\&.
+.PP
+.nf
+139                                           {
+140     qApp->quit();
+141 }
+.fi
+.SS "void SettingsWidget::on_shiftBox_activated (intindex)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 147 of file settingswidget\&.cpp\&.
+.PP
+References updateModifiers()\&.
+.PP
+.nf
+147                                                    {
+148     updateModifiers();
+149 }
+.fi
+.SS "void SettingsWidget::on_winBox_activated (intindex)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 159 of file settingswidget\&.cpp\&.
+.PP
+References updateModifiers()\&.
+.PP
+.nf
+159                                                  {
+160     updateModifiers();
+161 }
+.fi
+.SS "void SettingsWidget::pollUpdates ()"
+
+.PP
+Definition at line 106 of file settingswidget\&.cpp\&.
+.PP
+References extra, and ExtraSettingsWidget::pollUpdates()\&.
+.PP
+Referenced by MainWindow::timerTick()\&.
+.PP
+.nf
+106                                 {
+107     extra->pollUpdates();
+108 }
+.fi
+.SS "void SettingsWidget::setStatus (const QString &text)"
+
+.PP
+Definition at line 110 of file settingswidget\&.cpp\&.
+.PP
+References ui\&.
+.PP
+Referenced by MainWindow::updateVersion()\&.
+.PP
+.nf
+110                                                  {
+111     ui->devicesLabel->setText(text);
+112 }
+.fi
+.SS "void SettingsWidget::setVersion (const QString &version)"
+
+.PP
+Definition at line 114 of file settingswidget\&.cpp\&.
+.PP
+References ui\&.
+.PP
+Referenced by MainWindow::MainWindow()\&.
+.PP
+.nf
+114                                                      {
+115     ui->versionLabel->setText(version);
+116 }
+.fi
+.SS "void SettingsWidget::showLayoutDialog ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 98 of file settingswidget\&.cpp\&.
+.PP
+References on_layoutBox_activated(), LayoutDialog::selected(), and ui\&.
+.PP
+Referenced by SettingsWidget()\&.
+.PP
+.nf
+98                                      {
+99     LayoutDialog dialog(this);
+100     dialog\&.exec();
+101     // Set selected layout
+102     ui->layoutBox->setCurrentIndex((int)dialog\&.selected());
+103     on_layoutBox_activated((int)dialog\&.selected());         // Call activated() signal manually to trigger save
+104 }
+.fi
+.SS "void SettingsWidget::updateModifiers ()\fC [private]\fP"
+
+.PP
+Definition at line 124 of file settingswidget\&.cpp\&.
+.PP
+References modKeys, right(), KbBind::saveGlobalRemap(), KbBind::setGlobalRemap(), and ui\&.
+.PP
+Referenced by on_altBox_activated(), on_capsBox_activated(), on_ctrlBox_activated(), on_shiftBox_activated(), on_winBox_activated(), and SettingsWidget()\&.
+.PP
+.nf
+124                                     {
+125     QHash<QString, QString> newMods;
+126     newMods["caps"] = modKeys[ui->capsBox->currentIndex()];
+127     newMods["lshift"] = modKeys[ui->shiftBox->currentIndex()];
+128     newMods["rshift"] = right(modKeys[ui->shiftBox->currentIndex()]);
+129     newMods["lctrl"] = modKeys[ui->ctrlBox->currentIndex()];
+130     newMods["rctrl"] = right(modKeys[ui->ctrlBox->currentIndex()]);
+131     newMods["lalt"] = modKeys[ui->altBox->currentIndex()];
+132     newMods["ralt"] = right(modKeys[ui->altBox->currentIndex()]);
+133     newMods["lwin"] = modKeys[ui->winBox->currentIndex()];
+134     newMods["rwin"] = right(modKeys[ui->winBox->currentIndex()]);
+135     KbBind::setGlobalRemap(newMods);
+136     KbBind::saveGlobalRemap();
+137 }
+.fi
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBMainWindow\fP\fC [friend]\fP"
+
+.PP
+Definition at line 44 of file settingswidget\&.h\&.
+.SH "Field Documentation"
+.PP 
+.SS "\fBExtraSettingsWidget\fP* SettingsWidget::extra\fC [private]\fP"
+
+.PP
+Definition at line 46 of file settingswidget\&.h\&.
+.PP
+Referenced by on_extraButton_clicked(), pollUpdates(), and SettingsWidget()\&.
+.SS "Ui::SettingsWidget* SettingsWidget::ui\fC [private]\fP"
+
+.PP
+Definition at line 43 of file settingswidget\&.h\&.
+.PP
+Referenced by setStatus(), SettingsWidget(), setVersion(), showLayoutDialog(), updateModifiers(), and ~SettingsWidget()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

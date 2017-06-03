@@ -1,0 +1,132 @@
+.TH "src/ckb/kbanim.cpp" 3 "Sat Jun 3 2017" "Version beta-v0.2.8+testing at branch testing-documentation" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb/kbanim.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <cmath>\fP
+.br
+\fC#include <QDateTime>\fP
+.br
+\fC#include <QMetaEnum>\fP
+.br
+\fC#include <QDebug>\fP
+.br
+\fC#include 'ckbsettings\&.h'\fP
+.br
+\fC#include 'kbanim\&.h'\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef float(* \fBblendFunc\fP )(float, float)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "static float \fBblendNormal\fP (float bg, float fg)"
+.br
+.ti -1c
+.RI "static float \fBblendAdd\fP (float bg, float fg)"
+.br
+.ti -1c
+.RI "static float \fBblendSubtract\fP (float bg, float fg)"
+.br
+.ti -1c
+.RI "static float \fBblendMultiply\fP (float bg, float fg)"
+.br
+.ti -1c
+.RI "static float \fBblendDivide\fP (float bg, float fg)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static \fBblendFunc\fP \fBfunctions\fP [5] = { \fBblendNormal\fP, \fBblendAdd\fP, \fBblendSubtract\fP, \fBblendMultiply\fP, \fBblendDivide\fP }"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef float(* blendFunc)(float, float)"
+
+.PP
+Definition at line 362 of file kbanim\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "static float blendAdd (floatbg, floatfg)\fC [static]\fP"
+
+.PP
+Definition at line 337 of file kbanim\&.cpp\&.
+.PP
+.nf
+337                                          {
+338     float res = bg + fg;
+339     if(res > 1\&.f)
+340         res = 1\&.f;
+341     return res;
+342 }
+.fi
+.SS "static float blendDivide (floatbg, floatfg)\fC [static]\fP"
+
+.PP
+Definition at line 355 of file kbanim\&.cpp\&.
+.PP
+.nf
+355                                             {
+356     float res = bg / fg;
+357     if(res > 1\&.f)
+358         res = 1\&.f;
+359     return res;
+360 }
+.fi
+.SS "static float blendMultiply (floatbg, floatfg)\fC [static]\fP"
+
+.PP
+Definition at line 351 of file kbanim\&.cpp\&.
+.PP
+.nf
+351                                               {
+352     return bg * fg;
+353 }
+.fi
+.SS "static float blendNormal (floatbg, floatfg)\fC [static]\fP"
+
+.PP
+Definition at line 333 of file kbanim\&.cpp\&.
+.PP
+.nf
+333                                             {
+334     return fg;
+335 }
+.fi
+.SS "static float blendSubtract (floatbg, floatfg)\fC [static]\fP"
+
+.PP
+Definition at line 344 of file kbanim\&.cpp\&.
+.PP
+.nf
+344                                               {
+345     float res = bg - fg;
+346     if(res < 0\&.f)
+347         res = 0\&.f;
+348     return res;
+349 }
+.fi
+.SH "Variable Documentation"
+.PP 
+.SS "\fBblendFunc\fP functions[5] = { \fBblendNormal\fP, \fBblendAdd\fP, \fBblendSubtract\fP, \fBblendMultiply\fP, \fBblendDivide\fP }\fC [static]\fP"
+
+.PP
+Definition at line 363 of file kbanim\&.cpp\&.
+.PP
+Referenced by KbAnim::blend()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

@@ -1,0 +1,19 @@
+<map id="ColorButton::color" name="ColorButton::color">
+<area shape="rect" id="node2" href="$classMPerfWidget.html#add7710ea702be93465319741e70b3956" title="MPerfWidget::colorChanged" alt="" coords="181,5,368,32"/>
+<area shape="rect" id="node4" href="$classKPerfWidget.html#ae761365cfff8135fe60d2bf9792232e1" title="KPerfWidget::setPerf" alt="" coords="201,56,348,83"/>
+<area shape="rect" id="node5" href="$classMPerfWidget.html#ac0cf0ff2a6c0de5e888eae1288433a7f" title="MPerfWidget::setPerf" alt="" coords="201,107,349,133"/>
+<area shape="rect" id="node6" href="$classKPerfWidget.html#aa316dea2d18d90e6b950cc3466ad26ed" title="KPerfWidget::uiUpdated" alt="" coords="193,157,356,184"/>
+<area shape="rect" id="node8" href="$classAnimSettingDialog.html#ad8c12a644ef80b8ea56a70f0e30da4c7" title="AnimSettingDialog::\lupdateParam" alt="" coords="205,406,344,447"/>
+<area shape="rect" id="node3" href="$classMPerfWidget.html#a8c4d1f6edcab7c9c5c416c620a337cfd" title="MPerfWidget::MPerfWidget" alt="" coords="433,5,615,32"/>
+<area shape="rect" id="node7" href="$classKPerfWidget.html#afe3ef56d5262dbb3e5ea5ce9d77e124e" title="KPerfWidget::KPerfWidget sets up the UI for Keyboard Performace panel. " alt="" coords="435,107,613,133"/>
+<area shape="rect" id="node9" href="$classAnimSettingDialog.html#a0027d136ee0ad97cddd73d601c677e3a" title="AnimSettingDialog::\langleDialChanged" alt="" coords="455,158,593,199"/>
+<area shape="rect" id="node10" href="$classAnimSettingDialog.html#ae8882ea2cc60e89a446b763cc212a605" title="AnimSettingDialog::\lAnimSettingDialog" alt="" coords="680,275,819,317"/>
+<area shape="rect" id="node11" href="$classAnimSettingDialog.html#a96a59bcf494a19b74c4142e0c5813478" title="AnimSettingDialog::\langleSpinnerChanged" alt="" coords="449,275,599,317"/>
+<area shape="rect" id="node12" href="$classAnimSettingDialog.html#a5a1bb832c90f20c4f796c28da2a400cf" title="AnimSettingDialog::\lnewDuration" alt="" coords="455,341,593,382"/>
+<area shape="rect" id="node13" href="$classAnimSettingDialog.html#a6e4af505a9e7d05b5925a1aa82dbe752" title="AnimSettingDialog::\lon_delayBox_valueChanged" alt="" coords="431,406,617,447"/>
+<area shape="rect" id="node14" href="$classAnimSettingDialog.html#a6377bcd58b61efeadd787c9c03bb0b42" title="AnimSettingDialog::\lon_kpDelayBox_valueChanged" alt="" coords="422,471,626,513"/>
+<area shape="rect" id="node15" href="$classAnimSettingDialog.html#afda1103b7d55b806ee53dbaf9b5f3a14" title="AnimSettingDialog::\lon_kpReleaseBox_stateChanged" alt="" coords="416,537,632,578"/>
+<area shape="rect" id="node16" href="$classAnimSettingDialog.html#ace471d6a4e51cc70bd99a7888da1f3b6" title="AnimSettingDialog::\lon_kpRepeatBox_valueChanged" alt="" coords="418,602,630,643"/>
+<area shape="rect" id="node17" href="$classAnimSettingDialog.html#a507012b01eb96fba3be108d6ea774d69" title="AnimSettingDialog::\lon_repeatBox_valueChanged" alt="" coords="428,667,620,709"/>
+<area shape="rect" id="node18" href="$classAnimSettingDialog.html#a386b53c7d82aa7ae29676d404ad115d0" title="AnimSettingDialog::\lupdateStops" alt="" coords="455,733,593,774"/>
+</map>

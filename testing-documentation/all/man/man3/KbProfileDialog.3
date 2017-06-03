@@ -1,0 +1,364 @@
+.TH "KbProfileDialog" 3 "Sat Jun 3 2017" "Version beta-v0.2.8+testing at branch testing-documentation" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+KbProfileDialog \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/kbprofiledialog\&.h>\fP
+.PP
+Inherits \fBQDialog\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBKbProfileDialog\fP (\fBKbWidget\fP *parent=0)"
+.br
+.ti -1c
+.RI "\fB~KbProfileDialog\fP ()"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBprofileList_reordered\fP ()"
+.br
+.ti -1c
+.RI "void \fBon_profileList_currentItemChanged\fP (QListWidgetItem *\fBcurrent\fP, QListWidgetItem *previous)"
+.br
+.ti -1c
+.RI "void \fBon_profileList_itemClicked\fP (QListWidgetItem *item)"
+.br
+.ti -1c
+.RI "void \fBon_profileList_itemChanged\fP (QListWidgetItem *item)"
+.br
+.ti -1c
+.RI "void \fBon_profileList_customContextMenuRequested\fP (const QPoint &pos)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBrepopulate\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddNewProfileItem\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "Ui::KbProfileDialog * \fBui\fP"
+.br
+.ti -1c
+.RI "\fBKb\fP * \fBdevice\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const int \fBGUID\fP = Qt::UserRole"
+.br
+.ti -1c
+.RI "static const int \fBNEW_FLAG\fP = Qt::UserRole + 1"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 11 of file kbprofiledialog\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "KbProfileDialog::KbProfileDialog (\fBKbWidget\fP *parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 5 of file kbprofiledialog\&.cpp\&.
+.PP
+References profileList_reordered(), repopulate(), and ui\&.
+.PP
+.nf
+5                                                  :
+6     QDialog(parent),
+7     ui(new Ui::KbProfileDialog), device(parent->device)
+8 {
+9     ui->setupUi(this);
+10     connect(ui->profileList, SIGNAL(orderChanged()), this, SLOT(profileList_reordered()));
+11 
+12     // Populate profile list
+13     repopulate();
+14 }
+.fi
+.SS "KbProfileDialog::~KbProfileDialog ()"
+
+.PP
+Definition at line 16 of file kbprofiledialog\&.cpp\&.
+.PP
+References ui\&.
+.PP
+.nf
+16                                  {
+17     delete ui;
+18 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void KbProfileDialog::addNewProfileItem ()\fC [private]\fP"
+
+.PP
+Definition at line 66 of file kbprofiledialog\&.cpp\&.
+.PP
+References NEW_FLAG, and ui\&.
+.PP
+Referenced by on_profileList_itemClicked(), and repopulate()\&.
+.PP
+.nf
+66                                        {
+67     // Add an item for creating a new profile\&. Make it editable but not dragable\&.
+68     QListWidgetItem* item = new QListWidgetItem("New profile\&.\&.\&.", ui->profileList);
+69     item->setFlags((item->flags() | Qt::ItemIsEditable) & ~Qt::ItemIsDragEnabled & ~Qt::ItemIsDropEnabled);
+70     item->setData(NEW_FLAG, 1);
+71     QFont font = item->font();
+72     font\&.setItalic(true);
+73     item->setFont(font);
+74     item->setIcon(QIcon(":/img/icon_plus\&.png"));
+75     ui->profileList->addItem(item);
+76 }
+.fi
+.SS "void KbProfileDialog::on_profileList_currentItemChanged (QListWidgetItem *current, QListWidgetItem *previous)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 39 of file kbprofiledialog\&.cpp\&.
+.PP
+References device, Kb::find(), GUID, and Kb::setCurrentProfile()\&.
+.PP
+.nf
+39                                                                                                           {
+40     if(!current)
+41         return;
+42     KbProfile* profile = device->find(current->data(GUID)\&.toUuid());
+43     if(!profile)
+44         return;
+45     device->setCurrentProfile(profile);
+46 }
+.fi
+.SS "void KbProfileDialog::on_profileList_customContextMenuRequested (const QPoint &pos)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 109 of file kbprofiledialog\&.cpp\&.
+.PP
+References Kb::currentProfile(), device, Kb::find(), UsbId::guid, GUID, Kb::hwProfile(), Kb::hwSave(), KbProfile::id(), Kb::indexOf(), NEW_FLAG, KbProfile::newId(), Kb::newProfile(), Kb::profiles(), KbProfile::removeAll(), repopulate(), Kb::setCurrentProfile(), and ui\&.
+.PP
+.nf
+109                                                                                 {
+110     QListWidgetItem* item = ui->profileList->itemAt(pos);
+111     KbProfile* currentProfile = device->currentProfile();
+112     if(!item || !currentProfile || item->data(GUID)\&.toUuid() != currentProfile->id()\&.guid)
+113         return;
+114     int index = device->indexOf(currentProfile);
+115     QList<KbProfile*> profiles = device->profiles();
+116 
+117     QMenu menu(this);
+118     QAction* rename = new QAction("Rename\&.\&.\&.", this);
+119     QAction* duplicate = new QAction("Duplicate", this);
+120     QAction* del = new QAction("Delete", this);
+121     bool canDelete = (profiles\&.count() > 1);
+122     if(!canDelete)
+123         // Can't delete the last profile on the device
+124         del->setEnabled(false);
+125     QAction* hwsave = new QAction("Save to Hardware", this);
+126     QAction* moveup = new QAction("Move Up", this);
+127     if(index == 0)
+128         moveup->setEnabled(false);
+129     QAction* movedown = new QAction("Move Down", this);
+130     if(index >= profiles\&.count() - 1)
+131         movedown->setEnabled(false);
+132     menu\&.addAction(rename);
+133     menu\&.addAction(duplicate);
+134     menu\&.addAction(del);
+135     menu\&.addSeparator();
+136     menu\&.addAction(hwsave);
+137     menu\&.addSeparator();
+138     menu\&.addAction(moveup);
+139     menu\&.addAction(movedown);
+140     QAction* result = menu\&.exec(QCursor::pos());
+141     if(result == rename){
+142         ui->profileList->editItem(item);
+143     } else if(result == duplicate){
+144         KbProfile* newProfile = device->newProfile(currentProfile);
+145         newProfile->newId();
+146         profiles\&.insert(index + 1, newProfile);
+147         device->profiles(profiles);
+148         device->setCurrentProfile(newProfile);
+149     } else if(result == del){
+150         if(!canDelete)
+151             return;
+152         profiles\&.removeAll(currentProfile);
+153         device->profiles(profiles);
+154         currentProfile->deleteLater();
+155         // Select next profile
+156         if(index < profiles\&.count())
+157             device->setCurrentProfile(profiles\&.at(index));
+158         else
+159             device->setCurrentProfile(profiles\&.last());
+160     } else if(result == hwsave){
+161         device->hwSave();
+162         // Refresh item icons
+163         int count = ui->profileList->count();
+164         for(int i = 0; i < count; i++){
+165             QListWidgetItem* item = ui->profileList->item(i);
+166             if(item->data(NEW_FLAG)\&.toUInt() == 1)
+167                 continue;
+168             KbProfile* profile = device->find(item->data(GUID)\&.toUuid());
+169             item->setIcon(QIcon((profile == device->hwProfile()) ? ":/img/icon_profile_hardware\&.png" : ":/img/icon_profile\&.png"));
+170         }
+171     } else if(result == moveup){
+172         profiles\&.removeAll(currentProfile);
+173         profiles\&.insert(index - 1, currentProfile);
+174         device->profiles(profiles);
+175     } else if(result == movedown){
+176         profiles\&.removeAll(currentProfile);
+177         profiles\&.insert(index + 1, currentProfile);
+178         device->profiles(profiles);
+179     }
+180     repopulate();
+181 }
+.fi
+.SS "void KbProfileDialog::on_profileList_itemChanged (QListWidgetItem *item)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 100 of file kbprofiledialog\&.cpp\&.
+.PP
+References Kb::currentProfile(), device, UsbId::guid, GUID, KbProfile::id(), and KbProfile::name()\&.
+.PP
+.nf
+100                                                                      {
+101     KbProfile* currentProfile = device->currentProfile();
+102     if(!item || !currentProfile || item->data(GUID)\&.toUuid() != currentProfile->id()\&.guid)
+103         return;
+104     currentProfile->name(item->text());
+105     // Set the text to the actual name (trimmed, "" replaced with "Unnamed")
+106     item->setText(currentProfile->name());
+107 }
+.fi
+.SS "void KbProfileDialog::on_profileList_itemClicked (QListWidgetItem *item)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 78 of file kbprofiledialog\&.cpp\&.
+.PP
+References addNewProfileItem(), Kb::appendProfile(), device, UsbId::guid, GUID, KbProfile::id(), NEW_FLAG, Kb::newProfile(), Kb::setCurrentProfile(), and ui\&.
+.PP
+.nf
+78                                                                      {
+79     QUuid guid = item->data(GUID)\&.toUuid();
+80     if(guid\&.isNull() && item->data(NEW_FLAG)\&.toInt() == 1){
+81         // New profile
+82         item->setText("");
+83         ui->profileList->editItem(item);
+84         item->setFlags(item->flags() | Qt::ItemIsEditable | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled);
+85         QFont font = item->font();
+86         font\&.setItalic(false);
+87         item->setFont(font);
+88         item->setIcon(QIcon(":/img/icon_profile\&.png"));
+89         // Add the new profile and assign it to this item
+90         KbProfile* newProfile = device->newProfile();
+91         device->appendProfile(newProfile);
+92         item->setData(GUID, newProfile->id()\&.guid);
+93         item->setData(NEW_FLAG, 0);
+94         device->setCurrentProfile(newProfile);
+95         // Create another "new profile" item to replace this one
+96         addNewProfileItem();
+97     }
+98 }
+.fi
+.SS "void KbProfileDialog::profileList_reordered ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 20 of file kbprofiledialog\&.cpp\&.
+.PP
+References KbProfile::append(), device, Kb::find(), GUID, Kb::profiles(), and ui\&.
+.PP
+Referenced by KbProfileDialog()\&.
+.PP
+.nf
+20                                            {
+21     // Rebuild profile list from items
+22     QList<KbProfile*> newProfiles;
+23     int count = ui->profileList->count();
+24     for(int i = 0; i < count; i++){
+25         QListWidgetItem* item = ui->profileList->item(i);
+26         KbProfile* profile = device->find(item->data(GUID)\&.toUuid());
+27         if(profile && !newProfiles\&.contains(profile))
+28             newProfiles\&.append(profile);
+29         item->setFlags(item->flags() | Qt::ItemIsEditable);
+30     }
+31     // Add any missing profiles at the end of the list
+32     foreach(KbProfile* profile, device->profiles()){
+33         if(!newProfiles\&.contains(profile))
+34             newProfiles\&.append(profile);
+35     }
+36     device->profiles(newProfiles);
+37 }
+.fi
+.SS "void KbProfileDialog::repopulate ()\fC [private]\fP"
+
+.PP
+Definition at line 48 of file kbprofiledialog\&.cpp\&.
+.PP
+References addNewProfileItem(), current, Kb::currentProfile(), device, UsbId::guid, GUID, Kb::hwProfile(), KbProfile::id(), KbProfile::name(), Kb::profiles(), and ui\&.
+.PP
+Referenced by KbProfileDialog(), and on_profileList_customContextMenuRequested()\&.
+.PP
+.nf
+48                                 {
+49     ui->profileList->clear();
+50     QListWidgetItem* current = 0;
+51     foreach(KbProfile* profile, device->profiles()){
+52         QListWidgetItem* item = new QListWidgetItem(QIcon((profile == device->hwProfile()) ? ":/img/icon_profile_hardware\&.png" : ":/img/icon_profile\&.png"), profile->name(), ui->profileList);
+53         item->setData(GUID, profile->id()\&.guid);
+54         item->setFlags(item->flags() | Qt::ItemIsEditable);
+55         if(profile == device->currentProfile()){
+56             item->setSelected(true);
+57             current = item;
+58         }
+59         ui->profileList->addItem(item);
+60     }
+61     if(current)
+62         ui->profileList->setCurrentItem(current);
+63     addNewProfileItem();
+64 }
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "\fBKb\fP* KbProfileDialog::device\fC [private]\fP"
+
+.PP
+Definition at line 29 of file kbprofiledialog\&.h\&.
+.PP
+Referenced by on_profileList_currentItemChanged(), on_profileList_customContextMenuRequested(), on_profileList_itemChanged(), on_profileList_itemClicked(), profileList_reordered(), and repopulate()\&.
+.SS "const int KbProfileDialog::GUID = Qt::UserRole\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 30 of file kbprofiledialog\&.h\&.
+.PP
+Referenced by on_profileList_currentItemChanged(), on_profileList_customContextMenuRequested(), on_profileList_itemChanged(), on_profileList_itemClicked(), profileList_reordered(), and repopulate()\&.
+.SS "const int KbProfileDialog::NEW_FLAG = Qt::UserRole + 1\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 31 of file kbprofiledialog\&.h\&.
+.PP
+Referenced by addNewProfileItem(), on_profileList_customContextMenuRequested(), and on_profileList_itemClicked()\&.
+.SS "Ui::KbProfileDialog* KbProfileDialog::ui\fC [private]\fP"
+
+.PP
+Definition at line 27 of file kbprofiledialog\&.h\&.
+.PP
+Referenced by addNewProfileItem(), KbProfileDialog(), on_profileList_customContextMenuRequested(), on_profileList_itemClicked(), profileList_reordered(), repopulate(), and ~KbProfileDialog()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

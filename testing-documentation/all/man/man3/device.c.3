@@ -1,0 +1,185 @@
+.TH "src/ckb-daemon/device.c" 3 "Sat Jun 3 2017" "Version beta-v0.2.8+testing at branch testing-documentation" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb-daemon/device.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'command\&.h'\fP
+.br
+\fC#include 'device\&.h'\fP
+.br
+\fC#include 'firmware\&.h'\fP
+.br
+\fC#include 'profile\&.h'\fP
+.br
+\fC#include 'usb\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fB_start_dev\fP (\fBusbdevice\fP *kb, int makeactive)"
+.br
+.ti -1c
+.RI "int \fBstart_dev\fP (\fBusbdevice\fP *kb, int makeactive)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBhwload_mode\fP = 1"
+.br
+.RI "\fIhwload_mode = 1 means read hardware once\&. should be enough \fP"
+.ti -1c
+.RI "\fBusbdevice\fP \fBkeyboard\fP [9]"
+.br
+.RI "\fIremember all usb devices\&. Needed for \fBcloseusb()\fP\&. \fP"
+.ti -1c
+.RI "pthread_mutex_t \fBdevlistmutex\fP = PTHREAD_MUTEX_INITIALIZER"
+.br
+.ti -1c
+.RI "pthread_mutex_t \fBdevmutex\fP [9] = { [0 \&.\&.\&. 9 -1] = PTHREAD_MUTEX_INITIALIZER }"
+.br
+.ti -1c
+.RI "pthread_mutex_t \fBinputmutex\fP [9] = { [0 \&.\&.\&. 9 -1] = PTHREAD_MUTEX_INITIALIZER }"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int _start_dev (\fBusbdevice\fP *kb, intmakeactive)"
+_start_dev get fw-info and pollrate; if available, install new firmware; get all hardware profiles\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkb\fP the normal kb pointer to the usbdevice\&. Is also valid for mice\&. 
+.br
+\fImakeactive\fP if set to 1, activate the device via \fBsetactive()\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+0 if success, other else 
+.RE
+.PP
+
+.IP "\(bu" 2
+This hacker code is tricky in mutliple aspects\&. What it means is: 
+.br
+ if hwload_mode == 0: just set pollrate to 0 and clear features in the bottom lines of the if-block\&. 
+.br
+ if hwload_mode == 1: if the device has FEAT_HWLOAD active, call \fBgetfwversion()\fP\&. If it returns true, there was an error while detecting fw-version\&. Put error message, reset FEAT_HWLOAD and finalize as above\&. 
+.br
+ if hwload_mode == 2: if the device has FEAT_HWLOAD active, call \fBgetfwversion()\fP\&. If it returns true, there was an error while detecting fw-version\&. Put error message and return directly from function with error\&. 
+.br
+ Why do not you just write it down?
+.IP "\(bu" 2
+Now check if device needs a firmware update\&. If so, set it up and leave the function without error\&.
+.IP "\(bu" 2
+Device needs a firmware update\&. Finish setting up but don't do anything\&.
+.IP "\(bu" 2
+Load profile from device if the hw-pointer is not set yet and hw-loading is possible and allowed\&. 
+.br
+ return error if mode == 2 (load always) and loading got an error\&. Else reset HWLOAD feature, because hwload must be 1\&. 
+.br
+
+.br
+ That is real Horror code\&.
+.PP
+
+.PP
+Definition at line 22 of file device\&.c\&.
+.PP
+References usbdevice::active, ckb_info, ckb_warn, FEAT_ADJRATE, FEAT_FWUPDATE, FEAT_FWVERSION, FEAT_HWLOAD, FEAT_POLLRATE, FEAT_RGB, usbdevice::features, usbdevice::fwversion, getfwversion(), HAS_FEATURES, usbdevice::hw, hwload_mode, hwloadprofile, NEEDS_FW_UPDATE, usbdevice::pollrate, and setactive\&.
+.PP
+Referenced by start_dev()\&.
+.PP
+.nf
+22                                              {
+23     // Get the firmware version from the device
+24     if(kb->pollrate == 0){
+32         if(!hwload_mode || (HAS_FEATURES(kb, FEAT_HWLOAD) && getfwversion(kb))){
+33             if(hwload_mode == 2)
+34                 // hwload=always\&. Report setup failure\&.
+35                 return -1;
+36             else if(hwload_mode){
+37                 // hwload=once\&. Log failure, prevent trying again, and continue\&.
+38                 ckb_warn("Unable to load firmware version/poll rate\n");
+39                 kb->features &= ~FEAT_HWLOAD;
+40             }
+41             kb->pollrate = 0;
+42             kb->features &= ~(FEAT_POLLRATE | FEAT_ADJRATE);
+43             if(kb->fwversion == 0)
+44                 kb->features &= ~(FEAT_FWVERSION | FEAT_FWUPDATE);
+45         }
+46     }
+51     if(NEEDS_FW_UPDATE(kb)){
+53         ckb_info("Device needs a firmware update\&. Please issue a fwupdate command\&.\n");
+54         kb->features = FEAT_RGB | FEAT_FWVERSION | FEAT_FWUPDATE;
+55         kb->active = 1;
+56         return 0;
+57     }
+63     if(!kb->hw && hwload_mode && HAS_FEATURES(kb, FEAT_HWLOAD)){
+64         if(hwloadprofile(kb, 1)){
+65             if(hwload_mode == 2)
+66                 return -1;
+67             ckb_warn("Unable to load hardware profile\n");
+68             kb->features &= ~FEAT_HWLOAD;
+69         }
+70     }
+71     // Active software mode if requested
+72     if(makeactive)
+73         return setactive(kb, 1);
+74     return 0;
+75 }
+.fi
+.SS "int start_dev (\fBusbdevice\fP *kb, intmakeactive)"
+
+.PP
+Definition at line 77 of file device\&.c\&.
+.PP
+References _start_dev(), USB_DELAY_DEFAULT, and usbdevice::usbdelay\&.
+.PP
+.nf
+77                                             {
+78     // Force USB interval to 10ms during initial setup phase; return to nominal 5ms after setup completes\&.
+79     kb->usbdelay = 10;
+80     int res = _start_dev(kb, makeactive);
+81     kb->usbdelay = USB_DELAY_DEFAULT;
+82     return res;
+83 }
+.fi
+.SH "Variable Documentation"
+.PP 
+.SS "pthread_mutex_t devlistmutex = PTHREAD_MUTEX_INITIALIZER"
+
+.PP
+Definition at line 11 of file device\&.c\&.
+.SS "pthread_mutex_t devmutex[9] = { [0 \&.\&.\&. 9 -1] = PTHREAD_MUTEX_INITIALIZER }"
+
+.PP
+Definition at line 12 of file device\&.c\&.
+.PP
+Referenced by _updateconnected(), quitWithLock(), and usb_rm_device()\&.
+.SS "int hwload_mode = 1"
+hwload_mode is defined in \fBdevice\&.c\fP 
+.PP
+Definition at line 7 of file device\&.c\&.
+.PP
+Referenced by _start_dev(), _usbrecv(), _usbsend(), and main()\&.
+.SS "pthread_mutex_t inputmutex[9] = { [0 \&.\&.\&. 9 -1] = PTHREAD_MUTEX_INITIALIZER }"
+
+.PP
+Definition at line 13 of file device\&.c\&.
+.SS "\fBusbdevice\fP keyboard[9]"
+
+.PP
+Definition at line 10 of file device\&.c\&.
+.PP
+Referenced by _mkdevpath(), _mknotifynode(), _rmnotifynode(), _setupusb(), _updateconnected(), closeusb(), main(), mkfwnode(), os_closeusb(), os_inputmain(), os_inputopen(), os_setupusb(), quitWithLock(), rmdevpath(), usb_rm_device(), and usbadd()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.
