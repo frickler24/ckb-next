@@ -34,7 +34,6 @@ var searchData=
   ['changeanimkeys',['changeAnimKeys',['../classKbLightWidget.html#a642cc02f0dd2baa3d81edeef03c3e699',1,'KbLightWidget']]],
   ['changecolor',['changeColor',['../classKbLightWidget.html#a9a031f4bf7b76a5aafdeeae2d4d96ace',1,'KbLightWidget']]],
   ['check_5foverflow_5fop',['CHECK_OVERFLOW_OP',['../__kiss__fft__guts_8h.html#a664c056b2a7093f88391d7db3558aa24',1,'_kiss_fft_guts.h']]],
-  ['checkforgpg',['CHECKFORGPG',['../kbfirmware_8cpp.html#a61dffaa40bb4ed3c0e65eb36d4115df1',1,'kbfirmware.cpp']]],
   ['checkfwupdates',['checkFwUpdates',['../classMainWindow.html#a7bd3f729676a76651d4852d03d1cfb8e',1,'MainWindow']]],
   ['checksum',['checksum',['../classQuaAdler32.html#a28569a9918bcdb879f061e60bb29dca0',1,'QuaAdler32::checksum()'],['../classQuaCrc32.html#a00459f4bdf1b84f3390315850ee51b8e',1,'QuaCrc32::checksum()']]],
   ['checkupdates',['checkUpdates',['../classKbFirmware.html#ab4153173aa1b28cc9d58ede675f02627',1,'KbFirmware']]],

@@ -1,6 +1,6 @@
 <map id="KeyMap::getModel" name="KeyMap::getModel">
 <area shape="rect" id="node2" href="$classKeyMap.html#af5ee0c50fa207c167783f45ca1ff3b82" title="KeyMap::fromName" alt="" coords="184,31,323,57"/>
-<area shape="rect" id="node6" href="$classKb.html#a2ac268b01a79e71c56ad07b35efe8ecf" title="is invalid also. " alt="" coords="222,81,285,108"/>
+<area shape="rect" id="node6" href="$classKb.html#a2ac268b01a79e71c56ad07b35efe8ecf" title="Kb::Kb" alt="" coords="222,81,285,108"/>
 <area shape="rect" id="node7" href="$classKeyMap.html#a2131ccd550f0875acd0cabc33bce6ea1" title="KeyMap::strModel" alt="" coords="189,132,317,159"/>
 <area shape="rect" id="node3" href="$classKbBind.html#a25670999ed5a452b7df6c16633d197b5" title="KbBind::load" alt="" coords="379,5,475,32"/>
 <area shape="rect" id="node5" href="$classKbLight.html#a82d4feddc998442f245b562b7637de5d" title="KbLight::load" alt="" coords="377,56,476,83"/>

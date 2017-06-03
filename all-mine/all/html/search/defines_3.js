@@ -11,7 +11,6 @@ var searchData=
   ['casesensitivitydefaultvalue',['CASESENSITIVITYDEFAULTVALUE',['../unzip_8c.html#a211c212a9634c4a42e21d04861c0bdd5',1,'unzip.c']]],
   ['centralheadermagic',['CENTRALHEADERMAGIC',['../zip_8c.html#a693b6919a7002d5d8f2030ea38bdb745',1,'zip.c']]],
   ['check_5foverflow_5fop',['CHECK_OVERFLOW_OP',['../__kiss__fft__guts_8h.html#a664c056b2a7093f88391d7db3558aa24',1,'_kiss_fft_guts.h']]],
-  ['checkforgpg',['CHECKFORGPG',['../kbfirmware_8cpp.html#a61dffaa40bb4ed3c0e65eb36d4115df1',1,'kbfirmware.cpp']]],
   ['ckb_5fcontainer',['CKB_CONTAINER',['../ckb-anim_8h.html#a99ef68672d164b862ff02b7db28ff06d',1,'ckb-anim.h']]],
   ['ckb_5fcopyright',['CKB_COPYRIGHT',['../ckb-anim_8h.html#a43c634b0abfb037fd1f71433958df121',1,'ckb-anim.h']]],
   ['ckb_5fdescription',['CKB_DESCRIPTION',['../ckb-anim_8h.html#a8386c185fbcfdce3f9b5f7f95b6a5030',1,'ckb-anim.h']]],

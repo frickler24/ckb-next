@@ -1,4 +1,4 @@
-.TH "todo" 3 "Sat May 27 2017" "Version v0.2.8 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.TH "todo" 3 "Sat Jun 3 2017" "Version beta-v0.2.8+testing at branch all-mine" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -21,7 +21,7 @@ Hope to find the need for dmutex usage later\&.
 .IP "\fBGlobal \fBget_vtable\fP (short vendor, short product)\fP" 1c
 Is the last point really a good decision and always correct?  
 .IP "\fBGlobal \fBKb::Kb\fP (\fBQObject\fP *parent, const QString &path)\fP" 1c
-Is adding notifyX to the notifypaths neccessary?  
+Is adding notify2 to the notifypaths neccessary?  
 .IP "\fBGlobal \fBKb::~Kb\fP ()\fP" 1c
 I don't think, that notifypaths is used somewhere\&. So why do we have it? If we do not need it, searching for an ununsed notify channel can easy be refactored to a private member function\&.  
 .IP "\fBGlobal \fBos_inputmain\fP (void *context)\fP" 1c

@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"classKbLight.html#a03123a9927b59db991e6183a63003271":[7,0,28,48],
 "classKbLight.html#a05182102df4955faa1524f511d52a56a":[7,0,28,26],
 "classKbLight.html#a0d37ba50d07c949db3d9714f9b559e6b":[7,0,28,6],
 "classKbLight.html#a1140a40b1dea390c2500ae32e1813fa6":[7,0,28,44],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "classKbProfile.html#af2c3333da1d6cb937c6c679f08cf2bbd":[7,0,33,14],
 "classKbProfile.html#af9b406938a9e562fe33d14ddf84dd5c0":[7,0,33,23],
 "classKbProfile.html#afdb7ddf3f0cf18fdebba5f4eed76eaf8":[7,0,33,4],
-"classKbProfileDialog.html":[7,0,34],
-"classKbProfileDialog.html#a04a7456898687a0f9a3e9472b9fc0559":[7,0,34,8]
+"classKbProfileDialog.html":[7,0,34]
 };

@@ -1,4 +1,4 @@
-.TH "MacroReader" 3 "Sat May 27 2017" "Version v0.2.8 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.TH "MacroReader" 3 "Sat Jun 3 2017" "Version beta-v0.2.8+testing at branch all-mine" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -76,17 +76,16 @@ References startWorkInAThread()\&.
 .PP
 .nf
 13                                                                                                             {
-14     macText->setFocus();
-15     startWorkInAThread(macroNumber, macroPath, macBox, macText);
-16 }
+14     startWorkInAThread(macroNumber, macroPath, macBox, macText);
+15 }
 .fi
 .SS "MacroReader::~MacroReader ()"
 
 .PP
-Definition at line 17 of file macroreader\&.cpp\&.
+Definition at line 16 of file macroreader\&.cpp\&.
 .PP
 .nf
-17 {}
+16 {}
 .fi
 .SH "Member Function Documentation"
 .PP 
@@ -106,18 +105,18 @@ Definition at line 17 of file macroreader\&.cpp\&.
 .PP
 
 .PP
-Definition at line 19 of file macroreader\&.cpp\&.
+Definition at line 18 of file macroreader\&.cpp\&.
 .PP
 References macroReaderThread\&.
 .PP
 Referenced by MacroReader()\&.
 .PP
 .nf
-19                                                                                                                         {
-20     macroReaderThread = new MacroReaderThread(macroNumber, macroPath, macBox, macText);
-21     connect(macroReaderThread, &MacroReaderThread::finished, macroReaderThread, &QObject::deleteLater);
-22     macroReaderThread->start();
-23 }
+18                                                                                                                         {
+19     macroReaderThread = new MacroReaderThread(macroNumber, macroPath, macBox, macText);
+20     connect(macroReaderThread, &MacroReaderThread::finished, macroReaderThread, &QObject::deleteLater);
+21     macroReaderThread->start();
+22 }
 .fi
 .SH "Field Documentation"
 .PP 

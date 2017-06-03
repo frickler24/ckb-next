@@ -26,7 +26,6 @@ var searchData=
   ['changeanim',['changeAnim',['../classKbLightWidget.html#ade39e1f59fa2ca624f00aeecdb5ff837',1,'KbLightWidget']]],
   ['changeanimkeys',['changeAnimKeys',['../classKbLightWidget.html#a642cc02f0dd2baa3d81edeef03c3e699',1,'KbLightWidget']]],
   ['changecolor',['changeColor',['../classKbLightWidget.html#a9a031f4bf7b76a5aafdeeae2d4d96ace',1,'KbLightWidget']]],
-  ['checkforgpg',['CHECKFORGPG',['../kbfirmware_8cpp.html#a61dffaa40bb4ed3c0e65eb36d4115df1',1,'kbfirmware.cpp']]],
   ['checkfwupdates',['checkFwUpdates',['../classMainWindow.html#a7bd3f729676a76651d4852d03d1cfb8e',1,'MainWindow']]],
   ['checksum',['checksum',['../classQuaAdler32.html#a28569a9918bcdb879f061e60bb29dca0',1,'QuaAdler32::checksum()'],['../classQuaCrc32.html#a00459f4bdf1b84f3390315850ee51b8e',1,'QuaCrc32::checksum()']]],
   ['checkupdates',['checkUpdates',['../classKbFirmware.html#ab4153173aa1b28cc9d58ede675f02627',1,'KbFirmware']]],

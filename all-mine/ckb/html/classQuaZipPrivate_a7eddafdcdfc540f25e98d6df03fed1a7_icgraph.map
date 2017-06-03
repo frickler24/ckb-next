@@ -1,10 +1,10 @@
 <map id="QuaZipPrivate::goToFirstUnmappedFile" name="QuaZipPrivate::goToFirstUnmappedFile">
 <area shape="rect" id="node2" href="$classQuaZip.html#a6c657bfcfccb59d728e0da24c677d899" title="Sets current file by its name. " alt="" coords="221,177,376,204"/>
-<area shape="rect" id="node3" href="$classKbFirmware.html#ae5f3c91fcf3fe8fe55e2c1e3cea877eb" title="KbFirmware::_fileForBoard" alt="" coords="433,51,610,77"/>
+<area shape="rect" id="node3" href="$classKbFirmware.html#a86cc0f2021cb2d5d0353c52a957c0e0f" title="KbFirmware::_fileForBoard" alt="" coords="433,51,610,77"/>
 <area shape="rect" id="node9" href="$classJlCompress.html#a522739a65b382a9838ed69812340dd40" title="Extract a single file. " alt="" coords="441,139,602,165"/>
 <area shape="rect" id="node13" href="$classQuaZipPrivate.html#af26e854d77203dbece23b60b59945383" title="Returns either a list of file names or a list of QuaZipFileInfo. " alt="" coords="424,215,619,241"/>
 <area shape="rect" id="node17" href="$classQuaZipFile.html#aed75bace51f2bb4c3e4f656ab4493aac" title="Opens a file for reading. " alt="" coords="461,265,582,292"/>
-<area shape="rect" id="node4" href="$classKbFirmware.html#a1cc600d07217f327a1541a44d353004c" title="KbFirmware::dataForBoard" alt="" coords="667,12,845,39"/>
+<area shape="rect" id="node4" href="$classKbFirmware.html#ae5dae6557deb8b35d6731597d57eac26" title="KbFirmware::dataForBoard" alt="" coords="667,12,845,39"/>
 <area shape="rect" id="node5" href="$classFwUpgradeDialog.html#a1fd1f6f1285ab4998a7c81e2ee118d54" title="FwUpgradeDialog::exec" alt="" coords="893,12,1056,39"/>
 <area shape="rect" id="node6" href="$classKbWidget.html#a38c9f29a5d8f1edfcb5f8040de3dadb9" title="KbWidget::on_fwUpdButton\l_clicked" alt="" coords="1104,5,1288,46"/>
 <area shape="rect" id="node7" href="$classKbWidget.html#a428930086336c668e8a1055c21c938d9" title="KbWidget::showFwUpdate" alt="" coords="1336,12,1515,39"/>

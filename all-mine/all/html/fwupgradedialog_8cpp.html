@@ -31,7 +31,7 @@
   <td id="projectlogo"><img alt="Logo" src="ckb-128.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">ckb-next
-   &#160;<span id="projectnumber">v0.2.8 at branch all-mine</span>
+   &#160;<span id="projectnumber">beta-v0.2.8+testing at branch all-mine</span>
    </div>
    <div id="projectbrief">ckb-next driver for corsair devices</div>
   </td>
@@ -140,13 +140,11 @@ Data Structures</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a28727c27229bdee728266f176d995b71"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fwupgradedialog_8cpp.html#a28727c27229bdee728266f176d995b71">DIALOG_HEIGHT_MAX</a> (240)</td></tr>
 <tr class="separator:a28727c27229bdee728266f176d995b71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e7a9e214e385fe74d87e784a4f043a2"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fwupgradedialog_8cpp.html#a5e7a9e214e385fe74d87e784a4f043a2">verifyFw</a> (const QByteArray &amp;blob, const QString &amp;features)</td></tr>
-<tr class="separator:a5e7a9e214e385fe74d87e784a4f043a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abaf71d2c4bec490fe29292bfd9cec295"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fwupgradedialog_8cpp.html#abaf71d2c4bec490fe29292bfd9cec295">verifyFw</a> (const QByteArray &amp;blob, const short productID)</td></tr>
+<tr class="separator:abaf71d2c4bec490fe29292bfd9cec295"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a631127b4178165854dab046ba2759584"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="fwupgradedialog_8cpp.html#structKbId">KbId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fwupgradedialog_8cpp.html#a631127b4178165854dab046ba2759584">ids</a> []</td></tr>
-<tr class="separator:a631127b4178165854dab046ba2759584"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed2746941fc9f088a10d2ea26bffe908"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fwupgradedialog_8cpp.html#aed2746941fc9f088a10d2ea26bffe908">DIALOG_WIDTH</a> = 420</td></tr>
 <tr class="separator:aed2746941fc9f088a10d2ea26bffe908"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b9c6d47851c4e08f42d101befd9cc73"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fwupgradedialog_8cpp.html#a9b9c6d47851c4e08f42d101befd9cc73">DIALOG_HEIGHT_MIN</a> = 200</td></tr>
@@ -220,7 +218,7 @@ vendor</td>
 </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="fwupgradedialog_8cpp_source.html#l00109">FwUpgradeDialog::exec()</a>.</p>
+<p>Referenced by <a class="el" href="fwupgradedialog_8cpp_source.html#l00092">FwUpgradeDialog::exec()</a>.</p>
 
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -235,7 +233,7 @@ vendor</td>
 
 </div>
 </div>
-<a class="anchor" id="a5e7a9e214e385fe74d87e784a4f043a2"></a>
+<a class="anchor" id="abaf71d2c4bec490fe29292bfd9cec295"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -251,8 +249,8 @@ vendor</td>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>features</em>&#160;</td>
+          <td class="paramtype">const short&#160;</td>
+          <td class="paramname"><em>productID</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -266,43 +264,38 @@ vendor</td>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>&lt; Corsair has at the moment just one vendorID</p>
+<p>&lt; Something really bad has happened - wrong firmware file detected. </p>
 
-<p>Definition at line <a class="el" href="fwupgradedialog_8cpp_source.html#l00087">87</a> of file <a class="el" href="fwupgradedialog_8cpp_source.html">fwupgradedialog.cpp</a>.</p>
+<p>Definition at line <a class="el" href="fwupgradedialog_8cpp_source.html#l00073">73</a> of file <a class="el" href="fwupgradedialog_8cpp_source.html">fwupgradedialog.cpp</a>.</p>
 
-<p>References <a class="el" href="fwupgradedialog_8cpp_source.html#l00016">ids</a>.</p>
-
-<p>Referenced by <a class="el" href="fwupgradedialog_8cpp_source.html#l00109">FwUpgradeDialog::exec()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                                                      {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span>(blob.length() &lt; 0x0108)</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> 0.f;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* bData = blob.data();</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// Make sure it matches this device based on the vendor and product IDs embedded in the blob</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">bool</span> match = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">for</span>(uint i = 0; i &lt; <span class="keyword">sizeof</span>(<a class="code" href="fwupgradedialog_8cpp.html#a631127b4178165854dab046ba2759584">ids</a>)/<span class="keyword">sizeof</span>(<a class="code" href="fwupgradedialog_8cpp.html#structKbId">KbId</a>); i++){</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">if</span>(!memcmp(&amp;<a class="code" href="fwupgradedialog_8cpp.html#a631127b4178165854dab046ba2759584">ids</a>[i].vendor, bData + 0x102, 2) &amp;&amp; !memcmp(&amp;<a class="code" href="fwupgradedialog_8cpp.html#a631127b4178165854dab046ba2759584">ids</a>[i].product, bData + 0x104, 2)</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                &amp;&amp; features.startsWith(<a class="code" href="fwupgradedialog_8cpp.html#a631127b4178165854dab046ba2759584">ids</a>[i].feature, Qt::CaseInsensitive)){</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            match = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span>(!match)</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">return</span> 0.f;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">// Copy the version from the blob</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">short</span> version;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    memcpy(&amp;version, bData + 0x106, 2);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">// Un-hexify it</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">return</span> QString::number(version, 16).toFloat() / 100.f;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
-<div class="ttc" id="fwupgradedialog_8cpp_html_structKbId"><div class="ttname"><a href="fwupgradedialog_8cpp.html#structKbId">KbId</a></div><div class="ttdoc">IDs for verifying firmware suitability Some newer hardware models have the same features as older one...</div><div class="ttdef"><b>Definition:</b> <a href="fwupgradedialog_8cpp_source.html#l00010">fwupgradedialog.cpp:10</a></div></div>
-<div class="ttc" id="fwupgradedialog_8cpp_html_a631127b4178165854dab046ba2759584"><div class="ttname"><a href="fwupgradedialog_8cpp.html#a631127b4178165854dab046ba2759584">ids</a></div><div class="ttdeci">static KbId ids[]</div><div class="ttdef"><b>Definition:</b> <a href="fwupgradedialog_8cpp_source.html#l00016">fwupgradedialog.cpp:16</a></div></div>
+<p>Referenced by <a class="el" href="fwupgradedialog_8cpp_source.html#l00092">FwUpgradeDialog::exec()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                                                     {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">short</span> vendor = 0x1b1c;      </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">if</span>(blob.length() &lt; 0x0108)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">return</span> 0.f;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* bData = blob.data();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// Make sure it matches this device based on the vendor and product IDs embedded in the blob</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span> (memcmp(&amp;vendor, bData + 0x102, 2) || memcmp(&amp;productID, bData + 0x104, 2)) {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        qCritical() &lt;&lt; <span class="stringliteral">&quot;Something really bad happened - wrong firmware file detected&quot;</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span> 0.f; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// Copy the version from the blob</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">short</span> version;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    memcpy(&amp;version, bData + 0x106, 2);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">// Un-hexify it</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">return</span> QString::number(version, 16).toFloat() / 100.f;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="fwupgradedialog_8cpp_a5e7a9e214e385fe74d87e784a4f043a2_icgraph.png" border="0" usemap="#fwupgradedialog_8cpp_a5e7a9e214e385fe74d87e784a4f043a2_icgraph" alt=""/></div>
-<map name="fwupgradedialog_8cpp_a5e7a9e214e385fe74d87e784a4f043a2_icgraph" id="fwupgradedialog_8cpp_a5e7a9e214e385fe74d87e784a4f043a2_icgraph">
+<div class="center"><img src="fwupgradedialog_8cpp_abaf71d2c4bec490fe29292bfd9cec295_icgraph.png" border="0" usemap="#fwupgradedialog_8cpp_abaf71d2c4bec490fe29292bfd9cec295_icgraph" alt=""/></div>
+<map name="fwupgradedialog_8cpp_abaf71d2c4bec490fe29292bfd9cec295_icgraph" id="fwupgradedialog_8cpp_abaf71d2c4bec490fe29292bfd9cec295_icgraph">
 <area shape="rect" id="node2" href="classFwUpgradeDialog.html#a1fd1f6f1285ab4998a7c81e2ee118d54" title="FwUpgradeDialog::exec" alt="" coords="125,12,288,39"/><area shape="rect" id="node3" href="classKbWidget.html#a38c9f29a5d8f1edfcb5f8040de3dadb9" title="KbWidget::on_fwUpdButton\l_clicked" alt="" coords="336,5,520,46"/><area shape="rect" id="node4" href="classKbWidget.html#a428930086336c668e8a1055c21c938d9" title="KbWidget::showFwUpdate" alt="" coords="568,12,747,39"/><area shape="rect" id="node5" href="classMainWindow.html#ae50767c4ed6029f63ebacfffde4bc802" title="MainWindow::showFwUpdate\lNotification" alt="" coords="795,5,991,46"/></map>
 </div>
 </p>
@@ -328,9 +321,9 @@ vendor</td>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="fwupgradedialog_8cpp_source.html#l00031">31</a> of file <a class="el" href="fwupgradedialog_8cpp_source.html">fwupgradedialog.cpp</a>.</p>
+<p>Definition at line <a class="el" href="fwupgradedialog_8cpp_source.html#l00017">17</a> of file <a class="el" href="fwupgradedialog_8cpp_source.html">fwupgradedialog.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="fwupgradedialog_8cpp_source.html#l00033">FwUpgradeDialog::FwUpgradeDialog()</a>, and <a class="el" href="fwupgradedialog_8cpp_source.html#l00193">FwUpgradeDialog::on_actionButton_clicked()</a>.</p>
+<p>Referenced by <a class="el" href="fwupgradedialog_8cpp_source.html#l00019">FwUpgradeDialog::FwUpgradeDialog()</a>, and <a class="el" href="fwupgradedialog_8cpp_source.html#l00177">FwUpgradeDialog::on_actionButton_clicked()</a>.</p>
 
 </div>
 </div>
@@ -352,46 +345,9 @@ vendor</td>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="fwupgradedialog_8cpp_source.html#l00030">30</a> of file <a class="el" href="fwupgradedialog_8cpp_source.html">fwupgradedialog.cpp</a>.</p>
-
-<p>Referenced by <a class="el" href="fwupgradedialog_8cpp_source.html#l00109">FwUpgradeDialog::exec()</a>, <a class="el" href="fwupgradedialog_8cpp_source.html#l00033">FwUpgradeDialog::FwUpgradeDialog()</a>, and <a class="el" href="fwupgradedialog_8cpp_source.html#l00193">FwUpgradeDialog::on_actionButton_clicked()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a631127b4178165854dab046ba2759584"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="fwupgradedialog_8cpp.html#structKbId">KbId</a> ids[]</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    </div>
-<div class="line">    { 0x1b1c, 0x1b17, <span class="stringliteral">&quot;corsair k65 rgb&quot;</span> },</div>
-<div class="line">    { 0x1b1c, 0x1b13, <span class="stringliteral">&quot;corsair k70 rgb&quot;</span> },</div>
-<div class="line">    { 0x1b1c, 0x1b11, <span class="stringliteral">&quot;corsair k95 rgb&quot;</span> },</div>
-<div class="line">    { 0x1b1c, 0x1b15, <span class="stringliteral">&quot;corsair strafe monochrome&quot;</span> },</div>
-<div class="line">    { 0x1b1c, 0x1b20, <span class="stringliteral">&quot;corsair strafe rgb&quot;</span> },</div>
-<div class="line">    </div>
-<div class="line">    { 0x1b1c, 0x1b12, <span class="stringliteral">&quot;corsair m65 rgb&quot;</span> },</div>
-<div class="line">    { 0x1b1c, 0x1b1e, <span class="stringliteral">&quot;corsair scimitar rgb&quot;</span> },</div>
-<div class="line">    </div>
-<div class="line">    { 0x1b1c, 0x1b32, <span class="stringliteral">&quot;corsair sabre optical rgb&quot;</span> }</div>
-<div class="line">}</div>
-</div><!-- fragment -->
 <p>Definition at line <a class="el" href="fwupgradedialog_8cpp_source.html#l00016">16</a> of file <a class="el" href="fwupgradedialog_8cpp_source.html">fwupgradedialog.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="fwupgradedialog_8cpp_source.html#l00087">verifyFw()</a>.</p>
+<p>Referenced by <a class="el" href="fwupgradedialog_8cpp_source.html#l00092">FwUpgradeDialog::exec()</a>, <a class="el" href="fwupgradedialog_8cpp_source.html#l00019">FwUpgradeDialog::FwUpgradeDialog()</a>, and <a class="el" href="fwupgradedialog_8cpp_source.html#l00177">FwUpgradeDialog::on_actionButton_clicked()</a>.</p>
 
 </div>
 </div>
@@ -401,7 +357,7 @@ vendor</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_77b5d46a1bc2c75b90444f394c5858ea.html">ckb</a></li><li class="navelem"><a class="el" href="fwupgradedialog_8cpp.html">fwupgradedialog.cpp</a></li>
-    <li class="footer">Generated on Sat May 27 2017 21:14:03 for ckb-next by
+    <li class="footer">Generated on Sat Jun 3 2017 21:13:38 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

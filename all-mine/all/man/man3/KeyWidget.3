@@ -1,4 +1,4 @@
-.TH "KeyWidget" 3 "Sat May 27 2017" "Version v0.2.8 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.TH "KeyWidget" 3 "Sat Jun 3 2017" "Version beta-v0.2.8+testing at branch all-mine" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -247,35 +247,35 @@ References _bindMap\&.
 .SS "void KeyWidget::clearAnimation ()"
 
 .PP
-Definition at line 632 of file keywidget\&.cpp\&.
+Definition at line 637 of file keywidget\&.cpp\&.
 .PP
 References animation\&.
 .PP
 Referenced by KbLightWidget::setLight()\&.
 .PP
 .nf
-632                               {
-633     animation\&.fill(false);
-634     update();
-635 }
+637                               {
+638     animation\&.fill(false);
+639     update();
+640 }
 .fi
 .SS "void KeyWidget::clearSelection ()"
 
 .PP
-Definition at line 605 of file keywidget\&.cpp\&.
+Definition at line 610 of file keywidget\&.cpp\&.
 .PP
 References mouseDownMode, newSelection, NONE, selection, and selectionChanged()\&.
 .PP
 Referenced by KbLightWidget::changeAnim(), KbBindWidget::setBind(), and KbLightWidget::setLight()\&.
 .PP
 .nf
-605                               {
-606     selection\&.fill(false);
-607     newSelection\&.fill(false);
-608     mouseDownMode = NONE;
-609     update();
-610     emit selectionChanged(QStringList());
-611 }
+610                               {
+611     selection\&.fill(false);
+612     newSelection\&.fill(false);
+613     mouseDownMode = NONE;
+614     update();
+615     emit selectionChanged(QStringList());
+616 }
 .fi
 .SS "const \fBQColorMap\fP& KeyWidget::colorMap () const\fC [inline]\fP"
 
@@ -403,156 +403,156 @@ References _monochrome\&.
 .SS "void KeyWidget::mouseMoveEvent (QMouseEvent *event)\fC [private]\fP"
 
 .PP
-Definition at line 475 of file keywidget\&.cpp\&.
+Definition at line 480 of file keywidget\&.cpp\&.
 .PP
 References _indicators, _rgbMode, drawInfo(), Key::friendlyName(), Key::hasLed, Key::hasScan, Key::height, keyMap, KeyMap::model(), mouseCurrentX, mouseCurrentY, mouseDownMode, mouseDownX, mouseDownY, Key::name, newSelection, NONE, KeyMap::STRAFE, Key::width, Key::x, and Key::y\&.
 .PP
 .nf
-475                                                 {
-476     event->accept();
-477     QString tooltip;
-478 
-479     // Find selection rectangle
-480     mouseCurrentX = event->x();
-481     mouseCurrentY = event->y();
-482     float scale, offX, offY;
-483     drawInfo(scale, offX, offY);
-484     float mx = mouseCurrentX / scale - offX, my = mouseCurrentY / scale - offY;
-485     float mx1, mx2, my1, my2;
-486     if(mouseCurrentX >= mouseDownX){
-487         mx1 = mouseDownX / scale - offX;
-488         mx2 = mouseCurrentX / scale - offX;
-489     } else {
-490         mx1 = mouseCurrentX / scale - offX;
-491         mx2 = mouseDownX / scale - offX;
-492     }
-493     if(mouseCurrentY >= mouseDownY){
-494         my1 = mouseDownY / scale - offY;
-495         my2 = mouseCurrentY / scale - offY;
-496     } else {
-497         my1 = mouseCurrentY / scale - offY;
-498         my2 = mouseDownY / scale - offY;
-499     }
-500     // Clear new selection
-501     if(mouseDownMode != NONE)
-502         newSelection\&.fill(false);
-503     // See if the event hit any keys
-504     QHashIterator<QString, Key> k(keyMap);
-505     uint i = -1;
-506     while(k\&.hasNext()){
-507         k\&.next();
-508         i++;
-509         const Key& key = k\&.value();
-510         if((_rgbMode && !key\&.hasLed)
-511                 || (!_rgbMode && !key\&.hasScan))
-512             continue;
-513         // Update tooltip with the mouse hover (if any), even if it's not selectable
-514         if(fabs(key\&.x - mx) <= key\&.width / 2\&.f - 1\&.f && fabs(key\&.y - my) <= key\&.height / 2\&.f - 1\&.f
-515                 && tooltip\&.isEmpty())
-516             tooltip = key\&.friendlyName(false);
-517         // on STRAFE Sidelights and indicators can't be assigned color the way other keys are colored
-518         if(keyMap\&.model() == KeyMap::STRAFE && (!strcmp(key\&.name, "lsidel") || !strcmp(key\&.name, "rsidel") || _indicators\&.contains(key\&.name))) // FIX: _indicators check fails whenever _indicators is empty because "show animated" is unchecked
-519             continue;
-520         float kx1 = key\&.x - key\&.width / 2\&.f + 1\&.f;
-521         float ky1 = key\&.y - key\&.height / 2\&.f + 1\&.f;
-522         float kx2 = kx1 + key\&.width - 2\&.f;
-523         float ky2 = ky1 + key\&.height - 2\&.f;
-524         // If they overlap, add the key to the selection
-525         if(!(mx1 >= kx2 || kx1 >= mx2)
-526                 && !(my1 >= ky2 || ky1 >= my2)
-527                 && mouseDownMode != NONE)
-528             newSelection\&.setBit(i);
-529     }
-530 
-531     if(mouseDownMode != NONE)
-532         update();
-533     setToolTip(tooltip);
-534 }
+480                                                 {
+481     event->accept();
+482     QString tooltip;
+483 
+484     // Find selection rectangle
+485     mouseCurrentX = event->x();
+486     mouseCurrentY = event->y();
+487     float scale, offX, offY;
+488     drawInfo(scale, offX, offY);
+489     float mx = mouseCurrentX / scale - offX, my = mouseCurrentY / scale - offY;
+490     float mx1, mx2, my1, my2;
+491     if(mouseCurrentX >= mouseDownX){
+492         mx1 = mouseDownX / scale - offX;
+493         mx2 = mouseCurrentX / scale - offX;
+494     } else {
+495         mx1 = mouseCurrentX / scale - offX;
+496         mx2 = mouseDownX / scale - offX;
+497     }
+498     if(mouseCurrentY >= mouseDownY){
+499         my1 = mouseDownY / scale - offY;
+500         my2 = mouseCurrentY / scale - offY;
+501     } else {
+502         my1 = mouseCurrentY / scale - offY;
+503         my2 = mouseDownY / scale - offY;
+504     }
+505     // Clear new selection
+506     if(mouseDownMode != NONE)
+507         newSelection\&.fill(false);
+508     // See if the event hit any keys
+509     QHashIterator<QString, Key> k(keyMap);
+510     uint i = -1;
+511     while(k\&.hasNext()){
+512         k\&.next();
+513         i++;
+514         const Key& key = k\&.value();
+515         if((_rgbMode && !key\&.hasLed)
+516                 || (!_rgbMode && !key\&.hasScan))
+517             continue;
+518         // Update tooltip with the mouse hover (if any), even if it's not selectable
+519         if(fabs(key\&.x - mx) <= key\&.width / 2\&.f - 1\&.f && fabs(key\&.y - my) <= key\&.height / 2\&.f - 1\&.f
+520                 && tooltip\&.isEmpty())
+521             tooltip = key\&.friendlyName(false);
+522         // on STRAFE Sidelights and indicators can't be assigned color the way other keys are colored
+523         if(keyMap\&.model() == KeyMap::STRAFE && (!strcmp(key\&.name, "lsidel") || !strcmp(key\&.name, "rsidel") || _indicators\&.contains(key\&.name))) // FIX: _indicators check fails whenever _indicators is empty because "show animated" is unchecked
+524             continue;
+525         float kx1 = key\&.x - key\&.width / 2\&.f + 1\&.f;
+526         float ky1 = key\&.y - key\&.height / 2\&.f + 1\&.f;
+527         float kx2 = kx1 + key\&.width - 2\&.f;
+528         float ky2 = ky1 + key\&.height - 2\&.f;
+529         // If they overlap, add the key to the selection
+530         if(!(mx1 >= kx2 || kx1 >= mx2)
+531                 && !(my1 >= ky2 || ky1 >= my2)
+532                 && mouseDownMode != NONE)
+533             newSelection\&.setBit(i);
+534     }
+535 
+536     if(mouseDownMode != NONE)
+537         update();
+538     setToolTip(tooltip);
+539 }
 .fi
 .SS "void KeyWidget::mousePressEvent (QMouseEvent *event)\fC [private]\fP"
 
 .PP
-Definition at line 443 of file keywidget\&.cpp\&.
+Definition at line 448 of file keywidget\&.cpp\&.
 .PP
 References _rgbMode, ADD, drawInfo(), Key::hasLed, Key::hasScan, Key::height, keyMap, mouseCurrentX, mouseCurrentY, mouseDownMode, mouseDownX, mouseDownY, Key::name, newSelection, SET, sidelightToggled(), SUBTRACT, TOGGLE, Key::width, Key::x, and Key::y\&.
 .PP
 .nf
-443                                                  {
-444     event->accept();
-445     mouseDownMode = (event->modifiers() & Qt::AltModifier) ? SUBTRACT : (event->modifiers() & Qt::ShiftModifier) ? ADD : (event->modifiers() & Qt::ControlModifier) ? TOGGLE : SET;
-446     mouseDownX = mouseCurrentX = event->x();
-447     mouseDownY = mouseCurrentY = event->y();
-448     // See if the event hit a key
-449     float scale, offX, offY;
-450     drawInfo(scale, offX, offY);
-451     float mx = mouseCurrentX / scale - offX, my = mouseCurrentY / scale - offY;
-452     QHashIterator<QString, Key> k(keyMap);
-453     uint i = -1;
-454     while(k\&.hasNext()){
-455         k\&.next();
-456         i++;
-457         const Key& key = k\&.value();
-458         if((_rgbMode && !key\&.hasLed)
-459                 || (!_rgbMode && !key\&.hasScan))
-460             continue;
-461         if(fabs(key\&.x - mx) <= key\&.width / 2\&.f - 1\&.f && fabs(key\&.y - my) <= key\&.height / 2\&.f - 1\&.f){
-462             // Sidelights can't have a color, but they can be toggled
-463             if(!strcmp(key\&.name, "lsidel") || !strcmp(key\&.name, "rsidel")){
-464                 emit sidelightToggled(); // get the kblightwidget to record it
-465                 update();
-466                 break;
-467             }
-468             newSelection\&.setBit(i);
-469             update();
-470             break;
-471         }
-472     }
-473 }
+448                                                  {
+449     event->accept();
+450     mouseDownMode = (event->modifiers() & Qt::AltModifier) ? SUBTRACT : (event->modifiers() & Qt::ShiftModifier) ? ADD : (event->modifiers() & Qt::ControlModifier) ? TOGGLE : SET;
+451     mouseDownX = mouseCurrentX = event->x();
+452     mouseDownY = mouseCurrentY = event->y();
+453     // See if the event hit a key
+454     float scale, offX, offY;
+455     drawInfo(scale, offX, offY);
+456     float mx = mouseCurrentX / scale - offX, my = mouseCurrentY / scale - offY;
+457     QHashIterator<QString, Key> k(keyMap);
+458     uint i = -1;
+459     while(k\&.hasNext()){
+460         k\&.next();
+461         i++;
+462         const Key& key = k\&.value();
+463         if((_rgbMode && !key\&.hasLed)
+464                 || (!_rgbMode && !key\&.hasScan))
+465             continue;
+466         if(fabs(key\&.x - mx) <= key\&.width / 2\&.f - 1\&.f && fabs(key\&.y - my) <= key\&.height / 2\&.f - 1\&.f){
+467             // Sidelights can't have a color, but they can be toggled
+468             if(!strcmp(key\&.name, "lsidel") || !strcmp(key\&.name, "rsidel")){
+469                 emit sidelightToggled(); // get the kblightwidget to record it
+470                 update();
+471                 break;
+472             }
+473             newSelection\&.setBit(i);
+474             update();
+475             break;
+476         }
+477     }
+478 }
 .fi
 .SS "void KeyWidget::mouseReleaseEvent (QMouseEvent *event)\fC [private]\fP"
 
 .PP
-Definition at line 536 of file keywidget\&.cpp\&.
+Definition at line 541 of file keywidget\&.cpp\&.
 .PP
 References ADD, keyMap, KeyMap::keys(), mouseDownMode, newSelection, NONE, selection, selectionChanged(), SET, SUBTRACT, and TOGGLE\&.
 .PP
 .nf
-536                                                    {
-537     event->accept();
-538     if(mouseDownMode == NONE)
-539         return;
-540     // Apply the new selection
-541     switch(mouseDownMode){
-542     case SET:
-543         selection = newSelection;
-544         break;
-545     case ADD:
-546         selection |= newSelection;
-547         break;
-548     case SUBTRACT:
-549         selection &= ~newSelection;
-550         break;
-551     case TOGGLE:
-552         selection ^= newSelection;
-553         break;
-554     default:;
-555     }
-556     // Clear mousedown state\&.
-557     newSelection\&.fill(false);
-558     mouseDownMode = NONE;
-559     // Emit signal with the names of the keys
-560     QStringList selectedNames;
-561     uint i = 0;
-562     foreach(const QString& key, keyMap\&.keys()){
-563         if(selection\&.testBit(i++))
-564             selectedNames << key;
-565     }
-566     emit selectionChanged(selectedNames);
-567     update();
-568 }
+541                                                    {
+542     event->accept();
+543     if(mouseDownMode == NONE)
+544         return;
+545     // Apply the new selection
+546     switch(mouseDownMode){
+547     case SET:
+548         selection = newSelection;
+549         break;
+550     case ADD:
+551         selection |= newSelection;
+552         break;
+553     case SUBTRACT:
+554         selection &= ~newSelection;
+555         break;
+556     case TOGGLE:
+557         selection ^= newSelection;
+558         break;
+559     default:;
+560     }
+561     // Clear mousedown state\&.
+562     newSelection\&.fill(false);
+563     mouseDownMode = NONE;
+564     // Emit signal with the names of the keys
+565     QStringList selectedNames;
+566     uint i = 0;
+567     foreach(const QString& key, keyMap\&.keys()){
+568         if(selection\&.testBit(i++))
+569             selectedNames << key;
+570     }
+571     emit selectionChanged(selectedNames);
+572     update();
+573 }
 .fi
 .SS "void KeyWidget::paintEvent (QPaintEvent *)\fC [private]\fP"
-
+  
 .PP
 Definition at line 70 of file keywidget\&.cpp\&.
 .PP
@@ -830,107 +830,107 @@ References _bindMap, _colorMap, _displayColorMap, _indicators, _monochrome, _rgb
 338             struct {
 339                 const char* keyName, *displayName;
 340             } names[] = {
-341                 {"light", "☼"}, {"lock", "☒"}, {"mute", "◖⊘"}, {"volup", keyMap\&.model() == KeyMap::K65 ? "◖))" : "▲"}, {"voldn", keyMap\&.model() == KeyMap::K65 ? "◖)" : "▼"},
-342                 {"prtscn",  "PrtScn\nSysRq"}, {"scroll", "Scroll\nLock"}, {"pause", "Pause\nBreak"}, {"stop", "▪"}, {"prev", "|◂◂"}, {"play", "▸||"}, {"next", "▸▸|"},
-343                 {"pgup", "Page\nUp"}, {"pgdn", "Page\nDown"}, {"numlock", "Num\nLock"},
-344                 {"caps", "Caps"}, {"lshift", "Shift"}, {"rshift", "Shift"},
-345 #ifdef Q_OS_MACX
-346                 {"lctrl", "⌃"}, {"rctrl", "⌃"}, {"lwin", "⌘"}, {"rwin", "⌘"}, {"lalt", "⌥"}, {"ralt", "⌥"},
-347 #else
-348                 {"lctrl", "Ctrl"}, {"rctrl", "Ctrl"}, {"lwin", "❖"}, {"rwin", "❖"}, {"lalt", "Alt"}, {"ralt", "Alt"},
-349 #endif
-350                 {"rmenu", "▤"}, {"up", "▲"}, {"left", "◀"}, {"down", "▼"}, {"right", "▶"}, {"fn","Fn"},
-351                 {"mouse1", ""}, {"mouse2", ""}, {"mouse3", "∙"}, {"dpiup", "▲"}, {"dpidn", "▼"}, {"wheelup", "▲"}, {"wheeldn", "▼"}, {"dpi", "◉"}, {"mouse5", "▲"}, {"mouse4", "▼"}, {"sniper", "⊕"}
-352             };
-353             for(uint k = 0; k < sizeof(names) / sizeof(names[0]); k++){
-354                 if(keyName == names[k]\&.keyName){
-355                     name = names[k]\&.displayName;
-356                     break;
-357                 }
-358             }
-359             if(keyName == "thumb1" && model == KeyMap::SABRE)
-360                 name = "∙";
-361             if(keyName == "mr" || keyName == "m1" || keyName == "m2" || keyName == "m3" || keyName == "up" || keyName == "down" || keyName == "left" || keyName == "right")
-362                 // Use a smaller size for MR, M1 - M3, and arrow keys
-363                 font\&.setPixelSize(font\&.pixelSize() * 0\&.75);
-364             else if(keyName == "end")
-365                 // Use a smaller size for "End" to match everything else in that area
-366                 font\&.setPixelSize(font\&.pixelSize() * 0\&.65);
-367             else if(keyName == "light"
-368 #ifndef Q_OS_MACX
-369                     || keyName == "lwin" || keyName == "rwin"
-370 #endif
-371                     )
-372                 // Use a larger font size for Super (Linux only) and Brightness to compensate for the unicode symbols looking smaller
-373                 font\&.setPixelSize(font\&.pixelSize() * 1\&.3);
-374             if((layout == KeyMap::EU || layout == KeyMap::EU_DVORAK) && (keyName == "hash" || keyName == "bslash_iso"))
-375                 // Don't differentiate backslashes on the EU layout
-376                 name = "\\";
-377             // Determine the appropriate size to draw the text at
-378             decPainter\&.setFont(font);
-379             QRectF rect(x * scale, y * scale - 1, w * scale, h * scale);
-380             int flags = Qt::AlignHCenter | Qt::AlignVCenter | Qt::TextWordWrap;
-381             QRectF bounds = decPainter\&.boundingRect(rect, flags, name);
-382             while((bounds\&.height() >= rect\&.height() - 8\&. || bounds\&.width() >= rect\&.width() - 2\&.) && font\&.pixelSize() >= 5){
-383                 // Scale font size down until it fits inside the key
-384                 font\&.setPixelSize(font\&.pixelSize() - 2);
-385                 decPainter\&.setFont(font);
-386                 bounds = decPainter\&.boundingRect(rect, flags, name);
-387             }
-388             // Pick color based on key function
-389             QString bind = _bindMap\&.value(key\&.name);
-390             QString def = KbBind::defaultAction(key\&.name);
-391             if(bind\&.isEmpty())
-392                 // Unbound - red
-393                 decPainter\&.setPen(QColor(255, 136, 136));
-394             else if(KeyAction(bind)\&.isProgram())
-395                 // Custom program - orange
-396                 decPainter\&.setPen(QColor(255, 224, 192));
-397             else if(KeyAction(bind)\&.isSpecial() && (bind == def || !KeyAction(def)\&.isSpecial()))
-398                 // Special function - blue (only if not mapped to a different function - if a special function is remapped, color it yellow)
-399                 decPainter\&.setPen(QColor(128, 224, 255));
-400             else if(KeyAction(bind)\&.isMedia() && (bind == def || !KeyAction(def)\&.isMedia()))
-401                 // Media key - green
-402                 decPainter\&.setPen(QColor(160, 255, 168));
-403             else if(bind == def)
-404                 // Standard key - white
-405                 decPainter\&.setPen(QColor(255, 255, 255));
-406             else
-407                 // Remapped key - yellow
-408                 decPainter\&.setPen(QColor(255, 248, 128));
-409             decPainter\&.drawText(rect, flags, name);
-410             font = font0;
-411         }
-412     }
-413     // Create drop shadow effects
-414     QGraphicsDropShadowEffect* bgEffect = new QGraphicsDropShadowEffect;  // Have to use "new", creating these on the stack causes a crash\&.\&.\&.
-415     bgEffect->setBlurRadius(2\&.);
-416     bgEffect->setColor(QColor(0, 0, 0, 32));
-417     bgEffect->setOffset(0, 1);
-418     QGraphicsDropShadowEffect* decEffect = new QGraphicsDropShadowEffect;
-419     decEffect->setBlurRadius(4\&.);
-420     decEffect->setColor(QColor(0, 0, 0, 104));
-421     decEffect->setOffset(0, 1);
-422     // Apply them to the pixmaps
-423     QGraphicsPixmapItem* bgItem = new QGraphicsPixmapItem(keyBG);
-424     bgItem->setGraphicsEffect(bgEffect);
-425     QGraphicsPixmapItem* decItem = new QGraphicsPixmapItem(decoration);
-426     decItem->setGraphicsEffect(decEffect);
-427     // Render everything
-428     QGraphicsScene* scene = new QGraphicsScene;
-429     scene->addItem(bgItem);
-430     scene->addItem(decItem);
-431     // It has to be rendered onto yet another pixmap or else DPI scaling will look terrible\&.\&.\&.
-432     QPixmap final(wWidth * ratio, wHeight * ratio);
-433     final\&.fill(QColor(0, 0, 0, 0));
-434     QPainter finalPainter(&final);
-435     scene->render(&finalPainter, QRectF(0, 0, wWidth * ratio, wHeight * ratio), QRectF(0, 0, wWidth * ratio, wHeight * ratio));
-436     delete scene;   // <- Automatically cleans up the rest of the objects
-437 #if QT_VERSION >= QT_VERSION_CHECK(5, 3, 0)
-438     final\&.setDevicePixelRatio(ratio);
-439 #endif
-440     painter\&.drawPixmap(QPointF(0\&., 0\&.), final);
-441 }
+342                 {"light", "☼"}, {"lock", "☒"}, {"mute", "◖⊘"}, {"volup", keyMap\&.model() == KeyMap::K65 ? "◖))" : "▲"}, {"voldn", keyMap\&.model() == KeyMap::K65 ? "◖)" : "▼"},
+343                 {"prtscn",  "PrtScn\nSysRq"}, {"scroll", "Scroll\nLock"}, {"pause", "Pause\nBreak"}, {"stop", "▪"}, {"prev", "|◂◂"}, {"play", "▸||"}, {"next", "▸▸|"},
+344                 {"pgup", "Page\nUp"}, {"pgdn", "Page\nDown"}, {"numlock", "Num\nLock"},
+345                 {"caps", "Caps"}, {"lshift", "Shift"}, {"rshift", "Shift"},
+346 #ifdef Q_OS_MACX
+347                 {"lctrl", "⌃"}, {"rctrl", "⌃"}, {"lwin", "⌘"}, {"rwin", "⌘"}, {"lalt", "⌥"}, {"ralt", "⌥"},
+348 #else
+349                 {"lctrl", "Ctrl"}, {"rctrl", "Ctrl"}, {"lwin", "❖"}, {"rwin", "❖"}, {"lalt", "Alt"}, {"ralt", "Alt"},
+350 #endif
+351                 {"rmenu", "▤"}, {"up", "▲"}, {"left", "◀"}, {"down", "▼"}, {"right", "▶"}, {"fn","Fn"},
+352                 {"mouse1", ""}, {"mouse2", ""}, {"mouse3", "∙"}, {"dpiup", "▲"}, {"dpidn", "▼"}, {"wheelup", "▲"}, {"wheeldn", "▼"}, {"dpi", "◉"}, {"mouse5", "▲"}, {"mouse4", "▼"}, {"sniper", "⊕"}
+357             };
+358             for(uint k = 0; k < sizeof(names) / sizeof(names[0]); k++){
+359                 if(keyName == names[k]\&.keyName){
+360                     name = names[k]\&.displayName;
+361                     break;
+362                 }
+363             }
+364             if(keyName == "thumb1" && model == KeyMap::SABRE)
+365                 name = "∙";
+366             if(keyName == "mr" || keyName == "m1" || keyName == "m2" || keyName == "m3" || keyName == "up" || keyName == "down" || keyName == "left" || keyName == "right")
+367                 // Use a smaller size for MR, M1 - M3, and arrow keys
+368                 font\&.setPixelSize(font\&.pixelSize() * 0\&.75);
+369             else if(keyName == "end")
+370                 // Use a smaller size for "End" to match everything else in that area
+371                 font\&.setPixelSize(font\&.pixelSize() * 0\&.65);
+372             else if(keyName == "light"
+373 #ifndef Q_OS_MACX
+374                     || keyName == "lwin" || keyName == "rwin"
+375 #endif
+376                     )
+377                 // Use a larger font size for Super (Linux only) and Brightness to compensate for the unicode symbols looking smaller
+378                 font\&.setPixelSize(font\&.pixelSize() * 1\&.3);
+379             if((layout == KeyMap::EU || layout == KeyMap::EU_DVORAK) && (keyName == "hash" || keyName == "bslash_iso"))
+380                 // Don't differentiate backslashes on the EU layout
+381                 name = "\\";
+382             // Determine the appropriate size to draw the text at
+383             decPainter\&.setFont(font);
+384             QRectF rect(x * scale, y * scale - 1, w * scale, h * scale);
+385             int flags = Qt::AlignHCenter | Qt::AlignVCenter | Qt::TextWordWrap;
+386             QRectF bounds = decPainter\&.boundingRect(rect, flags, name);
+387             while((bounds\&.height() >= rect\&.height() - 8\&. || bounds\&.width() >= rect\&.width() - 2\&.) && font\&.pixelSize() >= 5){
+388                 // Scale font size down until it fits inside the key
+389                 font\&.setPixelSize(font\&.pixelSize() - 2);
+390                 decPainter\&.setFont(font);
+391                 bounds = decPainter\&.boundingRect(rect, flags, name);
+392             }
+393             // Pick color based on key function
+394             QString bind = _bindMap\&.value(key\&.name);
+395             QString def = KbBind::defaultAction(key\&.name);
+396             if(bind\&.isEmpty())
+397                 // Unbound - red
+398                 decPainter\&.setPen(QColor(255, 136, 136));
+399             else if(KeyAction(bind)\&.isProgram())
+400                 // Custom program - orange
+401                 decPainter\&.setPen(QColor(255, 224, 192));
+402             else if(KeyAction(bind)\&.isSpecial() && (bind == def || !KeyAction(def)\&.isSpecial()))
+403                 // Special function - blue (only if not mapped to a different function - if a special function is remapped, color it yellow)
+404                 decPainter\&.setPen(QColor(128, 224, 255));
+405             else if(KeyAction(bind)\&.isMedia() && (bind == def || !KeyAction(def)\&.isMedia()))
+406                 // Media key - green
+407                 decPainter\&.setPen(QColor(160, 255, 168));
+408             else if(bind == def)
+409                 // Standard key - white
+410                 decPainter\&.setPen(QColor(255, 255, 255));
+411             else
+412                 // Remapped key - yellow
+413                 decPainter\&.setPen(QColor(255, 248, 128));
+414             decPainter\&.drawText(rect, flags, name);
+415             font = font0;
+416         }
+417     }
+418     // Create drop shadow effects
+419     QGraphicsDropShadowEffect* bgEffect = new QGraphicsDropShadowEffect;  // Have to use "new", creating these on the stack causes a crash\&.\&.\&.
+420     bgEffect->setBlurRadius(2\&.);
+421     bgEffect->setColor(QColor(0, 0, 0, 32));
+422     bgEffect->setOffset(0, 1);
+423     QGraphicsDropShadowEffect* decEffect = new QGraphicsDropShadowEffect;
+424     decEffect->setBlurRadius(4\&.);
+425     decEffect->setColor(QColor(0, 0, 0, 104));
+426     decEffect->setOffset(0, 1);
+427     // Apply them to the pixmaps
+428     QGraphicsPixmapItem* bgItem = new QGraphicsPixmapItem(keyBG);
+429     bgItem->setGraphicsEffect(bgEffect);
+430     QGraphicsPixmapItem* decItem = new QGraphicsPixmapItem(decoration);
+431     decItem->setGraphicsEffect(decEffect);
+432     // Render everything
+433     QGraphicsScene* scene = new QGraphicsScene;
+434     scene->addItem(bgItem);
+435     scene->addItem(decItem);
+436     // It has to be rendered onto yet another pixmap or else DPI scaling will look terrible\&.\&.\&.
+437     QPixmap final(wWidth * ratio, wHeight * ratio);
+438     final\&.fill(QColor(0, 0, 0, 0));
+439     QPainter finalPainter(&final);
+440     scene->render(&finalPainter, QRectF(0, 0, wWidth * ratio, wHeight * ratio), QRectF(0, 0, wWidth * ratio, wHeight * ratio));
+441     delete scene;   // <- Automatically cleans up the rest of the objects
+442 #if QT_VERSION >= QT_VERSION_CHECK(5, 3, 0)
+443     final\&.setDevicePixelRatio(ratio);
+444 #endif
+445     painter\&.drawPixmap(QPointF(0\&., 0\&.), final);
+446 }
 .fi
 .SS "bool KeyWidget::rgbMode ()\fC [inline]\fP"
 
@@ -957,33 +957,33 @@ References _rgbMode\&.
 .SS "void KeyWidget::selectAll ()"
 
 .PP
-Definition at line 584 of file keywidget\&.cpp\&.
+Definition at line 589 of file keywidget\&.cpp\&.
 .PP
 References _rgbMode, Key::hasLed, Key::hasScan, keyMap, mouseDownMode, Key::name, newSelection, NONE, KeyMap::positions(), selection, and selectionChanged()\&.
 .PP
 Referenced by KbLightWidget::on_animButton_clicked(), and KbLightWidget::on_bgButton_clicked()\&.
 .PP
 .nf
-584                          {
-585     selection\&.fill(false);
-586     // Fill the selection with all keys that have an LED/scancode (depending on widget mode)
-587     int i = 0;
-588     QStringList selectedNames;
-589     foreach(const Key& key, keyMap\&.positions()){
-590         // Sidelights can't be selected
-591         if(strcmp(key\&.name, "lsidel") && strcmp(key\&.name, "rsidel")
-592            && ((_rgbMode && key\&.hasLed) || !(_rgbMode && key\&.hasScan))){
-593             selection\&.setBit(i);
-594             selectedNames << key\&.name;
-595         }
-596         i++;
-597     }
-598     // Clear mousedown state
-599     newSelection\&.fill(false);
-600     mouseDownMode = NONE;
-601     update();
-602     emit selectionChanged(selectedNames);
-603 }
+589                          {
+590     selection\&.fill(false);
+591     // Fill the selection with all keys that have an LED/scancode (depending on widget mode)
+592     int i = 0;
+593     QStringList selectedNames;
+594     foreach(const Key& key, keyMap\&.positions()){
+595         // Sidelights can't be selected
+596         if(strcmp(key\&.name, "lsidel") && strcmp(key\&.name, "rsidel")
+597            && ((_rgbMode && key\&.hasLed) || !(_rgbMode && key\&.hasScan))){
+598             selection\&.setBit(i);
+599             selectedNames << key\&.name;
+600         }
+601         i++;
+602     }
+603     // Clear mousedown state
+604     newSelection\&.fill(false);
+605     mouseDownMode = NONE;
+606     update();
+607     emit selectionChanged(selectedNames);
+608 }
 .fi
 .SS "void KeyWidget::selectionChanged (QStringListselected)\fC [signal]\fP"
 
@@ -1001,65 +1001,65 @@ Referenced by clearSelection(), mouseReleaseEvent(), selectAll(), and setSelecti
 .SS "void KeyWidget::setAnimation (const QStringList &keys)"
 
 .PP
-Definition at line 613 of file keywidget\&.cpp\&.
+Definition at line 618 of file keywidget\&.cpp\&.
 .PP
 References animation, keyMap, and KeyMap::keys()\&.
 .PP
 Referenced by KbLightWidget::changeAnimKeys(), and KbLightWidget::setLight()\&.
 .PP
 .nf
-613                                                    {
-614     animation\&.fill(false);
-615     QStringList allNames = keyMap\&.keys();
-616     foreach(const QString& key, keys){
-617         // Sidelights can't be selected
-618         if(!strcmp(key\&.toLatin1(), "lsidel") || !strcmp(key\&.toLatin1(), "rsidel"))
-619             continue;
-620         int index = allNames\&.indexOf(key);
-621         if(index >= 0)
-622             animation\&.setBit(index);
-623     }
-624     update();
-625 }
+618                                                    {
+619     animation\&.fill(false);
+620     QStringList allNames = keyMap\&.keys();
+621     foreach(const QString& key, keys){
+622         // Sidelights can't be selected
+623         if(!strcmp(key\&.toLatin1(), "lsidel") || !strcmp(key\&.toLatin1(), "rsidel"))
+624             continue;
+625         int index = allNames\&.indexOf(key);
+626         if(index >= 0)
+627             animation\&.setBit(index);
+628     }
+629     update();
+630 }
 .fi
 .SS "void KeyWidget::setAnimationToSelection ()"
 
 .PP
-Definition at line 627 of file keywidget\&.cpp\&.
+Definition at line 632 of file keywidget\&.cpp\&.
 .PP
 References animation, and selection\&.
 .PP
 Referenced by KbLightWidget::changeAnim()\&.
 .PP
 .nf
-627                                        {
-628     animation = selection;
-629     update();
-630 }
+632                                        {
+633     animation = selection;
+634     update();
+635 }
 .fi
 .SS "void KeyWidget::setSelection (const QStringList &keys)"
 
 .PP
-Definition at line 570 of file keywidget\&.cpp\&.
+Definition at line 575 of file keywidget\&.cpp\&.
 .PP
 References keyMap, KeyMap::keys(), mouseDownMode, newSelection, NONE, selection, and selectionChanged()\&.
 .PP
 Referenced by KbLightWidget::changeAnim()\&.
 .PP
 .nf
-570                                                    {
-571     selection\&.fill(false);
-572     QStringList allNames = keyMap\&.keys();
-573     foreach(const QString& key, keys){
-574         int index = allNames\&.indexOf(key);
-575         if(index >= 0)
-576             selection\&.setBit(index);
-577     }
-578     newSelection\&.fill(false);
-579     mouseDownMode = NONE;
-580     update();
-581     emit selectionChanged(keys);
-582 }
+575                                                    {
+576     selection\&.fill(false);
+577     QStringList allNames = keyMap\&.keys();
+578     foreach(const QString& key, keys){
+579         int index = allNames\&.indexOf(key);
+580         if(index >= 0)
+581             selection\&.setBit(index);
+582     }
+583     newSelection\&.fill(false);
+584     mouseDownMode = NONE;
+585     update();
+586     emit selectionChanged(keys);
+587 }
 .fi
 .SS "void KeyWidget::sidelightToggled ()\fC [signal]\fP"
 

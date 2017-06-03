@@ -1,4 +1,4 @@
-.TH "RebindWidget" 3 "Sat May 27 2017" "Version v0.2.8 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.TH "RebindWidget" 3 "Sat Jun 3 2017" "Version beta-v0.2.8+testing at branch all-mine" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -194,9 +194,6 @@ Inherits \fBQWidget\fP\&.
 .RI "\fBUi::RebindWidget\fP * \fBui\fP"
 .br
 .ti -1c
-.RI "bool \fBfirstCall\fP"
-.br
-.ti -1c
 .RI "\fBKbBind\fP * \fBbind\fP"
 .br
 .ti -1c
@@ -240,13 +237,6 @@ Inherits \fBQWidget\fP\&.
 .ti -1c
 .RI "static const int \fBTAB_KB\fP = 0"
 .br
-.RI "\fI
-.PP
-.RS 4
-Used to position the mouse panel on first bind calls 
-.RE
-.PP
-\fP"
 .ti -1c
 .RI "static const int \fBTAB_MOUSE\fP = 1"
 .br
@@ -273,7 +263,7 @@ Definition at line 15 of file rebindwidget\&.h\&.
 .PP
 Definition at line 9 of file rebindwidget\&.cpp\&.
 .PP
-References firstCall, Ui_RebindWidget::fnBox, fnKeys, KeyMap::friendlyName(), Ui_RebindWidget::lightWrapBox, Ui_RebindWidget::mediaBox, mediaKeys, Ui_RebindWidget::modBox, Ui_RebindWidget::modeWrapBox, modKeys, mouseExtKeys, mouseKeys, Ui_RebindWidget::numBox, numKeys, Ui_RebindWidget::programKpExtra, Ui_RebindWidget::programKrExtra, Ui_RebindWidget::progTipLabel, Ui_RebindWidget::setupUi(), ui, and wheelKeys\&.
+References Ui_RebindWidget::fnBox, fnKeys, KeyMap::friendlyName(), Ui_RebindWidget::lightWrapBox, Ui_RebindWidget::mediaBox, mediaKeys, Ui_RebindWidget::modBox, Ui_RebindWidget::modeWrapBox, modKeys, mouseExtKeys, mouseKeys, Ui_RebindWidget::numBox, numKeys, Ui_RebindWidget::programKpExtra, Ui_RebindWidget::programKrExtra, Ui_RebindWidget::progTipLabel, Ui_RebindWidget::setupUi(), ui, and wheelKeys\&.
 .PP
 .nf
 9                                           :
@@ -281,63 +271,62 @@ References firstCall, Ui_RebindWidget::fnBox, fnKeys, KeyMap::friendlyName(), Ui
 11     ui(new Ui::RebindWidget),
 12     bind(0), profile(0), macReader(0)
 13 {
-14     firstCall = true;
-15     ui->setupUi(this);
-16     ui->lightWrapBox->hide();
-17     ui->modeWrapBox->hide();
-18     ui->programKpExtra->hide();
-19     ui->programKrExtra->hide();
-20 
-21     // Populate key lists
-22     modKeys << "caps" << "lshift" << "rshift" << "lctrl" << "rctrl" << "lwin" << "rwin" << "lalt" << "ralt" << "rmenu" << "fn";
-23     fnKeys << "esc" << "f1" << "f2" << "f3" << "f4" << "f5" << "f6" << "f7" << "f8" << "f9" << "f10" << "f11" << "f12" << "prtscn" << "scroll" << "pause" << "f13" << "f14" << "f15" << "f16" << "f17" << "f18" << "f19" << "f20" << "ins" << "del" << "home" << "end" << "pgup" << "pgdn" << "power" << "lightup" << "lightdn" << "up" << "down" << "left" << "right";
-24     numKeys << "numlock" << "num0" << "num1" << "num2" << "num3" << "num4" << "num5" << "num6" << "num7" << "num8" << "num9" << "numslash" << "numstar" << "numminus" << "numplus" << "numdot" << "numenter";
-25     mediaKeys << "stop" << "prev" << "play" << "next" << "volup" << "voldn" << "mute" << "eject";
-26     mouseKeys << "mouse1" << "mouse2" << "mouse3";
-27     mouseExtKeys << "mouse4" << "mouse5" << "mouse6" << "mouse7" << "mouse8";
-28     wheelKeys << "wheelup" << "wheeldn";
-29     // Populate boxes
-30     foreach(const QString& key, modKeys)
-31         ui->modBox->addItem(KeyMap::friendlyName(key));
-32     foreach(const QString& key, fnKeys)
-33         ui->fnBox->addItem(KeyMap::friendlyName(key)\&.replace("\n", " / "));
-34     foreach(const QString& key, numKeys)
-35         ui->numBox->addItem(KeyMap::friendlyName(key)\&.remove("NumPad "));
-36     foreach(const QString& key, mediaKeys)
-37         ui->mediaBox->addItem(KeyMap::friendlyName(key));
-38 #ifdef Q_OS_MACX
-39     // Replace some OSX keys with their actual meanings
-40     ui->modBox->setItemText(modKeys\&.indexOf("lwin") + 1, "Left Cmd");
-41     ui->modBox->setItemText(modKeys\&.indexOf("rwin") + 1, "Right Cmd");
-42     ui->modBox->setItemText(modKeys\&.indexOf("lalt") + 1, "Left Option");
-43     ui->modBox->setItemText(modKeys\&.indexOf("ralt") + 1, "Right Option");
-44     ui->fnBox->setItemText(fnKeys\&.indexOf("prtscn") + 1, "F13");
-45     ui->fnBox->setItemText(fnKeys\&.indexOf("scroll") + 1, "F14");
-46     ui->fnBox->setItemText(fnKeys\&.indexOf("pause") + 1, "F15");
-47     ui->fnBox->setItemText(fnKeys\&.indexOf("f13") + 1, "F13 (Windows/Linux)");
-48     ui->fnBox->setItemText(fnKeys\&.indexOf("f14") + 1, "F14 (Windows/Linux)");
-49     ui->fnBox->setItemText(fnKeys\&.indexOf("f15") + 1, "F15 (Windows/Linux)");
-50     ui->fnBox->setItemText(fnKeys\&.indexOf("ins") + 1, "Help");
-51     ui->numBox->setItemText(numKeys\&.indexOf("numlock") + 1, "Clear");
-52 
-53     // Add tip label
-54     ui->progTipLabel->setText("<p style=\"line-height:150%\">Tip: use the <font face=\"monospace\">open</font> command to launch a file, directory, or app\&. For instance, to start Safari:<br /><font face=\"monospace\">&nbsp;&nbsp;open /Applications/Safari\&.app</font></p>");
-55 #else
-56     ui->progTipLabel->setText("<p style=\"line-height:150%\">Tip: use <font face=\"monospace\">xdg-open</font> to launch a file or directory\&. For instance, to open your home folder:<br /><font face=\"monospace\">&nbsp;&nbsp;xdg-open " + QStandardPaths::writableLocation(QStandardPaths::HomeLocation) + "</font></p>");
-57 #endif
-58 }
+14     ui->setupUi(this);
+15     ui->lightWrapBox->hide();
+16     ui->modeWrapBox->hide();
+17     ui->programKpExtra->hide();
+18     ui->programKrExtra->hide();
+19 
+20     // Populate key lists
+21     modKeys << "caps" << "lshift" << "rshift" << "lctrl" << "rctrl" << "lwin" << "rwin" << "lalt" << "ralt" << "rmenu" << "fn";
+22     fnKeys << "esc" << "f1" << "f2" << "f3" << "f4" << "f5" << "f6" << "f7" << "f8" << "f9" << "f10" << "f11" << "f12" << "prtscn" << "scroll" << "pause" << "f13" << "f14" << "f15" << "f16" << "f17" << "f18" << "f19" << "f20" << "ins" << "del" << "home" << "end" << "pgup" << "pgdn" << "power" << "lightup" << "lightdn" << "up" << "down" << "left" << "right";
+23     numKeys << "numlock" << "num0" << "num1" << "num2" << "num3" << "num4" << "num5" << "num6" << "num7" << "num8" << "num9" << "numslash" << "numstar" << "numminus" << "numplus" << "numdot" << "numenter";
+24     mediaKeys << "stop" << "prev" << "play" << "next" << "volup" << "voldn" << "mute" << "eject";
+25     mouseKeys << "mouse1" << "mouse2" << "mouse3";
+26     mouseExtKeys << "mouse4" << "mouse5" << "mouse6" << "mouse7" << "mouse8";
+27     wheelKeys << "wheelup" << "wheeldn";
+28     // Populate boxes
+29     foreach(const QString& key, modKeys)
+30         ui->modBox->addItem(KeyMap::friendlyName(key));
+31     foreach(const QString& key, fnKeys)
+32         ui->fnBox->addItem(KeyMap::friendlyName(key)\&.replace("\n", " / "));
+33     foreach(const QString& key, numKeys)
+34         ui->numBox->addItem(KeyMap::friendlyName(key)\&.remove("NumPad "));
+35     foreach(const QString& key, mediaKeys)
+36         ui->mediaBox->addItem(KeyMap::friendlyName(key));
+37 #ifdef Q_OS_MACX
+38     // Replace some OSX keys with their actual meanings
+39     ui->modBox->setItemText(modKeys\&.indexOf("lwin") + 1, "Left Cmd");
+40     ui->modBox->setItemText(modKeys\&.indexOf("rwin") + 1, "Right Cmd");
+41     ui->modBox->setItemText(modKeys\&.indexOf("lalt") + 1, "Left Option");
+42     ui->modBox->setItemText(modKeys\&.indexOf("ralt") + 1, "Right Option");
+43     ui->fnBox->setItemText(fnKeys\&.indexOf("prtscn") + 1, "F13");
+44     ui->fnBox->setItemText(fnKeys\&.indexOf("scroll") + 1, "F14");
+45     ui->fnBox->setItemText(fnKeys\&.indexOf("pause") + 1, "F15");
+46     ui->fnBox->setItemText(fnKeys\&.indexOf("f13") + 1, "F13 (Windows/Linux)");
+47     ui->fnBox->setItemText(fnKeys\&.indexOf("f14") + 1, "F14 (Windows/Linux)");
+48     ui->fnBox->setItemText(fnKeys\&.indexOf("f15") + 1, "F15 (Windows/Linux)");
+49     ui->fnBox->setItemText(fnKeys\&.indexOf("ins") + 1, "Help");
+50     ui->numBox->setItemText(numKeys\&.indexOf("numlock") + 1, "Clear");
+51 
+52     // Add tip label
+53     ui->progTipLabel->setText("<p style=\"line-height:150%\">Tip: use the <font face=\"monospace\">open</font> command to launch a file, directory, or app\&. For instance, to start Safari:<br /><font face=\"monospace\">&nbsp;&nbsp;open /Applications/Safari\&.app</font></p>");
+54 #else
+55     ui->progTipLabel->setText("<p style=\"line-height:150%\">Tip: use <font face=\"monospace\">xdg-open</font> to launch a file or directory\&. For instance, to open your home folder:<br /><font face=\"monospace\">&nbsp;&nbsp;xdg-open " + QStandardPaths::writableLocation(QStandardPaths::HomeLocation) + "</font></p>");
+56 #endif
+57 }
 .fi
 .SS "RebindWidget::~RebindWidget ()"
 
 .PP
-Definition at line 60 of file rebindwidget\&.cpp\&.
+Definition at line 59 of file rebindwidget\&.cpp\&.
 .PP
 References ui\&.
 .PP
 .nf
-60                            {
-61     delete ui;
-62 }
+59                            {
+60     delete ui;
+61 }
 .fi
 .SH "Member Function Documentation"
 .PP 
@@ -353,117 +342,117 @@ There is still a bug in the state machine: If you record a macro in asTyped-mode
 .PP
 
 .PP
-Definition at line 338 of file rebindwidget\&.cpp\&.
+Definition at line 334 of file rebindwidget\&.cpp\&.
 .PP
 References anim, KeyAction::animAction(), Ui_RebindWidget::animBox, Ui_RebindWidget::animKrBox, KbLight::animList(), Ui_RebindWidget::animOnceBox, bind, DPI_OFFSET, KeyAction::dpiAction(), Ui_RebindWidget::dpiBox, Ui_RebindWidget::dpiCustXBox, Ui_RebindWidget::dpiCustYBox, Ui_RebindWidget::fnBox, fnKeys, KbAnim::guid(), KbBind::light(), KeyAction::lightAction(), Ui_RebindWidget::lightBox, Ui_RebindWidget::lightWrapBox, KeyAction::lockAction(), Ui_RebindWidget::lockBox, KeyAction::macroAction(), Ui_RebindWidget::mb2Box, Ui_RebindWidget::mbBox, Ui_RebindWidget::mediaBox, mediaKeys, Ui_RebindWidget::modBox, KeyAction::modeAction(), Ui_RebindWidget::modeBox, Ui_RebindWidget::modeWrapBox, modKeys, mouseExtKeys, mouseKeys, KbBind::noAction(), Ui_RebindWidget::numBox, numKeys, KeyAction::PROGRAM_PR_MULTI, KeyAction::PROGRAM_RE_INDEF, KeyAction::PROGRAM_RE_KPSTOP, KeyAction::PROGRAM_RE_MULTI, KeyAction::programAction(), Ui_RebindWidget::programKpBox, Ui_RebindWidget::programKpModeBox, Ui_RebindWidget::programKpSIBox, Ui_RebindWidget::programKrBox, Ui_RebindWidget::programKrModeBox, Ui_RebindWidget::programKrSIBox, Ui_RebindWidget::pteMacroBox, Ui_RebindWidget::pteMacroComment, Ui_RebindWidget::pteMacroText, Ui_RebindWidget::rb_delay_asTyped, KbBind::setAction(), Ui_RebindWidget::txtBuffer, Ui_RebindWidget::typingBox, typingKeys, ui, Ui_RebindWidget::wheelBox, and wheelKeys\&.
 .PP
 Referenced by on_applyButton_clicked(), and setSelection()\&.
 .PP
 .nf
-338                                                                      {
-339     if(ui->typingBox->currentIndex() > 0)
-340         bind->setAction(keys, typingKeys[ui->typingBox->currentIndex() - 1]);
-341     else if(ui->modBox->currentIndex() > 0)
-342         bind->setAction(keys, modKeys[ui->modBox->currentIndex() - 1]);
-343     else if(ui->fnBox->currentIndex() > 0)
-344         bind->setAction(keys, fnKeys[ui->fnBox->currentIndex() - 1]);
-345     else if(ui->numBox->currentIndex() > 0)
-346         bind->setAction(keys, numKeys[ui->numBox->currentIndex() - 1]);
-347     else if(ui->mediaBox->currentIndex() > 0)
-348         bind->setAction(keys, mediaKeys[ui->mediaBox->currentIndex() - 1]);
-349     else if(ui->mbBox->currentIndex() > 0)
-350         bind->setAction(keys, mouseKeys[ui->mbBox->currentIndex() - 1]);
-351     else if(ui->mb2Box->currentIndex() > 0)
-352         bind->setAction(keys, mouseExtKeys[ui->mb2Box->currentIndex() - 1]);
-353     else if(ui->wheelBox->currentIndex() > 0)
-354         bind->setAction(keys, wheelKeys[ui->wheelBox->currentIndex() - 1]);
-355     else if(ui->dpiBox->currentIndex() > 0)
-356         bind->setAction(keys, KeyAction::dpiAction(ui->dpiBox->currentIndex() - DPI_OFFSET, ui->dpiCustXBox->value(), ui->dpiCustYBox->value()));
-357     else if(ui->modeBox->currentIndex() > 0)
-358         bind->setAction(keys, KeyAction::modeAction(ui->modeBox->currentIndex() - 3 - (ui->modeWrapBox->isChecked() && ui->modeBox->currentIndex() < 3 ? 2 : 0)));
-359     else if(ui->lightBox->currentIndex() > 0)
-360         bind->setAction(keys, KeyAction::lightAction(ui->lightBox->currentIndex() - 1 + (ui->lightWrapBox->isChecked() ? 2 : 0)));
-361     else if(ui->lockBox->currentIndex() > 0)
-362         bind->setAction(keys, KeyAction::lockAction(ui->lockBox->currentIndex() - 1));
-363     else if(ui->animBox->currentIndex() > 0){
-364         KbAnim* anim = bind->light()->animList()\&.at(ui->animBox->currentIndex() - 1);
-365         bind->setAction(keys, KeyAction::animAction(anim->guid(), !ui->animOnceBox->isChecked(), ui->animKrBox->isChecked()));
-366     } else if(!ui->programKpBox->text()\&.isEmpty() || !ui->programKrBox->text()\&.isEmpty()){
-367         int kpStop = 0, krStop = 0;
-368         if(!ui->programKpBox->text()\&.isEmpty()){
-369             if(!ui->programKpSIBox->isChecked())
-370                 kpStop = KeyAction::PROGRAM_PR_MULTI;
-371             else
-372                 kpStop = ui->programKpModeBox->currentIndex();
-373         }
-374         if(!ui->programKrBox->text()\&.isEmpty()){
-375             if(!ui->programKrSIBox->isChecked())
-376                 krStop = KeyAction::PROGRAM_RE_MULTI;
-377             else if(ui->programKrModeBox->currentIndex() == 0)
-378                 krStop = KeyAction::PROGRAM_RE_INDEF;
-379             else
-380                 krStop = KeyAction::PROGRAM_RE_KPSTOP;
-381         }
-382         bind->setAction(keys, KeyAction::programAction(ui->programKpBox->text(), ui->programKrBox->text(), kpStop | krStop));
-383     } else if (ui->pteMacroBox->toPlainText()\&.length() > 0) {
-388 
-393         if (ui->rb_delay_asTyped->isChecked()) ui->txtBuffer->setText(ui->pteMacroBox->toPlainText());
-394 
-400         QString mac;
-401         mac = ui->txtBuffer->text();
-402         mac = ui->pteMacroComment->toPlainText()\&.replace(":", "&das_IST_31N_col0n;") + ":" + mac;
-403         mac = ui->pteMacroText->toPlainText()\&.replace(":", "&das_IST_31N_col0n;") + ":" + mac;
-404         mac = ui->pteMacroBox->toPlainText() + ":" + mac;
-405         bind->setAction(keys, KeyAction::macroAction(mac));
-406     } else if(doUnbind)
-407         bind->noAction(keys);
-408 }
+334                                                                      {
+335     if(ui->typingBox->currentIndex() > 0)
+336         bind->setAction(keys, typingKeys[ui->typingBox->currentIndex() - 1]);
+337     else if(ui->modBox->currentIndex() > 0)
+338         bind->setAction(keys, modKeys[ui->modBox->currentIndex() - 1]);
+339     else if(ui->fnBox->currentIndex() > 0)
+340         bind->setAction(keys, fnKeys[ui->fnBox->currentIndex() - 1]);
+341     else if(ui->numBox->currentIndex() > 0)
+342         bind->setAction(keys, numKeys[ui->numBox->currentIndex() - 1]);
+343     else if(ui->mediaBox->currentIndex() > 0)
+344         bind->setAction(keys, mediaKeys[ui->mediaBox->currentIndex() - 1]);
+345     else if(ui->mbBox->currentIndex() > 0)
+346         bind->setAction(keys, mouseKeys[ui->mbBox->currentIndex() - 1]);
+347     else if(ui->mb2Box->currentIndex() > 0)
+348         bind->setAction(keys, mouseExtKeys[ui->mb2Box->currentIndex() - 1]);
+349     else if(ui->wheelBox->currentIndex() > 0)
+350         bind->setAction(keys, wheelKeys[ui->wheelBox->currentIndex() - 1]);
+351     else if(ui->dpiBox->currentIndex() > 0)
+352         bind->setAction(keys, KeyAction::dpiAction(ui->dpiBox->currentIndex() - DPI_OFFSET, ui->dpiCustXBox->value(), ui->dpiCustYBox->value()));
+353     else if(ui->modeBox->currentIndex() > 0)
+354         bind->setAction(keys, KeyAction::modeAction(ui->modeBox->currentIndex() - 3 - (ui->modeWrapBox->isChecked() && ui->modeBox->currentIndex() < 3 ? 2 : 0)));
+355     else if(ui->lightBox->currentIndex() > 0)
+356         bind->setAction(keys, KeyAction::lightAction(ui->lightBox->currentIndex() - 1 + (ui->lightWrapBox->isChecked() ? 2 : 0)));
+357     else if(ui->lockBox->currentIndex() > 0)
+358         bind->setAction(keys, KeyAction::lockAction(ui->lockBox->currentIndex() - 1));
+359     else if(ui->animBox->currentIndex() > 0){
+360         KbAnim* anim = bind->light()->animList()\&.at(ui->animBox->currentIndex() - 1);
+361         bind->setAction(keys, KeyAction::animAction(anim->guid(), !ui->animOnceBox->isChecked(), ui->animKrBox->isChecked()));
+362     } else if(!ui->programKpBox->text()\&.isEmpty() || !ui->programKrBox->text()\&.isEmpty()){
+363         int kpStop = 0, krStop = 0;
+364         if(!ui->programKpBox->text()\&.isEmpty()){
+365             if(!ui->programKpSIBox->isChecked())
+366                 kpStop = KeyAction::PROGRAM_PR_MULTI;
+367             else
+368                 kpStop = ui->programKpModeBox->currentIndex();
+369         }
+370         if(!ui->programKrBox->text()\&.isEmpty()){
+371             if(!ui->programKrSIBox->isChecked())
+372                 krStop = KeyAction::PROGRAM_RE_MULTI;
+373             else if(ui->programKrModeBox->currentIndex() == 0)
+374                 krStop = KeyAction::PROGRAM_RE_INDEF;
+375             else
+376                 krStop = KeyAction::PROGRAM_RE_KPSTOP;
+377         }
+378         bind->setAction(keys, KeyAction::programAction(ui->programKpBox->text(), ui->programKrBox->text(), kpStop | krStop));
+379     } else if (ui->pteMacroBox->toPlainText()\&.length() > 0) {
+384 
+389         if (ui->rb_delay_asTyped->isChecked()) ui->txtBuffer->setText(ui->pteMacroBox->toPlainText());
+390 
+396         QString mac;
+397         mac = ui->txtBuffer->text();
+398         mac = ui->pteMacroComment->toPlainText()\&.replace(":", "&das_IST_31N_col0n;") + ":" + mac;
+399         mac = ui->pteMacroText->toPlainText()\&.replace(":", "&das_IST_31N_col0n;") + ":" + mac;
+400         mac = ui->pteMacroBox->toPlainText() + ":" + mac;
+401         bind->setAction(keys, KeyAction::macroAction(mac));
+402     } else if(doUnbind)
+403         bind->noAction(keys);
+404 }
 .fi
 .SS "void RebindWidget::convertMacroBox ()\fC [private]\fP"
 The ckb-daemon needs a shorter format, only ' [+|-]<keyname>=<delay>', multiple entries are separated by comma\&.
 .PP
 That function does the conversion\&. 
 .PP
-Definition at line 813 of file rebindwidget\&.cpp\&.
+Definition at line 808 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::pteMacroBox, Ui_RebindWidget::rb_delay_default, Ui_RebindWidget::rb_delay_no, Ui_RebindWidget::txtBuffer, and ui\&.
 .PP
 Referenced by on_btnStopMacro_clicked(), on_rb_delay_asTyped_toggled(), on_rb_delay_default_toggled(), and on_rb_delay_no_toggled()\&.
 .PP
 .nf
-813                                    {
-814     QString in;
-815 
-816     // Remember the original input stream before it is converted\&.
-817     // In case of new choice of delay mode we have to restore it\&.
-818     if (ui->txtBuffer->text() == "") {
-819         ui->txtBuffer->setText(ui->pteMacroBox->toPlainText());
-820         in = ui->pteMacroBox->toPlainText();
-821     } else in = ui->txtBuffer->text();
-822 
-823     in\&.replace (QRegExp("\n"), ",");    // first join all in one line
-824     in\&.replace (QRegExp("key "), "");   // then delete keyword "key" followed by space
-825     in\&.replace (QRegExp(",="), "=");    // at last join each keystroke with its delay parameter
+808                                    {
+809     QString in;
+810 
+811     // Remember the original input stream before it is converted\&.
+812     // In case of new choice of delay mode we have to restore it\&.
+813     if (ui->txtBuffer->text() == "") {
+814         ui->txtBuffer->setText(ui->pteMacroBox->toPlainText());
+815         in = ui->pteMacroBox->toPlainText();
+816     } else in = ui->txtBuffer->text();
+817 
+818     in\&.replace (QRegExp("\n"), ",");    // first join all in one line
+819     in\&.replace (QRegExp("key "), "");   // then delete keyword "key" followed by space
+820     in\&.replace (QRegExp(",="), "=");    // at last join each keystroke with its delay parameter
+821 
+822     // How to deal with the delay params?
+823     // Because the three radio buttons are mututally exclusive,
+824     // we can run through the if-chain w/o conflicts\&.
+825     // If rb_delay_asTyped is checked, do nothing, because that's the standard\&.
 826 
-827     // How to deal with the delay params?
-828     // Because the three radio buttons are mututally exclusive,
-829     // we can run through the if-chain w/o conflicts\&.
-830     // If rb_delay_asTyped is checked, do nothing, because that's the standard\&.
-831 
-832     if (ui->rb_delay_default->isChecked()) {
-833         in\&.replace(QRegExp("=\\d+,"), ",");  // Delete the timing infos, use default value
-834         in\&.replace(QRegExp("=\\d+$"), "");   // The last entry is without comma
-835     }
-836     if (ui->rb_delay_no->isChecked()) {
-837         in\&.replace(QRegExp("=\\d+,"), "=0,");  // Set timing infos to zero for no delay
-838         in\&.replace(QRegExp("=\\d+$"), "=0");   // Again the last entry w/o comma
-839         in\&.replace(QRegExp("([\\+\\-]\\w+),"), "\\1=0,");  // If no delay is given, force it to zero
-840         in\&.replace(QRegExp("([\\+\\-]\\w+)$"), "\\1=0");
-841     }
-842 
-843     // Show the new format by replacing the older one\&.
-844     ui->pteMacroBox->setPlainText(in);
-845 }
+827     if (ui->rb_delay_default->isChecked()) {
+828         in\&.replace(QRegExp("=\\d+,"), ",");  // Delete the timing infos, use default value
+829         in\&.replace(QRegExp("=\\d+$"), "");   // The last entry is without comma
+830     }
+831     if (ui->rb_delay_no->isChecked()) {
+832         in\&.replace(QRegExp("=\\d+,"), "=0,");  // Set timing infos to zero for no delay
+833         in\&.replace(QRegExp("=\\d+$"), "=0");   // Again the last entry w/o comma
+834         in\&.replace(QRegExp("([\\+\\-]\\w+),"), "\\1=0,");  // If no delay is given, force it to zero
+835         in\&.replace(QRegExp("([\\+\\-]\\w+)$"), "\\1=0");
+836     }
+837 
+838     // Show the new format by replacing the older one\&.
+839     ui->pteMacroBox->setPlainText(in);
+840 }
 .fi
 .SS "void RebindWidget::helpStatus (intstatus)\fC [private]\fP"
 
@@ -475,75 +464,75 @@ Referenced by on_btnStopMacro_clicked(), on_rb_delay_asTyped_toggled(), on_rb_de
 .PP
 
 .PP
-Definition at line 787 of file rebindwidget\&.cpp\&.
+Definition at line 782 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::lbl_macro, and ui\&.
 .PP
 Referenced by on_btnClearMacro_clicked(), on_btnStartMacro_clicked(), on_btnStopMacro_clicked(), and setBox()\&.
 .PP
 .nf
-787                                         {
-788     switch (status) {
-789     case 1:
-790         ui->lbl_macro->setText("Type in a macro name in the comment box and click start\&.");
-791         break;
-792     case 2:
-793         ui->lbl_macro->setText("Type your macro and click stop when finished\&.");
-794         break;
-795     case 3:
-796         ui->lbl_macro->setText("Click Apply or change values in Macro Key Actions in advance\&.");
-797         break;
-798     default:
-799         ui->lbl_macro->setText(QString("Oops: Some magic in RebindWidget::helpStatus (%1)")\&.arg(status));
-800     }
-801 }
+782                                         {
+783     switch (status) {
+784     case 1:
+785         ui->lbl_macro->setText("Type in a macro name in the comment box and click start\&.");
+786         break;
+787     case 2:
+788         ui->lbl_macro->setText("Type your macro and click stop when finished\&.");
+789         break;
+790     case 3:
+791         ui->lbl_macro->setText("Click Apply or change values in Macro Key Actions in advance\&.");
+792         break;
+793     default:
+794         ui->lbl_macro->setText(QString("Oops: Some magic in RebindWidget::helpStatus (%1)")\&.arg(status));
+795     }
+796 }
 .fi
 .SS "void RebindWidget::on_animBox_currentIndexChanged (intindex)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 618 of file rebindwidget\&.cpp\&.
+Definition at line 613 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::animBox, Ui_RebindWidget::animButton, setBox(), and ui\&.
 .PP
 .nf
-618                                                           {
-619     if(index == 0)
-620         ui->animButton->setChecked(false);
-621     else {
-622         ui->animButton->setChecked(true);
-623         setBox(ui->animBox);
-624     }
-625 }
+613                                                           {
+614     if(index == 0)
+615         ui->animButton->setChecked(false);
+616     else {
+617         ui->animButton->setChecked(true);
+618         setBox(ui->animBox);
+619     }
+620 }
 .fi
 .SS "void RebindWidget::on_animButton_clicked (boolchecked)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 715 of file rebindwidget\&.cpp\&.
+Definition at line 710 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::animBox, and ui\&.
 .PP
 .nf
-715                                                     {
-716     if(checked && ui->animBox->currentIndex() == 0)
-717         ui->animBox->setCurrentIndex(1);
-718 }
+710                                                     {
+711     if(checked && ui->animBox->currentIndex() == 0)
+712         ui->animBox->setCurrentIndex(1);
+713 }
 .fi
 .SS "void RebindWidget::on_applyButton_clicked ()\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 410 of file rebindwidget\&.cpp\&.
+Definition at line 406 of file rebindwidget\&.cpp\&.
 .PP
 References applyChanges(), on_btnStopMacro_clicked(), and selection\&.
 .PP
 .nf
-410                                          {
-411     // Normally, this should be done via signalling\&.
-412     // Because there is no serarate thread, we have to call it directly
-413     // (otherwise we could do Key char conversion step by step,
-414     // but so it is more easy to change the key definition):
-415     on_btnStopMacro_clicked();
-416     applyChanges(selection, true);
-417 }
+406                                          {
+407     // Normally, this should be done via signalling\&.
+408     // Because there is no serarate thread, we have to call it directly
+409     // (otherwise we could do Key char conversion step by step,
+410     // but so it is more easy to change the key definition):
+411     on_btnStopMacro_clicked();
+412     applyChanges(selection, true);
+413 }
 .fi
 .SS "void RebindWidget::on_btnClearMacro_clicked ()\fC [private]\fP, \fC [slot]\fP"
 
@@ -555,512 +544,511 @@ I do not know what is the better solution with the delay-buttons in case of clic
 .PP
 
 .PP
-Definition at line 779 of file rebindwidget\&.cpp\&.
+Definition at line 774 of file rebindwidget\&.cpp\&.
 .PP
 References helpStatus()\&.
 .PP
 .nf
-779                                             {
-780     helpStatus(1);
-781 }
+774                                             {
+775     helpStatus(1);
+776 }
 .fi
 .SS "void RebindWidget::on_btnStartMacro_clicked ()\fC [private]\fP, \fC [slot]\fP"
 The UI is protected against false clicking (e\&.g\&. if you type start and than Apply, the channel is closed in wrong order)\&.
 .PP
 At this time, all neccessary params like macroNumber, macroPath, cmdFile etc\&. had been cached\&. 
 .PP
-Definition at line 729 of file rebindwidget\&.cpp\&.
+Definition at line 724 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::applyButton, bind, Ui_RebindWidget::btnStartMacro, Ui_RebindWidget::btnStopMacro, KbBind::getMacroNumber(), KbBind::getMacroPath(), KbBind::handleNotificationChannel(), helpStatus(), macReader, Ui_RebindWidget::pteMacroBox, Ui_RebindWidget::pteMacroText, Ui_RebindWidget::rb_delay_asTyped, Ui_RebindWidget::rb_delay_default, Ui_RebindWidget::rb_delay_no, Ui_RebindWidget::resetButton, ui, and Ui_RebindWidget::unbindButton\&.
 .PP
 .nf
-729                                             {
-730     if (!macReader) {
-731         bind->handleNotificationChannel(true, bind->getMacroPath());
-732         macReader = new MacroReader(bind->getMacroNumber(), bind->getMacroPath(), ui->pteMacroBox, ui->pteMacroText);
-733         // because of the second thread we need to disable three of the four bottom buttons\&.
-734         // Clicking "Stop" will enable them again\&.
-735         ui->applyButton->setEnabled(false);
-736         ui->resetButton->setEnabled(false);
-737         ui->unbindButton->setEnabled(false);
-738         ui->btnStartMacro->setEnabled(false);
-739         ui->btnStopMacro->setEnabled(true);
-740         ui->rb_delay_asTyped->setEnabled(false);
-741         ui->rb_delay_no->setEnabled(false);
-742         ui->rb_delay_default->setEnabled(false);
-743         helpStatus(2);
-744     }
-745 }
+724                                             {
+725     if (!macReader) {
+726         bind->handleNotificationChannel(true);
+727         macReader = new MacroReader(bind->getMacroNumber(), bind->getMacroPath(), ui->pteMacroBox, ui->pteMacroText);
+728         // because of the second thread we need to disable three of the four bottom buttons\&.
+729         // Clicking "Stop" will enable them again\&.
+730         ui->applyButton->setEnabled(false);
+731         ui->resetButton->setEnabled(false);
+732         ui->unbindButton->setEnabled(false);
+733         ui->btnStartMacro->setEnabled(false);
+734         ui->btnStopMacro->setEnabled(true);
+735         ui->rb_delay_asTyped->setEnabled(false);
+736         ui->rb_delay_no->setEnabled(false);
+737         ui->rb_delay_default->setEnabled(false);
+738         helpStatus(2);
+739     }
+740 }
 .fi
 .SS "void RebindWidget::on_btnStopMacro_clicked ()\fC [private]\fP, \fC [slot]\fP"
 Afterwards, the characters in the MacroBox are changed from KB-out format to cmd-in format\&. At last the UI changes to the new state\&. 
 .PP
-Definition at line 754 of file rebindwidget\&.cpp\&.
+Definition at line 749 of file rebindwidget\&.cpp\&.
 .PP
-References Ui_RebindWidget::applyButton, bind, Ui_RebindWidget::btnStartMacro, Ui_RebindWidget::btnStopMacro, convertMacroBox(), KbBind::getMacroPath(), KbBind::handleNotificationChannel(), helpStatus(), macReader, Ui_RebindWidget::rb_delay_asTyped, Ui_RebindWidget::rb_delay_default, Ui_RebindWidget::rb_delay_no, Ui_RebindWidget::resetButton, ui, and Ui_RebindWidget::unbindButton\&.
+References Ui_RebindWidget::applyButton, bind, Ui_RebindWidget::btnStartMacro, Ui_RebindWidget::btnStopMacro, convertMacroBox(), KbBind::handleNotificationChannel(), helpStatus(), macReader, Ui_RebindWidget::rb_delay_asTyped, Ui_RebindWidget::rb_delay_default, Ui_RebindWidget::rb_delay_no, Ui_RebindWidget::resetButton, ui, and Ui_RebindWidget::unbindButton\&.
 .PP
-Referenced by on_applyButton_clicked(), and on_cancelButton_clicked()\&.
+Referenced by on_applyButton_clicked()\&.
 .PP
 .nf
-754                                            {
-755     if (macReader) {
-756         bind->handleNotificationChannel(false, bind->getMacroPath());
-757         delete macReader;
-758         macReader = 0;
-759         convertMacroBox();
-760         ui->applyButton->setEnabled(true);
-761         ui->resetButton->setEnabled(true);
-762         ui->unbindButton->setEnabled(true);
-763         ui->btnStartMacro->setEnabled(true);
-764         ui->btnStopMacro->setEnabled(false);
-765         ui->rb_delay_asTyped->setEnabled(true);
-766         ui->rb_delay_no->setEnabled(true);
-767         ui->rb_delay_default->setEnabled(true);
-768         helpStatus(3);
-769     }
-770 }
+749                                            {
+750     if (macReader) {
+751         bind->handleNotificationChannel(false);
+752         delete macReader;
+753         macReader = 0;
+754         convertMacroBox();
+755         ui->applyButton->setEnabled(true);
+756         ui->resetButton->setEnabled(true);
+757         ui->unbindButton->setEnabled(true);
+758         ui->btnStartMacro->setEnabled(true);
+759         ui->btnStopMacro->setEnabled(false);
+760         ui->rb_delay_asTyped->setEnabled(true);
+761         ui->rb_delay_no->setEnabled(true);
+762         ui->rb_delay_default->setEnabled(true);
+763         helpStatus(3);
+764     }
+765 }
 .fi
 .SS "void RebindWidget::on_cancelButton_clicked ()\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 419 of file rebindwidget\&.cpp\&.
+Definition at line 415 of file rebindwidget\&.cpp\&.
 .PP
-References on_btnStopMacro_clicked(), selection, and setSelection()\&.
+References selection, and setSelection()\&.
 .PP
 .nf
-419                                           {
-420     on_btnStopMacro_clicked();
-421     // Re-load selection
-422     setSelection(selection);
-423 }
+415                                           {
+416     // Re-load selection
+417     setSelection(selection);
+418 }
 .fi
 .SS "void RebindWidget::on_dpiBox_currentIndexChanged (intindex)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 544 of file rebindwidget\&.cpp\&.
+Definition at line 539 of file rebindwidget\&.cpp\&.
 .PP
 References DPI_CUST_IDX, Ui_RebindWidget::dpiBox, Ui_RebindWidget::dpiButton, Ui_RebindWidget::dpiCustLabel, Ui_RebindWidget::dpiCustXBox, Ui_RebindWidget::dpiCustYBox, setBox(), and ui\&.
 .PP
 .nf
-544                                                          {
-545     if(index != DPI_CUST_IDX){
-546         // Clear custom DPI
-547         ui->dpiCustXBox->setEnabled(false);
-548         ui->dpiCustYBox->setEnabled(false);
-549         ui->dpiCustLabel->setEnabled(false);
-550     } else {
-551         ui->dpiCustXBox->setEnabled(true);
-552         ui->dpiCustYBox->setEnabled(true);
-553         ui->dpiCustLabel->setEnabled(true);
-554     }
-555     if(index == 0)
-556         ui->dpiButton->setChecked(false);
-557     else {
-558         ui->dpiButton->setChecked(true);
-559         setBox(ui->dpiBox);
-560     }
-561 }
+539                                                          {
+540     if(index != DPI_CUST_IDX){
+541         // Clear custom DPI
+542         ui->dpiCustXBox->setEnabled(false);
+543         ui->dpiCustYBox->setEnabled(false);
+544         ui->dpiCustLabel->setEnabled(false);
+545     } else {
+546         ui->dpiCustXBox->setEnabled(true);
+547         ui->dpiCustYBox->setEnabled(true);
+548         ui->dpiCustLabel->setEnabled(true);
+549     }
+550     if(index == 0)
+551         ui->dpiButton->setChecked(false);
+552     else {
+553         ui->dpiButton->setChecked(true);
+554         setBox(ui->dpiBox);
+555     }
+556 }
 .fi
 .SS "void RebindWidget::on_dpiButton_clicked (boolchecked)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 700 of file rebindwidget\&.cpp\&.
+Definition at line 695 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::dpiBox, and ui\&.
 .PP
 .nf
-700                                                    {
-701     if(checked && ui->dpiBox->currentIndex() == 0)
-702         ui->dpiBox->setCurrentIndex(1);
-703 }
+695                                                    {
+696     if(checked && ui->dpiBox->currentIndex() == 0)
+697         ui->dpiBox->setCurrentIndex(1);
+698 }
 .fi
 .SS "void RebindWidget::on_fnBox_currentIndexChanged (intindex)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 490 of file rebindwidget\&.cpp\&.
+Definition at line 485 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::fnBox, Ui_RebindWidget::fnButton, setBox(), and ui\&.
 .PP
 .nf
-490                                                         {
-491     if(index == 0)
-492         ui->fnButton->setChecked(false);
-493     else {
-494         ui->fnButton->setChecked(true);
-495         setBox(ui->fnBox);
-496     }
-497 }
+485                                                         {
+486     if(index == 0)
+487         ui->fnButton->setChecked(false);
+488     else {
+489         ui->fnButton->setChecked(true);
+490         setBox(ui->fnBox);
+491     }
+492 }
 .fi
 .SS "void RebindWidget::on_fnButton_clicked (boolchecked)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 637 of file rebindwidget\&.cpp\&.
+Definition at line 632 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::fnBox, and ui\&.
 .PP
 .nf
-637                                                   {
-638     if(checked && ui->fnBox->currentIndex() == 0)
-639         ui->fnBox->setCurrentIndex(1);
-640 }
+632                                                   {
+633     if(checked && ui->fnBox->currentIndex() == 0)
+634         ui->fnBox->setCurrentIndex(1);
+635 }
 .fi
 .SS "void RebindWidget::on_lightBox_currentIndexChanged (intindex)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 576 of file rebindwidget\&.cpp\&.
+Definition at line 571 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::lightBox, Ui_RebindWidget::lightButton, Ui_RebindWidget::lightWrapBox, setBox(), and ui\&.
 .PP
 .nf
-576                                                            {
-577     if(index == 0){
-578         ui->lightButton->setChecked(false);
-579         ui->lightWrapBox->hide();
-580     } else {
-581         ui->lightWrapBox->show();
-582         ui->lightButton->setChecked(true);
-583         setBox(ui->lightBox);
-584     }
-585 }
+571                                                            {
+572     if(index == 0){
+573         ui->lightButton->setChecked(false);
+574         ui->lightWrapBox->hide();
+575     } else {
+576         ui->lightWrapBox->show();
+577         ui->lightButton->setChecked(true);
+578         setBox(ui->lightBox);
+579     }
+580 }
 .fi
 .SS "void RebindWidget::on_lightButton_clicked (boolchecked)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 657 of file rebindwidget\&.cpp\&.
+Definition at line 652 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::lightBox, and ui\&.
 .PP
 .nf
-657                                                      {
-658     if(checked && ui->lightBox->currentIndex() == 0)
-659         ui->lightBox->setCurrentIndex(1);
-660 }
+652                                                      {
+653     if(checked && ui->lightBox->currentIndex() == 0)
+654         ui->lightBox->setCurrentIndex(1);
+655 }
 .fi
 .SS "void RebindWidget::on_lockBox_currentIndexChanged (intindex)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 587 of file rebindwidget\&.cpp\&.
+Definition at line 582 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::lockBox, Ui_RebindWidget::lockButton, setBox(), and ui\&.
 .PP
 .nf
-587                                                           {
-588     if(index == 0)
-589         ui->lockButton->setChecked(false);
-590     else {
-591         ui->lockButton->setChecked(true);
-592         setBox(ui->lockBox);
-593     }
-594 }
+582                                                           {
+583     if(index == 0)
+584         ui->lockButton->setChecked(false);
+585     else {
+586         ui->lockButton->setChecked(true);
+587         setBox(ui->lockBox);
+588     }
+589 }
 .fi
 .SS "void RebindWidget::on_lockButton_clicked (boolchecked)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 662 of file rebindwidget\&.cpp\&.
+Definition at line 657 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::lockBox, and ui\&.
 .PP
 .nf
-662                                                     {
-663     if(checked && ui->lockBox->currentIndex() == 0)
-664         ui->lockBox->setCurrentIndex(1);
-665 }
+657                                                     {
+658     if(checked && ui->lockBox->currentIndex() == 0)
+659         ui->lockBox->setCurrentIndex(1);
+660 }
 .fi
 .SS "void RebindWidget::on_mb2Box_currentIndexChanged (intindex)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 526 of file rebindwidget\&.cpp\&.
+Definition at line 521 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::mb2Box, Ui_RebindWidget::mb2Button, setBox(), and ui\&.
 .PP
 .nf
-526                                                          {
-527     if(index == 0)
-528         ui->mb2Button->setChecked(false);
-529     else {
-530         ui->mb2Button->setChecked(true);
-531         setBox(ui->mb2Box);
-532     }
-533 }
+521                                                          {
+522     if(index == 0)
+523         ui->mb2Button->setChecked(false);
+524     else {
+525         ui->mb2Button->setChecked(true);
+526         setBox(ui->mb2Box);
+527     }
+528 }
 .fi
 .SS "void RebindWidget::on_mb2Button_clicked (boolchecked)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 690 of file rebindwidget\&.cpp\&.
+Definition at line 685 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::mb2Box, and ui\&.
 .PP
 .nf
-690                                                    {
-691     if(checked && ui->mb2Box->currentIndex() == 0)
-692         ui->mb2Box->setCurrentIndex(1);
-693 }
+685                                                    {
+686     if(checked && ui->mb2Box->currentIndex() == 0)
+687         ui->mb2Box->setCurrentIndex(1);
+688 }
 .fi
 .SS "void RebindWidget::on_mbBox_currentIndexChanged (intindex)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 517 of file rebindwidget\&.cpp\&.
+Definition at line 512 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::mbBox, Ui_RebindWidget::mbButton, setBox(), and ui\&.
 .PP
 .nf
-517                                                         {
-518     if(index == 0)
-519         ui->mbButton->setChecked(false);
-520     else {
-521         ui->mbButton->setChecked(true);
-522         setBox(ui->mbBox);
-523     }
-524 }
+512                                                         {
+513     if(index == 0)
+514         ui->mbButton->setChecked(false);
+515     else {
+516         ui->mbButton->setChecked(true);
+517         setBox(ui->mbBox);
+518     }
+519 }
 .fi
 .SS "void RebindWidget::on_mbButton_clicked (boolchecked)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 685 of file rebindwidget\&.cpp\&.
+Definition at line 680 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::mbBox, and ui\&.
 .PP
 .nf
-685                                                   {
-686     if(checked && ui->mbBox->currentIndex() == 0)
-687         ui->mbBox->setCurrentIndex(1);
-688 }
+680                                                   {
+681     if(checked && ui->mbBox->currentIndex() == 0)
+682         ui->mbBox->setCurrentIndex(1);
+683 }
 .fi
 .SS "void RebindWidget::on_mediaBox_currentIndexChanged (intindex)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 508 of file rebindwidget\&.cpp\&.
+Definition at line 503 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::mediaBox, Ui_RebindWidget::mediaButton, setBox(), and ui\&.
 .PP
 .nf
-508                                                            {
-509     if(index == 0)
-510         ui->mediaButton->setChecked(false);
-511     else {
-512         ui->mediaButton->setChecked(true);
-513         setBox(ui->mediaBox);
-514     }
-515 }
+503                                                            {
+504     if(index == 0)
+505         ui->mediaButton->setChecked(false);
+506     else {
+507         ui->mediaButton->setChecked(true);
+508         setBox(ui->mediaBox);
+509     }
+510 }
 .fi
 .SS "void RebindWidget::on_mediaButton_clicked (boolchecked)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 647 of file rebindwidget\&.cpp\&.
+Definition at line 642 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::mediaBox, and ui\&.
 .PP
 .nf
-647                                                      {
-648     if(checked && ui->mediaBox->currentIndex() == 0)
-649         ui->mediaBox->setCurrentIndex(1);
-650 }
+642                                                      {
+643     if(checked && ui->mediaBox->currentIndex() == 0)
+644         ui->mediaBox->setCurrentIndex(1);
+645 }
 .fi
 .SS "void RebindWidget::on_modBox_currentIndexChanged (intindex)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 481 of file rebindwidget\&.cpp\&.
+Definition at line 476 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::modBox, Ui_RebindWidget::modButton, setBox(), and ui\&.
 .PP
 .nf
-481                                                          {
-482     if(index == 0)
-483         ui->modButton->setChecked(false);
-484     else {
-485         ui->modButton->setChecked(true);
-486         setBox(ui->modBox);
-487     }
-488 }
+476                                                          {
+477     if(index == 0)
+478         ui->modButton->setChecked(false);
+479     else {
+480         ui->modButton->setChecked(true);
+481         setBox(ui->modBox);
+482     }
+483 }
 .fi
 .SS "void RebindWidget::on_modButton_clicked (boolchecked)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 632 of file rebindwidget\&.cpp\&.
+Definition at line 627 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::modBox, and ui\&.
 .PP
 .nf
-632                                                    {
-633     if(checked && ui->modBox->currentIndex() == 0)
-634         ui->modBox->setCurrentIndex(1);
-635 }
+627                                                    {
+628     if(checked && ui->modBox->currentIndex() == 0)
+629         ui->modBox->setCurrentIndex(1);
+630 }
 .fi
 .SS "void RebindWidget::on_modeBox_currentIndexChanged (intindex)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 563 of file rebindwidget\&.cpp\&.
+Definition at line 558 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::modeBox, Ui_RebindWidget::modeButton, Ui_RebindWidget::modeWrapBox, setBox(), and ui\&.
 .PP
 .nf
-563                                                           {
-564     if(index == 1 || index == 2)
-565         ui->modeWrapBox->show();
-566     else
-567         ui->modeWrapBox->hide();
-568     if(index == 0)
-569         ui->modeButton->setChecked(false);
-570     else {
-571         ui->modeButton->setChecked(true);
-572         setBox(ui->modeBox);
-573     }
-574 }
+558                                                           {
+559     if(index == 1 || index == 2)
+560         ui->modeWrapBox->show();
+561     else
+562         ui->modeWrapBox->hide();
+563     if(index == 0)
+564         ui->modeButton->setChecked(false);
+565     else {
+566         ui->modeButton->setChecked(true);
+567         setBox(ui->modeBox);
+568     }
+569 }
 .fi
 .SS "void RebindWidget::on_modeButton_clicked (boolchecked)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 652 of file rebindwidget\&.cpp\&.
+Definition at line 647 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::modeBox, and ui\&.
 .PP
 .nf
-652                                                     {
-653     if(checked && ui->modeBox->currentIndex() == 0)
-654         ui->modeBox->setCurrentIndex(1);
-655 }
+647                                                     {
+648     if(checked && ui->modeBox->currentIndex() == 0)
+649         ui->modeBox->setCurrentIndex(1);
+650 }
 .fi
 .SS "void RebindWidget::on_numBox_currentIndexChanged (intindex)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 499 of file rebindwidget\&.cpp\&.
+Definition at line 494 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::numBox, Ui_RebindWidget::numButton, setBox(), and ui\&.
 .PP
 .nf
-499                                                          {
-500     if(index == 0)
-501         ui->numButton->setChecked(false);
-502     else {
-503         ui->numButton->setChecked(true);
-504         setBox(ui->numBox);
-505     }
-506 }
+494                                                          {
+495     if(index == 0)
+496         ui->numButton->setChecked(false);
+497     else {
+498         ui->numButton->setChecked(true);
+499         setBox(ui->numBox);
+500     }
+501 }
 .fi
 .SS "void RebindWidget::on_numButton_clicked (boolchecked)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 642 of file rebindwidget\&.cpp\&.
+Definition at line 637 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::numBox, and ui\&.
 .PP
 .nf
-642                                                    {
-643     if(checked && ui->numBox->currentIndex() == 0)
-644         ui->numBox->setCurrentIndex(1);
-645 }
+637                                                    {
+638     if(checked && ui->numBox->currentIndex() == 0)
+639         ui->numBox->setCurrentIndex(1);
+640 }
 .fi
 .SS "void RebindWidget::on_programKpBox_textChanged (const QString &arg1)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 596 of file rebindwidget\&.cpp\&.
+Definition at line 591 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::programKpBox, Ui_RebindWidget::programKpButton, Ui_RebindWidget::programKpExtra, setBox(), and ui\&.
 .PP
 .nf
-596                                                                  {
-597     if(arg1\&.isEmpty()){
-598         ui->programKpButton->setChecked(false);
-599         ui->programKpExtra->hide();
-600     } else {
-601         ui->programKpButton->setChecked(true);
-602         setBox(ui->programKpBox);
-603         ui->programKpExtra->show();
-604     }
-605 }
+591                                                                  {
+592     if(arg1\&.isEmpty()){
+593         ui->programKpButton->setChecked(false);
+594         ui->programKpExtra->hide();
+595     } else {
+596         ui->programKpButton->setChecked(true);
+597         setBox(ui->programKpBox);
+598         ui->programKpExtra->show();
+599     }
+600 }
 .fi
 .SS "void RebindWidget::on_programKpButton_clicked (boolchecked)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 667 of file rebindwidget\&.cpp\&.
+Definition at line 662 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::programKpBox, setBox(), and ui\&.
 .PP
 .nf
-667                                                          {
-668     if(!checked){
-669         ui->programKpBox->setText("");
-670     } else if(ui->programKpBox->text()\&.isEmpty()){
-671         ui->programKpBox->setFocus();
-672         setBox(ui->programKpBox);
-673     }
-674 }
+662                                                          {
+663     if(!checked){
+664         ui->programKpBox->setText("");
+665     } else if(ui->programKpBox->text()\&.isEmpty()){
+666         ui->programKpBox->setFocus();
+667         setBox(ui->programKpBox);
+668     }
+669 }
 .fi
 .SS "void RebindWidget::on_programKpSIBox_clicked (boolchecked)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 705 of file rebindwidget\&.cpp\&.
+Definition at line 700 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::programKpModeBox, and ui\&.
 .PP
 .nf
-705                                                         {
-706     ui->programKpModeBox->setCurrentIndex(0);
-707     ui->programKpModeBox->setEnabled(checked);
-708 }
+700                                                         {
+701     ui->programKpModeBox->setCurrentIndex(0);
+702     ui->programKpModeBox->setEnabled(checked);
+703 }
 .fi
 .SS "void RebindWidget::on_programKrBox_textChanged (const QString &arg1)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 607 of file rebindwidget\&.cpp\&.
+Definition at line 602 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::programKrBox, Ui_RebindWidget::programKrButton, Ui_RebindWidget::programKrExtra, setBox(), and ui\&.
 .PP
 .nf
-607                                                                  {
-608     if(arg1\&.isEmpty()){
-609         ui->programKrButton->setChecked(false);
-610         ui->programKrExtra->hide();
-611     } else {
-612         ui->programKrButton->setChecked(true);
-613         setBox(ui->programKrBox);
-614         ui->programKrExtra->show();
-615     }
-616 }
+602                                                                  {
+603     if(arg1\&.isEmpty()){
+604         ui->programKrButton->setChecked(false);
+605         ui->programKrExtra->hide();
+606     } else {
+607         ui->programKrButton->setChecked(true);
+608         setBox(ui->programKrBox);
+609         ui->programKrExtra->show();
+610     }
+611 }
 .fi
 .SS "void RebindWidget::on_programKrButton_clicked (boolchecked)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 676 of file rebindwidget\&.cpp\&.
+Definition at line 671 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::programKrBox, setBox(), and ui\&.
 .PP
 .nf
-676                                                          {
-677     if(!checked){
-678         ui->programKrBox->setText("");
-679     } else if(ui->programKrBox->text()\&.isEmpty()){
-680         ui->programKrBox->setFocus();
-681         setBox(ui->programKrBox);
-682     }
-683 }
+671                                                          {
+672     if(!checked){
+673         ui->programKrBox->setText("");
+674     } else if(ui->programKrBox->text()\&.isEmpty()){
+675         ui->programKrBox->setFocus();
+676         setBox(ui->programKrBox);
+677     }
+678 }
 .fi
 .SS "void RebindWidget::on_programKrSIBox_clicked (boolchecked)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 710 of file rebindwidget\&.cpp\&.
+Definition at line 705 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::programKrModeBox, and ui\&.
 .PP
 .nf
-710                                                         {
-711     ui->programKrModeBox->setCurrentIndex(0);
-712     ui->programKrModeBox->setEnabled(checked);
-713 }
+705                                                         {
+706     ui->programKrModeBox->setCurrentIndex(0);
+707     ui->programKrModeBox->setEnabled(checked);
+708 }
 .fi
 .SS "void RebindWidget::on_pteMacroBox_textChanged ()\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 475 of file rebindwidget\&.cpp\&.
+Definition at line 470 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::pteMacroBox, setBox(), and ui\&.
 .PP
 .nf
-475                                               {
-476     if (ui->pteMacroBox->toPlainText()\&.length() > 0) {
-477         setBox(ui->pteMacroBox);
-478     }
-479 }
+470                                               {
+471     if (ui->pteMacroBox->toPlainText()\&.length() > 0) {
+472         setBox(ui->pteMacroBox);
+473     }
+474 }
 .fi
 .SS "void RebindWidget::on_rb_delay_asTyped_toggled (boolchecked)\fC [private]\fP, \fC [slot]\fP"
 
@@ -1072,14 +1060,14 @@ References Ui_RebindWidget::pteMacroBox, setBox(), and ui\&.
 .PP
 
 .PP
-Definition at line 867 of file rebindwidget\&.cpp\&.
+Definition at line 862 of file rebindwidget\&.cpp\&.
 .PP
 References convertMacroBox()\&.
 .PP
 .nf
-868 {
-869     convertMacroBox();
-870 }
+863 {
+864     convertMacroBox();
+865 }
 .fi
 .SS "void RebindWidget::on_rb_delay_default_toggled (boolchecked)\fC [private]\fP, \fC [slot]\fP"
 
@@ -1091,14 +1079,14 @@ References convertMacroBox()\&.
 .PP
 
 .PP
-Definition at line 878 of file rebindwidget\&.cpp\&.
+Definition at line 873 of file rebindwidget\&.cpp\&.
 .PP
 References convertMacroBox()\&.
 .PP
 .nf
-879 {
-880     convertMacroBox();
-881 }
+874 {
+875     convertMacroBox();
+876 }
 .fi
 .SS "void RebindWidget::on_rb_delay_no_toggled (boolchecked)\fC [private]\fP, \fC [slot]\fP"
 
@@ -1110,216 +1098,216 @@ References convertMacroBox()\&.
 .PP
 
 .PP
-Definition at line 855 of file rebindwidget\&.cpp\&.
+Definition at line 850 of file rebindwidget\&.cpp\&.
 .PP
 References convertMacroBox()\&.
 .PP
 .nf
-856 {
-857     convertMacroBox();
-858 }
+851 {
+852     convertMacroBox();
+853 }
 .fi
 .SS "void RebindWidget::on_resetButton_clicked ()\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 425 of file rebindwidget\&.cpp\&.
+Definition at line 420 of file rebindwidget\&.cpp\&.
 .PP
 References bind, KbBind::resetAction(), and selection\&.
 .PP
 .nf
-425                                          {
-426     bind->resetAction(selection);
-427 }
+420                                          {
+421     bind->resetAction(selection);
+422 }
 .fi
 .SS "void RebindWidget::on_typingBox_currentIndexChanged (intindex)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 466 of file rebindwidget\&.cpp\&.
+Definition at line 461 of file rebindwidget\&.cpp\&.
 .PP
 References setBox(), Ui_RebindWidget::typingBox, Ui_RebindWidget::typingButton, and ui\&.
 .PP
 .nf
-466                                                             {
-467     if(index == 0)
-468         ui->typingButton->setChecked(false);
-469     else {
-470         ui->typingButton->setChecked(true);
-471         setBox(ui->typingBox);
-472     }
-473 }
+461                                                             {
+462     if(index == 0)
+463         ui->typingButton->setChecked(false);
+464     else {
+465         ui->typingButton->setChecked(true);
+466         setBox(ui->typingBox);
+467     }
+468 }
 .fi
 .SS "void RebindWidget::on_typingButton_clicked (boolchecked)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 627 of file rebindwidget\&.cpp\&.
+Definition at line 622 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::typingBox, and ui\&.
 .PP
 .nf
-627                                                       {
-628     if(checked && ui->typingBox->currentIndex() == 0)
-629         ui->typingBox->setCurrentIndex(1);
-630 }
+622                                                       {
+623     if(checked && ui->typingBox->currentIndex() == 0)
+624         ui->typingBox->setCurrentIndex(1);
+625 }
 .fi
 .SS "void RebindWidget::on_unbindButton_clicked ()\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 429 of file rebindwidget\&.cpp\&.
+Definition at line 424 of file rebindwidget\&.cpp\&.
 .PP
 References bind, KbBind::noAction(), and selection\&.
 .PP
 .nf
-429                                           {
-430     bind->noAction(selection);
-431 }
+424                                           {
+425     bind->noAction(selection);
+426 }
 .fi
 .SS "void RebindWidget::on_wheelBox_currentIndexChanged (intindex)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 535 of file rebindwidget\&.cpp\&.
+Definition at line 530 of file rebindwidget\&.cpp\&.
 .PP
 References setBox(), ui, Ui_RebindWidget::wheelBox, and Ui_RebindWidget::wheelButton\&.
 .PP
 .nf
-535                                                            {
-536     if(index == 0)
-537         ui->wheelButton->setChecked(false);
-538     else {
-539         ui->wheelButton->setChecked(true);
-540         setBox(ui->wheelBox);
-541     }
-542 }
+530                                                            {
+531     if(index == 0)
+532         ui->wheelButton->setChecked(false);
+533     else {
+534         ui->wheelButton->setChecked(true);
+535         setBox(ui->wheelBox);
+536     }
+537 }
 .fi
 .SS "void RebindWidget::on_wheelButton_clicked (boolchecked)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 695 of file rebindwidget\&.cpp\&.
+Definition at line 690 of file rebindwidget\&.cpp\&.
 .PP
 References ui, and Ui_RebindWidget::wheelBox\&.
 .PP
 .nf
-695                                                      {
-696     if(checked && ui->wheelBox->currentIndex() == 0)
-697         ui->wheelBox->setCurrentIndex(1);
-698 }
+690                                                      {
+691     if(checked && ui->wheelBox->currentIndex() == 0)
+692         ui->wheelBox->setCurrentIndex(1);
+693 }
 .fi
 .SS "void RebindWidget::setBind (\fBKbBind\fP *newBind, \fBKbProfile\fP *newProfile)"
 
 .PP
-Definition at line 64 of file rebindwidget\&.cpp\&.
+Definition at line 63 of file rebindwidget\&.cpp\&.
 .PP
 References bind, KeyMap::byPosition(), KbBind::defaultAction(), KbPerf::dpi(), KbPerf::DPI_COUNT, Ui_RebindWidget::dpiBox, Ui_RebindWidget::dpiButton, Ui_RebindWidget::dpiCustLabel, Ui_RebindWidget::dpiCustXBox, Ui_RebindWidget::dpiCustYBox, Ui_RebindWidget::dpiWarning, fnKeys, Key::friendlyName(), KeyMap::isISO(), KbBind::isMouse(), KeyAction::isNormal(), KeyMap::K95, KeyMap::layout(), KbBind::map(), mediaKeys, Ui_RebindWidget::modeBox, KbProfile::modes(), modKeys, KbMode::name(), numKeys, KbBind::perf(), profile, setSelection(), Ui_RebindWidget::typingBox, typingKeys, and ui\&.
 .PP
 Referenced by KbBindWidget::newLayout(), and KbBindWidget::setBind()\&.
 .PP
 .nf
-64                                                                 {
-65     bind = newBind;
-66     profile = newProfile;
-67     setSelection(QStringList());
-68 
-69     // Populate typing keys by position
-70     ui->typingBox->clear();
-71     ui->typingBox->addItem(" ");
-72     typingKeys\&.clear();
-73     // Use the K95 map as it has all keys
-74     const KeyMap& map = KeyMap(KeyMap::K95, bind->map()\&.layout());
-75     foreach(const QString& name, map\&.byPosition()){
-76         KeyAction action(KbBind::defaultAction(name));
-77         if(action\&.isNormal() && !modKeys\&.contains(name) && !fnKeys\&.contains(name) && !numKeys\&.contains(name) && !mediaKeys\&.contains(name) && name != "enter" && name != "tab" && name != "bspace"){
-78             const Key& pos = map[name];
-79             QString friendly = pos\&.friendlyName();
-80             ui->typingBox->addItem(friendly);
-81             typingKeys\&.append(name);
-82         }
-83     }
-84     typingKeys << "enter" << "tab" << "bspace";
-85     ui->typingBox->addItem("Enter");
-86     ui->typingBox->addItem("Tab");
-87     ui->typingBox->addItem("Backspace");
-88     if(!map\&.isISO()){
-89         // Add ISO backslash (aka KEY_102ND) to ANSI options
-90         typingKeys << "bslash_iso";
-91         ui->typingBox->addItem("Backslash (ISO layout)");
-92     }
-93 
-94     // Populate mode list
-95     ui->modeBox->clear();
-96     ui->modeBox->addItem(" ");
-97     ui->modeBox->addItem("(Previous)");
-98     ui->modeBox->addItem("(Next)");
-99     int idx = 1;
-100     foreach(KbMode* mode, newProfile->modes())
-101         ui->modeBox->addItem(QString("%1: %2")\&.arg(idx++)\&.arg(mode->name()));
-102 
-103     // Enable/disable DPI based on device
-104     if(bind->isMouse()){
-105         ui->dpiButton->setEnabled(true);
-106         ui->dpiBox->setEnabled(true);
-107         ui->dpiWarning->hide();
-108         // Fill DPI slots
-109         const KbPerf* perf = bind->perf();
-110         for(int i = 0; i < KbPerf::DPI_COUNT; i++){
-111             bool sniper = (i == 0);
-112             int boxIdx = i + 3;
-113             QPoint dpi = perf->dpi(i);
-114             QString text = tr(sniper ? "Sniper:\t%1 x %2" : "%3:\t%1 x %2")\&.arg(dpi\&.x())\&.arg(dpi\&.y());
-115             if(!sniper) text = text\&.arg(i);
-116             ui->dpiBox->setItemText(boxIdx, text);
-117         }
-118     } else {
-119         ui->dpiButton->setEnabled(false);
-120         ui->dpiBox->setEnabled(false);
-121         ui->dpiWarning->show();
-122     }
-123     // Always disable custom DPI boxes until selected
-124     ui->dpiCustXBox->setEnabled(false);
-125     ui->dpiCustYBox->setEnabled(false);
-126     ui->dpiCustLabel->setEnabled(false);
-127 }
+63                                                                 {
+64     bind = newBind;
+65     profile = newProfile;
+66     setSelection(QStringList());
+67 
+68     // Populate typing keys by position
+69     ui->typingBox->clear();
+70     ui->typingBox->addItem(" ");
+71     typingKeys\&.clear();
+72     // Use the K95 map as it has all keys
+73     const KeyMap& map = KeyMap(KeyMap::K95, bind->map()\&.layout());
+74     foreach(const QString& name, map\&.byPosition()){
+75         KeyAction action(KbBind::defaultAction(name));
+76         if(action\&.isNormal() && !modKeys\&.contains(name) && !fnKeys\&.contains(name) && !numKeys\&.contains(name) && !mediaKeys\&.contains(name) && name != "enter" && name != "tab" && name != "bspace"){
+77             const Key& pos = map[name];
+78             QString friendly = pos\&.friendlyName();
+79             ui->typingBox->addItem(friendly);
+80             typingKeys\&.append(name);
+81         }
+82     }
+83     typingKeys << "enter" << "tab" << "bspace";
+84     ui->typingBox->addItem("Enter");
+85     ui->typingBox->addItem("Tab");
+86     ui->typingBox->addItem("Backspace");
+87     if(!map\&.isISO()){
+88         // Add ISO backslash (aka KEY_102ND) to ANSI options
+89         typingKeys << "bslash_iso";
+90         ui->typingBox->addItem("Backslash (ISO layout)");
+91     }
+92 
+93     // Populate mode list
+94     ui->modeBox->clear();
+95     ui->modeBox->addItem(" ");
+96     ui->modeBox->addItem("(Previous)");
+97     ui->modeBox->addItem("(Next)");
+98     int idx = 1;
+99     foreach(KbMode* mode, newProfile->modes())
+100         ui->modeBox->addItem(QString("%1: %2")\&.arg(idx++)\&.arg(mode->name()));
+101 
+102     // Enable/disable DPI based on device
+103     if(bind->isMouse()){
+104         ui->dpiButton->setEnabled(true);
+105         ui->dpiBox->setEnabled(true);
+106         ui->dpiWarning->hide();
+107         // Fill DPI slots
+108         const KbPerf* perf = bind->perf();
+109         for(int i = 0; i < KbPerf::DPI_COUNT; i++){
+110             bool sniper = (i == 0);
+111             int boxIdx = i + 3;
+112             QPoint dpi = perf->dpi(i);
+113             QString text = tr(sniper ? "Sniper:\t%1 x %2" : "%3:\t%1 x %2")\&.arg(dpi\&.x())\&.arg(dpi\&.y());
+114             if(!sniper) text = text\&.arg(i);
+115             ui->dpiBox->setItemText(boxIdx, text);
+116         }
+117     } else {
+118         ui->dpiButton->setEnabled(false);
+119         ui->dpiBox->setEnabled(false);
+120         ui->dpiWarning->show();
+121     }
+122     // Always disable custom DPI boxes until selected
+123     ui->dpiCustXBox->setEnabled(false);
+124     ui->dpiCustYBox->setEnabled(false);
+125     ui->dpiCustLabel->setEnabled(false);
+126 }
 .fi
 .SS "void RebindWidget::setBox (\fBQWidget\fP *box)\fC [private]\fP"
 
 .PP
-Definition at line 433 of file rebindwidget\&.cpp\&.
+Definition at line 428 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::animBox, Ui_RebindWidget::dpiBox, Ui_RebindWidget::fnBox, helpStatus(), Ui_RebindWidget::lightBox, Ui_RebindWidget::lockBox, Ui_RebindWidget::mb2Box, Ui_RebindWidget::mbBox, Ui_RebindWidget::mediaBox, Ui_RebindWidget::modBox, Ui_RebindWidget::modeBox, Ui_RebindWidget::numBox, Ui_RebindWidget::programKpBox, Ui_RebindWidget::programKpButton, Ui_RebindWidget::programKrBox, Ui_RebindWidget::programKrButton, Ui_RebindWidget::pteMacroBox, Ui_RebindWidget::txtBuffer, Ui_RebindWidget::typingBox, ui, and Ui_RebindWidget::wheelBox\&.
 .PP
 Referenced by on_animBox_currentIndexChanged(), on_dpiBox_currentIndexChanged(), on_fnBox_currentIndexChanged(), on_lightBox_currentIndexChanged(), on_lockBox_currentIndexChanged(), on_mb2Box_currentIndexChanged(), on_mbBox_currentIndexChanged(), on_mediaBox_currentIndexChanged(), on_modBox_currentIndexChanged(), on_modeBox_currentIndexChanged(), on_numBox_currentIndexChanged(), on_programKpBox_textChanged(), on_programKpButton_clicked(), on_programKrBox_textChanged(), on_programKrButton_clicked(), on_pteMacroBox_textChanged(), on_typingBox_currentIndexChanged(), on_wheelBox_currentIndexChanged(), and setSelection()\&.
 .PP
 .nf
-433                                      {
-434     // Un-select every item except for the current one\&.
-435     // on_*_currentIndexChanged will take care of deselecting the checkbox\&.
-436     // Key
-437     if(box != ui->typingBox) ui->typingBox->setCurrentIndex(0);
-438     if(box != ui->modBox) ui->modBox->setCurrentIndex(0);
-439     if(box != ui->fnBox) ui->fnBox->setCurrentIndex(0);
-440     if(box != ui->numBox) ui->numBox->setCurrentIndex(0);
-441     if(box != ui->mediaBox) ui->mediaBox->setCurrentIndex(0);
-442     // Mouse
-443     if(box != ui->mbBox) ui->mbBox->setCurrentIndex(0);
-444     if(box != ui->mb2Box) ui->mb2Box->setCurrentIndex(0);
-445     if(box != ui->wheelBox) ui->wheelBox->setCurrentIndex(0);
-446     if(box != ui->dpiBox) ui->dpiBox->setCurrentIndex(0);
-447     // Anim
-448     if(box != ui->animBox) ui->animBox->setCurrentIndex(0);
-449     // Special
-450     if(box != ui->modeBox) ui->modeBox->setCurrentIndex(0);
-451     if(box != ui->lightBox) ui->lightBox->setCurrentIndex(0);
-452     if(box != ui->lockBox) ui->lockBox->setCurrentIndex(0);
-453     // Program
-454     if(box != ui->programKpBox && box != ui->programKrBox){
-455         ui->programKpButton->setChecked(false);
-456         ui->programKrButton->setChecked(false);
-457     }
-458     // Clear macro panel
-459     if (box != ui->pteMacroBox) {
-460         ui->pteMacroBox->setPlainText("");
-461         ui->txtBuffer->setText("");
-462         helpStatus(1);
-463     }
-464 }
+428                                      {
+429     // Un-select every item except for the current one\&.
+430     // on_*_currentIndexChanged will take care of deselecting the checkbox\&.
+431     // Key
+432     if(box != ui->typingBox) ui->typingBox->setCurrentIndex(0);
+433     if(box != ui->modBox) ui->modBox->setCurrentIndex(0);
+434     if(box != ui->fnBox) ui->fnBox->setCurrentIndex(0);
+435     if(box != ui->numBox) ui->numBox->setCurrentIndex(0);
+436     if(box != ui->mediaBox) ui->mediaBox->setCurrentIndex(0);
+437     // Mouse
+438     if(box != ui->mbBox) ui->mbBox->setCurrentIndex(0);
+439     if(box != ui->mb2Box) ui->mb2Box->setCurrentIndex(0);
+440     if(box != ui->wheelBox) ui->wheelBox->setCurrentIndex(0);
+441     if(box != ui->dpiBox) ui->dpiBox->setCurrentIndex(0);
+442     // Anim
+443     if(box != ui->animBox) ui->animBox->setCurrentIndex(0);
+444     // Special
+445     if(box != ui->modeBox) ui->modeBox->setCurrentIndex(0);
+446     if(box != ui->lightBox) ui->lightBox->setCurrentIndex(0);
+447     if(box != ui->lockBox) ui->lockBox->setCurrentIndex(0);
+448     // Program
+449     if(box != ui->programKpBox && box != ui->programKrBox){
+450         ui->programKpButton->setChecked(false);
+451         ui->programKrButton->setChecked(false);
+452     }
+453     // Clear macro panel
+454     if (box != ui->pteMacroBox) {
+455         ui->pteMacroBox->setPlainText("");
+456         ui->txtBuffer->setText("");
+457         helpStatus(1);
+458     }
+459 }
 .fi
 .SS "void RebindWidget::setCorrectRadioButton (QStringmacdef)\fC [private]\fP"
 
@@ -1331,352 +1319,343 @@ Referenced by on_animBox_currentIndexChanged(), on_dpiBox_currentIndexChanged(),
 .PP
 
 .PP
-Definition at line 892 of file rebindwidget\&.cpp\&.
+Definition at line 887 of file rebindwidget\&.cpp\&.
 .PP
 References Ui_RebindWidget::rb_delay_asTyped, Ui_RebindWidget::rb_delay_default, Ui_RebindWidget::rb_delay_no, and ui\&.
 .PP
 Referenced by setSelection()\&.
 .PP
 .nf
-892                                                         {
-893     if (!macdef\&.contains(QRegExp("=\\d+,"))) {
-894         ui->rb_delay_default->setChecked(true);
-895         return;
-896     }
-897     if (macdef\&.contains(QRegExp("=\\d\\d+,"))) {
-898         ui->rb_delay_asTyped->setChecked(true);
-899         return;
-900     }
-901     ui->rb_delay_no->setChecked(true);
-902 }
+887                                                         {
+888     if (!macdef\&.contains(QRegExp("=\\d+,"))) {
+889         ui->rb_delay_default->setChecked(true);
+890         return;
+891     }
+892     if (macdef\&.contains(QRegExp("=\\d\\d+,"))) {
+893         ui->rb_delay_asTyped->setChecked(true);
+894         return;
+895     }
+896     ui->rb_delay_no->setChecked(true);
+897 }
 .fi
 .SS "void RebindWidget::setSelection (const QStringList &newSelection, boolapplyPrevious = \fCfalse\fP)"
 
 .PP
-Definition at line 129 of file rebindwidget\&.cpp\&.
+Definition at line 128 of file rebindwidget\&.cpp\&.
 .PP
-References KbBind::action(), anim, Ui_RebindWidget::animBox, KeyAction::animInfo(), Ui_RebindWidget::animKrBox, KbLight::animList(), Ui_RebindWidget::animOnceBox, applyChanges(), bind, KeyAction::DPI_CUSTOM, DPI_OFFSET, Ui_RebindWidget::dpiBox, Ui_RebindWidget::dpiCustXBox, Ui_RebindWidget::dpiCustYBox, KeyAction::dpiInfo(), KbLight::findAnimIdx(), firstCall, Ui_RebindWidget::fnBox, fnKeys, KeyAction::isAnim(), KeyAction::isDPI(), KeyAction::isMouse(), KeyAction::isNormal(), KeyAction::isProgram(), KeyAction::isSpecial(), KeyAction::isValidMacro(), KbBind::light(), KeyAction::LIGHT_DOWN, KeyAction::LIGHT_DOWN_WRAP, KeyAction::LIGHT_UP, KeyAction::LIGHT_UP_WRAP, Ui_RebindWidget::lightBox, Ui_RebindWidget::lightWrapBox, Ui_RebindWidget::lockBox, KeyAction::macroContent(), KeyAction::macroDisplay(), KeyAction::macroLine(), KeyAction::macroTiming(), Ui_RebindWidget::mb2Box, Ui_RebindWidget::mbBox, Ui_RebindWidget::mediaBox, mediaKeys, Ui_RebindWidget::modBox, KeyAction::MODE_NEXT, KeyAction::MODE_NEXT_WRAP, KeyAction::MODE_PREV, KeyAction::MODE_PREV_WRAP, Ui_RebindWidget::modeBox, Ui_RebindWidget::modeWrapBox, modKeys, mouseExtKeys, mouseKeys, KbAnim::name(), Ui_RebindWidget::numBox, numKeys, KeyAction::PROGRAM_PR_MULTI, KeyAction::PROGRAM_RE_INDEF, KeyAction::PROGRAM_RE_KPSTOP, KeyAction::PROGRAM_RE_MULTI, KeyAction::programInfo(), Ui_RebindWidget::programKpBox, Ui_RebindWidget::programKpModeBox, Ui_RebindWidget::programKpSIBox, Ui_RebindWidget::programKrBox, Ui_RebindWidget::programKrModeBox, Ui_RebindWidget::programKrSIBox, Ui_RebindWidget::pteMacroBox, Ui_RebindWidget::pteMacroComment, Ui_RebindWidget::pteMacroText, selection, setBox(), setCorrectRadioButton(), KeyAction::specialInfo(), TAB_ANIM, TAB_KB, TAB_MACRO, TAB_MOUSE, TAB_PROGRAM, TAB_SPECIAL, Ui_RebindWidget::tabWidget, Ui_RebindWidget::txtBuffer, Ui_RebindWidget::typingBox, typingKeys, ui, Ui_RebindWidget::wheelBox, and wheelKeys\&.
+References KbBind::action(), anim, Ui_RebindWidget::animBox, KeyAction::animInfo(), Ui_RebindWidget::animKrBox, KbLight::animList(), Ui_RebindWidget::animOnceBox, applyChanges(), bind, KeyAction::DPI_CUSTOM, DPI_OFFSET, Ui_RebindWidget::dpiBox, Ui_RebindWidget::dpiCustXBox, Ui_RebindWidget::dpiCustYBox, KeyAction::dpiInfo(), KbLight::findAnimIdx(), Ui_RebindWidget::fnBox, fnKeys, KeyAction::isAnim(), KeyAction::isDPI(), KeyAction::isMouse(), KeyAction::isNormal(), KeyAction::isProgram(), KeyAction::isSpecial(), KeyAction::isValidMacro(), KbBind::light(), KeyAction::LIGHT_DOWN, KeyAction::LIGHT_DOWN_WRAP, KeyAction::LIGHT_UP, KeyAction::LIGHT_UP_WRAP, Ui_RebindWidget::lightBox, Ui_RebindWidget::lightWrapBox, Ui_RebindWidget::lockBox, KeyAction::macroContent(), KeyAction::macroDisplay(), KeyAction::macroLine(), KeyAction::macroTiming(), Ui_RebindWidget::mb2Box, Ui_RebindWidget::mbBox, Ui_RebindWidget::mediaBox, mediaKeys, Ui_RebindWidget::modBox, KeyAction::MODE_NEXT, KeyAction::MODE_NEXT_WRAP, KeyAction::MODE_PREV, KeyAction::MODE_PREV_WRAP, Ui_RebindWidget::modeBox, Ui_RebindWidget::modeWrapBox, modKeys, mouseExtKeys, mouseKeys, KbAnim::name(), Ui_RebindWidget::numBox, numKeys, KeyAction::PROGRAM_PR_MULTI, KeyAction::PROGRAM_RE_INDEF, KeyAction::PROGRAM_RE_KPSTOP, KeyAction::PROGRAM_RE_MULTI, KeyAction::programInfo(), Ui_RebindWidget::programKpBox, Ui_RebindWidget::programKpModeBox, Ui_RebindWidget::programKpSIBox, Ui_RebindWidget::programKrBox, Ui_RebindWidget::programKrModeBox, Ui_RebindWidget::programKrSIBox, Ui_RebindWidget::pteMacroBox, Ui_RebindWidget::pteMacroComment, Ui_RebindWidget::pteMacroText, selection, setBox(), setCorrectRadioButton(), KeyAction::specialInfo(), TAB_ANIM, TAB_KB, TAB_MACRO, TAB_MOUSE, TAB_PROGRAM, TAB_SPECIAL, Ui_RebindWidget::tabWidget, Ui_RebindWidget::txtBuffer, Ui_RebindWidget::typingBox, typingKeys, ui, Ui_RebindWidget::wheelBox, and wheelKeys\&.
 .PP
 Referenced by KbBindWidget::newSelection(), on_cancelButton_clicked(), setBind(), and KbBindWidget::updateBind()\&.
 .PP
 .nf
-129                                                                                   {
-130     if(bind){
-131         // Populate animation list
-132         // FIXME: There should be a trigger to update this whenever an animation is added/removed, even if the key selection hasn't changed
-133         ui->animBox->clear();
-134         ui->animBox->addItem(" ");
-135         foreach(KbAnim* anim, bind->light()->animList())
-136             ui->animBox->addItem(anim->name());
-137     }
-138 
-139     // Apply changes to previous selection (if any)
-140     if(!selection\&.isEmpty() && applyPrevious){
-141         QStringList previous = selection;
-142         selection = QStringList();
-143         applyChanges(previous, false);
-144     }
-145 
-146     selection = newSelection;
-147     if(newSelection\&.isEmpty()){
-148         hide();
-149         return;
-150     } else
-151         show();
-152 
-153     bool hasAction = false;
-154     QString action;
-155     if(selection\&.count() == 1){
-156         // Select action from the UI
-157         action = bind->action(selection\&.first());
-158         if(!action\&.isEmpty())
-159             hasAction = true;
-160     } else {
-161         // Select an action from the UI if all keys are the same\&.
-162         // Select nothing if any are unbound or different
-163         foreach(const QString& key, selection){
-164             QString keyAction = bind->action(key);
-165             if(keyAction\&.isEmpty() || (hasAction && keyAction != action)){
-166                 hasAction = false;
-167                 break;
-168             } else if(action\&.isEmpty()){
-169                 action = keyAction;
-170                 hasAction = true;
-171             }
-172         }
-173     }
-174 
-175     if(!hasAction)
-176         action = "";
-177     KeyAction act(action);
-178     // Clear everything
-179     setBox(0);
-180     ui->dpiCustXBox->setValue(400);
-181     ui->dpiCustYBox->setValue(400);
-182     ui->animOnceBox->setChecked(false);
-183     ui->animKrBox->setChecked(false);
-184     ui->programKpBox->setText("");
-185     ui->programKrBox->setText("");
-186     ui->programKpSIBox->setChecked(false);
-187     ui->programKrSIBox->setChecked(false);
-188     ui->programKpModeBox->setCurrentIndex(0);
-189     ui->programKrModeBox->setCurrentIndex(0);
-190     ui->programKpModeBox->setEnabled(false);
-191     ui->programKrModeBox->setEnabled(false);
-192     // Clear neu UI elements in MacroTab
-193     ui->pteMacroBox->setPlainText("");
-194     ui->pteMacroText->setPlainText("");
-195     ui->pteMacroComment->setPlainText("");
-196     ui->txtBuffer->setText("");
-197     // Fill in field and select tab according to action type
-198     bool mouse = act\&.isMouse();
-199     if(mouse){
-200         // Mouse buttons
-201         if (firstCall) {
-202             ui->tabWidget->setCurrentIndex(TAB_MOUSE);
-203             firstCall = false;
-204         }
-205         // Set mouse buttons (indexOf returns -1 if not found, index zero is blank)
-206         ui->mbBox->setCurrentIndex(mouseKeys\&.indexOf(action) + 1);
-207         ui->mb2Box->setCurrentIndex(mouseExtKeys\&.indexOf(action) + 1);
-208         ui->wheelBox->setCurrentIndex(wheelKeys\&.indexOf(action) + 1);
-209         if(act\&.isDPI()){
-210             QPoint custom;
-211             int value = act\&.dpiInfo(custom);
-212             if(value <= -DPI_OFFSET || value > KeyAction::DPI_CUSTOM)
-213                 return;
-214             ui->dpiBox->setCurrentIndex(value + DPI_OFFSET);
-215             if(value == KeyAction::DPI_CUSTOM){
-216                 ui->dpiCustXBox->setValue(custom\&.x());
-217                 ui->dpiCustYBox->setValue(custom\&.y());
-218             }
-219         }
-220     } else if(act\&.isNormal()){
-221         // Standard key
-222         ui->tabWidget->setCurrentIndex(TAB_KB);
-223         ui->typingBox->setCurrentIndex(typingKeys\&.indexOf(action) + 1);
-224         ui->modBox->setCurrentIndex(modKeys\&.indexOf(action) + 1);
-225         ui->fnBox->setCurrentIndex(fnKeys\&.indexOf(action) + 1);
-226         ui->numBox->setCurrentIndex(numKeys\&.indexOf(action) + 1);
-227         ui->mediaBox->setCurrentIndex(mediaKeys\&.indexOf(action) + 1);
-228     } else if(act\&.isProgram()){
-229         // Program key
-230         ui->tabWidget->setCurrentIndex(TAB_PROGRAM);
-231         QString onPress, onRelease;
-232         int stop = act\&.programInfo(onPress, onRelease);
-233         ui->programKpBox->setText(onPress);
-234         ui->programKrBox->setText(onRelease);
-235         switch(stop & 0x0F){
-236         case KeyAction::PROGRAM_PR_MULTI:
-237             ui->programKpSIBox->setChecked(false);
-238             ui->programKpModeBox->setCurrentIndex(0);
-239             ui->programKpModeBox->setEnabled(false);
-240             break;
-241         default:
-242             ui->programKpSIBox->setChecked(true);
-243             ui->programKpModeBox->setCurrentIndex(stop & 0x0F);
-244             ui->programKpModeBox->setEnabled(true);
-245             break;
-246         }
-247         switch(stop & 0xF0){
-248         case KeyAction::PROGRAM_RE_MULTI:
-249             ui->programKrSIBox->setChecked(false);
-250             ui->programKrModeBox->setCurrentIndex(0);
-251             ui->programKrModeBox->setEnabled(false);
-252             break;
-253         case KeyAction::PROGRAM_RE_INDEF:
-254             ui->programKrSIBox->setChecked(true);
-255             ui->programKrModeBox->setCurrentIndex(0);
-256             ui->programKrModeBox->setEnabled(true);
-257             break;
-258         case KeyAction::PROGRAM_RE_KPSTOP:
-259             ui->programKrSIBox->setChecked(true);
-260             ui->programKrModeBox->setCurrentIndex(1);
-261             ui->programKrModeBox->setEnabled(true);
-262             break;
-263         }
-264     } else if(act\&.isAnim()){
-265         // Animation key
-266         ui->tabWidget->setCurrentIndex(TAB_ANIM);
-267         bool onlyOnce = false, stopOnRelease = false;
-268         QUuid id = act\&.animInfo(onlyOnce, stopOnRelease);
-269         // Find this animation in the list\&. If not found, -1 will be returned, resulting in the blank space being selected
-270         int index = bind->light()->findAnimIdx(id);
-271         ui->animBox->setCurrentIndex(index + 1);
-272         ui->animOnceBox->setChecked(!onlyOnce);
-273         ui->animKrBox->setChecked(stopOnRelease);
-274     } else if(act\&.isSpecial()){
-275         // Other special keys
-276         ui->tabWidget->setCurrentIndex(TAB_SPECIAL);
-277         int param;
-278         QString sAction = act\&.specialInfo(param);
-279         // Mode selection\&. Check wrap-around flag
-280         ui->modeWrapBox->setChecked(true);
-281         if(sAction == "mode"){
-282             ui->modeWrapBox->setChecked(true);
-283             if(param == KeyAction::MODE_PREV_WRAP)
-284                 param = KeyAction::MODE_PREV;
-285             else if(param == KeyAction::MODE_NEXT_WRAP)
-286                 param = KeyAction::MODE_NEXT;
-287             else if(param < 0)
-288                 ui->modeWrapBox->setChecked(false);
-289             // Set mode box to current selection, or to mode 1 if invalid
-290             param += 3;
-291             if(param >= 0 && param < ui->modeBox->count())
-292                 ui->modeBox->setCurrentIndex(param);
-293             else
-294                 // 0 -> "", 1 -> Prev, 2 -> Next, 3 -> Mode 1
-295                 ui->modeBox->setCurrentIndex(3);
-296         } else if (sAction == "macro") {
-297             ui->tabWidget->setCurrentIndex(TAB_MACRO);
-298             if (act\&.isValidMacro()) {
-299                 ui->pteMacroBox->setPlainText(act\&.macroContent());
-300                 ui->pteMacroText->setPlainText(act\&.macroLine()[1]\&.replace("&das_IST_31N_col0n;", ":"));
-301                 ui->pteMacroComment->setPlainText(act\&.macroLine()[2]\&.replace("&das_IST_31N_col0n;", ":"));
-302                 // Set the invisible Buffer to the original timing information\&.
-303                 // For convenience / Migration from older versions:
-304                 // If the timing information is only "x", then ignore it by setting it to an empty QString\&.
-305                 ui->txtBuffer->setText("");
-306                 if (act\&.macroTiming() != "x") ui->txtBuffer->setText(act\&.macroTiming());
-307                 setCorrectRadioButton(act\&.macroContent());
-308             } else {
-309                 qDebug("RebindWidget::setSelection found invalid macro definition\&.");
-310                 act\&.macroDisplay();
-311             }
-312         } else
-313             ui->modeBox->setCurrentIndex(0);
-314         // Brightness control\&. Also check wrap
-315         if(sAction == "light"){
-316             ui->lightWrapBox->setChecked(true);
-317             if(param == KeyAction::LIGHT_DOWN_WRAP)
-318                 param = KeyAction::LIGHT_DOWN;
-319             else if(param == KeyAction::LIGHT_UP_WRAP)
-320                 param = KeyAction::LIGHT_UP;
-321             else
-322                 ui->lightWrapBox->setChecked(false);
-323             if(param < 0 || param > 1)
-324                 param = -1;
-325             ui->lightBox->setCurrentIndex(param + 1);
-326         } else
-327             ui->lightBox->setCurrentIndex(0);
-328         // Win lock
-329         if(sAction == "lock"){
-330             if(param < 0 || param > 2)
-331                 param = -1;
-332             ui->lockBox->setCurrentIndex(param + 1);
-333         } else
-334             ui->lockBox->setCurrentIndex(0);
-335     }
-336 }
+128                                                                                   {
+129     if(bind){
+130         // Populate animation list
+131         // FIXME: There should be a trigger to update this whenever an animation is added/removed, even if the key selection hasn't changed
+132         ui->animBox->clear();
+133         ui->animBox->addItem(" ");
+134         foreach(KbAnim* anim, bind->light()->animList())
+135             ui->animBox->addItem(anim->name());
+136     }
+137 
+138     // Apply changes to previous selection (if any)
+139     if(!selection\&.isEmpty() && applyPrevious){
+140         QStringList previous = selection;
+141         selection = QStringList();
+142         applyChanges(previous, false);
+143     }
+144 
+145     selection = newSelection;
+146     if(newSelection\&.isEmpty()){
+147         hide();
+148         return;
+149     } else
+150         show();
+151 
+152     bool hasAction = false;
+153     QString action;
+154     if(selection\&.count() == 1){
+155         // Select action from the UI
+156         action = bind->action(selection\&.first());
+157         if(!action\&.isEmpty())
+158             hasAction = true;
+159     } else {
+160         // Select an action from the UI if all keys are the same\&.
+161         // Select nothing if any are unbound or different
+162         foreach(const QString& key, selection){
+163             QString keyAction = bind->action(key);
+164             if(keyAction\&.isEmpty() || (hasAction && keyAction != action)){
+165                 hasAction = false;
+166                 break;
+167             } else if(action\&.isEmpty()){
+168                 action = keyAction;
+169                 hasAction = true;
+170             }
+171         }
+172     }
+173 
+174     if(!hasAction)
+175         action = "";
+176     KeyAction act(action);
+177     // Clear everything
+178     setBox(0);
+179     ui->dpiCustXBox->setValue(400);
+180     ui->dpiCustYBox->setValue(400);
+181     ui->animOnceBox->setChecked(false);
+182     ui->animKrBox->setChecked(false);
+183     ui->programKpBox->setText("");
+184     ui->programKrBox->setText("");
+185     ui->programKpSIBox->setChecked(false);
+186     ui->programKrSIBox->setChecked(false);
+187     ui->programKpModeBox->setCurrentIndex(0);
+188     ui->programKrModeBox->setCurrentIndex(0);
+189     ui->programKpModeBox->setEnabled(false);
+190     ui->programKrModeBox->setEnabled(false);
+191     // Clear neu UI elements in MacroTab
+192     ui->pteMacroBox->setPlainText("");
+193     ui->pteMacroText->setPlainText("");
+194     ui->pteMacroComment->setPlainText("");
+195     ui->txtBuffer->setText("");
+196     // Fill in field and select tab according to action type
+197     bool mouse = act\&.isMouse();
+198     if(mouse){
+199         // Mouse buttons
+200         ui->tabWidget->setCurrentIndex(TAB_MOUSE);
+201         // Set mouse buttons (indexOf returns -1 if not found, index zero is blank)
+202         ui->mbBox->setCurrentIndex(mouseKeys\&.indexOf(action) + 1);
+203         ui->mb2Box->setCurrentIndex(mouseExtKeys\&.indexOf(action) + 1);
+204         ui->wheelBox->setCurrentIndex(wheelKeys\&.indexOf(action) + 1);
+205         if(act\&.isDPI()){
+206             QPoint custom;
+207             int value = act\&.dpiInfo(custom);
+208             if(value <= -DPI_OFFSET || value > KeyAction::DPI_CUSTOM)
+209                 return;
+210             ui->dpiBox->setCurrentIndex(value + DPI_OFFSET);
+211             if(value == KeyAction::DPI_CUSTOM){
+212                 ui->dpiCustXBox->setValue(custom\&.x());
+213                 ui->dpiCustYBox->setValue(custom\&.y());
+214             }
+215         }
+216     } else if(act\&.isNormal()){
+217         // Standard key
+218         ui->tabWidget->setCurrentIndex(TAB_KB);
+219         ui->typingBox->setCurrentIndex(typingKeys\&.indexOf(action) + 1);
+220         ui->modBox->setCurrentIndex(modKeys\&.indexOf(action) + 1);
+221         ui->fnBox->setCurrentIndex(fnKeys\&.indexOf(action) + 1);
+222         ui->numBox->setCurrentIndex(numKeys\&.indexOf(action) + 1);
+223         ui->mediaBox->setCurrentIndex(mediaKeys\&.indexOf(action) + 1);
+224     } else if(act\&.isProgram()){
+225         // Program key
+226         ui->tabWidget->setCurrentIndex(TAB_PROGRAM);
+227         QString onPress, onRelease;
+228         int stop = act\&.programInfo(onPress, onRelease);
+229         ui->programKpBox->setText(onPress);
+230         ui->programKrBox->setText(onRelease);
+231         switch(stop & 0x0F){
+232         case KeyAction::PROGRAM_PR_MULTI:
+233             ui->programKpSIBox->setChecked(false);
+234             ui->programKpModeBox->setCurrentIndex(0);
+235             ui->programKpModeBox->setEnabled(false);
+236             break;
+237         default:
+238             ui->programKpSIBox->setChecked(true);
+239             ui->programKpModeBox->setCurrentIndex(stop & 0x0F);
+240             ui->programKpModeBox->setEnabled(true);
+241             break;
+242         }
+243         switch(stop & 0xF0){
+244         case KeyAction::PROGRAM_RE_MULTI:
+245             ui->programKrSIBox->setChecked(false);
+246             ui->programKrModeBox->setCurrentIndex(0);
+247             ui->programKrModeBox->setEnabled(false);
+248             break;
+249         case KeyAction::PROGRAM_RE_INDEF:
+250             ui->programKrSIBox->setChecked(true);
+251             ui->programKrModeBox->setCurrentIndex(0);
+252             ui->programKrModeBox->setEnabled(true);
+253             break;
+254         case KeyAction::PROGRAM_RE_KPSTOP:
+255             ui->programKrSIBox->setChecked(true);
+256             ui->programKrModeBox->setCurrentIndex(1);
+257             ui->programKrModeBox->setEnabled(true);
+258             break;
+259         }
+260     } else if(act\&.isAnim()){
+261         // Animation key
+262         ui->tabWidget->setCurrentIndex(TAB_ANIM);
+263         bool onlyOnce = false, stopOnRelease = false;
+264         QUuid id = act\&.animInfo(onlyOnce, stopOnRelease);
+265         // Find this animation in the list\&. If not found, -1 will be returned, resulting in the blank space being selected
+266         int index = bind->light()->findAnimIdx(id);
+267         ui->animBox->setCurrentIndex(index + 1);
+268         ui->animOnceBox->setChecked(!onlyOnce);
+269         ui->animKrBox->setChecked(stopOnRelease);
+270     } else if(act\&.isSpecial()){
+271         // Other special keys
+272         ui->tabWidget->setCurrentIndex(TAB_SPECIAL);
+273         int param;
+274         QString sAction = act\&.specialInfo(param);
+275         // Mode selection\&. Check wrap-around flag
+276         ui->modeWrapBox->setChecked(true);
+277         if(sAction == "mode"){
+278             ui->modeWrapBox->setChecked(true);
+279             if(param == KeyAction::MODE_PREV_WRAP)
+280                 param = KeyAction::MODE_PREV;
+281             else if(param == KeyAction::MODE_NEXT_WRAP)
+282                 param = KeyAction::MODE_NEXT;
+283             else if(param < 0)
+284                 ui->modeWrapBox->setChecked(false);
+285             // Set mode box to current selection, or to mode 1 if invalid
+286             param += 3;
+287             if(param >= 0 && param < ui->modeBox->count())
+288                 ui->modeBox->setCurrentIndex(param);
+289             else
+290                 // 0 -> "", 1 -> Prev, 2 -> Next, 3 -> Mode 1
+291                 ui->modeBox->setCurrentIndex(3);
+292         } else if (sAction == "macro") {
+293             ui->tabWidget->setCurrentIndex(TAB_MACRO);
+294             if (act\&.isValidMacro()) {
+295                 ui->pteMacroBox->setPlainText(act\&.macroContent());
+296                 ui->pteMacroText->setPlainText(act\&.macroLine()[1]\&.replace("&das_IST_31N_col0n;", ":"));
+297                 ui->pteMacroComment->setPlainText(act\&.macroLine()[2]\&.replace("&das_IST_31N_col0n;", ":"));
+298                 // Set the invisible Buffer to the original timing information\&.
+299                 // For convenience / Migration from older versions:
+300                 // If the timing information is only "x", then ignore it by setting it to an empty QString\&.
+301                 ui->txtBuffer->setText("");
+302                 if (act\&.macroTiming() != "x") ui->txtBuffer->setText(act\&.macroTiming());
+303                 setCorrectRadioButton(act\&.macroContent());
+304             } else {
+305                 qDebug("RebindWidget::setSelection found invalid macro definition\&.");
+306                 act\&.macroDisplay();
+307             }
+308         } else
+309             ui->modeBox->setCurrentIndex(0);
+310         // Brightness control\&. Also check wrap
+311         if(sAction == "light"){
+312             ui->lightWrapBox->setChecked(true);
+313             if(param == KeyAction::LIGHT_DOWN_WRAP)
+314                 param = KeyAction::LIGHT_DOWN;
+315             else if(param == KeyAction::LIGHT_UP_WRAP)
+316                 param = KeyAction::LIGHT_UP;
+317             else
+318                 ui->lightWrapBox->setChecked(false);
+319             if(param < 0 || param > 1)
+320                 param = -1;
+321             ui->lightBox->setCurrentIndex(param + 1);
+322         } else
+323             ui->lightBox->setCurrentIndex(0);
+324         // Win lock
+325         if(sAction == "lock"){
+326             if(param < 0 || param > 2)
+327                 param = -1;
+328             ui->lockBox->setCurrentIndex(param + 1);
+329         } else
+330             ui->lockBox->setCurrentIndex(0);
+331     }
+332 }
 .fi
 .SH "Field Documentation"
 .PP 
 .SS "\fBKbBind\fP* RebindWidget::bind\fC [private]\fP"
 
 .PP
-Definition at line 95 of file rebindwidget\&.h\&.
+Definition at line 94 of file rebindwidget\&.h\&.
 .PP
 Referenced by applyChanges(), on_btnStartMacro_clicked(), on_btnStopMacro_clicked(), on_resetButton_clicked(), on_unbindButton_clicked(), setBind(), and setSelection()\&.
-.SS "bool RebindWidget::firstCall\fC [private]\fP"
-
-.PP
-Definition at line 81 of file rebindwidget\&.h\&.
-.PP
-Referenced by RebindWidget(), and setSelection()\&.
 .SS "QStringList RebindWidget::fnKeys\fC [private]\fP"
-
-.PP
-Definition at line 101 of file rebindwidget\&.h\&.
-.PP
-Referenced by applyChanges(), RebindWidget(), setBind(), and setSelection()\&.
-.SS "\fBMacroReader\fP* RebindWidget::macReader\fC [private]\fP"
-
-.PP
-Definition at line 107 of file rebindwidget\&.h\&.
-.PP
-Referenced by on_btnStartMacro_clicked(), and on_btnStopMacro_clicked()\&.
-.SS "QStringList RebindWidget::mediaKeys\fC [private]\fP"
-
-.PP
-Definition at line 103 of file rebindwidget\&.h\&.
-.PP
-Referenced by applyChanges(), RebindWidget(), setBind(), and setSelection()\&.
-.SS "QStringList RebindWidget::modKeys\fC [private]\fP"
 
 .PP
 Definition at line 100 of file rebindwidget\&.h\&.
 .PP
 Referenced by applyChanges(), RebindWidget(), setBind(), and setSelection()\&.
-.SS "QStringList RebindWidget::mouseExtKeys\fC [private]\fP"
+.SS "\fBMacroReader\fP* RebindWidget::macReader\fC [private]\fP"
 
 .PP
-Definition at line 105 of file rebindwidget\&.h\&.
+Definition at line 106 of file rebindwidget\&.h\&.
 .PP
-Referenced by applyChanges(), RebindWidget(), and setSelection()\&.
-.SS "QStringList RebindWidget::mouseKeys\fC [private]\fP"
-
-.PP
-Definition at line 104 of file rebindwidget\&.h\&.
-.PP
-Referenced by applyChanges(), RebindWidget(), and setSelection()\&.
-.SS "QStringList RebindWidget::numKeys\fC [private]\fP"
+Referenced by on_btnStartMacro_clicked(), and on_btnStopMacro_clicked()\&.
+.SS "QStringList RebindWidget::mediaKeys\fC [private]\fP"
 
 .PP
 Definition at line 102 of file rebindwidget\&.h\&.
 .PP
 Referenced by applyChanges(), RebindWidget(), setBind(), and setSelection()\&.
+.SS "QStringList RebindWidget::modKeys\fC [private]\fP"
+
+.PP
+Definition at line 99 of file rebindwidget\&.h\&.
+.PP
+Referenced by applyChanges(), RebindWidget(), setBind(), and setSelection()\&.
+.SS "QStringList RebindWidget::mouseExtKeys\fC [private]\fP"
+
+.PP
+Definition at line 104 of file rebindwidget\&.h\&.
+.PP
+Referenced by applyChanges(), RebindWidget(), and setSelection()\&.
+.SS "QStringList RebindWidget::mouseKeys\fC [private]\fP"
+
+.PP
+Definition at line 103 of file rebindwidget\&.h\&.
+.PP
+Referenced by applyChanges(), RebindWidget(), and setSelection()\&.
+.SS "QStringList RebindWidget::numKeys\fC [private]\fP"
+
+.PP
+Definition at line 101 of file rebindwidget\&.h\&.
+.PP
+Referenced by applyChanges(), RebindWidget(), setBind(), and setSelection()\&.
 .SS "\fBKbProfile\fP* RebindWidget::profile\fC [private]\fP"
 
 .PP
-Definition at line 96 of file rebindwidget\&.h\&.
+Definition at line 95 of file rebindwidget\&.h\&.
 .PP
 Referenced by setBind()\&.
 .SS "QStringList RebindWidget::selection\fC [private]\fP"
 
 .PP
-Definition at line 97 of file rebindwidget\&.h\&.
+Definition at line 96 of file rebindwidget\&.h\&.
 .PP
 Referenced by on_applyButton_clicked(), on_cancelButton_clicked(), on_resetButton_clicked(), on_unbindButton_clicked(), and setSelection()\&.
 .SS "const int RebindWidget::TAB_ANIM = 2\fC [static]\fP, \fC [private]\fP"
 
 .PP
-Definition at line 84 of file rebindwidget\&.h\&.
+Definition at line 83 of file rebindwidget\&.h\&.
 .PP
 Referenced by setSelection()\&.
 .SS "const int RebindWidget::TAB_KB = 0\fC [static]\fP, \fC [private]\fP"
 
 .PP
-Definition at line 84 of file rebindwidget\&.h\&.
+Definition at line 83 of file rebindwidget\&.h\&.
 .PP
 Referenced by setSelection()\&.
 .SS "const int RebindWidget::TAB_MACRO = 5\fC [static]\fP, \fC [private]\fP"
 
 .PP
-Definition at line 84 of file rebindwidget\&.h\&.
+Definition at line 83 of file rebindwidget\&.h\&.
 .PP
 Referenced by setSelection()\&.
 .SS "const int RebindWidget::TAB_MOUSE = 1\fC [static]\fP, \fC [private]\fP"
 
 .PP
-Definition at line 84 of file rebindwidget\&.h\&.
+Definition at line 83 of file rebindwidget\&.h\&.
 .PP
 Referenced by setSelection()\&.
 .SS "const int RebindWidget::TAB_PROGRAM = 4\fC [static]\fP, \fC [private]\fP"
 
 .PP
-Definition at line 84 of file rebindwidget\&.h\&.
+Definition at line 83 of file rebindwidget\&.h\&.
 .PP
 Referenced by setSelection()\&.
 .SS "const int RebindWidget::TAB_SPECIAL = 3\fC [static]\fP, \fC [private]\fP"
 
 .PP
-Definition at line 84 of file rebindwidget\&.h\&.
+Definition at line 83 of file rebindwidget\&.h\&.
 .PP
 Referenced by setSelection()\&.
 .SS "QStringList RebindWidget::typingKeys\fC [private]\fP"
 
 .PP
-Definition at line 99 of file rebindwidget\&.h\&.
+Definition at line 98 of file rebindwidget\&.h\&.
 .PP
 Referenced by applyChanges(), setBind(), and setSelection()\&.
 .SS "\fBUi::RebindWidget\fP* RebindWidget::ui\fC [private]\fP"
@@ -1688,7 +1667,7 @@ Referenced by applyChanges(), convertMacroBox(), helpStatus(), on_animBox_curren
 .SS "QStringList RebindWidget::wheelKeys\fC [private]\fP"
 
 .PP
-Definition at line 106 of file rebindwidget\&.h\&.
+Definition at line 105 of file rebindwidget\&.h\&.
 .PP
 Referenced by applyChanges(), RebindWidget(), and setSelection()\&.
 

@@ -96,6 +96,7 @@ var classKb =
     [ "prefsPath", "classKb.html#a05ac826fd49da70583dbc284d57d8897", null ],
     [ "prevMode", "classKb.html#a98f8f34c717b24934c542be252380da1", null ],
     [ "prevProfile", "classKb.html#a6020e4bb32cefb2fee38d4c27bce2c90", null ],
+    [ "productID", "classKb.html#a4e63225e4aa00acf72a13d792fb237a2", null ],
     [ "usbModel", "classKb.html#a83714d107e0c9242781d157cfabb051e", null ],
     [ "usbSerial", "classKb.html#a1089874f4fba9e268d24fe6ccb3d3efa", null ]
 ];

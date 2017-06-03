@@ -29,7 +29,7 @@
 <area shape="rect" id="node23" href="$classKbAnimWidget.html#a79f0a97b24005a54981e66d8c9e43e62" title="KbAnimWidget::on_keyButton\l_clicked" alt="" coords="1537,329,1735,370"/>
 <area shape="rect" id="node24" href="$classKbAnimWidget.html#a5d00279a905a85a5e702f266ca84f6ef" title="KbAnimWidget::on_deleteButton\l_clicked" alt="" coords="1531,446,1741,487"/>
 <area shape="rect" id="node25" href="$classKbAnimWidget.html#aed385da23edc78f5a407d26f191eb110" title="KbAnimWidget::on_property\lButton_clicked" alt="" coords="1543,211,1729,253"/>
-<area shape="rect" id="node28" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent. " alt="" coords="1573,277,1699,304"/>
+<area shape="rect" id="node28" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent" alt="" coords="1573,277,1699,304"/>
 <area shape="rect" id="node30" href="$classKbAnim.html#a9c9743475b9acade3c5d556ec88f2b59" title="KbAnim::catchUp" alt="" coords="943,588,1068,615"/>
 <area shape="rect" id="node33" href="$classAnimScript.html#a90121fc1ed15264bb8ffb56288127fed" title="AnimScript::load" alt="" coords="761,751,879,777"/>
 <area shape="rect" id="node34" href="$classAnimScript.html#ae59ff1932ad97696fcaf244bb9d7a537" title="AnimScript::scan" alt="" coords="944,761,1067,788"/>

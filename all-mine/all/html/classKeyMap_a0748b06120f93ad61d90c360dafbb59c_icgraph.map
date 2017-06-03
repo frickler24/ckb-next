@@ -25,7 +25,7 @@
 <area shape="rect" id="node13" href="$classKbLightWidget.html#a854d8332999f4b2337d198199661d405" title="KbLightWidget::on_animButton\l_clicked" alt="" coords="2093,243,2296,285"/>
 <area shape="rect" id="node15" href="$classKbAnimWidget.html#aa49c33f3e673b9521ab812df554dec93" title="KbAnimWidget::duplicateAnim" alt="" coords="1579,71,1778,97"/>
 <area shape="rect" id="node16" href="$classKbAnimWidget.html#a8fefdad4f8ee8082890159438c78e911" title="KbAnimWidget::on_animList\l_customContextMenuRequested" alt="" coords="1832,95,2045,137"/>
-<area shape="rect" id="node18" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent. " alt="" coords="1615,421,1742,448"/>
+<area shape="rect" id="node18" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent" alt="" coords="1615,421,1742,448"/>
 <area shape="rect" id="node21" href="$classAnimAddDialog.html#acb2d42b03ff17769c46acacc780f81d8" title="AnimAddDialog::on_preset\lBox_activated" alt="" coords="1590,5,1767,46"/>
 <area shape="rect" id="node22" href="$classAnimAddDialog.html#a238fd7d380baf02174d89f5ce12e7eeb" title="AnimAddDialog::on_animBox\l_activated" alt="" coords="1843,5,2035,46"/>
 <area shape="rect" id="node24" href="$classKbAnimWidget.html#a5d00279a905a85a5e702f266ca84f6ef" title="KbAnimWidget::on_deleteButton\l_clicked" alt="" coords="1573,122,1784,163"/>

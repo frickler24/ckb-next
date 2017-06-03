@@ -162,6 +162,10 @@ var dir_77b5d46a1bc2c75b90444f394c5858ea =
     [ "layoutdialog.h", "layoutdialog_8h.html", [
       [ "LayoutDialog", "classLayoutDialog.html", "classLayoutDialog" ]
     ] ],
+    [ "macromigrationtip.cpp", "macromigrationtip_8cpp.html", null ],
+    [ "macromigrationtip.h", "macromigrationtip_8h.html", [
+      [ "macroMigrationTip", "classmacroMigrationTip.html", "classmacroMigrationTip" ]
+    ] ],
     [ "macroreader.cpp", "macroreader_8cpp.html", null ],
     [ "macroreader.h", "macroreader_8h.html", [
       [ "MacroReaderThread", "classMacroReaderThread.html", "classMacroReaderThread" ],

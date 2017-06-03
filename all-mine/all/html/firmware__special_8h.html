@@ -31,7 +31,7 @@
   <td id="projectlogo"><img alt="Logo" src="ckb-128.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">ckb-next
-   &#160;<span id="projectnumber">v0.2.8 at branch all-mine</span>
+   &#160;<span id="projectnumber">beta-v0.2.8+testing at branch all-mine</span>
    </div>
    <div id="projectbrief">ckb-next driver for corsair devices</div>
   </td>
@@ -143,10 +143,9 @@ Data Structures</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a2aa27325e30aac7dcec6203d4f11e996"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware__special_8h.html#a2aa27325e30aac7dcec6203d4f11e996">V_CORSAIR</a>&#160;&#160;&#160;0x1b1c</td></tr>
-<tr class="memdesc:a2aa27325e30aac7dcec6203d4f11e996"><td class="mdescLeft">&#160;</td><td class="mdescRight">To reduce effort, please insert these combinations only, which need really special treatment. All other models will further be identified by their feature-lists.  <a href="#a2aa27325e30aac7dcec6203d4f11e996">More...</a><br/></td></tr>
+<tr class="memdesc:a2aa27325e30aac7dcec6203d4f11e996"><td class="mdescLeft">&#160;</td><td class="mdescRight">To reduce effort, please insert only these combinations, whcih need really special treatment. All other models will further be identified by their featrur-lists.  <a href="#a2aa27325e30aac7dcec6203d4f11e996">More...</a><br/></td></tr>
 <tr class="separator:a2aa27325e30aac7dcec6203d4f11e996"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0f89f20ca96ad159330a8d071a45352"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware__special_8h.html#aa0f89f20ca96ad159330a8d071a45352">P_K70_LUX_NRGB</a>&#160;&#160;&#160;0x1b36</td></tr>
-<tr class="memdesc:aa0f89f20ca96ad159330a8d071a45352"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enter the Product ID of your device you want to handle with special treatment.  <a href="#aa0f89f20ca96ad159330a8d071a45352">More...</a><br/></td></tr>
 <tr class="separator:aa0f89f20ca96ad159330a8d071a45352"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -165,7 +164,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p>Definition at line <a class="el" href="firmware__special_8h_source.html#l00020">20</a> of file <a class="el" href="firmware__special_8h_source.html">firmware_special.h</a>.</p>
+<p>Definition at line <a class="el" href="firmware__special_8h_source.html#l00018">18</a> of file <a class="el" href="firmware__special_8h_source.html">firmware_special.h</a>.</p>
 </div><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Collaboration diagram for firmwareSpecial:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -204,7 +203,7 @@ product</td>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="firmware__special_8h_source.html#l00018">18</a> of file <a class="el" href="firmware__special_8h_source.html">firmware_special.h</a>.</p>
+<p>Definition at line <a class="el" href="firmware__special_8h_source.html#l00016">16</a> of file <a class="el" href="firmware__special_8h_source.html">firmware_special.h</a>.</p>
 
 <p>Referenced by <a class="el" href="led__keyboard_8c_source.html#l00181">loadrgb_kb()</a>, and <a class="el" href="usb_8c_source.html#l00070">product_str()</a>.</p>
 
@@ -219,11 +218,11 @@ product</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>And - please - add a comment, why this entry is needed. Don't change this. If Corsair is not corsair any more, we have a different problem... </p>
+<p>And - please - add a comment, why this antry is needed. Don't change this. If Corsair is not corsair any more, we have a different problem... </p>
 
 <p>Definition at line <a class="el" href="firmware__special_8h_source.html#l00015">15</a> of file <a class="el" href="firmware__special_8h_source.html">firmware_special.h</a>.</p>
 
-<p>Referenced by <a class="el" href="keymap_8cpp_source.html#l00504">KeyMap::getModel()</a>, <a class="el" href="usb__linux_8c_source.html#l00694">usb_add_device()</a>, and <a class="el" href="usb_8c_source.html#l00043">vendor_str()</a>.</p>
+<p>Referenced by <a class="el" href="keymap_8cpp_source.html#l00504">KeyMap::getModel()</a>, <a class="el" href="usb__linux_8c_source.html#l00696">usb_add_device()</a>, and <a class="el" href="usb_8c_source.html#l00043">vendor_str()</a>.</p>
 
 </div>
 </div>
@@ -246,7 +245,7 @@ product</td>
 <div class="line">    </div>
 <div class="line">    </div>
 <div class="line">    </div>
-<div class="line">    {  0x1b36 , <a class="code" href="classKeyMap.html#a6d29bbbb4d74908a0a1873d485d6769da6dd5dd80a4c40a9bbd8a881d10ae5ffe">KeyMap::K70</a> },</div>
+<div class="line">    {  0x1b36 , <a class="code" href="classKeyMap.html#a6d29bbbb4d74908a0a1873d485d6769da6dd5dd80a4c40a9bbd8a881d10ae5ffe">KeyMap::K70</a>},</div>
 <div class="line">}</div>
 <div class="ttc" id="classKeyMap_html_a6d29bbbb4d74908a0a1873d485d6769da6dd5dd80a4c40a9bbd8a881d10ae5ffe"><div class="ttname"><a href="classKeyMap.html#a6d29bbbb4d74908a0a1873d485d6769da6dd5dd80a4c40a9bbd8a881d10ae5ffe">KeyMap::K70</a></div><div class="ttdef"><b>Definition:</b> <a href="keymap_8h_source.html#l00055">keymap.h:55</a></div></div>
 </div><!-- fragment -->
@@ -260,7 +259,7 @@ product</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_77b5d46a1bc2c75b90444f394c5858ea.html">ckb</a></li><li class="navelem"><a class="el" href="firmware__special_8h.html">firmware_special.h</a></li>
-    <li class="footer">Generated on Sat May 27 2017 21:14:03 for ckb-next by
+    <li class="footer">Generated on Sat Jun 3 2017 21:13:38 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

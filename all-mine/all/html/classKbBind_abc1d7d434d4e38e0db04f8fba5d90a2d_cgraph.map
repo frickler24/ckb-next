@@ -2,7 +2,7 @@
 <area shape="rect" id="node2" href="$classKbBind.html#a116916d2451ee7dcfe69cd816eb6d255" title="KbBind::bindAction" alt="" coords="185,5,319,32"/>
 <area shape="rect" id="node4" href="$classKeyAction.html#a943d9ec1c22dfc6f6497271b0bfd568c" title="KeyAction::driverName" alt="" coords="173,56,331,83"/>
 <area shape="rect" id="node7" href="$classKeyAction.html#ae657d934ff312fb11e306472472b31ef" title="isValidMacro checks whether a keyAction contains a valid macro. This is done easily: If the macro act..." alt="" coords="388,132,553,159"/>
-<area shape="rect" id="node9" href="$classKeyAction.html#ac72be90499e81c76ae9f908e2a17d1c0" title="macroContent returns the macro key definition only (the second part of the macro action). In this Implementation, strip the delay information. " alt="" coords="166,157,338,184"/>
+<area shape="rect" id="node9" href="$classKeyAction.html#ac72be90499e81c76ae9f908e2a17d1c0" title="macroContent returns the macro key definition only (the second part of the macro action). " alt="" coords="166,157,338,184"/>
 <area shape="rect" id="node10" href="$classKeyAction.html#a67bbf6dd422e76ef20ed858f28bb4b21" title="KeyAction::value" alt="" coords="191,208,313,235"/>
 <area shape="rect" id="node3" href="$classKeyAction.html#ae744da2dd239b7d6596a341ea63b0e88" title="KeyAction::defaultAction" alt="" coords="387,5,554,32"/>
 <area shape="rect" id="node5" href="$classKeyAction.html#ad393200d82796ade359ae0e1959dbca8" title="KeyAction::isSpecial" alt="" coords="399,56,542,83"/>

@@ -16,11 +16,11 @@
 <area shape="rect" id="node15" href="$ckb-daemon_2main_8c.html#acd1527386a48875050e637e4bb872f11" title="quit Stop working the daemon. function is called if the daemon received a sigterm In this case..." alt="" coords="1160,291,1203,317"/>
 <area shape="rect" id="node16" href="$ckb-daemon_2main_8c.html#a05f9b9989842b986a26caf9e4c66a4c7" title="sighandler" alt="" coords="1330,183,1411,209"/>
 <area shape="rect" id="node17" href="$classFwUpgradeDialog.html#a72dac03aca9395d1d440f0edcd1bb1da" title="FwUpgradeDialog::fwUpdate\lFinished" alt="" coords="1275,285,1466,326"/>
-<area shape="rect" id="node20" href="$classKbFirmware.html#aa68b2e0aed9074c60eba72e9fa60a6b5" title="KbFirmware::_latestForBoard" alt="" coords="1275,423,1467,449"/>
-<area shape="rect" id="node30" href="$classKbFirmware.html#ae5f3c91fcf3fe8fe55e2c1e3cea877eb" title="KbFirmware::_fileForBoard" alt="" coords="1282,368,1459,395"/>
+<area shape="rect" id="node20" href="$classKbFirmware.html#a1d5c53d6b1efddfcb4fdbb4b872ed897" title="KbFirmware::_latestForBoard" alt="" coords="1275,423,1467,449"/>
+<area shape="rect" id="node30" href="$classKbFirmware.html#a86cc0f2021cb2d5d0353c52a957c0e0f" title="KbFirmware::_fileForBoard" alt="" coords="1282,368,1459,395"/>
 <area shape="rect" id="node18" href="$classFwUpgradeDialog.html#ae785587a6678240a0a6f47ef79808ad7" title="FwUpgradeDialog::FwUpgrade\lDialog" alt="" coords="1766,298,1967,339"/>
 <area shape="rect" id="node19" href="$classFwUpgradeDialog.html#a8f4e424ecf62240c666836a8d5425f50" title="FwUpgradeDialog::removeDev" alt="" coords="1515,335,1717,361"/>
-<area shape="rect" id="node21" href="$classKbFirmware.html#adf60ed5d7553a8c3f362ce5ae29ce965" title="KbFirmware::versionForBoard" alt="" coords="1519,461,1713,488"/>
+<area shape="rect" id="node21" href="$classKbFirmware.html#a89c4d7badcf2f167842174a1f872a0da" title="KbFirmware::versionForBoard" alt="" coords="1519,461,1713,488"/>
 <area shape="rect" id="node22" href="$classKbWidget.html#adabed0db911bef8b3c0157372fb4e21a" title="KbWidget::updateFwButton" alt="" coords="1775,476,1958,503"/>
 <area shape="rect" id="node24" href="$classKbWidget.html#a38c9f29a5d8f1edfcb5f8040de3dadb9" title="KbWidget::on_fwUpdButton\l_clicked" alt="" coords="2028,401,2212,442"/>
 <area shape="rect" id="node27" href="$classMainWindow.html#a7bd3f729676a76651d4852d03d1cfb8e" title="MainWindow::checkFwUpdates" alt="" coords="2017,532,2223,559"/>
@@ -29,7 +29,7 @@
 <area shape="rect" id="node26" href="$classMainWindow.html#ae50767c4ed6029f63ebacfffde4bc802" title="MainWindow::showFwUpdate\lNotification" alt="" coords="2499,401,2695,442"/>
 <area shape="rect" id="node28" href="$classMainWindow.html#a888ae1a192a5ca93d0d8bddd104ae953" title="MainWindow::timerTick" alt="" coords="2282,532,2441,559"/>
 <area shape="rect" id="node29" href="$classMainWindow.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow" alt="" coords="2507,532,2687,559"/>
-<area shape="rect" id="node31" href="$classKbFirmware.html#a1cc600d07217f327a1541a44d353004c" title="KbFirmware::dataForBoard" alt="" coords="1527,385,1705,412"/>
+<area shape="rect" id="node31" href="$classKbFirmware.html#ae5dae6557deb8b35d6731597d57eac26" title="KbFirmware::dataForBoard" alt="" coords="1527,385,1705,412"/>
 <area shape="rect" id="node32" href="$classFwUpgradeDialog.html#a1fd1f6f1285ab4998a7c81e2ee118d54" title="FwUpgradeDialog::exec" alt="" coords="1785,375,1948,401"/>
 <area shape="rect" id="node34" href="$usb_8c.html#ab8c22b4f7012c6d9fe1a0d5e2a93df65" title="brief . " alt="" coords="425,107,495,133"/>
 <area shape="rect" id="node35" href="$usb__linux_8c.html#adeffaa2b04d01b15c8623255719420ef" title="usb_rm_device find the usb port to remove and close it via closeusb(). " alt="" coords="699,157,810,184"/>

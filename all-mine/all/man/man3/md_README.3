@@ -1,77 +1,37 @@
-.TH "md_README" 3 "Sat May 27 2017" "Version v0.2.8 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.TH "md_README" 3 "Sat Jun 3 2017" "Version beta-v0.2.8+testing at branch all-mine" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 md_README \- ckb-next: RGB Driver for Linux and OS X 
+\fC\fP
+.PP
 \fBckb-next\fP is an open-source driver for Corsair keyboards and mice\&. It aims to bring the features of their proprietary CUE software to the Linux and Mac operating systems\&. This project is currently a work in progress, but it already supports much of the same functionality, including full RGB animations\&. More features are coming soon\&. Testing and bug reports are appreciated!
 .PP
 .PP
 \fBDisclaimer:\fP ckb-next is not an official Corsair product\&. It is licensed under the GNU General Public License (version 2) in the hope that it will be useful, but with NO WARRANTY of any kind\&.
 .PP
+.SS "What happened to the original \fCckb\fP? "
+.PP
+We don't know\&. The author of \fBckb\fP \fCccMSC\fP suddenly disappeared and hasn't showed up since July 2016\&. So the community around ckb decided to take the project over and continue its development\&. That's how \fBckb-next\fP was created\&. Currently it's not rock solid and very easy to set up on newer systems but we are actively working on this\&. Nevertheless the project already incorporates a notable amount of fixes and patches in comparison to the original ckb\&.
+.PP
+.SS "Contents "
+.PP
+.IP "\(bu" 2
+\fCCurrent Status\fP
 .IP "\(bu" 2
 \fCDevice Support\fP
-.IP "  \(bu" 4
-\fCKeyboards\fP
-.IP "  \(bu" 4
-\fCMice\fP
-.PP
-
 .IP "\(bu" 2
 \fCLinux Installation\fP
-.IP "  \(bu" 4
-\fCPre-made packages\fP
-.IP "  \(bu" 4
-\fCPreparation\fP
-.IP "  \(bu" 4
-\fCInstalling\fP
-.IP "  \(bu" 4
-\fCUpgrading\fP
-.IP "  \(bu" 4
-\fCUninstalling\fP
-.PP
-
 .IP "\(bu" 2
 \fCOS X/macOS Installation\fP
-.IP "  \(bu" 4
-\fCBinary download\fP
-.IP "  \(bu" 4
-\fCBuilding from source\fP
-.IP "  \(bu" 4
-\fCUpgrading (binary)\fP
-.IP "  \(bu" 4
-\fCUpgrading (source)\fP
-.IP "  \(bu" 4
-\fCUninstalling\fP
-.PP
-
 .IP "\(bu" 2
 \fCUsage\fP
-.IP "  \(bu" 4
-\fCMajor features\fP
-.IP "  \(bu" 4
-\fCRoadmap\fP
-.PP
-
 .IP "\(bu" 2
 \fCTroubleshooting\fP
-.IP "  \(bu" 4
-\fCLinux\fP
-.IP "  \(bu" 4
-\fCOS X/macOS\fP
-.IP "  \(bu" 4
-\fCGeneral\fP
-.IP "  \(bu" 4
-\fCReporting issues\fP
-.PP
-
 .IP "\(bu" 2
-\fCKnown issues\fP
+\fCKnown Issues\fP
 .IP "\(bu" 2
 \fCContributing\fP
-.IP "\(bu" 2
-\fCContact us\fP
-.IP "\(bu" 2
-\fCWhat happened to the original ckb\fP
 .PP
 .PP
 See also:
@@ -82,9 +42,9 @@ See also:
 \fCckb testing repository\fP (updated more frequently, but may be unstable)
 .PP
 .PP
-.SS "Device Support"
+.SS "Device Support "
 .PP
-.SS "Keyboards"
+Keyboards:
 .PP
 .IP "\(bu" 2
 K65 RGB
@@ -106,7 +66,7 @@ Strafe RGB
 = hardware playback not supported\&. Settings will be saved to software only\&.
 .PP
 .PP
-.SS "Mice"
+Mice:
 .PP
 .IP "\(bu" 2
 M65 RGB
@@ -118,9 +78,11 @@ Sabre RGB
 Scimitar RGB
 .PP
 .PP
-.SS "Linux Installation"
+.SS "Linux Installation "
 .PP
-.SS "Pre-made packages"
+.SS "Pre-made packages:"
+.PP
+\fBckb-next\fP packages:
 .PP
 .IP "\(bu" 2
 Fedora 24/25, CentOS/RHEL 7 (maintained by \fC\fP):
@@ -128,21 +90,27 @@ Fedora 24/25, CentOS/RHEL 7 (maintained by \fC\fP):
 \fC`johanh/ckb`\fP - based on \fCmaster\fP branch
 .PP
 
+.PP
+.PP
+\fBckb\fP packages (deprecated):
+.PP
 .IP "\(bu" 2
-Arch Linux (maintained by \fC\fP, \fC\fP):
+Arch Linux (maintained by \fC\fP):
 .IP "  \(bu" 4
-\fC`aur/ckb-next-git`\fP - based on \fCmaster\fP branch (more stable)
+\fC`aur/ckb-git`\fP - based on \fCmaster\fP branch (more stable)
 .IP "  \(bu" 4
-\fC`aur/ckb-next-latest-git`\fP - based on \fCtesting\fP branch (less stable but fresher)
+\fC`aur/ckb-git-latest`\fP - based on \fCtesting\fP branch (less stable but fresher)
 .PP
 
+.IP "\(bu" 2
+Gentoo (maintained by \fC\fP): \fCemerge -av app-misc/ckb\fP
 .PP
 .PP
-If you are a package maintainer or want to discuss something with package maintainers let us know in \fC#5\fP, so we can have an accountable and centralized communication about this\&. \fIIf you would like to maintain a package for your favorite distro/OS, please let us know as well\&.\fP
+If you are a package maintainer or want to discuss something with package maintainers let us know in the issues, so we can have an accountable and centralized communication about this\&. \fIIf you would like to maintain a package for your favorite distro/OS, please let us know as well\&.\fP
 .PP
-.SS "Preparation"
+.SS "Preparation:"
 .PP
-ckb-next requires Qt5 (Qt 5\&.8 is recommended), libudev, zlib, gcc, g++, and glibc\&.
+ckb-next requires Qt5 (Qt 5\&.6 recommened for OS X), libudev, zlib, gcc, g++, and glibc\&.
 .PP
 .IP "\(bu" 2
 Ubuntu: \fCsudo apt-get install build-essential libudev-dev qt5-default zlib1g-dev libappindicator-dev\fP
@@ -154,17 +122,17 @@ Arch: \fCsudo pacman -S base-devel qt5-base zlib\fP
 Other distros: Look for \fCqt5\fP or \fClibqt5*-devel\fP
 .PP
 .PP
-Note: If you build your own kernels, ckb-next requires the \fCCONFIG_INPUT_UINPUT\fP flag to be enabled\&. It is located in \fCDevice Drivers -> Input Device Support -> Miscellaneous devices -> User level driver support\fP\&. If you don't know what this means, you can ignore this\&.
+Note: If you build your own kernels, ckb-next requires the uinput flag to be enabled\&. It is located in \fCDevice Drivers -> Input Device Support -> Miscellaneous devices -> User level driver support\fP\&. If you don't know what this means, you can ignore this\&.
 .PP
-.SS "Installing"
+.SS "Installing:"
 .PP
-You can download ckb-next using the 'Download zip' option on the right or clone it using \fCgit clone\fP\&. Extract it and open the ckb-master directory in a terminal\&. Run \fC\&./quickinstall\fP\&. It will attempt to build ckb and then ask if you'd like to install/run the application\&. If the build doesn't succeed, or if you'd like to hand-tune the compilation of ckb, see \fBhttps:\fP//github\&.com/mattanger/ckb-next/blob/master/BUILD\&.md '`BUILD\&.md`' for instructions\&.
+You can download ckb-next using the 'Download zip' option on the right\&. Extract it and open the ckb-master directory\&. The easiest way to install ckb is to double-click the \fCquickinstall\fP script and run it in a Terminal\&. It will attempt to build ckb and then ask if you'd like to install/run the application\&. If the build doesn't succeed, or if you'd like to compile ckb manually, see \fBhttps:\fP//github\&.com/ccMSC/ckb/blob/master/BUILD\&.md '`BUILD\&.md`' for instructions\&.
 .PP
-.SS "Upgrading"
+.SS "Upgrading:"
 .PP
-To install a new version of ckb, or to reinstall the same version, first delete the ckb-master directory and the zip file from your previous download\&. Then download the source code again and re-run \fC\&./quickinstall\fP\&. The script will automatically replace the previous installation\&. You may need to reboot afterward\&.
+To install a new version of ckb, or to reinstall the same version, first delete the ckb-master directory and the zip file from your previous download\&. Then download the source code again and re-run \fCquickinstall\fP\&. The script will automatically replace the previous installation\&. You may need to reboot afterward\&.
 .PP
-.SS "Uninstalling"
+.SS "Uninstalling:"
 .PP
 First, stop the ckb-daemon service and remove the service file\&.
 .IP "\(bu" 2
@@ -181,38 +149,37 @@ Afterward, remove the applications and related files: ``` sudo rm -f /usr/bin/ck
 .PP
 Before https://github.com/mattanger/ckb-next/commit/f347e60df211c60452f95084b6c46dc4ec5f42ee animations were located elsewhere, try removing them as well: ``` sudo rm -rf /usr/bin/ckb-animations ```
 .PP
-.SS "OS X/macOS Installation"
+.SS "OS X/macOS Installation "
 .PP
-.SS "Binary download"
+.SS "Binary download:"
 .PP
-macOS \fCpkg\fP can be downloaded from \fCGitHub Releases\fP\&. It is always built with the last available stable Qt version and tagrets 10\&.10 SDK\&. If you run 10\&.9\&.x, you'll need to build the project from source and comment out \fCsrc/ckb-heat\fP (and the backslash above it) inside \fCckb\&.pro\fP\&.
+The latest OS X/macOS binary can be downloaded here: https://github.com/mattanger/ckb-next/releases/latest
 .PP
-.SS "Building from source"
+Click on \fCckb\&.pkg\fP under the Downloads section\&. This is an automated installer which will set up the driver for you\&. After it's finished, open ckb\&.app (it will be installed to your Applications directory) to get started\&.
 .PP
-Install the latest version of Xcode from the App Store\&. While it's downloading, open the Terminal and execute \fCxcode-select --install\fP to install Command Line Tools\&. Then open Xcode, accept the license agreement and wait for it to install any additional components (if necessary)\&. When you see the 'Welcome to Xcode' screen, from the top bar choose \fCXcode -> Preferences -> Locations -> Command Line Tools\fP and select an SDK version\&. Afterwards install Qt5 from here: http://www.qt.io/download-open-source/
+.SS "Building from source:"
 .PP
-The easiest way to build the driver is with the \fCquickinstall\fP script, which is present in the ckb-master folder\&. Double-click on \fCquickinstall\fP and it will compile the app for you, then ask if you'd like to install it system-wide\&. If the build fails for any reason, or if you'd like to compile and install manually, see \fBhttps:\fP//github\&.com/ccMSC/ckb/blob/master/BUILD\&.md '`BUILD\&.md`'\&.
+Install the latest version of Xcode from the App Store\&. Open Xcode, accept the license agreement, and wait for it to install any additional components (if necessary)\&. When you see the 'Welcome to Xcode' screen, the setup is finished and you can close the app\&. Then install Xcode Command Line Tools package issuing \fCxcode-select --install\fP in a Terminal app\&. Afterwards install Qt5 from here: http://www.qt.io/download-open-source/
 .PP
-.SS "Upgrading (binary)"
+The easiest way to build the driver is with the \fCquickinstall\fP script, which is present in the ckb-master folder\&. Double-click on \fCquickinstall\fP and it will compile the app for you, then ask if you'd like to install it system-wide\&. If the build fails for any reason, or if you'd like to compile manually, see \fBhttps:\fP//github\&.com/ccMSC/ckb/blob/master/BUILD\&.md '`BUILD\&.md`'\&.
+.PP
+.SS "Upgrading (binary):"
 .PP
 Download the latest \fCckb\&.pkg\fP, run the installer, and reboot\&. The newly-installed driver will replace the old one\&.
 .PP
-.SS "Upgrading (source)"
+.SS "Upgrading (source):"
 .PP
 Remove the existing ckb-master directory and zip file\&. Re-download the source code and run the \fCquickinstall\fP script again\&. The script will automatically replace the previous installation\&. You may need to reboot afterward\&.
 .PP
-.SS "Uninstalling"
+.SS "Uninstalling:"
 .PP
-Drag \fCckb\&.app\fP into the trash\&. Then stop and remove the agent:
+Drag \fCckb\&.app\fP into the trash\&. If the system service file isn't cleaned up automatically, you can find it and remove it here: \fC/Library/LaunchDaemons/com\&.ckb\&.daemon\&.plist\fP\&.
 .PP
-```sh sudo unload /Library/LaunchDaemons/com\&.ckb\&.daemon\&.plist sudo rm /Library/LaunchDaemons/com\&.ckb\&.daemon\&.plist ```
-.PP
-.SS "Usage"
+.SS "Usage "
 .PP
 The user interface is still a work in progress\&.
 .PP
-.SS "Major features"
-.PP
+\fBMajor features:\fP
 .IP "\(bu" 2
 Control multiple devices independently
 .IP "\(bu" 2
@@ -235,8 +202,7 @@ Adjustable mouse DPI with ability to change DPI on button press
 .PP
 Closing ckb will actually minimize it to the system tray\&. Use the Quit option from the tray icon or the settings screen to exit the application\&.
 .PP
-.SS "Roadmap"
-.PP
+\fBRoadmap\fP (roughly in order)
 .IP "\(bu" 2
 \fBv0\&.3 release:\fP
 .IP "\(bu" 2
@@ -265,7 +231,7 @@ Extra settings?
 ????
 .PP
 .PP
-.SS "Troubleshooting"
+.SS "Troubleshooting "
 .PP
 .SS "Linux"
 .PP
@@ -274,9 +240,7 @@ If you have problems connecting the device to your system (device doesn't respon
 .IP "\(bu" 2
 K65 RGB: \fCusbhid\&.quirks=0x1B1C:0x1B17:0x20000408\fP
 .IP "\(bu" 2
-K70: \fCusbhid\&.quirks=0x1B1C:0x1B09:0x20000408\fP
-.IP "\(bu" 2
-K70 LUX: \fCusbhid\&.quirks=0x1B1C:0x1B36:0x20000408\fP
+K70: \fCusbhid\&.quirks=0x1B1C:0x1B09:0x0x20000408\fP
 .IP "\(bu" 2
 K70 RGB: \fCusbhid\&.quirks=0x1B1C:0x1B13:0x20000408\fP
 .IP "\(bu" 2
@@ -303,7 +267,13 @@ If you have multiple devices, combine them with commas, starting after the \fC=\
 .PP
 If it still doesn't work, try replacing \fC0x20000408\fP with \fC0x4\fP\&. Note that this will cause the kernel driver to ignore the device(s) completely, so you need to ensure ckb-daemon is running at boot or else you'll have no input\&. This will not work if you are using full-disk encryption\&.
 .PP
-If you see \fBGLib\fP critical errors like ``` GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'G_TYPE_IS_INSTANTIATABLE (instance_type)' failed ``` read \fCthis Arch Linux thread\fP and try different combinations from it\&. If it doesn't help, you might want get support from your distribution community and tell them you cannot solve the problem in this thread\&.
+If you see \fBGLib\fP critical errors like `GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'G_TYPE_IS_INSTANTIATABLE (instance_type)' failed` and you are using:
+.PP
+.IP "\(bu" 2
+Qt 5\&.8 and newer, remove your Qt configuration files and restart the ckb GUI\&. Also watch out for different style overridings in dotfiles under \fC~/\fP generated by Qt automatically, remove them as well\&.
+.IP "\(bu" 2
+Qt 5\&.7 and lower, install \fCqt5ct\fP package on Arch Linux (find a similar one for your distribution)\&. That's all\&. This is a known Qt bug\&. It happened because Qt did not ship required GTK files\&.
+.PP
 .PP
 If you're using \fBUnity\fP and the tray icon doesn't appear correctly, run \fCsudo apt-get install libappindicator-dev\fP\&. Then reinstall ckb\&.
 .PP
@@ -348,7 +318,7 @@ BIOS mode can be activated using the poll rate switch at the back of the keyboar
 .PP
 If you have a problem that you can't solve (and it isn't mentioned in the Known Issues section below), you can report it on \fCthe GitHub issue tracker\fP\&. Before opening a new issue, please check to see if someone else has reported your problem already - if so, feel free to leave a comment there\&.
 .PP
-.SS "Known issues"
+.SS "Known issues "
 .PP
 .IP "\(bu" 2
 Using the keyboard in BIOS mode prevents the media keys (including mute and volume wheel), as well as the K95's G-keys from working\&. This is a hardware limitation\&.
@@ -358,26 +328,8 @@ The tray icon doesn't appear in some desktop environments\&. This is a known Qt 
 When starting the driver manually, the Terminal window sometimes gets spammed with enter keys\&. You can stop it by unplugging and replugging the keyboard or by moving the poll rate switch\&.
 .IP "\(bu" 2
 When stopping the driver manually, the keyboard sometimes stops working completely\&. You can reconnect it by moving the poll rate switch\&.
-.IP "\(bu" 2
-On newer versions of macOS (i\&.e\&. 10\&.12 and up) CMD/Shift+select does not work, yet\&. Stopping the daemon and GUI for \fCckb\fP will fix this issue temporarily\&.
 .PP
 .PP
-.SS "Contributing"
+.SS "Contributing "
 .PP
-You can contribute to the project by \fCopening a pull request\fP\&. It's best if you base your changes off of the \fCtesting\fP branch as opposed to the \fCmaster\fP, because the pull request will be merged there first\&. If you'd like to contribute but don't know what you can do, take a look at \fCthe issue tracker\fP and see if any features/problems are still unresolved\&. Feel free to ask if you'd like some ideas\&.
-.PP
-.SS "Contact us"
-.PP
-There are multiple ways you can get in touch with us:
-.PP
-.IP "\(bu" 2
-\fCjoin\fP \fCckb-next\fP mailing list
-.IP "\(bu" 2
-\fCopen\fP a GitHub Issue
-.IP "\(bu" 2
-hop on \fC#ckb-next\fP to chat \fC\fP
-.PP
-.PP
-.SS "What happened to the original ckb"
-.PP
-Due to time restrictions, the original author of \fBckb\fP \fCccMSC\fP hasn't been able to further develop the software\&. So the community around it decided to take the project over and continue its development\&. That's how \fBckb-next\fP was created\&. Currently it's not rock solid and not very easy to set up on newer systems but we are actively working on this\&. Nevertheless the project already incorporates a notable amount of fixes and patches in comparison to the original ckb\&. 
+You can contribute to the project by \fCopening a pull request\fP\&. It's best if you base your changes off of the \fCtesting\fP branch as opposed to the \fCmaster\fP, because the pull request will be merged there first\&. If you'd like to contribute but don't know what you can do, take a look at \fCthe issue tracker\fP and see if any features/problems are still unresolved\&. Feel free to ask if you'd like some ideas\&. 

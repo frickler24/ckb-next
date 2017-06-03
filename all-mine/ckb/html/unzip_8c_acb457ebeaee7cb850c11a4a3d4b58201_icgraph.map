@@ -3,11 +3,11 @@
 <area shape="rect" id="node19" href="$classQuaZip.html#aee6779b6cd338420c2e8c5655fa8ba97" title="Sets the current file to the next file in the archive. " alt="" coords="187,173,338,200"/>
 <area shape="rect" id="node21" href="$unzip_8c.html#a22730edef5a8a98b367bb30a0d619608" title="unzLocateFile" alt="" coords="211,224,314,251"/>
 <area shape="rect" id="node3" href="$classQuaZip.html#a6c657bfcfccb59d728e0da24c677d899" title="Sets current file by its name. " alt="" coords="397,115,552,141"/>
-<area shape="rect" id="node4" href="$classKbFirmware.html#ae5f3c91fcf3fe8fe55e2c1e3cea877eb" title="KbFirmware::_fileForBoard" alt="" coords="611,64,789,91"/>
+<area shape="rect" id="node4" href="$classKbFirmware.html#a86cc0f2021cb2d5d0353c52a957c0e0f" title="KbFirmware::_fileForBoard" alt="" coords="611,64,789,91"/>
 <area shape="rect" id="node10" href="$classJlCompress.html#a522739a65b382a9838ed69812340dd40" title="Extract a single file. " alt="" coords="619,115,781,141"/>
 <area shape="rect" id="node14" href="$classQuaZipPrivate.html#af26e854d77203dbece23b60b59945383" title="Returns either a list of file names or a list of QuaZipFileInfo. " alt="" coords="603,267,797,293"/>
 <area shape="rect" id="node18" href="$classQuaZipFile.html#aed75bace51f2bb4c3e4f656ab4493aac" title="Opens a file for reading. " alt="" coords="639,13,761,40"/>
-<area shape="rect" id="node5" href="$classKbFirmware.html#a1cc600d07217f327a1541a44d353004c" title="KbFirmware::dataForBoard" alt="" coords="845,13,1024,40"/>
+<area shape="rect" id="node5" href="$classKbFirmware.html#ae5dae6557deb8b35d6731597d57eac26" title="KbFirmware::dataForBoard" alt="" coords="845,13,1024,40"/>
 <area shape="rect" id="node6" href="$classFwUpgradeDialog.html#a1fd1f6f1285ab4998a7c81e2ee118d54" title="FwUpgradeDialog::exec" alt="" coords="1072,13,1235,40"/>
 <area shape="rect" id="node7" href="$classKbWidget.html#a38c9f29a5d8f1edfcb5f8040de3dadb9" title="KbWidget::on_fwUpdButton\l_clicked" alt="" coords="1283,6,1467,47"/>
 <area shape="rect" id="node8" href="$classKbWidget.html#a428930086336c668e8a1055c21c938d9" title="KbWidget::showFwUpdate" alt="" coords="1515,13,1693,40"/>

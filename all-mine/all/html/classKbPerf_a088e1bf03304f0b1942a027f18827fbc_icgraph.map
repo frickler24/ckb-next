@@ -1,6 +1,6 @@
 <map id="KbPerf::popDpi" name="KbPerf::popDpi">
 <area shape="rect" id="node2" href="$classKbPerf.html#a63acb61ec1726f8448d247cc6ef832e5" title="KbPerf::curDpi" alt="" coords="185,5,293,32"/>
 <area shape="rect" id="node3" href="$classKeyAction.html#a1fd7bef50c828e25299d514222d5b5a4" title="KeyAction::keyEvent" alt="" coords="166,56,311,83"/>
-<area shape="rect" id="node4" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent. " alt="" coords="361,56,487,83"/>
+<area shape="rect" id="node4" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent" alt="" coords="361,56,487,83"/>
 <area shape="rect" id="node5" href="$classKb.html#afa36635dcc1cd9512f372594c57c546c" title="Kb::readNotify" alt="" coords="536,56,643,83"/>
 </map>

@@ -2,9 +2,9 @@
 <area shape="rect" id="node2" href="$classKbManager.html#ad22cd8487923dc938a925a6941ed6f3d" title="KbManager::ckbDaemonVersionF" alt="" coords="1008,215,1227,242"/>
 <area shape="rect" id="node16" href="$classKbManager.html#a444f0c8ab29309aad704e07a9aaaee05" title="KbManager::ckbGuiVersionF" alt="" coords="1023,266,1212,292"/>
 <area shape="rect" id="node17" href="$classKbFirmware.html#ae2409af30da0ae6e8731623b2b68dfc9" title="KbFirmware::processDownload" alt="" coords="262,164,466,191"/>
-<area shape="rect" id="node3" href="$classKbFirmware.html#aa68b2e0aed9074c60eba72e9fa60a6b5" title="KbFirmware::_latestForBoard" alt="" coords="1275,164,1467,191"/>
+<area shape="rect" id="node3" href="$classKbFirmware.html#a1d5c53d6b1efddfcb4fdbb4b872ed897" title="KbFirmware::_latestForBoard" alt="" coords="1275,164,1467,191"/>
 <area shape="rect" id="node13" href="$classMainWindow.html#af8adffe48835b0d1f5356e7209b5207b" title="MainWindow::updateVersion" alt="" coords="1999,256,2187,283"/>
-<area shape="rect" id="node4" href="$classKbFirmware.html#adf60ed5d7553a8c3f362ce5ae29ce965" title="KbFirmware::versionForBoard" alt="" coords="1515,151,1709,178"/>
+<area shape="rect" id="node4" href="$classKbFirmware.html#a89c4d7badcf2f167842174a1f872a0da" title="KbFirmware::versionForBoard" alt="" coords="1515,151,1709,178"/>
 <area shape="rect" id="node5" href="$classMainWindow.html#a7bd3f729676a76651d4852d03d1cfb8e" title="MainWindow::checkFwUpdates" alt="" coords="1990,188,2197,215"/>
 <area shape="rect" id="node8" href="$classKbWidget.html#a38c9f29a5d8f1edfcb5f8040de3dadb9" title="KbWidget::on_fwUpdButton\l_clicked" alt="" coords="2001,57,2185,98"/>
 <area shape="rect" id="node11" href="$classKbWidget.html#adabed0db911bef8b3c0157372fb4e21a" title="KbWidget::updateFwButton" alt="" coords="1758,126,1941,152"/>

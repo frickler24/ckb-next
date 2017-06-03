@@ -3,7 +3,7 @@
 <area shape="rect" id="node30" href="$classKbBind.html#adc0b3a203d2f9604799d2f7513241f91" title="KbBind::defaultAction" alt="" coords="222,76,370,103"/>
 <area shape="rect" id="node32" href="$classKbBind.html#ad5557fad088d9b6981203fabdf86cafc" title="KbBind::save" alt="" coords="246,360,346,387"/>
 <area shape="rect" id="node3" href="$classKbBind.html#ab140ce3e9ab0c94d5b23129729234bfb" title="KbBind::action" alt="" coords="444,215,551,241"/>
-<area shape="rect" id="node26" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent. " alt="" coords="434,328,561,355"/>
+<area shape="rect" id="node26" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent" alt="" coords="434,328,561,355"/>
 <area shape="rect" id="node28" href="$classKbBind.html#abc1d7d434d4e38e0db04f8fba5d90a2d" title="KbBind::update" alt="" coords="442,139,553,165"/>
 <area shape="rect" id="node4" href="$classKbBind.html#a610e348fc6762607c0c4b17ce0fcc88f" title="KbBind::friendlyActionName" alt="" coords="624,113,811,140"/>
 <area shape="rect" id="node13" href="$classKbBindWidget.html#a3274fb51d224f0ca111bd714ed524a59" title="KbBindWidget::updateBind" alt="" coords="1645,224,1824,251"/>

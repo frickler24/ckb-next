@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['handlenotificationchannel',['handleNotificationChannel',['../classKbBind.html#ab27322709a40e2d244b714d260c05928',1,'KbBind']]],
+  ['handlenotificationchannel',['handleNotificationChannel',['../classKbBind.html#a4bb7a8b9bdf99bbdbdf6edba08c7d248',1,'KbBind']]],
   ['has_5fkey',['has_key',['../led_8c.html#a97b59f7ad581a5fdd8e2becec0b7725b',1,'led.c']]],
   ['hascurrentfile',['hasCurrentFile',['../classQuaZip.html#a00b237d926648f45da86db25e7cfb697',1,'QuaZip']]],
   ['hasdownloaded',['hasDownloaded',['../classKbFirmware.html#aa103350a5d980275e2abc86d4bd8b62b',1,'KbFirmware']]],

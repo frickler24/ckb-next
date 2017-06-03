@@ -1,4 +1,4 @@
-.TH "src/ckb-daemon/devnode.c" 3 "Sat May 27 2017" "Version v0.2.8 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.TH "src/ckb-daemon/devnode.c" 3 "Sat Jun 3 2017" "Version beta-v0.2.8+testing at branch all-mine" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -106,7 +106,7 @@ src/ckb-daemon/devnode.c \-
 .PP 
 .SH "struct _readlines_ctx"
 .PP 
-Definition at line 335 of file devnode\&.c\&.
+Definition at line 350 of file devnode\&.c\&.
 .PP
 \fBData Fields:\fP
 .RS 4
@@ -129,7 +129,7 @@ int \fIleftoverlen\fP
 .SS "#define MAX_BUFFER   (1024 * 1024 - 1)"
 
 .PP
-Definition at line 334 of file devnode\&.c\&.
+Definition at line 349 of file devnode\&.c\&.
 .PP
 Referenced by readlines()\&.
 .SS "#define S_GID_READ   (\fBgid\fP >= 0 ? \fBS_CUSTOM_R\fP : \fBS_READ\fP)"
@@ -218,69 +218,84 @@ Referenced by mkdevpath()\&.
 201         _mknotifynode(kb, 0);
 202 
 203         // Write the model and serial to files
-204         char mpath[sizeof(path) + 6], spath[sizeof(path) + 7];
+204         char mpath[sizeof(path) + 6], spath[sizeof(path) + 7], ipath[sizeof(path) + 10];
 205         snprintf(mpath, sizeof(mpath), "%s/model", path);
 206         snprintf(spath, sizeof(spath), "%s/serial", path);
-207         FILE* mfile = fopen(mpath, "w");
-208         if(mfile){
-209             fputs(kb->name, mfile);
-210             fputc('\n', mfile);
-211             fclose(mfile);
-212             chmod(mpath, S_GID_READ);
-213             if(gid >= 0)
-214                 chown(mpath, 0, gid);
-215         } else {
-216             ckb_warn("Unable to create %s: %s\n", mpath, strerror(errno));
-217             remove(mpath);
-218         }
-219         FILE* sfile = fopen(spath, "w");
-220         if(sfile){
-221             fputs(kb->serial, sfile);
-222             fputc('\n', sfile);
-223             fclose(sfile);
-224             chmod(spath, S_GID_READ);
-225             if(gid >= 0)
-226                 chown(spath, 0, gid);
-227         } else {
-228             ckb_warn("Unable to create %s: %s\n", spath, strerror(errno));
-229             remove(spath);
-230         }
-231         // Write the keyboard's features
-232         char fpath[sizeof(path) + 9];
-233         snprintf(fpath, sizeof(fpath), "%s/features", path);
-234         FILE* ffile = fopen(fpath, "w");
-235         if(ffile){
-236             fprintf(ffile, "%s %s", vendor_str(kb->vendor), product_str(kb->product));
-237             if(HAS_FEATURES(kb, FEAT_MONOCHROME))
-238                 fputs(" monochrome", ffile);
-239             if(HAS_FEATURES(kb, FEAT_RGB))
-240                 fputs(" rgb", ffile);
-241             if(HAS_FEATURES(kb, FEAT_POLLRATE))
-242                 fputs(" pollrate", ffile);
-243             if(HAS_FEATURES(kb, FEAT_ADJRATE))
-244                 fputs(" adjrate", ffile);
-245             if(HAS_FEATURES(kb, FEAT_BIND))
-246                 fputs(" bind", ffile);
-247             if(HAS_FEATURES(kb, FEAT_NOTIFY))
-248                 fputs(" notify", ffile);
-249             if(HAS_FEATURES(kb, FEAT_FWVERSION))
-250                 fputs(" fwversion", ffile);
-251             if(HAS_FEATURES(kb, FEAT_FWUPDATE))
-252                 fputs(" fwupdate", ffile);
-253             fputc('\n', ffile);
-254             fclose(ffile);
-255             chmod(fpath, S_GID_READ);
-256             if(gid >= 0)
-257                 chown(fpath, 0, gid);
-258         } else {
-259             ckb_warn("Unable to create %s: %s\n", fpath, strerror(errno));
-260             remove(fpath);
-261         }
-262         // Write firmware version and poll rate
-263         mkfwnode(kb);
-264     }
-265     return 0;
-266 }
+207         snprintf(ipath, sizeof(ipath), "%s/productid", path);
+208         FILE* mfile = fopen(mpath, "w");
+209         if(mfile){
+210             fputs(kb->name, mfile);
+211             fputc('\n', mfile);
+212             fclose(mfile);
+213             chmod(mpath, S_GID_READ);
+214             if(gid >= 0)
+215                 chown(mpath, 0, gid);
+216         } else {
+217             ckb_warn("Unable to create %s: %s\n", mpath, strerror(errno));
+218             remove(mpath);
+219         }
+220         FILE* sfile = fopen(spath, "w");
+221         if(sfile){
+222             fputs(kb->serial, sfile);
+223             fputc('\n', sfile);
+224             fclose(sfile);
+225             chmod(spath, S_GID_READ);
+226             if(gid >= 0)
+227                 chown(spath, 0, gid);
+228         } else {
+229             ckb_warn("Unable to create %s: %s\n", spath, strerror(errno));
+230             remove(spath);
+231         }
+232         FILE* ifile = fopen(ipath, "w");
+233         if(ifile){
+234             char productid [5];
+235             snprintf(productid, 5, "%04x", kb->product);
+236             fputs(productid, ifile);
+237             fputc('\n', ifile);
+238             fclose(ifile);
+239             chmod(ipath, S_GID_READ);
+240             if(gid >= 0)
+241                 chown(ipath, 0, gid);
+242         } else {
+243             ckb_warn("Unable to create %s: %s\n", ipath, strerror(errno));
+244             remove(ipath);
+245         }
+246         // Write the keyboard's features
+247         char fpath[sizeof(path) + 9];
+248         snprintf(fpath, sizeof(fpath), "%s/features", path);
+249         FILE* ffile = fopen(fpath, "w");
+250         if(ffile){
+251             fprintf(ffile, "%s %s", vendor_str(kb->vendor), product_str(kb->product));
+252             if(HAS_FEATURES(kb, FEAT_MONOCHROME))
+253                 fputs(" monochrome", ffile);
+254             if(HAS_FEATURES(kb, FEAT_RGB))
+255                 fputs(" rgb", ffile);
+256             if(HAS_FEATURES(kb, FEAT_POLLRATE))
+257                 fputs(" pollrate", ffile);
+258             if(HAS_FEATURES(kb, FEAT_ADJRATE))
+259                 fputs(" adjrate", ffile);
+260             if(HAS_FEATURES(kb, FEAT_BIND))
+261                 fputs(" bind", ffile);
+262             if(HAS_FEATURES(kb, FEAT_NOTIFY))
+263                 fputs(" notify", ffile);
+264             if(HAS_FEATURES(kb, FEAT_FWVERSION))
+265                 fputs(" fwversion", ffile);
+266             if(HAS_FEATURES(kb, FEAT_FWUPDATE))
+267                 fputs(" fwupdate", ffile);
+268             fputc('\n', ffile);
+269             fclose(ffile);
+270             chmod(fpath, S_GID_READ);
+271             if(gid >= 0)
+272                 chown(fpath, 0, gid);
+273         } else {
+274             ckb_warn("Unable to create %s: %s\n", fpath, strerror(errno));
+275             remove(fpath);
+276         }
+277         // Write firmware version and poll rate
+278         mkfwnode(kb);
+279     }
+280     return 0;
+281 }
 .fi
 .SS "int _mknotifynode (\fBusbdevice\fP *kb, intnotify)"
 
@@ -388,64 +403,64 @@ Referenced by _mkdevpath(), and updateconnected()\&.
 .SS "int mkdevpath (\fBusbdevice\fP *kb)"
 
 .PP
-Definition at line 268 of file devnode\&.c\&.
+Definition at line 283 of file devnode\&.c\&.
 .PP
 References _mkdevpath(), euid_guard_start, and euid_guard_stop\&.
 .PP
 Referenced by _setupusb(), and main()\&.
 .PP
 .nf
-268                             {
-269     euid_guard_start;
-270     int res = _mkdevpath(kb);
-271     euid_guard_stop;
-272     return res;
-273 }
+283                             {
+284     euid_guard_start;
+285     int res = _mkdevpath(kb);
+286     euid_guard_stop;
+287     return res;
+288 }
 .fi
 .SS "int mkfwnode (\fBusbdevice\fP *kb)"
 
 .PP
-Definition at line 299 of file devnode\&.c\&.
+Definition at line 314 of file devnode\&.c\&.
 .PP
-References ckb_warn, devpath, usbdevice::fwversion, gid, INDEX_OF, keyboard, usbdevice::pollrate, usbdevice::product, S_GID_READ, and usbdevice::vendor\&.
+References ckb_warn, devpath, usbdevice::fwversion, gid, INDEX_OF, keyboard, usbdevice::pollrate, and S_GID_READ\&.
 .PP
 Referenced by _mkdevpath(), and fwupdate()\&.
 .PP
 .nf
-299                            {
-300     int index = INDEX_OF(kb, keyboard);
-301     char fwpath[strlen(devpath) + 12];
-302     snprintf(fwpath, sizeof(fwpath), "%s%d/fwversion", devpath, index);
-303     FILE* fwfile = fopen(fwpath, "w");
-304     if(fwfile){
-305         fprintf(fwfile, "%04x:0x%04x:0x%04x", kb->fwversion, kb->vendor, kb->product);
-306         fputc('\n', fwfile);
-307         fclose(fwfile);
-308         chmod(fwpath, S_GID_READ);
-309         if(gid >= 0)
-310             chown(fwpath, 0, gid);
-311     } else {
-312         ckb_warn("Unable to create %s: %s\n", fwpath, strerror(errno));
-313         remove(fwpath);
-314         return -1;
-315     }
-316     char ppath[strlen(devpath) + 11];
-317     snprintf(ppath, sizeof(ppath), "%s%d/pollrate", devpath, index);
-318     FILE* pfile = fopen(ppath, "w");
-319     if(pfile){
-320         fprintf(pfile, "%d ms", kb->pollrate);
-321         fputc('\n', pfile);
-322         fclose(pfile);
-323         chmod(ppath, S_GID_READ);
+314                            {
+315     int index = INDEX_OF(kb, keyboard);
+316     char fwpath[strlen(devpath) + 12];
+317     snprintf(fwpath, sizeof(fwpath), "%s%d/fwversion", devpath, index);
+318     FILE* fwfile = fopen(fwpath, "w");
+319     if(fwfile){
+320         fprintf(fwfile, "%04x", kb->fwversion);
+321         fputc('\n', fwfile);
+322         fclose(fwfile);
+323         chmod(fwpath, S_GID_READ);
 324         if(gid >= 0)
-325             chown(ppath, 0, gid);
+325             chown(fwpath, 0, gid);
 326     } else {
 327         ckb_warn("Unable to create %s: %s\n", fwpath, strerror(errno));
-328         remove(ppath);
-329         return -2;
+328         remove(fwpath);
+329         return -1;
 330     }
-331     return 0;
-332 }
+331     char ppath[strlen(devpath) + 11];
+332     snprintf(ppath, sizeof(ppath), "%s%d/pollrate", devpath, index);
+333     FILE* pfile = fopen(ppath, "w");
+334     if(pfile){
+335         fprintf(pfile, "%d ms", kb->pollrate);
+336         fputc('\n', pfile);
+337         fclose(pfile);
+338         chmod(ppath, S_GID_READ);
+339         if(gid >= 0)
+340             chown(ppath, 0, gid);
+341     } else {
+342         ckb_warn("Unable to create %s: %s\n", fwpath, strerror(errno));
+343         remove(ppath);
+344         return -2;
+345     }
+346     return 0;
+347 }
 .fi
 .SS "int mknotifynode (\fBusbdevice\fP *kb, intnotify)"
 
@@ -467,96 +482,96 @@ Referenced by readcmd()\&.
 .SS "unsigned readlines (intfd, \fBreadlines_ctx\fPctx, const char **input)"
 
 .PP
-Definition at line 353 of file devnode\&.c\&.
+Definition at line 368 of file devnode\&.c\&.
 .PP
 References _readlines_ctx::buffer, _readlines_ctx::buffersize, ckb_warn, _readlines_ctx::leftover, _readlines_ctx::leftoverlen, and MAX_BUFFER\&.
 .PP
 Referenced by devmain()\&.
 .PP
 .nf
-353                                                                  {
-354     // Move any data left over from a previous read to the start of the buffer
-355     char* buffer = ctx->buffer;
-356     int buffersize = ctx->buffersize;
-357     int leftover = ctx->leftover, leftoverlen = ctx->leftoverlen;
-358     memcpy(buffer, buffer + leftover, leftoverlen);
-359     // Read data from the file
-360     ssize_t length = read(fd, buffer + leftoverlen, buffersize - leftoverlen);
-361     length = (length < 0 ? 0 : length) + leftoverlen;
-362     leftover = ctx->leftover = leftoverlen = ctx->leftoverlen = 0;
-363     if(length <= 0){
-364         *input = 0;
-365         return 0;
-366     }
-367     // Continue buffering until all available input is read or there's no room left
-368     while(length == buffersize){
-369         if(buffersize == MAX_BUFFER)
-370             break;
-371         int oldsize = buffersize;
-372         buffersize += 4096;
-373         ctx->buffersize = buffersize;
-374         buffer = ctx->buffer = realloc(buffer, buffersize + 1);
-375         ssize_t length2 = read(fd, buffer + oldsize, buffersize - oldsize);
-376         if(length2 <= 0)
-377             break;
-378         length += length2;
-379     }
-380     buffer[length] = 0;
-381     // Input should be issued one line at a time and should end with a newline\&.
-382     char* lastline = memrchr(buffer, '\n', length);
-383     if(lastline == buffer + length - 1){
-384         // If the buffer ends in a newline, process the whole string
-385         *input = buffer;
-386         return length;
-387     } else if(lastline){
-388         // Otherwise, chop off the last line but process everything else
-389         *lastline = 0;
-390         leftover = ctx->leftover = lastline + 1 - buffer;
-391         leftoverlen = ctx->leftoverlen = length - leftover;
-392         *input = buffer;
-393         return leftover - 1;
-394     } else {
-395         // If a newline wasn't found at all, process the whole buffer next time
-396         *input = 0;
-397         if(length == MAX_BUFFER){
-398             // Unless the buffer is completely full, in which case discard it
-399             ckb_warn("Too much input (1MB)\&. Dropping\&.\n");
-400             return 0;
-401         }
-402         leftoverlen = ctx->leftoverlen = length;
-403         return 0;
-404     }
-405 }
+368                                                                  {
+369     // Move any data left over from a previous read to the start of the buffer
+370     char* buffer = ctx->buffer;
+371     int buffersize = ctx->buffersize;
+372     int leftover = ctx->leftover, leftoverlen = ctx->leftoverlen;
+373     memcpy(buffer, buffer + leftover, leftoverlen);
+374     // Read data from the file
+375     ssize_t length = read(fd, buffer + leftoverlen, buffersize - leftoverlen);
+376     length = (length < 0 ? 0 : length) + leftoverlen;
+377     leftover = ctx->leftover = leftoverlen = ctx->leftoverlen = 0;
+378     if(length <= 0){
+379         *input = 0;
+380         return 0;
+381     }
+382     // Continue buffering until all available input is read or there's no room left
+383     while(length == buffersize){
+384         if(buffersize == MAX_BUFFER)
+385             break;
+386         int oldsize = buffersize;
+387         buffersize += 4096;
+388         ctx->buffersize = buffersize;
+389         buffer = ctx->buffer = realloc(buffer, buffersize + 1);
+390         ssize_t length2 = read(fd, buffer + oldsize, buffersize - oldsize);
+391         if(length2 <= 0)
+392             break;
+393         length += length2;
+394     }
+395     buffer[length] = 0;
+396     // Input should be issued one line at a time and should end with a newline\&.
+397     char* lastline = memrchr(buffer, '\n', length);
+398     if(lastline == buffer + length - 1){
+399         // If the buffer ends in a newline, process the whole string
+400         *input = buffer;
+401         return length;
+402     } else if(lastline){
+403         // Otherwise, chop off the last line but process everything else
+404         *lastline = 0;
+405         leftover = ctx->leftover = lastline + 1 - buffer;
+406         leftoverlen = ctx->leftoverlen = length - leftover;
+407         *input = buffer;
+408         return leftover - 1;
+409     } else {
+410         // If a newline wasn't found at all, process the whole buffer next time
+411         *input = 0;
+412         if(length == MAX_BUFFER){
+413             // Unless the buffer is completely full, in which case discard it
+414             ckb_warn("Too much input (1MB)\&. Dropping\&.\n");
+415             return 0;
+416         }
+417         leftoverlen = ctx->leftoverlen = length;
+418         return 0;
+419     }
+420 }
 .fi
 .SS "void readlines_ctx_free (\fBreadlines_ctx\fPctx)"
 
 .PP
-Definition at line 348 of file devnode\&.c\&.
+Definition at line 363 of file devnode\&.c\&.
 .PP
 References _readlines_ctx::buffer\&.
 .PP
 Referenced by devmain()\&.
 .PP
 .nf
-348                                           {
-349     free(ctx->buffer);
-350     free(ctx);
-351 }
+363                                           {
+364     free(ctx->buffer);
+365     free(ctx);
+366 }
 .fi
 .SS "void readlines_ctx_init (\fBreadlines_ctx\fP *ctx)"
 
 .PP
-Definition at line 341 of file devnode\&.c\&.
+Definition at line 356 of file devnode\&.c\&.
 .PP
 Referenced by devmain()\&.
 .PP
 .nf
-341                                            {
-342     // Allocate buffers to store data
-343     *ctx = calloc(1, sizeof(struct _readlines_ctx));
-344     int buffersize = (*ctx)->buffersize = 4095;
-345     (*ctx)->buffer = malloc(buffersize + 1);
-346 }
+356                                            {
+357     // Allocate buffers to store data
+358     *ctx = calloc(1, sizeof(struct _readlines_ctx));
+359     int buffersize = (*ctx)->buffersize = 4095;
+360     (*ctx)->buffer = malloc(buffersize + 1);
+361 }
 .fi
 .SS "int rm_recursive (const char *path)"
 
@@ -588,36 +603,36 @@ Referenced by _mkdevpath(), and rmdevpath()\&.
 .SS "int rmdevpath (\fBusbdevice\fP *kb)"
 
 .PP
-Definition at line 275 of file devnode\&.c\&.
+Definition at line 290 of file devnode\&.c\&.
 .PP
 References _rmnotifynode(), ckb_info, ckb_warn, devpath, euid_guard_start, euid_guard_stop, INDEX_OF, usbdevice::infifo, keyboard, OUTFIFO_MAX, and rm_recursive()\&.
 .PP
 Referenced by closeusb(), and quitWithLock()\&.
 .PP
 .nf
-275                             {
-276     euid_guard_start;
-277     int index = INDEX_OF(kb, keyboard);
-278     if(kb->infifo != 0){
-279 #ifdef OS_LINUX
-280         write(kb->infifo - 1, "\n", 1); // hack to prevent the FIFO thread from perma-blocking
-281 #endif
-282         close(kb->infifo - 1);
-283         kb->infifo = 0;
-284     }
-285     for(int i = 0; i < OUTFIFO_MAX; i++)
-286         _rmnotifynode(kb, i);
-287     char path[strlen(devpath) + 2];
-288     snprintf(path, sizeof(path), "%s%d", devpath, index);
-289     if(rm_recursive(path) != 0 && errno != ENOENT){
-290         ckb_warn("Unable to delete %s: %s\n", path, strerror(errno));
-291         euid_guard_stop;
-292         return -1;
-293     }
-294     ckb_info("Removed device path %s\n", path);
-295     euid_guard_stop;
-296     return 0;
-297 }
+290                             {
+291     euid_guard_start;
+292     int index = INDEX_OF(kb, keyboard);
+293     if(kb->infifo != 0){
+294 #ifdef OS_LINUX
+295         write(kb->infifo - 1, "\n", 1); // hack to prevent the FIFO thread from perma-blocking
+296 #endif
+297         close(kb->infifo - 1);
+298         kb->infifo = 0;
+299     }
+300     for(int i = 0; i < OUTFIFO_MAX; i++)
+301         _rmnotifynode(kb, i);
+302     char path[strlen(devpath) + 2];
+303     snprintf(path, sizeof(path), "%s%d", devpath, index);
+304     if(rm_recursive(path) != 0 && errno != ENOENT){
+305         ckb_warn("Unable to delete %s: %s\n", path, strerror(errno));
+306         euid_guard_stop;
+307         return -1;
+308     }
+309     ckb_info("Removed device path %s\n", path);
+310     euid_guard_stop;
+311     return 0;
+312 }
 .fi
 .SS "int rmnotifynode (\fBusbdevice\fP *kb, intnotify)"
 

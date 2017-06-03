@@ -1,5 +1,5 @@
 <map id="KeyAction::isValidMacro" name="KeyAction::isValidMacro">
-<area shape="rect" id="node2" href="$classKeyAction.html#ac72be90499e81c76ae9f908e2a17d1c0" title="macroContent returns the macro key definition only (the second part of the macro action). In this Implementation, strip the delay information. " alt="" coords="219,71,391,97"/>
+<area shape="rect" id="node2" href="$classKeyAction.html#ac72be90499e81c76ae9f908e2a17d1c0" title="macroContent returns the macro key definition only (the second part of the macro action). " alt="" coords="219,71,391,97"/>
 <area shape="rect" id="node3" href="$classKbBind.html#abc1d7d434d4e38e0db04f8fba5d90a2d" title="KbBind::update" alt="" coords="477,20,587,47"/>
 <area shape="rect" id="node5" href="$classRebindWidget.html#a0edad41d578028bea3ea0e327fc4c203" title="RebindWidget::setSelection" alt="" coords="440,172,624,199"/>
 <area shape="rect" id="node17" href="$classKeyAction.html#aa5db7ed889913fde947cfba128c7d80b" title="Debug output for invalid macro Definitions. " alt="" coords="220,172,391,199"/>

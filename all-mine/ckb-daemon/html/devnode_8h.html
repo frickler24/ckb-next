@@ -31,7 +31,7 @@
   <td id="projectlogo"><img alt="Logo" src="ckb-128.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">ckb-next
-   &#160;<span id="projectnumber">v0.2.8 at branch all-mine</span>
+   &#160;<span id="projectnumber">beta-v0.2.8+testing at branch all-mine</span>
    </div>
    <div id="projectbrief">ckb-next driver for corsair devices</div>
   </td>
@@ -300,17 +300,17 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="devnode_8c_source.html#l00268">268</a> of file <a class="el" href="devnode_8c_source.html">devnode.c</a>.</p>
+<p>Definition at line <a class="el" href="devnode_8c_source.html#l00283">283</a> of file <a class="el" href="devnode_8c_source.html">devnode.c</a>.</p>
 
 <p>References <a class="el" href="devnode_8c_source.html#l00136">_mkdevpath()</a>, <a class="el" href="os_8h_source.html#l00040">euid_guard_start</a>, and <a class="el" href="os_8h_source.html#l00041">euid_guard_stop</a>.</p>
 
 <p>Referenced by <a class="el" href="usb_8c_source.html#l00214">_setupusb()</a>, and <a class="el" href="main_8c_source.html#l00088">main()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                            {</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <a class="code" href="os_8h.html#aeff95c59e588ab0168a912118675c998">euid_guard_start</a>;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keywordtype">int</span> res = <a class="code" href="devnode_8c.html#a81c81014b2dfa89e326dd61769842953">_mkdevpath</a>(kb);</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <a class="code" href="os_8h.html#a4d209aab69a79b5d050f6b98770cb3e8">euid_guard_stop</a>;</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keywordflow">return</span> res;</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                            {</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <a class="code" href="os_8h.html#aeff95c59e588ab0168a912118675c998">euid_guard_start</a>;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordtype">int</span> res = <a class="code" href="devnode_8c.html#a81c81014b2dfa89e326dd61769842953">_mkdevpath</a>(kb);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <a class="code" href="os_8h.html#a4d209aab69a79b5d050f6b98770cb3e8">euid_guard_stop</a>;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;}</div>
 <div class="ttc" id="os_8h_html_aeff95c59e588ab0168a912118675c998"><div class="ttname"><a href="os_8h.html#aeff95c59e588ab0168a912118675c998">euid_guard_start</a></div><div class="ttdeci">#define euid_guard_start</div><div class="ttdef"><b>Definition:</b> <a href="os_8h_source.html#l00040">os.h:40</a></div></div>
 <div class="ttc" id="devnode_8c_html_a81c81014b2dfa89e326dd61769842953"><div class="ttname"><a href="devnode_8c.html#a81c81014b2dfa89e326dd61769842953">_mkdevpath</a></div><div class="ttdeci">static int _mkdevpath(usbdevice *kb)</div><div class="ttdef"><b>Definition:</b> <a href="devnode_8c_source.html#l00136">devnode.c:136</a></div></div>
 <div class="ttc" id="os_8h_html_a4d209aab69a79b5d050f6b98770cb3e8"><div class="ttname"><a href="os_8h.html#a4d209aab69a79b5d050f6b98770cb3e8">euid_guard_stop</a></div><div class="ttdeci">#define euid_guard_stop</div><div class="ttdef"><b>Definition:</b> <a href="os_8h_source.html#l00041">os.h:41</a></div></div>
@@ -353,55 +353,53 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="devnode_8c_source.html#l00299">299</a> of file <a class="el" href="devnode_8c_source.html">devnode.c</a>.</p>
+<p>Definition at line <a class="el" href="devnode_8c_source.html#l00314">314</a> of file <a class="el" href="devnode_8c_source.html">devnode.c</a>.</p>
 
-<p>References <a class="el" href="includes_8h_source.html#l00053">ckb_warn</a>, <a class="el" href="devnode_8c_source.html#l00011">devpath</a>, <a class="el" href="structures_8h_source.html#l00239">usbdevice::fwversion</a>, <a class="el" href="devnode_8c_source.html#l00016">gid</a>, <a class="el" href="includes_8h_source.html#l00028">INDEX_OF</a>, <a class="el" href="device_8c_source.html#l00010">keyboard</a>, <a class="el" href="structures_8h_source.html#l00241">usbdevice::pollrate</a>, <a class="el" href="structures_8h_source.html#l00237">usbdevice::product</a>, <a class="el" href="devnode_8c_source.html#l00017">S_GID_READ</a>, and <a class="el" href="structures_8h_source.html#l00237">usbdevice::vendor</a>.</p>
+<p>References <a class="el" href="includes_8h_source.html#l00053">ckb_warn</a>, <a class="el" href="devnode_8c_source.html#l00011">devpath</a>, <a class="el" href="structures_8h_source.html#l00239">usbdevice::fwversion</a>, <a class="el" href="devnode_8c_source.html#l00016">gid</a>, <a class="el" href="includes_8h_source.html#l00028">INDEX_OF</a>, <a class="el" href="device_8c_source.html#l00010">keyboard</a>, <a class="el" href="structures_8h_source.html#l00241">usbdevice::pollrate</a>, and <a class="el" href="devnode_8c_source.html#l00017">S_GID_READ</a>.</p>
 
 <p>Referenced by <a class="el" href="devnode_8c_source.html#l00136">_mkdevpath()</a>, and <a class="el" href="firmware_8c_source.html#l00055">fwupdate()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                           {</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keywordtype">int</span> index = <a class="code" href="includes_8h.html#ac114b913ed9d0b7cab3b83188f111530">INDEX_OF</a>(kb, <a class="code" href="device_8c.html#a5f2ad0f3998226c000c52c5c375c2661">keyboard</a>);</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordtype">char</span> fwpath[strlen(<a class="code" href="devnode_8c.html#a6bb60389c0bd8be714f8fe2459205c89">devpath</a>) + 12];</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    snprintf(fwpath, <span class="keyword">sizeof</span>(fwpath), <span class="stringliteral">&quot;%s%d/fwversion&quot;</span>, <a class="code" href="devnode_8c.html#a6bb60389c0bd8be714f8fe2459205c89">devpath</a>, index);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    FILE* fwfile = fopen(fwpath, <span class="stringliteral">&quot;w&quot;</span>);</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="keywordflow">if</span>(fwfile){</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        fprintf(fwfile, <span class="stringliteral">&quot;%04x:0x%04x:0x%04x&quot;</span>, kb-&gt;<a class="code" href="structures_8h.html#a47e0bd130899bcf5acdef059f2970ac7">fwversion</a>, kb-&gt;<a class="code" href="structures_8h.html#a2fa713366249e2fdbb2539e5d65a1439">vendor</a>, kb-&gt;<a class="code" href="structures_8h.html#a045b6c91e3f04e54f25d39da9bda105b">product</a>);</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        fputc(<span class="charliteral">&#39;\n&#39;</span>, fwfile);</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        fclose(fwfile);</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        chmod(fwpath, <a class="code" href="devnode_8c.html#a6630ffde57ae6f653942d21b4868a201">S_GID_READ</a>);</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="devnode_8c.html#a744295e83aec820a837a9bad6606cf06">gid</a> &gt;= 0)</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            chown(fwpath, 0, <a class="code" href="devnode_8c.html#a744295e83aec820a837a9bad6606cf06">gid</a>);</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <a class="code" href="includes_8h.html#a8e1e1ac7870420e38a04f30554ff2bbb">ckb_warn</a>(<span class="stringliteral">&quot;Unable to create %s: %s\n&quot;</span>, fwpath, strerror(errno));</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <span class="keyword">remove</span>(fwpath);</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    }</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keywordtype">char</span> ppath[strlen(<a class="code" href="devnode_8c.html#a6bb60389c0bd8be714f8fe2459205c89">devpath</a>) + 11];</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    snprintf(ppath, <span class="keyword">sizeof</span>(ppath), <span class="stringliteral">&quot;%s%d/pollrate&quot;</span>, <a class="code" href="devnode_8c.html#a6bb60389c0bd8be714f8fe2459205c89">devpath</a>, index);</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    FILE* pfile = fopen(ppath, <span class="stringliteral">&quot;w&quot;</span>);</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="keywordflow">if</span>(pfile){</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        fprintf(pfile, <span class="stringliteral">&quot;%d ms&quot;</span>, kb-&gt;<a class="code" href="structures_8h.html#a56e8458239a40a080e9cccf901875285">pollrate</a>);</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        fputc(<span class="charliteral">&#39;\n&#39;</span>, pfile);</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        fclose(pfile);</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        chmod(ppath, <a class="code" href="devnode_8c.html#a6630ffde57ae6f653942d21b4868a201">S_GID_READ</a>);</div>
+<div class="fragment"><div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                           {</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keywordtype">int</span> index = <a class="code" href="includes_8h.html#ac114b913ed9d0b7cab3b83188f111530">INDEX_OF</a>(kb, <a class="code" href="device_8c.html#a5f2ad0f3998226c000c52c5c375c2661">keyboard</a>);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keywordtype">char</span> fwpath[strlen(<a class="code" href="devnode_8c.html#a6bb60389c0bd8be714f8fe2459205c89">devpath</a>) + 12];</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    snprintf(fwpath, <span class="keyword">sizeof</span>(fwpath), <span class="stringliteral">&quot;%s%d/fwversion&quot;</span>, <a class="code" href="devnode_8c.html#a6bb60389c0bd8be714f8fe2459205c89">devpath</a>, index);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    FILE* fwfile = fopen(fwpath, <span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="keywordflow">if</span>(fwfile){</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        fprintf(fwfile, <span class="stringliteral">&quot;%04x&quot;</span>, kb-&gt;<a class="code" href="structures_8h.html#a47e0bd130899bcf5acdef059f2970ac7">fwversion</a>);</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        fputc(<span class="charliteral">&#39;\n&#39;</span>, fwfile);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        fclose(fwfile);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        chmod(fwpath, <a class="code" href="devnode_8c.html#a6630ffde57ae6f653942d21b4868a201">S_GID_READ</a>);</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="devnode_8c.html#a744295e83aec820a837a9bad6606cf06">gid</a> &gt;= 0)</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            chown(ppath, 0, <a class="code" href="devnode_8c.html#a744295e83aec820a837a9bad6606cf06">gid</a>);</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            chown(fwpath, 0, <a class="code" href="devnode_8c.html#a744295e83aec820a837a9bad6606cf06">gid</a>);</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        <a class="code" href="includes_8h.html#a8e1e1ac7870420e38a04f30554ff2bbb">ckb_warn</a>(<span class="stringliteral">&quot;Unable to create %s: %s\n&quot;</span>, fwpath, strerror(errno));</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="keyword">remove</span>(ppath);</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordflow">return</span> -2;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="keyword">remove</span>(fwpath);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordflow">return</span> -1;</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    }</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;}</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keywordtype">char</span> ppath[strlen(<a class="code" href="devnode_8c.html#a6bb60389c0bd8be714f8fe2459205c89">devpath</a>) + 11];</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    snprintf(ppath, <span class="keyword">sizeof</span>(ppath), <span class="stringliteral">&quot;%s%d/pollrate&quot;</span>, <a class="code" href="devnode_8c.html#a6bb60389c0bd8be714f8fe2459205c89">devpath</a>, index);</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    FILE* pfile = fopen(ppath, <span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keywordflow">if</span>(pfile){</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        fprintf(pfile, <span class="stringliteral">&quot;%d ms&quot;</span>, kb-&gt;<a class="code" href="structures_8h.html#a56e8458239a40a080e9cccf901875285">pollrate</a>);</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        fputc(<span class="charliteral">&#39;\n&#39;</span>, pfile);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        fclose(pfile);</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        chmod(ppath, <a class="code" href="devnode_8c.html#a6630ffde57ae6f653942d21b4868a201">S_GID_READ</a>);</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="devnode_8c.html#a744295e83aec820a837a9bad6606cf06">gid</a> &gt;= 0)</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            chown(ppath, 0, <a class="code" href="devnode_8c.html#a744295e83aec820a837a9bad6606cf06">gid</a>);</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        <a class="code" href="includes_8h.html#a8e1e1ac7870420e38a04f30554ff2bbb">ckb_warn</a>(<span class="stringliteral">&quot;Unable to create %s: %s\n&quot;</span>, fwpath, strerror(errno));</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        <span class="keyword">remove</span>(ppath);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <span class="keywordflow">return</span> -2;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    }</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;}</div>
 <div class="ttc" id="structures_8h_html_a47e0bd130899bcf5acdef059f2970ac7"><div class="ttname"><a href="structures_8h.html#a47e0bd130899bcf5acdef059f2970ac7">usbdevice::fwversion</a></div><div class="ttdeci">ushort fwversion</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00239">structures.h:239</a></div></div>
 <div class="ttc" id="device_8c_html_a5f2ad0f3998226c000c52c5c375c2661"><div class="ttname"><a href="device_8c.html#a5f2ad0f3998226c000c52c5c375c2661">keyboard</a></div><div class="ttdeci">usbdevice keyboard[9]</div><div class="ttdoc">remember all usb devices. Needed for closeusb(). </div><div class="ttdef"><b>Definition:</b> <a href="device_8c_source.html#l00010">device.c:10</a></div></div>
 <div class="ttc" id="devnode_8c_html_a744295e83aec820a837a9bad6606cf06"><div class="ttname"><a href="devnode_8c.html#a744295e83aec820a837a9bad6606cf06">gid</a></div><div class="ttdeci">long gid</div><div class="ttdoc">Group ID for the control nodes. -1 to give read/write access to everybody. </div><div class="ttdef"><b>Definition:</b> <a href="devnode_8c_source.html#l00016">devnode.c:16</a></div></div>
 <div class="ttc" id="includes_8h_html_a8e1e1ac7870420e38a04f30554ff2bbb"><div class="ttname"><a href="includes_8h.html#a8e1e1ac7870420e38a04f30554ff2bbb">ckb_warn</a></div><div class="ttdeci">#define ckb_warn(fmt, args...)</div><div class="ttdef"><b>Definition:</b> <a href="includes_8h_source.html#l00053">includes.h:53</a></div></div>
 <div class="ttc" id="devnode_8c_html_a6bb60389c0bd8be714f8fe2459205c89"><div class="ttname"><a href="devnode_8c.html#a6bb60389c0bd8be714f8fe2459205c89">devpath</a></div><div class="ttdeci">const char *const devpath</div><div class="ttdef"><b>Definition:</b> <a href="devnode_8c_source.html#l00011">devnode.c:11</a></div></div>
-<div class="ttc" id="structures_8h_html_a045b6c91e3f04e54f25d39da9bda105b"><div class="ttname"><a href="structures_8h.html#a045b6c91e3f04e54f25d39da9bda105b">usbdevice::product</a></div><div class="ttdeci">short product</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00237">structures.h:237</a></div></div>
 <div class="ttc" id="includes_8h_html_ac114b913ed9d0b7cab3b83188f111530"><div class="ttname"><a href="includes_8h.html#ac114b913ed9d0b7cab3b83188f111530">INDEX_OF</a></div><div class="ttdeci">#define INDEX_OF(entry, array)</div><div class="ttdef"><b>Definition:</b> <a href="includes_8h_source.html#l00028">includes.h:28</a></div></div>
 <div class="ttc" id="structures_8h_html_a56e8458239a40a080e9cccf901875285"><div class="ttname"><a href="structures_8h.html#a56e8458239a40a080e9cccf901875285">usbdevice::pollrate</a></div><div class="ttdeci">char pollrate</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00241">structures.h:241</a></div></div>
 <div class="ttc" id="devnode_8c_html_a6630ffde57ae6f653942d21b4868a201"><div class="ttname"><a href="devnode_8c.html#a6630ffde57ae6f653942d21b4868a201">S_GID_READ</a></div><div class="ttdeci">#define S_GID_READ</div><div class="ttdef"><b>Definition:</b> <a href="devnode_8c_source.html#l00017">devnode.c:17</a></div></div>
-<div class="ttc" id="structures_8h_html_a2fa713366249e2fdbb2539e5d65a1439"><div class="ttname"><a href="structures_8h.html#a2fa713366249e2fdbb2539e5d65a1439">usbdevice::vendor</a></div><div class="ttdeci">short vendor</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00237">structures.h:237</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -509,70 +507,70 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="devnode_8c_source.html#l00353">353</a> of file <a class="el" href="devnode_8c_source.html">devnode.c</a>.</p>
+<p>Definition at line <a class="el" href="devnode_8c_source.html#l00368">368</a> of file <a class="el" href="devnode_8c_source.html">devnode.c</a>.</p>
 
-<p>References <a class="el" href="devnode_8c_source.html#l00336">_readlines_ctx::buffer</a>, <a class="el" href="devnode_8c_source.html#l00337">_readlines_ctx::buffersize</a>, <a class="el" href="includes_8h_source.html#l00053">ckb_warn</a>, <a class="el" href="devnode_8c_source.html#l00338">_readlines_ctx::leftover</a>, <a class="el" href="devnode_8c_source.html#l00338">_readlines_ctx::leftoverlen</a>, and <a class="el" href="devnode_8c_source.html#l00334">MAX_BUFFER</a>.</p>
+<p>References <a class="el" href="devnode_8c_source.html#l00351">_readlines_ctx::buffer</a>, <a class="el" href="devnode_8c_source.html#l00352">_readlines_ctx::buffersize</a>, <a class="el" href="includes_8h_source.html#l00053">ckb_warn</a>, <a class="el" href="devnode_8c_source.html#l00353">_readlines_ctx::leftover</a>, <a class="el" href="devnode_8c_source.html#l00353">_readlines_ctx::leftoverlen</a>, and <a class="el" href="devnode_8c_source.html#l00349">MAX_BUFFER</a>.</p>
 
 <p>Referenced by <a class="el" href="usb_8c_source.html#l00135">devmain()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                                                                 {</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <span class="comment">// Move any data left over from a previous read to the start of the buffer</span></div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <span class="keywordtype">char</span>* buffer = ctx-&gt;<a class="code" href="devnode_8c.html#afbb9a428bab37c19008f4339b0a9cb8f">buffer</a>;</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="keywordtype">int</span> buffersize = ctx-&gt;<a class="code" href="devnode_8c.html#a35b9cd95e8d53b5127fa18c5014e27b5">buffersize</a>;</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="keywordtype">int</span> leftover = ctx-&gt;<a class="code" href="devnode_8c.html#a679cf71cdb16f2a93c60e109497f40cf">leftover</a>, leftoverlen = ctx-&gt;<a class="code" href="devnode_8c.html#a42604d3b877eeac333fc184a538c3ef5">leftoverlen</a>;</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    memcpy(buffer, buffer + leftover, leftoverlen);</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="comment">// Read data from the file</span></div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    ssize_t length = read(fd, buffer + leftoverlen, buffersize - leftoverlen);</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    length = (length &lt; 0 ? 0 : length) + leftoverlen;</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    leftover = ctx-&gt;<a class="code" href="devnode_8c.html#a679cf71cdb16f2a93c60e109497f40cf">leftover</a> = leftoverlen = ctx-&gt;<a class="code" href="devnode_8c.html#a42604d3b877eeac333fc184a538c3ef5">leftoverlen</a> = 0;</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <span class="keywordflow">if</span>(length &lt;= 0){</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        *input = 0;</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    }</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="comment">// Continue buffering until all available input is read or there&#39;s no room left</span></div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keywordflow">while</span>(length == buffersize){</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <span class="keywordflow">if</span>(buffersize == <a class="code" href="devnode_8c.html#a1d5dab30b404fab91608086105afc78c">MAX_BUFFER</a>)</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="keywordtype">int</span> oldsize = buffersize;</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        buffersize += 4096;</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        ctx-&gt;<a class="code" href="devnode_8c.html#a35b9cd95e8d53b5127fa18c5014e27b5">buffersize</a> = buffersize;</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        buffer = ctx-&gt;<a class="code" href="devnode_8c.html#afbb9a428bab37c19008f4339b0a9cb8f">buffer</a> = realloc(buffer, buffersize + 1);</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        ssize_t length2 = read(fd, buffer + oldsize, buffersize - oldsize);</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        <span class="keywordflow">if</span>(length2 &lt;= 0)</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        length += length2;</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    }</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    buffer[length] = 0;</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <span class="comment">// Input should be issued one line at a time and should end with a newline.</span></div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <span class="keywordtype">char</span>* lastline = memrchr(buffer, <span class="charliteral">&#39;\n&#39;</span>, length);</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="keywordflow">if</span>(lastline == buffer + length - 1){</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        <span class="comment">// If the buffer ends in a newline, process the whole string</span></div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        *input = buffer;</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keywordflow">return</span> length;</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(lastline){</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        <span class="comment">// Otherwise, chop off the last line but process everything else</span></div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        *lastline = 0;</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        leftover = ctx-&gt;<a class="code" href="devnode_8c.html#a679cf71cdb16f2a93c60e109497f40cf">leftover</a> = lastline + 1 - buffer;</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        leftoverlen = ctx-&gt;<a class="code" href="devnode_8c.html#a42604d3b877eeac333fc184a538c3ef5">leftoverlen</a> = length - leftover;</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        *input = buffer;</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="keywordflow">return</span> leftover - 1;</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        <span class="comment">// If a newline wasn&#39;t found at all, process the whole buffer next time</span></div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        *input = 0;</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        <span class="keywordflow">if</span>(length == <a class="code" href="devnode_8c.html#a1d5dab30b404fab91608086105afc78c">MAX_BUFFER</a>){</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            <span class="comment">// Unless the buffer is completely full, in which case discard it</span></div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            <a class="code" href="includes_8h.html#a8e1e1ac7870420e38a04f30554ff2bbb">ckb_warn</a>(<span class="stringliteral">&quot;Too much input (1MB). Dropping.\n&quot;</span>);</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        }</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        leftoverlen = ctx-&gt;<a class="code" href="devnode_8c.html#a42604d3b877eeac333fc184a538c3ef5">leftoverlen</a> = length;</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    }</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;}</div>
-<div class="ttc" id="devnode_8c_html_a35b9cd95e8d53b5127fa18c5014e27b5"><div class="ttname"><a href="devnode_8c.html#a35b9cd95e8d53b5127fa18c5014e27b5">_readlines_ctx::buffersize</a></div><div class="ttdeci">int buffersize</div><div class="ttdef"><b>Definition:</b> <a href="devnode_8c_source.html#l00337">devnode.c:337</a></div></div>
-<div class="ttc" id="devnode_8c_html_afbb9a428bab37c19008f4339b0a9cb8f"><div class="ttname"><a href="devnode_8c.html#afbb9a428bab37c19008f4339b0a9cb8f">_readlines_ctx::buffer</a></div><div class="ttdeci">char * buffer</div><div class="ttdef"><b>Definition:</b> <a href="devnode_8c_source.html#l00336">devnode.c:336</a></div></div>
-<div class="ttc" id="devnode_8c_html_a679cf71cdb16f2a93c60e109497f40cf"><div class="ttname"><a href="devnode_8c.html#a679cf71cdb16f2a93c60e109497f40cf">_readlines_ctx::leftover</a></div><div class="ttdeci">int leftover</div><div class="ttdef"><b>Definition:</b> <a href="devnode_8c_source.html#l00338">devnode.c:338</a></div></div>
+<div class="fragment"><div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                                                                 {</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="comment">// Move any data left over from a previous read to the start of the buffer</span></div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="keywordtype">char</span>* buffer = ctx-&gt;<a class="code" href="devnode_8c.html#afbb9a428bab37c19008f4339b0a9cb8f">buffer</a>;</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <span class="keywordtype">int</span> buffersize = ctx-&gt;<a class="code" href="devnode_8c.html#a35b9cd95e8d53b5127fa18c5014e27b5">buffersize</a>;</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="keywordtype">int</span> leftover = ctx-&gt;<a class="code" href="devnode_8c.html#a679cf71cdb16f2a93c60e109497f40cf">leftover</a>, leftoverlen = ctx-&gt;<a class="code" href="devnode_8c.html#a42604d3b877eeac333fc184a538c3ef5">leftoverlen</a>;</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    memcpy(buffer, buffer + leftover, leftoverlen);</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="comment">// Read data from the file</span></div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    ssize_t length = read(fd, buffer + leftoverlen, buffersize - leftoverlen);</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    length = (length &lt; 0 ? 0 : length) + leftoverlen;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    leftover = ctx-&gt;<a class="code" href="devnode_8c.html#a679cf71cdb16f2a93c60e109497f40cf">leftover</a> = leftoverlen = ctx-&gt;<a class="code" href="devnode_8c.html#a42604d3b877eeac333fc184a538c3ef5">leftoverlen</a> = 0;</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keywordflow">if</span>(length &lt;= 0){</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        *input = 0;</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    }</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <span class="comment">// Continue buffering until all available input is read or there&#39;s no room left</span></div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="keywordflow">while</span>(length == buffersize){</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        <span class="keywordflow">if</span>(buffersize == <a class="code" href="devnode_8c.html#a1d5dab30b404fab91608086105afc78c">MAX_BUFFER</a>)</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keywordtype">int</span> oldsize = buffersize;</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        buffersize += 4096;</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        ctx-&gt;<a class="code" href="devnode_8c.html#a35b9cd95e8d53b5127fa18c5014e27b5">buffersize</a> = buffersize;</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        buffer = ctx-&gt;<a class="code" href="devnode_8c.html#afbb9a428bab37c19008f4339b0a9cb8f">buffer</a> = realloc(buffer, buffersize + 1);</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        ssize_t length2 = read(fd, buffer + oldsize, buffersize - oldsize);</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        <span class="keywordflow">if</span>(length2 &lt;= 0)</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        length += length2;</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    }</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    buffer[length] = 0;</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="comment">// Input should be issued one line at a time and should end with a newline.</span></div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    <span class="keywordtype">char</span>* lastline = memrchr(buffer, <span class="charliteral">&#39;\n&#39;</span>, length);</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="keywordflow">if</span>(lastline == buffer + length - 1){</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        <span class="comment">// If the buffer ends in a newline, process the whole string</span></div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        *input = buffer;</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        <span class="keywordflow">return</span> length;</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(lastline){</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        <span class="comment">// Otherwise, chop off the last line but process everything else</span></div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        *lastline = 0;</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        leftover = ctx-&gt;<a class="code" href="devnode_8c.html#a679cf71cdb16f2a93c60e109497f40cf">leftover</a> = lastline + 1 - buffer;</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;        leftoverlen = ctx-&gt;<a class="code" href="devnode_8c.html#a42604d3b877eeac333fc184a538c3ef5">leftoverlen</a> = length - leftover;</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        *input = buffer;</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        <span class="keywordflow">return</span> leftover - 1;</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        <span class="comment">// If a newline wasn&#39;t found at all, process the whole buffer next time</span></div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        *input = 0;</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        <span class="keywordflow">if</span>(length == <a class="code" href="devnode_8c.html#a1d5dab30b404fab91608086105afc78c">MAX_BUFFER</a>){</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            <span class="comment">// Unless the buffer is completely full, in which case discard it</span></div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;            <a class="code" href="includes_8h.html#a8e1e1ac7870420e38a04f30554ff2bbb">ckb_warn</a>(<span class="stringliteral">&quot;Too much input (1MB). Dropping.\n&quot;</span>);</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        }</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        leftoverlen = ctx-&gt;<a class="code" href="devnode_8c.html#a42604d3b877eeac333fc184a538c3ef5">leftoverlen</a> = length;</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    }</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;}</div>
+<div class="ttc" id="devnode_8c_html_a35b9cd95e8d53b5127fa18c5014e27b5"><div class="ttname"><a href="devnode_8c.html#a35b9cd95e8d53b5127fa18c5014e27b5">_readlines_ctx::buffersize</a></div><div class="ttdeci">int buffersize</div><div class="ttdef"><b>Definition:</b> <a href="devnode_8c_source.html#l00352">devnode.c:352</a></div></div>
+<div class="ttc" id="devnode_8c_html_afbb9a428bab37c19008f4339b0a9cb8f"><div class="ttname"><a href="devnode_8c.html#afbb9a428bab37c19008f4339b0a9cb8f">_readlines_ctx::buffer</a></div><div class="ttdeci">char * buffer</div><div class="ttdef"><b>Definition:</b> <a href="devnode_8c_source.html#l00351">devnode.c:351</a></div></div>
+<div class="ttc" id="devnode_8c_html_a679cf71cdb16f2a93c60e109497f40cf"><div class="ttname"><a href="devnode_8c.html#a679cf71cdb16f2a93c60e109497f40cf">_readlines_ctx::leftover</a></div><div class="ttdeci">int leftover</div><div class="ttdef"><b>Definition:</b> <a href="devnode_8c_source.html#l00353">devnode.c:353</a></div></div>
 <div class="ttc" id="includes_8h_html_a8e1e1ac7870420e38a04f30554ff2bbb"><div class="ttname"><a href="includes_8h.html#a8e1e1ac7870420e38a04f30554ff2bbb">ckb_warn</a></div><div class="ttdeci">#define ckb_warn(fmt, args...)</div><div class="ttdef"><b>Definition:</b> <a href="includes_8h_source.html#l00053">includes.h:53</a></div></div>
-<div class="ttc" id="devnode_8c_html_a42604d3b877eeac333fc184a538c3ef5"><div class="ttname"><a href="devnode_8c.html#a42604d3b877eeac333fc184a538c3ef5">_readlines_ctx::leftoverlen</a></div><div class="ttdeci">int leftoverlen</div><div class="ttdef"><b>Definition:</b> <a href="devnode_8c_source.html#l00338">devnode.c:338</a></div></div>
-<div class="ttc" id="devnode_8c_html_a1d5dab30b404fab91608086105afc78c"><div class="ttname"><a href="devnode_8c.html#a1d5dab30b404fab91608086105afc78c">MAX_BUFFER</a></div><div class="ttdeci">#define MAX_BUFFER</div><div class="ttdef"><b>Definition:</b> <a href="devnode_8c_source.html#l00334">devnode.c:334</a></div></div>
+<div class="ttc" id="devnode_8c_html_a42604d3b877eeac333fc184a538c3ef5"><div class="ttname"><a href="devnode_8c.html#a42604d3b877eeac333fc184a538c3ef5">_readlines_ctx::leftoverlen</a></div><div class="ttdeci">int leftoverlen</div><div class="ttdef"><b>Definition:</b> <a href="devnode_8c_source.html#l00353">devnode.c:353</a></div></div>
+<div class="ttc" id="devnode_8c_html_a1d5dab30b404fab91608086105afc78c"><div class="ttname"><a href="devnode_8c.html#a1d5dab30b404fab91608086105afc78c">MAX_BUFFER</a></div><div class="ttdeci">#define MAX_BUFFER</div><div class="ttdef"><b>Definition:</b> <a href="devnode_8c_source.html#l00349">devnode.c:349</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -601,16 +599,16 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="devnode_8c_source.html#l00348">348</a> of file <a class="el" href="devnode_8c_source.html">devnode.c</a>.</p>
+<p>Definition at line <a class="el" href="devnode_8c_source.html#l00363">363</a> of file <a class="el" href="devnode_8c_source.html">devnode.c</a>.</p>
 
-<p>References <a class="el" href="devnode_8c_source.html#l00336">_readlines_ctx::buffer</a>.</p>
+<p>References <a class="el" href="devnode_8c_source.html#l00351">_readlines_ctx::buffer</a>.</p>
 
 <p>Referenced by <a class="el" href="usb_8c_source.html#l00135">devmain()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                                          {</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    free(ctx-&gt;<a class="code" href="devnode_8c.html#afbb9a428bab37c19008f4339b0a9cb8f">buffer</a>);</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    free(ctx);</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;}</div>
-<div class="ttc" id="devnode_8c_html_afbb9a428bab37c19008f4339b0a9cb8f"><div class="ttname"><a href="devnode_8c.html#afbb9a428bab37c19008f4339b0a9cb8f">_readlines_ctx::buffer</a></div><div class="ttdeci">char * buffer</div><div class="ttdef"><b>Definition:</b> <a href="devnode_8c_source.html#l00336">devnode.c:336</a></div></div>
+<div class="fragment"><div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                                          {</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    free(ctx-&gt;<a class="code" href="devnode_8c.html#afbb9a428bab37c19008f4339b0a9cb8f">buffer</a>);</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    free(ctx);</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;}</div>
+<div class="ttc" id="devnode_8c_html_afbb9a428bab37c19008f4339b0a9cb8f"><div class="ttname"><a href="devnode_8c.html#afbb9a428bab37c19008f4339b0a9cb8f">_readlines_ctx::buffer</a></div><div class="ttdeci">char * buffer</div><div class="ttdef"><b>Definition:</b> <a href="devnode_8c_source.html#l00351">devnode.c:351</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -639,16 +637,16 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="devnode_8c_source.html#l00341">341</a> of file <a class="el" href="devnode_8c_source.html">devnode.c</a>.</p>
+<p>Definition at line <a class="el" href="devnode_8c_source.html#l00356">356</a> of file <a class="el" href="devnode_8c_source.html">devnode.c</a>.</p>
 
 <p>Referenced by <a class="el" href="usb_8c_source.html#l00135">devmain()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                                           {</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="comment">// Allocate buffers to store data</span></div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    *ctx = calloc(1, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code" href="devnode_8c.html#struct__readlines__ctx">_readlines_ctx</a>));</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="keywordtype">int</span> buffersize = (*ctx)-&gt;buffersize = 4095;</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    (*ctx)-&gt;buffer = malloc(buffersize + 1);</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;}</div>
-<div class="ttc" id="devnode_8c_html_struct__readlines__ctx"><div class="ttname"><a href="devnode_8c.html#struct__readlines__ctx">_readlines_ctx</a></div><div class="ttdef"><b>Definition:</b> <a href="devnode_8c_source.html#l00335">devnode.c:335</a></div></div>
+<div class="fragment"><div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                                           {</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="comment">// Allocate buffers to store data</span></div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    *ctx = calloc(1, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code" href="devnode_8c.html#struct__readlines__ctx">_readlines_ctx</a>));</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="keywordtype">int</span> buffersize = (*ctx)-&gt;buffersize = 4095;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    (*ctx)-&gt;buffer = malloc(buffersize + 1);</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;}</div>
+<div class="ttc" id="devnode_8c_html_struct__readlines__ctx"><div class="ttname"><a href="devnode_8c.html#struct__readlines__ctx">_readlines_ctx</a></div><div class="ttdef"><b>Definition:</b> <a href="devnode_8c_source.html#l00350">devnode.c:350</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -677,34 +675,34 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="devnode_8c_source.html#l00275">275</a> of file <a class="el" href="devnode_8c_source.html">devnode.c</a>.</p>
+<p>Definition at line <a class="el" href="devnode_8c_source.html#l00290">290</a> of file <a class="el" href="devnode_8c_source.html">devnode.c</a>.</p>
 
 <p>References <a class="el" href="devnode_8c_source.html#l00115">_rmnotifynode()</a>, <a class="el" href="includes_8h_source.html#l00056">ckb_info</a>, <a class="el" href="includes_8h_source.html#l00053">ckb_warn</a>, <a class="el" href="devnode_8c_source.html#l00011">devpath</a>, <a class="el" href="os_8h_source.html#l00040">euid_guard_start</a>, <a class="el" href="os_8h_source.html#l00041">euid_guard_stop</a>, <a class="el" href="includes_8h_source.html#l00028">INDEX_OF</a>, <a class="el" href="structures_8h_source.html#l00225">usbdevice::infifo</a>, <a class="el" href="device_8c_source.html#l00010">keyboard</a>, <a class="el" href="structures_8h_source.html#l00024">OUTFIFO_MAX</a>, and <a class="el" href="devnode_8c_source.html#l00019">rm_recursive()</a>.</p>
 
 <p>Referenced by <a class="el" href="usb_8c_source.html#l00675">closeusb()</a>, and <a class="el" href="main_8c_source.html#l00040">quitWithLock()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                            {</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <a class="code" href="os_8h.html#aeff95c59e588ab0168a912118675c998">euid_guard_start</a>;</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keywordtype">int</span> index = <a class="code" href="includes_8h.html#ac114b913ed9d0b7cab3b83188f111530">INDEX_OF</a>(kb, <a class="code" href="device_8c.html#a5f2ad0f3998226c000c52c5c375c2661">keyboard</a>);</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordflow">if</span>(kb-&gt;<a class="code" href="structures_8h.html#a7d1cfa1502994290bd18f564a502e24f">infifo</a> != 0){</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="preprocessor">#ifdef OS_LINUX</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="preprocessor"></span>        write(kb-&gt;<a class="code" href="structures_8h.html#a7d1cfa1502994290bd18f564a502e24f">infifo</a> - 1, <span class="stringliteral">&quot;\n&quot;</span>, 1); <span class="comment">// hack to prevent the FIFO thread from perma-blocking</span></div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="preprocessor"></span>        close(kb-&gt;<a class="code" href="structures_8h.html#a7d1cfa1502994290bd18f564a502e24f">infifo</a> - 1);</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        kb-&gt;<a class="code" href="structures_8h.html#a7d1cfa1502994290bd18f564a502e24f">infifo</a> = 0;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    }</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="structures_8h.html#a530d85f2d7ae00e384c5633c7e3056db">OUTFIFO_MAX</a>; i++)</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <a class="code" href="devnode_8c.html#a9d97ede033e4f6c6bdd1c66fc82aa15e">_rmnotifynode</a>(kb, i);</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordtype">char</span> path[strlen(<a class="code" href="devnode_8c.html#a6bb60389c0bd8be714f8fe2459205c89">devpath</a>) + 2];</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    snprintf(path, <span class="keyword">sizeof</span>(path), <span class="stringliteral">&quot;%s%d&quot;</span>, <a class="code" href="devnode_8c.html#a6bb60389c0bd8be714f8fe2459205c89">devpath</a>, index);</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="devnode_8c.html#aac8f6f936a0ff6c16adc677622b226c4">rm_recursive</a>(path) != 0 &amp;&amp; errno != ENOENT){</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <a class="code" href="includes_8h.html#a8e1e1ac7870420e38a04f30554ff2bbb">ckb_warn</a>(<span class="stringliteral">&quot;Unable to delete %s: %s\n&quot;</span>, path, strerror(errno));</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <a class="code" href="os_8h.html#a4d209aab69a79b5d050f6b98770cb3e8">euid_guard_stop</a>;</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    }</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <a class="code" href="includes_8h.html#af3b6c3fbbe2da20e4058fd83084329a6">ckb_info</a>(<span class="stringliteral">&quot;Removed device path %s\n&quot;</span>, path);</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <a class="code" href="os_8h.html#a4d209aab69a79b5d050f6b98770cb3e8">euid_guard_stop</a>;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                            {</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <a class="code" href="os_8h.html#aeff95c59e588ab0168a912118675c998">euid_guard_start</a>;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="keywordtype">int</span> index = <a class="code" href="includes_8h.html#ac114b913ed9d0b7cab3b83188f111530">INDEX_OF</a>(kb, <a class="code" href="device_8c.html#a5f2ad0f3998226c000c52c5c375c2661">keyboard</a>);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keywordflow">if</span>(kb-&gt;<a class="code" href="structures_8h.html#a7d1cfa1502994290bd18f564a502e24f">infifo</a> != 0){</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="preprocessor">#ifdef OS_LINUX</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="preprocessor"></span>        write(kb-&gt;<a class="code" href="structures_8h.html#a7d1cfa1502994290bd18f564a502e24f">infifo</a> - 1, <span class="stringliteral">&quot;\n&quot;</span>, 1); <span class="comment">// hack to prevent the FIFO thread from perma-blocking</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="preprocessor"></span>        close(kb-&gt;<a class="code" href="structures_8h.html#a7d1cfa1502994290bd18f564a502e24f">infifo</a> - 1);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        kb-&gt;<a class="code" href="structures_8h.html#a7d1cfa1502994290bd18f564a502e24f">infifo</a> = 0;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    }</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="structures_8h.html#a530d85f2d7ae00e384c5633c7e3056db">OUTFIFO_MAX</a>; i++)</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <a class="code" href="devnode_8c.html#a9d97ede033e4f6c6bdd1c66fc82aa15e">_rmnotifynode</a>(kb, i);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordtype">char</span> path[strlen(<a class="code" href="devnode_8c.html#a6bb60389c0bd8be714f8fe2459205c89">devpath</a>) + 2];</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    snprintf(path, <span class="keyword">sizeof</span>(path), <span class="stringliteral">&quot;%s%d&quot;</span>, <a class="code" href="devnode_8c.html#a6bb60389c0bd8be714f8fe2459205c89">devpath</a>, index);</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="devnode_8c.html#aac8f6f936a0ff6c16adc677622b226c4">rm_recursive</a>(path) != 0 &amp;&amp; errno != ENOENT){</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        <a class="code" href="includes_8h.html#a8e1e1ac7870420e38a04f30554ff2bbb">ckb_warn</a>(<span class="stringliteral">&quot;Unable to delete %s: %s\n&quot;</span>, path, strerror(errno));</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <a class="code" href="os_8h.html#a4d209aab69a79b5d050f6b98770cb3e8">euid_guard_stop</a>;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    }</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <a class="code" href="includes_8h.html#af3b6c3fbbe2da20e4058fd83084329a6">ckb_info</a>(<span class="stringliteral">&quot;Removed device path %s\n&quot;</span>, path);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <a class="code" href="os_8h.html#a4d209aab69a79b5d050f6b98770cb3e8">euid_guard_stop</a>;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;}</div>
 <div class="ttc" id="device_8c_html_a5f2ad0f3998226c000c52c5c375c2661"><div class="ttname"><a href="device_8c.html#a5f2ad0f3998226c000c52c5c375c2661">keyboard</a></div><div class="ttdeci">usbdevice keyboard[9]</div><div class="ttdoc">remember all usb devices. Needed for closeusb(). </div><div class="ttdef"><b>Definition:</b> <a href="device_8c_source.html#l00010">device.c:10</a></div></div>
 <div class="ttc" id="structures_8h_html_a7d1cfa1502994290bd18f564a502e24f"><div class="ttname"><a href="structures_8h.html#a7d1cfa1502994290bd18f564a502e24f">usbdevice::infifo</a></div><div class="ttdeci">int infifo</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00225">structures.h:225</a></div></div>
 <div class="ttc" id="includes_8h_html_a8e1e1ac7870420e38a04f30554ff2bbb"><div class="ttname"><a href="includes_8h.html#a8e1e1ac7870420e38a04f30554ff2bbb">ckb_warn</a></div><div class="ttdeci">#define ckb_warn(fmt, args...)</div><div class="ttdef"><b>Definition:</b> <a href="includes_8h_source.html#l00053">includes.h:53</a></div></div>
@@ -882,7 +880,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="devnode_8c_source.html#l00016">16</a> of file <a class="el" href="devnode_8c_source.html">devnode.c</a>.</p>
 
-<p>Referenced by <a class="el" href="devnode_8c_source.html#l00136">_mkdevpath()</a>, <a class="el" href="devnode_8c_source.html#l00087">_mknotifynode()</a>, <a class="el" href="devnode_8c_source.html#l00055">_updateconnected()</a>, <a class="el" href="main_8c_source.html#l00088">main()</a>, and <a class="el" href="devnode_8c_source.html#l00299">mkfwnode()</a>.</p>
+<p>Referenced by <a class="el" href="devnode_8c_source.html#l00136">_mkdevpath()</a>, <a class="el" href="devnode_8c_source.html#l00087">_mknotifynode()</a>, <a class="el" href="devnode_8c_source.html#l00055">_updateconnected()</a>, <a class="el" href="main_8c_source.html#l00088">main()</a>, and <a class="el" href="devnode_8c_source.html#l00314">mkfwnode()</a>.</p>
 
 </div>
 </div>
@@ -892,7 +890,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c663af95b3406af676444e819a47854e.html">ckb-daemon</a></li><li class="navelem"><a class="el" href="devnode_8h.html">devnode.h</a></li>
-    <li class="footer">Generated on Sat May 27 2017 21:13:56 for ckb-next by
+    <li class="footer">Generated on Sat Jun 3 2017 21:13:29 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

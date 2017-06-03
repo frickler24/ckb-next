@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"classKbProfileDialog.html#a04a7456898687a0f9a3e9472b9fc0559":[7,0,34,8],
 "classKbProfileDialog.html#a0fcc7ba62abd8177e77ee550b6acb3d1":[7,0,34,9],
 "classKbProfileDialog.html#a1796361397b027ef7eaa7e02dadce965":[7,0,34,2],
 "classKbProfileDialog.html#a23bf2a42986694eae434a60688ccc249":[7,0,34,5],
@@ -238,16 +239,15 @@ var NAVTREEINDEX4 =
 "classLayoutDialog.html#a4ebc4c73a6e16c47a450e1d3198fdd1f":[7,0,42,0],
 "classLayoutDialog.html#a9d5c3b473ea1c5bb1a95cab20934eaa2":[7,0,42,2],
 "classLayoutDialog.html#aa8517dacc313edcfb5e2c1a5a4c6998f":[7,0,42,3],
-"classMPerfWidget.html":[7,0,49],
-"classMPerfWidget.html#a03ffef54d16f71873890128de907a66b":[7,0,49,18],
-"classMPerfWidget.html#a0e8fd12100c6983e2a15fd09b0799867":[7,0,49,31],
-"classMPerfWidget.html#a0ffbf17d6638dfeb7e1b4674df40e6f9":[7,0,49,2],
-"classMPerfWidget.html#a1259c3a27e042e61dcb62e1db4212138":[7,0,49,20],
-"classMPerfWidget.html#a1db4443d794f38754b482b921966fa8b":[7,0,49,12],
-"classMPerfWidget.html#a20393e4c9d5ab284b5efd3669d3526a5":[7,0,49,27],
-"classMPerfWidget.html#a213df320cdada52ac63bdcdce771c839":[7,0,49,11],
-"classMPerfWidget.html#a2db1de8348c5af26c6074e775b0dd9b7":[7,0,49,0,5],
-"classMPerfWidget.html#a35cf46eda409a47447f9fee7be6ad4dc":[7,0,49,4],
-"classMPerfWidget.html#a374ca3e67c662f18d12f7643f4da4bc1":[7,0,49,6],
-"classMPerfWidget.html#a3786d846dc2498ea60ef850afaac2351":[7,0,49,30]
+"classMPerfWidget.html":[7,0,50],
+"classMPerfWidget.html#a03ffef54d16f71873890128de907a66b":[7,0,50,18],
+"classMPerfWidget.html#a0e8fd12100c6983e2a15fd09b0799867":[7,0,50,31],
+"classMPerfWidget.html#a0ffbf17d6638dfeb7e1b4674df40e6f9":[7,0,50,2],
+"classMPerfWidget.html#a1259c3a27e042e61dcb62e1db4212138":[7,0,50,20],
+"classMPerfWidget.html#a1db4443d794f38754b482b921966fa8b":[7,0,50,12],
+"classMPerfWidget.html#a20393e4c9d5ab284b5efd3669d3526a5":[7,0,50,27],
+"classMPerfWidget.html#a213df320cdada52ac63bdcdce771c839":[7,0,50,11],
+"classMPerfWidget.html#a2db1de8348c5af26c6074e775b0dd9b7":[7,0,50,0,5],
+"classMPerfWidget.html#a35cf46eda409a47447f9fee7be6ad4dc":[7,0,50,4],
+"classMPerfWidget.html#a374ca3e67c662f18d12f7643f4da4bc1":[7,0,50,6]
 };

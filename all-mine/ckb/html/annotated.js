@@ -45,6 +45,7 @@ var annotated =
     [ "LayoutDialog", "classLayoutDialog.html", "classLayoutDialog" ],
     [ "linkedlist_data_s", "zip_8c.html#structlinkedlist__data__s", "zip_8c_structlinkedlist__data__s" ],
     [ "linkedlist_datablock_internal_s", "zip_8c.html#structlinkedlist__datablock__internal__s", "zip_8c_structlinkedlist__datablock__internal__s" ],
+    [ "macroMigrationTip", "classmacroMigrationTip.html", "classmacroMigrationTip" ],
     [ "MacroReader", "classMacroReader.html", "classMacroReader" ],
     [ "MacroReaderThread", "classMacroReaderThread.html", "classMacroReaderThread" ],
     [ "MainWindow", "classMainWindow.html", "classMainWindow" ],

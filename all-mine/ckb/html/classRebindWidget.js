@@ -53,7 +53,6 @@ var classRebindWidget =
     [ "setCorrectRadioButton", "classRebindWidget.html#aba2b132778e1ab90c08daa154b99f506", null ],
     [ "setSelection", "classRebindWidget.html#a0edad41d578028bea3ea0e327fc4c203", null ],
     [ "bind", "classRebindWidget.html#a8f0d1807ccead6dca0d305d3db40c2e8", null ],
-    [ "firstCall", "classRebindWidget.html#a5acf4f14a75363740c8414c8f7de7995", null ],
     [ "fnKeys", "classRebindWidget.html#a10979d83c79919d879a31049a1f06bac", null ],
     [ "macReader", "classRebindWidget.html#aa690347be793a91e496df7bf5a313f0f", null ],
     [ "mediaKeys", "classRebindWidget.html#a45d8ce28edd3694bab28398ff3f81274", null ],

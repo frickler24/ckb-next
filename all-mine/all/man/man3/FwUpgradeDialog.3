@@ -1,4 +1,4 @@
-.TH "FwUpgradeDialog" 3 "Sat May 27 2017" "Version v0.2.8 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.TH "FwUpgradeDialog" 3 "Sat Jun 3 2017" "Version beta-v0.2.8+testing at branch all-mine" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -85,259 +85,260 @@ Definition at line 13 of file fwupgradedialog\&.h\&.
 .SS "FwUpgradeDialog::FwUpgradeDialog (\fBQWidget\fP *parent, floatnewV, const QByteArray &fwBlob, \fBKb\fP *device)"
 
 .PP
-Definition at line 33 of file fwupgradedialog\&.cpp\&.
+Definition at line 19 of file fwupgradedialog\&.cpp\&.
 .PP
 References Ui_FwUpgradeDialog::curLabel, Ui_FwUpgradeDialog::devLabel, DIALOG_HEIGHT_MIN, DIALOG_WIDTH, Kb::firmware, fwUpdateFinished(), fwUpdateProgress(), kb, Ui_FwUpgradeDialog::newLabel, removeDev(), Ui_FwUpgradeDialog::setupUi(), ui, and Kb::usbModel\&.
 .PP
 .nf
-33                                                                                                   :
-34     QDialog(parent),
-35     ui(new Ui::FwUpgradeDialog),
-36     blob(fwBlob), kb(device), evLoop(0), exitSuccess(true)
-37 {
-38     ui->setupUi(this);
-39     ui->curLabel->setText(kb->firmware);
-40     ui->newLabel->setText(QString::number(newV, 'f', 2));
-41     ui->devLabel->setText(kb->usbModel);
-42 
-43     connect(device, SIGNAL(destroyed()), this, SLOT(removeDev()));
-44     connect(device, SIGNAL(fwUpdateProgress(int,int)), this, SLOT(fwUpdateProgress(int,int)));
-45     connect(device, SIGNAL(fwUpdateFinished(bool)), this, SLOT(fwUpdateFinished(bool)));
-46 
-47     setFixedSize(DIALOG_WIDTH, DIALOG_HEIGHT_MIN);
-48 }
+19                                                                                                   :
+20     QDialog(parent),
+21     ui(new Ui::FwUpgradeDialog),
+22     blob(fwBlob), kb(device), evLoop(0), exitSuccess(true)
+23 {
+24     ui->setupUi(this);
+25     ui->curLabel->setText(kb->firmware);
+26     ui->newLabel->setText(QString::number(newV, 'f', 2));
+27     ui->devLabel->setText(kb->usbModel);
+28 
+29     connect(device, SIGNAL(destroyed()), this, SLOT(removeDev()));
+30     connect(device, SIGNAL(fwUpdateProgress(int,int)), this, SLOT(fwUpdateProgress(int,int)));
+31     connect(device, SIGNAL(fwUpdateFinished(bool)), this, SLOT(fwUpdateFinished(bool)));
+32 
+33     setFixedSize(DIALOG_WIDTH, DIALOG_HEIGHT_MIN);
+34 }
 .fi
 .SS "FwUpgradeDialog::~FwUpgradeDialog ()"
 
 .PP
-Definition at line 50 of file fwupgradedialog\&.cpp\&.
+Definition at line 36 of file fwupgradedialog\&.cpp\&.
 .PP
 References cleanBlob(), and ui\&.
 .PP
 .nf
-50                                  {
-51     cleanBlob();
-52     delete ui;
-53 }
+36                                  {
+37     cleanBlob();
+38     delete ui;
+39 }
 .fi
 .SH "Member Function Documentation"
 .PP 
 .SS "void FwUpgradeDialog::cleanBlob ()\fC [private]\fP"
 
 .PP
-Definition at line 79 of file fwupgradedialog\&.cpp\&.
+Definition at line 65 of file fwupgradedialog\&.cpp\&.
 .PP
 References savePath\&.
 .PP
 Referenced by fwUpdateFinished(), and ~FwUpgradeDialog()\&.
 .PP
 .nf
-79                                {
-80     if(savePath\&.isEmpty())
-81         return;
-82     QFile(savePath)\&.remove();
-83     savePath = "";
-84 }
+65                                {
+66     if(savePath\&.isEmpty())
+67         return;
+68     QFile(savePath)\&.remove();
+69     savePath = "";
+70 }
 .fi
 .SS "void FwUpgradeDialog::closeEvent (QCloseEvent *event)\fC [private]\fP"
 
 .PP
-Definition at line 55 of file fwupgradedialog\&.cpp\&.
+Definition at line 41 of file fwupgradedialog\&.cpp\&.
 .PP
 .nf
-55                                                   {
-56     event->ignore();
-57 }
+41                                                   {
+42     event->ignore();
+43 }
 .fi
 .SS "int FwUpgradeDialog::exec ()"
 
 .PP
-Definition at line 109 of file fwupgradedialog\&.cpp\&.
+Definition at line 92 of file fwupgradedialog\&.cpp\&.
 .PP
-References Ui_FwUpgradeDialog::actionButton, blob, Ui_FwUpgradeDialog::cancelButton, KbFirmware::dataForBoard(), DIALOG_HEIGHT_MAX(), DIALOG_WIDTH, evLoop, exitSuccess, Kb::features, kb, Ui_FwUpgradeDialog::newLabel, Ui_FwUpgradeDialog::progressBar, saveBlob(), Ui_FwUpgradeDialog::statusLabel, ui, and verifyFw()\&.
+References Ui_FwUpgradeDialog::actionButton, blob, Ui_FwUpgradeDialog::cancelButton, KbFirmware::dataForBoard(), DIALOG_HEIGHT_MAX(), DIALOG_WIDTH, evLoop, exitSuccess, kb, Ui_FwUpgradeDialog::newLabel, Kb::productID, Ui_FwUpgradeDialog::progressBar, saveBlob(), Ui_FwUpgradeDialog::statusLabel, ui, and verifyFw()\&.
 .PP
 Referenced by KbWidget::on_fwUpdButton_clicked()\&.
 .PP
 .nf
-109                          {
-110     QString features = kb->features;
-111     if(!blob\&.isEmpty()){
-112         // If a blob was already specified, check its version and validity
-113         float newV = verifyFw(blob, features);
-114         if(newV == 0\&.f){
-115             QMessageBox::warning(parentWidget(), "Error", "<center>Not a valid firmware for this device\&.</center>");
+92                          {
+93     short productID = kb->productID;
+94 
+95     if(!blob\&.isEmpty()){
+96         // If a blob was already specified, check its version and validity
+97         float newV = verifyFw(blob, productID);
+98         if(newV == 0\&.f){
+99             QMessageBox::warning(parentWidget(), "Error", "<center>Not a valid firmware for this device\&.</center>");
+100             return QDialog::Rejected;
+101         }
+102         ui->newLabel->setText(QString::number(newV, 'f', 2));
+103     } else {
+104         // Download a new blob file
+105         ui->progressBar->show();
+106         ui->cancelButton->setEnabled(false);
+107         ui->actionButton->setEnabled(false);
+108         show();
+109         // This can take a while
+110         blob = KbFirmware::dataForBoard(productID);
+111         // Check validity
+112         float newV = verifyFw(blob, productID);
+113         if(newV == 0\&.f){
+114             hide();
+115             QMessageBox::warning(parentWidget(), "Error", "<center>There was a problem with the downloaded file\&.<br />Please try again later\&.</center>");
 116             return QDialog::Rejected;
 117         }
-118         ui->newLabel->setText(QString::number(newV, 'f', 2));
-119     } else {
-120         // Download a new blob file
-121         ui->progressBar->show();
-122         ui->cancelButton->setEnabled(false);
-123         ui->actionButton->setEnabled(false);
-124         show();
-125         // This can take a while
-126         blob = KbFirmware::dataForBoard(features);
-127         // Check validity
-128         float newV = verifyFw(blob, features);
-129         if(newV == 0\&.f){
-130             hide();
-131             QMessageBox::warning(parentWidget(), "Error", "<center>There was a problem with the downloaded file\&.<br />Please try again later\&.</center>");
-132             return QDialog::Rejected;
-133         }
-134     }
-135     // Save temporary file
-136     if(saveBlob()\&.isEmpty()){
-137         hide();
-138         QMessageBox::warning(parentWidget(), "Error", "<center>Unable to save temporary file\&.</center>");
-139         return QDialog::Rejected;
-140     }
-141     // Set up UI
-142     ui->progressBar->setValue(0);
-143     ui->progressBar->setMaximum(1);
-144     ui->progressBar->setTextVisible(false);
-145     ui->statusLabel->setText("Ready to install new firmware\&.<br /><br /><b>Disclaimer:</b> ckb is not endorsed by Corsair\&. This is <i>unlikely</i> to brick your device, but I accept no responsibility if it does\&. If you're paranoid, update from Windows\&.");
-146     ui->cancelButton->setEnabled(true);
-147     ui->actionButton->setEnabled(true);
-148     setFixedSize(DIALOG_WIDTH, DIALOG_HEIGHT_MAX);
-149     show();
-150     // Run modal event loop
-151     evLoop = new QEventLoop(this);
-152     evLoop->exec();
-153     delete evLoop;
-154     hide();
-155     return exitSuccess ? QDialog::Accepted : QDialog::Rejected;
-156 }
+118     }
+119     // Save temporary file
+120     if(saveBlob()\&.isEmpty()){
+121         hide();
+122         QMessageBox::warning(parentWidget(), "Error", "<center>Unable to save temporary file\&.</center>");
+123         return QDialog::Rejected;
+124     }
+125     // Set up UI
+126     ui->progressBar->setValue(0);
+127     ui->progressBar->setMaximum(1);
+128     ui->progressBar->setTextVisible(false);
+129     ui->statusLabel->setText("Ready to install new firmware\&.<br /><br /><b>Disclaimer:</b> ckb is not endorsed by Corsair\&. This is <i>unlikely</i> to brick your device, but I accept no responsibility if it does\&. If you're paranoid, update from Windows\&.");
+130     ui->cancelButton->setEnabled(true);
+131     ui->actionButton->setEnabled(true);
+132     setFixedSize(DIALOG_WIDTH, DIALOG_HEIGHT_MAX);
+133     show();
+134     // Run modal event loop
+135     evLoop = new QEventLoop(this);
+136     evLoop->exec();
+137     delete evLoop;
+138     hide();
+139     return exitSuccess ? QDialog::Accepted : QDialog::Rejected;
+140 }
 .fi
 .SS "void FwUpgradeDialog::fwUpdateFinished (boolsucceeded)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 172 of file fwupgradedialog\&.cpp\&.
+Definition at line 156 of file fwupgradedialog\&.cpp\&.
 .PP
 References Ui_FwUpgradeDialog::actionButton, cleanBlob(), evLoop, Ui_FwUpgradeDialog::progressBar, quit(), Ui_FwUpgradeDialog::statusLabel, and ui\&.
 .PP
 Referenced by FwUpgradeDialog(), and removeDev()\&.
 .PP
 .nf
-172                                                     {
-173     cleanBlob();
-174     if(succeeded)
-175         ui->statusLabel->setText("Update successful!");
-176     else
-177         ui->statusLabel->setText("Update failed\&.");
-178     ui->actionButton->setText("OK");
-179     ui->actionButton->setEnabled(true);
-180     ui->progressBar->setMaximum(1);
-181     ui->progressBar->setValue(1);
-182     // Exit after 10s
-183     if(evLoop)
-184         QTimer::singleShot(10000, evLoop, SLOT(quit()));
-185 }
+156                                                     {
+157     cleanBlob();
+158     if(succeeded)
+159         ui->statusLabel->setText("Update successful!");
+160     else
+161         ui->statusLabel->setText("Update failed\&.");
+162     ui->actionButton->setText("OK");
+163     ui->actionButton->setEnabled(true);
+164     ui->progressBar->setMaximum(1);
+165     ui->progressBar->setValue(1);
+166     // Exit after 10s
+167     if(evLoop)
+168         QTimer::singleShot(10000, evLoop, SLOT(quit()));
+169 }
 .fi
 .SS "void FwUpgradeDialog::fwUpdateProgress (intcurrent, inttotal)\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 165 of file fwupgradedialog\&.cpp\&.
+Definition at line 149 of file fwupgradedialog\&.cpp\&.
 .PP
 References Ui_FwUpgradeDialog::progressBar, and ui\&.
 .PP
 Referenced by FwUpgradeDialog()\&.
 .PP
 .nf
-165                                                             {
-166     if(current > 0 && total > 0){
-167         ui->progressBar->setMaximum(total);
-168         ui->progressBar->setValue(current);
-169     }
-170 }
+149                                                             {
+150     if(current > 0 && total > 0){
+151         ui->progressBar->setMaximum(total);
+152         ui->progressBar->setValue(current);
+153     }
+154 }
 .fi
 .SS "void FwUpgradeDialog::on_actionButton_clicked ()\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 193 of file fwupgradedialog\&.cpp\&.
+Definition at line 177 of file fwupgradedialog\&.cpp\&.
 .PP
 References Ui_FwUpgradeDialog::actionButton, Ui_FwUpgradeDialog::cancelButton, DIALOG_HEIGHT_MIN, DIALOG_WIDTH, evLoop, Kb::fwUpdate(), kb, Ui_FwUpgradeDialog::progressBar, savePath, Ui_FwUpgradeDialog::statusLabel, and ui\&.
 .PP
 .nf
-193                                              {
-194     if(!savePath\&.isEmpty() && kb){
-195         // Start upgrade
-196         setFixedSize(DIALOG_WIDTH, DIALOG_HEIGHT_MIN);
-197         ui->progressBar->show();
-198         ui->progressBar->setValue(0);
-199         ui->progressBar->setMaximum(0);
-200         ui->progressBar->setTextVisible(true);
-201         ui->cancelButton->hide();
-202         ui->actionButton->setEnabled(false);
-203         ui->actionButton->setText("Please wait");
-204         ui->statusLabel->setText("Installing firmware\&.\&.\&.");
-205         kb->fwUpdate(savePath);
-206     } else {
-207         // Finished, close dialog\&.
-208         if(evLoop)
-209             evLoop->quit();
-210     }
-211 }
+177                                              {
+178     if(!savePath\&.isEmpty() && kb){
+179         // Start upgrade
+180         setFixedSize(DIALOG_WIDTH, DIALOG_HEIGHT_MIN);
+181         ui->progressBar->show();
+182         ui->progressBar->setValue(0);
+183         ui->progressBar->setMaximum(0);
+184         ui->progressBar->setTextVisible(true);
+185         ui->cancelButton->hide();
+186         ui->actionButton->setEnabled(false);
+187         ui->actionButton->setText("Please wait");
+188         ui->statusLabel->setText("Installing firmware\&.\&.\&.");
+189         kb->fwUpdate(savePath);
+190     } else {
+191         // Finished, close dialog\&.
+192         if(evLoop)
+193             evLoop->quit();
+194     }
+195 }
 .fi
 .SS "void FwUpgradeDialog::on_cancelButton_clicked ()\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 187 of file fwupgradedialog\&.cpp\&.
+Definition at line 171 of file fwupgradedialog\&.cpp\&.
 .PP
 References evLoop, and exitSuccess\&.
 .PP
 .nf
-187                                              {
-188     exitSuccess = false;
-189     if(evLoop)
-190         evLoop->quit();
-191 }
+171                                              {
+172     exitSuccess = false;
+173     if(evLoop)
+174         evLoop->quit();
+175 }
 .fi
 .SS "void FwUpgradeDialog::removeDev ()\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 158 of file fwupgradedialog\&.cpp\&.
+Definition at line 142 of file fwupgradedialog\&.cpp\&.
 .PP
 References fwUpdateFinished(), kb, and savePath\&.
 .PP
 Referenced by FwUpgradeDialog()\&.
 .PP
 .nf
-158                                {
-159     kb = 0;
-160     // Assume success if upgrade in progress
-161     if(!savePath\&.isEmpty())
-162         fwUpdateFinished(true);
-163 }
+142                                {
+143     kb = 0;
+144     // Assume success if upgrade in progress
+145     if(!savePath\&.isEmpty())
+146         fwUpdateFinished(true);
+147 }
 .fi
 .SS "const QString & FwUpgradeDialog::saveBlob ()\fC [private]\fP"
 
 .PP
-Definition at line 59 of file fwupgradedialog\&.cpp\&.
+Definition at line 45 of file fwupgradedialog\&.cpp\&.
 .PP
 References blob, and savePath\&.
 .PP
 Referenced by exec()\&.
 .PP
 .nf
-59                                         {
-60     if(!savePath\&.isEmpty())
-61         return savePath;
-62     QDir tmp = QDir::temp();
-63     qint64 pid = QCoreApplication::applicationPid();
-64     QString path = tmp\&.absoluteFilePath(QString("ckb-%1-fwblob\&.bin")\&.arg(pid));
-65     QFile output(path);
-66     if(!output\&.open(QIODevice::WriteOnly)){
-67         return savePath;
-68     }
-69     if(!output\&.write(blob)){
-70         output\&.close();
-71         tmp\&.remove(path);
-72         return savePath;
-73     }
-74     output\&.close();
-75     savePath = path;
-76     return savePath;
-77 }
+45                                         {
+46     if(!savePath\&.isEmpty())
+47         return savePath;
+48     QDir tmp = QDir::temp();
+49     qint64 pid = QCoreApplication::applicationPid();
+50     QString path = tmp\&.absoluteFilePath(QString("ckb-%1-fwblob\&.bin")\&.arg(pid));
+51     QFile output(path);
+52     if(!output\&.open(QIODevice::WriteOnly)){
+53         return savePath;
+54     }
+55     if(!output\&.write(blob)){
+56         output\&.close();
+57         tmp\&.remove(path);
+58         return savePath;
+59     }
+60     output\&.close();
+61     savePath = path;
+62     return savePath;
+63 }
 .fi
 .SH "Field Documentation"
 .PP 

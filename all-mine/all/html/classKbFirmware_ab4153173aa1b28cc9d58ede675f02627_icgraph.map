@@ -1,7 +1,7 @@
 <map id="KbFirmware::checkUpdates" name="KbFirmware::checkUpdates">
-<area shape="rect" id="node2" href="$classKbFirmware.html#aa68b2e0aed9074c60eba72e9fa60a6b5" title="KbFirmware::_latestForBoard" alt="" coords="237,135,429,161"/>
+<area shape="rect" id="node2" href="$classKbFirmware.html#a1d5c53d6b1efddfcb4fdbb4b872ed897" title="KbFirmware::_latestForBoard" alt="" coords="237,135,429,161"/>
 <area shape="rect" id="node10" href="$classMainWindow.html#a888ae1a192a5ca93d0d8bddd104ae953" title="MainWindow::timerTick" alt="" coords="1218,161,1377,188"/>
-<area shape="rect" id="node3" href="$classKbFirmware.html#adf60ed5d7553a8c3f362ce5ae29ce965" title="KbFirmware::versionForBoard" alt="" coords="477,107,672,133"/>
+<area shape="rect" id="node3" href="$classKbFirmware.html#a89c4d7badcf2f167842174a1f872a0da" title="KbFirmware::versionForBoard" alt="" coords="477,107,672,133"/>
 <area shape="rect" id="node4" href="$classKbWidget.html#adabed0db911bef8b3c0157372fb4e21a" title="KbWidget::updateFwButton" alt="" coords="721,80,903,107"/>
 <area shape="rect" id="node6" href="$classKbWidget.html#a38c9f29a5d8f1edfcb5f8040de3dadb9" title="KbWidget::on_fwUpdButton\l_clicked" alt="" coords="964,5,1148,46"/>
 <area shape="rect" id="node9" href="$classMainWindow.html#a7bd3f729676a76651d4852d03d1cfb8e" title="MainWindow::checkFwUpdates" alt="" coords="953,136,1159,163"/>

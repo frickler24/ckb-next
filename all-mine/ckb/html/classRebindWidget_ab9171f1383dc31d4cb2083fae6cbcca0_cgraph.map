@@ -1,10 +1,8 @@
 <map id="RebindWidget::on_btnStopMacro_clicked" name="RebindWidget::on_btnStopMacro_clicked">
 <area shape="rect" id="node2" href="$classRebindWidget.html#a45bb9f2a31ec2a5a0eacf7dff4f09c8b" title="RebindWidget::convertMacroBox converts the macroBox content. The KB sends each keypress as &quot;key [+|&#45;]..." alt="" coords="233,5,447,32"/>
-<area shape="rect" id="node3" href="$classKbBind.html#a592edd4cbb386e071e2cdaea0a2d53a9" title="KbBind::getMacroPath. " alt="" coords="263,56,417,83"/>
-<area shape="rect" id="node6" href="$classKbBind.html#ab27322709a40e2d244b714d260c05928" title="handleNotificationChannel sends commands to ckb&#45;daemon for (de&#45;) activating the notify channel..." alt="" coords="252,107,428,149"/>
-<area shape="rect" id="node9" href="$classRebindWidget.html#a09097e3ff4182f8238e47edabbadf930" title="RebindWidget::helpStatus shows a help line in the ui. " alt="" coords="253,173,427,200"/>
-<area shape="rect" id="node4" href="$classKbBind.html#ac4dc2ffee7d967975b8f13c75d52c5a3" title="KbBind::devParent" alt="" coords="725,39,856,65"/>
-<area shape="rect" id="node5" href="$classKb.html#a9ac09cc0fa78de17de22d7ffb13da09e" title="getMacroPath returns the macroPath (e.g. /dev/input/ckb1/notify), which we have saved in the construc..." alt="" coords="519,64,646,91"/>
-<area shape="rect" id="node7" href="$classKbBind.html#af0e5585cdc241e42c60fff16985429a0" title="KbBind::getMacroNumber. " alt="" coords="497,115,669,141"/>
-<area shape="rect" id="node8" href="$classKb.html#af98eaf3596f7f10fe817362f86abf90a" title="For usage with macro definions, these two params must only be readable. So there are no setters..." alt="" coords="717,115,864,141"/>
+<area shape="rect" id="node3" href="$classKbBind.html#a4bb7a8b9bdf99bbdbdf6edba08c7d248" title="handleNotificationChannel sends commands to ckb&#45;daemon for (de&#45;) activating the notify channel..." alt="" coords="252,57,428,98"/>
+<area shape="rect" id="node7" href="$classRebindWidget.html#a09097e3ff4182f8238e47edabbadf930" title="RebindWidget::helpStatus shows a help line in the ui. " alt="" coords="253,123,427,149"/>
+<area shape="rect" id="node4" href="$classKbBind.html#af0e5585cdc241e42c60fff16985429a0" title="KbBind::getMacroNumber. " alt="" coords="497,64,669,91"/>
+<area shape="rect" id="node5" href="$classKbBind.html#ac4dc2ffee7d967975b8f13c75d52c5a3" title="KbBind::devParent" alt="" coords="725,39,856,65"/>
+<area shape="rect" id="node6" href="$classKb.html#af98eaf3596f7f10fe817362f86abf90a" title="For usage with macro definions, these two params must only be readable. So there are no setters..." alt="" coords="717,89,864,116"/>
 </map>

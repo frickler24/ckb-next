@@ -1,6 +1,6 @@
 <map id="KbBind::bindAction" name="KbBind::bindAction">
 <area shape="rect" id="node2" href="$classKbBind.html#ab140ce3e9ab0c94d5b23129729234bfb" title="KbBind::action" alt="" coords="197,331,304,357"/>
-<area shape="rect" id="node25" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent. " alt="" coords="187,457,314,484"/>
+<area shape="rect" id="node25" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent" alt="" coords="187,457,314,484"/>
 <area shape="rect" id="node27" href="$classKbBind.html#abc1d7d434d4e38e0db04f8fba5d90a2d" title="KbBind::update" alt="" coords="195,508,306,535"/>
 <area shape="rect" id="node3" href="$classKbBind.html#a610e348fc6762607c0c4b17ce0fcc88f" title="KbBind::friendlyActionName" alt="" coords="363,407,549,433"/>
 <area shape="rect" id="node5" href="$classKbBindWidget.html#a3274fb51d224f0ca111bd714ed524a59" title="KbBindWidget::updateBind" alt="" coords="1384,305,1563,332"/>

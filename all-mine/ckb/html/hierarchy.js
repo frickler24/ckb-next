@@ -29,6 +29,7 @@ var hierarchy =
       [ "GradientDialog", "classGradientDialog.html", null ],
       [ "KbProfileDialog", "classKbProfileDialog.html", null ],
       [ "LayoutDialog", "classLayoutDialog.html", null ],
+      [ "macroMigrationTip", "classmacroMigrationTip.html", null ],
       [ "ModeSelectDialog", "classModeSelectDialog.html", null ]
     ] ],
     [ "QIODevice", "classQIODevice.html", [

@@ -108,7 +108,7 @@ var searchData=
   ['kpdelaybox',['kpDelayBox',['../classUi__AnimSettingDialog.html#a169f06e538a1f5f9e772b1bcc370305b',1,'Ui_AnimSettingDialog']]],
   ['kperftab',['kPerfTab',['../classUi__KbWidget.html#a5d2a112ae92dd9071ea054c2961995f8',1,'Ui_KbWidget']]],
   ['kperfwidget',['KPerfWidget',['../classUi_1_1KPerfWidget.html',1,'Ui']]],
-  ['kperfwidget',['KPerfWidget',['../classKPerfWidget.html',1,'KPerfWidget'],['../classKPerfWidget.html#afe3ef56d5262dbb3e5ea5ce9d77e124e',1,'KPerfWidget::KPerfWidget()'],['../classUi__KbWidget.html#a0dc836885071aa36562b5886baf5e104',1,'Ui_KbWidget::kPerfWidget()']]],
+  ['kperfwidget',['KPerfWidget',['../classKPerfWidget.html',1,'KPerfWidget'],['../classUi__KbWidget.html#a0dc836885071aa36562b5886baf5e104',1,'Ui_KbWidget::kPerfWidget()'],['../classKPerfWidget.html#afe3ef56d5262dbb3e5ea5ce9d77e124e',1,'KPerfWidget::KPerfWidget()']]],
   ['kperfwidget_2ecpp',['kperfwidget.cpp',['../kperfwidget_8cpp.html',1,'']]],
   ['kperfwidget_2eh',['kperfwidget.h',['../kperfwidget_8h.html',1,'']]],
   ['kpmodestopbox',['kpModeStopBox',['../classUi__AnimSettingDialog.html#a319bab7efdc2552c76af00072cc6b03e',1,'Ui_AnimSettingDialog']]],

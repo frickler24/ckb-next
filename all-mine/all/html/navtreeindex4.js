@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"classKbLight.html#af88059e91ea519346ae6769ac3d6188f":[7,0,35,32],
 "classKbLight.html#af9396a537f57ee8e0c5e0f9138b0a359":[7,0,35,0],
 "classKbLight.html#afc31bb8970f598aa20c1012c330cd8bf":[7,0,35,18],
 "classKbLight.html#affb65d8409e708480a8fb2611d51ba07":[7,0,35,16],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "classKbWidget.html#ae4d21aea9934b26adfe7f53e739e5d37":[7,0,42,23],
 "classKeyAction.html":[7,0,45],
 "classKeyAction.html#a01687796703ce2433630f2a177e59eb9":[7,0,45,53],
-"classKeyAction.html#a1182588fa5f3158d72830a4b064dfa2d":[7,0,45,32],
-"classKeyAction.html#a146ab050b820b483352aecf135462819":[7,0,45,51]
+"classKeyAction.html#a1182588fa5f3158d72830a4b064dfa2d":[7,0,45,32]
 };

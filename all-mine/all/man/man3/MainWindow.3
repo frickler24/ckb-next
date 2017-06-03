@@ -1,4 +1,4 @@
-.TH "MainWindow" 3 "Sat May 27 2017" "Version v0.2.8 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.TH "MainWindow" 3 "Sat Jun 3 2017" "Version beta-v0.2.8+testing at branch all-mine" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -109,7 +109,7 @@ Definition at line 27 of file mainwindow\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "MainWindow::MainWindow (\fBQWidget\fP *parent = \fC0\fP)\fC [explicit]\fP"
-give a hint if the config files are not writeable 
+give a hint if the config files are nonwriteable 
 .PP
 Definition at line 35 of file mainwindow\&.cpp\&.
 .PP
@@ -243,7 +243,7 @@ Referenced by MainWindow()\&.
 .PP
 Definition at line 175 of file mainwindow\&.cpp\&.
 .PP
-References KbWidget::device, Kb::features, Kb::firmware, KbWidget::hasShownNewFW, kbWidgets, mainWindow, KbWidget::updateFwButton(), and KbFirmware::versionForBoard()\&.
+References KbWidget::device, Kb::firmware, KbWidget::hasShownNewFW, kbWidgets, mainWindow, Kb::productID, KbWidget::updateFwButton(), and KbFirmware::versionForBoard()\&.
 .PP
 Referenced by timerTick()\&.
 .PP
@@ -253,7 +253,7 @@ Referenced by timerTick()\&.
 177         return;
 178     foreach(KbWidget* w, kbWidgets){
 179         // Display firmware upgrade notification if a new version is available
-180         float version = KbFirmware::versionForBoard(w->device->features);
+180         float version = KbFirmware::versionForBoard(w->device->productID);
 181         if(version > w->device->firmware\&.toFloat()){
 182             if(w->hasShownNewFW)
 183                 continue;

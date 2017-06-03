@@ -4,7 +4,7 @@
 <area shape="rect" id="node6" href="$classKbLight.html#a05182102df4955faa1524f511d52a56a" title="KbLight::open" alt="" coords="223,123,326,149"/>
 <area shape="rect" id="node8" href="$classKbLight.html#ab09bf15d59ba210a899f55a33effd931" title="KbLight::shareDimming" alt="" coords="195,173,354,200"/>
 <area shape="rect" id="node9" href="$classKbLightWidget.html#ab5dfd2e86b7068bf8d71a89cdf66822b" title="KbLightWidget::updateLight" alt="" coords="183,224,366,251"/>
-<area shape="rect" id="node3" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent. " alt="" coords="439,5,566,32"/>
+<area shape="rect" id="node3" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent" alt="" coords="439,5,566,32"/>
 <area shape="rect" id="node4" href="$classKb.html#afa36635dcc1cd9512f372594c57c546c" title="Kb::readNotify" alt="" coords="664,5,771,32"/>
 <area shape="rect" id="node7" href="$classKb.html#a97694a4cd55681adca7b972fb5722049" title="Kb::frameUpdate" alt="" coords="442,123,563,149"/>
 <area shape="rect" id="node10" href="$classKbLightWidget.html#a1de1f3328abf87f7f48673c46fbd3b4b" title="KbLightWidget::setLight" alt="" coords="422,224,583,251"/>

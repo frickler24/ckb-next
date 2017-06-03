@@ -15,7 +15,7 @@
 <area shape="rect" id="node30" href="$classKb.html#aef52ac833e598b199351621a7953dc65" title="Kb::updateLayout" alt="" coords="214,906,338,933"/>
 <area shape="rect" id="node3" href="$classKbWidget.html#a65f38c3fc88b4e1a8fbabc7a27946c49" title="KbWidget::on_hwSaveButton\l_clicked" alt="" coords="433,407,626,448"/>
 <area shape="rect" id="node4" href="$classKbProfileDialog.html#aac105b06b0a29e39c05cb70f01c37fcd" title="KbProfileDialog::on\l_profileList_customContext\lMenuRequested" alt="" coords="439,524,620,580"/>
-<area shape="rect" id="node7" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent. " alt="" coords="466,473,593,500"/>
+<area shape="rect" id="node7" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent" alt="" coords="466,473,593,500"/>
 <area shape="rect" id="node10" href="$classKbWidget.html#a848a21f1fd112e13ca5fcf25da4592c6" title="KbWidget::KbWidget" alt="" coords="1171,110,1315,137"/>
 <area shape="rect" id="node17" href="$classKbBindWidget.html#ae06c7e036759eb9a1ae7224cdba30b0b" title="KbBindWidget::setBind" alt="" coords="697,153,855,180"/>
 <area shape="rect" id="node19" href="$classKbBindWidget.html#ad052b9ce7166f5a1c46ee7a01f3457dc" title="KbBindWidget::newLayout" alt="" coords="441,102,617,129"/>

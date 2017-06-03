@@ -1,5 +1,9 @@
 var NAVTREEINDEX13 =
 {
+"daemon_2keymap_8h.html#a14af41b3bc1acf370c9c9bf78b0f8825":[8,0,0,1,21,12],
+"daemon_2keymap_8h.html#a154a1a73a1be1b151f488ee64a6d9057":[8,0,0,1,21,23],
+"daemon_2keymap_8h.html#a1e78fe78cc88328d9c38f020f3262554":[8,0,0,1,21,21],
+"daemon_2keymap_8h.html#a1f44d8d1a4f6bdde148f983a04cad881":[8,0,0,1,21,13],
 "daemon_2keymap_8h.html#a235f617fd296b13cdbb823ba39cca480":[8,0,0,1,21,15],
 "daemon_2keymap_8h.html#a274f3de972b30571c95f048562d7be03":[8,0,0,1,21,16],
 "daemon_2keymap_8h.html#a28297cc8eb7154aeb3c81fd42a3c59b2":[7,0,44,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX13 =
 "functions_o.html":[7,3,0,14],
 "functions_p.html":[7,3,0,15],
 "functions_q.html":[7,3,0,16],
-"functions_r.html":[7,3,0,17],
-"functions_rela.html":[7,3,6],
-"functions_s.html":[7,3,0,18],
-"functions_t.html":[7,3,0,19],
-"functions_type.html":[7,3,3]
+"functions_r.html":[7,3,0,17]
 };

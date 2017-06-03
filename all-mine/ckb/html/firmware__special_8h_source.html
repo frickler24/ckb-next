@@ -31,7 +31,7 @@
   <td id="projectlogo"><img alt="Logo" src="ckb-128.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">ckb-next
-   &#160;<span id="projectnumber">v0.2.8 at branch all-mine</span>
+   &#160;<span id="projectnumber">beta-v0.2.8+testing at branch all-mine</span>
    </div>
    <div id="projectbrief">ckb-next driver for corsair devices</div>
   </td>
@@ -111,38 +111,37 @@ $(document).ready(function(){initNavTree('firmware__special_8h_source.html','');
 <div class="contents">
 <a href="firmware__special_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef FIRMWARE_SPECIAL_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FIRMWARE_SPECIAL_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="keymap_8h.html">keymap.h</a>&quot;</span>     </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="keymap_8h.html">keymap.h</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
 <div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="firmware__special_8h.html#a2aa27325e30aac7dcec6203d4f11e996">   15</a></span>&#160;<span class="preprocessor">#define V_CORSAIR       0x1b1c</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="firmware__special_8h.html#aa0f89f20ca96ad159330a8d071a45352">   18</a></span>&#160;<span class="preprocessor">#define P_K70_LUX_NRGB       0x1b36</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="firmware__special_8h.html">   20</a></span>&#160;<span class="keyword">struct </span><a class="code" href="firmware__special_8h.html#structfirmwareSpecial">firmwareSpecial</a> {</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="firmware__special_8h.html#a50dc6fabdce8310c24cb73e86812185f">   21</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">short</span> <a class="code" href="firmware__special_8h.html#a50dc6fabdce8310c24cb73e86812185f">product</a>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="firmware__special_8h.html#a72a94e8be76837727acd9235dbffba09">   22</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="classKeyMap.html#a6d29bbbb4d74908a0a1873d485d6769d">KeyMap::Model</a> <a class="code" href="firmware__special_8h.html#a72a94e8be76837727acd9235dbffba09">model</a>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;} <a class="code" href="firmware__special_8h.html#ab961354ac207225078800180ecac6eb7">specials</a>[] = {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    { <a class="code" href="firmware__special_8h.html#aa0f89f20ca96ad159330a8d071a45352">P_K70_LUX_NRGB</a>, <a class="code" href="classKeyMap.html#a6d29bbbb4d74908a0a1873d485d6769da6dd5dd80a4c40a9bbd8a881d10ae5ffe">KeyMap::K70</a> },</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif // FIRMWARE_SPECIAL_H</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="firmware__special_8h.html#aa0f89f20ca96ad159330a8d071a45352">   16</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define P_K70_LUX_NRGB       0x1b36</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="firmware__special_8h.html">   18</a></span>&#160;<span class="keyword">struct </span><a class="code" href="firmware__special_8h.html#structfirmwareSpecial">firmwareSpecial</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="firmware__special_8h.html#a50dc6fabdce8310c24cb73e86812185f">   19</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">short</span> <a class="code" href="firmware__special_8h.html#a50dc6fabdce8310c24cb73e86812185f">product</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="firmware__special_8h.html#a72a94e8be76837727acd9235dbffba09">   20</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="classKeyMap.html#a6d29bbbb4d74908a0a1873d485d6769d">KeyMap::Model</a> <a class="code" href="firmware__special_8h.html#a72a94e8be76837727acd9235dbffba09">model</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;} <a class="code" href="firmware__special_8h.html#ab961354ac207225078800180ecac6eb7">specials</a>[] = {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    { <a class="code" href="firmware__special_8h.html#aa0f89f20ca96ad159330a8d071a45352">P_K70_LUX_NRGB</a>, <a class="code" href="classKeyMap.html#a6d29bbbb4d74908a0a1873d485d6769da6dd5dd80a4c40a9bbd8a881d10ae5ffe">KeyMap::K70</a>},</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif // FIRMWARE_SPECIAL_H</span></div>
 <div class="ttc" id="keymap_8h_html"><div class="ttname"><a href="keymap_8h.html">keymap.h</a></div></div>
-<div class="ttc" id="firmware__special_8h_html_structfirmwareSpecial"><div class="ttname"><a href="firmware__special_8h.html#structfirmwareSpecial">firmwareSpecial</a></div><div class="ttdef"><b>Definition:</b> <a href="firmware__special_8h_source.html#l00020">firmware_special.h:20</a></div></div>
+<div class="ttc" id="firmware__special_8h_html_structfirmwareSpecial"><div class="ttname"><a href="firmware__special_8h.html#structfirmwareSpecial">firmwareSpecial</a></div><div class="ttdef"><b>Definition:</b> <a href="firmware__special_8h_source.html#l00018">firmware_special.h:18</a></div></div>
 <div class="ttc" id="firmware__special_8h_html_ab961354ac207225078800180ecac6eb7"><div class="ttname"><a href="firmware__special_8h.html#ab961354ac207225078800180ecac6eb7">specials</a></div><div class="ttdeci">struct firmwareSpecial specials[]</div></div>
 <div class="ttc" id="classKeyMap_html_a6d29bbbb4d74908a0a1873d485d6769d"><div class="ttname"><a href="classKeyMap.html#a6d29bbbb4d74908a0a1873d485d6769d">KeyMap::Model</a></div><div class="ttdeci">Model</div><div class="ttdef"><b>Definition:</b> <a href="keymap_8h_source.html#l00051">keymap.h:51</a></div></div>
-<div class="ttc" id="firmware__special_8h_html_aa0f89f20ca96ad159330a8d071a45352"><div class="ttname"><a href="firmware__special_8h.html#aa0f89f20ca96ad159330a8d071a45352">P_K70_LUX_NRGB</a></div><div class="ttdeci">#define P_K70_LUX_NRGB</div><div class="ttdoc">Enter the Product ID of your device you want to handle with special treatment. </div><div class="ttdef"><b>Definition:</b> <a href="firmware__special_8h_source.html#l00018">firmware_special.h:18</a></div></div>
-<div class="ttc" id="firmware__special_8h_html_a72a94e8be76837727acd9235dbffba09"><div class="ttname"><a href="firmware__special_8h.html#a72a94e8be76837727acd9235dbffba09">firmwareSpecial::model</a></div><div class="ttdeci">const KeyMap::Model model</div><div class="ttdef"><b>Definition:</b> <a href="firmware__special_8h_source.html#l00022">firmware_special.h:22</a></div></div>
+<div class="ttc" id="firmware__special_8h_html_aa0f89f20ca96ad159330a8d071a45352"><div class="ttname"><a href="firmware__special_8h.html#aa0f89f20ca96ad159330a8d071a45352">P_K70_LUX_NRGB</a></div><div class="ttdeci">#define P_K70_LUX_NRGB</div><div class="ttdef"><b>Definition:</b> <a href="firmware__special_8h_source.html#l00016">firmware_special.h:16</a></div></div>
+<div class="ttc" id="firmware__special_8h_html_a72a94e8be76837727acd9235dbffba09"><div class="ttname"><a href="firmware__special_8h.html#a72a94e8be76837727acd9235dbffba09">firmwareSpecial::model</a></div><div class="ttdeci">const KeyMap::Model model</div><div class="ttdef"><b>Definition:</b> <a href="firmware__special_8h_source.html#l00020">firmware_special.h:20</a></div></div>
 <div class="ttc" id="classKeyMap_html_a6d29bbbb4d74908a0a1873d485d6769da6dd5dd80a4c40a9bbd8a881d10ae5ffe"><div class="ttname"><a href="classKeyMap.html#a6d29bbbb4d74908a0a1873d485d6769da6dd5dd80a4c40a9bbd8a881d10ae5ffe">KeyMap::K70</a></div><div class="ttdef"><b>Definition:</b> <a href="keymap_8h_source.html#l00055">keymap.h:55</a></div></div>
-<div class="ttc" id="firmware__special_8h_html_a50dc6fabdce8310c24cb73e86812185f"><div class="ttname"><a href="firmware__special_8h.html#a50dc6fabdce8310c24cb73e86812185f">firmwareSpecial::product</a></div><div class="ttdeci">const short product</div><div class="ttdef"><b>Definition:</b> <a href="firmware__special_8h_source.html#l00021">firmware_special.h:21</a></div></div>
+<div class="ttc" id="firmware__special_8h_html_a50dc6fabdce8310c24cb73e86812185f"><div class="ttname"><a href="firmware__special_8h.html#a50dc6fabdce8310c24cb73e86812185f">firmwareSpecial::product</a></div><div class="ttdeci">const short product</div><div class="ttdef"><b>Definition:</b> <a href="firmware__special_8h_source.html#l00019">firmware_special.h:19</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_77b5d46a1bc2c75b90444f394c5858ea.html">ckb</a></li><li class="navelem"><a class="el" href="firmware__special_8h.html">firmware_special.h</a></li>
-    <li class="footer">Generated on Sat May 27 2017 21:13:53 for ckb-next by
+    <li class="footer">Generated on Sat Jun 3 2017 21:13:25 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

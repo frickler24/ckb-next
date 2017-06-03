@@ -35,7 +35,7 @@
 <area shape="rect" id="node43" href="$classKeyAction.html#ad393200d82796ade359ae0e1959dbca8" title="KeyAction::isSpecial" alt="" coords="697,199,839,225"/>
 <area shape="rect" id="node44" href="$classKeyAction.html#af79fe655405a66e7135170cfe57dafd5" title="KeyAction::specialInfo" alt="" coords="463,832,617,859"/>
 <area shape="rect" id="node45" href="$classKeyAction.html#ae657d934ff312fb11e306472472b31ef" title="isValidMacro checks whether a keyAction contains a valid macro. This is done easily: If the macro act..." alt="" coords="685,1035,851,1061"/>
-<area shape="rect" id="node46" href="$classKeyAction.html#ac72be90499e81c76ae9f908e2a17d1c0" title="macroContent returns the macro key definition only (the second part of the macro action). In this Implementation, strip the delay information. " alt="" coords="454,1085,626,1112"/>
+<area shape="rect" id="node46" href="$classKeyAction.html#ac72be90499e81c76ae9f908e2a17d1c0" title="macroContent returns the macro key definition only (the second part of the macro action). " alt="" coords="454,1085,626,1112"/>
 <area shape="rect" id="node47" href="$classKeyAction.html#ac6f54c2e553b6ab11b086f734eac819d" title="macroLine returns all interresting content for a macro definition. " alt="" coords="465,1136,615,1163"/>
 <area shape="rect" id="node48" href="$classKeyAction.html#a1182588fa5f3158d72830a4b064dfa2d" title="macroTiming returns the macro key definition with original timing infos (the fifth and up to now last..." alt="" coords="457,933,623,960"/>
 <area shape="rect" id="node49" href="$classRebindWidget.html#aba2b132778e1ab90c08daa154b99f506" title="RebindWidget::setCorrectRadioButton. " alt="" coords="453,209,627,250"/>

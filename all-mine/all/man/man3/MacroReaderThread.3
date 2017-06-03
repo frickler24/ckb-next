@@ -1,4 +1,4 @@
-.TH "MacroReaderThread" 3 "Sat May 27 2017" "Version v0.2.8 at branch all-mine" "ckb-next" \" -*- nroff -*-
+.TH "MacroReaderThread" 3 "Sat Jun 3 2017" "Version beta-v0.2.8+testing at branch all-mine" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -107,82 +107,79 @@ This is used, because the worker thread shouldn't get access to the UI elements 
 \fIline\fP holds the line just got from keyboard 
 .RE
 .PP
-We want to see the keys as they appear in the macroText Widget\&. 
+We want to see the keys as they appear in the macroText Widget\&.
 .PP
-Definition at line 28 of file macroreader\&.cpp\&.
+Because it is possible to change the Focus via keyboard, we must set the focus on each call\&. 
+.PP
+Definition at line 27 of file macroreader\&.cpp\&.
 .PP
 References macroBox, and macroText\&.
 .PP
 .nf
-28                                               {
-30 //    macroText->setFocus();
-31     QTextCursor c = macroText->textCursor();
-32     c\&.setPosition(macroText->toPlainText()\&.length());
-33     macroText->setTextCursor(c);
-34     macroBox->appendPlainText(line\&.left(line\&.size()-1));
-35 }
+27                                               {
+32     macroText->setFocus();
+33     QTextCursor c = macroText->textCursor();
+34     c\&.setPosition(macroText->toPlainText()\&.length());
+35     macroText->setTextCursor(c);
+36     macroBox->appendPlainText(line\&.left(line\&.size()-1));
+37 }
 .fi
 .SS "void MacroReaderThread::run ()"
 \fBMacroReaderThread::run\fP is the standard main function for a thread\&. Tries to open a file <macroPath><macroNumber> several times (in this case, it should be possible the first time (the code was recycled from \fBkb\&.cpp\fP)\&.
 .PP
-While the file is open, read lines an signal them via metaObject() to the main thread\&. When the file is closed by the sender, close it as reader and terminate\&. at least here we should set the focus into the text pane 
+While the file is open, read lines an signal them via metaObject() to the main thread\&. When the file is closed by the sender, close it as reader and terminate\&. 
 .PP
-Definition at line 45 of file macroreader\&.cpp\&.
+Definition at line 47 of file macroreader\&.cpp\&.
 .PP
 References macroBox, macroNumber, macroPath, and macroText\&.
 .PP
 .nf
-45                             {
-46     qDebug() << "MacroReader::run() started with" << macroNumber << "and" << macroPath << "and" << macroBox << "and" << macroText;
-47 
-49     //macroText->setFocus();
-50 
-51     QString notifyFile = (macroPath + "/notify%1")\&.arg(macroNumber);
-52     QFile macroFile(notifyFile);
-53     qDebug() << "trying to open notify-File" << notifyFile;
-54 
-55     // Wait a small amount of time for the node to open (100ms) (code reused from kb\&.cpp)
-56     QThread::usleep(100000);
-57     if(!macroFile\&.open(QIODevice::ReadOnly)){
-58         // If it's still not open, try again before giving up (1s at a time, 10s total)
-59         QThread::usleep(900000);
-60         for(int i = 1; i < 10; i++){
-61             if(macroFile\&.open(QIODevice::ReadOnly))
-62                 break;
-63             QThread::sleep(1);
+47                             {
+48     qDebug() << "MacroReader::run() started with" << macroNumber << "and" << macroPath << "and" << macroBox << "and" << macroText;
+49 
+50     QFile macroFile(macroPath);
+51     // Wait a small amount of time for the node to open (100ms) (code reused from kb\&.cpp)
+52     QThread::usleep(100000);
+53     if(!macroFile\&.open(QIODevice::ReadOnly)){
+54         // If it's still not open, try again before giving up (1s at a time, 10s total)
+55         QThread::usleep(900000);
+56         for(int i = 1; i < 10; i++){
+57             if(macroFile\&.open(QIODevice::ReadOnly))
+58                 break;
+59             QThread::sleep(1);
+60         }
+61         if(!macroFile\&.isOpen()) {
+62             qDebug() << QString("unable to open macroFile (%1)")\&.arg(macroPath);
+63             return;
 64         }
-65         if(!macroFile\&.isOpen()) {
-66             qDebug() << "unable to open macroFile" << notifyFile;
-67             return;
-68         }
-69     }
-70     // Read data from notification node macroPath
-71     // Count time between lines read from the interface
-72     QByteArray line;
-73     timeval t;
-74     gettimeofday(&t, NULL);
-75     double tstart = t\&.tv_sec+(t\&.tv_usec/1000000\&.0);
-76     bool firstline = true;
-77 
-78     while(macroFile\&.isOpen() && (line = macroFile\&.readLine())\&.length() > 0){
-79         QString text = QString::fromUtf8(line);
-80         gettimeofday(&t, NULL);
-81         double tnow = t\&.tv_sec+(t\&.tv_usec/1000000\&.0);
-82 
-83         // in the first line, there is only a delay "before start"\&. Don't use it\&.
-84         if (!firstline) {
-85             text\&.prepend ("\n");
-86             text\&.prepend (QString::number ((tnow - tstart) * 1000000\&.0, 'f', 0));
-87             text\&.prepend ("=");
-88         } else firstline = false;
-89         tstart = tnow;
-90 
-91         metaObject()->invokeMethod(this, "readMacro", Qt::QueuedConnection, Q_ARG(QString, text));
-92     }
-93     qDebug() << "MacroReader::run() ends\&.";
-94     macroFile\&.close();
-95     QThread::exit ();
-96 }
+65     }
+66     // Read data from notification node macroPath
+67     // Count time between lines read from the interface
+68     QByteArray line;
+69     timeval t;
+70     gettimeofday(&t, NULL);
+71     double tstart = t\&.tv_sec+(t\&.tv_usec/1000000\&.0);
+72     bool firstline = true;
+73 
+74     while(macroFile\&.isOpen() && (line = macroFile\&.readLine())\&.length() > 0){
+75         QString text = QString::fromUtf8(line);
+76         gettimeofday(&t, NULL);
+77         double tnow = t\&.tv_sec+(t\&.tv_usec/1000000\&.0);
+78 
+79         // in the first line, there is only a delay "before start"\&. Don't use it\&.
+80         if (!firstline) {
+81             text\&.prepend ("\n");
+82             text\&.prepend (QString::number ((tnow - tstart) * 1000000\&.0, 'f', 0));
+83             text\&.prepend ("=");
+84         } else firstline = false;
+85         tstart = tnow;
+86 
+87         metaObject()->invokeMethod(this, "readMacro", Qt::QueuedConnection, Q_ARG(QString, text));
+88     }
+89     qDebug() << "MacroReader::run() ends\&.";
+90     macroFile\&.close();
+91     QThread::exit ();
+92 }
 .fi
 .SH "Field Documentation"
 .PP 

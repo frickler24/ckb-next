@@ -21,6 +21,7 @@ var searchData=
   ['_7ekeyaction',['~KeyAction',['../classKeyAction.html#ae35b08526aa8540ecd74853220cf5b2d',1,'KeyAction']]],
   ['_7ekperfwidget',['~KPerfWidget',['../classKPerfWidget.html#a2b654bf11f3e031805335829dd6ae94c',1,'KPerfWidget']]],
   ['_7elayoutdialog',['~LayoutDialog',['../classLayoutDialog.html#a006b8f1da99541ffd2ae253e3b5d39df',1,'LayoutDialog']]],
+  ['_7emacromigrationtip',['~macroMigrationTip',['../classmacroMigrationTip.html#a4f0e6834d9acdc06d72edb7edaffe05e',1,'macroMigrationTip']]],
   ['_7emacroreader',['~MacroReader',['../classMacroReader.html#aef99737181807f4596a788f0601cdc9a',1,'MacroReader']]],
   ['_7emainwindow',['~MainWindow',['../classMainWindow.html#ae98d00a93bc118200eeef9f9bba1dba7',1,'MainWindow']]],
   ['_7emodeselectdialog',['~ModeSelectDialog',['../classModeSelectDialog.html#ad2abfe0c8f8f819e39abe22d7192dc1c',1,'ModeSelectDialog']]],
