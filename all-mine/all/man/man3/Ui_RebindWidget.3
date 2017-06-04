@@ -1,4 +1,4 @@
-.TH "Ui::RebindWidget" 3 "Sat Jun 3 2017" "Version beta-v0.2.8+testing at branch all-mine" "ckb-next" \" -*- nroff -*-
+.TH "Ui::RebindWidget" 3 "Sun Jun 4 2017" "Version beta-v0.2.8+testing at branch all-mine" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -351,16 +351,16 @@ Inherits \fBUi_RebindWidget\fP\&.
 .RI "QHBoxLayout * \fBdelayButtons\fP"
 .br
 .ti -1c
-.RI "QRadioButton * \fBrb_delay_no\fP"
-.br
-.ti -1c
-.RI "QRadioButton * \fBrb_delay_default\fP"
+.RI "QLabel * \fBtxtBuffer\fP"
 .br
 .ti -1c
 .RI "QRadioButton * \fBrb_delay_asTyped\fP"
 .br
 .ti -1c
-.RI "QLabel * \fBtxtBuffer\fP"
+.RI "QRadioButton * \fBrb_delay_default\fP"
+.br
+.ti -1c
+.RI "QRadioButton * \fBrb_delay_no\fP"
 .br
 .ti -1c
 .RI "QHBoxLayout * \fBhorizontalLayout\fP"
@@ -383,173 +383,173 @@ Inherits \fBUi_RebindWidget\fP\&.
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 1077 of file ui_rebindwidget\&.h\&.
+Definition at line 1072 of file ui_rebindwidget\&.h\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "void Ui_RebindWidget::retranslateUi (\fBQWidget\fP *RebindWidget)\fC [inline]\fP, \fC [inherited]\fP"
 
 .PP
-Definition at line 918 of file ui_rebindwidget\&.h\&.
+Definition at line 913 of file ui_rebindwidget\&.h\&.
 .PP
 References Ui_RebindWidget::actionTab, Ui_RebindWidget::animBox, Ui_RebindWidget::animButton, Ui_RebindWidget::animKrBox, Ui_RebindWidget::animOnceBox, Ui_RebindWidget::animTab, Ui_RebindWidget::applyButton, Ui_RebindWidget::btnClearMacro, Ui_RebindWidget::btnStartMacro, Ui_RebindWidget::btnStopMacro, Ui_RebindWidget::cancelButton, Ui_RebindWidget::dpiBox, Ui_RebindWidget::dpiButton, Ui_RebindWidget::dpiCustLabel, Ui_RebindWidget::dpiWarning, Ui_RebindWidget::fnBox, Ui_RebindWidget::fnButton, Ui_RebindWidget::groupBox, Ui_RebindWidget::groupBox_2, Ui_RebindWidget::groupBox_3, Ui_RebindWidget::groupBox_4, Ui_RebindWidget::keyTab, Ui_RebindWidget::lbl_macro, Ui_RebindWidget::lightBox, Ui_RebindWidget::lightButton, Ui_RebindWidget::lightWrapBox, Ui_RebindWidget::lockBox, Ui_RebindWidget::lockButton, Ui_RebindWidget::macroTab, Ui_RebindWidget::mb2Box, Ui_RebindWidget::mb2Button, Ui_RebindWidget::mbBox, Ui_RebindWidget::mbButton, Ui_RebindWidget::mediaBox, Ui_RebindWidget::mediaButton, Ui_RebindWidget::modBox, Ui_RebindWidget::modButton, Ui_RebindWidget::modeBox, Ui_RebindWidget::modeButton, Ui_RebindWidget::modeWrapBox, Ui_RebindWidget::mouseTab, Ui_RebindWidget::numBox, Ui_RebindWidget::numButton, Ui_RebindWidget::programKpButton, Ui_RebindWidget::programKpModeBox, Ui_RebindWidget::programKpSIBox, Ui_RebindWidget::programKrButton, Ui_RebindWidget::programKrModeBox, Ui_RebindWidget::programKrSIBox, Ui_RebindWidget::programTab, Ui_RebindWidget::progTipLabel, Ui_RebindWidget::pteMacroComment, Ui_RebindWidget::pteMacroText, Ui_RebindWidget::rb_delay_asTyped, Ui_RebindWidget::rb_delay_default, Ui_RebindWidget::rb_delay_no, Ui_RebindWidget::resetButton, Ui_RebindWidget::tabWidget, Ui_RebindWidget::txtBuffer, Ui_RebindWidget::typingBox, Ui_RebindWidget::typingButton, Ui_RebindWidget::unbindButton, Ui_RebindWidget::wheelBox, and Ui_RebindWidget::wheelButton\&.
 .PP
 Referenced by Ui_RebindWidget::setupUi()\&.
 .PP
 .nf
-919     {
-920         numBox->clear();
-921         numBox->insertItems(0, QStringList()
-922          << QString()
-923         );
-924         typingBox->clear();
-925         typingBox->insertItems(0, QStringList()
-926          << QString()
-927         );
-928         fnBox->clear();
-929         fnBox->insertItems(0, QStringList()
+914     {
+915         numBox->clear();
+916         numBox->insertItems(0, QStringList()
+917          << QString()
+918         );
+919         typingBox->clear();
+920         typingBox->insertItems(0, QStringList()
+921          << QString()
+922         );
+923         fnBox->clear();
+924         fnBox->insertItems(0, QStringList()
+925          << QString()
+926         );
+927         typingButton->setText(QApplication::translate("RebindWidget", "T&yping:", Q_NULLPTR));
+928         modBox->clear();
+929         modBox->insertItems(0, QStringList()
 930          << QString()
 931         );
-932         typingButton->setText(QApplication::translate("RebindWidget", "T&yping:", Q_NULLPTR));
-933         modBox->clear();
-934         modBox->insertItems(0, QStringList()
-935          << QString()
-936         );
-937         mediaButton->setText(QApplication::translate("RebindWidget", "&Media:", Q_NULLPTR));
-938         modButton->setText(QApplication::translate("RebindWidget", "Modifier:", Q_NULLPTR));
-939         fnButton->setText(QApplication::translate("RebindWidget", "Misce&llaneous:", Q_NULLPTR));
-940         mediaBox->clear();
-941         mediaBox->insertItems(0, QStringList()
-942          << QString()
-943         );
-944         numButton->setText(QApplication::translate("RebindWidget", "Number pad:", Q_NULLPTR));
-945         tabWidget->setTabText(tabWidget->indexOf(keyTab), QApplication::translate("RebindWidget", "Keyboard", Q_NULLPTR));
-946         dpiButton->setText(QApplication::translate("RebindWidget", "Change DPI:", Q_NULLPTR));
-947         mb2Box->clear();
-948         mb2Box->insertItems(0, QStringList()
-949          << QString()
-950          << QApplication::translate("RebindWidget", "4 (Back)", Q_NULLPTR)
-951          << QApplication::translate("RebindWidget", "5 (Forward)", Q_NULLPTR)
-952          << QApplication::translate("RebindWidget", "6", Q_NULLPTR)
-953          << QApplication::translate("RebindWidget", "7", Q_NULLPTR)
-954          << QApplication::translate("RebindWidget", "8", Q_NULLPTR)
-955         );
-956         dpiBox->clear();
-957         dpiBox->insertItems(0, QStringList()
-958          << QString()
-959          << QApplication::translate("RebindWidget", "(Up)", Q_NULLPTR)
-960          << QApplication::translate("RebindWidget", "(Down)", Q_NULLPTR)
-961          << QApplication::translate("RebindWidget", "Sniper", Q_NULLPTR)
-962          << QApplication::translate("RebindWidget", "1:", Q_NULLPTR)
-963          << QApplication::translate("RebindWidget", "2:", Q_NULLPTR)
-964          << QApplication::translate("RebindWidget", "3:", Q_NULLPTR)
-965          << QApplication::translate("RebindWidget", "4:", Q_NULLPTR)
-966          << QApplication::translate("RebindWidget", "5:", Q_NULLPTR)
-967          << QApplication::translate("RebindWidget", "Custom:", Q_NULLPTR)
-968         );
-969         mbBox->clear();
-970         mbBox->insertItems(0, QStringList()
-971          << QString()
-972          << QApplication::translate("RebindWidget", "Left", Q_NULLPTR)
-973          << QApplication::translate("RebindWidget", "Right", Q_NULLPTR)
-974          << QApplication::translate("RebindWidget", "Middle", Q_NULLPTR)
-975         );
-976         wheelBox->clear();
-977         wheelBox->insertItems(0, QStringList()
-978          << QString()
-979          << QApplication::translate("RebindWidget", "Up", Q_NULLPTR)
-980          << QApplication::translate("RebindWidget", "Down", Q_NULLPTR)
-981         );
-982         mbButton->setText(QApplication::translate("RebindWidget", "Standard button:", Q_NULLPTR));
-983         dpiWarning->setText(QApplication::translate("RebindWidget", "DPI is only available for mice\&.", Q_NULLPTR));
-984         wheelButton->setText(QApplication::translate("RebindWidget", "Whee&l:", Q_NULLPTR));
-985         mb2Button->setText(QApplication::translate("RebindWidget", "Special button:", Q_NULLPTR));
-986         dpiCustLabel->setText(QApplication::translate("RebindWidget", "x", Q_NULLPTR));
-987         tabWidget->setTabText(tabWidget->indexOf(mouseTab), QApplication::translate("RebindWidget", "Mouse", Q_NULLPTR));
-988         animBox->clear();
-989         animBox->insertItems(0, QStringList()
-990          << QString()
-991         );
-992         animKrBox->setText(QApplication::translate("RebindWidget", "Stop on key release", Q_NULLPTR));
-993         animOnceBox->setText(QApplication::translate("RebindWidget", "Restart every time", Q_NULLPTR));
-994         animButton->setText(QApplication::translate("RebindWidget", "Start animation on keypress:", Q_NULLPTR));
-995         tabWidget->setTabText(tabWidget->indexOf(animTab), QApplication::translate("RebindWidget", "Animation", Q_NULLPTR));
-996         modeButton->setText(QApplication::translate("RebindWidget", "Switch to mode:", Q_NULLPTR));
-997         modeWrapBox->setText(QApplication::translate("RebindWidget", "Wrap-around", Q_NULLPTR));
-998         lightWrapBox->setText(QApplication::translate("RebindWidget", "Wrap-around", Q_NULLPTR));
-999         lockButton->setText(QApplication::translate("RebindWidget", "Windows lock:", Q_NULLPTR));
-1000         lightBox->clear();
-1001         lightBox->insertItems(0, QStringList()
-1002          << QString()
-1003          << QApplication::translate("RebindWidget", "Up", Q_NULLPTR)
-1004          << QApplication::translate("RebindWidget", "Down", Q_NULLPTR)
-1005         );
-1006         lockBox->clear();
-1007         lockBox->insertItems(0, QStringList()
-1008          << QString()
-1009          << QApplication::translate("RebindWidget", "Toggle", Q_NULLPTR)
-1010          << QApplication::translate("RebindWidget", "On", Q_NULLPTR)
-1011          << QApplication::translate("RebindWidget", "Off", Q_NULLPTR)
-1012         );
-1013         lightButton->setText(QApplication::translate("RebindWidget", "Brightness:", Q_NULLPTR));
-1014         modeBox->clear();
-1015         modeBox->insertItems(0, QStringList()
-1016          << QString()
-1017          << QApplication::translate("RebindWidget", "(Previous)", Q_NULLPTR)
-1018          << QApplication::translate("RebindWidget", "(Next)", Q_NULLPTR)
-1019         );
-1020         tabWidget->setTabText(tabWidget->indexOf(actionTab), QApplication::translate("RebindWidget", "Special", Q_NULLPTR));
-1021         programKpButton->setText(QApplication::translate("RebindWidget", "Launch program on key press:", Q_NULLPTR));
-1022         programKrButton->setText(QApplication::translate("RebindWidget", "Launch program on key release:", Q_NULLPTR));
-1023         programKpSIBox->setText(QApplication::translate("RebindWidget", "Single instance", Q_NULLPTR));
-1024         programKpModeBox->clear();
-1025         programKpModeBox->insertItems(0, QStringList()
-1026          << QApplication::translate("RebindWidget", "Run indefinitely", Q_NULLPTR)
-1027          << QApplication::translate("RebindWidget", "Stop on release", Q_NULLPTR)
-1028          << QApplication::translate("RebindWidget", "Stop on re-press", Q_NULLPTR)
-1029         );
-1030         programKrSIBox->setText(QApplication::translate("RebindWidget", "Single instance", Q_NULLPTR));
-1031         programKrModeBox->clear();
-1032         programKrModeBox->insertItems(0, QStringList()
-1033          << QApplication::translate("RebindWidget", "Run indefinitely", Q_NULLPTR)
-1034          << QApplication::translate("RebindWidget", "Stop on re-press", Q_NULLPTR)
-1035         );
-1036         progTipLabel->setText(QApplication::translate("RebindWidget", "Tip", Q_NULLPTR));
-1037         tabWidget->setTabText(tabWidget->indexOf(programTab), QApplication::translate("RebindWidget", "Program", Q_NULLPTR));
-1038         groupBox_2->setTitle(QApplication::translate("RebindWidget", "Macro Key Actions", Q_NULLPTR));
-1039 #ifndef QT_NO_TOOLTIP
-1040         pteMacroComment->setToolTip(QApplication::translate("RebindWidget", "What is this macro for?", Q_NULLPTR));
-1041 #endif // QT_NO_TOOLTIP
-1042         pteMacroComment->setDocumentTitle(QString());
-1043         pteMacroComment->setPlainText(QString());
-1044         pteMacroText->setDocumentTitle(QString());
-1045         pteMacroText->setPlainText(QString());
-1046         groupBox_3->setTitle(QApplication::translate("RebindWidget", "Macro Comment", Q_NULLPTR));
-1047         groupBox_4->setTitle(QApplication::translate("RebindWidget", "Macro Text", Q_NULLPTR));
-1048         btnStopMacro->setText(QApplication::translate("RebindWidget", "Stop", Q_NULLPTR));
-1049         btnClearMacro->setText(QApplication::translate("RebindWidget", "Clear", Q_NULLPTR));
-1050         btnStartMacro->setText(QApplication::translate("RebindWidget", "Start", Q_NULLPTR));
-1051         groupBox->setTitle(QApplication::translate("RebindWidget", "Macro recording", Q_NULLPTR));
-1052         lbl_macro->setText(QApplication::translate("RebindWidget", "Comment label for help", Q_NULLPTR));
+932         mediaButton->setText(QApplication::translate("RebindWidget", "&Media:", Q_NULLPTR));
+933         modButton->setText(QApplication::translate("RebindWidget", "Modifier:", Q_NULLPTR));
+934         fnButton->setText(QApplication::translate("RebindWidget", "Misce&llaneous:", Q_NULLPTR));
+935         mediaBox->clear();
+936         mediaBox->insertItems(0, QStringList()
+937          << QString()
+938         );
+939         numButton->setText(QApplication::translate("RebindWidget", "Number pad:", Q_NULLPTR));
+940         tabWidget->setTabText(tabWidget->indexOf(keyTab), QApplication::translate("RebindWidget", "Keyboard", Q_NULLPTR));
+941         dpiButton->setText(QApplication::translate("RebindWidget", "Change DPI:", Q_NULLPTR));
+942         mb2Box->clear();
+943         mb2Box->insertItems(0, QStringList()
+944          << QString()
+945          << QApplication::translate("RebindWidget", "4 (Back)", Q_NULLPTR)
+946          << QApplication::translate("RebindWidget", "5 (Forward)", Q_NULLPTR)
+947          << QApplication::translate("RebindWidget", "6", Q_NULLPTR)
+948          << QApplication::translate("RebindWidget", "7", Q_NULLPTR)
+949          << QApplication::translate("RebindWidget", "8", Q_NULLPTR)
+950         );
+951         dpiBox->clear();
+952         dpiBox->insertItems(0, QStringList()
+953          << QString()
+954          << QApplication::translate("RebindWidget", "(Up)", Q_NULLPTR)
+955          << QApplication::translate("RebindWidget", "(Down)", Q_NULLPTR)
+956          << QApplication::translate("RebindWidget", "Sniper", Q_NULLPTR)
+957          << QApplication::translate("RebindWidget", "1:", Q_NULLPTR)
+958          << QApplication::translate("RebindWidget", "2:", Q_NULLPTR)
+959          << QApplication::translate("RebindWidget", "3:", Q_NULLPTR)
+960          << QApplication::translate("RebindWidget", "4:", Q_NULLPTR)
+961          << QApplication::translate("RebindWidget", "5:", Q_NULLPTR)
+962          << QApplication::translate("RebindWidget", "Custom:", Q_NULLPTR)
+963         );
+964         mbBox->clear();
+965         mbBox->insertItems(0, QStringList()
+966          << QString()
+967          << QApplication::translate("RebindWidget", "Left", Q_NULLPTR)
+968          << QApplication::translate("RebindWidget", "Right", Q_NULLPTR)
+969          << QApplication::translate("RebindWidget", "Middle", Q_NULLPTR)
+970         );
+971         wheelBox->clear();
+972         wheelBox->insertItems(0, QStringList()
+973          << QString()
+974          << QApplication::translate("RebindWidget", "Up", Q_NULLPTR)
+975          << QApplication::translate("RebindWidget", "Down", Q_NULLPTR)
+976         );
+977         mbButton->setText(QApplication::translate("RebindWidget", "Standard button:", Q_NULLPTR));
+978         dpiWarning->setText(QApplication::translate("RebindWidget", "DPI is only available for mice\&.", Q_NULLPTR));
+979         wheelButton->setText(QApplication::translate("RebindWidget", "Whee&l:", Q_NULLPTR));
+980         mb2Button->setText(QApplication::translate("RebindWidget", "Special button:", Q_NULLPTR));
+981         dpiCustLabel->setText(QApplication::translate("RebindWidget", "x", Q_NULLPTR));
+982         tabWidget->setTabText(tabWidget->indexOf(mouseTab), QApplication::translate("RebindWidget", "Mouse", Q_NULLPTR));
+983         animBox->clear();
+984         animBox->insertItems(0, QStringList()
+985          << QString()
+986         );
+987         animKrBox->setText(QApplication::translate("RebindWidget", "Stop on key release", Q_NULLPTR));
+988         animOnceBox->setText(QApplication::translate("RebindWidget", "Restart every time", Q_NULLPTR));
+989         animButton->setText(QApplication::translate("RebindWidget", "Start animation on keypress:", Q_NULLPTR));
+990         tabWidget->setTabText(tabWidget->indexOf(animTab), QApplication::translate("RebindWidget", "Animation", Q_NULLPTR));
+991         modeButton->setText(QApplication::translate("RebindWidget", "Switch to mode:", Q_NULLPTR));
+992         modeWrapBox->setText(QApplication::translate("RebindWidget", "Wrap-around", Q_NULLPTR));
+993         lightWrapBox->setText(QApplication::translate("RebindWidget", "Wrap-around", Q_NULLPTR));
+994         lockButton->setText(QApplication::translate("RebindWidget", "Windows lock:", Q_NULLPTR));
+995         lightBox->clear();
+996         lightBox->insertItems(0, QStringList()
+997          << QString()
+998          << QApplication::translate("RebindWidget", "Up", Q_NULLPTR)
+999          << QApplication::translate("RebindWidget", "Down", Q_NULLPTR)
+1000         );
+1001         lockBox->clear();
+1002         lockBox->insertItems(0, QStringList()
+1003          << QString()
+1004          << QApplication::translate("RebindWidget", "Toggle", Q_NULLPTR)
+1005          << QApplication::translate("RebindWidget", "On", Q_NULLPTR)
+1006          << QApplication::translate("RebindWidget", "Off", Q_NULLPTR)
+1007         );
+1008         lightButton->setText(QApplication::translate("RebindWidget", "Brightness:", Q_NULLPTR));
+1009         modeBox->clear();
+1010         modeBox->insertItems(0, QStringList()
+1011          << QString()
+1012          << QApplication::translate("RebindWidget", "(Previous)", Q_NULLPTR)
+1013          << QApplication::translate("RebindWidget", "(Next)", Q_NULLPTR)
+1014         );
+1015         tabWidget->setTabText(tabWidget->indexOf(actionTab), QApplication::translate("RebindWidget", "Special", Q_NULLPTR));
+1016         programKpButton->setText(QApplication::translate("RebindWidget", "Launch program on key press:", Q_NULLPTR));
+1017         programKrButton->setText(QApplication::translate("RebindWidget", "Launch program on key release:", Q_NULLPTR));
+1018         programKpSIBox->setText(QApplication::translate("RebindWidget", "Single instance", Q_NULLPTR));
+1019         programKpModeBox->clear();
+1020         programKpModeBox->insertItems(0, QStringList()
+1021          << QApplication::translate("RebindWidget", "Run indefinitely", Q_NULLPTR)
+1022          << QApplication::translate("RebindWidget", "Stop on release", Q_NULLPTR)
+1023          << QApplication::translate("RebindWidget", "Stop on re-press", Q_NULLPTR)
+1024         );
+1025         programKrSIBox->setText(QApplication::translate("RebindWidget", "Single instance", Q_NULLPTR));
+1026         programKrModeBox->clear();
+1027         programKrModeBox->insertItems(0, QStringList()
+1028          << QApplication::translate("RebindWidget", "Run indefinitely", Q_NULLPTR)
+1029          << QApplication::translate("RebindWidget", "Stop on re-press", Q_NULLPTR)
+1030         );
+1031         progTipLabel->setText(QApplication::translate("RebindWidget", "Tip", Q_NULLPTR));
+1032         tabWidget->setTabText(tabWidget->indexOf(programTab), QApplication::translate("RebindWidget", "Program", Q_NULLPTR));
+1033         groupBox_2->setTitle(QApplication::translate("RebindWidget", "Macro Key Actions", Q_NULLPTR));
+1034 #ifndef QT_NO_TOOLTIP
+1035         pteMacroComment->setToolTip(QApplication::translate("RebindWidget", "What is this macro for?", Q_NULLPTR));
+1036 #endif // QT_NO_TOOLTIP
+1037         pteMacroComment->setDocumentTitle(QString());
+1038         pteMacroComment->setPlainText(QString());
+1039         pteMacroText->setDocumentTitle(QString());
+1040         pteMacroText->setPlainText(QString());
+1041         groupBox_3->setTitle(QApplication::translate("RebindWidget", "Macro Comment", Q_NULLPTR));
+1042         groupBox_4->setTitle(QApplication::translate("RebindWidget", "Macro Text", Q_NULLPTR));
+1043         btnStopMacro->setText(QApplication::translate("RebindWidget", "Stop", Q_NULLPTR));
+1044         btnClearMacro->setText(QApplication::translate("RebindWidget", "Clear", Q_NULLPTR));
+1045         btnStartMacro->setText(QApplication::translate("RebindWidget", "Start", Q_NULLPTR));
+1046         groupBox->setTitle(QApplication::translate("RebindWidget", "Macro recording", Q_NULLPTR));
+1047         lbl_macro->setText(QApplication::translate("RebindWidget", "Comment label for help", Q_NULLPTR));
+1048         txtBuffer->setText(QString());
+1049 #ifndef QT_NO_WHATSTHIS
+1050         rb_delay_asTyped->setWhatsThis(QApplication::translate("RebindWidget", "configure delays between keystrokes: Remember delays as they had been typed while the macro definition process", Q_NULLPTR));
+1051 #endif // QT_NO_WHATSTHIS
+1052         rb_delay_asTyped->setText(QApplication::translate("RebindWidget", "as typed", Q_NULLPTR));
 1053 #ifndef QT_NO_WHATSTHIS
-1054         rb_delay_no->setWhatsThis(QApplication::translate("RebindWidget", "configure delays between keystrokes: Disable delay", Q_NULLPTR));
+1054         rb_delay_default->setWhatsThis(QApplication::translate("RebindWidget", "configure delays between keystrokes: Set delay to default values: 20us up to 15 chars, 200us above", Q_NULLPTR));
 1055 #endif // QT_NO_WHATSTHIS
-1056         rb_delay_no->setText(QApplication::translate("RebindWidget", "No delay", Q_NULLPTR));
+1056         rb_delay_default->setText(QApplication::translate("RebindWidget", "default", Q_NULLPTR));
 1057 #ifndef QT_NO_WHATSTHIS
-1058         rb_delay_default->setWhatsThis(QApplication::translate("RebindWidget", "configure delays between keystrokes: Set delay to default values: 20us up to 15 chars, 200us above", Q_NULLPTR));
+1058         rb_delay_no->setWhatsThis(QApplication::translate("RebindWidget", "configure delays between keystrokes: Disable delay", Q_NULLPTR));
 1059 #endif // QT_NO_WHATSTHIS
-1060         rb_delay_default->setText(QApplication::translate("RebindWidget", "default", Q_NULLPTR));
-1061 #ifndef QT_NO_WHATSTHIS
-1062         rb_delay_asTyped->setWhatsThis(QApplication::translate("RebindWidget", "configure delays between keystrokes: Remember delays as they had been typed while the macro definition process", Q_NULLPTR));
-1063 #endif // QT_NO_WHATSTHIS
-1064         rb_delay_asTyped->setText(QApplication::translate("RebindWidget", "as typed", Q_NULLPTR));
-1065         txtBuffer->setText(QString());
-1066         tabWidget->setTabText(tabWidget->indexOf(macroTab), QApplication::translate("RebindWidget", "Macro", Q_NULLPTR));
-1067         unbindButton->setText(QApplication::translate("RebindWidget", "Unbind", Q_NULLPTR));
-1068         resetButton->setText(QApplication::translate("RebindWidget", "Reset to Default", Q_NULLPTR));
-1069         cancelButton->setText(QApplication::translate("RebindWidget", "Cancel", Q_NULLPTR));
-1070         applyButton->setText(QApplication::translate("RebindWidget", "Apply", Q_NULLPTR));
-1071         Q_UNUSED(RebindWidget);
-1072     } // retranslateUi
+1060         rb_delay_no->setText(QApplication::translate("RebindWidget", "No delay", Q_NULLPTR));
+1061         tabWidget->setTabText(tabWidget->indexOf(macroTab), QApplication::translate("RebindWidget", "Macro", Q_NULLPTR));
+1062         unbindButton->setText(QApplication::translate("RebindWidget", "Unbind", Q_NULLPTR));
+1063         resetButton->setText(QApplication::translate("RebindWidget", "Reset to Default", Q_NULLPTR));
+1064         cancelButton->setText(QApplication::translate("RebindWidget", "Cancel", Q_NULLPTR));
+1065         applyButton->setText(QApplication::translate("RebindWidget", "Apply", Q_NULLPTR));
+1066         Q_UNUSED(RebindWidget);
+1067     } // retranslateUi
 .fi
 .SS "void Ui_RebindWidget::setupUi (\fBQWidget\fP *RebindWidget)\fC [inline]\fP, \fC [inherited]\fP"
 
@@ -1151,174 +1151,169 @@ Referenced by RebindWidget::RebindWidget()\&.
 746         delayButtons->setSpacing(0);
 747         delayButtons->setObjectName(QStringLiteral("delayButtons"));
 748         delayButtons->setSizeConstraint(QLayout::SetMinimumSize);
-749         rb_delay_no = new QRadioButton(pteMacroBox);
-750         rb_delay_no->setObjectName(QStringLiteral("rb_delay_no"));
-751         rb_delay_no->setStyleSheet(QStringLiteral("font: 10pt ; color:  green;"));
-752 
-753         delayButtons->addWidget(rb_delay_no);
-754 
-755         rb_delay_default = new QRadioButton(pteMacroBox);
-756         rb_delay_default->setObjectName(QStringLiteral("rb_delay_default"));
-757         rb_delay_default->setStyleSheet(QStringLiteral("font: 10pt ; color:  green;"));
-758         rb_delay_default->setChecked(false);
-759         rb_delay_default->setAutoExclusive(true);
-760 
-761         delayButtons->addWidget(rb_delay_default);
-762 
-763         rb_delay_asTyped = new QRadioButton(pteMacroBox);
-764         rb_delay_asTyped->setObjectName(QStringLiteral("rb_delay_asTyped"));
-765         rb_delay_asTyped->setStyleSheet(QStringLiteral("font: 10pt ; color:  green;"));
-766         rb_delay_asTyped->setChecked(true);
-767 
-768         delayButtons->addWidget(rb_delay_asTyped);
-769 
-770         txtBuffer = new QLabel(macroTab);
-771         txtBuffer->setObjectName(QStringLiteral("txtBuffer"));
-772         txtBuffer->setEnabled(false);
-773         txtBuffer->setGeometry(QRect(300, 100, 0, 0));
-774         QSizePolicy sizePolicy5(QSizePolicy::Fixed, QSizePolicy::Fixed);
-775         sizePolicy5\&.setHorizontalStretch(0);
-776         sizePolicy5\&.setVerticalStretch(0);
-777         sizePolicy5\&.setHeightForWidth(txtBuffer->sizePolicy()\&.hasHeightForWidth());
-778         txtBuffer->setSizePolicy(sizePolicy5);
-779         txtBuffer->setMaximumSize(QSize(0, 0));
-780         txtBuffer->setContextMenuPolicy(Qt::NoContextMenu);
-781 #ifndef QT_NO_TOOLTIP
-782         txtBuffer->setToolTip(QStringLiteral(""));
-783 #endif // QT_NO_TOOLTIP
-784         txtBuffer->setToolTipDuration(0);
-785 #ifndef QT_NO_STATUSTIP
-786         txtBuffer->setStatusTip(QStringLiteral(""));
-787 #endif // QT_NO_STATUSTIP
-788 #ifndef QT_NO_WHATSTHIS
-789         txtBuffer->setWhatsThis(QStringLiteral(""));
-790 #endif // QT_NO_WHATSTHIS
-791         txtBuffer->setFrameShadow(QFrame::Plain);
-792         txtBuffer->setLineWidth(0);
-793         txtBuffer->setTextFormat(Qt::PlainText);
-794         txtBuffer->setIndent(0);
-795         txtBuffer->setTextInteractionFlags(Qt::NoTextInteraction);
-796         tabWidget->addTab(macroTab, QString());
-797         pteMacroComment->raise();
-798         layoutWidget->raise();
-799         layoutWidget1->raise();
-800         pteMacroText->raise();
-801         layoutWidget_2->raise();
-802         lbl_macro->raise();
-803         pteMacroBox->raise();
-804         rb_delay_asTyped->raise();
-805         rb_delay_default->raise();
-806         rb_delay_no->raise();
-807 
-808         verticalLayout->addWidget(tabWidget);
-809 
-810         horizontalLayout = new QHBoxLayout();
-811         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-812         horizontalSpacer_14 = new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Minimum);
-813 
-814         horizontalLayout->addItem(horizontalSpacer_14);
-815 
-816         unbindButton = new QPushButton(RebindWidget);
-817         unbindButton->setObjectName(QStringLiteral("unbindButton"));
-818         QSizePolicy sizePolicy6(QSizePolicy::Minimum, QSizePolicy::Minimum);
-819         sizePolicy6\&.setHorizontalStretch(0);
-820         sizePolicy6\&.setVerticalStretch(0);
-821         sizePolicy6\&.setHeightForWidth(unbindButton->sizePolicy()\&.hasHeightForWidth());
-822         unbindButton->setSizePolicy(sizePolicy6);
-823 
-824         horizontalLayout->addWidget(unbindButton);
+749         txtBuffer = new QLabel(macroTab);
+750         txtBuffer->setObjectName(QStringLiteral("txtBuffer"));
+751         txtBuffer->setEnabled(false);
+752         txtBuffer->setGeometry(QRect(300, 100, 0, 0));
+753         QSizePolicy sizePolicy5(QSizePolicy::Fixed, QSizePolicy::Fixed);
+754         sizePolicy5\&.setHorizontalStretch(0);
+755         sizePolicy5\&.setVerticalStretch(0);
+756         sizePolicy5\&.setHeightForWidth(txtBuffer->sizePolicy()\&.hasHeightForWidth());
+757         txtBuffer->setSizePolicy(sizePolicy5);
+758         txtBuffer->setMaximumSize(QSize(0, 0));
+759         txtBuffer->setContextMenuPolicy(Qt::NoContextMenu);
+760 #ifndef QT_NO_TOOLTIP
+761         txtBuffer->setToolTip(QStringLiteral(""));
+762 #endif // QT_NO_TOOLTIP
+763         txtBuffer->setToolTipDuration(0);
+764 #ifndef QT_NO_STATUSTIP
+765         txtBuffer->setStatusTip(QStringLiteral(""));
+766 #endif // QT_NO_STATUSTIP
+767 #ifndef QT_NO_WHATSTHIS
+768         txtBuffer->setWhatsThis(QStringLiteral(""));
+769 #endif // QT_NO_WHATSTHIS
+770         txtBuffer->setFrameShadow(QFrame::Plain);
+771         txtBuffer->setLineWidth(0);
+772         txtBuffer->setTextFormat(Qt::PlainText);
+773         txtBuffer->setIndent(0);
+774         txtBuffer->setTextInteractionFlags(Qt::NoTextInteraction);
+775         rb_delay_asTyped = new QRadioButton(macroTab);
+776         rb_delay_asTyped->setObjectName(QStringLiteral("rb_delay_asTyped"));
+777         rb_delay_asTyped->setGeometry(QRect(190, 170, 81, 21));
+778         rb_delay_asTyped->setStyleSheet(QStringLiteral("font: 10pt ; color:  green;"));
+779         rb_delay_asTyped->setChecked(true);
+780         rb_delay_default = new QRadioButton(macroTab);
+781         rb_delay_default->setObjectName(QStringLiteral("rb_delay_default"));
+782         rb_delay_default->setGeometry(QRect(119, 170, 71, 21));
+783         rb_delay_default->setStyleSheet(QStringLiteral("font: 10pt ; color:  green;"));
+784         rb_delay_default->setChecked(false);
+785         rb_delay_default->setAutoExclusive(true);
+786         rb_delay_no = new QRadioButton(macroTab);
+787         rb_delay_no->setObjectName(QStringLiteral("rb_delay_no"));
+788         rb_delay_no->setGeometry(QRect(45, 170, 74, 21));
+789         rb_delay_no->setStyleSheet(QStringLiteral("font: 10pt ; color:  green;"));
+790         tabWidget->addTab(macroTab, QString());
+791         txtBuffer->raise();
+792         pteMacroComment->raise();
+793         layoutWidget->raise();
+794         layoutWidget1->raise();
+795         pteMacroText->raise();
+796         layoutWidget_2->raise();
+797         lbl_macro->raise();
+798         pteMacroBox->raise();
+799         rb_delay_asTyped->raise();
+800         rb_delay_default->raise();
+801         rb_delay_no->raise();
+802 
+803         verticalLayout->addWidget(tabWidget);
+804 
+805         horizontalLayout = new QHBoxLayout();
+806         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+807         horizontalSpacer_14 = new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Minimum);
+808 
+809         horizontalLayout->addItem(horizontalSpacer_14);
+810 
+811         unbindButton = new QPushButton(RebindWidget);
+812         unbindButton->setObjectName(QStringLiteral("unbindButton"));
+813         QSizePolicy sizePolicy6(QSizePolicy::Minimum, QSizePolicy::Minimum);
+814         sizePolicy6\&.setHorizontalStretch(0);
+815         sizePolicy6\&.setVerticalStretch(0);
+816         sizePolicy6\&.setHeightForWidth(unbindButton->sizePolicy()\&.hasHeightForWidth());
+817         unbindButton->setSizePolicy(sizePolicy6);
+818 
+819         horizontalLayout->addWidget(unbindButton);
+820 
+821         resetButton = new QPushButton(RebindWidget);
+822         resetButton->setObjectName(QStringLiteral("resetButton"));
+823         sizePolicy6\&.setHeightForWidth(resetButton->sizePolicy()\&.hasHeightForWidth());
+824         resetButton->setSizePolicy(sizePolicy6);
 825 
-826         resetButton = new QPushButton(RebindWidget);
-827         resetButton->setObjectName(QStringLiteral("resetButton"));
-828         sizePolicy6\&.setHeightForWidth(resetButton->sizePolicy()\&.hasHeightForWidth());
-829         resetButton->setSizePolicy(sizePolicy6);
-830 
-831         horizontalLayout->addWidget(resetButton);
+826         horizontalLayout->addWidget(resetButton);
+827 
+828         cancelButton = new QPushButton(RebindWidget);
+829         cancelButton->setObjectName(QStringLiteral("cancelButton"));
+830         sizePolicy6\&.setHeightForWidth(cancelButton->sizePolicy()\&.hasHeightForWidth());
+831         cancelButton->setSizePolicy(sizePolicy6);
 832 
-833         cancelButton = new QPushButton(RebindWidget);
-834         cancelButton->setObjectName(QStringLiteral("cancelButton"));
-835         sizePolicy6\&.setHeightForWidth(cancelButton->sizePolicy()\&.hasHeightForWidth());
-836         cancelButton->setSizePolicy(sizePolicy6);
-837 
-838         horizontalLayout->addWidget(cancelButton);
+833         horizontalLayout->addWidget(cancelButton);
+834 
+835         applyButton = new QPushButton(RebindWidget);
+836         applyButton->setObjectName(QStringLiteral("applyButton"));
+837         sizePolicy6\&.setHeightForWidth(applyButton->sizePolicy()\&.hasHeightForWidth());
+838         applyButton->setSizePolicy(sizePolicy6);
 839 
-840         applyButton = new QPushButton(RebindWidget);
-841         applyButton->setObjectName(QStringLiteral("applyButton"));
-842         sizePolicy6\&.setHeightForWidth(applyButton->sizePolicy()\&.hasHeightForWidth());
-843         applyButton->setSizePolicy(sizePolicy6);
+840         horizontalLayout->addWidget(applyButton);
+841 
+842 
+843         verticalLayout->addLayout(horizontalLayout);
 844 
-845         horizontalLayout->addWidget(applyButton);
-846 
-847 
-848         verticalLayout->addLayout(horizontalLayout);
-849 
-850         QWidget::setTabOrder(tabWidget, pteMacroComment);
-851         QWidget::setTabOrder(pteMacroComment, pteMacroBox);
-852         QWidget::setTabOrder(pteMacroBox, dpiButton);
-853         QWidget::setTabOrder(dpiButton, mb2Box);
-854         QWidget::setTabOrder(mb2Box, btnStartMacro);
-855         QWidget::setTabOrder(btnStartMacro, fnBox);
-856         QWidget::setTabOrder(fnBox, dpiCustYBox);
-857         QWidget::setTabOrder(dpiCustYBox, dpiBox);
-858         QWidget::setTabOrder(dpiBox, applyButton);
-859         QWidget::setTabOrder(applyButton, mbBox);
-860         QWidget::setTabOrder(mbBox, cancelButton);
-861         QWidget::setTabOrder(cancelButton, wheelBox);
-862         QWidget::setTabOrder(wheelBox, btnStopMacro);
-863         QWidget::setTabOrder(btnStopMacro, mbButton);
-864         QWidget::setTabOrder(mbButton, dpiCustXBox);
-865         QWidget::setTabOrder(dpiCustXBox, btnClearMacro);
-866         QWidget::setTabOrder(btnClearMacro, wheelButton);
-867         QWidget::setTabOrder(wheelButton, mb2Button);
-868         QWidget::setTabOrder(mb2Button, animBox);
-869         QWidget::setTabOrder(animBox, animKrBox);
-870         QWidget::setTabOrder(animKrBox, animOnceBox);
-871         QWidget::setTabOrder(animOnceBox, animButton);
-872         QWidget::setTabOrder(animButton, modeButton);
-873         QWidget::setTabOrder(modeButton, modeWrapBox);
-874         QWidget::setTabOrder(modeWrapBox, lightWrapBox);
-875         QWidget::setTabOrder(lightWrapBox, lockButton);
-876         QWidget::setTabOrder(lockButton, lightBox);
-877         QWidget::setTabOrder(lightBox, resetButton);
-878         QWidget::setTabOrder(resetButton, lockBox);
-879         QWidget::setTabOrder(lockBox, lightButton);
-880         QWidget::setTabOrder(lightButton, modeBox);
-881         QWidget::setTabOrder(modeBox, unbindButton);
-882         QWidget::setTabOrder(unbindButton, programKpButton);
-883         QWidget::setTabOrder(programKpButton, programKpBox);
-884         QWidget::setTabOrder(programKpBox, programKrBox);
-885         QWidget::setTabOrder(programKrBox, programKrButton);
-886         QWidget::setTabOrder(programKrButton, programKpSIBox);
-887         QWidget::setTabOrder(programKpSIBox, programKpModeBox);
-888         QWidget::setTabOrder(programKpModeBox, programKrSIBox);
-889         QWidget::setTabOrder(programKrSIBox, programKrModeBox);
-890         QWidget::setTabOrder(programKrModeBox, typingBox);
-891         QWidget::setTabOrder(typingBox, numBox);
-892         QWidget::setTabOrder(numBox, pteMacroText);
-893         QWidget::setTabOrder(pteMacroText, typingButton);
-894         QWidget::setTabOrder(typingButton, mediaButton);
-895         QWidget::setTabOrder(mediaButton, modBox);
-896         QWidget::setTabOrder(modBox, modButton);
-897         QWidget::setTabOrder(modButton, fnButton);
-898         QWidget::setTabOrder(fnButton, mediaBox);
-899         QWidget::setTabOrder(mediaBox, numButton);
-900 
-901         retranslateUi(RebindWidget);
-902         QObject::connect(btnClearMacro, SIGNAL(clicked()), pteMacroText, SLOT(clear()));
-903         QObject::connect(btnClearMacro, SIGNAL(clicked()), pteMacroComment, SLOT(clear()));
-904         QObject::connect(btnClearMacro, SIGNAL(clicked()), btnStopMacro, SLOT(animateClick()));
-905         QObject::connect(cancelButton, SIGNAL(clicked()), txtBuffer, SLOT(clear()));
-906         QObject::connect(btnClearMacro, SIGNAL(clicked()), txtBuffer, SLOT(clear()));
-907         QObject::connect(btnStartMacro, SIGNAL(clicked()), txtBuffer, SLOT(clear()));
-908         QObject::connect(unbindButton, SIGNAL(clicked()), txtBuffer, SLOT(clear()));
-909         QObject::connect(resetButton, SIGNAL(clicked()), txtBuffer, SLOT(clear()));
-910 
-911         tabWidget->setCurrentIndex(5);
-912         applyButton->setDefault(true);
-913 
-914 
-915         QMetaObject::connectSlotsByName(RebindWidget);
-916     } // setupUi
+845         QWidget::setTabOrder(tabWidget, pteMacroComment);
+846         QWidget::setTabOrder(pteMacroComment, pteMacroBox);
+847         QWidget::setTabOrder(pteMacroBox, dpiButton);
+848         QWidget::setTabOrder(dpiButton, mb2Box);
+849         QWidget::setTabOrder(mb2Box, btnStartMacro);
+850         QWidget::setTabOrder(btnStartMacro, fnBox);
+851         QWidget::setTabOrder(fnBox, dpiCustYBox);
+852         QWidget::setTabOrder(dpiCustYBox, dpiBox);
+853         QWidget::setTabOrder(dpiBox, applyButton);
+854         QWidget::setTabOrder(applyButton, mbBox);
+855         QWidget::setTabOrder(mbBox, cancelButton);
+856         QWidget::setTabOrder(cancelButton, wheelBox);
+857         QWidget::setTabOrder(wheelBox, btnStopMacro);
+858         QWidget::setTabOrder(btnStopMacro, mbButton);
+859         QWidget::setTabOrder(mbButton, dpiCustXBox);
+860         QWidget::setTabOrder(dpiCustXBox, btnClearMacro);
+861         QWidget::setTabOrder(btnClearMacro, wheelButton);
+862         QWidget::setTabOrder(wheelButton, mb2Button);
+863         QWidget::setTabOrder(mb2Button, animBox);
+864         QWidget::setTabOrder(animBox, animKrBox);
+865         QWidget::setTabOrder(animKrBox, animOnceBox);
+866         QWidget::setTabOrder(animOnceBox, animButton);
+867         QWidget::setTabOrder(animButton, modeButton);
+868         QWidget::setTabOrder(modeButton, modeWrapBox);
+869         QWidget::setTabOrder(modeWrapBox, lightWrapBox);
+870         QWidget::setTabOrder(lightWrapBox, lockButton);
+871         QWidget::setTabOrder(lockButton, lightBox);
+872         QWidget::setTabOrder(lightBox, resetButton);
+873         QWidget::setTabOrder(resetButton, lockBox);
+874         QWidget::setTabOrder(lockBox, lightButton);
+875         QWidget::setTabOrder(lightButton, modeBox);
+876         QWidget::setTabOrder(modeBox, unbindButton);
+877         QWidget::setTabOrder(unbindButton, programKpButton);
+878         QWidget::setTabOrder(programKpButton, programKpBox);
+879         QWidget::setTabOrder(programKpBox, programKrBox);
+880         QWidget::setTabOrder(programKrBox, programKrButton);
+881         QWidget::setTabOrder(programKrButton, programKpSIBox);
+882         QWidget::setTabOrder(programKpSIBox, programKpModeBox);
+883         QWidget::setTabOrder(programKpModeBox, programKrSIBox);
+884         QWidget::setTabOrder(programKrSIBox, programKrModeBox);
+885         QWidget::setTabOrder(programKrModeBox, typingBox);
+886         QWidget::setTabOrder(typingBox, numBox);
+887         QWidget::setTabOrder(numBox, pteMacroText);
+888         QWidget::setTabOrder(pteMacroText, typingButton);
+889         QWidget::setTabOrder(typingButton, mediaButton);
+890         QWidget::setTabOrder(mediaButton, modBox);
+891         QWidget::setTabOrder(modBox, modButton);
+892         QWidget::setTabOrder(modButton, fnButton);
+893         QWidget::setTabOrder(fnButton, mediaBox);
+894         QWidget::setTabOrder(mediaBox, numButton);
+895 
+896         retranslateUi(RebindWidget);
+897         QObject::connect(btnClearMacro, SIGNAL(clicked()), pteMacroText, SLOT(clear()));
+898         QObject::connect(btnClearMacro, SIGNAL(clicked()), pteMacroComment, SLOT(clear()));
+899         QObject::connect(btnClearMacro, SIGNAL(clicked()), btnStopMacro, SLOT(animateClick()));
+900         QObject::connect(cancelButton, SIGNAL(clicked()), txtBuffer, SLOT(clear()));
+901         QObject::connect(btnClearMacro, SIGNAL(clicked()), txtBuffer, SLOT(clear()));
+902         QObject::connect(btnStartMacro, SIGNAL(clicked()), txtBuffer, SLOT(clear()));
+903         QObject::connect(unbindButton, SIGNAL(clicked()), txtBuffer, SLOT(clear()));
+904         QObject::connect(resetButton, SIGNAL(clicked()), txtBuffer, SLOT(clear()));
+905 
+906         tabWidget->setCurrentIndex(0);
+907         applyButton->setDefault(true);
+908 
+909 
+910         QMetaObject::connectSlotsByName(RebindWidget);
+911     } // setupUi
 .fi
 .SH "Field Documentation"
 .PP 
@@ -1901,19 +1896,19 @@ Referenced by RebindWidget::applyChanges(), RebindWidget::on_btnStartMacro_click
 .SS "QRadioButton* Ui_RebindWidget::rb_delay_asTyped\fC [inherited]\fP"
 
 .PP
-Definition at line 149 of file ui_rebindwidget\&.h\&.
+Definition at line 148 of file ui_rebindwidget\&.h\&.
 .PP
 Referenced by RebindWidget::applyChanges(), RebindWidget::on_btnStartMacro_clicked(), RebindWidget::on_btnStopMacro_clicked(), Ui_RebindWidget::retranslateUi(), RebindWidget::setCorrectRadioButton(), and Ui_RebindWidget::setupUi()\&.
 .SS "QRadioButton* Ui_RebindWidget::rb_delay_default\fC [inherited]\fP"
 
 .PP
-Definition at line 148 of file ui_rebindwidget\&.h\&.
+Definition at line 149 of file ui_rebindwidget\&.h\&.
 .PP
 Referenced by RebindWidget::convertMacroBox(), RebindWidget::on_btnStartMacro_clicked(), RebindWidget::on_btnStopMacro_clicked(), Ui_RebindWidget::retranslateUi(), RebindWidget::setCorrectRadioButton(), and Ui_RebindWidget::setupUi()\&.
 .SS "QRadioButton* Ui_RebindWidget::rb_delay_no\fC [inherited]\fP"
 
 .PP
-Definition at line 147 of file ui_rebindwidget\&.h\&.
+Definition at line 150 of file ui_rebindwidget\&.h\&.
 .PP
 Referenced by RebindWidget::convertMacroBox(), RebindWidget::on_btnStartMacro_clicked(), RebindWidget::on_btnStopMacro_clicked(), Ui_RebindWidget::retranslateUi(), RebindWidget::setCorrectRadioButton(), and Ui_RebindWidget::setupUi()\&.
 .SS "\fBQPushButton\fP* Ui_RebindWidget::resetButton\fC [inherited]\fP"
@@ -1931,7 +1926,7 @@ Referenced by Ui_RebindWidget::retranslateUi(), RebindWidget::setSelection(), an
 .SS "QLabel* Ui_RebindWidget::txtBuffer\fC [inherited]\fP"
 
 .PP
-Definition at line 150 of file ui_rebindwidget\&.h\&.
+Definition at line 147 of file ui_rebindwidget\&.h\&.
 .PP
 Referenced by RebindWidget::applyChanges(), RebindWidget::convertMacroBox(), Ui_RebindWidget::retranslateUi(), RebindWidget::setBox(), RebindWidget::setSelection(), and Ui_RebindWidget::setupUi()\&.
 .SS "QComboBox* Ui_RebindWidget::typingBox\fC [inherited]\fP"
