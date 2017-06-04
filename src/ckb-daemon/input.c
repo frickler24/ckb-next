@@ -36,6 +36,7 @@ static void inputupdate_keys(usbdevice* kb){
                             os_mousemove(kb, action->rel_x, action->rel_y);
                         else {
                             os_keypress(kb, action->scan, action->down);
+                            pthread_mutex_unlock(mmutex(kb));
                             if (action->delay != UINT_MAX) {    // local delay set
                                 usleep(action->delay);
                             } else if (kb->delay != UINT_MAX) { // use default global delay
@@ -47,6 +48,7 @@ static void inputupdate_keys(usbdevice* kb){
                                     usleep(30);
                                 }
                             }
+                            pthread_mutex_lock(mmutex(kb)); // Synchonization between macro output and color information
                         }
                     }
                     pthread_mutex_unlock(mmutex(kb));
