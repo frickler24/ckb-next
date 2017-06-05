@@ -1,0 +1,45 @@
+.TH "src/ckb/quazip/JlCompress.cpp" 3 "Mon Jun 5 2017" "Version beta-v0.2.8+testing at branch macrotime.0.2.thread" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb/quazip/JlCompress.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'JlCompress\&.h'\fP
+.br
+\fC#include <QDebug>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBcopyData\fP (\fBQIODevice\fP &inFile, \fBQIODevice\fP &outFile)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "static bool copyData (\fBQIODevice\fP &inFile, \fBQIODevice\fP &outFile)\fC [static]\fP"
+
+.PP
+Definition at line 29 of file JlCompress\&.cpp\&.
+.PP
+Referenced by JlCompress::compressFile(), and JlCompress::extractFile()\&.
+.PP
+.nf
+30 {
+31     while (!inFile\&.atEnd()) {
+32         char buf[4096];
+33         qint64 readLen = inFile\&.read(buf, 4096);
+34         if (readLen <= 0)
+35             return false;
+36         if (outFile\&.write(buf, readLen) != readLen)
+37             return false;
+38     }
+39     return true;
+40 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

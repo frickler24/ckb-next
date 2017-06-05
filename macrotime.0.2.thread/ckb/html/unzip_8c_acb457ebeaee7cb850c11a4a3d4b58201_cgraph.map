@@ -1,0 +1,8 @@
+<map id="unzGoToNextFile" name="unzGoToNextFile">
+<area shape="rect" id="node2" href="$unzip_8c.html#a33e149842497fe83f96ef95e71ba4973" title="unz64local_GetCurrentFile\lInfoInternal" alt="" coords="179,74,355,115"/>
+<area shape="rect" id="node3" href="$unzip_8c.html#afbbabad43d7045e4b4373e2a3fafc206" title="unz64local_DosDateToTmuDate" alt="" coords="403,5,615,32"/>
+<area shape="rect" id="node4" href="$unzip_8c.html#aadf5d3516ffd4262012ddfbd80a34863" title="unz64local_getLong" alt="" coords="441,56,578,83"/>
+<area shape="rect" id="node6" href="$unzip_8c.html#aba9b9b69240930610d4c80e5fdf30e68" title="unz64local_getLong64" alt="" coords="434,107,585,133"/>
+<area shape="rect" id="node7" href="$unzip_8c.html#a3c9da06aac7eccb3e336ba0f56c1f1a3" title="unz64local_getShort" alt="" coords="439,157,579,184"/>
+<area shape="rect" id="node5" href="$unzip_8c.html#a25e6c6413117acc85f65ab2a085e0c49" title="unz64local_getByte" alt="" coords="664,107,800,133"/>
+</map>

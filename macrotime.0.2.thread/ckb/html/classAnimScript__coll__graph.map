@@ -1,0 +1,5 @@
+<map id="AnimScript" name="AnimScript">
+<area shape="rect" id="node2" href="$classQObject.html" title="{QObject\n||}" alt="" coords="5,336,75,413"/>
+<area shape="rect" id="node6" href="$classColorMap.html" title="{ColorMap\n||+ ColorMap()\l+ ~ColorMap()\l+ ColorMap()\l+ operator=()\l+ init()\l+ clear()\l+ count()\l+ keyNames()\l+ colors()\l+ colors()\l+ colorForName()\l+ colorForName()\l&#45; alloc()\l&#45; deAlloc()\l}" alt="" coords="455,241,579,509"/>
+<area shape="rect" id="node14" href="$classKeyMap.html" title="{KeyMap\n||+ isISO()\l+ isKeyboard()\l+ isMouse()\l+ KeyMap()\l+ KeyMap()\l+ strLayout()\l+ strModel()\l+ model()\l+ layout()\l+ name()\land 13 more...\l+ layoutNames()\l+ isISO()\l+ locale()\l+ isKeyboard()\l+ isMouse()\l+ fromName()\l+ getLayout()\l+ getLayout()\l+ getModel()\l+ getModel()\l+ getModel()\l+ friendlyName()\l&#45; modelWidth()\l&#45; modelHeight()\l}" alt="" coords="1202,160,1320,589"/>
+</map>

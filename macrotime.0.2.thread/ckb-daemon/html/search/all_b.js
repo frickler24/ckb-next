@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['lastdpi',['lastdpi',['../structures_8h.html#a9244e07eb488103af0e44a9499851c1b',1,'usbprofile']]],
+  ['lastlight',['lastlight',['../structures_8h.html#a51d0b1cc9f728c74e7134095205e3765',1,'usbprofile']]],
+  ['layout',['LAYOUT',['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3af8f713bc0d10a2d2d7b7e61860816992',1,'command.h']]],
+  ['led',['led',['../keymap_8h.html#adfb7efb615d23c01a629dbf1f0aa83c4',1,'key']]],
+  ['led_2ec',['led.c',['../led_8c.html',1,'']]],
+  ['led_2eh',['led.h',['../led_8h.html',1,'']]],
+  ['led_5fdpi',['LED_DPI',['../keymap_8h.html#a651d575ebe5d00bbe17ae5fd9dbf41f8',1,'keymap.h']]],
+  ['led_5fkeyboard_2ec',['led_keyboard.c',['../led__keyboard_8c.html',1,'']]],
+  ['led_5fmouse',['LED_MOUSE',['../keymap_8h.html#ac4f7d9dce5248992866a0f2e23fe8200',1,'keymap.h']]],
+  ['led_5fmouse_2ec',['led_mouse.c',['../led__mouse_8c.html',1,'']]],
+  ['leftover',['leftover',['../devnode_8c.html#a679cf71cdb16f2a93c60e109497f40cf',1,'_readlines_ctx']]],
+  ['leftoverlen',['leftoverlen',['../devnode_8c.html#a42604d3b877eeac333fc184a538c3ef5',1,'_readlines_ctx']]],
+  ['lift',['lift',['../structures_8h.html#ae04edb14320df899b637f7cf167c733b',1,'dpiset::lift()'],['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3a04cc0d7716511de12e3544364d8e0aa8',1,'LIFT():&#160;command.h']]],
+  ['lift_5fmax',['LIFT_MAX',['../structures_8h.html#acf01b7111903b8b224b2da906d95c4f5',1,'structures.h']]],
+  ['lift_5fmin',['LIFT_MIN',['../structures_8h.html#a1c15017131ee4ba8752e8ab90e72c346',1,'structures.h']]],
+  ['light',['light',['../structures_8h.html#a4adb0b5a770a32ee4db36dca49398ce9',1,'usbmode::light()'],['../structures_8h.html#a0d25cb507275cff4c1487a5dfb87de8b',1,'hwprofile::light()']]],
+  ['lighting',['lighting',['../structures_8h.html#structlighting',1,'']]],
+  ['loaddpi',['loaddpi',['../dpi_8c.html#a723c4b894046adafff28fbda10ab2c8f',1,'loaddpi(usbdevice *kb, dpiset *dpi, lighting *light):&#160;dpi.c'],['../dpi_8h.html#a723c4b894046adafff28fbda10ab2c8f',1,'loaddpi(usbdevice *kb, dpiset *dpi, lighting *light):&#160;dpi.c']]],
+  ['loadprofile',['loadprofile',['../profile_8c.html#acd2c166be5b6139eab9b2c87447b5b7d',1,'loadprofile(usbdevice *kb):&#160;profile.c'],['../profile_8h.html#acd2c166be5b6139eab9b2c87447b5b7d',1,'loadprofile(usbdevice *kb):&#160;profile.c']]],
+  ['loadprofile_5fnone',['loadprofile_none',['../device__vtable_8c.html#a93a33f1acdfdc3a679be923e1e2abbee',1,'device_vtable.c']]],
+  ['loadrgb_5fkb',['loadrgb_kb',['../led_8h.html#a05cf9e0967ce8cbb2a51f0120b10365e',1,'loadrgb_kb(usbdevice *kb, lighting *light, int mode):&#160;led_keyboard.c'],['../led__keyboard_8c.html#a05cf9e0967ce8cbb2a51f0120b10365e',1,'loadrgb_kb(usbdevice *kb, lighting *light, int mode):&#160;led_keyboard.c']]],
+  ['loadrgb_5fmouse',['loadrgb_mouse',['../led_8h.html#aa08791d06c846b7b66bc0697cda6cd53',1,'loadrgb_mouse(usbdevice *kb, lighting *light, int mode):&#160;led_mouse.c'],['../led__mouse_8c.html#aa08791d06c846b7b66bc0697cda6cd53',1,'loadrgb_mouse(usbdevice *kb, lighting *light, int mode):&#160;led_mouse.c']]],
+  ['localecase',['localecase',['../main_8c.html#abc5744825b5effd5b37331918da58f2f',1,'main.c']]]
+];

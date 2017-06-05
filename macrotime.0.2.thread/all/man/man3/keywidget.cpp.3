@@ -1,0 +1,101 @@
+.TH "src/ckb/keywidget.cpp" 3 "Mon Jun 5 2017" "Version beta-v0.2.8+testing at branch macrotime.0.2.thread" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb/keywidget.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <cmath>\fP
+.br
+\fC#include <QGraphicsDropShadowEffect>\fP
+.br
+\fC#include <QGraphicsPixmapItem>\fP
+.br
+\fC#include <QGraphicsScene>\fP
+.br
+\fC#include <QPainter>\fP
+.br
+\fC#include 'keywidget\&.h'\fP
+.br
+\fC#include 'keyaction\&.h'\fP
+.br
+\fC#include 'kbbind\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "QRgb \fBmonoRgb\fP (float r, float g, float b)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static const int \fBKEY_SIZE\fP = 12"
+.br
+.ti -1c
+.RI "static QImage * \fBm65Overlay\fP = 0"
+.br
+.ti -1c
+.RI "static QImage * \fBsabOverlay\fP = 0"
+.br
+.ti -1c
+.RI "static QImage * \fBscimOverlay\fP = 0"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "QRgb monoRgb (floatr, floatg, floatb)"
+
+.PP
+Definition at line 284 of file kblight\&.cpp\&.
+.PP
+References lToS(), and sToL()\&.
+.PP
+Referenced by KbLight::base(), KbLight::frameUpdate(), and KeyWidget::paintEvent()\&.
+.PP
+.nf
+284                                        {
+285     // It's important to use a linear colorspace for this, otherwise the colors will appear inconsistent
+286     // Note that although we could use linear space for alpha blending or the animation blending functions, we don't\&.
+287     // The reason for this is that photo manipulation programs don't do it either, so even though the result would technically be more correct,
+288     // it would look wrong to most people\&.
+289     r = sToL(r);
+290     g = sToL(g);
+291     b = sToL(b);
+292     int value = round(lToS((r + g + b) / 3\&.f));
+293     return qRgb(value, value, value);
+294 }
+.fi
+.SH "Variable Documentation"
+.PP 
+.SS "const int KEY_SIZE = 12\fC [static]\fP"
+
+.PP
+Definition at line 10 of file keywidget\&.cpp\&.
+.PP
+Referenced by KeyWidget::drawInfo(), and KeyWidget::map()\&.
+.SS "QImage* m65Overlay = 0\fC [static]\fP"
+
+.PP
+Definition at line 12 of file keywidget\&.cpp\&.
+.PP
+Referenced by KeyWidget::paintEvent()\&.
+.SS "QImage * sabOverlay = 0\fC [static]\fP"
+
+.PP
+Definition at line 12 of file keywidget\&.cpp\&.
+.PP
+Referenced by KeyWidget::paintEvent()\&.
+.SS "QImage * scimOverlay = 0\fC [static]\fP"
+
+.PP
+Definition at line 12 of file keywidget\&.cpp\&.
+.PP
+Referenced by KeyWidget::paintEvent()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

@@ -1,0 +1,8 @@
+<map id="cmd_hwsave_kb" name="cmd_hwsave_kb">
+<area shape="rect" id="node2" href="$profile_8c.html#aab5b57ba9a9f089eaa7b176396dfa3a3" title="nativetohw" alt="" coords="176,31,261,57"/>
+<area shape="rect" id="node3" href="$led_8h.html#aa8009a607c4c46e41dd64f8490b1582d" title="savergb_kb" alt="" coords="174,81,263,108"/>
+<area shape="rect" id="node4" href="$led__keyboard_8c.html#ad37b49215ddbb5fdfcbc185bee256b28" title="makergb_512" alt="" coords="313,5,413,32"/>
+<area shape="rect" id="node5" href="$led__keyboard_8c.html#aa2518c44d1de14ec9852cc768f4e19f8" title="makergb_full" alt="" coords="315,56,411,83"/>
+<area shape="rect" id="node6" href="$led__keyboard_8c.html#a384276467a5331b5c6d134c00476b8a3" title="ordered8to3" alt="" coords="317,107,408,133"/>
+<area shape="rect" id="node7" href="$led__keyboard_8c.html#abb9b4e916b13b54ab23b4b5ace4e293d" title="quantize8to3" alt="" coords="315,157,411,184"/>
+</map>

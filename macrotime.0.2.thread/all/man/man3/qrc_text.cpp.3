@@ -1,0 +1,163 @@
+.TH "src/ckb/release/qrc_text.cpp" 3 "Mon Jun 5 2017" "Version beta-v0.2.8+testing at branch macrotime.0.2.thread" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb/release/qrc_text.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBQT_RCC_PREPEND_NAMESPACE\fP(name)   name"
+.br
+.ti -1c
+.RI "#define \fBQT_RCC_MANGLE_NAMESPACE\fP(name)   name"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBqRegisterResourceData\fP (int, const unsigned char *, const unsigned char *, const unsigned char *)"
+.br
+.ti -1c
+.RI "bool \fBqUnregisterResourceData\fP (int, const unsigned char *, const unsigned char *, const unsigned char *)"
+.br
+.ti -1c
+.RI "int \fBqInitResources_text\fP ()"
+.br
+.ti -1c
+.RI "int \fBqCleanupResources_text\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static const unsigned char \fBqt_resource_data\fP []"
+.br
+.ti -1c
+.RI "static const unsigned char \fBqt_resource_name\fP []"
+.br
+.ti -1c
+.RI "static const unsigned char \fBqt_resource_struct\fP []"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define QT_RCC_MANGLE_NAMESPACE(name)   name"
+
+.PP
+Definition at line 350 of file qrc_text\&.cpp\&.
+.SS "#define QT_RCC_PREPEND_NAMESPACE(name)   name"
+
+.PP
+Definition at line 349 of file qrc_text\&.cpp\&.
+.PP
+Referenced by qCleanupResources_text(), and qInitResources_text()\&.
+.SH "Function Documentation"
+.PP 
+.SS "int qCleanupResources_text ()"
+
+.PP
+Definition at line 374 of file qrc_text\&.cpp\&.
+.PP
+References QT_RCC_PREPEND_NAMESPACE, qt_resource_data, qt_resource_name, qt_resource_struct, and qUnregisterResourceData()\&.
+.PP
+.nf
+375 {
+376     QT_RCC_PREPEND_NAMESPACE(qUnregisterResourceData)
+377        (0x01, qt_resource_struct, qt_resource_name, qt_resource_data);
+378     return 1;
+379 }
+.fi
+.SS "int qInitResources_text ()"
+
+.PP
+Definition at line 366 of file qrc_text\&.cpp\&.
+.PP
+References qRegisterResourceData(), QT_RCC_PREPEND_NAMESPACE, qt_resource_data, qt_resource_name, and qt_resource_struct\&.
+.PP
+.nf
+367 {
+368     QT_RCC_PREPEND_NAMESPACE(qRegisterResourceData)
+369         (0x01, qt_resource_struct, qt_resource_name, qt_resource_data);
+370     return 1;
+371 }
+.fi
+.SS "bool qRegisterResourceData (int, const unsigned char *, const unsigned char *, const unsigned char *)"
+
+.PP
+Referenced by qInitResources_text()\&.
+.SS "bool qUnregisterResourceData (int, const unsigned char *, const unsigned char *, const unsigned char *)"
+
+.PP
+Referenced by qCleanupResources_text()\&.
+.SH "Variable Documentation"
+.PP 
+.SS "const unsigned char qt_resource_data[]\fC [static]\fP"
+
+.PP
+Definition at line 9 of file qrc_text\&.cpp\&.
+.PP
+Referenced by qCleanupResources_text(), and qInitResources_text()\&.
+.SS "const unsigned char qt_resource_name[]\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+  
+  0x0,0x3,
+  0x0,0x0,0x7b,0xf4,
+  0x0,0x74,
+  0x0,0x78,0x0,0x74,
+    
+  0x0,0xb,
+  0xa,0x1e,0x1,0xe0,
+  0x0,0x63,
+  0x0,0x6b,0x0,0x62,0x0,0x2e,0x0,0x64,0x0,0x65,0x0,0x73,0x0,0x6b,0x0,0x74,0x0,0x6f,0x0,0x70,
+    
+  0x0,0x10,
+  0xe,0xac,0xaf,0x46,
+  0x0,0x64,
+  0x0,0x65,0x0,0x6d,0x0,0x6f,0x0,0x70,0x0,0x72,0x0,0x6f,0x0,0x66,0x0,0x69,0x0,0x6c,0x0,0x65,0x0,0x2e,0x0,0x63,0x0,0x6f,0x0,0x6e,0x0,0x66,
+    
+  0x0,0x11,
+  0x0,0xd4,0x25,0xa4,
+  0x0,0x63,
+  0x0,0x6f,0x0,0x6d,0x0,0x2e,0x0,0x63,0x0,0x6b,0x0,0x62,0x0,0x2e,0x0,0x63,0x0,0x6b,0x0,0x62,0x0,0x2e,0x0,0x70,0x0,0x6c,0x0,0x69,0x0,0x73,0x0,0x74,
+  
+  
+}
+.fi
+.PP
+Definition at line 302 of file qrc_text\&.cpp\&.
+.PP
+Referenced by qCleanupResources_text(), and qInitResources_text()\&.
+.SS "const unsigned char qt_resource_struct[]\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+  
+  0x0,0x0,0x0,0x0,0x0,0x2,0x0,0x0,0x0,0x1,0x0,0x0,0x0,0x1,
+  
+  0x0,0x0,0x0,0x0,0x0,0x2,0x0,0x0,0x0,0x3,0x0,0x0,0x0,0x2,
+  
+  0x0,0x0,0x0,0x4e,0x0,0x0,0x0,0x0,0x0,0x1,0x0,0x0,0xf,0x74,
+  
+  0x0,0x0,0x0,0xc,0x0,0x0,0x0,0x0,0x0,0x1,0x0,0x0,0x0,0x0,
+  
+  0x0,0x0,0x0,0x28,0x0,0x1,0x0,0x0,0x0,0x1,0x0,0x0,0x0,0xc6,
+
+}
+.fi
+.PP
+Definition at line 327 of file qrc_text\&.cpp\&.
+.PP
+Referenced by qCleanupResources_text(), and qInitResources_text()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

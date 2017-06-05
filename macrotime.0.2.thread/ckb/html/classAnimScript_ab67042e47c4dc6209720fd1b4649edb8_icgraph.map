@@ -1,0 +1,8 @@
+<map id="AnimScript::parameters" name="AnimScript::parameters">
+<area shape="rect" id="node2" href="$classKbAnim.html#a50820fb193bfc35f13e399f33ff01958" title="KbAnim::updateParams" alt="" coords="213,31,373,57"/>
+<area shape="rect" id="node3" href="$classKbAnim.html#aebe1ab3b6110130302e32c147b42dbd9" title="KbAnim::parameter" alt="" coords="430,5,565,32"/>
+<area shape="rect" id="node4" href="$classKbAnim.html#a886e5631d76fefb9b8e549d8aa8d37f3" title="KbAnim::resetParams" alt="" coords="422,56,573,83"/>
+<area shape="rect" id="node5" href="$classKbAnimWidget.html#aed385da23edc78f5a407d26f191eb110" title="KbAnimWidget::on_property\lButton_clicked" alt="" coords="622,49,807,90"/>
+<area shape="rect" id="node6" href="$classKbAnimWidget.html#aec38d76f8f14709e03526c9f4b2782e8" title="KbAnimWidget::addAnim" alt="" coords="856,56,1024,83"/>
+<area shape="rect" id="node7" href="$classKbLightWidget.html#a854d8332999f4b2337d198199661d405" title="KbLightWidget::on_animButton\l_clicked" alt="" coords="1072,49,1275,90"/>
+</map>

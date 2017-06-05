@@ -1,0 +1,8 @@
+<map id="KbProfile::keyMap" name="KbProfile::keyMap">
+<area shape="rect" id="node2" href="$classKPerfWidget.html#ae761365cfff8135fe60d2bf9792232e1" title="KPerfWidget::setPerf" alt="" coords="184,35,331,61"/>
+<area shape="rect" id="node6" href="$classKb.html#aef52ac833e598b199351621a7953dc65" title="Kb::updateLayout" alt="" coords="195,85,319,112"/>
+<area shape="rect" id="node3" href="$classKbWidget.html#aae4a00bb180d711b5df7df6443c8bf36" title="KbWidget::modeChanged" alt="" coords="379,35,549,61"/>
+<area shape="rect" id="node4" href="$classKbWidget.html#a848a21f1fd112e13ca5fcf25da4592c6" title="KbWidget::KbWidget" alt="" coords="632,5,776,32"/>
+<area shape="rect" id="node5" href="$classKbWidget.html#add5eb15a399c87faf80db9fdfc2e868f" title="KbWidget::on_modesList_customContextMenuRequested. " alt="" coords="597,57,811,98"/>
+<area shape="rect" id="node7" href="$classKb.html#a3c4f12e4d166f46dd52ab6faca1b7c2d" title="Kb::layout" alt="" coords="423,85,505,112"/>
+</map>

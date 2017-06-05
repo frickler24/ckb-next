@@ -1,0 +1,56 @@
+.TH "src/ckb/animsettingdialog.cpp" 3 "Mon Jun 5 2017" "Version beta-v0.2.8+testing at branch macrotime.0.2.thread" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb/animsettingdialog.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <cstdio>\fP
+.br
+\fC#include <QDial>\fP
+.br
+\fC#include <QDoubleSpinBox>\fP
+.br
+\fC#include <QLineEdit>\fP
+.br
+\fC#include <QComboBox>\fP
+.br
+\fC#include 'animsettingdialog\&.h'\fP
+.br
+\fC#include 'ui_animsettingdialog\&.h'\fP
+.br
+\fC#include 'colorbutton\&.h'\fP
+.br
+\fC#include 'gradientbutton\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "static int \fBangleFlip\fP (int \fBangle\fP)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "static int angleFlip (intangle)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line 12 of file animsettingdialog\&.cpp\&.
+.PP
+References angle\&.
+.PP
+Referenced by AnimSettingDialog::angleDialChanged(), AnimSettingDialog::angleSpinnerChanged(), AnimSettingDialog::AnimSettingDialog(), and AnimSettingDialog::updateParam()\&.
+.PP
+.nf
+12                                       {
+13     if(angle <= 180)
+14         return 180 - angle;
+15     else
+16        return 360 - (angle - 180);
+17 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

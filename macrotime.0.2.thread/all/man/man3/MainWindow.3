@@ -1,0 +1,579 @@
+.TH "MainWindow" 3 "Mon Jun 5 2017" "Version beta-v0.2.8+testing at branch macrotime.0.2.thread" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MainWindow \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/mainwindow\&.h>\fP
+.PP
+Inherits \fBQMainWindow\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBshowWindow\fP ()"
+.br
+.ti -1c
+.RI "void \fBstateChange\fP (Qt::ApplicationState state)"
+.br
+.ti -1c
+.RI "void \fBquitApp\fP ()"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMainWindow\fP (\fBQWidget\fP *parent=0)"
+.br
+.ti -1c
+.RI "\fB~MainWindow\fP ()"
+.br
+.ti -1c
+.RI "void \fBtoggleTrayIcon\fP (bool visible)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static \fBMainWindow\fP * \fBmainWindow\fP = 0"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBaddDevice\fP (\fBKb\fP *device)"
+.br
+.ti -1c
+.RI "void \fBremoveDevice\fP (\fBKb\fP *device)"
+.br
+.ti -1c
+.RI "void \fBupdateVersion\fP ()"
+.br
+.ti -1c
+.RI "void \fBcheckFwUpdates\fP ()"
+.br
+.ti -1c
+.RI "void \fBtimerTick\fP ()"
+.br
+.ti -1c
+.RI "void \fBiconClicked\fP (QSystemTrayIcon::ActivationReason reason)"
+.br
+.ti -1c
+.RI "void \fBcleanup\fP ()"
+.br
+.ti -1c
+.RI "void \fBshowFwUpdateNotification\fP (\fBQWidget\fP *widget, float version)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcloseEvent\fP (QCloseEvent *event)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSettingsWidget\fP * \fBsettingsWidget\fP"
+.br
+.ti -1c
+.RI "QList< \fBKbWidget\fP * > \fBkbWidgets\fP"
+.br
+.ti -1c
+.RI "QAction * \fBrestoreAction\fP"
+.br
+.ti -1c
+.RI "QAction * \fBcloseAction\fP"
+.br
+.ti -1c
+.RI "QMenu * \fBtrayIconMenu\fP"
+.br
+.ti -1c
+.RI "QSystemTrayIcon * \fBtrayIcon\fP"
+.br
+.ti -1c
+.RI "\fBUi::MainWindow\fP * \fBui\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 27 of file mainwindow\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MainWindow::MainWindow (\fBQWidget\fP *parent = \fC0\fP)\fC [explicit]\fP"
+give a hint if the config files are nonwriteable 
+.PP
+Definition at line 35 of file mainwindow\&.cpp\&.
+.PP
+References Ui_MainWindow::actionExit, addDevice(), cleanup(), closeAction, configLabel, CkbSettings::get(), iconClicked(), CkbSettings::informIfNonWritable(), KbManager::init(), KbManager::kbManager(), mainWindow, quitApp(), removeDevice(), restoreAction, KbManager::scanTimer(), settingsWidget, Ui_MainWindow::setupUi(), SettingsWidget::setVersion(), showWindow(), stateChange(), Ui_MainWindow::tabWidget, timerTick(), toggleTrayIcon(), trayIcon, trayIconMenu, ui, and updateVersion()\&.
+.PP
+.nf
+35                                       :
+36     QMainWindow(parent),
+37     ui(new Ui::MainWindow)
+38 {
+39     ui->setupUi(this);
+40     mainWindow = this;
+41 
+42     // Start device manager
+43     KbManager::init(CKB_VERSION_STR);
+44     connect(KbManager::kbManager(), SIGNAL(kbConnected(Kb*)), this, SLOT(addDevice(Kb*)));
+45     connect(KbManager::kbManager(), SIGNAL(kbDisconnected(Kb*)), this, SLOT(removeDevice(Kb*)));
+46     connect(KbManager::kbManager(), SIGNAL(versionUpdated()), this, SLOT(updateVersion()));
+47     connect(KbManager::scanTimer(), SIGNAL(timeout()), this, SLOT(timerTick()));
+48 
+49     // Set up tray icon
+50     restoreAction = new QAction(tr("Restore"), this);
+51     closeAction = new QAction(tr("Quit ckb"), this);
+52 #ifdef USE_LIBAPPINDICATOR
+53     QString desktop = std::getenv("XDG_CURRENT_DESKTOP");
+54     unityDesktop = (desktop\&.toLower() == "unity");
+55 
+56     if(unityDesktop){
+57         trayIcon = 0;
+58 
+59         indicatorMenu = gtk_menu_new();
+60         indicatorMenuRestoreItem = gtk_menu_item_new_with_label("Restore");
+61         indicatorMenuQuitItem = gtk_menu_item_new_with_label("Quit ckb");
+62 
+63         gtk_menu_shell_append(GTK_MENU_SHELL(indicatorMenu), indicatorMenuRestoreItem);
+64         gtk_menu_shell_append(GTK_MENU_SHELL(indicatorMenu), indicatorMenuQuitItem);
+65 
+66         g_signal_connect(indicatorMenuQuitItem, "activate",
+67             G_CALLBACK(quitIndicator), this);
+68         g_signal_connect(indicatorMenuRestoreItem, "activate",
+69             G_CALLBACK(restoreIndicator), this);
+70 
+71         gtk_widget_show(indicatorMenuRestoreItem);
+72         gtk_widget_show(indicatorMenuQuitItem);
+73 
+74         indicator = app_indicator_new("ckb", "indicator-messages", APP_INDICATOR_CATEGORY_APPLICATION_STATUS);
+75 
+76         app_indicator_set_status(indicator, APP_INDICATOR_STATUS_ACTIVE);
+77         app_indicator_set_menu(indicator, GTK_MENU(indicatorMenu));
+78         app_indicator_set_icon(indicator, "ckb");
+79     } else
+80 #endif // USE_LIBAPPINDICATOR
+81     {
+82         trayIconMenu = new QMenu(this);
+83         trayIconMenu->addAction(restoreAction);
+84         trayIconMenu->addAction(closeAction);
+85         trayIcon = new QSystemTrayIcon(QIcon(":/img/ckb-logo\&.png"), this);
+86         trayIcon->setContextMenu(trayIconMenu);
+87         connect(trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(iconClicked(QSystemTrayIcon::ActivationReason)));
+88      }
+89      toggleTrayIcon(!CkbSettings::get("Program/SuppressTrayIcon")\&.toBool());
+90 
+91 #ifdef Q_OS_MACX
+92     // Make a custom "Close" menu action for OSX, as the default one brings up the "still running" popup unnecessarily
+93     QMenuBar* menuBar = new QMenuBar(this);
+94     setMenuBar(menuBar);
+95     this->menuBar()->addMenu("ckb")->addAction(closeAction);
+96 #else
+97     // On linux, add a handler for Ctrl+Q
+98     new QShortcut(QKeySequence("Ctrl+Q"), this, SLOT(quitApp()));
+99 #endif
+100 
+101     connect(ui->actionExit, SIGNAL(triggered()), this, SLOT(quitApp()));
+102     connect(closeAction, SIGNAL(triggered()), this, SLOT(quitApp()));
+103     connect(restoreAction, SIGNAL(triggered()), this, SLOT(showWindow()));
+104     connect(qApp, SIGNAL(applicationStateChanged(Qt::ApplicationState)), this, SLOT(stateChange(Qt::ApplicationState)));
+105 
+106     connect(qApp, SIGNAL(aboutToQuit()), this, SLOT(cleanup()));
+107 
+108     ui->tabWidget->addTab(settingsWidget = new SettingsWidget(this), configLabel);
+109     settingsWidget->setVersion("ckb-next " CKB_VERSION_STR);
+110 
+112     CkbSettings::informIfNonWritable();
+113 }
+.fi
+.SS "MainWindow::~MainWindow ()"
+
+.PP
+Definition at line 306 of file mainwindow\&.cpp\&.
+.PP
+References cleanup(), and ui\&.
+.PP
+.nf
+306                        {
+307     cleanup();
+308     delete ui;
+309 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void MainWindow::addDevice (\fBKb\fP *device)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 124 of file mainwindow\&.cpp\&.
+.PP
+References KbWidget::device, kbWidgets, KbWidget::name(), Ui_MainWindow::tabWidget, ui, and updateVersion()\&.
+.PP
+Referenced by MainWindow()\&.
+.PP
+.nf
+124                                     {
+125     // Connected already?
+126     foreach(KbWidget* w, kbWidgets){
+127         if(w->device == device)
+128             return;
+129     }
+130     // Add the keyboard
+131     KbWidget* widget = new KbWidget(this, device);
+132     kbWidgets\&.append(widget);
+133     // Add to tabber; switch to this device if on the settings screen
+134     int count = ui->tabWidget->count();
+135     ui->tabWidget->insertTab(count - 1, widget, widget->name());
+136     if(ui->tabWidget->currentIndex() == count)
+137         ui->tabWidget->setCurrentIndex(count - 1);
+138     // Update connected device count
+139     updateVersion();
+140 }
+.fi
+.SS "void MainWindow::checkFwUpdates ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 175 of file mainwindow\&.cpp\&.
+.PP
+References KbWidget::device, Kb::features, Kb::firmware, KbWidget::hasShownNewFW, kbWidgets, mainWindow, KbWidget::updateFwButton(), and KbFirmware::versionForBoard()\&.
+.PP
+Referenced by timerTick()\&.
+.PP
+.nf
+175                                {
+176     if(!mainWindow->isVisible())
+177         return;
+178     foreach(KbWidget* w, kbWidgets){
+179         // Display firmware upgrade notification if a new version is available
+180         float version = KbFirmware::versionForBoard(w->device->features);
+181         if(version > w->device->firmware\&.toFloat()){
+182             if(w->hasShownNewFW)
+183                 continue;
+184             w->hasShownNewFW = true;
+185             w->updateFwButton();
+186             // Don't run this method here because it will lock up the timer and prevent devices from working properly
+187             // Use a queued invocation instead
+188             metaObject()->invokeMethod(this, "showFwUpdateNotification", Qt::QueuedConnection, Q_ARG(QWidget*, w), Q_ARG(float, version));
+189             // Don't display more than one of these at once
+190             return;
+191         }
+192     }
+193 }
+.fi
+.SS "void MainWindow::cleanup ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 298 of file mainwindow\&.cpp\&.
+.PP
+References CkbSettings::cleanUp(), kbWidgets, and KbManager::stop()\&.
+.PP
+Referenced by MainWindow(), and ~MainWindow()\&.
+.PP
+.nf
+298                         {
+299     foreach(KbWidget* w, kbWidgets)
+300         delete w;
+301     kbWidgets\&.clear();
+302     KbManager::stop();
+303     CkbSettings::cleanUp();
+304 }
+.fi
+.SS "void MainWindow::closeEvent (QCloseEvent *event)\fC [private]\fP"
+
+.PP
+Definition at line 212 of file mainwindow\&.cpp\&.
+.PP
+References CkbSettings::get(), and CkbSettings::set()\&.
+.PP
+.nf
+212                                              {
+213     // If the window is hidden already or the event is non-spontaneous (can happen on OSX when using the Quit menu), accept it and close
+214     if(!event->spontaneous() || isHidden()){
+215         event->accept();
+216         return;
+217     }
+218     if(!CkbSettings::get("Popups/BGWarning")\&.toBool()){
+219         QMessageBox::information(this, "ckb", "ckb will still run in the background\&.\nTo close it, choose Exit from the tray menu\nor click \"Quit ckb\" on the Settings screen\&.");
+220         CkbSettings::set("Popups/BGWarning", true);
+221     }
+222     hide();
+223     event->ignore();
+224 }
+.fi
+.SS "void MainWindow::iconClicked (QSystemTrayIcon::ActivationReasonreason)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 260 of file mainwindow\&.cpp\&.
+.PP
+References showWindow()\&.
+.PP
+Referenced by MainWindow()\&.
+.PP
+.nf
+260                                                                   {
+261     // On Linux, hide/show the app when the tray icon is clicked
+262     // On OSX this just shows the menu
+263 #ifndef Q_OS_MACX
+264     if(reason == QSystemTrayIcon::DoubleClick || reason == QSystemTrayIcon::Trigger){
+265         if(isVisible())
+266             hide();
+267         else
+268             showWindow();
+269     }
+270 #endif
+271 }
+.fi
+.SS "void MainWindow::quitApp ()\fC [slot]\fP"
+
+.PP
+Definition at line 294 of file mainwindow\&.cpp\&.
+.PP
+Referenced by MainWindow()\&.
+.PP
+.nf
+294                         {
+295     qApp->quit();
+296 }
+.fi
+.SS "void MainWindow::removeDevice (\fBKb\fP *device)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 142 of file mainwindow\&.cpp\&.
+.PP
+References KbWidget::device, kbWidgets, Ui_MainWindow::tabWidget, ui, and updateVersion()\&.
+.PP
+Referenced by MainWindow()\&.
+.PP
+.nf
+142                                        {
+143     foreach(KbWidget* w, kbWidgets){
+144         // Remove this device from the UI
+145         if(w->device == device){
+146             int i = kbWidgets\&.indexOf(w);
+147             ui->tabWidget->removeTab(i);
+148             kbWidgets\&.removeAt(i);
+149             w->deleteLater();
+150         }
+151     }
+152     // Update connected device count
+153     updateVersion();
+154 }
+.fi
+.SS "void MainWindow::showFwUpdateNotification (\fBQWidget\fP *widget, floatversion)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 195 of file mainwindow\&.cpp\&.
+.PP
+References KbWidget::device, kbWidgets, KbWidget::showFwUpdate(), KbWidget::showLastTab(), showWindow(), Ui_MainWindow::tabWidget, ui, and Kb::usbModel\&.
+.PP
+.nf
+195                                                                        {
+196     static bool isShowing = false;
+197     if(isShowing)
+198         return;
+199     isShowing = true;
+200     showWindow();
+201     KbWidget* w = (KbWidget*)widget;
+202     // Ask for update
+203     if(QMessageBox::information(this, "Firmware update", tr("A new firmware is available for your %1 (v%2)\nWould you like to install it now?")\&.arg(w->device->usbModel, QString::number(version, 'f', 2)), QMessageBox::StandardButtons(QMessageBox::Yes | QMessageBox::No), QMessageBox::Yes) == QMessageBox::Yes){
+204         // If accepted, switch to firmware tab and bring up update window
+205         w->showLastTab();
+206         ui->tabWidget->setCurrentIndex(kbWidgets\&.indexOf(w));
+207         w->showFwUpdate();
+208     }
+209     isShowing = false;
+210 }
+.fi
+.SS "void MainWindow::showWindow ()\fC [slot]\fP"
+
+.PP
+Definition at line 273 of file mainwindow\&.cpp\&.
+.PP
+Referenced by iconClicked(), MainWindow(), showFwUpdateNotification(), stateChange(), and timerTick()\&.
+.PP
+.nf
+273                            {
+274     showNormal();
+275     raise();
+276     activateWindow();
+277 }
+.fi
+.SS "void MainWindow::stateChange (Qt::ApplicationStatestate)\fC [slot]\fP"
+
+.PP
+Definition at line 279 of file mainwindow\&.cpp\&.
+.PP
+References showWindow()\&.
+.PP
+Referenced by MainWindow()\&.
+.PP
+.nf
+279                                                     {
+280     // On OSX it's possible for the app to be brought to the foreground without the window actually reappearing\&.
+281     // We want to make sure it's shown when this happens\&.
+282 #ifdef Q_OS_MAC
+283     static quint64 lastStateChange = 0;
+284     quint64 now = QDateTime::currentMSecsSinceEpoch();
+285     if(state == Qt::ApplicationActive){
+286         // This happens once at startup so ignore it\&. Also don't allow it to be called more than once every 2s\&.
+287         if(lastStateChange != 0 && now >= lastStateChange + 2 * 1000)
+288             showWindow();
+289         lastStateChange = now;
+290     }
+291 #endif
+292 }
+.fi
+.SS "void MainWindow::timerTick ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 226 of file mainwindow\&.cpp\&.
+.PP
+References appShare, checkFwUpdates(), KbFirmware::checkUpdates(), CkbSettings::get(), SettingsWidget::pollUpdates(), settingsWidget, and showWindow()\&.
+.PP
+Referenced by MainWindow()\&.
+.PP
+.nf
+226                           {
+227     // Check shared memory for changes
+228     if(appShare\&.lock()){
+229         void* data = appShare\&.data();
+230         QStringList commands = QString((const char*)data)\&.split("\n");
+231         // Restore PID, remove all other data
+232         snprintf((char*)appShare\&.data(), appShare\&.size(), "PID %ld", (long)getpid());
+233         appShare\&.unlock();
+234         // Parse commands
+235         foreach(const QString& line, commands){
+236             // Old ckb option line - bring application to foreground
+237             if(line == "Open")
+238                 showWindow();
+239             if(line\&.startsWith("Option ")){
+240                 // New ckb option line
+241                 QString option = line\&.split(" ")[1];
+242                 if(option == "Open")
+243                     // Bring to foreground
+244                     showWindow();
+245                 else if(option == "Close")
+246                     // Quit application
+247                     qApp->quit();
+248             }
+249         }
+250     }
+251     // Check for firmware updates (when appropriate)
+252     if(!CkbSettings::get("Program/DisableAutoFWCheck")\&.toBool()){
+253         KbFirmware::checkUpdates();
+254         checkFwUpdates();
+255     }
+256     // Poll for setting updates
+257     settingsWidget->pollUpdates();
+258 }
+.fi
+.SS "void MainWindow::toggleTrayIcon (boolvisible)"
+
+.PP
+Definition at line 115 of file mainwindow\&.cpp\&.
+.PP
+References trayIcon\&.
+.PP
+Referenced by MainWindow(), and ExtraSettingsWidget::on_trayBox_clicked()\&.
+.PP
+.nf
+115                                             {
+116 #ifdef USE_LIBAPPINDICATOR
+117     if(unityDesktop)
+118         app_indicator_set_status(indicator, visible ? APP_INDICATOR_STATUS_ACTIVE : APP_INDICATOR_STATUS_PASSIVE);
+119     else
+120 #endif // USE_LIBAPPINDICATOR
+121         trayIcon->setVisible(visible);
+122 }
+.fi
+.SS "void MainWindow::updateVersion ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 156 of file mainwindow\&.cpp\&.
+.PP
+References KbManager::ckbDaemonVersion(), KbManager::ckbDaemonVersionF(), KbManager::ckbGuiVersionF(), DAEMON_UNAVAILABLE_STR, kbWidgets, SettingsWidget::setStatus(), and settingsWidget\&.
+.PP
+Referenced by addDevice(), MainWindow(), and removeDevice()\&.
+.PP
+.nf
+156                               {
+157     QString daemonVersion = KbManager::ckbDaemonVersion();
+158     if(daemonVersion == DAEMON_UNAVAILABLE_STR){
+159         settingsWidget->setStatus("Driver inactive");
+160         return;
+161     }
+162     int count = kbWidgets\&.count();
+163     // Warn if the daemon version doesn't match the GUI
+164     QString daemonWarning;
+165     if(daemonVersion != CKB_VERSION_STR)
+166         daemonWarning = "<br /><br /><b>Warning:</b> Driver version mismatch (" + daemonVersion + ")\&. Please upgrade ckb" + QString(KbManager::ckbDaemonVersionF() > KbManager::ckbGuiVersionF() ? "" : "-daemon") + "\&. If the problem persists, try rebooting\&.";
+167     if(count == 0)
+168         settingsWidget->setStatus("No devices connected" + daemonWarning);
+169     else if(count == 1)
+170         settingsWidget->setStatus("1 device connected" + daemonWarning);
+171     else
+172         settingsWidget->setStatus(QString("%1 devices connected")\&.arg(count) + daemonWarning);
+173 }
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "QAction* MainWindow::closeAction\fC [private]\fP"
+
+.PP
+Definition at line 44 of file mainwindow\&.h\&.
+.PP
+Referenced by MainWindow()\&.
+.SS "QList<\fBKbWidget\fP*> MainWindow::kbWidgets\fC [private]\fP"
+
+.PP
+Definition at line 41 of file mainwindow\&.h\&.
+.PP
+Referenced by addDevice(), checkFwUpdates(), cleanup(), removeDevice(), showFwUpdateNotification(), and updateVersion()\&.
+.SS "\fBMainWindow\fP * MainWindow::mainWindow = 0\fC [static]\fP"
+
+.PP
+Definition at line 35 of file mainwindow\&.h\&.
+.PP
+Referenced by checkFwUpdates(), MainWindow(), and ExtraSettingsWidget::on_trayBox_clicked()\&.
+.SS "QAction* MainWindow::restoreAction\fC [private]\fP"
+
+.PP
+Definition at line 43 of file mainwindow\&.h\&.
+.PP
+Referenced by MainWindow()\&.
+.SS "\fBSettingsWidget\fP* MainWindow::settingsWidget\fC [private]\fP"
+
+.PP
+Definition at line 40 of file mainwindow\&.h\&.
+.PP
+Referenced by MainWindow(), timerTick(), and updateVersion()\&.
+.SS "QSystemTrayIcon* MainWindow::trayIcon\fC [private]\fP"
+
+.PP
+Definition at line 54 of file mainwindow\&.h\&.
+.PP
+Referenced by MainWindow(), and toggleTrayIcon()\&.
+.SS "QMenu* MainWindow::trayIconMenu\fC [private]\fP"
+
+.PP
+Definition at line 53 of file mainwindow\&.h\&.
+.PP
+Referenced by MainWindow()\&.
+.SS "\fBUi::MainWindow\fP* MainWindow::ui\fC [private]\fP"
+
+.PP
+Definition at line 75 of file mainwindow\&.h\&.
+.PP
+Referenced by addDevice(), MainWindow(), removeDevice(), showFwUpdateNotification(), and ~MainWindow()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

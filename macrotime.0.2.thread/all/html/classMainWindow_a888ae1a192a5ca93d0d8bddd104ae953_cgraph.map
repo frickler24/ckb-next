@@ -1,0 +1,42 @@
+<map id="MainWindow::timerTick" name="MainWindow::timerTick">
+<area shape="rect" id="node2" href="$classMainWindow.html#a7bd3f729676a76651d4852d03d1cfb8e" title="MainWindow::checkFwUpdates" alt="" coords="214,315,421,341"/>
+<area shape="rect" id="node7" href="$classKbFirmware.html#ab4153173aa1b28cc9d58ede675f02627" title="KbFirmware::checkUpdates" alt="" coords="1184,372,1368,399"/>
+<area shape="rect" id="node30" href="$classCkbSettings.html#a6945305e44cce23cc26785850637dbab" title="CkbSettings::get" alt="" coords="501,423,621,449"/>
+<area shape="rect" id="node33" href="$classSettingsWidget.html#a6ae876420712dcb104ce3ef5cabb0f53" title="SettingsWidget::pollUpdates" alt="" coords="223,473,411,500"/>
+<area shape="rect" id="node41" href="$classMainWindow.html#a04d901dec193f723d5ab3c4a3231b6b8" title="MainWindow::showWindow" alt="" coords="226,524,409,551"/>
+<area shape="rect" id="node3" href="$classKbWidget.html#adabed0db911bef8b3c0157372fb4e21a" title="KbWidget::updateFwButton" alt="" coords="470,264,653,291"/>
+<area shape="rect" id="node5" href="$classKbFirmware.html#adf60ed5d7553a8c3f362ce5ae29ce965" title="KbFirmware::versionForBoard" alt="" coords="701,289,896,316"/>
+<area shape="rect" id="node4" href="$classKbFirmware.html#aa103350a5d980275e2abc86d4bd8b62b" title="KbFirmware::hasDownloaded" alt="" coords="702,239,895,265"/>
+<area shape="rect" id="node6" href="$classKbFirmware.html#aa68b2e0aed9074c60eba72e9fa60a6b5" title="KbFirmware::_latestForBoard" alt="" coords="944,277,1136,304"/>
+<area shape="rect" id="node13" href="$classKbManager.html#ad22cd8487923dc938a925a6941ed6f3d" title="KbManager::ckbDaemonVersionF" alt="" coords="1416,321,1635,348"/>
+<area shape="rect" id="node14" href="$classKbManager.html#a444f0c8ab29309aad704e07a9aaaee05" title="KbManager::ckbGuiVersionF" alt="" coords="1431,271,1620,297"/>
+<area shape="rect" id="node15" href="$ckb-daemon_2main_8c.html#acd1527386a48875050e637e4bb872f11" title="quit Stop working the daemon. function is called if the daemon received a sigterm In this case..." alt="" coords="1255,125,1297,152"/>
+<area shape="rect" id="node29" href="$kbfirmware_8cpp.html#a61af340d454a04e7657e67151cd5ae2e" title="tableName" alt="" coords="1233,220,1319,247"/>
+<area shape="rect" id="node8" href="$classKbFirmware.html#a21477524cbd3621323795f4f5757c77b" title="KbFirmware::_checkUpdates" alt="" coords="1430,372,1621,399"/>
+<area shape="rect" id="node9" href="$classKbFirmware.html#a70d1d734d61e1a5eebc5411e02de231f" title="KbFirmware::downloadFinished" alt="" coords="1683,372,1887,399"/>
+<area shape="rect" id="node12" href="$classKbFirmware.html#a87e8a9b76f27124df80d81f54c7cd1da" title="KbFirmware::initManager" alt="" coords="1702,423,1869,449"/>
+<area shape="rect" id="node10" href="$classKbFirmware.html#ae2409af30da0ae6e8731623b2b68dfc9" title="KbFirmware::processDownload" alt="" coords="1937,372,2141,399"/>
+<area shape="rect" id="node11" href="$classKbManager.html#a4ce88ef95a35d0cd5a3ac67a0bc076ea" title="KbManager::parseVersionString" alt="" coords="2190,321,2397,348"/>
+<area shape="rect" id="node16" href="$ckb-daemon_2main_8c.html#a24a012c29e291fef5fa13f4a07fffd33" title="quitWithLock " alt="" coords="1476,125,1575,152"/>
+<area shape="rect" id="node17" href="$ckb-gradient_2main_8c.html#aa27d72ffe1172dde09660dd920e47e6e" title="ckb_info" alt="" coords="1750,151,1821,177"/>
+<area shape="rect" id="node18" href="$usb_8c.html#a8732b3ade76da4ae362996232ef95431" title="closeusb" alt="" coords="1748,201,1823,228"/>
+<area shape="rect" id="node22" href="$devnode_8c.html#a8d0aeeebb364608943b78573adb85c7f" title="Remove the dev path for the keyboard at index. Returns 0 on success. " alt="" coords="1997,24,2080,51"/>
+<area shape="rect" id="node27" href="$usb_8c.html#ae30a52968bb209e98461f48ffb2ee82f" title="revertusb" alt="" coords="1747,49,1823,76"/>
+<area shape="rect" id="node28" href="$usb_8h.html#a41aa3e13beb593c91a5410200b4dd8d2" title="Stop the USB system. " alt="" coords="1756,100,1815,127"/>
+<area shape="rect" id="node19" href="$usb_8h.html#a6a62575e9073fae15efb58f24fbfe5b8" title="os_closeusb unclaim it, destroy the udev device and clear data structures at kb " alt="" coords="1991,169,2086,196"/>
+<area shape="rect" id="node21" href="$input_8h.html#a44df5105a6a3f2eda5bc39a88201bd1a" title="os_inputclose" alt="" coords="1987,220,2090,247"/>
+<area shape="rect" id="node25" href="$devnode_8c.html#a4f2642e0c38280a1516fbe153c9fa18f" title="Update the list of connected devices. " alt="" coords="1978,119,2099,145"/>
+<area shape="rect" id="node20" href="$usb__linux_8c.html#afe1111f494da4776633be32fecaba44b" title="usbunclaim" alt="" coords="2249,169,2337,196"/>
+<area shape="rect" id="node23" href="$devnode_8c.html#a9d97ede033e4f6c6bdd1c66fc82aa15e" title="_rmnotifynode" alt="" coords="2241,56,2345,83"/>
+<area shape="rect" id="node24" href="$devnode_8c.html#aac8f6f936a0ff6c16adc677622b226c4" title="rm_recursive" alt="" coords="2245,5,2342,32"/>
+<area shape="rect" id="node26" href="$devnode_8c.html#acc36eaba5eb854461ab3c0a4d146e9c9" title="_updateconnected Update the list of connected devices. " alt="" coords="2229,119,2357,145"/>
+<area shape="rect" id="node31" href="$ckbsettings_8cpp.html#aa405e58960532b36ddb38251775238fd" title="globalSettings " alt="" coords="988,423,1092,449"/>
+<area shape="rect" id="node32" href="$classCkbSettings.html#a378a1793dae116fbea4a801396fa4fbb" title="CkbSettings::setWritable Remember if the config files are writable (setter) " alt="" coords="1192,423,1360,449"/>
+<area shape="rect" id="node34" href="$classExtraSettingsWidget.html#a77ded97e5f5097c29da0e6fe1a969ee7" title="ExtraSettingsWidget\l::pollUpdates" alt="" coords="490,495,633,537"/>
+<area shape="rect" id="node35" href="$classCkbSettings.html#a9c6a37558344dc426dd222deec6792f8" title="CkbSettings::isBusy" alt="" coords="727,473,870,500"/>
+<area shape="rect" id="node37" href="$classCkbSettings.html#a65c4f3ff1f75e5a554759040fb76044e" title="CkbSettings::set" alt="" coords="739,575,859,601"/>
+<area shape="rect" id="node40" href="$classKbLight.html#ae077a5423a30ade9554ff6749247156c" title="KbLight::shareDimming" alt="" coords="719,524,878,551"/>
+<area shape="rect" id="node36" href="$ckbsettings_8cpp.html#a5565e801b9999658c773c544a98ad10f" title="cacheWritesInProgress" alt="" coords="961,473,1119,500"/>
+<area shape="rect" id="node38" href="$classCkbSettings.html#a3793106d98878f170f9f9734bf39409b" title="CkbSettings::value" alt="" coords="973,575,1107,601"/>
+<area shape="rect" id="node39" href="$classCkbSettings.html#a29695ed0012617ba943a1878d4abc71c" title="CkbSettings::pwd" alt="" coords="1213,575,1339,601"/>
+</map>

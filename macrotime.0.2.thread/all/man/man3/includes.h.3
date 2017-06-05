@@ -1,0 +1,262 @@
+.TH "src/ckb-daemon/includes.h" 3 "Mon Jun 5 2017" "Version beta-v0.2.8+testing at branch macrotime.0.2.thread" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb-daemon/includes.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'os\&.h'\fP
+.br
+\fC#include <ctype\&.h>\fP
+.br
+\fC#include <dirent\&.h>\fP
+.br
+\fC#include <fcntl\&.h>\fP
+.br
+\fC#include <iconv\&.h>\fP
+.br
+\fC#include <pthread\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <limits\&.h>\fP
+.br
+\fC#include <sys/errno\&.h>\fP
+.br
+\fC#include <sys/ioctl\&.h>\fP
+.br
+\fC#include <sys/signal\&.h>\fP
+.br
+\fC#include <sys/stat\&.h>\fP
+.br
+\fC#include <sys/time\&.h>\fP
+.br
+\fC#include 'structures\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBINDEX_OF\fP(entry, array)   (int)(entry - array)"
+.br
+.ti -1c
+.RI "#define \fBckb_s_out\fP   stdout"
+.br
+.ti -1c
+.RI "#define \fBckb_s_err\fP   stdout"
+.br
+.ti -1c
+.RI "#define \fB__FILE_NOPATH__\fP   (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)"
+.br
+.ti -1c
+.RI "#define \fBckb_fatal_nofile\fP(fmt, args\&.\&.\&.)   fprintf(\fBckb_s_err\fP, '[F] ' fmt, ## args)"
+.br
+.ti -1c
+.RI "#define \fBckb_fatal_fn\fP(fmt, file, line, args\&.\&.\&.)   fprintf(\fBckb_s_err\fP, '[F] %s (via %s:%d): ' fmt, __func__, file, line, ## args)"
+.br
+.ti -1c
+.RI "#define \fBckb_fatal\fP(fmt, args\&.\&.\&.)   fprintf(\fBckb_s_err\fP, '[F] %s (%s:%d): ' fmt, __func__, \fB__FILE_NOPATH__\fP, __LINE__, ## args)"
+.br
+.ti -1c
+.RI "#define \fBckb_err_nofile\fP(fmt, args\&.\&.\&.)   fprintf(\fBckb_s_err\fP, '[E] ' fmt, ## args)"
+.br
+.ti -1c
+.RI "#define \fBckb_err_fn\fP(fmt, file, line, args\&.\&.\&.)   fprintf(\fBckb_s_err\fP, '[E] %s (via %s:%d): ' fmt, __func__, file, line, ## args)"
+.br
+.ti -1c
+.RI "#define \fBckb_err\fP(fmt, args\&.\&.\&.)   fprintf(\fBckb_s_err\fP, '[E] %s (%s:%d): ' fmt, __func__, \fB__FILE_NOPATH__\fP, __LINE__, ## args)"
+.br
+.ti -1c
+.RI "#define \fBckb_warn_nofile\fP(fmt, args\&.\&.\&.)   fprintf(\fBckb_s_out\fP, '[W] ' fmt, ## args)"
+.br
+.ti -1c
+.RI "#define \fBckb_warn_fn\fP(fmt, file, line, args\&.\&.\&.)   fprintf(\fBckb_s_out\fP, '[W] %s (via %s:%d): ' fmt, __func__, file, line, ## args)"
+.br
+.ti -1c
+.RI "#define \fBckb_warn\fP(fmt, args\&.\&.\&.)   fprintf(\fBckb_s_out\fP, '[W] %s (%s:%d): ' fmt, __func__, \fB__FILE_NOPATH__\fP, __LINE__, ## args)"
+.br
+.ti -1c
+.RI "#define \fBckb_info_nofile\fP(fmt, args\&.\&.\&.)   fprintf(\fBckb_s_out\fP, '[I] ' fmt, ## args)"
+.br
+.ti -1c
+.RI "#define \fBckb_info_fn\fP(fmt, file, line, args\&.\&.\&.)   fprintf(\fBckb_s_out\fP, '[I] ' fmt, ## args)"
+.br
+.ti -1c
+.RI "#define \fBckb_info\fP(fmt, args\&.\&.\&.)   fprintf(\fBckb_s_out\fP, '[I] ' fmt, ## args)"
+.br
+.ti -1c
+.RI "#define \fBtimespec_gt\fP(\fBleft\fP, \fBright\fP)   ((\fBleft\fP)\&.tv_sec > (\fBright\fP)\&.tv_sec || ((\fBleft\fP)\&.tv_sec == (\fBright\fP)\&.tv_sec && (\fBleft\fP)\&.tv_nsec > (\fBright\fP)\&.tv_nsec))"
+.br
+.ti -1c
+.RI "#define \fBtimespec_eq\fP(\fBleft\fP, \fBright\fP)   ((\fBleft\fP)\&.tv_sec == (\fBright\fP)\&.tv_sec && (\fBleft\fP)\&.tv_nsec == (\fBright\fP)\&.tv_nsec)"
+.br
+.ti -1c
+.RI "#define \fBtimespec_ge\fP(\fBleft\fP, \fBright\fP)   ((\fBleft\fP)\&.tv_sec > (\fBright\fP)\&.tv_sec || ((\fBleft\fP)\&.tv_sec == (\fBright\fP)\&.tv_sec && (\fBleft\fP)\&.tv_nsec >= (\fBright\fP)\&.tv_nsec))"
+.br
+.ti -1c
+.RI "#define \fBtimespec_lt\fP(\fBleft\fP, \fBright\fP)   (!\fBtimespec_ge\fP(\fBleft\fP, \fBright\fP))"
+.br
+.ti -1c
+.RI "#define \fBtimespec_le\fP(\fBleft\fP, \fBright\fP)   (!\fBtimespec_gt\fP(\fBleft\fP, \fBright\fP))"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef unsigned char \fBuchar\fP"
+.br
+.ti -1c
+.RI "typedef unsigned short \fBushort\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBtimespec_add\fP (struct timespec *timespec, long nanoseconds)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define __FILE_NOPATH__   (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)"
+
+.PP
+Definition at line 41 of file includes\&.h\&.
+.SS "#define ckb_err(fmt, args\&.\&.\&.)   fprintf(\fBckb_s_err\fP, '[E] %s (%s:%d): ' fmt, __func__, \fB__FILE_NOPATH__\fP, __LINE__, ## args)"
+
+.PP
+Definition at line 50 of file includes\&.h\&.
+.PP
+Referenced by _mkdevpath(), fwupdate(), getfwversion(), loaddpi(), loadrgb_kb(), loadrgb_mouse(), macro_pt_dequeue(), os_inputmain(), os_sendindicators(), os_setupusb(), restart(), setupusb(), uinputopen(), usb_tryreset(), usbadd(), and usbclaim()\&.
+.SS "#define ckb_err_fn(fmt, file, line, args\&.\&.\&.)   fprintf(\fBckb_s_err\fP, '[E] %s (via %s:%d): ' fmt, __func__, file, line, ## args)"
+
+.PP
+Definition at line 49 of file includes\&.h\&.
+.PP
+Referenced by _nk95cmd(), _usbrecv(), os_usbrecv(), and os_usbsend()\&.
+.SS "#define ckb_err_nofile(fmt, args\&.\&.\&.)   fprintf(\fBckb_s_err\fP, '[E] ' fmt, ## args)"
+
+.PP
+Definition at line 48 of file includes\&.h\&.
+.SS "#define ckb_fatal(fmt, args\&.\&.\&.)   fprintf(\fBckb_s_err\fP, '[F] %s (%s:%d): ' fmt, __func__, \fB__FILE_NOPATH__\fP, __LINE__, ## args)"
+
+.PP
+Definition at line 47 of file includes\&.h\&.
+.PP
+Referenced by usbmain()\&.
+.SS "#define ckb_fatal_fn(fmt, file, line, args\&.\&.\&.)   fprintf(\fBckb_s_err\fP, '[F] %s (via %s:%d): ' fmt, __func__, file, line, ## args)"
+
+.PP
+Definition at line 46 of file includes\&.h\&.
+.SS "#define ckb_fatal_nofile(fmt, args\&.\&.\&.)   fprintf(\fBckb_s_err\fP, '[F] ' fmt, ## args)"
+
+.PP
+Definition at line 45 of file includes\&.h\&.
+.PP
+Referenced by main()\&.
+.SS "#define ckb_info(fmt, args\&.\&.\&.)   fprintf(\fBckb_s_out\fP, '[I] ' fmt, ## args)"
+
+.PP
+Definition at line 56 of file includes\&.h\&.
+.PP
+Referenced by _setupusb(), _start_dev(), closeusb(), cmd_restart(), fwupdate(), os_inputmain(), os_setupusb(), rmdevpath(), usb_tryreset(), usbadd(), and usbclaim()\&.
+.SS "#define ckb_info_fn(fmt, file, line, args\&.\&.\&.)   fprintf(\fBckb_s_out\fP, '[I] ' fmt, ## args)"
+
+.PP
+Definition at line 55 of file includes\&.h\&.
+.SS "#define ckb_info_nofile(fmt, args\&.\&.\&.)   fprintf(\fBckb_s_out\fP, '[I] ' fmt, ## args)"
+
+.PP
+Definition at line 54 of file includes\&.h\&.
+.PP
+Referenced by main()\&.
+.SS "#define ckb_s_err   stdout"
+
+.PP
+Definition at line 37 of file includes\&.h\&.
+.SS "#define ckb_s_out   stdout"
+
+.PP
+Definition at line 36 of file includes\&.h\&.
+.SS "#define ckb_warn(fmt, args\&.\&.\&.)   fprintf(\fBckb_s_out\fP, '[W] %s (%s:%d): ' fmt, __func__, \fB__FILE_NOPATH__\fP, __LINE__, ## args)"
+
+.PP
+Definition at line 53 of file includes\&.h\&.
+.PP
+Referenced by _mkdevpath(), _mknotifynode(), _start_dev(), _updateconnected(), getfwversion(), hid_kb_translate(), isync(), mkfwnode(), os_inputclose(), os_keypress(), os_mousemove(), readlines(), rmdevpath(), uinputopen(), and usbmain()\&.
+.SS "#define ckb_warn_fn(fmt, file, line, args\&.\&.\&.)   fprintf(\fBckb_s_out\fP, '[W] %s (via %s:%d): ' fmt, __func__, file, line, ## args)"
+
+.PP
+Definition at line 52 of file includes\&.h\&.
+.PP
+Referenced by os_usbrecv(), and os_usbsend()\&.
+.SS "#define ckb_warn_nofile(fmt, args\&.\&.\&.)   fprintf(\fBckb_s_out\fP, '[W] ' fmt, ## args)"
+
+.PP
+Definition at line 51 of file includes\&.h\&.
+.PP
+Referenced by main()\&.
+.SS "#define INDEX_OF(entry, array)   (int)(entry - array)"
+
+.PP
+Definition at line 28 of file includes\&.h\&.
+.PP
+Referenced by _mkdevpath(), _mknotifynode(), _rmnotifynode(), _setupusb(), closeusb(), mkfwnode(), nprintf(), os_closeusb(), os_inputmain(), os_inputopen(), os_setupusb(), readcmd(), and rmdevpath()\&.
+.SS "#define timespec_eq(\fBleft\fP, \fBright\fP)   ((\fBleft\fP)\&.tv_sec == (\fBright\fP)\&.tv_sec && (\fBleft\fP)\&.tv_nsec == (\fBright\fP)\&.tv_nsec)"
+
+.PP
+Definition at line 61 of file includes\&.h\&.
+.SS "#define timespec_ge(\fBleft\fP, \fBright\fP)   ((\fBleft\fP)\&.tv_sec > (\fBright\fP)\&.tv_sec || ((\fBleft\fP)\&.tv_sec == (\fBright\fP)\&.tv_sec && (\fBleft\fP)\&.tv_nsec >= (\fBright\fP)\&.tv_nsec))"
+
+.PP
+Definition at line 62 of file includes\&.h\&.
+.SS "#define timespec_gt(\fBleft\fP, \fBright\fP)   ((\fBleft\fP)\&.tv_sec > (\fBright\fP)\&.tv_sec || ((\fBleft\fP)\&.tv_sec == (\fBright\fP)\&.tv_sec && (\fBleft\fP)\&.tv_nsec > (\fBright\fP)\&.tv_nsec))"
+
+.PP
+Definition at line 60 of file includes\&.h\&.
+.SS "#define timespec_le(\fBleft\fP, \fBright\fP)   (!\fBtimespec_gt\fP(\fBleft\fP, \fBright\fP))"
+
+.PP
+Definition at line 64 of file includes\&.h\&.
+.SS "#define timespec_lt(\fBleft\fP, \fBright\fP)   (!\fBtimespec_ge\fP(\fBleft\fP, \fBright\fP))"
+
+.PP
+Definition at line 63 of file includes\&.h\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef unsigned char \fBuchar\fP"
+
+.PP
+Definition at line 25 of file includes\&.h\&.
+.SS "typedef unsigned short \fBushort\fP"
+
+.PP
+Definition at line 26 of file includes\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "void timespec_add (struct timespec *timespec, longnanoseconds)"
+
+.PP
+Definition at line 19 of file main\&.c\&.
+.PP
+.nf
+19                                                               {
+20     nanoseconds += timespec->tv_nsec;
+21     timespec->tv_sec += nanoseconds / 1000000000;
+22     timespec->tv_nsec = nanoseconds % 1000000000;
+23 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

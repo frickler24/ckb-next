@@ -1,0 +1,113 @@
+.TH "src/ckb/media.h" 3 "Mon Jun 5 2017" "Version beta-v0.2.8+testing at branch macrotime.0.2.thread" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb/media.h \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBEXTERN_C\fP   extern"
+.br
+.ti -1c
+.RI "#define \fBENUM_C\fP(name)   typedef enum"
+.br
+.ti -1c
+.RI "#define \fBENUM_END_C\fP(name)   name"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBmuteState\fP { \fBUNKNOWN\fP = -1, \fBUNMUTED\fP, \fBMUTED\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBmuteState\fP \fBgetMuteState\fP ()"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ENUM_C(name)   typedef enum"
+
+.PP
+Definition at line 13 of file media\&.h\&.
+.SS "#define ENUM_END_C(name)   name"
+
+.PP
+Definition at line 14 of file media\&.h\&.
+.SS "#define EXTERN_C   extern"
+
+.PP
+Definition at line 12 of file media\&.h\&.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBmuteState\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUNKNOWN \fP\fP
+.TP
+\fB\fIUNMUTED \fP\fP
+.TP
+\fB\fIMUTED \fP\fP
+.PP
+Definition at line 19 of file media\&.h\&.
+.PP
+.nf
+19                   {
+20     UNKNOWN = -1,
+21     UNMUTED,
+22     MUTED
+23 } ENUM_END_C(muteState);
+.fi
+.SH "Function Documentation"
+.PP 
+.SS "\fBmuteState\fP getMuteState ()"
+
+.PP
+Definition at line 9 of file media_linux\&.cpp\&.
+.PP
+References MUTED, muteProcess, UNKNOWN, and UNMUTED\&.
+.PP
+Referenced by KbPerf::applyIndicators()\&.
+.PP
+.nf
+9                         {
+10     // Get default sink mute state from pulseaudio
+11     static muteState lastKnown = UNKNOWN;
+12     static quint64 lastTime = 0;
+13     // Instead of running a command to check the state and waiting for it to finish, run the command now but wait to check it until the next frame
+14     // (locking up the GUI thread is bad)
+15     if(lastTime > 0 && muteProcess\&.state() == QProcess::NotRunning){
+16         if(muteProcess\&.exitCode() != 0)
+17             lastKnown = UNKNOWN;
+18         QString output = muteProcess\&.readLine()\&.trimmed();
+19         if(output == "yes")
+20             lastKnown = MUTED;
+21         else if(output == "no")
+22             lastKnown = UNMUTED;
+23     }
+24     quint64 time = QDateTime::currentMSecsSinceEpoch();
+25     if(time - lastTime < 33)
+26         // Don't run it than 30 times per second
+27         return lastKnown;
+28     lastTime = time;
+29     if(muteProcess\&.state() == QProcess::NotRunning)
+30         // Shamelessly taken from pulseaudio-ctl
+31         muteProcess\&.start("sh", QStringList() << "-c" << "pacmd list-sinks|grep -A 15 '* index'|awk '/muted:/{ print $2 }'");
+32     return lastKnown;
+33 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

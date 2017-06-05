@@ -1,0 +1,26 @@
+<map id="src/ckb&#45;daemon/usb.h" name="src/ckb&#45;daemon/usb.h">
+<area shape="rect" id="node2" href="$devnode_8h.html" title="src/ckb&#45;daemon/devnode.h" alt="" coords="971,88,1149,115"/>
+<area shape="rect" id="node3" href="$command_8c.html" title="src/ckb&#45;daemon/command.c" alt="" coords="5,179,192,205"/>
+<area shape="rect" id="node4" href="$device__keyboard_8c.html" title="src/ckb&#45;daemon/device\l_keyboard.c" alt="" coords="421,171,579,213"/>
+<area shape="rect" id="node5" href="$device__mouse_8c.html" title="src/ckb&#45;daemon/device\l_mouse.c" alt="" coords="603,171,760,213"/>
+<area shape="rect" id="node7" href="$firmware_8c.html" title="src/ckb&#45;daemon/firmware.c" alt="" coords="217,179,396,205"/>
+<area shape="rect" id="node10" href="$usb_8c.html" title="src/ckb&#45;daemon/usb.c" alt="" coords="1174,179,1324,205"/>
+<area shape="rect" id="node11" href="$usb__linux_8c.html" title="src/ckb&#45;daemon/usb\l_linux.c" alt="" coords="1349,171,1488,213"/>
+<area shape="rect" id="node12" href="$usb__mac_8c.html" title="src/ckb&#45;daemon/usb\l_mac.c" alt="" coords="1695,171,1835,213"/>
+<area shape="rect" id="node13" href="$device_8c.html" title="src/ckb&#45;daemon/device.c" alt="" coords="1521,88,1689,115"/>
+<area shape="rect" id="node14" href="$input_8h.html" title="src/ckb&#45;daemon/input.h" alt="" coords="1338,88,1496,115"/>
+<area shape="rect" id="node20" href="$dpi_8c.html" title="src/ckb&#45;daemon/dpi.c" alt="" coords="1764,88,1911,115"/>
+<area shape="rect" id="node21" href="$led_8c.html" title="src/ckb&#45;daemon/led.c" alt="" coords="1935,88,2081,115"/>
+<area shape="rect" id="node22" href="$led__keyboard_8c.html" title="src/ckb&#45;daemon/led\l_keyboard.c" alt="" coords="2105,81,2240,122"/>
+<area shape="rect" id="node23" href="$led__mouse_8c.html" title="src/ckb&#45;daemon/led\l_mouse.c" alt="" coords="2265,81,2400,122"/>
+<area shape="rect" id="node24" href="$profile__keyboard_8c.html" title="src/ckb&#45;daemon/profile\l_keyboard.c" alt="" coords="2425,81,2579,122"/>
+<area shape="rect" id="node25" href="$profile__mouse_8c.html" title="src/ckb&#45;daemon/profile\l_mouse.c" alt="" coords="2604,81,2757,122"/>
+<area shape="rect" id="node6" href="$devnode_8c.html" title="src/ckb&#45;daemon/devnode.c" alt="" coords="971,179,1149,205"/>
+<area shape="rect" id="node8" href="$main_8c.html" title="src/ckb&#45;daemon/main.c" alt="" coords="1513,179,1671,205"/>
+<area shape="rect" id="node9" href="$notify_8c.html" title="src/ckb&#45;daemon/notify.c" alt="" coords="784,179,947,205"/>
+<area shape="rect" id="node15" href="$device__vtable_8c.html" title="src/ckb&#45;daemon/device\l_vtable.c" alt="" coords="2573,171,2731,213"/>
+<area shape="rect" id="node16" href="$input_8c.html" title="src/ckb&#45;daemon/input.c" alt="" coords="1859,179,2017,205"/>
+<area shape="rect" id="node17" href="$input__linux_8c.html" title="src/ckb&#45;daemon/input\l_linux.c" alt="" coords="2043,171,2189,213"/>
+<area shape="rect" id="node18" href="$input__mac_8c.html" title="src/ckb&#45;daemon/input\l_mac.c" alt="" coords="2213,171,2360,213"/>
+<area shape="rect" id="node19" href="$profile_8c.html" title="src/ckb&#45;daemon/profile.c" alt="" coords="2384,179,2548,205"/>
+</map>

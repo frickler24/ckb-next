@@ -1,0 +1,408 @@
+.TH "src/ckb-wave/main.c" 3 "Mon Jun 5 2017" "Version beta-v0.2.8+testing at branch macrotime.0.2.thread" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb-wave/main.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./ckb/ckb-anim\&.h'\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBANIM_MAX\fP   (144 * 2)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBckb_info\fP ()"
+.br
+.ti -1c
+.RI "void \fBckb_init\fP (\fBckb_runctx\fP *context)"
+.br
+.ti -1c
+.RI "void \fBckb_parameter\fP (\fBckb_runctx\fP *context, const char *name, const char *value)"
+.br
+.ti -1c
+.RI "void \fBanim_add\fP (float \fBx\fP, float \fBy\fP)"
+.br
+.ti -1c
+.RI "void \fBanim_remove\fP (float \fBx\fP, float \fBy\fP)"
+.br
+.ti -1c
+.RI "void \fBckb_keypress\fP (\fBckb_runctx\fP *context, \fBckb_key\fP *\fBkey\fP, int \fBx\fP, int \fBy\fP, int state)"
+.br
+.ti -1c
+.RI "void \fBckb_start\fP (\fBckb_runctx\fP *context, int state)"
+.br
+.ti -1c
+.RI "void \fBckb_time\fP (\fBckb_runctx\fP *context, double delta)"
+.br
+.ti -1c
+.RI "int \fBckb_frame\fP (\fBckb_runctx\fP *context)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBckb_gradient\fP \fBanimcolor\fP = { 0 }"
+.br
+.ti -1c
+.RI "int \fBsymmetric\fP = 0"
+.br
+.ti -1c
+.RI "int \fBkprelease\fP = 0"
+.br
+.ti -1c
+.RI "double \fBangle\fP = 0\&."
+.br
+.ti -1c
+.RI "double \fBleft\fP = 0\&."
+.br
+.ti -1c
+.RI "double \fBtop\fP = 0\&."
+.br
+.ti -1c
+.RI "double \fBanimlength\fP = 0\&."
+.br
+.ti -1c
+.RI "double \fBwidth\fP = 0\&."
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "int \fBactive\fP"
+.br
+.ti -1c
+.RI "float \fBx\fP"
+.br
+.ti -1c
+.RI "float \fBy\fP"
+.br
+.ti -1c
+.RI "float \fBcurx\fP"
+.br
+.ti -1c
+.RI "} \fBanim\fP [(144 *2)] = { }"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ANIM_MAX   (144 * 2)"
+
+.PP
+Definition at line 98 of file main\&.c\&.
+.PP
+Referenced by anim_add(), anim_remove(), ckb_frame(), and ckb_time()\&.
+.SH "Function Documentation"
+.PP 
+.SS "void anim_add (floatx, floaty)"
+
+.PP
+Definition at line 105 of file main\&.c\&.
+.PP
+References anim, ANIM_MAX, animlength, symmetric, width, x, and y\&.
+.PP
+.nf
+105                                {
+106     for(int i = 0; i < ANIM_MAX; i++){
+107         if(anim[i]\&.active)
+108             continue;
+109         anim[i]\&.active = 1;
+110         anim[i]\&.x = x;
+111         anim[i]\&.y = y;
+112         anim[i]\&.curx = symmetric ? -animlength * width : 0\&.f;
+113         return;
+114     }
+115 }
+.fi
+.SS "void anim_remove (floatx, floaty)"
+
+.PP
+Definition at line 117 of file main\&.c\&.
+.PP
+References anim, and ANIM_MAX\&.
+.PP
+.nf
+117                                   {
+118     for(int i = 0; i < ANIM_MAX; i++){
+119         if(anim[i]\&.active && anim[i]\&.x == x && anim[i]\&.y == y)
+120             anim[i]\&.active = 0;
+121     }
+122 }
+.fi
+.SS "int ckb_frame (\fBckb_runctx\fP *context)"
+
+.PP
+Definition at line 152 of file main\&.c\&.
+.PP
+References angle, anim, ANIM_MAX, animlength, ckb_alpha_blend(), ckb_grad_color(), CKB_KEYCLEAR, ckb_runctx::keycount, ckb_runctx::keys, symmetric, width, x, and y\&.
+.PP
+Referenced by main()\&.
+.PP
+.nf
+152                                   {
+153     CKB_KEYCLEAR(context);
+154     // Draw keys
+155     double length = animlength * width;
+156     unsigned count = context->keycount;
+157     ckb_key* keys = context->keys;
+158     for(unsigned i = 0; i < ANIM_MAX; i++){
+159         if(anim[i]\&.active){
+160             for(ckb_key* key = keys; key < keys + count; key++){
+161                 // Translate and rotate the key position into the animation's coordinate system
+162                 float x = key->x - anim[i]\&.x, y = key->y - anim[i]\&.y;
+163                 // Distance is the current X minus the key's X
+164                 float distance = anim[i]\&.curx - (x * cos(angle) - y * sin(angle));
+165                 distance /= length;
+166                 // If symmetric, use absolute distance
+167                 if(symmetric)
+168                     distance = fabs(distance);
+169                 else if(distance >= -0\&.005f && distance < 0\&.f)
+170                     // If not symmetric, round values close to 0
+171                     distance = 0\&.f;
+172                 if(distance > 1\&.f && distance <= 1\&.005f)
+173                     // Round values close to 1
+174                     distance = 1\&.f;
+175                 // Pick gradient position based on distance
+176                 if(distance <= 1\&.f && distance >= 0\&.){
+177                     float a, r, g, b;
+178                     ckb_grad_color(&a, &r, &g, &b, &animcolor, distance * 100\&.);
+179                     ckb_alpha_blend(key, a, r, g, b);
+180                 }
+181             }
+182         }
+183     }
+184     return 0;
+185 }
+.fi
+.SS "void ckb_info ()"
+
+.PP
+Definition at line 4 of file main\&.c\&.
+.PP
+References CKB_COPYRIGHT, CKB_DESCRIPTION, CKB_GUID, CKB_KP_POSITION, CKB_KPMODE, CKB_LICENSE, CKB_LIVEPARAMS, CKB_NAME, CKB_PARAM_AGRADIENT, CKB_PARAM_ANGLE, CKB_PARAM_BOOL, CKB_PARAM_DOUBLE, CKB_PREEMPT, CKB_PRESET_END, CKB_PRESET_PARAM, CKB_PRESET_START, CKB_TIME_DURATION, CKB_TIMEMODE, CKB_VERSION, and TRUE\&.
+.PP
+Referenced by main()\&.
+.PP
+.nf
+4                {
+5     // Plugin info
+6     CKB_NAME("Wave");
+7     CKB_VERSION("0\&.10");
+8     CKB_COPYRIGHT("2014-2016", "MSC");
+9     CKB_LICENSE("GPLv2");
+10     CKB_GUID("{E0BBA19E-C328-4C0E-8E3C-A06D5722B4FC}");
+11     CKB_DESCRIPTION("A moving wave effect\&.");
+12 
+13     // Effect parameters
+14     CKB_PARAM_ANGLE("angle", "Angle:", "", 90);
+15     CKB_PARAM_AGRADIENT("color", "Wave color:", "", "ffffffff");
+16     CKB_PARAM_DOUBLE("length", "Wave length:", "%", 100, 1\&., 100\&.);
+17     CKB_PARAM_BOOL("symmetric", "Symmetric", 0);
+18 
+19     // Timing/input parameters
+20     CKB_KPMODE(CKB_KP_POSITION);
+21     CKB_TIMEMODE(CKB_TIME_DURATION);
+22     CKB_LIVEPARAMS(TRUE);
+23     CKB_PREEMPT(TRUE);
+24 
+25     // Presets
+26     CKB_PRESET_START("Shimmer");
+27     CKB_PRESET_PARAM("duration", "2\&.0");
+28     CKB_PRESET_PARAM("length", "50\&.0");
+29     CKB_PRESET_PARAM("symmetric", "1");
+30     CKB_PRESET_END;
+31 
+32     CKB_PRESET_START("Rainbow");
+33     CKB_PRESET_PARAM("color", "0:ffff0000 17:ffffff00 33:ff00ff00 50:ff00ffff 67:ff0000ff 83:ffff00ff 100:ffff0000");
+34     CKB_PRESET_PARAM("duration", "2\&.0");
+35     CKB_PRESET_END;
+36 
+37     CKB_PRESET_START("Vertical rainbow");
+38     CKB_PRESET_PARAM("color", "0:ffff0000 17:ffffff00 33:ff00ff00 50:ff00ffff 67:ff0000ff 83:ffff00ff 100:ffff0000");
+39     CKB_PRESET_PARAM("duration", "2\&.0");
+40     CKB_PRESET_PARAM("angle", "180");
+41     CKB_PRESET_END;
+42 }
+.fi
+.SS "void ckb_init (\fBckb_runctx\fP *context)"
+
+.PP
+Definition at line 44 of file main\&.c\&.
+.PP
+Referenced by main()\&.
+.PP
+.nf
+44                                   {
+45     // Nothing to do
+46 }
+.fi
+.SS "void ckb_keypress (\fBckb_runctx\fP *context, \fBckb_key\fP *key, intx, inty, intstate)"
+
+.PP
+Definition at line 124 of file main\&.c\&.
+.PP
+References anim_add(), and anim_remove()\&.
+.PP
+Referenced by main()\&.
+.PP
+.nf
+124                                                                              {
+125     // Start or stop animation on a key
+126     if(state)
+127         anim_add(x, y);
+128     else
+129         anim_remove(x, y);
+130 }
+.fi
+.SS "void ckb_parameter (\fBckb_runctx\fP *context, const char *name, const char *value)"
+
+.PP
+Definition at line 54 of file main\&.c\&.
+.PP
+References angle, animlength, CKB_PARSE_AGRADIENT, CKB_PARSE_ANGLE, CKB_PARSE_BOOL, CKB_PARSE_DOUBLE, CKB_REAL_ANGLE, ckb_runctx::height, kprelease, left, symmetric, top, width, ckb_runctx::width, x, and y\&.
+.PP
+Referenced by ckb_read_params()\&.
+.PP
+.nf
+54                                                                             {
+55     CKB_PARSE_AGRADIENT("color", &animcolor){}
+56     double len;
+57     CKB_PARSE_DOUBLE("length", &len){
+58         animlength = len / 100\&.;
+59     }
+60     CKB_PARSE_BOOL("symmetric", &symmetric){}
+61     CKB_PARSE_BOOL("kprelease", &kprelease){}
+62     long _angle;
+63     CKB_PARSE_ANGLE("angle", &_angle){
+64         angle = CKB_REAL_ANGLE(_angle);
+65         // Get each of the four corners of the keyboard, relative to the center
+66         double wOver2 = context->width / 2\&., hOver2 = context->height / 2\&.;
+67         double x[4] = {
+68             -wOver2, wOver2,
+69             -wOver2, wOver2
+70         };
+71         double y[4] = {
+72             -hOver2, -hOver2,
+73             hOver2, hOver2
+74         };
+75         // Rotate them in the direction that the animation will travel
+76         for(int i = 0; i < 4; i++){
+77             double x2 = x[i] * cos(angle) - y[i] * sin(angle);
+78             y[i] = x[i] * sin(angle) + y[i] * cos(angle);
+79             x[i] = x2;
+80         }
+81         // Determine the leftmost and rightmost points
+82         double min_x = INFINITY, max_x = -INFINITY;
+83         for(int i = 0; i < 4; i++){
+84             if(x[i] < min_x)
+85                 min_x = x[i];
+86             if(x[i] > max_x)
+87                 max_x = x[i];
+88         }
+89         // The leftmost point is where the animation will begin when started with the mode,
+90         // and the difference between the two is the animation width\&.
+91         // Animations always travel left to right in their own coordinate system\&.
+92         left = min_x * cos(-angle) + wOver2;
+93         top = min_x * sin(-angle) + hOver2;
+94         width = max_x - min_x;
+95     }
+96 }
+.fi
+.SS "void ckb_start (\fBckb_runctx\fP *context, intstate)"
+
+.PP
+Definition at line 132 of file main\&.c\&.
+.PP
+References anim_add(), anim_remove(), kprelease, left, and top\&.
+.PP
+Referenced by main()\&.
+.PP
+.nf
+132                                               {
+133     // Start or stop animation on the edge of the keyboard
+134     if(state)
+135         anim_add(left, top);
+136     else if(kprelease)
+137         anim_remove(left, top);
+138 }
+.fi
+.SS "void ckb_time (\fBckb_runctx\fP *context, doubledelta)"
+
+.PP
+Definition at line 140 of file main\&.c\&.
+.PP
+References anim, ANIM_MAX, animlength, and width\&.
+.PP
+Referenced by main()\&.
+.PP
+.nf
+140                                                 {
+141     // Advance all waves, remove them if they pass the edge
+142     double length = animlength * width;
+143     for(unsigned i = 0; i < ANIM_MAX; i++){
+144         if(anim[i]\&.active){
+145             anim[i]\&.curx += width * delta;
+146             if(anim[i]\&.curx > width + length)
+147                 anim[i]\&.active = 0;
+148         }
+149     }
+150 }
+.fi
+.SH "Variable Documentation"
+.PP 
+.SS "double angle = 0\&."
+
+.PP
+Definition at line 50 of file main\&.c\&.
+.PP
+Referenced by angleFlip(), ckb_frame(), and ckb_parameter()\&.
+.SS "struct { \&.\&.\&. }   anim[ (144 * 2) ]"
+
+.SS "\fBckb_gradient\fP animcolor = { 0 }"
+
+.PP
+Definition at line 48 of file main\&.c\&.
+.SS "double animlength = 0\&."
+
+.PP
+Definition at line 52 of file main\&.c\&.
+.SS "int kprelease = 0"
+
+.PP
+Definition at line 49 of file main\&.c\&.
+.SS "double left = 0\&."
+
+.PP
+Definition at line 51 of file main\&.c\&.
+.PP
+Referenced by _cmd_macro(), ckb_parameter(), ckb_start(), cmd_dpi(), GradientDialogWidget::mouseMoveEvent(), readcmd(), and right()\&.
+.SS "int symmetric = 0"
+
+.PP
+Definition at line 49 of file main\&.c\&.
+.SS "double top = 0\&."
+
+.PP
+Definition at line 51 of file main\&.c\&.
+.PP
+Referenced by ckb_parameter(), ckb_start(), and GradientDialogWidget::mouseMoveEvent()\&.
+.SS "double width = 0\&."
+
+.PP
+Definition at line 52 of file main\&.c\&.
+.PP
+Referenced by anim_add(), ckb_frame(), ckb_parameter(), ckb_time(), KeyWidget::drawInfo(), GradientDialogWidget::fillRect(), KeyWidget::map(), and KeyWidget::paintEvent()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

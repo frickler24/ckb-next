@@ -1,0 +1,490 @@
+.TH "GradientDialog" 3 "Mon Jun 5 2017" "Version beta-v0.2.8+testing at branch macrotime.0.2.thread" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GradientDialog \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/gradientdialog\&.h>\fP
+.PP
+Inherits \fBQDialog\fP\&.
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBPreset\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGradientDialog\fP (\fBQWidget\fP *parent=0)"
+.br
+.ti -1c
+.RI "\fB~GradientDialog\fP ()"
+.br
+.ti -1c
+.RI "QGradientStops \fBgetGradient\fP (const QGradientStops &prevGradient)"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBcurrentChanged\fP (QColor color, bool spontaneous, int position)"
+.br
+.ti -1c
+.RI "void \fBcolorChanged\fP (QColor color)"
+.br
+.ti -1c
+.RI "void \fBon_presetList_currentItemChanged\fP (QListWidgetItem *\fBcurrent\fP, QListWidgetItem *previous)"
+.br
+.ti -1c
+.RI "void \fBon_presetName_textEdited\fP (const QString &arg1)"
+.br
+.ti -1c
+.RI "void \fBon_presetSave_clicked\fP ()"
+.br
+.ti -1c
+.RI "void \fBon_presetDelete_clicked\fP ()"
+.br
+.ti -1c
+.RI "void \fBon_stopPos_valueChanged\fP (int arg1)"
+.br
+.ti -1c
+.RI "void \fBon_stopOpacity_valueChanged\fP (int arg1)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBaddPreset\fP (const \fBPreset\fP &preset)"
+.br
+.ti -1c
+.RI "QIcon \fBmakeIcon\fP (const \fBPreset\fP &preset)"
+.br
+.ti -1c
+.RI "void \fBupdatePresets\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetPreset\fP (const QString &newPreset)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QMap< QString, \fBPreset\fP > \fBpresets\fP"
+.br
+.ti -1c
+.RI "QString \fBcurrentPreset\fP"
+.br
+.ti -1c
+.RI "\fBUi::GradientDialog\fP * \fBui\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 12 of file gradientdialog\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "GradientDialog::GradientDialog (\fBQWidget\fP *parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 11 of file gradientdialog\&.cpp\&.
+.PP
+References addPreset(), CkbSettings::childGroups(), CkbSettings::childKeys(), colorChanged(), currentChanged(), GradientDialog::Preset::gradient, prefsPath, presets, Ui_GradientDialog::setupUi(), Ui_GradientDialog::stopColor, ui, updatePresets(), CkbSettings::value(), and Ui_GradientDialog::widget\&.
+.PP
+.nf
+11                                               :
+12     QDialog(parent),
+13     ui(new Ui::GradientDialog)
+14 {
+15     ui->setupUi(this);
+16     connect(ui->widget, SIGNAL(currentChanged(QColor,bool,int)), this, SLOT(currentChanged(QColor,bool,int)));
+17     connect(ui->stopColor, SIGNAL(colorChanged(QColor)), this, SLOT(colorChanged(QColor)));
+18 
+19     // Add built-in presets
+20     Preset blackAndWhite("B & W", true);
+21     blackAndWhite\&.gradient\&.append(QGradientStop(0\&., QColor(0, 0, 0)));
+22     blackAndWhite\&.gradient\&.append(QGradientStop(1\&., QColor(255, 255, 255)));
+23     Preset fade("Fade", true);
+24     fade\&.gradient\&.append(QGradientStop(0\&., QColor(255, 255, 255)));
+25     fade\&.gradient\&.append(QGradientStop(1\&., QColor(255, 255, 255, 0)));
+26     Preset rainbow("Rainbow", true);
+27     rainbow\&.gradient\&.append(QGradientStop(0\&.00, QColor(255, 0, 0)));
+28     rainbow\&.gradient\&.append(QGradientStop(0\&.17, QColor(255, 255, 0)));
+29     rainbow\&.gradient\&.append(QGradientStop(0\&.33, QColor(0, 255, 0)));
+30     rainbow\&.gradient\&.append(QGradientStop(0\&.50, QColor(0, 255, 255)));
+31     rainbow\&.gradient\&.append(QGradientStop(0\&.67, QColor(0, 0, 255)));
+32     rainbow\&.gradient\&.append(QGradientStop(0\&.83, QColor(255, 0, 255)));
+33     rainbow\&.gradient\&.append(QGradientStop(1\&.00, QColor(255, 0, 0)));
+34     addPreset(blackAndWhite);
+35     addPreset(fade);
+36     addPreset(rainbow);
+37 
+38     // Load stored presets
+39     CkbSettings settings(prefsPath);
+40     foreach(const QString& name, settings\&.childGroups()){
+41         QString pName = name\&.toLower();
+42         if(presets\&.contains(pName))
+43             continue;
+44         SGroup group(settings, name);
+45         // Create keys in a map to ensure correct order and no duplicates
+46         QMap<int, QColor> colors;
+47         foreach(const QString& position, settings\&.childKeys()){
+48             int pos = position\&.toInt();
+49             if(pos < 0 || pos > 100)
+50                 continue;
+51             colors[pos] = settings\&.value(position)\&.value<QColor>();
+52         }
+53         if(colors\&.count() < 2)
+54             continue;
+55         Preset preset(name);
+56         QMapIterator<int, QColor> i(colors);
+57         while(i\&.hasNext()){
+58             i\&.next();
+59             preset\&.gradient\&.append(QGradientStop(i\&.key() / 100\&., i\&.value()));
+60         }
+61         presets[pName] = preset;
+62     }
+63 
+64     updatePresets();
+65 }
+.fi
+.SS "GradientDialog::~GradientDialog ()"
+
+.PP
+Definition at line 77 of file gradientdialog\&.cpp\&.
+.PP
+References GradientDialog::Preset::builtIn, GradientDialog::Preset::gradient, GradientDialog::Preset::name, prefsPath, presets, CkbSettings::setValue(), and ui\&.
+.PP
+.nf
+77                                {
+78     // Save presets
+79     CkbSettings settings(prefsPath, true);
+80     QMapIterator<QString, Preset> i(presets);
+81     while(i\&.hasNext()){
+82         Preset preset = i\&.next()\&.value();
+83         if(!preset\&.builtIn){
+84             SGroup group(settings, preset\&.name);
+85             foreach(const QGradientStop& stop, preset\&.gradient)
+86                 settings\&.setValue(QString::number((int)(stop\&.first * 100\&.)), stop\&.second);
+87         }
+88     }
+89     delete ui;
+90 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void GradientDialog::addPreset (const \fBPreset\fP &preset)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 34 of file gradientdialog\&.h\&.
+.PP
+References GradientDialog::Preset::name, and presets\&.
+.PP
+Referenced by GradientDialog()\&.
+.PP
+.nf
+34 { presets[preset\&.name\&.toLower()] = preset; }
+.fi
+.SS "void GradientDialog::colorChanged (QColorcolor)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 234 of file gradientdialog\&.cpp\&.
+.PP
+References GradientDialogWidget::setCurrentColor(), setPreset(), Ui_GradientDialog::stopOpacity, ui, and Ui_GradientDialog::widget\&.
+.PP
+Referenced by GradientDialog(), and on_stopOpacity_valueChanged()\&.
+.PP
+.nf
+234                                              {
+235     color\&.setAlphaF(ui->stopOpacity->value() / 100\&.f);
+236     ui->widget->setCurrentColor(color);
+237     setPreset("");
+238 }
+.fi
+.SS "void GradientDialog::currentChanged (QColorcolor, boolspontaneous, intposition)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 128 of file gradientdialog\&.cpp\&.
+.PP
+References ColorButton::color(), setPreset(), Ui_GradientDialog::stopBox, Ui_GradientDialog::stopColor, GradientDialogWidget::stopCount(), Ui_GradientDialog::stopOpacity, Ui_GradientDialog::stopPos, ui, and Ui_GradientDialog::widget\&.
+.PP
+Referenced by GradientDialog()\&.
+.PP
+.nf
+128                                                                                {
+129     int pCount = ui->widget->stopCount();
+130     if(pCount == 1)
+131         ui->stopBox->setTitle("1 point");
+132     else
+133         ui->stopBox->setTitle(QString("%1 points")\&.arg(pCount));
+134     if(!color\&.isValid()){
+135         ui->stopBox->setEnabled(false);
+136         ui->stopPos->setValue(0);
+137         ui->stopColor->color(QColor(0, 0, 0));
+138         ui->stopOpacity->setValue(0);
+139     } else {
+140         ui->stopBox->setEnabled(true);
+141         ui->stopPos->setValue(position);
+142         ui->stopColor->color(color);
+143         ui->stopOpacity->setValue(round(color\&.alphaF() * 100\&.f));
+144     }
+145     // Un-set current preset
+146     if(spontaneous)
+147         setPreset("");
+148     setFocus();
+149 }
+.fi
+.SS "QGradientStops GradientDialog::getGradient (const QGradientStops &prevGradient)"
+
+.PP
+Definition at line 67 of file gradientdialog\&.cpp\&.
+.PP
+References Ui_GradientDialog::presetDelete, Ui_GradientDialog::presetSave, GradientDialogWidget::setStops(), GradientDialogWidget::stops(), ui, and Ui_GradientDialog::widget\&.
+.PP
+Referenced by GradientButton::pickGradient()\&.
+.PP
+.nf
+67                                                                             {
+68     ui->presetDelete->setEnabled(false);
+69     ui->presetSave->setEnabled(true);
+70     ui->widget->setStops(prevGradient);
+71     exec();
+72     if(result() != QDialog::Accepted)
+73         return prevGradient;
+74     return ui->widget->stops();
+75 }
+.fi
+.SS "QIcon GradientDialog::makeIcon (const \fBPreset\fP &preset)\fC [private]\fP"
+
+.PP
+Definition at line 92 of file gradientdialog\&.cpp\&.
+.PP
+References GradientDialog::Preset::gradient, x, and y\&.
+.PP
+Referenced by updatePresets()\&.
+.PP
+.nf
+92                                                   {
+93     // Paint gradient into a square
+94     int w = 60, h = 60;
+95     QImage image(w, h, QImage::Format_RGB888);
+96     QPainter painter(&image);
+97     // Draw background
+98     for(int x = 0; x < w; x += 30){
+99         for(int y = 0; y < h; y += 30){
+100             painter\&.fillRect(x, y, 15, 15, QColor(255, 255, 255));
+101             painter\&.fillRect(x + 15, y, 15, 15, QColor(192, 192, 192));
+102             painter\&.fillRect(x, y + 15, 15, 15, QColor(192, 192, 192));
+103             painter\&.fillRect(x + 15, y + 15, 15, 15, QColor(255, 255, 255));
+104         }
+105     }
+106     // Draw gradient
+107     painter\&.setPen(QColor(0, 0, 0));
+108     QLinearGradient gradient(1\&., 1\&., w - 1\&., h - 1\&.);
+109     gradient\&.setStops(preset\&.gradient);
+110     painter\&.setBrush(gradient);
+111     painter\&.drawRect(0, 0, w - 1, h - 1);
+112     return QPixmap::fromImage(image);
+113 }
+.fi
+.SS "void GradientDialog::on_presetDelete_clicked ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 211 of file gradientdialog\&.cpp\&.
+.PP
+References GradientDialog::Preset::builtIn, current, currentPreset, GradientDialog::Preset::name, Ui_GradientDialog::presetDelete, presets, Ui_GradientDialog::presetSave, ui, and updatePresets()\&.
+.PP
+.nf
+211                                             {
+212     Preset current = presets\&.value(currentPreset);
+213     if(current\&.name == "" || current\&.builtIn)
+214         return;
+215     if(QMessageBox::warning(this, "Warning", QString("Delete preset \"%1\"?")\&.arg(current\&.name), QMessageBox::StandardButtons(QMessageBox::Yes | QMessageBox::No)) != QMessageBox::Yes){
+216         setFocus();
+217         return;
+218     }
+219     presets\&.remove(currentPreset);
+220     currentPreset = "";
+221     ui->presetDelete->setEnabled(false);
+222     ui->presetSave->setEnabled(true);
+223     updatePresets();
+224     setFocus();
+225 }
+.fi
+.SS "void GradientDialog::on_presetList_currentItemChanged (QListWidgetItem *current, QListWidgetItem *previous)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 174 of file gradientdialog\&.cpp\&.
+.PP
+References setPreset()\&.
+.PP
+.nf
+174                                                                                                         {
+175     setPreset(current ? current->text()\&.toLower() : "");
+176 }
+.fi
+.SS "void GradientDialog::on_presetName_textEdited (const QString &arg1)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 178 of file gradientdialog\&.cpp\&.
+.PP
+References currentPreset, presets, and setPreset()\&.
+.PP
+.nf
+178                                                                 {
+179     if(currentPreset != "" && arg1\&.trimmed() != presets[currentPreset]\&.name)
+180         setPreset("");
+181 }
+.fi
+.SS "void GradientDialog::on_presetSave_clicked ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 183 of file gradientdialog\&.cpp\&.
+.PP
+References GradientDialog::Preset::builtIn, currentPreset, GradientDialog::Preset::name, Ui_GradientDialog::presetDelete, Ui_GradientDialog::presetName, presets, Ui_GradientDialog::presetSave, GradientDialogWidget::stops(), ui, updatePresets(), and Ui_GradientDialog::widget\&.
+.PP
+.nf
+183                                           {
+184     if(currentPreset != "")
+185         return;
+186     QString name = ui->presetName->text()\&.trimmed();
+187     if(name == "")
+188         ui->presetName->setText(name = "Custom");
+189     QString pName = name\&.toLower();
+190     // Make sure not to overwrite a built-in preset
+191     Preset previous = presets[pName];
+192     if(previous\&.builtIn){
+193         QMessageBox::warning(this, "Error", "Can't overwrite a built-in preset\&. Please choose a different name\&.");
+194         setFocus();
+195         return;
+196     } else if(previous\&.name != ""){
+197         // Warn when overwriting an existing preset
+198         if(QMessageBox::warning(this, "Warning", QString("Preset \"%1\" already exists\&. Replace?")\&.arg(name), QMessageBox::StandardButtons(QMessageBox::Save | QMessageBox::Cancel)) != QMessageBox::Save){
+199             setFocus();
+200             return;
+201         }
+202     }
+203     presets[pName] = Preset(name, ui->widget->stops());
+204     currentPreset = pName;
+205     ui->presetDelete->setEnabled(true);
+206     ui->presetSave->setEnabled(false);
+207     updatePresets();
+208     setFocus();
+209 }
+.fi
+.SS "void GradientDialog::on_stopOpacity_valueChanged (intarg1)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 240 of file gradientdialog\&.cpp\&.
+.PP
+References ColorButton::color(), colorChanged(), setPreset(), Ui_GradientDialog::stopColor, and ui\&.
+.PP
+.nf
+240                                                         {
+241     colorChanged(ui->stopColor->color());
+242     setPreset("");
+243 }
+.fi
+.SS "void GradientDialog::on_stopPos_valueChanged (intarg1)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 227 of file gradientdialog\&.cpp\&.
+.PP
+References GradientDialogWidget::moveCurrent(), setPreset(), Ui_GradientDialog::stopPos, ui, and Ui_GradientDialog::widget\&.
+.PP
+.nf
+227                                                     {
+228     int res = ui->widget->moveCurrent(arg1);
+229     if(res != arg1)
+230         ui->stopPos->setValue(res);
+231     setPreset("");
+232 }
+.fi
+.SS "void GradientDialog::setPreset (const QString &newPreset)\fC [private]\fP"
+
+.PP
+Definition at line 151 of file gradientdialog\&.cpp\&.
+.PP
+References GradientDialog::Preset::builtIn, current, currentPreset, GradientDialog::Preset::gradient, GradientDialog::Preset::name, Ui_GradientDialog::presetDelete, Ui_GradientDialog::presetList, Ui_GradientDialog::presetName, presets, Ui_GradientDialog::presetSave, GradientDialogWidget::setStops(), ui, and Ui_GradientDialog::widget\&.
+.PP
+Referenced by colorChanged(), currentChanged(), on_presetList_currentItemChanged(), on_presetName_textEdited(), on_stopOpacity_valueChanged(), and on_stopPos_valueChanged()\&.
+.PP
+.nf
+151                                                       {
+152     if(currentPreset == newPreset)
+153         return;
+154     if(newPreset == ""){
+155         ui->presetList->clearSelection();
+156         ui->presetList->setCurrentItem(0);
+157         Preset current = presets\&.value(currentPreset);
+158         QString curName = ui->presetName->text()\&.trimmed();
+159         if(curName == "" || (curName == current\&.name && current\&.builtIn))
+160             ui->presetName->setText("Custom");
+161         ui->presetDelete->setEnabled(false);
+162         ui->presetSave->setEnabled(true);
+163     } else {
+164         Preset current = presets\&.value(newPreset);
+165         ui->presetName->setText(current\&.name);
+166         ui->presetDelete->setEnabled(!current\&.builtIn);
+167         ui->presetSave->setEnabled(false);
+168         ui->widget->setStops(current\&.gradient);
+169     }
+170     currentPreset = newPreset;
+171     setFocus();
+172 }
+.fi
+.SS "void GradientDialog::updatePresets ()\fC [private]\fP"
+
+.PP
+Definition at line 115 of file gradientdialog\&.cpp\&.
+.PP
+References currentPreset, makeIcon(), GradientDialog::Preset::name, Ui_GradientDialog::presetList, presets, and ui\&.
+.PP
+Referenced by GradientDialog(), on_presetDelete_clicked(), and on_presetSave_clicked()\&.
+.PP
+.nf
+115                                   {
+116     ui->presetList->clear();
+117     QMapIterator<QString, Preset> i(presets);
+118     while(i\&.hasNext()){
+119         i\&.next();
+120         const Preset& preset = i\&.value();
+121         QListWidgetItem* item = new QListWidgetItem(makeIcon(preset), preset\&.name, ui->presetList);
+122         if(currentPreset == i\&.key())
+123             item->setSelected(true);
+124         ui->presetList->addItem(item);
+125     }
+126 }
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "QString GradientDialog::currentPreset\fC [private]\fP"
+
+.PP
+Definition at line 32 of file gradientdialog\&.h\&.
+.PP
+Referenced by on_presetDelete_clicked(), on_presetName_textEdited(), on_presetSave_clicked(), setPreset(), and updatePresets()\&.
+.SS "QMap<QString, \fBPreset\fP> GradientDialog::presets\fC [private]\fP"
+
+.PP
+Definition at line 31 of file gradientdialog\&.h\&.
+.PP
+Referenced by addPreset(), GradientDialog(), on_presetDelete_clicked(), on_presetName_textEdited(), on_presetSave_clicked(), setPreset(), updatePresets(), and ~GradientDialog()\&.
+.SS "\fBUi::GradientDialog\fP* GradientDialog::ui\fC [private]\fP"
+
+.PP
+Definition at line 39 of file gradientdialog\&.h\&.
+.PP
+Referenced by colorChanged(), currentChanged(), getGradient(), GradientDialog(), on_presetDelete_clicked(), on_presetSave_clicked(), on_stopOpacity_valueChanged(), on_stopPos_valueChanged(), setPreset(), updatePresets(), and ~GradientDialog()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

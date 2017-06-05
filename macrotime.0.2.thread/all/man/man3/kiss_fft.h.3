@@ -1,0 +1,230 @@
+.TH "src/ckb-mviz/kiss_fft.h" 3 "Mon Jun 5 2017" "Version beta-v0.2.8+testing at branch macrotime.0.2.thread" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb-mviz/kiss_fft.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBkiss_fft_cpx\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBKISS_FFT_MALLOC\fP   malloc"
+.br
+.ti -1c
+.RI "#define \fBKISS_FFT_FREE\fP   free"
+.br
+.ti -1c
+.RI "#define \fBkiss_fft_scalar\fP   float"
+.br
+.ti -1c
+.RI "#define \fBkiss_fft_free\fP   free"
+.br
+.ti -1c
+.RI "#define \fBkiss_fftr_next_fast_size_real\fP(n)   (\fBkiss_fft_next_fast_size\fP( ((n)+1)>>1)<<1)"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBkiss_fft_state\fP * \fBkiss_fft_cfg\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBkiss_fft_cfg\fP \fBkiss_fft_alloc\fP (int nfft, int inverse_fft, void *mem, size_t *lenmem)"
+.br
+.ti -1c
+.RI "void \fBkiss_fft\fP (\fBkiss_fft_cfg\fP cfg, const \fBkiss_fft_cpx\fP *fin, \fBkiss_fft_cpx\fP *fout)"
+.br
+.ti -1c
+.RI "void \fBkiss_fft_stride\fP (\fBkiss_fft_cfg\fP cfg, const \fBkiss_fft_cpx\fP *fin, \fBkiss_fft_cpx\fP *fout, int fin_stride)"
+.br
+.ti -1c
+.RI "void \fBkiss_fft_cleanup\fP (void)"
+.br
+.ti -1c
+.RI "int \fBkiss_fft_next_fast_size\fP (int n)"
+.br
+.in -1c
+.SH "Data Structure Documentation"
+.PP 
+.SH "struct kiss_fft_cpx"
+.PP 
+Definition at line 51 of file kiss_fft\&.h\&.
+.PP
+\fBData Fields:\fP
+.RS 4
+float \fIi\fP 
+.br
+.PP
+float \fIr\fP 
+.br
+.PP
+.RE
+.PP
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define KISS_FFT_FREE   free"
+
+.PP
+Definition at line 33 of file kiss_fft\&.h\&.
+.SS "#define kiss_fft_free   free"
+
+.PP
+Definition at line 102 of file kiss_fft\&.h\&.
+.PP
+Referenced by getFreqDec()\&.
+.SS "#define KISS_FFT_MALLOC   malloc"
+
+.PP
+Definition at line 32 of file kiss_fft\&.h\&.
+.PP
+Referenced by kiss_fft_alloc(), and kiss_fftr_alloc()\&.
+.SS "#define kiss_fft_scalar   float"
+
+.PP
+Definition at line 47 of file kiss_fft\&.h\&.
+.SS "#define kiss_fftr_next_fast_size_real(n)   (\fBkiss_fft_next_fast_size\fP( ((n)+1)>>1)<<1)"
+
+.PP
+Definition at line 117 of file kiss_fft\&.h\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBkiss_fft_state\fP* \fBkiss_fft_cfg\fP"
+
+.PP
+Definition at line 56 of file kiss_fft\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "void kiss_fft (\fBkiss_fft_cfg\fPcfg, const \fBkiss_fft_cpx\fP *fin, \fBkiss_fft_cpx\fP *fout)"
+
+.PP
+Definition at line 385 of file kiss_fft\&.c\&.
+.PP
+References kiss_fft_stride()\&.
+.PP
+Referenced by getFreqDec(), kiss_fftr(), and kiss_fftri()\&.
+.PP
+.nf
+386 {
+387     kiss_fft_stride(cfg,fin,fout,1);
+388 }
+.fi
+.SS "\fBkiss_fft_cfg\fP kiss_fft_alloc (intnfft, intinverse_fft, void *mem, size_t *lenmem)"
+
+.PP
+Definition at line 339 of file kiss_fft\&.c\&.
+.PP
+References kiss_fft_state::factors, kiss_fft_state::inverse, kf_cexp, kf_factor(), KISS_FFT_MALLOC, kiss_fft_state::nfft, phase, and kiss_fft_state::twiddles\&.
+.PP
+Referenced by getFreqDec(), and kiss_fftr_alloc()\&.
+.PP
+.nf
+340 {
+341     kiss_fft_cfg st=NULL;
+342     size_t memneeded = sizeof(struct kiss_fft_state)
+343         + sizeof(kiss_fft_cpx)*(nfft-1); /* twiddle factors*/
+344 
+345     if ( lenmem==NULL ) {
+346         st = ( kiss_fft_cfg)KISS_FFT_MALLOC( memneeded );
+347     }else{
+348         if (mem != NULL && *lenmem >= memneeded)
+349             st = (kiss_fft_cfg)mem;
+350         *lenmem = memneeded;
+351     }
+352     if (st) {
+353         int i;
+354         st->nfft=nfft;
+355         st->inverse = inverse_fft;
+356 
+357         for (i=0;i<nfft;++i) {
+358             const double pi=3\&.141592653589793238462643383279502884197169399375105820974944;
+359             double phase = -2*pi*i / nfft;
+360             if (st->inverse)
+361                 phase *= -1;
+362             kf_cexp(st->twiddles+i, phase );
+363         }
+364 
+365         kf_factor(nfft,st->factors);
+366     }
+367     return st;
+368 }
+.fi
+.SS "void kiss_fft_cleanup (void)"
+
+.PP
+Definition at line 391 of file kiss_fft\&.c\&.
+.PP
+Referenced by getFreqDec()\&.
+.PP
+.nf
+392 {
+393     // nothing needed any more
+394 }
+.fi
+.SS "int kiss_fft_next_fast_size (intn)"
+
+.PP
+Definition at line 396 of file kiss_fft\&.c\&.
+.PP
+.nf
+397 {
+398     while(1) {
+399         int m=n;
+400         while ( (m%2) == 0 ) m/=2;
+401         while ( (m%3) == 0 ) m/=3;
+402         while ( (m%5) == 0 ) m/=5;
+403         if (m<=1)
+404             break; /* n is completely factorable by twos, threes, and fives */
+405         n++;
+406     }
+407     return n;
+408 }
+.fi
+.SS "void kiss_fft_stride (\fBkiss_fft_cfg\fPcfg, const \fBkiss_fft_cpx\fP *fin, \fBkiss_fft_cpx\fP *fout, intfin_stride)"
+
+.PP
+Definition at line 371 of file kiss_fft\&.c\&.
+.PP
+References kiss_fft_state::factors, kf_work(), KISS_FFT_TMP_ALLOC, KISS_FFT_TMP_FREE, and kiss_fft_state::nfft\&.
+.PP
+Referenced by kiss_fft()\&.
+.PP
+.nf
+372 {
+373     if (fin == fout) {
+374         //NOTE: this is not really an in-place FFT algorithm\&.
+375         //It just performs an out-of-place FFT into a temp buffer
+376         kiss_fft_cpx * tmpbuf = (kiss_fft_cpx*)KISS_FFT_TMP_ALLOC( sizeof(kiss_fft_cpx)*st->nfft);
+377         kf_work(tmpbuf,fin,1,in_stride, st->factors,st);
+378         memcpy(fout,tmpbuf,sizeof(kiss_fft_cpx)*st->nfft);
+379         KISS_FFT_TMP_FREE(tmpbuf);
+380     }else{
+381         kf_work( fout, fin, 1,in_stride, st->factors,st );
+382     }
+383 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

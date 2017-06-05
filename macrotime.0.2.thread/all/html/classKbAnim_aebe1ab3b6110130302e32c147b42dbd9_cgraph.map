@@ -1,0 +1,10 @@
+<map id="KbAnim::parameter" name="KbAnim::parameter">
+<area shape="rect" id="node2" href="$classAnimScript.html#aa62e0aac7a3859a42273584e702f444b" title="AnimScript::hasParam" alt="" coords="193,5,346,32"/>
+<area shape="rect" id="node4" href="$classKbAnim.html#aacd458fb1f1a853a483ec2798370ba87" title="KbAnim::name" alt="" coords="215,56,323,83"/>
+<area shape="rect" id="node5" href="$classKbAnim.html#a50820fb193bfc35f13e399f33ff01958" title="KbAnim::updateParams" alt="" coords="189,107,349,133"/>
+<area shape="rect" id="node3" href="$classAnimScript.html#afe1509ae396bf2924318580974db487c" title="AnimScript::name" alt="" coords="419,5,546,32"/>
+<area shape="rect" id="node6" href="$classAnimScript.html#ab67042e47c4dc6209720fd1b4649edb8" title="AnimScript::parameters" alt="" coords="403,81,562,108"/>
+<area shape="rect" id="node9" href="$classKbAnim.html#a3863d1e56a2aa9cf6a67f0635e1bab72" title="KbAnim::effectiveParams" alt="" coords="397,132,568,159"/>
+<area shape="rect" id="node7" href="$classAnimScript.html#ad14f3e232f3f4b0670b91d9cfe719c1d" title="AnimScript::printParams" alt="" coords="617,56,781,83"/>
+<area shape="rect" id="node8" href="$classAnimScript.html#abd0e45eaba390c858252bc0b0c4ac9b5" title="AnimScript::setDuration" alt="" coords="618,107,779,133"/>
+</map>

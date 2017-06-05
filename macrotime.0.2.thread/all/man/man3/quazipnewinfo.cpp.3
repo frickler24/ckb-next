@@ -1,0 +1,224 @@
+.TH "src/ckb/quazip/quazipnewinfo.cpp" 3 "Mon Jun 5 2017" "Version beta-v0.2.8+testing at branch macrotime.0.2.thread" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb/quazip/quazipnewinfo.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <QFileInfo>\fP
+.br
+\fC#include 'quazipnewinfo\&.h'\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBQuaZipNewInfo_setPermissions\fP (\fBQuaZipNewInfo\fP *info, QFile::Permissions perm, bool isDir)"
+.br
+.ti -1c
+.RI "template<typename FileInfo > void \fBQuaZipNewInfo_init\fP (\fBQuaZipNewInfo\fP &self, const FileInfo &existing)"
+.br
+.ti -1c
+.RI "static void \fBsetNTFSTime\fP (QByteArray &extra, const QDateTime &time, int position, int fineTicks)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "template<typename FileInfo > void QuaZipNewInfo_init (\fBQuaZipNewInfo\fP &self, const FileInfo &existing)"
+
+.PP
+Definition at line 57 of file quazipnewinfo\&.cpp\&.
+.PP
+Referenced by QuaZipNewInfo::QuaZipNewInfo()\&.
+.PP
+.nf
+58 {
+59     self\&.name = existing\&.name;
+60     self\&.dateTime = existing\&.dateTime;
+61     self\&.internalAttr = existing\&.internalAttr;
+62     self\&.externalAttr = existing\&.externalAttr;
+63     self\&.comment = existing\&.comment;
+64     self\&.extraLocal = existing\&.extra;
+65     self\&.extraGlobal = existing\&.extra;
+66     self\&.uncompressedSize = existing\&.uncompressedSize;
+67 }
+.fi
+.SS "static void QuaZipNewInfo_setPermissions (\fBQuaZipNewInfo\fP *info, QFile::Permissionsperm, boolisDir)\fC [static]\fP"
+
+.PP
+Definition at line 31 of file quazipnewinfo\&.cpp\&.
+.PP
+References QuaZipNewInfo::externalAttr\&.
+.PP
+Referenced by QuaZipNewInfo::QuaZipNewInfo(), QuaZipNewInfo::setFilePermissions(), and QuaZipNewInfo::setPermissions()\&.
+.PP
+.nf
+33 {
+34     quint32 uPerm = isDir ? 0040000 : 0100000;
+35     if ((perm & QFile::ReadOwner) != 0)
+36         uPerm |= 0400;
+37     if ((perm & QFile::WriteOwner) != 0)
+38         uPerm |= 0200;
+39     if ((perm & QFile::ExeOwner) != 0)
+40         uPerm |= 0100;
+41     if ((perm & QFile::ReadGroup) != 0)
+42         uPerm |= 0040;
+43     if ((perm & QFile::WriteGroup) != 0)
+44         uPerm |= 0020;
+45     if ((perm & QFile::ExeGroup) != 0)
+46         uPerm |= 0010;
+47     if ((perm & QFile::ReadOther) != 0)
+48         uPerm |= 0004;
+49     if ((perm & QFile::WriteOther) != 0)
+50         uPerm |= 0002;
+51     if ((perm & QFile::ExeOther) != 0)
+52         uPerm |= 0001;
+53     info->externalAttr = (info->externalAttr & ~0xFFFF0000u) | (uPerm << 16);
+54 }
+.fi
+.SS "static void setNTFSTime (QByteArray &extra, const QDateTime &time, intposition, intfineTicks)\fC [static]\fP"
+
+.PP
+Definition at line 131 of file quazipnewinfo\&.cpp\&.
+.PP
+References QUAZIP_EXTRA_NTFS_MAGIC, and QUAZIP_EXTRA_NTFS_TIME_MAGIC\&.
+.PP
+Referenced by QuaZipNewInfo::setFileNTFSaTime(), QuaZipNewInfo::setFileNTFScTime(), and QuaZipNewInfo::setFileNTFSmTime()\&.
+.PP
+.nf
+132                                        {
+133     int ntfsPos = -1, timesPos = -1;
+134     unsigned ntfsLength = 0, ntfsTimesLength = 0;
+135     for (int i = 0; i <= extra\&.size() - 4; ) {
+136         unsigned type = static_cast<unsigned>(static_cast<unsigned char>(
+137                                                   extra\&.at(i)))
+138                 | (static_cast<unsigned>(static_cast<unsigned char>(
+139                                                   extra\&.at(i + 1))) << 8);
+140         i += 2;
+141         unsigned length = static_cast<unsigned>(static_cast<unsigned char>(
+142                                                   extra\&.at(i)))
+143                 | (static_cast<unsigned>(static_cast<unsigned char>(
+144                                                   extra\&.at(i + 1))) << 8);
+145         i += 2;
+146         if (type == QUAZIP_EXTRA_NTFS_MAGIC) {
+147             ntfsPos = i - 4; // the beginning of the NTFS record
+148             ntfsLength = length;
+149             if (length <= 4) {
+150                 break; // no times in the NTFS record
+151             }
+152             i += 4; // reserved
+153             while (i <= extra\&.size() - 4) {
+154                 unsigned tag = static_cast<unsigned>(
+155                             static_cast<unsigned char>(extra\&.at(i)))
+156                         | (static_cast<unsigned>(
+157                                static_cast<unsigned char>(extra\&.at(i + 1)))
+158                            << 8);
+159                 i += 2;
+160                 unsigned tagsize = static_cast<unsigned>(
+161                             static_cast<unsigned char>(extra\&.at(i)))
+162                         | (static_cast<unsigned>(
+163                                static_cast<unsigned char>(extra\&.at(i + 1)))
+164                            << 8);
+165                 i += 2;
+166                 if (tag == QUAZIP_EXTRA_NTFS_TIME_MAGIC) {
+167                     timesPos = i - 4; // the beginning of the NTFS times tag
+168                     ntfsTimesLength = tagsize;
+169                     break;
+170                 } else {
+171                     i += tagsize;
+172                 }
+173             }
+174             break; // I ain't going to search for yet another NTFS record!
+175         } else {
+176             i += length;
+177         }
+178     }
+179     if (ntfsPos == -1) {
+180         // No NTFS record, need to create one\&.
+181         ntfsPos = extra\&.size();
+182         ntfsLength = 32;
+183         extra\&.resize(extra\&.size() + 4 + ntfsLength);
+184         // the NTFS record header
+185         extra[ntfsPos] = static_cast<char>(QUAZIP_EXTRA_NTFS_MAGIC);
+186         extra[ntfsPos + 1] = static_cast<char>(QUAZIP_EXTRA_NTFS_MAGIC >> 8);
+187         extra[ntfsPos + 2] = 32; // the 2-byte size in LittleEndian
+188         extra[ntfsPos + 3] = 0;
+189         // zero the record
+190         memset(extra\&.data() + ntfsPos + 4, 0, 32);
+191         timesPos = ntfsPos + 8;
+192         // now set the tag data
+193         extra[timesPos] = static_cast<char>(QUAZIP_EXTRA_NTFS_TIME_MAGIC);
+194         extra[timesPos + 1] = static_cast<char>(QUAZIP_EXTRA_NTFS_TIME_MAGIC
+195                                                >> 8);
+196         // the size:
+197         extra[timesPos + 2] = 24;
+198         extra[timesPos + 3] = 0;
+199         ntfsTimesLength = 24;
+200     }
+201     if (timesPos == -1) {
+202         // No time tag in the NTFS record, need to add one\&.
+203         timesPos = ntfsPos + 4 + ntfsLength;
+204         extra\&.resize(extra\&.size() + 28);
+205         // Now we need to move the rest of the field
+206         // (possibly zero bytes, but memmove() is OK with that)\&.
+207         // 0 \&.\&.\&.\&.\&.\&.\&.\&.\&. ntfsPos \&.\&. ntfsPos + 4   \&.\&.\&. timesPos
+208         // <some data> <header>   <NTFS record>     <need-to-move data>    <end>
+209         memmove(extra\&.data() + timesPos + 28, extra\&.data() + timesPos,
+210                 extra\&.size() - 28 - timesPos);
+211         ntfsLength += 28;
+212         // now set the tag data
+213         extra[timesPos] = static_cast<char>(QUAZIP_EXTRA_NTFS_TIME_MAGIC);
+214         extra[timesPos + 1] = static_cast<char>(QUAZIP_EXTRA_NTFS_TIME_MAGIC
+215                                                >> 8);
+216         // the size:
+217         extra[timesPos + 2] = 24;
+218         extra[timesPos + 3] = 0;
+219         // zero the record
+220         memset(extra\&.data() + timesPos + 4, 0, 24);
+221         ntfsTimesLength = 24;
+222     }
+223     if (ntfsTimesLength < 24) {
+224         // Broken times field\&. OK, this is really unlikely, but just in case\&.\&.\&.
+225         size_t timesEnd = timesPos + 4 + ntfsTimesLength;
+226         extra\&.resize(extra\&.size() + (24 - ntfsTimesLength));
+227         // Move it!
+228         // 0 \&.\&.\&.\&.\&.\&.\&.\&.\&. timesPos \&.\&.\&.\&. timesPos + 4 \&.\&. timesEnd
+229         // <some data> <time header> <broken times> <need-to-move data> <end>
+230         memmove(extra\&.data() + timesEnd + (24 - ntfsTimesLength),
+231                 extra\&.data() + timesEnd,
+232                 extra\&.size() - (24 - ntfsTimesLength) - timesEnd);
+233         // Now we have to increase the NTFS record and time tag lengths\&.
+234         ntfsLength += (24 - ntfsTimesLength);
+235         ntfsTimesLength = 24;
+236         extra[ntfsPos + 2] = static_cast<char>(ntfsLength);
+237         extra[ntfsPos + 3] = static_cast<char>(ntfsLength >> 8);
+238         extra[timesPos + 2] = static_cast<char>(ntfsTimesLength);
+239         extra[timesPos + 3] = static_cast<char>(ntfsTimesLength >> 8);
+240     }
+241     QDateTime base(QDate(1601, 1, 1), QTime(0, 0), Qt::UTC);
+242 #if (QT_VERSION >= 0x040700)
+243     quint64 ticks = base\&.msecsTo(time) * 10000 + fineTicks;
+244 #else
+245     QDateTime utc = time\&.toUTC();
+246     quint64 ticks = (static_cast<qint64>(base\&.date()\&.daysTo(utc\&.date()))
+247             * Q_INT64_C(86400000)
+248             + static_cast<qint64>(base\&.time()\&.msecsTo(utc\&.time())))
+249         * Q_INT64_C(10000) + fineTicks;
+250 #endif
+251     extra[timesPos + 4 + position] = static_cast<char>(ticks);
+252     extra[timesPos + 5 + position] = static_cast<char>(ticks >> 8);
+253     extra[timesPos + 6 + position] = static_cast<char>(ticks >> 16);
+254     extra[timesPos + 7 + position] = static_cast<char>(ticks >> 24);
+255     extra[timesPos + 8 + position] = static_cast<char>(ticks >> 32);
+256     extra[timesPos + 9 + position] = static_cast<char>(ticks >> 40);
+257     extra[timesPos + 10 + position] = static_cast<char>(ticks >> 48);
+258     extra[timesPos + 11 + position] = static_cast<char>(ticks >> 56);
+259 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

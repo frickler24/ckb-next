@@ -1,0 +1,8 @@
+<map id="GradientButton::GradientButton" name="GradientButton::GradientButton">
+<area shape="rect" id="node2" href="$classGradientButton.html#af9f5fbed467ab03dc455f7c6d204f037" title="GradientButton::fromString" alt="" coords="229,5,406,32"/>
+<area shape="rect" id="node4" href="$classGradientButton.html#a787f1587d19538e3cb93ddee2a6571d7" title="GradientButton::pickGradient" alt="" coords="222,56,413,83"/>
+<area shape="rect" id="node3" href="$classGradientButton.html#aaf55b6a56235da9662bd661692c9e6c7" title="GradientButton::updateImage" alt="" coords="461,5,653,32"/>
+<area shape="rect" id="node5" href="$classGradientDialog.html#a93b09a5970b1f6bad4407e2fde68cbbe" title="GradientDialog::getGradient" alt="" coords="466,56,649,83"/>
+<area shape="rect" id="node6" href="$classGradientDialogWidget.html#a084f13e7bb85c4eac663517aece064be" title="GradientDialogWidget\l::setStops" alt="" coords="701,19,851,61"/>
+<area shape="rect" id="node7" href="$classGradientDialogWidget.html#a86c8f4efd74732ef510dd887417b2e6c" title="GradientDialogWidget\l::stops" alt="" coords="899,49,1048,90"/>
+</map>

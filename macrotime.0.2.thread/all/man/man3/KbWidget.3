@@ -1,0 +1,760 @@
+.TH "KbWidget" 3 "Mon Jun 5 2017" "Version beta-v0.2.8+testing at branch macrotime.0.2.thread" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+KbWidget \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/kbwidget\&.h>\fP
+.PP
+Inherits \fBQWidget\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBshowFirstTab\fP ()"
+.br
+.ti -1c
+.RI "void \fBshowLastTab\fP ()"
+.br
+.ti -1c
+.RI "void \fBshowFwUpdate\fP ()"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBKbWidget\fP (\fBQWidget\fP *parent, \fBKb\fP *_device)"
+.br
+.ti -1c
+.RI "\fB~KbWidget\fP ()"
+.br
+.ti -1c
+.RI "QString \fBname\fP () const "
+.br
+.ti -1c
+.RI "void \fBupdateFwButton\fP ()"
+.br
+.in -1c
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBKb\fP * \fBdevice\fP"
+.br
+.ti -1c
+.RI "bool \fBhasShownNewFW\fP"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBupdateProfileList\fP ()"
+.br
+.ti -1c
+.RI "void \fBprofileChanged\fP ()"
+.br
+.ti -1c
+.RI "void \fBon_profileBox_activated\fP (int index)"
+.br
+.ti -1c
+.RI "QIcon \fBmodeIcon\fP (int i)"
+.br
+.ti -1c
+.RI "void \fBaddNewModeItem\fP ()"
+.br
+.ti -1c
+.RI "void \fBmodeChanged\fP (bool spontaneous=true)"
+.br
+.ti -1c
+.RI "void \fBon_modesList_currentItemChanged\fP (QListWidgetItem *\fBcurrent\fP, QListWidgetItem *previous)"
+.br
+.ti -1c
+.RI "void \fBmodesList_reordered\fP ()"
+.br
+.ti -1c
+.RI "void \fBon_modesList_itemChanged\fP (QListWidgetItem *item)"
+.br
+.ti -1c
+.RI "void \fBon_modesList_itemClicked\fP (QListWidgetItem *item)"
+.br
+.ti -1c
+.RI "void \fBon_modesList_customContextMenuRequested\fP (const QPoint &pos)"
+.br
+.RI "\fI\fBKbWidget::on_modesList_customContextMenuRequested\fP\&. \fP"
+.ti -1c
+.RI "void \fBdevUpdate\fP ()"
+.br
+.ti -1c
+.RI "void \fBmodeUpdate\fP ()"
+.br
+.ti -1c
+.RI "void \fBon_hwSaveButton_clicked\fP ()"
+.br
+.ti -1c
+.RI "void \fBon_tabWidget_currentChanged\fP (int index)"
+.br
+.ti -1c
+.RI "void \fBon_fwUpdButton_clicked\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUi::KbWidget\fP * \fBui\fP"
+.br
+.ti -1c
+.RI "quint64 \fBlastAutoSave\fP"
+.br
+.ti -1c
+.RI "\fBKbMode\fP * \fBcurrentMode\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const int \fBGUID\fP = Qt::UserRole"
+.br
+.ti -1c
+.RI "static const int \fBNEW_FLAG\fP = Qt::UserRole + 1"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 15 of file kbwidget\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "KbWidget::KbWidget (\fBQWidget\fP *parent, \fBKb\fP *_device)\fC [explicit]\fP"
+
+.PP
+Definition at line 15 of file kbwidget\&.cpp\&.
+.PP
+References device, devUpdate(), Kb::features, Ui_KbWidget::fwUpdButton, Ui_KbWidget::fwUpdLabel, Ui_KbWidget::fwUpdLayout, Kb::isKeyboard(), Kb::isMouse(), Ui_KbWidget::kPerfTab, Ui_KbWidget::lightTab, Ui_KbWidget::lightWidget, modeChanged(), Ui_KbWidget::modesList, modesList_reordered(), Kb::monochrome, Ui_KbWidget::mPerfTab, Ui_KbWidget::pollLabel, Ui_KbWidget::pollLabel2, profileChanged(), KbLightWidget::setMonochrome(), Ui_KbWidget::setupUi(), Ui_KbWidget::tabWidget, ui, and updateProfileList()\&.
+.PP
+.nf
+15                                                :
+16     QWidget(parent),
+17     device(_device), hasShownNewFW(false),
+18     ui(new Ui::KbWidget),
+19     currentMode(0)
+20 {
+21     ui->setupUi(this);
+22     connect(ui->modesList, SIGNAL(orderChanged()), this, SLOT(modesList_reordered()));
+23 
+24     connect(device, SIGNAL(infoUpdated()), this, SLOT(devUpdate()));
+25     connect(device, SIGNAL(profileAdded()), this, SLOT(updateProfileList()));
+26     connect(device, SIGNAL(profileChanged()), this, SLOT(profileChanged()));
+27     connect(device, SIGNAL(profileRenamed()), this, SLOT(updateProfileList()));
+28     connect(device, SIGNAL(modeRenamed()), this, SLOT(profileChanged()));
+29     connect(device, SIGNAL(modeRenamed()), this, SLOT(modeChanged()));
+30     connect(device, SIGNAL(modeChanged(bool)), this, SLOT(modeChanged(bool)));
+31 
+32     // Remove the Lighting and Performance tabs from non-RGB keyboards
+33     if(!device->features\&.contains("rgb")){
+34         ui->tabWidget->removeTab(ui->tabWidget->indexOf(ui->lightTab));
+35         ui->tabWidget->removeTab(ui->tabWidget->indexOf(ui->kPerfTab));
+36         ui->tabWidget->removeTab(ui->tabWidget->indexOf(ui->mPerfTab));
+37     } else {
+38         // Remove mouse Performance tab from non-mice
+39         if(!device->isMouse())
+40             ui->tabWidget->removeTab(ui->tabWidget->indexOf(ui->mPerfTab));
+41         // Remove keyboard Performance tab from non-keyboards
+42         if(!device->isKeyboard())
+43             ui->tabWidget->removeTab(ui->tabWidget->indexOf(ui->kPerfTab));
+44     }
+45     // Hide poll rate and FW update as appropriate
+46     if(!device->features\&.contains("pollrate")){
+47         ui->pollLabel->hide();
+48         ui->pollLabel2->hide();
+49     }
+50     if(!device->features\&.contains("fwupdate")){
+51         ui->fwUpdButton->hide();
+52         ui->fwUpdLabel->hide();
+53         ui->fwUpdLayout->removeItem(ui->fwUpdLayout->itemAt(1));
+54     }
+55     // Set monochrome mode according to hardware
+56     if(device->monochrome)
+57         ui->lightWidget->setMonochrome();
+58 }
+.fi
+.SS "KbWidget::~KbWidget ()"
+
+.PP
+Definition at line 60 of file kbwidget\&.cpp\&.
+.PP
+References ui\&.
+.PP
+.nf
+60                    {
+61     delete ui;
+62 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void KbWidget::addNewModeItem ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 136 of file kbwidget\&.cpp\&.
+.PP
+References Ui_KbWidget::modesList, NEW_FLAG, and ui\&.
+.PP
+Referenced by on_modesList_itemClicked(), and profileChanged()\&.
+.PP
+.nf
+136                              {
+137     // Add an item for creating a new mode\&. Make it editable but not dragable\&.
+138     QListWidgetItem* item = new QListWidgetItem("New mode\&.\&.\&.", ui->modesList);
+139     item->setFlags((item->flags() | Qt::ItemIsEditable) & ~Qt::ItemIsDragEnabled & ~Qt::ItemIsDropEnabled);
+140     item->setData(NEW_FLAG, 1);
+141     QFont font = item->font();
+142     font\&.setItalic(true);
+143     item->setFont(font);
+144     item->setIcon(QIcon(":/img/icon_plus\&.png"));
+145     ui->modesList->addItem(item);
+146 }
+.fi
+.SS "void KbWidget::devUpdate ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 300 of file kbwidget\&.cpp\&.
+.PP
+References device, Kb::firmware, Ui_KbWidget::fwLabel, Ui_KbWidget::pollLabel, Kb::pollrate, Ui_KbWidget::serialLabel, ui, and Kb::usbSerial\&.
+.PP
+Referenced by KbWidget()\&.
+.PP
+.nf
+300                         {
+301     // Update device tab
+302     ui->serialLabel->setText(device->usbSerial);
+303     ui->fwLabel->setText(device->firmware);
+304     ui->pollLabel->setText(device->pollrate);
+305 }
+.fi
+.SS "void KbWidget::modeChanged (boolspontaneous = \fCtrue\fP)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 148 of file kbwidget\&.cpp\&.
+.PP
+References Ui_KbWidget::bindWidget, Kb::currentBind(), Kb::currentLight(), currentMode, Kb::currentMode(), Kb::currentPerf(), Kb::currentProfile(), device, KbProfile::indexOf(), Ui_KbWidget::kPerfWidget, Ui_KbWidget::lightWidget, Ui_KbWidget::modesList, modeUpdate(), Ui_KbWidget::mPerfWidget, KbBindWidget::setBind(), KbLightWidget::setLight(), KPerfWidget::setPerf(), MPerfWidget::setPerf(), and ui\&.
+.PP
+Referenced by KbWidget(), and on_modesList_customContextMenuRequested()\&.
+.PP
+.nf
+148                                           {
+149     int index = device->currentProfile()->indexOf(device->currentMode());
+150     if(index < 0)
+151         return;
+152     // Update tabs
+153     ui->lightWidget->setLight(device->currentLight());
+154     ui->bindWidget->setBind(device->currentBind(), device->currentProfile());
+155     ui->kPerfWidget->setPerf(device->currentPerf(), device->currentProfile());
+156     ui->mPerfWidget->setPerf(device->currentPerf(), device->currentProfile());
+157     // Update selection
+158     if(spontaneous)
+159         ui->modesList->setCurrentRow(index);
+160     // Connect signals
+161     if(currentMode)
+162         disconnect(currentMode, SIGNAL(updated()), this, SLOT(modeUpdate()));
+163     currentMode = device->currentMode();
+164     connect(currentMode, SIGNAL(updated()), this, SLOT(modeUpdate()));
+165     modeUpdate();
+166 }
+.fi
+.SS "QIcon KbWidget::modeIcon (inti)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 127 of file kbwidget\&.cpp\&.
+.PP
+References Kb::currentProfile(), device, Kb::hwModeCount, and Kb::hwProfile()\&.
+.PP
+Referenced by modesList_reordered(), and profileChanged()\&.
+.PP
+.nf
+127                              {
+128     KbProfile* currentProfile = device->currentProfile(), *hwProfile = device->hwProfile();
+129     int hwModeCount = device->hwModeCount;
+130     if(i >= hwModeCount)
+131         return QIcon(":/img/icon_mode\&.png");
+132     else
+133         return QIcon(QString(currentProfile == hwProfile ? ":/img/icon_mode%1_hardware\&.png" : ":/img/icon_mode%1\&.png")\&.arg(i + 1));
+134 }
+.fi
+.SS "void KbWidget::modesList_reordered ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 177 of file kbwidget\&.cpp\&.
+.PP
+References Kb::currentProfile(), device, KbProfile::find(), GUID, modeIcon(), KbProfile::modes(), Ui_KbWidget::modesList, NEW_FLAG, and ui\&.
+.PP
+Referenced by KbWidget()\&.
+.PP
+.nf
+177                                   {
+178     KbProfile* currentProfile = device->currentProfile();
+179     // Rebuild mode list from items
+180     QList<KbMode*> newModes;
+181     int count = ui->modesList->count();
+182     for(int i = 0; i < count; i++){
+183         QListWidgetItem* item = ui->modesList->item(i);
+184         KbMode* mode = currentProfile->find(item->data(GUID)\&.toUuid());
+185         if(mode && !newModes\&.contains(mode))
+186             newModes\&.append(mode);
+187         if(item->data(NEW_FLAG)\&.toInt() != 1)
+188             item->setIcon(modeIcon(i));
+189         item->setFlags(item->flags() | Qt::ItemIsEditable);
+190     }
+191     // Add any missing modes at the end of the list
+192     foreach(KbMode* mode, currentProfile->modes()){
+193         if(!newModes\&.contains(mode))
+194             newModes\&.append(mode);
+195     }
+196     currentProfile->modes(newModes);
+197 }
+.fi
+.SS "void KbWidget::modeUpdate ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 307 of file kbwidget\&.cpp\&.
+.PP
+Referenced by modeChanged()\&.
+.PP
+.nf
+307                          {
+308 }
+.fi
+.SS "QString KbWidget::name () const\fC [inline]\fP"
+
+.PP
+Definition at line 25 of file kbwidget\&.h\&.
+.PP
+References device, and Kb::usbModel\&.
+.PP
+Referenced by MainWindow::addDevice()\&.
+.PP
+.nf
+25 { return device->usbModel; }
+.fi
+.SS "void KbWidget::on_fwUpdButton_clicked ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 339 of file kbwidget\&.cpp\&.
+.PP
+References device, FwUpgradeDialog::exec(), Kb::features, Kb::firmware, Ui_KbWidget::fwUpdButton, KbFirmware::hasDownloaded(), ui, updateFwButton(), and KbFirmware::versionForBoard()\&.
+.PP
+Referenced by showFwUpdate()\&.
+.PP
+.nf
+339                                      {
+340     // If alt is pressed, ignore upgrades and go straight to the manual prompt
+341     if(!(qApp->keyboardModifiers() & Qt::AltModifier)){
+342         // Check version numbers
+343         if(!KbFirmware::hasDownloaded()){
+344             ui->fwUpdButton->setText("Checking\&.\&.\&.");
+345             ui->fwUpdButton->setEnabled(false);
+346         }
+347         float newVersion = KbFirmware::versionForBoard(device->features, true);
+348         float oldVersion = device->firmware\&.toFloat();
+349         ui->fwUpdButton->setEnabled(true);
+350         updateFwButton();
+351         if(newVersion == -1\&.f){
+352             QMessageBox::information(this, "Firmware update", "<center>There is a new firmware available for this device\&.<br />However, it requires a newer version of ckb\&.<br />Please upgrade ckb and try again\&.</center>");
+353             return;
+354         } else if(newVersion == 0\&.f){
+355             if(QMessageBox::question(this, "Firmware update", "<center>There was a problem getting the status for this device\&.<br />Would you like to select a file manually?</center>") != QMessageBox::Yes)
+356                 return;
+357             // "Yes" -> fall through to browse file
+358         } else if(newVersion <= oldVersion){
+359             if(QMessageBox::question(this, "Firmware update", "<center>Your firmware is already up to date\&.<br />Would you like to select a file manually?</center>") != QMessageBox::Yes)
+360                 return;
+361             // "Yes" -> fall through to browse file
+362         } else {
+363             // Automatic upgrade\&. Fetch file from web\&.
+364             // FwUpgradeDialog can't be parented to KbWidget because KbWidget may be deleted before the dialog exits
+365             FwUpgradeDialog dialog(parentWidget(), newVersion, "", device);
+366             dialog\&.exec();
+367             return;
+368         }
+369     }
+370     // Browse for file
+371     QString path = QFileDialog::getOpenFileName(this, "Select firmware file", QStandardPaths::writableLocation(QStandardPaths::DownloadLocation), "Firmware blobs (*\&.bin)");
+372     if(path\&.isEmpty())
+373         return;
+374     QFile file(path);
+375     if(!file\&.open(QIODevice::ReadOnly)){
+376         QMessageBox::warning(parentWidget(), "Error", "<center>File could not be read\&.</center>");
+377         return;
+378     }
+379     QByteArray blob = file\&.readAll();
+380     FwUpgradeDialog dialog(parentWidget(), 0\&.f, blob, device);
+381     dialog\&.exec();
+382 }
+.fi
+.SS "void KbWidget::on_hwSaveButton_clicked ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 310 of file kbwidget\&.cpp\&.
+.PP
+References device, Kb::hwSave(), profileChanged(), Kb::save(), and updateProfileList()\&.
+.PP
+.nf
+310                                       {
+311     device->save();
+312     device->hwSave();
+313     updateProfileList();
+314     profileChanged();
+315 }
+.fi
+.SS "void KbWidget::on_modesList_currentItemChanged (QListWidgetItem *current, QListWidgetItem *previous)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 168 of file kbwidget\&.cpp\&.
+.PP
+References Kb::currentProfile(), device, KbProfile::find(), GUID, and Kb::setCurrentMode()\&.
+.PP
+.nf
+168                                                                                                  {
+169     if(!current)
+170         return;
+171     KbMode* mode = device->currentProfile()->find(current->data(GUID)\&.toUuid());
+172     if(!mode)
+173         return;
+174     device->setCurrentMode(mode, false);
+175 }
+.fi
+.SS "void KbWidget::on_modesList_customContextMenuRequested (const QPoint &pos)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP Opens on right click in the profiles list a context sensitive menue at position pos\&.
+.RE
+.PP
+When clicking on a command it is located and executed\&. 
+.PP
+Definition at line 236 of file kbwidget\&.cpp\&.
+.PP
+References currentMode, Kb::currentProfile(), device, UsbId::guid, GUID, Kb::hwModeCount, KbMode::id(), KbProfile::indexOf(), KbProfile::insert(), modeChanged(), KbProfile::modeCount(), KbProfile::modes(), Ui_KbWidget::modesList, KbMode::newId(), Kb::newMode(), profileChanged(), KbProfile::removeAll(), Kb::setCurrentMode(), and ui\&.
+.PP
+.nf
+236                                                                        {
+237     QListWidgetItem* item = ui->modesList->itemAt(pos);
+238     if(!item || !currentMode || item->data(GUID)\&.toUuid() != currentMode->id()\&.guid)
+239         return;
+240     KbProfile* currentProfile = device->currentProfile();
+241     int index = currentProfile->indexOf(currentMode);
+242 
+243     QMenu menu(this);
+244     QAction* rename = new QAction("Rename\&.\&.\&.", this);
+245     QAction* duplicate = new QAction("Duplicate", this);
+246     QAction* del = new QAction("Delete", this);
+247     bool canDelete = (device->currentProfile()->modeCount() > device->hwModeCount);
+248     if(!canDelete)
+249         // Can't delete modes if they're required by hardware
+250         del->setEnabled(false);
+251     QAction* moveup = new QAction("Move Up", this);
+252     if(index == 0)
+253         moveup->setEnabled(false);
+254     QAction* movedown = new QAction("Move Down", this);
+255     if(index >= currentProfile->modeCount() - 1)
+256         movedown->setEnabled(false);
+257     menu\&.addAction(rename);
+258     menu\&.addAction(duplicate);
+259     menu\&.addAction(del);
+260     menu\&.addSeparator();
+261     menu\&.addAction(moveup);
+262     menu\&.addAction(movedown);
+263     QAction* result = menu\&.exec(QCursor::pos());
+264     if(result == rename){
+265         ui->modesList->editItem(item);
+266     } else if(result == duplicate){
+267         KbMode* newMode = device->newMode(currentMode);
+268         newMode->newId();
+269         currentProfile->insert(index + 1, newMode);
+270         // Update UI
+271         profileChanged();
+272         device->setCurrentMode(newMode);
+273     } else if(result == del){
+274         if(!canDelete)
+275             return;
+276         currentProfile->removeAll(currentMode);
+277         currentMode->deleteLater();
+278         currentMode = 0;
+279         // Select next mode
+280         profileChanged();
+281         if(index < currentProfile->modeCount())
+282             device->setCurrentMode(currentProfile->modes()[index]);
+283         else
+284             device->setCurrentMode(currentProfile->modes()\&.last());
+285     } else if(result == moveup){
+286         currentProfile->removeAll(currentMode);
+287         currentProfile->insert(index - 1, currentMode);
+288         // Update UI
+289         profileChanged();
+290         modeChanged(true);
+291     } else if(result == movedown){
+292         currentProfile->removeAll(currentMode);
+293         currentProfile->insert(index + 1, currentMode);
+294         // Update UI
+295         profileChanged();
+296         modeChanged(true);
+297     }
+298 }
+.fi
+.SS "void KbWidget::on_modesList_itemChanged (QListWidgetItem *item)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 199 of file kbwidget\&.cpp\&.
+.PP
+References currentMode, UsbId::guid, GUID, KbMode::id(), and KbMode::name()\&.
+.PP
+.nf
+199                                                             {
+200     if(!item || !currentMode || item->data(GUID)\&.toUuid() != currentMode->id()\&.guid)
+201         return;
+202     currentMode->name(item->text());
+203     // Set the text to the actual name (trimmed, "" replaced with "Unnamed")
+204     item->setText(currentMode->name());
+205 }
+.fi
+.SS "void KbWidget::on_modesList_itemClicked (QListWidgetItem *item)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 207 of file kbwidget\&.cpp\&.
+.PP
+References addNewModeItem(), KbProfile::append(), Kb::currentProfile(), device, UsbId::guid, GUID, KbMode::id(), Ui_KbWidget::modesList, NEW_FLAG, Kb::newMode(), Kb::setCurrentMode(), and ui\&.
+.PP
+.nf
+207                                                             {
+208     QUuid guid = item->data(GUID)\&.toUuid();
+209     if(guid\&.isNull() && item->data(NEW_FLAG)\&.toInt() == 1){
+210         // "New mode" item\&. Clear text and start editing
+211         item->setText("");
+212         ui->modesList->editItem(item);
+213         item->setFlags(item->flags() | Qt::ItemIsEditable | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled);
+214         QFont font = item->font();
+215         font\&.setItalic(false);
+216         item->setFont(font);
+217         item->setIcon(QIcon(":/img/icon_mode\&.png"));
+218         // Add the new mode and assign it to this item
+219         KbMode* newMode = device->newMode();
+220         device->currentProfile()->append(newMode);
+221         item->setData(GUID, newMode->id()\&.guid);
+222         item->setData(NEW_FLAG, 0);
+223         device->setCurrentMode(newMode, false);
+224         // Create another "new mode" item to replace this one
+225         addNewModeItem();
+226     }
+227 }
+.fi
+.SS "void KbWidget::on_profileBox_activated (intindex)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 113 of file kbwidget\&.cpp\&.
+.PP
+References device, Kb::profiles(), Kb::setCurrentProfile(), and updateProfileList()\&.
+.PP
+.nf
+113                                                {
+114     if(index < 0)
+115         return;
+116     if(index >= device->profiles()\&.count()){
+117         // "Manage profiles" option
+118         KbProfileDialog dialog(this);
+119         dialog\&.exec();
+120         updateProfileList();
+121         return;
+122     }
+123     device->setCurrentProfile(device->profiles()[index]);
+124     // Device will emit profileChanged() and modeChanged() signals to update UI
+125 }
+.fi
+.SS "void KbWidget::on_tabWidget_currentChanged (intindex)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 317 of file kbwidget\&.cpp\&.
+.PP
+References device, Ui_KbWidget::tabWidget, ui, and updateFwButton()\&.
+.PP
+.nf
+317                                                    {
+318     if(!device)
+319         return;
+320     if(index == ui->tabWidget->count() - 1){
+321         // Device tab
+322         updateFwButton();
+323     }
+324 }
+.fi
+.SS "void KbWidget::profileChanged ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 91 of file kbwidget\&.cpp\&.
+.PP
+References addNewModeItem(), current, currentMode, Kb::currentProfile(), device, UsbId::guid, GUID, KbMode::id(), modeIcon(), KbProfile::modes(), Ui_KbWidget::modesList, KbMode::name(), and ui\&.
+.PP
+Referenced by KbWidget(), on_hwSaveButton_clicked(), and on_modesList_customContextMenuRequested()\&.
+.PP
+.nf
+91                              {
+92     // Rebuild mode list
+93     ui->modesList->clear();
+94     int i = 0;
+95     QListWidgetItem* current = 0;
+96     foreach(KbMode* mode, device->currentProfile()->modes()){
+97         QListWidgetItem* item = new QListWidgetItem(modeIcon(i), mode->name(), ui->modesList);
+98         item->setData(GUID, mode->id()\&.guid);
+99         item->setFlags(item->flags() | Qt::ItemIsEditable);
+100         if(mode == currentMode){
+101             item->setSelected(true);
+102             current = item;
+103         }
+104         ui->modesList->addItem(item);
+105         i++;
+106     }
+107     if(current)
+108         ui->modesList->setCurrentItem(current);
+109     addNewModeItem();
+110     // Wait for modeChanged() to refresh the rest of the UI
+111 }
+.fi
+.SS "void KbWidget::showFirstTab ()\fC [slot]\fP"
+
+.PP
+Definition at line 64 of file kbwidget\&.cpp\&.
+.PP
+References Ui_KbWidget::tabWidget, and ui\&.
+.PP
+.nf
+64                            {
+65     ui->tabWidget->setCurrentIndex(0);
+66 }
+.fi
+.SS "void KbWidget::showFwUpdate ()\fC [inline]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 38 of file kbwidget\&.h\&.
+.PP
+References on_fwUpdButton_clicked()\&.
+.PP
+Referenced by MainWindow::showFwUpdateNotification()\&.
+.PP
+.nf
+38 { on_fwUpdButton_clicked(); }
+.fi
+.SS "void KbWidget::showLastTab ()\fC [slot]\fP"
+
+.PP
+Definition at line 68 of file kbwidget\&.cpp\&.
+.PP
+References Ui_KbWidget::tabWidget, and ui\&.
+.PP
+Referenced by MainWindow::showFwUpdateNotification()\&.
+.PP
+.nf
+68                           {
+69     ui->tabWidget->setCurrentIndex(ui->tabWidget->count() - 1);
+70 }
+.fi
+.SS "void KbWidget::updateFwButton ()"
+
+.PP
+Definition at line 326 of file kbwidget\&.cpp\&.
+.PP
+References device, Kb::features, Kb::firmware, Ui_KbWidget::fwUpdButton, KbFirmware::hasDownloaded(), ui, and KbFirmware::versionForBoard()\&.
+.PP
+Referenced by MainWindow::checkFwUpdates(), on_fwUpdButton_clicked(), and on_tabWidget_currentChanged()\&.
+.PP
+.nf
+326                              {
+327     if(!KbFirmware::hasDownloaded())
+328         ui->fwUpdButton->setText("Check for updates");
+329     else {
+330         float newVersion = KbFirmware::versionForBoard(device->features);
+331         float oldVersion = device->firmware\&.toFloat();
+332         if(newVersion <= 0\&.f || newVersion <= oldVersion)
+333             ui->fwUpdButton->setText("Up to date");
+334         else
+335             ui->fwUpdButton->setText(tr("Upgrade to v%1")\&.arg(QString::number(newVersion, 'f', 2)));
+336     }
+337 }
+.fi
+.SS "void KbWidget::updateProfileList ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 73 of file kbwidget\&.cpp\&.
+.PP
+References Kb::currentProfile(), device, Kb::hwProfile(), KbProfile::name(), Ui_KbWidget::profileBox, Kb::profiles(), and ui\&.
+.PP
+Referenced by KbWidget(), on_hwSaveButton_clicked(), and on_profileBox_activated()\&.
+.PP
+.nf
+73                                 {
+74     // Clear profile list and rebuild
+75     KbProfile* hwProfile = device->hwProfile(), *currentProfile = device->currentProfile();
+76     ui->profileBox->clear();
+77     int i = 0;
+78     foreach(KbProfile* profile, device->profiles()){
+79         ui->profileBox->addItem((profile == hwProfile) ? QIcon(":/img/icon_profile_hardware\&.png") : QIcon(":/img/icon_profile\&.png"),
+80                                 profile->name());
+81         if(profile == currentProfile)
+82             ui->profileBox->setCurrentIndex(i);
+83         i++;
+84     }
+85     ui->profileBox->addItem(QIcon(":/img/icon_blank\&.png"), "Manage profiles\&.\&.\&.");
+86     QFont font = ui->profileBox->font();
+87     font\&.setItalic(true);
+88     ui->profileBox->setItemData(ui->profileBox->count() - 1, font, Qt::FontRole);
+89 }
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "\fBKbMode\fP* KbWidget::currentMode\fC [private]\fP"
+
+.PP
+Definition at line 44 of file kbwidget\&.h\&.
+.PP
+Referenced by modeChanged(), on_modesList_customContextMenuRequested(), on_modesList_itemChanged(), and profileChanged()\&.
+.SS "\fBKb\fP* KbWidget::device"
+
+.PP
+Definition at line 24 of file kbwidget\&.h\&.
+.PP
+Referenced by MainWindow::addDevice(), MainWindow::checkFwUpdates(), devUpdate(), KbWidget(), modeChanged(), modeIcon(), modesList_reordered(), name(), on_fwUpdButton_clicked(), on_hwSaveButton_clicked(), on_modesList_currentItemChanged(), on_modesList_customContextMenuRequested(), on_modesList_itemClicked(), on_profileBox_activated(), on_tabWidget_currentChanged(), profileChanged(), MainWindow::removeDevice(), MainWindow::showFwUpdateNotification(), updateFwButton(), and updateProfileList()\&.
+.SS "const int KbWidget::GUID = Qt::UserRole\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 46 of file kbwidget\&.h\&.
+.PP
+Referenced by modesList_reordered(), on_modesList_currentItemChanged(), on_modesList_customContextMenuRequested(), on_modesList_itemChanged(), on_modesList_itemClicked(), and profileChanged()\&.
+.SS "bool KbWidget::hasShownNewFW"
+
+.PP
+Definition at line 28 of file kbwidget\&.h\&.
+.PP
+Referenced by MainWindow::checkFwUpdates()\&.
+.SS "quint64 KbWidget::lastAutoSave\fC [private]\fP"
+
+.PP
+Definition at line 42 of file kbwidget\&.h\&.
+.SS "const int KbWidget::NEW_FLAG = Qt::UserRole + 1\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 47 of file kbwidget\&.h\&.
+.PP
+Referenced by addNewModeItem(), modesList_reordered(), and on_modesList_itemClicked()\&.
+.SS "\fBUi::KbWidget\fP* KbWidget::ui\fC [private]\fP"
+
+.PP
+Definition at line 41 of file kbwidget\&.h\&.
+.PP
+Referenced by addNewModeItem(), devUpdate(), KbWidget(), modeChanged(), modesList_reordered(), on_fwUpdButton_clicked(), on_modesList_customContextMenuRequested(), on_modesList_itemClicked(), on_tabWidget_currentChanged(), profileChanged(), showFirstTab(), showLastTab(), updateFwButton(), updateProfileList(), and ~KbWidget()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

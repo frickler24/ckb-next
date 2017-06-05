@@ -1,0 +1,10 @@
+<map id="SettingsWidget::on_loginItemBox_clicked" name="SettingsWidget::on_loginItemBox_clicked">
+<area shape="rect" id="node2" href="$classAutoRun.html#aaa1d724de808dc049c625172ef378c18" title="AutoRun::disable" alt="" coords="208,5,331,32"/>
+<area shape="rect" id="node4" href="$classAutoRun.html#a657adef91e2efe69c5262bff6cad9711" title="AutoRun::enable" alt="" coords="210,56,329,83"/>
+<area shape="rect" id="node3" href="$classAutoRun.html#abc596cb83ba6b611aa6df7eb98c51f19" title="AutoRun::available" alt="" coords="379,5,511,32"/>
+<area shape="rect" id="node5" href="$classCkbSettings.html#a65c4f3ff1f75e5a554759040fb76044e" title="CkbSettings::set" alt="" coords="385,56,505,83"/>
+<area shape="rect" id="node6" href="$ckbsettings_8cpp.html#aa405e58960532b36ddb38251775238fd" title="globalSettings " alt="" coords="575,31,679,57"/>
+<area shape="rect" id="node8" href="$classCkbSettings.html#a3793106d98878f170f9f9734bf39409b" title="CkbSettings::value" alt="" coords="560,81,693,108"/>
+<area shape="rect" id="node7" href="$classCkbSettings.html#a378a1793dae116fbea4a801396fa4fbb" title="CkbSettings::setWritable Remember if the config files are writable (setter) " alt="" coords="741,31,909,57"/>
+<area shape="rect" id="node9" href="$classCkbSettings.html#a29695ed0012617ba943a1878d4abc71c" title="CkbSettings::pwd" alt="" coords="762,81,889,108"/>
+</map>

@@ -1,0 +1,112 @@
+.TH "src/ckb/kblight.cpp" 3 "Mon Jun 5 2017" "Version beta-v0.2.8+testing at branch macrotime.0.2.thread" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb/kblight.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <cmath>\fP
+.br
+\fC#include <QDateTime>\fP
+.br
+\fC#include <QSet>\fP
+.br
+\fC#include 'kblight\&.h'\fP
+.br
+\fC#include 'kbmode\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "static float \fBsToL\fP (float srgb)"
+.br
+.ti -1c
+.RI "static float \fBlToS\fP (float linear)"
+.br
+.ti -1c
+.RI "QRgb \fBmonoRgb\fP (float r, float g, float b)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static int \fB_shareDimming\fP = -1"
+.br
+.ti -1c
+.RI "static QSet< \fBKbLight\fP * > \fBactiveLights\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "static float lToS (floatlinear)\fC [static]\fP"
+
+.PP
+Definition at line 277 of file kblight\&.cpp\&.
+.PP
+Referenced by KbLight::frameUpdate(), and monoRgb()\&.
+.PP
+.nf
+277                                {
+278     if(linear <= 0\&.0031308f)
+279         return 12\&.92f * linear * 255\&.f;
+280     return (1\&.055f * pow(linear, 1\&.f / 2\&.4f) - 0\&.055f) * 255\&.f;
+281 }
+.fi
+.SS "QRgb monoRgb (floatr, floatg, floatb)"
+
+.PP
+Definition at line 284 of file kblight\&.cpp\&.
+.PP
+References lToS(), and sToL()\&.
+.PP
+Referenced by KbLight::base(), KbLight::frameUpdate(), and KeyWidget::paintEvent()\&.
+.PP
+.nf
+284                                        {
+285     // It's important to use a linear colorspace for this, otherwise the colors will appear inconsistent
+286     // Note that although we could use linear space for alpha blending or the animation blending functions, we don't\&.
+287     // The reason for this is that photo manipulation programs don't do it either, so even though the result would technically be more correct,
+288     // it would look wrong to most people\&.
+289     r = sToL(r);
+290     g = sToL(g);
+291     b = sToL(b);
+292     int value = round(lToS((r + g + b) / 3\&.f));
+293     return qRgb(value, value, value);
+294 }
+.fi
+.SS "static float sToL (floatsrgb)\fC [static]\fP"
+
+.PP
+Definition at line 270 of file kblight\&.cpp\&.
+.PP
+Referenced by KbLight::frameUpdate(), and monoRgb()\&.
+.PP
+.nf
+270                              {
+271     srgb /= 255\&.f;
+272     if(srgb <= 0\&.04045f)
+273         return srgb / 12\&.92f;
+274     return pow((srgb + 0\&.055f) / 1\&.055f, 2\&.4f);
+275 }
+.fi
+.SH "Variable Documentation"
+.PP 
+.SS "int _shareDimming = -1\fC [static]\fP"
+
+.PP
+Definition at line 7 of file kblight\&.cpp\&.
+.PP
+Referenced by KbLight::dimming(), KbLight::open(), and KbLight::shareDimming()\&.
+.SS "QSet<\fBKbLight\fP*> activeLights\fC [static]\fP"
+
+.PP
+Definition at line 8 of file kblight\&.cpp\&.
+.PP
+Referenced by KbLight::close(), KbLight::open(), KbLight::shareDimming(), and KbLight::~KbLight()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

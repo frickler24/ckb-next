@@ -1,0 +1,9 @@
+<map id="KbLight::shareDimming" name="KbLight::shareDimming">
+<area shape="rect" id="node2" href="$classKbLight.html#a96e38738568cb1c652d4cd8beaff6ac9" title="KbLight::dimming" alt="" coords="228,5,351,32"/>
+<area shape="rect" id="node3" href="$classExtraSettingsWidget.html#acde7ec134d1094521001d4512edbbe92" title="ExtraSettingsWidget\l::ExtraSettingsWidget" alt="" coords="214,57,365,98"/>
+<area shape="rect" id="node4" href="$classExtraSettingsWidget.html#acc6116c20fe8030cf2dc3443558bff18" title="ExtraSettingsWidget\l::on_brightnessBox_clicked" alt="" coords="417,115,599,157"/>
+<area shape="rect" id="node5" href="$classExtraSettingsWidget.html#a77ded97e5f5097c29da0e6fe1a969ee7" title="ExtraSettingsWidget\l::pollUpdates" alt="" coords="218,174,361,215"/>
+<area shape="rect" id="node6" href="$classSettingsWidget.html#a6ae876420712dcb104ce3ef5cabb0f53" title="SettingsWidget::pollUpdates" alt="" coords="414,181,602,208"/>
+<area shape="rect" id="node7" href="$classMainWindow.html#a888ae1a192a5ca93d0d8bddd104ae953" title="MainWindow::timerTick" alt="" coords="651,181,810,208"/>
+<area shape="rect" id="node8" href="$classMainWindow.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow" alt="" coords="859,181,1039,208"/>
+</map>

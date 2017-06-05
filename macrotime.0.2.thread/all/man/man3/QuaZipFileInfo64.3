@@ -1,0 +1,365 @@
+.TH "QuaZipFileInfo64" 3 "Mon Jun 5 2017" "Version beta-v0.2.8+testing at branch macrotime.0.2.thread" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QuaZipFileInfo64 \- 
+.PP
+Information about a file inside archive (with zip64 support)\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/quazip/quazipfileinfo\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "QFile::Permissions \fBgetPermissions\fP () const "
+.br
+.RI "\fIGet the file permissions\&. \fP"
+.ti -1c
+.RI "bool \fBtoQuaZipFileInfo\fP (\fBQuaZipFileInfo\fP &info) const "
+.br
+.RI "\fIConverts to \fBQuaZipFileInfo\fP\&. \fP"
+.ti -1c
+.RI "QDateTime \fBgetNTFSmTime\fP (int *fineTicks=NULL) const "
+.br
+.RI "\fIReturns the NTFS modification time\&. \fP"
+.ti -1c
+.RI "QDateTime \fBgetNTFSaTime\fP (int *fineTicks=NULL) const "
+.br
+.RI "\fIReturns the NTFS access time\&. \fP"
+.ti -1c
+.RI "QDateTime \fBgetNTFScTime\fP (int *fineTicks=NULL) const "
+.br
+.RI "\fIReturns the NTFS creation time\&. \fP"
+.ti -1c
+.RI "bool \fBisEncrypted\fP () const "
+.br
+.RI "\fIChecks whether the file is encrypted\&. \fP"
+.in -1c
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "QString \fBname\fP"
+.br
+.RI "\fIFile name\&. \fP"
+.ti -1c
+.RI "quint16 \fBversionCreated\fP"
+.br
+.RI "\fIVersion created by\&. \fP"
+.ti -1c
+.RI "quint16 \fBversionNeeded\fP"
+.br
+.RI "\fIVersion needed to extract\&. \fP"
+.ti -1c
+.RI "quint16 \fBflags\fP"
+.br
+.RI "\fIGeneral purpose flags\&. \fP"
+.ti -1c
+.RI "quint16 \fBmethod\fP"
+.br
+.RI "\fICompression method\&. \fP"
+.ti -1c
+.RI "QDateTime \fBdateTime\fP"
+.br
+.RI "\fILast modification date and time\&. \fP"
+.ti -1c
+.RI "quint32 \fBcrc\fP"
+.br
+.RI "\fICRC\&. \fP"
+.ti -1c
+.RI "quint64 \fBcompressedSize\fP"
+.br
+.RI "\fICompressed file size\&. \fP"
+.ti -1c
+.RI "quint64 \fBuncompressedSize\fP"
+.br
+.RI "\fIUncompressed file size\&. \fP"
+.ti -1c
+.RI "quint16 \fBdiskNumberStart\fP"
+.br
+.RI "\fIDisk number start\&. \fP"
+.ti -1c
+.RI "quint16 \fBinternalAttr\fP"
+.br
+.RI "\fIInternal file attributes\&. \fP"
+.ti -1c
+.RI "quint32 \fBexternalAttr\fP"
+.br
+.RI "\fIExternal file attributes\&. \fP"
+.ti -1c
+.RI "QString \fBcomment\fP"
+.br
+.RI "\fIComment\&. \fP"
+.ti -1c
+.RI "QByteArray \fBextra\fP"
+.br
+.RI "\fIExtra field\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Call \fBQuaZip::getCurrentFileInfo()\fP or \fBQuaZipFile::getFileInfo()\fP to fill this structure\&. 
+.PP
+Definition at line 81 of file quazipfileinfo\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QDateTime QuaZipFileInfo64::getNTFSaTime (int *fineTicks = \fCNULL\fP) const"
+The getNTFS*Time() functions only work if there is an NTFS extra field present\&. Otherwise, they all return invalid null timestamps\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfineTicks\fP If not NULL, the fractional part of milliseconds returned there, measured in 100-nanosecond ticks\&. Will be set to zero if there is no NTFS extra field\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBdateTime\fP 
+.PP
+\fBgetNTFSmTime()\fP 
+.PP
+\fBgetNTFScTime()\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The NTFS access time, UTC 
+.RE
+.PP
+
+.PP
+Definition at line 168 of file quazipfileinfo\&.cpp\&.
+.PP
+References extra, and getNTFSTime()\&.
+.PP
+.nf
+169 {
+170     return getNTFSTime(extra, 8, fineTicks);
+171 }
+.fi
+.SS "QDateTime QuaZipFileInfo64::getNTFScTime (int *fineTicks = \fCNULL\fP) const"
+The getNTFS*Time() functions only work if there is an NTFS extra field present\&. Otherwise, they all return invalid null timestamps\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfineTicks\fP If not NULL, the fractional part of milliseconds returned there, measured in 100-nanosecond ticks\&. Will be set to zero if there is no NTFS extra field\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBdateTime\fP 
+.PP
+\fBgetNTFSmTime()\fP 
+.PP
+\fBgetNTFSaTime()\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The NTFS creation time, UTC 
+.RE
+.PP
+
+.PP
+Definition at line 173 of file quazipfileinfo\&.cpp\&.
+.PP
+References extra, and getNTFSTime()\&.
+.PP
+.nf
+174 {
+175     return getNTFSTime(extra, 16, fineTicks);
+176 }
+.fi
+.SS "QDateTime QuaZipFileInfo64::getNTFSmTime (int *fineTicks = \fCNULL\fP) const"
+The getNTFS*Time() functions only work if there is an NTFS extra field present\&. Otherwise, they all return invalid null timestamps\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfineTicks\fP If not NULL, the fractional part of milliseconds returned there, measured in 100-nanosecond ticks\&. Will be set to zero if there is no NTFS extra field\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBdateTime\fP 
+.PP
+\fBgetNTFSaTime()\fP 
+.PP
+\fBgetNTFScTime()\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The NTFS modification time, UTC 
+.RE
+.PP
+
+.PP
+Definition at line 163 of file quazipfileinfo\&.cpp\&.
+.PP
+References extra, and getNTFSTime()\&.
+.PP
+.nf
+164 {
+165     return getNTFSTime(extra, 0, fineTicks);
+166 }
+.fi
+.SS "QFile::Permissions QuaZipFileInfo64::getPermissions () const"
+Returns the high 16 bits of external attributes converted to QFile::Permissions\&. 
+.PP
+Definition at line 57 of file quazipfileinfo\&.cpp\&.
+.PP
+References externalAttr, and permissionsFromExternalAttr()\&.
+.PP
+Referenced by JlCompress::extractFile()\&.
+.PP
+.nf
+58 {
+59     return permissionsFromExternalAttr(externalAttr);
+60 }
+.fi
+.SS "bool QuaZipFileInfo64::isEncrypted () const\fC [inline]\fP"
+
+.PP
+Definition at line 175 of file quazipfileinfo\&.h\&.
+.PP
+.nf
+175 {return (flags & 1) != 0;}
+.fi
+.SS "bool QuaZipFileInfo64::toQuaZipFileInfo (\fBQuaZipFileInfo\fP &info) const"
+If any of the fields are greater than 0xFFFFFFFFu, they are set to 0xFFFFFFFFu exactly, not just truncated\&. This function should be mainly used for compatibility with the old code expecting \fBQuaZipFileInfo\fP, in the cases when it's impossible or otherwise unadvisable (due to ABI compatibility reasons, for example) to modify that old code to use \fBQuaZipFileInfo64\fP\&.
+.PP
+\fBReturns:\fP
+.RS 4
+\fCtrue\fP if all fields converted correctly, \fCfalse\fP if an overflow occured\&. 
+.RE
+.PP
+
+.PP
+Definition at line 62 of file quazipfileinfo\&.cpp\&.
+.PP
+References QuaZipFileInfo::comment, comment, QuaZipFileInfo::compressedSize, compressedSize, QuaZipFileInfo::crc, crc, QuaZipFileInfo::dateTime, dateTime, QuaZipFileInfo::diskNumberStart, diskNumberStart, QuaZipFileInfo::externalAttr, externalAttr, QuaZipFileInfo::extra, extra, QuaZipFileInfo::flags, flags, QuaZipFileInfo::internalAttr, internalAttr, QuaZipFileInfo::method, method, QuaZipFileInfo::name, name, QuaZipFileInfo::uncompressedSize, uncompressedSize, QuaZipFileInfo::versionCreated, versionCreated, QuaZipFileInfo::versionNeeded, and versionNeeded\&.
+.PP
+Referenced by QuaZip::getCurrentFileInfo(), and QuaZipFile::getFileInfo()\&.
+.PP
+.nf
+63 {
+64     bool noOverflow = true;
+65     info\&.name = name;
+66     info\&.versionCreated = versionCreated;
+67     info\&.versionNeeded = versionNeeded;
+68     info\&.flags = flags;
+69     info\&.method = method;
+70     info\&.dateTime = dateTime;
+71     info\&.crc = crc;
+72     if (compressedSize > 0xFFFFFFFFu) {
+73         info\&.compressedSize = 0xFFFFFFFFu;
+74         noOverflow = false;
+75     } else {
+76         info\&.compressedSize = compressedSize;
+77     }
+78     if (uncompressedSize > 0xFFFFFFFFu) {
+79         info\&.uncompressedSize = 0xFFFFFFFFu;
+80         noOverflow = false;
+81     } else {
+82         info\&.uncompressedSize = uncompressedSize;
+83     }
+84     info\&.diskNumberStart = diskNumberStart;
+85     info\&.internalAttr = internalAttr;
+86     info\&.externalAttr = externalAttr;
+87     info\&.comment = comment;
+88     info\&.extra = extra;
+89     return noOverflow;
+90 }
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "QString QuaZipFileInfo64::comment"
+
+.PP
+Definition at line 114 of file quazipfileinfo\&.h\&.
+.PP
+Referenced by QuaZip::getCurrentFileInfo(), and toQuaZipFileInfo()\&.
+.SS "quint64 QuaZipFileInfo64::compressedSize"
+
+.PP
+Definition at line 104 of file quazipfileinfo\&.h\&.
+.PP
+Referenced by QuaZip::getCurrentFileInfo(), QuaZipDir_getFileInfo(), and toQuaZipFileInfo()\&.
+.SS "quint32 QuaZipFileInfo64::crc"
+
+.PP
+Definition at line 102 of file quazipfileinfo\&.h\&.
+.PP
+Referenced by QuaZip::getCurrentFileInfo(), QuaZipDir_getFileInfo(), and toQuaZipFileInfo()\&.
+.SS "QDateTime QuaZipFileInfo64::dateTime"
+This is the time stored in the standard ZIP header\&. This format only allows to store time with 2-second precision, so the seconds will always be even and the milliseconds will always be zero\&. If you need more precise date and time, you can try to call the \fBgetNTFSmTime()\fP function or its siblings, provided that the archive itself contains these NTFS times\&. 
+.PP
+Definition at line 100 of file quazipfileinfo\&.h\&.
+.PP
+Referenced by QuaZip::getCurrentFileInfo(), and toQuaZipFileInfo()\&.
+.SS "quint16 QuaZipFileInfo64::diskNumberStart"
+
+.PP
+Definition at line 108 of file quazipfileinfo\&.h\&.
+.PP
+Referenced by QuaZip::getCurrentFileInfo(), QuaZipDir_getFileInfo(), and toQuaZipFileInfo()\&.
+.SS "quint32 QuaZipFileInfo64::externalAttr"
+
+.PP
+Definition at line 112 of file quazipfileinfo\&.h\&.
+.PP
+Referenced by QuaZip::getCurrentFileInfo(), getPermissions(), QuaZipDir_getFileInfo(), and toQuaZipFileInfo()\&.
+.SS "QByteArray QuaZipFileInfo64::extra"
+
+.PP
+Definition at line 116 of file quazipfileinfo\&.h\&.
+.PP
+Referenced by QuaZip::getCurrentFileInfo(), getNTFSaTime(), getNTFScTime(), getNTFSmTime(), and toQuaZipFileInfo()\&.
+.SS "quint16 QuaZipFileInfo64::flags"
+
+.PP
+Definition at line 89 of file quazipfileinfo\&.h\&.
+.PP
+Referenced by QuaZip::getCurrentFileInfo(), QuaZipDir_getFileInfo(), and toQuaZipFileInfo()\&.
+.SS "quint16 QuaZipFileInfo64::internalAttr"
+
+.PP
+Definition at line 110 of file quazipfileinfo\&.h\&.
+.PP
+Referenced by QuaZip::getCurrentFileInfo(), QuaZipDir_getFileInfo(), and toQuaZipFileInfo()\&.
+.SS "quint16 QuaZipFileInfo64::method"
+
+.PP
+Definition at line 91 of file quazipfileinfo\&.h\&.
+.PP
+Referenced by QuaZip::getCurrentFileInfo(), QuaZipDir_getFileInfo(), and toQuaZipFileInfo()\&.
+.SS "QString QuaZipFileInfo64::name"
+
+.PP
+Definition at line 83 of file quazipfileinfo\&.h\&.
+.PP
+Referenced by QuaZip::getCurrentFileInfo(), JlCompress::getFileList(), QuaZipDir_getFileInfo(), and toQuaZipFileInfo()\&.
+.SS "quint64 QuaZipFileInfo64::uncompressedSize"
+
+.PP
+Definition at line 106 of file quazipfileinfo\&.h\&.
+.PP
+Referenced by QuaZip::getCurrentFileInfo(), QuaZipDir_getFileInfo(), and toQuaZipFileInfo()\&.
+.SS "quint16 QuaZipFileInfo64::versionCreated"
+
+.PP
+Definition at line 85 of file quazipfileinfo\&.h\&.
+.PP
+Referenced by QuaZip::getCurrentFileInfo(), QuaZipDir_getFileInfo(), and toQuaZipFileInfo()\&.
+.SS "quint16 QuaZipFileInfo64::versionNeeded"
+
+.PP
+Definition at line 87 of file quazipfileinfo\&.h\&.
+.PP
+Referenced by QuaZip::getCurrentFileInfo(), QuaZipDir_getFileInfo(), and toQuaZipFileInfo()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

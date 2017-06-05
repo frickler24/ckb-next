@@ -1,0 +1,375 @@
+.TH "src/ckb-daemon/notify.c" 3 "Mon Jun 5 2017" "Version beta-v0.2.8+testing at branch macrotime.0.2.thread" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb-daemon/notify.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'device\&.h'\fP
+.br
+\fC#include 'devnode\&.h'\fP
+.br
+\fC#include 'dpi\&.h'\fP
+.br
+\fC#include 'led\&.h'\fP
+.br
+\fC#include 'notify\&.h'\fP
+.br
+\fC#include 'profile\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBHWMODE_OR_RETURN\fP(kb, index)"
+.br
+.ti -1c
+.RI "#define \fBHW_STANDARD\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBnprintf\fP (\fBusbdevice\fP *kb, int nodenumber, \fBusbmode\fP *mode, const char *format,\&.\&.\&.)"
+.br
+.ti -1c
+.RI "void \fBnprintkey\fP (\fBusbdevice\fP *kb, int nnumber, int keyindex, int down)"
+.br
+.ti -1c
+.RI "void \fBnprintind\fP (\fBusbdevice\fP *kb, int nnumber, int led, int on)"
+.br
+.ti -1c
+.RI "void \fBcmd_notify\fP (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, int nnumber, int keyindex, const char *toggle)"
+.br
+.ti -1c
+.RI "static void \fB_cmd_get\fP (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, int nnumber, const char *setting)"
+.br
+.ti -1c
+.RI "void \fBcmd_get\fP (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, int nnumber, int dummy, const char *setting)"
+.br
+.ti -1c
+.RI "int \fBrestart\fP ()"
+.br
+.ti -1c
+.RI "void \fBcmd_restart\fP (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, int nnumber, int dummy, const char *content)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define HW_STANDARD"
+\fBValue:\fP
+.PP
+.nf
+if(!kb->hw)                                     \
+        return;                                     \
+    unsigned index = INDEX_OF(mode, profile->mode); \
+    /* Make sure the mode number is valid */        \\
+    HWMODE_OR_RETURN(kb, index)
+.fi
+.PP
+Definition at line 83 of file notify\&.c\&.
+.PP
+Referenced by _cmd_get()\&.
+.SS "#define HWMODE_OR_RETURN(kb, index)"
+\fBValue:\fP
+.PP
+.nf
+if(IS_K95(kb)){                 \
+        if((index) >= HWMODE_K95)   \
+            return;                 \
+    } else {                        \
+        if((index) >= HWMODE_K70)   \
+            return;                 \
+    }
+.fi
+.PP
+Definition at line 73 of file notify\&.c\&.
+.SH "Function Documentation"
+.PP 
+.SS "static void _cmd_get (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, intnnumber, const char *setting)\fC [static]\fP"
+
+.PP
+Definition at line 90 of file notify\&.c\&.
+.PP
+References dpiset::current, usbmode::dpi, hwprofile::dpi, gethwmodename(), gethwprofilename(), getid(), getmodename(), getprofilename(), usbdevice::hw, usbdevice::hw_ileds, HW_STANDARD, I_CAPS, I_NUM, I_SCROLL, usbmode::id, usbprofile::id, hwprofile::id, usbdevice::input, keymap, usbinput::keys, dpiset::lift, usbmode::light, hwprofile::light, usbid::modified, N_KEYS_INPUT, nprintf(), nprintind(), nprintkey(), printdpi(), printrgb(), usbdevice::profile, and dpiset::snap\&.
+.PP
+Referenced by cmd_get()\&.
+.PP
+.nf
+90                                                                                     {
+91     usbprofile* profile = kb->profile;
+92     if(!strcmp(setting, ":mode")){
+93         // Get the current mode number
+94         nprintf(kb, nnumber, mode, "switch\n");
+95         return;
+96     } else if(!strcmp(setting, ":rgb")){
+97         // Get the current RGB settings
+98         char* rgb = printrgb(&mode->light, kb);
+99         nprintf(kb, nnumber, mode, "rgb %s\n", rgb);
+100         free(rgb);
+101         return;
+102     } else if(!strcmp(setting, ":hwrgb")){
+103         // Get the current hardware RGB settings
+104         HW_STANDARD;
+105         char* rgb = printrgb(kb->hw->light + index, kb);
+106         nprintf(kb, nnumber, mode, "hwrgb %s\n", rgb);
+107         free(rgb);
+108         return;
+109     } else if(!strcmp(setting, ":profilename")){
+110         // Get the current profile name
+111         char* name = getprofilename(profile);
+112         nprintf(kb, nnumber, 0, "profilename %s\n", name[0] ? name : "Unnamed");
+113         free(name);
+114     } else if(!strcmp(setting, ":name")){
+115         // Get the current mode name
+116         char* name = getmodename(mode);
+117         nprintf(kb, nnumber, mode, "name %s\n", name[0] ? name : "Unnamed");
+118         free(name);
+119     } else if(!strcmp(setting, ":hwprofilename")){
+120         // Get the current hardware profile name
+121         if(!kb->hw)
+122             return;
+123         char* name = gethwprofilename(kb->hw);
+124         nprintf(kb, nnumber, 0, "hwprofilename %s\n", name[0] ? name : "Unnamed");
+125         free(name);
+126     } else if(!strcmp(setting, ":hwname")){
+127         // Get the current hardware mode name
+128         HW_STANDARD;
+129         char* name = gethwmodename(kb->hw, index);
+130         nprintf(kb, nnumber, mode, "hwname %s\n", name[0] ? name : "Unnamed");
+131         free(name);
+132     } else if(!strcmp(setting, ":profileid")){
+133         // Get the current profile ID
+134         char* guid = getid(&profile->id);
+135         int modified;
+136         memcpy(&modified, &profile->id\&.modified, sizeof(modified));
+137         nprintf(kb, nnumber, 0, "profileid %s %x\n", guid, modified);
+138         free(guid);
+139     } else if(!strcmp(setting, ":id")){
+140         // Get the current mode ID
+141         char* guid = getid(&mode->id);
+142         int modified;
+143         memcpy(&modified, &mode->id\&.modified, sizeof(modified));
+144         nprintf(kb, nnumber, mode, "id %s %x\n", guid, modified);
+145         free(guid);
+146     } else if(!strcmp(setting, ":hwprofileid")){
+147         // Get the current hardware profile ID
+148         if(!kb->hw)
+149             return;
+150         char* guid = getid(&kb->hw->id[0]);
+151         int modified;
+152         memcpy(&modified, &kb->hw->id[0]\&.modified, sizeof(modified));
+153         nprintf(kb, nnumber, 0, "hwprofileid %s %x\n", guid, modified);
+154         free(guid);
+155     } else if(!strcmp(setting, ":hwid")){
+156         // Get the current hardware mode ID
+157         HW_STANDARD;
+158         char* guid = getid(&kb->hw->id[index + 1]);
+159         int modified;
+160         memcpy(&modified, &kb->hw->id[index + 1]\&.modified, sizeof(modified));
+161         nprintf(kb, nnumber, mode, "hwid %s %x\n", guid, modified);
+162         free(guid);
+163     } else if(!strcmp(setting, ":keys")){
+164         // Get the current state of all keys
+165         for(int i = 0; i < N_KEYS_INPUT; i++){
+166             if(!keymap[i]\&.name)
+167                 continue;
+168             int byte = i / 8, bit = 1 << (i & 7);
+169             uchar state = kb->input\&.keys[byte] & bit;
+170             if(state)
+171                 nprintkey(kb, nnumber, i, 1);
+172         }
+173     } else if(!strcmp(setting, ":i")){
+174         // Get the current state of all indicator LEDs
+175         if(kb->hw_ileds & I_NUM) nprintind(kb, nnumber, I_NUM, 1);
+176         if(kb->hw_ileds & I_CAPS) nprintind(kb, nnumber, I_CAPS, 1);
+177         if(kb->hw_ileds & I_SCROLL) nprintind(kb, nnumber, I_SCROLL, 1);
+178     } else if(!strcmp(setting, ":dpi")){
+179         // Get the current DPI levels
+180         char* dpi = printdpi(&mode->dpi, kb);
+181         nprintf(kb, nnumber, mode, "dpi %s\n", dpi);
+182         free(dpi);
+183         return;
+184     } else if(!strcmp(setting, ":hwdpi")){
+185         // Get the current hardware DPI levels
+186         HW_STANDARD;
+187         char* dpi = printdpi(kb->hw->dpi + index, kb);
+188         nprintf(kb, nnumber, mode, "hwdpi %s\n", dpi);
+189         free(dpi);
+190         return;
+191     } else if(!strcmp(setting, ":dpisel")){
+192         // Get the currently-selected DPI
+193         nprintf(kb, nnumber, mode, "dpisel %d\n", mode->dpi\&.current);
+194     } else if(!strcmp(setting, ":hwdpisel")){
+195         // Get the currently-selected hardware DPI
+196         HW_STANDARD;
+197         nprintf(kb, nnumber, mode, "hwdpisel %d\n", kb->hw->dpi[index]\&.current);
+198     } else if(!strcmp(setting, ":lift")){
+199         // Get the mouse lift height
+200         nprintf(kb, nnumber, mode, "lift %d\n", mode->dpi\&.lift);
+201     } else if(!strcmp(setting, ":hwlift")){
+202         // Get the hardware lift height
+203         HW_STANDARD;
+204         nprintf(kb, nnumber, mode, "hwlift %d\n", kb->hw->dpi[index]\&.lift);
+205     } else if(!strcmp(setting, ":snap")){
+206         // Get the angle snap status
+207         nprintf(kb, nnumber, mode, "snap %s\n", mode->dpi\&.snap ? "on" : "off");
+208     } else if(!strcmp(setting, ":hwsnap")){
+209         // Get the hardware angle snap status
+210         HW_STANDARD;
+211         nprintf(kb, nnumber, mode, "hwsnap %s\n", kb->hw->dpi[index]\&.snap ? "on" : "off");
+212     }
+213 }
+.fi
+.SS "void cmd_get (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, intnnumber, intdummy, const char *setting)"
+
+.PP
+Definition at line 215 of file notify\&.c\&.
+.PP
+References _cmd_get(), and imutex\&.
+.PP
+.nf
+215                                                                                        {
+216     pthread_mutex_lock(imutex(kb));
+217     _cmd_get(kb, mode, nnumber, setting);
+218     pthread_mutex_unlock(imutex(kb));
+219 }
+.fi
+.SS "void cmd_notify (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, intnnumber, intkeyindex, const char *toggle)"
+
+.PP
+Definition at line 61 of file notify\&.c\&.
+.PP
+References CLEAR_KEYBIT, imutex, N_KEYS_INPUT, usbmode::notify, and SET_KEYBIT\&.
+.PP
+.nf
+61                                                                                             {
+62     if(keyindex >= N_KEYS_INPUT)
+63         return;
+64     pthread_mutex_lock(imutex(kb));
+65     if(!strcmp(toggle, "on") || *toggle == 0)
+66         SET_KEYBIT(mode->notify[nnumber], keyindex);
+67     else if(!strcmp(toggle, "off"))
+68         CLEAR_KEYBIT(mode->notify[nnumber], keyindex);
+69     pthread_mutex_unlock(imutex(kb));
+70 }
+.fi
+.SS "void cmd_restart (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, intnnumber, intdummy, const char *content)"
+
+.PP
+Definition at line 223 of file notify\&.c\&.
+.PP
+References ckb_info, nprintf(), and restart()\&.
+.PP
+.nf
+223                                                                                             {
+224     ckb_info("RESTART called with %s\n", content);
+225     nprintf(kb, -1, 0, "RESTART called with %s\n", content);
+226     restart();
+227 }
+.fi
+.SS "void nprintf (\fBusbdevice\fP *kb, intnodenumber, \fBusbmode\fP *mode, const char *format, \&.\&.\&.)"
+
+.PP
+Definition at line 8 of file notify\&.c\&.
+.PP
+References INDEX_OF, usbprofile::mode, usbdevice::outfifo, OUTFIFO_MAX, and usbdevice::profile\&.
+.PP
+Referenced by _cmd_get(), cmd_fwupdate(), cmd_restart(), fwupdate(), nprintind(), and nprintkey()\&.
+.PP
+.nf
+8                                                                                    {
+9     if(!kb)
+10         return;
+11     usbprofile* profile = kb->profile;
+12     va_list va_args;
+13     int fifo;
+14     if(nodenumber >= 0){
+15         // If node number was given, print to that node (if open)
+16         if((fifo = kb->outfifo[nodenumber] - 1) != -1){
+17             va_start(va_args, format);
+18             if(mode)
+19                 dprintf(fifo, "mode %d ", INDEX_OF(mode, profile->mode) + 1);
+20             vdprintf(fifo, format, va_args);
+21         }
+22         return;
+23     }
+24     // Otherwise, print to all nodes
+25     for(int i = 0; i < OUTFIFO_MAX; i++){
+26         if((fifo = kb->outfifo[i] - 1) != -1){
+27             va_start(va_args, format);
+28             if(mode)
+29                 dprintf(fifo, "mode %d ", INDEX_OF(mode, profile->mode) + 1);
+30             vdprintf(fifo, format, va_args);
+31         }
+32     }
+33 }
+.fi
+.SS "void nprintind (\fBusbdevice\fP *kb, intnnumber, intled, inton)"
+
+.PP
+Definition at line 43 of file notify\&.c\&.
+.PP
+References I_CAPS, I_NUM, I_SCROLL, and nprintf()\&.
+.PP
+Referenced by _cmd_get(), and updateindicators_kb()\&.
+.PP
+.nf
+43                                                            {
+44     const char* name = 0;
+45     switch(led){
+46     case I_NUM:
+47         name = "num";
+48         break;
+49     case I_CAPS:
+50         name = "caps";
+51         break;
+52     case I_SCROLL:
+53         name = "scroll";
+54         break;
+55     default:
+56         return;
+57     }
+58     nprintf(kb, nnumber, 0, "i %c%s\n", on ? '+' : '-', name);
+59 }
+.fi
+.SS "void nprintkey (\fBusbdevice\fP *kb, intnnumber, intkeyindex, intdown)"
+
+.PP
+Definition at line 35 of file notify\&.c\&.
+.PP
+References keymap, key::name, and nprintf()\&.
+.PP
+Referenced by _cmd_get(), and inputupdate_keys()\&.
+.PP
+.nf
+35                                                                   {
+36     const key* map = keymap + keyindex;
+37     if(map->name)
+38         nprintf(kb, nnumber, 0, "key %c%s\n", down ? '+' : '-', map->name);
+39     else
+40         nprintf(kb, nnumber, 0, "key %c#%d\n", down ? '+' : '-', keyindex);
+41 }
+.fi
+.SS "int restart ()"
+
+.PP
+Definition at line 228 of file main\&.c\&.
+.PP
+References ckb_err, main(), main_ac, main_av, and quitWithLock()\&.
+.PP
+Referenced by cmd_restart(), and main()\&.
+.PP
+.nf
+228               {
+229     ckb_err("restart called, running quit without mutex-lock\&.\n");
+230     quitWithLock(0);
+231     return main(main_ac, main_av);
+232 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

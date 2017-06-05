@@ -1,0 +1,6 @@
+<map id="Kb::writeProfileHeader" name="Kb::writeProfileHeader">
+<area shape="rect" id="node2" href="$structUsbId.html#ab631307e05a399f378a339f02802bb9b" title="UsbId::guidString" alt="" coords="221,5,344,32"/>
+<area shape="rect" id="node3" href="$classKbProfile.html#a868bdfbe3f9c00ce2708a1ed8f457ccf" title="KbProfile::id" alt="" coords="236,56,329,83"/>
+<area shape="rect" id="node4" href="$structUsbId.html#a3ae49f21689d155d0de64b96666369d8" title="UsbId::modifiedString" alt="" coords="209,107,357,133"/>
+<area shape="rect" id="node5" href="$classKbProfile.html#a0239b0037d8206ed5bfd6c774d803d1a" title="KbProfile::name" alt="" coords="225,157,340,184"/>
+</map>

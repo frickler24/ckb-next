@@ -1,0 +1,5 @@
+<map id="KbLight::setIndicator" name="KbLight::setIndicator">
+<area shape="rect" id="node2" href="$classKbPerf.html#a1ed366362f786a8ae66074bf991bea7f" title="KbPerf::lightIndicator" alt="" coords="197,5,341,32"/>
+<area shape="rect" id="node3" href="$classKbPerf.html#a6e177a85d035cfe0340b3eefdf8bf866" title="KbPerf::applyIndicators" alt="" coords="390,5,549,32"/>
+<area shape="rect" id="node4" href="$classKb.html#a97694a4cd55681adca7b972fb5722049" title="Kb::frameUpdate" alt="" coords="598,5,719,32"/>
+</map>
