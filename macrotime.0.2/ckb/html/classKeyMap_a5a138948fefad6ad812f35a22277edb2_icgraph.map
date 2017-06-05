@@ -1,0 +1,8 @@
+<map id="KeyMap::isMouse" name="KeyMap::isMouse">
+<area shape="rect" id="node2" href="$classKeyMap.html#a4b485fa117ce360a5ca7d9f5c762421e" title="KeyMap::isKeyboard" alt="" coords="189,5,331,32"/>
+<area shape="rect" id="node4" href="$classKb.html#ab4c9c664189ad5b084be7dd5ad55b8fa" title="Kb::isMouse" alt="" coords="213,56,307,83"/>
+<area shape="rect" id="node7" href="$classKeyWidget.html#ae41120f21e087439104cb6bce42f489e" title="KeyWidget::paintEvent" alt="" coords="182,107,338,133"/>
+<area shape="rect" id="node3" href="$classKbBind.html#a742281f5fabab1923101e941b4ec3599" title="KbBind::isKeyboard" alt="" coords="390,5,527,32"/>
+<area shape="rect" id="node5" href="$classKbWidget.html#a848a21f1fd112e13ca5fcf25da4592c6" title="KbWidget::KbWidget" alt="" coords="387,56,531,83"/>
+<area shape="rect" id="node6" href="$classKb.html#afa36635dcc1cd9512f372594c57c546c" title="Kb::readNotify" alt="" coords="405,107,512,133"/>
+</map>

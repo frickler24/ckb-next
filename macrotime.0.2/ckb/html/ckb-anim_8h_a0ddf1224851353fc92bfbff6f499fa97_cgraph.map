@@ -1,0 +1,12 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$ckb-anim_8h.html#abeb0942eec728549b89a3765e49ab6df" title="ckb_frame" alt="" coords="125,5,208,32"/>
+<area shape="rect" id="node3" href="$ckb-anim_8h.html#a1f497d2e1aeec7944ae45cd28fae2219" title="ckb_getline" alt="" coords="288,132,376,159"/>
+<area shape="rect" id="node5" href="$ckb-anim_8h.html#aa27d72ffe1172dde09660dd920e47e6e" title="ckb_info" alt="" coords="131,107,202,133"/>
+<area shape="rect" id="node6" href="$ckb-anim_8h.html#ae0800d642f1ac5bc70daa4001006c80d" title="ckb_init" alt="" coords="133,157,200,184"/>
+<area shape="rect" id="node7" href="$ckb-anim_8h.html#ae06aede83c1a82174cbaff40cf691b2b" title="ckb_keypress" alt="" coords="115,208,218,235"/>
+<area shape="rect" id="node8" href="$ckb-anim_8h.html#a08dc6498a7c563b2c97245e01c11dffd" title="ckb_read_params" alt="" coords="104,259,229,285"/>
+<area shape="rect" id="node10" href="$ckb-anim_8h.html#a171f496a40fe11cc6e043e68558bc721" title="ckb_start" alt="" coords="129,309,205,336"/>
+<area shape="rect" id="node11" href="$ckb-anim_8h.html#a6e67bfe3eaac6d60897ae58a0d286745" title="ckb_time" alt="" coords="129,360,204,387"/>
+<area shape="rect" id="node4" href="$ckb-anim_8h.html#aff8e8575fa2db4c2e0dc7f62b4aa2e1f" title="urldecode" alt="" coords="435,132,514,159"/>
+<area shape="rect" id="node9" href="$ckb-anim_8h.html#a7604d9fc8ea368a7f7a88200402b3e2b" title="ckb_parameter" alt="" coords="278,259,386,285"/>
+</map>

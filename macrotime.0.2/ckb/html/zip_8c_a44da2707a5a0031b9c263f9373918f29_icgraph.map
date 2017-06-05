@@ -1,0 +1,22 @@
+<map id="LoadCentralDirectoryRecord" name="LoadCentralDirectoryRecord">
+<area shape="rect" id="node2" href="$zip_8h.html#a6cb26503b56121bf3b5779b4df561b24" title="zipOpen3" alt="" coords="240,292,317,319"/>
+<area shape="rect" id="node3" href="$classQuaZip.html#abfa4e6018b2964a3d10a4c54e5ab3962" title="Opens ZIP file. " alt="" coords="513,216,613,243"/>
+<area shape="rect" id="node18" href="$zip_8c.html#a67ab4da81787241b90623ab2dfb5f64a" title="zipOpen2" alt="" coords="376,241,453,268"/>
+<area shape="rect" id="node19" href="$zip_8c.html#af5902bca5d94f10555ebc03e83e10256" title="zipOpen2_64" alt="" coords="365,292,464,319"/>
+<area shape="rect" id="node20" href="$zip_8c.html#a20f498af9fd0d6dae2293917822f17c8" title="zipOpen" alt="" coords="379,343,450,369"/>
+<area shape="rect" id="node21" href="$zip_8c.html#abab85905a76f7b4cf2001b71a561ee0e" title="zipOpen64" alt="" coords="373,393,457,420"/>
+<area shape="rect" id="node4" href="$classKbFirmware.html#ae5f3c91fcf3fe8fe55e2c1e3cea877eb" title="KbFirmware::_fileForBoard" alt="" coords="666,13,843,40"/>
+<area shape="rect" id="node10" href="$classJlCompress.html#a4a4de9c62ecf161bb658d4d80495ea97" title="Compress a single file. " alt="" coords="665,64,844,91"/>
+<area shape="rect" id="node11" href="$classJlCompress.html#a9cdb92d29a94c6b13a718a3249685846" title="Compress a list of files. " alt="" coords="662,115,847,141"/>
+<area shape="rect" id="node12" href="$classJlCompress.html#a8708eafcadc5c192a1d492e784cfc98f" title="Compress a whole directory. " alt="" coords="667,165,842,192"/>
+<area shape="rect" id="node13" href="$classJlCompress.html#a38c0d58bfe3bbbcb3cf4e98d126633a3" title="Extract a single file. " alt="" coords="674,216,835,243"/>
+<area shape="rect" id="node14" href="$classJlCompress.html#a309e9ee366719a4d8aa28f837fab73ae" title="Extract a list of files. " alt="" coords="671,267,839,293"/>
+<area shape="rect" id="node15" href="$classJlCompress.html#a365a153baa4c11812d93cbca60b6a293" title="Extract a whole archive. " alt="" coords="676,317,833,344"/>
+<area shape="rect" id="node16" href="$classJlCompress.html#ab42422be913f817d7e04c1b1cd5d0156" title="Get the file list. " alt="" coords="675,368,835,395"/>
+<area shape="rect" id="node17" href="$classQuaZipFile.html#aed75bace51f2bb4c3e4f656ab4493aac" title="Opens a file for reading. " alt="" coords="694,419,815,445"/>
+<area shape="rect" id="node5" href="$classKbFirmware.html#a1cc600d07217f327a1541a44d353004c" title="KbFirmware::dataForBoard" alt="" coords="896,13,1075,40"/>
+<area shape="rect" id="node6" href="$classFwUpgradeDialog.html#a1fd1f6f1285ab4998a7c81e2ee118d54" title="FwUpgradeDialog::exec" alt="" coords="1123,13,1285,40"/>
+<area shape="rect" id="node7" href="$classKbWidget.html#a38c9f29a5d8f1edfcb5f8040de3dadb9" title="KbWidget::on_fwUpdButton\l_clicked" alt="" coords="1333,6,1517,47"/>
+<area shape="rect" id="node8" href="$classKbWidget.html#a428930086336c668e8a1055c21c938d9" title="KbWidget::showFwUpdate" alt="" coords="1565,13,1744,40"/>
+<area shape="rect" id="node9" href="$classMainWindow.html#ae50767c4ed6029f63ebacfffde4bc802" title="MainWindow::showFwUpdate\lNotification" alt="" coords="1793,6,1989,47"/>
+</map>

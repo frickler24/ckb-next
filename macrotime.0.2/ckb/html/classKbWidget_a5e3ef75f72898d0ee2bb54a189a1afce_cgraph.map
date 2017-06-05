@@ -1,0 +1,15 @@
+<map id="KbWidget::on_modesList_itemClicked" name="KbWidget::on_modesList_itemClicked">
+<area shape="rect" id="node2" href="$classKbWidget.html#aa592f030638a59bc13901b2e1b13de8e" title="KbWidget::addNewModeItem" alt="" coords="222,5,415,32"/>
+<area shape="rect" id="node3" href="$classKbProfile.html#afdb7ddf3f0cf18fdebba5f4eed76eaf8" title="KbProfile::append" alt="" coords="256,56,381,83"/>
+<area shape="rect" id="node9" href="$classKb.html#a4a9b9ba54fb83506ae61aa787d98cbb8" title="Kb::currentProfile" alt="" coords="257,107,380,133"/>
+<area shape="rect" id="node10" href="$classKbMode.html#a7f9aa60df1f6adabad5d6b6314546c57" title="KbMode::id" alt="" coords="275,157,363,184"/>
+<area shape="rect" id="node11" href="$classKb.html#a752353b7f2aae7070b2b0b45fa360763" title="Kb::newMode" alt="" coords="267,208,370,235"/>
+<area shape="rect" id="node13" href="$classKb.html#abf87fd5cc7fb602b96810ed5a528c3a6" title="Kb::setCurrentMode" alt="" coords="249,259,388,285"/>
+<area shape="rect" id="node4" href="$classKbProfile.html#a6a35f6ecae0910a7a9b4cfc238b4c318" title="KbProfile::setNeedsUpdate" alt="" coords="464,56,645,83"/>
+<area shape="rect" id="node5" href="$classKbProfile.html#a30827cbf8720209464b7acd99d7b59e4" title="KbProfile::setNeedsSave" alt="" coords="697,31,866,57"/>
+<area shape="rect" id="node6" href="$classKbMode.html#abc86ed1b24f62f1d0056de7ed6668d70" title="KbMode::setNeedsUpdate" alt="" coords="693,81,869,108"/>
+<area shape="rect" id="node7" href="$classKbBind.html#ab4c4ec0863c0bc07a9f4e2d5a1a60436" title="KbBind::setNeedsUpdate" alt="" coords="917,56,1088,83"/>
+<area shape="rect" id="node8" href="$classKbPerf.html#a7323c70a0794aa0fc8313bf2dc7a36c1" title="KbPerf::setNeedsUpdate" alt="" coords="919,107,1087,133"/>
+<area shape="rect" id="node12" href="$classKb.html#a440e61c2d7841703d52ea3ad953840f9" title="Kb::getKeyMap" alt="" coords="499,208,611,235"/>
+<area shape="rect" id="node14" href="$classKbProfile.html#a7982b0c1a3bc80021cce0771714cc146" title="KbProfile::currentMode" alt="" coords="477,259,632,285"/>
+</map>

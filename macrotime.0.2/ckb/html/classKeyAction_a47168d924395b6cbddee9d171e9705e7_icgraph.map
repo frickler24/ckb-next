@@ -1,0 +1,18 @@
+<map id="KeyAction::isAnim" name="KeyAction::isAnim">
+<area shape="rect" id="node2" href="$classKeyAction.html#ac5eebd69fc7897b1c37cf3484b8268df" title="KeyAction::animInfo" alt="" coords="185,148,325,175"/>
+<area shape="rect" id="node6" href="$classRebindWidget.html#a0edad41d578028bea3ea0e327fc4c203" title="RebindWidget::setSelection" alt="" coords="373,199,557,225"/>
+<area shape="rect" id="node3" href="$classKeyAction.html#a1fd7bef50c828e25299d514222d5b5a4" title="KeyAction::keyEvent" alt="" coords="393,97,538,124"/>
+<area shape="rect" id="node4" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent" alt="" coords="647,39,774,65"/>
+<area shape="rect" id="node5" href="$classKb.html#afa36635dcc1cd9512f372594c57c546c" title="Kb::readNotify" alt="" coords="912,5,1019,32"/>
+<area shape="rect" id="node7" href="$classKbBindWidget.html#a3274fb51d224f0ca111bd714ed524a59" title="KbBindWidget::updateBind" alt="" coords="621,123,800,149"/>
+<area shape="rect" id="node13" href="$classKbBindWidget.html#ad1ce63ee68f21c7857ca8b24b7bb8309" title="KbBindWidget::newSelection" alt="" coords="615,199,806,225"/>
+<area shape="rect" id="node15" href="$classRebindWidget.html#a6a68ae3d9abc935dbba8e2ce187337ce" title="RebindWidget::setBind" alt="" coords="633,249,789,276"/>
+<area shape="rect" id="node17" href="$classRebindWidget.html#a8cb2e54e8bbd17cae8e152132a7a1ddf" title="RebindWidget::on_cancelButton\l_clicked" alt="" coords="606,301,815,342"/>
+<area shape="rect" id="node8" href="$classKbBindWidget.html#a1ac20b99c822f65c7a2c8c61a5a1f029" title="KbBindWidget::on_resetButton\l_clicked" alt="" coords="865,57,1066,98"/>
+<area shape="rect" id="node9" href="$classKbBindWidget.html#ae06c7e036759eb9a1ae7224cdba30b0b" title="KbBindWidget::setBind" alt="" coords="1115,224,1272,251"/>
+<area shape="rect" id="node10" href="$classKbWidget.html#aae4a00bb180d711b5df7df6443c8bf36" title="KbWidget::modeChanged" alt="" coords="1320,224,1491,251"/>
+<area shape="rect" id="node11" href="$classKbWidget.html#a848a21f1fd112e13ca5fcf25da4592c6" title="KbWidget::KbWidget" alt="" coords="1573,195,1717,221"/>
+<area shape="rect" id="node12" href="$classKbWidget.html#add5eb15a399c87faf80db9fdfc2e868f" title="KbWidget::on_modesList_customContextMenuRequested. " alt="" coords="1539,246,1752,287"/>
+<area shape="rect" id="node14" href="$classKbBindWidget.html#ab41173324ff2873e36dbebb96951ed8b" title="KbBindWidget::KbBindWidget" alt="" coords="867,224,1063,251"/>
+<area shape="rect" id="node16" href="$classKbBindWidget.html#ad052b9ce7166f5a1c46ee7a01f3457dc" title="KbBindWidget::newLayout" alt="" coords="877,325,1053,352"/>
+</map>

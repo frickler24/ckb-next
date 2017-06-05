@@ -1,6 +1,6 @@
 Warning: ignoring unsupported tag `ALLOW_UNICODE_NAMES    =' at line 79, file /home/travis/build/frickler24/ckb-next/documentation/Doxy-ckb-all
 Warning: ignoring unsupported tag `MAN_SUBDIR             =' at line 1782, file /home/travis/build/frickler24/ckb-next/documentation/Doxy-ckb-all
-Notice: Output directory `macrotime.0.2.thread/all' does not exist. I have created it for you.
+Notice: Output directory `macrotime.0.2/all' does not exist. I have created it for you.
 Searching for include files...
 Searching for example files...
 Searching for images...
@@ -105,8 +105,8 @@ Parsing file /home/travis/build/frickler24/ckb-next/src/ckb/gradientdialogwidget
 Preprocessing /home/travis/build/frickler24/ckb-next/src/ckb/kb.cpp...
 Parsing file /home/travis/build/frickler24/ckb-next/src/ckb/kb.cpp...
 Preprocessing /home/travis/build/frickler24/ckb-next/src/ckb/kb.h...
-Parsing file /home/travis/build/frickler24/ckb-next/src/ckb/k/home/travis/build/frickler24/ckb-next/src/ckb/kbbindwidget.cpp:76: warning: reached end of comment while inside a @htmlonly block; check for missing @endhtmlonly tag!
-b.h...
+Parsing file /home/travis/build/frickler24/ckb-next/src/ckb/kb.h...
+/home/travis/build/frickler24/ckb-next/src/ckb/kbbindwidget.cpp:76: warning: reached end of comment while inside a @htmlonly block; check for missing @endhtmlonly tag!
 Preprocessing /home/travis/build/frickler24/ckb-next/src/ckb/kbanim.cpp...
 Parsing file /home/travis/build/frickler24/ckb-next/src/ckb/kbanim.cpp...
 Preprocessing /home/travis/build/frickler24/ckb-next/src/ckb/kbanim.h...
@@ -160,8 +160,8 @@ Parsing file /home/travis/build/frickler24/ckb-next/src/ckb/kbwidget.cpp...
 Preprocessing /home/travis/build/frickler24/ckb-next/src/ckb/kbwidget.h...
 Parsing file /home/travis/build/frickler24/ckb-next/src/ckb/kbwidget.h...
 Preprocessing /home/travis/build/frickler24/ckb-next/src/ckb/keyaction.cpp...
-Parsing file /home/travis/home/travis/build/frickler24/ckb-next/src/ckb/keywidget.cpp:341: warning: reached end of comment while inside a @htmlonly block; check for missing @endhtmlonly tag!
-/build/frickler24/ckb-next/src/ckb/keyaction.cpp...
+Parsing file /home/travis/build//home/travis/build/frickler24/ckb-next/src/ckb/keywidget.cpp:341: warning: reached end of comment while inside a @htmlonly block; check for missing @endhtmlonly tag!
+frickler24/ckb-next/src/ckb/keyaction.cpp...
 Preprocessing /home/travis/build/frickler24/ckb-next/src/ckb/keyaction.h...
 Parsing file /home/travis/build/frickler24/ckb-next/src/ckb/keyaction.h...
 Preprocessing /home/travis/build/frickler24/ckb-next/src/ckb/keymap.cpp...
@@ -453,8 +453,8 @@ Parsing file /home/travis/build/frickler24/ckb-next/src/ckb-daemon/main.c...
 Preprocessing /home/travis/build/frickler24/ckb-next/src/ckb-daemon/notify.c...
 Parsing file /home/travis/build/frickler24/ckb-next/src/ckb-daemon/notify.c...
 Preprocessing /home/travis/build/frickler24/ckb-next/src/ckb-daemon/notify.h...
-Parsing file /home/travis/build/frickler24/ckb-ne/home/travis/build/frickler24/ckb-next/src/ckb/firmware_special.h:5: warning: the name `Define' supplied as the second argument in the \file statement is not an input file
-xt/src/ckb-daemon/notify.h...
+Parsing file /home/travis/build/frickler24/ckb-next/src//home/travis/build/frickler24/ckb-next/src/ckb/firmware_special.h:5: warning: the name `Define' supplied as the second argument in the \file statement is not an input file
+ckb-daemon/notify.h...
 Preprocessing /home/travis/build/frickler24/ckb-next/src/ckb-daemon/os.h...
 Parsing file /home/travis/build/frickler24/ckb-next/src/ckb-daemon/os.h...
 Preprocessing /home/travis/build/frickler24/ckb-next/src/ckb-daemon/profile.c...
@@ -513,7 +513,7 @@ Searching for enumerations...
 Searching for documented typedefs...
 Searching for members imported via using declarations...
 Searching for included using directives...
-/home/travis/build/frickler24/ckb-next/src/ckb/release/moc_animadddialog.cpp:73: warning: documented symbol `void AnimAddDialog::qt_static_metacall' was not declared or defined.
+Searchi/home/travis/build/frickler24/ckb-next/src/ckb/release/moc_animadddialog.cpp:73: warning: documented symbol `void AnimAddDialog::qt_static_metacall' was not declared or defined.
 /home/travis/build/frickler24/ckb-next/src/ckb/release/moc_animadddialog.cpp:87: warning: documented symbol `const QMetaObject AnimAddDialog::staticMetaObject' was not declared or defined.
 /home/travis/build/frickler24/ckb-next/src/ckb/release/moc_animadddialog.cpp:93: warning: documented symbol `const QMetaObject * AnimAddDialog::metaObject' was not declared or defined.
 /home/travis/build/frickler24/ckb-next/src/ckb/release/moc_animadddialog.cpp:98: warning: documented symbol `void * AnimAddDialog::qt_metacast' was not declared or defined.
@@ -732,7 +732,7 @@ Searching for included using directives...
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:533: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:635: warning: End of list marker found without any preceding list items
-Searching for documented variables...
+ng for documented variables...
 Building interface member list...
 Building member list...
 Searching for friends...
@@ -975,7 +975,7 @@ Generating code for file src/ckb/release/moc_modeselectdialog.cpp...
 Generating code for file src/ckb/release/moc_mperfwidget.cpp...
 Generating code for file src/ckb/release/moc_quagzipfile.cpp...
 Generating code for file src/ckb/release/moc_quaziodevice.cpp...
-Generating code f/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
+Generating code for file/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
@@ -999,7 +999,7 @@ QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
-or file src/ckb/release/moc_quazipfile.cpp...
+ src/ckb/release/moc_quazipfile.cpp...
 Generating code for file src/ckb/release/moc_rebindwidget.cpp...
 Generating code for file src/ckb/release/moc_rlistwidget.cpp...
 Generating code for file src/ckb/release/moc_settingswidget.cpp...
@@ -1079,7 +1079,7 @@ Generating caller graph for function readlines_ctx_free
 Generating caller graph for function readlines_ctx_init
 Generating caller graph for function rm_recursive
 Generating call graph for function rmdevpath
-Genera/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
+Generating ca/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
@@ -1121,7 +1121,7 @@ QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
-ting caller graph for function rmdevpath
+ller graph for function rmdevpath
 Generating call graph for function rmnotifynode
 Generating caller graph for function rmnotifynode
 Generating call graph for function updateconnected
@@ -1204,7 +1204,7 @@ Generating call graph for function os_mousemove
 Generating caller graph for function os_mousemove
 Generating call graph for function os_setupindicators
 Generating caller graph for function os_setupindicators
-Gener/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
+Generating c/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
@@ -1233,7 +1233,7 @@ Gener/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warn
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:635: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:394: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
-ating caller graph for function uinputopen
+aller graph for function uinputopen
 Generating docs for file src/ckb-daemon/input_mac.c...
 Generating docs for file src/ckb-daemon/input_mac_mouse.c...
 Generating docs for file src/ckb-daemon/keymap.c...
@@ -1319,7 +1319,7 @@ Generating docs for file src/ckb-random/main.c...
 Generating call graph for function ckb_start
 Generating call graph for function ckb_time
 Generating caller graph for function newtarget
-Ge/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:635: warning: End of list marker found without any preceding list items
+Generatin/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:635: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:394: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
@@ -1344,7 +1344,7 @@ Ge/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:635: warning: End 
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:452: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
-nerating docs for file src/ckb-ripple/main.c...
+g docs for file src/ckb-ripple/main.c...
 Generating call graph for function ckb_frame
 Generating call graph for function ckb_keypress
 Generating call graph for function ckb_start
@@ -1430,7 +1430,7 @@ Generating call graph for function cmd_profilename
 Generating call graph for function freeprofile
 Generating call graph for function gethwmodename
 Generating caller graph for function gethwmodename
-Generating call graQGDict::hashAsciiKey: Invalid null key
+Generating call graph for QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
@@ -1637,7 +1637,7 @@ QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:492: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:533: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
-ph for function gethwprofilename
+function gethwprofilename
 Generating caller graph for function gethwprofilename
 Generating caller graph for function getid
 Generating call graph for function getmodename
@@ -1722,7 +1722,7 @@ Generating call graph for function usb_rm_device
 Generating caller graph for function usb_rm_device
 Generating call graph for function usbadd
 Generating caller graph for function usbadd
-Generating caller graph/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
+Generating caller graph for fu/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:635: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:394: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:510: warning: End of list marker found without any preceding list items
@@ -1731,7 +1731,7 @@ Generating caller graph/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:433: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:492: warning: End of list marker found without any preceding list items
- for function usbclaim
+nction usbclaim
 Generating caller graph for function usbkill
 Generating call graph for function usbmain
 Generating caller graph for function usbmain
@@ -1814,11 +1814,11 @@ Generating caller graph for function qs_strcmp
 Generating docs for file src/ckb/colormap.h...
 Generating docs for file src/ckb/extrasettingswidget.cpp...
 Generating docs for file src/ckb/extrasettingswidget.h...
-Generating doc/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
+Generating docs for f/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
-s for file src/ckb/firmware_special.h...
+ile src/ckb/firmware_special.h...
 Generating docs for file src/ckb/fwupgradedialog.cpp...
 Generating caller graph for function DIALOG_HEIGHT_MAX
 Generating caller graph for function verifyFw
@@ -2119,7 +2119,7 @@ Generating docs for file src/ckb/release/moc_kb.cpp...
 Generating docs for file src/ckb/release/moc_kbanim.cpp...
 Generating docs for file src/ckb/release/moc_kbanimwidget.cpp...
 Generating docs for file src/ckb/release/moc_kbbind.cpp...
-G/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
+Generati/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/README.md:4: warning: Unexpected html tag <img> found within <a href=...> context
 /home/travis/build/frickler24/ckb-next/README.md:34: warning: unable to resolve reference to `https:' for \ref command
 /home/travis/build/frickler24/ckb-next/README.md:72: warning: Illegal command hevanaa as part of a <a>..</a> block
@@ -2132,7 +2132,7 @@ G/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning:
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-enerating docs for file src/ckb/release/moc_kbbindwidget.cpp...
+ng docs for file src/ckb/release/moc_kbbindwidget.cpp...
 Generating docs for file src/ckb/release/moc_kbfirmware.cpp...
 Generating docs for file src/ckb/release/moc_kblight.cpp...
 Generating docs for file src/ckb/release/moc_kblightwidget.cpp...
@@ -2205,11 +2205,11 @@ Generating class documentation...
 Generating docs for compound AnimAddDialog...
 Generating call graph for function AnimAddDialog::AnimAddDialog
 Generating call graph for function AnimAddDialog::~AnimAddDialog
-GQGDict::hashAsciiKey: Invalid null key
+GeneratiQGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-enerating caller graph for function AnimAddDialog::chosenPreset
+ng caller graph for function AnimAddDialog::chosenPreset
 Generating caller graph for function AnimAddDialog::chosenScript
 Generating call graph for function AnimAddDialog::on_animBox_activated
 Generating caller graph for function AnimAddDialog::on_animBox_activated
@@ -2348,7 +2348,7 @@ Generating call graph for function ColorMap::alloc
 Generating caller graph for function ColorMap::alloc
 Generating caller graph for function ColorMap::clear
 Generating call graph for function ColorMap::colorForName
-Generating caller graph for functiQGDict::hashAsciiKey: Invalid null key
+Generating caller graph for function ColoQGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:635: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:394: warning: End of list marker found without any preceding list items
@@ -2362,7 +2362,7 @@ QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:635: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:394: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
-on ColorMap::colorForName
+rMap::colorForName
 Generating call graph for function ColorMap::colorForName
 Generating caller graph for function ColorMap::colors
 Generating caller graph for function ColorMap::count
@@ -2424,14 +2424,14 @@ Generating call graph for function GradientDialog::on_presetList_currentItemChan
 Generating call graph for function GradientDialog::on_presetName_textEdited
 Generating call graph for function GradientDialog::on_presetSave_clicked
 Generating call graph for function GradientDialog::on_stopOpacity_valueChanged
-Generating call graph for function Gradi/home/travis/build/frickler24/ckb-next/src/ckb/quazip/JlCompress.cpp:86: warning: argument 'parentZip' of command @param is not found in the argument list of JlCompress::compressSubDir(QuaZip *zip, QString dir, QString origDir, bool recursive=true)
+Generating call graph for function GradientDial/home/travis/build/frickler24/ckb-next/src/ckb/quazip/JlCompress.cpp:86: warning: argument 'parentZip' of command @param is not found in the argument list of JlCompress::compressSubDir(QuaZip *zip, QString dir, QString origDir, bool recursive=true)
 /home/travis/build/frickler24/ckb-next/src/ckb/quazip/JlCompress.cpp:86: warning: argument 'parentDir' of command @param is not found in the argument list of JlCompress::compressSubDir(QuaZip *zip, QString dir, QString origDir, bool recursive=true)
 /home/travis/build/frickler24/ckb-next/src/ckb/quazip/JlCompress.cpp:86: warning: The following parameters of JlCompress::compressSubDir(QuaZip *zip, QString dir, QString origDir, bool recursive=true) are not documented:
   parameter 'zip'
   parameter 'origDir'
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-entDialog::on_stopPos_valueChanged
+og::on_stopPos_valueChanged
 Generating call graph for function GradientDialog::setPreset
 Generating caller graph for function GradientDialog::setPreset
 Generating call graph for function GradientDialog::updatePresets
@@ -2499,9 +2499,9 @@ Generating caller graph for function Kb::frameRate
 Generating call graph for function Kb::frameRate
 Generating call graph for function Kb::frameUpdate
 Generating caller graph for function Kb::fwUpdate
-Generating caller grapQGDict::hashAsciiKey: Invalid null key
+Generating caller graph for fQGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-h for function Kb::fwUpdateFinished
+unction Kb::fwUpdateFinished
 Generating caller graph for function Kb::fwUpdateProgress
 Generating caller graph for function Kb::getKeyMap
 Generating caller graph for function Kb::getMacroNumber
@@ -2580,12 +2580,12 @@ Generating caller graph for function KbAnim::mode
 Generating caller graph for function KbAnim::name
 Generating caller graph for function KbAnim::needsSave
 Generating caller graph for function KbAnim::newId
-Generating caller graph for function KQGDict::hashAsciiKey: Invalid null key
+Generating caller graph for function KbAnim::QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/frickler24/ckb-next/src/ckb/kbbind.cpp:17: warning: argument 'devParent' of command @param is not found in the argument list of KbBind::KbBind(KbMode *modeParent, Kb *parentBoard, const KeyMap &keyMap, const KbBind &other)
-bAnim::opacity
+opacity
 Generating caller graph for function KbAnim::parameter
 Generating call graph for function KbAnim::parameter
 Generating call graph for function KbAnim::reInit
@@ -2653,7 +2653,7 @@ Generating caller graph for function KbBind::getMacroPath
 Generating caller graph for function KbBind::globalRemap
 Generating call graph for function KbBind::handleNotificationChannel
 Generating caller graph for function KbBind::handleNotificationChannel
-Generating call graph for fuQGDict::hashAsciiKey: Invalid null key
+Generating call graph for function QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
@@ -2667,7 +2667,7 @@ QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:635: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:394: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
-nction KbBind::isISO
+KbBind::isISO
 Generating call graph for function KbBind::isKeyboard
 Generating call graph for function KbBind::isMouse
 Generating caller graph for function KbBind::isMouse
@@ -2739,7 +2739,7 @@ Generating caller graph for function KbFirmware::downloadFinished
 Generating caller graph for function KbFirmware::hasDownloaded
 Generating caller graph for function KbFirmware::initManager
 Generating call graph for function KbFirmware::processDownload
-Generating caller graph/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:635: warning: End of list marker found without any preceding list items
+Generating caller graph for fu/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:635: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:394: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
 QGDict::hashAsciiKey: Invalid null key
@@ -2747,7 +2747,7 @@ QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
- for function KbFirmware::processDownload
+nction KbFirmware::processDownload
 Generating call graph for function KbFirmware::versionForBoard
 Generating caller graph for function KbFirmware::versionForBoard
 Generating docs for nested compound KbFirmware::FW...
@@ -2819,9 +2819,9 @@ Generating call graph for function KbLightWidget::newSelection
 Generating caller graph for function KbLightWidget::newSelection
 Generating call graph for function KbLightWidget::on_animButton_clicked
 Generating call graph for function KbLightWidget::on_bgButton_clicked
-Generating call graph for function KbLightWidget::on_brQGDict::hashAsciiKey: Invalid null key
+Generating call graph for function KbLightWidget::on_brightnesQGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-ightnessBox_activated
+sBox_activated
 Generating call graph for function KbLightWidget::on_showAnimBox_clicked
 Generating caller graph for function KbLightWidget::on_showAnimBox_clicked
 Generating call graph for function KbLightWidget::setLight
@@ -2895,11 +2895,11 @@ Generating caller graph for function KbPerf::didLoad
 Generating caller graph for function KbPerf::dpi
 Generating call graph for function KbPerf::dpi
 Generating caller graph for function KbPerf::dpi
-Generating caller graph for funcQGDict::hashAsciiKey: Invalid null key
+Generating caller graph for function KbQGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-tion KbPerf::dpiColor
+Perf::dpiColor
 Generating call graph for function KbPerf::dpiDown
 Generating caller graph for function KbPerf::dpiDown
 Generating caller graph for function KbPerf::dpiEnabled
@@ -2974,7 +2974,7 @@ Generating docs for compound KbProfileDialog...
 Generating call graph for function KbProfileDialog::KbProfileDialog
 Generating caller graph for function KbProfileDialog::addNewProfileItem
 Generating call graph for function KbProfileDialog::on_profileList_currentItemChanged
-Generating call graph foQGDict::hashAsciiKey: Invalid null key
+Generating call graph for functQGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:635: warning: End of list marker found without any preceding list items
@@ -2989,7 +2989,7 @@ QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:635: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:394: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
-r function KbProfileDialog::on_profileList_customContextMenuRequested
+ion KbProfileDialog::on_profileList_customContextMenuRequested
 Generating call graph for function KbProfileDialog::on_profileList_itemChanged
 Generating call graph for function KbProfileDialog::on_profileList_itemClicked
 Generating call graph for function KbProfileDialog::profileList_reordered
@@ -3056,9 +3056,9 @@ Generating call graph for function KeyAction::isValidMacro
 Generating caller graph for function KeyAction::isValidMacro
 Generating call graph for function KeyAction::keyEvent
 Generating caller graph for function KeyAction::keyEvent
-Generating caller graph for functionQGDict::hashAsciiKey: Invalid null key
+Generating caller graph for function KeyActQGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
- KeyAction::lightAction
+ion::lightAction
 Generating caller graph for function KeyAction::lockAction
 Generating caller graph for function KeyAction::macroAction
 Generating call graph for function KeyAction::macroContent
@@ -3132,7 +3132,8 @@ Generating call graph for function KeyWidget::mouseMoveEvent
 Generating call graph for function KeyWidget::mousePressEvent
 Generating call graph for function KeyWidget::mouseReleaseEvent
 Generating call graph for function KeyWidget::paintEvent
-Generating caller graph for function KeyWidget::rgQGDict::hashAsciiKey: Invalid null key
+Generating caller graph for function KeyWidget::rgbMode
+GQGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/frickler24/ckb-next/src/ckb/kperfwidget.cpp:88: warning: argument 'IN' of command @param is not found in the argument list of KPerfWidget::mode2Raw(HwMode mode, bool &sw_enable, i_hw &hw_enable)
 /home/travis/build/frickler24/ckb-next/src/ckb/kperfwidget.cpp:88: warning: argument 'OUT' of command @param is not found in the argument list of KPerfWidget::mode2Raw(HwMode mode, bool &sw_enable, i_hw &hw_enable)
@@ -3158,8 +3159,7 @@ QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-bMode
-Generating call graph for function KeyWidget::selectAll
+enerating call graph for function KeyWidget::selectAll
 Generating caller graph for function KeyWidget::selectAll
 Generating caller graph for function KeyWidget::selectionChanged
 Generating call graph for function KeyWidget::setAnimation
@@ -3227,9 +3227,9 @@ Generating caller graph for function MPerfWidget::enableChanged
 Generating call graph for function MPerfWidget::on_aSnapBox_clicked
 Generating call graph for function MPerfWidget::on_copyButton_clicked
 Generating call graph for function MPerfWidget::on_indicBox_clicked
-Generating callQGDict::hashAsciiKey: Invalid null key
+Generating call graph QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
- graph for function MPerfWidget::on_lHeightBox_activated
+for function MPerfWidget::on_lHeightBox_activated
 Generating call graph for function MPerfWidget::on_spinBox_valueChanged
 Generating call graph for function MPerfWidget::on_xyBox_clicked
 Generating call graph for function MPerfWidget::setPerf
@@ -3302,11 +3302,11 @@ Generating call graph for function QuaZip::setZipName
 Generating docs for compound QuaZipDir...
 Generating caller graph for function QuaZipDir::QuaZipDir
 Generating caller graph for function QuaZipDir::caseSensitivity
-Generating call graph for function QuQGDict::hashAsciiKey: Invalid null key
+Generating call graph for function QuaZipDirQGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-aZipDir::cd
+::cd
 Generating caller graph for function QuaZipDir::cd
 Generating call graph for function QuaZipDir::cdUp
 Generating call graph for function QuaZipDir::count
@@ -3376,11 +3376,11 @@ Generating caller graph for function QuaZipNewInfo::setFileNTFScTime
 Generating call graph for function QuaZipNewInfo::setFileNTFSmTime
 Generating caller graph for function QuaZipNewInfo::setFileNTFSmTime
 Generating call graph for function QuaZipNewInfo::setFileNTFSTimes
-Generating call graph for function QuaZQGDict::hashAsciiKey: Invalid null key
+Generating call graph for function QuaZipNewInQGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-ipNewInfo::setFilePermissions
+fo::setFilePermissions
 Generating call graph for function QuaZipNewInfo::setPermissions
 Generating docs for compound QuaZipPrivate...
 Generating call graph for function QuaZipPrivate::addCurrentFileToDirectoryMap
@@ -3439,7 +3439,7 @@ Generating caller graph for function RListWidget::change
 Generating call graph for function RListWidget::enter
 Generating caller graph for function RListWidget::enter
 Generating caller graph for function RListWidget::orderChanged
-Generating caller graph for function RListWidget:QGDict::hashAsciiKey: Invalid null key
+Generating caller graph for function RListWidget::rescanQGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
@@ -3448,7 +3448,7 @@ QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-:rescanItems
+Items
 Generating caller graph for function RListWidget::timerTick
 Generating docs for compound SettingsWidget...
 Generating call graph for function SettingsWidget::SettingsWidget
@@ -3514,13 +3514,13 @@ Generating call graph for function Ui_KbWidget::setupUi
 Generating caller graph for function Ui_KbWidget::setupUi
 Generating docs for compound Ui_KPerfWidget...
 Generating caller graph for function Ui_KPerfWidget::retranslateUi
-Generating call graQGDict::hashAsciiKey: Invalid null key
+Generating call graph for QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-ph for function Ui_KPerfWidget::setupUi
+function Ui_KPerfWidget::setupUi
 Generating caller graph for function Ui_KPerfWidget::setupUi
 Generating docs for compound Ui_LayoutDialog...
 Generating caller graph for function Ui_LayoutDialog::retranslateUi
@@ -3589,10 +3589,10 @@ Generating call graph for function Ui_KbLightWidget::setupUi
 Generating caller graph for function Ui_KbLightWidget::setupUi
 Generating docs for compound Ui::KbProfileDialog...
 Generating caller graph for function Ui_KbProfileDialog::retranslateUi
-GeneratQGDict::hashAsciiKey: Invalid null key
+Generating calQGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-ing call graph for function Ui_KbProfileDialog::setupUi
+l graph for function Ui_KbProfileDialog::setupUi
 Generating caller graph for function Ui_KbProfileDialog::setupUi
 Generating docs for compound Ui::KbWidget...
 Generating caller graph for function Ui_KbWidget::retranslateUi

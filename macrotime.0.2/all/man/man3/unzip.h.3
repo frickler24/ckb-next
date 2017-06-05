@@ -1,0 +1,905 @@
+.TH "src/ckb/quazip/unzip.h" 3 "Mon Jun 5 2017" "Version beta-v0.2.8+testing at branch macrotime.0.2" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb/quazip/unzip.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'zlib\&.h'\fP
+.br
+\fC#include 'ioapi\&.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBtm_unz_s\fP"
+.br
+.ti -1c
+.RI "struct \fBunz_global_info64_s\fP"
+.br
+.ti -1c
+.RI "struct \fBunz_global_info_s\fP"
+.br
+.ti -1c
+.RI "struct \fBunz_file_info64_s\fP"
+.br
+.ti -1c
+.RI "struct \fBunz_file_info_s\fP"
+.br
+.ti -1c
+.RI "struct \fBunz_file_pos_s\fP"
+.br
+.ti -1c
+.RI "struct \fBunz64_file_pos_s\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBZ_BZIP2ED\fP   12"
+.br
+.ti -1c
+.RI "#define \fBUNZ_OK\fP   (0)"
+.br
+.ti -1c
+.RI "#define \fBUNZ_END_OF_LIST_OF_FILE\fP   (-100)"
+.br
+.ti -1c
+.RI "#define \fBUNZ_ERRNO\fP   (Z_ERRNO)"
+.br
+.ti -1c
+.RI "#define \fBUNZ_EOF\fP   (0)"
+.br
+.ti -1c
+.RI "#define \fBUNZ_PARAMERROR\fP   (-102)"
+.br
+.ti -1c
+.RI "#define \fBUNZ_BADZIPFILE\fP   (-103)"
+.br
+.ti -1c
+.RI "#define \fBUNZ_INTERNALERROR\fP   (-104)"
+.br
+.ti -1c
+.RI "#define \fBUNZ_CRCERROR\fP   (-105)"
+.br
+.ti -1c
+.RI "#define \fBUNZ_AUTO_CLOSE\fP   0x01u"
+.br
+.ti -1c
+.RI "#define \fBUNZ_DEFAULT_FLAGS\fP   \fBUNZ_AUTO_CLOSE\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef voidp \fBunzFile\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBtm_unz_s\fP \fBtm_unz\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBunz_global_info64_s\fP \fBunz_global_info64\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBunz_global_info_s\fP \fBunz_global_info\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBunz_file_info64_s\fP \fBunz_file_info64\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBunz_file_info_s\fP \fBunz_file_info\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBunz_file_pos_s\fP \fBunz_file_pos\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBunz64_file_pos_s\fP \fBunz64_file_pos\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int ZEXPORT 
+.br
+\fBunzStringFileNameCompare\fP \fB_Z_OF\fP ((const char *fileName1, const char *fileName2, int iCaseSensitivity))"
+.br
+.ti -1c
+.RI "\fBunzFile\fP ZEXPORT \fBunzOpen\fP \fB_Z_OF\fP ((voidpf file))"
+.br
+.ti -1c
+.RI "\fBunzFile\fP ZEXPORT \fBunzOpen2\fP \fB_Z_OF\fP ((voidpf file, \fBzlib_filefunc_def\fP *pzlib_filefunc_def))"
+.br
+.ti -1c
+.RI "\fBunzFile\fP ZEXPORT \fBunzOpen2_64\fP \fB_Z_OF\fP ((voidpf file, \fBzlib_filefunc64_def\fP *pzlib_filefunc_def))"
+.br
+.ti -1c
+.RI "\fBunzFile\fP \fBunzOpenInternal\fP (voidpf file, \fBzlib_filefunc64_32_def\fP *pzlib_filefunc64_32_def, int is64bitOpenFunction, unsigned flags)"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBunzClose\fP \fB_Z_OF\fP ((\fBunzFile\fP file))"
+.br
+.RI "\fIAddition for GDAL : START\&. \fP"
+.ti -1c
+.RI "int ZEXPORT \fBunzGetGlobalInfo\fP \fB_Z_OF\fP ((\fBunzFile\fP file, \fBunz_global_info\fP *pglobal_info))"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBunzGetGlobalInfo64\fP \fB_Z_OF\fP ((\fBunzFile\fP file, \fBunz_global_info64\fP *pglobal_info))"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBunzGetGlobalComment\fP \fB_Z_OF\fP ((\fBunzFile\fP file, char *szComment, uLong uSizeBuf))"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBunzLocateFile\fP \fB_Z_OF\fP ((\fBunzFile\fP file, const char *szFileName, int iCaseSensitivity))"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBunzGetFilePos\fP (\fBunzFile\fP file, \fBunz_file_pos\fP *file_pos)"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBunzGoToFilePos\fP (\fBunzFile\fP file, \fBunz_file_pos\fP *file_pos)"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBunzGetFilePos64\fP (\fBunzFile\fP file, \fBunz64_file_pos\fP *file_pos)"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBunzGoToFilePos64\fP (\fBunzFile\fP file, const \fBunz64_file_pos\fP *file_pos)"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBunzGetCurrentFileInfo64\fP \fB_Z_OF\fP ((\fBunzFile\fP file, \fBunz_file_info64\fP *pfile_info, char *szFileName, uLong fileNameBufferSize, void *extraField, uLong extraFieldBufferSize, char *szComment, uLong commentBufferSize))"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBunzGetCurrentFileInfo\fP \fB_Z_OF\fP ((\fBunzFile\fP file, \fBunz_file_info\fP *pfile_info, char *szFileName, uLong fileNameBufferSize, void *extraField, uLong extraFieldBufferSize, char *szComment, uLong commentBufferSize))"
+.br
+.ti -1c
+.RI "int ZEXPORT 
+.br
+\fBunzOpenCurrentFilePassword\fP \fB_Z_OF\fP ((\fBunzFile\fP file, const char *password))"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBunzOpenCurrentFile2\fP \fB_Z_OF\fP ((\fBunzFile\fP file, int *method, int *level, int raw))"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBunzOpenCurrentFile3\fP \fB_Z_OF\fP ((\fBunzFile\fP file, int *method, int *level, int raw, const char *password))"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBunzReadCurrentFile\fP \fB_Z_OF\fP ((\fBunzFile\fP file, voidp buf, unsigned len))"
+.br
+.ti -1c
+.RI "\fBZPOS64_T\fP ZEXPORT \fBunzGetOffset64\fP (\fBunzFile\fP file)"
+.br
+.ti -1c
+.RI "uLong ZEXPORT \fBunzGetOffset\fP (\fBunzFile\fP file)"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBunzSetOffset64\fP (\fBunzFile\fP file, \fBZPOS64_T\fP pos)"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBunzSetOffset\fP (\fBunzFile\fP file, uLong pos)"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBunzSetFlags\fP (\fBunzFile\fP file, unsigned flags)"
+.br
+.ti -1c
+.RI "int ZEXPORT \fBunzClearFlags\fP (\fBunzFile\fP file, unsigned flags)"
+.br
+.in -1c
+.SH "Data Structure Documentation"
+.PP 
+.SH "struct tm_unz_s"
+.PP 
+Definition at line 92 of file unzip\&.h\&.
+.PP
+\fBData Fields:\fP
+.RS 4
+uInt \fItm_hour\fP 
+.br
+.PP
+uInt \fItm_mday\fP 
+.br
+.PP
+uInt \fItm_min\fP 
+.br
+.PP
+uInt \fItm_mon\fP 
+.br
+.PP
+uInt \fItm_sec\fP 
+.br
+.PP
+uInt \fItm_year\fP 
+.br
+.PP
+.RE
+.PP
+.SH "struct unz_global_info64_s"
+.PP 
+Definition at line 104 of file unzip\&.h\&.
+.PP
+\fBData Fields:\fP
+.RS 4
+\fBZPOS64_T\fP \fInumber_entry\fP 
+.br
+.PP
+uLong \fIsize_comment\fP 
+.br
+.PP
+.RE
+.PP
+.SH "struct unz_global_info_s"
+.PP 
+Definition at line 111 of file unzip\&.h\&.
+.PP
+\fBData Fields:\fP
+.RS 4
+uLong \fInumber_entry\fP 
+.br
+.PP
+uLong \fIsize_comment\fP 
+.br
+.PP
+.RE
+.PP
+.SH "struct unz_file_info64_s"
+.PP 
+Definition at line 119 of file unzip\&.h\&.
+.PP
+\fBData Fields:\fP
+.RS 4
+\fBZPOS64_T\fP \fIcompressed_size\fP 
+.br
+.PP
+uLong \fIcompression_method\fP 
+.br
+.PP
+uLong \fIcrc\fP 
+.br
+.PP
+uLong \fIdisk_num_start\fP 
+.br
+.PP
+uLong \fIdosDate\fP 
+.br
+.PP
+uLong \fIexternal_fa\fP 
+.br
+.PP
+uLong \fIflag\fP 
+.br
+.PP
+uLong \fIinternal_fa\fP 
+.br
+.PP
+uLong \fIsize_file_comment\fP 
+.br
+.PP
+uLong \fIsize_file_extra\fP 
+.br
+.PP
+uLong \fIsize_filename\fP 
+.br
+.PP
+\fBtm_unz\fP \fItmu_date\fP 
+.br
+.PP
+\fBZPOS64_T\fP \fIuncompressed_size\fP 
+.br
+.PP
+uLong \fIversion\fP 
+.br
+.PP
+uLong \fIversion_needed\fP 
+.br
+.PP
+.RE
+.PP
+.SH "struct unz_file_info_s"
+.PP 
+Definition at line 140 of file unzip\&.h\&.
+.PP
+\fBData Fields:\fP
+.RS 4
+uLong \fIcompressed_size\fP 
+.br
+.PP
+uLong \fIcompression_method\fP 
+.br
+.PP
+uLong \fIcrc\fP 
+.br
+.PP
+uLong \fIdisk_num_start\fP 
+.br
+.PP
+uLong \fIdosDate\fP 
+.br
+.PP
+uLong \fIexternal_fa\fP 
+.br
+.PP
+uLong \fIflag\fP 
+.br
+.PP
+uLong \fIinternal_fa\fP 
+.br
+.PP
+uLong \fIsize_file_comment\fP 
+.br
+.PP
+uLong \fIsize_file_extra\fP 
+.br
+.PP
+uLong \fIsize_filename\fP 
+.br
+.PP
+\fBtm_unz\fP \fItmu_date\fP 
+.br
+.PP
+uLong \fIuncompressed_size\fP 
+.br
+.PP
+uLong \fIversion\fP 
+.br
+.PP
+uLong \fIversion_needed\fP 
+.br
+.PP
+.RE
+.PP
+.SH "struct unz_file_pos_s"
+.PP 
+Definition at line 278 of file unzip\&.h\&.
+.PP
+\fBData Fields:\fP
+.RS 4
+uLong \fInum_of_file\fP 
+.br
+.PP
+uLong \fIpos_in_zip_directory\fP 
+.br
+.PP
+.RE
+.PP
+.SH "struct unz64_file_pos_s"
+.PP 
+Definition at line 292 of file unzip\&.h\&.
+.PP
+\fBData Fields:\fP
+.RS 4
+\fBZPOS64_T\fP \fInum_of_file\fP 
+.br
+.PP
+\fBZPOS64_T\fP \fIpos_in_zip_directory\fP 
+.br
+.PP
+.RE
+.PP
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define UNZ_AUTO_CLOSE   0x01u"
+
+.PP
+Definition at line 88 of file unzip\&.h\&.
+.PP
+Referenced by QuaZip::open(), unzClose(), and unzOpenInternal()\&.
+.SS "#define UNZ_BADZIPFILE   (-103)"
+
+.PP
+Definition at line 84 of file unzip\&.h\&.
+.PP
+Referenced by unz64local_CheckCurrentFileCoherencyHeader(), unz64local_GetCurrentFileInfoInternal(), unzOpenCurrentFile3(), and unzOpenInternal()\&.
+.SS "#define UNZ_CRCERROR   (-105)"
+
+.PP
+Definition at line 86 of file unzip\&.h\&.
+.PP
+Referenced by unzCloseCurrentFile()\&.
+.SS "#define UNZ_DEFAULT_FLAGS   \fBUNZ_AUTO_CLOSE\fP"
+
+.PP
+Definition at line 89 of file unzip\&.h\&.
+.PP
+Referenced by unzOpen(), unzOpen2(), unzOpen2_64(), and unzOpen64()\&.
+.SS "#define UNZ_END_OF_LIST_OF_FILE   (-100)"
+
+.PP
+Definition at line 80 of file unzip\&.h\&.
+.PP
+Referenced by QuaZipPrivate::goToFirstUnmappedFile(), QuaZip::goToNextFile(), unzGetFilePos64(), unzGoToNextFile(), unzLocateFile(), and unzReadCurrentFile()\&.
+.SS "#define UNZ_EOF   (0)"
+
+.PP
+Definition at line 82 of file unzip\&.h\&.
+.PP
+Referenced by unz64local_getByte(), and unzReadCurrentFile()\&.
+.SS "#define UNZ_ERRNO   (Z_ERRNO)"
+
+.PP
+Definition at line 81 of file unzip\&.h\&.
+.PP
+Referenced by unz64local_CheckCurrentFileCoherencyHeader(), unz64local_getByte(), unz64local_GetCurrentFileInfoInternal(), unzGetGlobalComment(), unzGetLocalExtrafield(), unzOpenInternal(), and unzReadCurrentFile()\&.
+.SS "#define UNZ_INTERNALERROR   (-104)"
+
+.PP
+Definition at line 85 of file unzip\&.h\&.
+.PP
+Referenced by unzOpenCurrentFile3()\&.
+.SS "#define UNZ_OK   (0)"
+
+.PP
+Definition at line 79 of file unzip\&.h\&.
+.PP
+Referenced by QuaZip::close(), QuaZipFile::close(), JlCompress::compressFile(), QuaZipFile::csize(), JlCompress::extractFile(), QuaZipFile::getActualFileName(), QuaZip::getComment(), QuaZip::getCurrentFileInfo(), QuaZip::getCurrentFileName(), QuaZip::getEntriesCount(), QuaZipFile::getFileInfo(), QuaZipPrivate::getFileInfoList(), QuaZip::goToFirstFile(), QuaZipPrivate::goToFirstUnmappedFile(), QuaZip::goToNextFile(), QuaZip::open(), QuaZipFile::open(), QuaZipFile::readData(), QuaZipFilePrivate::resetZipError(), QuaZip::setCurrentFile(), QuaZipFilePrivate::setZipError(), unz64local_CheckCurrentFileCoherencyHeader(), unz64local_getByte(), unz64local_GetCurrentFileInfoInternal(), unz64local_getLong(), unz64local_getLong64(), unz64local_getShort(), unz64local_SearchCentralDir64(), unzClearFlags(), unzClose(), unzCloseCurrentFile(), unzGetCurrentFileInfo(), unzGetFilePos(), unzGetFilePos64(), unzGetGlobalInfo(), unzGetGlobalInfo64(), unzGoToFilePos64(), unzGoToFirstFile(), unzGoToNextFile(), unzLocateFile(), unzOpenCurrentFile3(), unzOpenInternal(), unzReadCurrentFile(), unzSetFlags(), unzSetOffset64(), and QuaZipFile::usize()\&.
+.SS "#define UNZ_PARAMERROR   (-102)"
+
+.PP
+Definition at line 83 of file unzip\&.h\&.
+.PP
+Referenced by QuaZip::setCurrentFile(), unz64local_GetCurrentFileInfoInternal(), unzClearFlags(), unzClose(), unzCloseCurrentFile(), unzeof(), unzGetFilePos64(), unzGetGlobalComment(), unzGetGlobalInfo(), unzGetGlobalInfo64(), unzGetLocalExtrafield(), unzGoToFilePos(), unzGoToFilePos64(), unzGoToFirstFile(), unzGoToNextFile(), unzLocateFile(), unzOpenCurrentFile3(), unzReadCurrentFile(), unzSetFlags(), unzSetOffset64(), and unztell()\&.
+.SS "#define Z_BZIP2ED   12"
+
+.PP
+Definition at line 67 of file unzip\&.h\&.
+.PP
+Referenced by unz64local_CheckCurrentFileCoherencyHeader(), unzCloseCurrentFile(), unzOpenCurrentFile3(), unzReadCurrentFile(), zip64FlushWriteBuffer(), zipCloseFileInZipRaw64(), zipOpenNewFileInZip4_64(), and zipWriteInFileInZip()\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBtm_unz_s\fP  \fBtm_unz\fP"
+
+.SS "typedef struct \fBunz64_file_pos_s\fP  \fBunz64_file_pos\fP"
+
+.SS "typedef struct \fBunz_file_info_s\fP  \fBunz_file_info\fP"
+
+.SS "typedef struct \fBunz_file_info64_s\fP  \fBunz_file_info64\fP"
+
+.SS "typedef struct \fBunz_file_pos_s\fP  \fBunz_file_pos\fP"
+
+.SS "typedef struct \fBunz_global_info_s\fP  \fBunz_global_info\fP"
+
+.SS "typedef struct \fBunz_global_info64_s\fP  \fBunz_global_info64\fP"
+
+.SS "typedef voidp \fBunzFile\fP"
+
+.PP
+Definition at line 75 of file unzip\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "int ZEXPORT \fBunzStringFileNameCompare\fP _Z_OF ((const char *fileName1, const char *fileName2, int iCaseSensitivity))"
+
+.SS "\fBunzFile\fP ZEXPORT \fBunzOpen\fP _Z_OF ((voidpf file))"
+
+.SS "\fBunzFile\fP ZEXPORT \fBunzOpen2\fP _Z_OF ((voidpf file, \fBzlib_filefunc_def\fP *pzlib_filefunc_def))"
+
+.SS "\fBunzFile\fP ZEXPORT \fBunzOpen2_64\fP _Z_OF ((voidpf file, \fBzlib_filefunc64_def\fP *pzlib_filefunc_def))"
+
+.SS "int ZEXPORT \fBunzClose\fP _Z_OF ((\fBunzFile\fP file))"
+Addition for GDAL : END\&. 
+.SS "int ZEXPORT \fBunzGetGlobalInfo\fP _Z_OF ((\fBunzFile\fP file, \fBunz_global_info\fP *pglobal_info))"
+
+.SS "int ZEXPORT \fBunzGetGlobalInfo64\fP _Z_OF ((\fBunzFile\fP file, \fBunz_global_info64\fP *pglobal_info))"
+
+.SS "int ZEXPORT \fBunzGetGlobalComment\fP _Z_OF ((\fBunzFile\fP file, char *szComment, uLong uSizeBuf))"
+
+.SS "int ZEXPORT \fBunzLocateFile\fP _Z_OF ((\fBunzFile\fP file, const char *szFileName, int iCaseSensitivity))"
+
+.SS "int ZEXPORT \fBunzGetCurrentFileInfo64\fP _Z_OF ((\fBunzFile\fP file, \fBunz_file_info64\fP *pfile_info, char *szFileName, uLong fileNameBufferSize, void *extraField, uLong extraFieldBufferSize, char *szComment, uLong commentBufferSize))"
+
+.SS "int ZEXPORT \fBunzGetCurrentFileInfo\fP _Z_OF ((\fBunzFile\fP file, \fBunz_file_info\fP *pfile_info, char *szFileName, uLong fileNameBufferSize, void *extraField, uLong extraFieldBufferSize, char *szComment, uLong commentBufferSize))"
+
+.SS "int ZEXPORT \fBunzOpenCurrentFilePassword\fP _Z_OF ((\fBunzFile\fP file, const char *password))"
+
+.SS "int ZEXPORT \fBunzOpenCurrentFile2\fP _Z_OF ((\fBunzFile\fP file, int *method, int *level, int raw))"
+
+.SS "int ZEXPORT \fBunzOpenCurrentFile3\fP _Z_OF ((\fBunzFile\fP file, int *method, int *level, int raw, const char *password))"
+
+.SS "int ZEXPORT \fBunzReadCurrentFile\fP _Z_OF ((\fBunzFile\fP file, voidp buf, unsigned len))"
+
+.SS "int ZEXPORT unzClearFlags (\fBunzFile\fPfile, unsignedflags)"
+
+.PP
+Definition at line 2147 of file unzip\&.c\&.
+.PP
+References unz64_s::flags, UNZ_OK, and UNZ_PARAMERROR\&.
+.PP
+Referenced by QuaZip::open()\&.
+.PP
+.nf
+2148 {
+2149     unz64_s* s;
+2150     if (file == NULL)
+2151         return UNZ_PARAMERROR;
+2152     s = (unz64_s*)file;
+2153     s->flags &= ~flags;
+2154     return UNZ_OK;
+2155 }
+.fi
+.SS "int ZEXPORT unzGetFilePos (\fBunzFile\fPfile, \fBunz_file_pos\fP *file_pos)"
+
+.PP
+Definition at line 1334 of file unzip\&.c\&.
+.PP
+References unz_file_pos_s::num_of_file, unz64_file_pos_s::num_of_file, unz_file_pos_s::pos_in_zip_directory, unz64_file_pos_s::pos_in_zip_directory, UNZ_OK, and unzGetFilePos64()\&.
+.PP
+.nf
+1337 {
+1338     unz64_file_pos file_pos64;
+1339     int err = unzGetFilePos64(file,&file_pos64);
+1340     if (err==UNZ_OK)
+1341     {
+1342         file_pos->pos_in_zip_directory = (uLong)file_pos64\&.pos_in_zip_directory;
+1343         file_pos->num_of_file = (uLong)file_pos64\&.num_of_file;
+1344     }
+1345     return err;
+1346 }
+.fi
+.SS "int ZEXPORT unzGetFilePos64 (\fBunzFile\fPfile, \fBunz64_file_pos\fP *file_pos)"
+
+.PP
+Definition at line 1318 of file unzip\&.c\&.
+.PP
+References unz64_s::current_file_ok, unz64_s::num_file, unz64_file_pos_s::num_of_file, unz64_s::pos_in_central_dir, unz64_file_pos_s::pos_in_zip_directory, UNZ_END_OF_LIST_OF_FILE, UNZ_OK, and UNZ_PARAMERROR\&.
+.PP
+Referenced by QuaZipPrivate::addCurrentFileToDirectoryMap(), and unzGetFilePos()\&.
+.PP
+.nf
+1319 {
+1320     unz64_s* s;
+1321 
+1322     if (file==NULL || file_pos==NULL)
+1323         return UNZ_PARAMERROR;
+1324     s=(unz64_s*)file;
+1325     if (!s->current_file_ok)
+1326         return UNZ_END_OF_LIST_OF_FILE;
+1327 
+1328     file_pos->pos_in_zip_directory  = s->pos_in_central_dir;
+1329     file_pos->num_of_file           = s->num_file;
+1330 
+1331     return UNZ_OK;
+1332 }
+.fi
+.SS "uLong ZEXPORT unzGetOffset (\fBunzFile\fPfile)"
+
+.PP
+Definition at line 2102 of file unzip\&.c\&.
+.PP
+References unzGetOffset64()\&.
+.PP
+.nf
+2103 {
+2104     ZPOS64_T offset64;
+2105 
+2106     if (file==NULL)
+2107           return 0; /*UNZ_PARAMERROR; */
+2108     offset64 = unzGetOffset64(file);
+2109     return (uLong)offset64;
+2110 }
+.fi
+.SS "\fBZPOS64_T\fP ZEXPORT unzGetOffset64 (\fBunzFile\fPfile)"
+
+.PP
+Definition at line 2087 of file unzip\&.c\&.
+.PP
+References unz64_s::current_file_ok, unz64_s::gi, unz64_s::num_file, unz_global_info64_s::number_entry, and unz64_s::pos_in_central_dir\&.
+.PP
+Referenced by unzGetOffset()\&.
+.PP
+.nf
+2088 {
+2089     unz64_s* s;
+2090 
+2091     if (file==NULL)
+2092           return 0; /*UNZ_PARAMERROR; */
+2093     s=(unz64_s*)file;
+2094     if (!s->current_file_ok)
+2095       return 0;
+2096     if (s->gi\&.number_entry != 0 && s->gi\&.number_entry != 0xffff)
+2097       if (s->num_file==s->gi\&.number_entry)
+2098          return 0;
+2099     return s->pos_in_central_dir;
+2100 }
+.fi
+.SS "int ZEXPORT unzGoToFilePos (\fBunzFile\fPfile, \fBunz_file_pos\fP *file_pos)"
+
+.PP
+Definition at line 1370 of file unzip\&.c\&.
+.PP
+References unz_file_pos_s::num_of_file, unz64_file_pos_s::num_of_file, unz_file_pos_s::pos_in_zip_directory, unz64_file_pos_s::pos_in_zip_directory, UNZ_PARAMERROR, and unzGoToFilePos64()\&.
+.PP
+.nf
+1373 {
+1374     unz64_file_pos file_pos64;
+1375     if (file_pos == NULL)
+1376         return UNZ_PARAMERROR;
+1377 
+1378     file_pos64\&.pos_in_zip_directory = file_pos->pos_in_zip_directory;
+1379     file_pos64\&.num_of_file = file_pos->num_of_file;
+1380     return unzGoToFilePos64(file,&file_pos64);
+1381 }
+.fi
+.SS "int ZEXPORT unzGoToFilePos64 (\fBunzFile\fPfile, const \fBunz64_file_pos\fP *file_pos)"
+
+.PP
+Definition at line 1348 of file unzip\&.c\&.
+.PP
+References unz64_s::cur_file_info, unz64_s::cur_file_info_internal, unz64_s::current_file_ok, unz64_s::num_file, unz64_file_pos_s::num_of_file, unz64_s::pos_in_central_dir, unz64_file_pos_s::pos_in_zip_directory, unz64local_GetCurrentFileInfoInternal(), UNZ_OK, and UNZ_PARAMERROR\&.
+.PP
+Referenced by QuaZipPrivate::goToFirstUnmappedFile(), QuaZip::setCurrentFile(), and unzGoToFilePos()\&.
+.PP
+.nf
+1349 {
+1350     unz64_s* s;
+1351     int err;
+1352 
+1353     if (file==NULL || file_pos==NULL)
+1354         return UNZ_PARAMERROR;
+1355     s=(unz64_s*)file;
+1356 
+1357     /* jump to the right spot */
+1358     s->pos_in_central_dir = file_pos->pos_in_zip_directory;
+1359     s->num_file           = file_pos->num_of_file;
+1360 
+1361     /* set the current file */
+1362     err = unz64local_GetCurrentFileInfoInternal(file,&s->cur_file_info,
+1363                                                &s->cur_file_info_internal,
+1364                                                NULL,0,NULL,0,NULL,0);
+1365     /* return results */
+1366     s->current_file_ok = (err == UNZ_OK);
+1367     return err;
+1368 }
+.fi
+.SS "\fBunzFile\fP unzOpenInternal (voidpffile, \fBzlib_filefunc64_32_def\fP *pzlib_filefunc64_32_def, intis64bitOpenFunction, unsignedflags)"
+
+.PP
+Definition at line 587 of file unzip\&.c\&.
+.PP
+References ALLOC, unz64_s::byte_before_the_zipfile, unz64_s::central_pos, unz64_s::encrypted, unz64_s::filestream, fill_qiodevice64_filefunc(), unz64_s::flags, unz64_s::gi, unz64_s::is64bitOpenFunction, unz64_s::isZip64, unz_global_info64_s::number_entry, unz64_s::offset_central_dir, unz64_s::pfile_in_zip_read, unz64_s::size_central_dir, unz_global_info64_s::size_comment, unz64local_getLong(), unz64local_getLong64(), unz64local_getShort(), unz64local_SearchCentralDir(), unz64local_SearchCentralDir64(), UNZ_AUTO_CLOSE, UNZ_BADZIPFILE, unz_copyright, UNZ_ERRNO, UNZ_OK, unzGoToFirstFile(), unz64_s::z_filefunc, ZCLOSE64, ZFAKECLOSE64, zlib_filefunc64_32_def_s::zfile_func64, ZLIB_FILEFUNC_MODE_EXISTING, ZLIB_FILEFUNC_MODE_READ, ZLIB_FILEFUNC_SEEK_SET, ZOPEN64, zlib_filefunc64_32_def_s::zseek32_file, ZSEEK64, and zlib_filefunc64_32_def_s::ztell32_file\&.
+.PP
+Referenced by QuaZip::open(), unzOpen(), unzOpen2(), unzOpen2_64(), and unzOpen64()\&.
+.PP
+.nf
+590 {
+591     unz64_s us;
+592     unz64_s *s;
+593     ZPOS64_T central_pos;
+594     uLong   uL;
+595 
+596     uLong number_disk;          /* number of the current dist, used for
+597                                    spaning ZIP, unsupported, always 0*/
+598     uLong number_disk_with_CD;  /* number the the disk with central dir, used
+599                                    for spaning ZIP, unsupported, always 0*/
+600     ZPOS64_T number_entry_CD;      /* total number of entries in
+601                                    the central dir
+602                                    (same than number_entry on nospan) */
+603 
+604     int err=UNZ_OK;
+605 
+606     if (unz_copyright[0]!=' ')
+607         return NULL;
+608 
+609     us\&.flags = flags;
+610     us\&.z_filefunc\&.zseek32_file = NULL;
+611     us\&.z_filefunc\&.ztell32_file = NULL;
+612     if (pzlib_filefunc64_32_def==NULL)
+613         fill_qiodevice64_filefunc(&us\&.z_filefunc\&.zfile_func64);
+614     else
+615         us\&.z_filefunc = *pzlib_filefunc64_32_def;
+616     us\&.is64bitOpenFunction = is64bitOpenFunction;
+617 
+618 
+619 
+620     us\&.filestream = ZOPEN64(us\&.z_filefunc,
+621                                                  file,
+622                                                  ZLIB_FILEFUNC_MODE_READ |
+623                                                  ZLIB_FILEFUNC_MODE_EXISTING);
+624     if (us\&.filestream==NULL)
+625         return NULL;
+626 
+627     central_pos = unz64local_SearchCentralDir64(&us\&.z_filefunc,us\&.filestream);
+628     if (central_pos)
+629     {
+630         uLong uS;
+631         ZPOS64_T uL64;
+632 
+633         us\&.isZip64 = 1;
+634 
+635         if (ZSEEK64(us\&.z_filefunc, us\&.filestream,
+636                                       central_pos,ZLIB_FILEFUNC_SEEK_SET)!=0)
+637         err=UNZ_ERRNO;
+638 
+639         /* the signature, already checked */
+640         if (unz64local_getLong(&us\&.z_filefunc, us\&.filestream,&uL)!=UNZ_OK)
+641             err=UNZ_ERRNO;
+642 
+643         /* size of zip64 end of central directory record */
+644         if (unz64local_getLong64(&us\&.z_filefunc, us\&.filestream,&uL64)!=UNZ_OK)
+645             err=UNZ_ERRNO;
+646 
+647         /* version made by */
+648         if (unz64local_getShort(&us\&.z_filefunc, us\&.filestream,&uS)!=UNZ_OK)
+649             err=UNZ_ERRNO;
+650 
+651         /* version needed to extract */
+652         if (unz64local_getShort(&us\&.z_filefunc, us\&.filestream,&uS)!=UNZ_OK)
+653             err=UNZ_ERRNO;
+654 
+655         /* number of this disk */
+656         if (unz64local_getLong(&us\&.z_filefunc, us\&.filestream,&number_disk)!=UNZ_OK)
+657             err=UNZ_ERRNO;
+658 
+659         /* number of the disk with the start of the central directory */
+660         if (unz64local_getLong(&us\&.z_filefunc, us\&.filestream,&number_disk_with_CD)!=UNZ_OK)
+661             err=UNZ_ERRNO;
+662 
+663         /* total number of entries in the central directory on this disk */
+664         if (unz64local_getLong64(&us\&.z_filefunc, us\&.filestream,&us\&.gi\&.number_entry)!=UNZ_OK)
+665             err=UNZ_ERRNO;
+666 
+667         /* total number of entries in the central directory */
+668         if (unz64local_getLong64(&us\&.z_filefunc, us\&.filestream,&number_entry_CD)!=UNZ_OK)
+669             err=UNZ_ERRNO;
+670 
+671         if ((number_entry_CD!=us\&.gi\&.number_entry) ||
+672             (number_disk_with_CD!=0) ||
+673             (number_disk!=0))
+674             err=UNZ_BADZIPFILE;
+675 
+676         /* size of the central directory */
+677         if (unz64local_getLong64(&us\&.z_filefunc, us\&.filestream,&us\&.size_central_dir)!=UNZ_OK)
+678             err=UNZ_ERRNO;
+679 
+680         /* offset of start of central directory with respect to the
+681           starting disk number */
+682         if (unz64local_getLong64(&us\&.z_filefunc, us\&.filestream,&us\&.offset_central_dir)!=UNZ_OK)
+683             err=UNZ_ERRNO;
+684 
+685         us\&.gi\&.size_comment = 0;
+686     }
+687     else
+688     {
+689         central_pos = unz64local_SearchCentralDir(&us\&.z_filefunc,us\&.filestream);
+690         if (central_pos==0)
+691             err=UNZ_ERRNO;
+692 
+693         us\&.isZip64 = 0;
+694 
+695         if (ZSEEK64(us\&.z_filefunc, us\&.filestream,
+696                                         central_pos,ZLIB_FILEFUNC_SEEK_SET)!=0)
+697             err=UNZ_ERRNO;
+698 
+699         /* the signature, already checked */
+700         if (unz64local_getLong(&us\&.z_filefunc, us\&.filestream,&uL)!=UNZ_OK)
+701             err=UNZ_ERRNO;
+702 
+703         /* number of this disk */
+704         if (unz64local_getShort(&us\&.z_filefunc, us\&.filestream,&number_disk)!=UNZ_OK)
+705             err=UNZ_ERRNO;
+706 
+707         /* number of the disk with the start of the central directory */
+708         if (unz64local_getShort(&us\&.z_filefunc, us\&.filestream,&number_disk_with_CD)!=UNZ_OK)
+709             err=UNZ_ERRNO;
+710 
+711         /* total number of entries in the central dir on this disk */
+712         if (unz64local_getShort(&us\&.z_filefunc, us\&.filestream,&uL)!=UNZ_OK)
+713             err=UNZ_ERRNO;
+714         us\&.gi\&.number_entry = uL;
+715 
+716         /* total number of entries in the central dir */
+717         if (unz64local_getShort(&us\&.z_filefunc, us\&.filestream,&uL)!=UNZ_OK)
+718             err=UNZ_ERRNO;
+719         number_entry_CD = uL;
+720 
+721         if ((number_entry_CD!=us\&.gi\&.number_entry) ||
+722             (number_disk_with_CD!=0) ||
+723             (number_disk!=0))
+724             err=UNZ_BADZIPFILE;
+725 
+726         /* size of the central directory */
+727         if (unz64local_getLong(&us\&.z_filefunc, us\&.filestream,&uL)!=UNZ_OK)
+728             err=UNZ_ERRNO;
+729         us\&.size_central_dir = uL;
+730 
+731         /* offset of start of central directory with respect to the
+732             starting disk number */
+733         if (unz64local_getLong(&us\&.z_filefunc, us\&.filestream,&uL)!=UNZ_OK)
+734             err=UNZ_ERRNO;
+735         us\&.offset_central_dir = uL;
+736 
+737         /* zipfile comment length */
+738         if (unz64local_getShort(&us\&.z_filefunc, us\&.filestream,&us\&.gi\&.size_comment)!=UNZ_OK)
+739             err=UNZ_ERRNO;
+740     }
+741 
+742     if ((central_pos<us\&.offset_central_dir+us\&.size_central_dir) &&
+743         (err==UNZ_OK))
+744         err=UNZ_BADZIPFILE;
+745 
+746     if (err!=UNZ_OK)
+747     {
+748         if ((us\&.flags & UNZ_AUTO_CLOSE) != 0)
+749             ZCLOSE64(us\&.z_filefunc, us\&.filestream);
+750         else
+751             ZFAKECLOSE64(us\&.z_filefunc, us\&.filestream);
+752         return NULL;
+753     }
+754 
+755     us\&.byte_before_the_zipfile = central_pos -
+756                             (us\&.offset_central_dir+us\&.size_central_dir);
+757     us\&.central_pos = central_pos;
+758     us\&.pfile_in_zip_read = NULL;
+759     us\&.encrypted = 0;
+760 
+761 
+762     s=(unz64_s*)ALLOC(sizeof(unz64_s));
+763     if( s != NULL)
+764     {
+765         *s=us;
+766         unzGoToFirstFile((unzFile)s);
+767     }
+768     return (unzFile)s;
+769 }
+.fi
+.SS "int ZEXPORT unzSetFlags (\fBunzFile\fPfile, unsignedflags)"
+
+.PP
+Definition at line 2136 of file unzip\&.c\&.
+.PP
+References unz64_s::flags, UNZ_OK, and UNZ_PARAMERROR\&.
+.PP
+Referenced by QuaZip::open()\&.
+.PP
+.nf
+2137 {
+2138     unz64_s* s;
+2139     if (file == NULL)
+2140         return UNZ_PARAMERROR;
+2141     s = (unz64_s*)file;
+2142     s->flags |= flags;
+2143     return UNZ_OK;
+2144 }
+.fi
+.SS "int ZEXPORT unzSetOffset (\fBunzFile\fPfile, uLongpos)"
+
+.PP
+Definition at line 2130 of file unzip\&.c\&.
+.PP
+References unzSetOffset64()\&.
+.PP
+.nf
+2131 {
+2132     return unzSetOffset64(file,pos);
+2133 }
+.fi
+.SS "int ZEXPORT unzSetOffset64 (\fBunzFile\fPfile, \fBZPOS64_T\fPpos)"
+
+.PP
+Definition at line 2112 of file unzip\&.c\&.
+.PP
+References unz64_s::cur_file_info, unz64_s::cur_file_info_internal, unz64_s::current_file_ok, unz64_s::gi, unz64_s::num_file, unz_global_info64_s::number_entry, unz64_s::pos_in_central_dir, unz64local_GetCurrentFileInfoInternal(), UNZ_OK, and UNZ_PARAMERROR\&.
+.PP
+Referenced by unzSetOffset()\&.
+.PP
+.nf
+2113 {
+2114     unz64_s* s;
+2115     int err;
+2116 
+2117     if (file==NULL)
+2118         return UNZ_PARAMERROR;
+2119     s=(unz64_s*)file;
+2120 
+2121     s->pos_in_central_dir = pos;
+2122     s->num_file = s->gi\&.number_entry;      /* hack */
+2123     err = unz64local_GetCurrentFileInfoInternal(file,&s->cur_file_info,
+2124                                               &s->cur_file_info_internal,
+2125                                               NULL,0,NULL,0,NULL,0);
+2126     s->current_file_ok = (err == UNZ_OK);
+2127     return err;
+2128 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

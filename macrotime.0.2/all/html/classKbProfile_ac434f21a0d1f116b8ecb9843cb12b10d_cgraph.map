@@ -1,0 +1,7 @@
+<map id="KbProfile::modes" name="KbProfile::modes">
+<area shape="rect" id="node2" href="$classKbProfile.html#a6a35f6ecae0910a7a9b4cfc238b4c318" title="KbProfile::setNeedsUpdate" alt="" coords="176,31,357,57"/>
+<area shape="rect" id="node3" href="$classKbProfile.html#a30827cbf8720209464b7acd99d7b59e4" title="KbProfile::setNeedsSave" alt="" coords="409,5,578,32"/>
+<area shape="rect" id="node4" href="$classKbMode.html#abc86ed1b24f62f1d0056de7ed6668d70" title="KbMode::setNeedsUpdate" alt="" coords="405,56,581,83"/>
+<area shape="rect" id="node5" href="$classKbBind.html#ab4c4ec0863c0bc07a9f4e2d5a1a60436" title="KbBind::setNeedsUpdate" alt="" coords="629,31,800,57"/>
+<area shape="rect" id="node6" href="$classKbPerf.html#a7323c70a0794aa0fc8313bf2dc7a36c1" title="KbPerf::setNeedsUpdate" alt="" coords="631,81,799,108"/>
+</map>

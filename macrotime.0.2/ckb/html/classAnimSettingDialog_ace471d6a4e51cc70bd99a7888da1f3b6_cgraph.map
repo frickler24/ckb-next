@@ -1,0 +1,10 @@
+<map id="AnimSettingDialog::on_kpRepeatBox_valueChanged" name="AnimSettingDialog::on_kpRepeatBox_valueChanged">
+<area shape="rect" id="node2" href="$classAnimSettingDialog.html#ad8c12a644ef80b8ea56a70f0e30da4c7" title="AnimSettingDialog::\lupdateParam" alt="" coords="267,150,405,191"/>
+<area shape="rect" id="node3" href="$classKbAnim.html#a7baa451a6a0c5bfe283de6e22b65dbc3" title="KbAnim::parameter" alt="" coords="471,5,606,32"/>
+<area shape="rect" id="node4" href="$classKbAnim.html#a20ce294b015ed0fc649e92ba3995ef18" title="KbAnim::script" alt="" coords="485,56,593,83"/>
+<area shape="rect" id="node5" href="$classAnimScript.html#ab753c3483bf04eee431aee6981187b3a" title="AnimScript::hasKeypress" alt="" coords="453,107,624,133"/>
+<area shape="rect" id="node6" href="$classAnimScript.html#ab4d28f52e87a474053e5933a3c8dcbc8" title="AnimScript::param" alt="" coords="473,157,604,184"/>
+<area shape="rect" id="node7" href="$classColorButton.html#a05e0cfb49a76a67227a36353640a8282" title="ColorButton::color" alt="" coords="475,208,602,235"/>
+<area shape="rect" id="node8" href="$classGradientButton.html#afd76a825496e5111de7af1ac14fafa9b" title="GradientButton::toString" alt="" coords="457,259,620,285"/>
+<area shape="rect" id="node9" href="$animsettingdialog_8cpp.html#a628352e93a216ed9949fd0891b268276" title="angleFlip" alt="" coords="501,309,576,336"/>
+</map>

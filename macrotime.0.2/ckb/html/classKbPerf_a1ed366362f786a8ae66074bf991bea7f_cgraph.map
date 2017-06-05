@@ -1,0 +1,8 @@
+<map id="KbPerf::lightIndicator" name="KbPerf::lightIndicator">
+<area shape="rect" id="node2" href="$classKbPerf.html#aa68fe94355a0921bd6bc15032cd2035f" title="KbPerf::light" alt="" coords="222,56,317,83"/>
+<area shape="rect" id="node5" href="$classKbLight.html#a6253ca7cd1f8c0272eb12e1ac8f2ed1a" title="KbLight::setIndicator" alt="" coords="198,107,341,133"/>
+<area shape="rect" id="node3" href="$classKbMode.html#afdfc0cdec0315dd3b2ab6506f6ef43f9" title="KbMode::light" alt="" coords="422,5,525,32"/>
+<area shape="rect" id="node4" href="$classKbPerf.html#a179898f3d3ada32bcd3b5ca1e8d4ae4c" title="KbPerf::modeParent" alt="" coords="403,56,543,83"/>
+<area shape="rect" id="node6" href="$classColorMap.html#a206bfd8a9465e856c16a71bb908772fe" title="ColorMap::colorForName" alt="" coords="389,107,557,133"/>
+<area shape="rect" id="node7" href="$colormap_8cpp.html#aadd858d434ca6f9507ef897c2e4c12ab" title="qs_strcmp" alt="" coords="605,107,688,133"/>
+</map>

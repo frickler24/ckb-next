@@ -1,6 +1,6 @@
 Warning: ignoring unsupported tag `ALLOW_UNICODE_NAMES    =' at line 79, file /home/travis/build/frickler24/ckb-next/documentation/Doxy-ckb
 Warning: ignoring unsupported tag `MAN_SUBDIR             =' at line 1782, file /home/travis/build/frickler24/ckb-next/documentation/Doxy-ckb
-Notice: Output directory `macrotime.0.2.thread/ckb' does not exist. I have created it for you.
+Notice: Output directory `macrotime.0.2/ckb' does not exist. I have created it for you.
 Searching for include files...
 Searching for example files...
 Searching for images...
@@ -58,8 +58,8 @@ Parsing file /home/travis/build/frickler24/ckb-next/src/ckb/extrasettingswidget.
 Preprocessing /home/travis/build/frickler24/ckb-next/src/ckb/extrasettingswidget.h...
 Parsing file /home/travis/build/frickler24/ckb-next/src/ckb/extrasettingswidget.h...
 Preprocessing /home/travis/build/frickler24/ckb-next/src/ckb/firmware_special.h...
-Parsing file /home/travis/buil/home/travis/build/frickler24/ckb-next/src/ckb/kbbindwidget.cpp:76: warning: reached end of comment while inside a @htmlonly block; check for missing @endhtmlonly tag!
-d/frickler24/ckb-next/src/ckb/firmware_special.h...
+Parsing file /home/travis/build/frick/home/travis/build/frickler24/ckb-next/src/ckb/kbbindwidget.cpp:76: warning: reached end of comment while inside a @htmlonly block; check for missing @endhtmlonly tag!
+ler24/ckb-next/src/ckb/firmware_special.h...
 Preprocessing /home/travis/build/frickler24/ckb-next/src/ckb/fwupgradedialog.cpp...
 Parsing file /home/travis/build/frickler24/ckb-next/src/ckb/fwupgradedialog.cpp...
 Preprocessing /home/travis/build/frickler24/ckb-next/src/ckb/fwupgradedialog.h...
@@ -111,8 +111,8 @@ Parsing file /home/travis/build/frickler24/ckb-next/src/ckb/kblightwidget.h...
 Preprocessing /home/travis/build/frickler24/ckb-next/src/ckb/kbmanager.cpp...
 Parsing file /home/travis/build/frickler24/ckb-next/src/ckb/kbmanager.cpp...
 Preprocessing /home/travis/build/frickler24/ckb-next/src/ckb/kbmanager.h...
-Parsing file /home/travis/build/frickler24/ckb-ne/home/travis/build/frickler24/ckb-next/src/ckb/keywidget.cpp:341: warning: reached end of comment while inside a @htmlonly block; check for missing @endhtmlonly tag!
-xt/src/ckb/kbmanager.h...
+Parsing file /home/travis/build/frickler24/ckb-next/src//home/travis/build/frickler24/ckb-next/src/ckb/keywidget.cpp:341: warning: reached end of comment while inside a @htmlonly block; check for missing @endhtmlonly tag!
+ckb/kbmanager.h...
 Preprocessing /home/travis/build/frickler24/ckb-next/src/ckb/kbmode.cpp...
 Parsing file /home/travis/build/frickler24/ckb-next/src/ckb/kbmode.cpp...
 Preprocessing /home/travis/build/frickler24/ckb-next/src/ckb/kbmode.h...
@@ -355,7 +355,7 @@ Preprocessing /home/travis/build/frickler24/ckb-next/src/ckb/ui_kbwidget.h...
 Parsing file /home/travis/build/frickler24/ckb-next/src/ckb/ui_kbwidget.h...
 Preprocessing /home/travis/build/frickler24/ckb-next/src/ckb/ui_kperfwidget.h...
 Parsing file /home/travis/build/frickler24/ckb-next/src/ckb/ui_kperfwidget.h...
-Preprocessing /home/travis/build/frickler24/ckb-next/src/ckb/ui_layoutd/home/travis/build/frickler24/ckb-next/src/ckb/firmware_special.h:5: warning: the name `Define' supplied as the second argument in the \file statement is not an input file
+Preprocessing /home/travis/build/frickler24/ckb-next/src/ckb/ui_layoutdialog.h/home/travis/build/frickler24/ckb-next/src/ckb/firmware_special.h:5: warning: the name `Define' supplied as the second argument in the \file statement is not an input file
 /home/travis/build/frickler24/ckb-next/src/ckb/release/moc_animadddialog.cpp:73: warning: documented symbol `void AnimAddDialog::qt_static_metacall' was not declared or defined.
 /home/travis/build/frickler24/ckb-next/src/ckb/release/moc_animadddialog.cpp:87: warning: documented symbol `const QMetaObject AnimAddDialog::staticMetaObject' was not declared or defined.
 /home/travis/build/frickler24/ckb-next/src/ckb/release/moc_animadddialog.cpp:93: warning: documented symbol `const QMetaObject * AnimAddDialog::metaObject' was not declared or defined.
@@ -551,7 +551,7 @@ Preprocessing /home/travis/build/frickler24/ckb-next/src/ckb/ui_layoutd/home/tra
 /home/travis/build/frickler24/ckb-next/src/ckb/release/moc_settingswidget.cpp:129: warning: documented symbol `const QMetaObject * SettingsWidget::metaObject' was not declared or defined.
 /home/travis/build/frickler24/ckb-next/src/ckb/release/moc_settingswidget.cpp:134: warning: documented symbol `void * SettingsWidget::qt_metacast' was not declared or defined.
 /home/travis/build/frickler24/ckb-next/src/ckb/release/moc_settingswidget.cpp:142: warning: documented symbol `int SettingsWidget::qt_metacall' was not declared or defined.
-ialog.h...
+...
 Parsing file /home/travis/build/frickler24/ckb-next/src/ckb/ui_layoutdialog.h...
 Preprocessing /home/travis/build/frickler24/ckb-next/src/ckb/ui_mainwindow.h...
 Parsing file /home/travis/build/frickler24/ckb-next/src/ckb/ui_mainwindow.h...
@@ -1167,7 +1167,7 @@ Generating caller graph for function qRegisterResourceData
 Generating caller graph for function qUnregisterResourceData
 Generating docs for file src/ckb/release/qrc_text.cpp...
 Generating call graph for function qCleanupResources_text
-/home/travis/build/frickler24/ckb-next/README.md:4: warning: Unexpected html tag <img> found within <a href=...> context
+Generat/home/travis/build/frickler24/ckb-next/README.md:4: warning: Unexpected html tag <img> found within <a href=...> context
 /home/travis/build/frickler24/ckb-next/README.md:34: warning: unable to resolve reference to `https:' for \ref command
 /home/travis/build/frickler24/ckb-next/README.md:72: warning: Illegal command hevanaa as part of a <a>..</a> block
 /home/travis/build/frickler24/ckb-next/README.md:79: warning: Illegal command light2yellow as part of a <a>..</a> block
@@ -1179,7 +1179,7 @@ QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-Generating call graph for function qInitResources_text
+ing call graph for function qInitResources_text
 Generating caller graph for function qRegisterResourceData
 Generating caller graph for function qUnregisterResourceData
 Generating docs for file src/ckb/rlistwidget.cpp...
@@ -1254,9 +1254,9 @@ Generating caller graph for function AnimScript::list
 Generating call graph for function AnimScript::load
 Generating caller graph for function AnimScript::load
 Generating caller graph for function AnimScript::name
-Generating caller graph for functQGDict::hashAsciiKey: Invalid null key
+Generating caller graph for function AniQGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-ion AnimScript::param
+mScript::param
 Generating call graph for function AnimScript::parameters
 Generating caller graph for function AnimScript::parameters
 Generating caller graph for function AnimScript::paramIterator
@@ -1324,9 +1324,9 @@ Generating call graph for function CkbSettings::informIfNonWritable
 Generating caller graph for function CkbSettings::informIfNonWritable
 Generating call graph for function CkbSettings::isBusy
 Generating caller graph for function CkbSettings::isBusy
-GeneratQGDict::hashAsciiKey: Invalid null key
+Generating calQGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-ing caller graph for function CkbSettings::isWritable
+ler graph for function CkbSettings::isWritable
 Generating caller graph for function CkbSettings::pwd
 Generating call graph for function CkbSettings::pwd
 Generating caller graph for function CkbSettings::pwd
@@ -1454,14 +1454,14 @@ Generating caller graph for function GradientDialogWidget::stops
 Generating docs for compound JlCompress...
 Generating call graph for function JlCompress::compressDir
 Generating call graph for function JlCompress::compressFile
-Generating caller grap/home/travis/build/frickler24/ckb-next/src/ckb/quazip/JlCompress.cpp:86: warning: argument 'parentZip' of command @param is not found in the argument list of JlCompress::compressSubDir(QuaZip *zip, QString dir, QString origDir, bool recursive=true)
+Generating caller graph for f/home/travis/build/frickler24/ckb-next/src/ckb/quazip/JlCompress.cpp:86: warning: argument 'parentZip' of command @param is not found in the argument list of JlCompress::compressSubDir(QuaZip *zip, QString dir, QString origDir, bool recursive=true)
 /home/travis/build/frickler24/ckb-next/src/ckb/quazip/JlCompress.cpp:86: warning: argument 'parentDir' of command @param is not found in the argument list of JlCompress::compressSubDir(QuaZip *zip, QString dir, QString origDir, bool recursive=true)
 /home/travis/build/frickler24/ckb-next/src/ckb/quazip/JlCompress.cpp:86: warning: The following parameters of JlCompress::compressSubDir(QuaZip *zip, QString dir, QString origDir, bool recursive=true) are not documented:
   parameter 'zip'
   parameter 'origDir'
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-h for function JlCompress::compressFile
+unction JlCompress::compressFile
 Generating call graph for function JlCompress::compressFile
 Generating call graph for function JlCompress::compressFiles
 Generating call graph for function JlCompress::compressSubDir
@@ -1540,11 +1540,11 @@ Generating call graph for function Kb::setCurrentMode
 Generating caller graph for function Kb::setCurrentMode
 Generating call graph for function Kb::setCurrentMode
 Generating caller graph for function Kb::setCurrentMode
-Generating call QGDict::hashAsciiKey: Invalid null key
+Generating call graph fQGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-graph for function Kb::setCurrentMode
+or function Kb::setCurrentMode
 Generating caller graph for function Kb::setCurrentMode
 Generating call graph for function Kb::setCurrentProfile
 Generating caller graph for function Kb::setCurrentProfile
@@ -1615,13 +1615,13 @@ Generating call graph for function KbAnimWidget::on_keyButton_clicked
 Generating call graph for function KbAnimWidget::on_nameBox_textEdited
 Generating caller graph for function KbAnimWidget::on_nameBox_textEdited
 Generating call graph for function KbAnimWidget::on_opacityBox_valueChanged
-Generating call graph for function KbAnimWidget::on_propeQGDict::hashAsciiKey: Invalid null key
+Generating call graph for function KbAnimWidget::on_propertyButtQGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/frickler24/ckb-next/src/ckb/kbbind.cpp:17: warning: argument 'devParent' of command @param is not found in the argument list of KbBind::KbBind(KbMode *modeParent, Kb *parentBoard, const KeyMap &keyMap, const KbBind &other)
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-rtyButton_clicked
+on_clicked
 Generating caller graph for function KbAnimWidget::on_propertyButton_clicked
 Generating call graph for function KbAnimWidget::refreshList
 Generating caller graph for function KbAnimWidget::refreshList
@@ -1695,11 +1695,11 @@ Generating caller graph for function KbBind::updated
 Generating caller graph for function KbBind::winLock
 Generating docs for compound KbBindWidget...
 Generating call graph for function KbBindWidget::KbBindWidget
-GeneratiQGDict::hashAsciiKey: Invalid null key
+Generating callQGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-ng call graph for function KbBindWidget::newLayout
+ graph for function KbBindWidget::newLayout
 Generating caller graph for function KbBindWidget::newLayout
 Generating call graph for function KbBindWidget::newSelection
 Generating caller graph for function KbBindWidget::newSelection
@@ -1770,12 +1770,12 @@ Generating call graph for function KbLight::needsSave
 Generating caller graph for function KbLight::needsSave
 Generating call graph for function KbLight::open
 Generating caller graph for function KbLight::open
-Generating call graph for functioQGDict::hashAsciiKey: Invalid null key
+Generating call graph for function KbLigQGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-n KbLight::previewAnim
+ht::previewAnim
 Generating caller graph for function KbLight::previewAnim
 Generating call graph for function KbLight::printRGB
 Generating caller graph for function KbLight::printRGB
@@ -1844,9 +1844,9 @@ Generating call graph for function KbMode::KbMode
 Generating call graph for function KbMode::KbMode
 Generating caller graph for function KbMode::bind
 Generating caller graph for function KbMode::doUpdate
-Generating caller graphQGDict::hashAsciiKey: Invalid null key
+Generating caller graph for fuQGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
- for function KbMode::id
+nction KbMode::id
 Generating call graph for function KbMode::id
 Generating call graph for function KbMode::keyMap
 Generating caller graph for function KbMode::keyMap
@@ -1924,12 +1924,12 @@ Generating docs for compound KbProfile...
 Generating call graph for function KbProfile::KbProfile
 Generating call graph for function KbProfile::KbProfile
 Generating call graph for function KbProfile::append
-Generating callerQGDict::hashAsciiKey: Invalid null key
+Generating caller graph QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
- graph for function KbProfile::append
+for function KbProfile::append
 Generating caller graph for function KbProfile::currentMode
 Generating call graph for function KbProfile::find
 Generating caller graph for function KbProfile::find
@@ -2069,7 +2069,7 @@ Generating caller graph for function KeyMap::isKeyboard
 Generating call graph for function KeyMap::isKeyboard
 Generating caller graph for function KeyMap::isKeyboard
 Generating caller graph for function KeyMap::isMouse
-Generating call graph for functQGDict::hashAsciiKey: Invalid null key
+Generating call graph for function KeyQGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
@@ -2083,7 +2083,7 @@ QGDict::hashAsciiKey: Invalid null key
   parameter 'mode'
   parameter 'sw_enable'
   parameter 'hw_enable'
-ion KeyMap::isMouse
+Map::isMouse
 Generating caller graph for function KeyMap::isMouse
 Generating caller graph for function KeyMap::key
 Generating caller graph for function KeyMap::keys
@@ -2155,11 +2155,11 @@ Generating caller graph for function MainWindow::checkFwUpdates
 Generating call graph for function MainWindow::cleanup
 Generating caller graph for function MainWindow::cleanup
 Generating call graph for function MainWindow::closeEvent
-Generating call graph for function MainWindow::iconQGDict::hashAsciiKey: Invalid null key
+Generating call graph for function MainWindow::iconClickedQGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-Clicked
+
 Generating caller graph for function MainWindow::iconClicked
 Generating caller graph for function MainWindow::quitApp
 Generating call graph for function MainWindow::removeDevice
@@ -2231,9 +2231,9 @@ Generating call graph for function QuaZip::getComment
 Generating caller graph for function QuaZip::getCommentCodec
 Generating call graph for function QuaZip::getCurrentFileInfo
 Generating caller graph for function QuaZip::getCurrentFileInfo
-Generating call graph for function QQGDict::hashAsciiKey: Invalid null key
+Generating call graph for function QuaZip::QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-uaZip::getCurrentFileInfo
+getCurrentFileInfo
 Generating call graph for function QuaZip::getCurrentFileName
 Generating caller graph for function QuaZip::getCurrentFileName
 Generating call graph for function QuaZip::getEntriesCount
@@ -2305,13 +2305,13 @@ Generating caller graph for function QuaZipFile::open
 Generating call graph for function QuaZipFile::open
 Generating call graph for function QuaZipFile::open
 Generating call graph for function QuaZipFile::pos
-Generating caller grQGDict::hashAsciiKey: Invalid null key
+Generating caller graph forQGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-aph for function QuaZipFile::pos
+ function QuaZipFile::pos
 Generating call graph for function QuaZipFile::readData
 Generating call graph for function QuaZipFile::size
 Generating caller graph for function QuaZipFile::size
@@ -2435,7 +2435,7 @@ Generating caller graph for function Ui_AnimSettingDialog::setupUi
 Generating docs for compound Ui_ExtraSettingsWidget...
 Generating caller graph for function Ui_ExtraSettingsWidget::retranslateUi
 Generating call graph for function Ui_ExtraSettingsWidget::setupUi
-Generating caller QGDict::hashAsciiKey: Invalid null key
+Generating caller graph fQGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
@@ -2444,7 +2444,7 @@ QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-graph for function Ui_ExtraSettingsWidget::setupUi
+or function Ui_ExtraSettingsWidget::setupUi
 Generating docs for compound Ui_FwUpgradeDialog...
 Generating caller graph for function Ui_FwUpgradeDialog::retranslateUi
 Generating call graph for function Ui_FwUpgradeDialog::setupUi
@@ -2514,7 +2514,7 @@ Generating docs for compound Ui::AnimAddDialog...
 Generating caller graph for function Ui_AnimAddDialog::retranslateUi
 Generating call graph for function Ui_AnimAddDialog::setupUi
 Generating caller graph for function Ui_AnimAddDialog::setupUi
-GenerQGDict::hashAsciiKey: Invalid null key
+Generating dQGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
@@ -2523,7 +2523,7 @@ QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-ating docs for compound Ui::AnimSettingDialog...
+ocs for compound Ui::AnimSettingDialog...
 Generating caller graph for function Ui_AnimSettingDialog::retranslateUi
 Generating call graph for function Ui_AnimSettingDialog::setupUi
 Generating caller graph for function Ui_AnimSettingDialog::setupUi

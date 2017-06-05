@@ -1,0 +1,6 @@
+<map id="readcmd" name="readcmd">
+<area shape="rect" id="node2" href="$devnode_8c.html#a981305884de053a41d337efac23900ec" title="Creates a notification node for the specified keyboard. " alt="" coords="126,5,226,32"/>
+<area shape="rect" id="node4" href="$devnode_8c.html#a40e40a8ea3edccbfd8fdfefc44a76206" title="Removes a notification node for the specified keyboard. " alt="" coords="127,56,225,83"/>
+<area shape="rect" id="node3" href="$devnode_8c.html#a38fcf6ff044f9249ae04234340ee8e7b" title="_mknotifynode" alt="" coords="275,5,381,32"/>
+<area shape="rect" id="node5" href="$devnode_8c.html#a9d97ede033e4f6c6bdd1c66fc82aa15e" title="_rmnotifynode" alt="" coords="276,56,380,83"/>
+</map>

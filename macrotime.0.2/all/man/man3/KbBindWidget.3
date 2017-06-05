@@ -1,0 +1,304 @@
+.TH "KbBindWidget" 3 "Mon Jun 5 2017" "Version beta-v0.2.8+testing at branch macrotime.0.2" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+KbBindWidget \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/kbbindwidget\&.h>\fP
+.PP
+Inherits \fBQWidget\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBKbBindWidget\fP (\fBQWidget\fP *parent=0)"
+.br
+.ti -1c
+.RI "\fB~KbBindWidget\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetBind\fP (\fBKbBind\fP *newBind, \fBKbProfile\fP *newProfile)"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBupdateBind\fP ()"
+.br
+.ti -1c
+.RI "void \fBnewLayout\fP ()"
+.br
+.ti -1c
+.RI "void \fBnewSelection\fP (QStringList selection)"
+.br
+.ti -1c
+.RI "void \fBupdateSelDisplay\fP ()"
+.br
+.ti -1c
+.RI "void \fBon_resetButton_clicked\fP ()"
+.br
+.ti -1c
+.RI "void \fBon_copyButton_clicked\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUi::KbBindWidget\fP * \fBui\fP"
+.br
+.ti -1c
+.RI "\fBKbBind\fP * \fBbind\fP"
+.br
+.ti -1c
+.RI "\fBKbProfile\fP * \fBprofile\fP"
+.br
+.ti -1c
+.RI "QStringList \fBcurrentSelection\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 12 of file kbbindwidget\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "KbBindWidget::KbBindWidget (\fBQWidget\fP *parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 7 of file kbbindwidget\&.cpp\&.
+.PP
+References Ui_KbBindWidget::keyWidget, newSelection(), KeyWidget::rgbMode(), Ui_KbBindWidget::setupUi(), and ui\&.
+.PP
+.nf
+7                                           :
+8     QWidget(parent),
+9     ui(new Ui::KbBindWidget), bind(0), profile(0)
+10 {
+11     ui->setupUi(this);
+12     ui->keyWidget->rgbMode(false);
+13     connect(ui->keyWidget, SIGNAL(selectionChanged(QStringList)), this, SLOT(newSelection(QStringList)));
+14 }
+.fi
+.SS "KbBindWidget::~KbBindWidget ()"
+
+.PP
+Definition at line 16 of file kbbindwidget\&.cpp\&.
+.PP
+References ui\&.
+.PP
+.nf
+16                            {
+17     delete ui;
+18 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void KbBindWidget::newLayout ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 50 of file kbbindwidget\&.cpp\&.
+.PP
+References bind, Ui_KbBindWidget::keyWidget, KeyWidget::map(), KbBind::map(), profile, Ui_KbBindWidget::rbWidget, RebindWidget::setBind(), ui, and updateSelDisplay()\&.
+.PP
+Referenced by setBind()\&.
+.PP
+.nf
+50                             {
+51     ui->keyWidget->map(bind->map());
+52     ui->rbWidget->setBind(bind, profile);
+53     updateSelDisplay();
+54 }
+.fi
+.SS "void KbBindWidget::newSelection (QStringListselection)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 56 of file kbbindwidget\&.cpp\&.
+.PP
+References currentSelection, Ui_KbBindWidget::rbWidget, RebindWidget::setSelection(), ui, and updateSelDisplay()\&.
+.PP
+Referenced by KbBindWidget(), and setBind()\&.
+.PP
+.nf
+56                                                     {
+57     currentSelection = selection;
+58     ui->rbWidget->setSelection(selection, true);
+59     updateSelDisplay();
+60 }
+.fi
+.SS "void KbBindWidget::on_copyButton_clicked ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 108 of file kbbindwidget\&.cpp\&.
+.PP
+References KbBind::action(), bind, KbMode::bind(), KeyMap::count(), KbProfile::currentMode(), currentSelection, KbBind::isMouse(), KeyMap::keys(), KbBind::map(), KbProfile::modes(), profile, ModeSelectDialog::selection(), KbBind::setAction(), and KeyAction::type()\&.
+.PP
+.nf
+108                                         {
+109     QStringList selection = currentSelection;
+110     const KeyMap& map = bind->map();
+111     int count = selection\&.count();
+112     QString type = bind->isMouse() ? "button" : "key";
+113     QString text = tr("%1 %2")\&.arg(count)\&.arg(type) + (count == 1 ? "" : "s");
+114     if(count == 0){
+115         // Copy all keys if none selected
+116         selection = map\&.keys();
+117         text = tr("all %1s")\&.arg(type);
+118     }
+119     text = "Copy binding for " + text + " to:";
+120     // Display popup
+121     ModeSelectDialog dialog(this, profile->currentMode(), profile->modes(), text);
+122     if(dialog\&.exec() != QDialog::Accepted)
+123         return;
+124     // Copy selected keys to selected modes
+125     QList<KbMode*> selectedModes = dialog\&.selection();
+126     foreach(KbMode* mode, selectedModes){
+127         KbBind* modeBind = mode->bind();
+128         foreach(const QString& key, selection){
+129             modeBind->setAction(key, bind->action(key));
+130         }
+131     }
+132 }
+.fi
+.SS "void KbBindWidget::on_resetButton_clicked ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 87 of file kbbindwidget\&.cpp\&.
+.PP
+References bind, KeyMap::count(), currentSelection, KbBind::isMouse(), KeyMap::keys(), KbBind::map(), KbBind::resetAction(), KeyAction::type(), and updateBind()\&.
+.PP
+.nf
+87                                          {
+88     QStringList selection = currentSelection;
+89     const KeyMap& map = bind->map();
+90     if(selection\&.isEmpty())
+91         // Reset all keys if none selected
+92         selection = map\&.keys();
+93     uint count = selection\&.count();
+94     QString type = bind->isMouse() ? "button" : "key";
+95     QString text;
+96     if(count == map\&.count())
+97         text = "<center>Reset all %1s to default?</center>";
+98     else if(count == 1)
+99         text = "<center>Reset this %1 to default?</center>";
+100     else
+101         text = tr("<center>Reset %1 %2s to default?</center>")\&.arg(count);
+102     if(QMessageBox(QMessageBox::NoIcon, "Confirm action", text\&.arg(type), QMessageBox::Yes | QMessageBox::No, this)\&.exec() != QMessageBox::Yes)
+103         return;
+104     bind->resetAction(selection);
+105     updateBind();
+106 }
+.fi
+.SS "void KbBindWidget::setBind (\fBKbBind\fP *newBind, \fBKbProfile\fP *newProfile)"
+
+.PP
+Definition at line 20 of file kbbindwidget\&.cpp\&.
+.PP
+References bind, KeyWidget::clearSelection(), Ui_KbBindWidget::keyWidget, newLayout(), newSelection(), profile, Ui_KbBindWidget::rbWidget, RebindWidget::setBind(), ui, and updateBind()\&.
+.PP
+Referenced by KbWidget::modeChanged()\&.
+.PP
+.nf
+20                                                                 {
+21     ui->keyWidget->clearSelection();
+22     ui->rbWidget->setBind(newBind, newProfile);
+23     newSelection(QStringList());
+24     if(bind == newBind)
+25         return;
+26     if(bind){
+27         disconnect(bind, SIGNAL(layoutChanged()), this, SLOT(newLayout()));
+28         disconnect(bind, SIGNAL(updated()), this, SLOT(updateBind()));
+29     }
+30     connect(newBind, SIGNAL(layoutChanged()), this, SLOT(newLayout()));
+31     connect(newBind, SIGNAL(updated()), this, SLOT(updateBind()));
+32     bind = newBind;
+33     profile = newProfile;
+34     newLayout();
+35     ui->rbWidget->setBind(bind, profile);
+36     updateBind();
+37 }
+.fi
+.SS "void KbBindWidget::updateBind ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 39 of file kbbindwidget\&.cpp\&.
+.PP
+References KbBind::action(), bind, KeyWidget::bindMap(), currentSelection, KeyMap::keys(), Ui_KbBindWidget::keyWidget, KbBind::map(), Ui_KbBindWidget::rbWidget, RebindWidget::setSelection(), ui, and updateSelDisplay()\&.
+.PP
+Referenced by on_resetButton_clicked(), and setBind()\&.
+.PP
+.nf
+39                              {
+40     const KeyMap& map = bind->map();
+41     // Build the action list based on the keymap
+42     QHash<QString, QString> actions;
+43     foreach(const QString& key, map\&.keys())
+44         actions[key] = bind->action(key);
+45     ui->keyWidget->bindMap(actions);
+46     ui->rbWidget->setSelection(currentSelection);
+47     updateSelDisplay();
+48 }
+.fi
+.SS "void KbBindWidget::updateSelDisplay ()\fC [private]\fP, \fC [slot]\fP"
+  
+.PP
+Definition at line 62 of file kbbindwidget\&.cpp\&.
+.PP
+References bind, currentSelection, KbBind::friendlyActionName(), Key::friendlyName(), KbBind::isMouse(), KbBind::map(), Ui_KbBindWidget::selectLabel, and ui\&.
+.PP
+Referenced by newLayout(), newSelection(), and updateBind()\&.
+.PP
+.nf
+62                                    {
+63     int count = currentSelection\&.count();
+64     if(count == 0){
+65         // No keys selected
+66         ui->selectLabel->setText("Click to select");
+67         return;
+68     }
+69     if(count == 1){
+70         // Single key selected: show key name and binding
+71         QString key = currentSelection[0];
+72         const Key& pos = bind->map()[key];
+73         if(!pos)
+74             ui->selectLabel->setText("(Unknown)");
+75         else
+77             ui->selectLabel->setText(pos\&.friendlyName(false)\&.split("\n")[0] + " → " + bind->friendlyActionName(key)\&.split("\n")[0]); 
+78         return;
+83     }
+84     ui->selectLabel->setText(QString("%1 %2 selected")\&.arg(count)\&.arg(bind->isMouse() ? "buttons" : "keys"));
+85 }
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "\fBKbBind\fP* KbBindWidget::bind\fC [private]\fP"
+
+.PP
+Definition at line 34 of file kbbindwidget\&.h\&.
+.PP
+Referenced by newLayout(), on_copyButton_clicked(), on_resetButton_clicked(), setBind(), updateBind(), and updateSelDisplay()\&.
+.SS "QStringList KbBindWidget::currentSelection\fC [private]\fP"
+
+.PP
+Definition at line 36 of file kbbindwidget\&.h\&.
+.PP
+Referenced by newSelection(), on_copyButton_clicked(), on_resetButton_clicked(), updateBind(), and updateSelDisplay()\&.
+.SS "\fBKbProfile\fP* KbBindWidget::profile\fC [private]\fP"
+
+.PP
+Definition at line 35 of file kbbindwidget\&.h\&.
+.PP
+Referenced by newLayout(), on_copyButton_clicked(), and setBind()\&.
+.SS "\fBUi::KbBindWidget\fP* KbBindWidget::ui\fC [private]\fP"
+
+.PP
+Definition at line 32 of file kbbindwidget\&.h\&.
+.PP
+Referenced by KbBindWidget(), newLayout(), newSelection(), setBind(), updateBind(), updateSelDisplay(), and ~KbBindWidget()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

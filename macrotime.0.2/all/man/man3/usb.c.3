@@ -1,0 +1,911 @@
+.TH "src/ckb-daemon/usb.c" 3 "Mon Jun 5 2017" "Version beta-v0.2.8+testing at branch macrotime.0.2" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb-daemon/usb.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'command\&.h'\fP
+.br
+\fC#include 'device\&.h'\fP
+.br
+\fC#include 'devnode\&.h'\fP
+.br
+\fC#include 'firmware\&.h'\fP
+.br
+\fC#include 'input\&.h'\fP
+.br
+\fC#include 'led\&.h'\fP
+.br
+\fC#include 'notify\&.h'\fP
+.br
+\fC#include 'profile\&.h'\fP
+.br
+\fC#include 'usb\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "const char * \fBvendor_str\fP (short vendor)"
+.br
+.RI "\fIbrief \&. \fP"
+.ti -1c
+.RI "const char * \fBproduct_str\fP (short product)"
+.br
+.RI "\fIbrief \&. \fP"
+.ti -1c
+.RI "static const \fBdevcmd\fP * \fBget_vtable\fP (short vendor, short product)"
+.br
+.RI "\fIbrief \&. \fP"
+.ti -1c
+.RI "static void * \fBdevmain\fP (\fBusbdevice\fP *kb)"
+.br
+.RI "\fIbrief \&. \fP"
+.ti -1c
+.RI "static void * \fB_setupusb\fP (void *context)"
+.br
+.RI "\fIbrief \&. \fP"
+.ti -1c
+.RI "void \fBsetupusb\fP (\fBusbdevice\fP *kb)"
+.br
+.ti -1c
+.RI "int \fBrevertusb\fP (\fBusbdevice\fP *kb)"
+.br
+.ti -1c
+.RI "int \fB_resetusb\fP (\fBusbdevice\fP *kb, const char *file, int line)"
+.br
+.ti -1c
+.RI "int \fBusb_tryreset\fP (\fBusbdevice\fP *kb)"
+.br
+.ti -1c
+.RI "int \fB_usbsend\fP (\fBusbdevice\fP *kb, const \fBuchar\fP *messages, int count, const char *file, int line)"
+.br
+.ti -1c
+.RI "int \fB_usbrecv\fP (\fBusbdevice\fP *kb, const \fBuchar\fP *out_msg, \fBuchar\fP *in_msg, const char *file, int line)"
+.br
+.ti -1c
+.RI "int \fBcloseusb\fP (\fBusbdevice\fP *kb)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "pthread_mutex_t \fBusbmutex\fP = PTHREAD_MUTEX_INITIALIZER"
+.br
+.RI "\fIbrief \&. \fP"
+.ti -1c
+.RI "volatile int \fBreset_stop\fP = 0"
+.br
+.RI "\fIbrief \&. \fP"
+.ti -1c
+.RI "int \fBfeatures_mask\fP = -1"
+.br
+.RI "\fIbrief \&. \fP"
+.ti -1c
+.RI "int \fBhwload_mode\fP"
+.br
+.RI "\fIhwload_mode is defined in \fBdevice\&.c\fP \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int _resetusb (\fBusbdevice\fP *kb, const char *file, intline)"
+_resetusb Reset a USB device\&.
+.PP
+First reset the device via \fBos_resetusb()\fP after a long delay (it may send something to the host)\&. If this worked (retval == 0), give the device another long delay Then perform the initialization via the device specific start() function entry in kb->vtable and if this is successful also, return the result of the device depenten updatergb() with force=true\&. 
+.PP
+Definition at line 426 of file usb\&.c\&.
+.PP
+References usbdevice::active, DELAY_LONG, os_resetusb(), and usbdevice::vtable\&.
+.PP
+.nf
+426                                                         {
+427     // Perform a USB reset
+428     DELAY_LONG(kb);
+429     int res = os_resetusb(kb, file, line);
+430     if(res)
+431         return res;
+432     DELAY_LONG(kb);
+433     // Re-initialize the device
+434     if(kb->vtable->start(kb, kb->active) != 0)
+435         return -1;
+436     if(kb->vtable->updatergb(kb, 1) != 0)
+437         return -1;
+438     return 0;
+439 }
+.fi
+.SS "static void* _setupusb (void *context)\fC [static]\fP"
+_setupusb A horrible function for setting up an usb device 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcontext\fP As \fB_setupusb()\fP is called as a new thread, the kb* is transferred as void* 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+a ptread_t* 0, here casted as void*\&. Retval is always null
+.RE
+.PP
+The basic structure of the function is somewhat habituated\&. It is more like an assembler routine than a structured program\&. This is not really bad, but just getting used to\&.
+.PP
+After every action, which can be practically fault-prone, the routine goes into the same error handling: It goes via goto to one of two exit labels\&. The difference is whether or not an unlock has to be performed on the imutex variable\&. In both cases, \fBcloseusb()\fP is called, then an unlock is performed on the dmutex\&.
+.PP
+The only case where this error handling is not performed is the correct return of the call to \fBdevmain()\fP\&. Here simply the return value of \fBdevmain()\fP is passed to the caller\&.
+.PP
+In either case, the routine terminates with a void* 0 because either \fBdevmain()\fP has returned constant null or the routine itself returns zero\&.
+.PP
+The basic idea of this routine is the following: 
+.br
+ First some initialization of kb standard structured and local vars is done\&.
+.IP "\(bu" 2
+\fBkb\fP is set to the pointer given from start environment
+.IP "\(bu" 2
+local vars \fBvendor\fP and \fBproduct\fP are set to the values from the corresponding fields of kb
+.IP "\(bu" 2
+local var \fBvt\fP \fBand\fP the \fBkb->vtable\fP are both set to the retval of \fI\fBget_vtable()\fP\fP 
+.IP "\(bu" 2
+\fBkb->features\fP are set depending on the type of hardware connected:
+.IP "  \(bu" 4
+set either to standard non rgb (all common flags like binding, notify, FW, hardware-loading etc) or in case of RGB-device set to standard + RGB, pollrate-change and fw-update
+.IP "  \(bu" 4
+exclude all features which are disabled via feature_mask (set by daemon CLI parameters)
+.IP "  \(bu" 4
+if it is a mouse, add adjust-rate
+.IP "  \(bu" 4
+if it is a monochrome device, set the flag for RGB-protocol, but single color
+.PP
+
+.IP "\(bu" 2
+the standard delay time is initialized in kb->usbdelay
+.IP "\(bu" 2
+A fixed 100ms wait is the start\&. \fBAlthough the DELAY_LONG macro is given a parameter, it is ignored\&. Occasionally refactor it\&.\fP
+.IP "\(bu" 2
+The first relevant point is the operating system-specific opening of the interface in \fBos_setupusb()\fP\&. As a result, some parameters should be set in kb (name, serial, fwversion, epcount = number of usb endpoints), and all endpoints should be claimed with \fBusbclaim()\fP\&. Claiming is the only point where \fBos_setupusb()\fP can produce an error (-1, otherwise 0)\&.
+.IP "\(bu" 2
+The following two statements deal with possible errors when setting the kb values in the current routine: If the version or the name was not read correctly, they are set to default values:
+.IP "  \(bu" 4
+serial is set to '<vendor>: <product> -NoID'
+.IP "  \(bu" 4
+the name is set to '<vendor> <product>'\&.
+.PP
+
+.IP "\(bu" 2
+Then the user level input subsystem is activated via os_openinput()\&. There are two file descriptors, one for the mouse and one for the keyboard\&. \fBAs mentioned in \fBstructures\&.h\fP, not the just opened FD numbers are stored under kb->uinput_kb or kb->uinput_mouse, but the values increased by 1!\fP The reason is, if the open fails or not open has been done until now, that struct member is set to 0, not to -1 or other negative value\&. So all usage of this kb->handle must be something like \fC'kb->handle - 1'\fP, as you can find it in the code\&.
+.IP "\(bu" 2
+The next action is to create a separate thread, which gets as parameter kb and starts with \fBos_inputmain()\fP\&. The thread is immediately detached so that it can return its resource completely independently if it should terminate\&.
+.IP "\(bu" 2
+The same happens with \fBos_setupindicators()\fP, which initially initializes all LED variables in kb to off and then starts the \fB_ledthread()\fP thread with kb as parameter and then detaches it\&. Here again only the generation of the thread can fail\&.
+.IP "\(bu" 2
+Via an entry in the vable (allocprofile, identical for all three vtable types), \fBallocprofile()\fP is called in \fBprofile\&.c\fP\&. With a valid parameter kb, a usbprofile structure is allocated and stored as a kb->profile\&. Then \fBinitmode()\fP is called for each of the initializable modes (MODE_COUNT, currently 6)\&. This procedure creates the memory space for the mode information, initializes the range to 0, and then sets the light\&.forceupdate and dpi\&.forceupdate to true\&. This forces an update later in the initialization of the device\&. 
+.br
+ The first mode is set as the current mode and two force flags are set (this seems to be mode-intersecting flags for light and update)\&. 
+.PP
+\fBWarning:\fP
+.RS 4
+There is no error handling for the \fBallocprofile()\fP and \fBinitmode()\fP procedures\&. However, since they allocate storage areas, the subsequent assignments and initializations can run in a SEGV\&.
+.RE
+.PP
+
+.IP "\(bu" 2
+Not completely understandable is why now via the vtable the function updateindicators() is called\&. But this actually happens in the just started thread \fB_ledthread()\fP\&. Either the initialization is wrong und must done here with force or the overview is lost, what happens when\&.\&.\&.
+.br
+Regardless: For a mouse nothing happens here, for a keyboard \fBupdateindicators_kb()\fP is called via the entry in kb->vtable\&. The first parameter is kb again, the second is constant 1 (means force = true)\&. This causes the LED status to be sent after a 5ms delay via \fBos_sendindicators()\fP (ioctl with a \fCusbdevfs_ctrltransfer\fP)\&. 
+.br
+ The notification is sent to all currently open notification channels then\&. 
+.br
+ Setupindicators() and with it \fBupdateindicators_kb()\fP can fail\&.
+.IP "\(bu" 2
+From this point - if an error is detected - the error label is addressed by goto statement, which first performs an unlock on the imutex\&. This is interesting because the next statement is exactly this: An unlock on the imutex\&.
+.IP "\(bu" 2
+Via vtable the \fIkb->start()\fP function is called next\&. This is the same for a mouse and an RGB keyboard: \fBstart_dev()\fP, for a non RGB keyboard it is \fBstart_kb_nrgb()\fP\&. 
+.br
+ First parameter is as always kb, second is 0 (makeactive = false)\&.
+.IP "  \(bu" 4
+In \fBstart_kb_nrgb()\fP set the keyboard into a so-called software mode (NK95_HWOFF) via ioctl with \fCusbdevfs_ctrltransfer\fP in function \fB_nk95cmd()\fP, which will in turn is called via macro \fBnk95cmd()\fP via \fBstart_kb_nrgb()\fP\&. 
+.br
+ Then two dummy values (active and pollrate) are set in the kb structure and ready\&.
+.IP "  \(bu" 4
+\fBstart_dev()\fP does a bit more - because this function is for both mouse and keyboard\&. \fBstart_dev()\fP calls - after setting an extended timeout parameter - \fB_start_dev()\fP\&. Both are located in \fBdevice\&.c\fP\&.
+.IP "  \(bu" 4
+First, \fB_start_dev()\fP attempts to determine the firmware version of the device, but only if two conditions are met: hwload-mode is not null (then hw-loading is disabled) and the device has the FEAT_HWLOAD feature\&. Then the firmware and the poll rate are fetched via \fBgetfwversion()\fP\&. 
+.br
+ If hwload_mode is set to 'load only once' (==1), then the HWLOAD feature is masked, so that no further reading can take place\&.
+.IP "  \(bu" 4
+Now check if device needs a firmware update\&. If so, set it up and leave the function without error\&.
+.IP "  \(bu" 4
+Else load the hardware profile from device if the hw-pointer is not set and hw-loading is possible and allowed\&. 
+.br
+ Return error if mode == 2 (load always) and loading got an error\&. Else mask the HWLOAD feature, because hwload must be 1 and the error couold be a repeated hw-reading\&. 
+.br
+ \fBPuh, that is real Horror code\&. It seems to be not faulty, but completely unreadable\&.\fP
+.IP "  \(bu" 4
+Finally, the second parameter of _startdev() is used to check whether the device is to be activated\&. Depending on the parameter, the active or the idle-member in the correspondig vtable is called\&. These are device-dependent again: Device active idle  RGB Keyboard \fBcmd_active_kb()\fP means: start the device with a lot of kb-specific initializers (software controlled mode) \fBcmd_idle_kb()\fP set the device with a lot of kb-specific initializers into the hardware controlled mode) non RGB Keyboard \fBcmd_io_none()\fP means: Do nothing \fBcmd_io_none()\fP means: Do nothing Mouse \fBcmd_active_mouse()\fP similar to \fBcmd_active_kb()\fP cmd_idle_mouse similar to \fBcmd_idle_kb()\fP 
+.PP
+
+.IP "\(bu" 2
+If either \fIstart()\fP succeeded or the next following \fBusb_tryreset()\fP, it goes on, otherwise again a hard abort occurs\&.
+.IP "\(bu" 2
+Next, go to \fBmkdevpath()\fP\&. After securing the EUID (effective UID) especially for macOS, work starts really in \fB_mkdevpath()\fP\&. Create - no matter how many devices were registered - either the ckb0/ files \fBversion\fP, \fBpid\fP and \fBconnected\fP or the \fBcmd\fP command fifo, the first notification fifo \fBnotify0\fP, \fBmodel\fP and \fBserial\fP as well as the \fBfeatures\fP of the device and the \fBpollrate\fP\&.
+.IP "\(bu" 2
+If all this is done and no error has occurred, a debug info is printed ('Setup finished for ckbx') \fBupdateconnected()\fP writes the new device into the text file under ckb0/ and \fBdevmain()\fP is called\&.
+.PP
+.PP
+\fBdevmain()\fP's return value is returned by \fB_setupusb()\fP when we terminate\&.
+.PP
+.IP "\(bu" 2
+The remaining code lines are the two exit labels as described above 
+.PP
+
+.PP
+Definition at line 214 of file usb\&.c\&.
+.PP
+References ckb_info, closeusb(), DELAY_LONG, devmain(), devpath, dmutex, FEAT_ADJRATE, FEAT_MONOCHROME, FEAT_STD_NRGB, FEAT_STD_RGB, usbdevice::features, features_mask, get_vtable(), imutex, INDEX_OF, usbdevice::inputthread, IS_MONOCHROME, IS_MOUSE, IS_RGB, KB_NAME_LEN, keyboard, mkdevpath(), usbdevice::name, os_inputmain(), os_inputopen(), os_setupindicators(), os_setupusb(), usbdevice::product, product_str(), usbdevice::serial, SERIAL_LEN, updateconnected(), USB_DELAY_DEFAULT, usb_tryreset(), usbdevice::usbdelay, usbdevice::vendor, vendor_str(), and usbdevice::vtable\&.
+.PP
+Referenced by setupusb()\&.
+.PP
+.nf
+214                                      {
+227     usbdevice* kb = context;
+228     // Set standard fields
+229     short vendor = kb->vendor, product = kb->product;
+230     const devcmd* vt = kb->vtable = get_vtable(vendor, product);
+231     kb->features = (IS_RGB(vendor, product) ? FEAT_STD_RGB : FEAT_STD_NRGB) & features_mask;
+232     if(IS_MOUSE(vendor, product)) kb->features |= FEAT_ADJRATE;
+233     if(IS_MONOCHROME(vendor, product)) kb->features |= FEAT_MONOCHROME;
+234     kb->usbdelay = USB_DELAY_DEFAULT;
+235 
+236     // Perform OS-specific setup
+240     DELAY_LONG(kb);
+241 
+247     if(os_setupusb(kb))
+248         goto fail;
+249 
+255     // Make up a device name and serial if they weren't assigned
+256     if(!kb->serial[0])
+257         snprintf(kb->serial, SERIAL_LEN, "%04x:%04x-NoID", kb->vendor, kb->product);
+258     if(!kb->name[0])
+259         snprintf(kb->name, KB_NAME_LEN, "%s %s", vendor_str(kb->vendor), product_str(kb->product));
+260 
+261     // Set up an input device for key events
+269     if(os_inputopen(kb))
+270         goto fail;
+274     if(pthread_create(&kb->inputthread, 0, os_inputmain, kb))
+275         goto fail;
+276     pthread_detach(kb->inputthread);
+282     if(os_setupindicators(kb))
+283         goto fail;
+284 
+285     // Set up device
+298     vt->allocprofile(kb);
+309     vt->updateindicators(kb, 1);
+314     pthread_mutex_unlock(imutex(kb));
+348     if(vt->start(kb, 0) && usb_tryreset(kb))
+349         goto fail_noinput;
+355     // Make /dev path
+356     if(mkdevpath(kb))
+357         goto fail_noinput;
+363     // Finished\&. Enter main loop
+364     int index = INDEX_OF(kb, keyboard);
+365     ckb_info("Setup finished for %s%d\n", devpath, index);
+366     updateconnected();
+369     return devmain(kb);
+372     fail:
+373     pthread_mutex_unlock(imutex(kb));
+374     fail_noinput:
+375     closeusb(kb);
+376     pthread_mutex_unlock(dmutex(kb));
+377     return 0;
+378 }
+.fi
+.SS "int _usbrecv (\fBusbdevice\fP *kb, const \fBuchar\fP *out_msg, \fBuchar\fP *in_msg, const char *file, intline)"
+_usbrecv Request data from a USB device by first sending an output packet and then reading the response\&.
+.PP
+To fully understand this, you need to know about usb: All control is at the usb host (the CPU)\&. If the device wants to communicate something to the host, it must wait for the host to ask\&. The usb protocol defines the cycles and periods in which actions are to be taken\&.
+.PP
+So in order to receive a data packet from the device, the host must first send a send request\&. 
+.br
+ This is done by \fB_usbrecv()\fP in the first block by sending the MSG_SIZE large data block from \fBout_msg\fP via \fBos_usbsend()\fP as it is a machine depending implementation\&. The usb target device is as always determined over kb\&.
+.PP
+For \fBos_usbsend()\fP to know that it is a receive request, the \fBis_recv\fP parameter is set to true (1)\&. With this, os_usbsend () generates a control package for the hardware, not a data packet\&.
+.PP
+If sending of the control package is not successful, a maximum of 5 times the transmission is repeated (including the first attempt)\&. If a non-cancelable error is signaled or the drive is stopped via reset_stop, \fB_usbrecv()\fP immediately returns 0\&.
+.PP
+After this, the function waits for the requested response from the device using os_usbrecv ()\&.
+.PP
+\fBos_usbrecv()\fP returns 0, -1 or something else\&. 
+.br
+ Zero signals a serious error which is not treatable and \fB_usbrecv()\fP also returns 0\&. 
+.br
+ -1 means that it is a treatable error - a timeout for example - and therefore the next transfer attempt is started after a long pause (DELAY_LONG) if not reset_stop or the wrong hwload_mode require a termination with a return value of 0\&.
+.PP
+After 5 attempts, _usbrecv () returns and returns 0 as well as an error message\&.
+.PP
+When data is received, the number of received bytes is returned\&. This should always be MSG_SIZE, but \fBos_usbrecv()\fP can also return less\&. It should not be more, because then there would be an unhandled buffer overflow, but it could be less\&. This would be signaled in os_usbrecv () with a message\&.
+.PP
+The buffers behind \fBout_msg\fP and \fBin_msg\fP are MSG_SIZE at least (currently 64 Bytes)\&. More is ok but useless, less brings unpredictable behavior\&. < Synchonization between macro and color information 
+.PP
+Definition at line 601 of file usb\&.c\&.
+.PP
+References ckb_err_fn, DELAY_LONG, DELAY_MEDIUM, DELAY_SHORT, hwload_mode, mmutex, os_usbrecv(), os_usbsend(), and reset_stop\&.
+.PP
+.nf
+601                                                                                             {
+602     // Try a maximum of 5 times
+603     for (int try = 0; try < 5; try++) {
+604         // Send the output message
+605         pthread_mutex_lock(mmutex(kb)); 
+606         DELAY_SHORT(kb);
+607         int res = os_usbsend(kb, out_msg, 1, file, line);
+608         pthread_mutex_unlock(mmutex(kb));
+609         if (res == 0)
+610             return 0;
+611         else if (res == -1) {
+612             // Retry on temporary failure
+613             if (reset_stop)
+614                 return 0;
+615             DELAY_LONG(kb);
+616             continue;
+617         }
+618         // Wait for the response
+619         DELAY_MEDIUM(kb);
+620         res = os_usbrecv(kb, in_msg, file, line);
+621         if(res == 0)
+622             return 0;
+623         else if(res != -1)
+624             return res;
+625         if(reset_stop || hwload_mode != 2)
+626             return 0;
+627         DELAY_LONG(kb);
+628     }
+629     // Give up
+630     ckb_err_fn("Too many send/recv failures\&. Dropping\&.\n", file, line);
+631     return 0;
+632 }
+.fi
+.SS "int _usbsend (\fBusbdevice\fP *kb, const \fBuchar\fP *messages, intcount, const char *file, intline)"
+_usbsend send a logical message completely to the given device
+.PP
+\fBTodo\fP
+.RS 4
+A lot of different conditions are combined in this code\&. Don't think, it is good in every combination\&.\&.\&.
+.RE
+.PP
+.PP
+The main task of _usbsend () is to transfer the complete logical message from the buffer beginning with \fImessages\fP to \fBcount * MSG_SIZE\fP\&. 
+.br
+ According to usb 2\&.0 specification, a USB transmits a maximum of 64 byte user data packets\&. For the transmission of longer messages we need a segmentation\&. And that is exactly what happens here\&.
+.PP
+The message is given one by one to \fBos_usbsend()\fP in MSG_SIZE (= 64) byte large bites\&. 
+.PP
+\fBAttention:\fP
+.RS 4
+This means that the buffer given as argument must be n * MSG_SIZE Byte long\&.
+.RE
+.PP
+An essential constant parameter which is relevant for \fBos_usbsend()\fP only is is_recv = 0, which means sending\&.
+.PP
+Now it gets a little complicated again:
+.IP "\(bu" 2
+If \fBos_usbsend()\fP returns 0, only zero bytes could be sent in one of the packets, or it was an error (-1 from the systemcall), but not a timeout\&. How many Bytes were sent in total from earlier calls does not seem to matter, \fB_usbsend()\fP returns a total of 0\&.
+.IP "\(bu" 2
+Returns \fBos_usbsend()\fP -1, first check if \fBreset_stop\fP is set globally or (incomprehensible) hwload_mode is not set to 'always'\&. In either case, \fB_usbsend()\fP returns 0, otherwise it is assumed to be a temporary transfer error and it simply retransmits the physical packet after a long delay\&.
+.IP "\(bu" 2
+If the return value of \fBos_usbsend()\fP was neither 0 nor -1, it specifies the numer of bytes transferred\&. 
+.br
+ Here is an information hiding conflict with \fBos_usbsend()\fP (at least in the Linux version): 
+.br
+ If \fBos_usbsend()\fP can not transfer the entire packet, errors are thrown and the number of bytes sent is returned\&. \fB_usbsend()\fP interprets this as well and remembers the total number of bytes transferred in the local variable \fBtotal_sent\fP\&. Subsequently, however, transmission is continued with the next complete MSG_SIZE block and not with the first of the possibly missing bytes\&. 
+.PP
+\fBTodo\fP
+.RS 4
+Check whether this is the same in the macOS variant\&. It is not dramatic, but if errors occur, it can certainly irritate the devices completely if they receive incomplete data streams\&. Do we have errors with the messages 'Wrote YY bytes (expected 64)' in the system logs? If not, we do not need to look any further\&.
+.RE
+.PP
+
+.PP
+.PP
+When the last packet is transferred, \fB_usbsend()\fP returns the effectively counted set of bytes (from \fBtotal_sent\fP)\&. This at least gives the caller the opportunity to check whether something has been lost in the middle\&.
+.PP
+A bit strange is the structure of the program: Handling the \fBcount\fP MSG_SIZE blocks to be transferred is done in the outer for (\&.\&.\&.) loop\&. Repeating the transfer with a treatable error is managed by the inner while(1) loop\&. 
+.br
+ This must be considered when reading the code; The 'break' on successful block transfer leaves the inner while, not the for (\&.\&.\&.)\&. < Synchonization between macro and color information 
+.PP
+Definition at line 532 of file usb\&.c\&.
+.PP
+References DELAY_LONG, DELAY_SHORT, hwload_mode, mmutex, MSG_SIZE, os_usbsend(), and reset_stop\&.
+.PP
+.nf
+532                                                                                          {
+533     int total_sent = 0;
+534     for(int i = 0; i < count; i++){
+535         // Send each message via the OS function
+536         while(1){
+537             pthread_mutex_lock(mmutex(kb)); 
+538             DELAY_SHORT(kb);
+539             int res = os_usbsend(kb, messages + i * MSG_SIZE, 0, file, line);
+540             pthread_mutex_unlock(mmutex(kb));
+541             if(res == 0)
+542                 return 0;
+543             else if(res != -1){
+544                 total_sent += res;
+545                 break;
+546             }
+547             // Stop immediately if the program is shutting down or hardware load is set to tryonce
+548             if(reset_stop || hwload_mode != 2)
+549                 return 0;
+550             // Retry as long as the result is temporary failure
+551             DELAY_LONG(kb);
+552         }
+553     }
+554     return total_sent;
+555 }
+.fi
+.SS "int closeusb (\fBusbdevice\fP *kb)"
+closeusb Close a USB device and remove device entry\&.
+.PP
+An imutex lock ensures first of all, that no communication is currently running from the viewpoint of the driver to the user input device (ie the virtual driver with which characters or mouse movements are sent from the daemon to the operating system as inputs)\&.
+.PP
+If the \fBkb\fP has an acceptable value != 0, the index of the device is looked for and with this index \fBos_inputclose()\fP is called\&. After this no more characters can be sent to the operating system\&.
+.PP
+Then the connection to the usb device is capped by \fBos_closeusb()\fP\&. 
+.PP
+\fBTodo\fP
+.RS 4
+What is not yet comprehensible is the call to \fBupdateconnected()\fP BEFORE \fBos_closeusb()\fP\&. Should that be in the other sequence? Or is \fBupdateconnected()\fP not displaying the connected usb devices, but the representation which uinput devices are loaded? Questions about questions \&.\&.\&.
+.RE
+.PP
+.PP
+If there is no valid \fBhandle\fP, only \fBupdateconnected()\fP is called\&. We are probably trying to disconnect a connection under construction\&. Not clear\&.
+.PP
+The cmd pipe as well as all open notify pipes are deleted via rmdevpath ()\&. 
+.br
+ This means that nothing can happen to the input path - so the device-specific imutex is unlocked again and remains unlocked\&.
+.PP
+Also the dmutex is unlocked now, but only to join the thread, which was originally taken under \fBkb->thread\fP (which started with \fB_setupusb()\fP) with pthread_join() again\&. Because of the closed devices that thread would have to quit sometime 
+.PP
+\fBSee Also:\fP
+.RS 4
+the hack note with \fBrmdevpath()\fP)
+.RE
+.PP
+As soon as the thread is caught, the dmutex is locked again, which is what I do not understand yet: What other thread can do usb communication now? 
+.br
+ If the vtabel exists for the given kb (why not? It seems to have race conditions here!!), via the vtable the actually device-specific, but still everywhere identical \fBfreeprofile()\fP is called\&. This frees areas that are no longer needed\&. Then the \fBusbdevice\fP structure in its array is set to zero completely\&.
+.PP
+Error handling is rather unusual in \fBcloseusb()\fP; Everything works (no matter what the called functions return), and \fBcloseusb()\fP always returns zero (success)\&. 
+.PP
+Definition at line 677 of file usb\&.c\&.
+.PP
+References ckb_info, devpath, dmutex, usbdevice::handle, imutex, INDEX_OF, keyboard, os_closeusb(), os_inputclose(), rmdevpath(), usbdevice::thread, updateconnected(), and usbdevice::vtable\&.
+.PP
+Referenced by _setupusb(), devmain(), quitWithLock(), and usb_rm_device()\&.
+.PP
+.nf
+677                            {
+678     pthread_mutex_lock(imutex(kb));
+679     if(kb->handle){
+680         int index = INDEX_OF(kb, keyboard);
+681         ckb_info("Disconnecting %s%d\n", devpath, index);
+682         os_inputclose(kb);
+683         updateconnected();
+684         // Close USB device
+685         os_closeusb(kb);
+686     } else
+687         updateconnected();
+688     rmdevpath(kb);
+689 
+690     // Wait for thread to close
+691     pthread_mutex_unlock(imutex(kb));
+692     pthread_mutex_unlock(dmutex(kb));
+693     pthread_join(kb->thread, 0);
+694     pthread_mutex_lock(dmutex(kb));
+695 
+696     // Delete the profile and the control path
+697     if(!kb->vtable)
+698         return 0;
+699     kb->vtable->freeprofile(kb);
+700     memset(kb, 0, sizeof(usbdevice));
+701     return 0;
+702 }
+.fi
+.SS "static void* devmain (\fBusbdevice\fP *kb)\fC [static]\fP"
+devmain is called by _setupusb 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkb\fP the pointer to the device\&. Even if it has the name kb, it is valid also for a mouse (the whole driver seems to be implemented first for a keyboard)\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+always a nullptr
+.RE
+.PP
+.SH "Synchronization"
+.PP
+.PP
+The syncing via mutexes is interesting:
+.IP "1." 4
+\fIimutex\fP (the Input mutex)
+.br
+This one is locked in \fC\fBsetupusb()\fP\fP\&. That function does only two things: Locking the mutex and trying to start a thread at \fC\fB_setupusb()\fP\fP\&. \fB_setupusb()\fP unlocks \fIimutex\fP after getting some buffers and initalizing internal structures from the indicators (this function often gets problems with error messages like 'unable to read indicators' or 'Timeout bla blubb')\&. 
+.PP
+\fBWarning:\fP
+.RS 4
+have a look at \fIupdateindicators()\fP later\&. 
+.PP
+if creating the thread is not successful, the \fIimutex\fP remains blocked\&. Have a look at \fBsetupusb()\fP later\&.
+.RE
+.PP
+
+.IP "2." 4
+\fIdmutex\fP (the Device mutex)
+.br
+This one is very interesting, because it is handled in \fBdevmain()\fP\&. It seems that it is locked only in \fI\fB_ledthread()\fP\fP, which is a thread created in \fI\fBos_setupindicators()\fP\fP\&. \fBos_setupindicators()\fP again is called in \fI\fB_setupusb()\fP\fP long before calling \fBdevmain()\fP\&. So this mutex is locked when we start the function as the old comment says\&.
+.br
+Before reading from the FIFO and direct afterwards an unlock\&.\&.lock sequence is implemented here\&. Even if only the function \fBreadlines()\fP should be surrounded by the unlock\&.\&.lock, the variable definition of the line pointer is also included here\&. Not nice, but does not bother either\&. Probably the Unlock\&.\&.lock is needed so that now another process can change the control structure \fIlinectx\fP while we wait in \fBreadlines()\fP\&. 
+.PP
+\fBTodo\fP
+.RS 4
+Hope to find the need for dmutex usage later\&. 
+.br
+ Should this function be declared as pthread_t* function, because of the defintion of pthread-create? But void* works also\&.\&.\&. 
+.RE
+.PP
+
+.PP
+
+.PP
+\fBAttention:\fP
+.RS 4
+dmutex should still be locked when this is called
+.RE
+.PP
+First a \fIreadlines_ctx\fP buffer structure is initialized by \fC\fBreadlines_ctx_init()\fP\fP\&.
+.PP
+After some setup functions, beginning in \fB_setupusb()\fP which has called \fBdevmain()\fP, we read the command input-Fifo designated to that device in an endless loop\&. This loop has two possible exits (plus reaction to signals, not mentioned here)\&.
+.PP
+If the reading via \fBreadlines()\fP is successful (we might have read multiple lines), the interpretation is done by \fBreadcmd()\fP iff the connection to the device is still available (checked via \fBIS_CONNECTED(kb)\fP)\&. This is true if the kb-structure has a handle and an event pointer both != Null)\&. If not, the loop is left (the first exit point)\&.
+.PP
+if nothing is in the line buffer (some magic interrupt?), continue in the endless while without any reaction\&.
+.PP
+\fBTodo\fP
+.RS 4
+\fBreadcmd()\fP gets a \fBline\fP, not \fBlines\fP\&. Have a look on that later\&. 
+.br
+ Is the condition IS_CONNECTED valid? What functions change the condititon for the macro? 
+.RE
+.PP
+.PP
+If interpretation and communication with the usb device got errors, they are signalled by \fBreadcmd()\fP (non zero retcode)\&. In this case the usb device is closed via \fBcloseusb()\fP and the endless loop is left (the second exit point)\&.
+.PP
+After leaving the endless loop the readlines-ctx structure and its buffers are freed by \fBreadlines_ctx_free()\fP\&. 
+.PP
+Definition at line 135 of file usb\&.c\&.
+.PP
+References closeusb(), dmutex, usbdevice::infifo, IS_CONNECTED, readcmd(), readlines(), readlines_ctx_free(), and readlines_ctx_init()\&.
+.PP
+Referenced by _setupusb()\&.
+.PP
+.nf
+135                                    {
+137     int kbfifo = kb->infifo - 1;
+140     readlines_ctx linectx;
+141     readlines_ctx_init(&linectx);
+146     while(1){
+153         pthread_mutex_unlock(dmutex(kb));
+154         // Read from FIFO
+155         const char* line;
+156         int lines = readlines(kbfifo, linectx, &line);
+157         pthread_mutex_lock(dmutex(kb));
+158         // End thread when the handle is removed
+159         if(!IS_CONNECTED(kb))
+160             break;
+164         if(lines){
+167             if(readcmd(kb, line)){
+173                 // USB transfer failed; destroy device
+174                 closeusb(kb);
+175                 break;
+176             }
+177         }
+178     }
+179     pthread_mutex_unlock(dmutex(kb));
+182     readlines_ctx_free(linectx);
+183     return 0;
+184 }
+.fi
+.SS "static const \fBdevcmd\fP* get_vtable (shortvendor, shortproduct)\fC [static]\fP"
+get_vtable returns the correct vtable pointer 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvendor\fP short usb vendor ID 
+.br
+\fIproduct\fP short usb product ID 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Depending on the type and model, the corresponding vtable pointer is returned (see below)
+.RE
+.PP
+At present, we have three different vtables:
+.IP "\(bu" 2
+\fCvtable_mouse\fP is used for all mouse types\&. This may be wrong with some newer mice?
+.IP "\(bu" 2
+\fCvtable_keyboard\fP is used for all RGB Keyboards\&.
+.IP "\(bu" 2
+\fCvtable_keyboard_nonrgb\fP for all the rest\&.
+.PP
+.PP
+\fBTodo\fP
+.RS 4
+Is the last point really a good decision and always correct? 
+.RE
+.PP
+
+.PP
+Definition at line 102 of file usb\&.c\&.
+.PP
+References IS_MOUSE, IS_RGB, vtable_keyboard, vtable_keyboard_nonrgb, and vtable_mouse\&.
+.PP
+Referenced by _setupusb()\&.
+.PP
+.nf
+102                                                             {
+103     return IS_MOUSE(vendor, product) ? &vtable_mouse : IS_RGB(vendor, product) ? &vtable_keyboard : &vtable_keyboard_nonrgb;
+104 }
+.fi
+.SS "const char* product_str (shortproduct)"
+product_str returns a condensed view on what type of device we have\&.
+.PP
+At present, various models and their properties are known from corsair products\&. Some models differ in principle (mice and keyboards), others differ in the way they function (for example, RGB and non RGB), but they are very similar\&.
+.PP
+Here, only the first point is taken into consideration and we return a unified model string\&. If the model is not known with its number, \fIproduct_str\fP returns an empty string\&.
+.PP
+The model numbers and corresponding strings wwith the numbers in hex-string are defined in \fC\fBusb\&.h\fP\fP 
+.PP
+At present, this function is used to initialize \fCkb->name\fP and to give information in debug strings\&.
+.PP
+\fBAttention:\fP
+.RS 4
+The combinations below have to fit to the combinations in the macros mentioned above\&. So if you add a device with a new number, change both\&.
+.RE
+.PP
+\fBTodo\fP
+.RS 4
+There are macros defined in \fBusb\&.h\fP to detect all the combinations below\&. the only difference is the parameter: The macros need the \fIkb*\fP, \fBproduct_str()\fP needs the \fIproduct\fP \fIID\fP 
+.RE
+.PP
+
+.PP
+Definition at line 70 of file usb\&.c\&.
+.PP
+References P_K65, P_K65_LUX, P_K65_NRGB, P_K65_RFIRE, P_K70, P_K70_LUX, P_K70_LUX_NRGB, P_K70_NRGB, P_K70_RFIRE, P_K70_RFIRE_NRGB, P_K95, P_K95_NRGB, P_K95_PLATINUM, P_M65, P_M65_PRO, P_SABRE_L, P_SABRE_N, P_SABRE_O, P_SABRE_O2, P_SCIMITAR, P_SCIMITAR_PRO, P_STRAFE, and P_STRAFE_NRGB\&.
+.PP
+Referenced by _mkdevpath(), and _setupusb()\&.
+.PP
+.nf
+70                                       {
+71     if(product == P_K95 || product == P_K95_NRGB || product == P_K95_PLATINUM)
+72         return "k95";
+73     if(product == P_K70 || product == P_K70_NRGB || product == P_K70_LUX || product == P_K70_LUX_NRGB || product == P_K70_RFIRE || product == P_K70_RFIRE_NRGB)
+74         return "k70";
+75     if(product == P_K65 || product == P_K65_NRGB || product == P_K65_LUX || product == P_K65_RFIRE)
+76         return "k65";
+77     if(product == P_STRAFE || product == P_STRAFE_NRGB)
+78         return "strafe";
+79     if(product == P_M65 || product == P_M65_PRO)
+80         return "m65";
+81     if(product == P_SABRE_O || product == P_SABRE_L || product == P_SABRE_N || product == P_SABRE_O2)
+82         return "sabre";
+83     if(product == P_SCIMITAR || product == P_SCIMITAR_PRO)
+84         return "scimitar";
+85     return "";
+86 }
+.fi
+.SS "int revertusb (\fBusbdevice\fP *kb)"
+revertusb sets a given device to inactive (hardware controlled) mode if not a fw-ugrade is indicated
+.PP
+First is checked, whether a firmware-upgrade is indicated for the device\&. If so, \fBrevertusb()\fP returns 0\&. 
+.PP
+\fBTodo\fP
+.RS 4
+Why is this useful? Are there problems seen with deactivating a device with older fw-version??? Why isn't this an error indicating reason and we return success (0)?
+.RE
+.PP
+.PP
+Anyway, the following steps are similar to some other procs, dealing with low level usb handling:
+.IP "\(bu" 2
+If we do not have an RGB device, a simple setting to Hardware-mode (NK95_HWON) is sent to the device via n95cmd()\&. 
+.PP
+\fBTodo\fP
+.RS 4
+The return value of \fBnk95cmd()\fP is ignored (but sending the ioctl may produce an error and _nk95_cmd will indicate this), instead \fBrevertusb()\fP returns success in any case\&.
+.RE
+.PP
+
+.IP "\(bu" 2
+If we have an RGB device, \fBsetactive()\fP is called with second param active = false\&. That function will have a look on differences between keyboards and mice\&. 
+.br
+ More precisely \fBsetactive()\fP is just a macro to call via the kb->vtable enties either the active() or the idle() function where the vtable points to\&. \fBsetactive()\fP may return error indications\&. If so, \fBrevertusb()\fP returns -1, otherwise 0 in any other case\&. 
+.PP
+
+.PP
+Definition at line 407 of file usb\&.c\&.
+.PP
+References FEAT_RGB, HAS_FEATURES, NEEDS_FW_UPDATE, NK95_HWON, nk95cmd, and setactive\&.
+.PP
+Referenced by quitWithLock()\&.
+.PP
+.nf
+407                             {
+408     if(NEEDS_FW_UPDATE(kb))
+409         return 0;
+410     if(!HAS_FEATURES(kb, FEAT_RGB)){
+411         nk95cmd(kb, NK95_HWON);
+412         return 0;
+413     }
+414     if(setactive(kb, 0))
+415         return -1;
+416     return 0;
+417 }
+.fi
+.SS "void setupusb (\fBusbdevice\fP *kb)"
+setupusb starts a thread with kb as parameter and \fB_setupusb()\fP as entrypoint\&.
+.PP
+Set up a USB device after its handle is open\&. Spawns a new thread \fB_setupusb()\fP with standard parameter kb\&. dmutex must be locked prior to calling this function\&. The function will unlock it when finished\&. In kb->thread the thread id is mentioned, because \fBcloseusb()\fP needs this info for joining that thread again\&. 
+.PP
+Definition at line 386 of file usb\&.c\&.
+.PP
+References _setupusb(), ckb_err, imutex, and usbdevice::thread\&.
+.PP
+Referenced by usbadd()\&.
+.PP
+.nf
+386                             {
+387     pthread_mutex_lock(imutex(kb));
+388     if(pthread_create(&kb->thread, 0, _setupusb, kb))
+389         ckb_err("Failed to create USB thread\n");
+390 }
+.fi
+.SS "int usb_tryreset (\fBusbdevice\fP *kb)"
+usb_tryreset does what the name means: Try to reset the usb via \fBresetusb()\fP
+.PP
+This function is called if an usb command ran into an error in case of one of the following two situations:
+.IP "\(bu" 2
+When setting up a new usb device and the start() function got an error (
+.PP
+\fBSee Also:\fP
+.RS 4
+\fB_setupusb()\fP)
+.RE
+.PP
+
+.IP "\(bu" 2
+If upgrading to a new firmware gets an error (
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBcmd_fwupdate()\fP)\&.
+.RE
+.PP
+The previous action which got the error will NOT be re-attempted\&.
+.PP
+.PP
+In an endless loop \fBusb_tryreset()\fP tries to reset the given usb device via the macro \fBresetusb()\fP\&. 
+.br
+ This macro calls \fB_resetusb()\fP with debugging information\&. 
+.br
+ \fB_resetusb()\fP sends a command via the operating system dependent function \fBos_resetusb()\fP and - if successful - reinitializes the device\&. \fBos_resetusb()\fP returns -2 to indicate a broken device and all structures should be removed for it\&. 
+.br
+ In that case, the loop is terminated, an error message is produced and \fBusb_tryreset()\fP returns -1\&.
+.PP
+In case \fBresetusb()\fP has success, the endless loop is left via a return 0 (success)\&. 
+.br
+ If the return value from \fBresetusb()\fP is -1, the loop is continued with the next try\&.
+.PP
+If the global variable \fBreset_stop\fP is set directly when the function is called or after each try, \fBusb_tryreset()\fP stops working and returns -1\&.
+.PP
+\fBTodo\fP
+.RS 4
+Why does \fBusb_tryreset()\fP hide the information returned from \fBresetusb()\fP? Isn't it needed by the callers? 
+.RE
+.PP
+
+.PP
+Definition at line 465 of file usb\&.c\&.
+.PP
+References ckb_err, ckb_info, reset_stop, and resetusb\&.
+.PP
+Referenced by _setupusb(), cmd_fwupdate(), os_sendindicators(), and os_setupusb()\&.
+.PP
+.nf
+465                                {
+466     if(reset_stop)
+467         return -1;
+468     ckb_info("Attempting reset\&.\&.\&.\n");
+469     while(1){
+470         int res = resetusb(kb);
+471         if(!res){
+472             ckb_info("Reset success\n");
+473             return 0;
+474         }
+475         if(res == -2 || reset_stop)
+476             break;
+477     }
+478     ckb_err("Reset failed\&. Disconnecting\&.\n");
+479     return -1;
+480 }
+.fi
+.SS "const char* vendor_str (shortvendor)"
+uncomment the following Define to see USB packets sent to the device
+.PP
+vendor_str returns 'corsair' iff the given \fIvendor\fP argument is equal to \fIV_CORSAIR\fP \fC\fP(0x1bc) else it returns ''
+.PP
+\fBAttention:\fP
+.RS 4
+There is also a string defined V_CORSAIR_STR, which returns the device number as string in hex '1b1c'\&. 
+.RE
+.PP
+
+.PP
+Definition at line 43 of file usb\&.c\&.
+.PP
+References V_CORSAIR\&.
+.PP
+Referenced by _mkdevpath(), and _setupusb()\&.
+.PP
+.nf
+43                                     {
+44     if(vendor == V_CORSAIR)
+45         return "corsair";
+46     return "";
+47 }
+.fi
+.SH "Variable Documentation"
+.PP 
+.SS "int features_mask = -1"
+features_mask Mask of features to exclude from all devices
+.PP
+That bit mask ist set to enable all (-1)\&. When interpreting the input parameters, some of these bits can be cleared\&. 
+.br
+ At the moment binding, notifying and mouse-acceleration can be disabled via command line\&. 
+.br
+ Have a look at \fI\fBmain()\fP\fP in main\&.c for details\&. 
+.PP
+Definition at line 35 of file usb\&.c\&.
+.PP
+Referenced by _setupusb(), and main()\&.
+.SS "int hwload_mode"
+hwload_mode is defined in \fBdevice\&.c\fP 
+.PP
+Definition at line 7 of file device\&.c\&.
+.PP
+Referenced by _start_dev(), _usbrecv(), and _usbsend()\&.
+.SS "volatile int reset_stop = 0"
+reset_stop is boolean: Reset stopper for when the program shuts down\&.
+.PP
+Is set only by \fI\fBquit()\fP\fP to true (1) to inform several usb_* functions to end their loops and tries\&. 
+.PP
+Definition at line 25 of file usb\&.c\&.
+.PP
+Referenced by _usbrecv(), _usbsend(), quitWithLock(), and usb_tryreset()\&.
+.SS "pthread_mutex_t usbmutex = PTHREAD_MUTEX_INITIALIZER"
+usbmutex is a never referenced mutex!
+.PP
+\fBTodo\fP
+.RS 4
+We should have a look why this mutex is never used\&. 
+.RE
+.PP
+
+.PP
+Definition at line 17 of file usb\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

@@ -1,0 +1,51 @@
+<map id="setupusb" name="setupusb">
+<area shape="rect" id="node2" href="$usb_8c.html#a10ad381abfe51e67e341c882c92bb9ac" title="brief . " alt="" coords="128,537,211,564"/>
+<area shape="rect" id="node3" href="$usb_8c.html#a8732b3ade76da4ae362996232ef95431" title="closeusb" alt="" coords="472,56,547,83"/>
+<area shape="rect" id="node10" href="$devnode_8c.html#a4f2642e0c38280a1516fbe153c9fa18f" title="Update the list of connected devices. " alt="" coords="631,157,753,184"/>
+<area shape="rect" id="node12" href="$usb_8c.html#ab8c22b4f7012c6d9fe1a0d5e2a93df65" title="brief . " alt="" coords="289,183,359,209"/>
+<area shape="rect" id="node21" href="$usb_8c.html#a25ded61622ec9349905b5aa2ed2cb48b" title="brief . " alt="" coords="283,411,365,437"/>
+<area shape="rect" id="node22" href="$devnode_8c.html#a0c3d1e3cd90f43a9b5ee0793f4a75041" title="Create a dev path for the keyboard at index. Returns 0 on success. " alt="" coords="281,461,367,488"/>
+<area shape="rect" id="node25" href="$usb_8c.html#af87f830e031d8f63d2d1c3fc14fdad20" title="brief . " alt="" coords="649,563,735,589"/>
+<area shape="rect" id="node26" href="$usb_8c.html#a8e6389e8183a834fedb6ed317dd26f94" title="brief . " alt="" coords="651,613,733,640"/>
+<area shape="rect" id="node27" href="$usb_8h.html#a9e5784bfca2e4612f498ce67c7dab275" title="os_inputmain is run in a separate thread and will be detached from the main thread, so it needs to clean up its own resources. " alt="" coords="275,683,373,709"/>
+<area shape="rect" id="node43" href="$input_8h.html#ac73b3c2c38b916b901b4cca6b350a863" title="os_inputopen " alt="" coords="275,771,373,797"/>
+<area shape="rect" id="node45" href="$input_8h.html#a081bbacaa312d4a1a63bc1cab5d3520f" title="os_setupindicators" alt="" coords="259,897,389,924"/>
+<area shape="rect" id="node47" href="$usb_8h.html#a39442715182933b93172de60cdb66e8f" title="os_setupusb OS&#45;specific setup for a specific usb device. " alt="" coords="276,980,372,1007"/>
+<area shape="rect" id="node49" href="$usb_8c.html#a8a1c88df5e127732cb63f1a8be180926" title="usb_tryreset" alt="" coords="462,1069,557,1096"/>
+<area shape="rect" id="node4" href="$usb_8h.html#a6a62575e9073fae15efb58f24fbfe5b8" title="os_closeusb unclaim it, destroy the udev device and clear data structures at kb " alt="" coords="645,56,739,83"/>
+<area shape="rect" id="node6" href="$input_8h.html#a44df5105a6a3f2eda5bc39a88201bd1a" title="os_inputclose" alt="" coords="641,5,743,32"/>
+<area shape="rect" id="node7" href="$devnode_8c.html#a8d0aeeebb364608943b78573adb85c7f" title="Remove the dev path for the keyboard at index. Returns 0 on success. " alt="" coords="651,107,733,133"/>
+<area shape="rect" id="node5" href="$usb__linux_8c.html#afe1111f494da4776633be32fecaba44b" title="usbunclaim" alt="" coords="823,56,911,83"/>
+<area shape="rect" id="node8" href="$devnode_8c.html#a9d97ede033e4f6c6bdd1c66fc82aa15e" title="_rmnotifynode" alt="" coords="815,157,919,184"/>
+<area shape="rect" id="node9" href="$devnode_8c.html#aac8f6f936a0ff6c16adc677622b226c4" title="rm_recursive" alt="" coords="818,227,915,253"/>
+<area shape="rect" id="node11" href="$devnode_8c.html#acc36eaba5eb854461ab3c0a4d146e9c9" title="_updateconnected Update the list of connected devices. " alt="" coords="803,315,931,341"/>
+<area shape="rect" id="node13" href="$command_8c.html#ad7239680e0942b0b85a6cd3e9fff25a9" title="readcmd" alt="" coords="473,309,545,336"/>
+<area shape="rect" id="node18" href="$devnode_8c.html#a1062ed70d4ea0310fbf5eeee928b58b7" title="readlines" alt="" coords="472,208,547,235"/>
+<area shape="rect" id="node19" href="$devnode_8c.html#a588ab2c69fcb283a5beb90c49a165979" title="readlines_ctx_free" alt="" coords="445,107,573,133"/>
+<area shape="rect" id="node20" href="$devnode_8c.html#ac118005c75badc2028b4921be8d9bdd0" title="readlines_ctx_init" alt="" coords="448,157,571,184"/>
+<area shape="rect" id="node14" href="$devnode_8c.html#a981305884de053a41d337efac23900ec" title="Creates a notification node for the specified keyboard. " alt="" coords="642,309,742,336"/>
+<area shape="rect" id="node16" href="$settingswidget_8cpp.html#a184e8402a94481ba2f47ba063272525b" title="right" alt="" coords="669,259,715,285"/>
+<area shape="rect" id="node17" href="$devnode_8c.html#a40e40a8ea3edccbfd8fdfefc44a76206" title="Removes a notification node for the specified keyboard. " alt="" coords="643,208,741,235"/>
+<area shape="rect" id="node15" href="$devnode_8c.html#a38fcf6ff044f9249ae04234340ee8e7b" title="_mknotifynode" alt="" coords="813,441,920,468"/>
+<area shape="rect" id="node23" href="$devnode_8c.html#a81c81014b2dfa89e326dd61769842953" title="_mkdevpath" alt="" coords="463,461,556,488"/>
+<area shape="rect" id="node24" href="$devnode_8c.html#ad130425a617cf973b28603a72607a057" title="Writes a keyboard&#39;s firmware version and poll rate to its device node. " alt="" coords="651,461,733,488"/>
+<area shape="rect" id="node28" href="$keymap_8c.html#ad39ede76abd657f5123fa331853db017" title="corsair_kbcopy" alt="" coords="454,715,565,741"/>
+<area shape="rect" id="node29" href="$keymap_8c.html#a0dc9a16564cc51b35a35d28af1a96fb0" title="corsair_mousecopy" alt="" coords="442,765,577,792"/>
+<area shape="rect" id="node30" href="$keymap_8c.html#a6f4afd134546237416b271d9cefd2889" title="hid_kb_translate" alt="" coords="451,816,568,843"/>
+<area shape="rect" id="node31" href="$keymap_8c.html#a092f675ff366b5823c73b25f83d513f9" title="hid_mouse_translate" alt="" coords="438,613,581,640"/>
+<area shape="rect" id="node32" href="$input_8c.html#ae360d0b9a764a1d38c5be5464be8b70a" title="inputupdate" alt="" coords="465,664,554,691"/>
+<area shape="rect" id="node33" href="$input_8c.html#aed8e9842ed5750c1d328c5dc4c1ba2bd" title="inputupdate_keys Handle input from Keyboard or mouse; start Macrof if detected. " alt="" coords="630,740,754,767"/>
+<area shape="rect" id="node42" href="$input_8h.html#a9f2cfb2d883ae4a3732047fe3f3da683" title="os_mousemove" alt="" coords="988,664,1103,691"/>
+<area shape="rect" id="node34" href="$input_8c.html#a34b6a3d2e97732b6973cd608e35317c9" title="macro_pt_first returns the first pthread_id but does not remove the first entry. " alt="" coords="993,765,1098,792"/>
+<area shape="rect" id="node35" href="$input_8c.html#abd38419ce56379559481f51d9491adeb" title="macromask" alt="" coords="821,765,912,792"/>
+<area shape="rect" id="node36" href="$notify_8c.html#ac2411c0997dfdbefdebd45f2584a5d04" title="nprintkey" alt="" coords="829,613,904,640"/>
+<area shape="rect" id="node38" href="$input_8h.html#af0d3401f317f3214dadad7d1a3378c58" title="os_keypress" alt="" coords="997,816,1093,843"/>
+<area shape="rect" id="node40" href="$input_8c.html#a42ef48810461524270042eeda9616dba" title="play_macro is the code for all threads started to play a macro. " alt="" coords="822,715,911,741"/>
+<area shape="rect" id="node37" href="$notify_8c.html#a7ac88f15243030290e4d57c3c9ac7c98" title="nprintf" alt="" coords="1016,613,1075,640"/>
+<area shape="rect" id="node39" href="$input__linux_8c.html#a14ff0fdf147e3702197db2cadb878460" title="isync" alt="" coords="1160,740,1213,767"/>
+<area shape="rect" id="node41" href="$input_8c.html#a712ce5a59c9a281c4d4c4d0ba3446de7" title="macro_pt_dequeue gets the first thread id of the list and returns the thread_id stored in it..." alt="" coords="979,715,1111,741"/>
+<area shape="rect" id="node44" href="$input__linux_8c.html#a5f050529d49f8cb5e8dda4617c5984b7" title="uinputopen" alt="" coords="467,867,552,893"/>
+<area shape="rect" id="node46" href="$input__linux_8c.html#a5d40cc9137eaefbc2d860fac76020460" title="_ledthread" alt="" coords="468,917,551,944"/>
+<area shape="rect" id="node48" href="$usb__linux_8c.html#ab694a2ac859b16b5af802b4484f5ba0b" title="strtrim" alt="" coords="480,1019,539,1045"/>
+<area shape="rect" id="node50" href="$usb__linux_8c.html#a309cab8bf65221b01dc320f247abf626" title="usbclaim" alt="" coords="472,968,547,995"/>
+</map>

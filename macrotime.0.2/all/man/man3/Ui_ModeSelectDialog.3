@@ -1,0 +1,163 @@
+.TH "Ui::ModeSelectDialog" 3 "Mon Jun 5 2017" "Version beta-v0.2.8+testing at branch macrotime.0.2" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ui::ModeSelectDialog \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/ui_modeselectdialog\&.h>\fP
+.PP
+Inherits \fBUi_ModeSelectDialog\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetupUi\fP (\fBQDialog\fP *\fBModeSelectDialog\fP)"
+.br
+.ti -1c
+.RI "void \fBretranslateUi\fP (\fBQDialog\fP *\fBModeSelectDialog\fP)"
+.br
+.in -1c
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "QGridLayout * \fBgridLayout\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel\fP"
+.br
+.ti -1c
+.RI "QDialogButtonBox * \fBbuttonBox\fP"
+.br
+.ti -1c
+.RI "\fBQListWidget\fP * \fBmodeList\fP"
+.br
+.ti -1c
+.RI "\fBQPushButton\fP * \fBselAllButton\fP"
+.br
+.ti -1c
+.RI "\fBQPushButton\fP * \fBselNoneButton\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 93 of file ui_modeselectdialog\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Ui_ModeSelectDialog::retranslateUi (\fBQDialog\fP *ModeSelectDialog)\fC [inline]\fP, \fC [inherited]\fP"
+
+.PP
+Definition at line 82 of file ui_modeselectdialog\&.h\&.
+.PP
+References Ui_ModeSelectDialog::label, Ui_ModeSelectDialog::selAllButton, and Ui_ModeSelectDialog::selNoneButton\&.
+.PP
+Referenced by Ui_ModeSelectDialog::setupUi()\&.
+.PP
+.nf
+83     {
+84         ModeSelectDialog->setWindowTitle(QApplication::translate("ModeSelectDialog", "Select Modes", Q_NULLPTR));
+85         label->setText(QApplication::translate("ModeSelectDialog", "TextLabel", Q_NULLPTR));
+86         selAllButton->setText(QApplication::translate("ModeSelectDialog", "Select All", Q_NULLPTR));
+87         selNoneButton->setText(QApplication::translate("ModeSelectDialog", "Select None", Q_NULLPTR));
+88     } // retranslateUi
+.fi
+.SS "void Ui_ModeSelectDialog::setupUi (\fBQDialog\fP *ModeSelectDialog)\fC [inline]\fP, \fC [inherited]\fP"
+
+.PP
+Definition at line 36 of file ui_modeselectdialog\&.h\&.
+.PP
+References Ui_ModeSelectDialog::buttonBox, Ui_ModeSelectDialog::gridLayout, Ui_ModeSelectDialog::label, Ui_ModeSelectDialog::modeList, Ui_ModeSelectDialog::retranslateUi(), Ui_ModeSelectDialog::selAllButton, and Ui_ModeSelectDialog::selNoneButton\&.
+.PP
+Referenced by ModeSelectDialog::ModeSelectDialog()\&.
+.PP
+.nf
+37     {
+38         if (ModeSelectDialog->objectName()\&.isEmpty())
+39             ModeSelectDialog->setObjectName(QStringLiteral("ModeSelectDialog"));
+40         ModeSelectDialog->resize(415, 192);
+41         gridLayout = new QGridLayout(ModeSelectDialog);
+42         gridLayout->setObjectName(QStringLiteral("gridLayout"));
+43         label = new QLabel(ModeSelectDialog);
+44         label->setObjectName(QStringLiteral("label"));
+45         label->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+46 
+47         gridLayout->addWidget(label, 0, 0, 1, 2);
+48 
+49         buttonBox = new QDialogButtonBox(ModeSelectDialog);
+50         buttonBox->setObjectName(QStringLiteral("buttonBox"));
+51         buttonBox->setOrientation(Qt::Vertical);
+52         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
+53         buttonBox->setCenterButtons(false);
+54 
+55         gridLayout->addWidget(buttonBox, 0, 2, 3, 1);
+56 
+57         modeList = new QListWidget(ModeSelectDialog);
+58         modeList->setObjectName(QStringLiteral("modeList"));
+59         modeList->setFrameShadow(QFrame::Plain);
+60         modeList->setSelectionMode(QAbstractItemView::ExtendedSelection);
+61 
+62         gridLayout->addWidget(modeList, 1, 0, 1, 2);
+63 
+64         selAllButton = new QPushButton(ModeSelectDialog);
+65         selAllButton->setObjectName(QStringLiteral("selAllButton"));
+66 
+67         gridLayout->addWidget(selAllButton, 2, 0, 1, 1);
+68 
+69         selNoneButton = new QPushButton(ModeSelectDialog);
+70         selNoneButton->setObjectName(QStringLiteral("selNoneButton"));
+71 
+72         gridLayout->addWidget(selNoneButton, 2, 1, 1, 1);
+73 
+74 
+75         retranslateUi(ModeSelectDialog);
+76         QObject::connect(buttonBox, SIGNAL(accepted()), ModeSelectDialog, SLOT(accept()));
+77         QObject::connect(buttonBox, SIGNAL(rejected()), ModeSelectDialog, SLOT(reject()));
+78 
+79         QMetaObject::connectSlotsByName(ModeSelectDialog);
+80     } // setupUi
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "QDialogButtonBox* Ui_ModeSelectDialog::buttonBox\fC [inherited]\fP"
+
+.PP
+Definition at line 31 of file ui_modeselectdialog\&.h\&.
+.PP
+Referenced by Ui_ModeSelectDialog::setupUi()\&.
+.SS "QGridLayout* Ui_ModeSelectDialog::gridLayout\fC [inherited]\fP"
+
+.PP
+Definition at line 29 of file ui_modeselectdialog\&.h\&.
+.PP
+Referenced by Ui_ModeSelectDialog::setupUi()\&.
+.SS "QLabel* Ui_ModeSelectDialog::label\fC [inherited]\fP"
+
+.PP
+Definition at line 30 of file ui_modeselectdialog\&.h\&.
+.PP
+Referenced by ModeSelectDialog::ModeSelectDialog(), Ui_ModeSelectDialog::retranslateUi(), and Ui_ModeSelectDialog::setupUi()\&.
+.SS "\fBQListWidget\fP* Ui_ModeSelectDialog::modeList\fC [inherited]\fP"
+
+.PP
+Definition at line 32 of file ui_modeselectdialog\&.h\&.
+.PP
+Referenced by ModeSelectDialog::ModeSelectDialog(), ModeSelectDialog::on_selAllButton_clicked(), ModeSelectDialog::on_selNoneButton_clicked(), ModeSelectDialog::selection(), and Ui_ModeSelectDialog::setupUi()\&.
+.SS "\fBQPushButton\fP* Ui_ModeSelectDialog::selAllButton\fC [inherited]\fP"
+
+.PP
+Definition at line 33 of file ui_modeselectdialog\&.h\&.
+.PP
+Referenced by Ui_ModeSelectDialog::retranslateUi(), and Ui_ModeSelectDialog::setupUi()\&.
+.SS "\fBQPushButton\fP* Ui_ModeSelectDialog::selNoneButton\fC [inherited]\fP"
+
+.PP
+Definition at line 34 of file ui_modeselectdialog\&.h\&.
+.PP
+Referenced by Ui_ModeSelectDialog::retranslateUi(), and Ui_ModeSelectDialog::setupUi()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

@@ -1,0 +1,15 @@
+<map id="KbMode::name" name="KbMode::name">
+<area shape="rect" id="node2" href="$classKb.html#abd5f5fc526541fd9fe41a4755e6b42f2" title="Kb::hwSave" alt="" coords="221,231,315,258"/>
+<area shape="rect" id="node5" href="$classModeSelectDialog.html#ac2e74403a333930e7586538310dfb8a8" title="ModeSelectDialog::ModeSelect\lDialog" alt="" coords="165,283,371,324"/>
+<area shape="rect" id="node6" href="$classKbWidget.html#a35eadaa80209329f7b201d23598ee141" title="KbWidget::on_modesList\l_itemChanged" alt="" coords="184,348,352,389"/>
+<area shape="rect" id="node7" href="$classKbWidget.html#a49de52afbca9a13838058ec68d9c3f29" title="KbWidget::profileChanged" alt="" coords="181,177,355,203"/>
+<area shape="rect" id="node10" href="$classKb.html#afa36635dcc1cd9512f372594c57c546c" title="Kb::readNotify" alt="" coords="215,414,321,441"/>
+<area shape="rect" id="node11" href="$classRebindWidget.html#a6a68ae3d9abc935dbba8e2ce187337ce" title="RebindWidget::setBind" alt="" coords="190,23,346,50"/>
+<area shape="rect" id="node3" href="$classKbWidget.html#a65f38c3fc88b4e1a8fbabc7a27946c49" title="KbWidget::on_hwSaveButton\l_clicked" alt="" coords="419,227,613,268"/>
+<area shape="rect" id="node4" href="$classKbProfileDialog.html#aac105b06b0a29e39c05cb70f01c37fcd" title="KbProfileDialog::on\l_profileList_customContext\lMenuRequested" alt="" coords="425,291,607,347"/>
+<area shape="rect" id="node8" href="$classKbWidget.html#a848a21f1fd112e13ca5fcf25da4592c6" title="KbWidget::KbWidget" alt="" coords="1120,154,1264,181"/>
+<area shape="rect" id="node9" href="$classKbWidget.html#add5eb15a399c87faf80db9fdfc2e868f" title="KbWidget::on_modesList_customContextMenuRequested. " alt="" coords="1085,77,1299,119"/>
+<area shape="rect" id="node12" href="$classKbBindWidget.html#ae06c7e036759eb9a1ae7224cdba30b0b" title="KbBindWidget::setBind" alt="" coords="661,23,819,50"/>
+<area shape="rect" id="node14" href="$classKbBindWidget.html#ad052b9ce7166f5a1c46ee7a01f3457dc" title="KbBindWidget::newLayout" alt="" coords="428,23,604,50"/>
+<area shape="rect" id="node13" href="$classKbWidget.html#aae4a00bb180d711b5df7df6443c8bf36" title="KbWidget::modeChanged" alt="" coords="867,125,1037,151"/>
+</map>

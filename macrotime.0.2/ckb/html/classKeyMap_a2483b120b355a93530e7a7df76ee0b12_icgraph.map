@@ -1,0 +1,8 @@
+<map id="KeyMap::byPosition" name="KeyMap::byPosition">
+<area shape="rect" id="node2" href="$classRebindWidget.html#a6a68ae3d9abc935dbba8e2ce187337ce" title="RebindWidget::setBind" alt="" coords="193,35,349,61"/>
+<area shape="rect" id="node3" href="$classKbBindWidget.html#ae06c7e036759eb9a1ae7224cdba30b0b" title="KbBindWidget::setBind" alt="" coords="621,35,779,61"/>
+<area shape="rect" id="node7" href="$classKbBindWidget.html#ad052b9ce7166f5a1c46ee7a01f3457dc" title="KbBindWidget::newLayout" alt="" coords="397,60,573,87"/>
+<area shape="rect" id="node4" href="$classKbWidget.html#aae4a00bb180d711b5df7df6443c8bf36" title="KbWidget::modeChanged" alt="" coords="827,35,997,61"/>
+<area shape="rect" id="node5" href="$classKbWidget.html#a848a21f1fd112e13ca5fcf25da4592c6" title="KbWidget::KbWidget" alt="" coords="1080,5,1224,32"/>
+<area shape="rect" id="node6" href="$classKbWidget.html#add5eb15a399c87faf80db9fdfc2e868f" title="KbWidget::on_modesList_customContextMenuRequested. " alt="" coords="1045,57,1259,98"/>
+</map>

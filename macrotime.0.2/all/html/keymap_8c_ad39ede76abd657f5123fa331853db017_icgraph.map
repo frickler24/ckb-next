@@ -1,0 +1,12 @@
+<map id="corsair_kbcopy" name="corsair_kbcopy">
+<area shape="rect" id="node2" href="$usb__linux_8c.html#a9e5784bfca2e4612f498ce67c7dab275" title="os_inputmain This function is run in a separate thread and will be detached from the main thread..." alt="" coords="165,31,264,57"/>
+<area shape="rect" id="node3" href="$usb_8c.html#a10ad381abfe51e67e341c882c92bb9ac" title="brief . " alt="" coords="312,31,395,57"/>
+<area shape="rect" id="node4" href="$usb_8h.html#a1ab9d61dd894466125283465201161cd" title="setupusb starts a thread with kb as parameter and _setupusb() as entrypoint. " alt="" coords="443,31,517,57"/>
+<area shape="rect" id="node5" href="$usb__linux_8c.html#a3185d6da36c8b0f8b862a8479ae82034" title="usbadd" alt="" coords="565,31,629,57"/>
+<area shape="rect" id="node6" href="$usb__linux_8c.html#a50efc8ee0ffcb6f201735d1a3bb08779" title="Add a udev device. Returns 0 if device was recognized/added. " alt="" coords="678,31,794,57"/>
+<area shape="rect" id="node7" href="$usb__linux_8c.html#ad56c1e4ec53bbd6b947cb535590328ea" title="udev_enum use the udev_enumerate_add_match_subsystem() to get all you need but only that..." alt="" coords="843,5,933,32"/>
+<area shape="rect" id="node8" href="$usb__linux_8c.html#a0859efad3739abe2ec61af4f3bb983ff" title="usbmain" alt="" coords="982,31,1053,57"/>
+<area shape="rect" id="node9" href="$ckb-daemon_2main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1101,31,1152,57"/>
+<area shape="rect" id="node10" href="$notify_8c.html#ae246359e104d63520158c26329caac80" title="restart" alt="" coords="1200,31,1259,57"/>
+<area shape="rect" id="node11" href="$notify_8h.html#a700b520b9eb9a3698af8f8ebf547a9ab" title="cmd_restart" alt="" coords="1307,31,1397,57"/>
+</map>

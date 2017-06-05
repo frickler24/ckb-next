@@ -1,6 +1,6 @@
 Warning: ignoring unsupported tag `ALLOW_UNICODE_NAMES    =' at line 79, file /home/travis/build/frickler24/ckb-next/documentation/Doxy-ckb-daemon
 Warning: ignoring unsupported tag `MAN_SUBDIR             =' at line 1782, file /home/travis/build/frickler24/ckb-next/documentation/Doxy-ckb-daemon
-Notice: Output directory `macrotime.0.2.thread/ckb-daemon' does not exist. I have created it for you.
+Notice: Output directory `macrotime.0.2/ckb-daemon' does not exist. I have created it for you.
 Searching for include files...
 Searching for example files...
 Searching for images...
@@ -125,7 +125,8 @@ Building page list...
 Search for main page...
 Computing page relations...
 Determining the scope of groups...
-Sorting li/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:19: warning: End of list marker found without any preceding list items
+Sorting lists...
+/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:19: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:635: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
@@ -159,7 +160,6 @@ QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:19: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:19: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:635: warning: End of list marker found without any preceding list items
-sts...
 Freeing entry tree
 Determining which enums are documented
 Computing member relations...
@@ -250,7 +250,7 @@ Generating call graph for function cmd_idle_mouse
 Generating call graph for function setactive_kb
 Generating caller graph for function setactive_kb
 Generating call graph for function setactive_mouse
-Genera/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:19: warning: End of list marker found without any preceding list items
+Generating ca/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:19: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:19: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
@@ -289,7 +289,7 @@ Genera/home/travis/build/frickler24/ckb-next/src/ckb-daemon/device.c:19: warning
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-ting caller graph for function setactive_mouse
+ller graph for function setactive_mouse
 Generating call graph for function start_dev
 Generating docs for file src/ckb-daemon/device_keyboard.c...
 Generating call graph for function cmd_active_kb
@@ -371,7 +371,7 @@ Generating caller graph for function macro_pt_first
 Generating caller graph for function macromask
 Generating call graph for function play_macro
 Generating caller graph for function play_macro
-Generating call graph for funcQGDict::hashAsciiKey: Invalid null key
+Generating call graph for function upQGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
@@ -403,7 +403,7 @@ QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:510: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:452: warning: End of list marker found without any preceding list items
-tion updateindicators_kb
+dateindicators_kb
 Generating docs for file src/ckb-daemon/input.h...
 Generating call graph for function cmd_macro
 Generating caller graph for function freebind
@@ -486,7 +486,7 @@ Generating caller graph for function rgbcmp
 Generating caller graph for function savergb_mouse
 Generating call graph for function updatergb_mouse
 Generating docs for file src/ckb-daemon/main.c...
-Generating c/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
+Generating call gra/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:635: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:394: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:635: warning: End of list marker found without any preceding list items
@@ -529,7 +529,7 @@ Generating c/home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: war
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:452: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
-all graph for function main
+ph for function main
 Generating caller graph for function main
 Generating call graph for function quit
 Generating caller graph for function quit
@@ -615,7 +615,8 @@ Generating call graph for function gethwprofilename
 Generating caller graph for function gethwprofilename
 Generating caller graph for function getid
 Generating call graph for function getmodename
-Generating caller graph for function getmodenamQGDict::hashAsciiKey: Invalid null key
+Generating caller graph for function getmodename
+GenerQGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:381: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
@@ -831,8 +832,7 @@ QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:433: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:776: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb_linux.c:492: warning: End of list marker found without any preceding list items
-e
-Generating call graph for function getprofilename
+ating call graph for function getprofilename
 Generating caller graph for function getprofilename
 Generating caller graph for function hwtonative
 Generating caller graph for function nativetohw
@@ -917,7 +917,7 @@ Generating caller graph for function usbkill
 Generating call graph for function usbmain
 Generating caller graph for function usbmain
 Generating caller graph for function usbunclaim
-Generating docs for /home/travis/build/frickler24/ckb-next/README.md:4: warning: Unexpected html tag <img> found within <a href=...> context
+Generating docs for file sr/home/travis/build/frickler24/ckb-next/README.md:4: warning: Unexpected html tag <img> found within <a href=...> context
 /home/travis/build/frickler24/ckb-next/README.md:34: warning: unable to resolve reference to `https:' for \ref command
 /home/travis/build/frickler24/ckb-next/README.md:72: warning: Illegal command hevanaa as part of a <a>..</a> block
 /home/travis/build/frickler24/ckb-next/README.md:79: warning: Illegal command light2yellow as part of a <a>..</a> block
@@ -927,7 +927,7 @@ Generating docs for /home/travis/build/frickler24/ckb-next/README.md:4: warning:
 /home/travis/build/frickler24/ckb-next/README.md:251: warning: explicit link request to 'c3474d2' could not be resolved
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:393: warning: End of list marker found without any preceding list items
 /home/travis/build/frickler24/ckb-next/src/ckb-daemon/usb.c:442: warning: End of list marker found without any preceding list items
-file src/ckb-daemon/usb_mac.c...
+c/ckb-daemon/usb_mac.c...
 Generating page documentation...
 Generating docs for page md_README...
 Generating docs for page md_BUILD...

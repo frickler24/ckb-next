@@ -1,0 +1,9 @@
+<map id="RebindWidget::on_btnStartMacro_clicked" name="RebindWidget::on_btnStartMacro_clicked">
+<area shape="rect" id="node2" href="$classKbBind.html#af0e5585cdc241e42c60fff16985429a0" title="KbBind::getMacroNumber. " alt="" coords="457,13,629,40"/>
+<area shape="rect" id="node5" href="$classKbBind.html#a592edd4cbb386e071e2cdaea0a2d53a9" title="KbBind::getMacroPath. " alt="" coords="243,93,397,120"/>
+<area shape="rect" id="node7" href="$classKbBind.html#a4bb7a8b9bdf99bbdbdf6edba08c7d248" title="handleNotificationChannel sends commands to ckb&#45;daemon for (de&#45;) activating the notify channel..." alt="" coords="232,27,408,69"/>
+<area shape="rect" id="node8" href="$classRebindWidget.html#a09097e3ff4182f8238e47edabbadf930" title="RebindWidget::helpStatus shows a help line in the ui. " alt="" coords="233,144,407,171"/>
+<area shape="rect" id="node3" href="$classKbBind.html#ac4dc2ffee7d967975b8f13c75d52c5a3" title="KbBind::devParent" alt="" coords="685,64,816,91"/>
+<area shape="rect" id="node4" href="$classKb.html#af98eaf3596f7f10fe817362f86abf90a" title="For usage with macro definions, these two params must only be readable. So there are no setters..." alt="" coords="677,13,824,40"/>
+<area shape="rect" id="node6" href="$classKb.html#a9ac09cc0fa78de17de22d7ffb13da09e" title="getMacroPath returns the macroPath (e.g. /dev/input/ckb1/notify), which we have saved in the construc..." alt="" coords="479,115,606,141"/>
+</map>

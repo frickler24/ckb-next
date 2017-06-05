@@ -1,0 +1,611 @@
+.TH "src/ckb-daemon/profile.c" 3 "Mon Jun 5 2017" "Version beta-v0.2.8+testing at branch macrotime.0.2" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ckb-daemon/profile.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'command\&.h'\fP
+.br
+\fC#include 'device\&.h'\fP
+.br
+\fC#include 'input\&.h'\fP
+.br
+\fC#include 'led\&.h'\fP
+.br
+\fC#include 'profile\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBurldecode2\fP (char *dst, const char *src)"
+.br
+.ti -1c
+.RI "void \fBurlencode2\fP (char *dst, const char *src)"
+.br
+.ti -1c
+.RI "int \fBsetid\fP (\fBusbid\fP *id, const char *guid)"
+.br
+.ti -1c
+.RI "char * \fBgetid\fP (\fBusbid\fP *id)"
+.br
+.ti -1c
+.RI "void \fBu16enc\fP (char *in, \fBushort\fP *out, size_t *srclen, size_t *dstlen)"
+.br
+.ti -1c
+.RI "void \fBu16dec\fP (\fBushort\fP *in, char *out, size_t *srclen, size_t *dstlen)"
+.br
+.ti -1c
+.RI "void \fBcmd_name\fP (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, int dummy1, int dummy2, const char *name)"
+.br
+.ti -1c
+.RI "void \fBcmd_profilename\fP (\fBusbdevice\fP *kb, \fBusbmode\fP *dummy1, int dummy2, int dummy3, const char *name)"
+.br
+.ti -1c
+.RI "char * \fBprintname\fP (\fBushort\fP *name, int length)"
+.br
+.ti -1c
+.RI "char * \fBgetmodename\fP (\fBusbmode\fP *mode)"
+.br
+.ti -1c
+.RI "char * \fBgetprofilename\fP (\fBusbprofile\fP *profile)"
+.br
+.ti -1c
+.RI "char * \fBgethwmodename\fP (\fBhwprofile\fP *profile, int index)"
+.br
+.ti -1c
+.RI "char * \fBgethwprofilename\fP (\fBhwprofile\fP *profile)"
+.br
+.ti -1c
+.RI "void \fBcmd_id\fP (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, int dummy1, int dummy2, const char *id)"
+.br
+.ti -1c
+.RI "void \fBcmd_profileid\fP (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, int dummy1, int dummy2, const char *id)"
+.br
+.ti -1c
+.RI "static void \fBinitmode\fP (\fBusbmode\fP *mode)"
+.br
+.ti -1c
+.RI "void \fBallocprofile\fP (\fBusbdevice\fP *kb)"
+.br
+.ti -1c
+.RI "int \fBloadprofile\fP (\fBusbdevice\fP *kb)"
+.br
+.ti -1c
+.RI "static void \fBfreemode\fP (\fBusbmode\fP *mode)"
+.br
+.ti -1c
+.RI "void \fBcmd_erase\fP (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, int dummy1, int dummy2, const char *dummy3)"
+.br
+.ti -1c
+.RI "static void \fB_freeprofile\fP (\fBusbdevice\fP *kb)"
+.br
+.ti -1c
+.RI "void \fBcmd_eraseprofile\fP (\fBusbdevice\fP *kb, \fBusbmode\fP *dummy1, int dummy2, int dummy3, const char *dummy4)"
+.br
+.ti -1c
+.RI "void \fBfreeprofile\fP (\fBusbdevice\fP *kb)"
+.br
+.ti -1c
+.RI "void \fBhwtonative\fP (\fBusbprofile\fP *profile, \fBhwprofile\fP *hw, int modecount)"
+.br
+.ti -1c
+.RI "void \fBnativetohw\fP (\fBusbprofile\fP *profile, \fBhwprofile\fP *hw, int modecount)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static iconv_t \fButf8to16\fP = 0"
+.br
+.ti -1c
+.RI "static iconv_t \fButf16to8\fP = 0"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "static void _freeprofile (\fBusbdevice\fP *kb)\fC [static]\fP"
+
+.PP
+Definition at line 210 of file profile\&.c\&.
+.PP
+References freemode(), usbprofile::mode, MODE_COUNT, and usbdevice::profile\&.
+.PP
+Referenced by cmd_eraseprofile(), and freeprofile()\&.
+.PP
+.nf
+210                                        {
+211     usbprofile* profile = kb->profile;
+212     if(!profile)
+213         return;
+214     // Clear all mode data
+215     for(int i = 0; i < MODE_COUNT; i++)
+216         freemode(profile->mode + i);
+217     free(profile);
+218     kb->profile = 0;
+219 }
+.fi
+.SS "void allocprofile (\fBusbdevice\fP *kb)"
+
+.PP
+Definition at line 182 of file profile\&.c\&.
+.PP
+References usbprofile::currentmode, dpiset::forceupdate, lighting::forceupdate, initmode(), usbprofile::lastdpi, usbprofile::lastlight, usbprofile::mode, MODE_COUNT, and usbdevice::profile\&.
+.PP
+Referenced by cmd_eraseprofile()\&.
+.PP
+.nf
+182                                 {
+183     if(kb->profile)
+184         return;
+185     usbprofile* profile = kb->profile = calloc(1, sizeof(usbprofile));
+186     for(int i = 0; i < MODE_COUNT; i++)
+187         initmode(profile->mode + i);
+188     profile->currentmode = profile->mode;
+189     profile->lastlight\&.forceupdate = profile->lastdpi\&.forceupdate = 1;
+190 }
+.fi
+.SS "void cmd_erase (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, intdummy1, intdummy2, const char *dummy3)"
+
+.PP
+Definition at line 203 of file profile\&.c\&.
+.PP
+References freemode(), imutex, and initmode()\&.
+.PP
+.nf
+203                                                                                         {
+204     pthread_mutex_lock(imutex(kb));
+205     freemode(mode);
+206     initmode(mode);
+207     pthread_mutex_unlock(imutex(kb));
+208 }
+.fi
+.SS "void cmd_eraseprofile (\fBusbdevice\fP *kb, \fBusbmode\fP *dummy1, intdummy2, intdummy3, const char *dummy4)"
+
+.PP
+Definition at line 221 of file profile\&.c\&.
+.PP
+References _freeprofile(), allocprofile(), and imutex\&.
+.PP
+.nf
+221                                                                                                  {
+222     pthread_mutex_lock(imutex(kb));
+223     _freeprofile(kb);
+224     allocprofile(kb);
+225     pthread_mutex_unlock(imutex(kb));
+226 }
+.fi
+.SS "void cmd_id (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, intdummy1, intdummy2, const char *id)"
+
+.PP
+Definition at line 160 of file profile\&.c\&.
+.PP
+References usbmode::id, usbid::modified, and setid()\&.
+.PP
+.nf
+160                                                                                  {
+161     // ID is either a GUID or an 8-digit hex number
+162     int newmodified;
+163     if(!setid(&mode->id, id) && sscanf(id, "%08x", &newmodified) == 1)
+164         memcpy(mode->id\&.modified, &newmodified, sizeof(newmodified));
+165 }
+.fi
+.SS "void cmd_name (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, intdummy1, intdummy2, const char *name)"
+
+.PP
+Definition at line 117 of file profile\&.c\&.
+.PP
+References MD_NAME_LEN, usbmode::name, u16enc(), and urldecode2()\&.
+.PP
+.nf
+117                                                                                      {
+118     char decoded[strlen(name) + 1];
+119     urldecode2(decoded, name);
+120     size_t srclen = strlen(decoded), dstlen = MD_NAME_LEN;
+121     u16enc(decoded, mode->name, &srclen, &dstlen);
+122 }
+.fi
+.SS "void cmd_profileid (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, intdummy1, intdummy2, const char *id)"
+
+.PP
+Definition at line 167 of file profile\&.c\&.
+.PP
+References usbprofile::id, usbid::modified, usbdevice::profile, and setid()\&.
+.PP
+.nf
+167                                                                                         {
+168     usbprofile* profile = kb->profile;
+169     int newmodified;
+170     if(!setid(&profile->id, id) && sscanf(id, "%08x", &newmodified) == 1)
+171         memcpy(profile->id\&.modified, &newmodified, sizeof(newmodified));
+172 
+173 }
+.fi
+.SS "void cmd_profilename (\fBusbdevice\fP *kb, \fBusbmode\fP *dummy1, intdummy2, intdummy3, const char *name)"
+
+.PP
+Definition at line 124 of file profile\&.c\&.
+.PP
+References usbprofile::name, PR_NAME_LEN, usbdevice::profile, u16enc(), and urldecode2()\&.
+.PP
+.nf
+124                                                                                               {
+125     usbprofile* profile = kb->profile;
+126     char decoded[strlen(name) + 1];
+127     urldecode2(decoded, name);
+128     size_t srclen = strlen(decoded), dstlen = PR_NAME_LEN;
+129     u16enc(decoded, profile->name, &srclen, &dstlen);
+130 }
+.fi
+.SS "static void freemode (\fBusbmode\fP *mode)\fC [static]\fP"
+
+.PP
+Definition at line 198 of file profile\&.c\&.
+.PP
+References usbmode::bind, and freebind()\&.
+.PP
+Referenced by _freeprofile(), and cmd_erase()\&.
+.PP
+.nf
+198                                    {
+199     freebind(&mode->bind);
+200     memset(mode, 0, sizeof(*mode));
+201 }
+.fi
+.SS "void freeprofile (\fBusbdevice\fP *kb)"
+
+.PP
+Definition at line 228 of file profile\&.c\&.
+.PP
+References _freeprofile(), and usbdevice::hw\&.
+.PP
+.nf
+228                                {
+229     _freeprofile(kb);
+230     // Also free HW profile
+231     free(kb->hw);
+232     kb->hw = 0;
+233 }
+.fi
+.SS "char* gethwmodename (\fBhwprofile\fP *profile, intindex)"
+
+.PP
+Definition at line 152 of file profile\&.c\&.
+.PP
+References MD_NAME_LEN, hwprofile::name, and printname()\&.
+.PP
+Referenced by _cmd_get()\&.
+.PP
+.nf
+152                                                   {
+153     return printname(profile->name[index + 1], MD_NAME_LEN);
+154 }
+.fi
+.SS "char* gethwprofilename (\fBhwprofile\fP *profile)"
+
+.PP
+Definition at line 156 of file profile\&.c\&.
+.PP
+References MD_NAME_LEN, hwprofile::name, and printname()\&.
+.PP
+Referenced by _cmd_get()\&.
+.PP
+.nf
+156                                           {
+157     return printname(profile->name[0], MD_NAME_LEN);
+158 }
+.fi
+.SS "char* getid (\fBusbid\fP *id)"
+
+.PP
+Definition at line 79 of file profile\&.c\&.
+.PP
+References usbid::guid\&.
+.PP
+Referenced by _cmd_get()\&.
+.PP
+.nf
+79                       {
+80     int32_t data1;
+81     int16_t data2, data3, data4a;
+82     char data4b[6];
+83     memcpy(&data1, id->guid + 0x0, 4);
+84     memcpy(&data2, id->guid + 0x4, 2);
+85     memcpy(&data3, id->guid + 0x6, 2);
+86     memcpy(&data4a, id->guid + 0x8, 2);
+87     memcpy(data4b, id->guid + 0xA, 6);
+88     char* guid = malloc(39);
+89     snprintf(guid, 39, "{%08X-%04hX-%04hX-%04hX-%02hhX%02hhX%02hhX%02hhX%02hhX%02hhX}",
+90              data1, data2, data3, data4a, data4b[0], data4b[1], data4b[2], data4b[3], data4b[4], data4b[5]);
+91     return guid;
+92 }
+.fi
+.SS "char* getmodename (\fBusbmode\fP *mode)"
+
+.PP
+Definition at line 144 of file profile\&.c\&.
+.PP
+References MD_NAME_LEN, usbmode::name, and printname()\&.
+.PP
+Referenced by _cmd_get()\&.
+.PP
+.nf
+144                                 {
+145     return printname(mode->name, MD_NAME_LEN);
+146 }
+.fi
+.SS "char* getprofilename (\fBusbprofile\fP *profile)"
+
+.PP
+Definition at line 148 of file profile\&.c\&.
+.PP
+References usbprofile::name, PR_NAME_LEN, and printname()\&.
+.PP
+Referenced by _cmd_get()\&.
+.PP
+.nf
+148                                          {
+149     return printname(profile->name, PR_NAME_LEN);
+150 }
+.fi
+.SS "void hwtonative (\fBusbprofile\fP *profile, \fBhwprofile\fP *hw, intmodecount)"
+
+.PP
+Definition at line 235 of file profile\&.c\&.
+.PP
+References usbmode::dpi, hwprofile::dpi, dpiset::forceupdate, lighting::forceupdate, usbmode::id, usbprofile::id, hwprofile::id, usbprofile::lastdpi, usbprofile::lastlight, usbmode::light, hwprofile::light, MD_NAME_LEN, usbprofile::mode, usbmode::name, usbprofile::name, hwprofile::name, and PR_NAME_LEN\&.
+.PP
+Referenced by cmd_hwload_kb(), and cmd_hwload_mouse()\&.
+.PP
+.nf
+235                                                                   {
+236     // Copy the profile name and ID
+237     memcpy(profile->name, hw->name[0], PR_NAME_LEN * 2);
+238     memcpy(&profile->id, hw->id, sizeof(usbid));
+239     // Copy the mode settings
+240     for(int i = 0; i < modecount; i++){
+241         usbmode* mode = profile->mode + i;
+242         memcpy(mode->name, hw->name[i + 1], MD_NAME_LEN * 2);
+243         memcpy(&mode->id, hw->id + i + 1, sizeof(usbid));
+244         memcpy(&mode->light, hw->light + i, sizeof(lighting));
+245         memcpy(&mode->dpi, hw->dpi + i, sizeof(dpiset));
+246         // Set a force update on the light/DPI since they've been overwritten
+247         mode->light\&.forceupdate = mode->dpi\&.forceupdate = 1;
+248     }
+249     profile->lastlight\&.forceupdate = profile->lastdpi\&.forceupdate = 1;
+250 }
+.fi
+.SS "static void initmode (\fBusbmode\fP *mode)\fC [static]\fP"
+
+.PP
+Definition at line 175 of file profile\&.c\&.
+.PP
+References usbmode::bind, usbmode::dpi, dpiset::forceupdate, lighting::forceupdate, initbind(), and usbmode::light\&.
+.PP
+Referenced by allocprofile(), and cmd_erase()\&.
+.PP
+.nf
+175                                    {
+176     memset(mode, 0, sizeof(*mode));
+177     mode->light\&.forceupdate = 1;
+178     mode->dpi\&.forceupdate = 1;
+179     initbind(&mode->bind);
+180 }
+.fi
+.SS "int loadprofile (\fBusbdevice\fP *kb)"
+
+.PP
+Definition at line 192 of file profile\&.c\&.
+.PP
+References hwloadprofile\&.
+.PP
+.nf
+192                               {
+193     if(hwloadprofile(kb, 1))
+194         return -1;
+195     return 0;
+196 }
+.fi
+.SS "void nativetohw (\fBusbprofile\fP *profile, \fBhwprofile\fP *hw, intmodecount)"
+
+.PP
+Definition at line 252 of file profile\&.c\&.
+.PP
+References usbmode::dpi, hwprofile::dpi, usbmode::id, usbprofile::id, hwprofile::id, usbmode::light, hwprofile::light, MD_NAME_LEN, usbprofile::mode, usbmode::name, usbprofile::name, hwprofile::name, and PR_NAME_LEN\&.
+.PP
+Referenced by cmd_hwsave_kb(), and cmd_hwsave_mouse()\&.
+.PP
+.nf
+252                                                                   {
+253     // Copy name and ID
+254     memcpy(hw->name[0], profile->name, PR_NAME_LEN * 2);
+255     memcpy(hw->id, &profile->id, sizeof(usbid));
+256     // Copy the mode settings
+257     for(int i = 0; i < modecount; i++){
+258         usbmode* mode = profile->mode + i;
+259         memcpy(hw->name[i + 1], mode->name, MD_NAME_LEN * 2);
+260         memcpy(hw->id + i + 1, &mode->id, sizeof(usbid));
+261         memcpy(hw->light + i, &mode->light, sizeof(lighting));
+262         memcpy(hw->dpi + i, &mode->dpi, sizeof(dpiset));
+263     }
+264 }
+.fi
+.SS "char* printname (\fBushort\fP *name, intlength)"
+
+.PP
+Definition at line 132 of file profile\&.c\&.
+.PP
+References u16dec(), and urlencode2()\&.
+.PP
+Referenced by gethwmodename(), gethwprofilename(), getmodename(), and getprofilename()\&.
+.PP
+.nf
+132                                          {
+133     // Convert the name to UTF-8
+134     char* buffer = calloc(1, length * 4 - 3);
+135     size_t srclen = length, dstlen = length * 4 - 4;
+136     u16dec(name, buffer, &srclen, &dstlen);
+137     // URL-encode it
+138     char* buffer2 = malloc(strlen(buffer) * 3 + 1);
+139     urlencode2(buffer2, buffer);
+140     free(buffer);
+141     return buffer2;
+142 }
+.fi
+.SS "int setid (\fBusbid\fP *id, const char *guid)"
+
+.PP
+Definition at line 64 of file profile\&.c\&.
+.PP
+References usbid::guid\&.
+.PP
+Referenced by cmd_id(), and cmd_profileid()\&.
+.PP
+.nf
+64                                       {
+65     int32_t data1;
+66     int16_t data2, data3, data4a;
+67     char data4b[6];
+68     if(sscanf(guid, "{%08X-%04hX-%04hX-%04hX-%02hhX%02hhX%02hhX%02hhX%02hhX%02hhX}",
+69               &data1, &data2, &data3, &data4a, data4b, data4b + 1, data4b + 2, data4b + 3, data4b + 4, data4b + 5) != 10)
+70         return 0;
+71     memcpy(id->guid + 0x0, &data1, 4);
+72     memcpy(id->guid + 0x4, &data2, 2);
+73     memcpy(id->guid + 0x6, &data3, 2);
+74     memcpy(id->guid + 0x8, &data4a, 2);
+75     memcpy(id->guid + 0xA, data4b, 6);
+76     return 1;
+77 }
+.fi
+.SS "void u16dec (\fBushort\fP *in, char *out, size_t *srclen, size_t *dstlen)"
+
+.PP
+Definition at line 105 of file profile\&.c\&.
+.PP
+References utf16to8\&.
+.PP
+Referenced by printname()\&.
+.PP
+.nf
+105                                                                   {
+106     if(!utf16to8)
+107         utf16to8 = iconv_open("UTF-8", "UTF-16LE");
+108     size_t srclen2 = 0, srclenmax = *srclen;
+109     for(; srclen2 < srclenmax; srclen2++){
+110         if(!in[srclen2])
+111             break;
+112     }
+113     *srclen = srclen2 * 2;
+114     iconv(utf16to8, (char**)&in, srclen, &out, dstlen);
+115 }
+.fi
+.SS "void u16enc (char *in, \fBushort\fP *out, size_t *srclen, size_t *dstlen)"
+
+.PP
+Definition at line 97 of file profile\&.c\&.
+.PP
+References utf8to16\&.
+.PP
+Referenced by cmd_name(), and cmd_profilename()\&.
+.PP
+.nf
+97                                                                   {
+98     if(!utf8to16)
+99         utf8to16 = iconv_open("UTF-16LE", "UTF-8");
+100     memset(out, 0, *dstlen * 2);
+101     *dstlen = *dstlen * 2 - 2;
+102     iconv(utf8to16, &in, srclen, (char**)&out, dstlen);
+103 }
+.fi
+.SS "void urldecode2 (char *dst, const char *src)"
+
+.PP
+Definition at line 8 of file profile\&.c\&.
+.PP
+Referenced by cmd_name(), and cmd_profilename()\&.
+.PP
+.nf
+8                                            {
+9     char a, b;
+10     char s;
+11     while((s = *src)){
+12         if((s == '%') &&
+13                 ((a = src[1]) && (b = src[2])) &&
+14                 (isxdigit(a) && isxdigit(b))){
+15             if(a >= 'a')
+16                 a -= 'a'-'A';
+17             if(a >= 'A')
+18                 a -= 'A' - 10;
+19             else
+20                 a -= '0';
+21             if(b >= 'a')
+22                 b -= 'a'-'A';
+23             if(b >= 'A')
+24                 b -= 'A' - 10;
+25             else
+26                 b -= '0';
+27             *dst++ = 16 * a + b;
+28             src += 3;
+29         } else {
+30             *dst++ = s;
+31             src++;
+32         }
+33     }
+34     *dst = '\0';
+35 }
+.fi
+.SS "void urlencode2 (char *dst, const char *src)"
+
+.PP
+Definition at line 37 of file profile\&.c\&.
+.PP
+Referenced by printname()\&.
+.PP
+.nf
+37                                            {
+38     char s;
+39     while((s = *src++)){
+40         if(s <= ',' || s == '/' ||
+41                 (s >= ':' && s <= '@') ||
+42                 s == '[' || s == ']' ||
+43                 s >= 0x7F){
+44             char a = s >> 4, b = s & 0xF;
+45             if(a >= 10)
+46                 a += 'A' - 10;
+47             else
+48                 a += '0';
+49             if(b >= 10)
+50                 b += 'A' - 10;
+51             else
+52                 b += '0';
+53             dst[0] = '%';
+54             dst[1] = a;
+55             dst[2] = b;
+56             dst += 3;
+57         } else
+58             *dst++ = s;
+59     }
+60     *dst = '\0';
+61 }
+.fi
+.SH "Variable Documentation"
+.PP 
+.SS "iconv_t utf16to8 = 0\fC [static]\fP"
+
+.PP
+Definition at line 95 of file profile\&.c\&.
+.PP
+Referenced by u16dec()\&.
+.SS "iconv_t utf8to16 = 0\fC [static]\fP"
+
+.PP
+Definition at line 95 of file profile\&.c\&.
+.PP
+Referenced by u16enc()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

@@ -1,0 +1,5 @@
+<map id="ModeSelectDialog" name="ModeSelectDialog">
+<area shape="rect" id="node2" href="$classQDialog.html" title="{QDialog\n||}" alt="" coords="5,304,75,381"/>
+<area shape="rect" id="node4" href="$classUi_1_1ModeSelectDialog.html" title="{Ui::ModeSelectDialog\n||}" alt="" coords="259,304,407,381"/>
+<area shape="rect" id="node5" href="$classUi__ModeSelectDialog.html" title="{Ui_ModeSelectDialog\n||+ setupUi()\l+ retranslateUi()\l}" alt="" coords="259,161,407,253"/>
+</map>

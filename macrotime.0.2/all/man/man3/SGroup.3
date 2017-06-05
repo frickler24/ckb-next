@@ -1,0 +1,64 @@
+.TH "SGroup" 3 "Mon Jun 5 2017" "Version beta-v0.2.8+testing at branch macrotime.0.2" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SGroup \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/ckbsettings\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSGroup\fP (\fBCkbSettings\fP &settings, const QString &prefix)"
+.br
+.ti -1c
+.RI "\fB~SGroup\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBCkbSettings\fP & \fB_settings\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 67 of file ckbsettings\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SGroup::SGroup (\fBCkbSettings\fP &settings, const QString &prefix)\fC [inline]\fP"
+
+.PP
+Definition at line 70 of file ckbsettings\&.h\&.
+.PP
+References CkbSettings::beginGroup()\&.
+.PP
+.nf
+70 : _settings(settings) { settings\&.beginGroup(prefix); }
+.fi
+.SS "SGroup::~SGroup ()\fC [inline]\fP"
+
+.PP
+Definition at line 71 of file ckbsettings\&.h\&.
+.PP
+References _settings, and CkbSettings::endGroup()\&.
+.PP
+.nf
+71 { _settings\&.endGroup(); }
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "\fBCkbSettings\fP& SGroup::_settings\fC [private]\fP"
+
+.PP
+Definition at line 74 of file ckbsettings\&.h\&.
+.PP
+Referenced by ~SGroup()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

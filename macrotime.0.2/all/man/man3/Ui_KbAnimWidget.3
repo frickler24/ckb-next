@@ -1,0 +1,549 @@
+.TH "Ui::KbAnimWidget" 3 "Mon Jun 5 2017" "Version beta-v0.2.8+testing at branch macrotime.0.2" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ui::KbAnimWidget \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/ui_kbanimwidget\&.h>\fP
+.PP
+Inherits \fBUi_KbAnimWidget\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetupUi\fP (\fBQWidget\fP *\fBKbAnimWidget\fP)"
+.br
+.ti -1c
+.RI "void \fBretranslateUi\fP (\fBQWidget\fP *\fBKbAnimWidget\fP)"
+.br
+.in -1c
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "QGridLayout * \fBgridLayout\fP"
+.br
+.ti -1c
+.RI "QStackedWidget * \fBselectionStack\fP"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBnoSelPage\fP"
+.br
+.ti -1c
+.RI "QGridLayout * \fBgridLayout_2\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBnoAnimLabel\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBverticalSpacer\fP"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBanimPage\fP"
+.br
+.ti -1c
+.RI "QVBoxLayout * \fBverticalLayout\fP"
+.br
+.ti -1c
+.RI "QHBoxLayout * \fBhorizontalLayout\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBaNameLabel\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBaVerLabel\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBaCopyLabel\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBverticalSpacer_3\fP"
+.br
+.ti -1c
+.RI "QGridLayout * \fBgridLayout_3\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBnameBox\fP"
+.br
+.ti -1c
+.RI "QDoubleSpinBox * \fBopacityBox\fP"
+.br
+.ti -1c
+.RI "QComboBox * \fBblendBox\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_6\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer_4\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer_2\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_5\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer_3\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlabel_7\fP"
+.br
+.ti -1c
+.RI "\fBQPushButton\fP * \fBkeyButton\fP"
+.br
+.ti -1c
+.RI "\fBQPushButton\fP * \fBdeleteButton\fP"
+.br
+.ti -1c
+.RI "\fBQPushButton\fP * \fBpropertyButton\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBhorizontalSpacer_5\fP"
+.br
+.ti -1c
+.RI "QSpacerItem * \fBverticalSpacer_2\fP"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBaMissingPage\fP"
+.br
+.ti -1c
+.RI "QGridLayout * \fBgridLayout_4\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBaMissingLabel\fP"
+.br
+.ti -1c
+.RI "\fBRListWidget\fP * \fBanimList\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 269 of file ui_kbanimwidget\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Ui_KbAnimWidget::retranslateUi (\fBQWidget\fP *KbAnimWidget)\fC [inline]\fP, \fC [inherited]\fP"
+
+.PP
+Definition at line 241 of file ui_kbanimwidget\&.h\&.
+.PP
+References Ui_KbAnimWidget::aCopyLabel, Ui_KbAnimWidget::aMissingLabel, Ui_KbAnimWidget::aNameLabel, Ui_KbAnimWidget::aVerLabel, Ui_KbAnimWidget::blendBox, Ui_KbAnimWidget::deleteButton, Ui_KbAnimWidget::keyButton, Ui_KbAnimWidget::label_5, Ui_KbAnimWidget::label_6, Ui_KbAnimWidget::label_7, Ui_KbAnimWidget::noAnimLabel, Ui_KbAnimWidget::opacityBox, and Ui_KbAnimWidget::propertyButton\&.
+.PP
+Referenced by Ui_KbAnimWidget::setupUi()\&.
+.PP
+.nf
+242     {
+243         KbAnimWidget->setWindowTitle(QApplication::translate("KbAnimWidget", "Form", Q_NULLPTR));
+244         noAnimLabel->setText(QApplication::translate("KbAnimWidget", "No animations in this mode", Q_NULLPTR));
+245         aNameLabel->setText(QApplication::translate("KbAnimWidget", "Animation name", Q_NULLPTR));
+246         aVerLabel->setText(QApplication::translate("KbAnimWidget", "v0\&.0", Q_NULLPTR));
+247         aCopyLabel->setText(QApplication::translate("KbAnimWidget", "Copyright \302\251", Q_NULLPTR));
+248         opacityBox->setSuffix(QApplication::translate("KbAnimWidget", "%", Q_NULLPTR));
+249         blendBox->clear();
+250         blendBox->insertItems(0, QStringList()
+251          << QApplication::translate("KbAnimWidget", "Normal", Q_NULLPTR)
+252          << QApplication::translate("KbAnimWidget", "Add", Q_NULLPTR)
+253          << QApplication::translate("KbAnimWidget", "Subtract", Q_NULLPTR)
+254          << QApplication::translate("KbAnimWidget", "Multiply", Q_NULLPTR)
+255          << QApplication::translate("KbAnimWidget", "Divide", Q_NULLPTR)
+256         );
+257         label_6->setText(QApplication::translate("KbAnimWidget", "Blend mode:", Q_NULLPTR));
+258         label_5->setText(QApplication::translate("KbAnimWidget", "Opacity:", Q_NULLPTR));
+259         label_7->setText(QApplication::translate("KbAnimWidget", "Name:", Q_NULLPTR));
+260         keyButton->setText(QApplication::translate("KbAnimWidget", "Set keys", Q_NULLPTR));
+261         deleteButton->setText(QApplication::translate("KbAnimWidget", "Delete animation", Q_NULLPTR));
+262         propertyButton->setText(QApplication::translate("KbAnimWidget", "Edit properties", Q_NULLPTR));
+263         aMissingLabel->setText(QApplication::translate("KbAnimWidget", "Mising animation", Q_NULLPTR));
+264     } // retranslateUi
+.fi
+.SS "void Ui_KbAnimWidget::setupUi (\fBQWidget\fP *KbAnimWidget)\fC [inline]\fP, \fC [inherited]\fP"
+
+.PP
+Definition at line 69 of file ui_kbanimwidget\&.h\&.
+.PP
+References Ui_KbAnimWidget::aCopyLabel, Ui_KbAnimWidget::aMissingLabel, Ui_KbAnimWidget::aMissingPage, Ui_KbAnimWidget::aNameLabel, Ui_KbAnimWidget::animList, Ui_KbAnimWidget::animPage, Ui_KbAnimWidget::aVerLabel, Ui_KbAnimWidget::blendBox, Ui_KbAnimWidget::deleteButton, Ui_KbAnimWidget::gridLayout, Ui_KbAnimWidget::gridLayout_2, Ui_KbAnimWidget::gridLayout_3, Ui_KbAnimWidget::gridLayout_4, Ui_KbAnimWidget::horizontalLayout, Ui_KbAnimWidget::horizontalSpacer, Ui_KbAnimWidget::horizontalSpacer_2, Ui_KbAnimWidget::horizontalSpacer_3, Ui_KbAnimWidget::horizontalSpacer_4, Ui_KbAnimWidget::horizontalSpacer_5, Ui_KbAnimWidget::keyButton, Ui_KbAnimWidget::label_5, Ui_KbAnimWidget::label_6, Ui_KbAnimWidget::label_7, Ui_KbAnimWidget::nameBox, Ui_KbAnimWidget::noAnimLabel, Ui_KbAnimWidget::noSelPage, Ui_KbAnimWidget::opacityBox, Ui_KbAnimWidget::propertyButton, Ui_KbAnimWidget::retranslateUi(), Ui_KbAnimWidget::selectionStack, Ui_KbAnimWidget::verticalLayout, Ui_KbAnimWidget::verticalSpacer, Ui_KbAnimWidget::verticalSpacer_2, and Ui_KbAnimWidget::verticalSpacer_3\&.
+.PP
+Referenced by KbAnimWidget::KbAnimWidget()\&.
+.PP
+.nf
+70     {
+71         if (KbAnimWidget->objectName()\&.isEmpty())
+72             KbAnimWidget->setObjectName(QStringLiteral("KbAnimWidget"));
+73         KbAnimWidget->resize(675, 218);
+74         gridLayout = new QGridLayout(KbAnimWidget);
+75         gridLayout->setObjectName(QStringLiteral("gridLayout"));
+76         gridLayout->setContentsMargins(0, 0, 0, 0);
+77         selectionStack = new QStackedWidget(KbAnimWidget);
+78         selectionStack->setObjectName(QStringLiteral("selectionStack"));
+79         noSelPage = new QWidget();
+80         noSelPage->setObjectName(QStringLiteral("noSelPage"));
+81         gridLayout_2 = new QGridLayout(noSelPage);
+82         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+83         gridLayout_2->setContentsMargins(6, 6, 6, 6);
+84         noAnimLabel = new QLabel(noSelPage);
+85         noAnimLabel->setObjectName(QStringLiteral("noAnimLabel"));
+86 
+87         gridLayout_2->addWidget(noAnimLabel, 0, 0, 1, 1);
+88 
+89         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+90 
+91         gridLayout_2->addItem(verticalSpacer, 1, 0, 1, 1);
+92 
+93         selectionStack->addWidget(noSelPage);
+94         animPage = new QWidget();
+95         animPage->setObjectName(QStringLiteral("animPage"));
+96         verticalLayout = new QVBoxLayout(animPage);
+97         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+98         verticalLayout->setContentsMargins(6, 0, 0, 0);
+99         horizontalLayout = new QHBoxLayout();
+100         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+101         aNameLabel = new QLabel(animPage);
+102         aNameLabel->setObjectName(QStringLiteral("aNameLabel"));
+103         QFont font;
+104         font\&.setBold(true);
+105         font\&.setWeight(75);
+106         aNameLabel->setFont(font);
+107 
+108         horizontalLayout->addWidget(aNameLabel);
+109 
+110         aVerLabel = new QLabel(animPage);
+111         aVerLabel->setObjectName(QStringLiteral("aVerLabel"));
+112 
+113         horizontalLayout->addWidget(aVerLabel);
+114 
+115         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+116 
+117         horizontalLayout->addItem(horizontalSpacer);
+118 
+119         aCopyLabel = new QLabel(animPage);
+120         aCopyLabel->setObjectName(QStringLiteral("aCopyLabel"));
+121 
+122         horizontalLayout->addWidget(aCopyLabel);
+123 
+124 
+125         verticalLayout->addLayout(horizontalLayout);
+126 
+127         verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+128 
+129         verticalLayout->addItem(verticalSpacer_3);
+130 
+131         gridLayout_3 = new QGridLayout();
+132         gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
+133         nameBox = new QLineEdit(animPage);
+134         nameBox->setObjectName(QStringLiteral("nameBox"));
+135         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+136         sizePolicy\&.setHorizontalStretch(0);
+137         sizePolicy\&.setVerticalStretch(0);
+138         sizePolicy\&.setHeightForWidth(nameBox->sizePolicy()\&.hasHeightForWidth());
+139         nameBox->setSizePolicy(sizePolicy);
+140         nameBox->setMinimumSize(QSize(150, 0));
+141         nameBox->setMaximumSize(QSize(150, 16777215));
+142 
+143         gridLayout_3->addWidget(nameBox, 0, 3, 1, 2);
+144 
+145         opacityBox = new QDoubleSpinBox(animPage);
+146         opacityBox->setObjectName(QStringLiteral("opacityBox"));
+147         opacityBox->setDecimals(1);
+148         opacityBox->setValue(100);
+149 
+150         gridLayout_3->addWidget(opacityBox, 1, 3, 1, 1);
+151 
+152         blendBox = new QComboBox(animPage);
+153         blendBox->setObjectName(QStringLiteral("blendBox"));
+154 
+155         gridLayout_3->addWidget(blendBox, 2, 3, 1, 2);
+156 
+157         label_6 = new QLabel(animPage);
+158         label_6->setObjectName(QStringLiteral("label_6"));
+159 
+160         gridLayout_3->addWidget(label_6, 2, 1, 1, 1);
+161 
+162         horizontalSpacer_4 = new QSpacerItem(0, 0, QSizePolicy::Fixed, QSizePolicy::Minimum);
+163 
+164         gridLayout_3->addItem(horizontalSpacer_4, 0, 0, 1, 1);
+165 
+166         horizontalSpacer_2 = new QSpacerItem(30, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+167 
+168         gridLayout_3->addItem(horizontalSpacer_2, 0, 2, 1, 1);
+169 
+170         label_5 = new QLabel(animPage);
+171         label_5->setObjectName(QStringLiteral("label_5"));
+172 
+173         gridLayout_3->addWidget(label_5, 1, 1, 1, 1);
+174 
+175         horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+176 
+177         gridLayout_3->addItem(horizontalSpacer_3, 0, 5, 1, 1);
+178 
+179         label_7 = new QLabel(animPage);
+180         label_7->setObjectName(QStringLiteral("label_7"));
+181 
+182         gridLayout_3->addWidget(label_7, 0, 1, 1, 1);
+183 
+184         keyButton = new QPushButton(animPage);
+185         keyButton->setObjectName(QStringLiteral("keyButton"));
+186 
+187         gridLayout_3->addWidget(keyButton, 1, 6, 1, 1);
+188 
+189         deleteButton = new QPushButton(animPage);
+190         deleteButton->setObjectName(QStringLiteral("deleteButton"));
+191 
+192         gridLayout_3->addWidget(deleteButton, 2, 6, 1, 1);
+193 
+194         propertyButton = new QPushButton(animPage);
+195         propertyButton->setObjectName(QStringLiteral("propertyButton"));
+196 
+197         gridLayout_3->addWidget(propertyButton, 0, 6, 1, 1);
+198 
+199         horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+200 
+201         gridLayout_3->addItem(horizontalSpacer_5, 1, 4, 1, 1);
+202 
+203 
+204         verticalLayout->addLayout(gridLayout_3);
+205 
+206         verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+207 
+208         verticalLayout->addItem(verticalSpacer_2);
+209 
+210         selectionStack->addWidget(animPage);
+211         aMissingPage = new QWidget();
+212         aMissingPage->setObjectName(QStringLiteral("aMissingPage"));
+213         gridLayout_4 = new QGridLayout(aMissingPage);
+214         gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
+215         aMissingLabel = new QLabel(aMissingPage);
+216         aMissingLabel->setObjectName(QStringLiteral("aMissingLabel"));
+217         aMissingLabel->setFont(font);
+218 
+219         gridLayout_4->addWidget(aMissingLabel, 0, 0, 1, 1);
+220 
+221         selectionStack->addWidget(aMissingPage);
+222 
+223         gridLayout->addWidget(selectionStack, 0, 2, 2, 1);
+224 
+225         animList = new RListWidget(KbAnimWidget);
+226         animList->setObjectName(QStringLiteral("animList"));
+227         animList->setMaximumSize(QSize(130, 16777215));
+228         animList->setContextMenuPolicy(Qt::CustomContextMenu);
+229         animList->setFrameShadow(QFrame::Plain);
+230         animList->setDragDropMode(QAbstractItemView::InternalMove);
+231         animList->setMovement(QListView::Snap);
+232 
+233         gridLayout->addWidget(animList, 0, 0, 2, 1);
+234 
+235 
+236         retranslateUi(KbAnimWidget);
+237 
+238         QMetaObject::connectSlotsByName(KbAnimWidget);
+239     } // setupUi
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "QLabel* Ui_KbAnimWidget::aCopyLabel\fC [inherited]\fP"
+
+.PP
+Definition at line 47 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::retranslateUi(), KbAnimWidget::setCurrent(), and Ui_KbAnimWidget::setupUi()\&.
+.SS "QLabel* Ui_KbAnimWidget::aMissingLabel\fC [inherited]\fP"
+
+.PP
+Definition at line 66 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::retranslateUi(), KbAnimWidget::setCurrent(), and Ui_KbAnimWidget::setupUi()\&.
+.SS "\fBQWidget\fP* Ui_KbAnimWidget::aMissingPage\fC [inherited]\fP"
+
+.PP
+Definition at line 64 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::setupUi()\&.
+.SS "QLabel* Ui_KbAnimWidget::aNameLabel\fC [inherited]\fP"
+
+.PP
+Definition at line 44 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::retranslateUi(), KbAnimWidget::setCurrent(), and Ui_KbAnimWidget::setupUi()\&.
+.SS "\fBRListWidget\fP* Ui_KbAnimWidget::animList\fC [inherited]\fP"
+
+.PP
+Definition at line 67 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by KbAnimWidget::addAnim(), KbAnimWidget::clearSelection(), KbAnimWidget::duplicateAnim(), KbAnimWidget::KbAnimWidget(), KbAnimWidget::on_animList_customContextMenuRequested(), KbAnimWidget::on_deleteButton_clicked(), KbAnimWidget::on_nameBox_textEdited(), KbAnimWidget::refreshList(), KbAnimWidget::reorderAnims(), and Ui_KbAnimWidget::setupUi()\&.
+.SS "\fBQWidget\fP* Ui_KbAnimWidget::animPage\fC [inherited]\fP"
+
+.PP
+Definition at line 41 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::setupUi()\&.
+.SS "QLabel* Ui_KbAnimWidget::aVerLabel\fC [inherited]\fP"
+
+.PP
+Definition at line 45 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::retranslateUi(), KbAnimWidget::setCurrent(), and Ui_KbAnimWidget::setupUi()\&.
+.SS "QComboBox* Ui_KbAnimWidget::blendBox\fC [inherited]\fP"
+
+.PP
+Definition at line 52 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::retranslateUi(), KbAnimWidget::setCurrent(), and Ui_KbAnimWidget::setupUi()\&.
+.SS "\fBQPushButton\fP* Ui_KbAnimWidget::deleteButton\fC [inherited]\fP"
+
+.PP
+Definition at line 60 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::retranslateUi(), and Ui_KbAnimWidget::setupUi()\&.
+.SS "QGridLayout* Ui_KbAnimWidget::gridLayout\fC [inherited]\fP"
+
+.PP
+Definition at line 35 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::setupUi()\&.
+.SS "QGridLayout* Ui_KbAnimWidget::gridLayout_2\fC [inherited]\fP"
+
+.PP
+Definition at line 38 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::setupUi()\&.
+.SS "QGridLayout* Ui_KbAnimWidget::gridLayout_3\fC [inherited]\fP"
+
+.PP
+Definition at line 49 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::setupUi()\&.
+.SS "QGridLayout* Ui_KbAnimWidget::gridLayout_4\fC [inherited]\fP"
+
+.PP
+Definition at line 65 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::setupUi()\&.
+.SS "QHBoxLayout* Ui_KbAnimWidget::horizontalLayout\fC [inherited]\fP"
+
+.PP
+Definition at line 43 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KbAnimWidget::horizontalSpacer\fC [inherited]\fP"
+
+.PP
+Definition at line 46 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KbAnimWidget::horizontalSpacer_2\fC [inherited]\fP"
+
+.PP
+Definition at line 55 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KbAnimWidget::horizontalSpacer_3\fC [inherited]\fP"
+
+.PP
+Definition at line 57 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KbAnimWidget::horizontalSpacer_4\fC [inherited]\fP"
+
+.PP
+Definition at line 54 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KbAnimWidget::horizontalSpacer_5\fC [inherited]\fP"
+
+.PP
+Definition at line 62 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::setupUi()\&.
+.SS "\fBQPushButton\fP* Ui_KbAnimWidget::keyButton\fC [inherited]\fP"
+
+.PP
+Definition at line 59 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::retranslateUi(), KbAnimWidget::setSelectedKeys(), and Ui_KbAnimWidget::setupUi()\&.
+.SS "QLabel* Ui_KbAnimWidget::label_5\fC [inherited]\fP"
+
+.PP
+Definition at line 56 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::retranslateUi(), and Ui_KbAnimWidget::setupUi()\&.
+.SS "QLabel* Ui_KbAnimWidget::label_6\fC [inherited]\fP"
+
+.PP
+Definition at line 53 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::retranslateUi(), and Ui_KbAnimWidget::setupUi()\&.
+.SS "QLabel* Ui_KbAnimWidget::label_7\fC [inherited]\fP"
+
+.PP
+Definition at line 58 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::retranslateUi(), and Ui_KbAnimWidget::setupUi()\&.
+.SS "QLineEdit* Ui_KbAnimWidget::nameBox\fC [inherited]\fP"
+
+.PP
+Definition at line 50 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by KbAnimWidget::on_animList_itemChanged(), KbAnimWidget::on_propertyButton_clicked(), KbAnimWidget::setCurrent(), and Ui_KbAnimWidget::setupUi()\&.
+.SS "QLabel* Ui_KbAnimWidget::noAnimLabel\fC [inherited]\fP"
+
+.PP
+Definition at line 39 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by KbAnimWidget::addAnim(), KbAnimWidget::duplicateAnim(), KbAnimWidget::on_deleteButton_clicked(), KbAnimWidget::refreshList(), Ui_KbAnimWidget::retranslateUi(), and Ui_KbAnimWidget::setupUi()\&.
+.SS "\fBQWidget\fP* Ui_KbAnimWidget::noSelPage\fC [inherited]\fP"
+
+.PP
+Definition at line 37 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::setupUi()\&.
+.SS "QDoubleSpinBox* Ui_KbAnimWidget::opacityBox\fC [inherited]\fP"
+
+.PP
+Definition at line 51 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::retranslateUi(), KbAnimWidget::setCurrent(), and Ui_KbAnimWidget::setupUi()\&.
+.SS "\fBQPushButton\fP* Ui_KbAnimWidget::propertyButton\fC [inherited]\fP"
+
+.PP
+Definition at line 61 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::retranslateUi(), and Ui_KbAnimWidget::setupUi()\&.
+.SS "QStackedWidget* Ui_KbAnimWidget::selectionStack\fC [inherited]\fP"
+
+.PP
+Definition at line 36 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by KbAnimWidget::setCurrent(), and Ui_KbAnimWidget::setupUi()\&.
+.SS "QVBoxLayout* Ui_KbAnimWidget::verticalLayout\fC [inherited]\fP"
+
+.PP
+Definition at line 42 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KbAnimWidget::verticalSpacer\fC [inherited]\fP"
+
+.PP
+Definition at line 40 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KbAnimWidget::verticalSpacer_2\fC [inherited]\fP"
+
+.PP
+Definition at line 63 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::setupUi()\&.
+.SS "QSpacerItem* Ui_KbAnimWidget::verticalSpacer_3\fC [inherited]\fP"
+
+.PP
+Definition at line 48 of file ui_kbanimwidget\&.h\&.
+.PP
+Referenced by Ui_KbAnimWidget::setupUi()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

@@ -1,0 +1,771 @@
+.TH "QuaZipDir" 3 "Mon Jun 5 2017" "Version beta-v0.2.8+testing at branch macrotime.0.2" "ckb-next" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QuaZipDir \- 
+.PP
+Provides ZIP archive navigation\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <src/ckb/quazip/quazipdir\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQuaZipDir\fP (const \fBQuaZipDir\fP &that)"
+.br
+.RI "\fIThe copy constructor\&. \fP"
+.ti -1c
+.RI "\fBQuaZipDir\fP (\fBQuaZip\fP *zip, const QString &dir=QString())"
+.br
+.RI "\fIConstructs a \fBQuaZipDir\fP instance pointing to the specified directory\&. \fP"
+.ti -1c
+.RI "\fB~QuaZipDir\fP ()"
+.br
+.RI "\fIDestructor\&. \fP"
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBQuaZipDir\fP &that)"
+.br
+.RI "\fIThe assignment operator\&. \fP"
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBQuaZipDir\fP &that)"
+.br
+.RI "\fIoperator!= \fP"
+.ti -1c
+.RI "\fBQuaZipDir\fP & \fBoperator=\fP (const \fBQuaZipDir\fP &that)"
+.br
+.RI "\fIoperator== \fP"
+.ti -1c
+.RI "QString \fBoperator[]\fP (int pos) const "
+.br
+.RI "\fIReturns the name of the entry at the specified position\&. \fP"
+.ti -1c
+.RI "\fBQuaZip::CaseSensitivity\fP \fBcaseSensitivity\fP () const "
+.br
+.RI "\fIReturns the current case sensitivity mode\&. \fP"
+.ti -1c
+.RI "bool \fBcd\fP (const QString &\fBdirName\fP)"
+.br
+.RI "\fIChanges the 'current' directory\&. \fP"
+.ti -1c
+.RI "bool \fBcdUp\fP ()"
+.br
+.RI "\fIGoes up\&. \fP"
+.ti -1c
+.RI "uint \fBcount\fP () const "
+.br
+.RI "\fIReturns the number of entries in the directory\&. \fP"
+.ti -1c
+.RI "QString \fBdirName\fP () const "
+.br
+.RI "\fIReturns the current directory name\&. \fP"
+.ti -1c
+.RI "QList< \fBQuaZipFileInfo\fP > \fBentryInfoList\fP (const QStringList &\fBnameFilters\fP, QDir::Filters filters=QDir::NoFilter, QDir::SortFlags sort=QDir::NoSort) const "
+.br
+.RI "\fIReturns the list of the entries in the directory\&. \fP"
+.ti -1c
+.RI "QList< \fBQuaZipFileInfo\fP > \fBentryInfoList\fP (QDir::Filters filters=QDir::NoFilter, QDir::SortFlags sort=QDir::NoSort) const "
+.br
+.RI "\fIReturns the list of the entries in the directory\&. \fP"
+.ti -1c
+.RI "QList< \fBQuaZipFileInfo64\fP > \fBentryInfoList64\fP (const QStringList &\fBnameFilters\fP, QDir::Filters filters=QDir::NoFilter, QDir::SortFlags sort=QDir::NoSort) const "
+.br
+.RI "\fIReturns the list of the entries in the directory with zip64 support\&. \fP"
+.ti -1c
+.RI "QList< \fBQuaZipFileInfo64\fP > \fBentryInfoList64\fP (QDir::Filters filters=QDir::NoFilter, QDir::SortFlags sort=QDir::NoSort) const "
+.br
+.RI "\fIReturns the list of the entries in the directory with zip64 support\&. \fP"
+.ti -1c
+.RI "QStringList \fBentryList\fP (const QStringList &\fBnameFilters\fP, QDir::Filters filters=QDir::NoFilter, QDir::SortFlags sort=QDir::NoSort) const "
+.br
+.RI "\fIReturns the list of the entry names in the directory\&. \fP"
+.ti -1c
+.RI "QStringList \fBentryList\fP (QDir::Filters filters=QDir::NoFilter, QDir::SortFlags sort=QDir::NoSort) const "
+.br
+.RI "\fIReturns the list of the entry names in the directory\&. \fP"
+.ti -1c
+.RI "bool \fBexists\fP (const QString &fileName) const "
+.br
+.RI "\fIReturns \fCtrue\fP if the entry with the specified name exists\&. \fP"
+.ti -1c
+.RI "bool \fBexists\fP () const "
+.br
+.RI "\fIReturn \fCtrue\fP if the directory pointed by this \fBQuaZipDir\fP exists\&. \fP"
+.ti -1c
+.RI "QString \fBfilePath\fP (const QString &fileName) const "
+.br
+.RI "\fIReturns the full path to the specified file\&. \fP"
+.ti -1c
+.RI "QDir::Filters \fBfilter\fP ()"
+.br
+.RI "\fIReturns the default filter\&. \fP"
+.ti -1c
+.RI "bool \fBisRoot\fP () const "
+.br
+.RI "\fIReturns if the \fBQuaZipDir\fP points to the root of the archive\&. \fP"
+.ti -1c
+.RI "QStringList \fBnameFilters\fP () const "
+.br
+.RI "\fIReturn the default name filter\&. \fP"
+.ti -1c
+.RI "QString \fBpath\fP () const "
+.br
+.RI "\fIReturns the path to the current dir\&. \fP"
+.ti -1c
+.RI "QString \fBrelativeFilePath\fP (const QString &fileName) const "
+.br
+.RI "\fIReturns the path to the specified file relative to the current dir\&. \fP"
+.ti -1c
+.RI "void \fBsetCaseSensitivity\fP (\fBQuaZip::CaseSensitivity\fP \fBcaseSensitivity\fP)"
+.br
+.RI "\fISets the default case sensitivity mode\&. \fP"
+.ti -1c
+.RI "void \fBsetFilter\fP (QDir::Filters filters)"
+.br
+.RI "\fISets the default filter\&. \fP"
+.ti -1c
+.RI "void \fBsetNameFilters\fP (const QStringList &\fBnameFilters\fP)"
+.br
+.RI "\fISets the default name filter\&. \fP"
+.ti -1c
+.RI "void \fBsetPath\fP (const QString &\fBpath\fP)"
+.br
+.RI "\fIGoes to the specified path\&. \fP"
+.ti -1c
+.RI "void \fBsetSorting\fP (QDir::SortFlags sort)"
+.br
+.RI "\fISets the default sorting mode\&. \fP"
+.ti -1c
+.RI "QDir::SortFlags \fBsorting\fP () const "
+.br
+.RI "\fIReturns the default sorting mode\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QSharedDataPointer
+.br
+< QuaZipDirPrivate > \fBd\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class is modelled after QDir, and is designed to provide similar features for ZIP archives\&.
+.PP
+The only significant difference from QDir is that the root path is not '/', but an empty string since that's how the file paths are stored in the archive\&. However, \fBQuaZipDir\fP understands the paths starting with '/'\&. It is important in a few places:
+.PP
+.IP "\(bu" 2
+In the \fBcd()\fP function\&.
+.IP "\(bu" 2
+In the constructor\&.
+.IP "\(bu" 2
+In the \fBexists()\fP function\&.
+.IP "\(bu" 2
+In the relativePath() function\&.
+.PP
+.PP
+Note that since ZIP uses '/' on all platforms, the '\\' separator is not supported\&. 
+.PP
+Definition at line 54 of file quazipdir\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QuaZipDir::QuaZipDir (const \fBQuaZipDir\fP &that)"
+
+.PP
+Definition at line 50 of file quazipdir\&.cpp\&.
+.PP
+Referenced by exists()\&.
+.PP
+.nf
+50                                          :
+51     d(that\&.d)
+52 {
+53 }
+.fi
+.SS "QuaZipDir::QuaZipDir (\fBQuaZip\fP *zip, const QString &dir = \fCQString()\fP)"
+If \fIdir\fP is not specified, points to the root of the archive\&. The same happens if the \fIdir\fP is "/"\&. 
+.PP
+Definition at line 55 of file quazipdir\&.cpp\&.
+.PP
+References d\&.
+.PP
+.nf
+55                                                    :
+56     d(new QuaZipDirPrivate(zip, dir))
+57 {
+58     if (d->dir\&.startsWith('/'))
+59         d->dir = d->dir\&.mid(1);
+60 }
+.fi
+.SS "QuaZipDir::~QuaZipDir ()"
+
+.PP
+Definition at line 62 of file quazipdir\&.cpp\&.
+.PP
+.nf
+63 {
+64 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBQuaZip::CaseSensitivity\fP QuaZipDir::caseSensitivity () const"
+
+.PP
+Definition at line 82 of file quazipdir\&.cpp\&.
+.PP
+References d\&.
+.PP
+Referenced by setCaseSensitivity()\&.
+.PP
+.nf
+83 {
+84     return d->caseSensitivity;
+85 }
+.fi
+.SS "bool QuaZipDir::cd (const QString &dirName)"
+If the path starts with '/', it is interpreted as an absolute path from the root of the archive\&. Otherwise, it is interpreted as a path relative to the current directory as was set by the previous \fBcd()\fP or the constructor\&.
+.PP
+Note that the subsequent \fBpath()\fP call will not return a path starting with '/' in all cases\&. 
+.PP
+Definition at line 87 of file quazipdir\&.cpp\&.
+.PP
+References cd(), d, dirName(), exists(), isRoot(), and path()\&.
+.PP
+Referenced by cd(), and cdUp()\&.
+.PP
+.nf
+88 {
+89     if (directoryName == "/") {
+90         d->dir = "";
+91         return true;
+92     }
+93     QString dirName = directoryName;
+94     if (dirName\&.endsWith('/'))
+95         dirName\&.chop(1);
+96     if (dirName\&.contains('/')) {
+97         QuaZipDir dir(*this);
+98         if (dirName\&.startsWith('/')) {
+99 #ifdef QUAZIP_QUAZIPDIR_DEBUG
+100             qDebug("QuaZipDir::cd(%s): going to /",
+101                     dirName\&.toUtf8()\&.constData());
+102 #endif
+103             if (!dir\&.cd("/"))
+104                 return false;
+105         }
+106         QStringList path = dirName\&.split('/', QString::SkipEmptyParts);
+107         for (QStringList::const_iterator i = path\&.constBegin();
+108                 i != path\&.end();
+109                 ++i) {
+110             const QString &step = *i;
+111 #ifdef QUAZIP_QUAZIPDIR_DEBUG
+112             qDebug("QuaZipDir::cd(%s): going to %s",
+113                     dirName\&.toUtf8()\&.constData(),
+114                     step\&.toUtf8()\&.constData());
+115 #endif
+116             if (!dir\&.cd(step))
+117                 return false;
+118         }
+119         d->dir = dir\&.path();
+120         return true;
+121     } else { // no '/'
+122         if (dirName == "\&.") {
+123             return true;
+124         } else if (dirName == "\&.\&.") {
+125             if (isRoot()) {
+126                 return false;
+127             } else {
+128                 int slashPos = d->dir\&.lastIndexOf('/');
+129                 if (slashPos == -1) {
+130                     d->dir = "";
+131                 } else {
+132                     d->dir = d->dir\&.left(slashPos);
+133                 }
+134                 return true;
+135             }
+136         } else { // a simple subdirectory
+137             if (exists(dirName)) {
+138                 if (isRoot())
+139                     d->dir = dirName;
+140                 else
+141                     d->dir += "/" + dirName;
+142                 return true;
+143             } else {
+144                 return false;
+145             }
+146         }
+147     }
+148 }
+.fi
+.SS "bool QuaZipDir::cdUp ()"
+
+.PP
+Definition at line 150 of file quazipdir\&.cpp\&.
+.PP
+References cd()\&.
+.PP
+.nf
+151 {
+152     return cd("\&.\&.");
+153 }
+.fi
+.SS "uint QuaZipDir::count () const"
+
+.PP
+Definition at line 155 of file quazipdir\&.cpp\&.
+.PP
+References entryList()\&.
+.PP
+.nf
+156 {
+157     return entryList()\&.count();
+158 }
+.fi
+.SS "QString QuaZipDir::dirName () const"
+The name doesn't include the path\&. 
+.PP
+Definition at line 160 of file quazipdir\&.cpp\&.
+.PP
+References d\&.
+.PP
+Referenced by cd()\&.
+.PP
+.nf
+161 {
+162     return QDir(d->dir)\&.dirName();
+163 }
+.fi
+.SS "QList< \fBQuaZipFileInfo\fP > QuaZipDir::entryInfoList (const QStringList &nameFilters, QDir::Filtersfilters = \fCQDir::NoFilter\fP, QDir::SortFlagssort = \fCQDir::NoSort\fP) const"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fInameFilters\fP The list of file patterns to list, uses the same syntax as QDir\&. 
+.br
+\fIfilters\fP The entry type filters, only Files and Dirs are accepted\&. 
+.br
+\fIsort\fP Sorting mode\&. 
+.RE
+.PP
+
+.PP
+Definition at line 401 of file quazipdir\&.cpp\&.
+.PP
+References d\&.
+.PP
+Referenced by entryInfoList()\&.
+.PP
+.nf
+403 {
+404     QList<QuaZipFileInfo> result;
+405     if (d->entryInfoList(nameFilters, filters, sort, result))
+406         return result;
+407     else
+408         return QList<QuaZipFileInfo>();
+409 }
+.fi
+.SS "QList< \fBQuaZipFileInfo\fP > QuaZipDir::entryInfoList (QDir::Filtersfilters = \fCQDir::NoFilter\fP, QDir::SortFlagssort = \fCQDir::NoSort\fP) const"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+The same as entryInfoList(QStringList(), filters, sort)\&. 
+.PP
+Definition at line 411 of file quazipdir\&.cpp\&.
+.PP
+References entryInfoList()\&.
+.PP
+.nf
+413 {
+414     return entryInfoList(QStringList(), filters, sort);
+415 }
+.fi
+.SS "QList< \fBQuaZipFileInfo64\fP > QuaZipDir::entryInfoList64 (const QStringList &nameFilters, QDir::Filtersfilters = \fCQDir::NoFilter\fP, QDir::SortFlagssort = \fCQDir::NoSort\fP) const"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fInameFilters\fP The list of file patterns to list, uses the same syntax as QDir\&. 
+.br
+\fIfilters\fP The entry type filters, only Files and Dirs are accepted\&. 
+.br
+\fIsort\fP Sorting mode\&. 
+.RE
+.PP
+
+.PP
+Definition at line 417 of file quazipdir\&.cpp\&.
+.PP
+References d\&.
+.PP
+Referenced by entryInfoList64()\&.
+.PP
+.nf
+419 {
+420     QList<QuaZipFileInfo64> result;
+421     if (d->entryInfoList(nameFilters, filters, sort, result))
+422         return result;
+423     else
+424         return QList<QuaZipFileInfo64>();
+425 }
+.fi
+.SS "QList< \fBQuaZipFileInfo64\fP > QuaZipDir::entryInfoList64 (QDir::Filtersfilters = \fCQDir::NoFilter\fP, QDir::SortFlagssort = \fCQDir::NoSort\fP) const"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+The same as entryInfoList64(QStringList(), filters, sort)\&. 
+.PP
+Definition at line 427 of file quazipdir\&.cpp\&.
+.PP
+References entryInfoList64()\&.
+.PP
+.nf
+429 {
+430     return entryInfoList64(QStringList(), filters, sort);
+431 }
+.fi
+.SS "QStringList QuaZipDir::entryList (const QStringList &nameFilters, QDir::Filtersfilters = \fCQDir::NoFilter\fP, QDir::SortFlagssort = \fCQDir::NoSort\fP) const"
+The same as entryInfoList(nameFilters, filters, sort), but only returns entry names\&. 
+.PP
+Definition at line 433 of file quazipdir\&.cpp\&.
+.PP
+References d\&.
+.PP
+Referenced by count(), entryList(), exists(), and operator[]()\&.
+.PP
+.nf
+435 {
+436     QStringList result;
+437     if (d->entryInfoList(nameFilters, filters, sort, result))
+438         return result;
+439     else
+440         return QStringList();
+441 }
+.fi
+.SS "QStringList QuaZipDir::entryList (QDir::Filtersfilters = \fCQDir::NoFilter\fP, QDir::SortFlagssort = \fCQDir::NoSort\fP) const"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+The same as entryList(QStringList(), filters, sort)\&. 
+.PP
+Definition at line 443 of file quazipdir\&.cpp\&.
+.PP
+References entryList()\&.
+.PP
+.nf
+445 {
+446     return entryList(QStringList(), filters, sort);
+447 }
+.fi
+.SS "bool QuaZipDir::exists (const QString &fileName) const"
+The "\&.\&." is considered to exist if the current directory is not root\&. The "\&." and "/" are considered to always exist\&. Paths starting with "/" are relative to the archive root, other paths are relative to the current dir\&. 
+.PP
+Definition at line 449 of file quazipdir\&.cpp\&.
+.PP
+References QuaZip::convertCaseSensitivity(), d, entryList(), filePath(), and isRoot()\&.
+.PP
+.nf
+450 {
+451     if (filePath == "/" || filePath\&.isEmpty())
+452         return true;
+453     QString fileName = filePath;
+454     if (fileName\&.endsWith('/'))
+455         fileName\&.chop(1);
+456     if (fileName\&.contains('/')) {
+457         QFileInfo fileInfo(fileName);
+458 #ifdef QUAZIP_QUAZIPDIR_DEBUG
+459         qDebug("QuaZipDir::exists(): fileName=%s, fileInfo\&.fileName()=%s, "
+460                 "fileInfo\&.path()=%s", fileName\&.toUtf8()\&.constData(),
+461                 fileInfo\&.fileName()\&.toUtf8()\&.constData(),
+462                 fileInfo\&.path()\&.toUtf8()\&.constData());
+463 #endif
+464         QuaZipDir dir(*this);
+465         return dir\&.cd(fileInfo\&.path()) && dir\&.exists(fileInfo\&.fileName());
+466     } else {
+467         if (fileName == "\&.\&.") {
+468             return !isRoot();
+469         } else if (fileName == "\&.") {
+470             return true;
+471         } else {
+472             QStringList entries = entryList(QDir::AllEntries, QDir::NoSort);
+473 #ifdef QUAZIP_QUAZIPDIR_DEBUG
+474             qDebug("QuaZipDir::exists(): looking for %s",
+475                     fileName\&.toUtf8()\&.constData());
+476             for (QStringList::const_iterator i = entries\&.constBegin();
+477                     i != entries\&.constEnd();
+478                     ++i) {
+479                 qDebug("QuaZipDir::exists(): entry: %s",
+480                         i->toUtf8()\&.constData());
+481             }
+482 #endif
+483             Qt::CaseSensitivity cs = QuaZip::convertCaseSensitivity(
+484                     d->caseSensitivity);
+485             if (filePath\&.endsWith('/')) {
+486                 return entries\&.contains(filePath, cs);
+487             } else {
+488                 return entries\&.contains(fileName, cs)
+489                     || entries\&.contains(fileName + "/", cs);
+490             }
+491         }
+492     }
+493 }
+.fi
+.SS "bool QuaZipDir::exists () const"
+
+.PP
+Definition at line 495 of file quazipdir\&.cpp\&.
+.PP
+References d, and QuaZipDir()\&.
+.PP
+Referenced by cd()\&.
+.PP
+.nf
+496 {
+497     return QuaZipDir(d->zip)\&.exists(d->dir);
+498 }
+.fi
+.SS "QString QuaZipDir::filePath (const QString &fileName) const"
+Doesn't check if the file actually exists\&. 
+.PP
+Definition at line 500 of file quazipdir\&.cpp\&.
+.PP
+References d\&.
+.PP
+Referenced by exists()\&.
+.PP
+.nf
+501 {
+502     return QDir(d->dir)\&.filePath(fileName);
+503 }
+.fi
+.SS "QDir::Filters QuaZipDir::filter ()"
+
+.PP
+Definition at line 505 of file quazipdir\&.cpp\&.
+.PP
+References d\&.
+.PP
+.nf
+506 {
+507     return d->filter;
+508 }
+.fi
+.SS "bool QuaZipDir::isRoot () const"
+Not that the root path is the empty string, not '/'\&. 
+.PP
+Definition at line 510 of file quazipdir\&.cpp\&.
+.PP
+References d\&.
+.PP
+Referenced by cd(), and exists()\&.
+.PP
+.nf
+511 {
+512     return d->simplePath()\&.isEmpty();
+513 }
+.fi
+.SS "QStringList QuaZipDir::nameFilters () const"
+
+.PP
+Definition at line 515 of file quazipdir\&.cpp\&.
+.PP
+References d\&.
+.PP
+Referenced by setNameFilters()\&.
+.PP
+.nf
+516 {
+517     return d->nameFilters;
+518 }
+.fi
+.SS "bool QuaZipDir::operator!= (const \fBQuaZipDir\fP &that)\fC [inline]\fP"
+
+.PP
+\fBReturns:\fP
+.RS 4
+\fCtrue\fP if either this and \fIthat\fP use different \fBQuaZip\fP instances or if they point to different directories\&. 
+.RE
+.PP
+
+.PP
+Definition at line 75 of file quazipdir\&.h\&.
+.PP
+.nf
+75 {return !operator==(that);}
+.fi
+.SS "\fBQuaZipDir\fP & QuaZipDir::operator= (const \fBQuaZipDir\fP &that)"
+
+.PP
+\fBReturns:\fP
+.RS 4
+\fCtrue\fP if both this and \fIthat\fP use the same \fBQuaZip\fP instance and point to the same directory\&. 
+.RE
+.PP
+
+.PP
+Definition at line 71 of file quazipdir\&.cpp\&.
+.PP
+References d\&.
+.PP
+.nf
+72 {
+73     this->d = that\&.d;
+74     return *this;
+75 }
+.fi
+.SS "bool QuaZipDir::operator== (const \fBQuaZipDir\fP &that)"
+
+.PP
+Definition at line 66 of file quazipdir\&.cpp\&.
+.PP
+References d\&.
+.PP
+.nf
+67 {
+68     return d->zip == that\&.d->zip && d->dir == that\&.d->dir;
+69 }
+.fi
+.SS "QString QuaZipDir::operator[] (intpos) const"
+
+.PP
+Definition at line 77 of file quazipdir\&.cpp\&.
+.PP
+References entryList()\&.
+.PP
+.nf
+78 {
+79     return entryList()\&.at(pos);
+80 }
+.fi
+.SS "QString QuaZipDir::path () const"
+The path never starts with '/', and the root path is an empty string\&. 
+.PP
+Definition at line 520 of file quazipdir\&.cpp\&.
+.PP
+References d\&.
+.PP
+Referenced by cd(), and setPath()\&.
+.PP
+.nf
+521 {
+522     return d->dir;
+523 }
+.fi
+.SS "QString QuaZipDir::relativeFilePath (const QString &fileName) const"
+This function is mostly useless, provided only for the sake of completeness\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfileName\fP The path to the file, should start with "/" if relative to the archive root\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Path relative to the current dir\&. 
+.RE
+.PP
+
+.PP
+Definition at line 525 of file quazipdir\&.cpp\&.
+.PP
+References d\&.
+.PP
+.nf
+526 {
+527     return QDir("/" + d->dir)\&.relativeFilePath(fileName);
+528 }
+.fi
+.SS "void QuaZipDir::setCaseSensitivity (\fBQuaZip::CaseSensitivity\fPcaseSensitivity)"
+
+.PP
+Definition at line 530 of file quazipdir\&.cpp\&.
+.PP
+References caseSensitivity(), and d\&.
+.PP
+.nf
+531 {
+532     d->caseSensitivity = caseSensitivity;
+533 }
+.fi
+.SS "void QuaZipDir::setFilter (QDir::Filtersfilters)"
+
+.PP
+Definition at line 535 of file quazipdir\&.cpp\&.
+.PP
+References d\&.
+.PP
+.nf
+536 {
+537     d->filter = filters;
+538 }
+.fi
+.SS "void QuaZipDir::setNameFilters (const QStringList &nameFilters)"
+
+.PP
+Definition at line 540 of file quazipdir\&.cpp\&.
+.PP
+References d, and nameFilters()\&.
+.PP
+.nf
+541 {
+542     d->nameFilters = nameFilters;
+543 }
+.fi
+.SS "void QuaZipDir::setPath (const QString &path)"
+The difference from \fBcd()\fP is that this function never checks if the path actually exists and doesn't use relative paths, so it's possible to go to the root directory with setPath("")\&.
+.PP
+Note that this function still chops the trailing and/or leading '/' and treats a single '/' as the root path (\fBpath()\fP will still return an empty string)\&. 
+.PP
+Definition at line 545 of file quazipdir\&.cpp\&.
+.PP
+References d, and path()\&.
+.PP
+.nf
+546 {
+547     QString newDir = path;
+548     if (newDir == "/") {
+549         d->dir = "";
+550     } else {
+551         if (newDir\&.endsWith('/'))
+552             newDir\&.chop(1);
+553         if (newDir\&.startsWith('/'))
+554             newDir = newDir\&.mid(1);
+555         d->dir = newDir;
+556     }
+557 }
+.fi
+.SS "void QuaZipDir::setSorting (QDir::SortFlagssort)"
+
+.PP
+Definition at line 559 of file quazipdir\&.cpp\&.
+.PP
+References d\&.
+.PP
+.nf
+560 {
+561     d->sorting = sort;
+562 }
+.fi
+.SS "QDir::SortFlags QuaZipDir::sorting () const"
+
+.PP
+Definition at line 564 of file quazipdir\&.cpp\&.
+.PP
+References d\&.
+.PP
+.nf
+565 {
+566     return d->sorting;
+567 }
+.fi
+.SH "Field Documentation"
+.PP 
+.SS "QSharedDataPointer<QuaZipDirPrivate> QuaZipDir::d\fC [private]\fP"
+
+.PP
+Definition at line 56 of file quazipdir\&.h\&.
+.PP
+Referenced by caseSensitivity(), cd(), dirName(), entryInfoList(), entryInfoList64(), entryList(), exists(), filePath(), filter(), isRoot(), nameFilters(), operator=(), operator==(), path(), QuaZipDir(), relativeFilePath(), setCaseSensitivity(), setFilter(), setNameFilters(), setPath(), setSorting(), and sorting()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ckb-next from the source code\&.

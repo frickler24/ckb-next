@@ -1,0 +1,19 @@
+<map id="AnimScript::setDuration" name="AnimScript::setDuration">
+<area shape="rect" id="node2" href="$classAnimScript.html#a226572590c52210a0ec275b9b6e9eb94" title="AnimScript::init" alt="" coords="241,207,351,233"/>
+<area shape="rect" id="node15" href="$classAnimScript.html#ab67042e47c4dc6209720fd1b4649edb8" title="AnimScript::parameters" alt="" coords="217,283,375,309"/>
+<area shape="rect" id="node3" href="$classKbAnim.html#a20ba85d611608fad6b43081bf5ff71ba" title="KbAnim::reInit" alt="" coords="451,168,557,195"/>
+<area shape="rect" id="node4" href="$classKbAnim.html#ad3776cc0c82156dcfce84f5275b839f8" title="KbAnim::KbAnim" alt="" coords="647,143,769,169"/>
+<area shape="rect" id="node5" href="$classKbAnim.html#a6ecc476394069c03a043883bcb48f827" title="KbAnim::map" alt="" coords="657,193,759,220"/>
+<area shape="rect" id="node6" href="$classKbAnim.html#a7f7fab7b134dacb633946d1976af3921" title="KbAnim::keys" alt="" coords="656,244,760,271"/>
+<area shape="rect" id="node7" href="$classKbAnimWidget.html#aed385da23edc78f5a407d26f191eb110" title="KbAnimWidget::on_property\lButton_clicked" alt="" coords="833,207,1018,249"/>
+<area shape="rect" id="node10" href="$classKbLight.html#a6a066549a06cbf0f081ad225ebd475d4" title="KbLight::previewAnim" alt="" coords="633,41,783,68"/>
+<area shape="rect" id="node8" href="$classKbAnimWidget.html#aec38d76f8f14709e03526c9f4b2782e8" title="KbAnimWidget::addAnim" alt="" coords="1079,215,1247,241"/>
+<area shape="rect" id="node9" href="$classKbLightWidget.html#a854d8332999f4b2337d198199661d405" title="KbLightWidget::on_animButton\l_clicked" alt="" coords="1311,207,1513,249"/>
+<area shape="rect" id="node11" href="$classAnimAddDialog.html#acb2d42b03ff17769c46acacc780f81d8" title="AnimAddDialog::on_preset\lBox_activated" alt="" coords="837,34,1014,75"/>
+<area shape="rect" id="node12" href="$classAnimAddDialog.html#a238fd7d380baf02174d89f5ce12e7eeb" title="AnimAddDialog::on_animBox\l_activated" alt="" coords="1067,70,1259,111"/>
+<area shape="rect" id="node14" href="$classAnimAddDialog.html#a7da394efc172a029448ac7ea9a16a648" title="AnimAddDialog::on_preview\lBox_clicked" alt="" coords="1069,5,1256,46"/>
+<area shape="rect" id="node13" href="$classAnimAddDialog.html#acb4f77d3ae8265e8ce69b0c38d57d5e1" title="AnimAddDialog::AnimAddDialog" alt="" coords="1307,77,1517,104"/>
+<area shape="rect" id="node16" href="$classKbAnim.html#a50820fb193bfc35f13e399f33ff01958" title="KbAnim::updateParams" alt="" coords="424,295,584,321"/>
+<area shape="rect" id="node17" href="$classKbAnim.html#aebe1ab3b6110130302e32c147b42dbd9" title="KbAnim::parameter" alt="" coords="641,345,775,372"/>
+<area shape="rect" id="node18" href="$classKbAnim.html#a886e5631d76fefb9b8e549d8aa8d37f3" title="KbAnim::resetParams" alt="" coords="633,295,783,321"/>
+</map>

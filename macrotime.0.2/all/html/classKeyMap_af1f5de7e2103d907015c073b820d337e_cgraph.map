@@ -1,0 +1,9 @@
+<map id="KeyMap::toStorage" name="KeyMap::toStorage">
+<area shape="rect" id="node2" href="$classKeyMap.html#a0748b06120f93ad61d90c360dafbb59c" title="KeyMap::key" alt="" coords="205,5,304,32"/>
+<area shape="rect" id="node3" href="$classKeyMap.html#a0c5ed88364ea162fb45fa32c196a0161" title="KeyMap::name" alt="" coords="199,56,310,83"/>
+<area shape="rect" id="node8" href="$structKey.html#ae49e46bd17707714b1ae86d8e47a45c8" title="Key::storageName" alt="" coords="189,107,320,133"/>
+<area shape="rect" id="node4" href="$classKeyMap.html#a27282ed1f29e14b9a5c836b9abb8f9b6" title="KeyMap::strLayout" alt="" coords="369,31,501,57"/>
+<area shape="rect" id="node6" href="$classKeyMap.html#a2131ccd550f0875acd0cabc33bce6ea1" title="KeyMap::strModel" alt="" coords="371,81,499,108"/>
+<area shape="rect" id="node5" href="$classKeyMap.html#a6701f6dab76262beb388d5a6f053b721" title="KeyMap::getLayout" alt="" coords="550,31,685,57"/>
+<area shape="rect" id="node7" href="$classKeyMap.html#ab582e08cb56076aa3ae89ec3d09bab6d" title="KeyMap::getModel get the KeyMap::Model from the vendor / product special table. Use this function fir..." alt="" coords="552,81,683,108"/>
+</map>
