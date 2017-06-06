@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>687</width>
-    <height>342</height>
+    <width>958</width>
+    <height>477</height>
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+   <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
@@ -19,12 +19,21 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QTabWidget" name="tabWidget">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>5</number>
+     </property>
+     <property name="usesScrollButtons">
+      <bool>true</bool>
      </property>
      <widget class="QWidget" name="keyTab">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
@@ -34,7 +43,7 @@
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
        <property name="bottomMargin">
-        <number>0</number>
+        <number>6</number>
        </property>
        <item row="6" column="4">
         <widget class="QComboBox" name="numBox">
@@ -97,6 +106,19 @@
          </property>
         </spacer>
        </item>
+       <item row="1" column="2">
+        <spacer name="horizontalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>0</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
        <item row="15" column="2">
         <spacer name="verticalSpacer_3">
          <property name="orientation">
@@ -105,23 +127,7 @@
          <property name="sizeHint" stdset="0">
           <size>
            <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="1" column="3">
-        <spacer name="horizontalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Fixed</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>5</width>
-           <height>20</height>
+           <height>50</height>
           </size>
          </property>
         </spacer>
@@ -129,7 +135,7 @@
        <item row="0" column="0" colspan="2">
         <widget class="QRadioButton" name="typingButton">
          <property name="text">
-          <string>Typing:</string>
+          <string>T&amp;yping:</string>
          </property>
          <property name="autoExclusive">
           <bool>false</bool>
@@ -170,7 +176,7 @@
        <item row="10" column="0" colspan="2">
         <widget class="QRadioButton" name="mediaButton">
          <property name="text">
-          <string>Media:</string>
+          <string>&amp;Media:</string>
          </property>
          <property name="autoExclusive">
           <bool>false</bool>
@@ -193,32 +199,6 @@
          </property>
         </spacer>
        </item>
-       <item row="1" column="5" colspan="2">
-        <spacer name="horizontalSpacer_9">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>0</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="1" column="2">
-        <spacer name="horizontalSpacer_4">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>0</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
        <item row="0" column="3" colspan="2">
         <widget class="QRadioButton" name="modButton">
          <property name="text">
@@ -229,7 +209,7 @@
        <item row="5" column="0" colspan="2">
         <widget class="QRadioButton" name="fnButton">
          <property name="text">
-          <string>Miscellaneous:</string>
+          <string>Misce&amp;llaneous:</string>
          </property>
          <property name="autoExclusive">
           <bool>false</bool>
@@ -261,15 +241,15 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="7">
+       <item row="1" column="5">
         <spacer name="horizontalSpacer_17">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>40</width>
-           <height>20</height>
+           <width>0</width>
+           <height>0</height>
           </size>
          </property>
         </spacer>
@@ -277,6 +257,12 @@
       </layout>
      </widget>
      <widget class="QWidget" name="mouseTab">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <attribute name="title">
        <string>Mouse</string>
       </attribute>
@@ -547,7 +533,7 @@
        <item row="3" column="0" colspan="2">
         <widget class="QRadioButton" name="wheelButton">
          <property name="text">
-          <string>Wheel:</string>
+          <string>Whee&amp;l:</string>
          </property>
         </widget>
        </item>
@@ -613,6 +599,12 @@
       </layout>
      </widget>
      <widget class="QWidget" name="animTab">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <attribute name="title">
        <string>Animation</string>
       </attribute>
@@ -668,8 +660,8 @@
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>438</width>
-           <height>20</height>
+           <width>0</width>
+           <height>0</height>
           </size>
          </property>
         </spacer>
@@ -737,7 +729,7 @@
      </widget>
      <widget class="QWidget" name="actionTab">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
@@ -747,7 +739,7 @@
       </attribute>
       <layout class="QGridLayout" name="gridLayout_3">
        <property name="bottomMargin">
-        <number>0</number>
+        <number>6</number>
        </property>
        <item row="1" column="0">
         <spacer name="horizontalSpacer_5">
@@ -969,35 +961,15 @@
          </property>
         </spacer>
        </item>
-       <item row="1" column="4">
-        <spacer name="horizontalSpacer_7">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="1" column="5">
-        <spacer name="horizontalSpacer_6">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="programTab">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <attribute name="title">
        <string>Program</string>
       </attribute>
@@ -1012,8 +984,8 @@
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>20</width>
-           <height>5</height>
+           <width>0</width>
+           <height>0</height>
           </size>
          </property>
         </spacer>
@@ -1024,18 +996,24 @@
           <enum>Qt::Horizontal</enum>
          </property>
          <property name="sizeType">
-          <enum>QSizePolicy::Fixed</enum>
+          <enum>QSizePolicy::Preferred</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>5</width>
-           <height>20</height>
+           <width>0</width>
+           <height>0</height>
           </size>
          </property>
         </spacer>
        </item>
        <item row="0" column="0" colspan="2">
         <widget class="QCheckBox" name="programKpButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="text">
           <string>Launch program on key press:</string>
          </property>
@@ -1051,8 +1029,8 @@
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>40</width>
-           <height>20</height>
+           <width>0</width>
+           <height>0</height>
           </size>
          </property>
         </spacer>
@@ -1090,8 +1068,8 @@
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>40</width>
-           <height>20</height>
+           <width>0</width>
+           <height>0</height>
           </size>
          </property>
         </spacer>
@@ -1116,6 +1094,12 @@
           </property>
           <item>
            <widget class="QCheckBox" name="programKpSIBox">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="text">
              <string>Single instance</string>
             </property>
@@ -1123,6 +1107,12 @@
           </item>
           <item>
            <widget class="QComboBox" name="programKpModeBox">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <item>
              <property name="text">
               <string>Run indefinitely</string>
@@ -1147,8 +1137,8 @@
             </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>40</width>
-              <height>20</height>
+              <width>0</width>
+              <height>0</height>
              </size>
             </property>
            </spacer>
@@ -1176,6 +1166,12 @@
           </property>
           <item>
            <widget class="QCheckBox" name="programKrSIBox">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="text">
              <string>Single instance</string>
             </property>
@@ -1183,6 +1179,12 @@
           </item>
           <item>
            <widget class="QComboBox" name="programKrModeBox">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <item>
              <property name="text">
               <string>Run indefinitely</string>
@@ -1202,8 +1204,8 @@
             </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>40</width>
-              <height>20</height>
+              <width>0</width>
+              <height>0</height>
              </size>
             </property>
            </spacer>
@@ -1214,7 +1216,7 @@
        <item row="5" column="1" colspan="4">
         <widget class="QLabel" name="progTipLabel">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
@@ -1230,6 +1232,12 @@
       </layout>
      </widget>
      <widget class="QWidget" name="macroTab">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <attribute name="title">
        <string>Macro</string>
       </attribute>
@@ -1238,25 +1246,18 @@
         <rect>
          <x>40</x>
          <y>12</y>
-         <width>241</width>
-         <height>171</height>
+         <width>239</width>
+         <height>36</height>
         </rect>
        </property>
        <layout class="QGridLayout" name="gridLayout_8">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetNoConstraint</enum>
+        </property>
         <item row="0" column="0">
          <widget class="QGroupBox" name="groupBox_2">
           <property name="title">
            <string>Macro Key Actions</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QPlainTextEdit" name="pteMacroBox">
-          <property name="focusPolicy">
-           <enum>Qt::WheelFocus</enum>
-          </property>
-          <property name="tabChangesFocus">
-           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -1268,10 +1269,10 @@
        </property>
        <property name="geometry">
         <rect>
-         <x>420</x>
+         <x>450</x>
          <y>20</y>
          <width>311</width>
-         <height>31</height>
+         <height>41</height>
         </rect>
        </property>
        <property name="focusPolicy">
@@ -1317,10 +1318,10 @@
       <widget class="QPlainTextEdit" name="pteMacroText">
        <property name="geometry">
         <rect>
-         <x>420</x>
-         <y>60</y>
+         <x>450</x>
+         <y>70</y>
          <width>311</width>
-         <height>61</height>
+         <height>121</height>
         </rect>
        </property>
        <property name="focusPolicy">
@@ -1354,15 +1355,24 @@
       <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
-         <x>300</x>
+         <x>310</x>
          <y>20</y>
-         <width>119</width>
-         <height>81</height>
+         <width>131</width>
+         <height>101</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_2">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetDefaultConstraint</enum>
+        </property>
         <item>
          <widget class="QGroupBox" name="groupBox_3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="title">
            <string>Macro Comment</string>
           </property>
@@ -1370,6 +1380,17 @@
         </item>
         <item>
          <widget class="QGroupBox" name="groupBox_4">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>8</pointsize>
+           </font>
+          </property>
           <property name="title">
            <string>Macro Text</string>
           </property>
@@ -1381,40 +1402,64 @@
        <property name="geometry">
         <rect>
          <x>300</x>
-         <y>160</y>
-         <width>436</width>
-         <height>30</height>
+         <y>230</y>
+         <width>461</width>
+         <height>33</height>
         </rect>
        </property>
        <layout class="QGridLayout" name="gridLayout_10">
-        <item row="0" column="0">
-         <widget class="QGroupBox" name="groupBox">
-          <property name="title">
-           <string>Macro recording</string>
-          </property>
-         </widget>
-        </item>
         <item row="0" column="2">
          <widget class="QPushButton" name="btnStopMacro">
           <property name="enabled">
            <bool>false</bool>
           </property>
-          <property name="text">
-           <string>Stop</string>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
           </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QPushButton" name="btnStartMacro">
           <property name="text">
-           <string>Start</string>
+           <string extracomment="Dummy comment">Stop</string>
           </property>
          </widget>
         </item>
         <item row="0" column="3">
          <widget class="QPushButton" name="btnClearMacro">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
            <string>Clear</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QPushButton" name="btnStartMacro">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Start</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="groupBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Macro recording</string>
           </property>
          </widget>
         </item>
@@ -1423,22 +1468,175 @@
       <widget class="QLabel" name="lbl_macro">
        <property name="geometry">
         <rect>
-         <x>300</x>
-         <y>130</y>
-         <width>431</width>
-         <height>27</height>
+         <x>50</x>
+         <y>200</y>
+         <width>711</width>
+         <height>21</height>
         </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
        </property>
        <property name="text">
         <string>Comment label for help</string>
        </property>
       </widget>
+      <widget class="QPlainTextEdit" name="pteMacroBox">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>50</y>
+         <width>239</width>
+         <height>101</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="delayButtons">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="sizeConstraint">
+         <enum>QLayout::SetMinimumSize</enum>
+        </property>
+       </layout>
+      </widget>
+      <widget class="QLabel" name="txtBuffer">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>30</y>
+         <width>0</width>
+         <height>0</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="toolTip">
+        <string notr="true"/>
+       </property>
+       <property name="toolTipDuration">
+        <number>0</number>
+       </property>
+       <property name="statusTip">
+        <string notr="true"/>
+       </property>
+       <property name="whatsThis">
+        <string notr="true"/>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>0</number>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="textFormat">
+        <enum>Qt::PlainText</enum>
+       </property>
+       <property name="indent">
+        <number>0</number>
+       </property>
+       <property name="textInteractionFlags">
+        <set>Qt::NoTextInteraction</set>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="rb_delay_asTyped">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>170</y>
+         <width>91</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="whatsThis">
+        <string>configure delays between keystrokes: Remember delays as they had been typed while the macro definition process</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 10pt ; color:  green;</string>
+       </property>
+       <property name="text">
+        <string>as typed</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="rb_delay_default">
+       <property name="geometry">
+        <rect>
+         <x>129</x>
+         <y>170</y>
+         <width>71</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="whatsThis">
+        <string>configure delays between keystrokes: Set delay to default values: 20us up to 15 chars, 200us above</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 10pt ; color:  green;</string>
+       </property>
+       <property name="text">
+        <string>default</string>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="rb_delay_no">
+       <property name="geometry">
+        <rect>
+         <x>45</x>
+         <y>170</y>
+         <width>74</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="whatsThis">
+        <string>configure delays between keystrokes: Disable delay</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 10pt ; color:  green;</string>
+       </property>
+       <property name="text">
+        <string>No delay</string>
+       </property>
+      </widget>
+      <zorder>txtBuffer</zorder>
       <zorder>pteMacroComment</zorder>
       <zorder>layoutWidget1</zorder>
       <zorder>layoutWidget</zorder>
       <zorder>pteMacroText</zorder>
       <zorder>layoutWidget_2</zorder>
       <zorder>lbl_macro</zorder>
+      <zorder>pteMacroBox</zorder>
+      <zorder>rb_delay_asTyped</zorder>
+      <zorder>rb_delay_default</zorder>
+      <zorder>rb_delay_no</zorder>
      </widget>
     </widget>
    </item>
@@ -1449,16 +1647,25 @@
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Minimum</enum>
+       </property>
        <property name="sizeHint" stdset="0">
         <size>
-         <width>40</width>
-         <height>20</height>
+         <width>0</width>
+         <height>0</height>
         </size>
        </property>
       </spacer>
      </item>
      <item>
       <widget class="QPushButton" name="unbindButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
         <string>Unbind</string>
        </property>
@@ -1466,6 +1673,12 @@
      </item>
      <item>
       <widget class="QPushButton" name="resetButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
         <string>Reset to Default</string>
        </property>
@@ -1473,6 +1686,12 @@
      </item>
      <item>
       <widget class="QPushButton" name="cancelButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
         <string>Cancel</string>
        </property>
@@ -1480,6 +1699,12 @@
      </item>
      <item>
       <widget class="QPushButton" name="applyButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
         <string>Apply</string>
        </property>
@@ -1548,9 +1773,9 @@
  <resources/>
  <connections>
   <connection>
-   <sender>cancelButton</sender>
+   <sender>btnClearMacro</sender>
    <signal>clicked()</signal>
-   <receiver>pteMacroBox</receiver>
+   <receiver>pteMacroText</receiver>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1566,7 +1791,7 @@
   <connection>
    <sender>btnClearMacro</sender>
    <signal>clicked()</signal>
-   <receiver>pteMacroBox</receiver>
+   <receiver>pteMacroComment</receiver>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1582,7 +1807,23 @@
   <connection>
    <sender>btnClearMacro</sender>
    <signal>clicked()</signal>
-   <receiver>pteMacroText</receiver>
+   <receiver>btnStopMacro</receiver>
+   <slot>animateClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>711</x>
+     <y>238</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>618</x>
+     <y>238</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cancelButton</sender>
+   <signal>clicked()</signal>
+   <receiver>txtBuffer</receiver>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1598,7 +1839,39 @@
   <connection>
    <sender>btnClearMacro</sender>
    <signal>clicked()</signal>
-   <receiver>pteMacroComment</receiver>
+   <receiver>txtBuffer</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>655</x>
+     <y>219</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>339</x>
+     <y>154</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnStartMacro</sender>
+   <signal>clicked()</signal>
+   <receiver>txtBuffer</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>485</x>
+     <y>228</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>352</x>
+     <y>156</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>unbindButton</sender>
+   <signal>clicked()</signal>
+   <receiver>txtBuffer</receiver>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1612,10 +1885,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>btnClearMacro</sender>
+   <sender>resetButton</sender>
    <signal>clicked()</signal>
-   <receiver>btnStopMacro</receiver>
-   <slot>animateClick()</slot>
+   <receiver>txtBuffer</receiver>
+   <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>671</x>

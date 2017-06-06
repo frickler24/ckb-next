@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>773</width>
-    <height>539</height>
+    <width>933</width>
+    <height>323</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>Form</string>
@@ -45,7 +51,7 @@
    <item row="0" column="1" rowspan="3">
     <widget class="QTabWidget" name="tabWidget">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
        <horstretch>82</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -79,7 +85,7 @@
        <item row="0" column="0">
         <widget class="KbLightWidget" name="lightWidget" native="true">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
@@ -124,7 +130,7 @@
        <item row="0" column="0">
         <widget class="KbBindWidget" name="bindWidget" native="true">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
@@ -151,7 +157,14 @@
         <number>6</number>
        </property>
        <item row="0" column="0">
-        <widget class="KPerfWidget" name="kPerfWidget" native="true"/>
+        <widget class="KPerfWidget" name="kPerfWidget" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -173,7 +186,14 @@
         <number>6</number>
        </property>
        <item row="0" column="0">
-        <widget class="MPerfWidget" name="mPerfWidget" native="true"/>
+        <widget class="MPerfWidget" name="mPerfWidget" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
