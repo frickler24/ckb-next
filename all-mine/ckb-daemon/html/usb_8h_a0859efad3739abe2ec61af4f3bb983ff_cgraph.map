@@ -38,12 +38,12 @@
 <area shape="rect" id="node33" href="$keymap_8c.html#a6f4afd134546237416b271d9cefd2889" title="hid_kb_translate" alt="" coords="987,715,1104,741"/>
 <area shape="rect" id="node34" href="$keymap_8c.html#a092f675ff366b5823c73b25f83d513f9" title="hid_mouse_translate" alt="" coords="974,765,1117,792"/>
 <area shape="rect" id="node35" href="$input_8c.html#ae360d0b9a764a1d38c5be5464be8b70a" title="inputupdate" alt="" coords="1001,816,1090,843"/>
-<area shape="rect" id="node36" href="$input_8c.html#aed8e9842ed5750c1d328c5dc4c1ba2bd" title="inputupdate_keys" alt="" coords="1166,791,1290,817"/>
-<area shape="rect" id="node41" href="$input_8h.html#a9f2cfb2d883ae4a3732047fe3f3da683" title="os_mousemove" alt="" coords="1345,841,1460,868"/>
-<area shape="rect" id="node37" href="$input_8c.html#abd38419ce56379559481f51d9491adeb" title="macromask" alt="" coords="1357,689,1448,716"/>
-<area shape="rect" id="node38" href="$notify_8c.html#ac2411c0997dfdbefdebd45f2584a5d04" title="nprintkey" alt="" coords="1365,740,1440,767"/>
-<area shape="rect" id="node39" href="$input_8h.html#af0d3401f317f3214dadad7d1a3378c58" title="os_keypress" alt="" coords="1355,791,1451,817"/>
-<area shape="rect" id="node40" href="$input__linux_8c.html#a14ff0fdf147e3702197db2cadb878460" title="isync" alt="" coords="1515,816,1568,843"/>
+<area shape="rect" id="node36" href="$input_8c.html#aed8e9842ed5750c1d328c5dc4c1ba2bd" title="inputupdate_keys Handle input from Keyboard or mouse; start Macrof if detected. " alt="" coords="1166,791,1290,817"/>
+<area shape="rect" id="node41" href="$input_8h.html#a9f2cfb2d883ae4a3732047fe3f3da683" title="os_mousemove" alt="" coords="1171,841,1285,868"/>
+<area shape="rect" id="node37" href="$input_8c.html#a34b6a3d2e97732b6973cd608e35317c9" title="macro_pt_first returns the first pthread_id but does not remove the first entry. " alt="" coords="1350,816,1455,843"/>
+<area shape="rect" id="node38" href="$input_8c.html#abd38419ce56379559481f51d9491adeb" title="macromask" alt="" coords="1357,867,1448,893"/>
+<area shape="rect" id="node39" href="$notify_8c.html#ac2411c0997dfdbefdebd45f2584a5d04" title="nprintkey" alt="" coords="1365,715,1440,741"/>
+<area shape="rect" id="node40" href="$input_8h.html#af0d3401f317f3214dadad7d1a3378c58" title="os_keypress" alt="" coords="1355,765,1451,792"/>
 <area shape="rect" id="node43" href="$input__linux_8c.html#a5f050529d49f8cb5e8dda4617c5984b7" title="uinputopen" alt="" coords="1003,917,1088,944"/>
 <area shape="rect" id="node45" href="$input__linux_8c.html#a5d40cc9137eaefbc2d860fac76020460" title="_ledthread" alt="" coords="1004,968,1087,995"/>
 <area shape="rect" id="node47" href="$usb__linux_8c.html#ab694a2ac859b16b5af802b4484f5ba0b" title="strtrim" alt="" coords="1016,309,1075,336"/>

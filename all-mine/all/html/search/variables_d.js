@@ -6,6 +6,7 @@ var searchData=
   ['new_5fflag',['NEW_FLAG',['../classKbProfileDialog.html#a6d705091492255f8ef8176c0010f3607',1,'KbProfileDialog::NEW_FLAG()'],['../classKbWidget.html#ab70ebf705938d91a196c4568bceb4dfe',1,'KbWidget::NEW_FLAG()']]],
   ['newlabel',['newLabel',['../classUi__FwUpgradeDialog.html#a2388a4ae7279b35505eee63734364800',1,'Ui_FwUpgradeDialog']]],
   ['newselection',['newSelection',['../classKeyWidget.html#a9f23700f4275676e2ef581361201043e',1,'KeyWidget']]],
+  ['next',['next',['../input_8h.html#a8a3e41c01cd3b7e9299a3f6c79c545f5',1,'ptlist']]],
   ['next_5fdatablock',['next_datablock',['../zip_8c.html#a1f5abadbf41d82b8724a048a33c4c153',1,'linkedlist_datablock_internal_s']]],
   ['nfft',['nfft',['../__kiss__fft__guts_8h.html#aa7446bded329a40e13aef0826e349791',1,'kiss_fft_state']]],
   ['noanimlabel',['noAnimLabel',['../classUi__KbAnimWidget.html#aeb267629d37dc9779c7b245d67e40750',1,'Ui_KbAnimWidget']]],

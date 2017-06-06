@@ -1,13 +1,18 @@
 var searchData=
 [
-  ['macro',['MACRO',['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3a3d1738a931468da77c233f1126436b81',1,'command.h']]],
+  ['macro',['macro',['../input_8h.html#a15320f283af85c0016be37beb3527e11',1,'parameter::macro()'],['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3a3d1738a931468da77c233f1126436b81',1,'MACRO():&#160;command.h']]],
   ['macro_5fmax',['MACRO_MAX',['../structures_8h.html#a564748b22549ad3f48e60e99caf3166e',1,'structures.h']]],
+  ['macro_5fpt_5fdequeue',['macro_pt_dequeue',['../input_8c.html#a712ce5a59c9a281c4d4c4d0ba3446de7',1,'input.c']]],
+  ['macro_5fpt_5fenqueue',['macro_pt_enqueue',['../input_8c.html#a225fb4bb1f20d4a8b524f5d72763367d',1,'input.c']]],
+  ['macro_5fpt_5ffirst',['macro_pt_first',['../input_8c.html#a34b6a3d2e97732b6973cd608e35317c9',1,'input.c']]],
   ['macroaction',['macroaction',['../structures_8h.html#structmacroaction',1,'']]],
   ['macrocap',['macrocap',['../structures_8h.html#a6b2bbaf2f7a55b7cdca6c99555919c7b',1,'binding']]],
   ['macrocount',['macrocount',['../structures_8h.html#a454d3fda3c8436eb951eace5819728da',1,'binding']]],
   ['macromask',['macromask',['../input_8c.html#abd38419ce56379559481f51d9491adeb',1,'input.c']]],
   ['macromutex',['macromutex',['../device_8c.html#a0435da20f2ad3d439f0a1f04b2f3f3cf',1,'macromutex():&#160;device.c'],['../device_8h.html#a0435da20f2ad3d439f0a1f04b2f3f3cf',1,'macromutex():&#160;device.c']]],
+  ['macromutex2',['macromutex2',['../device_8c.html#a9e2c060f6f466b6ed9406e6397ab3b1e',1,'macromutex2():&#160;device.c'],['../device_8h.html#a9e2c060f6f466b6ed9406e6397ab3b1e',1,'macromutex2():&#160;device.c']]],
   ['macros',['macros',['../structures_8h.html#a07ad87dd79741d47cabf12da5c03bf4c',1,'binding']]],
+  ['macrovar',['macrovar',['../device_8c.html#a26d8fa91b7834ac4c2806a73976ec0ca',1,'macrovar():&#160;device.c'],['../device_8h.html#a26d8fa91b7834ac4c2806a73976ec0ca',1,'macrovar():&#160;device.c']]],
   ['main',['main',['../main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main.c']]],
   ['main_2ec',['main.c',['../main_8c.html',1,'']]],
   ['main_5fac',['main_ac',['../main_8c.html#ab7c6bc8012f05d762a405dd8ea06b6fd',1,'main.c']]],
@@ -20,11 +25,13 @@ var searchData=
   ['mkfwnode',['mkfwnode',['../devnode_8c.html#ad130425a617cf973b28603a72607a057',1,'mkfwnode(usbdevice *kb):&#160;devnode.c'],['../devnode_8h.html#ad130425a617cf973b28603a72607a057',1,'mkfwnode(usbdevice *kb):&#160;devnode.c']]],
   ['mknotifynode',['mknotifynode',['../devnode_8c.html#a981305884de053a41d337efac23900ec',1,'mknotifynode(usbdevice *kb, int notify):&#160;devnode.c'],['../devnode_8h.html#a981305884de053a41d337efac23900ec',1,'mknotifynode(usbdevice *kb, int notify):&#160;devnode.c']]],
   ['mmutex',['mmutex',['../device_8h.html#a7c03b451627e1eefc2e17de9da445619',1,'device.h']]],
+  ['mmutex2',['mmutex2',['../device_8h.html#ab73520714dbf67fbc99a20fc07f0dded',1,'device.h']]],
   ['mode',['mode',['../structures_8h.html#a3606f3a45186ebabca0cf0575246ee25',1,'usbprofile::mode()'],['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3a865d4bfdc2dd5f698e4558474765cba8',1,'MODE():&#160;command.h']]],
   ['mode_5fcount',['MODE_COUNT',['../structures_8h.html#a49411106ded1f036bc87efe172598f79',1,'structures.h']]],
   ['models',['models',['../usb__linux_8c.html#ac1888fdd0cb519fd7ff5768437629b8b',1,'usb_linux.c']]],
   ['modified',['modified',['../structures_8h.html#a1a0c276e539686876fe18ff71770a927',1,'usbid']]],
   ['mouse_5fbutton_5ffirst',['MOUSE_BUTTON_FIRST',['../keymap_8h.html#a903ade6db268bd86c74b2692ebadca54',1,'keymap.h']]],
   ['mouse_5fextra_5ffirst',['MOUSE_EXTRA_FIRST',['../keymap_8h.html#a0375a5d2cddae84d3495f827c3e2b241',1,'keymap.h']]],
-  ['msg_5fsize',['MSG_SIZE',['../structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d',1,'structures.h']]]
+  ['msg_5fsize',['MSG_SIZE',['../structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d',1,'structures.h']]],
+  ['mvar',['mvar',['../device_8h.html#a462377863242694d02d0cb4781637f3c',1,'device.h']]]
 ];

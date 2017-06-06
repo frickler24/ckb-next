@@ -7,10 +7,10 @@
 <area shape="rect" id="node23" href="$usb_8c.html#af87f830e031d8f63d2d1c3fc14fdad20" title="brief . " alt="" coords="526,512,613,539"/>
 <area shape="rect" id="node24" href="$usb_8c.html#a8e6389e8183a834fedb6ed317dd26f94" title="brief . " alt="" coords="528,563,611,589"/>
 <area shape="rect" id="node25" href="$usb_8h.html#a9e5784bfca2e4612f498ce67c7dab275" title="os_inputmain is run in a separate thread and will be detached from the main thread, so it needs to clean up its own resources. " alt="" coords="152,683,251,709"/>
-<area shape="rect" id="node38" href="$input_8h.html#ac73b3c2c38b916b901b4cca6b350a863" title="os_inputopen " alt="" coords="152,771,251,797"/>
-<area shape="rect" id="node40" href="$input_8h.html#a081bbacaa312d4a1a63bc1cab5d3520f" title="os_setupindicators" alt="" coords="136,897,267,924"/>
-<area shape="rect" id="node42" href="$usb_8h.html#a39442715182933b93172de60cdb66e8f" title="os_setupusb OS&#45;specific setup for a specific usb device. " alt="" coords="153,980,249,1007"/>
-<area shape="rect" id="node44" href="$usb_8c.html#a8a1c88df5e127732cb63f1a8be180926" title="usb_tryreset" alt="" coords="339,1069,434,1096"/>
+<area shape="rect" id="node42" href="$input_8h.html#ac73b3c2c38b916b901b4cca6b350a863" title="os_inputopen " alt="" coords="152,771,251,797"/>
+<area shape="rect" id="node44" href="$input_8h.html#a081bbacaa312d4a1a63bc1cab5d3520f" title="os_setupindicators" alt="" coords="136,897,267,924"/>
+<area shape="rect" id="node46" href="$usb_8h.html#a39442715182933b93172de60cdb66e8f" title="os_setupusb OS&#45;specific setup for a specific usb device. " alt="" coords="153,980,249,1007"/>
+<area shape="rect" id="node48" href="$usb_8c.html#a8a1c88df5e127732cb63f1a8be180926" title="usb_tryreset" alt="" coords="339,1069,434,1096"/>
 <area shape="rect" id="node3" href="$input_8h.html#a44df5105a6a3f2eda5bc39a88201bd1a" title="os_inputclose" alt="" coords="518,107,621,133"/>
 <area shape="rect" id="node6" href="$usb_8h.html#a6a62575e9073fae15efb58f24fbfe5b8" title="os_closeusb unclaim it, destroy the udev device and clear data structures at kb " alt="" coords="522,56,617,83"/>
 <area shape="rect" id="node8" href="$devnode_8c.html#a8d0aeeebb364608943b78573adb85c7f" title="Remove the dev path for the keyboard at index. Returns 0 on success. " alt="" coords="528,259,611,285"/>
@@ -24,7 +24,7 @@
 <area shape="rect" id="node18" href="$devnode_8c.html#a588ab2c69fcb283a5beb90c49a165979" title="readlines_ctx_free" alt="" coords="323,385,451,412"/>
 <area shape="rect" id="node15" href="$devnode_8c.html#a981305884de053a41d337efac23900ec" title="Creates a notification node for the specified keyboard. " alt="" coords="519,360,619,387"/>
 <area shape="rect" id="node17" href="$devnode_8c.html#a40e40a8ea3edccbfd8fdfefc44a76206" title="Removes a notification node for the specified keyboard. " alt="" coords="521,157,618,184"/>
-<area shape="rect" id="node16" href="$devnode_8c.html#a38fcf6ff044f9249ae04234340ee8e7b" title="_mknotifynode" alt="" coords="691,411,797,437"/>
+<area shape="rect" id="node16" href="$devnode_8c.html#a38fcf6ff044f9249ae04234340ee8e7b" title="_mknotifynode" alt="" coords="691,385,797,412"/>
 <area shape="rect" id="node21" href="$devnode_8c.html#a81c81014b2dfa89e326dd61769842953" title="_mkdevpath" alt="" coords="340,461,433,488"/>
 <area shape="rect" id="node22" href="$devnode_8c.html#ad130425a617cf973b28603a72607a057" title="Writes a keyboard&#39;s firmware version and poll rate to its device node. " alt="" coords="528,411,611,437"/>
 <area shape="rect" id="node26" href="$keymap_8c.html#a092f675ff366b5823c73b25f83d513f9" title="hid_mouse_translate" alt="" coords="315,664,458,691"/>
@@ -32,15 +32,19 @@
 <area shape="rect" id="node28" href="$keymap_8c.html#a6f4afd134546237416b271d9cefd2889" title="hid_kb_translate" alt="" coords="328,765,445,792"/>
 <area shape="rect" id="node29" href="$keymap_8c.html#ad39ede76abd657f5123fa331853db017" title="corsair_kbcopy" alt="" coords="331,816,442,843"/>
 <area shape="rect" id="node30" href="$input_8c.html#ae360d0b9a764a1d38c5be5464be8b70a" title="inputupdate" alt="" coords="342,613,431,640"/>
-<area shape="rect" id="node31" href="$input_8c.html#aed8e9842ed5750c1d328c5dc4c1ba2bd" title="inputupdate_keys" alt="" coords="507,613,631,640"/>
-<area shape="rect" id="node37" href="$input_8h.html#a9f2cfb2d883ae4a3732047fe3f3da683" title="os_mousemove" alt="" coords="687,664,801,691"/>
-<area shape="rect" id="node32" href="$input_8c.html#abd38419ce56379559481f51d9491adeb" title="macromask" alt="" coords="699,512,789,539"/>
-<area shape="rect" id="node33" href="$notify_8c.html#ac2411c0997dfdbefdebd45f2584a5d04" title="nprintkey" alt="" coords="707,563,781,589"/>
-<area shape="rect" id="node35" href="$input_8h.html#af0d3401f317f3214dadad7d1a3378c58" title="os_keypress" alt="" coords="696,613,792,640"/>
-<area shape="rect" id="node34" href="$notify_8c.html#a7ac88f15243030290e4d57c3c9ac7c98" title="nprintf" alt="" coords="856,563,915,589"/>
-<area shape="rect" id="node36" href="$input__linux_8c.html#a14ff0fdf147e3702197db2cadb878460" title="isync" alt="" coords="859,639,912,665"/>
-<area shape="rect" id="node39" href="$input__linux_8c.html#a5f050529d49f8cb5e8dda4617c5984b7" title="uinputopen" alt="" coords="344,867,429,893"/>
-<area shape="rect" id="node41" href="$input__linux_8c.html#a5d40cc9137eaefbc2d860fac76020460" title="_ledthread" alt="" coords="345,917,428,944"/>
-<area shape="rect" id="node43" href="$usb__linux_8c.html#ab694a2ac859b16b5af802b4484f5ba0b" title="strtrim" alt="" coords="357,968,416,995"/>
-<area shape="rect" id="node45" href="$usb__linux_8c.html#a309cab8bf65221b01dc320f247abf626" title="usbclaim" alt="" coords="349,1019,424,1045"/>
+<area shape="rect" id="node31" href="$input_8c.html#aed8e9842ed5750c1d328c5dc4c1ba2bd" title="inputupdate_keys Handle input from Keyboard or mouse; start Macrof if detected. " alt="" coords="507,613,631,640"/>
+<area shape="rect" id="node41" href="$input_8h.html#a9f2cfb2d883ae4a3732047fe3f3da683" title="os_mousemove" alt="" coords="865,791,980,817"/>
+<area shape="rect" id="node32" href="$input_8c.html#a34b6a3d2e97732b6973cd608e35317c9" title="macro_pt_first returns the first pthread_id but does not remove the first entry. " alt="" coords="870,639,975,665"/>
+<area shape="rect" id="node33" href="$input_8c.html#abd38419ce56379559481f51d9491adeb" title="macromask" alt="" coords="699,487,789,513"/>
+<area shape="rect" id="node34" href="$notify_8c.html#ac2411c0997dfdbefdebd45f2584a5d04" title="nprintkey" alt="" coords="707,537,781,564"/>
+<area shape="rect" id="node36" href="$input_8h.html#af0d3401f317f3214dadad7d1a3378c58" title="os_keypress" alt="" coords="875,588,971,615"/>
+<area shape="rect" id="node38" href="$input_8c.html#a42ef48810461524270042eeda9616dba" title="play_macro is the code for all threads started to play a macro. " alt="" coords="699,689,789,716"/>
+<area shape="rect" id="node35" href="$notify_8c.html#a7ac88f15243030290e4d57c3c9ac7c98" title="nprintf" alt="" coords="893,537,952,564"/>
+<area shape="rect" id="node37" href="$input__linux_8c.html#a14ff0fdf147e3702197db2cadb878460" title="isync" alt="" coords="1037,689,1091,716"/>
+<area shape="rect" id="node39" href="$input_8c.html#a712ce5a59c9a281c4d4c4d0ba3446de7" title="macro_pt_dequeue gets the first thread id of the list and returns the thread_id stored in it..." alt="" coords="857,689,989,716"/>
+<area shape="rect" id="node40" href="$input_8c.html#a225fb4bb1f20d4a8b524f5d72763367d" title="macro_pt_enqueue Save the new thread in the single linked list (FIFO). " alt="" coords="857,740,989,767"/>
+<area shape="rect" id="node43" href="$input__linux_8c.html#a5f050529d49f8cb5e8dda4617c5984b7" title="uinputopen" alt="" coords="344,867,429,893"/>
+<area shape="rect" id="node45" href="$input__linux_8c.html#a5d40cc9137eaefbc2d860fac76020460" title="_ledthread" alt="" coords="345,917,428,944"/>
+<area shape="rect" id="node47" href="$usb__linux_8c.html#ab694a2ac859b16b5af802b4484f5ba0b" title="strtrim" alt="" coords="357,968,416,995"/>
+<area shape="rect" id="node49" href="$usb__linux_8c.html#a309cab8bf65221b01dc320f247abf626" title="usbclaim" alt="" coords="349,1019,424,1045"/>
 </map>

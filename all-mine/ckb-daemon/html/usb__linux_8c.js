@@ -5,7 +5,6 @@ var usb__linux_8c =
       [ "number", "usb__linux_8c.html#a0675741fabf6b6b11e21bf1bf3564fd4", null ]
     ] ],
     [ "DEBUG", "usb__linux_8c.html#ad72dbcf6d0153db1b8d8a58001feed83", null ],
-    [ "DEBUG", "usb__linux_8c.html#ad72dbcf6d0153db1b8d8a58001feed83", null ],
     [ "N_MODELS", "usb__linux_8c.html#a8d8cfcf715f178c0e85ce011e7a9bcbf", null ],
     [ "TEST_RESET", "usb__linux_8c.html#a023dc730b8ef35b7918272df90d04c9b", null ],
     [ "_nk95cmd", "usb__linux_8c.html#a3da2cab9cd88ea517d39888fe2159734", null ],

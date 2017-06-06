@@ -54,7 +54,6 @@ var searchData=
   ['sniper',['SNIPER',['../classKbPerf.html#ac945f209da6ec18bc6a654bef8bc8094',1,'KbPerf']]],
   ['snipervalue',['sniperValue',['../classKeyAction.html#a2010276d5349d7dcc6b3477c20d13160',1,'KeyAction']]],
   ['spawn',['spawn',['../ckb-rain_2main_8c.html#ae1e960d5096ba49c6ddbf6d8266a08aa',1,'main.c']]],
-  ['specials',['specials',['../firmware__special_8h.html#ab961354ac207225078800180ecac6eb7',1,'firmware_special.h']]],
   ['speed',['speed',['../ckb-rain_2main_8c.html#a6dc6e6f3c75c509ce943163afb5dade7',1,'main.c']]],
   ['spinbox',['spinBox',['../classUi__MPerfWidget.html#a50e5bf0557d9de22c069f58a49530476',1,'Ui_MPerfWidget']]],
   ['sspeedbox',['sSpeedBox',['../classUi__ExtraSettingsWidget.html#ac652e55249419a2ee7c8e54efd50ebd9',1,'Ui_ExtraSettingsWidget']]],

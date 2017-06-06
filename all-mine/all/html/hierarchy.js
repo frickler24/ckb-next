@@ -15,7 +15,6 @@ var hierarchy =
     [ "dpiset", "structures_8h.html#structdpiset", null ],
     [ "MPerfWidget::DpiUi", "classMPerfWidget.html#structMPerfWidget_1_1DpiUi", null ],
     [ "file_in_zip64_read_info_s", "unzip_8c.html#structfile__in__zip64__read__info__s", null ],
-    [ "firmwareSpecial", "firmware__special_8h.html#structfirmwareSpecial", null ],
     [ "KbFirmware::FW", "structKbFirmware_1_1FW.html", null ],
     [ "hwprofile", "structures_8h.html#structhwprofile", null ],
     [ "KPerfWidget::IndicatorUi", "classKPerfWidget.html#structKPerfWidget_1_1IndicatorUi", null ],
@@ -36,7 +35,9 @@ var hierarchy =
     [ "linkedlist_datablock_internal_s", "zip_8c.html#structlinkedlist__datablock__internal__s", null ],
     [ "macroaction", "structures_8h.html#structmacroaction", null ],
     [ "AnimScript::Param", "classAnimScript.html#structAnimScript_1_1Param", null ],
+    [ "parameter", "input_8h.html#structparameter", null ],
     [ "GradientDialog::Preset", "structGradientDialog_1_1Preset.html", null ],
+    [ "ptlist", "input_8h.html#structptlist", null ],
     [ "QDialog", "classQDialog.html", [
       [ "AnimAddDialog", "classAnimAddDialog.html", null ],
       [ "AnimSettingDialog", "classAnimSettingDialog.html", null ],
@@ -45,7 +46,6 @@ var hierarchy =
       [ "GradientDialog", "classGradientDialog.html", null ],
       [ "KbProfileDialog", "classKbProfileDialog.html", null ],
       [ "LayoutDialog", "classLayoutDialog.html", null ],
-      [ "macroMigrationTip", "classmacroMigrationTip.html", null ],
       [ "ModeSelectDialog", "classModeSelectDialog.html", null ]
     ] ],
     [ "QIODevice", "classQIODevice.html", [

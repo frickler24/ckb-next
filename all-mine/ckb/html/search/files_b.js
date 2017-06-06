@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['macromigrationtip_2ecpp',['macromigrationtip.cpp',['../macromigrationtip_8cpp.html',1,'']]],
-  ['macromigrationtip_2eh',['macromigrationtip.h',['../macromigrationtip_8h.html',1,'']]],
   ['macroreader_2ecpp',['macroreader.cpp',['../macroreader_8cpp.html',1,'']]],
   ['macroreader_2eh',['macroreader.h',['../macroreader_8h.html',1,'']]],
   ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]],

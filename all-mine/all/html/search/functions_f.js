@@ -15,6 +15,7 @@ var searchData=
   ['pickcolor',['pickColor',['../classColorButton.html#a9cd98ab11ac0c98e3c2ff7b3432c6928',1,'ColorButton']]],
   ['pickgradient',['pickGradient',['../classGradientButton.html#a787f1587d19538e3cb93ddee2a6571d7',1,'GradientButton']]],
   ['pidactive',['pidActive',['../main_8cpp.html#a6a2182013ee92b247971f24f25e0e587',1,'main.cpp']]],
+  ['play_5fmacro',['play_macro',['../input_8c.html#a42ef48810461524270042eeda9616dba',1,'input.c']]],
   ['pollupdates',['pollUpdates',['../classExtraSettingsWidget.html#a77ded97e5f5097c29da0e6fe1a969ee7',1,'ExtraSettingsWidget::pollUpdates()'],['../classSettingsWidget.html#a6ae876420712dcb104ce3ef5cabb0f53',1,'SettingsWidget::pollUpdates()']]],
   ['popdpi',['popDpi',['../classKbPerf.html#a088e1bf03304f0b1942a027f18827fbc',1,'KbPerf']]],
   ['pos',['pos',['../classQuaZipFile.html#a90fd55dab83eca7f95df50b2c41b7f22',1,'QuaZipFile']]],

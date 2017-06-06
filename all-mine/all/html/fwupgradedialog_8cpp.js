@@ -6,7 +6,8 @@ var fwupgradedialog_8cpp =
       [ "vendor", "fwupgradedialog_8cpp.html#a7ee73ddef65cc7851394429f088b0547", null ]
     ] ],
     [ "DIALOG_HEIGHT_MAX", "fwupgradedialog_8cpp.html#a28727c27229bdee728266f176d995b71", null ],
-    [ "verifyFw", "fwupgradedialog_8cpp.html#abaf71d2c4bec490fe29292bfd9cec295", null ],
+    [ "verifyFw", "fwupgradedialog_8cpp.html#a5e7a9e214e385fe74d87e784a4f043a2", null ],
     [ "DIALOG_HEIGHT_MIN", "fwupgradedialog_8cpp.html#a9b9c6d47851c4e08f42d101befd9cc73", null ],
-    [ "DIALOG_WIDTH", "fwupgradedialog_8cpp.html#aed2746941fc9f088a10d2ea26bffe908", null ]
+    [ "DIALOG_WIDTH", "fwupgradedialog_8cpp.html#aed2746941fc9f088a10d2ea26bffe908", null ],
+    [ "ids", "fwupgradedialog_8cpp.html#a631127b4178165854dab046ba2759584", null ]
 ];

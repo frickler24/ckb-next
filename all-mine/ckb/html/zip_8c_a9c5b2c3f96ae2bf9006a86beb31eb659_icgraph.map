@@ -26,10 +26,10 @@
 <area shape="rect" id="node20" href="$classQuaZipFile.html#af3c45f6d1963610a60331969fa3fd357" title="Opens a file for writing. " alt="" coords="1239,666,1361,692"/>
 <area shape="rect" id="node26" href="$classQuaZip.html#abfa4e6018b2964a3d10a4c54e5ab3962" title="Opens ZIP file. " alt="" coords="1450,235,1550,262"/>
 <area shape="rect" id="node35" href="$classQuaZip.html#a7a4323b73e12f3b4470109f200728f9f" title="Closes ZIP file. " alt="" coords="1050,311,1153,338"/>
-<area shape="rect" id="node27" href="$classKbFirmware.html#a86cc0f2021cb2d5d0353c52a957c0e0f" title="KbFirmware::_fileForBoard" alt="" coords="1647,184,1825,211"/>
+<area shape="rect" id="node27" href="$classKbFirmware.html#ae5f3c91fcf3fe8fe55e2c1e3cea877eb" title="KbFirmware::_fileForBoard" alt="" coords="1647,184,1825,211"/>
 <area shape="rect" id="node33" href="$classJlCompress.html#ab42422be913f817d7e04c1b1cd5d0156" title="Get the file list. " alt="" coords="1656,286,1816,312"/>
 <area shape="rect" id="node34" href="$classQuaZipFile.html#aed75bace51f2bb4c3e4f656ab4493aac" title="Opens a file for reading. " alt="" coords="1675,336,1797,363"/>
-<area shape="rect" id="node28" href="$classKbFirmware.html#ae5dae6557deb8b35d6731597d57eac26" title="KbFirmware::dataForBoard" alt="" coords="1883,184,2061,211"/>
+<area shape="rect" id="node28" href="$classKbFirmware.html#a1cc600d07217f327a1541a44d353004c" title="KbFirmware::dataForBoard" alt="" coords="1883,184,2061,211"/>
 <area shape="rect" id="node29" href="$classFwUpgradeDialog.html#a1fd1f6f1285ab4998a7c81e2ee118d54" title="FwUpgradeDialog::exec" alt="" coords="2109,184,2272,211"/>
 <area shape="rect" id="node30" href="$classKbWidget.html#a38c9f29a5d8f1edfcb5f8040de3dadb9" title="KbWidget::on_fwUpdButton\l_clicked" alt="" coords="2320,177,2504,218"/>
 <area shape="rect" id="node31" href="$classKbWidget.html#a428930086336c668e8a1055c21c938d9" title="KbWidget::showFwUpdate" alt="" coords="2552,184,2731,211"/>

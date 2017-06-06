@@ -77,7 +77,6 @@ var searchData=
   ['setupusb',['setupusb',['../usb_8c.html#a1ab9d61dd894466125283465201161cd',1,'setupusb(usbdevice *kb):&#160;usb.c'],['../usb_8h.html#a1ab9d61dd894466125283465201161cd',1,'setupusb(usbdevice *kb):&#160;usb.c']]],
   ['setvalue',['setValue',['../classCkbSettings.html#a7b5f9dcfd7582a42655a5635f52d46fb',1,'CkbSettings']]],
   ['setversion',['setVersion',['../classSettingsWidget.html#ab824675bf3626fe1dba7132379a14328',1,'SettingsWidget']]],
-  ['setwritable',['setWritable',['../classCkbSettings.html#a378a1793dae116fbea4a801396fa4fbb',1,'CkbSettings']]],
   ['setzip',['setZip',['../classQuaZipFile.html#ab7939a26d1e8de2f6aca54f49a12b980',1,'QuaZipFile']]],
   ['setzip64enabled',['setZip64Enabled',['../classQuaZip.html#ab99a22efae02ebb4b5c9cd8eedc1c0b0',1,'QuaZip']]],
   ['setziperror',['setZipError',['../classQuaZipFilePrivate.html#ac5b22d3b5ccced847ddce1a6f971cc80',1,'QuaZipFilePrivate']]],

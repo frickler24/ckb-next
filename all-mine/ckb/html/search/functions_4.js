@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['dataforboard',['dataForBoard',['../classKbFirmware.html#ae5dae6557deb8b35d6731597d57eac26',1,'KbFirmware']]],
+  ['dataforboard',['dataForBoard',['../classKbFirmware.html#a1cc600d07217f327a1541a44d353004c',1,'KbFirmware']]],
   ['dealloc',['deAlloc',['../classColorMap.html#a5b1a2380ceed6ea2981c5d1928fc3a1e',1,'ColorMap']]],
   ['decrypt_5fbyte',['decrypt_byte',['../crypt_8h.html#a3d049bf9296cf72cff8a07cff388bb1d',1,'crypt.h']]],
   ['defaultaction',['defaultAction',['../classKbBind.html#adc0b3a203d2f9604799d2f7513241f91',1,'KbBind::defaultAction()'],['../classKeyAction.html#ae744da2dd239b7d6596a341ea63b0e88',1,'KeyAction::defaultAction()']]],

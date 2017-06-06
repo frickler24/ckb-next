@@ -1,4 +1,4 @@
-.TH "src/ckb/ckbsettings.cpp" 3 "Sun Jun 4 2017" "Version beta-v0.2.8+testing at branch all-mine" "ckb-next" \" -*- nroff -*-
+.TH "src/ckb/ckbsettings.cpp" 3 "Tue Jun 6 2017" "Version beta-v0.2.8+testing at branch all-mine" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -13,8 +13,6 @@ src/ckb/ckbsettings.cpp \-
 \fC#include <QThread>\fP
 .br
 \fC#include <QMutex>\fP
-.br
-\fC#include <QFile>\fP
 .br
 \fC#include <QDebug>\fP
 .br
@@ -50,7 +48,6 @@ src/ckb/ckbsettings.cpp \-
 .ti -1c
 .RI "static QSettings * \fBglobalSettings\fP ()"
 .br
-.RI "\fIglobalSettings \fP"
 .in -1c
 .SS "Variables"
 
@@ -70,25 +67,25 @@ src/ckb/ckbsettings.cpp \-
 .SS "#define lockMutex   QMutexLocker locker(backing == \fB_globalSettings\fP ? &\fBsettingsMutex\fP : 0)"
 
 .PP
-Definition at line 16 of file ckbsettings\&.cpp\&.
+Definition at line 15 of file ckbsettings\&.cpp\&.
 .PP
 Referenced by CkbSettings::childGroups(), CkbSettings::childKeys(), CkbSettings::contains(), and CkbSettings::value()\&.
 .SS "#define lockMutexCache   QMutexLocker locker(&\fBsettingsCacheMutex\fP)"
 
 .PP
-Definition at line 19 of file ckbsettings\&.cpp\&.
+Definition at line 18 of file ckbsettings\&.cpp\&.
 .PP
 Referenced by CkbSettings::get(), CkbSettings::set(), and CkbSettings::setValue()\&.
 .SS "#define lockMutexStatic   QMutexLocker locker(&\fBsettingsMutex\fP)"
 
 .PP
-Definition at line 17 of file ckbsettings\&.cpp\&.
+Definition at line 16 of file ckbsettings\&.cpp\&.
 .PP
 Referenced by globalSettings(), and CkbSettings::set()\&.
 .SS "#define lockMutexStatic2   QMutexLocker locker2(&\fBsettingsMutex\fP)"
 
 .PP
-Definition at line 18 of file ckbsettings\&.cpp\&.
+Definition at line 17 of file ckbsettings\&.cpp\&.
 .PP
 Referenced by CkbSettings::get()\&.
 .SH "Function Documentation"
@@ -100,71 +97,27 @@ Referenced by CkbSettings::cleanUp(), and CkbSettings::isBusy()\&.
 .SS "static QSettings* globalSettings ()\fC [static]\fP"
 
 .PP
-\fBReturns:\fP
-.RS 4
-QSettings* _globalsettings Opens the global settings organized by QSettings class (machine independent implementation)\&. Settings contain key definitions, colors, macros, settings for the profiles and so on\&. 
-.RE
+Definition at line 27 of file ckbsettings\&.cpp\&.
 .PP
-first check if QSettings structures can be written in the filesystem\&. Try to open the standard config file and to write something into it\&. Close the file\&.
-.PP
-Try to open the conf file again and to read the standard value\&. Delete the standard value afterwards\&. Because on linux QSettings does somehow caching, it reads the correct value even the file (not the directory) is read only\&. So we need to add the original isWritable() function\&.
-.PP
-Put the settings object in a separate thread so that it won't lock up the GUI when it syncs 
-.PP
-Definition at line 34 of file ckbsettings\&.cpp\&.
-.PP
-References _globalSettings, lockMutexStatic, and CkbSettings::setWritable()\&.
+References _globalSettings, and lockMutexStatic\&.
 .PP
 Referenced by CkbSettings::get(), and CkbSettings::set()\&.
 .PP
 .nf
-34                                   {
-35     if(!_globalSettings){
-36         lockMutexStatic;
-37         if(!(volatile QSettings*)_globalSettings){   // Check again after locking mutex in case another thread created the object
-41             CkbSettings::setWritable(false);
-42             QSettings* testSettings = new QSettings;
-43             testSettings->setValue("testIfWritable", 42);
-44             testSettings->sync();
-45 
-46             QString settingsFileName = testSettings->fileName();
-47             delete testSettings;
-48 
-49             bool fileWriteAccess = false;
-50             int lastSlashInName = settingsFileName\&.lastIndexOf("/");
-51             if (lastSlashInName != -1) {
-52                 QString newFileName = settingsFileName\&.left(settingsFileName\&.lastIndexOf("/"))\&.append("/testFileToCheckWriteAccess");
-53                 QFile testFile(newFileName);
-54                 try {
-55                     if (testFile\&.open(QIODevice::WriteOnly | QIODevice::Text)) {
-56                         QTextStream out(&testFile);
-57                         out << "The magic number is: " << 42 << "\n";
-58                         testFile\&.close();
-59                         fileWriteAccess = QFile::remove(newFileName);
-60                     }
-61                 } catch(int e) {
-62                     fileWriteAccess = false;
-63                 }
-64             }
-65 
-70             testSettings = new QSettings;
-71             if ((testSettings->value("testIfWritable")\&.toInt() == 42) && testSettings->isWritable()) {
-72                 CkbSettings::setWritable(fileWriteAccess);
-73                 testSettings->remove("testIfWritable");
-74                 testSettings->sync();
-75             }
-76             delete testSettings;
-77             testSettings = 0;
-78 
-80             globalThread = new QThread;
-81             globalThread->start();
-82             _globalSettings = new QSettings;
-83             qInfo() << "Path  to settings is" << _globalSettings->fileName();
-84             _globalSettings->moveToThread(globalThread);
-85         }
-86     }
-87     return _globalSettings;
-88 }
+27                                   {
+28     if(!_globalSettings){
+29         lockMutexStatic;
+30         if(!(volatile QSettings*)_globalSettings){   // Check again after locking mutex in case another thread created the object
+31             // Put the settings object in a separate thread so that it won't lock up the GUI when it syncs
+32             globalThread = new QThread;
+33             globalThread->start();
+34             _globalSettings = new QSettings;
+35             qInfo() << "Path  to settings is" << _globalSettings->fileName();
+36             _globalSettings->moveToThread(globalThread);
+37         }
+38     }
+39     return _globalSettings;
+40 }
 .fi
 .SS "QMutex settingsCacheMutex (QMutex::Recursive)"
 
@@ -175,19 +128,19 @@ Referenced by CkbSettings::get(), and CkbSettings::set()\&.
 .SS "QSettings* _globalSettings = 0\fC [static]\fP"
 
 .PP
-Definition at line 9 of file ckbsettings\&.cpp\&.
+Definition at line 8 of file ckbsettings\&.cpp\&.
 .PP
-Referenced by CkbSettings::cleanUp(), globalSettings(), and CkbSettings::informIfNonWritable()\&.
+Referenced by CkbSettings::cleanUp(), and globalSettings()\&.
 .SS "QMap<QString, QVariant> globalCache\fC [static]\fP"
 
 .PP
-Definition at line 13 of file ckbsettings\&.cpp\&.
+Definition at line 12 of file ckbsettings\&.cpp\&.
 .PP
 Referenced by CkbSettings::get(), CkbSettings::set(), and CkbSettings::setValue()\&.
 .SS "\fBQThread\fP* globalThread = 0\fC [static]\fP"
 
 .PP
-Definition at line 10 of file ckbsettings\&.cpp\&.
+Definition at line 9 of file ckbsettings\&.cpp\&.
 .PP
 Referenced by CkbSettings::cleanUp()\&.
 .SH "Author"

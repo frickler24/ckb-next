@@ -12,6 +12,7 @@ var searchData=
   ['icolor',['iColor',['../classKbPerf.html#a29acc0a53d33235f8d0f4ae3c629e23a',1,'KbPerf']]],
   ['iconclicked',['iconClicked',['../classMainWindow.html#a3e292f1ddb54b722c8270b1259c1f85a',1,'MainWindow']]],
   ['id',['id',['../classKbMode.html#a7f9aa60df1f6adabad5d6b6314546c57',1,'KbMode::id()'],['../classKbMode.html#ac315d57f007bb10901566fb32a3fdd93',1,'KbMode::id(const UsbId &amp;newId)'],['../classKbProfile.html#a868bdfbe3f9c00ce2708a1ed8f457ccf',1,'KbProfile::id()'],['../classKbProfile.html#ac71a91f5ec60278895b841cba6d2ab68',1,'KbProfile::id(const UsbId &amp;newId)']]],
+  ['ids',['ids',['../fwupgradedialog_8cpp.html#a631127b4178165854dab046ba2759584',1,'fwupgradedialog.cpp']]],
   ['ienable',['iEnable',['../classKbPerf.html#a53ee71812e4d2a621e043fa2a18c4fd6',1,'KbPerf']]],
   ['in_5fopened_5ffile_5finzip',['in_opened_file_inzip',['../zip_8c.html#aa24353ae49bce7e6d6aa3f5994782be7',1,'zip64_internal']]],
   ['includecryptingcode_5fifcryptallowed',['INCLUDECRYPTINGCODE_IFCRYPTALLOWED',['../zip_8c.html#aeef9f96d4641105f1c2f5e7d5a51c713',1,'zip.c']]],
@@ -20,7 +21,6 @@ var searchData=
   ['indicators',['indicators',['../classKPerfWidget.html#a12693a15bf943641c5fc08032f25160d',1,'KPerfWidget']]],
   ['indicatorui',['IndicatorUi',['../classKPerfWidget.html#structKPerfWidget_1_1IndicatorUi',1,'KPerfWidget']]],
   ['indicbox',['indicBox',['../classUi__MPerfWidget.html#a250c079c03be7832ad806c491557e6a5',1,'Ui_MPerfWidget']]],
-  ['informifnonwritable',['informIfNonWritable',['../classCkbSettings.html#a6c5935f9ea0cc25bbb0b64929578d99b',1,'CkbSettings']]],
   ['infotab',['infoTab',['../classUi__AnimSettingDialog.html#a15d7b27e111ae2c5aa43051cbd06f0a5',1,'Ui_AnimSettingDialog']]],
   ['infoupdated',['infoUpdated',['../classKb.html#a74c8333e28ae155c77b59865f4018c82',1,'Kb']]],
   ['inframe',['inFrame',['../classAnimScript.html#a6a2843307918b14d7a572eb382bf69b6',1,'AnimScript']]],
@@ -66,7 +66,6 @@ var searchData=
   ['istate',['iState',['../classKb.html#a710124683ee1c8fcca194a59a284bb5d',1,'Kb']]],
   ['isunbound',['isUnbound',['../classKeyAction.html#a23c0536bbfe20712a1e998e692439d6e',1,'KeyAction']]],
   ['isvalidmacro',['isValidMacro',['../classKeyAction.html#ae657d934ff312fb11e306472472b31ef',1,'KeyAction']]],
-  ['iswritable',['isWritable',['../classCkbSettings.html#afbbe306ace70b296d30a56ab595e14bb',1,'CkbSettings']]],
   ['iszip64',['isZip64',['../unzip_8c.html#afd7f9f28081943e01294bc4bf6f36e7b',1,'unz64_s']]],
   ['iszip64enabled',['isZip64Enabled',['../classQuaZip.html#a1b638566390d7599ba5982e844b151f4',1,'QuaZip']]],
   ['it',['IT',['../classKeyMap.html#ad1d282278b1b6a408e75ec29f06a546ca1a55f400ce3724d99ddc8c127b02ce50',1,'KeyMap']]]

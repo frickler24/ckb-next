@@ -146,11 +146,20 @@ Variables</h2></td></tr>
 <tr class="memitem:a009a6978650a3c90df5488092c583064"><td class="memItemLeft" align="right" valign="top">pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="device_8c.html#a009a6978650a3c90df5488092c583064">devlistmutex</a> = PTHREAD_MUTEX_INITIALIZER</td></tr>
 <tr class="separator:a009a6978650a3c90df5488092c583064"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca7076170e3f264e2960ebd508fff190"><td class="memItemLeft" align="right" valign="top">pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="device_8c.html#aca7076170e3f264e2960ebd508fff190">devmutex</a> [9] = { [0 ... 9 -1] = PTHREAD_MUTEX_INITIALIZER }</td></tr>
+<tr class="memdesc:aca7076170e3f264e2960ebd508fff190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutex for handling the usbdevice structure.  <a href="#aca7076170e3f264e2960ebd508fff190">More...</a><br/></td></tr>
 <tr class="separator:aca7076170e3f264e2960ebd508fff190"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefb30be1551e1284c1e4a7545949d973"><td class="memItemLeft" align="right" valign="top">pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="device_8c.html#aefb30be1551e1284c1e4a7545949d973">inputmutex</a> [9] = { [0 ... 9 -1] = PTHREAD_MUTEX_INITIALIZER }</td></tr>
+<tr class="memdesc:aefb30be1551e1284c1e4a7545949d973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutex for dealing with usb input frames.  <a href="#aefb30be1551e1284c1e4a7545949d973">More...</a><br/></td></tr>
 <tr class="separator:aefb30be1551e1284c1e4a7545949d973"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0435da20f2ad3d439f0a1f04b2f3f3cf"><td class="memItemLeft" align="right" valign="top">pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="device_8c.html#a0435da20f2ad3d439f0a1f04b2f3f3cf">macromutex</a> [9] = { [0 ... 9 -1] = PTHREAD_MUTEX_INITIALIZER }</td></tr>
+<tr class="memdesc:a0435da20f2ad3d439f0a1f04b2f3f3cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protecting macros against lightning: Both use usb_send.  <a href="#a0435da20f2ad3d439f0a1f04b2f3f3cf">More...</a><br/></td></tr>
 <tr class="separator:a0435da20f2ad3d439f0a1f04b2f3f3cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e2c060f6f466b6ed9406e6397ab3b1e"><td class="memItemLeft" align="right" valign="top">pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="device_8c.html#a9e2c060f6f466b6ed9406e6397ab3b1e">macromutex2</a> [9] = { [0 ... 9 -1] = PTHREAD_MUTEX_INITIALIZER }</td></tr>
+<tr class="memdesc:a9e2c060f6f466b6ed9406e6397ab3b1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protecting the single link list of threads and the macrovar.  <a href="#a9e2c060f6f466b6ed9406e6397ab3b1e">More...</a><br/></td></tr>
+<tr class="separator:a9e2c060f6f466b6ed9406e6397ab3b1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26d8fa91b7834ac4c2806a73976ec0ca"><td class="memItemLeft" align="right" valign="top">pthread_cond_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="device_8c.html#a26d8fa91b7834ac4c2806a73976ec0ca">macrovar</a> [9] = { [0 ... 9 -1] = PTHREAD_COND_INITIALIZER }</td></tr>
+<tr class="memdesc:a26d8fa91b7834ac4c2806a73976ec0ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">This variable is used to stop and wakeup all macro threads which have to wait.  <a href="#a26d8fa91b7834ac4c2806a73976ec0ca">More...</a><br/></td></tr>
+<tr class="separator:a26d8fa91b7834ac4c2806a73976ec0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a96ee4de97d66a995084757151f4ed150"></a>
@@ -199,48 +208,48 @@ Variables</h2></td></tr>
  That is real Horror code.</li>
 </ul>
 
-<p>Definition at line <a class="el" href="device_8c_source.html#l00023">23</a> of file <a class="el" href="device_8c_source.html">device.c</a>.</p>
+<p>Definition at line <a class="el" href="device_8c_source.html#l00025">25</a> of file <a class="el" href="device_8c_source.html">device.c</a>.</p>
 
-<p>References <a class="el" href="structures_8h_source.html#l00231">usbdevice::active</a>, <a class="el" href="includes_8h_source.html#l00056">ckb_info</a>, <a class="el" href="includes_8h_source.html#l00053">ckb_warn</a>, <a class="el" href="structures_8h_source.html#l00139">FEAT_ADJRATE</a>, <a class="el" href="structures_8h_source.html#l00143">FEAT_FWUPDATE</a>, <a class="el" href="structures_8h_source.html#l00142">FEAT_FWVERSION</a>, <a class="el" href="structures_8h_source.html#l00144">FEAT_HWLOAD</a>, <a class="el" href="structures_8h_source.html#l00138">FEAT_POLLRATE</a>, <a class="el" href="structures_8h_source.html#l00136">FEAT_RGB</a>, <a class="el" href="structures_8h_source.html#l00229">usbdevice::features</a>, <a class="el" href="structures_8h_source.html#l00239">usbdevice::fwversion</a>, <a class="el" href="firmware_8c_source.html#l00011">getfwversion()</a>, <a class="el" href="structures_8h_source.html#l00157">HAS_FEATURES</a>, <a class="el" href="structures_8h_source.html#l00223">usbdevice::hw</a>, <a class="el" href="device_8c_source.html#l00007">hwload_mode</a>, <a class="el" href="profile_8h_source.html#l00052">hwloadprofile</a>, <a class="el" href="structures_8h_source.html#l00161">NEEDS_FW_UPDATE</a>, <a class="el" href="structures_8h_source.html#l00241">usbdevice::pollrate</a>, and <a class="el" href="device_8h_source.html#l00040">setactive</a>.</p>
+<p>References <a class="el" href="structures_8h_source.html#l00231">usbdevice::active</a>, <a class="el" href="includes_8h_source.html#l00056">ckb_info</a>, <a class="el" href="includes_8h_source.html#l00053">ckb_warn</a>, <a class="el" href="structures_8h_source.html#l00139">FEAT_ADJRATE</a>, <a class="el" href="structures_8h_source.html#l00143">FEAT_FWUPDATE</a>, <a class="el" href="structures_8h_source.html#l00142">FEAT_FWVERSION</a>, <a class="el" href="structures_8h_source.html#l00144">FEAT_HWLOAD</a>, <a class="el" href="structures_8h_source.html#l00138">FEAT_POLLRATE</a>, <a class="el" href="structures_8h_source.html#l00136">FEAT_RGB</a>, <a class="el" href="structures_8h_source.html#l00229">usbdevice::features</a>, <a class="el" href="structures_8h_source.html#l00239">usbdevice::fwversion</a>, <a class="el" href="firmware_8c_source.html#l00011">getfwversion()</a>, <a class="el" href="structures_8h_source.html#l00157">HAS_FEATURES</a>, <a class="el" href="structures_8h_source.html#l00223">usbdevice::hw</a>, <a class="el" href="device_8c_source.html#l00007">hwload_mode</a>, <a class="el" href="profile_8h_source.html#l00052">hwloadprofile</a>, <a class="el" href="structures_8h_source.html#l00161">NEEDS_FW_UPDATE</a>, <a class="el" href="structures_8h_source.html#l00241">usbdevice::pollrate</a>, and <a class="el" href="device_8h_source.html#l00044">setactive</a>.</p>
 
-<p>Referenced by <a class="el" href="device_8c_source.html#l00078">start_dev()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                                             {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">// Get the firmware version from the device</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">if</span>(kb-&gt;<a class="code" href="structures_8h.html#a56e8458239a40a080e9cccf901875285">pollrate</a> == 0){</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="device_8c.html#a94d4a8df060c5f77d94f3656fefe6c32">hwload_mode</a> || (<a class="code" href="structures_8h.html#ac5ce9f3f886e327076d6fa5393e7aa69">HAS_FEATURES</a>(kb, <a class="code" href="structures_8h.html#a492073405a0d2b0919249c839f2d9cea">FEAT_HWLOAD</a>) &amp;&amp; <a class="code" href="firmware_8c.html#a3a6f1b57ca13dc54b046616963b299fa">getfwversion</a>(kb))){</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="device_8c.html#a94d4a8df060c5f77d94f3656fefe6c32">hwload_mode</a> == 2)</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="comment">// hwload=always. Report setup failure.</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="device_8c.html#a94d4a8df060c5f77d94f3656fefe6c32">hwload_mode</a>){</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="comment">// hwload=once. Log failure, prevent trying again, and continue.</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <a class="code" href="includes_8h.html#a8e1e1ac7870420e38a04f30554ff2bbb">ckb_warn</a>(<span class="stringliteral">&quot;Unable to load firmware version/poll rate\n&quot;</span>);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                kb-&gt;<a class="code" href="structures_8h.html#abbffdd889fd9a15c8796a47cabd3abd9">features</a> &amp;= ~<a class="code" href="structures_8h.html#a492073405a0d2b0919249c839f2d9cea">FEAT_HWLOAD</a>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            kb-&gt;<a class="code" href="structures_8h.html#a56e8458239a40a080e9cccf901875285">pollrate</a> = 0;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            kb-&gt;<a class="code" href="structures_8h.html#abbffdd889fd9a15c8796a47cabd3abd9">features</a> &amp;= ~(<a class="code" href="structures_8h.html#ab81953cace1c960b24e4756af468f5b5">FEAT_POLLRATE</a> | <a class="code" href="structures_8h.html#a7f4c1f60cfc4f6e1895f6ce63964688e">FEAT_ADJRATE</a>);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">if</span>(kb-&gt;<a class="code" href="structures_8h.html#a47e0bd130899bcf5acdef059f2970ac7">fwversion</a> == 0)</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                kb-&gt;<a class="code" href="structures_8h.html#abbffdd889fd9a15c8796a47cabd3abd9">features</a> &amp;= ~(<a class="code" href="structures_8h.html#aa04530fd77dc8315ac9ba2967c71459e">FEAT_FWVERSION</a> | <a class="code" href="structures_8h.html#a99829418368565753c69abca5a6b496c">FEAT_FWUPDATE</a>);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="structures_8h.html#ac041871a5605e5dbcd73c3671ef2a8bc">NEEDS_FW_UPDATE</a>(kb)){</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="includes_8h.html#af3b6c3fbbe2da20e4058fd83084329a6">ckb_info</a>(<span class="stringliteral">&quot;Device needs a firmware update. Please issue a fwupdate command.\n&quot;</span>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        kb-&gt;<a class="code" href="structures_8h.html#abbffdd889fd9a15c8796a47cabd3abd9">features</a> = <a class="code" href="structures_8h.html#ae84210929bc758f0da372e723d002f8e">FEAT_RGB</a> | <a class="code" href="structures_8h.html#aa04530fd77dc8315ac9ba2967c71459e">FEAT_FWVERSION</a> | <a class="code" href="structures_8h.html#a99829418368565753c69abca5a6b496c">FEAT_FWUPDATE</a>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        kb-&gt;<a class="code" href="structures_8h.html#a8889b6a5d3ce83427377e3a3de947f03">active</a> = 1;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span>(!kb-&gt;<a class="code" href="structures_8h.html#af1c4f9eec19b57c3311bf09d5a988d82">hw</a> &amp;&amp; <a class="code" href="device_8c.html#a94d4a8df060c5f77d94f3656fefe6c32">hwload_mode</a> &amp;&amp; <a class="code" href="structures_8h.html#ac5ce9f3f886e327076d6fa5393e7aa69">HAS_FEATURES</a>(kb, <a class="code" href="structures_8h.html#a492073405a0d2b0919249c839f2d9cea">FEAT_HWLOAD</a>)){</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="profile_8h.html#aac0a781392156e64d344d8eb6d5de3b4">hwloadprofile</a>(kb, 1)){</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="device_8c.html#a94d4a8df060c5f77d94f3656fefe6c32">hwload_mode</a> == 2)</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <a class="code" href="includes_8h.html#a8e1e1ac7870420e38a04f30554ff2bbb">ckb_warn</a>(<span class="stringliteral">&quot;Unable to load hardware profile\n&quot;</span>);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            kb-&gt;<a class="code" href="structures_8h.html#abbffdd889fd9a15c8796a47cabd3abd9">features</a> &amp;= ~<a class="code" href="structures_8h.html#a492073405a0d2b0919249c839f2d9cea">FEAT_HWLOAD</a>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// Active software mode if requested</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span>(makeactive)</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="device_8h.html#afc841d1137ff44e8a225208262d97fae">setactive</a>(kb, 1);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<p>Referenced by <a class="el" href="device_8c_source.html#l00080">start_dev()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                             {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">// Get the firmware version from the device</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">if</span>(kb-&gt;<a class="code" href="structures_8h.html#a56e8458239a40a080e9cccf901875285">pollrate</a> == 0){</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="device_8c.html#a94d4a8df060c5f77d94f3656fefe6c32">hwload_mode</a> || (<a class="code" href="structures_8h.html#ac5ce9f3f886e327076d6fa5393e7aa69">HAS_FEATURES</a>(kb, <a class="code" href="structures_8h.html#a492073405a0d2b0919249c839f2d9cea">FEAT_HWLOAD</a>) &amp;&amp; <a class="code" href="firmware_8c.html#a3a6f1b57ca13dc54b046616963b299fa">getfwversion</a>(kb))){</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="device_8c.html#a94d4a8df060c5f77d94f3656fefe6c32">hwload_mode</a> == 2)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <span class="comment">// hwload=always. Report setup failure.</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="device_8c.html#a94d4a8df060c5f77d94f3656fefe6c32">hwload_mode</a>){</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="comment">// hwload=once. Log failure, prevent trying again, and continue.</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <a class="code" href="includes_8h.html#a8e1e1ac7870420e38a04f30554ff2bbb">ckb_warn</a>(<span class="stringliteral">&quot;Unable to load firmware version/poll rate\n&quot;</span>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                kb-&gt;<a class="code" href="structures_8h.html#abbffdd889fd9a15c8796a47cabd3abd9">features</a> &amp;= ~<a class="code" href="structures_8h.html#a492073405a0d2b0919249c839f2d9cea">FEAT_HWLOAD</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            kb-&gt;<a class="code" href="structures_8h.html#a56e8458239a40a080e9cccf901875285">pollrate</a> = 0;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            kb-&gt;<a class="code" href="structures_8h.html#abbffdd889fd9a15c8796a47cabd3abd9">features</a> &amp;= ~(<a class="code" href="structures_8h.html#ab81953cace1c960b24e4756af468f5b5">FEAT_POLLRATE</a> | <a class="code" href="structures_8h.html#a7f4c1f60cfc4f6e1895f6ce63964688e">FEAT_ADJRATE</a>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">if</span>(kb-&gt;<a class="code" href="structures_8h.html#a47e0bd130899bcf5acdef059f2970ac7">fwversion</a> == 0)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                kb-&gt;<a class="code" href="structures_8h.html#abbffdd889fd9a15c8796a47cabd3abd9">features</a> &amp;= ~(<a class="code" href="structures_8h.html#aa04530fd77dc8315ac9ba2967c71459e">FEAT_FWVERSION</a> | <a class="code" href="structures_8h.html#a99829418368565753c69abca5a6b496c">FEAT_FWUPDATE</a>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="structures_8h.html#ac041871a5605e5dbcd73c3671ef2a8bc">NEEDS_FW_UPDATE</a>(kb)){</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="includes_8h.html#af3b6c3fbbe2da20e4058fd83084329a6">ckb_info</a>(<span class="stringliteral">&quot;Device needs a firmware update. Please issue a fwupdate command.\n&quot;</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        kb-&gt;<a class="code" href="structures_8h.html#abbffdd889fd9a15c8796a47cabd3abd9">features</a> = <a class="code" href="structures_8h.html#ae84210929bc758f0da372e723d002f8e">FEAT_RGB</a> | <a class="code" href="structures_8h.html#aa04530fd77dc8315ac9ba2967c71459e">FEAT_FWVERSION</a> | <a class="code" href="structures_8h.html#a99829418368565753c69abca5a6b496c">FEAT_FWUPDATE</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        kb-&gt;<a class="code" href="structures_8h.html#a8889b6a5d3ce83427377e3a3de947f03">active</a> = 1;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">if</span>(!kb-&gt;<a class="code" href="structures_8h.html#af1c4f9eec19b57c3311bf09d5a988d82">hw</a> &amp;&amp; <a class="code" href="device_8c.html#a94d4a8df060c5f77d94f3656fefe6c32">hwload_mode</a> &amp;&amp; <a class="code" href="structures_8h.html#ac5ce9f3f886e327076d6fa5393e7aa69">HAS_FEATURES</a>(kb, <a class="code" href="structures_8h.html#a492073405a0d2b0919249c839f2d9cea">FEAT_HWLOAD</a>)){</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="profile_8h.html#aac0a781392156e64d344d8eb6d5de3b4">hwloadprofile</a>(kb, 1)){</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="device_8c.html#a94d4a8df060c5f77d94f3656fefe6c32">hwload_mode</a> == 2)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <a class="code" href="includes_8h.html#a8e1e1ac7870420e38a04f30554ff2bbb">ckb_warn</a>(<span class="stringliteral">&quot;Unable to load hardware profile\n&quot;</span>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            kb-&gt;<a class="code" href="structures_8h.html#abbffdd889fd9a15c8796a47cabd3abd9">features</a> &amp;= ~<a class="code" href="structures_8h.html#a492073405a0d2b0919249c839f2d9cea">FEAT_HWLOAD</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// Active software mode if requested</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">if</span>(makeactive)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="device_8h.html#afc841d1137ff44e8a225208262d97fae">setactive</a>(kb, 1);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
 <div class="ttc" id="structures_8h_html_aa04530fd77dc8315ac9ba2967c71459e"><div class="ttname"><a href="structures_8h.html#aa04530fd77dc8315ac9ba2967c71459e">FEAT_FWVERSION</a></div><div class="ttdeci">#define FEAT_FWVERSION</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00142">structures.h:142</a></div></div>
 <div class="ttc" id="structures_8h_html_a47e0bd130899bcf5acdef059f2970ac7"><div class="ttname"><a href="structures_8h.html#a47e0bd130899bcf5acdef059f2970ac7">usbdevice::fwversion</a></div><div class="ttdeci">ushort fwversion</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00239">structures.h:239</a></div></div>
 <div class="ttc" id="structures_8h_html_ae84210929bc758f0da372e723d002f8e"><div class="ttname"><a href="structures_8h.html#ae84210929bc758f0da372e723d002f8e">FEAT_RGB</a></div><div class="ttdeci">#define FEAT_RGB</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00136">structures.h:136</a></div></div>
@@ -259,7 +268,7 @@ Variables</h2></td></tr>
 <div class="ttc" id="structures_8h_html_a99829418368565753c69abca5a6b496c"><div class="ttname"><a href="structures_8h.html#a99829418368565753c69abca5a6b496c">FEAT_FWUPDATE</a></div><div class="ttdeci">#define FEAT_FWUPDATE</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00143">structures.h:143</a></div></div>
 <div class="ttc" id="structures_8h_html_ab81953cace1c960b24e4756af468f5b5"><div class="ttname"><a href="structures_8h.html#ab81953cace1c960b24e4756af468f5b5">FEAT_POLLRATE</a></div><div class="ttdeci">#define FEAT_POLLRATE</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00138">structures.h:138</a></div></div>
 <div class="ttc" id="firmware_8c_html_a3a6f1b57ca13dc54b046616963b299fa"><div class="ttname"><a href="firmware_8c.html#a3a6f1b57ca13dc54b046616963b299fa">getfwversion</a></div><div class="ttdeci">int getfwversion(usbdevice *kb)</div><div class="ttdef"><b>Definition:</b> <a href="firmware_8c_source.html#l00011">firmware.c:11</a></div></div>
-<div class="ttc" id="device_8h_html_afc841d1137ff44e8a225208262d97fae"><div class="ttname"><a href="device_8h.html#afc841d1137ff44e8a225208262d97fae">setactive</a></div><div class="ttdeci">#define setactive(kb, makeactive)</div><div class="ttdoc">setactive() calls via the corresponding kb-&gt;vtable either the active() or the idle() function...</div><div class="ttdef"><b>Definition:</b> <a href="device_8h_source.html#l00040">device.h:40</a></div></div>
+<div class="ttc" id="device_8h_html_afc841d1137ff44e8a225208262d97fae"><div class="ttname"><a href="device_8h.html#afc841d1137ff44e8a225208262d97fae">setactive</a></div><div class="ttdeci">#define setactive(kb, makeactive)</div><div class="ttdoc">setactive() calls via the corresponding kb-&gt;vtable either the active() or the idle() function...</div><div class="ttdef"><b>Definition:</b> <a href="device_8h_source.html#l00044">device.h:44</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -309,18 +318,18 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device_8c_source.html#l00078">78</a> of file <a class="el" href="device_8c_source.html">device.c</a>.</p>
+<p>Definition at line <a class="el" href="device_8c_source.html#l00080">80</a> of file <a class="el" href="device_8c_source.html">device.c</a>.</p>
 
-<p>References <a class="el" href="device_8c_source.html#l00023">_start_dev()</a>, <a class="el" href="usb_8h_source.html#l00158">USB_DELAY_DEFAULT</a>, and <a class="el" href="structures_8h_source.html#l00243">usbdevice::usbdelay</a>.</p>
-<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                            {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// Force USB interval to 10ms during initial setup phase; return to nominal 5ms after setup completes.</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    kb-&gt;<a class="code" href="structures_8h.html#a0b79f63d24a3653b071b9e295f3b15fc">usbdelay</a> = 10;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">int</span> res = <a class="code" href="device_8c.html#a96ee4de97d66a995084757151f4ed150">_start_dev</a>(kb, makeactive);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    kb-&gt;<a class="code" href="structures_8h.html#a0b79f63d24a3653b071b9e295f3b15fc">usbdelay</a> = <a class="code" href="usb_8h.html#a099563afe2cc26cafb14b788b03d218e">USB_DELAY_DEFAULT</a>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span> res;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
-<div class="ttc" id="usb_8h_html_a099563afe2cc26cafb14b788b03d218e"><div class="ttname"><a href="usb_8h.html#a099563afe2cc26cafb14b788b03d218e">USB_DELAY_DEFAULT</a></div><div class="ttdeci">#define USB_DELAY_DEFAULT</div><div class="ttdoc">This constant is used to initialize kb-&gt;usbdelay. It is used in many places (see macros above) but of...</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00158">usb.h:158</a></div></div>
-<div class="ttc" id="device_8c_html_a96ee4de97d66a995084757151f4ed150"><div class="ttname"><a href="device_8c.html#a96ee4de97d66a995084757151f4ed150">_start_dev</a></div><div class="ttdeci">int _start_dev(usbdevice *kb, int makeactive)</div><div class="ttdef"><b>Definition:</b> <a href="device_8c_source.html#l00023">device.c:23</a></div></div>
+<p>References <a class="el" href="device_8c_source.html#l00025">_start_dev()</a>, <a class="el" href="usb_8h_source.html#l00156">USB_DELAY_DEFAULT</a>, and <a class="el" href="structures_8h_source.html#l00243">usbdevice::usbdelay</a>.</p>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                            {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// Force USB interval to 10ms during initial setup phase; return to nominal 5ms after setup completes.</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    kb-&gt;<a class="code" href="structures_8h.html#a0b79f63d24a3653b071b9e295f3b15fc">usbdelay</a> = 10;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">int</span> res = <a class="code" href="device_8c.html#a96ee4de97d66a995084757151f4ed150">_start_dev</a>(kb, makeactive);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    kb-&gt;<a class="code" href="structures_8h.html#a0b79f63d24a3653b071b9e295f3b15fc">usbdelay</a> = <a class="code" href="usb_8h.html#a099563afe2cc26cafb14b788b03d218e">USB_DELAY_DEFAULT</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
+<div class="ttc" id="usb_8h_html_a099563afe2cc26cafb14b788b03d218e"><div class="ttname"><a href="usb_8h.html#a099563afe2cc26cafb14b788b03d218e">USB_DELAY_DEFAULT</a></div><div class="ttdeci">#define USB_DELAY_DEFAULT</div><div class="ttdoc">This constant is used to initialize kb-&gt;usbdelay. It is used in many places (see macros above) but of...</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00156">usb.h:156</a></div></div>
+<div class="ttc" id="device_8c_html_a96ee4de97d66a995084757151f4ed150"><div class="ttname"><a href="device_8c.html#a96ee4de97d66a995084757151f4ed150">_start_dev</a></div><div class="ttdeci">int _start_dev(usbdevice *kb, int makeactive)</div><div class="ttdef"><b>Definition:</b> <a href="device_8c_source.html#l00025">device.c:25</a></div></div>
 <div class="ttc" id="structures_8h_html_a0b79f63d24a3653b071b9e295f3b15fc"><div class="ttname"><a href="structures_8h.html#a0b79f63d24a3653b071b9e295f3b15fc">usbdevice::usbdelay</a></div><div class="ttdeci">char usbdelay</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00243">structures.h:243</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -363,7 +372,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="device_8c_source.html#l00012">12</a> of file <a class="el" href="device_8c_source.html">device.c</a>.</p>
 
-<p>Referenced by <a class="el" href="devnode_8c_source.html#l00055">_updateconnected()</a>, <a class="el" href="main_8c_source.html#l00040">quitWithLock()</a>, and <a class="el" href="usb__linux_8c_source.html#l00721">usb_rm_device()</a>.</p>
+<p>Referenced by <a class="el" href="devnode_8c_source.html#l00055">_updateconnected()</a>, <a class="el" href="main_8c_source.html#l00040">quitWithLock()</a>, and <a class="el" href="usb__linux_8c_source.html#l00723">usb_rm_device()</a>.</p>
 
 </div>
 </div>
@@ -380,7 +389,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="device_8c_source.html#l00007">7</a> of file <a class="el" href="device_8c_source.html">device.c</a>.</p>
 
-<p>Referenced by <a class="el" href="device_8c_source.html#l00023">_start_dev()</a>, <a class="el" href="usb_8c_source.html#l00601">_usbrecv()</a>, <a class="el" href="usb_8c_source.html#l00532">_usbsend()</a>, and <a class="el" href="main_8c_source.html#l00088">main()</a>.</p>
+<p>Referenced by <a class="el" href="device_8c_source.html#l00025">_start_dev()</a>, <a class="el" href="usb_8c_source.html#l00601">_usbrecv()</a>, <a class="el" href="usb_8c_source.html#l00532">_usbsend()</a>, and <a class="el" href="main_8c_source.html#l00088">main()</a>.</p>
 
 </div>
 </div>
@@ -410,7 +419,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="device_8c_source.html#l00010">10</a> of file <a class="el" href="device_8c_source.html">device.c</a>.</p>
 
-<p>Referenced by <a class="el" href="devnode_8c_source.html#l00136">_mkdevpath()</a>, <a class="el" href="devnode_8c_source.html#l00087">_mknotifynode()</a>, <a class="el" href="devnode_8c_source.html#l00115">_rmnotifynode()</a>, <a class="el" href="usb_8c_source.html#l00214">_setupusb()</a>, <a class="el" href="devnode_8c_source.html#l00055">_updateconnected()</a>, <a class="el" href="usb_8c_source.html#l00675">closeusb()</a>, <a class="el" href="main_8c_source.html#l00088">main()</a>, <a class="el" href="devnode_8c_source.html#l00314">mkfwnode()</a>, <a class="el" href="usb__linux_8c_source.html#l00435">os_closeusb()</a>, <a class="el" href="usb__linux_8c_source.html#l00241">os_inputmain()</a>, <a class="el" href="input__linux_8c_source.html#l00055">os_inputopen()</a>, <a class="el" href="usb__linux_8c_source.html#l00535">os_setupusb()</a>, <a class="el" href="main_8c_source.html#l00040">quitWithLock()</a>, <a class="el" href="devnode_8c_source.html#l00290">rmdevpath()</a>, <a class="el" href="usb__linux_8c_source.html#l00721">usb_rm_device()</a>, and <a class="el" href="usb__linux_8c_source.html#l00594">usbadd()</a>.</p>
+<p>Referenced by <a class="el" href="devnode_8c_source.html#l00136">_mkdevpath()</a>, <a class="el" href="devnode_8c_source.html#l00087">_mknotifynode()</a>, <a class="el" href="devnode_8c_source.html#l00115">_rmnotifynode()</a>, <a class="el" href="usb_8c_source.html#l00214">_setupusb()</a>, <a class="el" href="devnode_8c_source.html#l00055">_updateconnected()</a>, <a class="el" href="usb_8c_source.html#l00677">closeusb()</a>, <a class="el" href="main_8c_source.html#l00088">main()</a>, <a class="el" href="devnode_8c_source.html#l00299">mkfwnode()</a>, <a class="el" href="usb__linux_8c_source.html#l00437">os_closeusb()</a>, <a class="el" href="usb__linux_8c_source.html#l00240">os_inputmain()</a>, <a class="el" href="input__linux_8c_source.html#l00055">os_inputopen()</a>, <a class="el" href="usb__linux_8c_source.html#l00537">os_setupusb()</a>, <a class="el" href="main_8c_source.html#l00040">quitWithLock()</a>, <a class="el" href="devnode_8c_source.html#l00275">rmdevpath()</a>, <a class="el" href="usb__linux_8c_source.html#l00723">usb_rm_device()</a>, and <a class="el" href="usb__linux_8c_source.html#l00596">usbadd()</a>.</p>
 
 </div>
 </div>
@@ -428,13 +437,41 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a9e2c060f6f466b6ed9406e6397ab3b1e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pthread_mutex_t macromutex2[9] = { [0 ... 9 -1] = PTHREAD_MUTEX_INITIALIZER }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="device_8c_source.html#l00015">15</a> of file <a class="el" href="device_8c_source.html">device.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a26d8fa91b7834ac4c2806a73976ec0ca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pthread_cond_t macrovar[9] = { [0 ... 9 -1] = PTHREAD_COND_INITIALIZER }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="device_8c_source.html#l00016">16</a> of file <a class="el" href="device_8c_source.html">device.c</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c663af95b3406af676444e819a47854e.html">ckb-daemon</a></li><li class="navelem"><a class="el" href="device_8c.html">device.c</a></li>
-    <li class="footer">Generated on Sun Jun 4 2017 07:26:12 for ckb-next by
+    <li class="footer">Generated on Tue Jun 6 2017 19:18:07 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

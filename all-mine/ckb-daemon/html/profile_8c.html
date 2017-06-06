@@ -759,7 +759,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="profile_8c_source.html#l00198">198</a> of file <a class="el" href="profile_8c_source.html">profile.c</a>.</p>
 
-<p>References <a class="el" href="structures_8h_source.html#l00085">usbmode::bind</a>, and <a class="el" href="input_8c_source.html#l00191">freebind()</a>.</p>
+<p>References <a class="el" href="structures_8h_source.html#l00085">usbmode::bind</a>, and <a class="el" href="input_8c_source.html#l00299">freebind()</a>.</p>
 
 <p>Referenced by <a class="el" href="profile_8c_source.html#l00210">_freeprofile()</a>, and <a class="el" href="profile_8c_source.html#l00203">cmd_erase()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                                   {</div>
@@ -767,7 +767,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    memset(mode, 0, <span class="keyword">sizeof</span>(*mode));</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;}</div>
 <div class="ttc" id="structures_8h_html_a60912d4777e7a95e3b5cdd8581c0cf0c"><div class="ttname"><a href="structures_8h.html#a60912d4777e7a95e3b5cdd8581c0cf0c">usbmode::bind</a></div><div class="ttdeci">binding bind</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00085">structures.h:85</a></div></div>
-<div class="ttc" id="input_8c_html_a8ca5c839763db10f95f88d9c051c133f"><div class="ttname"><a href="input_8c.html#a8ca5c839763db10f95f88d9c051c133f">freebind</a></div><div class="ttdeci">void freebind(binding *bind)</div><div class="ttdef"><b>Definition:</b> <a href="input_8c_source.html#l00191">input.c:191</a></div></div>
+<div class="ttc" id="input_8c_html_a8ca5c839763db10f95f88d9c051c133f"><div class="ttname"><a href="input_8c.html#a8ca5c839763db10f95f88d9c051c133f">freebind</a></div><div class="ttdeci">void freebind(binding *bind)</div><div class="ttdef"><b>Definition:</b> <a href="input_8c_source.html#l00299">input.c:299</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -1200,7 +1200,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="profile_8c_source.html#l00175">175</a> of file <a class="el" href="profile_8c_source.html">profile.c</a>.</p>
 
-<p>References <a class="el" href="structures_8h_source.html#l00085">usbmode::bind</a>, <a class="el" href="structures_8h_source.html#l00086">usbmode::dpi</a>, <a class="el" href="structures_8h_source.html#l00069">dpiset::forceupdate</a>, <a class="el" href="structures_8h_source.html#l00077">lighting::forceupdate</a>, <a class="el" href="input_8c_source.html#l00183">initbind()</a>, and <a class="el" href="structures_8h_source.html#l00084">usbmode::light</a>.</p>
+<p>References <a class="el" href="structures_8h_source.html#l00085">usbmode::bind</a>, <a class="el" href="structures_8h_source.html#l00086">usbmode::dpi</a>, <a class="el" href="structures_8h_source.html#l00069">dpiset::forceupdate</a>, <a class="el" href="structures_8h_source.html#l00077">lighting::forceupdate</a>, <a class="el" href="input_8c_source.html#l00291">initbind()</a>, and <a class="el" href="structures_8h_source.html#l00084">usbmode::light</a>.</p>
 
 <p>Referenced by <a class="el" href="profile_8c_source.html#l00182">allocprofile()</a>, and <a class="el" href="profile_8c_source.html#l00203">cmd_erase()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                                   {</div>
@@ -1209,7 +1209,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    mode-&gt;<a class="code" href="structures_8h.html#aa86335fb4e746c3f1105f9a186728968">dpi</a>.<a class="code" href="structures_8h.html#ab5b4417ec1ae5dcadc46373434c44f2f">forceupdate</a> = 1;</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <a class="code" href="input_8c.html#a73aa09fc0b9e95c247041549cbc0671e">initbind</a>(&amp;mode-&gt;<a class="code" href="structures_8h.html#a60912d4777e7a95e3b5cdd8581c0cf0c">bind</a>);</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;}</div>
-<div class="ttc" id="input_8c_html_a73aa09fc0b9e95c247041549cbc0671e"><div class="ttname"><a href="input_8c.html#a73aa09fc0b9e95c247041549cbc0671e">initbind</a></div><div class="ttdeci">void initbind(binding *bind)</div><div class="ttdef"><b>Definition:</b> <a href="input_8c_source.html#l00183">input.c:183</a></div></div>
+<div class="ttc" id="input_8c_html_a73aa09fc0b9e95c247041549cbc0671e"><div class="ttname"><a href="input_8c.html#a73aa09fc0b9e95c247041549cbc0671e">initbind</a></div><div class="ttdeci">void initbind(binding *bind)</div><div class="ttdef"><b>Definition:</b> <a href="input_8c_source.html#l00291">input.c:291</a></div></div>
 <div class="ttc" id="structures_8h_html_a4adb0b5a770a32ee4db36dca49398ce9"><div class="ttname"><a href="structures_8h.html#a4adb0b5a770a32ee4db36dca49398ce9">usbmode::light</a></div><div class="ttdeci">lighting light</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00084">structures.h:84</a></div></div>
 <div class="ttc" id="structures_8h_html_aa86335fb4e746c3f1105f9a186728968"><div class="ttname"><a href="structures_8h.html#aa86335fb4e746c3f1105f9a186728968">usbmode::dpi</a></div><div class="ttdeci">dpiset dpi</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00086">structures.h:86</a></div></div>
 <div class="ttc" id="structures_8h_html_ae593d2a41548d4cc2a3c886caa4a53b2"><div class="ttname"><a href="structures_8h.html#ae593d2a41548d4cc2a3c886caa4a53b2">lighting::forceupdate</a></div><div class="ttdeci">uchar forceupdate</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00077">structures.h:77</a></div></div>
@@ -1790,7 +1790,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c663af95b3406af676444e819a47854e.html">ckb-daemon</a></li><li class="navelem"><a class="el" href="profile_8c.html">profile.c</a></li>
-    <li class="footer">Generated on Sun Jun 4 2017 07:26:12 for ckb-next by
+    <li class="footer">Generated on Tue Jun 6 2017 19:18:07 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

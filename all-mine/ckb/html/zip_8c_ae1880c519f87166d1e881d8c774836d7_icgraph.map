@@ -3,7 +3,7 @@
 <area shape="rect" id="node3" href="$zip_8c.html#a4fda7a41fa2f57d105ffc7d1cbcf53cc" title="zipClose" alt="" coords="313,502,386,528"/>
 <area shape="rect" id="node4" href="$classQuaZip.html#abfa4e6018b2964a3d10a4c54e5ab3962" title="Opens ZIP file. " alt="" coords="799,578,899,604"/>
 <area shape="rect" id="node19" href="$classQuaZip.html#a7a4323b73e12f3b4470109f200728f9f" title="Closes ZIP file. " alt="" coords="435,375,538,402"/>
-<area shape="rect" id="node5" href="$classKbFirmware.html#a86cc0f2021cb2d5d0353c52a957c0e0f" title="KbFirmware::_fileForBoard" alt="" coords="997,578,1174,604"/>
+<area shape="rect" id="node5" href="$classKbFirmware.html#ae5f3c91fcf3fe8fe55e2c1e3cea877eb" title="KbFirmware::_fileForBoard" alt="" coords="997,578,1174,604"/>
 <area shape="rect" id="node11" href="$classJlCompress.html#a4a4de9c62ecf161bb658d4d80495ea97" title="Compress a single file. " alt="" coords="996,172,1175,199"/>
 <area shape="rect" id="node12" href="$classJlCompress.html#a9cdb92d29a94c6b13a718a3249685846" title="Compress a list of files. " alt="" coords="993,223,1178,250"/>
 <area shape="rect" id="node13" href="$classJlCompress.html#a8708eafcadc5c192a1d492e784cfc98f" title="Compress a whole directory. " alt="" coords="1234,274,1409,300"/>
@@ -12,7 +12,7 @@
 <area shape="rect" id="node16" href="$classJlCompress.html#a365a153baa4c11812d93cbca60b6a293" title="Extract a whole archive. " alt="" coords="1007,476,1164,503"/>
 <area shape="rect" id="node17" href="$classJlCompress.html#ab42422be913f817d7e04c1b1cd5d0156" title="Get the file list. " alt="" coords="1005,628,1165,655"/>
 <area shape="rect" id="node18" href="$classQuaZipFile.html#aed75bace51f2bb4c3e4f656ab4493aac" title="Opens a file for reading. " alt="" coords="1025,679,1146,706"/>
-<area shape="rect" id="node6" href="$classKbFirmware.html#ae5dae6557deb8b35d6731597d57eac26" title="KbFirmware::dataForBoard" alt="" coords="1232,578,1411,604"/>
+<area shape="rect" id="node6" href="$classKbFirmware.html#a1cc600d07217f327a1541a44d353004c" title="KbFirmware::dataForBoard" alt="" coords="1232,578,1411,604"/>
 <area shape="rect" id="node7" href="$classFwUpgradeDialog.html#a1fd1f6f1285ab4998a7c81e2ee118d54" title="FwUpgradeDialog::exec" alt="" coords="1459,578,1621,604"/>
 <area shape="rect" id="node8" href="$classKbWidget.html#a38c9f29a5d8f1edfcb5f8040de3dadb9" title="KbWidget::on_fwUpdButton\l_clicked" alt="" coords="1669,570,1853,612"/>
 <area shape="rect" id="node9" href="$classKbWidget.html#a428930086336c668e8a1055c21c938d9" title="KbWidget::showFwUpdate" alt="" coords="1901,578,2080,604"/>

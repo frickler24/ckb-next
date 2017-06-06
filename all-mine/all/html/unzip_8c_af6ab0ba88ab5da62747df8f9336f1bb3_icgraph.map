@@ -15,8 +15,8 @@
 <area shape="rect" id="node14" href="$classJlCompress.html#a8c581f5f8a692fc598ea98cb5fa53d37" title="Compress a subdirectory. " alt="" coords="683,251,880,277"/>
 <area shape="rect" id="node15" href="$classJlCompress.html#a522739a65b382a9838ed69812340dd40" title="Extract a single file. " alt="" coords="465,403,626,429"/>
 <area shape="rect" id="node16" href="$classQuaZipFile.html#aa1e5a0cf491bafae6cc73e649caa97fc" title="Destroys a QuaZipFile instance. " alt="" coords="463,301,627,328"/>
-<area shape="rect" id="node18" href="$classKbFirmware.html#a86cc0f2021cb2d5d0353c52a957c0e0f" title="KbFirmware::_fileForBoard" alt="" coords="693,555,870,581"/>
-<area shape="rect" id="node19" href="$classKbFirmware.html#ae5dae6557deb8b35d6731597d57eac26" title="KbFirmware::dataForBoard" alt="" coords="928,555,1107,581"/>
+<area shape="rect" id="node18" href="$classKbFirmware.html#ae5f3c91fcf3fe8fe55e2c1e3cea877eb" title="KbFirmware::_fileForBoard" alt="" coords="693,555,870,581"/>
+<area shape="rect" id="node19" href="$classKbFirmware.html#a1cc600d07217f327a1541a44d353004c" title="KbFirmware::dataForBoard" alt="" coords="928,555,1107,581"/>
 <area shape="rect" id="node20" href="$classFwUpgradeDialog.html#a1fd1f6f1285ab4998a7c81e2ee118d54" title="FwUpgradeDialog::exec" alt="" coords="1155,555,1317,581"/>
 <area shape="rect" id="node21" href="$classKbWidget.html#a38c9f29a5d8f1edfcb5f8040de3dadb9" title="KbWidget::on_fwUpdButton\l_clicked" alt="" coords="1365,547,1549,589"/>
 <area shape="rect" id="node22" href="$classKbWidget.html#a428930086336c668e8a1055c21c938d9" title="KbWidget::showFwUpdate" alt="" coords="1597,555,1776,581"/>

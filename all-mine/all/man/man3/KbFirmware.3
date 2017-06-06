@@ -1,4 +1,4 @@
-.TH "KbFirmware" 3 "Sun Jun 4 2017" "Version beta-v0.2.8+testing at branch all-mine" "ckb-next" \" -*- nroff -*-
+.TH "KbFirmware" 3 "Tue Jun 6 2017" "Version beta-v0.2.8+testing at branch all-mine" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -34,10 +34,10 @@ Inherits \fBQObject\fP\&.
 .RI "static bool \fBhasDownloaded\fP ()"
 .br
 .ti -1c
-.RI "static float \fBversionForBoard\fP (const short productID, bool waitForComplete=false)"
+.RI "static float \fBversionForBoard\fP (const QString &features, bool waitForComplete=false)"
 .br
 .ti -1c
-.RI "static QByteArray \fBdataForBoard\fP (const short productID)"
+.RI "static QByteArray \fBdataForBoard\fP (const QString &features)"
 .br
 .in -1c
 .SS "Private Types"
@@ -73,10 +73,10 @@ Inherits \fBQObject\fP\&.
 .RI "bool \fB_checkUpdates\fP ()"
 .br
 .ti -1c
-.RI "float \fB_latestForBoard\fP (const short productID, bool waitForComplete)"
+.RI "float \fB_latestForBoard\fP (const QString &features, bool waitForComplete)"
 .br
 .ti -1c
-.RI "QByteArray \fB_fileForBoard\fP (const short productID)"
+.RI "QByteArray \fB_fileForBoard\fP (const QString &features)"
 .br
 .in -1c
 .SS "Private Attributes"
@@ -175,84 +175,83 @@ Referenced by checkUpdates()\&.
 33     if(now < lastCheck + AUTO_CHECK_TIME)
 34         return false;
 35     // First location is for debugging only\&.
-36     tableDownload = networkManager->get(QNetworkRequest(QUrl("https://raw\&.githubusercontent\&.com/frickler24/ckb-next/new-firmware-file-format/FIRMWARE")));
+36     // tableDownload = networkManager->get(QNetworkRequest(QUrl("https://raw\&.githubusercontent\&.com/frickler24/ckb-next/issues-26-Firmware-Incident/FIRMWARE")));
 37     // This one is the production one\&.
-38     // tableDownload = networkManager->get(QNetworkRequest(QUrl("https://raw\&.githubusercontent\&.com/mattanger/ckb-next/master/FIRMWARE")));
+38     tableDownload = networkManager->get(QNetworkRequest(QUrl("https://raw\&.githubusercontent\&.com/mattanger/ckb-next/master/FIRMWARE")));
 39     connect(tableDownload, SIGNAL(finished()), this, SLOT(downloadFinished()));
 40     lastCheck = now;
 41     return true;
 42 }
 .fi
-.SS "QByteArray KbFirmware::_fileForBoard (const shortproductID)\fC [private]\fP"
+.SS "QByteArray KbFirmware::_fileForBoard (const QString &features)\fC [private]\fP"
 
 .PP
-Definition at line 177 of file kbfirmware\&.cpp\&.
+Definition at line 183 of file kbfirmware\&.cpp\&.
 .PP
-References QuaZip::csInsensitive, KbFirmware::FW::fileName, fwTable, KbFirmware::FW::hash, QuaZip::mdUnzip, networkManager, QuaZip::open(), QuaZipFile::open(), quit(), QuaZip::setCurrentFile(), and KbFirmware::FW::url\&.
+References QuaZip::csInsensitive, KbFirmware::FW::fileName, fwTable, KbFirmware::FW::hash, QuaZip::mdUnzip, networkManager, QuaZip::open(), QuaZipFile::open(), quit(), QuaZip::setCurrentFile(), tableName(), and KbFirmware::FW::url\&.
 .PP
 Referenced by dataForBoard()\&.
 .PP
 .nf
-177                                                          {
-178     FW info = fwTable\&.value(QString::number(productID));
-179     if(info\&.hash\&.isEmpty())
-180         return "";
-181     // Download zip from URL\&. Wait for it to finish\&.
-182     QNetworkReply* reply = networkManager->get(QNetworkRequest(QUrl(info\&.url)));
-183     QEventLoop loop(this);
-184     connect(reply, SIGNAL(finished()), &loop, SLOT(quit()));
-185     loop\&.exec();
-186     // Download finished, process data
-187     if(reply->error() != QNetworkReply::NoError)
-188         return "";
-189     QByteArray zipData = reply->readAll();
-190     QBuffer buffer(&zipData);
-191     // Open zip archive
-192     QuaZip zip(&buffer);
-193     if(!zip\&.open(QuaZip::mdUnzip))
-194         return "";
-195     // Find the desired file
-196     if(!zip\&.setCurrentFile(info\&.fileName, QuaZip::csInsensitive))
-197         return "";
-198     QuaZipFile binFile(&zip);
-199     if(!binFile\&.open(QIODevice::ReadOnly))
-200         return "";
-201     QByteArray binary = binFile\&.readAll();
-202     // Check the hash
-203     if(QCryptographicHash::hash(binary, QCryptographicHash::Sha256) != info\&.hash)
+183                                                            {
+184     QString name = tableName(features);
+185     FW info = fwTable\&.value(name);
+186     if(info\&.hash\&.isEmpty())
+187         return "";
+188     // Download zip from URL\&. Wait for it to finish\&.
+189     QNetworkReply* reply = networkManager->get(QNetworkRequest(QUrl(info\&.url)));
+190     QEventLoop loop(this);
+191     connect(reply, SIGNAL(finished()), &loop, SLOT(quit()));
+192     loop\&.exec();
+193     // Download finished, process data
+194     if(reply->error() != QNetworkReply::NoError)
+195         return "";
+196     QByteArray zipData = reply->readAll();
+197     QBuffer buffer(&zipData);
+198     // Open zip archive
+199     QuaZip zip(&buffer);
+200     if(!zip\&.open(QuaZip::mdUnzip))
+201         return "";
+202     // Find the desired file
+203     if(!zip\&.setCurrentFile(info\&.fileName, QuaZip::csInsensitive))
 204         return "";
-205     return binary;
-206 }
+205     QuaZipFile binFile(&zip);
+206     if(!binFile\&.open(QIODevice::ReadOnly))
+207         return "";
+208     QByteArray binary = binFile\&.readAll();
+209     // Check the hash
+210     if(QCryptographicHash::hash(binary, QCryptographicHash::Sha256) != info\&.hash)
+211         return "";
+212     return binary;
+213 }
 .fi
-.SS "float KbFirmware::_latestForBoard (const shortproductID, boolwaitForComplete)\fC [private]\fP"
-< Only give an error message if we loaded the FIRMWARE file\&. 
+.SS "float KbFirmware::_latestForBoard (const QString &features, boolwaitForComplete)\fC [private]\fP"
+
 .PP
-Definition at line 157 of file kbfirmware\&.cpp\&.
+Definition at line 165 of file kbfirmware\&.cpp\&.
 .PP
-References checkUpdates(), KbManager::ckbDaemonVersionF(), KbManager::ckbGuiVersionF(), KbFirmware::FW::ckbVersion, downloaded(), fwTable, KbFirmware::FW::fwVersion, KbFirmware::FW::hash, quit(), and tableDownload\&.
+References checkUpdates(), KbManager::ckbDaemonVersionF(), KbManager::ckbGuiVersionF(), KbFirmware::FW::ckbVersion, downloaded(), fwTable, KbFirmware::FW::fwVersion, KbFirmware::FW::hash, quit(), tableDownload, and tableName()\&.
 .PP
 Referenced by versionForBoard()\&.
 .PP
 .nf
-157                                                                              {
-158     if((tableDownload || checkUpdates()) && waitForComplete){
-159         // If waiting is desired, enter an event loop and stay here until the download is finished
-160         QEventLoop loop(this);
-161         connect(this, SIGNAL(downloaded()), &loop, SLOT(quit()));
-162         loop\&.exec();
-163     }
-164     // Find this board
-165     FW info = fwTable\&.value(QString::number(productID));
-166     if (info\&.hash\&.isEmpty()) {
-167         if (fwTable\&.count() > 0)        
-168             qDebug() << "Can't find valid firmware version for device" << productID << QString::number(productID);
-169         return 0\&.f;
-170     }
-171     // Don't return the new version if the current ckb doesn't support it
-172     if(info\&.ckbVersion > KbManager::ckbGuiVersionF() || info\&.ckbVersion > KbManager::ckbDaemonVersionF())
-173         return -1\&.f;
-174     return info\&.fwVersion;
-175 }
+165                                                                               {
+166     if((tableDownload || checkUpdates()) && waitForComplete){
+167         // If waiting is desired, enter an event loop and stay here until the download is finished
+168         QEventLoop loop(this);
+169         connect(this, SIGNAL(downloaded()), &loop, SLOT(quit()));
+170         loop\&.exec();
+171     }
+172     // Find this board
+173     QString name = tableName(features);
+174     FW info = fwTable\&.value(name);
+175     if(info\&.hash\&.isEmpty())
+176         return 0\&.f;
+177     // Don't return the new version if the current ckb doesn't support it
+178     if(info\&.ckbVersion > KbManager::ckbGuiVersionF() || info\&.ckbVersion > KbManager::ckbDaemonVersionF())
+179         return -1\&.f;
+180     return info\&.fwVersion;
+181 }
 .fi
 .SS "static bool KbFirmware::checkUpdates ()\fC [inline]\fP, \fC [static]\fP"
 
@@ -266,7 +265,7 @@ Referenced by _latestForBoard(), and MainWindow::timerTick()\&.
 .nf
 15 { return instance\&._checkUpdates(); }
 .fi
-.SS "static QByteArray KbFirmware::dataForBoard (const shortproductID)\fC [inline]\fP, \fC [static]\fP"
+.SS "static QByteArray KbFirmware::dataForBoard (const QString &features)\fC [inline]\fP, \fC [static]\fP"
 
 .PP
 Definition at line 25 of file kbfirmware\&.h\&.
@@ -276,7 +275,7 @@ References _fileForBoard(), and instance\&.
 Referenced by FwUpgradeDialog::exec()\&.
 .PP
 .nf
-25 { return instance\&._fileForBoard(productID); }
+25 { return instance\&._fileForBoard(features); }
 .fi
 .SS "void KbFirmware::downloaded ()\fC [signal]\fP"
 
@@ -293,21 +292,21 @@ Referenced by _latestForBoard(), and downloadFinished()\&.
 .SS "void KbFirmware::downloadFinished ()\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 148 of file kbfirmware\&.cpp\&.
+Definition at line 144 of file kbfirmware\&.cpp\&.
 .PP
 References downloaded(), processDownload(), and tableDownload\&.
 .PP
 Referenced by _checkUpdates()\&.
 .PP
 .nf
-148                                  {
-149     if(!tableDownload)
-150         return;
-151     processDownload(tableDownload);
-152     tableDownload->deleteLater();
-153     tableDownload = 0;
-154     emit downloaded();
-155 }
+144                                  {
+145     if(!tableDownload)
+146         return;
+147     processDownload(tableDownload);
+148     tableDownload->deleteLater();
+149     tableDownload = 0;
+150     emit downloaded();
+151 }
 .fi
 .SS "static bool KbFirmware::hasDownloaded ()\fC [inline]\fP, \fC [static]\fP"
 
@@ -342,7 +341,7 @@ Referenced by _checkUpdates()\&.
 .PP
 Definition at line 44 of file kbfirmware\&.cpp\&.
 .PP
-References KbFirmware::FW::ckbVersion, KbFirmware::FW::fileName, fwTable, fwTableHash, KbFirmware::FW::fwVersion, hasGPG, KbFirmware::FW::hash, lastCheck, lastFinished, NO, KbManager::parseVersionString(), KbFirmware::FW::productID, UNKNOWN, KbFirmware::FW::url, and YES\&.
+References KbFirmware::FW::ckbVersion, KbFirmware::FW::fileName, fwTable, fwTableHash, KbFirmware::FW::fwVersion, hasGPG, KbFirmware::FW::hash, lastCheck, lastFinished, NO, KbManager::parseVersionString(), UNKNOWN, KbFirmware::FW::url, and YES\&.
 .PP
 Referenced by downloadFinished()\&.
 .PP
@@ -431,27 +430,23 @@ Referenced by downloadFinished()\&.
 125         if(line == "!END FW ENTRIES")
 126             break;
 127         QStringList components = line\&.split(" ");
-128         if(components\&.length() != 8)
+128         if(components\&.length() != 7)
 129             continue;
 130         // "VENDOR-PRODUCT"
 131         QString device = components[0]\&.toUpper() + "-" + components[1]\&.toUpper();
-132         bool ok;
-133         FW fw;
-134         fw\&.fwVersion = components[2]\&.toFloat();                             // Firmware blob version
-135         fw\&.url = QUrl::fromPercentEncoding(components[3]\&.toLatin1());       // URL to zip file
-136         fw\&.ckbVersion = KbManager::parseVersionString(components[4]);       // Minimum ckb version
-137         fw\&.fileName = QUrl::fromPercentEncoding(components[5]\&.toLatin1());  // Name of file inside zip
-138         fw\&.hash = QByteArray::fromHex(components[6]\&.toLatin1());            // SHA256 of file inside zip
-139         fw\&.productID = components[7]\&.toShort(&ok, 16);                      // Hex productID assigned to this FW
-140         // Update entry
-141         fwTable[QString::number(fw\&.productID)] = fw;
-142         // qDebug() << "saving fwTabel entry[" << QString::number(fw\&.productID) << "] for device" << device
-143         //         << fw\&.fwVersion << fw\&.fileName << fw\&.url << "for ckb-next version >=" << fw\&.ckbVersion;
-144     }
-145     qDebug() << "Downloaded new firmware list\&." << fwTable\&.count() << "entries found\&.";
-146 }
+132         FW fw;
+133         fw\&.fwVersion = components[2]\&.toFloat();                             // Firmware blob version
+134         fw\&.url = QUrl::fromPercentEncoding(components[3]\&.toLatin1());       // URL to zip file
+135         fw\&.ckbVersion = KbManager::parseVersionString(components[4]);       // Minimum ckb version
+136         fw\&.fileName = QUrl::fromPercentEncoding(components[5]\&.toLatin1());  // Name of file inside zip
+137         fw\&.hash = QByteArray::fromHex(components[6]\&.toLatin1());            // SHA256 of file inside zip
+138         // Update entry
+139         fwTable[device] = fw;
+140     }
+141     qDebug() << "Downloaded new firmware list\&." << fwTable\&.count() << "entries found\&.";
+142 }
 .fi
-.SS "static float KbFirmware::versionForBoard (const shortproductID, boolwaitForComplete = \fCfalse\fP)\fC [inline]\fP, \fC [static]\fP"
+.SS "static float KbFirmware::versionForBoard (const QString &features, boolwaitForComplete = \fCfalse\fP)\fC [inline]\fP, \fC [static]\fP"
 
 .PP
 Definition at line 22 of file kbfirmware\&.h\&.
@@ -461,7 +456,7 @@ References _latestForBoard(), and instance\&.
 Referenced by MainWindow::checkFwUpdates(), KbWidget::on_fwUpdButton_clicked(), and KbWidget::updateFwButton()\&.
 .PP
 .nf
-22 { return instance\&._latestForBoard(productID, waitForComplete); }
+22 { return instance\&._latestForBoard(features, waitForComplete); }
 .fi
 .SH "Field Documentation"
 .PP 

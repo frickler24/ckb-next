@@ -11,6 +11,8 @@ var annotated =
     [ "keymacro", "structures_8h.html#structkeymacro", "structures_8h_structkeymacro" ],
     [ "lighting", "structures_8h.html#structlighting", "structures_8h_structlighting" ],
     [ "macroaction", "structures_8h.html#structmacroaction", "structures_8h_structmacroaction" ],
+    [ "parameter", "input_8h.html#structparameter", "input_8h_structparameter" ],
+    [ "ptlist", "input_8h.html#structptlist", "input_8h_structptlist" ],
     [ "usbdevice", "structures_8h.html#structusbdevice", "structures_8h_structusbdevice" ],
     [ "usbid", "structures_8h.html#structusbid", "structures_8h_structusbid" ],
     [ "usbinput", "structures_8h.html#structusbinput", "structures_8h_structusbinput" ],

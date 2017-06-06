@@ -250,9 +250,9 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="firmware_8c_source.html#l00011">11</a> of file <a class="el" href="firmware_8c_source.html">firmware.c</a>.</p>
 
-<p>References <a class="el" href="includes_8h_source.html#l00050">ckb_err</a>, <a class="el" href="includes_8h_source.html#l00053">ckb_warn</a>, <a class="el" href="structures_8h_source.html#l00138">FEAT_POLLRATE</a>, <a class="el" href="structures_8h_source.html#l00229">usbdevice::features</a>, <a class="el" href="structures_8h_source.html#l00239">usbdevice::fwversion</a>, <a class="el" href="structures_8h_source.html#l00176">MSG_SIZE</a>, <a class="el" href="structures_8h_source.html#l00241">usbdevice::pollrate</a>, <a class="el" href="structures_8h_source.html#l00237">usbdevice::product</a>, <a class="el" href="usb_8h_source.html#l00254">usbrecv</a>, and <a class="el" href="structures_8h_source.html#l00237">usbdevice::vendor</a>.</p>
+<p>References <a class="el" href="includes_8h_source.html#l00050">ckb_err</a>, <a class="el" href="includes_8h_source.html#l00053">ckb_warn</a>, <a class="el" href="structures_8h_source.html#l00138">FEAT_POLLRATE</a>, <a class="el" href="structures_8h_source.html#l00229">usbdevice::features</a>, <a class="el" href="structures_8h_source.html#l00239">usbdevice::fwversion</a>, <a class="el" href="structures_8h_source.html#l00176">MSG_SIZE</a>, <a class="el" href="structures_8h_source.html#l00241">usbdevice::pollrate</a>, <a class="el" href="structures_8h_source.html#l00237">usbdevice::product</a>, <a class="el" href="usb_8h_source.html#l00252">usbrecv</a>, and <a class="el" href="structures_8h_source.html#l00237">usbdevice::vendor</a>.</p>
 
-<p>Referenced by <a class="el" href="device_8c_source.html#l00023">_start_dev()</a>.</p>
+<p>Referenced by <a class="el" href="device_8c_source.html#l00025">_start_dev()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                               {</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="comment">// Ask board for firmware info</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> data_pkt[<a class="code" href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a>] = { 0x0e, 0x01, 0 };</div>
@@ -300,7 +300,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="structures_8h_html_a045b6c91e3f04e54f25d39da9bda105b"><div class="ttname"><a href="structures_8h.html#a045b6c91e3f04e54f25d39da9bda105b">usbdevice::product</a></div><div class="ttdeci">short product</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00237">structures.h:237</a></div></div>
 <div class="ttc" id="structures_8h_html_a56e8458239a40a080e9cccf901875285"><div class="ttname"><a href="structures_8h.html#a56e8458239a40a080e9cccf901875285">usbdevice::pollrate</a></div><div class="ttdeci">char pollrate</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00241">structures.h:241</a></div></div>
 <div class="ttc" id="structures_8h_html_abbffdd889fd9a15c8796a47cabd3abd9"><div class="ttname"><a href="structures_8h.html#abbffdd889fd9a15c8796a47cabd3abd9">usbdevice::features</a></div><div class="ttdeci">ushort features</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00229">structures.h:229</a></div></div>
-<div class="ttc" id="usb_8h_html_a80241296ff114704b355cd6081d2ff2e"><div class="ttname"><a href="usb_8h.html#a80241296ff114704b355cd6081d2ff2e">usbrecv</a></div><div class="ttdeci">#define usbrecv(kb, out_msg, in_msg)</div><div class="ttdoc">usbrecv macro is used to wrap _usbrecv() with debugging information (file and lineno) ...</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00254">usb.h:254</a></div></div>
+<div class="ttc" id="usb_8h_html_a80241296ff114704b355cd6081d2ff2e"><div class="ttname"><a href="usb_8h.html#a80241296ff114704b355cd6081d2ff2e">usbrecv</a></div><div class="ttdeci">#define usbrecv(kb, out_msg, in_msg)</div><div class="ttdoc">usbrecv macro is used to wrap _usbrecv() with debugging information (file and lineno) ...</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00252">usb.h:252</a></div></div>
 <div class="ttc" id="structures_8h_html_a2fa713366249e2fdbb2539e5d65a1439"><div class="ttname"><a href="structures_8h.html#a2fa713366249e2fdbb2539e5d65a1439">usbdevice::vendor</a></div><div class="ttdeci">short vendor</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00237">structures.h:237</a></div></div>
 <div class="ttc" id="structures_8h_html_ab81953cace1c960b24e4756af468f5b5"><div class="ttname"><a href="structures_8h.html#ab81953cace1c960b24e4756af468f5b5">FEAT_POLLRATE</a></div><div class="ttdeci">#define FEAT_POLLRATE</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00138">structures.h:138</a></div></div>
 </div><!-- fragment -->
@@ -323,7 +323,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c663af95b3406af676444e819a47854e.html">ckb-daemon</a></li><li class="navelem"><a class="el" href="firmware_8h.html">firmware.h</a></li>
-    <li class="footer">Generated on Sun Jun 4 2017 07:26:14 for ckb-next by
+    <li class="footer">Generated on Tue Jun 6 2017 19:18:10 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

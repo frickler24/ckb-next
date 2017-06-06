@@ -1,28 +1,29 @@
 <map id="KbWidget::on_tabWidget_currentChanged" name="KbWidget::on_tabWidget_currentChanged">
-<area shape="rect" id="node2" href="$classKbWidget.html#adabed0db911bef8b3c0157372fb4e21a" title="KbWidget::updateFwButton" alt="" coords="222,107,405,133"/>
-<area shape="rect" id="node3" href="$classKbFirmware.html#aa103350a5d980275e2abc86d4bd8b62b" title="KbFirmware::hasDownloaded" alt="" coords="454,81,647,108"/>
-<area shape="rect" id="node4" href="$classKbFirmware.html#a89c4d7badcf2f167842174a1f872a0da" title="KbFirmware::versionForBoard" alt="" coords="453,132,648,159"/>
-<area shape="rect" id="node5" href="$classKbFirmware.html#a1d5c53d6b1efddfcb4fdbb4b872ed897" title="KbFirmware::_latestForBoard" alt="" coords="696,132,888,159"/>
-<area shape="rect" id="node6" href="$classKbFirmware.html#ab4153173aa1b28cc9d58ede675f02627" title="KbFirmware::checkUpdates" alt="" coords="939,56,1123,83"/>
-<area shape="rect" id="node12" href="$classKbManager.html#ad22cd8487923dc938a925a6941ed6f3d" title="KbManager::ckbDaemonVersionF" alt="" coords="1173,107,1392,133"/>
-<area shape="rect" id="node13" href="$classKbManager.html#a444f0c8ab29309aad704e07a9aaaee05" title="KbManager::ckbGuiVersionF" alt="" coords="936,157,1125,184"/>
-<area shape="rect" id="node14" href="$ckb-daemon_2main_8c.html#acd1527386a48875050e637e4bb872f11" title="quit Stop working the daemon. function is called if the daemon received a sigterm In this case..." alt="" coords="1009,284,1052,311"/>
-<area shape="rect" id="node7" href="$classKbFirmware.html#a21477524cbd3621323795f4f5757c77b" title="KbFirmware::_checkUpdates" alt="" coords="1187,56,1378,83"/>
-<area shape="rect" id="node8" href="$classKbFirmware.html#a70d1d734d61e1a5eebc5411e02de231f" title="KbFirmware::downloadFinished" alt="" coords="1441,56,1645,83"/>
-<area shape="rect" id="node11" href="$classKbFirmware.html#a87e8a9b76f27124df80d81f54c7cd1da" title="KbFirmware::initManager" alt="" coords="1459,5,1626,32"/>
-<area shape="rect" id="node9" href="$classKbFirmware.html#ae2409af30da0ae6e8731623b2b68dfc9" title="KbFirmware::processDownload" alt="" coords="1694,56,1898,83"/>
-<area shape="rect" id="node10" href="$classKbManager.html#a4ce88ef95a35d0cd5a3ac67a0bc076ea" title="KbManager::parseVersionString" alt="" coords="1947,107,2154,133"/>
-<area shape="rect" id="node15" href="$ckb-daemon_2main_8c.html#a24a012c29e291fef5fa13f4a07fffd33" title="quitWithLock " alt="" coords="1233,360,1332,387"/>
-<area shape="rect" id="node16" href="$ckb-gradient_2main_8c.html#aa27d72ffe1172dde09660dd920e47e6e" title="ckb_info" alt="" coords="1507,487,1578,513"/>
-<area shape="rect" id="node17" href="$usb_8c.html#a8732b3ade76da4ae362996232ef95431" title="closeusb" alt="" coords="1505,284,1580,311"/>
-<area shape="rect" id="node21" href="$devnode_8c.html#a8d0aeeebb364608943b78573adb85c7f" title="Remove the dev path for the keyboard at index. Returns 0 on success. " alt="" coords="1755,360,1837,387"/>
-<area shape="rect" id="node26" href="$usb_8c.html#ae30a52968bb209e98461f48ffb2ee82f" title="revertusb" alt="" coords="1505,385,1581,412"/>
-<area shape="rect" id="node27" href="$usb_8h.html#a41aa3e13beb593c91a5410200b4dd8d2" title="Stop the USB system. " alt="" coords="1513,436,1572,463"/>
-<area shape="rect" id="node18" href="$usb_8h.html#a6a62575e9073fae15efb58f24fbfe5b8" title="os_closeusb unclaim it, destroy the udev device and clear data structures at kb " alt="" coords="1749,259,1843,285"/>
-<area shape="rect" id="node20" href="$input_8h.html#a44df5105a6a3f2eda5bc39a88201bd1a" title="os_inputclose" alt="" coords="1745,309,1847,336"/>
-<area shape="rect" id="node24" href="$devnode_8c.html#a4f2642e0c38280a1516fbe153c9fa18f" title="Update the list of connected devices. " alt="" coords="1735,208,1857,235"/>
-<area shape="rect" id="node19" href="$usb__linux_8c.html#afe1111f494da4776633be32fecaba44b" title="usbunclaim" alt="" coords="2007,259,2095,285"/>
-<area shape="rect" id="node22" href="$devnode_8c.html#a9d97ede033e4f6c6bdd1c66fc82aa15e" title="_rmnotifynode" alt="" coords="1999,335,2103,361"/>
-<area shape="rect" id="node23" href="$devnode_8c.html#aac8f6f936a0ff6c16adc677622b226c4" title="rm_recursive" alt="" coords="2002,385,2099,412"/>
-<area shape="rect" id="node25" href="$devnode_8c.html#acc36eaba5eb854461ab3c0a4d146e9c9" title="_updateconnected Update the list of connected devices. " alt="" coords="1987,208,2115,235"/>
+<area shape="rect" id="node2" href="$classKbWidget.html#adabed0db911bef8b3c0157372fb4e21a" title="KbWidget::updateFwButton" alt="" coords="222,132,405,159"/>
+<area shape="rect" id="node3" href="$classKbFirmware.html#aa103350a5d980275e2abc86d4bd8b62b" title="KbFirmware::hasDownloaded" alt="" coords="454,107,647,133"/>
+<area shape="rect" id="node4" href="$classKbFirmware.html#adf60ed5d7553a8c3f362ce5ae29ce965" title="KbFirmware::versionForBoard" alt="" coords="453,157,648,184"/>
+<area shape="rect" id="node5" href="$classKbFirmware.html#aa68b2e0aed9074c60eba72e9fa60a6b5" title="KbFirmware::_latestForBoard" alt="" coords="696,157,888,184"/>
+<area shape="rect" id="node6" href="$classKbFirmware.html#ab4153173aa1b28cc9d58ede675f02627" title="KbFirmware::checkUpdates" alt="" coords="936,56,1120,83"/>
+<area shape="rect" id="node12" href="$classKbManager.html#ad22cd8487923dc938a925a6941ed6f3d" title="KbManager::ckbDaemonVersionF" alt="" coords="1168,107,1387,133"/>
+<area shape="rect" id="node13" href="$classKbManager.html#a444f0c8ab29309aad704e07a9aaaee05" title="KbManager::ckbGuiVersionF" alt="" coords="1183,157,1372,184"/>
+<area shape="rect" id="node14" href="$ckb-daemon_2main_8c.html#acd1527386a48875050e637e4bb872f11" title="quit Stop working the daemon. function is called if the daemon received a sigterm In this case..." alt="" coords="1007,208,1049,235"/>
+<area shape="rect" id="node28" href="$kbfirmware_8cpp.html#a61af340d454a04e7657e67151cd5ae2e" title="tableName" alt="" coords="985,259,1071,285"/>
+<area shape="rect" id="node7" href="$classKbFirmware.html#a21477524cbd3621323795f4f5757c77b" title="KbFirmware::_checkUpdates" alt="" coords="1182,56,1373,83"/>
+<area shape="rect" id="node8" href="$classKbFirmware.html#a70d1d734d61e1a5eebc5411e02de231f" title="KbFirmware::downloadFinished" alt="" coords="1435,56,1639,83"/>
+<area shape="rect" id="node11" href="$classKbFirmware.html#a87e8a9b76f27124df80d81f54c7cd1da" title="KbFirmware::initManager" alt="" coords="1454,5,1621,32"/>
+<area shape="rect" id="node9" href="$classKbFirmware.html#ae2409af30da0ae6e8731623b2b68dfc9" title="KbFirmware::processDownload" alt="" coords="1689,56,1893,83"/>
+<area shape="rect" id="node10" href="$classKbManager.html#a4ce88ef95a35d0cd5a3ac67a0bc076ea" title="KbManager::parseVersionString" alt="" coords="1942,107,2149,133"/>
+<area shape="rect" id="node15" href="$ckb-daemon_2main_8c.html#a24a012c29e291fef5fa13f4a07fffd33" title="quitWithLock " alt="" coords="1228,360,1327,387"/>
+<area shape="rect" id="node16" href="$ckb-gradient_2main_8c.html#aa27d72ffe1172dde09660dd920e47e6e" title="ckb_info" alt="" coords="1502,487,1573,513"/>
+<area shape="rect" id="node17" href="$usb_8c.html#a8732b3ade76da4ae362996232ef95431" title="closeusb" alt="" coords="1500,284,1575,311"/>
+<area shape="rect" id="node21" href="$devnode_8c.html#a8d0aeeebb364608943b78573adb85c7f" title="Remove the dev path for the keyboard at index. Returns 0 on success. " alt="" coords="1749,360,1832,387"/>
+<area shape="rect" id="node26" href="$usb_8c.html#ae30a52968bb209e98461f48ffb2ee82f" title="revertusb" alt="" coords="1499,385,1575,412"/>
+<area shape="rect" id="node27" href="$usb_8h.html#a41aa3e13beb593c91a5410200b4dd8d2" title="Stop the USB system. " alt="" coords="1508,436,1567,463"/>
+<area shape="rect" id="node18" href="$usb_8h.html#a6a62575e9073fae15efb58f24fbfe5b8" title="os_closeusb unclaim it, destroy the udev device and clear data structures at kb " alt="" coords="1743,259,1838,285"/>
+<area shape="rect" id="node20" href="$input_8h.html#a44df5105a6a3f2eda5bc39a88201bd1a" title="os_inputclose" alt="" coords="1739,309,1842,336"/>
+<area shape="rect" id="node24" href="$devnode_8c.html#a4f2642e0c38280a1516fbe153c9fa18f" title="Update the list of connected devices. " alt="" coords="1730,208,1851,235"/>
+<area shape="rect" id="node19" href="$usb__linux_8c.html#afe1111f494da4776633be32fecaba44b" title="usbunclaim" alt="" coords="2001,259,2089,285"/>
+<area shape="rect" id="node22" href="$devnode_8c.html#a9d97ede033e4f6c6bdd1c66fc82aa15e" title="_rmnotifynode" alt="" coords="1993,335,2097,361"/>
+<area shape="rect" id="node23" href="$devnode_8c.html#aac8f6f936a0ff6c16adc677622b226c4" title="rm_recursive" alt="" coords="1997,385,2094,412"/>
+<area shape="rect" id="node25" href="$devnode_8c.html#acc36eaba5eb854461ab3c0a4d146e9c9" title="_updateconnected Update the list of connected devices. " alt="" coords="1981,208,2109,235"/>
 </map>

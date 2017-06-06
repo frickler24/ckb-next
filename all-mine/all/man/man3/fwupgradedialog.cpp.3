@@ -1,4 +1,4 @@
-.TH "src/ckb/fwupgradedialog.cpp" 3 "Sun Jun 4 2017" "Version beta-v0.2.8+testing at branch all-mine" "ckb-next" \" -*- nroff -*-
+.TH "src/ckb/fwupgradedialog.cpp" 3 "Tue Jun 6 2017" "Version beta-v0.2.8+testing at branch all-mine" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -23,7 +23,6 @@ src/ckb/fwupgradedialog.cpp \-
 .ti -1c
 .RI "struct \fBKbId\fP"
 .br
-.RI "\fIIDs for verifying firmware suitability Some newer hardware models have the same features as older ones, but need a different firmware version number but not a different firmware file\&. \fP"
 .in -1c
 .SS "Functions"
 
@@ -32,12 +31,15 @@ src/ckb/fwupgradedialog.cpp \-
 .RI "static const int \fBDIALOG_HEIGHT_MAX\fP (240)"
 .br
 .ti -1c
-.RI "static float \fBverifyFw\fP (const QByteArray &blob, const short productID)"
+.RI "static float \fBverifyFw\fP (const QByteArray &blob, const QString &features)"
 .br
 .in -1c
 .SS "Variables"
 
 .in +1c
+.ti -1c
+.RI "static \fBKbId\fP \fBids\fP []"
+.br
 .ti -1c
 .RI "static const int \fBDIALOG_WIDTH\fP = 420"
 .br
@@ -49,7 +51,7 @@ src/ckb/fwupgradedialog.cpp \-
 .PP 
 .SH "struct KbId"
 .PP 
-Definition at line 10 of file fwupgradedialog\&.cpp\&.
+Definition at line 8 of file fwupgradedialog\&.cpp\&.
 .PP
 \fBData Fields:\fP
 .RS 4
@@ -70,49 +72,74 @@ short \fIvendor\fP
 
 .PP
 Referenced by FwUpgradeDialog::exec()\&.
-.SS "static float verifyFw (const QByteArray &blob, const shortproductID)\fC [static]\fP"
-< Corsair has at the moment just one vendorID
+.SS "static float verifyFw (const QByteArray &blob, const QString &features)\fC [static]\fP"
+
 .PP
-< Something really bad has happened - wrong firmware file detected\&. 
+Definition at line 85 of file fwupgradedialog\&.cpp\&.
 .PP
-Definition at line 73 of file fwupgradedialog\&.cpp\&.
+References ids\&.
 .PP
 Referenced by FwUpgradeDialog::exec()\&.
 .PP
 .nf
-73                                                                      {
-74     short vendor = 0x1b1c;      
-75     if(blob\&.length() < 0x0108)
-76         return 0\&.f;
-77     const char* bData = blob\&.data();
-78     // Make sure it matches this device based on the vendor and product IDs embedded in the blob
-79 
-80     if (memcmp(&vendor, bData + 0x102, 2) || memcmp(&productID, bData + 0x104, 2)) {
-81         qCritical() << "Something really bad happened - wrong firmware file detected";
-82         return 0\&.f; 
-83     }
-84 
-85     // Copy the version from the blob
-86     short version;
-87     memcpy(&version, bData + 0x106, 2);
-88     // Un-hexify it
-89     return QString::number(version, 16)\&.toFloat() / 100\&.f;
-90 }
+85                                                                       {
+86     if(blob\&.length() < 0x0108)
+87         return 0\&.f;
+88     const char* bData = blob\&.data();
+89     // Make sure it matches this device based on the vendor and product IDs embedded in the blob
+90     bool match = false;
+91     for(uint i = 0; i < sizeof(ids)/sizeof(KbId); i++){
+92         if(!memcmp(&ids[i]\&.vendor, bData + 0x102, 2) && !memcmp(&ids[i]\&.product, bData + 0x104, 2)
+93                 && features\&.startsWith(ids[i]\&.feature, Qt::CaseInsensitive)){
+94             match = true;
+95             break;
+96         }
+97     }
+98     if(!match)
+99         return 0\&.f;
+100     // Copy the version from the blob
+101     short version;
+102     memcpy(&version, bData + 0x106, 2);
+103     // Un-hexify it
+104     return QString::number(version, 16)\&.toFloat() / 100\&.f;
+105 }
 .fi
 .SH "Variable Documentation"
 .PP 
 .SS "const int DIALOG_HEIGHT_MIN = 200\fC [static]\fP"
 
 .PP
-Definition at line 17 of file fwupgradedialog\&.cpp\&.
+Definition at line 29 of file fwupgradedialog\&.cpp\&.
 .PP
 Referenced by FwUpgradeDialog::FwUpgradeDialog(), and FwUpgradeDialog::on_actionButton_clicked()\&.
 .SS "const int DIALOG_WIDTH = 420\fC [static]\fP"
 
 .PP
-Definition at line 16 of file fwupgradedialog\&.cpp\&.
+Definition at line 28 of file fwupgradedialog\&.cpp\&.
 .PP
 Referenced by FwUpgradeDialog::exec(), FwUpgradeDialog::FwUpgradeDialog(), and FwUpgradeDialog::on_actionButton_clicked()\&.
+.SS "\fBKbId\fP ids[]\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+    
+    { 0x1b1c, 0x1b17, "corsair k65 rgb" },
+    { 0x1b1c, 0x1b13, "corsair k70 rgb" },
+    { 0x1b1c, 0x1b11, "corsair k95 rgb" },
+    { 0x1b1c, 0x1b15, "corsair strafe monochrome" },
+    { 0x1b1c, 0x1b20, "corsair strafe rgb" },
+    
+    { 0x1b1c, 0x1b12, "corsair m65 rgb" },
+    { 0x1b1c, 0x1b1e, "corsair scimitar rgb" },
+    
+    { 0x1b1c, 0x1b32, "corsair sabre optical rgb" }
+}
+.fi
+.PP
+Definition at line 14 of file fwupgradedialog\&.cpp\&.
+.PP
+Referenced by verifyFw()\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for ckb-next from the source code\&.

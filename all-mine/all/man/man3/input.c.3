@@ -1,4 +1,4 @@
-.TH "src/ckb-daemon/input.c" 3 "Sun Jun 4 2017" "Version beta-v0.2.8+testing at branch all-mine" "ckb-next" \" -*- nroff -*-
+.TH "src/ckb-daemon/input.c" 3 "Tue Jun 6 2017" "Version beta-v0.2.8+testing at branch all-mine" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -27,8 +27,25 @@ src/ckb-daemon/input.c \-
 .RI "int \fBmacromask\fP (const \fBuchar\fP *key1, const \fBuchar\fP *key2)"
 .br
 .ti -1c
+.RI "static void \fBmacro_pt_enqueue\fP ()"
+.br
+.RI "\fImacro_pt_enqueue Save the new thread in the single linked list (FIFO)\&. \fP"
+.ti -1c
+.RI "static pthread_t \fBmacro_pt_dequeue\fP ()"
+.br
+.RI "\fImacro_pt_dequeue gets the first thread id of the list and returns the thread_id stored in it\&. \fP"
+.ti -1c
+.RI "static pthread_t \fBmacro_pt_first\fP ()"
+.br
+.RI "\fImacro_pt_first returns the first pthread_id but does not remove the first entry\&. \fP"
+.ti -1c
+.RI "static void * \fBplay_macro\fP (void *param)"
+.br
+.RI "\fIplay_macro is the code for all threads started to play a macro\&. \fP"
+.ti -1c
 .RI "static void \fBinputupdate_keys\fP (\fBusbdevice\fP *kb)"
 .br
+.RI "\fIinputupdate_keys Handle input from Keyboard or mouse; start Macrof if detected\&. \fP"
 .ti -1c
 .RI "void \fBinputupdate\fP (\fBusbdevice\fP *kb)"
 .br
@@ -57,6 +74,18 @@ src/ckb-daemon/input.c \-
 .RI "void \fBcmd_macro\fP (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, const int notifynumber, const char *keys, const char *assignment)"
 .br
 .in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static \fBptlist_t\fP * \fBpt_head\fP = 0"
+.br
+.RI "\fIpt_head is the head pointer for the single linked thread list managed by macro_pt_en/dequeue()\&. \fP"
+.ti -1c
+.RI "static \fBptlist_t\fP * \fBpt_tail\fP = 0"
+.br
+.RI "\fIpt_tail is the tail pointer for the single linked thread list managed by macro_pt_en/dequeue()\&. \fP"
+.in -1c
 .SH "Macro Definition Documentation"
 .PP 
 .SS "#define IS_WHEEL(scan, kb)   (((scan) == KEY_VOLUMEUP || (scan) == KEY_VOLUMEDOWN || (scan) == \fBBTN_WHEELUP\fP || (scan) == \fBBTN_WHEELDOWN\fP) && !\fBIS_K65\fP(kb))"
@@ -68,402 +97,516 @@ Referenced by inputupdate_keys()\&.
 .SS "static void _cmd_macro (\fBusbmode\fP *mode, const char *keys, const char *assignment)\fC [static]\fP"
 
 .PP
-Definition at line 236 of file input\&.c\&.
+Definition at line 344 of file input\&.c\&.
 .PP
 References keymacro::actioncount, keymacro::actions, usbmode::bind, keymacro::combo, macroaction::delay, macroaction::down, keymap, left, MACRO_MAX, binding::macrocap, binding::macrocount, binding::macros, N_KEYBYTES_INPUT, N_KEYS_INPUT, right(), macroaction::scan, key::scan, and SET_KEYBIT\&.
 .PP
 Referenced by cmd_macro()\&.
 .PP
 .nf
-236                                                                                {
-237     binding* bind = &mode->bind;
-238     if(!keys && !assignment){
-239         // Null strings = "macro clear" -> erase the whole thing
-240         for(int i = 0; i < bind->macrocount; i++)
-241             free(bind->macros[i]\&.actions);
-242         bind->macrocount = 0;
-243         return;
-244     }
-245     if(bind->macrocount >= MACRO_MAX)
-246         return;
-247     // Create a key macro
-248     keymacro macro;
-249     memset(&macro, 0, sizeof(macro));
-250     // Scan the left side for key names, separated by +
-251     int empty = 1;
-252     int left = strlen(keys), right = strlen(assignment);
-253     int position = 0, field = 0;
-254     char keyname[24];
-255     while(position < left && sscanf(keys + position, "%10[^+]%n", keyname, &field) == 1){
-256         int keycode;
-257         if((sscanf(keyname, "#%d", &keycode) && keycode >= 0 && keycode < N_KEYS_INPUT)
-258                   || (sscanf(keyname, "#x%x", &keycode) && keycode >= 0 && keycode < N_KEYS_INPUT)){
-259             // Set a key numerically
-260             SET_KEYBIT(macro\&.combo, keycode);
-261             empty = 0;
-262         } else {
-263             // Find this key in the keymap
-264             for(unsigned i = 0; i < N_KEYS_INPUT; i++){
-265                 if(keymap[i]\&.name && !strcmp(keyname, keymap[i]\&.name)){
-266                     macro\&.combo[i / 8] |= 1 << (i % 8);
-267                     empty = 0;
-268                     break;
-269                 }
-270             }
-271         }
-272         if(keys[position += field] == '+')
-273             position++;
-274     }
-275     if(empty)
-276         return;
-277     // Count the number of actions (comma separated)
-278     int count = 1;
-279     for(const char* c = assignment; *c != 0; c++){
-280         if(*c == ',')
-281             count++;
-282     }
-283     // Allocate a buffer for them
-284     macro\&.actions = calloc(count, sizeof(macroaction));
-285     macro\&.actioncount = 0;
-286     // Scan the actions
-287     position = 0;
-288     field = 0;
-289     // max action = old 11 chars plus 12 chars which is the max 32-bit int 4294967295 size
-290     while(position < right && sscanf(assignment + position, "%23[^,]%n", keyname, &field) == 1){
-291         if(!strcmp(keyname, "clear"))
-292             break;
-293 
-294         // Check for local key delay of the form '[+-]<key>=<delay>'
-295         long int long_delay;    // scanned delay value, used to keep delay in range\&.
-296         unsigned int delay = UINT_MAX; // computed delay value\&. UINT_MAX means use global delay value\&.
-297         char real_keyname[12];  // temp to hold the left side (key) of the <key>=<delay>
-298         int scan_matches = sscanf(keyname, "%11[^=]=%ld", real_keyname, &long_delay);
-299         if (scan_matches == 2) {
-300             if (0 <= long_delay && long_delay < UINT_MAX) {
-301                 delay = (unsigned int)long_delay;
-302                 strcpy(keyname, real_keyname); // keyname[24], real_keyname[12]
-303             }
-304         }
-305 
-306         int down = (keyname[0] == '+');
-307         if(down || keyname[0] == '-'){
-308             int keycode;
-309             if((sscanf(keyname + 1, "#%d", &keycode) && keycode >= 0 && keycode < N_KEYS_INPUT)
-310                       || (sscanf(keyname + 1, "#x%x", &keycode) && keycode >= 0 && keycode < N_KEYS_INPUT)){
-311                 // Set a key numerically
-312                 macro\&.actions[macro\&.actioncount]\&.scan = keymap[keycode]\&.scan;
-313                 macro\&.actions[macro\&.actioncount]\&.down = down;
-314                 macro\&.actions[macro\&.actioncount]\&.delay = delay;
-315                 macro\&.actioncount++;
-316             } else {
-317                 // Find this key in the keymap
-318                 for(unsigned i = 0; i < N_KEYS_INPUT; i++){
-319                     if(keymap[i]\&.name && !strcmp(keyname + 1, keymap[i]\&.name)){
-320                         macro\&.actions[macro\&.actioncount]\&.scan = keymap[i]\&.scan;
-321                         macro\&.actions[macro\&.actioncount]\&.down = down;
-322                         macro\&.actions[macro\&.actioncount]\&.delay = delay;
-323                         macro\&.actioncount++;
-324                         break;
-325                     }
-326                 }
-327             }
-328         }
-329         if(assignment[position += field] == ',')
-330             position++;
-331     }
-332 
-333     // See if there's already a macro with this trigger
-334     keymacro* macros = bind->macros;
-335     for(int i = 0; i < bind->macrocount; i++){
-336         if(!memcmp(macros[i]\&.combo, macro\&.combo, N_KEYBYTES_INPUT)){
-337             free(macros[i]\&.actions);
-338             // If the new macro has no actions, erase the existing one
-339             if(!macro\&.actioncount){
-340                 for(int j = i + 1; j < bind->macrocount; j++)
-341                     memcpy(macros + j - 1, macros + j, sizeof(keymacro));
-342                 bind->macrocount--;
-343             } else
-344                 // If there are actions, replace the existing with the new
-345                 memcpy(macros + i, &macro, sizeof(keymacro));
-346             return;
-347         }
-348     }
-349 
-350     // Add the macro to the device settings if not empty
-351     if(macro\&.actioncount < 1)
-352         return;
-353     memcpy(bind->macros + (bind->macrocount++), &macro, sizeof(keymacro));
-354     if(bind->macrocount >= bind->macrocap)
-355         bind->macros = realloc(bind->macros, (bind->macrocap += 16) * sizeof(keymacro));
-356 }
+344                                                                                {
+345     binding* bind = &mode->bind;
+346     if(!keys && !assignment){
+347         // Null strings = "macro clear" -> erase the whole thing
+348         for(int i = 0; i < bind->macrocount; i++)
+349             free(bind->macros[i]\&.actions);
+350         bind->macrocount = 0;
+351         return;
+352     }
+353     if(bind->macrocount >= MACRO_MAX)
+354         return;
+355     // Create a key macro
+356     keymacro macro;
+357     memset(&macro, 0, sizeof(macro));
+358     // Scan the left side for key names, separated by +
+359     int empty = 1;
+360     int left = strlen(keys), right = strlen(assignment);
+361     int position = 0, field = 0;
+362     char keyname[24];
+363     while(position < left && sscanf(keys + position, "%10[^+]%n", keyname, &field) == 1){
+364         int keycode;
+365         if((sscanf(keyname, "#%d", &keycode) && keycode >= 0 && keycode < N_KEYS_INPUT)
+366                   || (sscanf(keyname, "#x%x", &keycode) && keycode >= 0 && keycode < N_KEYS_INPUT)){
+367             // Set a key numerically
+368             SET_KEYBIT(macro\&.combo, keycode);
+369             empty = 0;
+370         } else {
+371             // Find this key in the keymap
+372             for(unsigned i = 0; i < N_KEYS_INPUT; i++){
+373                 if(keymap[i]\&.name && !strcmp(keyname, keymap[i]\&.name)){
+374                     macro\&.combo[i / 8] |= 1 << (i % 8);
+375                     empty = 0;
+376                     break;
+377                 }
+378             }
+379         }
+380         if(keys[position += field] == '+')
+381             position++;
+382     }
+383     if(empty)
+384         return;
+385     // Count the number of actions (comma separated)
+386     int count = 1;
+387     for(const char* c = assignment; *c != 0; c++){
+388         if(*c == ',')
+389             count++;
+390     }
+391     // Allocate a buffer for them
+392     macro\&.actions = calloc(count, sizeof(macroaction));
+393     macro\&.actioncount = 0;
+394     // Scan the actions
+395     position = 0;
+396     field = 0;
+397     // max action = old 11 chars plus 12 chars which is the max 32-bit int 4294967295 size
+398     while(position < right && sscanf(assignment + position, "%23[^,]%n", keyname, &field) == 1){
+399         if(!strcmp(keyname, "clear"))
+400             break;
+401 
+402         // Check for local key delay of the form '[+-]<key>=<delay>'
+403         long int long_delay;    // scanned delay value, used to keep delay in range\&.
+404         unsigned int delay = UINT_MAX; // computed delay value\&. UINT_MAX means use global delay value\&.
+405         char real_keyname[12];  // temp to hold the left side (key) of the <key>=<delay>
+406         int scan_matches = sscanf(keyname, "%11[^=]=%ld", real_keyname, &long_delay);
+407         if (scan_matches == 2) {
+408             if (0 <= long_delay && long_delay < UINT_MAX) {
+409                 delay = (unsigned int)long_delay;
+410                 strcpy(keyname, real_keyname); // keyname[24], real_keyname[12]
+411             }
+412         }
+413 
+414         int down = (keyname[0] == '+');
+415         if(down || keyname[0] == '-'){
+416             int keycode;
+417             if((sscanf(keyname + 1, "#%d", &keycode) && keycode >= 0 && keycode < N_KEYS_INPUT)
+418                       || (sscanf(keyname + 1, "#x%x", &keycode) && keycode >= 0 && keycode < N_KEYS_INPUT)){
+419                 // Set a key numerically
+420                 macro\&.actions[macro\&.actioncount]\&.scan = keymap[keycode]\&.scan;
+421                 macro\&.actions[macro\&.actioncount]\&.down = down;
+422                 macro\&.actions[macro\&.actioncount]\&.delay = delay;
+423                 macro\&.actioncount++;
+424             } else {
+425                 // Find this key in the keymap
+426                 for(unsigned i = 0; i < N_KEYS_INPUT; i++){
+427                     if(keymap[i]\&.name && !strcmp(keyname + 1, keymap[i]\&.name)){
+428                         macro\&.actions[macro\&.actioncount]\&.scan = keymap[i]\&.scan;
+429                         macro\&.actions[macro\&.actioncount]\&.down = down;
+430                         macro\&.actions[macro\&.actioncount]\&.delay = delay;
+431                         macro\&.actioncount++;
+432                         break;
+433                     }
+434                 }
+435             }
+436         }
+437         if(assignment[position += field] == ',')
+438             position++;
+439     }
+440 
+441     // See if there's already a macro with this trigger
+442     keymacro* macros = bind->macros;
+443     for(int i = 0; i < bind->macrocount; i++){
+444         if(!memcmp(macros[i]\&.combo, macro\&.combo, N_KEYBYTES_INPUT)){
+445             free(macros[i]\&.actions);
+446             // If the new macro has no actions, erase the existing one
+447             if(!macro\&.actioncount){
+448                 for(int j = i + 1; j < bind->macrocount; j++)
+449                     memcpy(macros + j - 1, macros + j, sizeof(keymacro));
+450                 bind->macrocount--;
+451             } else
+452                 // If there are actions, replace the existing with the new
+453                 memcpy(macros + i, &macro, sizeof(keymacro));
+454             return;
+455         }
+456     }
+457 
+458     // Add the macro to the device settings if not empty
+459     if(macro\&.actioncount < 1)
+460         return;
+461     memcpy(bind->macros + (bind->macrocount++), &macro, sizeof(keymacro));
+462     if(bind->macrocount >= bind->macrocap)
+463         bind->macros = realloc(bind->macros, (bind->macrocap += 16) * sizeof(keymacro));
+464 }
 .fi
 .SS "void cmd_bind (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, intdummy, intkeyindex, const char *to)"
 
 .PP
-Definition at line 198 of file input\&.c\&.
+Definition at line 306 of file input\&.c\&.
 .PP
 References binding::base, usbmode::bind, imutex, keymap, N_KEYS_INPUT, and key::scan\&.
 .PP
 .nf
-198                                                                                     {
-199     if(keyindex >= N_KEYS_INPUT)
-200         return;
-201     // Find the key to bind to
-202     int tocode = 0;
-203     if(sscanf(to, "#x%ux", &tocode) != 1 && sscanf(to, "#%u", &tocode) == 1 && tocode < N_KEYS_INPUT){
-204         pthread_mutex_lock(imutex(kb));
-205         mode->bind\&.base[keyindex] = tocode;
-206         pthread_mutex_unlock(imutex(kb));
-207         return;
-208     }
-209     // If not numeric, look it up
-210     for(int i = 0; i < N_KEYS_INPUT; i++){
-211         if(keymap[i]\&.name && !strcmp(to, keymap[i]\&.name)){
-212             pthread_mutex_lock(imutex(kb));
-213             mode->bind\&.base[keyindex] = keymap[i]\&.scan;
-214             pthread_mutex_unlock(imutex(kb));
-215             return;
-216         }
-217     }
-218 }
+306                                                                                     {
+307     if(keyindex >= N_KEYS_INPUT)
+308         return;
+309     // Find the key to bind to
+310     int tocode = 0;
+311     if(sscanf(to, "#x%ux", &tocode) != 1 && sscanf(to, "#%u", &tocode) == 1 && tocode < N_KEYS_INPUT){
+312         pthread_mutex_lock(imutex(kb));
+313         mode->bind\&.base[keyindex] = tocode;
+314         pthread_mutex_unlock(imutex(kb));
+315         return;
+316     }
+317     // If not numeric, look it up
+318     for(int i = 0; i < N_KEYS_INPUT; i++){
+319         if(keymap[i]\&.name && !strcmp(to, keymap[i]\&.name)){
+320             pthread_mutex_lock(imutex(kb));
+321             mode->bind\&.base[keyindex] = keymap[i]\&.scan;
+322             pthread_mutex_unlock(imutex(kb));
+323             return;
+324         }
+325     }
+326 }
 .fi
 .SS "void cmd_macro (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, const intnotifynumber, const char *keys, const char *assignment)"
 
 .PP
-Definition at line 358 of file input\&.c\&.
+Definition at line 466 of file input\&.c\&.
 .PP
 References _cmd_macro(), and imutex\&.
 .PP
 .nf
-358                                                                                                               {
-359     pthread_mutex_lock(imutex(kb));
-360     _cmd_macro(mode, keys, assignment);
-361     pthread_mutex_unlock(imutex(kb));
-362 }
+466                                                                                                               {
+467     pthread_mutex_lock(imutex(kb));
+468     _cmd_macro(mode, keys, assignment);
+469     pthread_mutex_unlock(imutex(kb));
+470 }
 .fi
 .SS "void cmd_rebind (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, intdummy, intkeyindex, const char *to)"
 
 .PP
-Definition at line 228 of file input\&.c\&.
+Definition at line 336 of file input\&.c\&.
 .PP
 References binding::base, usbmode::bind, imutex, keymap, N_KEYS_INPUT, and key::scan\&.
 .PP
 .nf
-228                                                                                       {
-229     if(keyindex >= N_KEYS_INPUT)
-230         return;
-231     pthread_mutex_lock(imutex(kb));
-232     mode->bind\&.base[keyindex] = keymap[keyindex]\&.scan;
-233     pthread_mutex_unlock(imutex(kb));
-234 }
+336                                                                                       {
+337     if(keyindex >= N_KEYS_INPUT)
+338         return;
+339     pthread_mutex_lock(imutex(kb));
+340     mode->bind\&.base[keyindex] = keymap[keyindex]\&.scan;
+341     pthread_mutex_unlock(imutex(kb));
+342 }
 .fi
 .SS "void cmd_unbind (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, intdummy, intkeyindex, const char *to)"
 
 .PP
-Definition at line 220 of file input\&.c\&.
+Definition at line 328 of file input\&.c\&.
 .PP
 References binding::base, usbmode::bind, imutex, KEY_UNBOUND, and N_KEYS_INPUT\&.
 .PP
 .nf
-220                                                                                       {
-221     if(keyindex >= N_KEYS_INPUT)
-222         return;
-223     pthread_mutex_lock(imutex(kb));
-224     mode->bind\&.base[keyindex] = KEY_UNBOUND;
-225     pthread_mutex_unlock(imutex(kb));
-226 }
+328                                                                                       {
+329     if(keyindex >= N_KEYS_INPUT)
+330         return;
+331     pthread_mutex_lock(imutex(kb));
+332     mode->bind\&.base[keyindex] = KEY_UNBOUND;
+333     pthread_mutex_unlock(imutex(kb));
+334 }
 .fi
 .SS "void freebind (\fBbinding\fP *bind)"
 
 .PP
-Definition at line 191 of file input\&.c\&.
+Definition at line 299 of file input\&.c\&.
 .PP
 References keymacro::actions, binding::macrocount, and binding::macros\&.
 .PP
 Referenced by freemode()\&.
 .PP
 .nf
-191                             {
-192     for(int i = 0; i < bind->macrocount; i++)
-193         free(bind->macros[i]\&.actions);
-194     free(bind->macros);
-195     memset(bind, 0, sizeof(*bind));
-196 }
+299                             {
+300     for(int i = 0; i < bind->macrocount; i++)
+301         free(bind->macros[i]\&.actions);
+302     free(bind->macros);
+303     memset(bind, 0, sizeof(*bind));
+304 }
 .fi
 .SS "void initbind (\fBbinding\fP *bind)"
 
 .PP
-Definition at line 183 of file input\&.c\&.
+Definition at line 291 of file input\&.c\&.
 .PP
 References binding::base, keymap, binding::macrocap, binding::macrocount, binding::macros, N_KEYS_INPUT, and key::scan\&.
 .PP
 Referenced by initmode()\&.
 .PP
 .nf
-183                             {
-184     for(int i = 0; i < N_KEYS_INPUT; i++)
-185         bind->base[i] = keymap[i]\&.scan;
-186     bind->macros = calloc(32, sizeof(keymacro));
-187     bind->macrocap = 32;
-188     bind->macrocount = 0;
-189 }
+291                             {
+292     for(int i = 0; i < N_KEYS_INPUT; i++)
+293         bind->base[i] = keymap[i]\&.scan;
+294     bind->macros = calloc(32, sizeof(keymacro));
+295     bind->macrocap = 32;
+296     bind->macrocount = 0;
+297 }
 .fi
 .SS "void inputupdate (\fBusbdevice\fP *kb)"
 
 .PP
-Definition at line 132 of file input\&.c\&.
+Definition at line 240 of file input\&.c\&.
 .PP
 References usbdevice::input, inputupdate_keys(), os_mousemove(), usbdevice::profile, usbinput::rel_x, usbinput::rel_y, usbdevice::uinput_kb, and usbdevice::uinput_mouse\&.
 .PP
 Referenced by os_inputmain(), setactive_kb(), and setactive_mouse()\&.
 .PP
 .nf
-132                                {
-133 #ifdef OS_LINUX
-134     if((!kb->uinput_kb || !kb->uinput_mouse)
-135 #else
-136     if(!kb->event
-137 #endif
-138             || !kb->profile)
-139         return;
-140     // Process key/button input
-141     inputupdate_keys(kb);
-142     // Process mouse movement
-143     usbinput* input = &kb->input;
-144     if(input->rel_x != 0 || input->rel_y != 0){
-145         os_mousemove(kb, input->rel_x, input->rel_y);
-146         input->rel_x = input->rel_y = 0;
-147     }
-148     // Finish up
-149     memcpy(input->prevkeys, input->keys, N_KEYBYTES_INPUT);
-150 }
+240                                {
+241 #ifdef OS_LINUX
+242     if((!kb->uinput_kb || !kb->uinput_mouse)
+243 #else
+244     if(!kb->event
+245 #endif
+246             || !kb->profile)
+247         return;
+248     // Process key/button input
+249     inputupdate_keys(kb);
+250     // Process mouse movement
+251     usbinput* input = &kb->input;
+252     if(input->rel_x != 0 || input->rel_y != 0){
+253         os_mousemove(kb, input->rel_x, input->rel_y);
+254         input->rel_x = input->rel_y = 0;
+255     }
+256     // Finish up
+257     memcpy(input->prevkeys, input->keys, N_KEYBYTES_INPUT);
+258 }
 .fi
 .SS "static void inputupdate_keys (\fBusbdevice\fP *kb)\fC [static]\fP"
 
 .PP
-Definition at line 15 of file input\&.c\&.
+\fBParameters:\fP
+.RS 4
+\fIkb\fP 
+.RE
 .PP
-References keymacro::actioncount, keymacro::actions, usbdevice::active, binding::base, usbmode::bind, keymacro::combo, usbprofile::currentmode, macroaction::delay, usbdevice::delay, macroaction::down, usbdevice::input, IS_MOD, IS_WHEEL, keymap, usbinput::keys, binding::macrocount, macromask(), binding::macros, mmutex, N_KEYBYTES_INPUT, N_KEYS_INPUT, usbmode::notify, nprintkey(), os_keypress(), os_mousemove(), OUTFIFO_MAX, usbinput::prevkeys, usbdevice::profile, macroaction::rel_x, macroaction::rel_y, macroaction::scan, key::scan, SCAN_SILENT, and keymacro::triggered\&.
+Process all queued keypresses if no macro is running yet\&. 
+.PP
+\fBTodo\fP
+.RS 4
+If we want to get all keys typed while a macro is played, add the code for it here\&. 
+.RE
+.PP
+
+.PP
+Definition at line 133 of file input\&.c\&.
+.PP
+References usbdevice::active, binding::base, usbmode::bind, keymacro::combo, usbprofile::currentmode, usbdevice::input, IS_MOD, IS_WHEEL, parameter::kb, keymap, usbinput::keys, parameter::macro, macro_pt_first(), binding::macrocount, macromask(), binding::macros, N_KEYBYTES_INPUT, N_KEYS_INPUT, usbmode::notify, nprintkey(), os_keypress(), OUTFIFO_MAX, play_macro(), usbinput::prevkeys, usbdevice::profile, key::scan, SCAN_SILENT, and keymacro::triggered\&.
 .PP
 Referenced by inputupdate()\&.
 .PP
 .nf
-15                                            {
-16     usbmode* mode = kb->profile->currentmode;
-17     binding* bind = &mode->bind;
-18     usbinput* input = &kb->input;
-19     // Don't do anything if the state hasn't changed
-20     if(!memcmp(input->prevkeys, input->keys, N_KEYBYTES_INPUT))
-21         return;
-22     // Look for macros matching the current state
-23     int macrotrigger = 0;
-24     if(kb->active){
-25         for(int i = 0; i < bind->macrocount; i++){
-26             keymacro* macro = &bind->macros[i];
-27             if(macromask(input->keys, macro->combo)){
-28                 if(!macro->triggered){
-29                     macrotrigger = 1;
-30                     macro->triggered = 1;
-31                     // Send events for each keypress in the macro
-32                     pthread_mutex_lock(mmutex(kb)); // Synchonization between macro output and color information
-33                     for(int a = 0; a < macro->actioncount; a++){
-34                         macroaction* action = macro->actions + a;
-35                         if(action->rel_x != 0 || action->rel_y != 0)
-36                             os_mousemove(kb, action->rel_x, action->rel_y);
-37                         else {
-38                             os_keypress(kb, action->scan, action->down);
-39                             if (action->delay != UINT_MAX) {    // local delay set
-40                                 usleep(action->delay);
-41                             } else if (kb->delay != UINT_MAX) { // use default global delay
-42                                 usleep(kb->delay);
-43                             } else if (a < (macro->actioncount - 1)) { // use delays depending on macro length
-44                                 if (a > 200) {
-45                                     usleep (100);
-46                                 } else if (a > 20) {
-47                                     usleep(30);
-48                                 }
-49                             }
-50                         }
-51                     }
-52                     pthread_mutex_unlock(mmutex(kb));
-53                 }
-54             } else {
-55                 macro->triggered = 0;
-56                 macrotrigger = 0;
-57             }
-58         }
-59     }
-60     // Make a list of keycodes to send\&. Rearrange them so that modifier keydowns always come first
-61     // and modifier keyups always come last\&. This ensures that shortcut keys will register properly
-62     // even if both keydown events happen at once\&.
-63     // N_KEYS + 4 is used because the volume wheel generates keydowns and keyups at the same time
-64     // (it's currently impossible to press all four at once, but safety first)
-65     int events[N_KEYS_INPUT + 4];
-66     int modcount = 0, keycount = 0, rmodcount = 0;
-67     for(int byte = 0; byte < N_KEYBYTES_INPUT; byte++){
-68         char oldb = input->prevkeys[byte], newb = input->keys[byte];
-69         if(oldb == newb)
-70             continue;
-71         for(int bit = 0; bit < 8; bit++){
-72             int keyindex = byte * 8 + bit;
-73             if(keyindex >= N_KEYS_INPUT)
-74                 break;
-75             const key* map = keymap + keyindex;
-76             int scancode = (kb->active) ? bind->base[keyindex] : map->scan;
-77             char mask = 1 << bit;
-78             char old = oldb & mask, new = newb & mask;
-79             // If the key state changed, send it to the input device
-80             if(old != new){
-81                 // Don't echo a key press if a macro was triggered or if there's no scancode associated
-82                 if(!macrotrigger && !(scancode & SCAN_SILENT)){
-83                     if(IS_MOD(scancode)){
-84                         if(new){
-85                             // Modifier down: Add to the end of modifier keys
-86                             for(int i = keycount + rmodcount; i > 0; i--)
-87                                 events[modcount + i] = events[modcount + i - 1];
-88                             // Add 1 to the scancode because A is zero on OSX
-89                             // Positive code = keydown, negative code = keyup
-90                             events[modcount++] = scancode + 1;
-91                         } else {
-92                             // Modifier up: Add to the end of everything
-93                             events[modcount + keycount + rmodcount++] = -(scancode + 1);
-94                         }
-95                     } else {
-96                         // Regular keypress: add to the end of regular keys
-97                         for(int i = rmodcount; i > 0; i--)
-98                             events[modcount + keycount + i] = events[modcount + keycount + i - 1];
-99                         events[modcount + keycount++] = new ? (scancode + 1) : -(scancode + 1);
-100                         // The volume wheel and the mouse wheel don't generate keyups, so create them automatically
-101 #define IS_WHEEL(scan, kb)  (((scan) == KEY_VOLUMEUP || (scan) == KEY_VOLUMEDOWN || (scan) == BTN_WHEELUP || (scan) == BTN_WHEELDOWN) && !IS_K65(kb))
-102                         if(new && IS_WHEEL(map->scan, kb)){
-103                             for(int i = rmodcount; i > 0; i--)
-104                                 events[modcount + keycount + i] = events[modcount + keycount + i - 1];
-105                             events[modcount + keycount++] = -(scancode + 1);
-106                             input->keys[byte] &= ~mask;
-107                         }
-108                     }
-109                 }
-110                 // Print notifications if desired
-111                 if(kb->active){
-112                     for(int notify = 0; notify < OUTFIFO_MAX; notify++){
-113                         if(mode->notify[notify][byte] & mask){
-114                             nprintkey(kb, notify, keyindex, new);
-115                             // Wheels doesn't generate keyups
-116                             if(new && IS_WHEEL(map->scan, kb))
-117                                 nprintkey(kb, notify, keyindex, 0);
-118                         }
-119                     }
-120                 }
-121             }
-122         }
-123     }
-124     // Process all queued keypresses
-125     int totalkeys = modcount + keycount + rmodcount;
-126     for(int i = 0; i < totalkeys; i++){
-127         int scancode = events[i];
-128         os_keypress(kb, (scancode < 0 ? -scancode : scancode) - 1, scancode > 0);
-129     }
-130 }
+133                                            {
+134     usbmode* mode = kb->profile->currentmode;
+135     binding* bind = &mode->bind;
+136     usbinput* input = &kb->input;
+137 
+138     // Don't do anything if the state hasn't changed
+139     if(!memcmp(input->prevkeys, input->keys, N_KEYBYTES_INPUT))
+140         return;
+141     // Look for macros matching the current state
+142     if (kb->active) {
+143         for (int i = 0; i < bind->macrocount; i++) {
+144             keymacro* macro = &bind->macros[i];
+145             if (macromask(input->keys, macro->combo)) {
+146                 if (!macro->triggered) {
+147                     parameter_t* params = malloc(sizeof(parameter_t));
+148                     if (params == 0) {
+149                         perror("inputupdate_keys got no more mem:");
+150                     } else {
+151                         pthread_t thread = 0;
+152                         params->kb = kb;
+153                         params->macro = macro;
+154                         int retval = pthread_create(&thread, 0, play_macro, (void*)params);
+155                         if (retval) {
+156                             perror("inputupdate_keys: Creating thread returned not null");
+157                         } else {
+158                             macro->triggered = 1;
+159                         }
+160                     }
+161                 }
+162             } else macro->triggered = 0;
+163         }
+164     }
+165     // Make a list of keycodes to send\&. Rearrange them so that modifier keydowns always come first
+166     // and modifier keyups always come last\&. This ensures that shortcut keys will register properly
+167     // even if both keydown events happen at once\&.
+168     // N_KEYS + 4 is used because the volume wheel generates keydowns and keyups at the same time
+169     // (it's currently impossible to press all four at once, but safety first)
+170     int events[N_KEYS_INPUT + 4];
+171     int modcount = 0, keycount = 0, rmodcount = 0;
+172     for(int byte = 0; byte < N_KEYBYTES_INPUT; byte++){
+173         char oldb = input->prevkeys[byte], newb = input->keys[byte];
+174         if(oldb == newb)
+175             continue;
+176         for(int bit = 0; bit < 8; bit++){
+177             int keyindex = byte * 8 + bit;
+178             if(keyindex >= N_KEYS_INPUT)
+179                 break;
+180             const key* map = keymap + keyindex;
+181             int scancode = (kb->active) ? bind->base[keyindex] : map->scan;
+182             char mask = 1 << bit;
+183             char old = oldb & mask, new = newb & mask;
+184             // If the key state changed, send it to the input device
+185             if(old != new){
+186                 // Don't echo a key press if there's no scancode associated
+187                 if(!(scancode & SCAN_SILENT)){
+188                     if(IS_MOD(scancode)){
+189                         if(new){
+190                             // Modifier down: Add to the end of modifier keys
+191                             for(int i = keycount + rmodcount; i > 0; i--)
+192                                 events[modcount + i] = events[modcount + i - 1];
+193                             // Add 1 to the scancode because A is zero on OSX
+194                             // Positive code = keydown, negative code = keyup
+195                             events[modcount++] = scancode + 1;
+196                         } else {
+197                             // Modifier up: Add to the end of everything
+198                             events[modcount + keycount + rmodcount++] = -(scancode + 1);
+199                         }
+200                     } else {
+201                         // Regular keypress: add to the end of regular keys
+202                         for(int i = rmodcount; i > 0; i--)
+203                             events[modcount + keycount + i] = events[modcount + keycount + i - 1];
+204                         events[modcount + keycount++] = new ? (scancode + 1) : -(scancode + 1);
+205                         // The volume wheel and the mouse wheel don't generate keyups, so create them automatically
+206 #define IS_WHEEL(scan, kb)  (((scan) == KEY_VOLUMEUP || (scan) == KEY_VOLUMEDOWN || (scan) == BTN_WHEELUP || (scan) == BTN_WHEELDOWN) && !IS_K65(kb))
+207                         if(new && IS_WHEEL(map->scan, kb)){
+208                             for(int i = rmodcount; i > 0; i--)
+209                                 events[modcount + keycount + i] = events[modcount + keycount + i - 1];
+210                             events[modcount + keycount++] = -(scancode + 1);
+211                             input->keys[byte] &= ~mask;
+212                         }
+213                     }
+214                 }
+215                 // Print notifications if desired
+216                 if(kb->active){
+217                     for(int notify = 0; notify < OUTFIFO_MAX; notify++){
+218                         if(mode->notify[notify][byte] & mask){
+219                             nprintkey(kb, notify, keyindex, new);
+220                             // Wheels doesn't generate keyups
+221                             if(new && IS_WHEEL(map->scan, kb))
+222                                 nprintkey(kb, notify, keyindex, 0);
+223                         }
+224                     }
+225                 }
+226             }
+227         }
+228     }
+231     if (!macro_pt_first()) {
+232         int totalkeys = modcount + keycount + rmodcount;
+233         for(int i = 0; i < totalkeys; i++){
+234             int scancode = events[i];
+235             os_keypress(kb, (scancode < 0 ? -scancode : scancode) - 1, scancode > 0);
+236         }
+237     }
+238 }
+.fi
+.SS "static pthread_t macro_pt_dequeue ()\fC [static]\fP"
+
+.PP
+\fBReturns:\fP
+.RS 4
+the ptread_id of the first element\&. If list is empty, return 0\&. 
+.RE
+.PP
+\fBAttention:\fP
+.RS 4
+Becuase multiple threads may use this function in parallel, save the critical section with a mutex\&. 
+.RE
+.PP
+< why are we called?
+.PP
+< Was last element in the list, so clear tail\&.
+.PP
+< save the return value before deleting element 
+.PP
+Definition at line 48 of file input\&.c\&.
+.PP
+References ckb_err, ptlist::next, pt_head, and ptlist::thread_id\&.
+.PP
+Referenced by play_macro()\&.
+.PP
+.nf
+48                                     {
+49     pthread_t retval = 0;
+50     ptlist_t* elem = 0;
+51     if (pt_head == 0 && pt_tail == 0) {
+52         ckb_err("macro_pt_dequeue: called on empty list\&.\n");
+53         return 0;       
+54     }
+55     elem = pt_head;
+56     pt_head = pt_head->next;
+57     if (pt_head == 0) pt_tail = 0;      
+58     retval = elem->thread_id;           
+59     free(elem);
+60     return retval;
+61 }
+.fi
+.SS "static void macro_pt_enqueue ()\fC [static]\fP"
+
+.PP
+\fBAttention:\fP
+.RS 4
+Becuase multiple threads may use this function in parallel, save the critical section with a mutex\&. 
+.RE
+.PP
+< exit on critical situation;
+.PP
+\fBTodo\fP
+.RS 4
+find a better exit strategy if no more mem available\&. 
+.RE
+.PP
+.PP
+< The element knows its ID byself
+.PP
+< new list, first element
+.PP
+< existing list, append on last element (FIFO) 
+.PP
+Definition at line 26 of file input\&.c\&.
+.PP
+References ptlist::next, and ptlist::thread_id\&.
+.PP
+Referenced by play_macro()\&.
+.PP
+.nf
+26                                {
+27     ptlist_t* new_elem = malloc(sizeof(ptlist_t));
+28     if (!new_elem) {
+29         perror("macro_pt_enqueue: ");
+30         exit (-1);  
+31     }
+32     new_elem->next = 0;
+33     new_elem->thread_id = pthread_self();   
+34     if (pt_head == 0) {
+35         pt_head = pt_tail = new_elem;       
+36     } else {
+37         pt_tail->next = new_elem;           
+38         pt_tail = new_elem;
+39     }
+40 }
+.fi
+.SS "static pthread_t macro_pt_first ()\fC [static]\fP"
+
+.PP
+\fBReturns:\fP
+.RS 4
+the pthread_id of the first element in the list or 0 if list is empty\&. 
+.RE
+.PP
+\fBAttention:\fP
+.RS 4
+Becuase multiple threads may use this function in parallel, save the critical section with a mutex (avoid NIL-ptr) 
+.RE
+.PP
+
+.PP
+Definition at line 69 of file input\&.c\&.
+.PP
+References ptlist::thread_id\&.
+.PP
+Referenced by inputupdate_keys(), and play_macro()\&.
+.PP
+.nf
+69                                   {
+70     return pt_head? pt_head->thread_id : 0;
+71 }
 .fi
 .SS "int macromask (const \fBuchar\fP *key1, const \fBuchar\fP *key2)"
 
@@ -485,45 +628,151 @@ Referenced by inputupdate_keys()\&.
 12     return 1;
 13 }
 .fi
+.SS "static void* play_macro (void *param)\fC [static]\fP"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparam\fP \fIparameter_t\fP to store Kb-ptr and macro-ptr (thread may get only one user-parameter) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+0 on success, -1 else (no one is interested in it except the kernel\&.\&.\&.) 
+.RE
+.PP
+First have a look if we are the first and only macro-thread to run\&. If not, wait\&. So enqueue our thread first, so it is remembered for us and can be seen by all others\&.
+.PP
+< If the first thread in the list is not our, another one is running
+.PP
+< Give all new threads the chance to enter the block\&.
+.PP
+Send events for each keypress in the macro
+.PP
+< Synchonization between macro output and color information
+.PP
+< use this unlock / relock for enablling the parallel running colorization
+.PP
+< local delay set
+.PP
+< use default global delay
+.PP
+< use delays depending on macro length
+.PP
+< protect the linked list and the mvar
+.PP
+< Wake up all waiting threads
+.PP
+< for the linked list and the mvar
+.PP
+< Sync keyboard input/output and colorization 
+.PP
+Definition at line 78 of file input\&.c\&.
+.PP
+References keymacro::actioncount, keymacro::actions, macroaction::delay, usbdevice::delay, macroaction::down, parameter::kb, parameter::macro, macro_pt_dequeue(), macro_pt_enqueue(), macro_pt_first(), mmutex, mmutex2, mvar, os_keypress(), os_mousemove(), macroaction::rel_x, macroaction::rel_y, and macroaction::scan\&.
+.PP
+Referenced by inputupdate_keys()\&.
+.PP
+.nf
+78                                      {
+79     parameter_t* ptr = (parameter_t*) param;
+80     usbdevice* kb = ptr->kb;
+81     keymacro* macro = ptr->macro;
+82 
+85     pthread_mutex_lock(mmutex2(kb));
+86     macro_pt_enqueue();
+87     // ckb_info("Entering critical section with 0x%lx\&. Queue head is 0x%lx\n",  (unsigned long int)pthread_self(), (unsigned long int)macro_pt_first());
+88     while (macro_pt_first() != pthread_self()) {    
+89         // ckb_info("Now waiting with 0x%lx because of 0x%lx\n", (unsigned long int)pthread_self(), (unsigned long int)macro_pt_first());
+90         pthread_cond_wait(mvar(kb), mmutex2(kb));
+91         // ckb_info("Waking up with 0x%lx\n", (unsigned long int)pthread_self());
+92     }
+93     pthread_mutex_unlock(mmutex2(kb));       
+94 
+96     pthread_mutex_lock(mmutex(kb)); 
+97     for (int a = 0; a < macro->actioncount; a++) {
+98         macroaction* action = macro->actions + a;
+99         if (action->rel_x != 0 || action->rel_y != 0)
+100             os_mousemove(kb, action->rel_x, action->rel_y);
+101         else {
+102             os_keypress(kb, action->scan, action->down);
+103             pthread_mutex_unlock(mmutex(kb));           
+104             if (action->delay != UINT_MAX) {            
+105                 usleep(action->delay);
+106             } else if (kb->delay != UINT_MAX) {         
+107                 usleep(kb->delay);
+108             } else if (a < (macro->actioncount - 1)) {  
+109                 if (a > 200) {
+110                     usleep (100);
+111                 } else if (a > 20) {
+112                     usleep(30);
+113                 }
+114             }
+115             pthread_mutex_lock(mmutex(kb));
+116         }
+117     }
+118 
+119     pthread_mutex_lock(mmutex2(kb));    
+120     // ckb_info("Now leaving 0x%lx and waking up all others\n", (unsigned long int)pthread_self());
+121     macro_pt_dequeue();
+122     pthread_cond_broadcast(mvar(kb));   
+123     pthread_mutex_unlock(mmutex2(kb));  
+124 
+125     pthread_mutex_unlock(mmutex(kb));   
+126     return 0;
+127 }
+.fi
 .SS "void updateindicators_kb (\fBusbdevice\fP *kb, intforce)"
 
 .PP
-Definition at line 152 of file input\&.c\&.
+Definition at line 260 of file input\&.c\&.
 .PP
 References usbdevice::active, usbprofile::currentmode, DELAY_SHORT, usbdevice::hw_ileds, usbdevice::hw_ileds_old, I_CAPS, I_NUM, I_SCROLL, usbdevice::ileds, usbmode::inotify, usbmode::ioff, usbmode::ion, nprintind(), os_sendindicators(), OUTFIFO_MAX, and usbdevice::profile\&.
 .PP
 .nf
-152                                                   {
-153     // Read current hardware indicator state (set externally)
-154     uchar old = kb->ileds, hw_old = kb->hw_ileds_old;
-155     uchar new = kb->hw_ileds, hw_new = new;
-156     // Update them if needed
-157     if(kb->active){
-158         usbmode* mode = kb->profile->currentmode;
-159         new = (new & ~mode->ioff) | mode->ion;
-160     }
-161     kb->ileds = new;
-162     kb->hw_ileds_old = hw_new;
-163     if(old != new || force){
-164         DELAY_SHORT(kb);
-165         os_sendindicators(kb);
-166     }
-167     // Print notifications if desired
-168     if(!kb->active)
-169         return;
-170     usbmode* mode = kb->profile->currentmode;
-171     uchar indicators[] = { I_NUM, I_CAPS, I_SCROLL };
-172     for(unsigned i = 0; i < sizeof(indicators) / sizeof(uchar); i++){
-173         uchar mask = indicators[i];
-174         if((hw_old & mask) == (hw_new & mask))
-175             continue;
-176         for(int notify = 0; notify < OUTFIFO_MAX; notify++){
-177             if(mode->inotify[notify] & mask)
-178                 nprintind(kb, notify, mask, hw_new & mask);
-179         }
-180     }
-181 }
+260                                                   {
+261     // Read current hardware indicator state (set externally)
+262     uchar old = kb->ileds, hw_old = kb->hw_ileds_old;
+263     uchar new = kb->hw_ileds, hw_new = new;
+264     // Update them if needed
+265     if(kb->active){
+266         usbmode* mode = kb->profile->currentmode;
+267         new = (new & ~mode->ioff) | mode->ion;
+268     }
+269     kb->ileds = new;
+270     kb->hw_ileds_old = hw_new;
+271     if(old != new || force){
+272         DELAY_SHORT(kb);
+273         os_sendindicators(kb);
+274     }
+275     // Print notifications if desired
+276     if(!kb->active)
+277         return;
+278     usbmode* mode = kb->profile->currentmode;
+279     uchar indicators[] = { I_NUM, I_CAPS, I_SCROLL };
+280     for(unsigned i = 0; i < sizeof(indicators) / sizeof(uchar); i++){
+281         uchar mask = indicators[i];
+282         if((hw_old & mask) == (hw_new & mask))
+283             continue;
+284         for(int notify = 0; notify < OUTFIFO_MAX; notify++){
+285             if(mode->inotify[notify] & mask)
+286                 nprintind(kb, notify, mask, hw_new & mask);
+287         }
+288     }
+289 }
 .fi
+.SH "Variable Documentation"
+.PP 
+.SS "\fBptlist_t\fP* pt_head = 0\fC [static]\fP"
+
+.PP
+Definition at line 17 of file input\&.c\&.
+.PP
+Referenced by macro_pt_dequeue()\&.
+.SS "\fBptlist_t\fP* pt_tail = 0\fC [static]\fP"
+
+.PP
+Definition at line 19 of file input\&.c\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for ckb-next from the source code\&.

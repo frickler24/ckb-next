@@ -1,11 +1,5 @@
 var NAVTREEINDEX12 =
 {
-"classUi__RebindWidget.html#a1dfad37d8e105271e3dfa74f142ca842":[7,0,150,50],
-"classUi__RebindWidget.html#a1ef0be1bed0b91bf5ee6a53e7c54ec30":[7,0,150,81],
-"classUi__RebindWidget.html#a215279fbc123b8f7a4a08c4db74c9aaa":[7,0,150,5],
-"classUi__RebindWidget.html#a22e99d57b9ed7f54095d4bf43dc09770":[7,0,150,21],
-"classUi__RebindWidget.html#a25091e1dafeee57b89d25d4f052cb9e9":[7,0,150,79],
-"classUi__RebindWidget.html#a25151fa62c658461ab48baaf2f8fcd0c":[7,0,150,44],
 "classUi__RebindWidget.html#a2867fa4bd7da8dcec725cc0960d16b64":[7,0,150,65],
 "classUi__RebindWidget.html#a287135e8f02b93c180e5a6749849f9cf":[7,0,150,56],
 "classUi__RebindWidget.html#a2875647a5477eacc181585c192892ce7":[7,0,150,94],
@@ -158,10 +152,6 @@ var NAVTREEINDEX12 =
 "classUi__SettingsWidget.html#af5ddf17e837d04d5b9d2d805ab3a7bd0":[7,0,151,0],
 "classUi__SettingsWidget.html#affff027c44bb4ffe0b50b65843b451af":[7,0,151,13],
 "classes.html":[7,1],
-"classmacroMigrationTip.html":[7,0,61],
-"classmacroMigrationTip.html#a4f0e6834d9acdc06d72edb7edaffe05e":[7,0,61,1],
-"classmacroMigrationTip.html#ac07a1e7b2b8d30e232aec3ba42a1520a":[7,0,61,2],
-"classmacroMigrationTip.html#ad5b6ca4b686127fa49e3e2d9eeefa9fe":[7,0,61,0],
 "colorbutton_8cpp.html":[8,0,0,0,15],
 "colorbutton_8cpp_source.html":[8,0,0,0,15],
 "colorbutton_8h.html":[8,0,0,0,16],
@@ -249,5 +239,15 @@ var NAVTREEINDEX12 =
 "daemon_2keymap_8h.html#a092f675ff366b5823c73b25f83d513f9":[8,0,0,1,21,29],
 "daemon_2keymap_8h.html#a0dc9a16564cc51b35a35d28af1a96fb0":[8,0,0,1,21,27],
 "daemon_2keymap_8h.html#a10391e4f9bcda1c6efe03f2961bcd838":[8,0,0,1,21,1],
-"daemon_2keymap_8h.html#a13222e9e2e7decc49add579e180fc0ce":[8,0,0,1,21,24]
+"daemon_2keymap_8h.html#a13222e9e2e7decc49add579e180fc0ce":[8,0,0,1,21,24],
+"daemon_2keymap_8h.html#a14af41b3bc1acf370c9c9bf78b0f8825":[8,0,0,1,21,12],
+"daemon_2keymap_8h.html#a154a1a73a1be1b151f488ee64a6d9057":[8,0,0,1,21,23],
+"daemon_2keymap_8h.html#a1e78fe78cc88328d9c38f020f3262554":[8,0,0,1,21,21],
+"daemon_2keymap_8h.html#a1f44d8d1a4f6bdde148f983a04cad881":[8,0,0,1,21,13],
+"daemon_2keymap_8h.html#a235f617fd296b13cdbb823ba39cca480":[8,0,0,1,21,15],
+"daemon_2keymap_8h.html#a274f3de972b30571c95f048562d7be03":[8,0,0,1,21,16],
+"daemon_2keymap_8h.html#a28297cc8eb7154aeb3c81fd42a3c59b2":[7,0,43,2],
+"daemon_2keymap_8h.html#a390cacb50de667138de3e6d54825332a":[8,0,0,1,21,18],
+"daemon_2keymap_8h.html#a4c690382afdb435f75a135309f15294d":[8,0,0,1,21,22],
+"daemon_2keymap_8h.html#a5972a715b26e6b792acc53ad946e1fbb":[8,0,0,1,21,30]
 };
