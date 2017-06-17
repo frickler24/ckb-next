@@ -1,8 +1,0 @@
-<map id="KbPerf::angleSnap" name="KbPerf::angleSnap">
-<area shape="rect" id="node2" href="$classMPerfWidget.html#a8ffdb9e2d121333708056c286af19be0" title="MPerfWidget::on_aSnapBox\l_clicked" alt="" coords="184,5,371,46"/>
-<area shape="rect" id="node3" href="$classKb.html#afa36635dcc1cd9512f372594c57c546c" title="Kb::readNotify" alt="" coords="224,71,331,97"/>
-<area shape="rect" id="node4" href="$classMPerfWidget.html#ac0cf0ff2a6c0de5e888eae1288433a7f" title="MPerfWidget::setPerf" alt="" coords="203,121,351,148"/>
-<area shape="rect" id="node5" href="$classKbWidget.html#aae4a00bb180d711b5df7df6443c8bf36" title="KbWidget::modeChanged" alt="" coords="419,121,589,148"/>
-<area shape="rect" id="node6" href="$classKbWidget.html#a848a21f1fd112e13ca5fcf25da4592c6" title="KbWidget::KbWidget" alt="" coords="672,92,816,119"/>
-<area shape="rect" id="node7" href="$classKbWidget.html#add5eb15a399c87faf80db9fdfc2e868f" title="KbWidget::on_modesList_customContextMenuRequested. " alt="" coords="637,143,851,185"/>
-</map>

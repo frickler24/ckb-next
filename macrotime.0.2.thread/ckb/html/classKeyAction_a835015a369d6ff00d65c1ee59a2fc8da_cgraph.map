@@ -1,9 +1,0 @@
-<map id="KeyAction::friendlyName" name="KeyAction::friendlyName">
-<area shape="rect" id="node2" href="$classKeyAction.html#a186027e75647f80551f1a045193ee2e9" title="KeyAction::dpiInfo" alt="" coords="234,19,363,45"/>
-<area shape="rect" id="node4" href="$classKeyMap.html#a17534cc00d6042c83b0251ef68afa167" title="KeyMap::friendlyName" alt="" coords="221,81,376,108"/>
-<area shape="rect" id="node8" href="$classKeyMap.html#a554a0f5a25bd4cd5c3678234f5935677" title="KeyMap::layout" alt="" coords="242,132,355,159"/>
-<area shape="rect" id="node3" href="$classKeyAction.html#af7568ca87a4590b3978eae0dad280bbe" title="KeyAction::isDPI" alt="" coords="427,5,549,32"/>
-<area shape="rect" id="node5" href="$classKeyMap.html#af9eb579f01124883cb7b485f2fd03cfa" title="KeyMap::map" alt="" coords="437,56,539,83"/>
-<area shape="rect" id="node6" href="$classKeyMap.html#a19b6692f7cabf7824a6995fcc738351e" title="KeyMap::contains" alt="" coords="425,107,551,133"/>
-<area shape="rect" id="node7" href="$classKeyMap.html#aece933ff97b9583f2e431a1fb3a699d7" title="KeyMap::KeyMap" alt="" coords="425,157,551,184"/>
-</map>

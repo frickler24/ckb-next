@@ -1,8 +1,0 @@
-<map id="revertusb" name="revertusb">
-<area shape="rect" id="node2" href="$main_8c.html#a24a012c29e291fef5fa13f4a07fffd33" title="quitWithLock " alt="" coords="131,47,229,74"/>
-<area shape="rect" id="node3" href="$main_8c.html#acd1527386a48875050e637e4bb872f11" title="quit Stop working the daemon. function is called if the daemon received a sigterm In this case..." alt="" coords="277,22,320,49"/>
-<area shape="rect" id="node5" href="$notify_8c.html#ae246359e104d63520158c26329caac80" title="restart" alt="" coords="597,22,656,49"/>
-<area shape="rect" id="node4" href="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="499,22,549,49"/>
-<area shape="rect" id="node7" href="$main_8c.html#a05f9b9989842b986a26caf9e4c66a4c7" title="sighandler" alt="" coords="369,22,450,49"/>
-<area shape="rect" id="node6" href="$notify_8h.html#a700b520b9eb9a3698af8f8ebf547a9ab" title="cmd_restart" alt="" coords="704,22,795,49"/>
-</map>

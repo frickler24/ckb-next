@@ -1,6 +1,0 @@
-<map id="KbLightWidget::updateLight" name="KbLightWidget::updateLight">
-<area shape="rect" id="node2" href="$classKbLightWidget.html#a1de1f3328abf87f7f48673c46fbd3b4b" title="KbLightWidget::setLight" alt="" coords="238,35,399,61"/>
-<area shape="rect" id="node3" href="$classKbWidget.html#aae4a00bb180d711b5df7df6443c8bf36" title="KbWidget::modeChanged" alt="" coords="448,35,619,61"/>
-<area shape="rect" id="node4" href="$classKbWidget.html#a848a21f1fd112e13ca5fcf25da4592c6" title="KbWidget::KbWidget" alt="" coords="701,5,845,32"/>
-<area shape="rect" id="node5" href="$classKbWidget.html#add5eb15a399c87faf80db9fdfc2e868f" title="KbWidget::on_modesList_customContextMenuRequested. " alt="" coords="667,57,880,98"/>
-</map>

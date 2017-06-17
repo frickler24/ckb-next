@@ -1,7 +1,0 @@
-<map id="GradientDialog::currentChanged" name="GradientDialog::currentChanged">
-<area shape="rect" id="node2" href="$classColorButton.html#a05e0cfb49a76a67227a36353640a8282" title="ColorButton::color" alt="" coords="285,5,411,32"/>
-<area shape="rect" id="node3" href="$classGradientDialog.html#ac9561fdcb1499ee945b4a6e45a80c1eb" title="GradientDialog::setPreset" alt="" coords="262,56,434,83"/>
-<area shape="rect" id="node6" href="$classGradientDialogWidget.html#ac507fc90fea4a229667f3c603f10287c" title="GradientDialogWidget\l::stopCount" alt="" coords="273,107,423,149"/>
-<area shape="rect" id="node4" href="$classGradientDialogWidget.html#a084f13e7bb85c4eac663517aece064be" title="GradientDialogWidget\l::setStops" alt="" coords="483,49,632,90"/>
-<area shape="rect" id="node5" href="$classGradientDialogWidget.html#a86c8f4efd74732ef510dd887417b2e6c" title="GradientDialogWidget\l::stops" alt="" coords="680,49,829,90"/>
-</map>

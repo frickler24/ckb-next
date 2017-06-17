@@ -1,7 +1,0 @@
-<map id="zip64_internal" name="zip64_internal">
-<area shape="rect" id="node21" href="$zip_8c.html#structcurfile64__info" title="{curfile64_info\n||}" alt="" coords="661,488,760,565"/>
-<area shape="rect" id="node3" href="$zip_8c.html#structlinkedlist__data__s" title="{linkedlist_data_s\n||}" alt="" coords="81,488,199,565"/>
-<area shape="rect" id="node4" href="$zip_8c.html#structlinkedlist__datablock__internal__s" title="{linkedlist_datablock\l_internal_s\n||}" alt="" coords="55,177,189,269"/>
-<area shape="rect" id="node13" href="$ioapi_8h.html#structzlib__filefunc64__def__s" title="{zlib_filefunc64_def_s\n||}" alt="" coords="1608,184,1752,261"/>
-<area shape="rect" id="node9" href="$ioapi_8h.html#structzlib__filefunc64__32__def__s" title="{zlib_filefunc64_32\l_def_s\n||}" alt="" coords="1617,481,1743,573"/>
-</map>

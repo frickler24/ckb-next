@@ -1,8 +1,0 @@
-<map id="play_macro" name="play_macro">
-<area shape="rect" id="node2" href="$input_8c.html#a712ce5a59c9a281c4d4c4d0ba3446de7" title="macro_pt_dequeue gets the first thread id of the list and returns the thread_id stored in it..." alt="" coords="145,5,277,32"/>
-<area shape="rect" id="node3" href="$input_8c.html#a225fb4bb1f20d4a8b524f5d72763367d" title="macro_pt_enqueue Save the new thread in the single linked list (FIFO). " alt="" coords="145,56,277,83"/>
-<area shape="rect" id="node4" href="$input_8c.html#a34b6a3d2e97732b6973cd608e35317c9" title="macro_pt_first returns the first pthread_id but does not remove the first entry. " alt="" coords="158,107,263,133"/>
-<area shape="rect" id="node5" href="$input_8h.html#af0d3401f317f3214dadad7d1a3378c58" title="os_keypress" alt="" coords="163,157,259,184"/>
-<area shape="rect" id="node7" href="$input_8h.html#a9f2cfb2d883ae4a3732047fe3f3da683" title="os_mousemove" alt="" coords="153,208,268,235"/>
-<area shape="rect" id="node6" href="$input__linux_8c.html#a14ff0fdf147e3702197db2cadb878460" title="isync" alt="" coords="325,183,379,209"/>
-</map>

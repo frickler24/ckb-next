@@ -1,7 +1,0 @@
-<map id="ColorButton::updateImage" name="ColorButton::updateImage">
-<area shape="rect" id="node2" href="$classColorButton.html#a00c581d94fe2a1b0ca92824cbdd61c28" title="ColorButton::allowAlpha" alt="" coords="229,5,392,32"/>
-<area shape="rect" id="node3" href="$classColorButton.html#ab09901e5aa07c7193c56b1184ba0036f" title="ColorButton::bigIcons" alt="" coords="237,56,385,83"/>
-<area shape="rect" id="node4" href="$classColorButton.html#a6e97545cbe4d9c890a70f4ca105724a4" title="ColorButton::color" alt="" coords="247,107,374,133"/>
-<area shape="rect" id="node5" href="$classColorButton.html#a378a08d51745db40f09a5f5e8f9de5fd" title="ColorButton::ColorButton" alt="" coords="440,183,608,209"/>
-<area shape="rect" id="node6" href="$classColorButton.html#a9cd98ab11ac0c98e3c2ff7b3432c6928" title="ColorButton::pickColor" alt="" coords="233,208,388,235"/>
-</map>

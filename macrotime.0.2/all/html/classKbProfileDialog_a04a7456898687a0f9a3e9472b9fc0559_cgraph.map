@@ -1,8 +1,0 @@
-<map id="KbProfileDialog::repopulate" name="KbProfileDialog::repopulate">
-<area shape="rect" id="node2" href="$classKbProfileDialog.html#a1796361397b027ef7eaa7e02dadce965" title="KbProfileDialog::addNewProfileItem" alt="" coords="235,5,466,32"/>
-<area shape="rect" id="node3" href="$classKb.html#a4a9b9ba54fb83506ae61aa787d98cbb8" title="Kb::currentProfile" alt="" coords="289,56,412,83"/>
-<area shape="rect" id="node4" href="$classKb.html#a8917f2f252b7d46ca02c9d3b71025be7" title="Kb::hwProfile" alt="" coords="301,107,401,133"/>
-<area shape="rect" id="node5" href="$classKbProfile.html#a868bdfbe3f9c00ce2708a1ed8f457ccf" title="KbProfile::id" alt="" coords="304,157,397,184"/>
-<area shape="rect" id="node6" href="$classKbProfile.html#a0239b0037d8206ed5bfd6c774d803d1a" title="KbProfile::name" alt="" coords="293,208,408,235"/>
-<area shape="rect" id="node7" href="$classKb.html#abd3211644024c6f6eee8186c44836aec" title="Kb::profiles" alt="" coords="307,259,395,285"/>
-</map>

@@ -1,8 +1,0 @@
-<map id="KPerfWidget::setPerf" name="KPerfWidget::setPerf">
-<area shape="rect" id="node2" href="$classColorButton.html#a05e0cfb49a76a67227a36353640a8282" title="ColorButton::color" alt="" coords="219,5,346,32"/>
-<area shape="rect" id="node3" href="$classKbPerf.html#a7be882c94deece28a04579048039b7b2" title="KbPerf::getIndicator" alt="" coords="213,56,352,83"/>
-<area shape="rect" id="node4" href="$classKbPerf.html#ad1982e00dcad4b29302c7c441fd9d781" title="KbPerf::iOpacity" alt="" coords="223,107,342,133"/>
-<area shape="rect" id="node5" href="$classKbProfile.html#a1923bb106c5e9a5b2399126e3689cc02" title="KbProfile::keyMap" alt="" coords="218,157,347,184"/>
-<area shape="rect" id="node6" href="$classKeyMap.html#a72ab32524b88e5a6bce86b1d9eafde48" title="KeyMap::model" alt="" coords="226,208,339,235"/>
-<area shape="rect" id="node7" href="$classKPerfWidget.html#a64b9a4645b42ef8341d5f6a5a8541a09" title="KPerfWidget::raw2Mode return hardware mode depending on setiings in sw_enable and hw_enable..." alt="" coords="201,259,365,285"/>
-</map>

@@ -1,7 +1,0 @@
-<map id="KbBindWidget::updateBind" name="KbBindWidget::updateBind">
-<area shape="rect" id="node2" href="$classKbBindWidget.html#a1ac20b99c822f65c7a2c8c61a5a1f029" title="KbBindWidget::on_resetButton\l_clicked" alt="" coords="233,5,434,46"/>
-<area shape="rect" id="node3" href="$classKbBindWidget.html#ae06c7e036759eb9a1ae7224cdba30b0b" title="KbBindWidget::setBind" alt="" coords="255,71,412,97"/>
-<area shape="rect" id="node4" href="$classKbWidget.html#aae4a00bb180d711b5df7df6443c8bf36" title="KbWidget::modeChanged" alt="" coords="483,71,653,97"/>
-<area shape="rect" id="node5" href="$classKbWidget.html#a848a21f1fd112e13ca5fcf25da4592c6" title="KbWidget::KbWidget" alt="" coords="736,41,880,68"/>
-<area shape="rect" id="node6" href="$classKbWidget.html#add5eb15a399c87faf80db9fdfc2e868f" title="KbWidget::on_modesList_customContextMenuRequested. " alt="" coords="701,93,915,134"/>
-</map>

@@ -1,8 +1,0 @@
-<map id="CkbSettings::get" name="CkbSettings::get">
-<area shape="rect" id="node2" href="$classMainWindow.html#a4e20a4a065fbb0e4d3532a45a0a91425" title="MainWindow::closeEvent" alt="" coords="188,5,359,32"/>
-<area shape="rect" id="node3" href="$classKbLightWidget.html#aeba7635ba699a30033a877a2994df618" title="KbLightWidget::KbLightWidget" alt="" coords="173,56,373,83"/>
-<area shape="rect" id="node4" href="$classMainWindow.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow" alt="" coords="422,128,602,155"/>
-<area shape="rect" id="node5" href="$classAutoRun.html#ae158c179f0b4c232ba5a2b3e3c6ce2d9" title="AutoRun::once" alt="" coords="219,208,328,235"/>
-<area shape="rect" id="node7" href="$classMainWindow.html#a888ae1a192a5ca93d0d8bddd104ae953" title="MainWindow::timerTick" alt="" coords="194,157,353,184"/>
-<area shape="rect" id="node6" href="$classSettingsWidget.html#ab381a630fcf24d7fe49ab7bd2896c052" title="SettingsWidget::Settings\lWidget" alt="" coords="429,201,595,242"/>
-</map>

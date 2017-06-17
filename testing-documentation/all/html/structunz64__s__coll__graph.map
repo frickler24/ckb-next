@@ -1,9 +1,0 @@
-<map id="unz64_s" name="unz64_s">
-<area shape="rect" id="node2" href="$unzip_8c.html#structfile__in__zip64__read__info__s" title="{file_in_zip64_read\l_info_s\n||}" alt="" coords="967,698,1093,790"/>
-<area shape="rect" id="node22" href="$unzip_8c.html#structunz__file__info64__internal__s" title="{unz_file_info64_internal_s\n||}" alt="" coords="343,705,515,783"/>
-<area shape="rect" id="node25" href="$unzip_8h.html#structunz__file__info64__s" title="{unz_file_info64_s\n|+ size_filename\l+ disk_num_start\l|}" alt="" coords="579,698,701,790"/>
-<area shape="rect" id="node23" href="$unzip_8h.html#structunz__global__info64__s" title="{unz_global_info64_s\n||}" alt="" coords="1417,705,1556,783"/>
-<area shape="rect" id="node12" href="$ioapi_8h.html#structzlib__filefunc64__def__s" title="{zlib_filefunc64_def_s\n||}" alt="" coords="544,160,688,237"/>
-<area shape="rect" id="node8" href="$ioapi_8h.html#structzlib__filefunc64__32__def__s" title="{zlib_filefunc64_32\l_def_s\n||}" alt="" coords="1169,374,1295,466"/>
-<area shape="rect" id="node26" href="$unzip_8h.html#structtm__unz__s" title="{tm_unz_s\n||}" alt="" coords="426,381,504,459"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="getNTFSTime" name="getNTFSTime">
-<area shape="rect" id="node2" href="$structQuaZipFileInfo64.html#afe4c454de7d067a0095da0223f0cbec2" title="Returns the NTFS access time. " alt="" coords="160,5,379,32"/>
-<area shape="rect" id="node3" href="$structQuaZipFileInfo64.html#a409dcbbe1ecd88dadb51be1aec48819d" title="Returns the NTFS creation time. " alt="" coords="160,56,379,83"/>
-<area shape="rect" id="node4" href="$structQuaZipFileInfo64.html#af4b19399367cf5bf24026344e0631ccb" title="Returns the NTFS modification time. " alt="" coords="158,107,381,133"/>
-</map>

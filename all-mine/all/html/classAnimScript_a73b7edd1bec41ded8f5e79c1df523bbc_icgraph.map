@@ -1,7 +1,0 @@
-<map id="AnimScript::AnimScript" name="AnimScript::AnimScript">
-<area shape="rect" id="node2" href="$classAnimScript.html#a67ce348a3bb60d0143e8f7cc9e1d8df5" title="AnimScript::copy" alt="" coords="213,9,336,36"/>
-<area shape="rect" id="node4" href="$classAnimScript.html#ae59ff1932ad97696fcaf244bb9d7a537" title="AnimScript::scan" alt="" coords="213,64,336,91"/>
-<area shape="rect" id="node3" href="$classKbAnim.html#ad3776cc0c82156dcfce84f5275b839f8" title="KbAnim::KbAnim" alt="" coords="396,5,519,32"/>
-<area shape="rect" id="node5" href="$classExtraSettingsWidget.html#a59868422fbecc72b233ad472be99bb54" title="ExtraSettingsWidget\l::on_animScanButton\l_clicked" alt="" coords="384,56,531,112"/>
-<area shape="rect" id="node6" href="$classExtraSettingsWidget.html#acde7ec134d1094521001d4512edbbe92" title="ExtraSettingsWidget\l::ExtraSettingsWidget" alt="" coords="579,63,730,105"/>
-</map>

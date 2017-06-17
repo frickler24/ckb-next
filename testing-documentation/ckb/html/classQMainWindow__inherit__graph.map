@@ -1,3 +1,0 @@
-<map id="QMainWindow" name="QMainWindow">
-<area shape="rect" id="node2" href="$classMainWindow.html" title="{MainWindow\n|+ mainWindow\l&#45; settingsWidget\l&#45; kbWidgets\l&#45; restoreAction\l&#45; closeAction\l&#45; trayIconMenu\l&#45; trayIcon\l&#45; ui\l|+ MainWindow()\l+ ~MainWindow()\l+ toggleTrayIcon()\l+ showWindow()\l+ stateChange()\l+ quitApp()\l&#45; closeEvent()\l&#45; addDevice()\l&#45; removeDevice()\l&#45; updateVersion()\l&#45; checkFwUpdates()\l&#45; timerTick()\l&#45; iconClicked()\l&#45; cleanup()\l&#45; showFwUpdateNotification()\l}" alt="" coords="5,131,200,517"/>
-</map>

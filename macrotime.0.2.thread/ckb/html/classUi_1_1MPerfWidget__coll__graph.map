@@ -1,5 +1,0 @@
-<map id="Ui::MPerfWidget" name="Ui::MPerfWidget">
-<area shape="rect" id="node2" href="$classUi__MPerfWidget.html" title="{Ui_MPerfWidget\n|+ xBox0\l+ yBox5\l+ xSlider5\l+ xSlider4\l+ label_4\l+ yBox4\l+ label_3\l+ label_5\l+ label_2\l|+ setupUi()\l+ retranslateUi()\l}" alt="" coords="682,611,800,821"/>
-<area shape="rect" id="node6" href="$classColorButton.html" title="{ColorButton\n||+ ColorButton()\l+ color()\l+ color()\l+ allowAlpha()\l+ allowAlpha()\l+ setLabel()\l+ setLabel()\l+ bigIcons()\l+ bigIcons()\l&#45; updateImage()\l&#45; pickColor()\l}" alt="" coords="381,176,493,400"/>
-<area shape="rect" id="node7" href="$classQPushButton.html" title="{QPushButton\n||}" alt="" coords="282,5,381,83"/>
-</map>

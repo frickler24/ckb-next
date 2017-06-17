@@ -1,9 +1,0 @@
-<map id="KeyWidget::map" name="KeyWidget::map">
-<area shape="rect" id="node2" href="$classKbBindWidget.html#ad052b9ce7166f5a1c46ee7a01f3457dc" title="KbBindWidget::newLayout" alt="" coords="177,9,353,36"/>
-<area shape="rect" id="node7" href="$classKbLightWidget.html#ab5dfd2e86b7068bf8d71a89cdf66822b" title="KbLightWidget::updateLight" alt="" coords="174,60,357,87"/>
-<area shape="rect" id="node3" href="$classKbBindWidget.html#ae06c7e036759eb9a1ae7224cdba30b0b" title="KbBindWidget::setBind" alt="" coords="408,9,565,36"/>
-<area shape="rect" id="node4" href="$classKbWidget.html#aae4a00bb180d711b5df7df6443c8bf36" title="KbWidget::modeChanged" alt="" coords="616,35,787,61"/>
-<area shape="rect" id="node5" href="$classKbWidget.html#a848a21f1fd112e13ca5fcf25da4592c6" title="KbWidget::KbWidget" alt="" coords="869,5,1013,32"/>
-<area shape="rect" id="node6" href="$classKbWidget.html#add5eb15a399c87faf80db9fdfc2e868f" title="KbWidget::on_modesList_customContextMenuRequested. " alt="" coords="835,57,1048,98"/>
-<area shape="rect" id="node8" href="$classKbLightWidget.html#a1de1f3328abf87f7f48673c46fbd3b4b" title="KbLightWidget::setLight" alt="" coords="406,60,567,87"/>
-</map>

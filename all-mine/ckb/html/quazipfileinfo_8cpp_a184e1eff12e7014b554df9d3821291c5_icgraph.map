@@ -1,8 +1,0 @@
-<map id="permissionsFromExternalAttr" name="permissionsFromExternalAttr">
-<area shape="rect" id="node2" href="$structQuaZipFileInfo.html#af87f96a64d7c02b002622f81d13accdb" title="Get the file permissions. " alt="" coords="252,5,457,32"/>
-<area shape="rect" id="node3" href="$structQuaZipFileInfo64.html#a099216bd8991a983168d91c06a689f61" title="Get the file permissions. " alt="" coords="245,56,464,83"/>
-<area shape="rect" id="node4" href="$classJlCompress.html#a522739a65b382a9838ed69812340dd40" title="Extract a single file. " alt="" coords="513,56,674,83"/>
-<area shape="rect" id="node5" href="$classJlCompress.html#a38c0d58bfe3bbbcb3cf4e98d126633a3" title="Extract a single file. " alt="" coords="726,5,887,32"/>
-<area shape="rect" id="node6" href="$classJlCompress.html#a309e9ee366719a4d8aa28f837fab73ae" title="Extract a list of files. " alt="" coords="723,56,891,83"/>
-<area shape="rect" id="node7" href="$classJlCompress.html#a365a153baa4c11812d93cbca60b6a293" title="Extract a whole archive. " alt="" coords="728,107,885,133"/>
-</map>

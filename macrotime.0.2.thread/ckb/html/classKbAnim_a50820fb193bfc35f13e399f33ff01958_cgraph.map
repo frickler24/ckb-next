@@ -1,6 +1,0 @@
-<map id="KbAnim::updateParams" name="KbAnim::updateParams">
-<area shape="rect" id="node2" href="$classKbAnim.html#a3863d1e56a2aa9cf6a67f0635e1bab72" title="KbAnim::effectiveParams" alt="" coords="213,5,384,32"/>
-<area shape="rect" id="node3" href="$classAnimScript.html#ab67042e47c4dc6209720fd1b4649edb8" title="AnimScript::parameters" alt="" coords="219,56,378,83"/>
-<area shape="rect" id="node4" href="$classAnimScript.html#ad14f3e232f3f4b0670b91d9cfe719c1d" title="AnimScript::printParams" alt="" coords="433,31,597,57"/>
-<area shape="rect" id="node5" href="$classAnimScript.html#abd0e45eaba390c858252bc0b0c4ac9b5" title="AnimScript::setDuration" alt="" coords="434,81,595,108"/>
-</map>

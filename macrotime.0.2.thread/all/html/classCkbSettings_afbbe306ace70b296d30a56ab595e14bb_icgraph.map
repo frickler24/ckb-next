@@ -1,5 +1,0 @@
-<map id="CkbSettings::isWritable" name="CkbSettings::isWritable">
-<area shape="rect" id="node2" href="$classCkbSettings.html#a6c5935f9ea0cc25bbb0b64929578d99b" title="If config files are writable, return false. Otherwise give the user a pop up and return true..." alt="" coords="213,5,384,46"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="273,71,324,97"/>
-<area shape="rect" id="node3" href="$classMainWindow.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow" alt="" coords="433,12,613,39"/>
-</map>

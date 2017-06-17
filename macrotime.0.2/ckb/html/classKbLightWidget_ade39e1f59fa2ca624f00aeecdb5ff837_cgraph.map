@@ -1,7 +1,0 @@
-<map id="KbLightWidget::changeAnim" name="KbLightWidget::changeAnim">
-<area shape="rect" id="node2" href="$classKeyWidget.html#a8d40c82dcb72b2ab97be866b8f95fe75" title="KeyWidget::clearSelection" alt="" coords="245,5,421,32"/>
-<area shape="rect" id="node3" href="$classKbAnim.html#aebfd6f4cc51099a1de64eae4929c6bb5" title="KbAnim::keys" alt="" coords="281,56,385,83"/>
-<area shape="rect" id="node4" href="$classKeyWidget.html#a253fcdd25d2a661dc8137a78643abc6a" title="KeyWidget::setAnimationTo\lSelection" alt="" coords="241,107,426,149"/>
-<area shape="rect" id="node5" href="$classKeyWidget.html#ac89be95afd2a854b019dc0ee86871a81" title="KeyWidget::setSelection" alt="" coords="250,173,417,200"/>
-<area shape="rect" id="node6" href="$classKeyMap.html#a405d537637046a2437f7089f36ed4834" title="KeyMap::keys" alt="" coords="475,173,581,200"/>
-</map>

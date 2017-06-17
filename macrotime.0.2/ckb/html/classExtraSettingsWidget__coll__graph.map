@@ -1,5 +1,0 @@
-<map id="ExtraSettingsWidget" name="ExtraSettingsWidget">
-<area shape="rect" id="node2" href="$classQDialog.html" title="{QDialog\n||}" alt="" coords="441,555,511,632"/>
-<area shape="rect" id="node3" href="$classUi_1_1ExtraSettingsWidget.html" title="{Ui::ExtraSettingsWidget\n||}" alt="" coords="535,555,697,632"/>
-<area shape="rect" id="node4" href="$classUi__ExtraSettingsWidget.html" title="{Ui_ExtraSettingsWidget\n|+ verticalSpacer\l+ verticalSpacer_3\l+ verticalSpacer_2\l+ horizontalSpacer\l+ label_5\l|+ setupUi()\l+ retranslateUi()\l}" alt="" coords="535,353,697,503"/>
-</map>

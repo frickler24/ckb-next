@@ -1,5 +1,0 @@
-<map id="GradientDialog::on_presetList_currentItemChanged" name="GradientDialog::on_presetList_currentItemChanged">
-<area shape="rect" id="node2" href="$classGradientDialog.html#ac9561fdcb1499ee945b4a6e45a80c1eb" title="GradientDialog::setPreset" alt="" coords="265,12,437,39"/>
-<area shape="rect" id="node3" href="$classGradientDialogWidget.html#a084f13e7bb85c4eac663517aece064be" title="GradientDialogWidget\l::setStops" alt="" coords="485,5,635,46"/>
-<area shape="rect" id="node4" href="$classGradientDialogWidget.html#a86c8f4efd74732ef510dd887417b2e6c" title="GradientDialogWidget\l::stops" alt="" coords="683,5,832,46"/>
-</map>

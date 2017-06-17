@@ -1,8 +1,0 @@
-<map id="QuaZip::goToFirstFile" name="QuaZip::goToFirstFile">
-<area shape="rect" id="node2" href="$classJlCompress.html#a365a153baa4c11812d93cbca60b6a293" title="Extract a whole archive. " alt="" coords="221,5,379,32"/>
-<area shape="rect" id="node3" href="$classQuaZipPrivate.html#af26e854d77203dbece23b60b59945383" title="Returns either a list of file names or a list of QuaZipFileInfo. " alt="" coords="203,56,397,83"/>
-<area shape="rect" id="node7" href="$classJlCompress.html#ab42422be913f817d7e04c1b1cd5d0156" title="Get the file list. " alt="" coords="220,107,380,133"/>
-<area shape="rect" id="node4" href="$classQuaZip.html#abb38d8b4c9c4ae0728b48caae9dd82de" title="Returns a list of files inside the archive. " alt="" coords="446,5,613,32"/>
-<area shape="rect" id="node5" href="$classQuaZip.html#a7486af66bede8e131db0cd2e81881387" title="Returns information list about all files inside the archive. " alt="" coords="452,56,607,83"/>
-<area shape="rect" id="node6" href="$classQuaZip.html#a474e66b1b696a9e00edcc067484c36ad" title="Returns information list about all files inside the archive. " alt="" coords="445,107,613,133"/>
-</map>

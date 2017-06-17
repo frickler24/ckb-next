@@ -1,6 +1,0 @@
-<map id="MPerfWidget::on_copyButton_clicked" name="MPerfWidget::on_copyButton_clicked">
-<area shape="rect" id="node2" href="$classKbProfile.html#a7982b0c1a3bc80021cce0771714cc146" title="KbProfile::currentMode" alt="" coords="265,5,420,32"/>
-<area shape="rect" id="node3" href="$classKbProfile.html#a84a8f4428749f8ac37d8b34393856a32" title="KbProfile::modes" alt="" coords="281,56,404,83"/>
-<area shape="rect" id="node4" href="$classKbMode.html#afd90aa9cce9846da60a1ccc862b5a2ee" title="KbMode::perf" alt="" coords="293,107,393,133"/>
-<area shape="rect" id="node5" href="$classModeSelectDialog.html#a4e0db33c13a78828ce7a62b9a1683208" title="ModeSelectDialog::selection" alt="" coords="249,157,437,184"/>
-</map>

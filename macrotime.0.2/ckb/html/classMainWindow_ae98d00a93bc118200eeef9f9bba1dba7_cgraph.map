@@ -1,6 +1,0 @@
-<map id="MainWindow::~MainWindow" name="MainWindow::~MainWindow">
-<area shape="rect" id="node2" href="$classMainWindow.html#aa9dd2871f040b8f79efae0bf864b90dd" title="MainWindow::cleanup" alt="" coords="243,31,394,57"/>
-<area shape="rect" id="node3" href="$classKbManager.html#abe7c73e1b1f526533d71a909fa8ee642" title="KbManager::stop" alt="" coords="458,5,579,32"/>
-<area shape="rect" id="node4" href="$classCkbSettings.html#a39d3a0336b7414de8c56c88174f46985" title="CkbSettings::cleanUp" alt="" coords="443,56,594,83"/>
-<area shape="rect" id="node5" href="$ckbsettings_8cpp.html#a5565e801b9999658c773c544a98ad10f" title="cacheWritesInProgress" alt="" coords="643,56,802,83"/>
-</map>

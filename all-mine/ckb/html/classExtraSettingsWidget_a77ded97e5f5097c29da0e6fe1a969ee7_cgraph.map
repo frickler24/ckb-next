@@ -1,9 +1,0 @@
-<map id="ExtraSettingsWidget::pollUpdates" name="ExtraSettingsWidget::pollUpdates">
-<area shape="rect" id="node2" href="$classCkbSettings.html#a9c6a37558344dc426dd222deec6792f8" title="CkbSettings::isBusy" alt="" coords="206,5,349,32"/>
-<area shape="rect" id="node4" href="$classCkbSettings.html#a65c4f3ff1f75e5a554759040fb76044e" title="CkbSettings::set" alt="" coords="217,56,337,83"/>
-<area shape="rect" id="node8" href="$classKbLight.html#ae077a5423a30ade9554ff6749247156c" title="KbLight::shareDimming" alt="" coords="198,107,357,133"/>
-<area shape="rect" id="node3" href="$ckbsettings_8cpp.html#a5565e801b9999658c773c544a98ad10f" title="cacheWritesInProgress" alt="" coords="406,5,565,32"/>
-<area shape="rect" id="node5" href="$ckbsettings_8cpp.html#aa405e58960532b36ddb38251775238fd" title="globalSettings" alt="" coords="433,56,537,83"/>
-<area shape="rect" id="node6" href="$classCkbSettings.html#a3793106d98878f170f9f9734bf39409b" title="CkbSettings::value" alt="" coords="419,107,552,133"/>
-<area shape="rect" id="node7" href="$classCkbSettings.html#a29695ed0012617ba943a1878d4abc71c" title="CkbSettings::pwd" alt="" coords="614,107,741,133"/>
-</map>

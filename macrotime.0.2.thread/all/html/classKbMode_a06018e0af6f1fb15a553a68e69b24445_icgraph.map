@@ -1,6 +1,0 @@
-<map id="KbMode::setNeedsSave" name="KbMode::setNeedsSave">
-<area shape="rect" id="node2" href="$classKb.html#abd5f5fc526541fd9fe41a4755e6b42f2" title="Kb::hwSave" alt="" coords="225,48,319,75"/>
-<area shape="rect" id="node5" href="$classKb.html#afa36635dcc1cd9512f372594c57c546c" title="Kb::readNotify" alt="" coords="219,99,325,125"/>
-<area shape="rect" id="node3" href="$classKbWidget.html#a65f38c3fc88b4e1a8fbabc7a27946c49" title="KbWidget::on_hwSaveButton\l_clicked" alt="" coords="374,5,567,46"/>
-<area shape="rect" id="node4" href="$classKbProfileDialog.html#aac105b06b0a29e39c05cb70f01c37fcd" title="KbProfileDialog::on\l_profileList_customContext\lMenuRequested" alt="" coords="380,69,561,125"/>
-</map>

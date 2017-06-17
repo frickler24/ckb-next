@@ -1,5 +1,0 @@
-<map id="ModeSelectDialog::selection" name="ModeSelectDialog::selection">
-<area shape="rect" id="node2" href="$classKbBindWidget.html#afa54eb21dc5dfff20175d5201a7d2698" title="KbBindWidget::on_copyButton\l_clicked" alt="" coords="243,5,443,46"/>
-<area shape="rect" id="node3" href="$classKPerfWidget.html#a2e1727f7eb4aa60e3e96c6d1febd5306" title="KPerfWidget::on_copyButton\l_clicked" alt="" coords="247,70,438,111"/>
-<area shape="rect" id="node4" href="$classMPerfWidget.html#a9ca1fbfe52a1782483fa5b2e82d6e388" title="MPerfWidget::on_copyButton\l_clicked" alt="" coords="246,135,439,177"/>
-</map>

@@ -1,6 +1,0 @@
-<map id="KbLight::previewAnim" name="KbLight::previewAnim">
-<area shape="rect" id="node2" href="$classAnimAddDialog.html#acb2d42b03ff17769c46acacc780f81d8" title="AnimAddDialog::on_preset\lBox_activated" alt="" coords="203,38,381,79"/>
-<area shape="rect" id="node3" href="$classAnimAddDialog.html#a238fd7d380baf02174d89f5ce12e7eeb" title="AnimAddDialog::on_animBox\l_activated" alt="" coords="429,5,621,46"/>
-<area shape="rect" id="node5" href="$classAnimAddDialog.html#a7da394efc172a029448ac7ea9a16a648" title="AnimAddDialog::on_preview\lBox_clicked" alt="" coords="432,70,619,111"/>
-<area shape="rect" id="node4" href="$classAnimAddDialog.html#acb4f77d3ae8265e8ce69b0c38d57d5e1" title="AnimAddDialog::AnimAddDialog" alt="" coords="669,12,880,39"/>
-</map>

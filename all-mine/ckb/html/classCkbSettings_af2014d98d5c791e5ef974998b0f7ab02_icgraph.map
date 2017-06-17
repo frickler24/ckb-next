@@ -1,9 +1,0 @@
-<map id="CkbSettings::childKeys" name="CkbSettings::childKeys">
-<area shape="rect" id="node2" href="$classGradientDialog.html#a30a03b6ef4aaa3fe4968699a76cc9a00" title="GradientDialog::Gradient\lDialog" alt="" coords="219,5,384,46"/>
-<area shape="rect" id="node3" href="$classKbAnim.html#ad3776cc0c82156dcfce84f5275b839f8" title="KbAnim::KbAnim" alt="" coords="240,71,363,97"/>
-<area shape="rect" id="node4" href="$classKbBind.html#a25670999ed5a452b7df6c16633d197b5" title="KbBind::load" alt="" coords="253,121,349,148"/>
-<area shape="rect" id="node6" href="$classKbLight.html#a82d4feddc998442f245b562b7637de5d" title="KbLight::load" alt="" coords="252,172,351,199"/>
-<area shape="rect" id="node7" href="$classKbBind.html#aae3573f7f3b1d385285e6179392c2ef3" title="KbBind::loadGlobalRemap" alt="" coords="214,223,389,249"/>
-<area shape="rect" id="node5" href="$classKbMode.html#a399519dd076e0231fd636023f6479436" title="KbMode::KbMode" alt="" coords="458,143,585,169"/>
-<area shape="rect" id="node8" href="$classSettingsWidget.html#ab381a630fcf24d7fe49ab7bd2896c052" title="SettingsWidget::Settings\lWidget" alt="" coords="438,215,605,257"/>
-</map>

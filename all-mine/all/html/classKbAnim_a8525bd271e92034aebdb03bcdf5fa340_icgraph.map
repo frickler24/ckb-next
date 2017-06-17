@@ -1,7 +1,0 @@
-<map id="KbAnim::needsSave" name="KbAnim::needsSave">
-<area shape="rect" id="node2" href="$classKbLight.html#ae674f04c3b9b72ccacfe6c731d2c9d3f" title="KbLight::needsSave" alt="" coords="195,5,333,32"/>
-<area shape="rect" id="node3" href="$classKbMode.html#ac1014466a1bdddd42d739a6e44e151f0" title="KbMode::needsSave" alt="" coords="382,5,525,32"/>
-<area shape="rect" id="node4" href="$classKbProfile.html#a6f62071d0836b7500f1abad3daa8f62b" title="KbProfile::needsSave" alt="" coords="574,5,722,32"/>
-<area shape="rect" id="node5" href="$classKb.html#ad91a2851b16d223f9d884df5898b6179" title="Kb::needsSave" alt="" coords="771,5,882,32"/>
-<area shape="rect" id="node6" href="$classKb.html#af993d8050eed40c657f4ed0db30f7023" title="Kb::autoSave" alt="" coords="931,5,1032,32"/>
-</map>

@@ -1,7 +1,0 @@
-<map id="KbFirmware::checkUpdates" name="KbFirmware::checkUpdates">
-<area shape="rect" id="node2" href="$classKbFirmware.html#a21477524cbd3621323795f4f5757c77b" title="KbFirmware::_checkUpdates" alt="" coords="238,31,429,57"/>
-<area shape="rect" id="node3" href="$classKbFirmware.html#a70d1d734d61e1a5eebc5411e02de231f" title="KbFirmware::downloadFinished" alt="" coords="478,5,682,32"/>
-<area shape="rect" id="node6" href="$classKbFirmware.html#a87e8a9b76f27124df80d81f54c7cd1da" title="KbFirmware::initManager" alt="" coords="497,56,663,83"/>
-<area shape="rect" id="node4" href="$classKbFirmware.html#ae2409af30da0ae6e8731623b2b68dfc9" title="KbFirmware::processDownload" alt="" coords="731,5,935,32"/>
-<area shape="rect" id="node5" href="$classKbManager.html#a4ce88ef95a35d0cd5a3ac67a0bc076ea" title="KbManager::parseVersionString" alt="" coords="985,5,1191,32"/>
-</map>

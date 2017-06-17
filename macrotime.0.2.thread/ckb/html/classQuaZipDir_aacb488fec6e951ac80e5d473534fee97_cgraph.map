@@ -1,6 +1,0 @@
-<map id="QuaZipDir::exists" name="QuaZipDir::exists">
-<area shape="rect" id="node2" href="$classQuaZip.html#a1d3fbd445a8e9d3449ded7371931c6b3" title="Returns the actual case sensitivity for the specified QuaZIP one. " alt="" coords="179,5,386,32"/>
-<area shape="rect" id="node3" href="$classQuaZipDir.html#a4a32faa77c4120cd3c6db4b683fa16d9" title="Returns the list of the entry names in the directory. " alt="" coords="213,56,352,83"/>
-<area shape="rect" id="node4" href="$classQuaZipDir.html#ae8b576a150f8d62c902067603cbc97ae" title="Returns the full path to the specified file. " alt="" coords="216,107,349,133"/>
-<area shape="rect" id="node5" href="$classQuaZipDir.html#a598fdf23f1b37e1876476e5969040a32" title="Returns if the QuaZipDir points to the root of the archive. " alt="" coords="219,157,346,184"/>
-</map>

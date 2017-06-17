@@ -1,6 +1,0 @@
-<map id="KeyMap::contains" name="KeyMap::contains">
-<area shape="rect" id="node2" href="$classKeyMap.html#a17534cc00d6042c83b0251ef68afa167" title="KeyMap::friendlyName" alt="" coords="203,31,357,57"/>
-<area shape="rect" id="node5" href="$classKbAnimWidget.html#a79f0a97b24005a54981e66d8c9e43e62" title="KbAnimWidget::on_keyButton\l_clicked" alt="" coords="181,82,379,123"/>
-<area shape="rect" id="node3" href="$classKeyAction.html#a835015a369d6ff00d65c1ee59a2fc8da" title="KeyAction::friendlyName" alt="" coords="441,5,607,32"/>
-<area shape="rect" id="node4" href="$classRebindWidget.html#a2982577bb3fe00fc2a5b358f1968919e" title="RebindWidget::RebindWidget" alt="" coords="427,56,621,83"/>
-</map>

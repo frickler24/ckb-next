@@ -1,4 +1,0 @@
-<map id="QPushButton" name="QPushButton">
-<area shape="rect" id="node2" href="$classColorButton.html" title="{ColorButton\n|&#45; _color\l&#45; _alpha\l&#45; _setLabel\l&#45; _bigIcons\l|+ ColorButton()\l+ color()\l+ color()\l+ allowAlpha()\l+ allowAlpha()\l+ setLabel()\l+ setLabel()\l+ bigIcons()\l+ bigIcons()\l&#45; updateImage()\l&#45; pickColor()\l}" alt="" coords="5,131,117,399"/>
-<area shape="rect" id="node3" href="$classGradientButton.html" title="{GradientButton\n|&#45; _stops\l&#45; _alpha\l|+ GradientButton()\l+ fromString()\l+ toString()\l&#45; updateImage()\l&#45; pickGradient()\l}" alt="" coords="142,190,271,341"/>
-</map>

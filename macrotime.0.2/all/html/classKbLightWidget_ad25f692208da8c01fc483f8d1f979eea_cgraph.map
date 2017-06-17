@@ -1,7 +1,0 @@
-<map id="KbLightWidget::newSelection" name="KbLightWidget::newSelection">
-<area shape="rect" id="node2" href="$classColorButton.html#a05e0cfb49a76a67227a36353640a8282" title="ColorButton::color" alt="" coords="293,5,419,32"/>
-<area shape="rect" id="node3" href="$classKbLight.html#a5bca9ce0f937639f207872b37323b5e5" title="KbLight::colorMap" alt="" coords="293,56,419,83"/>
-<area shape="rect" id="node4" href="$classKeyMap.html#af4921437c3e6729e82ae05f4f049a5f0" title="KeyMap::isMouse" alt="" coords="293,107,419,133"/>
-<area shape="rect" id="node5" href="$classKbLight.html#ae682f44cb55d99f70f6516c76f322c80" title="KbLight::map" alt="" coords="307,157,405,184"/>
-<area shape="rect" id="node6" href="$classKbAnimWidget.html#a718c74ce8c75a2c11a20a64ebed653aa" title="KbAnimWidget::setSelectedKeys" alt="" coords="248,208,464,235"/>
-</map>

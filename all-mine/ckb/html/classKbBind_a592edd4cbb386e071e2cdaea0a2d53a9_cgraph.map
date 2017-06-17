@@ -1,4 +1,0 @@
-<map id="KbBind::getMacroPath" name="KbBind::getMacroPath">
-<area shape="rect" id="node2" href="$classKbBind.html#ac4dc2ffee7d967975b8f13c75d52c5a3" title="KbBind::devParent" alt="" coords="208,5,339,32"/>
-<area shape="rect" id="node3" href="$classKb.html#a9ac09cc0fa78de17de22d7ffb13da09e" title="getMacroPath returns the macroPath (e.g. /dev/input/ckb1/notify), which we have saved in the construc..." alt="" coords="210,56,337,83"/>
-</map>

@@ -1,6 +1,0 @@
-<map id="CkbSettings::set" name="CkbSettings::set">
-<area shape="rect" id="node2" href="$ckbsettings_8cpp.html#aa405e58960532b36ddb38251775238fd" title="globalSettings " alt="" coords="188,5,292,32"/>
-<area shape="rect" id="node4" href="$classCkbSettings.html#a3793106d98878f170f9f9734bf39409b" title="CkbSettings::value" alt="" coords="173,56,307,83"/>
-<area shape="rect" id="node3" href="$classCkbSettings.html#a378a1793dae116fbea4a801396fa4fbb" title="CkbSettings::setWritable Remember if the config files are writable (setter) " alt="" coords="355,5,523,32"/>
-<area shape="rect" id="node5" href="$classCkbSettings.html#a29695ed0012617ba943a1878d4abc71c" title="CkbSettings::pwd" alt="" coords="375,56,502,83"/>
-</map>

@@ -1,6 +1,0 @@
-<map id="QuaZipDir::entryList" name="QuaZipDir::entryList">
-<area shape="rect" id="node2" href="$classQuaZipDir.html#aa3f14665e3991351f4ef94ab8e0ab29d" title="Returns the number of entries in the directory. " alt="" coords="203,5,325,32"/>
-<area shape="rect" id="node3" href="$classQuaZipDir.html#ab20e9d3de675b74fcacc98accbc1d766" title="Returns the list of the entry names in the directory. " alt="" coords="195,56,333,83"/>
-<area shape="rect" id="node4" href="$classQuaZipDir.html#aacb488fec6e951ac80e5d473534fee97" title="Returns true if the entry with the specified name exists. " alt="" coords="202,107,326,133"/>
-<area shape="rect" id="node5" href="$classQuaZipDir.html#a9e37ef5318c44a4575c58d66110e535a" title="Returns the name of the entry at the specified position. " alt="" coords="192,157,336,184"/>
-</map>

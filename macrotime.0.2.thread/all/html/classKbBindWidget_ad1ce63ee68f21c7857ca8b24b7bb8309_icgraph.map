@@ -1,7 +1,0 @@
-<map id="KbBindWidget::newSelection" name="KbBindWidget::newSelection">
-<area shape="rect" id="node2" href="$classKbBindWidget.html#ab41173324ff2873e36dbebb96951ed8b" title="KbBindWidget::KbBindWidget" alt="" coords="246,5,442,32"/>
-<area shape="rect" id="node3" href="$classKbBindWidget.html#ae06c7e036759eb9a1ae7224cdba30b0b" title="KbBindWidget::setBind" alt="" coords="265,56,423,83"/>
-<area shape="rect" id="node4" href="$classKbWidget.html#aae4a00bb180d711b5df7df6443c8bf36" title="KbWidget::modeChanged" alt="" coords="491,56,661,83"/>
-<area shape="rect" id="node5" href="$classKbWidget.html#a848a21f1fd112e13ca5fcf25da4592c6" title="KbWidget::KbWidget" alt="" coords="744,27,888,53"/>
-<area shape="rect" id="node6" href="$classKbWidget.html#add5eb15a399c87faf80db9fdfc2e868f" title="KbWidget::on_modesList_customContextMenuRequested. " alt="" coords="709,78,923,119"/>
-</map>

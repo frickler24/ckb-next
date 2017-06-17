@@ -1,4 +1,0 @@
-<map id="fwupdate" name="fwupdate">
-<area shape="rect" id="node2" href="$devnode_8c.html#ad130425a617cf973b28603a72607a057" title="Writes a keyboard&#39;s firmware version and poll rate to its device node. " alt="" coords="128,5,211,32"/>
-<area shape="rect" id="node3" href="$notify_8c.html#a7ac88f15243030290e4d57c3c9ac7c98" title="nprintf" alt="" coords="140,56,199,83"/>
-</map>

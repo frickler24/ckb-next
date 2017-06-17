@@ -1,9 +1,0 @@
-<map id="SettingsWidget" name="SettingsWidget">
-<area shape="rect" id="node2" href="$classQWidget.html" title="{QWidget\n||}" alt="" coords="762,881,835,959"/>
-<area shape="rect" id="node3" href="$classUi_1_1SettingsWidget.html" title="{Ui::SettingsWidget\n||}" alt="" coords="797,699,928,776"/>
-<area shape="rect" id="node4" href="$classUi__SettingsWidget.html" title="{Ui_SettingsWidget\n|+ label_2\l+ label_5\l+ label_3\l+ horizontalSpacer\l+ verticalSpacer\l+ verticalSpacer_3\l+ verticalSpacer_2\l|+ setupUi()\l+ retranslateUi()\l}" alt="" coords="401,366,531,546"/>
-<area shape="rect" id="node16" href="$classUi__ExtraSettingsWidget.html" title="{Ui_ExtraSettingsWidget\n|+ verticalSpacer\l+ verticalSpacer_3\l+ verticalSpacer_2\l+ horizontalSpacer\l+ label_5\l|+ setupUi()\l+ retranslateUi()\l}" alt="" coords="1380,381,1543,531"/>
-<area shape="rect" id="node13" href="$classExtraSettingsWidget.html" title="{ExtraSettingsWidget\n||+ ExtraSettingsWidget()\l+ ~ExtraSettingsWidget()\l+ pollUpdates()\l&#45; on_trayBox_clicked()\l&#45; on_brightnessBox_clicked()\l&#45; on_animScanButton_clicked()\l&#45; on_fpsBox_valueChanged()\l&#45; on_ditherBox_clicked()\l&#45; on_mAccelBox_clicked()\l&#45; on_sAccelBox_clicked()\l&#45; on_sSpeedBox_valueChanged()\l&#45; on_delayBox_clicked()\l}" alt="" coords="937,801,1153,1039"/>
-<area shape="rect" id="node14" href="$classQDialog.html" title="{QDialog\n||}" alt="" coords="1011,597,1080,675"/>
-<area shape="rect" id="node15" href="$classUi_1_1ExtraSettingsWidget.html" title="{Ui::ExtraSettingsWidget\n||}" alt="" coords="1192,597,1355,675"/>
-</map>

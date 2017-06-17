@@ -1,5 +1,0 @@
-<map id="KeyWidget" name="KeyWidget">
-<area shape="rect" id="node2" href="$classQWidget.html" title="{QWidget\n||}" alt="" coords="5,336,77,413"/>
-<area shape="rect" id="node5" href="$classColorMap.html" title="{ColorMap\n||+ ColorMap()\l+ ~ColorMap()\l+ ColorMap()\l+ operator=()\l+ init()\l+ clear()\l+ count()\l+ keyNames()\l+ colors()\l+ colors()\l+ colorForName()\l+ colorForName()\l&#45; alloc()\l&#45; deAlloc()\l}" alt="" coords="371,241,495,509"/>
-<area shape="rect" id="node13" href="$classKeyMap.html" title="{KeyMap\n||+ isISO()\l+ isKeyboard()\l+ isMouse()\l+ KeyMap()\l+ KeyMap()\l+ strLayout()\l+ strModel()\l+ model()\l+ layout()\l+ name()\land 13 more...\l+ layoutNames()\l+ isISO()\l+ locale()\l+ isKeyboard()\l+ isMouse()\l+ fromName()\l+ getLayout()\l+ getLayout()\l+ getModel()\l+ getModel()\l+ getModel()\l+ friendlyName()\l&#45; modelWidth()\l&#45; modelHeight()\l}" alt="" coords="1181,160,1299,589"/>
-</map>

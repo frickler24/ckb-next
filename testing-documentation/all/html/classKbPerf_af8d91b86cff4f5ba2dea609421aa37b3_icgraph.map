@@ -1,6 +1,0 @@
-<map id="KbPerf::dpiEnabled" name="KbPerf::dpiEnabled">
-<area shape="rect" id="node2" href="$classMPerfWidget.html#ad0a0610ab8bf3de9418c54fb2dc2bac2" title="MPerfWidget::enableChanged" alt="" coords="190,5,386,32"/>
-<area shape="rect" id="node4" href="$classKb.html#afa36635dcc1cd9512f372594c57c546c" title="Kb::readNotify" alt="" coords="235,56,341,83"/>
-<area shape="rect" id="node5" href="$classMPerfWidget.html#ac0cf0ff2a6c0de5e888eae1288433a7f" title="MPerfWidget::setPerf" alt="" coords="214,107,362,133"/>
-<area shape="rect" id="node3" href="$classMPerfWidget.html#a8c4d1f6edcab7c9c5c416c620a337cfd" title="MPerfWidget::MPerfWidget" alt="" coords="435,5,618,32"/>
-</map>

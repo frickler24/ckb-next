@@ -1,8 +1,0 @@
-<map id="usbmode" name="usbmode">
-<area shape="rect" id="node2" href="$structures_8h.html#structlighting" title="{lighting\n||}" alt="" coords="86,307,148,384"/>
-<area shape="rect" id="node4" href="$structures_8h.html#structdpiset" title="{dpiset\n||}" alt="" coords="162,205,219,283"/>
-<area shape="rect" id="node10" href="$structures_8h.html#structkeymacro" title="{keymacro\n||}" alt="" coords="338,408,416,485"/>
-<area shape="rect" id="node11" href="$structures_8h.html#structmacroaction" title="{macroaction\n||}" alt="" coords="417,205,511,283"/>
-<area shape="rect" id="node13" href="$structures_8h.html#structusbid" title="{usbid\n||}" alt="" coords="5,509,59,587"/>
-<area shape="rect" id="node8" href="$structures_8h.html#structbinding" title="{binding\n||}" alt="" coords="211,611,273,688"/>
-</map>

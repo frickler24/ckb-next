@@ -1,7 +1,0 @@
-<map id="zipCloseFileInZipRaw64" name="zipCloseFileInZipRaw64">
-<area shape="rect" id="node2" href="$zip_8c.html#af027310aec51b70ed53bc0bda4392ede" title="add_data_in_datablock" alt="" coords="219,5,373,32"/>
-<area shape="rect" id="node4" href="$zip_8c.html#a9c5b2c3f96ae2bf9006a86beb31eb659" title="zip64FlushWriteBuffer" alt="" coords="221,56,371,83"/>
-<area shape="rect" id="node5" href="$zip_8c.html#aed1106d32873a7959b923bbb5d444f8b" title="zip64local_putValue" alt="" coords="227,107,365,133"/>
-<area shape="rect" id="node6" href="$zip_8c.html#a7487c44c33a7aa8d29c640619575a144" title="zip64local_putValue\l_inmemory" alt="" coords="227,158,365,199"/>
-<area shape="rect" id="node3" href="$zip_8c.html#a904f85612fbfecc3a5238535e7a34cc6" title="allocate_new_datablock" alt="" coords="422,5,583,32"/>
-</map>

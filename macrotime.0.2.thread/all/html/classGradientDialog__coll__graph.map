@@ -1,9 +1,0 @@
-<map id="GradientDialog" name="GradientDialog">
-<area shape="rect" id="node2" href="$classQDialog.html" title="{QDialog\n||}" alt="" coords="661,763,731,840"/>
-<area shape="rect" id="node3" href="$classUi_1_1GradientDialog.html" title="{Ui::GradientDialog\n||}" alt="" coords="755,763,884,840"/>
-<area shape="rect" id="node4" href="$classUi__GradientDialog.html" title="{Ui_GradientDialog\n||+ setupUi()\l+ retranslateUi()\l}" alt="" coords="756,611,884,703"/>
-<area shape="rect" id="node7" href="$classGradientDialogWidget.html" title="{GradientDialogWidget\n||+ GradientDialogWidget()\l+ setStops()\l+ stops()\l+ stopCount()\l+ colorAt()\l+ current()\l+ moveCurrent()\l+ setCurrentColor()\l&#45; fillRect()\l&#45; stopRect()\l&#45; selectedStop()\l&#45; selectionColors()\l&#45; makeStops()\l&#45; paintEvent()\l&#45; mousePressEvent()\l&#45; mouseMoveEvent()\l&#45; mouseReleaseEvent()\l}" alt="" coords="391,176,560,488"/>
-<area shape="rect" id="node8" href="$classQWidget.html" title="{QWidget\n||}" alt="" coords="667,5,740,83"/>
-<area shape="rect" id="node14" href="$classColorButton.html" title="{ColorButton\n||+ ColorButton()\l+ color()\l+ color()\l+ allowAlpha()\l+ allowAlpha()\l+ setLabel()\l+ setLabel()\l+ bigIcons()\l+ bigIcons()\l&#45; updateImage()\l&#45; pickColor()\l}" alt="" coords="254,220,367,444"/>
-<area shape="rect" id="node15" href="$classQPushButton.html" title="{QPushButton\n||}" alt="" coords="69,5,168,83"/>
-</map>

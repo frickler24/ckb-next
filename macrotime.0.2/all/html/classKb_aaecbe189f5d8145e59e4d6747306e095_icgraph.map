@@ -1,8 +1,0 @@
-<map id="Kb::profileAdded" name="Kb::profileAdded">
-<area shape="rect" id="node2" href="$classKb.html#a6ca2405d7e56301c5c5c336261d01c45" title="Kb::load" alt="" coords="191,5,262,32"/>
-<area shape="rect" id="node7" href="$classKb.html#afa36635dcc1cd9512f372594c57c546c" title="Kb::readNotify" alt="" coords="173,56,280,83"/>
-<area shape="rect" id="node3" href="$classKbManager.html#ac7660c297a81ed3ff5a5e20e674e6d6e" title="KbManager::scanKeyboards" alt="" coords="328,5,515,32"/>
-<area shape="rect" id="node4" href="$classKbManager.html#ac1baa1b3be9efa0bbca1b4ca40139df4" title="KbManager::KbManager" alt="" coords="563,5,725,32"/>
-<area shape="rect" id="node5" href="$classKbManager.html#add00fc7213f369bf50e8b069f9387206" title="KbManager::init" alt="" coords="774,5,887,32"/>
-<area shape="rect" id="node6" href="$classMainWindow.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow" alt="" coords="937,5,1117,32"/>
-</map>

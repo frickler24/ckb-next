@@ -1,9 +1,0 @@
-<map id="KbBind::defaultAction" name="KbBind::defaultAction">
-<area shape="rect" id="node2" href="$classKeyWidget.html#ae41120f21e087439104cb6bce42f489e" title="KeyWidget::paintEvent" alt="" coords="203,5,359,32"/>
-<area shape="rect" id="node3" href="$classRebindWidget.html#a6a68ae3d9abc935dbba8e2ce187337ce" title="RebindWidget::setBind" alt="" coords="203,56,359,83"/>
-<area shape="rect" id="node4" href="$classKbBindWidget.html#ae06c7e036759eb9a1ae7224cdba30b0b" title="KbBindWidget::setBind" alt="" coords="632,56,789,83"/>
-<area shape="rect" id="node8" href="$classKbBindWidget.html#ad052b9ce7166f5a1c46ee7a01f3457dc" title="KbBindWidget::newLayout" alt="" coords="408,81,584,108"/>
-<area shape="rect" id="node5" href="$classKbWidget.html#aae4a00bb180d711b5df7df6443c8bf36" title="KbWidget::modeChanged" alt="" coords="837,56,1008,83"/>
-<area shape="rect" id="node6" href="$classKbWidget.html#a848a21f1fd112e13ca5fcf25da4592c6" title="KbWidget::KbWidget" alt="" coords="1091,27,1235,53"/>
-<area shape="rect" id="node7" href="$classKbWidget.html#add5eb15a399c87faf80db9fdfc2e868f" title="KbWidget::on_modesList_customContextMenuRequested. " alt="" coords="1056,78,1269,119"/>
-</map>

@@ -1,3 +1,0 @@
-<map id="Ui::FwUpgradeDialog" name="Ui::FwUpgradeDialog">
-<area shape="rect" id="node2" href="$classUi__FwUpgradeDialog.html" title="{Ui_FwUpgradeDialog\n|+ gridLayout_2\l+ horizontalSpacer\l+ gridLayout\l+ horizontalSpacer_3\l+ label_4\l+ horizontalSpacer_4\l+ label_2\l+ curLabel\l+ newLabel\l+ statusLabel\l+ horizontalSpacer_2\l+ devLabel\l+ progressBar\l+ actionButton\l+ cancelButton\l|+ setupUi()\l+ retranslateUi()\l}" alt="" coords="5,6,152,303"/>
-</map>

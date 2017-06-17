@@ -1,6 +1,0 @@
-<map id="KbBind::perf" name="KbBind::perf">
-<area shape="rect" id="node2" href="$classKeyAction.html#a1fd7bef50c828e25299d514222d5b5a4" title="KeyAction::keyEvent" alt="" coords="155,5,301,32"/>
-<area shape="rect" id="node5" href="$classRebindWidget.html#a6a68ae3d9abc935dbba8e2ce187337ce" title="RebindWidget::setBind" alt="" coords="150,56,306,83"/>
-<area shape="rect" id="node3" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent" alt="" coords="355,5,482,32"/>
-<area shape="rect" id="node4" href="$classKb.html#afa36635dcc1cd9512f372594c57c546c" title="Kb::readNotify" alt="" coords="531,5,637,32"/>
-</map>
