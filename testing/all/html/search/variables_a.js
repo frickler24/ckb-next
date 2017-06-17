@@ -12,7 +12,7 @@ var searchData=
   ['k95line',['k95Line',['../classUi__KPerfWidget.html#a19de951bb93c7dddf330c21087bbb9dc',1,'Ui_KPerfWidget']]],
   ['k95spacer',['k95Spacer',['../classUi__KPerfWidget.html#a55c49b7b53d712084871cebf175b1e75',1,'Ui_KPerfWidget']]],
   ['k95widgets',['k95Widgets',['../classKPerfWidget.html#a827fd8959cd369da684a7582a4bd1ce4',1,'KPerfWidget']]],
-  ['kb',['kb',['../classFwUpgradeDialog.html#a24b6dbbf72f0283464aac2b3964b7cd5',1,'FwUpgradeDialog']]],
+  ['kb',['kb',['../classFwUpgradeDialog.html#a24b6dbbf72f0283464aac2b3964b7cd5',1,'FwUpgradeDialog::kb()'],['../input_8h.html#aebefc6a57b9fec687b67f16054a985fe',1,'parameter::kb()']]],
   ['kbsize',['kbsize',['../ckb-ripple_2main_8c.html#a7fdf45fcb037565ef9e56cc6374cf78b',1,'main.c']]],
   ['kbsyspath',['kbsyspath',['../usb__linux_8c.html#a1b952c601049b156fe39d96473aaca3a',1,'usb_linux.c']]],
   ['kbwidgets',['kbWidgets',['../classMainWindow.html#a3d91eadbc8e1596b6e4bf8bc82467536',1,'MainWindow']]],

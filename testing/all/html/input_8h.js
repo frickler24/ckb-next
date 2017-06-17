@@ -1,6 +1,16 @@
 var input_8h =
 [
+    [ "parameter", "input_8h.html#structparameter", [
+      [ "kb", "input_8h.html#aebefc6a57b9fec687b67f16054a985fe", null ],
+      [ "macro", "input_8h.html#a15320f283af85c0016be37beb3527e11", null ]
+    ] ],
+    [ "ptlist", "input_8h.html#structptlist", [
+      [ "next", "input_8h.html#a8a3e41c01cd3b7e9299a3f6c79c545f5", null ],
+      [ "thread_id", "input_8h.html#abaf9eca856dbcdfb46b4c0ddd9f4afd9", null ]
+    ] ],
     [ "IS_MOD", "input_8h.html#a4c2dfa1ea0b9801f9f554a9d01ba03e8", null ],
+    [ "parameter_t", "input_8h.html#a8b9bffbd622ca07b52ae46936d654580", null ],
+    [ "ptlist_t", "input_8h.html#ad52b5325d4f60325d995d989f11a9247", null ],
     [ "cmd_bind", "input_8h.html#a82b36edb432ad17b6b50f6a1e553db6e", null ],
     [ "cmd_macro", "input_8h.html#a57bb1acb99f0c21295ce39f3bf4211a0", null ],
     [ "cmd_rebind", "input_8h.html#a8e5c6bb47eee0760d55f99412ecb24cd", null ],

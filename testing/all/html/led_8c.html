@@ -31,7 +31,7 @@
   <td id="projectlogo"><img alt="Logo" src="ckb-128.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">ckb-next
-   &#160;<span id="projectnumber">beta-v0.2.8+testing at branch testing</span>
+   &#160;<span id="projectnumber">beta-v0.2.8 at branch testing</span>
    </div>
    <div id="projectbrief">ckb-next driver for corsair devices</div>
   </td>
@@ -191,7 +191,7 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="led_8c_source.html#l00054">54</a> of file <a class="el" href="led_8c_source.html">led.c</a>.</p>
 
-<p>References <a class="el" href="structures_8h_source.html#l00092">usbmode::ioff</a>, <a class="el" href="structures_8h_source.html#l00092">usbmode::ion</a>, <a class="el" href="led_8c_source.html#l00025">iselect()</a>, and <a class="el" href="structures_8h_source.html#l00179">usbdevice::vtable</a>.</p>
+<p>References <a class="el" href="structures_8h_source.html#l00093">usbmode::ioff</a>, <a class="el" href="structures_8h_source.html#l00093">usbmode::ion</a>, <a class="el" href="led_8c_source.html#l00025">iselect()</a>, and <a class="el" href="structures_8h_source.html#l00180">usbdevice::vtable</a>.</p>
 <div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                                                                     {</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> bits = <a class="code" href="led_8c.html#a638c6503f2e7af80babe827bd79156aa">iselect</a>(led);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// Remove the bits from both ioff and ion</span></div>
@@ -199,10 +199,10 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    mode-&gt;<a class="code" href="structures_8h.html#a66827675394b4aa9cc927d5bb0037d2a">ion</a> &amp;= ~bits;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    kb-&gt;<a class="code" href="structures_8h.html#a3ad960bd68547aca1f870fac1138023b">vtable</a>-&gt;updateindicators(kb, 0);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
-<div class="ttc" id="structures_8h_html_a66827675394b4aa9cc927d5bb0037d2a"><div class="ttname"><a href="structures_8h.html#a66827675394b4aa9cc927d5bb0037d2a">usbmode::ion</a></div><div class="ttdeci">uchar ion</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00092">structures.h:92</a></div></div>
-<div class="ttc" id="structures_8h_html_a9fb9fb7dcfef5bf001034a73ae349b2c"><div class="ttname"><a href="structures_8h.html#a9fb9fb7dcfef5bf001034a73ae349b2c">usbmode::ioff</a></div><div class="ttdeci">uchar ioff</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00092">structures.h:92</a></div></div>
+<div class="ttc" id="structures_8h_html_a66827675394b4aa9cc927d5bb0037d2a"><div class="ttname"><a href="structures_8h.html#a66827675394b4aa9cc927d5bb0037d2a">usbmode::ion</a></div><div class="ttdeci">uchar ion</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00093">structures.h:93</a></div></div>
+<div class="ttc" id="structures_8h_html_a9fb9fb7dcfef5bf001034a73ae349b2c"><div class="ttname"><a href="structures_8h.html#a9fb9fb7dcfef5bf001034a73ae349b2c">usbmode::ioff</a></div><div class="ttdeci">uchar ioff</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00093">structures.h:93</a></div></div>
 <div class="ttc" id="includes_8h_html_a65f85814a8290f9797005d3b28e7e5fc"><div class="ttname"><a href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a></div><div class="ttdeci">unsigned char uchar</div><div class="ttdef"><b>Definition:</b> <a href="includes_8h_source.html#l00024">includes.h:24</a></div></div>
-<div class="ttc" id="structures_8h_html_a3ad960bd68547aca1f870fac1138023b"><div class="ttname"><a href="structures_8h.html#a3ad960bd68547aca1f870fac1138023b">usbdevice::vtable</a></div><div class="ttdeci">const union devcmd * vtable</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00179">structures.h:179</a></div></div>
+<div class="ttc" id="structures_8h_html_a3ad960bd68547aca1f870fac1138023b"><div class="ttname"><a href="structures_8h.html#a3ad960bd68547aca1f870fac1138023b">usbdevice::vtable</a></div><div class="ttdeci">const union devcmd * vtable</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00180">structures.h:180</a></div></div>
 <div class="ttc" id="led_8c_html_a638c6503f2e7af80babe827bd79156aa"><div class="ttname"><a href="led_8c.html#a638c6503f2e7af80babe827bd79156aa">iselect</a></div><div class="ttdeci">static uchar iselect(const char *led)</div><div class="ttdef"><b>Definition:</b> <a href="led_8c_source.html#l00025">led.c:25</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -262,7 +262,7 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="led_8c_source.html#l00062">62</a> of file <a class="el" href="led_8c_source.html">led.c</a>.</p>
 
-<p>References <a class="el" href="structures_8h_source.html#l00094">usbmode::inotify</a>, and <a class="el" href="led_8c_source.html#l00025">iselect()</a>.</p>
+<p>References <a class="el" href="structures_8h_source.html#l00095">usbmode::inotify</a>, and <a class="el" href="led_8c_source.html#l00025">iselect()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                                                                       {</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> bits = <a class="code" href="led_8c.html#a638c6503f2e7af80babe827bd79156aa">iselect</a>(led);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span>(strstr(led, <span class="stringliteral">&quot;:off&quot;</span>))</div>
@@ -273,7 +273,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        mode-&gt;<a class="code" href="structures_8h.html#ad3c04481b7b8608af885d01fcc64a6a5">inotify</a>[nnumber] |= bits;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
 <div class="ttc" id="includes_8h_html_a65f85814a8290f9797005d3b28e7e5fc"><div class="ttname"><a href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a></div><div class="ttdeci">unsigned char uchar</div><div class="ttdef"><b>Definition:</b> <a href="includes_8h_source.html#l00024">includes.h:24</a></div></div>
-<div class="ttc" id="structures_8h_html_ad3c04481b7b8608af885d01fcc64a6a5"><div class="ttname"><a href="structures_8h.html#ad3c04481b7b8608af885d01fcc64a6a5">usbmode::inotify</a></div><div class="ttdeci">uchar inotify[10]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00094">structures.h:94</a></div></div>
+<div class="ttc" id="structures_8h_html_ad3c04481b7b8608af885d01fcc64a6a5"><div class="ttname"><a href="structures_8h.html#ad3c04481b7b8608af885d01fcc64a6a5">usbmode::inotify</a></div><div class="ttdeci">uchar inotify[10]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00095">structures.h:95</a></div></div>
 <div class="ttc" id="led_8c_html_a638c6503f2e7af80babe827bd79156aa"><div class="ttname"><a href="led_8c.html#a638c6503f2e7af80babe827bd79156aa">iselect</a></div><div class="ttdeci">static uchar iselect(const char *led)</div><div class="ttdef"><b>Definition:</b> <a href="led_8c_source.html#l00025">led.c:25</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -333,7 +333,7 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="led_8c_source.html#l00038">38</a> of file <a class="el" href="led_8c_source.html">led.c</a>.</p>
 
-<p>References <a class="el" href="structures_8h_source.html#l00092">usbmode::ioff</a>, <a class="el" href="structures_8h_source.html#l00092">usbmode::ion</a>, <a class="el" href="led_8c_source.html#l00025">iselect()</a>, and <a class="el" href="structures_8h_source.html#l00179">usbdevice::vtable</a>.</p>
+<p>References <a class="el" href="structures_8h_source.html#l00093">usbmode::ioff</a>, <a class="el" href="structures_8h_source.html#l00093">usbmode::ion</a>, <a class="el" href="led_8c_source.html#l00025">iselect()</a>, and <a class="el" href="structures_8h_source.html#l00180">usbdevice::vtable</a>.</p>
 <div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                                                                    {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> bits = <a class="code" href="led_8c.html#a638c6503f2e7af80babe827bd79156aa">iselect</a>(led);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// Add the bits to ioff, remove them from ion</span></div>
@@ -341,10 +341,10 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    mode-&gt;<a class="code" href="structures_8h.html#a66827675394b4aa9cc927d5bb0037d2a">ion</a> &amp;= ~bits;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    kb-&gt;<a class="code" href="structures_8h.html#a3ad960bd68547aca1f870fac1138023b">vtable</a>-&gt;updateindicators(kb, 0);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
-<div class="ttc" id="structures_8h_html_a66827675394b4aa9cc927d5bb0037d2a"><div class="ttname"><a href="structures_8h.html#a66827675394b4aa9cc927d5bb0037d2a">usbmode::ion</a></div><div class="ttdeci">uchar ion</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00092">structures.h:92</a></div></div>
-<div class="ttc" id="structures_8h_html_a9fb9fb7dcfef5bf001034a73ae349b2c"><div class="ttname"><a href="structures_8h.html#a9fb9fb7dcfef5bf001034a73ae349b2c">usbmode::ioff</a></div><div class="ttdeci">uchar ioff</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00092">structures.h:92</a></div></div>
+<div class="ttc" id="structures_8h_html_a66827675394b4aa9cc927d5bb0037d2a"><div class="ttname"><a href="structures_8h.html#a66827675394b4aa9cc927d5bb0037d2a">usbmode::ion</a></div><div class="ttdeci">uchar ion</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00093">structures.h:93</a></div></div>
+<div class="ttc" id="structures_8h_html_a9fb9fb7dcfef5bf001034a73ae349b2c"><div class="ttname"><a href="structures_8h.html#a9fb9fb7dcfef5bf001034a73ae349b2c">usbmode::ioff</a></div><div class="ttdeci">uchar ioff</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00093">structures.h:93</a></div></div>
 <div class="ttc" id="includes_8h_html_a65f85814a8290f9797005d3b28e7e5fc"><div class="ttname"><a href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a></div><div class="ttdeci">unsigned char uchar</div><div class="ttdef"><b>Definition:</b> <a href="includes_8h_source.html#l00024">includes.h:24</a></div></div>
-<div class="ttc" id="structures_8h_html_a3ad960bd68547aca1f870fac1138023b"><div class="ttname"><a href="structures_8h.html#a3ad960bd68547aca1f870fac1138023b">usbdevice::vtable</a></div><div class="ttdeci">const union devcmd * vtable</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00179">structures.h:179</a></div></div>
+<div class="ttc" id="structures_8h_html_a3ad960bd68547aca1f870fac1138023b"><div class="ttname"><a href="structures_8h.html#a3ad960bd68547aca1f870fac1138023b">usbdevice::vtable</a></div><div class="ttdeci">const union devcmd * vtable</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00180">structures.h:180</a></div></div>
 <div class="ttc" id="led_8c_html_a638c6503f2e7af80babe827bd79156aa"><div class="ttname"><a href="led_8c.html#a638c6503f2e7af80babe827bd79156aa">iselect</a></div><div class="ttdeci">static uchar iselect(const char *led)</div><div class="ttdef"><b>Definition:</b> <a href="led_8c_source.html#l00025">led.c:25</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -404,7 +404,7 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="led_8c_source.html#l00046">46</a> of file <a class="el" href="led_8c_source.html">led.c</a>.</p>
 
-<p>References <a class="el" href="structures_8h_source.html#l00092">usbmode::ioff</a>, <a class="el" href="structures_8h_source.html#l00092">usbmode::ion</a>, <a class="el" href="led_8c_source.html#l00025">iselect()</a>, and <a class="el" href="structures_8h_source.html#l00179">usbdevice::vtable</a>.</p>
+<p>References <a class="el" href="structures_8h_source.html#l00093">usbmode::ioff</a>, <a class="el" href="structures_8h_source.html#l00093">usbmode::ion</a>, <a class="el" href="led_8c_source.html#l00025">iselect()</a>, and <a class="el" href="structures_8h_source.html#l00180">usbdevice::vtable</a>.</p>
 <div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                                                                   {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> bits = <a class="code" href="led_8c.html#a638c6503f2e7af80babe827bd79156aa">iselect</a>(led);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// Remove the bits from ioff, add them to ion</span></div>
@@ -412,10 +412,10 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    mode-&gt;<a class="code" href="structures_8h.html#a66827675394b4aa9cc927d5bb0037d2a">ion</a> |= bits;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    kb-&gt;<a class="code" href="structures_8h.html#a3ad960bd68547aca1f870fac1138023b">vtable</a>-&gt;updateindicators(kb, 0);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
-<div class="ttc" id="structures_8h_html_a66827675394b4aa9cc927d5bb0037d2a"><div class="ttname"><a href="structures_8h.html#a66827675394b4aa9cc927d5bb0037d2a">usbmode::ion</a></div><div class="ttdeci">uchar ion</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00092">structures.h:92</a></div></div>
-<div class="ttc" id="structures_8h_html_a9fb9fb7dcfef5bf001034a73ae349b2c"><div class="ttname"><a href="structures_8h.html#a9fb9fb7dcfef5bf001034a73ae349b2c">usbmode::ioff</a></div><div class="ttdeci">uchar ioff</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00092">structures.h:92</a></div></div>
+<div class="ttc" id="structures_8h_html_a66827675394b4aa9cc927d5bb0037d2a"><div class="ttname"><a href="structures_8h.html#a66827675394b4aa9cc927d5bb0037d2a">usbmode::ion</a></div><div class="ttdeci">uchar ion</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00093">structures.h:93</a></div></div>
+<div class="ttc" id="structures_8h_html_a9fb9fb7dcfef5bf001034a73ae349b2c"><div class="ttname"><a href="structures_8h.html#a9fb9fb7dcfef5bf001034a73ae349b2c">usbmode::ioff</a></div><div class="ttdeci">uchar ioff</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00093">structures.h:93</a></div></div>
 <div class="ttc" id="includes_8h_html_a65f85814a8290f9797005d3b28e7e5fc"><div class="ttname"><a href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a></div><div class="ttdeci">unsigned char uchar</div><div class="ttdef"><b>Definition:</b> <a href="includes_8h_source.html#l00024">includes.h:24</a></div></div>
-<div class="ttc" id="structures_8h_html_a3ad960bd68547aca1f870fac1138023b"><div class="ttname"><a href="structures_8h.html#a3ad960bd68547aca1f870fac1138023b">usbdevice::vtable</a></div><div class="ttdeci">const union devcmd * vtable</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00179">structures.h:179</a></div></div>
+<div class="ttc" id="structures_8h_html_a3ad960bd68547aca1f870fac1138023b"><div class="ttname"><a href="structures_8h.html#a3ad960bd68547aca1f870fac1138023b">usbdevice::vtable</a></div><div class="ttdeci">const union devcmd * vtable</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00180">structures.h:180</a></div></div>
 <div class="ttc" id="led_8c_html_a638c6503f2e7af80babe827bd79156aa"><div class="ttname"><a href="led_8c.html#a638c6503f2e7af80babe827bd79156aa">iselect</a></div><div class="ttdeci">static uchar iselect(const char *led)</div><div class="ttdef"><b>Definition:</b> <a href="led_8c_source.html#l00025">led.c:25</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -475,7 +475,7 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="led_8c_source.html#l00006">6</a> of file <a class="el" href="led_8c_source.html">led.c</a>.</p>
 
-<p>References <a class="el" href="structures_8h_source.html#l00075">lighting::b</a>, <a class="el" href="structures_8h_source.html#l00074">lighting::g</a>, <a class="el" href="keymap_8c_source.html#l00005">keymap</a>, <a class="el" href="daemon_2keymap_8h_source.html#l00051">key::led</a>, <a class="el" href="structures_8h_source.html#l00083">usbmode::light</a>, <a class="el" href="structures_8h_source.html#l00073">lighting::r</a>, and <a class="el" href="structures_8h_source.html#l00077">lighting::sidelight</a>.</p>
+<p>References <a class="el" href="structures_8h_source.html#l00076">lighting::b</a>, <a class="el" href="structures_8h_source.html#l00075">lighting::g</a>, <a class="el" href="keymap_8c_source.html#l00005">keymap</a>, <a class="el" href="daemon_2keymap_8h_source.html#l00051">key::led</a>, <a class="el" href="structures_8h_source.html#l00084">usbmode::light</a>, <a class="el" href="structures_8h_source.html#l00074">lighting::r</a>, and <a class="el" href="structures_8h_source.html#l00078">lighting::sidelight</a>.</p>
 <div class="fragment"><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;                                                                                     {</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordtype">int</span> index = <a class="code" href="keymap_8c.html#a5972a715b26e6b792acc53ad946e1fbb">keymap</a>[keyindex].<a class="code" href="daemon_2keymap_8h.html#adfb7efb615d23c01a629dbf1f0aa83c4">led</a>;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordflow">if</span>(index &lt; 0) {</div>
@@ -493,13 +493,13 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        mode-&gt;<a class="code" href="structures_8h.html#a4adb0b5a770a32ee4db36dca49398ce9">light</a>.<a class="code" href="structures_8h.html#abeb581d1f9790ac0dc97bd177546586e">b</a>[index] = b;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
-<div class="ttc" id="structures_8h_html_a761a7cf0b0943ecba869358267c54028"><div class="ttname"><a href="structures_8h.html#a761a7cf0b0943ecba869358267c54028">lighting::sidelight</a></div><div class="ttdeci">uchar sidelight</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00077">structures.h:77</a></div></div>
-<div class="ttc" id="structures_8h_html_abeb581d1f9790ac0dc97bd177546586e"><div class="ttname"><a href="structures_8h.html#abeb581d1f9790ac0dc97bd177546586e">lighting::b</a></div><div class="ttdeci">uchar b[152+11]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00075">structures.h:75</a></div></div>
+<div class="ttc" id="structures_8h_html_a761a7cf0b0943ecba869358267c54028"><div class="ttname"><a href="structures_8h.html#a761a7cf0b0943ecba869358267c54028">lighting::sidelight</a></div><div class="ttdeci">uchar sidelight</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00078">structures.h:78</a></div></div>
+<div class="ttc" id="structures_8h_html_abeb581d1f9790ac0dc97bd177546586e"><div class="ttname"><a href="structures_8h.html#abeb581d1f9790ac0dc97bd177546586e">lighting::b</a></div><div class="ttdeci">uchar b[152+11]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00076">structures.h:76</a></div></div>
 <div class="ttc" id="daemon_2keymap_8h_html_adfb7efb615d23c01a629dbf1f0aa83c4"><div class="ttname"><a href="daemon_2keymap_8h.html#adfb7efb615d23c01a629dbf1f0aa83c4">key::led</a></div><div class="ttdeci">short led</div><div class="ttdef"><b>Definition:</b> <a href="daemon_2keymap_8h_source.html#l00051">keymap.h:51</a></div></div>
-<div class="ttc" id="structures_8h_html_a4adb0b5a770a32ee4db36dca49398ce9"><div class="ttname"><a href="structures_8h.html#a4adb0b5a770a32ee4db36dca49398ce9">usbmode::light</a></div><div class="ttdeci">lighting light</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00083">structures.h:83</a></div></div>
+<div class="ttc" id="structures_8h_html_a4adb0b5a770a32ee4db36dca49398ce9"><div class="ttname"><a href="structures_8h.html#a4adb0b5a770a32ee4db36dca49398ce9">usbmode::light</a></div><div class="ttdeci">lighting light</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00084">structures.h:84</a></div></div>
 <div class="ttc" id="includes_8h_html_a65f85814a8290f9797005d3b28e7e5fc"><div class="ttname"><a href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a></div><div class="ttdeci">unsigned char uchar</div><div class="ttdef"><b>Definition:</b> <a href="includes_8h_source.html#l00024">includes.h:24</a></div></div>
-<div class="ttc" id="structures_8h_html_aef072a169d12aabf02985bd659103244"><div class="ttname"><a href="structures_8h.html#aef072a169d12aabf02985bd659103244">lighting::g</a></div><div class="ttdeci">uchar g[152+11]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00074">structures.h:74</a></div></div>
-<div class="ttc" id="structures_8h_html_a58f2fbe1709465a5258292e8c8421f58"><div class="ttname"><a href="structures_8h.html#a58f2fbe1709465a5258292e8c8421f58">lighting::r</a></div><div class="ttdeci">uchar r[152+11]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00073">structures.h:73</a></div></div>
+<div class="ttc" id="structures_8h_html_aef072a169d12aabf02985bd659103244"><div class="ttname"><a href="structures_8h.html#aef072a169d12aabf02985bd659103244">lighting::g</a></div><div class="ttdeci">uchar g[152+11]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00075">structures.h:75</a></div></div>
+<div class="ttc" id="structures_8h_html_a58f2fbe1709465a5258292e8c8421f58"><div class="ttname"><a href="structures_8h.html#a58f2fbe1709465a5258292e8c8421f58">lighting::r</a></div><div class="ttdeci">uchar r[152+11]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00074">structures.h:74</a></div></div>
 <div class="ttc" id="keymap_8c_html_a5972a715b26e6b792acc53ad946e1fbb"><div class="ttname"><a href="keymap_8c.html#a5972a715b26e6b792acc53ad946e1fbb">keymap</a></div><div class="ttdeci">const key keymap[(((152+3+12)+25)+11)]</div><div class="ttdef"><b>Definition:</b> <a href="keymap_8c_source.html#l00005">keymap.c:5</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -538,7 +538,7 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="led_8c_source.html#l00073">73</a> of file <a class="el" href="led_8c_source.html">led.c</a>.</p>
 
-<p>References <a class="el" href="usb_8h_source.html#l00049">IS_K65</a>, <a class="el" href="usb_8h_source.html#l00071">IS_K95</a>, <a class="el" href="usb_8h_source.html#l00137">IS_MOUSE</a>, <a class="el" href="usb_8h_source.html#l00093">IS_SABRE</a>, <a class="el" href="usb_8h_source.html#l00099">IS_SCIMITAR</a>, <a class="el" href="structures_8h_source.html#l00236">usbdevice::product</a>, and <a class="el" href="structures_8h_source.html#l00236">usbdevice::vendor</a>.</p>
+<p>References <a class="el" href="usb_8h_source.html#l00049">IS_K65</a>, <a class="el" href="usb_8h_source.html#l00071">IS_K95</a>, <a class="el" href="usb_8h_source.html#l00141">IS_MOUSE</a>, <a class="el" href="usb_8h_source.html#l00093">IS_SABRE</a>, <a class="el" href="usb_8h_source.html#l00099">IS_SCIMITAR</a>, <a class="el" href="structures_8h_source.html#l00237">usbdevice::product</a>, and <a class="el" href="structures_8h_source.html#l00237">usbdevice::vendor</a>.</p>
 
 <p>Referenced by <a class="el" href="led_8c_source.html#l00102">printrgb()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                                         {</div>
@@ -572,10 +572,10 @@ Functions</h2></td></tr>
 <div class="ttc" id="usb_8h_html_a42d0504a482944df6fe7cbdb06c0851b"><div class="ttname"><a href="usb_8h.html#a42d0504a482944df6fe7cbdb06c0851b">IS_SCIMITAR</a></div><div class="ttdeci">#define IS_SCIMITAR(kb)</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00099">usb.h:99</a></div></div>
 <div class="ttc" id="usb_8h_html_a42deb465caa31f803a16306986cd6bbe"><div class="ttname"><a href="usb_8h.html#a42deb465caa31f803a16306986cd6bbe">IS_SABRE</a></div><div class="ttdeci">#define IS_SABRE(kb)</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00093">usb.h:93</a></div></div>
 <div class="ttc" id="usb_8h_html_ae2e07011a0423b4667ec133f8b9900f8"><div class="ttname"><a href="usb_8h.html#ae2e07011a0423b4667ec133f8b9900f8">IS_K65</a></div><div class="ttdeci">#define IS_K65(kb)</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00049">usb.h:49</a></div></div>
-<div class="ttc" id="usb_8h_html_a9aa1b86ddc13dc886bb403fda7c72ee7"><div class="ttname"><a href="usb_8h.html#a9aa1b86ddc13dc886bb403fda7c72ee7">IS_MOUSE</a></div><div class="ttdeci">#define IS_MOUSE(vendor, product)</div><div class="ttdoc">Mouse vs keyboard test. </div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00137">usb.h:137</a></div></div>
-<div class="ttc" id="structures_8h_html_a045b6c91e3f04e54f25d39da9bda105b"><div class="ttname"><a href="structures_8h.html#a045b6c91e3f04e54f25d39da9bda105b">usbdevice::product</a></div><div class="ttdeci">short product</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00236">structures.h:236</a></div></div>
+<div class="ttc" id="usb_8h_html_a9aa1b86ddc13dc886bb403fda7c72ee7"><div class="ttname"><a href="usb_8h.html#a9aa1b86ddc13dc886bb403fda7c72ee7">IS_MOUSE</a></div><div class="ttdeci">#define IS_MOUSE(vendor, product)</div><div class="ttdoc">Mouse vs keyboard test. </div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00141">usb.h:141</a></div></div>
+<div class="ttc" id="structures_8h_html_a045b6c91e3f04e54f25d39da9bda105b"><div class="ttname"><a href="structures_8h.html#a045b6c91e3f04e54f25d39da9bda105b">usbdevice::product</a></div><div class="ttdeci">short product</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00237">structures.h:237</a></div></div>
 <div class="ttc" id="usb_8h_html_af612b6b5e489ef9dd625458ba57af521"><div class="ttname"><a href="usb_8h.html#af612b6b5e489ef9dd625458ba57af521">IS_K95</a></div><div class="ttdeci">#define IS_K95(kb)</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00071">usb.h:71</a></div></div>
-<div class="ttc" id="structures_8h_html_a2fa713366249e2fdbb2539e5d65a1439"><div class="ttname"><a href="structures_8h.html#a2fa713366249e2fdbb2539e5d65a1439">usbdevice::vendor</a></div><div class="ttdeci">short vendor</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00236">structures.h:236</a></div></div>
+<div class="ttc" id="structures_8h_html_a2fa713366249e2fdbb2539e5d65a1439"><div class="ttname"><a href="structures_8h.html#a2fa713366249e2fdbb2539e5d65a1439">usbdevice::vendor</a></div><div class="ttdeci">short vendor</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00237">structures.h:237</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -672,7 +672,7 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="led_8c_source.html#l00102">102</a> of file <a class="el" href="led_8c_source.html">led.c</a>.</p>
 
-<p>References <a class="el" href="structures_8h_source.html#l00075">lighting::b</a>, <a class="el" href="structures_8h_source.html#l00074">lighting::g</a>, <a class="el" href="led_8c_source.html#l00073">has_key()</a>, <a class="el" href="keymap_8c_source.html#l00005">keymap</a>, <a class="el" href="daemon_2keymap_8h_source.html#l00051">key::led</a>, <a class="el" href="daemon_2keymap_8h_source.html#l00045">N_KEYS_EXTENDED</a>, <a class="el" href="daemon_2keymap_8h_source.html#l00050">key::name</a>, and <a class="el" href="structures_8h_source.html#l00073">lighting::r</a>.</p>
+<p>References <a class="el" href="structures_8h_source.html#l00076">lighting::b</a>, <a class="el" href="structures_8h_source.html#l00075">lighting::g</a>, <a class="el" href="led_8c_source.html#l00073">has_key()</a>, <a class="el" href="keymap_8c_source.html#l00005">keymap</a>, <a class="el" href="daemon_2keymap_8h_source.html#l00051">key::led</a>, <a class="el" href="daemon_2keymap_8h_source.html#l00045">N_KEYS_EXTENDED</a>, <a class="el" href="daemon_2keymap_8h_source.html#l00050">key::name</a>, and <a class="el" href="structures_8h_source.html#l00074">lighting::r</a>.</p>
 
 <p>Referenced by <a class="el" href="notify_8c_source.html#l00090">_cmd_get()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                                                          {</div>
@@ -743,12 +743,12 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">return</span> buffer;</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;}</div>
 <div class="ttc" id="led_8c_html_a97b59f7ad581a5fdd8e2becec0b7725b"><div class="ttname"><a href="led_8c.html#a97b59f7ad581a5fdd8e2becec0b7725b">has_key</a></div><div class="ttdeci">static int has_key(const char *name, const usbdevice *kb)</div><div class="ttdef"><b>Definition:</b> <a href="led_8c_source.html#l00073">led.c:73</a></div></div>
-<div class="ttc" id="structures_8h_html_abeb581d1f9790ac0dc97bd177546586e"><div class="ttname"><a href="structures_8h.html#abeb581d1f9790ac0dc97bd177546586e">lighting::b</a></div><div class="ttdeci">uchar b[152+11]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00075">structures.h:75</a></div></div>
+<div class="ttc" id="structures_8h_html_abeb581d1f9790ac0dc97bd177546586e"><div class="ttname"><a href="structures_8h.html#abeb581d1f9790ac0dc97bd177546586e">lighting::b</a></div><div class="ttdeci">uchar b[152+11]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00076">structures.h:76</a></div></div>
 <div class="ttc" id="daemon_2keymap_8h_html_adfb7efb615d23c01a629dbf1f0aa83c4"><div class="ttname"><a href="daemon_2keymap_8h.html#adfb7efb615d23c01a629dbf1f0aa83c4">key::led</a></div><div class="ttdeci">short led</div><div class="ttdef"><b>Definition:</b> <a href="daemon_2keymap_8h_source.html#l00051">keymap.h:51</a></div></div>
 <div class="ttc" id="includes_8h_html_a65f85814a8290f9797005d3b28e7e5fc"><div class="ttname"><a href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a></div><div class="ttdeci">unsigned char uchar</div><div class="ttdef"><b>Definition:</b> <a href="includes_8h_source.html#l00024">includes.h:24</a></div></div>
 <div class="ttc" id="daemon_2keymap_8h_html_aaa2ca200a4bd86567f53851153b045af"><div class="ttname"><a href="daemon_2keymap_8h.html#aaa2ca200a4bd86567f53851153b045af">key::name</a></div><div class="ttdeci">const char * name</div><div class="ttdef"><b>Definition:</b> <a href="daemon_2keymap_8h_source.html#l00050">keymap.h:50</a></div></div>
-<div class="ttc" id="structures_8h_html_aef072a169d12aabf02985bd659103244"><div class="ttname"><a href="structures_8h.html#aef072a169d12aabf02985bd659103244">lighting::g</a></div><div class="ttdeci">uchar g[152+11]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00074">structures.h:74</a></div></div>
-<div class="ttc" id="structures_8h_html_a58f2fbe1709465a5258292e8c8421f58"><div class="ttname"><a href="structures_8h.html#a58f2fbe1709465a5258292e8c8421f58">lighting::r</a></div><div class="ttdeci">uchar r[152+11]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00073">structures.h:73</a></div></div>
+<div class="ttc" id="structures_8h_html_aef072a169d12aabf02985bd659103244"><div class="ttname"><a href="structures_8h.html#aef072a169d12aabf02985bd659103244">lighting::g</a></div><div class="ttdeci">uchar g[152+11]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00075">structures.h:75</a></div></div>
+<div class="ttc" id="structures_8h_html_a58f2fbe1709465a5258292e8c8421f58"><div class="ttname"><a href="structures_8h.html#a58f2fbe1709465a5258292e8c8421f58">lighting::r</a></div><div class="ttdeci">uchar r[152+11]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00074">structures.h:74</a></div></div>
 <div class="ttc" id="daemon_2keymap_8h_html_ae1b7aad208a3aca184f7ea6f4bb8643c"><div class="ttname"><a href="daemon_2keymap_8h.html#ae1b7aad208a3aca184f7ea6f4bb8643c">N_KEYS_EXTENDED</a></div><div class="ttdeci">#define N_KEYS_EXTENDED</div><div class="ttdef"><b>Definition:</b> <a href="daemon_2keymap_8h_source.html#l00045">keymap.h:45</a></div></div>
 <div class="ttc" id="keymap_8c_html_a5972a715b26e6b792acc53ad946e1fbb"><div class="ttname"><a href="keymap_8c.html#a5972a715b26e6b792acc53ad946e1fbb">keymap</a></div><div class="ttdeci">const key keymap[(((152+3+12)+25)+11)]</div><div class="ttdef"><b>Definition:</b> <a href="keymap_8c_source.html#l00005">keymap.c:5</a></div></div>
 </div><!-- fragment -->
@@ -782,7 +782,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c663af95b3406af676444e819a47854e.html">ckb-daemon</a></li><li class="navelem"><a class="el" href="led_8c.html">led.c</a></li>
-    <li class="footer">Generated on Wed May 24 2017 22:39:54 for ckb-next by
+    <li class="footer">Generated on Sat Jun 17 2017 13:44:05 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

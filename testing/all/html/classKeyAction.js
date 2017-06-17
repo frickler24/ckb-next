@@ -36,6 +36,7 @@ var classKeyAction =
     [ "macroDisplay", "classKeyAction.html#aa5db7ed889913fde947cfba128c7d80b", null ],
     [ "macroFullLine", "classKeyAction.html#a75cba10df0a1b17c079221879de8c88b", null ],
     [ "macroLine", "classKeyAction.html#ac6f54c2e553b6ab11b086f734eac819d", null ],
+    [ "macroTiming", "classKeyAction.html#a1182588fa5f3158d72830a4b064dfa2d", null ],
     [ "modeAction", "classKeyAction.html#a2932bd638ecc7ae59178c50153b82b79", null ],
     [ "noAction", "classKeyAction.html#a3ccd8c77ce321632ead3ee18146dbce5", null ],
     [ "operator QString", "classKeyAction.html#a850ac6a176f56c7ec76a3373ddd6ff10", null ],

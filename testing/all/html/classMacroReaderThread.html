@@ -31,7 +31,7 @@
   <td id="projectlogo"><img alt="Logo" src="ckb-128.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">ckb-next
-   &#160;<span id="projectnumber">beta-v0.2.8+testing at branch testing</span>
+   &#160;<span id="projectnumber">beta-v0.2.8 at branch testing</span>
    </div>
    <div id="projectbrief">ckb-next driver for corsair devices</div>
   </td>
@@ -277,16 +277,16 @@ Private Attributes</h2></td></tr>
 <p>We want to see the keys as they appear in the macroText Widget.</p>
 <p>Because it is possible to change the Focus via keyboard, we must set the focus on each call. </p>
 
-<p>Definition at line <a class="el" href="macroreader_8cpp_source.html#l00026">26</a> of file <a class="el" href="macroreader_8cpp_source.html">macroreader.cpp</a>.</p>
+<p>Definition at line <a class="el" href="macroreader_8cpp_source.html#l00027">27</a> of file <a class="el" href="macroreader_8cpp_source.html">macroreader.cpp</a>.</p>
 
 <p>References <a class="el" href="macroreader_8h_source.html#l00040">macroBox</a>, and <a class="el" href="macroreader_8h_source.html#l00045">macroText</a>.</p>
-<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                              {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classMacroReaderThread.html#ab46254193bebff8bcb8a7f72aa675727">macroText</a>-&gt;setFocus();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    QTextCursor c = <a class="code" href="classMacroReaderThread.html#ab46254193bebff8bcb8a7f72aa675727">macroText</a>-&gt;textCursor();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    c.setPosition(<a class="code" href="classMacroReaderThread.html#ab46254193bebff8bcb8a7f72aa675727">macroText</a>-&gt;toPlainText().length());</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classMacroReaderThread.html#ab46254193bebff8bcb8a7f72aa675727">macroText</a>-&gt;setTextCursor(c);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classMacroReaderThread.html#adbb276710f35095c0d7a41e06a48199a">macroBox</a>-&gt;appendPlainText(line.left(line.size()-1));</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                              {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classMacroReaderThread.html#ab46254193bebff8bcb8a7f72aa675727">macroText</a>-&gt;setFocus();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    QTextCursor c = <a class="code" href="classMacroReaderThread.html#ab46254193bebff8bcb8a7f72aa675727">macroText</a>-&gt;textCursor();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    c.setPosition(<a class="code" href="classMacroReaderThread.html#ab46254193bebff8bcb8a7f72aa675727">macroText</a>-&gt;toPlainText().length());</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classMacroReaderThread.html#ab46254193bebff8bcb8a7f72aa675727">macroText</a>-&gt;setTextCursor(c);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classMacroReaderThread.html#adbb276710f35095c0d7a41e06a48199a">macroBox</a>-&gt;appendPlainText(line.left(line.size()-1));</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
 <div class="ttc" id="classMacroReaderThread_html_ab46254193bebff8bcb8a7f72aa675727"><div class="ttname"><a href="classMacroReaderThread.html#ab46254193bebff8bcb8a7f72aa675727">MacroReaderThread::macroText</a></div><div class="ttdeci">QPlainTextEdit * macroText</div><div class="ttdoc">macroText is the other textpane used in the UI while typing new macros. That variable is used for set...</div><div class="ttdef"><b>Definition:</b> <a href="macroreader_8h_source.html#l00045">macroreader.h:45</a></div></div>
 <div class="ttc" id="classMacroReaderThread_html_adbb276710f35095c0d7a41e06a48199a"><div class="ttname"><a href="classMacroReaderThread.html#adbb276710f35095c0d7a41e06a48199a">MacroReaderThread::macroBox</a></div><div class="ttdeci">QPlainTextEdit * macroBox</div><div class="ttdoc">macroBox will receive the Macro Key Values sent from the keyboard while defining a new macro...</div><div class="ttdef"><b>Definition:</b> <a href="macroreader_8h_source.html#l00040">macroreader.h:40</a></div></div>
 </div><!-- fragment -->
@@ -307,38 +307,55 @@ Private Attributes</h2></td></tr>
 <p><a class="el" href="classMacroReaderThread.html#a96cdbbe4a082c633c23ec5a01f7e21b4" title="run is the notification reader main loop. ">MacroReaderThread::run</a> is the standard main function for a thread. Tries to open a file &lt;macroPath&gt;&lt;macroNumber&gt; several times (in this case, it should be possible the first time (the code was recycled from <a class="el" href="kb_8cpp.html">kb.cpp</a>).</p>
 <p>While the file is open, read lines an signal them via metaObject() to the main thread. When the file is closed by the sender, close it as reader and terminate. </p>
 
-<p>Definition at line <a class="el" href="macroreader_8cpp_source.html#l00046">46</a> of file <a class="el" href="macroreader_8cpp_source.html">macroreader.cpp</a>.</p>
+<p>Definition at line <a class="el" href="macroreader_8cpp_source.html#l00047">47</a> of file <a class="el" href="macroreader_8cpp_source.html">macroreader.cpp</a>.</p>
 
 <p>References <a class="el" href="macroreader_8h_source.html#l00040">macroBox</a>, <a class="el" href="macroreader_8h_source.html#l00031">macroNumber</a>, <a class="el" href="macroreader_8h_source.html#l00036">macroPath</a>, and <a class="el" href="macroreader_8h_source.html#l00045">macroText</a>.</p>
-<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                            {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    qDebug() &lt;&lt; <span class="stringliteral">&quot;MacroReader::run() started with&quot;</span> &lt;&lt; <a class="code" href="classMacroReaderThread.html#a830c0055023a7fee1c8ea573e05a6291">macroNumber</a> &lt;&lt; <span class="stringliteral">&quot;and&quot;</span> &lt;&lt; <a class="code" href="classMacroReaderThread.html#a181a9110c4630861f60ab3fdea1c70eb">macroPath</a> &lt;&lt; <span class="stringliteral">&quot;and&quot;</span> &lt;&lt; <a class="code" href="classMacroReaderThread.html#adbb276710f35095c0d7a41e06a48199a">macroBox</a> &lt;&lt; <span class="stringliteral">&quot;and&quot;</span> &lt;&lt; <a class="code" href="classMacroReaderThread.html#ab46254193bebff8bcb8a7f72aa675727">macroText</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    QFile macroFile(<a class="code" href="classMacroReaderThread.html#a181a9110c4630861f60ab3fdea1c70eb">macroPath</a>);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// Wait a small amount of time for the node to open (100ms) (code reused from kb.cpp)</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    QThread::usleep(100000);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">if</span>(!macroFile.open(QIODevice::ReadOnly)){</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="comment">// If it&#39;s still not open, try again before giving up (1s at a time, 10s total)</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        QThread::usleep(900000);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 1; i &lt; 10; i++){</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">if</span>(macroFile.open(QIODevice::ReadOnly))</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            QThread::sleep(1);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">if</span>(!macroFile.isOpen()) {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            qDebug() &lt;&lt; QString(<span class="stringliteral">&quot;unable to open macroFile (%1)&quot;</span>).arg(<a class="code" href="classMacroReaderThread.html#a181a9110c4630861f60ab3fdea1c70eb">macroPath</a>);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// Read data from notification node macroPath</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    QByteArray line;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">while</span>(macroFile.isOpen() &amp;&amp; (line = macroFile.readLine()).length() &gt; 0){</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        QString text = QString::fromUtf8(line);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        metaObject()-&gt;invokeMethod(<span class="keyword">this</span>, <span class="stringliteral">&quot;readMacro&quot;</span>, Qt::QueuedConnection, Q_ARG(QString, text));</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    qDebug() &lt;&lt; <span class="stringliteral">&quot;MacroReader::run() ends.&quot;</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    macroFile.close();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    QThread::exit ();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                            {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    qDebug() &lt;&lt; <span class="stringliteral">&quot;MacroReader::run() started with&quot;</span> &lt;&lt; <a class="code" href="classMacroReaderThread.html#a830c0055023a7fee1c8ea573e05a6291">macroNumber</a> &lt;&lt; <span class="stringliteral">&quot;and&quot;</span> &lt;&lt; <a class="code" href="classMacroReaderThread.html#a181a9110c4630861f60ab3fdea1c70eb">macroPath</a> &lt;&lt; <span class="stringliteral">&quot;and&quot;</span> &lt;&lt; <a class="code" href="classMacroReaderThread.html#adbb276710f35095c0d7a41e06a48199a">macroBox</a> &lt;&lt; <span class="stringliteral">&quot;and&quot;</span> &lt;&lt; <a class="code" href="classMacroReaderThread.html#ab46254193bebff8bcb8a7f72aa675727">macroText</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    QFile macroFile(<a class="code" href="classMacroReaderThread.html#a181a9110c4630861f60ab3fdea1c70eb">macroPath</a>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// Wait a small amount of time for the node to open (100ms) (code reused from kb.cpp)</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    QThread::usleep(100000);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span>(!macroFile.open(QIODevice::ReadOnly)){</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="comment">// If it&#39;s still not open, try again before giving up (1s at a time, 10s total)</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        QThread::usleep(900000);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 1; i &lt; 10; i++){</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordflow">if</span>(macroFile.open(QIODevice::ReadOnly))</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            QThread::sleep(1);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">if</span>(!macroFile.isOpen()) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            qDebug() &lt;&lt; QString(<span class="stringliteral">&quot;unable to open macroFile (%1)&quot;</span>).arg(<a class="code" href="classMacroReaderThread.html#a181a9110c4630861f60ab3fdea1c70eb">macroPath</a>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// Read data from notification node macroPath</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// Count time between lines read from the interface</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    QByteArray line;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    timeval t;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    gettimeofday(&amp;t, NULL);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">double</span> tstart = t.tv_sec+(t.tv_usec/1000000.0);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">bool</span> firstline = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">while</span>(macroFile.isOpen() &amp;&amp; (line = macroFile.readLine()).length() &gt; 0){</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        QString text = QString::fromUtf8(line);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        gettimeofday(&amp;t, NULL);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">double</span> tnow = t.tv_sec+(t.tv_usec/1000000.0);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="comment">// in the first line, there is only a delay &quot;before start&quot;. Don&#39;t use it.</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">if</span> (!firstline) {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            text.prepend (<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            text.prepend (QString::number ((tnow - tstart) * 1000000.0, <span class="charliteral">&#39;f&#39;</span>, 0));</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            text.prepend (<span class="stringliteral">&quot;=&quot;</span>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        } <span class="keywordflow">else</span> firstline = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        tstart = tnow;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        metaObject()-&gt;invokeMethod(<span class="keyword">this</span>, <span class="stringliteral">&quot;readMacro&quot;</span>, Qt::QueuedConnection, Q_ARG(QString, text));</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    qDebug() &lt;&lt; <span class="stringliteral">&quot;MacroReader::run() ends.&quot;</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    macroFile.close();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    QThread::exit ();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
 <div class="ttc" id="classMacroReaderThread_html_ab46254193bebff8bcb8a7f72aa675727"><div class="ttname"><a href="classMacroReaderThread.html#ab46254193bebff8bcb8a7f72aa675727">MacroReaderThread::macroText</a></div><div class="ttdeci">QPlainTextEdit * macroText</div><div class="ttdoc">macroText is the other textpane used in the UI while typing new macros. That variable is used for set...</div><div class="ttdef"><b>Definition:</b> <a href="macroreader_8h_source.html#l00045">macroreader.h:45</a></div></div>
 <div class="ttc" id="classMacroReaderThread_html_a181a9110c4630861f60ab3fdea1c70eb"><div class="ttname"><a href="classMacroReaderThread.html#a181a9110c4630861f60ab3fdea1c70eb">MacroReaderThread::macroPath</a></div><div class="ttdeci">QString macroPath</div><div class="ttdoc">macroPath holds the path for the notify channel </div><div class="ttdef"><b>Definition:</b> <a href="macroreader_8h_source.html#l00036">macroreader.h:36</a></div></div>
 <div class="ttc" id="classMacroReaderThread_html_adbb276710f35095c0d7a41e06a48199a"><div class="ttname"><a href="classMacroReaderThread.html#adbb276710f35095c0d7a41e06a48199a">MacroReaderThread::macroBox</a></div><div class="ttdeci">QPlainTextEdit * macroBox</div><div class="ttdoc">macroBox will receive the Macro Key Values sent from the keyboard while defining a new macro...</div><div class="ttdef"><b>Definition:</b> <a href="macroreader_8h_source.html#l00040">macroreader.h:40</a></div></div>
@@ -367,7 +384,7 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="macroreader_8h_source.html#l00040">40</a> of file <a class="el" href="macroreader_8h_source.html">macroreader.h</a>.</p>
 
-<p>Referenced by <a class="el" href="macroreader_8h_source.html#l00055">MacroReaderThread()</a>, <a class="el" href="macroreader_8cpp_source.html#l00026">readMacro()</a>, and <a class="el" href="macroreader_8cpp_source.html#l00046">run()</a>.</p>
+<p>Referenced by <a class="el" href="macroreader_8h_source.html#l00055">MacroReaderThread()</a>, <a class="el" href="macroreader_8cpp_source.html#l00027">readMacro()</a>, and <a class="el" href="macroreader_8cpp_source.html#l00047">run()</a>.</p>
 
 </div>
 </div>
@@ -391,7 +408,7 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="macroreader_8h_source.html#l00031">31</a> of file <a class="el" href="macroreader_8h_source.html">macroreader.h</a>.</p>
 
-<p>Referenced by <a class="el" href="macroreader_8h_source.html#l00055">MacroReaderThread()</a>, and <a class="el" href="macroreader_8cpp_source.html#l00046">run()</a>.</p>
+<p>Referenced by <a class="el" href="macroreader_8h_source.html#l00055">MacroReaderThread()</a>, and <a class="el" href="macroreader_8cpp_source.html#l00047">run()</a>.</p>
 
 </div>
 </div>
@@ -416,7 +433,7 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="macroreader_8h_source.html#l00036">36</a> of file <a class="el" href="macroreader_8h_source.html">macroreader.h</a>.</p>
 
-<p>Referenced by <a class="el" href="macroreader_8h_source.html#l00055">MacroReaderThread()</a>, and <a class="el" href="macroreader_8cpp_source.html#l00046">run()</a>.</p>
+<p>Referenced by <a class="el" href="macroreader_8h_source.html#l00055">MacroReaderThread()</a>, and <a class="el" href="macroreader_8cpp_source.html#l00047">run()</a>.</p>
 
 </div>
 </div>
@@ -440,7 +457,7 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="macroreader_8h_source.html#l00045">45</a> of file <a class="el" href="macroreader_8h_source.html">macroreader.h</a>.</p>
 
-<p>Referenced by <a class="el" href="macroreader_8h_source.html#l00055">MacroReaderThread()</a>, <a class="el" href="macroreader_8cpp_source.html#l00026">readMacro()</a>, and <a class="el" href="macroreader_8cpp_source.html#l00046">run()</a>.</p>
+<p>Referenced by <a class="el" href="macroreader_8h_source.html#l00055">MacroReaderThread()</a>, <a class="el" href="macroreader_8cpp_source.html#l00027">readMacro()</a>, and <a class="el" href="macroreader_8cpp_source.html#l00047">run()</a>.</p>
 
 </div>
 </div>
@@ -454,7 +471,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classMacroReaderThread.html">MacroReaderThread</a></li>
-    <li class="footer">Generated on Wed May 24 2017 22:40:05 for ckb-next by
+    <li class="footer">Generated on Sat Jun 17 2017 13:44:15 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

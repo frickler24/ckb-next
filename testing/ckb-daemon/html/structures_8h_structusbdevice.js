@@ -1,7 +1,7 @@
 var structures_8h_structusbdevice =
 [
     [ "active", "structures_8h.html#a8889b6a5d3ce83427377e3a3de947f03", null ],
-    [ "delay", "structures_8h.html#a4b18e06c9ef188aefdad5daa0e59e658", null ],
+    [ "delay", "structures_8h.html#ac3f3ab5bda85925648ff834ba7afcacd", null ],
     [ "dither", "structures_8h.html#ac001911d43498f4165bfc7cdd5024d39", null ],
     [ "epcount", "structures_8h.html#a8d667681cbb0b3741476bf54c01e79b9", null ],
     [ "features", "structures_8h.html#abbffdd889fd9a15c8796a47cabd3abd9", null ],

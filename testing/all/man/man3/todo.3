@@ -1,4 +1,4 @@
-.TH "todo" 3 "Wed May 24 2017" "Version beta-v0.2.8+testing at branch testing" "ckb-next" \" -*- nroff -*-
+.TH "todo" 3 "Sat Jun 17 2017" "Version beta-v0.2.8 at branch testing" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -20,10 +20,14 @@ Hope to find the need for dmutex usage later\&.
  Is the condition IS_CONNECTED valid? What functions change the condititon for the macro?  
 .IP "\fBGlobal \fBget_vtable\fP (short vendor, short product)\fP" 1c
 Is the last point really a good decision and always correct?  
+.IP "\fBGlobal \fBinputupdate_keys\fP (usbdevice *kb)\fP" 1c
+If we want to get all keys typed while a macro is played, add the code for it here\&.  
 .IP "\fBGlobal \fBKb::Kb\fP (\fBQObject\fP *parent, const QString &path)\fP" 1c
 Is adding notify2 to the notifypaths neccessary?  
 .IP "\fBGlobal \fBKb::~Kb\fP ()\fP" 1c
 I don't think, that notifypaths is used somewhere\&. So why do we have it? If we do not need it, searching for an ununsed notify channel can easy be refactored to a private member function\&.  
+.IP "\fBGlobal \fBmacro_pt_enqueue\fP ()\fP" 1c
+find a better exit strategy if no more mem available\&.  
 .IP "\fBGlobal \fBos_inputmain\fP (void *context)\fP" 1c
 This function is a collection of many tasks\&. It should be divided into several sub-functions for the sake of greater convenience: 
 .IP "\fBGlobal \fBos_resetusb\fP (usbdevice *kb, const char *file, int line)\fP" 1c
@@ -36,6 +40,10 @@ Since the handling of endpoints has already led to problems elsewhere, this impl
  Eg\&. the new keyboard K95PLATINUMRGB has a version number significantly less than 2\&.0 - will it run with this implementation? 
 .IP "\fBGlobal \fBproduct_str\fP (short product)\fP" 1c
 There are macros defined in \fBusb\&.h\fP to detect all the combinations below\&. the only difference is the parameter: The macros need the \fIkb*\fP, \fBproduct_str()\fP needs the \fIproduct\fP \fIID\fP  
+.IP "\fBGlobal \fBRebindWidget::applyChanges\fP (const QStringList &keys, bool doUnbind)\fP" 1c
+There is still a bug in the state machine: If you record a macro in asTyped-mode, switch to another mode and change the vontent of the pteMacroBox manually, then the changes are not saved in the timing buffer\&. But anyhow, let's do more relevant things\&.\&.\&.  
+.IP "\fBGlobal \fBRebindWidget::on_btnClearMacro_clicked\fP ()\fP" 1c
+I do not know what is the better solution with the delay-buttons in case of clicking clear: Reset the button to the default value or do not touch it? Not clear is ignored\&.  
 .IP "\fBGlobal \fBrevertusb\fP (usbdevice *kb)\fP" 1c
 Why is this useful? Are there problems seen with deactivating a device with older fw-version??? Why isn't this an error indicating reason and we return success (0)?
 .PP

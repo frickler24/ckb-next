@@ -40,7 +40,8 @@ var searchData=
   ['trigger',['trigger',['../classKbAnim.html#af999e793fe618f48215f4dc6b7f0a295',1,'KbAnim']]],
   ['true',['TRUE',['../ckb-anim_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d',1,'ckb-anim.h']]],
   ['tryfree',['TRYFREE',['../unzip_8c.html#a5fb23c00a00f3856832e660edc2ab03d',1,'TRYFREE():&#160;unzip.c'],['../zip_8c.html#a5fb23c00a00f3856832e660edc2ab03d',1,'TRYFREE():&#160;zip.c']]],
-  ['type',['Type',['../classAnimScript.html#a7d1132f0a5ff40823a9e655e7d6aa106',1,'AnimScript::Param::Type()'],['../classKeyAction.html#aaf046486ea4bafca9614bb4ff4538646',1,'KeyAction::Type()'],['../classAnimScript.html#a1031a0cca15358cf6652de123f2a687f',1,'AnimScript::Param::type()'],['../classKeyAction.html#a30d7a2f7f10bead67f56dc2d5c8babe3',1,'KeyAction::type()']]],
+  ['txtbuffer',['txtBuffer',['../classUi__RebindWidget.html#a8e95bb05bcc0c8f3eb5542aec9ada3b3',1,'Ui_RebindWidget']]],
+  ['type',['type',['../classAnimScript.html#a1031a0cca15358cf6652de123f2a687f',1,'AnimScript::Param::type()'],['../classKeyAction.html#a30d7a2f7f10bead67f56dc2d5c8babe3',1,'KeyAction::type()'],['../classAnimScript.html#a7d1132f0a5ff40823a9e655e7d6aa106',1,'AnimScript::Param::Type()'],['../classKeyAction.html#aaf046486ea4bafca9614bb4ff4538646',1,'KeyAction::Type()']]],
   ['typingbox',['typingBox',['../classUi__RebindWidget.html#a79157d169a0c9de54cce3e58f25029ed',1,'Ui_RebindWidget']]],
   ['typingbutton',['typingButton',['../classUi__RebindWidget.html#aa1de3764ac3cb428f7df6e14e899ad0d',1,'Ui_RebindWidget']]],
   ['typingkeys',['typingKeys',['../classRebindWidget.html#afcb207ef3d67e1300205627fe1a1eb8c',1,'RebindWidget']]]

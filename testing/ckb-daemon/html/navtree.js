@@ -1,7 +1,7 @@
 var NAVTREE =
 [
   [ "ckb-next", "index.html", [
-    [ "ckb-next: RGB Driver for Linux and OS X", "md_README.html", null ],
+    [ "README", "md_README.html", null ],
     [ "Building ckb", "md_BUILD.html", null ],
     [ "cbk Improvements Roadmap", "md_ROADMAP.html", null ],
     [ "DAEMON", "md_DAEMON.html", null ],
@@ -32,9 +32,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"globals_func_i.html",
-"profile_8c.html#a0ee8ec630a6cfed288d325f284ffe632",
-"usb_8h.html#a07e80868f8a95b9f8a2e85636833d45d"
+"globals_f.html",
+"notify_8c.html#ac2415bc338238fa860042b44ee0ab9d1",
+"structures_8h.html#structusbinput"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

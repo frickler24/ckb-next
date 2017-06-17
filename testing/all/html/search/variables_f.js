@@ -73,6 +73,8 @@ var searchData=
   ['progressbar',['progressBar',['../classUi__FwUpgradeDialog.html#adc5ed7c0de5de1bb97ade3cf834d3fed',1,'Ui_FwUpgradeDialog']]],
   ['progtiplabel',['progTipLabel',['../classUi__RebindWidget.html#a2875647a5477eacc181585c192892ce7',1,'Ui_RebindWidget']]],
   ['propertybutton',['propertyButton',['../classUi__KbAnimWidget.html#acad5c6903d0465b2f4169bfb59ec62e6',1,'Ui_KbAnimWidget']]],
+  ['pt_5fhead',['pt_head',['../input_8c.html#a00af804e2e97b2bf7c0554dcfc441ce8',1,'input.c']]],
+  ['pt_5ftail',['pt_tail',['../input_8c.html#a1dc43d4d8be547a1bf951261867c34fb',1,'input.c']]],
   ['ptcount',['ptcount',['../ckb-anim_8h.html#a1fbc643f08e3cb0e2424e018063873d0',1,'ckb_gradient']]],
   ['ptemacrobox',['pteMacroBox',['../classUi__RebindWidget.html#adad687d2c716052811044d325b66ab96',1,'Ui_RebindWidget']]],
   ['ptemacrocomment',['pteMacroComment',['../classUi__RebindWidget.html#a127f35cc26dd3418479dbcb96d49a05c',1,'Ui_RebindWidget']]],

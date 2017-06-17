@@ -1,5 +1,16 @@
 var NAVTREEINDEX10 =
 {
+"classUi__KPerfWidget.html#a79b6980d6f0158f1122294273d4e5048":[7,0,126,1],
+"classUi__KPerfWidget.html#a7c36f70240731d27540013dca20867c4":[7,0,126,52],
+"classUi__KPerfWidget.html#a7d68f56c05116c7e1611973e2de47056":[7,0,126,39],
+"classUi__KPerfWidget.html#a7fa7da93d1b86dc67bb83fc2ffd2f371":[7,0,126,42],
+"classUi__KPerfWidget.html#a80a9535be62d424a655bdaab2695b428":[7,0,126,19],
+"classUi__KPerfWidget.html#a80f9dce6fb69d80e2b6b1d9db79b34c7":[7,0,126,71],
+"classUi__KPerfWidget.html#a81a4b9a2cbd8b28ae7ba6bbe00c73094":[7,0,126,58],
+"classUi__KPerfWidget.html#a854a808bed2310b2d19d972a2bb30bdf":[7,0,126,55],
+"classUi__KPerfWidget.html#a8a76c98f8ffaaf1cc3ce38d4aeb4f0d6":[7,0,126,2],
+"classUi__KPerfWidget.html#a91ead06ff39810d22182d56049eef179":[7,0,126,62],
+"classUi__KPerfWidget.html#a9673df074d6d8c2225ad066bccd0262b":[7,0,126,10],
 "classUi__KPerfWidget.html#a9b81fc0b1f20249bdb600a5971515b8d":[7,0,126,57],
 "classUi__KPerfWidget.html#a9f761106c9384e9c26994116041fcfb8":[7,0,126,61],
 "classUi__KPerfWidget.html#aa1d34eadfb8d8faf6d332bf53b54889b":[7,0,126,31],
@@ -238,16 +249,5 @@ var NAVTREEINDEX10 =
 "classUi__MPerfWidget.html#ace128b8e7ebde6ddfc3d0b0373fda798":[7,0,130,13],
 "classUi__MPerfWidget.html#ad34026f578a6982b43bf0e133ffec3a9":[7,0,130,71],
 "classUi__MPerfWidget.html#ad3bc4d893936d061769e5b8562f24eb8":[7,0,130,31],
-"classUi__MPerfWidget.html#ad3ceaccf0426fd01d04d7df895193598":[7,0,130,63],
-"classUi__MPerfWidget.html#ad51fad3d0d9defec10bf54d5ec238e01":[7,0,130,24],
-"classUi__MPerfWidget.html#ad93c7cca86f47b70b016b1774f0c54fc":[7,0,130,42],
-"classUi__MPerfWidget.html#ada2bb65f8b2d918d6d32492b099c5b24":[7,0,130,49],
-"classUi__MPerfWidget.html#ada67c64c2fee2a0c92f11de7855c7ca4":[7,0,130,29],
-"classUi__MPerfWidget.html#addce62145621148110dbc8df7e5d0e94":[7,0,130,56],
-"classUi__MPerfWidget.html#adec766892b032e0bbf67c1d86016607b":[7,0,130,53],
-"classUi__MPerfWidget.html#ae05c09b2d20bcfe8fd7d10f565fd6389":[7,0,130,40],
-"classUi__MPerfWidget.html#ae0a54bc30d4118f03f82879bf20305dd":[7,0,130,11],
-"classUi__MPerfWidget.html#ae92102c9b2be663b57c704b21cf29526":[7,0,130,50],
-"classUi__MPerfWidget.html#af2cbe47b7a5f8db771a03b7db6dff1d2":[7,0,130,58],
-"classUi__MPerfWidget.html#af8117fd4df1bd24dbf9dd81ebeb740f3":[7,0,130,69]
+"classUi__MPerfWidget.html#ad3ceaccf0426fd01d04d7df895193598":[7,0,130,63]
 };

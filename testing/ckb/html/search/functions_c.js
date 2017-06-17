@@ -8,6 +8,7 @@ var searchData=
   ['macroline',['macroLine',['../classKeyAction.html#ac6f54c2e553b6ab11b086f734eac819d',1,'KeyAction']]],
   ['macroreader',['MacroReader',['../classMacroReader.html#af1303babee9627566ee763630a45158c',1,'MacroReader::MacroReader()'],['../classMacroReader.html#a4c8a7c7b890ee96648111b912e8ebf5a',1,'MacroReader::MacroReader(int macroNumber, QString macroPath, QPlainTextEdit *macBox, QPlainTextEdit *macText)']]],
   ['macroreaderthread',['MacroReaderThread',['../classMacroReaderThread.html#a55338956e86e7eae3b40df67245ef4f4',1,'MacroReaderThread']]],
+  ['macrotiming',['macroTiming',['../classKeyAction.html#a1182588fa5f3158d72830a4b064dfa2d',1,'KeyAction']]],
   ['main',['main',['../ckb-anim_8h.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;ckb-anim.h'],['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;main.cpp']]],
   ['mainwindow',['MainWindow',['../classMainWindow.html#a8b244be8b7b7db1b08de2a2acb9409db',1,'MainWindow']]],
   ['makeicon',['makeIcon',['../classGradientDialog.html#a2a6be76acaa2bf9b2cfe4cfca38fb762',1,'GradientDialog']]],

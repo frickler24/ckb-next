@@ -1,7 +1,7 @@
 var NAVTREE =
 [
   [ "ckb-next", "index.html", [
-    [ "ckb-next: RGB Driver for Linux and OS X", "md_README.html", null ],
+    [ "README", "md_README.html", null ],
     [ "Building ckb", "md_BUILD.html", null ],
     [ "cbk Improvements Roadmap", "md_ROADMAP.html", null ],
     [ "DAEMON", "md_DAEMON.html", null ],
@@ -46,23 +46,24 @@ var NAVTREEINDEX =
 "classCkbSettingsWriter.html#ad9f2b7cda74639c159be06aeface6538",
 "classKb.html#ad5ff9af4c586f42e8656f17b798a3696",
 "classKbLightWidget.html#a1cfe59a926904c07fb5131496e28378a",
-"classKeyAction.html#a2010276d5349d7dcc6b3477c20d13160",
-"classMainWindow.html#a64fe894ef88b14a53d6ab7166786f957",
-"classQuaZipPrivate.html#ad95e4de7f3bee9068745e79e003436a9",
-"classUi_1_1GradientDialog.html#a58b7c3f734e711d248cf1fefdfb0258a",
-"classUi_1_1MPerfWidget.html#a34adb35bf1b482739b195040bcfe304c",
-"classUi__AnimAddDialog.html",
-"classUi__KbAnimWidget.html#a5713df770616cfd38a16a1ad9553b002",
-"classUi__RebindWidget.html#a323dedb29892b0d6fef951675904f01b",
-"daemon_2keymap_8h.html#ad1360e90afeb08ab29e46f4bff674a9c",
-"functions_vars_x.html",
-"ioapi_8h.html#ac3f6323030cbaf7b0d389a8aaac36496",
-"led_8h.html#a8ce4572649dc96fbff076a765f4a8ddd",
-"moc__kbperf_8cpp.html#abca75df783edca2579855dc4f2c5ae2f",
-"profile__keyboard_8c_source.html",
-"structdevcmd_8____unnamed____.html#a6ee618f40c3c671a0daa20bfb9000c04",
-"unzip_8c.html#a7f66f187144c9c6da0052016296c2469",
-"usb_8h.html#ae8d1cf4b55023aae2b72ee607e214f84"
+"classKeyAction.html#a1fd7bef50c828e25299d514222d5b5a4",
+"classMainWindow.html#a5f7b64a1013389fd3b13974f6f4b4dc5",
+"classQuaZipPrivate.html#ad324b69fdfbe29b4caa6030bf1b2d141",
+"classUi_1_1GradientDialog.html#a1f0bb5f745117b6ad09291589ef5edfd",
+"classUi_1_1MPerfWidget.html#a2599248679c190eb18be477d26db52c6",
+"classUi_1_1SettingsWidget.html#ac398e885a76f6387baa4c8cec310ff99",
+"classUi__KbAnimWidget.html#a074ceb7e5354c8004a2248e8ee88d409",
+"classUi__RebindWidget.html#a22e99d57b9ed7f54095d4bf43dc09770",
+"daemon_2keymap_8h.html#a1e78fe78cc88328d9c38f020f3262554",
+"functions_u.html",
+"ioapi_8h.html#a04f5366c9e7e48343357bb88b46998f9",
+"kiss__fft_8h_source.html",
+"moc__kbfirmware_8cpp.html#a75f5811bfed2845e5cef8ccf3b62f20a",
+"profile_8c.html#a84276e1670627ed463d30bc2431dab57",
+"structQuaZipNewInfo.html#a2bdef01b6ac3326e48598e32bfa5fbe8",
+"unzip_8c.html#a1f67bddec6376276633b43042f367167",
+"usb_8h.html#a67316b233c0f7fca0b77a70a0bbb9c81",
+"zip_8h.html#aebc461dd0a4a7b7ebd4e00de5fbf594d"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,3 +1,3 @@
 <map id="Ui::RebindWidget" name="Ui::RebindWidget">
-<area shape="rect" id="node2" href="$classUi__RebindWidget.html" title="{Ui_RebindWidget\n|+ typingBox\l+ verticalSpacer_3\l+ mediaButton\l+ horizontalSpacer_9\l+ horizontalSpacer_4\l+ fnButton\l+ horizontalSpacer_17\l+ verticalSpacer_2\l+ horizontalSpacer_18\l+ horizontalSpacer_20\land 25 more...\l|+ setupUi()\l+ retranslateUi()\l}" alt="" coords="855,294,1007,533"/>
+<area shape="rect" id="node2" href="$classUi__RebindWidget.html" title="{Ui_RebindWidget\n|+ keyTab\l+ typingBox\l+ verticalSpacer_3\l+ mediaButton\l+ horizontalSpacer_9\l+ horizontalSpacer_4\l+ fnButton\l+ horizontalSpacer_17\l+ verticalSpacer_2\l+ horizontalSpacer_18\land 29 more...\l|+ setupUi()\l+ retranslateUi()\l}" alt="" coords="869,294,1021,533"/>
 </map>

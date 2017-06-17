@@ -1,7 +1,7 @@
 var NAVTREE =
 [
   [ "ckb-next", "index.html", [
-    [ "ckb-next: RGB Driver for Linux and OS X", "md_README.html", null ],
+    [ "README", "md_README.html", null ],
     [ "Building ckb", "md_BUILD.html", null ],
     [ "cbk Improvements Roadmap", "md_ROADMAP.html", null ],
     [ "DAEMON", "md_DAEMON.html", null ],
@@ -46,19 +46,19 @@ var NAVTREEINDEX =
 "classKb.html#a69c6e0253f45def19d1a21c5648f5467",
 "classKbLight.html#a1a3d6085ea8406fbe6a8b80cc6589c30",
 "classKbProfileDialog.html#a3b0058e2aaebf070bb85ac6449c1beb2",
-"classMPerfWidget.html#a6e4a6b7bc983701e6d12f8a2b4015b62",
-"classQuaZipFile.html#ae614495d6b2404a6c59d7cfca5c3f6fd",
-"classUi_1_1ExtraSettingsWidget.html#a8cbd7371e746508dc87f880d1f0354c3",
-"classUi_1_1KbWidget.html#a5d2a112ae92dd9071ea054c2961995f8",
-"classUi_1_1SettingsWidget.html#a0aa23fdf7b779ec6e012475b5304098b",
-"classUi__KPerfWidget.html#a9b81fc0b1f20249bdb600a5971515b8d",
-"classUi__MPerfWidget.html#af845b29c8ec08c6a5eb14ce1e880abde",
-"functions_func_s.html",
-"kblight_8cpp.html#a1b369974db04cf9b57e096d8caff10b8",
-"moc__gradientdialogwidget_8cpp.html#structqt__meta__stringdata__GradientDialogWidget__t",
-"pages.html",
-"ui__kbbindwidget_8h_source.html",
-"zip_8c.html#a264fabfc0967e5c2e045a153599cbb75"
+"classMPerfWidget.html#a69c52b09fd6900c95364680777636c20",
+"classQuaZipFile.html#ad3f5807329321be21b12c1ba5798b359",
+"classUi_1_1ExtraSettingsWidget.html#a749e6b92b29ad7cdd4d31c5e050ea521",
+"classUi_1_1KbWidget.html#a3c98cd4dba3d28f02314d2e37a1dc3d3",
+"classUi_1_1RebindWidget.html#af13089078e119b7b2f9b7f10dd6a8028",
+"classUi__KPerfWidget.html#a79b6980d6f0158f1122294273d4e5048",
+"classUi__MPerfWidget.html#ad51fad3d0d9defec10bf54d5ec238e01",
+"functions_func_a.html",
+"kbanimwidget_8h.html",
+"moc__gradientbutton_8cpp.html#ad98dea5155561cda62684f7746282af5",
+"modeselectdialog_8cpp_source.html",
+"structUsbId.html#ab8dd6ba64eea7f252c6833f4ee9c9005",
+"zip_8c.html#a11acfc377461094b27681612f0bd277d"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

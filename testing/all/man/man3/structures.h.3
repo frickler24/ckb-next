@@ -1,4 +1,4 @@
-.TH "src/ckb-daemon/structures.h" 3 "Wed May 24 2017" "Version beta-v0.2.8+testing at branch testing" "ckb-next" \" -*- nroff -*-
+.TH "src/ckb-daemon/structures.h" 3 "Sat Jun 17 2017" "Version beta-v0.2.8 at branch testing" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -214,6 +214,9 @@ Definition at line 27 of file structures\&.h\&.
 .PP
 \fBData Fields:\fP
 .RS 4
+uint \fIdelay\fP 
+.br
+.PP
 char \fIdown\fP 
 .br
 .PP
@@ -230,7 +233,7 @@ short \fIscan\fP
 .PP
 .SH "struct keymacro"
 .PP 
-Definition at line 34 of file structures\&.h\&.
+Definition at line 35 of file structures\&.h\&.
 .PP
 \fBData Fields:\fP
 .RS 4
@@ -250,7 +253,7 @@ char \fItriggered\fP
 .PP
 .SH "struct binding"
 .PP 
-Definition at line 42 of file structures\&.h\&.
+Definition at line 43 of file structures\&.h\&.
 .PP
 \fBData Fields:\fP
 .RS 4
@@ -270,7 +273,7 @@ int \fImacrocount\fP
 .PP
 .SH "struct dpiset"
 .PP 
-Definition at line 56 of file structures\&.h\&.
+Definition at line 57 of file structures\&.h\&.
 .PP
 \fBData Fields:\fP
 .RS 4
@@ -299,7 +302,7 @@ Definition at line 56 of file structures\&.h\&.
 .PP
 .SH "struct lighting"
 .PP 
-Definition at line 72 of file structures\&.h\&.
+Definition at line 73 of file structures\&.h\&.
 .PP
 \fBData Fields:\fP
 .RS 4
@@ -322,7 +325,7 @@ Definition at line 72 of file structures\&.h\&.
 .PP
 .SH "struct usbmode"
 .PP 
-Definition at line 82 of file structures\&.h\&.
+Definition at line 83 of file structures\&.h\&.
 .PP
 \fBData Fields:\fP
 .RS 4
@@ -357,7 +360,7 @@ Definition at line 82 of file structures\&.h\&.
 .PP
 .SH "struct usbprofile"
 .PP 
-Definition at line 100 of file structures\&.h\&.
+Definition at line 101 of file structures\&.h\&.
 .PP
 \fBData Fields:\fP
 .RS 4
@@ -383,7 +386,7 @@ Definition at line 100 of file structures\&.h\&.
 .PP
 .SH "struct hwprofile"
 .PP 
-Definition at line 117 of file structures\&.h\&.
+Definition at line 118 of file structures\&.h\&.
 .PP
 \fBData Fields:\fP
 .RS 4
@@ -403,7 +406,7 @@ Definition at line 117 of file structures\&.h\&.
 .PP
 .SH "struct usbinput"
 .PP 
-Definition at line 128 of file structures\&.h\&.
+Definition at line 129 of file structures\&.h\&.
 .PP
 \fBData Fields:\fP
 .RS 4
@@ -423,14 +426,14 @@ short \fIrel_y\fP
 .PP
 .SH "struct usbdevice"
 .PP 
-Definition at line 177 of file structures\&.h\&.
+Definition at line 178 of file structures\&.h\&.
 .PP
 \fBData Fields:\fP
 .RS 4
 char \fIactive\fP 
 .br
 .PP
-char \fIdelay\fP 
+uint \fIdelay\fP 
 .br
 .PP
 char \fIdither\fP 
@@ -521,129 +524,129 @@ Referenced by cmd_notify(), corsair_mousecopy(), hid_kb_translate(), and hid_mou
 .SS "#define DPI_COUNT   6"
 
 .PP
-Definition at line 53 of file structures\&.h\&.
+Definition at line 54 of file structures\&.h\&.
 .PP
 Referenced by cmd_dpi(), cmd_dpisel(), loaddpi(), printdpi(), savedpi(), and updatedpi()\&.
 .SS "#define FEAT_ADJRATE   0x008"
 
 .PP
-Definition at line 138 of file structures\&.h\&.
+Definition at line 139 of file structures\&.h\&.
 .PP
 Referenced by _mkdevpath(), _setupusb(), and _start_dev()\&.
 .SS "#define FEAT_ANSI   0x200"
 
 .PP
-Definition at line 145 of file structures\&.h\&.
+Definition at line 146 of file structures\&.h\&.
 .PP
 Referenced by readcmd()\&.
 .SS "#define FEAT_BIND   0x010"
 
 .PP
-Definition at line 139 of file structures\&.h\&.
+Definition at line 140 of file structures\&.h\&.
 .PP
 Referenced by _mkdevpath(), main(), and readcmd()\&.
 .SS "#define FEAT_COMMON   (\fBFEAT_BIND\fP | \fBFEAT_NOTIFY\fP | \fBFEAT_FWVERSION\fP | \fBFEAT_MOUSEACCEL\fP | \fBFEAT_HWLOAD\fP)"
 
 .PP
-Definition at line 150 of file structures\&.h\&.
+Definition at line 151 of file structures\&.h\&.
 .SS "#define FEAT_FWUPDATE   0x080"
 
 .PP
-Definition at line 142 of file structures\&.h\&.
+Definition at line 143 of file structures\&.h\&.
 .PP
 Referenced by _mkdevpath(), _start_dev(), and cmd_fwupdate()\&.
 .SS "#define FEAT_FWVERSION   0x040"
 
 .PP
-Definition at line 141 of file structures\&.h\&.
+Definition at line 142 of file structures\&.h\&.
 .PP
 Referenced by _mkdevpath(), and _start_dev()\&.
 .SS "#define FEAT_HWLOAD   0x100"
 
 .PP
-Definition at line 143 of file structures\&.h\&.
+Definition at line 144 of file structures\&.h\&.
 .PP
 Referenced by _start_dev()\&.
 .SS "#define FEAT_ISO   0x400"
 
 .PP
-Definition at line 146 of file structures\&.h\&.
+Definition at line 147 of file structures\&.h\&.
 .PP
 Referenced by readcmd()\&.
 .SS "#define FEAT_LMASK   (\fBFEAT_ANSI\fP | \fBFEAT_ISO\fP)"
 
 .PP
-Definition at line 153 of file structures\&.h\&.
+Definition at line 154 of file structures\&.h\&.
 .PP
 Referenced by readcmd()\&.
 .SS "#define FEAT_MONOCHROME   0x002"
 
 .PP
-Definition at line 136 of file structures\&.h\&.
+Definition at line 137 of file structures\&.h\&.
 .PP
 Referenced by _mkdevpath(), and _setupusb()\&.
 .SS "#define FEAT_MOUSEACCEL   0x800"
 
 .PP
-Definition at line 147 of file structures\&.h\&.
+Definition at line 148 of file structures\&.h\&.
 .PP
 Referenced by main(), and readcmd()\&.
 .SS "#define FEAT_NOTIFY   0x020"
 
 .PP
-Definition at line 140 of file structures\&.h\&.
+Definition at line 141 of file structures\&.h\&.
 .PP
 Referenced by _mkdevpath(), main(), and readcmd()\&.
 .SS "#define FEAT_POLLRATE   0x004"
 
 .PP
-Definition at line 137 of file structures\&.h\&.
+Definition at line 138 of file structures\&.h\&.
 .PP
 Referenced by _mkdevpath(), _start_dev(), and getfwversion()\&.
 .SS "#define FEAT_RGB   0x001"
 
 .PP
-Definition at line 135 of file structures\&.h\&.
+Definition at line 136 of file structures\&.h\&.
 .PP
 Referenced by _mkdevpath(), _start_dev(), revertusb(), and usbunclaim()\&.
 .SS "#define FEAT_STD_NRGB   (\fBFEAT_COMMON\fP)"
 
 .PP
-Definition at line 152 of file structures\&.h\&.
+Definition at line 153 of file structures\&.h\&.
 .PP
 Referenced by _setupusb()\&.
 .SS "#define FEAT_STD_RGB   (\fBFEAT_COMMON\fP | \fBFEAT_RGB\fP | \fBFEAT_POLLRATE\fP | \fBFEAT_FWUPDATE\fP)"
 
 .PP
-Definition at line 151 of file structures\&.h\&.
+Definition at line 152 of file structures\&.h\&.
 .PP
 Referenced by _setupusb()\&.
 .SS "#define HAS_ANY_FEATURE(kb, feat)   (!!((kb)->features & (feat)))"
 
 .PP
-Definition at line 157 of file structures\&.h\&.
+Definition at line 158 of file structures\&.h\&.
 .SS "#define HAS_FEATURES(kb, feat)   (((kb)->features & (feat)) == (feat))"
 
 .PP
-Definition at line 156 of file structures\&.h\&.
+Definition at line 157 of file structures\&.h\&.
 .PP
 Referenced by _mkdevpath(), _start_dev(), cmd_fwupdate(), readcmd(), revertusb(), and usbunclaim()\&.
 .SS "#define HWMODE_K70   1"
 
 .PP
-Definition at line 114 of file structures\&.h\&.
+Definition at line 115 of file structures\&.h\&.
 .PP
 Referenced by cmd_hwload_kb(), and cmd_hwsave_kb()\&.
 .SS "#define HWMODE_K95   3"
 
 .PP
-Definition at line 115 of file structures\&.h\&.
+Definition at line 116 of file structures\&.h\&.
 .PP
 Referenced by cmd_hwload_kb(), and cmd_hwsave_kb()\&.
 .SS "#define HWMODE_MAX   3"
 
 .PP
-Definition at line 116 of file structures\&.h\&.
+Definition at line 117 of file structures\&.h\&.
 .SS "#define I_CAPS   2"
 
 .PP
@@ -665,53 +668,53 @@ Referenced by _cmd_get(), iselect(), nprintind(), and updateindicators_kb()\&.
 .SS "#define IFACE_MAX   4"
 
 .PP
-Definition at line 176 of file structures\&.h\&.
+Definition at line 177 of file structures\&.h\&.
 .SS "#define KB_NAME_LEN   40"
 
 .PP
-Definition at line 173 of file structures\&.h\&.
+Definition at line 174 of file structures\&.h\&.
 .PP
 Referenced by _setupusb(), and os_setupusb()\&.
 .SS "#define LIFT_MAX   5"
 
 .PP
-Definition at line 55 of file structures\&.h\&.
+Definition at line 56 of file structures\&.h\&.
 .PP
 Referenced by cmd_lift(), and loaddpi()\&.
 .SS "#define LIFT_MIN   1"
 
 .PP
-Definition at line 54 of file structures\&.h\&.
+Definition at line 55 of file structures\&.h\&.
 .PP
 Referenced by cmd_lift(), and loaddpi()\&.
 .SS "#define MACRO_MAX   1024"
 
 .PP
-Definition at line 50 of file structures\&.h\&.
+Definition at line 51 of file structures\&.h\&.
 .PP
 Referenced by _cmd_macro()\&.
 .SS "#define MD_NAME_LEN   16"
 
 .PP
-Definition at line 81 of file structures\&.h\&.
+Definition at line 82 of file structures\&.h\&.
 .PP
 Referenced by cmd_hwsave_kb(), cmd_hwsave_mouse(), cmd_name(), gethwmodename(), gethwprofilename(), getmodename(), hwloadmode(), hwtonative(), and nativetohw()\&.
 .SS "#define MODE_COUNT   6"
 
 .PP
-Definition at line 99 of file structures\&.h\&.
+Definition at line 100 of file structures\&.h\&.
 .PP
 Referenced by _freeprofile(), allocprofile(), and readcmd()\&.
 .SS "#define MSG_SIZE   64"
 
 .PP
-Definition at line 175 of file structures\&.h\&.
+Definition at line 176 of file structures\&.h\&.
 .PP
 Referenced by _usbsend(), cmd_hwload_kb(), cmd_hwload_mouse(), cmd_hwsave_kb(), cmd_hwsave_mouse(), cmd_pollrate(), fwupdate(), getfwversion(), hwloadmode(), loaddpi(), loadrgb_kb(), loadrgb_mouse(), os_inputmain(), os_usbrecv(), os_usbsend(), savedpi(), savergb_kb(), savergb_mouse(), setactive_kb(), setactive_mouse(), updatedpi(), updatergb_kb(), and updatergb_mouse()\&.
 .SS "#define NEEDS_FW_UPDATE(kb)   ((kb)->fwversion == 0 && \fBHAS_FEATURES\fP((kb), \fBFEAT_FWUPDATE\fP | \fBFEAT_FWVERSION\fP))"
 
 .PP
-Definition at line 160 of file structures\&.h\&.
+Definition at line 161 of file structures\&.h\&.
 .PP
 Referenced by _start_dev(), readcmd(), revertusb(), setactive_kb(), and setactive_mouse()\&.
 .SS "#define OUTFIFO_MAX   10"
@@ -723,31 +726,31 @@ Referenced by _mknotifynode(), _rmnotifynode(), inputupdate_keys(), nprintf(), r
 .SS "#define PR_NAME_LEN   16"
 
 .PP
-Definition at line 98 of file structures\&.h\&.
+Definition at line 99 of file structures\&.h\&.
 .PP
 Referenced by cmd_hwload_kb(), cmd_hwload_mouse(), cmd_profilename(), getprofilename(), hwtonative(), and nativetohw()\&.
 .SS "#define SCROLL_ACCELERATED   0"
 
 .PP
-Definition at line 163 of file structures\&.h\&.
+Definition at line 164 of file structures\&.h\&.
 .PP
 Referenced by readcmd()\&.
 .SS "#define SCROLL_MAX   10"
 
 .PP
-Definition at line 165 of file structures\&.h\&.
+Definition at line 166 of file structures\&.h\&.
 .PP
 Referenced by readcmd()\&.
 .SS "#define SCROLL_MIN   1"
 
 .PP
-Definition at line 164 of file structures\&.h\&.
+Definition at line 165 of file structures\&.h\&.
 .PP
 Referenced by readcmd()\&.
 .SS "#define SERIAL_LEN   34"
 
 .PP
-Definition at line 174 of file structures\&.h\&.
+Definition at line 175 of file structures\&.h\&.
 .PP
 Referenced by _setupusb(), and os_setupusb()\&.
 .SS "#define SET_KEYBIT(array, index)   do { (array)[(index) / 8] |= 1 << ((index) % 8); } while(0)"

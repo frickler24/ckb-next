@@ -1,5 +1,5 @@
 <map id="macromask" name="macromask">
-<area shape="rect" id="node2" href="$input_8c.html#aed8e9842ed5750c1d328c5dc4c1ba2bd" title="inputupdate_keys" alt="" coords="145,120,269,147"/>
+<area shape="rect" id="node2" href="$input_8c.html#aed8e9842ed5750c1d328c5dc4c1ba2bd" title="inputupdate_keys Handle input from Keyboard or mouse; start Macrof if detected. " alt="" coords="145,120,269,147"/>
 <area shape="rect" id="node3" href="$input_8h.html#ae360d0b9a764a1d38c5be5464be8b70a" title="inputupdate" alt="" coords="318,120,407,147"/>
 <area shape="rect" id="node4" href="$device__keyboard_8c.html#aeb1b886efdcfce59e4ee8977ba2fd135" title="setactive_kb" alt="" coords="469,56,565,83"/>
 <area shape="rect" id="node7" href="$device__mouse_8c.html#a78f463c19ce586845e80094c949beda2" title="setactive_mouse" alt="" coords="457,120,578,147"/>

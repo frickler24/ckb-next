@@ -1,4 +1,4 @@
-.TH "KbBind" 3 "Wed May 24 2017" "Version beta-v0.2.8+testing at branch testing" "ckb-next" \" -*- nroff -*-
+.TH "KbBind" 3 "Sat Jun 17 2017" "Version beta-v0.2.8 at branch testing" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -889,7 +889,7 @@ Referenced by Kb::frameUpdate()\&.
 244     if(_winLock)
 245         cmd\&.write(" unbind lwin rwin");
 246 
-247     // At last, send Macro definitions if avalilable\&.
+247     // At last, send Macro definitions if available\&.
 248     // If no definitions are made, clear macro will be sent only to reset all macros,
 249     cmd\&.write(macros\&.toLatin1());
 250     lastCmd = &cmd;

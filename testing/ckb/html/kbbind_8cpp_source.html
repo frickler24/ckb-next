@@ -31,7 +31,7 @@
   <td id="projectlogo"><img alt="Logo" src="ckb-128.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">ckb-next
-   &#160;<span id="projectnumber">beta-v0.2.8+testing at branch testing</span>
+   &#160;<span id="projectnumber">beta-v0.2.8 at branch testing</span>
    </div>
    <div id="projectbrief">ckb-next driver for corsair devices</div>
   </td>
@@ -345,7 +345,7 @@ $(document).ready(function(){initNavTree('kbbind_8cpp_source.html','');});
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="classKbBind.html#a0b1211db7844d3c2cc7c9896cb489a7e">_winLock</a>)</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        cmd.write(<span class="stringliteral">&quot; unbind lwin rwin&quot;</span>);</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="comment">// At last, send Macro definitions if avalilable.</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="comment">// At last, send Macro definitions if available.</span></div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="comment">// If no definitions are made, clear macro will be sent only to reset all macros,</span></div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    cmd.write(macros.toLatin1());</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <a class="code" href="classKbBind.html#acb9288a71764f0191f2a624bde228351">lastCmd</a> = &amp;cmd;</div>
@@ -394,7 +394,7 @@ $(document).ready(function(){initNavTree('kbbind_8cpp_source.html','');});
 <div class="ttc" id="classKeyAction_html_a67bbf6dd422e76ef20ed858f28bb4b21"><div class="ttname"><a href="classKeyAction.html#a67bbf6dd422e76ef20ed858f28bb4b21">KeyAction::value</a></div><div class="ttdeci">QString value() const </div><div class="ttdef"><b>Definition:</b> <a href="keyaction_8h_source.html#l00019">keyaction.h:19</a></div></div>
 <div class="ttc" id="classKbBind_html_a070b6ad8caef322e2f16ba712b0fd242"><div class="ttname"><a href="classKbBind.html#a070b6ad8caef322e2f16ba712b0fd242">KbBind::setGlobalRemap</a></div><div class="ttdeci">static void setGlobalRemap(const QHash&lt; QString, QString &gt; keyToActual)</div><div class="ttdef"><b>Definition:</b> <a href="kbbind_8cpp_source.html#l00104">kbbind.cpp:104</a></div></div>
 <div class="ttc" id="classKbBind_html_af876f15671f6088e6f37f99dac79d298"><div class="ttname"><a href="classKbBind.html#af876f15671f6088e6f37f99dac79d298">KbBind::map</a></div><div class="ttdeci">const KeyMap &amp; map()</div><div class="ttdef"><b>Definition:</b> <a href="kbbind_8h_source.html#l00041">kbbind.h:41</a></div></div>
-<div class="ttc" id="classKeyAction_html_ae657d934ff312fb11e306472472b31ef"><div class="ttname"><a href="classKeyAction.html#ae657d934ff312fb11e306472472b31ef">KeyAction::isValidMacro</a></div><div class="ttdeci">bool isValidMacro() const </div><div class="ttdoc">isValidMacro checks whether a keyAction contains a valid macro. This is done easily: If the macro act...</div><div class="ttdef"><b>Definition:</b> <a href="keyaction_8h_source.html#l00054">keyaction.h:54</a></div></div>
+<div class="ttc" id="classKeyAction_html_ae657d934ff312fb11e306472472b31ef"><div class="ttname"><a href="classKeyAction.html#ae657d934ff312fb11e306472472b31ef">KeyAction::isValidMacro</a></div><div class="ttdeci">bool isValidMacro() const </div><div class="ttdoc">isValidMacro checks whether a keyAction contains a valid macro. This is done easily: If the macro act...</div><div class="ttdef"><b>Definition:</b> <a href="keyaction_8h_source.html#l00055">keyaction.h:55</a></div></div>
 <div class="ttc" id="classKeyAction_html"><div class="ttname"><a href="classKeyAction.html">KeyAction</a></div><div class="ttdef"><b>Definition:</b> <a href="keyaction_8h_source.html#l00013">keyaction.h:13</a></div></div>
 <div class="ttc" id="classKbMode_html_afdfc0cdec0315dd3b2ab6506f6ef43f9"><div class="ttname"><a href="classKbMode.html#afdfc0cdec0315dd3b2ab6506f6ef43f9">KbMode::light</a></div><div class="ttdeci">KbLight * light()</div><div class="ttdef"><b>Definition:</b> <a href="kbmode_8h_source.html#l00060">kbmode.h:60</a></div></div>
 <div class="ttc" id="classKbBind_html_a632bb3815ab03058c6f2273ad6311aa7"><div class="ttname"><a href="classKbBind.html#a632bb3815ab03058c6f2273ad6311aa7">KbBind::didLoad</a></div><div class="ttdeci">void didLoad()</div><div class="ttdef"><b>Definition:</b> <a href="moc__kbbind_8cpp_source.html#l00155">moc_kbbind.cpp:155</a></div></div>
@@ -438,7 +438,7 @@ $(document).ready(function(){initNavTree('kbbind_8cpp_source.html','');});
 <div class="ttc" id="classKeyMap_html_af5ee0c50fa207c167783f45ca1ff3b82"><div class="ttname"><a href="classKeyMap.html#af5ee0c50fa207c167783f45ca1ff3b82">KeyMap::fromName</a></div><div class="ttdeci">static KeyMap fromName(const QString &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="keymap_8cpp_source.html#l00535">keymap.cpp:535</a></div></div>
 <div class="ttc" id="classKbBind_html_af0e5585cdc241e42c60fff16985429a0"><div class="ttname"><a href="classKbBind.html#af0e5585cdc241e42c60fff16985429a0">KbBind::getMacroNumber</a></div><div class="ttdeci">int getMacroNumber()</div><div class="ttdoc">KbBind::getMacroNumber. </div><div class="ttdef"><b>Definition:</b> <a href="kbbind_8cpp_source.html#l00257">kbbind.cpp:257</a></div></div>
 <div class="ttc" id="kbmode_8h_html"><div class="ttname"><a href="kbmode_8h.html">kbmode.h</a></div></div>
-<div class="ttc" id="classKeyAction_html_ac72be90499e81c76ae9f908e2a17d1c0"><div class="ttname"><a href="classKeyAction.html#ac72be90499e81c76ae9f908e2a17d1c0">KeyAction::macroContent</a></div><div class="ttdeci">QString macroContent() const </div><div class="ttdoc">macroContent returns the macro key definition only (the second part of the macro action). </div><div class="ttdef"><b>Definition:</b> <a href="keyaction_8h_source.html#l00083">keyaction.h:83</a></div></div>
+<div class="ttc" id="classKeyAction_html_ac72be90499e81c76ae9f908e2a17d1c0"><div class="ttname"><a href="classKeyAction.html#ac72be90499e81c76ae9f908e2a17d1c0">KeyAction::macroContent</a></div><div class="ttdeci">QString macroContent() const </div><div class="ttdoc">macroContent returns the macro key definition only (the second part of the macro action). </div><div class="ttdef"><b>Definition:</b> <a href="keyaction_8h_source.html#l00086">keyaction.h:86</a></div></div>
 <div class="ttc" id="classKbBind_html_afc5c79e15e3ef01fbabc9c3c6d96224d"><div class="ttname"><a href="classKbBind.html#afc5c79e15e3ef01fbabc9c3c6d96224d">KbBind::updated</a></div><div class="ttdeci">void updated()</div><div class="ttdef"><b>Definition:</b> <a href="moc__kbbind_8cpp_source.html#l00167">moc_kbbind.cpp:167</a></div></div>
 <div class="ttc" id="classKbBind_html_a42a6f714e8b39d519aba3958fec30c58"><div class="ttname"><a href="classKbBind.html#a42a6f714e8b39d519aba3958fec30c58">KbBind::_needsUpdate</a></div><div class="ttdeci">bool _needsUpdate</div><div class="ttdef"><b>Definition:</b> <a href="kbbind_8h_source.html#l00134">kbbind.h:134</a></div></div>
 <div class="ttc" id="classKbBind_html_a6708cf21cbbdc520078627a5f875d2d2"><div class="ttname"><a href="classKbBind.html#a6708cf21cbbdc520078627a5f875d2d2">KbBind::layoutChanged</a></div><div class="ttdeci">void layoutChanged()</div><div class="ttdef"><b>Definition:</b> <a href="moc__kbbind_8cpp_source.html#l00161">moc_kbbind.cpp:161</a></div></div>
@@ -454,7 +454,7 @@ $(document).ready(function(){initNavTree('kbbind_8cpp_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_77b5d46a1bc2c75b90444f394c5858ea.html">ckb</a></li><li class="navelem"><a class="el" href="kbbind_8cpp.html">kbbind.cpp</a></li>
-    <li class="footer">Generated on Wed May 24 2017 22:39:46 for ckb-next by
+    <li class="footer">Generated on Sat Jun 17 2017 13:43:58 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

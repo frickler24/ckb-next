@@ -1,6 +1,6 @@
 <map id="nprintkey" name="nprintkey">
 <area shape="rect" id="node2" href="$notify_8c.html#a43f4edf3463eff4979c3ad361ca40306" title="_cmd_get" alt="" coords="151,56,230,83"/>
-<area shape="rect" id="node4" href="$input_8c.html#aed8e9842ed5750c1d328c5dc4c1ba2bd" title="inputupdate_keys" alt="" coords="129,107,253,133"/>
+<area shape="rect" id="node4" href="$input_8c.html#aed8e9842ed5750c1d328c5dc4c1ba2bd" title="inputupdate_keys Handle input from Keyboard or mouse; start Macrof if detected. " alt="" coords="129,107,253,133"/>
 <area shape="rect" id="node3" href="$notify_8h.html#a49d278b14d646bfbd4b466b0fff80aae" title="cmd_get" alt="" coords="311,56,383,83"/>
 <area shape="rect" id="node5" href="$input_8h.html#ae360d0b9a764a1d38c5be5464be8b70a" title="inputupdate" alt="" coords="302,107,391,133"/>
 <area shape="rect" id="node6" href="$usb__linux_8c.html#a9e5784bfca2e4612f498ce67c7dab275" title="os_inputmain This function is run in a separate thread and will be detached from the main thread..." alt="" coords="452,44,551,71"/>

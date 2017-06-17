@@ -16,6 +16,7 @@ var searchData=
   ['name',['name',['../keymap_8h.html#aaa2ca200a4bd86567f53851153b045af',1,'key::name()'],['../structures_8h.html#af61b96d68822607ac4ba55a79d1768a4',1,'usbmode::name()'],['../structures_8h.html#aca3368e410a22815fce21aae42894148',1,'usbprofile::name()'],['../structures_8h.html#a6c497bca5e78f2959b4590bdde095be0',1,'hwprofile::name()'],['../structures_8h.html#afe60cc96ef4f77b69f3d15bc9bfb7f58',1,'usbdevice::name()'],['../usb__linux_8c.html#acb9618ccc26a67ae69db081b7f091495',1,'_model::name()'],['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3a67bc2ced260a8e43805d2480a785d312',1,'NAME():&#160;command.h']]],
   ['nativetohw',['nativetohw',['../profile_8c.html#aab5b57ba9a9f089eaa7b176396dfa3a3',1,'nativetohw(usbprofile *profile, hwprofile *hw, int modecount):&#160;profile.c'],['../profile_8h.html#aab5b57ba9a9f089eaa7b176396dfa3a3',1,'nativetohw(usbprofile *profile, hwprofile *hw, int modecount):&#160;profile.c']]],
   ['needs_5ffw_5fupdate',['NEEDS_FW_UPDATE',['../structures_8h.html#ac041871a5605e5dbcd73c3671ef2a8bc',1,'structures.h']]],
+  ['next',['next',['../input_8h.html#a8a3e41c01cd3b7e9299a3f6c79c545f5',1,'ptlist']]],
   ['nk95_5fhwoff',['NK95_HWOFF',['../usb_8h.html#a9078f1b51a13f9710904c08826d57097',1,'usb.h']]],
   ['nk95_5fhwon',['NK95_HWON',['../usb_8h.html#af4d21ffe463251f15ed249be2531d8c7',1,'usb.h']]],
   ['nk95_5fm1',['NK95_M1',['../usb_8h.html#ae7897e304126f1b024206ea3001d377d',1,'usb.h']]],

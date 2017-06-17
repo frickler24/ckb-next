@@ -1,4 +1,4 @@
-.TH "src/ckb-daemon/input.h" 3 "Wed May 24 2017" "Version beta-v0.2.8+testing at branch testing" "ckb-next" \" -*- nroff -*-
+.TH "src/ckb-daemon/input.h" 3 "Sat Jun 17 2017" "Version beta-v0.2.8 at branch testing" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -11,12 +11,36 @@ src/ckb-daemon/input.h \-
 \fC#include 'usb\&.h'\fP
 .br
 
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBparameter\fP"
+.br
+.RI "\fIstruct parameter contains the values for a fresh started macro_play thread\&. \fIparameter_t\fP is the typedef for it\&. \fP"
+.ti -1c
+.RI "struct \fBptlist\fP"
+.br
+.RI "\fIstruct ptlist is one element in the single linked list to store macro_play threads waiting for their execution \fIptlist_t\fP is the typedef for it\&. \fP"
+.in -1c
 .SS "Macros"
 
 .in +1c
 .ti -1c
 .RI "#define \fBIS_MOD\fP(s)   ((s) == KEY_CAPSLOCK || (s) == KEY_NUMLOCK || (s) == KEY_SCROLLLOCK || (s) == KEY_LEFTSHIFT || (s) == KEY_RIGHTSHIFT || (s) == KEY_LEFTCTRL || (s) == KEY_RIGHTCTRL || (s) == KEY_LEFTMETA || (s) == KEY_RIGHTMETA || (s) == KEY_LEFTALT || (s) == KEY_RIGHTALT || (s) == KEY_FN)"
 .br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBparameter\fP \fBparameter_t\fP"
+.br
+.RI "\fIstruct parameter contains the values for a fresh started macro_play thread\&. \fIparameter_t\fP is the typedef for it\&. \fP"
+.ti -1c
+.RI "typedef struct \fBptlist\fP \fBptlist_t\fP"
+.br
+.RI "\fIstruct ptlist is one element in the single linked list to store macro_play threads waiting for their execution \fIptlist_t\fP is the typedef for it\&. \fP"
 .in -1c
 .SS "Functions"
 
@@ -62,6 +86,36 @@ src/ckb-daemon/input.h \-
 .RI "int \fBos_setupindicators\fP (\fBusbdevice\fP *kb)"
 .br
 .in -1c
+.SH "Data Structure Documentation"
+.PP 
+.SH "struct parameter"
+.PP 
+Definition at line 54 of file input\&.h\&.
+.PP
+\fBData Fields:\fP
+.RS 4
+\fBusbdevice\fP * \fIkb\fP 
+.br
+.PP
+\fBkeymacro\fP * \fImacro\fP 
+.br
+.PP
+.RE
+.PP
+.SH "struct ptlist"
+.PP 
+Definition at line 62 of file input\&.h\&.
+.PP
+\fBData Fields:\fP
+.RS 4
+struct \fBptlist\fP * \fInext\fP 
+.br
+.PP
+pthread_t \fIthread_id\fP 
+.br
+.PP
+.RE
+.PP
 .SH "Macro Definition Documentation"
 .PP 
 .SS "#define IS_MOD(s)   ((s) == KEY_CAPSLOCK || (s) == KEY_NUMLOCK || (s) == KEY_SCROLLLOCK || (s) == KEY_LEFTSHIFT || (s) == KEY_RIGHTSHIFT || (s) == KEY_LEFTCTRL || (s) == KEY_RIGHTCTRL || (s) == KEY_LEFTMETA || (s) == KEY_RIGHTMETA || (s) == KEY_LEFTALT || (s) == KEY_RIGHTALT || (s) == KEY_FN)"
@@ -70,148 +124,154 @@ src/ckb-daemon/input.h \-
 Definition at line 34 of file input\&.h\&.
 .PP
 Referenced by inputupdate_keys()\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBparameter\fP  \fBparameter_t\fP"
+
+.SS "typedef struct \fBptlist\fP  \fBptlist_t\fP"
+
 .SH "Function Documentation"
 .PP 
 .SS "void cmd_bind (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, intdummy, intkeyindex, const char *to)"
 
 .PP
-Definition at line 188 of file input\&.c\&.
+Definition at line 307 of file input\&.c\&.
 .PP
 References binding::base, usbmode::bind, imutex, keymap, N_KEYS_INPUT, and key::scan\&.
 .PP
 .nf
-188                                                                                     {
-189     if(keyindex >= N_KEYS_INPUT)
-190         return;
-191     // Find the key to bind to
-192     int tocode = 0;
-193     if(sscanf(to, "#x%ux", &tocode) != 1 && sscanf(to, "#%u", &tocode) == 1 && tocode < N_KEYS_INPUT){
-194         pthread_mutex_lock(imutex(kb));
-195         mode->bind\&.base[keyindex] = tocode;
-196         pthread_mutex_unlock(imutex(kb));
-197         return;
-198     }
-199     // If not numeric, look it up
-200     for(int i = 0; i < N_KEYS_INPUT; i++){
-201         if(keymap[i]\&.name && !strcmp(to, keymap[i]\&.name)){
-202             pthread_mutex_lock(imutex(kb));
-203             mode->bind\&.base[keyindex] = keymap[i]\&.scan;
-204             pthread_mutex_unlock(imutex(kb));
-205             return;
-206         }
-207     }
-208 }
+307                                                                                     {
+308     if(keyindex >= N_KEYS_INPUT)
+309         return;
+310     // Find the key to bind to
+311     int tocode = 0;
+312     if(sscanf(to, "#x%ux", &tocode) != 1 && sscanf(to, "#%u", &tocode) == 1 && tocode < N_KEYS_INPUT){
+313         pthread_mutex_lock(imutex(kb));
+314         mode->bind\&.base[keyindex] = tocode;
+315         pthread_mutex_unlock(imutex(kb));
+316         return;
+317     }
+318     // If not numeric, look it up
+319     for(int i = 0; i < N_KEYS_INPUT; i++){
+320         if(keymap[i]\&.name && !strcmp(to, keymap[i]\&.name)){
+321             pthread_mutex_lock(imutex(kb));
+322             mode->bind\&.base[keyindex] = keymap[i]\&.scan;
+323             pthread_mutex_unlock(imutex(kb));
+324             return;
+325         }
+326     }
+327 }
 .fi
 .SS "void cmd_macro (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, const intnotifynumber, const char *keys, const char *assignment)"
 
 .PP
-Definition at line 332 of file input\&.c\&.
+Definition at line 467 of file input\&.c\&.
 .PP
 References _cmd_macro(), and imutex\&.
 .PP
 .nf
-332                                                                                                               {
-333     pthread_mutex_lock(imutex(kb));
-334     _cmd_macro(mode, keys, assignment);
-335     pthread_mutex_unlock(imutex(kb));
-336 }
+467                                                                                                               {
+468     pthread_mutex_lock(imutex(kb));
+469     _cmd_macro(mode, keys, assignment);
+470     pthread_mutex_unlock(imutex(kb));
+471 }
 .fi
 .SS "void cmd_rebind (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, intdummy, intkeyindex, const char *ignored)"
 
 .PP
-Definition at line 218 of file input\&.c\&.
+Definition at line 337 of file input\&.c\&.
 .PP
 References binding::base, usbmode::bind, imutex, keymap, N_KEYS_INPUT, and key::scan\&.
 .PP
 .nf
-218                                                                                       {
-219     if(keyindex >= N_KEYS_INPUT)
-220         return;
-221     pthread_mutex_lock(imutex(kb));
-222     mode->bind\&.base[keyindex] = keymap[keyindex]\&.scan;
-223     pthread_mutex_unlock(imutex(kb));
-224 }
+337                                                                                       {
+338     if(keyindex >= N_KEYS_INPUT)
+339         return;
+340     pthread_mutex_lock(imutex(kb));
+341     mode->bind\&.base[keyindex] = keymap[keyindex]\&.scan;
+342     pthread_mutex_unlock(imutex(kb));
+343 }
 .fi
 .SS "void cmd_unbind (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, intdummy, intkeyindex, const char *ignored)"
 
 .PP
-Definition at line 210 of file input\&.c\&.
+Definition at line 329 of file input\&.c\&.
 .PP
 References binding::base, usbmode::bind, imutex, KEY_UNBOUND, and N_KEYS_INPUT\&.
 .PP
 .nf
-210                                                                                       {
-211     if(keyindex >= N_KEYS_INPUT)
-212         return;
-213     pthread_mutex_lock(imutex(kb));
-214     mode->bind\&.base[keyindex] = KEY_UNBOUND;
-215     pthread_mutex_unlock(imutex(kb));
-216 }
+329                                                                                       {
+330     if(keyindex >= N_KEYS_INPUT)
+331         return;
+332     pthread_mutex_lock(imutex(kb));
+333     mode->bind\&.base[keyindex] = KEY_UNBOUND;
+334     pthread_mutex_unlock(imutex(kb));
+335 }
 .fi
 .SS "void freebind (\fBbinding\fP *bind)"
 
 .PP
-Definition at line 181 of file input\&.c\&.
+Definition at line 300 of file input\&.c\&.
 .PP
 References keymacro::actions, binding::macrocount, and binding::macros\&.
 .PP
 Referenced by freemode()\&.
 .PP
 .nf
-181                             {
-182     for(int i = 0; i < bind->macrocount; i++)
-183         free(bind->macros[i]\&.actions);
-184     free(bind->macros);
-185     memset(bind, 0, sizeof(*bind));
-186 }
+300                             {
+301     for(int i = 0; i < bind->macrocount; i++)
+302         free(bind->macros[i]\&.actions);
+303     free(bind->macros);
+304     memset(bind, 0, sizeof(*bind));
+305 }
 .fi
 .SS "void initbind (\fBbinding\fP *bind)"
 
 .PP
-Definition at line 173 of file input\&.c\&.
+Definition at line 292 of file input\&.c\&.
 .PP
 References binding::base, keymap, binding::macrocap, binding::macrocount, binding::macros, N_KEYS_INPUT, and key::scan\&.
 .PP
 Referenced by initmode()\&.
 .PP
 .nf
-173                             {
-174     for(int i = 0; i < N_KEYS_INPUT; i++)
-175         bind->base[i] = keymap[i]\&.scan;
-176     bind->macros = calloc(32, sizeof(keymacro));
-177     bind->macrocap = 32;
-178     bind->macrocount = 0;
-179 }
+292                             {
+293     for(int i = 0; i < N_KEYS_INPUT; i++)
+294         bind->base[i] = keymap[i]\&.scan;
+295     bind->macros = calloc(32, sizeof(keymacro));
+296     bind->macrocap = 32;
+297     bind->macrocount = 0;
+298 }
 .fi
 .SS "void inputupdate (\fBusbdevice\fP *kb)"
 
 .PP
-Definition at line 122 of file input\&.c\&.
+Definition at line 241 of file input\&.c\&.
 .PP
 References usbdevice::input, inputupdate_keys(), os_mousemove(), usbdevice::profile, usbinput::rel_x, usbinput::rel_y, usbdevice::uinput_kb, and usbdevice::uinput_mouse\&.
 .PP
 Referenced by os_inputmain(), setactive_kb(), and setactive_mouse()\&.
 .PP
 .nf
-122                                {
-123 #ifdef OS_LINUX
-124     if((!kb->uinput_kb || !kb->uinput_mouse)
-125 #else
-126     if(!kb->event
-127 #endif
-128             || !kb->profile)
-129         return;
-130     // Process key/button input
-131     inputupdate_keys(kb);
-132     // Process mouse movement
-133     usbinput* input = &kb->input;
-134     if(input->rel_x != 0 || input->rel_y != 0){
-135         os_mousemove(kb, input->rel_x, input->rel_y);
-136         input->rel_x = input->rel_y = 0;
-137     }
-138     // Finish up
-139     memcpy(input->prevkeys, input->keys, N_KEYBYTES_INPUT);
-140 }
+241                                {
+242 #ifdef OS_LINUX
+243     if((!kb->uinput_kb || !kb->uinput_mouse)
+244 #else
+245     if(!kb->event
+246 #endif
+247             || !kb->profile)
+248         return;
+249     // Process key/button input
+250     inputupdate_keys(kb);
+251     // Process mouse movement
+252     usbinput* input = &kb->input;
+253     if(input->rel_x != 0 || input->rel_y != 0){
+254         os_mousemove(kb, input->rel_x, input->rel_y);
+255         input->rel_x = input->rel_y = 0;
+256     }
+257     // Finish up
+258     memcpy(input->prevkeys, input->keys, N_KEYBYTES_INPUT);
+259 }
 .fi
 .SS "void os_inputclose (\fBusbdevice\fP *kb)"
 
@@ -302,7 +362,7 @@ Definition at line 118 of file input_linux\&.c\&.
 .PP
 References BTN_WHEELDOWN, BTN_WHEELUP, ckb_warn, isync(), SCAN_MOUSE, usbdevice::uinput_kb, and usbdevice::uinput_mouse\&.
 .PP
-Referenced by inputupdate_keys()\&.
+Referenced by inputupdate_keys(), and play_macro()\&.
 .PP
 .nf
 118                                                        {
@@ -337,7 +397,7 @@ Definition at line 143 of file input_linux\&.c\&.
 .PP
 References ckb_warn, isync(), usbdevice::uinput_mouse, x, and y\&.
 .PP
-Referenced by inputupdate(), and inputupdate_keys()\&.
+Referenced by inputupdate(), and play_macro()\&.
 .PP
 .nf
 143                                               {
@@ -387,41 +447,41 @@ Referenced by _setupusb()\&.
 .SS "void updateindicators_kb (\fBusbdevice\fP *kb, intforce)"
 
 .PP
-Definition at line 142 of file input\&.c\&.
+Definition at line 261 of file input\&.c\&.
 .PP
 References usbdevice::active, usbprofile::currentmode, DELAY_SHORT, usbdevice::hw_ileds, usbdevice::hw_ileds_old, I_CAPS, I_NUM, I_SCROLL, usbdevice::ileds, usbmode::inotify, usbmode::ioff, usbmode::ion, nprintind(), os_sendindicators(), OUTFIFO_MAX, and usbdevice::profile\&.
 .PP
 .nf
-142                                                   {
-143     // Read current hardware indicator state (set externally)
-144     uchar old = kb->ileds, hw_old = kb->hw_ileds_old;
-145     uchar new = kb->hw_ileds, hw_new = new;
-146     // Update them if needed
-147     if(kb->active){
-148         usbmode* mode = kb->profile->currentmode;
-149         new = (new & ~mode->ioff) | mode->ion;
-150     }
-151     kb->ileds = new;
-152     kb->hw_ileds_old = hw_new;
-153     if(old != new || force){
-154         DELAY_SHORT(kb);
-155         os_sendindicators(kb);
-156     }
-157     // Print notifications if desired
-158     if(!kb->active)
-159         return;
-160     usbmode* mode = kb->profile->currentmode;
-161     uchar indicators[] = { I_NUM, I_CAPS, I_SCROLL };
-162     for(unsigned i = 0; i < sizeof(indicators) / sizeof(uchar); i++){
-163         uchar mask = indicators[i];
-164         if((hw_old & mask) == (hw_new & mask))
-165             continue;
-166         for(int notify = 0; notify < OUTFIFO_MAX; notify++){
-167             if(mode->inotify[notify] & mask)
-168                 nprintind(kb, notify, mask, hw_new & mask);
-169         }
-170     }
-171 }
+261                                                   {
+262     // Read current hardware indicator state (set externally)
+263     uchar old = kb->ileds, hw_old = kb->hw_ileds_old;
+264     uchar new = kb->hw_ileds, hw_new = new;
+265     // Update them if needed
+266     if(kb->active){
+267         usbmode* mode = kb->profile->currentmode;
+268         new = (new & ~mode->ioff) | mode->ion;
+269     }
+270     kb->ileds = new;
+271     kb->hw_ileds_old = hw_new;
+272     if(old != new || force){
+273         DELAY_SHORT(kb);
+274         os_sendindicators(kb);
+275     }
+276     // Print notifications if desired
+277     if(!kb->active)
+278         return;
+279     usbmode* mode = kb->profile->currentmode;
+280     uchar indicators[] = { I_NUM, I_CAPS, I_SCROLL };
+281     for(unsigned i = 0; i < sizeof(indicators) / sizeof(uchar); i++){
+282         uchar mask = indicators[i];
+283         if((hw_old & mask) == (hw_new & mask))
+284             continue;
+285         for(int notify = 0; notify < OUTFIFO_MAX; notify++){
+286             if(mode->inotify[notify] & mask)
+287                 nprintind(kb, notify, mask, hw_new & mask);
+288         }
+289     }
+290 }
 .fi
 .SH "Author"
 .PP 

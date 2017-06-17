@@ -32,6 +32,7 @@ var searchData=
   ['newprofile',['newProfile',['../classKb.html#a0b466f81ac4c0ababdf31c37830b3227',1,'Kb::newProfile()'],['../classKb.html#a2641383a911abd4f9d777f6a3a3322f1',1,'Kb::newProfile(KbProfile *other)']]],
   ['newselection',['newSelection',['../classKeyWidget.html#a9f23700f4275676e2ef581361201043e',1,'KeyWidget::newSelection()'],['../classKbBindWidget.html#ad1ce63ee68f21c7857ca8b24b7bb8309',1,'KbBindWidget::newSelection()'],['../classKbLightWidget.html#ad25f692208da8c01fc483f8d1f979eea',1,'KbLightWidget::newSelection()']]],
   ['newtarget',['newtarget',['../ckb-random_2main_8c.html#ad1efc1fcb05e57f4ccda754ed9945360',1,'main.c']]],
+  ['next',['next',['../input_8h.html#a8a3e41c01cd3b7e9299a3f6c79c545f5',1,'ptlist']]],
   ['next_5fdatablock',['next_datablock',['../zip_8c.html#a1f5abadbf41d82b8724a048a33c4c153',1,'linkedlist_datablock_internal_s']]],
   ['nfft',['nfft',['../__kiss__fft__guts_8h.html#aa7446bded329a40e13aef0826e349791',1,'kiss_fft_state']]],
   ['nk95_5fhwoff',['NK95_HWOFF',['../usb_8h.html#a9078f1b51a13f9710904c08826d57097',1,'usb.h']]],

@@ -31,7 +31,7 @@
   <td id="projectlogo"><img alt="Logo" src="ckb-128.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">ckb-next
-   &#160;<span id="projectnumber">beta-v0.2.8+testing at branch testing</span>
+   &#160;<span id="projectnumber">beta-v0.2.8 at branch testing</span>
    </div>
    <div id="projectbrief">ckb-next driver for corsair devices</div>
   </td>
@@ -355,7 +355,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="devnode_8c_source.html#l00299">299</a> of file <a class="el" href="devnode_8c_source.html">devnode.c</a>.</p>
 
-<p>References <a class="el" href="includes_8h_source.html#l00052">ckb_warn</a>, <a class="el" href="devnode_8c_source.html#l00011">devpath</a>, <a class="el" href="structures_8h_source.html#l00238">usbdevice::fwversion</a>, <a class="el" href="devnode_8c_source.html#l00016">gid</a>, <a class="el" href="includes_8h_source.html#l00027">INDEX_OF</a>, <a class="el" href="device_8c_source.html#l00010">keyboard</a>, <a class="el" href="structures_8h_source.html#l00240">usbdevice::pollrate</a>, and <a class="el" href="devnode_8c_source.html#l00017">S_GID_READ</a>.</p>
+<p>References <a class="el" href="includes_8h_source.html#l00052">ckb_warn</a>, <a class="el" href="devnode_8c_source.html#l00011">devpath</a>, <a class="el" href="structures_8h_source.html#l00239">usbdevice::fwversion</a>, <a class="el" href="devnode_8c_source.html#l00016">gid</a>, <a class="el" href="includes_8h_source.html#l00027">INDEX_OF</a>, <a class="el" href="device_8c_source.html#l00010">keyboard</a>, <a class="el" href="structures_8h_source.html#l00241">usbdevice::pollrate</a>, and <a class="el" href="devnode_8c_source.html#l00017">S_GID_READ</a>.</p>
 
 <p>Referenced by <a class="el" href="devnode_8c_source.html#l00136">_mkdevpath()</a>, and <a class="el" href="firmware_8c_source.html#l00055">fwupdate()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                           {</div>
@@ -392,13 +392,13 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    }</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;}</div>
-<div class="ttc" id="structures_8h_html_a47e0bd130899bcf5acdef059f2970ac7"><div class="ttname"><a href="structures_8h.html#a47e0bd130899bcf5acdef059f2970ac7">usbdevice::fwversion</a></div><div class="ttdeci">ushort fwversion</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00238">structures.h:238</a></div></div>
+<div class="ttc" id="structures_8h_html_a47e0bd130899bcf5acdef059f2970ac7"><div class="ttname"><a href="structures_8h.html#a47e0bd130899bcf5acdef059f2970ac7">usbdevice::fwversion</a></div><div class="ttdeci">ushort fwversion</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00239">structures.h:239</a></div></div>
 <div class="ttc" id="device_8c_html_a5f2ad0f3998226c000c52c5c375c2661"><div class="ttname"><a href="device_8c.html#a5f2ad0f3998226c000c52c5c375c2661">keyboard</a></div><div class="ttdeci">usbdevice keyboard[9]</div><div class="ttdoc">remember all usb devices. Needed for closeusb(). </div><div class="ttdef"><b>Definition:</b> <a href="device_8c_source.html#l00010">device.c:10</a></div></div>
 <div class="ttc" id="devnode_8c_html_a744295e83aec820a837a9bad6606cf06"><div class="ttname"><a href="devnode_8c.html#a744295e83aec820a837a9bad6606cf06">gid</a></div><div class="ttdeci">long gid</div><div class="ttdoc">Group ID for the control nodes. -1 to give read/write access to everybody. </div><div class="ttdef"><b>Definition:</b> <a href="devnode_8c_source.html#l00016">devnode.c:16</a></div></div>
 <div class="ttc" id="includes_8h_html_a8e1e1ac7870420e38a04f30554ff2bbb"><div class="ttname"><a href="includes_8h.html#a8e1e1ac7870420e38a04f30554ff2bbb">ckb_warn</a></div><div class="ttdeci">#define ckb_warn(fmt, args...)</div><div class="ttdef"><b>Definition:</b> <a href="includes_8h_source.html#l00052">includes.h:52</a></div></div>
 <div class="ttc" id="devnode_8c_html_a6bb60389c0bd8be714f8fe2459205c89"><div class="ttname"><a href="devnode_8c.html#a6bb60389c0bd8be714f8fe2459205c89">devpath</a></div><div class="ttdeci">const char *const devpath</div><div class="ttdef"><b>Definition:</b> <a href="devnode_8c_source.html#l00011">devnode.c:11</a></div></div>
 <div class="ttc" id="includes_8h_html_ac114b913ed9d0b7cab3b83188f111530"><div class="ttname"><a href="includes_8h.html#ac114b913ed9d0b7cab3b83188f111530">INDEX_OF</a></div><div class="ttdeci">#define INDEX_OF(entry, array)</div><div class="ttdef"><b>Definition:</b> <a href="includes_8h_source.html#l00027">includes.h:27</a></div></div>
-<div class="ttc" id="structures_8h_html_a56e8458239a40a080e9cccf901875285"><div class="ttname"><a href="structures_8h.html#a56e8458239a40a080e9cccf901875285">usbdevice::pollrate</a></div><div class="ttdeci">char pollrate</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00240">structures.h:240</a></div></div>
+<div class="ttc" id="structures_8h_html_a56e8458239a40a080e9cccf901875285"><div class="ttname"><a href="structures_8h.html#a56e8458239a40a080e9cccf901875285">usbdevice::pollrate</a></div><div class="ttdeci">char pollrate</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00241">structures.h:241</a></div></div>
 <div class="ttc" id="devnode_8c_html_a6630ffde57ae6f653942d21b4868a201"><div class="ttname"><a href="devnode_8c.html#a6630ffde57ae6f653942d21b4868a201">S_GID_READ</a></div><div class="ttdeci">#define S_GID_READ</div><div class="ttdef"><b>Definition:</b> <a href="devnode_8c_source.html#l00017">devnode.c:17</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -442,7 +442,7 @@ Variables</h2></td></tr>
 
 <p>References <a class="el" href="devnode_8c_source.html#l00087">_mknotifynode()</a>, <a class="el" href="os_8h_source.html#l00040">euid_guard_start</a>, and <a class="el" href="os_8h_source.html#l00041">euid_guard_stop</a>.</p>
 
-<p>Referenced by <a class="el" href="command_8c_source.html#l00067">readcmd()</a>.</p>
+<p>Referenced by <a class="el" href="command_8c_source.html#l00068">readcmd()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                           {</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="os_8h.html#aeff95c59e588ab0168a912118675c998">euid_guard_start</a>;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">int</span> res = <a class="code" href="devnode_8c.html#a38fcf6ff044f9249ae04234340ee8e7b">_mknotifynode</a>(kb, notify);</div>
@@ -677,9 +677,9 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="devnode_8c_source.html#l00275">275</a> of file <a class="el" href="devnode_8c_source.html">devnode.c</a>.</p>
 
-<p>References <a class="el" href="devnode_8c_source.html#l00115">_rmnotifynode()</a>, <a class="el" href="includes_8h_source.html#l00055">ckb_info</a>, <a class="el" href="includes_8h_source.html#l00052">ckb_warn</a>, <a class="el" href="devnode_8c_source.html#l00011">devpath</a>, <a class="el" href="os_8h_source.html#l00040">euid_guard_start</a>, <a class="el" href="os_8h_source.html#l00041">euid_guard_stop</a>, <a class="el" href="includes_8h_source.html#l00027">INDEX_OF</a>, <a class="el" href="structures_8h_source.html#l00224">usbdevice::infifo</a>, <a class="el" href="device_8c_source.html#l00010">keyboard</a>, <a class="el" href="structures_8h_source.html#l00024">OUTFIFO_MAX</a>, and <a class="el" href="devnode_8c_source.html#l00019">rm_recursive()</a>.</p>
+<p>References <a class="el" href="devnode_8c_source.html#l00115">_rmnotifynode()</a>, <a class="el" href="includes_8h_source.html#l00055">ckb_info</a>, <a class="el" href="includes_8h_source.html#l00052">ckb_warn</a>, <a class="el" href="devnode_8c_source.html#l00011">devpath</a>, <a class="el" href="os_8h_source.html#l00040">euid_guard_start</a>, <a class="el" href="os_8h_source.html#l00041">euid_guard_stop</a>, <a class="el" href="includes_8h_source.html#l00027">INDEX_OF</a>, <a class="el" href="structures_8h_source.html#l00225">usbdevice::infifo</a>, <a class="el" href="device_8c_source.html#l00010">keyboard</a>, <a class="el" href="structures_8h_source.html#l00024">OUTFIFO_MAX</a>, and <a class="el" href="devnode_8c_source.html#l00019">rm_recursive()</a>.</p>
 
-<p>Referenced by <a class="el" href="usb_8c_source.html#l00673">closeusb()</a>, and <a class="el" href="main_8c_source.html#l00040">quitWithLock()</a>.</p>
+<p>Referenced by <a class="el" href="usb_8c_source.html#l00677">closeusb()</a>, and <a class="el" href="main_8c_source.html#l00040">quitWithLock()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                            {</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <a class="code" href="os_8h.html#aeff95c59e588ab0168a912118675c998">euid_guard_start</a>;</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keywordtype">int</span> index = <a class="code" href="includes_8h.html#ac114b913ed9d0b7cab3b83188f111530">INDEX_OF</a>(kb, <a class="code" href="device_8c.html#a5f2ad0f3998226c000c52c5c375c2661">keyboard</a>);</div>
@@ -704,7 +704,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;}</div>
 <div class="ttc" id="device_8c_html_a5f2ad0f3998226c000c52c5c375c2661"><div class="ttname"><a href="device_8c.html#a5f2ad0f3998226c000c52c5c375c2661">keyboard</a></div><div class="ttdeci">usbdevice keyboard[9]</div><div class="ttdoc">remember all usb devices. Needed for closeusb(). </div><div class="ttdef"><b>Definition:</b> <a href="device_8c_source.html#l00010">device.c:10</a></div></div>
-<div class="ttc" id="structures_8h_html_a7d1cfa1502994290bd18f564a502e24f"><div class="ttname"><a href="structures_8h.html#a7d1cfa1502994290bd18f564a502e24f">usbdevice::infifo</a></div><div class="ttdeci">int infifo</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00224">structures.h:224</a></div></div>
+<div class="ttc" id="structures_8h_html_a7d1cfa1502994290bd18f564a502e24f"><div class="ttname"><a href="structures_8h.html#a7d1cfa1502994290bd18f564a502e24f">usbdevice::infifo</a></div><div class="ttdeci">int infifo</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00225">structures.h:225</a></div></div>
 <div class="ttc" id="includes_8h_html_a8e1e1ac7870420e38a04f30554ff2bbb"><div class="ttname"><a href="includes_8h.html#a8e1e1ac7870420e38a04f30554ff2bbb">ckb_warn</a></div><div class="ttdeci">#define ckb_warn(fmt, args...)</div><div class="ttdef"><b>Definition:</b> <a href="includes_8h_source.html#l00052">includes.h:52</a></div></div>
 <div class="ttc" id="devnode_8c_html_a6bb60389c0bd8be714f8fe2459205c89"><div class="ttname"><a href="devnode_8c.html#a6bb60389c0bd8be714f8fe2459205c89">devpath</a></div><div class="ttdeci">const char *const devpath</div><div class="ttdef"><b>Definition:</b> <a href="devnode_8c_source.html#l00011">devnode.c:11</a></div></div>
 <div class="ttc" id="includes_8h_html_af3b6c3fbbe2da20e4058fd83084329a6"><div class="ttname"><a href="includes_8h.html#af3b6c3fbbe2da20e4058fd83084329a6">ckb_info</a></div><div class="ttdeci">#define ckb_info(fmt, args...)</div><div class="ttdef"><b>Definition:</b> <a href="includes_8h_source.html#l00055">includes.h:55</a></div></div>
@@ -767,7 +767,7 @@ Variables</h2></td></tr>
 
 <p>References <a class="el" href="devnode_8c_source.html#l00115">_rmnotifynode()</a>, <a class="el" href="os_8h_source.html#l00040">euid_guard_start</a>, and <a class="el" href="os_8h_source.html#l00041">euid_guard_stop</a>.</p>
 
-<p>Referenced by <a class="el" href="command_8c_source.html#l00067">readcmd()</a>.</p>
+<p>Referenced by <a class="el" href="command_8c_source.html#l00068">readcmd()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                                           {</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="os_8h.html#aeff95c59e588ab0168a912118675c998">euid_guard_start</a>;</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordtype">int</span> res = <a class="code" href="devnode_8c.html#a9d97ede033e4f6c6bdd1c66fc82aa15e">_rmnotifynode</a>(kb, notify);</div>
@@ -819,7 +819,7 @@ Variables</h2></td></tr>
 
 <p>References <a class="el" href="devnode_8c_source.html#l00055">_updateconnected()</a>, <a class="el" href="os_8h_source.html#l00040">euid_guard_start</a>, and <a class="el" href="os_8h_source.html#l00041">euid_guard_stop</a>.</p>
 
-<p>Referenced by <a class="el" href="usb_8c_source.html#l00214">_setupusb()</a>, and <a class="el" href="usb_8c_source.html#l00673">closeusb()</a>.</p>
+<p>Referenced by <a class="el" href="usb_8c_source.html#l00214">_setupusb()</a>, and <a class="el" href="usb_8c_source.html#l00677">closeusb()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                      {</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="os_8h.html#aeff95c59e588ab0168a912118675c998">euid_guard_start</a>;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="devnode_8c.html#acc36eaba5eb854461ab3c0a4d146e9c9">_updateconnected</a>();</div>
@@ -890,7 +890,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c663af95b3406af676444e819a47854e.html">ckb-daemon</a></li><li class="navelem"><a class="el" href="devnode_8h.html">devnode.h</a></li>
-    <li class="footer">Generated on Wed May 24 2017 22:39:50 for ckb-next by
+    <li class="footer">Generated on Sat Jun 17 2017 13:44:01 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['kb',['kb',['../input_8h.html#aebefc6a57b9fec687b67f16054a985fe',1,'parameter']]],
   ['kb_5fname_5flen',['KB_NAME_LEN',['../structures_8h.html#a32d661966379fef9590d62fcb70a384f',1,'structures.h']]],
   ['kbsyspath',['kbsyspath',['../usb__linux_8c.html#a1b952c601049b156fe39d96473aaca3a',1,'usb_linux.c']]],
   ['key',['key',['../keymap_8h.html#structkey',1,'']]],

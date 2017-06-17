@@ -15,7 +15,6 @@ var searchData=
   ['gridlayout_5f5',['gridLayout_5',['../classUi__KbWidget.html#a9c1ca9ba6a16ef3d53a4681d8dfa1ae3',1,'Ui_KbWidget::gridLayout_5()'],['../classUi__RebindWidget.html#abde125f824afb9a4f17b651241c6aa05',1,'Ui_RebindWidget::gridLayout_5()'],['../classUi__SettingsWidget.html#affff027c44bb4ffe0b50b65843b451af',1,'Ui_SettingsWidget::gridLayout_5()']]],
   ['gridlayout_5f7',['gridLayout_7',['../classUi__KbWidget.html#a498906da74b2d2f7b5ea905f1747a8b9',1,'Ui_KbWidget']]],
   ['gridlayout_5f8',['gridLayout_8',['../classUi__RebindWidget.html#aaa33221b6978967852647dcbcbf2b2f6',1,'Ui_RebindWidget']]],
-  ['groupbox',['groupBox',['../classUi__RebindWidget.html#a0b5458feb5dc8ed743df9df68e7f4aa7',1,'Ui_RebindWidget']]],
   ['groupbox_5f2',['groupBox_2',['../classUi__GradientDialog.html#a58b7c3f734e711d248cf1fefdfb0258a',1,'Ui_GradientDialog::groupBox_2()'],['../classUi__RebindWidget.html#af476787cc9a07395b6f59d8983ca287d',1,'Ui_RebindWidget::groupBox_2()']]],
   ['groupbox_5f3',['groupBox_3',['../classUi__RebindWidget.html#a3ca0792a7274e4626c4600b690216154',1,'Ui_RebindWidget']]],
   ['groupbox_5f4',['groupBox_4',['../classUi__RebindWidget.html#a35460fca7bcfd59d06e62763fafa3966',1,'Ui_RebindWidget']]],

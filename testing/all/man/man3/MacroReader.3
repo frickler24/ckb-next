@@ -1,4 +1,4 @@
-.TH "MacroReader" 3 "Wed May 24 2017" "Version beta-v0.2.8+testing at branch testing" "ckb-next" \" -*- nroff -*-
+.TH "MacroReader" 3 "Sat Jun 17 2017" "Version beta-v0.2.8 at branch testing" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -47,12 +47,12 @@ Definition at line 87 of file macroreader\&.h\&.
 .SS "MacroReader::MacroReader ()"
 
 .PP
-Definition at line 8 of file macroreader\&.cpp\&.
+Definition at line 9 of file macroreader\&.cpp\&.
 .PP
 .nf
-8                          {
-9     qDebug() << "Calling MacroReader without params is not allowed\&.";
-10 }
+9                          {
+10     qDebug() << "Calling MacroReader without params is not allowed\&.";
+11 }
 .fi
 .SS "MacroReader::MacroReader (intmacroNumber, QStringmacroPath, QPlainTextEdit *macBox, QPlainTextEdit *macText)"
 
@@ -70,22 +70,22 @@ Definition at line 8 of file macroreader\&.cpp\&.
 .PP
 
 .PP
-Definition at line 12 of file macroreader\&.cpp\&.
+Definition at line 13 of file macroreader\&.cpp\&.
 .PP
 References startWorkInAThread()\&.
 .PP
 .nf
-12                                                                                                             {
-13     startWorkInAThread(macroNumber, macroPath, macBox, macText);
-14 }
+13                                                                                                             {
+14     startWorkInAThread(macroNumber, macroPath, macBox, macText);
+15 }
 .fi
 .SS "MacroReader::~MacroReader ()"
 
 .PP
-Definition at line 15 of file macroreader\&.cpp\&.
+Definition at line 16 of file macroreader\&.cpp\&.
 .PP
 .nf
-15 {}
+16 {}
 .fi
 .SH "Member Function Documentation"
 .PP 
@@ -105,18 +105,18 @@ Definition at line 15 of file macroreader\&.cpp\&.
 .PP
 
 .PP
-Definition at line 17 of file macroreader\&.cpp\&.
+Definition at line 18 of file macroreader\&.cpp\&.
 .PP
 References macroReaderThread\&.
 .PP
 Referenced by MacroReader()\&.
 .PP
 .nf
-17                                                                                                                         {
-18     macroReaderThread = new MacroReaderThread(macroNumber, macroPath, macBox, macText);
-19     connect(macroReaderThread, &MacroReaderThread::finished, macroReaderThread, &QObject::deleteLater);
-20     macroReaderThread->start();
-21 }
+18                                                                                                                         {
+19     macroReaderThread = new MacroReaderThread(macroNumber, macroPath, macBox, macText);
+20     connect(macroReaderThread, &MacroReaderThread::finished, macroReaderThread, &QObject::deleteLater);
+21     macroReaderThread->start();
+22 }
 .fi
 .SH "Field Documentation"
 .PP 

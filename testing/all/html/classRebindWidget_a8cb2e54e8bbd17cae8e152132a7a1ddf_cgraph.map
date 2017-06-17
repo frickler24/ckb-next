@@ -1,5 +1,5 @@
 <map id="RebindWidget::on_cancelButton_clicked" name="RebindWidget::on_cancelButton_clicked">
-<area shape="rect" id="node2" href="$classRebindWidget.html#a0edad41d578028bea3ea0e327fc4c203" title="RebindWidget::setSelection" alt="" coords="264,993,448,1020"/>
+<area shape="rect" id="node2" href="$classRebindWidget.html#a0edad41d578028bea3ea0e327fc4c203" title="RebindWidget::setSelection" alt="" coords="264,1044,448,1071"/>
 <area shape="rect" id="node3" href="$classKbBind.html#a5ec162b416f0ffad926348db02db3084" title="KbBind::light" alt="" coords="779,31,875,57"/>
 <area shape="rect" id="node6" href="$classKbLight.html#a0d37ba50d07c949db3d9714f9b559e6b" title="KbLight::animList" alt="" coords="765,81,888,108"/>
 <area shape="rect" id="node7" href="$classKbAnim.html#aacd458fb1f1a853a483ec2798370ba87" title="KbAnim::name" alt="" coords="539,740,647,767"/>
@@ -17,10 +17,12 @@
 <area shape="rect" id="node37" href="$classKbLight.html#afc31bb8970f598aa20c1012c330cd8bf" title="KbLight::findAnimIdx" alt="" coords="522,639,665,665"/>
 <area shape="rect" id="node39" href="$classKeyAction.html#ad393200d82796ade359ae0e1959dbca8" title="KeyAction::isSpecial" alt="" coords="522,1044,665,1071"/>
 <area shape="rect" id="node40" href="$classKeyAction.html#af79fe655405a66e7135170cfe57dafd5" title="KeyAction::specialInfo" alt="" coords="517,1297,670,1324"/>
-<area shape="rect" id="node41" href="$classKeyAction.html#ae657d934ff312fb11e306472472b31ef" title="isValidMacro checks whether a keyAction contains a valid macro. This is done easily: If the macro act..." alt="" coords="744,1449,909,1476"/>
-<area shape="rect" id="node43" href="$classKeyAction.html#ac72be90499e81c76ae9f908e2a17d1c0" title="macroContent returns the macro key definition only (the second part of the macro action). " alt="" coords="507,1399,679,1425"/>
-<area shape="rect" id="node44" href="$classKeyAction.html#ac6f54c2e553b6ab11b086f734eac819d" title="macroLine returns all interresting content for a macro definition. " alt="" coords="518,1449,669,1476"/>
-<area shape="rect" id="node45" href="$classKeyAction.html#aa5db7ed889913fde947cfba128c7d80b" title="Debug output for invalid macro Definitions. " alt="" coords="508,1500,679,1527"/>
+<area shape="rect" id="node41" href="$classKeyAction.html#ae657d934ff312fb11e306472472b31ef" title="isValidMacro checks whether a keyAction contains a valid macro. This is done easily: If the macro act..." alt="" coords="744,1475,909,1501"/>
+<area shape="rect" id="node43" href="$classKeyAction.html#ac72be90499e81c76ae9f908e2a17d1c0" title="macroContent returns the macro key definition only (the second part of the macro action). " alt="" coords="507,1449,679,1476"/>
+<area shape="rect" id="node44" href="$classKeyAction.html#ac6f54c2e553b6ab11b086f734eac819d" title="macroLine returns all interresting content for a macro definition. " alt="" coords="518,1500,669,1527"/>
+<area shape="rect" id="node45" href="$classKeyAction.html#a1182588fa5f3158d72830a4b064dfa2d" title="macroTiming returns the macro key definition with original timing infos (the fifth and up to now last..." alt="" coords="511,1348,676,1375"/>
+<area shape="rect" id="node46" href="$classRebindWidget.html#aba2b132778e1ab90c08daa154b99f506" title="RebindWidget::setCorrectRadioButton. " alt="" coords="507,1602,680,1643"/>
+<area shape="rect" id="node47" href="$classKeyAction.html#aa5db7ed889913fde947cfba128c7d80b" title="Debug output for invalid macro Definitions. " alt="" coords="508,1551,679,1577"/>
 <area shape="rect" id="node4" href="$classKbMode.html#afdfc0cdec0315dd3b2ab6506f6ef43f9" title="KbMode::light" alt="" coords="983,5,1086,32"/>
 <area shape="rect" id="node5" href="$classKbBind.html#a92923d9f4643d368f70e54c7f409261c" title="KbBind::modeParent" alt="" coords="963,56,1106,83"/>
 <area shape="rect" id="node9" href="$classKeyAction.html#a7a2b4890c18242420439ac5689be88b0" title="KeyAction::animAction" alt="" coords="749,436,904,463"/>
@@ -42,5 +44,5 @@
 <area shape="rect" id="node27" href="$classRebindWidget.html#a09097e3ff4182f8238e47edabbadf930" title="RebindWidget::helpStatus shows a help line in the ui. " alt="" coords="739,791,914,817"/>
 <area shape="rect" id="node31" href="$classKeyAction.html#a30d7a2f7f10bead67f56dc2d5c8babe3" title="KeyAction::type" alt="" coords="977,1019,1092,1045"/>
 <area shape="rect" id="node38" href="$classKbLight.html#a75b0978957e79b1acb15e35cc91cf778" title="KbLight::findAnim" alt="" coords="764,639,889,665"/>
-<area shape="rect" id="node42" href="$classKeyAction.html#a52e1d42a5993690c760add5321bc79f4" title="KeyAction::isMacro" alt="" coords="967,1475,1103,1501"/>
+<area shape="rect" id="node42" href="$classKeyAction.html#a52e1d42a5993690c760add5321bc79f4" title="KeyAction::isMacro" alt="" coords="967,1505,1103,1532"/>
 </map>
