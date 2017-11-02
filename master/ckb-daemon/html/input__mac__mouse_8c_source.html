@@ -152,7 +152,7 @@ $(document).ready(function(){initNavTree('input__mac__mouse_8c_source.html','');
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// The following functions are modified from IOHIDCopyCFTypeParameter, designed to get the mouse info properly</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">// (it&#39;s stored in several different locations; a naïve search will fail)</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">static</span> kern_return_t IOServiceCopyCF(io_registry_entry_t service, CFStringRef <a class="code" href="keymap_8h.html#structkey">key</a>, CFTypeRef * parameter){</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">static</span> kern_return_t IOServiceCopyCF(io_registry_entry_t service, CFStringRef <a class="code" href="keymap_8h.html#structkey">key</a>, CFTypeRef * <a class="code" href="input_8h.html#structparameter">parameter</a>){</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    kern_return_t   kr = KERN_SUCCESS;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    CFDictionaryRef paramDict;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    CFTypeRef       tempParameter = NULL;</div>
@@ -690,7 +690,7 @@ $(document).ready(function(){initNavTree('input__mac__mouse_8c_source.html','');
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;            (primaryParams-&gt;gain[3].value != 0LL));</div>
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;</div>
 <div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    <span class="comment">// calculate secondary values</span></div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;    bzero(secondaryParams, <span class="keyword">sizeof</span>(secondaryParams));</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;    bzero(secondaryParams, <span class="keyword">sizeof</span>(*secondaryParams));</div>
 <div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    <span class="keywordflow">if</span> ((primaryParams-&gt;tangent[1].value &gt; 0LL) &amp;&amp; (primaryParams-&gt;tangent[1].value &lt; primaryParams-&gt;tangent[0].value))</div>
 <div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;        secondaryParams-&gt;firstTangent = 1;</div>
 <div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;</div>
@@ -1550,6 +1550,7 @@ $(document).ready(function(){initNavTree('input__mac__mouse_8c_source.html','');
 <div class="line"><a name="l01440"></a><span class="lineno"> 1440</span>&#160;</div>
 <div class="line"><a name="l01441"></a><span class="lineno"> 1441</span>&#160;<span class="preprocessor">#endif  // OS_MAC</span></div>
 <div class="ttc" id="includes_8h_html_a8425d7de27df1e0d659d20abbe4151c0"><div class="ttname"><a href="includes_8h.html#a8425d7de27df1e0d659d20abbe4151c0">timespec_gt</a></div><div class="ttdeci">#define timespec_gt(left, right)</div><div class="ttdef"><b>Definition:</b> <a href="includes_8h_source.html#l00059">includes.h:59</a></div></div>
+<div class="ttc" id="input_8h_html_structparameter"><div class="ttname"><a href="input_8h.html#structparameter">parameter</a></div><div class="ttdoc">struct parameter contains the values for a fresh started macro_play thread. parameter_t is the typede...</div><div class="ttdef"><b>Definition:</b> <a href="input_8h_source.html#l00054">input.h:54</a></div></div>
 <div class="ttc" id="includes_8h_html"><div class="ttname"><a href="includes_8h.html">includes.h</a></div></div>
 <div class="ttc" id="includes_8h_html_a992e93f6e648db783f6d04e1ed07176c"><div class="ttname"><a href="includes_8h.html#a992e93f6e648db783f6d04e1ed07176c">timespec_add</a></div><div class="ttdeci">void timespec_add(struct timespec *timespec, long nanoseconds)</div><div class="ttdef"><b>Definition:</b> <a href="main_8c_source.html#l00019">main.c:19</a></div></div>
 <div class="ttc" id="keymap_8h_html_structkey"><div class="ttname"><a href="keymap_8h.html#structkey">key</a></div><div class="ttdef"><b>Definition:</b> <a href="keymap_8h_source.html#l00049">keymap.h:49</a></div></div>
@@ -1559,7 +1560,7 @@ $(document).ready(function(){initNavTree('input__mac__mouse_8c_source.html','');
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c663af95b3406af676444e819a47854e.html">ckb-daemon</a></li><li class="navelem"><a class="el" href="input__mac__mouse_8c.html">input_mac_mouse.c</a></li>
-    <li class="footer">Generated on Wed May 24 2017 08:16:54 for ckb-next by
+    <li class="footer">Generated on Thu Nov 2 2017 17:17:52 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

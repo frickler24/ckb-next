@@ -1,4 +1,4 @@
-.TH "src/ckb-daemon/firmware.h" 3 "Wed May 24 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "src/ckb-daemon/firmware.h" 3 "Thu Nov 2 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -30,30 +30,33 @@ References FEAT_FWUPDATE, FW_NOFILE, FW_OK, FW_USBFAIL, FW_WRONGDEV, fwupdate(),
 .PP
 .nf
 154                                                                                            {
-155     if(!HAS_FEATURES(kb, FEAT_FWUPDATE))
-156         return 0;
-157     // Update the firmware
-158     int ret = fwupdate(kb, path, nnumber);
-159     while(ret == FW_USBFAIL){
-160         // Try to reset the device if it fails
-161         if(usb_tryreset(kb))
-162             break;
-163         ret = fwupdate(kb, path, nnumber);
-164     }
-165     switch(ret){
-166     case FW_OK:
-167         nprintf(kb, nnumber, 0, "fwupdate %s ok\n", path);
-168         break;
-169     case FW_NOFILE:
-170     case FW_WRONGDEV:
-171         nprintf(kb, nnumber, 0, "fwupdate %s invalid\n", path);
-172         break;
-173     case FW_USBFAIL:
-174         nprintf(kb, nnumber, 0, "fwupdate %s fail\n", path);
-175         return -1;
-176     }
-177     return 0;
-178 }
+155     (void)dummy1;
+156     (void)dummy2;
+157 
+158     if(!HAS_FEATURES(kb, FEAT_FWUPDATE))
+159         return 0;
+160     // Update the firmware
+161     int ret = fwupdate(kb, path, nnumber);
+162     while(ret == FW_USBFAIL){
+163         // Try to reset the device if it fails
+164         if(usb_tryreset(kb))
+165             break;
+166         ret = fwupdate(kb, path, nnumber);
+167     }
+168     switch(ret){
+169     case FW_OK:
+170         nprintf(kb, nnumber, 0, "fwupdate %s ok\n", path);
+171         break;
+172     case FW_NOFILE:
+173     case FW_WRONGDEV:
+174         nprintf(kb, nnumber, 0, "fwupdate %s invalid\n", path);
+175         break;
+176     case FW_USBFAIL:
+177         nprintf(kb, nnumber, 0, "fwupdate %s fail\n", path);
+178         return -1;
+179     }
+180     return 0;
+181 }
 .fi
 .SS "int getfwversion (\fBusbdevice\fP *kb)"
 

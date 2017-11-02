@@ -30,6 +30,6 @@ var searchData=
   ['fw_5fok',['FW_OK',['../firmware_8c.html#ac49e2f514ee24881a278e59d5c1d7f47',1,'firmware.c']]],
   ['fw_5fusbfail',['FW_USBFAIL',['../firmware_8c.html#addd952eba26c09705a1666f77afed7fc',1,'firmware.c']]],
   ['fw_5fwrongdev',['FW_WRONGDEV',['../firmware_8c.html#af4889fa85c2de6febffe8d1de3eb90fb',1,'firmware.c']]],
-  ['fwupdate',['fwupdate',['../firmware_8c.html#a23b0c6bc6d6ca8b0324b18869fbbc4d7',1,'fwupdate(usbdevice *kb, const char *path, int nnumber):&#160;firmware.c'],['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3acecdb603bb117091d4cf08bf3d48df09',1,'FWUPDATE():&#160;command.h']]],
+  ['fwupdate',['FWUPDATE',['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3acecdb603bb117091d4cf08bf3d48df09',1,'FWUPDATE():&#160;command.h'],['../firmware_8c.html#a23b0c6bc6d6ca8b0324b18869fbbc4d7',1,'fwupdate(usbdevice *kb, const char *path, int nnumber):&#160;firmware.c']]],
   ['fwversion',['fwversion',['../structures_8h.html#a47e0bd130899bcf5acdef059f2970ac7',1,'usbdevice']]]
 ];

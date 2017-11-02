@@ -58,6 +58,5 @@ var searchData=
   ['mutecolorna',['muteColorNA',['../classUi__KPerfWidget.html#a5e8772b002d1fb23a54392227aab078c',1,'Ui_KPerfWidget']]],
   ['mutecoloroff',['muteColorOff',['../classUi__KPerfWidget.html#a3a20d0aa68360af3abb25ff48685379e',1,'Ui_KPerfWidget']]],
   ['mutecoloron',['muteColorOn',['../classUi__KPerfWidget.html#ad78b7e783f8dd503a1e5f620109c1aef',1,'Ui_KPerfWidget']]],
-  ['mutenacolor',['muteNAColor',['../classKbPerf.html#ab9905363d612bf5a91115b65c94e2752',1,'KbPerf']]],
-  ['muteprocess',['muteProcess',['../media__linux_8cpp.html#a11880811b022c866caa6b97ca3c53834',1,'media_linux.cpp']]]
+  ['mutenacolor',['muteNAColor',['../classKbPerf.html#ab9905363d612bf5a91115b65c94e2752',1,'KbPerf']]]
 ];

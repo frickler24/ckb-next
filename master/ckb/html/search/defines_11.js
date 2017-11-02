@@ -1,17 +1,19 @@
 var searchData=
 [
-  ['unused',['UNUSED',['../quazip__global_8h.html#addf5ec070e9499d36b7f2009ce736076',1,'quazip_global.h']]],
-  ['unz_5fauto_5fclose',['UNZ_AUTO_CLOSE',['../unzip_8h.html#a9cad1371a0ccad9587a8d1e86aec89cc',1,'unzip.h']]],
-  ['unz_5fbadzipfile',['UNZ_BADZIPFILE',['../unzip_8h.html#a3fcc1d41cbea304ce10286ce99577625',1,'unzip.h']]],
-  ['unz_5fbufsize',['UNZ_BUFSIZE',['../unzip_8c.html#ac88907609a3408a8ee6544287b6c9880',1,'unzip.c']]],
-  ['unz_5fcrcerror',['UNZ_CRCERROR',['../unzip_8h.html#ae9155f504a5db40587b390f9e487c303',1,'unzip.h']]],
-  ['unz_5fdefault_5fflags',['UNZ_DEFAULT_FLAGS',['../unzip_8h.html#abd1637707bfd6431e4fd34d9ce799a48',1,'unzip.h']]],
-  ['unz_5fend_5fof_5flist_5fof_5ffile',['UNZ_END_OF_LIST_OF_FILE',['../unzip_8h.html#ac55ed190d07021ce9bc1bf34b91dcae9',1,'unzip.h']]],
-  ['unz_5feof',['UNZ_EOF',['../unzip_8h.html#a0438887aea4e1c58e1b3955838a907f3',1,'unzip.h']]],
-  ['unz_5ferrno',['UNZ_ERRNO',['../unzip_8h.html#aae99fb3e34ea9f78ca8ba4a716f86e68',1,'unzip.h']]],
-  ['unz_5finternalerror',['UNZ_INTERNALERROR',['../unzip_8h.html#a813da146afcb179d57e948bf6871799b',1,'unzip.h']]],
-  ['unz_5fmaxfilenameinzip',['UNZ_MAXFILENAMEINZIP',['../unzip_8c.html#a97ef86322b25dcc3d0fc5eb50d386b54',1,'unzip.c']]],
-  ['unz_5fok',['UNZ_OK',['../unzip_8h.html#ada043545f95ccd4dae93fa44d95e39a8',1,'unzip.h']]],
-  ['unz_5fopenerror',['UNZ_OPENERROR',['../quazip_8h.html#acdd904e23688724c8f589ffd76812f9e',1,'quazip.h']]],
-  ['unz_5fparamerror',['UNZ_PARAMERROR',['../unzip_8h.html#aca983831f4d25e504d544eb07f48e39b',1,'unzip.h']]]
+  ['sabre_5fheight',['SABRE_HEIGHT',['../keymap_8cpp.html#a7af83b9a62e5e91f706571334af0761e',1,'keymap.cpp']]],
+  ['sabre_5fwidth',['SABRE_WIDTH',['../keymap_8cpp.html#aa02d5b3f23a1785974dabd0de81993e9',1,'keymap.cpp']]],
+  ['scim_5fheight',['SCIM_HEIGHT',['../keymap_8cpp.html#a4488e9c2f2a8a7104dc5e77b5fa992cd',1,'keymap.cpp']]],
+  ['scim_5fwidth',['SCIM_WIDTH',['../keymap_8cpp.html#afa14c4ec280e05b84b25f2b3e2e4962e',1,'keymap.cpp']]],
+  ['seek_5fcur',['SEEK_CUR',['../qioapi_8cpp.html#a4c8d0b76b470ba65a43ca46a88320f39',1,'SEEK_CUR():&#160;qioapi.cpp'],['../zip_8c.html#a4c8d0b76b470ba65a43ca46a88320f39',1,'SEEK_CUR():&#160;zip.c']]],
+  ['seek_5fend',['SEEK_END',['../qioapi_8cpp.html#ad2a2e6c114780c3071efd24f16c7f7d8',1,'SEEK_END():&#160;qioapi.cpp'],['../zip_8c.html#ad2a2e6c114780c3071efd24f16c7f7d8',1,'SEEK_END():&#160;zip.c']]],
+  ['seek_5fset',['SEEK_SET',['../qioapi_8cpp.html#a0d112bae8fd35be772185b6ec6bcbe64',1,'SEEK_SET():&#160;qioapi.cpp'],['../zip_8c.html#a0d112bae8fd35be772185b6ec6bcbe64',1,'SEEK_SET():&#160;zip.c']]],
+  ['set_5fend',['SET_END',['../mperfwidget_8cpp.html#aacb40165e62fb091780ce2247ca564fd',1,'mperfwidget.cpp']]],
+  ['set_5fstart',['SET_START',['../mperfwidget_8cpp.html#a1c10f41936892bcfa81bba7db8c43df1',1,'mperfwidget.cpp']]],
+  ['shmem_5fsize',['SHMEM_SIZE',['../main_8cpp.html#af5f1f189381eeaf6528d2ca30bd63d6a',1,'main.cpp']]],
+  ['shmem_5fsize_5fv015',['SHMEM_SIZE_V015',['../main_8cpp.html#a6a8febd68af0a2dafeaa04d21ee09bad',1,'main.cpp']]],
+  ['sizecentraldiritem',['SIZECENTRALDIRITEM',['../unzip_8c.html#ad43fed5cb489b2075313779a757e5c03',1,'unzip.c']]],
+  ['sizecentralheader',['SIZECENTRALHEADER',['../zip_8c.html#a1d462da8349d0e3e53ecbaf284336066',1,'zip.c']]],
+  ['sizedata_5findatablock',['SIZEDATA_INDATABLOCK',['../zip_8c.html#a836292d756d7119c390ac856b702ba82',1,'zip.c']]],
+  ['sizeziplocalheader',['SIZEZIPLOCALHEADER',['../unzip_8c.html#a3c43e42371a71abc3db1b5a013382e77',1,'unzip.c']]],
+  ['strcmpcasenosentivefunction',['STRCMPCASENOSENTIVEFUNCTION',['../unzip_8c.html#a245d2af04dc8b6d6617f21d34635b033',1,'unzip.c']]]
 ];

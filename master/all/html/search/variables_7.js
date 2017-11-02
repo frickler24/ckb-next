@@ -1,9 +1,11 @@
 var searchData=
 [
-  ['g',['g',['../ckb-anim_8h.html#adf239ba255d12b4e433e7b01a3095ed4',1,'ckb_key::g()'],['../ckb-anim_8h.html#ab13cf7a8b60be9fa003e103241eb33c8',1,'ckb_gradient::g()'],['../structures_8h.html#aef072a169d12aabf02985bd659103244',1,'lighting::g()'],['../ckb-random_2main_8c.html#aaa90468fc445cd4003cea65a84dea3e8',1,'rgb::g()']]],
+  ['g',['g',['../ckb-anim_8h.html#adf239ba255d12b4e433e7b01a3095ed4',1,'ckb_key::g()'],['../ckb-anim_8h.html#ab13cf7a8b60be9fa003e103241eb33c8',1,'ckb_gradient::g()'],['../structures_8h.html#a3df276662a9e5c1573c10835db13e0e8',1,'lighting::g()'],['../ckb-random_2main_8c.html#aaa90468fc445cd4003cea65a84dea3e8',1,'rgb::g()']]],
   ['gcounter',['gcounter',['../ckb-mviz_2main_8c.html#abd896a8c5f1fe7538b854a30ff6ba6e0',1,'main.c']]],
   ['gi',['gi',['../unzip_8c.html#a5ba3128f450a732ba83065b99f984d38',1,'unz64_s']]],
   ['gid',['gid',['../devnode_8c.html#a744295e83aec820a837a9bad6606cf06',1,'gid():&#160;devnode.c'],['../devnode_8h.html#a744295e83aec820a837a9bad6606cf06',1,'gid():&#160;devnode.c']]],
+  ['glaivekeys',['GlaiveKeys',['../keymap_8cpp.html#a3707aca1154779f1e3ed7db02d41ecd6',1,'keymap.cpp']]],
+  ['glaiveoverlay',['glaiveOverlay',['../keywidget_8cpp.html#ab627502a089af25953daafd1e92d0c22',1,'keywidget.cpp']]],
   ['globalcache',['globalCache',['../ckbsettings_8cpp.html#a341df76371a67be93f75bcf8d31b48a3',1,'ckbsettings.cpp']]],
   ['globalcomment',['globalcomment',['../zip_8c.html#a997ca8e9d08081a280e32b7c4280f090',1,'zip64_internal']]],
   ['globalremaptime',['globalRemapTime',['../classKbBind.html#a2a8124321f63afcf3d66249bbe573783',1,'KbBind']]],
@@ -17,7 +19,6 @@ var searchData=
   ['gridlayout_5f5',['gridLayout_5',['../classUi__KbWidget.html#a9c1ca9ba6a16ef3d53a4681d8dfa1ae3',1,'Ui_KbWidget::gridLayout_5()'],['../classUi__RebindWidget.html#abde125f824afb9a4f17b651241c6aa05',1,'Ui_RebindWidget::gridLayout_5()'],['../classUi__SettingsWidget.html#affff027c44bb4ffe0b50b65843b451af',1,'Ui_SettingsWidget::gridLayout_5()']]],
   ['gridlayout_5f7',['gridLayout_7',['../classUi__KbWidget.html#a498906da74b2d2f7b5ea905f1747a8b9',1,'Ui_KbWidget']]],
   ['gridlayout_5f8',['gridLayout_8',['../classUi__RebindWidget.html#aaa33221b6978967852647dcbcbf2b2f6',1,'Ui_RebindWidget']]],
-  ['groupbox',['groupBox',['../classUi__RebindWidget.html#a0b5458feb5dc8ed743df9df68e7f4aa7',1,'Ui_RebindWidget']]],
   ['groupbox_5f2',['groupBox_2',['../classUi__GradientDialog.html#a58b7c3f734e711d248cf1fefdfb0258a',1,'Ui_GradientDialog::groupBox_2()'],['../classUi__RebindWidget.html#af476787cc9a07395b6f59d8983ca287d',1,'Ui_RebindWidget::groupBox_2()']]],
   ['groupbox_5f3',['groupBox_3',['../classUi__RebindWidget.html#a3ca0792a7274e4626c4600b690216154',1,'Ui_RebindWidget']]],
   ['groupbox_5f4',['groupBox_4',['../classUi__RebindWidget.html#a35460fca7bcfd59d06e62763fafa3966',1,'Ui_RebindWidget']]],

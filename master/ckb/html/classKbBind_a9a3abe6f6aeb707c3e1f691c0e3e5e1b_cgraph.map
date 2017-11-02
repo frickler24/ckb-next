@@ -1,7 +1,8 @@
 <map id="KbBind::resetAction" name="KbBind::resetAction">
-<area shape="rect" id="node2" href="$classKbBind.html#ab140ce3e9ab0c94d5b23129729234bfb" title="KbBind::action" alt="" coords="192,56,299,83"/>
-<area shape="rect" id="node5" href="$classKbBind.html#a195e520e9f7ee76718ca8ca8927b1d3b" title="KbBind::globalRemap" alt="" coords="347,107,495,133"/>
-<area shape="rect" id="node3" href="$classKbBind.html#a116916d2451ee7dcfe69cd816eb6d255" title="KbBind::bindAction" alt="" coords="355,5,488,32"/>
-<area shape="rect" id="node6" href="$classKeyAction.html#a67bbf6dd422e76ef20ed858f28bb4b21" title="KeyAction::value" alt="" coords="361,56,482,83"/>
-<area shape="rect" id="node4" href="$classKeyAction.html#ae744da2dd239b7d6596a341ea63b0e88" title="KeyAction::defaultAction" alt="" coords="545,5,711,32"/>
+<area shape="rect" id="node2" href="$classKbBind.html#ab140ce3e9ab0c94d5b23129729234bfb" title="KbBind::action" alt="" coords="192,81,299,108"/>
+<area shape="rect" id="node6" href="$classKbBind.html#a195e520e9f7ee76718ca8ca8927b1d3b" title="KbBind::globalRemap" alt="" coords="347,132,495,159"/>
+<area shape="rect" id="node3" href="$classKbBind.html#a3cc447a4a13d60e1dd77ae4c0f6a3e3d" title="KbBind::bindAction" alt="" coords="355,31,488,57"/>
+<area shape="rect" id="node7" href="$classKeyAction.html#a67bbf6dd422e76ef20ed858f28bb4b21" title="KeyAction::value" alt="" coords="361,81,482,108"/>
+<area shape="rect" id="node4" href="$classKeyAction.html#a7350fa57245cfd2f199bb821ef7cda5d" title="KeyAction::defaultAction" alt="" coords="545,5,711,32"/>
+<area shape="rect" id="node5" href="$classKbBind.html#ac4dc2ffee7d967975b8f13c75d52c5a3" title="KbBind::devParent" alt="" coords="563,56,693,83"/>
 </map>

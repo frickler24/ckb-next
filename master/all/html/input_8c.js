@@ -10,6 +10,12 @@ var input_8c =
     [ "initbind", "input_8c.html#a73aa09fc0b9e95c247041549cbc0671e", null ],
     [ "inputupdate", "input_8c.html#ae360d0b9a764a1d38c5be5464be8b70a", null ],
     [ "inputupdate_keys", "input_8c.html#aed8e9842ed5750c1d328c5dc4c1ba2bd", null ],
+    [ "macro_pt_dequeue", "input_8c.html#a712ce5a59c9a281c4d4c4d0ba3446de7", null ],
+    [ "macro_pt_enqueue", "input_8c.html#a225fb4bb1f20d4a8b524f5d72763367d", null ],
+    [ "macro_pt_first", "input_8c.html#a34b6a3d2e97732b6973cd608e35317c9", null ],
     [ "macromask", "input_8c.html#abd38419ce56379559481f51d9491adeb", null ],
-    [ "updateindicators_kb", "input_8c.html#a1126a054e3319ba8cbd74bfbd39099eb", null ]
+    [ "play_macro", "input_8c.html#a42ef48810461524270042eeda9616dba", null ],
+    [ "updateindicators_kb", "input_8c.html#a1126a054e3319ba8cbd74bfbd39099eb", null ],
+    [ "pt_head", "input_8c.html#a00af804e2e97b2bf7c0554dcfc441ce8", null ],
+    [ "pt_tail", "input_8c.html#a1dc43d4d8be547a1bf951261867c34fb", null ]
 ];

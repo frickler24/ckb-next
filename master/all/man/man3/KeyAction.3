@@ -1,4 +1,4 @@
-.TH "KeyAction" 3 "Wed May 24 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "KeyAction" 3 "Thu Nov 2 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -45,7 +45,7 @@ Inherits \fBQObject\fP\&.
 .ti -1c
 .RI "bool \fBisValidMacro\fP () const "
 .br
-.RI "\fIisValidMacro checks whether a keyAction contains a valid macro\&. This is done easily: If the macro action starts with $macro: and has four elements, delimited by ':', we may assume, that is a structural correct macro action\&. \fP"
+.RI "\fIisValidMacro checks whether a keyAction contains a valid macro\&. This is done easily: If the macro action starts with $macro: and has five elements, delimited by ':', we may assume, that is a structural correct macro action\&. If it has 4 entries only, it is an older definition and ok also\&. \fP"
 .ti -1c
 .RI "QStringList \fBmacroLine\fP () const "
 .br
@@ -54,6 +54,10 @@ Inherits \fBQObject\fP\&.
 .RI "QString \fBmacroContent\fP () const "
 .br
 .RI "\fImacroContent returns the macro key definition only (the second part of the macro action)\&. \fP"
+.ti -1c
+.RI "QString \fBmacroTiming\fP () const "
+.br
+.RI "\fImacroTiming returns the macro key definition with original timing infos (the fifth and up to now last part of the macro action)\&. If the implementation does not know anything about delays and has no 5th part, return first part\&. \fP"
 .ti -1c
 .RI "void \fBmacroDisplay\fP ()"
 .br
@@ -89,7 +93,7 @@ Inherits \fBQObject\fP\&.
 .RI "bool \fBisMouse\fP () const "
 .br
 .ti -1c
-.RI "QString \fBspecialInfo\fP (int &parameter) const "
+.RI "QString \fBspecialInfo\fP (int &\fBparameter\fP) const "
 .br
 .ti -1c
 .RI "int \fBprogramInfo\fP (QString &onPress, QString &onRelease) const "
@@ -120,7 +124,7 @@ Inherits \fBQObject\fP\&.
 .RI "static QString \fBnoAction\fP ()"
 .br
 .ti -1c
-.RI "static QString \fBdefaultAction\fP (const QString &\fBkey\fP)"
+.RI "static QString \fBdefaultAction\fP (const QString &\fBkey\fP, \fBKeyMap::Model\fP model)"
 .br
 .ti -1c
 .RI "static QString \fBmodeAction\fP (int mode)"
@@ -159,6 +163,12 @@ Inherits \fBQObject\fP\&.
 .br
 .ti -1c
 .RI "static const int \fBMODE_NEXT_WRAP\fP = -3"
+.br
+.ti -1c
+.RI "static const int \fBDPI_CYCLE_UP\fP = -4"
+.br
+.ti -1c
+.RI "static const int \fBDPI_CYCLE_DOWN\fP = -3"
 .br
 .ti -1c
 .RI "static const int \fBDPI_UP\fP = -2"
@@ -259,14 +269,14 @@ Definition at line 13 of file keyaction\&.h\&.
 .TP
 \fB\fISPECIAL \fP\fP
 .PP
-Definition at line 125 of file keyaction\&.h\&.
+Definition at line 146 of file keyaction\&.h\&.
 .PP
 .nf
-125               {
-126         UNBOUND,
-127         NORMAL,
-128         SPECIAL,
-129     };
+146               {
+147         UNBOUND,
+148         NORMAL,
+149         SPECIAL,
+150     };
 .fi
 .SH "Constructor & Destructor Documentation"
 .PP 
@@ -313,120 +323,122 @@ References preProgram, and relProgram\&.
 .SS "KeyAction::KeyAction (const \fBKeyAction\fP &rhs)\fC [inline]\fP, \fC [private]\fP"
 
 .PP
-Definition at line 166 of file keyaction\&.h\&.
+Definition at line 187 of file keyaction\&.h\&.
 .PP
 .nf
-166 : QObject() {}
+187 : QObject() {}
 .fi
 .SH "Member Function Documentation"
 .PP 
 .SS "void KeyAction::adjustDisplay ()"
 
 .PP
-Definition at line 445 of file keyaction\&.cpp\&.
+Definition at line 464 of file keyaction\&.cpp\&.
 .PP
 Referenced by keyEvent()\&.
 .PP
 .nf
-445                              {
-446 #ifdef USE_LIBX11
-447     // Try to get the current display from the X server
-448     char* display_name = XDisplayName(NULL);
-449     if(!display_name)
-450         return;
-451     Display* display = XOpenDisplay(display_name);
-452     if(!display)
-453         return;
-454     char* display_string = DisplayString(display);
-455     if(!display_string || strlen(display_string) == 0){
-456         XCloseDisplay(display);
-457         return;
-458     }
-459     size_t envstr_size = strlen(display_string) + 4;
-460     char* envstr = new char[envstr_size];
-461     strncpy(envstr, display_string, envstr_size);
-462     envstr[envstr_size - 1] = 0;
-463 
-464     Window root_window = XRootWindow(display, DefaultScreen(display));
-465     Window root_window_ret, child_window_ret, window;
-466     XWindowAttributes attr;
-467     int root_x, root_y, win_x, win_y;
-468     unsigned int mask_ret;
-469 
-470     // Find the screen which currently has the mouse
-471     XQueryPointer(display, root_window, &root_window_ret, &child_window_ret, &root_x, &root_y, &win_x, &win_y, &mask_ret);
-472     if(child_window_ret == (Window)NULL)
-473         window = root_window_ret;
-474     else
-475         window = child_window_ret;
-476     XGetWindowAttributes(display, window,  &attr);
-477 
-478     char* ptr = strchr(envstr, ':');
-479     if(ptr){
-480         ptr = strchr(ptr, '\&.');
-481         if(ptr)
-482             *ptr = '\0';
-483         char buf[16];
-484         snprintf(buf, sizeof(buf), "\&.%i", XScreenNumberOfScreen(attr\&.screen));
-485         strncat(envstr, buf, envstr_size - 1 - strlen(envstr));
-486 
-487         // Update environment variable
-488         setenv("DISPLAY", envstr, 1);
-489     }
-490 
-491     delete[] envstr;
-492     XCloseDisplay(display);
-493 #endif
-494 }
+464                              {
+465 #ifdef USE_LIBX11
+466     // Try to get the current display from the X server
+467     char* display_name = XDisplayName(NULL);
+468     if(!display_name)
+469         return;
+470     Display* display = XOpenDisplay(display_name);
+471     if(!display)
+472         return;
+473     char* display_string = DisplayString(display);
+474     if(!display_string || strlen(display_string) == 0){
+475         XCloseDisplay(display);
+476         return;
+477     }
+478     size_t envstr_size = strlen(display_string) + 4;
+479     char* envstr = new char[envstr_size];
+480     strncpy(envstr, display_string, envstr_size);
+481     envstr[envstr_size - 1] = 0;
+482 
+483     Window root_window = XRootWindow(display, DefaultScreen(display));
+484     Window root_window_ret, child_window_ret, window;
+485     XWindowAttributes attr;
+486     int root_x, root_y, win_x, win_y;
+487     unsigned int mask_ret;
+488 
+489     // Find the screen which currently has the mouse
+490     XQueryPointer(display, root_window, &root_window_ret, &child_window_ret, &root_x, &root_y, &win_x, &win_y, &mask_ret);
+491     if(child_window_ret == (Window)NULL)
+492         window = root_window_ret;
+493     else
+494         window = child_window_ret;
+495     XGetWindowAttributes(display, window,  &attr);
+496 
+497     char* ptr = strchr(envstr, ':');
+498     if(ptr){
+499         ptr = strchr(ptr, '\&.');
+500         if(ptr)
+501             *ptr = '\0';
+502         char buf[16];
+503         snprintf(buf, sizeof(buf), "\&.%i", XScreenNumberOfScreen(attr\&.screen));
+504         strncat(envstr, buf, envstr_size - 1 - strlen(envstr));
+505 
+506         // Update environment variable
+507         setenv("DISPLAY", envstr, 1);
+508     }
+509 
+510     delete[] envstr;
+511     XCloseDisplay(display);
+512 #endif
+513 }
 .fi
 .SS "QString KeyAction::animAction (const QUuid &guid, boolonlyOnce, boolstopOnRelease)\fC [static]\fP"
 
 .PP
-Definition at line 175 of file keyaction\&.cpp\&.
+Definition at line 184 of file keyaction\&.cpp\&.
 .PP
 References ANIM_KRSTOP, and ANIM_ONCE\&.
 .PP
 Referenced by RebindWidget::applyChanges()\&.
 .PP
 .nf
-175                                                                                  {
-176     int flags = (onlyOnce ? ANIM_ONCE : 0) | (stopOnRelease ? ANIM_KRSTOP : 0);
-177     return "$anim:" + guid\&.toString() + QString("+%1")\&.arg(flags);
-178 }
+184                                                                                  {
+185     int flags = (onlyOnce ? ANIM_ONCE : 0) | (stopOnRelease ? ANIM_KRSTOP : 0);
+186     return "$anim:" + guid\&.toString() + QString("+%1")\&.arg(flags);
+187 }
 .fi
 .SS "QUuid KeyAction::animInfo (bool &onlyOnce, bool &stopOnRelease) const"
 
 .PP
-Definition at line 216 of file keyaction\&.cpp\&.
+Definition at line 225 of file keyaction\&.cpp\&.
 .PP
 References _value, ANIM_KRSTOP, ANIM_ONCE, and isAnim()\&.
 .PP
 Referenced by keyEvent(), and RebindWidget::setSelection()\&.
 .PP
 .nf
-216                                                                    {
-217     if(!isAnim())
-218         return QUuid();
-219     QString param = _value\&.mid(6);
-220     QStringList split = param\&.split("+");
-221     if(split\&.length() < 2)
-222         return QUuid();
-223     QUuid id = split[0];
-224     int flags = split[1]\&.toInt();
-225     onlyOnce = !!(flags & ANIM_ONCE);
-226     stopOnRelease = !!(flags & ANIM_KRSTOP);
-227     return id;
-228 }
+225                                                                    {
+226     if(!isAnim())
+227         return QUuid();
+228     QString param = _value\&.mid(6);
+229     QStringList split = param\&.split("+");
+230     if(split\&.length() < 2)
+231         return QUuid();
+232     QUuid id = split[0];
+233     int flags = split[1]\&.toInt();
+234     onlyOnce = !!(flags & ANIM_ONCE);
+235     stopOnRelease = !!(flags & ANIM_KRSTOP);
+236     return id;
+237 }
 .fi
-.SS "QString KeyAction::defaultAction (const QString &key)\fC [static]\fP"
+.SS "QString KeyAction::defaultAction (const QString &key, \fBKeyMap::Model\fPmodel)\fC [static]\fP"
 
 .PP
 Definition at line 44 of file keyaction\&.cpp\&.
 .PP
+References KeyMap::GLAIVE, and KeyMap::HARPOON\&.
+.PP
 Referenced by KbBind::bindAction(), KbBind::defaultAction(), and KbBind::save()\&.
 .PP
 .nf
-44                                                   {
+44                                                                      {
 45     // G1-G18 are unbound by default
 46     if(key\&.length() >= 2 && key[0] == 'g'
 47         && ((key\&.length() == 2 && key[1] >= '0' && key[1] <= '9')
@@ -451,254 +463,263 @@ Referenced by KbBind::bindAction(), KbBind::defaultAction(), and KbBind::save()\
 66     if(key == "lock")
 67         return "$lock:0";
 68     // DPI buttons
-69     if(key == "dpiup")
-70         return "$dpi:-2";
-71     if(key == "dpidn")
-72         return "$dpi:-1";
-73     if(key == "sniper")
-74         return "$dpi:0";
-75     // Everything else is a standard keypress
-76     return key;
-77 }
+69     if(key == "dpiup"){
+70         if(model == KeyMap::HARPOON ||
+71        model == KeyMap::GLAIVE){
+72         return "$dpi:-4";
+73         }
+74     return "$dpi:-2";
+75     }
+76     if(key == "dpidn")
+77         return "$dpi:-1";
+78     if(key == "sniper")
+79         return "$dpi:0";
+80     // Everything else is a standard keypress
+81     return key;
+82 }
 .fi
 .SS "QString KeyAction::dpiAction (intlevel, intcustomX = \fC0\fP, intcustomY = \fC0\fP)\fC [static]\fP"
 
 .PP
-Definition at line 153 of file keyaction\&.cpp\&.
+Definition at line 162 of file keyaction\&.cpp\&.
 .PP
 References DPI_CUSTOM\&.
 .PP
 Referenced by RebindWidget::applyChanges()\&.
 .PP
 .nf
-153                                                                {
-154     QString action = tr("$dpi:%1")\&.arg(level);
-155     if(level == DPI_CUSTOM)
-156         action += tr("+%1+%2")\&.arg(customX)\&.arg(customY);
-157     return action;
-158 }
+162                                                                {
+163     QString action = tr("$dpi:%1")\&.arg(level);
+164     if(level == DPI_CUSTOM)
+165         action += tr("+%1+%2")\&.arg(customX)\&.arg(customY);
+166     return action;
+167 }
 .fi
 .SS "int KeyAction::dpiInfo (QPoint &custom) const"
 
 .PP
-Definition at line 202 of file keyaction\&.cpp\&.
+Definition at line 211 of file keyaction\&.cpp\&.
 .PP
 References _value, DPI_CUSTOM, and isDPI()\&.
 .PP
 Referenced by friendlyName(), keyEvent(), and RebindWidget::setSelection()\&.
 .PP
 .nf
-202                                            {
-203     if(!isDPI())
-204         return 0;
-205     QString param = _value\&.mid(5);
-206     QStringList lxy = param\&.split("+");
-207     int level = lxy[0]\&.toInt();
-208     if(level == DPI_CUSTOM){
-209         if(lxy\&.length() != 3)
-210             return 0;
-211         custom = QPoint(lxy[1]\&.toInt(), lxy[2]\&.toInt());
-212     }
-213     return level;
-214 }
+211                                            {
+212     if(!isDPI())
+213         return 0;
+214     QString param = _value\&.mid(5);
+215     QStringList lxy = param\&.split("+");
+216     int level = lxy[0]\&.toInt();
+217     if(level == DPI_CUSTOM){
+218         if(lxy\&.length() != 3)
+219             return 0;
+220         custom = QPoint(lxy[1]\&.toInt(), lxy[2]\&.toInt());
+221     }
+222     return level;
+223 }
 .fi
 .SS "QString KeyAction::driverName () const"
 
 .PP
-Definition at line 230 of file keyaction\&.cpp\&.
+Definition at line 239 of file keyaction\&.cpp\&.
 .PP
 References _value, and isSpecial()\&.
 .PP
 Referenced by KbBind::update()\&.
 .PP
 .nf
-230                                     {
-231     if(isSpecial())
-232         return "";
-233     return _value;
-234 }
+239                                     {
+240     if(isSpecial())
+241         return "";
+242     return _value;
+243 }
 .fi
 .SS "QString KeyAction::friendlyName (const \fBKeyMap\fP &map) const"
 
 .PP
-Definition at line 79 of file keyaction\&.cpp\&.
+Definition at line 84 of file keyaction\&.cpp\&.
 .PP
-References _value, DPI_CUSTOM, DPI_DOWN, DPI_SNIPER, DPI_UP, dpiInfo(), KeyMap::friendlyName(), KeyMap::layout(), LIGHT_DOWN, LIGHT_DOWN_WRAP, LIGHT_UP, LIGHT_UP_WRAP, LOCK_OFF, LOCK_ON, LOCK_TOGGLE, MODE_NEXT, MODE_NEXT_WRAP, MODE_PREV, and MODE_PREV_WRAP\&.
+References _value, DPI_CUSTOM, DPI_CYCLE_DOWN, DPI_CYCLE_UP, DPI_DOWN, DPI_SNIPER, DPI_UP, dpiInfo(), KeyMap::friendlyName(), KeyMap::layout(), LIGHT_DOWN, LIGHT_DOWN_WRAP, LIGHT_UP, LIGHT_UP_WRAP, LOCK_OFF, LOCK_ON, LOCK_TOGGLE, MODE_NEXT, MODE_NEXT_WRAP, MODE_PREV, and MODE_PREV_WRAP\&.
 .PP
 .nf
-79                                                        {
-80     if(_value\&.isEmpty())
-81         return "Unbound";
-82     QStringList parts = _value\&.split(":");
-83     QString prefix = parts[0];
-84     if(parts\&.length() < 2){
-85         KeyMap::Layout layout = map\&.layout();
-86         QString name = KeyMap::friendlyName(_value, layout);
-87         if(name\&.isEmpty())
-88             return "(Unknown)";
-89         return name;
-90     }
-91     int suffix = parts[1]\&.toInt();
-92     if(prefix == "$mode"){
-93         switch(suffix){
-94         case MODE_PREV:
-95         case MODE_PREV_WRAP:
-96             return "Switch to previous mode";
-97         case MODE_NEXT:
-98         case MODE_NEXT_WRAP:
-99             return "Switch to next mode";
-100         default:
-101             return tr("Switch to mode %1")\&.arg(suffix + 1);
-102         }
-103     } else if(prefix == "$dpi"){
-104         // Split off custom parameters (if any)
-105         int level = parts[1]\&.split("+")[0]\&.toInt();
-106         switch(level){
-107         case DPI_UP:
-108             return "DPI up";
-109         case DPI_DOWN:
-110             return "DPI down";
-111         case DPI_SNIPER:
-112             return "Sniper";
-113         case DPI_CUSTOM:{
-114             QPoint xy;
-115             dpiInfo(xy);
-116             return tr("DPI: %1, %2")\&.arg(xy\&.x())\&.arg(xy\&.y());
-117         }
-118         default:
-119             return tr("DPI stage %1")\&.arg(level);
-120         }
-121     } else if(prefix == "$light"){
-122         switch(suffix){
-123         case LIGHT_UP:
-124         case LIGHT_UP_WRAP:
-125             return "Brightness up";
-126         case LIGHT_DOWN:
-127         case LIGHT_DOWN_WRAP:
-128             return "Brightness down";
+84                                                        {
+85     if(_value\&.isEmpty())
+86         return "Unbound";
+87     QStringList parts = _value\&.split(":");
+88     QString prefix = parts[0];
+89     if(parts\&.length() < 2){
+90         KeyMap::Layout layout = map\&.layout();
+91         QString name = KeyMap::friendlyName(_value, layout);
+92         if(name\&.isEmpty())
+93             return "(Unknown)";
+94         return name;
+95     }
+96     int suffix = parts[1]\&.toInt();
+97     if(prefix == "$mode"){
+98         switch(suffix){
+99         case MODE_PREV:
+100         case MODE_PREV_WRAP:
+101             return "Switch to previous mode";
+102         case MODE_NEXT:
+103         case MODE_NEXT_WRAP:
+104             return "Switch to next mode";
+105         default:
+106             return tr("Switch to mode %1")\&.arg(suffix + 1);
+107         }
+108     } else if(prefix == "$dpi"){
+109         // Split off custom parameters (if any)
+110         int level = parts[1]\&.split("+")[0]\&.toInt();
+111         switch(level){
+112         case DPI_CYCLE_UP:
+113             return "DPI cycle up";
+114         case DPI_CYCLE_DOWN:
+115             return "DPI cycle down";
+116         case DPI_UP:
+117             return "DPI up";
+118         case DPI_DOWN:
+119             return "DPI down";
+120         case DPI_SNIPER:
+121             return "Sniper";
+122         case DPI_CUSTOM:{
+123             QPoint xy;
+124             dpiInfo(xy);
+125             return tr("DPI: %1, %2")\&.arg(xy\&.x())\&.arg(xy\&.y());
+126         }
+127         default:
+128             return tr("DPI stage %1")\&.arg(level);
 129         }
-130     } else if(prefix == "$lock"){
+130     } else if(prefix == "$light"){
 131         switch(suffix){
-132         case LOCK_TOGGLE:
-133             return "Toggle Windows lock";
-134         case LOCK_ON:
-135             return "Windows lock on";
-136         case LOCK_OFF:
-137             return "Windows lock off";
+132         case LIGHT_UP:
+133         case LIGHT_UP_WRAP:
+134             return "Brightness up";
+135         case LIGHT_DOWN:
+136         case LIGHT_DOWN_WRAP:
+137             return "Brightness down";
 138         }
-139     } else if(prefix == "$anim"){
-140         return "Start animation";
-141     } else if(prefix == "$program"){
-142         return "Launch program";
-143     } else if(prefix == "$macro"){
-144         return "Send G-key macro";
-145     }
-146     return "(Unknown)";
-147 }
+139     } else if(prefix == "$lock"){
+140         switch(suffix){
+141         case LOCK_TOGGLE:
+142             return "Toggle Windows lock";
+143         case LOCK_ON:
+144             return "Windows lock on";
+145         case LOCK_OFF:
+146             return "Windows lock off";
+147         }
+148     } else if(prefix == "$anim"){
+149         return "Start animation";
+150     } else if(prefix == "$program"){
+151         return "Launch program";
+152     } else if(prefix == "$macro"){
+153         return "Send G-key macro";
+154     }
+155     return "(Unknown)";
+156 }
 .fi
 .SS "bool KeyAction::isAnim () const\fC [inline]\fP"
 
 .PP
-Definition at line 138 of file keyaction\&.h\&.
+Definition at line 159 of file keyaction\&.h\&.
 .PP
 References _value\&.
 .PP
 Referenced by animInfo(), and RebindWidget::setSelection()\&.
 .PP
 .nf
-138 { return _value\&.startsWith("$anim:"); }
+159 { return _value\&.startsWith("$anim:"); }
 .fi
 .SS "bool KeyAction::isDPI () const\fC [inline]\fP"
 
 .PP
-Definition at line 141 of file keyaction\&.h\&.
+Definition at line 162 of file keyaction\&.h\&.
 .PP
 References _value\&.
 .PP
 Referenced by dpiInfo(), isMouse(), and RebindWidget::setSelection()\&.
 .PP
 .nf
-141 { return _value\&.startsWith("$dpi:"); }
+162 { return _value\&.startsWith("$dpi:"); }
 .fi
 .SS "bool KeyAction::isMacro () const\fC [inline]\fP"
 
 .PP
-Definition at line 139 of file keyaction\&.h\&.
+Definition at line 160 of file keyaction\&.h\&.
 .PP
 References _value\&.
 .PP
 Referenced by isValidMacro(), macroDisplay(), and macroFullLine()\&.
 .PP
 .nf
-139 { return _value\&.startsWith("$macro:"); }
+160 { return _value\&.startsWith("$macro:"); }
 .fi
 .SS "bool KeyAction::isMedia () const\fC [inline]\fP"
 
 .PP
-Definition at line 135 of file keyaction\&.h\&.
+Definition at line 156 of file keyaction\&.h\&.
 .PP
 References _value\&.
 .PP
 .nf
-135 { return _value == "mute" || _value == "volup" || _value == "voldn" || _value == "stop" || _value == "prev" || _value == "play" || _value == "next"; }
+156 { return _value == "mute" || _value == "volup" || _value == "voldn" || _value == "stop" || _value == "prev" || _value == "play" || _value == "next"; }
 .fi
 .SS "bool KeyAction::isMouse () const\fC [inline]\fP"
 
 .PP
-Definition at line 142 of file keyaction\&.h\&.
+Definition at line 163 of file keyaction\&.h\&.
 .PP
 References _value, isDPI(), and isNormal()\&.
 .PP
 Referenced by RebindWidget::setSelection()\&.
 .PP
 .nf
-142 { return (isNormal() && (_value\&.startsWith("mouse") || _value\&.startsWith("wheel"))) || isDPI(); }
+163 { return (isNormal() && (_value\&.startsWith("mouse") || _value\&.startsWith("wheel"))) || isDPI(); }
 .fi
 .SS "bool KeyAction::isNormal () const\fC [inline]\fP"
 
 .PP
-Definition at line 132 of file keyaction\&.h\&.
+Definition at line 153 of file keyaction\&.h\&.
 .PP
 References NORMAL, and type()\&.
 .PP
-Referenced by isMouse(), RebindWidget::setBind(), and RebindWidget::setSelection()\&.
+Referenced by isMouse(), and RebindWidget::setSelection()\&.
 .PP
 .nf
-132 { return type() == NORMAL; }
+153 { return type() == NORMAL; }
 .fi
 .SS "bool KeyAction::isProgram () const\fC [inline]\fP"
 
 .PP
-Definition at line 137 of file keyaction\&.h\&.
+Definition at line 158 of file keyaction\&.h\&.
 .PP
 References _value\&.
 .PP
 Referenced by programInfo(), and RebindWidget::setSelection()\&.
 .PP
 .nf
-137 { return _value\&.startsWith("$program:"); }
+158 { return _value\&.startsWith("$program:"); }
 .fi
 .SS "bool KeyAction::isSpecial () const\fC [inline]\fP"
 
 .PP
-Definition at line 133 of file keyaction\&.h\&.
+Definition at line 154 of file keyaction\&.h\&.
 .PP
 References SPECIAL, and type()\&.
 .PP
 Referenced by driverName(), keyEvent(), and RebindWidget::setSelection()\&.
 .PP
 .nf
-133 { return type() == SPECIAL; }
+154 { return type() == SPECIAL; }
 .fi
 .SS "bool KeyAction::isUnbound () const\fC [inline]\fP"
 
 .PP
-Definition at line 131 of file keyaction\&.h\&.
+Definition at line 152 of file keyaction\&.h\&.
 .PP
 References type(), and UNBOUND\&.
 .PP
 .nf
-131 { return type() == UNBOUND; }
+152 { return type() == UNBOUND; }
 .fi
 .SS "bool KeyAction::isValidMacro () const\fC [inline]\fP"
 
@@ -710,280 +731,290 @@ bool as true iff the macro definition contains all four elements\&.
 .PP
 
 .PP
-Definition at line 54 of file keyaction\&.h\&.
+Definition at line 55 of file keyaction\&.h\&.
 .PP
 References _value, and isMacro()\&.
 .PP
-Referenced by macroContent(), macroDisplay(), macroLine(), RebindWidget::setSelection(), and KbBind::update()\&.
+Referenced by macroContent(), macroDisplay(), macroLine(), macroTiming(), RebindWidget::setSelection(), and KbBind::update()\&.
 .PP
 .nf
-54                                       {
-55         if (isMacro()) {
-56             QStringList ret;
-57             ret =_value\&.split(":");
-58             return (ret\&.count() == 4);
-59         } else {
-60             return false;
-61         }
-62     }
+55                                       {
+56         if (isMacro()) {
+57             QStringList ret;
+58             ret =_value\&.split(":");
+59             return ((ret\&.count() >= 4) && (ret\&.count() <= 5));
+60         } else {
+61             return false;
+62         }
+63     }
 .fi
 .SS "void KeyAction::keyEvent (\fBKbBind\fP *bind, booldown)"
 
 .PP
-Definition at line 236 of file keyaction\&.cpp\&.
+Definition at line 245 of file keyaction\&.cpp\&.
 .PP
-References _value, adjustDisplay(), anim, animInfo(), KbProfile::currentMode(), Kb::currentProfile(), KbBind::devParent(), KbLight::dimming(), KbPerf::dpi(), KbPerf::DPI_COUNT, DPI_CUSTOM, DPI_DOWN, DPI_SNIPER, DPI_UP, KbPerf::dpiDown(), dpiInfo(), KbPerf::dpiUp(), KbLight::findAnim(), KbProfile::indexOf(), KbAnim::isActive(), isSpecial(), KbBind::light(), LIGHT_DOWN, LIGHT_DOWN_WRAP, LIGHT_UP, LIGHT_UP_WRAP, LOCK_OFF, LOCK_ON, LOCK_TOGGLE, KbLight::MAX_DIM, MODE_NEXT, MODE_NEXT_WRAP, MODE_PREV, MODE_PREV_WRAP, KbProfile::modeCount(), KbProfile::modes(), KbBind::perf(), KbPerf::popDpi(), preProgram, PROGRAM_PR_KPSTOP, PROGRAM_PR_KRSTOP, PROGRAM_PR_MULTI, PROGRAM_RE_KPSTOP, PROGRAM_RE_MULTI, programInfo(), KbPerf::pushDpi(), KbPerf::pushSniper(), relProgram, Kb::setCurrentMode(), sniperValue, KbAnim::stop(), KbAnim::trigger(), and KbBind::winLock()\&.
+References _value, adjustDisplay(), anim, animInfo(), KbPerf::baseDpiIdx(), KbProfile::currentMode(), Kb::currentProfile(), KbBind::devParent(), KbLight::dimming(), KbPerf::DPI_COUNT, DPI_CUSTOM, DPI_CYCLE_DOWN, DPI_CYCLE_UP, DPI_DOWN, DPI_SNIPER, DPI_UP, KbPerf::dpiCycleDown(), KbPerf::dpiCycleUp(), KbPerf::dpiDown(), dpiInfo(), KbPerf::dpiUp(), KbLight::findAnim(), KbProfile::indexOf(), KbAnim::isActive(), isSpecial(), KbBind::light(), LIGHT_DOWN, LIGHT_DOWN_WRAP, LIGHT_UP, LIGHT_UP_WRAP, LOCK_OFF, LOCK_ON, LOCK_TOGGLE, KbLight::MAX_DIM, MODE_NEXT, MODE_NEXT_WRAP, MODE_PREV, MODE_PREV_WRAP, KbProfile::modeCount(), KbProfile::modes(), KbBind::perf(), KbPerf::popDpi(), preProgram, PROGRAM_PR_KPSTOP, PROGRAM_PR_KRSTOP, PROGRAM_PR_MULTI, PROGRAM_RE_KPSTOP, PROGRAM_RE_MULTI, programInfo(), KbPerf::pushDpi(), KbPerf::pushSniper(), relProgram, Kb::setCurrentMode(), sniperValue, KbAnim::stop(), KbAnim::trigger(), and KbBind::winLock()\&.
 .PP
 Referenced by KbBind::keyEvent()\&.
 .PP
 .nf
-236                                                {
-237     // No need to respond to standard actions
-238     if(!isSpecial())
-239         return;
-240     QStringList parts = _value\&.split(":");
-241     if(parts\&.length() < 2)
-242         return;
-243     QString prefix = parts[0];
-244     int suffix = parts[1]\&.toInt();
-245     if(prefix == "$mode"){
-246         if(!down)
-247             return;
-248         // Change mode
-249         Kb* device = bind->devParent();
-250         KbProfile* currentProfile = device->currentProfile();
-251         int mode = currentProfile->indexOf(currentProfile->currentMode());
-252         int modeCount = currentProfile->modeCount();
-253         switch(suffix){
-254         case MODE_PREV_WRAP:
-255             mode--;
-256             if(mode < 0)
-257                 mode = modeCount - 1;
-258             break;
-259         case MODE_NEXT_WRAP:
-260             mode++;
-261             if(mode >= modeCount)
-262                 mode = 0;
-263             break;
-264         case MODE_PREV:
-265             mode--;
-266             break;
-267         case MODE_NEXT:
-268             mode++;
-269             break;
-270         default:
-271             // Absolute
-272             mode = suffix;
-273             break;
-274         }
-275         if(mode < 0 || mode >= modeCount)
-276             return;
-277         device->setCurrentMode(currentProfile->modes()[mode]);
-278     } else if(prefix == "$dpi"){
-279         KbPerf* perf = bind->perf();
-280         int level = parts[1]\&.split("+")[0]\&.toInt();
-281         switch(level){
-282         case DPI_UP:
-283             if(!down)
-284                 return;
-285             perf->dpiUp();
-286             break;
-287         case DPI_DOWN:
-288             if(!down)
-289                 return;
-290             perf->dpiDown();
-291             break;
-292         case DPI_SNIPER:
-293             if(down)
-294                 sniperValue = perf->pushSniper();
-295             else {
-296                 perf->popDpi(sniperValue);
-297                 sniperValue = 0;
-298             }
-299             break;
-300         case DPI_CUSTOM:{
-301             QPoint xy;
-302             dpiInfo(xy);
-303             if(xy\&.x() <= 0 || xy\&.y() <= 0)
-304                 break;
-305             if(down)
-306                 sniperValue = perf->pushDpi(xy);
-307             else {
-308                 perf->popDpi(sniperValue);
-309                 sniperValue = 0;
-310             }
-311             break;
-312         }
-313         default:
-314             if(level < 1 || level >= KbPerf::DPI_COUNT
-315                     || !down)
-316                 return;
-317             perf->dpi(level);
+245                                                {
+246     // No need to respond to standard actions
+247     if(!isSpecial())
+248         return;
+249     QStringList parts = _value\&.split(":");
+250     if(parts\&.length() < 2)
+251         return;
+252     QString prefix = parts[0];
+253     int suffix = parts[1]\&.toInt();
+254     if(prefix == "$mode"){
+255         if(!down)
+256             return;
+257         // Change mode
+258         Kb* device = bind->devParent();
+259         KbProfile* currentProfile = device->currentProfile();
+260         int mode = currentProfile->indexOf(currentProfile->currentMode());
+261         int modeCount = currentProfile->modeCount();
+262         switch(suffix){
+263         case MODE_PREV_WRAP:
+264             mode--;
+265             if(mode < 0)
+266                 mode = modeCount - 1;
+267             break;
+268         case MODE_NEXT_WRAP:
+269             mode++;
+270             if(mode >= modeCount)
+271                 mode = 0;
+272             break;
+273         case MODE_PREV:
+274             mode--;
+275             break;
+276         case MODE_NEXT:
+277             mode++;
+278             break;
+279         default:
+280             // Absolute
+281             mode = suffix;
+282             break;
+283         }
+284         if(mode < 0 || mode >= modeCount)
+285             return;
+286         device->setCurrentMode(currentProfile->modes()[mode]);
+287     } else if(prefix == "$dpi"){
+288         KbPerf* perf = bind->perf();
+289         int level = parts[1]\&.split("+")[0]\&.toInt();
+290         switch(level){
+291         case DPI_CYCLE_UP:
+292             if(!down)
+293                 return;
+294             perf->dpiCycleUp();
+295             break;
+296         case DPI_CYCLE_DOWN:
+297             if(!down)
+298                 return;
+299             perf->dpiCycleDown();
+300             break;
+301         case DPI_UP:
+302             if(!down)
+303                 return;
+304             perf->dpiUp();
+305             break;
+306         case DPI_DOWN:
+307             if(!down)
+308                 return;
+309             perf->dpiDown();
+310             break;
+311         case DPI_SNIPER:
+312             if(down)
+313                 sniperValue = perf->pushSniper();
+314             else {
+315                 perf->popDpi(sniperValue);
+316                 sniperValue = 0;
+317             }
 318             break;
-319         }
-320     } else if(prefix == "$light"){
-321         if(!down)
-322             return;
-323         // Change brightness
-324         KbLight* light = bind->light();
-325         int dim = light->dimming();
-326         switch(suffix){
-327         case LIGHT_UP:
-328             if(dim > 0)
-329                 dim--;
+319         case DPI_CUSTOM:{
+320             QPoint xy;
+321             dpiInfo(xy);
+322             if(xy\&.x() <= 0 || xy\&.y() <= 0)
+323                 break;
+324             if(down)
+325                 sniperValue = perf->pushDpi(xy);
+326             else {
+327                 perf->popDpi(sniperValue);
+328                 sniperValue = 0;
+329             }
 330             break;
-331         case LIGHT_DOWN:
-332             if(dim < KbLight::MAX_DIM)
-333                 dim++;
-334             break;
-335         case LIGHT_UP_WRAP:
-336             dim--;
-337             if(dim < 0)
-338                 dim = KbLight::MAX_DIM;
-339             break;
-340         case LIGHT_DOWN_WRAP:
-341             dim++;
-342             if(dim > KbLight::MAX_DIM)
-343                 dim = 0;
-344             break;
-345         }
-346         light->dimming(dim);
-347     } else if(prefix == "$lock"){
-348         if(!down)
-349             return;
-350         // Change win lock
-351         switch(suffix){
-352         case LOCK_TOGGLE:
-353             bind->winLock(!bind->winLock());
-354             break;
-355         case LOCK_ON:
-356             bind->winLock(true);
-357             break;
-358         case LOCK_OFF:
-359             bind->winLock(false);
-360             break;
-361         }
-362     } else if(prefix == "$anim"){
-363         // Start animation
-364         bool onlyOnce = false, stopOnRelease = false;
-365         QUuid id = animInfo(onlyOnce, stopOnRelease);
-366         KbAnim* anim = bind->light()->findAnim(id);
-367         if(!anim)
+331         }
+332         default:
+333             if(level < 1 || level >= KbPerf::DPI_COUNT
+334                     || !down)
+335                 return;
+336             perf->baseDpiIdx(level);
+337             break;
+338         }
+339     } else if(prefix == "$light"){
+340         if(!down)
+341             return;
+342         // Change brightness
+343         KbLight* light = bind->light();
+344         int dim = light->dimming();
+345         switch(suffix){
+346         case LIGHT_UP:
+347             if(dim > 0)
+348                 dim--;
+349             break;
+350         case LIGHT_DOWN:
+351             if(dim < KbLight::MAX_DIM)
+352                 dim++;
+353             break;
+354         case LIGHT_UP_WRAP:
+355             dim--;
+356             if(dim < 0)
+357                 dim = KbLight::MAX_DIM;
+358             break;
+359         case LIGHT_DOWN_WRAP:
+360             dim++;
+361             if(dim > KbLight::MAX_DIM)
+362                 dim = 0;
+363             break;
+364         }
+365         light->dimming(dim);
+366     } else if(prefix == "$lock"){
+367         if(!down)
 368             return;
-369         if(down){
-370             if(!onlyOnce || !anim->isActive())
-371                 // If "only once" is enabled, don't start the animation when it's already running
-372                 anim->trigger(QDateTime::currentMSecsSinceEpoch(), true);
-373         } else if(stopOnRelease){
-374             // Key released - stop animation
-375             anim->stop();
-376         }
-377     } else if(prefix == "$program"){
-378         // Launch program
-379         QString onPress, onRelease;
-380         int stop = programInfo(onPress, onRelease);
-381         // Stop running programs based on setting
-382         QProcess* process = 0;
-383         if(down){
-384             if(stop & PROGRAM_PR_KPSTOP){
-385                 process = preProgram;
-386                 if(process)
-387                     process->kill();
-388                 process = 0;
-389             }
-390             if(stop & PROGRAM_RE_KPSTOP)
-391                 process = relProgram;
-392         } else {
-393             if(stop & PROGRAM_PR_KRSTOP)
-394                 process = preProgram;
+369         // Change win lock
+370         switch(suffix){
+371         case LOCK_TOGGLE:
+372             bind->winLock(!bind->winLock());
+373             break;
+374         case LOCK_ON:
+375             bind->winLock(true);
+376             break;
+377         case LOCK_OFF:
+378             bind->winLock(false);
+379             break;
+380         }
+381     } else if(prefix == "$anim"){
+382         // Start animation
+383         bool onlyOnce = false, stopOnRelease = false;
+384         QUuid id = animInfo(onlyOnce, stopOnRelease);
+385         KbAnim* anim = bind->light()->findAnim(id);
+386         if(!anim)
+387             return;
+388         if(down){
+389             if(!onlyOnce || !anim->isActive())
+390                 // If "only once" is enabled, don't start the animation when it's already running
+391                 anim->trigger(QDateTime::currentMSecsSinceEpoch(), true);
+392         } else if(stopOnRelease){
+393             // Key released - stop animation
+394             anim->stop();
 395         }
-396         if(process)
-397             process->kill();
-398         // Launch new process if requested
-399         QString& program = down ? onPress : onRelease;
-400         if(program\&.isEmpty())
-401             return;
-402         // Check if the program is running already\&. If so, don't start it again\&.
-403         process = down ? preProgram : relProgram;
-404         if(process){
-405             if(process->state() == QProcess::NotRunning)
-406                 delete process;
-407             else
-408                 return;
-409         }
-410 
-411         // Adjust the selected display\&.
-412         adjustDisplay();
-413 
-414         // Start the program\&. Wrap it around sh to parse arguments\&.
-415         if((down && (stop & PROGRAM_PR_MULTI))
-416                 || (!down && (stop & PROGRAM_RE_MULTI))){
-417             // Multiple instances allowed? Start detached process
-418             QProcess::startDetached("sh", QStringList() << "-c" << program);
-419         } else {
-420             process = new QProcess(this);
-421             process->start("sh", QStringList() << "-c" << program);
-422             if(down)
-423                 preProgram = process;
-424             else
-425                 relProgram = process;
-426         }
-427     } else if (prefix == "$macro") {
-428         // Do nothing, because all work is done by the keyboard itself\&.
-429         // For now, there is no reason to react on G-key press or release\&.
-430         // If u find some reason, then here is the place for it\&.
-431     }
-432 }
+396     } else if(prefix == "$program"){
+397         // Launch program
+398         QString onPress, onRelease;
+399         int stop = programInfo(onPress, onRelease);
+400         // Stop running programs based on setting
+401         QProcess* process = 0;
+402         if(down){
+403             if(stop & PROGRAM_PR_KPSTOP){
+404                 process = preProgram;
+405                 if(process)
+406                     process->kill();
+407                 process = 0;
+408             }
+409             if(stop & PROGRAM_RE_KPSTOP)
+410                 process = relProgram;
+411         } else {
+412             if(stop & PROGRAM_PR_KRSTOP)
+413                 process = preProgram;
+414         }
+415         if(process)
+416             process->kill();
+417         // Launch new process if requested
+418         QString& program = down ? onPress : onRelease;
+419         if(program\&.isEmpty())
+420             return;
+421         // Check if the program is running already\&. If so, don't start it again\&.
+422         process = down ? preProgram : relProgram;
+423         if(process){
+424             if(process->state() == QProcess::NotRunning)
+425                 delete process;
+426             else
+427                 return;
+428         }
+429 
+430         // Adjust the selected display\&.
+431         adjustDisplay();
+432 
+433         // Start the program\&. Wrap it around sh to parse arguments\&.
+434         if((down && (stop & PROGRAM_PR_MULTI))
+435                 || (!down && (stop & PROGRAM_RE_MULTI))){
+436             // Multiple instances allowed? Start detached process
+437             QProcess::startDetached("sh", QStringList() << "-c" << program);
+438         } else {
+439             process = new QProcess(this);
+440             process->start("sh", QStringList() << "-c" << program);
+441             if(down)
+442                 preProgram = process;
+443             else
+444                 relProgram = process;
+445         }
+446     } else if (prefix == "$macro") {
+447         // Do nothing, because all work is done by the keyboard itself\&.
+448         // For now, there is no reason to react on G-key press or release\&.
+449         // If u find some reason, then here is the place for it\&.
+450     }
+451 }
 .fi
 .SS "void KeyAction::keyRelease (\fBKbBind\fP *bind)"
 
 .SS "QString KeyAction::lightAction (inttype = \fC\fBLIGHT_UP_WRAP\fP\fP)\fC [static]\fP"
 
 .PP
-Definition at line 160 of file keyaction\&.cpp\&.
+Definition at line 169 of file keyaction\&.cpp\&.
 .PP
 Referenced by RebindWidget::applyChanges()\&.
 .PP
 .nf
-160                                       {
-161     return QString("$light:%1")\&.arg(type);
-162 }
+169                                       {
+170     return QString("$light:%1")\&.arg(type);
+171 }
 .fi
 .SS "QString KeyAction::lockAction (inttype = \fC\fBLOCK_TOGGLE\fP\fP)\fC [static]\fP"
 
 .PP
-Definition at line 164 of file keyaction\&.cpp\&.
+Definition at line 173 of file keyaction\&.cpp\&.
 .PP
 Referenced by RebindWidget::applyChanges()\&.
 .PP
 .nf
-164                                      {
-165     return QString("$lock:%1")\&.arg(type);
-166 }
+173                                      {
+174     return QString("$lock:%1")\&.arg(type);
+175 }
 .fi
 .SS "QString KeyAction::macroAction (QStringmacroDef)\fC [static]\fP"
 \fBKeyAction::macroAction\fP is called when applying changes on a macro definition\&. macroAction ist called while being in the macro pane and clicking Apply with something in the Macro Text Box\&. It tags that input with '$macro:' for further recognition\&.
 .PP
 \fBParameters:\fP
 .RS 4
-\fImacroDef\fP holds the String containing parts 2-4 of a complete macro definition\&. 
+\fImacroDef\fP holds the String containing parts 2-5 of a complete macro definition\&. 
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-QString holding the complete G-Key macro definition (parts 1-4) 
+QString holding the complete G-Key macro definition (parts 1-5) 
 .RE
 .PP
 
 .PP
-Definition at line 504 of file keyaction\&.cpp\&.
+Definition at line 523 of file keyaction\&.cpp\&.
 .PP
 Referenced by RebindWidget::applyChanges()\&.
 .PP
 .nf
-504                                                {
-505     return QString ("$macro:%1")\&.arg(macroDef);
-506 }
+523                                                {
+524     return QString ("$macro:%1")\&.arg(macroDef);
+525 }
 .fi
 .SS "QString KeyAction::macroContent () const\fC [inline]\fP"
 
@@ -995,16 +1026,17 @@ QString macroContent
 .PP
 
 .PP
-Definition at line 83 of file keyaction\&.h\&.
+Definition at line 86 of file keyaction\&.h\&.
 .PP
 References _value, and isValidMacro()\&.
 .PP
 Referenced by RebindWidget::setSelection(), and KbBind::update()\&.
 .PP
 .nf
-83                                         {
-84         return isValidMacro() ? _value\&.split(":")[1] : "";
-85     }
+86                                         {
+87         // return isValidMacro() ? _value\&.split(":")[1]\&.replace(QRegExp("=\\d+"), "") : ""; ///< Is used if we have ckb without delay handling
+88         return isValidMacro() ? _value\&.split(":")[1] : "";
+89     }
 .fi
 .SS "void KeyAction::macroDisplay ()"
 \fBKeyAction::macroDisplay\fP is just for debugging\&. It shows the content of the key action and some other info\&.
@@ -1017,31 +1049,33 @@ Macro \fBKey\fP Definition (coming from pteMacroBox): This sequence will program
 .IP "3." 4
 Readable Macro String: This is displayed in pteMacroText
 .IP "4." 4
-Readable Macro Comment:This is displayed in pteMacroComment 
+Readable Macro Comment:This is displayed in pteMacroComment
+.IP "5." 4
+completely unreadable original macro information with timing values 
 .PP
 
 .PP
-Definition at line 437 of file keyaction\&.cpp\&.
+Definition at line 456 of file keyaction\&.cpp\&.
 .PP
 References _value, isMacro(), and isValidMacro()\&.
 .PP
 Referenced by RebindWidget::setSelection()\&.
 .PP
 .nf
-437                              {
-438     qDebug() << "isMacro returns" << (isMacro() ? "true" : "false");
-439     qDebug() << "isValidMacro returns" << (isValidMacro() ? "true" : "false");
-440     QStringList ret =_value\&.split(":");
-441     qDebug() << "Macro definition conains" << ret\&.count() << "elements";
-442     qDebug() << "Macro definition is" << _value;
-443 }
+456                              {
+457     qDebug() << "isMacro returns" << (isMacro() ? "true" : "false");
+458     qDebug() << "isValidMacro returns" << (isValidMacro() ? "true" : "false");
+459     QStringList ret =_value\&.split(":");
+460     qDebug() << "Macro definition conains" << ret\&.count() << "elements";
+461     qDebug() << "Macro definition is" << _value;
+462 }
 .fi
 .SS "QString KeyAction::macroFullLine () const\fC [inline]\fP"
 
 .PP
 \fBReturns:\fP
 .RS 4
-QString All 4 parts are returned in one QString\&. If no definition exists, return '' 
+QString All 5 parts are returned in one QString\&. If no definition exists, return '' 
 .RE
 .PP
 
@@ -1060,37 +1094,62 @@ References _value, and isMacro()\&.
 .PP
 \fBReturns:\fP
 .RS 4
-QStringList returns the Macro \fBKey\fP Definition, Readble Macro String and Readable Macro Comment as QStringList\&. 
+QStringList returns the Macro \fBKey\fP Definition, Readble Macro String, Readable Macro Comment and the original timing information (if it exists as a 5th part) as QStringList\&. 
 .RE
 .PP
 
 .PP
-Definition at line 70 of file keyaction\&.h\&.
+Definition at line 73 of file keyaction\&.h\&.
 .PP
 References _value, and isValidMacro()\&.
 .PP
 Referenced by RebindWidget::setSelection()\&.
 .PP
 .nf
-70                                          {
-71         if (isValidMacro()) {
-72             QStringList ret =_value\&.split(":");
-73             ret\&.removeFirst();
-74             return ret;
-75         } else return QStringList();
-76     }
+73                                          {
+74         if (isValidMacro()) {
+75             QStringList ret =_value\&.split(":");
+76             ret\&.removeFirst();
+77             return ret;
+78         } else return QStringList();
+79     }
+.fi
+.SS "QString KeyAction::macroTiming () const\fC [inline]\fP"
+
+.PP
+\fBReturns:\fP
+.RS 4
+QString macroTiming 
+.RE
+.PP
+
+.PP
+Definition at line 98 of file keyaction\&.h\&.
+.PP
+References _value, and isValidMacro()\&.
+.PP
+Referenced by RebindWidget::setSelection()\&.
+.PP
+.nf
+98                                        {
+99         if (isValidMacro()) {
+100             QStringList rval = _value\&.split(":");
+101             return (rval\&.length() == 4)? rval[1] : rval[4];
+102         }
+103         return QString("");
+104     }
 .fi
 .SS "QString KeyAction::modeAction (intmode)\fC [static]\fP"
 
 .PP
-Definition at line 149 of file keyaction\&.cpp\&.
+Definition at line 158 of file keyaction\&.cpp\&.
 .PP
 Referenced by RebindWidget::applyChanges()\&.
 .PP
 .nf
-149                                      {
-150     return QString("$mode:%1")\&.arg(mode);
-151 }
+158                                      {
+159     return QString("$mode:%1")\&.arg(mode);
+160 }
 .fi
 .SS "static QString KeyAction::noAction ()\fC [inline]\fP, \fC [static]\fP"
 
@@ -1113,65 +1172,65 @@ References _value\&.
 .SS "void KeyAction::operator= (const \fBKeyAction\fP &rhs)\fC [inline]\fP, \fC [private]\fP"
 
 .PP
-Definition at line 165 of file keyaction\&.h\&.
+Definition at line 186 of file keyaction\&.h\&.
 .PP
 .nf
-165 {}
+186 {}
 .fi
 .SS "QString KeyAction::programAction (const QString &onPress, const QString &onRelease, intstop)\fC [static]\fP"
 
 .PP
-Definition at line 168 of file keyaction\&.cpp\&.
+Definition at line 177 of file keyaction\&.cpp\&.
 .PP
 Referenced by RebindWidget::applyChanges()\&.
 .PP
 .nf
-168                                                                                           {
-169     // URL-encode the commands and place them in the string (":" and "+" are both replaced, so they won't interfere)
-170     return "$program:" + QString::fromUtf8(QUrl::toPercentEncoding(onPress\&.trimmed())) + "+" + QString::fromUtf8(QUrl::toPercentEncoding(onRelease\&.trimmed())) + QString("+%1")\&.arg(stop);
-171 }
+177                                                                                           {
+178     // URL-encode the commands and place them in the string (":" and "+" are both replaced, so they won't interfere)
+179     return "$program:" + QString::fromUtf8(QUrl::toPercentEncoding(onPress\&.trimmed())) + "+" + QString::fromUtf8(QUrl::toPercentEncoding(onRelease\&.trimmed())) + QString("+%1")\&.arg(stop);
+180 }
 .fi
 .SS "int KeyAction::programInfo (QString &onPress, QString &onRelease) const"
 
 .PP
-Definition at line 190 of file keyaction\&.cpp\&.
+Definition at line 199 of file keyaction\&.cpp\&.
 .PP
 References _value, and isProgram()\&.
 .PP
 Referenced by keyEvent(), and RebindWidget::setSelection()\&.
 .PP
 .nf
-190                                                                      {
-191     if(!isProgram())
-192         return 0;
-193     QString param = _value\&.mid(9);
-194     QStringList programs = param\&.split("+");
-195     if(programs\&.length() != 3)
-196         return 0;
-197     onPress = QUrl::fromPercentEncoding(programs[0]\&.toUtf8());
-198     onRelease = QUrl::fromPercentEncoding(programs[1]\&.toUtf8());
-199     return programs[2]\&.toInt();
-200 }
+199                                                                      {
+200     if(!isProgram())
+201         return 0;
+202     QString param = _value\&.mid(9);
+203     QStringList programs = param\&.split("+");
+204     if(programs\&.length() != 3)
+205         return 0;
+206     onPress = QUrl::fromPercentEncoding(programs[0]\&.toUtf8());
+207     onRelease = QUrl::fromPercentEncoding(programs[1]\&.toUtf8());
+208     return programs[2]\&.toInt();
+209 }
 .fi
 .SS "QString KeyAction::specialInfo (int &parameter) const"
 
 .PP
-Definition at line 180 of file keyaction\&.cpp\&.
+Definition at line 189 of file keyaction\&.cpp\&.
 .PP
 References _value\&.
 .PP
 Referenced by RebindWidget::setSelection()\&.
 .PP
 .nf
-180                                                    {
-181     QStringList list = _value\&.split(":");
-182     if(list\&.length() < 2){
-183         parameter = INT_MIN;
-184         return "";
-185     }
-186     parameter = list[1]\&.toInt();
-187     return list[0]\&.replace("$", "");
-188 }
+189                                                    {
+190     QStringList list = _value\&.split(":");
+191     if(list\&.length() < 2){
+192         parameter = INT_MIN;
+193         return "";
+194     }
+195     parameter = list[1]\&.toInt();
+196     return list[0]\&.replace("$", "");
+197 }
 .fi
 .SS "\fBKeyAction::Type\fP KeyAction::type () const"
 
@@ -1208,155 +1267,167 @@ Referenced by KbBind::action(), KbBind::KbBind(), KbBind::save(), and KbBind::up
 .SS "QString KeyAction::_value\fC [private]\fP"
 
 .PP
-Definition at line 168 of file keyaction\&.h\&.
+Definition at line 189 of file keyaction\&.h\&.
 .PP
-Referenced by animInfo(), dpiInfo(), driverName(), friendlyName(), isAnim(), isDPI(), isMacro(), isMedia(), isMouse(), isProgram(), isValidMacro(), keyEvent(), macroContent(), macroDisplay(), macroFullLine(), macroLine(), operator QString(), programInfo(), specialInfo(), type(), and value()\&.
+Referenced by animInfo(), dpiInfo(), driverName(), friendlyName(), isAnim(), isDPI(), isMacro(), isMedia(), isMouse(), isProgram(), isValidMacro(), keyEvent(), macroContent(), macroDisplay(), macroFullLine(), macroLine(), macroTiming(), operator QString(), programInfo(), specialInfo(), type(), and value()\&.
 .SS "const int KeyAction::DPI_CUSTOM = 6\fC [static]\fP"
 
 .PP
-Definition at line 107 of file keyaction\&.h\&.
+Definition at line 128 of file keyaction\&.h\&.
 .PP
 Referenced by dpiAction(), dpiInfo(), friendlyName(), keyEvent(), and RebindWidget::setSelection()\&.
+.SS "const int KeyAction::DPI_CYCLE_DOWN = -3\fC [static]\fP"
+
+.PP
+Definition at line 126 of file keyaction\&.h\&.
+.PP
+Referenced by friendlyName(), and keyEvent()\&.
+.SS "const int KeyAction::DPI_CYCLE_UP = -4\fC [static]\fP"
+
+.PP
+Definition at line 126 of file keyaction\&.h\&.
+.PP
+Referenced by friendlyName(), and keyEvent()\&.
 .SS "const int KeyAction::DPI_DOWN = -1\fC [static]\fP"
 
 .PP
-Definition at line 106 of file keyaction\&.h\&.
+Definition at line 127 of file keyaction\&.h\&.
 .PP
 Referenced by friendlyName(), and keyEvent()\&.
 .SS "const int KeyAction::DPI_SNIPER = 0\fC [static]\fP"
 
 .PP
-Definition at line 107 of file keyaction\&.h\&.
+Definition at line 128 of file keyaction\&.h\&.
 .PP
 Referenced by friendlyName(), and keyEvent()\&.
 .SS "const int KeyAction::DPI_UP = -2\fC [static]\fP"
 
 .PP
-Definition at line 106 of file keyaction\&.h\&.
+Definition at line 127 of file keyaction\&.h\&.
 .PP
 Referenced by friendlyName(), and keyEvent()\&.
 .SS "const int KeyAction::LIGHT_DOWN = 1\fC [static]\fP"
 
 .PP
-Definition at line 110 of file keyaction\&.h\&.
+Definition at line 131 of file keyaction\&.h\&.
 .PP
 Referenced by friendlyName(), keyEvent(), and RebindWidget::setSelection()\&.
 .SS "const int KeyAction::LIGHT_DOWN_WRAP = 3\fC [static]\fP"
 
 .PP
-Definition at line 111 of file keyaction\&.h\&.
+Definition at line 132 of file keyaction\&.h\&.
 .PP
 Referenced by friendlyName(), keyEvent(), and RebindWidget::setSelection()\&.
 .SS "const int KeyAction::LIGHT_UP = 0\fC [static]\fP"
 
 .PP
-Definition at line 110 of file keyaction\&.h\&.
+Definition at line 131 of file keyaction\&.h\&.
 .PP
 Referenced by friendlyName(), keyEvent(), and RebindWidget::setSelection()\&.
 .SS "const int KeyAction::LIGHT_UP_WRAP = 2\fC [static]\fP"
 
 .PP
-Definition at line 111 of file keyaction\&.h\&.
+Definition at line 132 of file keyaction\&.h\&.
 .PP
 Referenced by friendlyName(), keyEvent(), and RebindWidget::setSelection()\&.
 .SS "const int KeyAction::LOCK_OFF = 2\fC [static]\fP"
 
 .PP
-Definition at line 114 of file keyaction\&.h\&.
+Definition at line 135 of file keyaction\&.h\&.
 .PP
 Referenced by friendlyName(), and keyEvent()\&.
 .SS "const int KeyAction::LOCK_ON = 1\fC [static]\fP"
 
 .PP
-Definition at line 114 of file keyaction\&.h\&.
+Definition at line 135 of file keyaction\&.h\&.
 .PP
 Referenced by friendlyName(), and keyEvent()\&.
 .SS "const int KeyAction::LOCK_TOGGLE = 0\fC [static]\fP"
 
 .PP
-Definition at line 114 of file keyaction\&.h\&.
+Definition at line 135 of file keyaction\&.h\&.
 .PP
 Referenced by friendlyName(), and keyEvent()\&.
 .SS "const int KeyAction::MODE_NEXT = -1\fC [static]\fP"
 
 .PP
-Definition at line 102 of file keyaction\&.h\&.
+Definition at line 122 of file keyaction\&.h\&.
 .PP
 Referenced by friendlyName(), keyEvent(), and RebindWidget::setSelection()\&.
 .SS "const int KeyAction::MODE_NEXT_WRAP = -3\fC [static]\fP"
 
 .PP
-Definition at line 103 of file keyaction\&.h\&.
+Definition at line 123 of file keyaction\&.h\&.
 .PP
 Referenced by friendlyName(), keyEvent(), and RebindWidget::setSelection()\&.
 .SS "const int KeyAction::MODE_PREV = -2\fC [static]\fP"
 
 .PP
-Definition at line 102 of file keyaction\&.h\&.
+Definition at line 122 of file keyaction\&.h\&.
 .PP
 Referenced by friendlyName(), keyEvent(), and RebindWidget::setSelection()\&.
 .SS "const int KeyAction::MODE_PREV_WRAP = -4\fC [static]\fP"
 
 .PP
-Definition at line 103 of file keyaction\&.h\&.
+Definition at line 123 of file keyaction\&.h\&.
 .PP
 Referenced by friendlyName(), keyEvent(), and RebindWidget::setSelection()\&.
 .SS "QProcess* KeyAction::preProgram\fC [private]\fP"
 
 .PP
-Definition at line 171 of file keyaction\&.h\&.
+Definition at line 192 of file keyaction\&.h\&.
 .PP
 Referenced by keyEvent(), and ~KeyAction()\&.
 .SS "const int KeyAction::PROGRAM_PR_INDEF = 0x00\fC [static]\fP"
 
 .PP
-Definition at line 117 of file keyaction\&.h\&.
+Definition at line 138 of file keyaction\&.h\&.
 .SS "const int KeyAction::PROGRAM_PR_KPSTOP = 0x02\fC [static]\fP"
 
 .PP
-Definition at line 117 of file keyaction\&.h\&.
+Definition at line 138 of file keyaction\&.h\&.
 .PP
 Referenced by keyEvent()\&.
 .SS "const int KeyAction::PROGRAM_PR_KRSTOP = 0x01\fC [static]\fP"
 
 .PP
-Definition at line 117 of file keyaction\&.h\&.
+Definition at line 138 of file keyaction\&.h\&.
 .PP
 Referenced by keyEvent()\&.
 .SS "const int KeyAction::PROGRAM_PR_MULTI = 0x04\fC [static]\fP"
 
 .PP
-Definition at line 117 of file keyaction\&.h\&.
+Definition at line 138 of file keyaction\&.h\&.
 .PP
 Referenced by RebindWidget::applyChanges(), keyEvent(), and RebindWidget::setSelection()\&.
 .SS "const int KeyAction::PROGRAM_RE_INDEF = 0x00\fC [static]\fP"
 
 .PP
-Definition at line 118 of file keyaction\&.h\&.
+Definition at line 139 of file keyaction\&.h\&.
 .PP
 Referenced by RebindWidget::applyChanges(), and RebindWidget::setSelection()\&.
 .SS "const int KeyAction::PROGRAM_RE_KPSTOP = 0x20\fC [static]\fP"
 
 .PP
-Definition at line 118 of file keyaction\&.h\&.
+Definition at line 139 of file keyaction\&.h\&.
 .PP
 Referenced by RebindWidget::applyChanges(), keyEvent(), and RebindWidget::setSelection()\&.
 .SS "const int KeyAction::PROGRAM_RE_MULTI = 0x40\fC [static]\fP"
 
 .PP
-Definition at line 118 of file keyaction\&.h\&.
+Definition at line 139 of file keyaction\&.h\&.
 .PP
 Referenced by RebindWidget::applyChanges(), keyEvent(), and RebindWidget::setSelection()\&.
 .SS "QProcess* KeyAction::relProgram\fC [private]\fP"
 
 .PP
-Definition at line 172 of file keyaction\&.h\&.
+Definition at line 193 of file keyaction\&.h\&.
 .PP
 Referenced by keyEvent(), and ~KeyAction()\&.
 .SS "quint64 KeyAction::sniperValue\fC [private]\fP"
 
 .PP
-Definition at line 175 of file keyaction\&.h\&.
+Definition at line 196 of file keyaction\&.h\&.
 .PP
 Referenced by keyEvent()\&.
 

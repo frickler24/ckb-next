@@ -14,7 +14,6 @@ var classKbFirmware =
     [ "downloaded", "classKbFirmware.html#acb3a856702ef6ebf9850bbcf2c295b90", null ],
     [ "downloadFinished", "classKbFirmware.html#a70d1d734d61e1a5eebc5411e02de231f", null ],
     [ "hasDownloaded", "classKbFirmware.html#aa103350a5d980275e2abc86d4bd8b62b", null ],
-    [ "initManager", "classKbFirmware.html#a87e8a9b76f27124df80d81f54c7cd1da", null ],
     [ "processDownload", "classKbFirmware.html#ae2409af30da0ae6e8731623b2b68dfc9", null ],
     [ "versionForBoard", "classKbFirmware.html#adf60ed5d7553a8c3f362ce5ae29ce965", null ],
     [ "fwTable", "classKbFirmware.html#a7363023c0ae8d1038de2c01ba5fe1cdc", null ],

@@ -1,4 +1,4 @@
-.TH "src/ckb/keywidget.cpp" 3 "Wed May 24 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "src/ckb/keywidget.cpp" 3 "Thu Nov 2 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -45,6 +45,12 @@ src/ckb/keywidget.cpp \-
 .ti -1c
 .RI "static QImage * \fBscimOverlay\fP = 0"
 .br
+.ti -1c
+.RI "static QImage * \fBharpOverlay\fP = 0"
+.br
+.ti -1c
+.RI "static QImage * \fBglaiveOverlay\fP = 0"
+.br
 .in -1c
 .SH "Function Documentation"
 .PP 
@@ -72,6 +78,18 @@ Referenced by KbLight::base(), KbLight::frameUpdate(), and KeyWidget::paintEvent
 .fi
 .SH "Variable Documentation"
 .PP 
+.SS "QImage * glaiveOverlay = 0\fC [static]\fP"
+
+.PP
+Definition at line 12 of file keywidget\&.cpp\&.
+.PP
+Referenced by KeyWidget::paintEvent()\&.
+.SS "QImage * harpOverlay = 0\fC [static]\fP"
+
+.PP
+Definition at line 12 of file keywidget\&.cpp\&.
+.PP
+Referenced by KeyWidget::paintEvent()\&.
 .SS "const int KEY_SIZE = 12\fC [static]\fP"
 
 .PP

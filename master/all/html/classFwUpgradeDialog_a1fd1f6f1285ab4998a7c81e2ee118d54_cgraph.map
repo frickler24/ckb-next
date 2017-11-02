@@ -12,9 +12,9 @@
 <area shape="rect" id="node6" href="$ckb-daemon_2main_8c.html#a24a012c29e291fef5fa13f4a07fffd33" title="quitWithLock " alt="" coords="937,132,1036,159"/>
 <area shape="rect" id="node7" href="$ckb-gradient_2main_8c.html#aa27d72ffe1172dde09660dd920e47e6e" title="ckb_info" alt="" coords="1215,208,1286,235"/>
 <area shape="rect" id="node8" href="$usb_8c.html#a8732b3ade76da4ae362996232ef95431" title="closeusb" alt="" coords="1213,5,1288,32"/>
-<area shape="rect" id="node9" href="$devnode_8c.html#a8d0aeeebb364608943b78573adb85c7f" title="rmdevpath" alt="" coords="1465,31,1548,57"/>
+<area shape="rect" id="node9" href="$devnode_8c.html#a8d0aeeebb364608943b78573adb85c7f" title="Remove the dev path for the keyboard at index. Returns 0 on success. " alt="" coords="1465,31,1548,57"/>
 <area shape="rect" id="node10" href="$usb_8c.html#ae30a52968bb209e98461f48ffb2ee82f" title="revertusb" alt="" coords="1213,107,1289,133"/>
-<area shape="rect" id="node11" href="$usb_8h.html#a41aa3e13beb593c91a5410200b4dd8d2" title="usbkill" alt="" coords="1221,157,1280,184"/>
+<area shape="rect" id="node11" href="$usb_8h.html#a41aa3e13beb593c91a5410200b4dd8d2" title="Stop the USB system. " alt="" coords="1221,157,1280,184"/>
 <area shape="rect" id="node13" href="$classQuaZip.html#a5b869a9c0d4f49955b759592fec08888" title="Returns true if ZIP file is open, false otherwise. " alt="" coords="1194,360,1307,387"/>
 <area shape="rect" id="node14" href="$unzip_8c.html#af1c890ff2c8e5173ded0af79a64f8b0a" title="unzOpenInternal" alt="" coords="1192,761,1309,788"/>
 <area shape="rect" id="node23" href="$unzip_8c.html#a24b14e9aa3110ed982718ba061eec60a" title="unzOpen2" alt="" coords="946,629,1027,656"/>

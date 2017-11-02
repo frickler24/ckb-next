@@ -5,6 +5,7 @@ var structures_8h =
       [ "modified", "structures_8h.html#a1a0c276e539686876fe18ff71770a927", null ]
     ] ],
     [ "macroaction", "structures_8h.html#structmacroaction", [
+      [ "delay", "structures_8h.html#a7a7c9896ceca4a73765ff73c08e0716c", null ],
       [ "down", "structures_8h.html#a7d77d9121650a8d1f49f3e8760e01027", null ],
       [ "rel_x", "structures_8h.html#a37b720953e37f1762c8218c7f0f15d01", null ],
       [ "rel_y", "structures_8h.html#ad7a1e9ce4d47ec7219ab389d85e113f6", null ],
@@ -32,10 +33,10 @@ var structures_8h =
       [ "y", "structures_8h.html#add3ea84bb0a47c12b330dc4141d30711", null ]
     ] ],
     [ "lighting", "structures_8h.html#structlighting", [
-      [ "b", "structures_8h.html#abeb581d1f9790ac0dc97bd177546586e", null ],
+      [ "b", "structures_8h.html#ac382c44757d208247320c2978b1f48b9", null ],
       [ "forceupdate", "structures_8h.html#ae593d2a41548d4cc2a3c886caa4a53b2", null ],
-      [ "g", "structures_8h.html#aef072a169d12aabf02985bd659103244", null ],
-      [ "r", "structures_8h.html#a58f2fbe1709465a5258292e8c8421f58", null ],
+      [ "g", "structures_8h.html#a3df276662a9e5c1573c10835db13e0e8", null ],
+      [ "r", "structures_8h.html#a7de6a9b7b901c884d632b15772c8ef56", null ],
       [ "sidelight", "structures_8h.html#a761a7cf0b0943ecba869358267c54028", null ]
     ] ],
     [ "usbmode", "structures_8h.html#structusbmode", [
@@ -71,7 +72,7 @@ var structures_8h =
     ] ],
     [ "usbdevice", "structures_8h.html#structusbdevice", [
       [ "active", "structures_8h.html#a8889b6a5d3ce83427377e3a3de947f03", null ],
-      [ "delay", "structures_8h.html#a4b18e06c9ef188aefdad5daa0e59e658", null ],
+      [ "delay", "structures_8h.html#ac3f3ab5bda85925648ff834ba7afcacd", null ],
       [ "dither", "structures_8h.html#ac001911d43498f4165bfc7cdd5024d39", null ],
       [ "epcount", "structures_8h.html#a8d667681cbb0b3741476bf54c01e79b9", null ],
       [ "features", "structures_8h.html#abbffdd889fd9a15c8796a47cabd3abd9", null ],

@@ -1,4 +1,4 @@
-.TH "src/ckb/main.cpp" 3 "Wed May 24 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "src/ckb/main.cpp" 3 "Thu Nov 2 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -196,57 +196,61 @@ References CommandLineBackground, CommandLineClose, CommandLineError, CommandLin
 170     qsrand(QDateTime::currentMSecsSinceEpoch());
 171 #ifdef Q_OS_MACX
 172     disableAppNap();
-173 #endif
-174 #if QT_VERSION >= QT_VERSION_CHECK(5, 3, 0)
-175     // Enable HiDPI support
-176     qApp->setAttribute(Qt::AA_UseHighDpiPixmaps);
+173 
+174     FILE *fp = fopen("/tmp/ckb", "w");
+175     fprintf(fp, "%d", getpid());
+176     fclose(fp);
 177 #endif
-178 
-179     // Parse arguments
-180     switch (parseCommandLine(parser, &errorMessage)) {
-181     case CommandLineOK:
-182         // If launched with no argument
-183         break;
-184     case CommandLineError:
-185         fputs(qPrintable(errorMessage), stderr);
-186         fputs("\n\n", stderr);
-187         fputs(qPrintable(parser\&.helpText()), stderr);
-188         return 1;
-189     case CommandLineVersionRequested:
-190         // If launched with --version, print version info and then quit
-191         printf("%s %s\n", qPrintable(QCoreApplication::applicationName()),
-192                qPrintable(QCoreApplication::applicationVersion()));
-193         return 0;
-194     case CommandLineHelpRequested:
-195         // If launched with --help, print help and then quit
-196         parser\&.showHelp();
+178 #if QT_VERSION >= QT_VERSION_CHECK(5, 3, 0)
+179     // Enable HiDPI support
+180     qApp->setAttribute(Qt::AA_UseHighDpiPixmaps);
+181 #endif
+182 
+183     // Parse arguments
+184     switch (parseCommandLine(parser, &errorMessage)) {
+185     case CommandLineOK:
+186         // If launched with no argument
+187         break;
+188     case CommandLineError:
+189         fputs(qPrintable(errorMessage), stderr);
+190         fputs("\n\n", stderr);
+191         fputs(qPrintable(parser\&.helpText()), stderr);
+192         return 1;
+193     case CommandLineVersionRequested:
+194         // If launched with --version, print version info and then quit
+195         printf("%s %s\n", qPrintable(QCoreApplication::applicationName()),
+196                qPrintable(QCoreApplication::applicationVersion()));
 197         return 0;
-198     case CommandLineClose:
-199         // If launched with --close, kill existing app
-200         if (isRunning("Close"))
-201             printf("Asking existing instance to close\&.\n");
-202         else
-203             printf("ckb is not running\&.\n");
-204         return 0;
-205     case CommandLineBackground:
-206         // If launched with --background, launch in background
-207         background = 1;
-208         break;
-209     }
-210 
-211     // Launch in background if requested, or if re-launching a previous session
-212     if(qApp->isSessionRestored())
-213             background = 1;
-214     if(isRunning(background ? 0 : "Open")){
-215         printf("ckb is already running\&. Exiting\&.\n");
-216         return 0;
-217     }
-218     MainWindow w;
-219     if(!background)
-220         w\&.show();
-221 
-222     return a\&.exec();
-223 }
+198     case CommandLineHelpRequested:
+199         // If launched with --help, print help and then quit
+200         parser\&.showHelp();
+201         return 0;
+202     case CommandLineClose:
+203         // If launched with --close, kill existing app
+204         if (isRunning("Close"))
+205             printf("Asking existing instance to close\&.\n");
+206         else
+207             printf("ckb is not running\&.\n");
+208         return 0;
+209     case CommandLineBackground:
+210         // If launched with --background, launch in background
+211         background = 1;
+212         break;
+213     }
+214 
+215     // Launch in background if requested, or if re-launching a previous session
+216     if(qApp->isSessionRestored())
+217             background = 1;
+218     if(isRunning(background ? 0 : "Open")){
+219         printf("ckb is already running\&. Exiting\&.\n");
+220         return 0;
+221     }
+222     MainWindow w;
+223     if(!background)
+224         w\&.show();
+225 
+226     return a\&.exec();
+227 }
 .fi
 .SS "\fBCommandLineParseResults\fP parseCommandLine (QCommandLineParser &parser, QString *errorMessage)"
 

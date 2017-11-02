@@ -1,6 +1,6 @@
 <map id="src/ckb&#45;daemon/firmware.c" name="src/ckb&#45;daemon/firmware.c">
 <area shape="rect" id="node2" href="$devnode_8h.html" title="devnode.h" alt="" coords="784,80,866,107"/>
-<area shape="rect" id="node27" href="$usb_8h.html" title="usb.h" alt="" coords="870,155,924,181"/>
+<area shape="rect" id="node27" href="$usb_8h.html" title="Definitions for using USB interface. " alt="" coords="870,155,924,181"/>
 <area shape="rect" id="node28" href="$firmware_8h.html" title="firmware.h" alt="" coords="706,155,787,181"/>
 <area shape="rect" id="node29" href="$notify_8h.html" title="notify.h" alt="" coords="636,80,700,107"/>
 <area shape="rect" id="node3" href="$includes_8h.html" title="includes.h" alt="" coords="706,229,787,256"/>

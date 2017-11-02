@@ -1,5 +1,8 @@
 var searchData=
 [
+  ['macro_5fpt_5fdequeue',['macro_pt_dequeue',['../input_8c.html#a712ce5a59c9a281c4d4c4d0ba3446de7',1,'input.c']]],
+  ['macro_5fpt_5fenqueue',['macro_pt_enqueue',['../input_8c.html#a225fb4bb1f20d4a8b524f5d72763367d',1,'input.c']]],
+  ['macro_5fpt_5ffirst',['macro_pt_first',['../input_8c.html#a34b6a3d2e97732b6973cd608e35317c9',1,'input.c']]],
   ['macroaction',['macroAction',['../classKeyAction.html#aae0da6c8f1c3bf409c35c6ab21a1115d',1,'KeyAction']]],
   ['macrocontent',['macroContent',['../classKeyAction.html#ac72be90499e81c76ae9f908e2a17d1c0',1,'KeyAction']]],
   ['macrodelay',['macroDelay',['../classKb.html#a3c3c9f7d0bb57507c9c9cb0c4f647c20',1,'Kb::macroDelay()'],['../classKb.html#a90fe47781ecd9e51bbde22540bfa2812',1,'Kb::macroDelay(bool flag)']]],
@@ -9,6 +12,7 @@ var searchData=
   ['macromask',['macromask',['../input_8c.html#abd38419ce56379559481f51d9491adeb',1,'input.c']]],
   ['macroreader',['MacroReader',['../classMacroReader.html#af1303babee9627566ee763630a45158c',1,'MacroReader::MacroReader()'],['../classMacroReader.html#a4c8a7c7b890ee96648111b912e8ebf5a',1,'MacroReader::MacroReader(int macroNumber, QString macroPath, QPlainTextEdit *macBox, QPlainTextEdit *macText)']]],
   ['macroreaderthread',['MacroReaderThread',['../classMacroReaderThread.html#a55338956e86e7eae3b40df67245ef4f4',1,'MacroReaderThread']]],
+  ['macrotiming',['macroTiming',['../classKeyAction.html#a1182588fa5f3158d72830a4b064dfa2d',1,'KeyAction']]],
   ['main',['main',['../ckb-anim_8h.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;ckb-anim.h'],['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;main.cpp'],['../ckb-daemon_2main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;main.c']]],
   ['mainwindow',['MainWindow',['../classMainWindow.html#a8b244be8b7b7db1b08de2a2acb9409db',1,'MainWindow']]],
   ['makeicon',['makeIcon',['../classGradientDialog.html#a2a6be76acaa2bf9b2cfe4cfca38fb762',1,'GradientDialog']]],

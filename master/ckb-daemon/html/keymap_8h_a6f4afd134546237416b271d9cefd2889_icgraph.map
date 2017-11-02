@@ -1,10 +1,10 @@
 <map id="hid_kb_translate" name="hid_kb_translate">
-<area shape="rect" id="node2" href="$usb__linux_8c.html#a9e5784bfca2e4612f498ce67c7dab275" title="os_inputmain" alt="" coords="171,31,269,57"/>
-<area shape="rect" id="node3" href="$usb_8c.html#a10ad381abfe51e67e341c882c92bb9ac" title="_setupusb" alt="" coords="317,31,400,57"/>
-<area shape="rect" id="node4" href="$usb_8h.html#a1ab9d61dd894466125283465201161cd" title="setupusb" alt="" coords="448,31,523,57"/>
+<area shape="rect" id="node2" href="$usb__linux_8c.html#a9e5784bfca2e4612f498ce67c7dab275" title="os_inputmain This function is run in a separate thread and will be detached from the main thread..." alt="" coords="171,31,269,57"/>
+<area shape="rect" id="node3" href="$usb_8c.html#a10ad381abfe51e67e341c882c92bb9ac" title="brief . " alt="" coords="317,31,400,57"/>
+<area shape="rect" id="node4" href="$usb_8h.html#a1ab9d61dd894466125283465201161cd" title="setupusb starts a thread with kb as parameter and _setupusb() as entrypoint. " alt="" coords="448,31,523,57"/>
 <area shape="rect" id="node5" href="$usb__linux_8c.html#a3185d6da36c8b0f8b862a8479ae82034" title="usbadd" alt="" coords="571,31,635,57"/>
-<area shape="rect" id="node6" href="$usb__linux_8c.html#a50efc8ee0ffcb6f201735d1a3bb08779" title="usb_add_device" alt="" coords="683,31,799,57"/>
-<area shape="rect" id="node7" href="$usb__linux_8c.html#ad56c1e4ec53bbd6b947cb535590328ea" title="udev_enum" alt="" coords="849,5,938,32"/>
+<area shape="rect" id="node6" href="$usb__linux_8c.html#a50efc8ee0ffcb6f201735d1a3bb08779" title="Add a udev device. Returns 0 if device was recognized/added. " alt="" coords="683,31,799,57"/>
+<area shape="rect" id="node7" href="$usb__linux_8c.html#ad56c1e4ec53bbd6b947cb535590328ea" title="udev_enum use the udev_enumerate_add_match_subsystem() to get all you need but only that..." alt="" coords="849,5,938,32"/>
 <area shape="rect" id="node8" href="$usb__linux_8c.html#a0859efad3739abe2ec61af4f3bb983ff" title="usbmain" alt="" coords="987,31,1058,57"/>
 <area shape="rect" id="node9" href="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1107,31,1157,57"/>
 <area shape="rect" id="node10" href="$notify_8c.html#ae246359e104d63520158c26329caac80" title="restart" alt="" coords="1205,31,1264,57"/>

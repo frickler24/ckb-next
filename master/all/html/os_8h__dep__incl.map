@@ -10,7 +10,7 @@
 <area shape="rect" id="node30" href="$dpi_8h.html" title="src/ckb&#45;daemon/dpi.h" alt="" coords="843,336,989,363"/>
 <area shape="rect" id="node32" href="$keymap_8c.html" title="src/ckb&#45;daemon/keymap.c" alt="" coords="3528,336,3704,363"/>
 <area shape="rect" id="node33" href="$devnode_8h.html" title="src/ckb&#45;daemon/devnode.h" alt="" coords="2584,336,2763,363"/>
-<area shape="rect" id="node34" href="$usb_8h.html" title="src/ckb&#45;daemon/usb.h" alt="" coords="1905,253,2055,280"/>
+<area shape="rect" id="node34" href="$usb_8h.html" title="Definitions for using USB interface. " alt="" coords="1905,253,2055,280"/>
 <area shape="rect" id="node35" href="$input_8h.html" title="src/ckb&#45;daemon/input.h" alt="" coords="2939,336,3097,363"/>
 <area shape="rect" id="node36" href="$firmware_8h.html" title="src/ckb&#45;daemon/firmware.h" alt="" coords="2227,336,2407,363"/>
 <area shape="rect" id="node37" href="$extra__mac_8c.html" title="src/ckb&#45;daemon/extra\l_mac.c" alt="" coords="1510,246,1657,287"/>

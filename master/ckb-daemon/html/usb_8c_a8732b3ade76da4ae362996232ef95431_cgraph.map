@@ -1,10 +1,10 @@
 <map id="closeusb" name="closeusb">
-<area shape="rect" id="node2" href="$usb_8h.html#a6a62575e9073fae15efb58f24fbfe5b8" title="os_closeusb" alt="" coords="142,5,237,32"/>
+<area shape="rect" id="node2" href="$usb_8h.html#a6a62575e9073fae15efb58f24fbfe5b8" title="os_closeusb unclaim it, destroy the udev device and clear data structures at kb " alt="" coords="142,5,237,32"/>
 <area shape="rect" id="node4" href="$input_8h.html#a44df5105a6a3f2eda5bc39a88201bd1a" title="os_inputclose" alt="" coords="138,56,241,83"/>
-<area shape="rect" id="node5" href="$devnode_8c.html#a8d0aeeebb364608943b78573adb85c7f" title="rmdevpath" alt="" coords="148,107,231,133"/>
-<area shape="rect" id="node8" href="$devnode_8c.html#a4f2642e0c38280a1516fbe153c9fa18f" title="updateconnected" alt="" coords="129,157,250,184"/>
-<area shape="rect" id="node3" href="$usb__linux_8c.html#a49df4aa42759b30c67b6298ddbcadf59" title="usbunclaim" alt="" coords="319,5,407,32"/>
+<area shape="rect" id="node5" href="$devnode_8c.html#a8d0aeeebb364608943b78573adb85c7f" title="Remove the dev path for the keyboard at index. Returns 0 on success. " alt="" coords="148,107,231,133"/>
+<area shape="rect" id="node8" href="$devnode_8c.html#a4f2642e0c38280a1516fbe153c9fa18f" title="Update the list of connected devices. " alt="" coords="129,157,250,184"/>
+<area shape="rect" id="node3" href="$usb__linux_8c.html#afe1111f494da4776633be32fecaba44b" title="usbunclaim" alt="" coords="319,5,407,32"/>
 <area shape="rect" id="node6" href="$devnode_8c.html#a9d97ede033e4f6c6bdd1c66fc82aa15e" title="_rmnotifynode" alt="" coords="311,56,415,83"/>
 <area shape="rect" id="node7" href="$devnode_8c.html#aac8f6f936a0ff6c16adc677622b226c4" title="rm_recursive" alt="" coords="314,107,411,133"/>
-<area shape="rect" id="node9" href="$devnode_8c.html#acc36eaba5eb854461ab3c0a4d146e9c9" title="_updateconnected" alt="" coords="299,157,427,184"/>
+<area shape="rect" id="node9" href="$devnode_8c.html#acc36eaba5eb854461ab3c0a4d146e9c9" title="_updateconnected Update the list of connected devices. " alt="" coords="299,157,427,184"/>
 </map>

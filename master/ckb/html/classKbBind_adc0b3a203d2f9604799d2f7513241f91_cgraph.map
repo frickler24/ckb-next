@@ -1,4 +1,3 @@
 <map id="KbBind::defaultAction" name="KbBind::defaultAction">
-<area shape="rect" id="node2" href="$classKeyAction.html#ae744da2dd239b7d6596a341ea63b0e88" title="KeyAction::defaultAction" alt="" coords="203,5,370,32"/>
-<area shape="rect" id="node3" href="$classKbBind.html#a195e520e9f7ee76718ca8ca8927b1d3b" title="KbBind::globalRemap" alt="" coords="213,56,361,83"/>
+<area shape="rect" id="node2" href="$classKbBind.html#ac4dc2ffee7d967975b8f13c75d52c5a3" title="KbBind::devParent" alt="" coords="203,5,333,32"/>
 </map>

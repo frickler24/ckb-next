@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['g',['g',['../structures_8h.html#aef072a169d12aabf02985bd659103244',1,'lighting']]],
+  ['g',['g',['../structures_8h.html#a3df276662a9e5c1573c10835db13e0e8',1,'lighting']]],
   ['get',['GET',['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3a12a8dcf59c16b5aadfda3a08ba67d529',1,'command.h']]],
   ['get_5fvtable',['get_vtable',['../usb_8c.html#a25ded61622ec9349905b5aa2ed2cb48b',1,'usb.c']]],
   ['getfwversion',['getfwversion',['../firmware_8c.html#a3a6f1b57ca13dc54b046616963b299fa',1,'getfwversion(usbdevice *kb):&#160;firmware.c'],['../firmware_8h.html#a3a6f1b57ca13dc54b046616963b299fa',1,'getfwversion(usbdevice *kb):&#160;firmware.c']]],

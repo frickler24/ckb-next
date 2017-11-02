@@ -1,11 +1,15 @@
 <map id="cmd_idle_kb" name="cmd_idle_kb">
-<area shape="rect" id="node2" href="$device__keyboard_8c.html#aeb1b886efdcfce59e4ee8977ba2fd135" title="setactive_kb" alt="" coords="149,31,245,57"/>
-<area shape="rect" id="node3" href="$input_8c.html#ae360d0b9a764a1d38c5be5464be8b70a" title="inputupdate" alt="" coords="294,31,383,57"/>
-<area shape="rect" id="node4" href="$input_8c.html#aed8e9842ed5750c1d328c5dc4c1ba2bd" title="inputupdate_keys" alt="" coords="433,56,557,83"/>
-<area shape="rect" id="node6" href="$input_8h.html#a9f2cfb2d883ae4a3732047fe3f3da683" title="os_mousemove" alt="" coords="605,5,720,32"/>
-<area shape="rect" id="node5" href="$input_8c.html#abd38419ce56379559481f51d9491adeb" title="macromask" alt="" coords="617,56,708,83"/>
-<area shape="rect" id="node8" href="$input_8h.html#af0d3401f317f3214dadad7d1a3378c58" title="os_keypress" alt="" coords="615,107,711,133"/>
-<area shape="rect" id="node9" href="$notify_8c.html#ac2411c0997dfdbefdebd45f2584a5d04" title="nprintkey" alt="" coords="625,157,700,184"/>
-<area shape="rect" id="node7" href="$input__linux_8c.html#a14ff0fdf147e3702197db2cadb878460" title="isync" alt="" coords="771,56,824,83"/>
-<area shape="rect" id="node10" href="$notify_8c.html#a7ac88f15243030290e4d57c3c9ac7c98" title="nprintf" alt="" coords="768,157,827,184"/>
+<area shape="rect" id="node2" href="$device__keyboard_8c.html#aeb1b886efdcfce59e4ee8977ba2fd135" title="setactive_kb" alt="" coords="149,196,245,223"/>
+<area shape="rect" id="node3" href="$input_8c.html#ae360d0b9a764a1d38c5be5464be8b70a" title="inputupdate" alt="" coords="294,196,383,223"/>
+<area shape="rect" id="node4" href="$input_8c.html#aed8e9842ed5750c1d328c5dc4c1ba2bd" title="inputupdate_keys Handle input from Keyboard or mouse; start Macrof if detected. " alt="" coords="433,132,557,159"/>
+<area shape="rect" id="node9" href="$input_8h.html#a9f2cfb2d883ae4a3732047fe3f3da683" title="os_mousemove" alt="" coords="753,259,868,285"/>
+<area shape="rect" id="node5" href="$input_8c.html#abd38419ce56379559481f51d9491adeb" title="macromask" alt="" coords="605,157,696,184"/>
+<area shape="rect" id="node6" href="$input_8c.html#a42ef48810461524270042eeda9616dba" title="play_macro is the code for all threads started to play a macro. " alt="" coords="606,107,695,133"/>
+<area shape="rect" id="node8" href="$input_8c.html#a34b6a3d2e97732b6973cd608e35317c9" title="macro_pt_first returns the first pthread_id but does not remove the first entry. " alt="" coords="758,208,863,235"/>
+<area shape="rect" id="node11" href="$input_8h.html#af0d3401f317f3214dadad7d1a3378c58" title="os_keypress" alt="" coords="763,56,859,83"/>
+<area shape="rect" id="node13" href="$notify_8c.html#ac2411c0997dfdbefdebd45f2584a5d04" title="nprintkey" alt="" coords="613,5,688,32"/>
+<area shape="rect" id="node7" href="$input_8c.html#a225fb4bb1f20d4a8b524f5d72763367d" title="macro_pt_enqueue Save the new thread in the single linked list (FIFO). " alt="" coords="745,107,877,133"/>
+<area shape="rect" id="node12" href="$input_8c.html#a712ce5a59c9a281c4d4c4d0ba3446de7" title="macro_pt_dequeue gets the first thread id of the list and returns the thread_id stored in it..." alt="" coords="745,157,877,184"/>
+<area shape="rect" id="node10" href="$input__linux_8c.html#a14ff0fdf147e3702197db2cadb878460" title="isync" alt="" coords="925,157,979,184"/>
+<area shape="rect" id="node14" href="$notify_8c.html#a7ac88f15243030290e4d57c3c9ac7c98" title="nprintf" alt="" coords="781,5,840,32"/>
 </map>

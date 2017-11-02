@@ -114,11 +114,13 @@ $(document).ready(function(){initNavTree('md_DAEMON.html','');});
 <p>Other <code>ckb*</code> devices contain the following:</p>
 <ul>
 <li><code>cmd</code>: Keyboard controller.</li>
-<li><code>notify0</code>: Keyboard notifications.</li>
+<li><code>notify0</code>: Keyboard- or mouse notifications.</li>
+<li><code>notify1</code>: Keyboard- or mouse notifications, used for macro recording.</li>
 <li><code>features</code>: Device features.</li>
 <li><code>fwversion</code>: Device firmware version (not present on all devices).</li>
 <li><code>model</code>: Device description/model.</li>
 <li><code>pollrate</code>: Poll rate in milliseconds (not present on all devices).</li>
+<li><code>productid</code>: Contains the USB productID of the hardware</li>
 <li><code>serial</code>: Device serial number. <code>model</code> and <code>serial</code> will match the info found in <code>ckb0/connected</code></li>
 </ul>
 <h2>Commands </h2>
@@ -216,6 +218,29 @@ $(document).ready(function(){initNavTree('md_DAEMON.html','');});
 <li><code>macro g2+g3:+lalt,+f4,-f4,-lalt</code> triggers an Alt+F4 when G2 and G3 are pressed simultaneously.</li>
 </ul>
 <p>Assigning a macro to a key will cause its binding to be ignored; for instance, <code>macro a:+b,-b</code> will cause A to generate a B character regardless of its binding. However, <code>macro lctrl+a:+b,-b</code> will cause A to generate a B only when Ctrl is also held down.</p>
+<h3>Macro playback delay</h3>
+<p>There are two types of playback delay that can be set with macros; global and local. Setting a <em>global delay</em> value introduces a time delay between events during macro execution or playback. <em>Local delay</em> allows setting the delay after an individual event, overriding the global delay value for that event. Thus global delay can be used to set the overall playback speed of macros and local delays can be used to tune individual events within a macro.</p>
+<p>All delay values are specified in microseconds (us) and are positive values from <code>0</code> to <code>UINT_MAX - 1</code>. This means delays range from 0 to just over 1 hour (4,294,967,294us, 4,294 seconds, 71 minutes, or 1.19 hours). A value of zero (0) represents no delay between actions.</p>
+<h4>Global macro delay (default delay)</h4>
+<p>Global delay allows macro playback speed to be changed. It sets the time between (actually after) each recorded macro event. If global delay is set to 1 microsecond then a 1 ms delay will follow each individual macro event when the macro is triggered.</p>
+<p>The <em>global delay</em> is set with the ckb-daemon's existing (in testing branch) <code>delay</code> command followed by an unsigned integer representing the number of microseconds to wait after each macro action and before the next.</p>
+<p>Global delay can also be set to <code>on</code> which maintains backwards compatibility with the current development of <code>ckb-daemon</code> for long macro playback. That is, setting the global delay to <code>on</code> introduces a 30us and a 100us delay based on the macro's length during playback.</p>
+<p><b>NOTE</b>: This setting also introduces a delay after the last macro action. This functionality exists in the current testing branch and was left as-is. It is still to be determined if this is a bug or a feature.</p>
+<p><b>Examples:</b></p>
+<ul>
+<li><code>delay 1000</code> sets a 1,000us delay between action playback.</li>
+<li><code>delay on</code> sets long macro delay; 30us for actions between 20 and 200, 100us for actions &gt; 200.</li>
+<li><code>delay off</code> sets no delay (same as 0).</li>
+<li><code>delay 0</code> sets no delay (same as off).</li>
+<li><code>delay spearmint-potato</code> is invalid input, sets no delay (same as off).</li>
+</ul>
+<h4>Local macro delay (keystroke delay)</h4>
+<p>Local Delay allows each macro action to have a post-action delay associated with it. This allows a macro to vary it's playback speed for each event. If no local delay is specified for a macro action, then the global <code>delay</code> (above) is used. All delay values are in microsecods (us) as with the global delay setting.</p>
+<p>***Examples:***</p>
+<ul>
+<li><code>macro g5:+d,-d,+e=5000,-e,+l,-l=10000,+a,-a,+y,-y=1000000,+enter,-enter</code> define a macro for <code>g5</code> with a 5,000us delay between the <code>e</code> down and <code>e</code> up actions. A 1,000us delay between <code>l</code> up and <code>a</code> down, a delay of one second (1,000,000us) after <code>y</code> up and before <code>enter</code>, and the global delay for all other actions.</li>
+<li><code>macro g5:+d,-d=0</code> use default delay between <code>d</code> down and <code>d</code> up and no delay (0us) after <code>d</code> up. This removes the noted feature/bug (above) where the last action has a trailing delay associated with it.</li>
+</ul>
 <h2>DPI and mouse settings </h2>
 <p>DPI settings are stored in a bank. They are controlled with the <code>dpi</code> command.</p>
 <ul>
@@ -278,7 +303,7 @@ $(document).ready(function(){initNavTree('md_DAEMON.html','');});
 <p>The latest firmware versions and their URLs can be found in the <code>FIRMWARE</code> document. To update your keyboard's firmware, first extract the contents of the zip file and then issue the command <code>fwupdate /path/to/fw/file.bin</code> to the keyboard you wish to update. The path name must be absolute and must not include spaces. If it succeeded, you should see <code>fwupdate &lt;path&gt; ok</code> logged to the keyboard's notification node and then the device will disconnect and reconnect. If you see <code>fwupdate &lt;path&gt; invalid</code> it means that the firmware file was not valid for the device; more info may be available in the daemon's <code>stdout</code>. If you see <code>fwupdate &lt;path&gt; fail</code> it means that the file was valid but the update failed at a hardware level. The keyboard may disconnect/reconnect anyway or it may remain in operation.</p>
 <p>When the device reconnects you should see the new firmware version in its <code>fwversion</code> node; if you see <code>0000</code> instead it means that the keyboard did not update successfully and will need another <code>fwupdate</code> command in order to function again. If the update fails repeatedly, try connecting the keyboard to a Windows PC and using the official firmware update in CUE.</p>
 <h2>Restart </h2>
-<p>Because sometimes the communication between the daemon and the keyboard is corrupted after resuming from standby or suspend, a restart function is implemented. It first calls the quit() funtion, then it calls <a class="el" href="ckb-anim_8h.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a> again with the original parameter list.</p>
+<p>Because sometimes the communication between the daemon and the keyboard is corrupted after resuming from standby or suspend, a restart function is implemented. It first calls the quit() function, then it calls <a class="el" href="ckb-anim_8h.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a> again with the original parameter list.</p>
 <p>There are two ways to restart the daemon:</p>
 <ul>
 <li>send the string "restart some-description-as-one-word" to the cmd-pipe (normally /dev/input/ckb1/cmd or /dev/input/ckb2/cmd, depending on what device gets which ID.</li>
@@ -293,7 +318,7 @@ $(document).ready(function(){initNavTree('md_DAEMON.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed May 24 2017 08:16:54 for ckb-next by
+    <li class="footer">Generated on Thu Nov 2 2017 17:17:53 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

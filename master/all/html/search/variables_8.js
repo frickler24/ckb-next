@@ -1,6 +1,8 @@
 var searchData=
 [
   ['handle',['handle',['../structures_8h.html#a1e1d8c37298aa076d30ba95dd97465ef',1,'usbdevice']]],
+  ['harpoonkeys',['HarpoonKeys',['../keymap_8cpp.html#a435163ca850df4f40c6607e12cda467b',1,'keymap.cpp']]],
+  ['harpoverlay',['harpOverlay',['../keywidget_8cpp.html#a6f4dc38b77f5dd804aeda2576754619b',1,'keywidget.cpp']]],
   ['hascurrentfile_5ff',['hasCurrentFile_f',['../classQuaZipPrivate.html#ad1f5a18e88f86ac0495129e9da017fc1',1,'QuaZipPrivate']]],
   ['hasgpg',['hasGPG',['../classKbFirmware.html#a9c72fd60ba705767f1a23aa9a7284d26',1,'KbFirmware']]],
   ['hash',['hash',['../structKbFirmware_1_1FW.html#a424fc886a3aea9ea518324dcf72a1748',1,'KbFirmware::FW']]],

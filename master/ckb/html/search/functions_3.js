@@ -67,8 +67,6 @@ var searchData=
   ['copyright',['copyright',['../classAnimScript.html#a9c35c39aa82523625e47cac84d17a53e',1,'AnimScript']]],
   ['count',['count',['../classAnimScript.html#a9356799764602db2d202348346919423',1,'AnimScript::count()'],['../classColorMap.html#a0755e3891edd1e0d2dce1491f5b06ba7',1,'ColorMap::count()'],['../classKeyMap.html#a56d9ed2e2be7b5ae0de5294636f25344',1,'KeyMap::count()'],['../classQuaZipDir.html#aa3f14665e3991351f4ef94ab8e0ab29d',1,'QuaZipDir::count()']]],
   ['csize',['csize',['../classQuaZipFile.html#ac4da08e5cdec368a2a686775f7dc5639',1,'QuaZipFile']]],
-  ['curdpi',['curDpi',['../classKbPerf.html#a0a63c31c04ee2b750cc3b91e3dde4771',1,'KbPerf::curDpi() const '],['../classKbPerf.html#a63acb61ec1726f8448d247cc6ef832e5',1,'KbPerf::curDpi(const QPoint &amp;newDpi)'],['../classKbPerf.html#a99bb8a925bc4e0b6ad04bd212c4b3204',1,'KbPerf::curDpi(int newDpi)']]],
-  ['curdpiidx',['curDpiIdx',['../classKbPerf.html#a6badfb392027292171f3f30e949e0212',1,'KbPerf::curDpiIdx() const '],['../classKbPerf.html#a708a1293174fc9a257e429d0cb4410a8',1,'KbPerf::curDpiIdx(int newIdx)']]],
   ['current',['current',['../classGradientDialogWidget.html#a3514509e581436a6a50a69505ffd9616',1,'GradientDialogWidget']]],
   ['currentbind',['currentBind',['../classKb.html#af9ff36a53624a3e5548d8060d125edb9',1,'Kb']]],
   ['currentchanged',['currentChanged',['../classGradientDialog.html#a99cd3a6a06c21682583fd80c0a3659ec',1,'GradientDialog::currentChanged()'],['../classGradientDialogWidget.html#aeae3264e6deb26c09749c938af4583ce',1,'GradientDialogWidget::currentChanged()']]],

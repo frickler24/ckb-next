@@ -14,6 +14,7 @@ var classColorMap =
     [ "init", "classColorMap.html#ad441372fc281a9555b3d3846a023ddf5", null ],
     [ "keyNames", "classColorMap.html#adaf17e1fca09c8170fb2c226be8317ec", null ],
     [ "operator=", "classColorMap.html#a17dd1f92bef8f63d6d980dcaeab8e6b9", null ],
+    [ "operator==", "classColorMap.html#a926f78baffb789848f74b1b3d4821437", null ],
     [ "_colors", "classColorMap.html#af83ea2effc0c88e8d44fd04e6bb974fb", null ],
     [ "_count", "classColorMap.html#ae4e6c620f3c5299ead48b8c65aa21b39", null ],
     [ "_keyNames", "classColorMap.html#a69c0dea1955f6d34f725c30217d62665", null ],

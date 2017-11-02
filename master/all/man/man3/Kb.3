@@ -1,4 +1,4 @@
-.TH "Kb" 3 "Wed May 24 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "Kb" 3 "Thu Nov 2 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -781,7 +781,7 @@ References _currentMode, _currentProfile, KbPerf::applyIndicators(), KbMode::bin
 418     cmd\&.write(QString("\n@%1 ")\&.arg(notifyNumber)\&.toLatin1());
 419     bind->update(cmd, changed);
 420     cmd\&.write(" ");
-421     perf->update(cmd, notifyNumber, changed);
+421     perf->update(cmd, notifyNumber, changed, true);
 422     cmd\&.write("\n");
 423     cmd\&.flush();
 424 }
@@ -919,7 +919,7 @@ References _hwProfile, and deleteHw()\&.
 .PP
 Definition at line 297 of file kb\&.cpp\&.
 .PP
-References _currentMode, _currentProfile, _hwProfile, KbProfile::append(), KbLight::base(), KbLight::close(), deletePrevious(), getKeyMap(), UsbId::guidString(), hwModeCount, UsbId::hwModified, hwProfile(), KbProfile::id(), KbMode::id(), KbMode::light(), KbProfile::modeCount(), KbProfile::modes(), UsbId::modified, UsbId::modifiedString(), monochrome, KbMode::name(), KbMode::perf(), prevMode, KbProfile::setNeedsSave(), KbMode::setNeedsSave(), KbPerf::update(), and writeProfileHeader()\&.
+References _currentMode, _currentProfile, _hwProfile, KbProfile::append(), KbLight::base(), KbLight::close(), deletePrevious(), getKeyMap(), UsbId::guidString(), hwModeCount, UsbId::hwModified, hwProfile(), KbProfile::id(), KbMode::id(), KbMode::light(), KbProfile::modeCount(), KbProfile::modes(), UsbId::modified, UsbId::modifiedString(), monochrome, KbMode::name(), notifyNumber, KbMode::perf(), prevMode, KbProfile::setNeedsSave(), KbMode::setNeedsSave(), KbPerf::update(), and writeProfileHeader()\&.
 .PP
 Referenced by KbWidget::on_hwSaveButton_clicked(), and KbProfileDialog::on_profileList_customContextMenuRequested()\&.
 .PP
@@ -959,7 +959,7 @@ Referenced by KbWidget::on_hwSaveButton_clicked(), and KbProfileDialog::on_profi
 329         // Write lighting and performance
 330         light->base(cmd, true, monochrome);
 331         cmd\&.write(" ");
-332         perf->update(cmd, true, false);
+332         perf->update(cmd, notifyNumber, true, false);
 333         // Update mode ID
 334         mode->id()\&.hwModified = mode->id()\&.modified;
 335         mode->setNeedsSave();
@@ -1342,7 +1342,7 @@ References _needsSave, and _profiles\&.
 .PP
 Definition at line 471 of file kb\&.cpp\&.
 .PP
-References _currentMode, _currentProfile, _hwProfile, _needsSave, _profiles, KbPerf::angleSnap(), KbLight::animKeypress(), KbProfile::append(), KbMode::bind(), KbLight::color(), KbPerf::curDpiIdx(), KbPerf::dpi(), KbPerf::DPI_COUNT, KbPerf::dpiColor(), KbPerf::dpiEnabled(), fwUpdateFinished(), fwUpdateProgress(), fwUpdPath, getKeyMap(), UsbId::guid, hwLoading, HWMODE_MAX, hwModeCount, UsbId::hwModifiedString(), hwProfile(), KbProfile::id(), KbMode::id(), KbProfile::indexOf(), isMouse(), iState, KbBind::keyEvent(), KbPerf::liftHeight(), KbMode::light(), KbProfile::modeCount(), modeRenamed(), KbProfile::modes(), UsbId::modifiedString(), KbProfile::move(), KbProfile::name(), KbMode::name(), newProfile(), notifyNumber, KbMode::perf(), profileAdded(), profileChanged(), profileRenamed(), setCurrentProfile(), KbProfile::setNeedsSave(), KbMode::setNeedsSave(), x, and y\&.
+References _currentMode, _currentProfile, _hwProfile, _needsSave, _profiles, KbPerf::angleSnap(), KbLight::animKeypress(), KbProfile::append(), KbPerf::baseDpiIdx(), KbMode::bind(), KbLight::color(), KbPerf::dpi(), KbPerf::DPI_COUNT, KbPerf::dpiColor(), KbPerf::dpiEnabled(), fwUpdateFinished(), fwUpdateProgress(), fwUpdPath, getKeyMap(), UsbId::guid, hwLoading, HWMODE_MAX, hwModeCount, UsbId::hwModifiedString(), hwProfile(), KbProfile::id(), KbMode::id(), KbProfile::indexOf(), isMouse(), iState, KbBind::keyEvent(), KbPerf::liftHeight(), KbMode::light(), KbProfile::modeCount(), modeRenamed(), KbProfile::modes(), UsbId::modifiedString(), KbProfile::move(), KbProfile::name(), KbMode::name(), newProfile(), notifyNumber, KbMode::perf(), profileAdded(), profileChanged(), profileRenamed(), setCurrentProfile(), KbProfile::setNeedsSave(), KbMode::setNeedsSave(), x, and y\&.
 .PP
 .nf
 471                                {
@@ -1594,7 +1594,7 @@ References _currentMode, _currentProfile, _hwProfile, _needsSave, _profiles, KbP
 717                 idx = 1;
 718             if(idx >= KbPerf::DPI_COUNT)
 719                 idx = KbPerf::DPI_COUNT - 1;
-720             perf->curDpiIdx(idx);
+720             perf->baseDpiIdx(idx);
 721         } else if(components[2] == "hwlift"){
 722             // Mouse lift height (1\&.\&.\&.5)
 723             if(!_hwProfile || _hwProfile->modeCount() <= mode || mode >= HWMODE_MAX || !hwLoading[mode + 1])
@@ -2006,7 +2006,7 @@ Referenced by frameUpdate(), hwSave(), Kb(), and KbWidget::KbWidget()\&.
 .PP
 Definition at line 194 of file kb\&.h\&.
 .PP
-Referenced by frameUpdate(), fwUpdate(), Kb(), readNotify(), and ~Kb()\&.
+Referenced by frameUpdate(), fwUpdate(), hwSave(), Kb(), readNotify(), and ~Kb()\&.
 .SS "QString Kb::notifyPath\fC [private]\fP"
 
 .PP

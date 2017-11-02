@@ -68,6 +68,6 @@ var searchData=
   ['corsair_5fmousecopy',['corsair_mousecopy',['../keymap_8c.html#a0dc9a16564cc51b35a35d28af1a96fb0',1,'corsair_mousecopy(unsigned char *kbinput, int endpoint, const unsigned char *urbinput):&#160;keymap.c'],['../keymap_8h.html#a0dc9a16564cc51b35a35d28af1a96fb0',1,'corsair_mousecopy(unsigned char *kbinput, int endpoint, const unsigned char *urbinput):&#160;keymap.c']]],
   ['current',['current',['../structures_8h.html#a19bec69caa1bec49b8f3a1bde78a5424',1,'dpiset']]],
   ['currentmode',['currentmode',['../structures_8h.html#a5646d61c7780a87a21b70209396ff605',1,'usbprofile']]],
-  ['ckb_2dnext_3a_20rgb_20driver_20for_20linux_20and_20os_20x',['ckb-next: RGB Driver for Linux and OS X',['../md_README.html',1,'']]],
+  ['ckb_2dnext_3a_20rgb_20driver_20for_20linux_20and_20macos',['ckb-next: RGB Driver for Linux and macOS',['../md_README.html',1,'']]],
   ['cbk_20improvements_20roadmap',['cbk Improvements Roadmap',['../md_ROADMAP.html',1,'']]]
 ];

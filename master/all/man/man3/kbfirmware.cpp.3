@@ -1,4 +1,4 @@
-.TH "src/ckb/kbfirmware.cpp" 3 "Wed May 24 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "src/ckb/kbfirmware.cpp" 3 "Thu Nov 2 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -38,22 +38,22 @@ src/ckb/kbfirmware.cpp \-
 .SS "static QString tableName (const QString &features)\fC [static]\fP"
 
 .PP
-Definition at line 153 of file kbfirmware\&.cpp\&.
+Definition at line 150 of file kbfirmware\&.cpp\&.
 .PP
 Referenced by KbFirmware::_fileForBoard(), and KbFirmware::_latestForBoard()\&.
 .PP
 .nf
-153                                                  {
-154     QStringList components = features\&.split(" ");
-155     if(components\&.length() < 2)
-156         return "";
-157     // First two components are vendor and model
-158     QString vendorModel = components[0]\&.toUpper() + "-" + components[1]\&.toUpper();
-159     // Add "RGB" on RGB boards
-160     if(features\&.contains("rgb") && !features\&.contains("monochrome"))
-161         vendorModel += "RGB";
-162     return vendorModel;
-163 }
+150                                                  {
+151     QStringList components = features\&.split(" ");
+152     if(components\&.length() < 2)
+153         return "";
+154     // First two components are vendor and model
+155     QString vendorModel = components[0]\&.toUpper() + "-" + components[1]\&.toUpper();
+156     // Add "RGB" on RGB boards
+157     if(features\&.contains("rgb") && !features\&.contains("monochrome"))
+158         vendorModel += "RGB";
+159     return vendorModel;
+160 }
 .fi
 .SH "Variable Documentation"
 .PP 

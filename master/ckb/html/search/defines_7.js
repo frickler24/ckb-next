@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['includecryptingcode_5fifcryptallowed',['INCLUDECRYPTINGCODE_IFCRYPTALLOWED',['../zip_8c.html#aeef9f96d4641105f1c2f5e7d5a51c713',1,'zip.c']]]
+  ['glaive_5fheight',['GLAIVE_HEIGHT',['../keymap_8cpp.html#a76141ad5f9d7f2fd94b52db57a8aac7d',1,'keymap.cpp']]],
+  ['glaive_5fwidth',['GLAIVE_WIDTH',['../keymap_8cpp.html#a02bf97c911365f9edb64f5ddae643750',1,'keymap.cpp']]]
 ];

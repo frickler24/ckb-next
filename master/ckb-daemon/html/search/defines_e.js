@@ -1,5 +1,11 @@
 var searchData=
 [
+  ['p_5fglaive',['P_GLAIVE',['../usb_8h.html#a73d4d984088a1d89a62b46cdd0437c8c',1,'usb.h']]],
+  ['p_5fglaive_5fstr',['P_GLAIVE_STR',['../usb_8h.html#aeedd6d2b5282abc05ead73764fcce2bf',1,'usb.h']]],
+  ['p_5fharpoon',['P_HARPOON',['../usb_8h.html#a0dcf30bf384db4146eb7be833c55c92b',1,'usb.h']]],
+  ['p_5fharpoon_5fstr',['P_HARPOON_STR',['../usb_8h.html#ad7d69769a77137011bfd465f941fd158',1,'usb.h']]],
+  ['p_5fk63_5fnrgb',['P_K63_NRGB',['../usb_8h.html#a92ec1729371015f42f6a1941e4a11892',1,'usb.h']]],
+  ['p_5fk63_5fnrgb_5fstr',['P_K63_NRGB_STR',['../usb_8h.html#a41bb21092a8702ba55b0e9f847279b87',1,'usb.h']]],
   ['p_5fk65',['P_K65',['../usb_8h.html#affc75c5e028c467b9a294360b8a66a17',1,'usb.h']]],
   ['p_5fk65_5flux',['P_K65_LUX',['../usb_8h.html#a976d0683dbfa2225bf40016d151f70d3',1,'usb.h']]],
   ['p_5fk65_5flux_5fstr',['P_K65_LUX_STR',['../usb_8h.html#a87f69e4b896c892cfb5b3ff1410d31ae',1,'usb.h']]],

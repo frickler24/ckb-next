@@ -36,9 +36,9 @@
 <area shape="rect" id="node34" href="$ckb-daemon_2main_8c.html#a24a012c29e291fef5fa13f4a07fffd33" title="quitWithLock " alt="" coords="431,1007,529,1033"/>
 <area shape="rect" id="node35" href="$ckb-gradient_2main_8c.html#aa27d72ffe1172dde09660dd920e47e6e" title="ckb_info" alt="" coords="682,1083,753,1109"/>
 <area shape="rect" id="node36" href="$usb_8c.html#a8732b3ade76da4ae362996232ef95431" title="closeusb" alt="" coords="680,1133,755,1160"/>
-<area shape="rect" id="node37" href="$devnode_8c.html#a8d0aeeebb364608943b78573adb85c7f" title="rmdevpath" alt="" coords="932,1056,1015,1083"/>
+<area shape="rect" id="node37" href="$devnode_8c.html#a8d0aeeebb364608943b78573adb85c7f" title="Remove the dev path for the keyboard at index. Returns 0 on success. " alt="" coords="932,1056,1015,1083"/>
 <area shape="rect" id="node38" href="$usb_8c.html#ae30a52968bb209e98461f48ffb2ee82f" title="revertusb" alt="" coords="679,981,755,1008"/>
-<area shape="rect" id="node39" href="$usb_8h.html#a41aa3e13beb593c91a5410200b4dd8d2" title="usbkill" alt="" coords="688,1032,747,1059"/>
+<area shape="rect" id="node39" href="$usb_8h.html#a41aa3e13beb593c91a5410200b4dd8d2" title="Stop the USB system. " alt="" coords="688,1032,747,1059"/>
 <area shape="rect" id="node41" href="$classQuaZip.html#a1d3fbd445a8e9d3449ded7371931c6b3" title="Returns the actual case sensitivity for the specified QuaZIP one. " alt="" coords="614,143,821,169"/>
 <area shape="rect" id="node42" href="$unzip_8c.html#a667afaf715015b8195e2f6f22390202d" title="unzGoToFilePos64" alt="" coords="907,337,1040,364"/>
 <area shape="rect" id="node43" href="$classQuaZipPrivate.html#a7eddafdcdfc540f25e98d6df03fed1a7" title="QuaZipPrivate::goToFirst\lUnmappedFile" alt="" coords="633,295,801,337"/>

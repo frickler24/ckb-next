@@ -1,4 +1,4 @@
-.TH "KbManager" 3 "Wed May 24 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "KbManager" 3 "Thu Nov 2 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -123,9 +123,12 @@ Referenced by init()\&.
 28     _eventTimer = new QTimer(this);
 29     _eventTimer->setTimerType(Qt::PreciseTimer);
 30     _scanTimer = new QTimer(this);
-31     _scanTimer->start(100);
+31     _scanTimer->start(1000);
 32     connect(_scanTimer, SIGNAL(timeout()), this, SLOT(scanKeyboards()));
-33 }
+33 
+34     // Scan for keyboards immediately so they show up as soon as the GUI appears\&.
+35     QTimer::singleShot(0,this,SLOT(scanKeyboards()));
+36 }
 .fi
 .SH "Member Function Documentation"
 .PP 
@@ -200,22 +203,22 @@ Referenced by fps()\&.
 .SS "void KbManager::fps (intframerate)\fC [static]\fP"
 
 .PP
-Definition at line 35 of file kbmanager\&.cpp\&.
+Definition at line 38 of file kbmanager\&.cpp\&.
 .PP
 References eventTimer()\&.
 .PP
 Referenced by Kb::frameRate()\&.
 .PP
 .nf
-35                                 {
-36     QTimer* timer = eventTimer();
-37     if(!timer)
-38         return;
-39     if(timer->isActive())
-40         timer->setInterval(1000 / framerate);
-41     else
-42         timer->start(1000 / framerate);
-43 }
+38                                 {
+39     QTimer* timer = eventTimer();
+40     if(!timer)
+41         return;
+42     if(timer->isActive())
+43         timer->setInterval(1000 / framerate);
+44     else
+45         timer->start(1000 / framerate);
+46 }
 .fi
 .SS "void KbManager::init (QStringguiVersion)\fC [static]\fP"
 
@@ -275,123 +278,123 @@ Referenced by MainWindow::MainWindow()\&.
 .SS "float KbManager::parseVersionString (QStringversion)\fC [static]\fP"
 
 .PP
-Definition at line 45 of file kbmanager\&.cpp\&.
+Definition at line 48 of file kbmanager\&.cpp\&.
 .PP
 Referenced by ckbDaemonVersionF(), ckbGuiVersionF(), and KbFirmware::processDownload()\&.
 .PP
 .nf
-45                                                   {
-46     // Remove extraneous info (anything after a +, anything non-numeric)
-47     QStringList dots = version\&.replace(QRegExp("\\+\&.+"), "")\&.replace(QRegExp("[^\\d\\\&.]"), "")\&.split("\&.");
-48     float base = 1\&.f;
-49     float res = 0\&.f;
-50     // A number like "1\&.2\&.3" will result in 1\&.0203
-51     // NB: will fail if a point version goes over 99 or if using more than two dots\&. floats can only reliably encode 7 decimal digits\&.
-52     foreach(const QString& dot, dots){
-53         res += dot\&.toFloat() * base;
-54         base /= 100\&.f;
-55     }
-56     return res;
-57 }
+48                                                   {
+49     // Remove extraneous info (anything after a +, anything non-numeric)
+50     QStringList dots = version\&.replace(QRegExp("\\+\&.+"), "")\&.replace(QRegExp("[^\\d\\\&.]"), "")\&.split("\&.");
+51     float base = 1\&.f;
+52     float res = 0\&.f;
+53     // A number like "1\&.2\&.3" will result in 1\&.0203
+54     // NB: will fail if a point version goes over 99 or if using more than two dots\&. floats can only reliably encode 7 decimal digits\&.
+55     foreach(const QString& dot, dots){
+56         res += dot\&.toFloat() * base;
+57         base /= 100\&.f;
+58     }
+59     return res;
+60 }
 .fi
 .SS "void KbManager::scanKeyboards ()\fC [private]\fP, \fC [slot]\fP"
 
 .PP
-Definition at line 59 of file kbmanager\&.cpp\&.
+Definition at line 62 of file kbmanager\&.cpp\&.
 .PP
 References _daemonVersion, _devices, _eventTimer, _scanTimer, DAEMON_UNAVAILABLE_STR, devpath, Kb::isOpen(), kbConnected(), kbDisconnected(), Kb::load(), Kb::matches(), Kb::save(), and versionUpdated()\&.
 .PP
 Referenced by KbManager()\&.
 .PP
 .nf
-59                              {
-60     QString rootdev = devpath\&.arg(0);
-61     QFile connected(rootdev + "/connected");
-62     if(!connected\&.open(QIODevice::ReadOnly)){
-63         // No root controller - remove all keyboards
-64         foreach(Kb* kb, _devices){
-65             emit kbDisconnected(kb);
-66             kb->save();
-67             delete kb;
-68         }
-69         _devices\&.clear();
-70         if(_daemonVersion != DAEMON_UNAVAILABLE_STR){
-71             _daemonVersion = DAEMON_UNAVAILABLE_STR;
-72             emit versionUpdated();
-73         }
-74         return;
-75     }
-76     // Check daemon version
-77     QFile version(rootdev + "/version");
-78     QString vString;
-79     if(version\&.open(QIODevice::ReadOnly)){
-80         vString = QString::fromUtf8(version\&.readLine())\&.trimmed();
-81         version\&.close();
-82     } else
-83         vString = DAEMON_UNAVAILABLE_STR;
-84     if(_daemonVersion != vString){
-85         _daemonVersion = vString;
-86         emit versionUpdated();
-87     }
-88 
-89     // Scan connected devices
-90     QList<QStringList> lines;
-91     while(1){
-92         QString line = connected\&.readLine()\&.trimmed();
-93         if(line\&.isEmpty())
-94             break;
-95         QStringList components = line\&.split(" ");
-96         if(components\&.length() < 2)             // "<path> <serial> <name>" (we're only interested in the first two)
-97             continue;
-98         lines\&.append(components);
-99     }
-100     connected\&.close();
-101 
-102     // Remove any active devices not in the list
-103     QMutableSetIterator<Kb*> i(_devices);
-104     while(i\&.hasNext()){
-105         Kb* kb = i\&.next();
-106         bool matched = false;
-107         foreach(const QStringList& line, lines){
-108             if(kb->matches(line[0], line[1])){
-109                 matched = true;
-110                 break;
-111             }
-112         }
-113         if(matched)
-114             continue;
-115         // Device not found, remove
-116         i\&.remove();
-117         emit kbDisconnected(kb);
-118         kb->save();
-119         delete kb;
-120     }
-121 
-122     // Add any new devices found in the list
-123     foreach(const QStringList& line, lines){
-124         bool matched = false;
-125         foreach(Kb* kb, _devices){
-126             if(kb->matches(line[0], line[1])){
-127                 matched = true;
-128                 break;
-129             }
-130         }
-131         if(matched)
-132             continue;
-133         // Device not found, create new
-134         Kb* kb = new Kb(this, line[0]);
-135         if(!kb->isOpen()){
-136             delete kb;
-137             continue;
-138         }
-139         _devices\&.insert(kb);
-140         // Load preferences and send signal
-141         emit kbConnected(kb);
-142         kb->load();
-143         connect(_eventTimer, SIGNAL(timeout()), kb, SLOT(frameUpdate()));
-144         connect(_scanTimer, SIGNAL(timeout()), kb, SLOT(autoSave()));
-145     }
-146 }
+62                              {
+63     QString rootdev = devpath\&.arg(0);
+64     QFile connected(rootdev + "/connected");
+65     if(!connected\&.open(QIODevice::ReadOnly)){
+66         // No root controller - remove all keyboards
+67         foreach(Kb* kb, _devices){
+68             emit kbDisconnected(kb);
+69             kb->save();
+70             delete kb;
+71         }
+72         _devices\&.clear();
+73         if(_daemonVersion != DAEMON_UNAVAILABLE_STR){
+74             _daemonVersion = DAEMON_UNAVAILABLE_STR;
+75             emit versionUpdated();
+76         }
+77         return;
+78     }
+79     // Check daemon version
+80     QFile version(rootdev + "/version");
+81     QString vString;
+82     if(version\&.open(QIODevice::ReadOnly)){
+83         vString = QString::fromUtf8(version\&.readLine())\&.trimmed();
+84         version\&.close();
+85     } else
+86         vString = DAEMON_UNAVAILABLE_STR;
+87     if(_daemonVersion != vString){
+88         _daemonVersion = vString;
+89         emit versionUpdated();
+90     }
+91 
+92     // Scan connected devices
+93     QList<QStringList> lines;
+94     while(1){
+95         QString line = connected\&.readLine()\&.trimmed();
+96         if(line\&.isEmpty())
+97             break;
+98         QStringList components = line\&.split(" ");
+99         if(components\&.length() < 2)             // "<path> <serial> <name>" (we're only interested in the first two)
+100             continue;
+101         lines\&.append(components);
+102     }
+103     connected\&.close();
+104 
+105     // Remove any active devices not in the list
+106     QMutableSetIterator<Kb*> i(_devices);
+107     while(i\&.hasNext()){
+108         Kb* kb = i\&.next();
+109         bool matched = false;
+110         foreach(const QStringList& line, lines){
+111             if(kb->matches(line[0], line[1])){
+112                 matched = true;
+113                 break;
+114             }
+115         }
+116         if(matched)
+117             continue;
+118         // Device not found, remove
+119         i\&.remove();
+120         emit kbDisconnected(kb);
+121         kb->save();
+122         delete kb;
+123     }
+124 
+125     // Add any new devices found in the list
+126     foreach(const QStringList& line, lines){
+127         bool matched = false;
+128         foreach(Kb* kb, _devices){
+129             if(kb->matches(line[0], line[1])){
+130                 matched = true;
+131                 break;
+132             }
+133         }
+134         if(matched)
+135             continue;
+136         // Device not found, create new
+137         Kb* kb = new Kb(this, line[0]);
+138         if(!kb->isOpen()){
+139             delete kb;
+140             continue;
+141         }
+142         _devices\&.insert(kb);
+143         // Load preferences and send signal
+144         emit kbConnected(kb);
+145         kb->load();
+146         connect(_eventTimer, SIGNAL(timeout()), kb, SLOT(frameUpdate()));
+147         connect(_scanTimer, SIGNAL(timeout()), kb, SLOT(autoSave()));
+148     }
+149 }
 .fi
 .SS "static QTimer* KbManager::scanTimer ()\fC [inline]\fP, \fC [static]\fP"
 

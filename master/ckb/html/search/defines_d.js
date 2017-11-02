@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['patch',['patch',['../keymap_8cpp.html#a232acd5db27465982a3a27f8bb7a9aaa',1,'keymap.cpp']]],
-  ['patch_5fcount',['PATCH_COUNT',['../keymap_8cpp.html#a9ec1c480d7be6f9473a3f02af363404f',1,'keymap.cpp']]]
+  ['n_5flayouts',['N_LAYOUTS',['../keymap_8cpp.html#aeef2bf0c507f9ff15a360085efaa2ef3',1,'keymap.cpp']]],
+  ['n_5fmodels',['N_MODELS',['../keymap_8cpp.html#a8d8cfcf715f178c0e85ce011e7a9bcbf',1,'keymap.cpp']]],
+  ['ns',['NS',['../keymap_8cpp.html#a06c201f90533d5b49cd039c960327968',1,'keymap.cpp']]]
 ];

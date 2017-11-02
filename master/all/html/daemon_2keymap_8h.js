@@ -34,5 +34,5 @@ var daemon_2keymap_8h =
     [ "corsair_mousecopy", "daemon_2keymap_8h.html#a0dc9a16564cc51b35a35d28af1a96fb0", null ],
     [ "hid_kb_translate", "daemon_2keymap_8h.html#a6f4afd134546237416b271d9cefd2889", null ],
     [ "hid_mouse_translate", "daemon_2keymap_8h.html#a092f675ff366b5823c73b25f83d513f9", null ],
-    [ "keymap", "daemon_2keymap_8h.html#a5972a715b26e6b792acc53ad946e1fbb", null ]
+    [ "keymap", "daemon_2keymap_8h.html#a31ffccc603ad3264b7d2fd09f468318a", null ]
 ];

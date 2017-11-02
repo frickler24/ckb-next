@@ -1,13 +1,18 @@
 var searchData=
 [
-  ['name',['NAME',['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3a67bc2ced260a8e43805d2480a785d312',1,'command.h']]],
-  ['no',['NO',['../classKbFirmware.html#a2e29f5ddc6e9506bc220e1439785ed52aef24e26d5e2f8995c883b952642e48ce',1,'KbFirmware::NO()'],['../classKeyMap.html#ad1d282278b1b6a408e75ec29f06a546cab28433095c6d266ff2e4679a080c8063',1,'KeyMap::NO()']]],
-  ['no_5flayout',['NO_LAYOUT',['../classKeyMap.html#ad1d282278b1b6a408e75ec29f06a546caebe83c21fda45b84b87040f5b33365e4',1,'KeyMap']]],
-  ['no_5fmodel',['NO_MODEL',['../classKeyMap.html#a6d29bbbb4d74908a0a1873d485d6769da9a3a78ecb794a5fe9b824c9ed212d537',1,'KeyMap']]],
-  ['none',['NONE',['../classKbPerf.html#a46a48ea91414d3c89068ad1326a4327fab5652ffa36562af9070d266a98ea8f1f',1,'KbPerf::NONE()'],['../classKeyWidget.html#afbfadc514a9b22a82a12ad01253760c2a2712f041b988009ac8a815007f240469',1,'KeyWidget::NONE()'],['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3ac157bdf0b85a40d2619cbc8bc1ae5fe2',1,'NONE():&#160;command.h']]],
-  ['normal',['NORMAL',['../classKbPerf.html#a46a48ea91414d3c89068ad1326a4327fa866b78001d43f618cb50000aee27dca4',1,'KbPerf::NORMAL()'],['../classKeyAction.html#aaf046486ea4bafca9614bb4ff4538646a840622ebd52322fef361aae7f0690d1f',1,'KeyAction::NORMAL()'],['../classKPerfWidget.html#a8fdc7e1080849feeef2fb7687d2d0c16a49db999e859d9fbbed8f07f82e29e4dd',1,'KPerfWidget::NORMAL()'],['../classKbAnim.html#a165ef54083569b9330ac467620861c49a32da35265a1508a7a3dad0c0b00f5336',1,'KbAnim::Normal()']]],
-  ['notify',['NOTIFY',['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3a396912289122c12cc2db4ee6a7eb150e',1,'command.h']]],
-  ['notifyoff',['NOTIFYOFF',['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3a24c8ea0c5000cbf0e5caf374af5d484f',1,'command.h']]],
-  ['notifyon',['NOTIFYON',['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3a2559c245938fb34b2588cc9cb88f21f7',1,'command.h']]],
-  ['num',['NUM',['../classKbPerf.html#a6616d819cf5ce9fd0a31e765fabb0386a3ed4e71ad36af68ebf5a120c17ca3974',1,'KbPerf']]]
+  ['m65',['M65',['../classKeyMap.html#a6d29bbbb4d74908a0a1873d485d6769dac6dc73f3e41d13370fc04cb4c781eea2',1,'KeyMap']]],
+  ['macro',['MACRO',['../classKbPerf.html#a6616d819cf5ce9fd0a31e765fabb0386ad67c5a3ececd5e4056c2f208fde5fbb0',1,'KbPerf::MACRO()'],['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3a3d1738a931468da77c233f1126436b81',1,'MACRO():&#160;command.h']]],
+  ['max_5ffile_5fname_5flength',['MAX_FILE_NAME_LENGTH',['../classQuaZip.html#adce46b942c341dbb5c851eadead65459ab26ce1a9c9e94f901dc2cf90fa5baa4b',1,'QuaZip']]],
+  ['mdadd',['mdAdd',['../classQuaZip.html#a47e28d4116ee716fdd6b431b821d0be4a22c745f349f06add449af523254fdaec',1,'QuaZip']]],
+  ['mdappend',['mdAppend',['../classQuaZip.html#a47e28d4116ee716fdd6b431b821d0be4ab807f0c65653a16d77b365801fd25582',1,'QuaZip']]],
+  ['mdcreate',['mdCreate',['../classQuaZip.html#a47e28d4116ee716fdd6b431b821d0be4a25ae05b12590540af8c66ae8298b928e',1,'QuaZip']]],
+  ['mdnotopen',['mdNotOpen',['../classQuaZip.html#a47e28d4116ee716fdd6b431b821d0be4ac87ddb1e901e1ec700c16ee0d4d398ce',1,'QuaZip']]],
+  ['mdunzip',['mdUnzip',['../classQuaZip.html#a47e28d4116ee716fdd6b431b821d0be4a803a371910c2dc830d111e9ce5b58897',1,'QuaZip']]],
+  ['medhigh',['MEDHIGH',['../classKbPerf.html#a2a45f7d6b34c137e5c1e24be5ff7d7cfa665359f0d70b18bb889810f71fbbea20',1,'KbPerf']]],
+  ['medium',['MEDIUM',['../classKbPerf.html#a2a45f7d6b34c137e5c1e24be5ff7d7cfa315fceb313da73e63bc2a7fe2e2bb284',1,'KbPerf']]],
+  ['mode',['MODE',['../classKbPerf.html#a6616d819cf5ce9fd0a31e765fabb0386aecc6cf057fd406a5ad8d8d725391b57d',1,'KbPerf::MODE()'],['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3a865d4bfdc2dd5f698e4558474765cba8',1,'MODE():&#160;command.h']]],
+  ['multiply',['Multiply',['../classKbAnim.html#a165ef54083569b9330ac467620861c49a0e0a332d064f5bc7e9b4a502643bcba4',1,'KbAnim']]],
+  ['mute',['MUTE',['../classKbPerf.html#a6616d819cf5ce9fd0a31e765fabb0386a670735b20071a7ac16457bf231370efe',1,'KbPerf']]],
+  ['muted',['MUTED',['../media_8h.html#a5de87393a37a174be410529a9ed77b01ad7750b2464175cffe19792309edf40f8',1,'media.h']]],
+  ['mx',['MX',['../classKeyMap.html#ad1d282278b1b6a408e75ec29f06a546ca219ebe8814df03e2b2462837a5c848ec',1,'KeyMap']]]
 ];

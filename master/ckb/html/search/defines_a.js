@@ -1,8 +1,23 @@
 var searchData=
 [
-  ['m65_5fheight',['M65_HEIGHT',['../keymap_8cpp.html#a4b7f857991ca2b5cb1260457924c8715',1,'keymap.cpp']]],
-  ['m65_5fwidth',['M65_WIDTH',['../keymap_8cpp.html#ab1f913e5e67029cdd004bd0f93391fca',1,'keymap.cpp']]],
-  ['m_5fpi',['M_PI',['../ckb-anim_8h.html#ae71449b1cc6e6250b91f539153a7a0d3',1,'ckb-anim.h']]],
-  ['makeulong64',['MAKEULONG64',['../zip_8c.html#abb9fced82ed75c8bba3235ee4a45d389',1,'zip.c']]],
-  ['map_5flast',['map_last',['../kbperf_8cpp.html#ada62713c13fa70171352c9b205f9c5bd',1,'kbperf.cpp']]]
+  ['k63_5fheight',['K63_HEIGHT',['../keymap_8cpp.html#ac63bba9d6639db50f6bb7dd042dbbd5c',1,'keymap.cpp']]],
+  ['k63_5ftop_5fcount',['K63_TOP_COUNT',['../keymap_8cpp.html#a974d88944349234f433b81e0c6cd9c48',1,'keymap.cpp']]],
+  ['k63_5fwidth',['K63_WIDTH',['../keymap_8cpp.html#ad62e48fb43d06db694ce1cd0c2793008',1,'keymap.cpp']]],
+  ['k65_5fheight',['K65_HEIGHT',['../keymap_8cpp.html#af49f04c721657debcfdd8753774e0362',1,'keymap.cpp']]],
+  ['k65_5ftop_5fcount',['K65_TOP_COUNT',['../keymap_8cpp.html#a674e458bebaa41a462e6bca184062023',1,'keymap.cpp']]],
+  ['k65_5fwidth',['K65_WIDTH',['../keymap_8cpp.html#aebbe8670de275c6b11c9a88d2d64e4be',1,'keymap.cpp']]],
+  ['k70_5fheight',['K70_HEIGHT',['../keymap_8cpp.html#a4174c5f8114d76a2de76460185e4674a',1,'keymap.cpp']]],
+  ['k70_5fwidth',['K70_WIDTH',['../keymap_8cpp.html#abd30a8b8edd35b77ad33ae891f686d6b',1,'keymap.cpp']]],
+  ['k70_5fx_5fstart',['K70_X_START',['../keymap_8cpp.html#a824388d4a0ef4a75e7d657230b848737',1,'keymap.cpp']]],
+  ['k95_5fheight',['K95_HEIGHT',['../keymap_8cpp.html#a60040e4b4eb44072971d5da63bd736ea',1,'keymap.cpp']]],
+  ['k95_5fwidth',['K95_WIDTH',['../keymap_8cpp.html#a3a6aef2455cd6c5448e4ff237cc80a0f',1,'keymap.cpp']]],
+  ['keycount_5fglaive',['KEYCOUNT_GLAIVE',['../keymap_8cpp.html#a4a0a75a74bf5fc5d5d158d83937fd63c',1,'keymap.cpp']]],
+  ['keycount_5fharpoon',['KEYCOUNT_HARPOON',['../keymap_8cpp.html#af3857ea5ae07fc0b6627522e656c403d',1,'keymap.cpp']]],
+  ['keycount_5fk95',['KEYCOUNT_K95',['../keymap_8cpp.html#ab045975e441545f7bb20a84da1f012d8',1,'keymap.cpp']]],
+  ['keycount_5fm65',['KEYCOUNT_M65',['../keymap_8cpp.html#addea11f5a09f41c3a7d5064f07a3114f',1,'keymap.cpp']]],
+  ['keycount_5fsabre',['KEYCOUNT_SABRE',['../keymap_8cpp.html#a81b47374a4b497352917088bb66993cb',1,'keymap.cpp']]],
+  ['keycount_5fscim',['KEYCOUNT_SCIM',['../keymap_8cpp.html#a2884b78dfbd80ab8f54d03a956058783',1,'keymap.cpp']]],
+  ['kstrafe_5fheight',['KSTRAFE_HEIGHT',['../keymap_8cpp.html#a68daa2ea22a3e68cbb6be18c01e49c09',1,'keymap.cpp']]],
+  ['kstrafe_5fwidth',['KSTRAFE_WIDTH',['../keymap_8cpp.html#a7465e5a6be520b47d331bd073037ef0c',1,'keymap.cpp']]],
+  ['kstrafe_5fx_5fstart',['KSTRAFE_X_START',['../keymap_8cpp.html#a5689afef9eb35dfaf2da54afbd51c31c',1,'keymap.cpp']]]
 ];

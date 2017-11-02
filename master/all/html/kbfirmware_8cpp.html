@@ -163,20 +163,20 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="kbfirmware_8cpp_source.html#l00153">153</a> of file <a class="el" href="kbfirmware_8cpp_source.html">kbfirmware.cpp</a>.</p>
+<p>Definition at line <a class="el" href="kbfirmware_8cpp_source.html#l00150">150</a> of file <a class="el" href="kbfirmware_8cpp_source.html">kbfirmware.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="kbfirmware_8cpp_source.html#l00183">KbFirmware::_fileForBoard()</a>, and <a class="el" href="kbfirmware_8cpp_source.html#l00165">KbFirmware::_latestForBoard()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                                                 {</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    QStringList components = features.split(<span class="stringliteral">&quot; &quot;</span>);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">if</span>(components.length() &lt; 2)</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="comment">// First two components are vendor and model</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    QString vendorModel = components[0].toUpper() + <span class="stringliteral">&quot;-&quot;</span> + components[1].toUpper();</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="comment">// Add &quot;RGB&quot; on RGB boards</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">if</span>(features.contains(<span class="stringliteral">&quot;rgb&quot;</span>) &amp;&amp; !features.contains(<span class="stringliteral">&quot;monochrome&quot;</span>))</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        vendorModel += <span class="stringliteral">&quot;RGB&quot;</span>;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">return</span> vendorModel;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div>
+<p>Referenced by <a class="el" href="kbfirmware_8cpp_source.html#l00180">KbFirmware::_fileForBoard()</a>, and <a class="el" href="kbfirmware_8cpp_source.html#l00162">KbFirmware::_latestForBoard()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                                                 {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    QStringList components = features.split(<span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">if</span>(components.length() &lt; 2)</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="comment">// First two components are vendor and model</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    QString vendorModel = components[0].toUpper() + <span class="stringliteral">&quot;-&quot;</span> + components[1].toUpper();</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="comment">// Add &quot;RGB&quot; on RGB boards</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordflow">if</span>(features.contains(<span class="stringliteral">&quot;rgb&quot;</span>) &amp;&amp; !features.contains(<span class="stringliteral">&quot;monochrome&quot;</span>))</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        vendorModel += <span class="stringliteral">&quot;RGB&quot;</span>;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">return</span> vendorModel;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -212,7 +212,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="kbfirmware_8cpp_source.html#l00009">9</a> of file <a class="el" href="kbfirmware_8cpp_source.html">kbfirmware.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="kbfirmware_8cpp_source.html#l00030">KbFirmware::_checkUpdates()</a>.</p>
+<p>Referenced by <a class="el" href="kbfirmware_8cpp_source.html#l00028">KbFirmware::_checkUpdates()</a>.</p>
 
 </div>
 </div>
@@ -222,7 +222,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_77b5d46a1bc2c75b90444f394c5858ea.html">ckb</a></li><li class="navelem"><a class="el" href="kbfirmware_8cpp.html">kbfirmware.cpp</a></li>
-    <li class="footer">Generated on Wed May 24 2017 08:17:03 for ckb-next by
+    <li class="footer">Generated on Thu Nov 2 2017 17:17:59 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

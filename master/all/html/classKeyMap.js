@@ -12,6 +12,7 @@ var classKeyMap =
       [ "FR", "classKeyMap.html#ad1d282278b1b6a408e75ec29f06a546ca0acc99eb5447016a577d91cc1f6463a5", null ],
       [ "DE", "classKeyMap.html#ad1d282278b1b6a408e75ec29f06a546cacfeacff71c3a6cbb6cebf61d3c8b06ce", null ],
       [ "IT", "classKeyMap.html#ad1d282278b1b6a408e75ec29f06a546ca1a55f400ce3724d99ddc8c127b02ce50", null ],
+      [ "JP", "classKeyMap.html#ad1d282278b1b6a408e75ec29f06a546ca5a0b8752692a1ac84b2edb4eeeaa8dbd", null ],
       [ "NO", "classKeyMap.html#ad1d282278b1b6a408e75ec29f06a546cab28433095c6d266ff2e4679a080c8063", null ],
       [ "PL", "classKeyMap.html#ad1d282278b1b6a408e75ec29f06a546caeaa025176864de73191cf60c3bac1fcf", null ],
       [ "MX", "classKeyMap.html#ad1d282278b1b6a408e75ec29f06a546ca219ebe8814df03e2b2462837a5c848ec", null ],
@@ -21,6 +22,7 @@ var classKeyMap =
     ] ],
     [ "Model", "classKeyMap.html#a6d29bbbb4d74908a0a1873d485d6769d", [
       [ "NO_MODEL", "classKeyMap.html#a6d29bbbb4d74908a0a1873d485d6769da9a3a78ecb794a5fe9b824c9ed212d537", null ],
+      [ "K63", "classKeyMap.html#a6d29bbbb4d74908a0a1873d485d6769daea3811d4a69ceb60ce8e55bca017cf9f", null ],
       [ "K65", "classKeyMap.html#a6d29bbbb4d74908a0a1873d485d6769dac17aa01d74f585038d2685028413d23c", null ],
       [ "K70", "classKeyMap.html#a6d29bbbb4d74908a0a1873d485d6769da6dd5dd80a4c40a9bbd8a881d10ae5ffe", null ],
       [ "K95", "classKeyMap.html#a6d29bbbb4d74908a0a1873d485d6769dac2199f7ed98ecf06437ad8f74cdde9ca", null ],
@@ -28,6 +30,8 @@ var classKeyMap =
       [ "M65", "classKeyMap.html#a6d29bbbb4d74908a0a1873d485d6769dac6dc73f3e41d13370fc04cb4c781eea2", null ],
       [ "SABRE", "classKeyMap.html#a6d29bbbb4d74908a0a1873d485d6769da0993b8598e21130937b28079fc7be182", null ],
       [ "SCIMITAR", "classKeyMap.html#a6d29bbbb4d74908a0a1873d485d6769dab637a4d7eddb64785f058ef1aa9c509c", null ],
+      [ "HARPOON", "classKeyMap.html#a6d29bbbb4d74908a0a1873d485d6769da87bb6e6247e1263cea100a0aee0faea1", null ],
+      [ "GLAIVE", "classKeyMap.html#a6d29bbbb4d74908a0a1873d485d6769da1262dabb8b3798f202e1e397dca6bc5d", null ],
       [ "_MODEL_MAX", "classKeyMap.html#a6d29bbbb4d74908a0a1873d485d6769dae4ada8b19d7bc25f2decb188b2401fba", null ]
     ] ],
     [ "KeyMap", "classKeyMap.html#aece933ff97b9583f2e431a1fb3a699d7", null ],
@@ -45,6 +49,8 @@ var classKeyMap =
     [ "height", "classKeyMap.html#a451d641449fbd38bb7c0f0656531d7ad", null ],
     [ "isISO", "classKeyMap.html#a9d4e25612de20d81ca1f60fbd1d7bc15", null ],
     [ "isISO", "classKeyMap.html#a13c21fb411c85a70fcd28379f4f46a83", null ],
+    [ "isJP", "classKeyMap.html#a1fd48a99b421b0c5e766cf53e91c6827", null ],
+    [ "isJP", "classKeyMap.html#a51902e3d879cc4066f47a67b9086a7f4", null ],
     [ "isKeyboard", "classKeyMap.html#a4b485fa117ce360a5ca7d9f5c762421e", null ],
     [ "isKeyboard", "classKeyMap.html#af9a63ba290c87d6250156407561cfc98", null ],
     [ "isMouse", "classKeyMap.html#af4921437c3e6729e82ae05f4f049a5f0", null ],

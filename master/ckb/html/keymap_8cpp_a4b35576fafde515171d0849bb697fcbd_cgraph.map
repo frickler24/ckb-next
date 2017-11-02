@@ -1,5 +1,9 @@
 <map id="getMap" name="getMap">
 <area shape="rect" id="node2" href="$classKeyMap.html#a13c21fb411c85a70fcd28379f4f46a83" title="KeyMap::isISO" alt="" coords="121,29,231,56"/>
-<area shape="rect" id="node3" href="$keymap_8cpp.html#a8566b65d2b1a5c8e614b3ee8dab76b0c" title="patchANSI" alt="" coords="133,80,219,107"/>
-<area shape="rect" id="node4" href="$keymap_8cpp.html#a8f0991f950f9a010301225bbf10094a8" title="patchISO" alt="" coords="137,131,215,157"/>
+<area shape="rect" id="node3" href="$classKeyMap.html#a51902e3d879cc4066f47a67b9086a7f4" title="KeyMap::isJP" alt="" coords="124,104,228,131"/>
+<area shape="rect" id="node4" href="$keymap_8cpp.html#a8566b65d2b1a5c8e614b3ee8dab76b0c" title="patchANSI" alt="" coords="133,155,219,181"/>
+<area shape="rect" id="node6" href="$keymap_8cpp.html#a8f0991f950f9a010301225bbf10094a8" title="patchISO" alt="" coords="137,205,215,232"/>
+<area shape="rect" id="node7" href="$keymap_8cpp.html#a98f00b0180ac3988cd57f52f21bd1f0b" title="patchJP106" alt="" coords="131,256,221,283"/>
+<area shape="rect" id="node8" href="$keymap_8cpp.html#a265e0c8cfbb42872f5c76c5acf1fc59d" title="patchJP106fn" alt="" coords="125,307,227,333"/>
+<area shape="rect" id="node5" href="$keymap_8cpp.html#a35258db9ac29e7650503d3b8dc14712c" title="patchnonJP106" alt="" coords="280,180,392,207"/>
 </map>

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['debug',['DEBUG',['../usb__linux_8c.html#ad72dbcf6d0153db1b8d8a58001feed83',1,'usb_linux.c']]],
   ['delay_5flong',['DELAY_LONG',['../usb_8h.html#a8de6458e3d59d88350ef3e73359c3526',1,'usb.h']]],
   ['delay_5fmedium',['DELAY_MEDIUM',['../usb_8h.html#aff3be8eafb827438a28c97b8f9d2ddcc',1,'usb.h']]],
   ['delay_5fshort',['DELAY_SHORT',['../usb_8h.html#a73130b0fe3277a0fd9481eceb4f0e483',1,'usb.h']]],

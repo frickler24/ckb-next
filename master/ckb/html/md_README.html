@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>ckb-next: ckb-next: RGB Driver for Linux and OS X</title>
+<title>ckb-next: ckb-next: RGB Driver for Linux and macOS</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('md_README.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">ckb-next: RGB Driver for Linux and OS X </div>  </div>
+<div class="title">ckb-next: RGB Driver for Linux and macOS </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><b>ckb-next</b> is an open-source driver for Corsair keyboards and mice. It aims to bring the features of their proprietary CUE software to the Linux and Mac operating systems. This project is currently a work in progress, but it already supports much of the same functionality, including full RGB animations. More features are coming soon. Testing and bug reports are appreciated!</p>
@@ -150,27 +150,60 @@ $(document).ready(function(){initNavTree('md_README.html','');});
 <p>See also:</p>
 <ul>
 <li>https://github.com/mattanger/ckb-next/blob/master/DAEMON.md "Manual for the driver daemon"</li>
-<li><a href="https://github.com/mattanger/ckb-next/tree/testing">ckb testing repository</a> (updated more frequently, but may be unstable)</li>
 </ul>
 <h2>Device Support</h2>
 <h3>Keyboards</h3>
 <ul>
-<li>K65 RGB</li>
-<li>K70</li>
-<li>K70 RGB</li>
-<li>K70 LUX RGB</li>
-<li>K95*</li>
-<li>K95 RGB</li>
-<li>Strafe</li>
-<li>Strafe RGB</li>
+<li>K63</li>
+<li>K65:<ul>
+<li>RGB</li>
+<li>non-RGB</li>
+<li>LUX RGB</li>
+<li>RGB RAPIDFIRE</li>
+</ul>
+</li>
+<li>K70:<ul>
+<li>RGB</li>
+<li>non-RGB</li>
+<li>LUX RGB</li>
+<li>LUX non-RGB</li>
+<li>RGB RAPIDFIRE</li>
+<li>non-RGB RAPIDFIRE</li>
+</ul>
+</li>
+<li>K95:<ul>
+<li>RGB</li>
+<li>non-RGB*</li>
+<li>Platinum**</li>
+</ul>
+</li>
+<li>Strafe:<ul>
+<li>RGB</li>
+<li>non-RGB</li>
+</ul>
+</li>
 <li>= hardware playback not supported. Settings will be saved to software only.</li>
 </ul>
+<p>** = partial support, static hardware playback only and inability to control some lights.</p>
 <h3>Mice</h3>
 <ul>
-<li>M65 RGB</li>
-<li>M65 PRO RGB</li>
-<li>Sabre RGB</li>
-<li>Scimitar RGB</li>
+<li>M65:<ul>
+<li>non-RGB</li>
+<li>PRO RGB</li>
+</ul>
+</li>
+<li>Sabre:<ul>
+<li>Optical RGB</li>
+<li>Laser RGB</li>
+</ul>
+</li>
+<li>Scimitar:<ul>
+<li>RGB</li>
+<li>PRO RGB</li>
+</ul>
+</li>
+<li>Harpoon</li>
+<li>Glaive</li>
 </ul>
 <h2>Linux Installation</h2>
 <h3>Pre-made packages</h3>
@@ -180,14 +213,15 @@ $(document).ready(function(){initNavTree('md_README.html','');});
 </ul>
 </li>
 <li>Arch Linux (maintained by <a href="https://github.com/makz27"></a>, <a href="https://github.com/light2yellow"></a>):<ul>
-<li><a href="https://aur.archlinux.org/packages/ckb-next-git">`aur/ckb-next-git`</a> - based on <code>master</code> branch (more stable)</li>
-<li><a href="https://aur.archlinux.org/packages/ckb-next-latest-git">`aur/ckb-next-latest-git`</a> - based on <code>testing</code> branch (less stable but fresher)</li>
+<li><a href="https://aur.archlinux.org/packages/ckb-next">`aur/ckb-next`</a> - based on GitHub releases</li>
+<li><a href="https://aur.archlinux.org/packages/ckb-next-git">`aur/ckb-next-git`</a> - based on <code>master</code> branch</li>
+<li><a href="https://aur.archlinux.org/packages/ckb-next-latest-git">`aur/ckb-next-latest-git`</a> - based on <code>newdev</code> branch</li>
 </ul>
 </li>
 </ul>
 <p>If you are a package maintainer or want to discuss something with package maintainers let us know in <a href="https://github.com/mattanger/ckb-next/issues/5">#5</a>, so we can have an accountable and centralized communication about this. <em>If you would like to maintain a package for your favorite distro/OS, please let us know as well.</em></p>
 <h3>Preparation</h3>
-<p>ckb-next requires Qt5 (Qt 5.8 is recommended), libudev, zlib, gcc, g++, and glibc.</p>
+<p>ckb-next requires Qt5 (Qt 5.9 is recommended), libudev, zlib, gcc, g++, and glibc.</p>
 <ul>
 <li>Ubuntu: <code>sudo apt-get install build-essential libudev-dev qt5-default zlib1g-dev libappindicator-dev</code></li>
 <li>Fedora: <code>sudo dnf install zlib-devel qt5-qtbase-devel libgudev-devel libappindicator-devel systemd-devel gcc-c++</code></li>
@@ -213,7 +247,11 @@ $(document).ready(function(){initNavTree('md_README.html','');});
 <h3>Binary download</h3>
 <p>macOS <code>pkg</code> can be downloaded from <a href="https://github.com/mattanger/ckb-next/releases">GitHub Releases</a>. It is always built with the last available stable Qt version and tagrets 10.10 SDK. If you run 10.9.x, you'll need to build the project from source and comment out <code>src/ckb-heat</code> (and the backslash above it) inside <code>ckb.pro</code>.</p>
 <h3>Building from source</h3>
-<p>Install the latest version of Xcode from the App Store. While it's downloading, open the Terminal and execute <code>xcode-select --install</code> to install Command Line Tools. Then open Xcode, accept the license agreement and wait for it to install any additional components (if necessary). When you see the "Welcome to Xcode" screen, from the top bar choose <code>Xcode -&gt; Preferences -&gt; Locations -&gt; Command Line Tools</code> and select an SDK version. Afterwards install Qt5 from here: <a href="http://www.qt.io/download-open-source/">http://www.qt.io/download-open-source/</a></p>
+<p>Install the latest version of Xcode from the App Store. While it's downloading, open the Terminal and execute <code>xcode-select --install</code> to install Command Line Tools. Then open Xcode, accept the license agreement and wait for it to install any additional components (if necessary). When you see the "Welcome to Xcode" screen, from the top bar choose <code>Xcode -&gt; Preferences -&gt; Locations -&gt; Command Line Tools</code> and select an SDK version. Afterwards install <a href="https://brew.sh/">Homebrew</a> and execute <code>brew install qt5</code> in the Terminal.</p>
+<blockquote class="doxtable">
+<p><b>Note</b>: If you decide to use the official Qt5 package from Qt website instead, you will have to edit the installation script and provide installation paths manually due to a qmake bug.</p>
+<p></p>
+</blockquote>
 <p>The easiest way to build the driver is with the <code>quickinstall</code> script, which is present in the ckb-master folder. Double-click on <code>quickinstall</code> and it will compile the app for you, then ask if you'd like to install it system-wide. If the build fails for any reason, or if you'd like to compile and install manually, see https://github.com/ccMSC/ckb/blob/master/BUILD.md "`BUILD.md`".</p>
 <h3>Upgrading (binary)</h3>
 <p>Download the latest <code>ckb.pkg</code>, run the installer, and reboot. The newly-installed driver will replace the old one.</p>
@@ -257,6 +295,7 @@ $(document).ready(function(){initNavTree('md_README.html','');});
 <p>If you have problems connecting the device to your system (device doesn't respond, ckb-daemon doesn't recognize or can't connect it) and/or you experience long boot times when using the keyboard, try adding the following to your kernel's <code>cmdline</code>:</p>
 <ul>
 <li>K65 RGB: <code>usbhid.quirks=0x1B1C:0x1B17:0x20000408</code></li>
+<li>K65 LUX: <code>usbhid.quirks=0x1B1C:0x1B37:0x20000408</code></li>
 <li>K70: <code>usbhid.quirks=0x1B1C:0x1B09:0x20000408</code></li>
 <li>K70 LUX: <code>usbhid.quirks=0x1B1C:0x1B36:0x20000408</code></li>
 <li>K70 RGB: <code>usbhid.quirks=0x1B1C:0x1B13:0x20000408</code></li>
@@ -274,9 +313,11 @@ $(document).ready(function(){initNavTree('md_README.html','');});
 <p>If it still doesn't work, try replacing <code>0x20000408</code> with <code>0x4</code>. Note that this will cause the kernel driver to ignore the device(s) completely, so you need to ensure ckb-daemon is running at boot or else you'll have no input. This will not work if you are using full-disk encryption.</p>
 <p>If you see <b>GLib</b> critical errors like ``` GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'G_TYPE_IS_INSTANTIATABLE (instance_type)' failed ``` read <a href="https://bbs.archlinux.org/viewtopic.php?id=214147">this Arch Linux thread</a> and try different combinations from it. If it doesn't help, you might want get support from your distribution community and tell them you cannot solve the problem in this thread.</p>
 <p>If you're using <b>Unity</b> and the tray icon doesn't appear correctly, run <code>sudo apt-get install libappindicator-dev</code>. Then reinstall ckb.</p>
+<h4>Fedora 26 Color Changer Freeze Fix</h4>
+<p>If you're running Fedora 26, a working solution for the color changer freezing issue is to install qt5ct <code>dnf install qt5ct</code> then modify your /etc/environment file to contain the line <code>QT_QPA_PLATFORMTHEME=qt5ct</code></p>
 <h3>OS X/macOS</h3>
 <ul>
-<li>**“ckb.pkg” can’t be opened because it is from an unidentified developer** Open <code>System Preferences &gt; Security &amp; Privacy &gt; General</code> and click <code>Open Anyway</code>.</li>
+<li>**“ckb.pkg” can’t be opened because it is from an unidentified developer** Right-click (control-click) on ckb.pkg and select Open. This new dialog box will give you the option to open anyway, without changing your system preferences.</li>
 <li><b>Modifier keys (Shift, Ctrl, etc.) are not rebound correctly</b> ckb does not recognize modifier keys rebound from System Preferences. You can rebind them again within the application.</li>
 <li>**<code>~</code> key prints <code>§±</code>** Check your keyboard layout on ckb's Settings screen. Choose the layout that matches your physical keyboard.</li>
 <li><b>Compile problems</b> Can usually be resolved by rebooting your computer and/or reinstalling Qt. Make sure that Xcode works on its own. If a compile fails, delete the <code>ckb-master</code> directory as well as any automatically generated <code>build-ckb</code> folders and try again from a new download.</li>
@@ -321,7 +362,7 @@ $(document).ready(function(){initNavTree('md_README.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed May 24 2017 08:16:54 for ckb-next by
+    <li class="footer">Generated on Thu Nov 2 2017 17:17:52 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

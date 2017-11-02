@@ -147,6 +147,10 @@ Variables</h2></td></tr>
 <tr class="separator:a31a0945f39076f59e16ec0ffec650779"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab57cdd96bbaa1352433c84ad63924952"><td class="memItemLeft" align="right" valign="top">static QImage *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="keywidget_8cpp.html#ab57cdd96bbaa1352433c84ad63924952">scimOverlay</a> = 0</td></tr>
 <tr class="separator:ab57cdd96bbaa1352433c84ad63924952"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f4dc38b77f5dd804aeda2576754619b"><td class="memItemLeft" align="right" valign="top">static QImage *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="keywidget_8cpp.html#a6f4dc38b77f5dd804aeda2576754619b">harpOverlay</a> = 0</td></tr>
+<tr class="separator:a6f4dc38b77f5dd804aeda2576754619b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab627502a089af25953daafd1e92d0c22"><td class="memItemLeft" align="right" valign="top">static QImage *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="keywidget_8cpp.html#ab627502a089af25953daafd1e92d0c22">glaiveOverlay</a> = 0</td></tr>
+<tr class="separator:ab627502a089af25953daafd1e92d0c22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a7b60353791945e82d8d75d4198c81146"></a>
@@ -183,7 +187,7 @@ Variables</h2></td></tr>
 
 <p>References <a class="el" href="kblight_8cpp_source.html#l00277">lToS()</a>, and <a class="el" href="kblight_8cpp_source.html#l00270">sToL()</a>.</p>
 
-<p>Referenced by <a class="el" href="kblight_8cpp_source.html#l00371">KbLight::base()</a>, <a class="el" href="kblight_8cpp_source.html#l00296">KbLight::frameUpdate()</a>, and <a class="el" href="keywidget_8cpp_source.html#l00070">KeyWidget::paintEvent()</a>.</p>
+<p>Referenced by <a class="el" href="kblight_8cpp_source.html#l00378">KbLight::base()</a>, <a class="el" href="kblight_8cpp_source.html#l00296">KbLight::frameUpdate()</a>, and <a class="el" href="keywidget_8cpp_source.html#l00070">KeyWidget::paintEvent()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                                       {</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="comment">// It&#39;s important to use a linear colorspace for this, otherwise the colors will appear inconsistent</span></div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="comment">// Note that although we could use linear space for alpha blending or the animation blending functions, we don&#39;t.</span></div>
@@ -223,6 +227,54 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="ab627502a089af25953daafd1e92d0c22"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QImage * glaiveOverlay = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="keywidget_8cpp_source.html#l00012">12</a> of file <a class="el" href="keywidget_8cpp_source.html">keywidget.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="keywidget_8cpp_source.html#l00070">KeyWidget::paintEvent()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6f4dc38b77f5dd804aeda2576754619b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QImage * harpOverlay = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="keywidget_8cpp_source.html#l00012">12</a> of file <a class="el" href="keywidget_8cpp_source.html">keywidget.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="keywidget_8cpp_source.html#l00070">KeyWidget::paintEvent()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ae3a0a347f1d5a8fd701cbe08f8618949"></a>
 <div class="memitem">
 <div class="memproto">
@@ -325,7 +377,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_77b5d46a1bc2c75b90444f394c5858ea.html">ckb</a></li><li class="navelem"><a class="el" href="keywidget_8cpp.html">keywidget.cpp</a></li>
-    <li class="footer">Generated on Wed May 24 2017 08:17:03 for ckb-next by
+    <li class="footer">Generated on Thu Nov 2 2017 17:17:59 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

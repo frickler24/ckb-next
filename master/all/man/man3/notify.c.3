@@ -1,4 +1,4 @@
-.TH "src/ckb-daemon/notify.c" 3 "Wed May 24 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "src/ckb-daemon/notify.c" 3 "Thu Nov 2 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -233,10 +233,12 @@ References _cmd_get(), and imutex\&.
 .PP
 .nf
 215                                                                                        {
-216     pthread_mutex_lock(imutex(kb));
-217     _cmd_get(kb, mode, nnumber, setting);
-218     pthread_mutex_unlock(imutex(kb));
-219 }
+216     (void)dummy;
+217 
+218     pthread_mutex_lock(imutex(kb));
+219     _cmd_get(kb, mode, nnumber, setting);
+220     pthread_mutex_unlock(imutex(kb));
+221 }
 .fi
 .SS "void cmd_notify (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, intnnumber, intkeyindex, const char *toggle)"
 
@@ -260,16 +262,20 @@ References CLEAR_KEYBIT, imutex, N_KEYS_INPUT, usbmode::notify, and SET_KEYBIT\&
 .SS "void cmd_restart (\fBusbdevice\fP *kb, \fBusbmode\fP *mode, intnnumber, intdummy, const char *content)"
 
 .PP
-Definition at line 223 of file notify\&.c\&.
+Definition at line 225 of file notify\&.c\&.
 .PP
 References ckb_info, nprintf(), and restart()\&.
 .PP
 .nf
-223                                                                                             {
-224     ckb_info("RESTART called with %s\n", content);
-225     nprintf(kb, -1, 0, "RESTART called with %s\n", content);
-226     restart();
-227 }
+225                                                                                             {
+226     (void)mode;
+227     (void)nnumber;
+228     (void)dummy;
+229 
+230     ckb_info("RESTART called with %s\n", content);
+231     nprintf(kb, -1, 0, "RESTART called with %s\n", content);
+232     restart();
+233 }
 .fi
 .SS "void nprintf (\fBusbdevice\fP *kb, intnodenumber, \fBusbmode\fP *mode, const char *format, \&.\&.\&.)"
 

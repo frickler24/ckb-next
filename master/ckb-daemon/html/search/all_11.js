@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['r',['r',['../structures_8h.html#a58f2fbe1709465a5258292e8c8421f58',1,'lighting']]],
+  ['r',['r',['../structures_8h.html#a7de6a9b7b901c884d632b15772c8ef56',1,'lighting']]],
   ['readcmd',['readcmd',['../command_8c.html#ad7239680e0942b0b85a6cd3e9fff25a9',1,'readcmd(usbdevice *kb, const char *line):&#160;command.c'],['../command_8h.html#ad7239680e0942b0b85a6cd3e9fff25a9',1,'readcmd(usbdevice *kb, const char *line):&#160;command.c']]],
   ['readlines',['readlines',['../devnode_8c.html#a1062ed70d4ea0310fbf5eeee928b58b7',1,'readlines(int fd, readlines_ctx ctx, const char **input):&#160;devnode.c'],['../devnode_8h.html#a1062ed70d4ea0310fbf5eeee928b58b7',1,'readlines(int fd, readlines_ctx ctx, const char **input):&#160;devnode.c']]],
   ['readlines_5fctx',['readlines_ctx',['../devnode_8h.html#a66f83878dcf33a644066726e394fef76',1,'devnode.h']]],

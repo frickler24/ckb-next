@@ -1,4 +1,4 @@
-.TH "md_DAEMON" 3 "Wed May 24 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "md_DAEMON" 3 "Thu Nov 2 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -20,7 +20,9 @@ Other \fCckb*\fP devices contain the following:
 .IP "\(bu" 2
 \fCcmd\fP: Keyboard controller\&.
 .IP "\(bu" 2
-\fCnotify0\fP: Keyboard notifications\&.
+\fCnotify0\fP: Keyboard- or mouse notifications\&.
+.IP "\(bu" 2
+\fCnotify1\fP: Keyboard- or mouse notifications, used for macro recording\&.
 .IP "\(bu" 2
 \fCfeatures\fP: Device features\&.
 .IP "\(bu" 2
@@ -29,6 +31,8 @@ Other \fCckb*\fP devices contain the following:
 \fCmodel\fP: Device description/model\&.
 .IP "\(bu" 2
 \fCpollrate\fP: Poll rate in milliseconds (not present on all devices)\&.
+.IP "\(bu" 2
+\fCproductid\fP: Contains the USB productID of the hardware
 .IP "\(bu" 2
 \fCserial\fP: Device serial number\&. \fCmodel\fP and \fCserial\fP will match the info found in \fCckb0/connected\fP
 .PP
@@ -187,6 +191,46 @@ Macros are a more advanced form of key binding, controlled with the \fCmacro\fP 
 .PP
 Assigning a macro to a key will cause its binding to be ignored; for instance, \fCmacro a:+b,-b\fP will cause A to generate a B character regardless of its binding\&. However, \fCmacro lctrl+a:+b,-b\fP will cause A to generate a B only when Ctrl is also held down\&.
 .PP
+.SS "Macro playback delay"
+.PP
+There are two types of playback delay that can be set with macros; global and local\&. Setting a \fIglobal delay\fP value introduces a time delay between events during macro execution or playback\&. \fILocal delay\fP allows setting the delay after an individual event, overriding the global delay value for that event\&. Thus global delay can be used to set the overall playback speed of macros and local delays can be used to tune individual events within a macro\&.
+.PP
+All delay values are specified in microseconds (us) and are positive values from \fC0\fP to \fCUINT_MAX - 1\fP\&. This means delays range from 0 to just over 1 hour (4,294,967,294us, 4,294 seconds, 71 minutes, or 1\&.19 hours)\&. A value of zero (0) represents no delay between actions\&.
+.PP
+.SS "Global macro delay (default delay)"
+.PP
+Global delay allows macro playback speed to be changed\&. It sets the time between (actually after) each recorded macro event\&. If global delay is set to 1 microsecond then a 1 ms delay will follow each individual macro event when the macro is triggered\&.
+.PP
+The \fIglobal delay\fP is set with the ckb-daemon's existing (in testing branch) \fCdelay\fP command followed by an unsigned integer representing the number of microseconds to wait after each macro action and before the next\&.
+.PP
+Global delay can also be set to \fCon\fP which maintains backwards compatibility with the current development of \fCckb-daemon\fP for long macro playback\&. That is, setting the global delay to \fCon\fP introduces a 30us and a 100us delay based on the macro's length during playback\&.
+.PP
+\fBNOTE\fP: This setting also introduces a delay after the last macro action\&. This functionality exists in the current testing branch and was left as-is\&. It is still to be determined if this is a bug or a feature\&.
+.PP
+\fBExamples:\fP
+.IP "\(bu" 2
+\fCdelay 1000\fP sets a 1,000us delay between action playback\&.
+.IP "\(bu" 2
+\fCdelay on\fP sets long macro delay; 30us for actions between 20 and 200, 100us for actions > 200\&.
+.IP "\(bu" 2
+\fCdelay off\fP sets no delay (same as 0)\&.
+.IP "\(bu" 2
+\fCdelay 0\fP sets no delay (same as off)\&.
+.IP "\(bu" 2
+\fCdelay spearmint-potato\fP is invalid input, sets no delay (same as off)\&.
+.PP
+.PP
+.SS "Local macro delay (keystroke delay)"
+.PP
+Local Delay allows each macro action to have a post-action delay associated with it\&. This allows a macro to vary it's playback speed for each event\&. If no local delay is specified for a macro action, then the global \fCdelay\fP (above) is used\&. All delay values are in microsecods (us) as with the global delay setting\&.
+.PP
+***Examples:***
+.IP "\(bu" 2
+\fCmacro g5:+d,-d,+e=5000,-e,+l,-l=10000,+a,-a,+y,-y=1000000,+enter,-enter\fP define a macro for \fCg5\fP with a 5,000us delay between the \fCe\fP down and \fCe\fP up actions\&. A 1,000us delay between \fCl\fP up and \fCa\fP down, a delay of one second (1,000,000us) after \fCy\fP up and before \fCenter\fP, and the global delay for all other actions\&.
+.IP "\(bu" 2
+\fCmacro g5:+d,-d=0\fP use default delay between \fCd\fP down and \fCd\fP up and no delay (0us) after \fCd\fP up\&. This removes the noted feature/bug (above) where the last action has a trailing delay associated with it\&.
+.PP
+.PP
 .SS "DPI and mouse settings "
 .PP
 DPI settings are stored in a bank\&. They are controlled with the \fCdpi\fP command\&.
@@ -293,7 +337,7 @@ When the device reconnects you should see the new firmware version in its \fCfwv
 .PP
 .SS "Restart "
 .PP
-Because sometimes the communication between the daemon and the keyboard is corrupted after resuming from standby or suspend, a restart function is implemented\&. It first calls the \fBquit()\fP funtion, then it calls \fBmain()\fP again with the original parameter list\&.
+Because sometimes the communication between the daemon and the keyboard is corrupted after resuming from standby or suspend, a restart function is implemented\&. It first calls the \fBquit()\fP function, then it calls \fBmain()\fP again with the original parameter list\&.
 .PP
 There are two ways to restart the daemon:
 .IP "\(bu" 2

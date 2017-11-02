@@ -1,8 +1,8 @@
-.TH "md_README" 3 "Wed May 24 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "md_README" 3 "Thu Nov 2 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-md_README \- ckb-next: RGB Driver for Linux and OS X 
+md_README \- ckb-next: RGB Driver for Linux and macOS 
 \fBckb-next\fP is an open-source driver for Corsair keyboards and mice\&. It aims to bring the features of their proprietary CUE software to the Linux and Mac operating systems\&. This project is currently a work in progress, but it already supports much of the same functionality, including full RGB animations\&. More features are coming soon\&. Testing and bug reports are appreciated!
 .PP
 .PP
@@ -78,8 +78,6 @@ See also:
 .PP
 .IP "\(bu" 2
 \fBhttps:\fP//github\&.com/mattanger/ckb-next/blob/master/DAEMON\&.md 'Manual for the driver daemon'
-.IP "\(bu" 2
-\fCckb testing repository\fP (updated more frequently, but may be unstable)
 .PP
 .PP
 .SS "Device Support"
@@ -87,35 +85,89 @@ See also:
 .SS "Keyboards"
 .PP
 .IP "\(bu" 2
-K65 RGB
+K63
 .IP "\(bu" 2
-K70
+K65:
+.IP "  \(bu" 4
+RGB
+.IP "  \(bu" 4
+non-RGB
+.IP "  \(bu" 4
+LUX RGB
+.IP "  \(bu" 4
+RGB RAPIDFIRE
+.PP
+
 .IP "\(bu" 2
-K70 RGB
+K70:
+.IP "  \(bu" 4
+RGB
+.IP "  \(bu" 4
+non-RGB
+.IP "  \(bu" 4
+LUX RGB
+.IP "  \(bu" 4
+LUX non-RGB
+.IP "  \(bu" 4
+RGB RAPIDFIRE
+.IP "  \(bu" 4
+non-RGB RAPIDFIRE
+.PP
+
 .IP "\(bu" 2
-K70 LUX RGB
+K95:
+.IP "  \(bu" 4
+RGB
+.IP "  \(bu" 4
+non-RGB*
+.IP "  \(bu" 4
+Platinum**
+.PP
+
 .IP "\(bu" 2
-K95*
-.IP "\(bu" 2
-K95 RGB
-.IP "\(bu" 2
-Strafe
-.IP "\(bu" 2
-Strafe RGB
+Strafe:
+.IP "  \(bu" 4
+RGB
+.IP "  \(bu" 4
+non-RGB
+.PP
+
 .IP "\(bu" 2
 = hardware playback not supported\&. Settings will be saved to software only\&.
 .PP
 .PP
+** = partial support, static hardware playback only and inability to control some lights\&.
+.PP
 .SS "Mice"
 .PP
 .IP "\(bu" 2
-M65 RGB
+M65:
+.IP "  \(bu" 4
+non-RGB
+.IP "  \(bu" 4
+PRO RGB
+.PP
+
 .IP "\(bu" 2
-M65 PRO RGB
+Sabre:
+.IP "  \(bu" 4
+Optical RGB
+.IP "  \(bu" 4
+Laser RGB
+.PP
+
 .IP "\(bu" 2
-Sabre RGB
+Scimitar:
+.IP "  \(bu" 4
+RGB
+.IP "  \(bu" 4
+PRO RGB
+.PP
+
 .IP "\(bu" 2
-Scimitar RGB
+Harpoon
+.IP "\(bu" 2
+Glaive
 .PP
 .PP
 .SS "Linux Installation"
@@ -131,9 +183,11 @@ Fedora 24/25, CentOS/RHEL 7 (maintained by \fC\fP):
 .IP "\(bu" 2
 Arch Linux (maintained by \fC\fP, \fC\fP):
 .IP "  \(bu" 4
-\fC`aur/ckb-next-git`\fP - based on \fCmaster\fP branch (more stable)
+\fC`aur/ckb-next`\fP - based on GitHub releases
 .IP "  \(bu" 4
-\fC`aur/ckb-next-latest-git`\fP - based on \fCtesting\fP branch (less stable but fresher)
+\fC`aur/ckb-next-git`\fP - based on \fCmaster\fP branch
+.IP "  \(bu" 4
+\fC`aur/ckb-next-latest-git`\fP - based on \fCnewdev\fP branch
 .PP
 
 .PP
@@ -142,7 +196,7 @@ If you are a package maintainer or want to discuss something with package mainta
 .PP
 .SS "Preparation"
 .PP
-ckb-next requires Qt5 (Qt 5\&.8 is recommended), libudev, zlib, gcc, g++, and glibc\&.
+ckb-next requires Qt5 (Qt 5\&.9 is recommended), libudev, zlib, gcc, g++, and glibc\&.
 .PP
 .IP "\(bu" 2
 Ubuntu: \fCsudo apt-get install build-essential libudev-dev qt5-default zlib1g-dev libappindicator-dev\fP
@@ -189,7 +243,13 @@ macOS \fCpkg\fP can be downloaded from \fCGitHub Releases\fP\&. It is always bui
 .PP
 .SS "Building from source"
 .PP
-Install the latest version of Xcode from the App Store\&. While it's downloading, open the Terminal and execute \fCxcode-select --install\fP to install Command Line Tools\&. Then open Xcode, accept the license agreement and wait for it to install any additional components (if necessary)\&. When you see the 'Welcome to Xcode' screen, from the top bar choose \fCXcode -> Preferences -> Locations -> Command Line Tools\fP and select an SDK version\&. Afterwards install Qt5 from here: http://www.qt.io/download-open-source/
+Install the latest version of Xcode from the App Store\&. While it's downloading, open the Terminal and execute \fCxcode-select --install\fP to install Command Line Tools\&. Then open Xcode, accept the license agreement and wait for it to install any additional components (if necessary)\&. When you see the 'Welcome to Xcode' screen, from the top bar choose \fCXcode -> Preferences -> Locations -> Command Line Tools\fP and select an SDK version\&. Afterwards install \fCHomebrew\fP and execute \fCbrew install qt5\fP in the Terminal\&.
+.PP
+.RS 4
+\fBNote\fP: If you decide to use the official Qt5 package from Qt website instead, you will have to edit the installation script and provide installation paths manually due to a qmake bug\&.
+.PP
+.RE
+.PP
 .PP
 The easiest way to build the driver is with the \fCquickinstall\fP script, which is present in the ckb-master folder\&. Double-click on \fCquickinstall\fP and it will compile the app for you, then ask if you'd like to install it system-wide\&. If the build fails for any reason, or if you'd like to compile and install manually, see \fBhttps:\fP//github\&.com/ccMSC/ckb/blob/master/BUILD\&.md '`BUILD\&.md`'\&.
 .PP
@@ -272,6 +332,8 @@ If you have problems connecting the device to your system (device doesn't respon
 .IP "\(bu" 2
 K65 RGB: \fCusbhid\&.quirks=0x1B1C:0x1B17:0x20000408\fP
 .IP "\(bu" 2
+K65 LUX: \fCusbhid\&.quirks=0x1B1C:0x1B37:0x20000408\fP
+.IP "\(bu" 2
 K70: \fCusbhid\&.quirks=0x1B1C:0x1B09:0x20000408\fP
 .IP "\(bu" 2
 K70 LUX: \fCusbhid\&.quirks=0x1B1C:0x1B36:0x20000408\fP
@@ -305,10 +367,14 @@ If you see \fBGLib\fP critical errors like ``` GLib-GObject-CRITICAL **: g_type_
 .PP
 If you're using \fBUnity\fP and the tray icon doesn't appear correctly, run \fCsudo apt-get install libappindicator-dev\fP\&. Then reinstall ckb\&.
 .PP
+.SS "Fedora 26 Color Changer Freeze Fix"
+.PP
+If you're running Fedora 26, a working solution for the color changer freezing issue is to install qt5ct \fCdnf install qt5ct\fP then modify your /etc/environment file to contain the line \fCQT_QPA_PLATFORMTHEME=qt5ct\fP
+.PP
 .SS "OS X/macOS"
 .PP
 .IP "\(bu" 2
-**“ckb\&.pkg” can’t be opened because it is from an unidentified developer** Open \fCSystem Preferences > Security & Privacy > General\fP and click \fCOpen Anyway\fP\&.
+**“ckb\&.pkg” can’t be opened because it is from an unidentified developer** Right-click (control-click) on ckb\&.pkg and select Open\&. This new dialog box will give you the option to open anyway, without changing your system preferences\&.
 .IP "\(bu" 2
 \fBModifier keys (Shift, Ctrl, etc\&.) are not rebound correctly\fP ckb does not recognize modifier keys rebound from System Preferences\&. You can rebind them again within the application\&.
 .IP "\(bu" 2

@@ -1,7 +1,7 @@
 <map id="setupusb" name="setupusb">
 <area shape="rect" id="node2" href="$usb__linux_8c.html#a3185d6da36c8b0f8b862a8479ae82034" title="usbadd" alt="" coords="128,31,192,57"/>
-<area shape="rect" id="node3" href="$usb__linux_8c.html#a50efc8ee0ffcb6f201735d1a3bb08779" title="usb_add_device" alt="" coords="241,31,357,57"/>
-<area shape="rect" id="node4" href="$usb__linux_8c.html#ad56c1e4ec53bbd6b947cb535590328ea" title="udev_enum" alt="" coords="406,5,495,32"/>
+<area shape="rect" id="node3" href="$usb__linux_8c.html#a50efc8ee0ffcb6f201735d1a3bb08779" title="Add a udev device. Returns 0 if device was recognized/added. " alt="" coords="241,31,357,57"/>
+<area shape="rect" id="node4" href="$usb__linux_8c.html#ad56c1e4ec53bbd6b947cb535590328ea" title="udev_enum use the udev_enumerate_add_match_subsystem() to get all you need but only that..." alt="" coords="406,5,495,32"/>
 <area shape="rect" id="node5" href="$usb__linux_8c.html#a0859efad3739abe2ec61af4f3bb983ff" title="usbmain" alt="" coords="545,31,615,57"/>
 <area shape="rect" id="node6" href="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="664,31,715,57"/>
 <area shape="rect" id="node7" href="$notify_8c.html#ae246359e104d63520158c26329caac80" title="restart" alt="" coords="763,31,821,57"/>

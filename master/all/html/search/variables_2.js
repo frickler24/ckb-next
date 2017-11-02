@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['b',['b',['../ckb-anim_8h.html#a52c258e4d5fc3f55ee8c8044e37a2028',1,'ckb_key::b()'],['../ckb-anim_8h.html#a555923174250d704dce3cbd92ab52472',1,'ckb_gradient::b()'],['../structures_8h.html#abeb581d1f9790ac0dc97bd177546586e',1,'lighting::b()'],['../ckb-random_2main_8c.html#ae99e63aa161acf8066058b7af8b3e02c',1,'rgb::b()']]],
+  ['b',['b',['../ckb-anim_8h.html#a52c258e4d5fc3f55ee8c8044e37a2028',1,'ckb_key::b()'],['../ckb-anim_8h.html#a555923174250d704dce3cbd92ab52472',1,'ckb_gradient::b()'],['../structures_8h.html#ac382c44757d208247320c2978b1f48b9',1,'lighting::b()'],['../ckb-random_2main_8c.html#ae99e63aa161acf8066058b7af8b3e02c',1,'rgb::b()']]],
   ['backing',['backing',['../classCkbSettings.html#aed54cdf9c87066289a1419d72a437815',1,'CkbSettings']]],
   ['base',['base',['../structures_8h.html#a7ca1dadcce398f5110d02b080ad1fe00',1,'binding']]],
   ['begin_5fpos',['begin_pos',['../zip_8c.html#adff1d5f1509675f5f1c9797c5addc1a7',1,'zip64_internal']]],

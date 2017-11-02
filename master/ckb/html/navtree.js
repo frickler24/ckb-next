@@ -1,7 +1,7 @@
 var NAVTREE =
 [
   [ "ckb-next", "index.html", [
-    [ "ckb-next: RGB Driver for Linux and OS X", "md_README.html", null ],
+    [ "ckb-next: RGB Driver for Linux and macOS", "md_README.html", null ],
     [ "Building ckb", "md_BUILD.html", null ],
     [ "cbk Improvements Roadmap", "md_ROADMAP.html", null ],
     [ "DAEMON", "md_DAEMON.html", null ],
@@ -43,22 +43,22 @@ var NAVTREEINDEX =
 [
 "JlCompress_8cpp.html",
 "classAnimSettingDialog.html#ab16cfd0ffaffcfdeb4a9b648f0038b6c",
-"classKb.html#a69c6e0253f45def19d1a21c5648f5467",
-"classKbLight.html#a1a3d6085ea8406fbe6a8b80cc6589c30",
-"classKbProfileDialog.html#a3b0058e2aaebf070bb85ac6449c1beb2",
-"classMPerfWidget.html#a6e4a6b7bc983701e6d12f8a2b4015b62",
-"classQuaZipFile.html#ae614495d6b2404a6c59d7cfca5c3f6fd",
-"classUi_1_1ExtraSettingsWidget.html#a8cbd7371e746508dc87f880d1f0354c3",
-"classUi_1_1KbWidget.html#a5d2a112ae92dd9071ea054c2961995f8",
-"classUi_1_1SettingsWidget.html#a0aa23fdf7b779ec6e012475b5304098b",
-"classUi__KPerfWidget.html#a9b81fc0b1f20249bdb600a5971515b8d",
-"classUi__MPerfWidget.html#af845b29c8ec08c6a5eb14ce1e880abde",
-"functions_func_s.html",
-"kblight_8cpp.html#a1b369974db04cf9b57e096d8caff10b8",
-"moc__gradientdialogwidget_8cpp.html#structqt__meta__stringdata__GradientDialogWidget__t",
-"pages.html",
-"ui__kbbindwidget_8h_source.html",
-"zip_8c.html#a264fabfc0967e5c2e045a153599cbb75"
+"classKb.html#a6020e4bb32cefb2fee38d4c27bce2c90",
+"classKbLight.html#a11a7ea44ecbfb9bec6565720c185a59f",
+"classKbProfileDialog.html#a23bf2a42986694eae434a60688ccc249",
+"classMPerfWidget.html#a213df320cdada52ac63bdcdce771c839",
+"classQuaZipFile.html#aa1f2274e1579327855a17d67a9046ec2",
+"classUi_1_1ExtraSettingsWidget.html#a44005c14bd7cc78c3a2c5beb2e40bf03",
+"classUi_1_1KbWidget.html",
+"classUi_1_1RebindWidget.html#adb17a7fe5d130ac6217dee490be5e268",
+"classUi__KPerfWidget.html#a5a83e48a7bd87a72e861d6af44dddd83",
+"classUi__MPerfWidget.html#ab762f13f3269abcf328d7c0cf68a5146",
+"functions_a.html",
+"kb_8h_source.html",
+"moc__ckbsettingswriter_8cpp.html#af222a8857d17097fa0d36f1312f1b276",
+"moc__quazipfile_8cpp.html#a194865a07adf35fa2c714815ea472eaa",
+"structQuaZipNewInfo.html",
+"unzip_8h.html#ad9440fb3b019cfdac9ba8b8d83026ffc"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

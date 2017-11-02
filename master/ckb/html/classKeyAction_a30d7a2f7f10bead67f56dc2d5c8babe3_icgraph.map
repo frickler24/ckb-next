@@ -1,25 +1,25 @@
 <map id="KeyAction::type" name="KeyAction::type">
-<area shape="rect" id="node2" href="$classKeyAction.html#aeb94cb31b33753ccb50c30a136f66090" title="KeyAction::isNormal" alt="" coords="197,184,339,211"/>
+<area shape="rect" id="node2" href="$classKeyAction.html#aeb94cb31b33753ccb50c30a136f66090" title="KeyAction::isNormal" alt="" coords="197,205,339,232"/>
 <area shape="rect" id="node6" href="$classKbBindWidget.html#a1ac20b99c822f65c7a2c8c61a5a1f029" title="KbBindWidget::on_resetButton\l_clicked" alt="" coords="1113,5,1314,46"/>
-<area shape="rect" id="node16" href="$classKeyAction.html#ad393200d82796ade359ae0e1959dbca8" title="KeyAction::isSpecial" alt="" coords="197,260,339,287"/>
-<area shape="rect" id="node23" href="$classKeyAction.html#a23c0536bbfe20712a1e998e692439d6e" title="KeyAction::isUnbound" alt="" coords="192,311,344,337"/>
-<area shape="rect" id="node24" href="$classKbBindWidget.html#afa54eb21dc5dfff20175d5201a7d2698" title="KbBindWidget::on_copyButton\l_clicked" alt="" coords="168,362,368,403"/>
-<area shape="rect" id="node3" href="$classKeyAction.html#a92beb058c9ce60917688762b341b6184" title="KeyAction::isMouse" alt="" coords="425,159,564,185"/>
-<area shape="rect" id="node4" href="$classRebindWidget.html#a0edad41d578028bea3ea0e327fc4c203" title="RebindWidget::setSelection" alt="" coords="621,159,805,185"/>
-<area shape="rect" id="node13" href="$classRebindWidget.html#a6a68ae3d9abc935dbba8e2ce187337ce" title="RebindWidget::setBind" alt="" coords="881,239,1037,265"/>
+<area shape="rect" id="node16" href="$classKeyAction.html#ad393200d82796ade359ae0e1959dbca8" title="KeyAction::isSpecial" alt="" coords="197,256,339,283"/>
+<area shape="rect" id="node23" href="$classKeyAction.html#a23c0536bbfe20712a1e998e692439d6e" title="KeyAction::isUnbound" alt="" coords="192,307,344,333"/>
+<area shape="rect" id="node24" href="$classKbBindWidget.html#afa54eb21dc5dfff20175d5201a7d2698" title="KbBindWidget::on_copyButton\l_clicked" alt="" coords="168,358,368,399"/>
+<area shape="rect" id="node3" href="$classKeyAction.html#a92beb058c9ce60917688762b341b6184" title="KeyAction::isMouse" alt="" coords="425,205,564,232"/>
+<area shape="rect" id="node4" href="$classRebindWidget.html#a0edad41d578028bea3ea0e327fc4c203" title="RebindWidget::setSelection" alt="" coords="621,197,805,224"/>
 <area shape="rect" id="node5" href="$classKbBindWidget.html#a3274fb51d224f0ca111bd714ed524a59" title="KbBindWidget::updateBind" alt="" coords="869,71,1048,97"/>
-<area shape="rect" id="node11" href="$classKbBindWidget.html#ad1ce63ee68f21c7857ca8b24b7bb8309" title="KbBindWidget::newSelection" alt="" coords="863,121,1054,148"/>
-<area shape="rect" id="node15" href="$classRebindWidget.html#a8cb2e54e8bbd17cae8e152132a7a1ddf" title="RebindWidget::on_cancelButton\l_clicked" alt="" coords="854,173,1063,214"/>
+<area shape="rect" id="node11" href="$classKbBindWidget.html#ad1ce63ee68f21c7857ca8b24b7bb8309" title="KbBindWidget::newSelection" alt="" coords="863,147,1054,173"/>
+<area shape="rect" id="node13" href="$classRebindWidget.html#a6a68ae3d9abc935dbba8e2ce187337ce" title="RebindWidget::setBind" alt="" coords="881,197,1037,224"/>
+<area shape="rect" id="node15" href="$classRebindWidget.html#a8cb2e54e8bbd17cae8e152132a7a1ddf" title="RebindWidget::on_cancelButton\l_clicked" alt="" coords="854,249,1063,290"/>
 <area shape="rect" id="node7" href="$classKbBindWidget.html#ae06c7e036759eb9a1ae7224cdba30b0b" title="KbBindWidget::setBind" alt="" coords="1363,172,1520,199"/>
 <area shape="rect" id="node8" href="$classKbWidget.html#aae4a00bb180d711b5df7df6443c8bf36" title="KbWidget::modeChanged" alt="" coords="1568,172,1739,199"/>
 <area shape="rect" id="node9" href="$classKbWidget.html#a848a21f1fd112e13ca5fcf25da4592c6" title="KbWidget::KbWidget" alt="" coords="1821,143,1965,169"/>
 <area shape="rect" id="node10" href="$classKbWidget.html#add5eb15a399c87faf80db9fdfc2e868f" title="KbWidget::on_modesList_customContextMenuRequested. " alt="" coords="1787,194,2000,235"/>
 <area shape="rect" id="node12" href="$classKbBindWidget.html#ab41173324ff2873e36dbebb96951ed8b" title="KbBindWidget::KbBindWidget" alt="" coords="1115,172,1311,199"/>
 <area shape="rect" id="node14" href="$classKbBindWidget.html#ad052b9ce7166f5a1c46ee7a01f3457dc" title="KbBindWidget::newLayout" alt="" coords="1125,273,1301,300"/>
-<area shape="rect" id="node17" href="$classKeyAction.html#a943d9ec1c22dfc6f6497271b0bfd568c" title="KeyAction::driverName" alt="" coords="416,361,573,388"/>
-<area shape="rect" id="node20" href="$classKeyAction.html#a1fd7bef50c828e25299d514222d5b5a4" title="KeyAction::keyEvent" alt="" coords="422,311,567,337"/>
-<area shape="rect" id="node18" href="$classKbBind.html#abc1d7d434d4e38e0db04f8fba5d90a2d" title="KbBind::update" alt="" coords="658,361,769,388"/>
-<area shape="rect" id="node19" href="$classKb.html#a97694a4cd55681adca7b972fb5722049" title="Kb::frameUpdate" alt="" coords="898,361,1019,388"/>
-<area shape="rect" id="node21" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent" alt="" coords="650,311,777,337"/>
-<area shape="rect" id="node22" href="$classKb.html#afa36635dcc1cd9512f372594c57c546c" title="Kb::readNotify" alt="" coords="905,311,1012,337"/>
+<area shape="rect" id="node17" href="$classKeyAction.html#a943d9ec1c22dfc6f6497271b0bfd568c" title="KeyAction::driverName" alt="" coords="416,308,573,335"/>
+<area shape="rect" id="node20" href="$classKeyAction.html#a1fd7bef50c828e25299d514222d5b5a4" title="KeyAction::keyEvent" alt="" coords="422,363,567,389"/>
+<area shape="rect" id="node18" href="$classKbBind.html#abc1d7d434d4e38e0db04f8fba5d90a2d" title="KbBind::update" alt="" coords="658,309,769,336"/>
+<area shape="rect" id="node19" href="$classKb.html#a97694a4cd55681adca7b972fb5722049" title="Kb::frameUpdate" alt="" coords="898,315,1019,341"/>
+<area shape="rect" id="node21" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent" alt="" coords="650,364,777,391"/>
+<area shape="rect" id="node22" href="$classKb.html#afa36635dcc1cd9512f372594c57c546c" title="Kb::readNotify" alt="" coords="905,365,1012,392"/>
 </map>

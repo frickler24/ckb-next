@@ -79,7 +79,7 @@ var searchData=
   ['fwlabel',['fwLabel',['../classUi__KbWidget.html#a38c83b674fa6fdec9d16f800f0e7f3f3',1,'Ui_KbWidget']]],
   ['fwtable',['fwTable',['../classKbFirmware.html#a7363023c0ae8d1038de2c01ba5fe1cdc',1,'KbFirmware']]],
   ['fwtablehash',['fwTableHash',['../classKbFirmware.html#a4d32d20559a2921a572d5025097a3d97',1,'KbFirmware']]],
-  ['fwupdate',['fwUpdate',['../classKb.html#aa473ca7abaf9924f8ea11d2d013661b6',1,'Kb::fwUpdate()'],['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3acecdb603bb117091d4cf08bf3d48df09',1,'FWUPDATE():&#160;command.h'],['../firmware_8c.html#a23b0c6bc6d6ca8b0324b18869fbbc4d7',1,'fwupdate(usbdevice *kb, const char *path, int nnumber):&#160;firmware.c']]],
+  ['fwupdate',['fwUpdate',['../classKb.html#aa473ca7abaf9924f8ea11d2d013661b6',1,'Kb::fwUpdate()'],['../firmware_8c.html#a23b0c6bc6d6ca8b0324b18869fbbc4d7',1,'fwupdate(usbdevice *kb, const char *path, int nnumber):&#160;firmware.c'],['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3acecdb603bb117091d4cf08bf3d48df09',1,'FWUPDATE():&#160;command.h']]],
   ['fwupdatefinished',['fwUpdateFinished',['../classFwUpgradeDialog.html#a72dac03aca9395d1d440f0edcd1bb1da',1,'FwUpgradeDialog::fwUpdateFinished()'],['../classKb.html#a013d92148c44c62e5302d37986daaba4',1,'Kb::fwUpdateFinished()']]],
   ['fwupdateprogress',['fwUpdateProgress',['../classFwUpgradeDialog.html#a2ff45665d40d646c3a11ba2559467d70',1,'FwUpgradeDialog::fwUpdateProgress()'],['../classKb.html#a7617cb958cfe8f858ffd752699026117',1,'Kb::fwUpdateProgress()']]],
   ['fwupdbutton',['fwUpdButton',['../classUi__KbWidget.html#a5e26606b182df2a6d4e5af92d7036e48',1,'Ui_KbWidget']]],

@@ -1,8 +1,9 @@
 <map id="KbPerf::load" name="KbPerf::load">
-<area shape="rect" id="node2" href="$classCkbSettings.html#a844da78d41f68a6847afcbf3566e0698" title="CkbSettings::contains" alt="" coords="394,5,545,32"/>
-<area shape="rect" id="node4" href="$classCkbSettings.html#ae118f64ff3c153cfeab7b7ab5fbe8183" title="CkbSettings::containsGroup" alt="" coords="149,56,336,83"/>
-<area shape="rect" id="node6" href="$classKbPerf.html#a0a63c31c04ee2b750cc3b91e3dde4771" title="KbPerf::curDpi" alt="" coords="189,107,297,133"/>
-<area shape="rect" id="node7" href="$classCkbSettings.html#a3793106d98878f170f9f9734bf39409b" title="CkbSettings::value" alt="" coords="403,132,536,159"/>
-<area shape="rect" id="node3" href="$classCkbSettings.html#a29695ed0012617ba943a1878d4abc71c" title="CkbSettings::pwd" alt="" coords="603,56,730,83"/>
-<area shape="rect" id="node5" href="$classCkbSettings.html#aea339a2d08ce25c2e52dd60687783c01" title="CkbSettings::childGroups" alt="" coords="384,56,555,83"/>
+<area shape="rect" id="node2" href="$classKbPerf.html#a71317dc06e7415fa3d3fb7cbc6e642ca" title="KbPerf::_curDpi" alt="" coords="185,5,300,32"/>
+<area shape="rect" id="node3" href="$classCkbSettings.html#a844da78d41f68a6847afcbf3566e0698" title="CkbSettings::contains" alt="" coords="394,56,545,83"/>
+<area shape="rect" id="node5" href="$classCkbSettings.html#ae118f64ff3c153cfeab7b7ab5fbe8183" title="CkbSettings::containsGroup" alt="" coords="149,107,336,133"/>
+<area shape="rect" id="node7" href="$classKbPerf.html#a33c43da2bc90e6fac30c4ca65b585efa" title="KbPerf::dpi" alt="" coords="199,157,286,184"/>
+<area shape="rect" id="node8" href="$classCkbSettings.html#a3793106d98878f170f9f9734bf39409b" title="CkbSettings::value" alt="" coords="403,183,536,209"/>
+<area shape="rect" id="node4" href="$classCkbSettings.html#a29695ed0012617ba943a1878d4abc71c" title="CkbSettings::pwd" alt="" coords="603,107,730,133"/>
+<area shape="rect" id="node6" href="$classCkbSettings.html#aea339a2d08ce25c2e52dd60687783c01" title="CkbSettings::childGroups" alt="" coords="384,107,555,133"/>
 </map>

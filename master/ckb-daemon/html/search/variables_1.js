@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['b',['b',['../structures_8h.html#abeb581d1f9790ac0dc97bd177546586e',1,'lighting']]],
+  ['b',['b',['../structures_8h.html#ac382c44757d208247320c2978b1f48b9',1,'lighting']]],
   ['base',['base',['../structures_8h.html#a7ca1dadcce398f5110d02b080ad1fe00',1,'binding']]],
   ['bind',['bind',['../structures_8h.html#a60912d4777e7a95e3b5cdd8581c0cf0c',1,'usbmode']]],
   ['bit_5freverse_5ftable',['bit_reverse_table',['../led__keyboard_8c.html#ae9db810812f8a848148335735541cdfb',1,'led_keyboard.c']]],

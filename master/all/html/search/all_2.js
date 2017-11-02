@@ -1,15 +1,16 @@
 var searchData=
 [
-  ['b',['b',['../ckb-anim_8h.html#a52c258e4d5fc3f55ee8c8044e37a2028',1,'ckb_key::b()'],['../ckb-anim_8h.html#a555923174250d704dce3cbd92ab52472',1,'ckb_gradient::b()'],['../structures_8h.html#abeb581d1f9790ac0dc97bd177546586e',1,'lighting::b()'],['../ckb-random_2main_8c.html#ae99e63aa161acf8066058b7af8b3e02c',1,'rgb::b()']]],
+  ['b',['b',['../ckb-anim_8h.html#a52c258e4d5fc3f55ee8c8044e37a2028',1,'ckb_key::b()'],['../ckb-anim_8h.html#a555923174250d704dce3cbd92ab52472',1,'ckb_gradient::b()'],['../structures_8h.html#ac382c44757d208247320c2978b1f48b9',1,'lighting::b()'],['../ckb-random_2main_8c.html#ae99e63aa161acf8066058b7af8b3e02c',1,'rgb::b()']]],
   ['backing',['backing',['../classCkbSettings.html#aed54cdf9c87066289a1419d72a437815',1,'CkbSettings']]],
   ['base',['base',['../structures_8h.html#a7ca1dadcce398f5110d02b080ad1fe00',1,'binding::base()'],['../classKbLight.html#a6bc366191c38d327b82b8d0acd741cea',1,'KbLight::base()']]],
+  ['basedpiidx',['baseDpiIdx',['../classKbPerf.html#a45fcf914391d22f056fef42e2923de42',1,'KbPerf::baseDpiIdx() const '],['../classKbPerf.html#adfc89d33cf53d26eaa57f23b5c962fc9',1,'KbPerf::baseDpiIdx(int newIdx)']]],
   ['begin',['begin',['../classAnimScript.html#a72b76b011846a06fafc9ddff09eb85e3',1,'AnimScript']]],
   ['begin_5fpos',['begin_pos',['../zip_8c.html#adff1d5f1509675f5f1c9797c5addc1a7',1,'zip64_internal']]],
   ['begingroup',['beginGroup',['../classCkbSettings.html#ac85a6fbc7250b71a05f38201c47abc69',1,'CkbSettings']]],
   ['bgbutton',['bgButton',['../classUi__KbLightWidget.html#ab9c1f361ed4ed881903d85c8ea563990',1,'Ui_KbLightWidget']]],
   ['bigicons',['bigIcons',['../classColorButton.html#a43607783d1c7adc27e444664b6543e2f',1,'ColorButton::bigIcons() const '],['../classColorButton.html#ab09901e5aa07c7193c56b1184ba0036f',1,'ColorButton::bigIcons(bool newBigIcons)']]],
   ['bind',['bind',['../classKbBindWidget.html#a1bb6624e5bd40458c10ae9f1d6ef1770',1,'KbBindWidget::bind()'],['../classRebindWidget.html#a8f0d1807ccead6dca0d305d3db40c2e8',1,'RebindWidget::bind()'],['../structures_8h.html#a60912d4777e7a95e3b5cdd8581c0cf0c',1,'usbmode::bind()'],['../classKbMode.html#aa90c7537a90e0a960a5eb327f3a2cdbb',1,'KbMode::bind()'],['../classKbPerf.html#ae082fb244dfdb0ab8e3e918551b1ea1f',1,'KbPerf::bind()'],['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3ae6b27a517c1c937b0a945c7393179677',1,'BIND():&#160;command.h']]],
-  ['bindaction',['bindAction',['../classKbBind.html#a116916d2451ee7dcfe69cd816eb6d255',1,'KbBind']]],
+  ['bindaction',['bindAction',['../classKbBind.html#a3cc447a4a13d60e1dd77ae4c0f6a3e3d',1,'KbBind']]],
   ['binding',['binding',['../structures_8h.html#structbinding',1,'']]],
   ['bindmap',['BindMap',['../classKeyWidget.html#a0a30a1d149576c781187c2a4b56f6db6',1,'KeyWidget::BindMap()'],['../classKeyWidget.html#a0a0e5b52e444eefb23f911df161ad243',1,'KeyWidget::bindMap() const '],['../classKeyWidget.html#ae60878e53b16491d8cdc7c05d3dd4eb4',1,'KeyWidget::bindMap(const BindMap &amp;newBindMap)']]],
   ['bindtab',['bindTab',['../classUi__KbWidget.html#a1e48da41d132c9fa28257403e2b08e18',1,'Ui_KbWidget']]],

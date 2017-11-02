@@ -1,5 +1,11 @@
 var searchData=
 [
+  ['p_5fglaive',['P_GLAIVE',['../usb_8h.html#a73d4d984088a1d89a62b46cdd0437c8c',1,'usb.h']]],
+  ['p_5fglaive_5fstr',['P_GLAIVE_STR',['../usb_8h.html#aeedd6d2b5282abc05ead73764fcce2bf',1,'usb.h']]],
+  ['p_5fharpoon',['P_HARPOON',['../usb_8h.html#a0dcf30bf384db4146eb7be833c55c92b',1,'usb.h']]],
+  ['p_5fharpoon_5fstr',['P_HARPOON_STR',['../usb_8h.html#ad7d69769a77137011bfd465f941fd158',1,'usb.h']]],
+  ['p_5fk63_5fnrgb',['P_K63_NRGB',['../usb_8h.html#a92ec1729371015f42f6a1941e4a11892',1,'usb.h']]],
+  ['p_5fk63_5fnrgb_5fstr',['P_K63_NRGB_STR',['../usb_8h.html#a41bb21092a8702ba55b0e9f847279b87',1,'usb.h']]],
   ['p_5fk65',['P_K65',['../usb_8h.html#affc75c5e028c467b9a294360b8a66a17',1,'usb.h']]],
   ['p_5fk65_5flux',['P_K65_LUX',['../usb_8h.html#a976d0683dbfa2225bf40016d151f70d3',1,'usb.h']]],
   ['p_5fk65_5flux_5fstr',['P_K65_LUX_STR',['../usb_8h.html#a87f69e4b896c892cfb5b3ff1410d31ae',1,'usb.h']]],
@@ -46,6 +52,9 @@ var searchData=
   ['p_5fstrafe_5fnrgb',['P_STRAFE_NRGB',['../usb_8h.html#a3e6f75a59f49265384d17e5d65b054e0',1,'usb.h']]],
   ['p_5fstrafe_5fnrgb_5fstr',['P_STRAFE_NRGB_STR',['../usb_8h.html#ada53df20c5479953f8bc3247a9f17fdf',1,'usb.h']]],
   ['p_5fstrafe_5fstr',['P_STRAFE_STR',['../usb_8h.html#a0d186f9f8f273b0bc614cf0232540f1a',1,'usb.h']]],
+  ['parameter',['parameter',['../input_8h.html#structparameter',1,'']]],
+  ['parameter_5ft',['parameter_t',['../input_8h.html#a8b9bffbd622ca07b52ae46936d654580',1,'input.h']]],
+  ['play_5fmacro',['play_macro',['../input_8c.html#a42ef48810461524270042eeda9616dba',1,'input.c']]],
   ['pollrate',['pollrate',['../structures_8h.html#a56e8458239a40a080e9cccf901875285',1,'usbdevice::pollrate()'],['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3a0e5be9165be1af282de1a13a1da12ab2',1,'POLLRATE():&#160;command.h']]],
   ['pr_5fname_5flen',['PR_NAME_LEN',['../structures_8h.html#a52bc040441fa4f36d74d69fcc478e510',1,'structures.h']]],
   ['prevkeys',['prevkeys',['../structures_8h.html#a97fa60c3c54a8c7105f424b0f7104a1f',1,'usbinput']]],
@@ -60,5 +69,9 @@ var searchData=
   ['profile_5fkeyboard_2ec',['profile_keyboard.c',['../profile__keyboard_8c.html',1,'']]],
   ['profile_5fmouse_2ec',['profile_mouse.c',['../profile__mouse_8c.html',1,'']]],
   ['profileid',['PROFILEID',['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3ac5d67058bd06f3d3630151b42d01cd9a',1,'command.h']]],
-  ['profilename',['PROFILENAME',['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3a54dbd6b1ddbebc40675f10a4608f7d62',1,'command.h']]]
+  ['profilename',['PROFILENAME',['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3a54dbd6b1ddbebc40675f10a4608f7d62',1,'command.h']]],
+  ['pt_5fhead',['pt_head',['../input_8c.html#a00af804e2e97b2bf7c0554dcfc441ce8',1,'input.c']]],
+  ['pt_5ftail',['pt_tail',['../input_8c.html#a1dc43d4d8be547a1bf951261867c34fb',1,'input.c']]],
+  ['ptlist',['ptlist',['../input_8h.html#structptlist',1,'']]],
+  ['ptlist_5ft',['ptlist_t',['../input_8h.html#ad52b5325d4f60325d995d989f11a9247',1,'input.h']]]
 ];

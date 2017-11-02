@@ -433,7 +433,7 @@ Private Attributes</h2></td></tr>
 
 <p>References <a class="el" href="ckbsettings_8h_source.html#l00046">backing</a>, <a class="el" href="ckbsettings_8cpp_source.html#l00015">lockMutex</a>, and <a class="el" href="ckbsettings_8h_source.html#l00051">pwd()</a>.</p>
 
-<p>Referenced by <a class="el" href="gradientdialog_8cpp_source.html#l00011">GradientDialog::GradientDialog()</a>, <a class="el" href="kbanim_8cpp_source.html#l00008">KbAnim::KbAnim()</a>, <a class="el" href="kbbind_8cpp_source.html#l00058">KbBind::load()</a>, <a class="el" href="kblight_8cpp_source.html#l00401">KbLight::load()</a>, and <a class="el" href="kbbind_8cpp_source.html#l00116">KbBind::loadGlobalRemap()</a>.</p>
+<p>Referenced by <a class="el" href="gradientdialog_8cpp_source.html#l00011">GradientDialog::GradientDialog()</a>, <a class="el" href="kbanim_8cpp_source.html#l00008">KbAnim::KbAnim()</a>, <a class="el" href="kbbind_8cpp_source.html#l00058">KbBind::load()</a>, <a class="el" href="kblight_8cpp_source.html#l00408">KbLight::load()</a>, and <a class="el" href="kbbind_8cpp_source.html#l00116">KbBind::loadGlobalRemap()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                         {</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    QString current = <a class="code" href="classCkbSettings.html#a29695ed0012617ba943a1878d4abc71c">pwd</a>();</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="ckbsettings_8cpp.html#a043950669e1aea6a1d05976a38ce64a6">lockMutex</a>;</div>
@@ -558,7 +558,7 @@ Private Attributes</h2></td></tr>
 
 <p>References <a class="el" href="ckbsettings_8h_source.html#l00046">backing</a>, <a class="el" href="ckbsettings_8cpp_source.html#l00015">lockMutex</a>, and <a class="el" href="ckbsettings_8h_source.html#l00051">pwd()</a>.</p>
 
-<p>Referenced by <a class="el" href="kbmode_8cpp_source.html#l00030">KbMode::KbMode()</a>, <a class="el" href="kbprofile_8cpp_source.html#l00022">KbProfile::KbProfile()</a>, and <a class="el" href="kbperf_8cpp_source.html#l00108">KbPerf::load()</a>.</p>
+<p>Referenced by <a class="el" href="kbmode_8cpp_source.html#l00030">KbMode::KbMode()</a>, <a class="el" href="kbprofile_8cpp_source.html#l00022">KbProfile::KbProfile()</a>, and <a class="el" href="kbperf_8cpp_source.html#l00106">KbPerf::load()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                                                   {</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="ckbsettings_8cpp.html#a043950669e1aea6a1d05976a38ce64a6">lockMutex</a>;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classCkbSettings.html#aed54cdf9c87066289a1419d72a437815">backing</a>-&gt;contains(<a class="code" href="classCkbSettings.html#a29695ed0012617ba943a1878d4abc71c">pwd</a>(key));</div>
@@ -609,7 +609,7 @@ Private Attributes</h2></td></tr>
 
 <p>References <a class="el" href="ckbsettings_8cpp_source.html#l00089">childGroups()</a>.</p>
 
-<p>Referenced by <a class="el" href="kbperf_8cpp_source.html#l00108">KbPerf::load()</a>.</p>
+<p>Referenced by <a class="el" href="kbperf_8cpp_source.html#l00106">KbPerf::load()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                                                   {</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    QStringList components = group.split(<span class="stringliteral">&quot;/&quot;</span>);</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">if</span>(components.length() &gt; 1){</div>
@@ -1065,7 +1065,7 @@ Private Attributes</h2></td></tr>
 
 <p>References <a class="el" href="ckbsettings_8cpp_source.html#l00012">globalCache</a>, <a class="el" href="ckbsettings_8cpp_source.html#l00018">lockMutexCache</a>, <a class="el" href="ckbsettings_8h_source.html#l00051">pwd()</a>, <a class="el" href="ckbsettings_8cpp_source.html#l00126">value()</a>, and <a class="el" href="ckbsettings_8h_source.html#l00049">writeCache</a>.</p>
 
-<p>Referenced by <a class="el" href="extrasettingswidget_8cpp_source.html#l00098">ExtraSettingsWidget::on_fpsBox_valueChanged()</a>, <a class="el" href="kbprofile_8cpp_source.html#l00048">KbProfile::save()</a>, <a class="el" href="kbperf_8cpp_source.html#l00207">KbPerf::save()</a>, <a class="el" href="kbanim_8cpp_source.html#l00064">KbAnim::save()</a>, <a class="el" href="kbbind_8cpp_source.html#l00081">KbBind::save()</a>, <a class="el" href="kbmode_8cpp_source.html#l00066">KbMode::save()</a>, <a class="el" href="kblight_8cpp_source.html#l00440">KbLight::save()</a>, <a class="el" href="kb_8cpp_source.html#l00273">Kb::save()</a>, <a class="el" href="kbbind_8cpp_source.html#l00124">KbBind::saveGlobalRemap()</a>, <a class="el" href="settingswidget_8cpp_source.html#l00015">SettingsWidget::SettingsWidget()</a>, and <a class="el" href="gradientdialog_8cpp_source.html#l00077">GradientDialog::~GradientDialog()</a>.</p>
+<p>Referenced by <a class="el" href="extrasettingswidget_8cpp_source.html#l00098">ExtraSettingsWidget::on_fpsBox_valueChanged()</a>, <a class="el" href="kbprofile_8cpp_source.html#l00048">KbProfile::save()</a>, <a class="el" href="kbperf_8cpp_source.html#l00211">KbPerf::save()</a>, <a class="el" href="kbanim_8cpp_source.html#l00064">KbAnim::save()</a>, <a class="el" href="kbbind_8cpp_source.html#l00081">KbBind::save()</a>, <a class="el" href="kbmode_8cpp_source.html#l00066">KbMode::save()</a>, <a class="el" href="kblight_8cpp_source.html#l00447">KbLight::save()</a>, <a class="el" href="kb_8cpp_source.html#l00273">Kb::save()</a>, <a class="el" href="kbbind_8cpp_source.html#l00124">KbBind::saveGlobalRemap()</a>, <a class="el" href="settingswidget_8cpp_source.html#l00015">SettingsWidget::SettingsWidget()</a>, and <a class="el" href="gradientdialog_8cpp_source.html#l00077">GradientDialog::~GradientDialog()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                                                                   {</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="comment">// Cache the write values, save them when the object is destroyed</span></div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    QString realKey = <a class="code" href="classCkbSettings.html#a29695ed0012617ba943a1878d4abc71c">pwd</a>(key);</div>
@@ -1133,7 +1133,7 @@ Private Attributes</h2></td></tr>
 
 <p>References <a class="el" href="ckbsettings_8h_source.html#l00046">backing</a>, <a class="el" href="ckbsettings_8cpp_source.html#l00015">lockMutex</a>, and <a class="el" href="ckbsettings_8h_source.html#l00051">pwd()</a>.</p>
 
-<p>Referenced by <a class="el" href="extrasettingswidget_8cpp_source.html#l00010">ExtraSettingsWidget::ExtraSettingsWidget()</a>, <a class="el" href="gradientdialog_8cpp_source.html#l00011">GradientDialog::GradientDialog()</a>, <a class="el" href="kbanim_8cpp_source.html#l00008">KbAnim::KbAnim()</a>, <a class="el" href="kbmode_8cpp_source.html#l00030">KbMode::KbMode()</a>, <a class="el" href="kbprofile_8cpp_source.html#l00022">KbProfile::KbProfile()</a>, <a class="el" href="kbperf_8cpp_source.html#l00108">KbPerf::load()</a>, <a class="el" href="kbbind_8cpp_source.html#l00058">KbBind::load()</a>, <a class="el" href="kblight_8cpp_source.html#l00401">KbLight::load()</a>, <a class="el" href="kb_8cpp_source.html#l00241">Kb::load()</a>, <a class="el" href="kbbind_8cpp_source.html#l00116">KbBind::loadGlobalRemap()</a>, <a class="el" href="ckbsettings_8cpp_source.html#l00166">set()</a>, <a class="el" href="settingswidget_8cpp_source.html#l00015">SettingsWidget::SettingsWidget()</a>, and <a class="el" href="ckbsettings_8cpp_source.html#l00131">setValue()</a>.</p>
+<p>Referenced by <a class="el" href="extrasettingswidget_8cpp_source.html#l00010">ExtraSettingsWidget::ExtraSettingsWidget()</a>, <a class="el" href="gradientdialog_8cpp_source.html#l00011">GradientDialog::GradientDialog()</a>, <a class="el" href="kbanim_8cpp_source.html#l00008">KbAnim::KbAnim()</a>, <a class="el" href="kbmode_8cpp_source.html#l00030">KbMode::KbMode()</a>, <a class="el" href="kbprofile_8cpp_source.html#l00022">KbProfile::KbProfile()</a>, <a class="el" href="kbperf_8cpp_source.html#l00106">KbPerf::load()</a>, <a class="el" href="kbbind_8cpp_source.html#l00058">KbBind::load()</a>, <a class="el" href="kblight_8cpp_source.html#l00408">KbLight::load()</a>, <a class="el" href="kb_8cpp_source.html#l00241">Kb::load()</a>, <a class="el" href="kbbind_8cpp_source.html#l00116">KbBind::loadGlobalRemap()</a>, <a class="el" href="ckbsettings_8cpp_source.html#l00166">set()</a>, <a class="el" href="settingswidget_8cpp_source.html#l00015">SettingsWidget::SettingsWidget()</a>, and <a class="el" href="ckbsettings_8cpp_source.html#l00131">setValue()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                                                                                  {</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="ckbsettings_8cpp.html#a043950669e1aea6a1d05976a38ce64a6">lockMutex</a>;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classCkbSettings.html#aed54cdf9c87066289a1419d72a437815">backing</a>-&gt;value(<a class="code" href="classCkbSettings.html#a29695ed0012617ba943a1878d4abc71c">pwd</a>(key), defaultValue);</div>
@@ -1273,7 +1273,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classCkbSettings.html">CkbSettings</a></li>
-    <li class="footer">Generated on Wed May 24 2017 08:16:54 for ckb-next by
+    <li class="footer">Generated on Thu Nov 2 2017 17:17:53 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

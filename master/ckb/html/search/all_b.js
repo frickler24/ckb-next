@@ -1,5 +1,10 @@
 var searchData=
 [
+  ['k63',['K63',['../classKeyMap.html#a6d29bbbb4d74908a0a1873d485d6769daea3811d4a69ceb60ce8e55bca017cf9f',1,'KeyMap']]],
+  ['k63_5fheight',['K63_HEIGHT',['../keymap_8cpp.html#ac63bba9d6639db50f6bb7dd042dbbd5c',1,'keymap.cpp']]],
+  ['k63_5ftop_5fcount',['K63_TOP_COUNT',['../keymap_8cpp.html#a974d88944349234f433b81e0c6cd9c48',1,'keymap.cpp']]],
+  ['k63_5fwidth',['K63_WIDTH',['../keymap_8cpp.html#ad62e48fb43d06db694ce1cd0c2793008',1,'keymap.cpp']]],
+  ['k63toprow',['K63TopRow',['../keymap_8cpp.html#a4ccf4005d21f2b4cc4f41a8bb13eea83',1,'keymap.cpp']]],
   ['k65',['K65',['../classKeyMap.html#a6d29bbbb4d74908a0a1873d485d6769dac17aa01d74f585038d2685028413d23c',1,'KeyMap']]],
   ['k65_5fheight',['K65_HEIGHT',['../keymap_8cpp.html#af49f04c721657debcfdd8753774e0362',1,'keymap.cpp']]],
   ['k65_5ftop_5fcount',['K65_TOP_COUNT',['../keymap_8cpp.html#a674e458bebaa41a462e6bca184062023',1,'keymap.cpp']]],
@@ -81,6 +86,8 @@ var searchData=
   ['keyaction_2eh',['keyaction.h',['../keyaction_8h.html',1,'']]],
   ['keybutton',['keyButton',['../classUi__KbAnimWidget.html#a594f563d0159bd65645360727cb14f8d',1,'Ui_KbAnimWidget']]],
   ['keycount',['keycount',['../ckb-anim_8h.html#ab8c4d362ec39de639d9e1b2fdb3ae033',1,'ckb_runctx']]],
+  ['keycount_5fglaive',['KEYCOUNT_GLAIVE',['../keymap_8cpp.html#a4a0a75a74bf5fc5d5d158d83937fd63c',1,'keymap.cpp']]],
+  ['keycount_5fharpoon',['KEYCOUNT_HARPOON',['../keymap_8cpp.html#af3857ea5ae07fc0b6627522e656c403d',1,'keymap.cpp']]],
   ['keycount_5fk95',['KEYCOUNT_K95',['../keymap_8cpp.html#ab045975e441545f7bb20a84da1f012d8',1,'keymap.cpp']]],
   ['keycount_5fm65',['KEYCOUNT_M65',['../keymap_8cpp.html#addea11f5a09f41c3a7d5064f07a3114f',1,'keymap.cpp']]],
   ['keycount_5fsabre',['KEYCOUNT_SABRE',['../keymap_8cpp.html#a81b47374a4b497352917088bb66993cb',1,'keymap.cpp']]],
@@ -108,7 +115,7 @@ var searchData=
   ['kpdelaybox',['kpDelayBox',['../classUi__AnimSettingDialog.html#a169f06e538a1f5f9e772b1bcc370305b',1,'Ui_AnimSettingDialog']]],
   ['kperftab',['kPerfTab',['../classUi__KbWidget.html#a5d2a112ae92dd9071ea054c2961995f8',1,'Ui_KbWidget']]],
   ['kperfwidget',['KPerfWidget',['../classUi_1_1KPerfWidget.html',1,'Ui']]],
-  ['kperfwidget',['KPerfWidget',['../classKPerfWidget.html',1,'KPerfWidget'],['../classKPerfWidget.html#afe3ef56d5262dbb3e5ea5ce9d77e124e',1,'KPerfWidget::KPerfWidget()'],['../classUi__KbWidget.html#a0dc836885071aa36562b5886baf5e104',1,'Ui_KbWidget::kPerfWidget()']]],
+  ['kperfwidget',['KPerfWidget',['../classKPerfWidget.html',1,'KPerfWidget'],['../classUi__KbWidget.html#a0dc836885071aa36562b5886baf5e104',1,'Ui_KbWidget::kPerfWidget()'],['../classKPerfWidget.html#afe3ef56d5262dbb3e5ea5ce9d77e124e',1,'KPerfWidget::KPerfWidget()']]],
   ['kperfwidget_2ecpp',['kperfwidget.cpp',['../kperfwidget_8cpp.html',1,'']]],
   ['kperfwidget_2eh',['kperfwidget.h',['../kperfwidget_8h.html',1,'']]],
   ['kpmodestopbox',['kpModeStopBox',['../classUi__AnimSettingDialog.html#a319bab7efdc2552c76af00072cc6b03e',1,'Ui_AnimSettingDialog']]],

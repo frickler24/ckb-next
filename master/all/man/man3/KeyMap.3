@@ -1,4 +1,4 @@
-.TH "KeyMap" 3 "Wed May 24 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "KeyMap" 3 "Thu Nov 2 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -12,10 +12,10 @@ KeyMap \-
 
 .in +1c
 .ti -1c
-.RI "enum \fBModel\fP { \fBNO_MODEL\fP = -1, \fBK65\fP, \fBK70\fP, \fBK95\fP, \fBSTRAFE\fP, \fBM65\fP, \fBSABRE\fP, \fBSCIMITAR\fP, \fB_MODEL_MAX\fP }"
+.RI "enum \fBModel\fP { \fBNO_MODEL\fP = -1, \fBK63\fP, \fBK65\fP, \fBK70\fP, \fBK95\fP, \fBSTRAFE\fP, \fBM65\fP, \fBSABRE\fP, \fBSCIMITAR\fP, \fBHARPOON\fP, \fBGLAIVE\fP, \fB_MODEL_MAX\fP }"
 .br
 .ti -1c
-.RI "enum \fBLayout\fP { \fBNO_LAYOUT\fP = -1, \fBDK\fP, \fBEU\fP, \fBEU_DVORAK\fP, \fBGB\fP, \fBGB_DVORAK\fP, \fBUS\fP, \fBUS_DVORAK\fP, \fBFR\fP, \fBDE\fP, \fBIT\fP, \fBNO\fP, \fBPL\fP, \fBMX\fP, \fBES\fP, \fBSE\fP, \fB_LAYOUT_MAX\fP }"
+.RI "enum \fBLayout\fP { \fBNO_LAYOUT\fP = -1, \fBDK\fP, \fBEU\fP, \fBEU_DVORAK\fP, \fBGB\fP, \fBGB_DVORAK\fP, \fBUS\fP, \fBUS_DVORAK\fP, \fBFR\fP, \fBDE\fP, \fBIT\fP, \fBJP\fP, \fBNO\fP, \fBPL\fP, \fBMX\fP, \fBES\fP, \fBSE\fP, \fB_LAYOUT_MAX\fP }"
 .br
 .in -1c
 .SS "Public Member Functions"
@@ -23,6 +23,9 @@ KeyMap \-
 .in +1c
 .ti -1c
 .RI "bool \fBisISO\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisJP\fP () const "
 .br
 .ti -1c
 .RI "bool \fBisKeyboard\fP () const "
@@ -99,6 +102,9 @@ KeyMap \-
 .br
 .ti -1c
 .RI "static bool \fBisISO\fP (\fBLayout\fP \fBlayout\fP)"
+.br
+.ti -1c
+.RI "static bool \fBisJP\fP (\fBLayout\fP \fBlayout\fP)"
 .br
 .ti -1c
 .RI "static \fBLayout\fP \fBlocale\fP ()"
@@ -190,6 +196,8 @@ Definition at line 49 of file keymap\&.h\&.
 .TP
 \fB\fIIT \fP\fP
 .TP
+\fB\fIJP \fP\fP
+.TP
 \fB\fINO \fP\fP
 .TP
 \fB\fIPL \fP\fP
@@ -202,28 +210,29 @@ Definition at line 49 of file keymap\&.h\&.
 .TP
 \fB\fI_LAYOUT_MAX \fP\fP
 .PP
-Definition at line 65 of file keymap\&.h\&.
+Definition at line 68 of file keymap\&.h\&.
 .PP
 .nf
-65                 {
-66         NO_LAYOUT = -1,
-67         DK,                 // Danish
-68         EU,                 // English (EU)
-69         EU_DVORAK,
-70         GB,                 // English (UK)
-71         GB_DVORAK,
-72         US,                 // English (US)
-73         US_DVORAK,
-74         FR,                 // French
-75         DE,                 // German
-76         IT,                 // Italian
-77         NO,                 // Norwegian
-78         PL,                 // Polish (identical to US)
-79         MX,                 // Spanish (Mexico/Latin America)
-80         ES,                 // Spanish (Spain)
-81         SE,                 // Swedish
-82         _LAYOUT_MAX
-83     };
+68                 {
+69         NO_LAYOUT = -1,
+70         DK,                 // Danish
+71         EU,                 // English (EU)
+72         EU_DVORAK,
+73         GB,                 // English (UK)
+74         GB_DVORAK,
+75         US,                 // English (US)
+76         US_DVORAK,
+77         FR,                 // French
+78         DE,                 // German
+79         IT,                 // Italian
+80         JP,                 // Japanese
+81         NO,                 // Norwegian
+82         PL,                 // Polish (identical to US)
+83         MX,                 // Spanish (Mexico/Latin America)
+84         ES,                 // Spanish (Spain)
+85         SE,                 // Swedish
+86         _LAYOUT_MAX
+87     };
 .fi
 .SS "enum \fBKeyMap::Model\fP"
 
@@ -232,6 +241,8 @@ Definition at line 65 of file keymap\&.h\&.
 .in +1c
 .TP
 \fB\fINO_MODEL \fP\fP
+.TP
+\fB\fIK63 \fP\fP
 .TP
 \fB\fIK65 \fP\fP
 .TP
@@ -247,6 +258,10 @@ Definition at line 65 of file keymap\&.h\&.
 .TP
 \fB\fISCIMITAR \fP\fP
 .TP
+\fB\fIHARPOON \fP\fP
+.TP
+\fB\fIGLAIVE \fP\fP
+.TP
 \fB\fI_MODEL_MAX \fP\fP
 .PP
 Definition at line 51 of file keymap\&.h\&.
@@ -255,704 +270,758 @@ Definition at line 51 of file keymap\&.h\&.
 51                {
 52         NO_MODEL = -1,
 53         // Keyboard models
-54         K65,
-55         K70,
-56         K95,
-57         STRAFE,
-58         // Mouse models
-59         M65,
-60         SABRE,
-61         SCIMITAR,
-62         _MODEL_MAX
-63     };
+54         K63,
+55         K65,
+56         K70,
+57         K95,
+58         STRAFE,
+59         // Mouse models
+60         M65,
+61         SABRE,
+62         SCIMITAR,
+63         HARPOON,
+64         GLAIVE,
+65         _MODEL_MAX
+66     };
 .fi
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "KeyMap::KeyMap ()"
 
 .PP
-Definition at line 583 of file keymap\&.cpp\&.
+Definition at line 750 of file keymap\&.cpp\&.
 .PP
 Referenced by friendlyName(), and fromName()\&.
 .PP
 .nf
-583                :
-584      keyWidth(0), keyHeight(0),
-585      keyModel(NO_MODEL), keyLayout(NO_LAYOUT)
-586 {}
+750                :
+751      keyWidth(0), keyHeight(0),
+752      keyModel(NO_MODEL), keyLayout(NO_LAYOUT)
+753 {}
 .fi
 .SS "KeyMap::KeyMap (\fBModel\fP_keyModel, \fBLayout\fP_keyLayout)"
 
 .PP
-Definition at line 577 of file keymap\&.cpp\&.
+Definition at line 744 of file keymap\&.cpp\&.
 .PP
 .nf
-577                                                  :
-578     _keys(getMap(_keyModel, _keyLayout)),
-579     keyWidth(modelWidth(_keyModel)), keyHeight(modelHeight(_keyModel)),
-580     keyModel(_keyModel), keyLayout(_keyLayout)
-581 {}
+744                                                  :
+745     _keys(getMap(_keyModel, _keyLayout)),
+746     keyWidth(modelWidth(_keyModel)), keyHeight(modelHeight(_keyModel)),
+747     keyModel(_keyModel), keyLayout(_keyLayout)
+748 {}
 .fi
 .SH "Member Function Documentation"
 .PP 
 .SS "QStringList KeyMap::byPosition () const"
 
 .PP
-Definition at line 588 of file keymap\&.cpp\&.
+Definition at line 755 of file keymap\&.cpp\&.
 .PP
 References Key::x, x, Key::y, and y\&.
 .PP
 Referenced by RebindWidget::setBind()\&.
 .PP
 .nf
-588                                      {
-589     // Use QMaps to order the keys
-590     QMap<int, QMap<int, QString> > ordered;
-591     QHashIterator<QString, Key> i(*this);
-592     while(i\&.hasNext()){
-593         i\&.next();
-594         const Key& key = i\&.value();
-595         ordered[key\&.y][key\&.x] = i\&.key();
-596     }
-597     // Merge them into a single list
-598     QStringList result;
-599     QMapIterator<int, QMap<int, QString> > y(ordered);
-600     while(y\&.hasNext()){
-601         y\&.next();
-602         QMapIterator<int, QString> x(y\&.value());
-603         while(x\&.hasNext()){
-604             x\&.next();
-605             result << x\&.value();
-606         }
-607     }
-608     return result;
-609 }
+755                                      {
+756     // Use QMaps to order the keys
+757     QMap<int, QMap<int, QString> > ordered;
+758     QHashIterator<QString, Key> i(*this);
+759     while(i\&.hasNext()){
+760         i\&.next();
+761         const Key& key = i\&.value();
+762         ordered[key\&.y][key\&.x] = i\&.key();
+763     }
+764     // Merge them into a single list
+765     QStringList result;
+766     QMapIterator<int, QMap<int, QString> > y(ordered);
+767     while(y\&.hasNext()){
+768         y\&.next();
+769         QMapIterator<int, QString> x(y\&.value());
+770         while(x\&.hasNext()){
+771             x\&.next();
+772             result << x\&.value();
+773         }
+774     }
+775     return result;
+776 }
 .fi
 .SS "bool KeyMap::contains (const QString &name) const\fC [inline]\fP"
 
 .PP
-Definition at line 127 of file keymap\&.h\&.
+Definition at line 136 of file keymap\&.h\&.
 .PP
 References _keys\&.
 .PP
 Referenced by friendlyName(), and KbAnimWidget::on_keyButton_clicked()\&.
 .PP
 .nf
-127 { return _keys\&.contains(name); }
+136 { return _keys\&.contains(name); }
 .fi
 .SS "uint KeyMap::count () const\fC [inline]\fP"
 
 .PP
-Definition at line 118 of file keymap\&.h\&.
+Definition at line 127 of file keymap\&.h\&.
 .PP
 References _keys\&.
 .PP
 Referenced by KeyWidget::map(), KbBindWidget::on_copyButton_clicked(), and KbBindWidget::on_resetButton_clicked()\&.
 .PP
 .nf
-118 { return _keys\&.count(); }
+127 { return _keys\&.count(); }
 .fi
 .SS "QString KeyMap::friendlyName (const QString &key, \fBLayout\fPlayout = \fC\fBUS\fP\fP)\fC [static]\fP"
 
 .PP
-Definition at line 611 of file keymap\&.cpp\&.
+Definition at line 778 of file keymap\&.cpp\&.
 .PP
-References contains(), K95, KeyMap(), M65, map(), SCIMITAR, and STRAFE\&.
+References contains(), HARPOON, K95, KeyMap(), M65, map(), SCIMITAR, and STRAFE\&.
 .PP
 Referenced by KeyAction::friendlyName(), and RebindWidget::RebindWidget()\&.
 .PP
 .nf
-611                                                              {
-612     // Try K95 map first
-613     // FIXME: This is an odd function and probably should be refactored
-614     // it would probably be best to remove the friendly names from the maps and have a completely separate name->friendlyName store
-615     KeyMap map(K95, layout);
-616     if(map\&.contains(key))
-617         return map[key]\&.friendlyName();
-618 
-619     // The only key missing from it should be Fn, which is found on STRAFE
-620     map = KeyMap(STRAFE, layout);
-621     if(map\&.contains(key))
-622         return map[key]\&.friendlyName();
-623 
-624     // Additionally, there are a handful of keys not present on any physical keyboard, but we need names for them
-625     if(key == "f13" || key == "f14" || key == "f15" || key == "f16" || key == "f17" || key == "f18" || key == "f19" || key == "f20")
-626         return key\&.toUpper();
-627     else if(key == "lightup")
-628         return "Screen Brightness Up";
-629     else if(key == "lightdn")
-630         return "Screen Brightness Down";
-631     else if(key == "eject" || key == "power")
-632         return key[0]\&.toUpper() + key\&.mid(1);   // capitalize first letter
-633 
-634     // All other names are found on mice
-635     map = KeyMap(SCIMITAR, layout);
-636     if(map\&.contains(key))
-637         return map[key]\&.friendlyName();
-638     map = KeyMap(M65, layout);
-639     if(map\&.contains(key))
-640         return map[key]\&.friendlyName();
-641 
-642     // Not found at all
-643     return "";
-644 }
+778                                                              {
+779     // Try K95 map first
+780     // FIXME: This is an odd function and probably should be refactored
+781     // it would probably be best to remove the friendly names from the maps and have a completely separate name->friendlyName store
+782     KeyMap map(K95, layout);
+783     if(map\&.contains(key))
+784         return map[key]\&.friendlyName();
+785 
+786     // The only key missing from it should be Fn, which is found on STRAFE
+787     map = KeyMap(STRAFE, layout);
+788     if(map\&.contains(key))
+789         return map[key]\&.friendlyName();
+790 
+791     // Additionally, there are a handful of keys not present on any physical keyboard, but we need names for them
+792     if(key == "f13" || key == "f14" || key == "f15" || key == "f16" || key == "f17" || key == "f18" || key == "f19" || key == "f20")
+793         return key\&.toUpper();
+794     else if(key == "lightup")
+795         return "Screen Brightness Up";
+796     else if(key == "lightdn")
+797         return "Screen Brightness Down";
+798     else if(key == "eject" || key == "power")
+799         return key[0]\&.toUpper() + key\&.mid(1);   // capitalize first letter
+800 
+801     // All other names are found on mice
+802     map = KeyMap(SCIMITAR, layout);
+803     if(map\&.contains(key))
+804         return map[key]\&.friendlyName();
+805     map = KeyMap(M65, layout);
+806     if(map\&.contains(key))
+807         return map[key]\&.friendlyName();
+808     map = KeyMap(HARPOON, layout);
+809     if(map\&.contains(key))
+810         return map[key]\&.friendlyName();
+811 
+812     // Not found at all
+813     return "";
+814 }
 .fi
 .SS "\fBKeyMap\fP KeyMap::fromName (const QString &name)\fC [static]\fP"
 
 .PP
-Definition at line 535 of file keymap\&.cpp\&.
+Definition at line 695 of file keymap\&.cpp\&.
 .PP
 References getLayout(), getModel(), and KeyMap()\&.
 .PP
 Referenced by KbBind::load(), and KbLight::load()\&.
 .PP
 .nf
-535                                           {
-536     QStringList list = name\&.trimmed()\&.split(" ");
-537     if(list\&.length() != 2)
-538         return KeyMap();
-539     return KeyMap(getModel(list[0]), getLayout(list[1]));
-540 }
+695                                           {
+696     QStringList list = name\&.trimmed()\&.split(" ");
+697     if(list\&.length() != 2)
+698         return KeyMap();
+699     return KeyMap(getModel(list[0]), getLayout(list[1]));
+700 }
 .fi
 .SS "QString KeyMap::fromStorage (const QString &storage)\fC [inline]\fP"
 
 .PP
-Definition at line 135 of file keymap\&.h\&.
+Definition at line 144 of file keymap\&.h\&.
 .PP
 Referenced by KbAnim::KbAnim(), KbBind::load(), and KbLight::load()\&.
 .PP
 .nf
-135 { QHashIterator<QString, Key> i(*this); while(i\&.hasNext()) { i\&.next(); const char* s = i\&.value()\&.storageName(); if(s == storage) return i\&.value()\&.name; } return storage; }
+144 { QHashIterator<QString, Key> i(*this); while(i\&.hasNext()) { i\&.next(); const char* s = i\&.value()\&.storageName(); if(s == storage) return i\&.value()\&.name; } return storage; }
 .fi
 .SS "\fBKeyMap::Layout\fP KeyMap::getLayout (const QString &name)\fC [static]\fP"
 
 .PP
-Definition at line 407 of file keymap\&.cpp\&.
+Definition at line 550 of file keymap\&.cpp\&.
 .PP
-References DE, DK, ES, EU, EU_DVORAK, FR, GB, GB_DVORAK, IT, MX, NO, NO_LAYOUT, PL, SE, US, and US_DVORAK\&.
+References DE, DK, ES, EU, EU_DVORAK, FR, GB, GB_DVORAK, IT, JP, MX, NO, NO_LAYOUT, PL, SE, US, and US_DVORAK\&.
 .PP
 Referenced by fromName(), SettingsWidget::on_layoutBox_activated(), SettingsWidget::SettingsWidget(), and strLayout()\&.
 .PP
 .nf
-407                                                  {
-408     QString lower = name\&.toLower();
-409     if(lower == "dk")
-410         return DK;
-411     if(lower == "eu")
-412         return EU;
-413     if(lower == "eu_dvorak")
-414         return EU_DVORAK;
-415     if(lower == "gb_dvorak")
-416         return GB_DVORAK;
-417     if(lower == "us")
-418         return US;
-419     if(lower == "us_dvorak")
-420         return US_DVORAK;
-421     if(lower == "fr")
-422         return FR;
-423     if(lower == "de")
-424         return DE;
-425     if(lower == "it")
-426         return IT;
-427     if(lower == "no")
-428         return NO;
-429     if(lower == "pl")
-430         return PL;
-431     if(lower == "mx")
-432         return MX;
-433     if(lower == "es")
-434         return ES;
-435     if(lower == "se")
-436         return SE;
-437     if(lower == "gb")
-438         return GB;
-439     return NO_LAYOUT;
-440 }
+550                                                  {
+551     QString lower = name\&.toLower();
+552     if(lower == "dk")
+553         return DK;
+554     if(lower == "eu")
+555         return EU;
+556     if(lower == "eu_dvorak")
+557         return EU_DVORAK;
+558     if(lower == "gb_dvorak")
+559         return GB_DVORAK;
+560     if(lower == "us")
+561         return US;
+562     if(lower == "us_dvorak")
+563         return US_DVORAK;
+564     if(lower == "fr")
+565         return FR;
+566     if(lower == "de")
+567         return DE;
+568     if(lower == "it")
+569         return IT;
+570     if(lower == "no")
+571         return NO;
+572     if(lower == "jp")
+573         return JP;
+574     if(lower == "pl")
+575         return PL;
+576     if(lower == "mx")
+577         return MX;
+578     if(lower == "es")
+579         return ES;
+580     if(lower == "se")
+581         return SE;
+582     if(lower == "gb")
+583         return GB;
+584     return NO_LAYOUT;
+585 }
 .fi
 .SS "QString KeyMap::getLayout (\fBKeyMap::Layout\fPlayout)\fC [static]\fP"
 
 .PP
-Definition at line 442 of file keymap\&.cpp\&.
+Definition at line 587 of file keymap\&.cpp\&.
 .PP
-References DE, DK, ES, EU, EU_DVORAK, FR, GB, GB_DVORAK, IT, MX, NO, PL, SE, US, and US_DVORAK\&.
+References DE, DK, ES, EU, EU_DVORAK, FR, GB, GB_DVORAK, IT, JP, MX, NO, PL, SE, US, and US_DVORAK\&.
 .PP
 .nf
-442                                             {
-443     switch(layout){
-444     case DK:
-445         return "dk";
-446     case EU:
-447         return "eu";
-448     case EU_DVORAK:
-449         return "eu_dvorak";
-450     case GB:
-451         return "gb";
-452     case GB_DVORAK:
-453         return "gb_dvorak";
-454     case US:
-455         return "us";
-456     case US_DVORAK:
-457         return "us_dvorak";
-458     case FR:
-459         return "fr";
-460     case DE:
-461         return "de";
-462     case IT:
-463         return "it";
-464     case NO:
-465         return "no";
-466     case PL:
-467         return "pl";
-468     case MX:
-469         return "mx";
-470     case ES:
-471         return "es";
-472     case SE:
-473         return "se";
-474     default:
-475         return "";
-476     }
-477 }
+587                                             {
+588     switch(layout){
+589     case DK:
+590         return "dk";
+591     case EU:
+592         return "eu";
+593     case EU_DVORAK:
+594         return "eu_dvorak";
+595     case GB:
+596         return "gb";
+597     case GB_DVORAK:
+598         return "gb_dvorak";
+599     case US:
+600         return "us";
+601     case US_DVORAK:
+602         return "us_dvorak";
+603     case FR:
+604         return "fr";
+605     case DE:
+606         return "de";
+607     case IT:
+608         return "it";
+609     case JP:
+610         return "jp";
+611     case NO:
+612         return "no";
+613     case PL:
+614         return "pl";
+615     case MX:
+616         return "mx";
+617     case ES:
+618         return "es";
+619     case SE:
+620         return "se";
+621     default:
+622         return "";
+623     }
+624 }
 .fi
 .SS "\fBKeyMap::Model\fP KeyMap::getModel (const QString &name)\fC [static]\fP"
 
 .PP
-Definition at line 495 of file keymap\&.cpp\&.
+Definition at line 643 of file keymap\&.cpp\&.
 .PP
-References K65, K70, K95, M65, NO_MODEL, SABRE, SCIMITAR, and STRAFE\&.
+References GLAIVE, HARPOON, K63, K65, K70, K95, M65, NO_MODEL, SABRE, SCIMITAR, and STRAFE\&.
 .PP
 Referenced by fromName(), Kb::Kb(), and strModel()\&.
 .PP
 .nf
-495                                                {
-496     QString lower = name\&.toLower();
-497     if(lower == "k65")
-498         return K65;
-499     if(lower == "k70")
-500         return K70;
-501     if(lower == "k95")
-502         return K95;
-503     if(lower == "strafe")
-504         return STRAFE;
-505     if(lower == "m65")
-506         return M65;
-507     if(lower == "sabre")
-508         return SABRE;
-509     if(lower == "scimitar")
-510         return SCIMITAR;
-511     return NO_MODEL;
-512 }
+643                                                {
+644     QString lower = name\&.toLower();
+645     if(lower == "k63")
+646         return K63;
+647     if(lower == "k65")
+648         return K65;
+649     if(lower == "k70")
+650         return K70;
+651     if(lower == "k95")
+652         return K95;
+653     if(lower == "strafe")
+654         return STRAFE;
+655     if(lower == "m65")
+656         return M65;
+657     if(lower == "sabre")
+658         return SABRE;
+659     if(lower == "scimitar")
+660         return SCIMITAR;
+661     if(lower == "harpoon")
+662         return HARPOON;
+663     if(lower == "glaive")
+664         return GLAIVE;
+665     return NO_MODEL;
+666 }
 .fi
 .SS "QString KeyMap::getModel (\fBKeyMap::Model\fPmodel)\fC [static]\fP"
 
 .PP
-Definition at line 514 of file keymap\&.cpp\&.
+Definition at line 668 of file keymap\&.cpp\&.
 .PP
-References K65, K70, K95, M65, SABRE, SCIMITAR, and STRAFE\&.
+References GLAIVE, HARPOON, K63, K65, K70, K95, M65, SABRE, SCIMITAR, and STRAFE\&.
 .PP
 .nf
-514                                          {
-515     switch(model){
-516     case K65:
-517         return "k65";
-518     case K70:
-519         return "k70";
-520     case K95:
-521         return "k95";
-522     case STRAFE:
-523         return "strafe";
-524     case M65:
-525         return "m65";
-526     case SABRE:
-527         return "sabre";
-528     case SCIMITAR:
-529         return "scimitar";
-530     default:
-531         return "";
-532     }
-533 }
+668                                          {
+669     switch(model){
+670     case K63:
+671         return "k63";
+672     case K65:
+673         return "k65";
+674     case K70:
+675         return "k70";
+676     case K95:
+677         return "k95";
+678     case STRAFE:
+679         return "strafe";
+680     case M65:
+681         return "m65";
+682     case SABRE:
+683         return "sabre";
+684     case SCIMITAR:
+685         return "scimitar";
+686     case HARPOON:
+687         return "harpoon";
+688     case GLAIVE:
+689         return "glaive";
+690     default:
+691         return "";
+692     }
+693 }
 .fi
 .SS "uint KeyMap::height () const\fC [inline]\fP"
 
 .PP
-Definition at line 122 of file keymap\&.h\&.
+Definition at line 131 of file keymap\&.h\&.
 .PP
 References keyHeight\&.
 .PP
 Referenced by KeyWidget::drawInfo(), and KeyWidget::map()\&.
 .PP
 .nf
-122 { return keyHeight; }
+131 { return keyHeight; }
 .fi
 .SS "static bool KeyMap::isISO (\fBLayout\fPlayout)\fC [inline]\fP, \fC [static]\fP"
 
 .PP
-Definition at line 87 of file keymap\&.h\&.
+Definition at line 91 of file keymap\&.h\&.
 .PP
 References PL, US, and US_DVORAK\&.
 .PP
 Referenced by KbBind::isISO(), and RebindWidget::setBind()\&.
 .PP
 .nf
-87 { return layout != US && layout != US_DVORAK && layout != PL; }
+91 { return layout != US && layout != US_DVORAK && layout != PL; }
 .fi
 .SS "bool KeyMap::isISO () const\fC [inline]\fP"
 
 .PP
-Definition at line 88 of file keymap\&.h\&.
+Definition at line 92 of file keymap\&.h\&.
 .PP
 References isISO(), and keyLayout\&.
 .PP
 Referenced by getMap(), isISO(), Kb::Kb(), and Kb::updateLayout()\&.
 .PP
 .nf
-88 { return isISO(keyLayout); }
+92 { return isISO(keyLayout); }
+.fi
+.SS "static bool KeyMap::isJP (\fBLayout\fPlayout)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line 95 of file keymap\&.h\&.
+.PP
+References JP\&.
+.PP
+.nf
+95 { return layout == JP; }
+.fi
+.SS "bool KeyMap::isJP () const\fC [inline]\fP"
+
+.PP
+Definition at line 96 of file keymap\&.h\&.
+.PP
+References isJP(), and keyLayout\&.
+.PP
+Referenced by getMap(), and isJP()\&.
+.PP
+.nf
+96 { return isJP(keyLayout); }
 .fi
 .SS "static bool KeyMap::isKeyboard (\fBModel\fPmodel)\fC [inline]\fP, \fC [static]\fP"
 
 .PP
-Definition at line 93 of file keymap\&.h\&.
+Definition at line 102 of file keymap\&.h\&.
 .PP
 References isMouse(), and NO_MODEL\&.
 .PP
 Referenced by KbBind::isKeyboard()\&.
 .PP
 .nf
-93 { return !isMouse(model) && model != NO_MODEL; }
+102 { return !isMouse(model) && model != NO_MODEL; }
 .fi
 .SS "bool KeyMap::isKeyboard () const\fC [inline]\fP"
 
 .PP
-Definition at line 94 of file keymap\&.h\&.
+Definition at line 103 of file keymap\&.h\&.
 .PP
 References isKeyboard(), and keyModel\&.
 .PP
 Referenced by Kb::isKeyboard(), and isKeyboard()\&.
 .PP
 .nf
-94 { return isKeyboard(keyModel); }
+103 { return isKeyboard(keyModel); }
 .fi
 .SS "static bool KeyMap::isMouse (\fBModel\fPmodel)\fC [inline]\fP, \fC [static]\fP"
 
 .PP
-Definition at line 95 of file keymap\&.h\&.
+Definition at line 104 of file keymap\&.h\&.
 .PP
-References M65, SABRE, and SCIMITAR\&.
+References GLAIVE, HARPOON, M65, SABRE, and SCIMITAR\&.
 .PP
 Referenced by KbBind::isMouse(), KeyWidget::map(), KbLightWidget::newSelection(), and KeyWidget::paintEvent()\&.
 .PP
 .nf
-95 { return model == M65 || model == SABRE || model == SCIMITAR; }
+104 { return model == M65 || model == SABRE || model == SCIMITAR || model == HARPOON || model == GLAIVE; }
 .fi
 .SS "bool KeyMap::isMouse () const\fC [inline]\fP"
 
 .PP
-Definition at line 96 of file keymap\&.h\&.
+Definition at line 105 of file keymap\&.h\&.
 .PP
 References isMouse(), and keyModel\&.
 .PP
 Referenced by isKeyboard(), Kb::isMouse(), isMouse(), and KeyWidget::paintEvent()\&.
 .PP
 .nf
-96 { return isMouse(keyModel); }
+105 { return isMouse(keyModel); }
 .fi
 .SS "\fBKey\fP KeyMap::key (const QString &name) const\fC [inline]\fP"
 
 .PP
-Definition at line 125 of file keymap\&.h\&.
+Definition at line 134 of file keymap\&.h\&.
 .PP
 References _keys\&.
 .PP
 Referenced by AnimScript::begin(), AnimScript::keypress(), KbBind::noAction(), operator[](), KbBind::setAction(), and toStorage()\&.
 .PP
 .nf
-125 { Key empty = {0,0,0,0,0,0,0,0,0}; return _keys\&.value(name, empty); }
+134 { Key empty = {0,0,0,0,0,0,0,0,0}; return _keys\&.value(name, empty); }
 .fi
 .SS "QStringList KeyMap::keys () const\fC [inline]\fP"
 
 .PP
-Definition at line 131 of file keymap\&.h\&.
+Definition at line 140 of file keymap\&.h\&.
 .PP
 References _keys\&.
 .PP
 Referenced by KeyWidget::mouseReleaseEvent(), KbBindWidget::on_copyButton_clicked(), KbBindWidget::on_resetButton_clicked(), KeyWidget::setAnimation(), KeyWidget::setSelection(), and KbBindWidget::updateBind()\&.
 .PP
 .nf
-131 { return _keys\&.keys(); }
+140 { return _keys\&.keys(); }
 .fi
 .SS "\fBLayout\fP KeyMap::layout () const\fC [inline]\fP"
 
 .PP
-Definition at line 114 of file keymap\&.h\&.
+Definition at line 123 of file keymap\&.h\&.
 .PP
 References keyLayout\&.
 .PP
 Referenced by KeyAction::friendlyName(), KeyWidget::paintEvent(), and RebindWidget::setBind()\&.
 .PP
 .nf
-114 { return keyLayout; }
+123 { return keyLayout; }
 .fi
 .SS "QStringList KeyMap::layoutNames ()\fC [static]\fP"
 
 .PP
-Definition at line 479 of file keymap\&.cpp\&.
+Definition at line 626 of file keymap\&.cpp\&.
 .PP
 Referenced by LayoutDialog::LayoutDialog(), and SettingsWidget::SettingsWidget()\&.
 .PP
 .nf
-479                                {
-480     return QStringList()
-481             << "Danish"
-482             << "English (ISO/European)" << "English (ISO/European, Dvorak)"
-483             << "English (United Kingdom)" << "English (United Kingdom, Dvorak)"
-484             << "English (United States)" << "English (United States, Dvorak)"
-485             << "French"
-486             << "German"
-487             << "Italian"
-488             << "Norwegian"
-489             << "Polish"
-490             << "Spanish (Latin America)"
-491             << "Spanish (Spain)"
-492             << "Swedish";
-493 }
+626                                {
+627     return QStringList()
+628             << "Danish"
+629             << "English (ISO/European)" << "English (ISO/European, Dvorak)"
+630             << "English (United Kingdom)" << "English (United Kingdom, Dvorak)"
+631             << "English (United States)" << "English (United States, Dvorak)"
+632             << "French"
+633             << "German"
+634             << "Italian"
+635             << "Japanese"
+636             << "Norwegian"
+637             << "Polish"
+638             << "Spanish (Latin America)"
+639             << "Spanish (Spain)"
+640             << "Swedish";
+641 }
 .fi
 .SS "\fBKeyMap::Layout\fP KeyMap::locale ()\fC [static]\fP"
 
 .PP
-Definition at line 375 of file keymap\&.cpp\&.
+Definition at line 516 of file keymap\&.cpp\&.
 .PP
-References DE, DK, ES, FR, GB, IT, MX, NO, PL, SE, and US\&.
+References DE, DK, ES, FR, GB, IT, JP, MX, NO, PL, SE, and US\&.
 .PP
 Referenced by SettingsWidget::SettingsWidget()\&.
 .PP
 .nf
-375                            {
-376     setlocale(LC_ALL, "");
-377     QString loc = setlocale(LC_CTYPE, 0);
-378     loc = loc\&.toLower()\&.replace('_', '-');
-379     if(loc\&.startsWith("dk-"))
-380         return KeyMap::DK;
-381     else if(loc\&.startsWith("fr-"))
-382         return KeyMap::FR;
-383     else if(loc\&.startsWith("de-"))
-384         return KeyMap::DE;
-385     else if(loc\&.startsWith("it-"))
-386         return KeyMap::IT;
-387     else if(loc\&.startsWith("pl-"))
-388         return KeyMap::PL;
-389     else if(loc\&.startsWith("no-"))
-390         return KeyMap::NO;
-391     else if(loc\&.startsWith("es-es"))
-392         // Spain uses the ES layout
-393         return KeyMap::ES;
-394     else if(loc\&.startsWith("es-"))
-395         // Other Spanish locales use MX
-396         return KeyMap::MX;
-397     else if(loc\&.startsWith("se-"))
-398         return KeyMap::SE;
-399     else if(loc\&.startsWith("en-us") || loc\&.startsWith("en-au") || loc\&.startsWith("en-ca") || loc\&.startsWith("en-hk") || loc\&.startsWith("en-in") || loc\&.startsWith("en-nz") || loc\&.startsWith("en-ph") || loc\&.startsWith("en-sg") || loc\&.startsWith("en-za"))
-400         // Most English locales use US
-401         return KeyMap::US;
-402     else
-403         // Default to GB
-404         return KeyMap::GB;
-405 }
+516                            {
+517     setlocale(LC_ALL, "");
+518     QString loc = setlocale(LC_CTYPE, 0);
+519     loc = loc\&.toLower()\&.replace('_', '-');
+520     if(loc\&.startsWith("dk-"))
+521         return KeyMap::DK;
+522     else if(loc\&.startsWith("fr-"))
+523         return KeyMap::FR;
+524     else if(loc\&.startsWith("de-"))
+525         return KeyMap::DE;
+526     else if(loc\&.startsWith("it-"))
+527         return KeyMap::IT;
+528     else if(loc\&.startsWith("ja-"))
+529         return KeyMap::JP;
+530     else if(loc\&.startsWith("pl-"))
+531         return KeyMap::PL;
+532     else if(loc\&.startsWith("no-"))
+533         return KeyMap::NO;
+534     else if(loc\&.startsWith("es-es"))
+535         // Spain uses the ES layout
+536         return KeyMap::ES;
+537     else if(loc\&.startsWith("es-"))
+538         // Other Spanish locales use MX
+539         return KeyMap::MX;
+540     else if(loc\&.startsWith("se-"))
+541         return KeyMap::SE;
+542     else if(loc\&.startsWith("en-us") || loc\&.startsWith("en-au") || loc\&.startsWith("en-ca") || loc\&.startsWith("en-hk") || loc\&.startsWith("en-in") || loc\&.startsWith("en-nz") || loc\&.startsWith("en-ph") || loc\&.startsWith("en-sg") || loc\&.startsWith("en-za"))
+543         // Most English locales use US
+544         return KeyMap::US;
+545     else
+546         // Default to GB
+547         return KeyMap::GB;
+548 }
 .fi
 .SS "const QHash<QString, \fBKey\fP>& KeyMap::map () const\fC [inline]\fP"
 
 .PP
-Definition at line 129 of file keymap\&.h\&.
+Definition at line 138 of file keymap\&.h\&.
 .PP
 References _keys\&.
 .PP
 Referenced by friendlyName()\&.
 .PP
 .nf
-129 { return _keys; }
+138 { return _keys; }
 .fi
 .SS "\fBModel\fP KeyMap::model () const\fC [inline]\fP"
 
 .PP
-Definition at line 113 of file keymap\&.h\&.
+Definition at line 122 of file keymap\&.h\&.
 .PP
 References keyModel\&.
 .PP
 Referenced by KeyWidget::mouseMoveEvent(), KeyWidget::paintEvent(), and KPerfWidget::setPerf()\&.
 .PP
 .nf
-113 { return keyModel; }
+122 { return keyModel; }
 .fi
 .SS "int KeyMap::modelHeight (\fBModel\fPmodel)\fC [static]\fP, \fC [private]\fP"
 
 .PP
-Definition at line 561 of file keymap\&.cpp\&.
+Definition at line 725 of file keymap\&.cpp\&.
 .PP
-References K65, K70, K95, K95_HEIGHT, M65, M65_HEIGHT, SABRE, SCIMITAR, and STRAFE\&.
+References GLAIVE, HARPOON, K63, K65, K70, K95, K95_HEIGHT, M65, M65_HEIGHT, SABRE, SCIMITAR, and STRAFE\&.
 .PP
 .nf
-561                                   {
-562     switch(model){
-563     case K65:
-564     case K70:
-565     case K95:
-566     case STRAFE:
-567         return K95_HEIGHT;
-568     case M65:
-569     case SABRE:
-570     case SCIMITAR:
-571         return M65_HEIGHT;
-572     default:
-573         return 0;
-574     }
-575 }
+725                                   {
+726     switch(model){
+727     case K63:
+728     case K65:
+729     case K70:
+730     case K95:
+731     case STRAFE:
+732         return K95_HEIGHT;
+733     case M65:
+734     case SABRE:
+735     case SCIMITAR:
+736     case HARPOON:
+737     case GLAIVE:
+738         return M65_HEIGHT;
+739     default:
+740         return 0;
+741     }
+742 }
 .fi
 .SS "int KeyMap::modelWidth (\fBModel\fPmodel)\fC [static]\fP, \fC [private]\fP"
 
 .PP
-Definition at line 542 of file keymap\&.cpp\&.
+Definition at line 702 of file keymap\&.cpp\&.
 .PP
-References K65, K65_WIDTH, K70, K70_WIDTH, K95, K95_WIDTH, KSTRAFE_WIDTH, M65, M65_WIDTH, SABRE, SCIMITAR, and STRAFE\&.
+References GLAIVE, HARPOON, K63, K63_WIDTH, K65, K65_WIDTH, K70, K70_WIDTH, K95, K95_WIDTH, KSTRAFE_WIDTH, M65, M65_WIDTH, SABRE, SCIMITAR, and STRAFE\&.
 .PP
 .nf
-542                                  {
-543     switch(model){
-544     case K65:
-545         return K65_WIDTH;
-546     case K70:
-547         return K70_WIDTH;
-548     case K95:
-549         return K95_WIDTH;
-550     case STRAFE:
-551         return KSTRAFE_WIDTH;
-552     case M65:
-553     case SABRE:
-554     case SCIMITAR:
-555         return M65_WIDTH;
-556     default:
-557         return 0;
-558     }
-559 }
+702                                  {
+703     switch(model){
+704     case K63:
+705         return K63_WIDTH;
+706     case K65:
+707         return K65_WIDTH;
+708     case K70:
+709         return K70_WIDTH;
+710     case K95:
+711         return K95_WIDTH;
+712     case STRAFE:
+713         return KSTRAFE_WIDTH;
+714     case M65:
+715     case SABRE:
+716     case SCIMITAR:
+717     case HARPOON:
+718     case GLAIVE:
+719         return M65_WIDTH;
+720     default:
+721         return 0;
+722     }
+723 }
 .fi
 .SS "QString KeyMap::name () const\fC [inline]\fP"
 
 .PP
-Definition at line 115 of file keymap\&.h\&.
+Definition at line 124 of file keymap\&.h\&.
 .PP
 References strLayout(), and strModel()\&.
 .PP
 Referenced by KbBind::save(), KbLight::save(), and toStorage()\&.
 .PP
 .nf
-115 { return (strModel() + " " + strLayout())\&.toUpper(); }
+124 { return (strModel() + " " + strLayout())\&.toUpper(); }
 .fi
 .SS "KeyMap::operator const QHash< QString, \fBKey\fP > & () const\fC [inline]\fP"
 
 .PP
-Definition at line 130 of file keymap\&.h\&.
+Definition at line 139 of file keymap\&.h\&.
 .PP
 References _keys\&.
 .PP
 .nf
-130 { return _keys; }
+139 { return _keys; }
 .fi
 .SS "\fBKey\fP KeyMap::operator[] (const QString &name) const\fC [inline]\fP"
 
 .PP
-Definition at line 126 of file keymap\&.h\&.
+Definition at line 135 of file keymap\&.h\&.
 .PP
 References key()\&.
 .PP
 .nf
-126 { return key(name); }
+135 { return key(name); }
 .fi
 .SS "QList<\fBKey\fP> KeyMap::positions () const\fC [inline]\fP"
 
 .PP
-Definition at line 132 of file keymap\&.h\&.
+Definition at line 141 of file keymap\&.h\&.
 .PP
 References _keys\&.
 .PP
 Referenced by ColorMap::init(), and KeyWidget::selectAll()\&.
 .PP
 .nf
-132 { return _keys\&.values(); }
+141 { return _keys\&.values(); }
 .fi
 .SS "QString KeyMap::strLayout () const\fC [inline]\fP"
 
 .PP
-Definition at line 106 of file keymap\&.h\&.
+Definition at line 115 of file keymap\&.h\&.
 .PP
 References getLayout(), and keyLayout\&.
 .PP
 Referenced by name()\&.
 .PP
 .nf
-106 { return getLayout(keyLayout); }
+115 { return getLayout(keyLayout); }
 .fi
 .SS "QString KeyMap::strModel () const\fC [inline]\fP"
 
 .PP
-Definition at line 110 of file keymap\&.h\&.
+Definition at line 119 of file keymap\&.h\&.
 .PP
 References getModel(), and keyModel\&.
 .PP
 Referenced by name()\&.
 .PP
 .nf
-110 { return getModel(keyModel); }
+119 { return getModel(keyModel); }
 .fi
 .SS "QString KeyMap::toStorage (const QString &name)\fC [inline]\fP"
 
 .PP
-Definition at line 134 of file keymap\&.h\&.
+Definition at line 143 of file keymap\&.h\&.
 .PP
 References key(), name(), and Key::storageName()\&.
 .PP
 .nf
-134 { const char* storage = key(name)\&.storageName(); if(!storage) return name; return storage; }
+143 { const char* storage = key(name)\&.storageName(); if(!storage) return name; return storage; }
 .fi
 .SS "uint KeyMap::width () const\fC [inline]\fP"
 
 .PP
-Definition at line 120 of file keymap\&.h\&.
+Definition at line 129 of file keymap\&.h\&.
 .PP
 References keyWidth\&.
 .PP
 Referenced by KeyWidget::drawInfo(), and KeyWidget::map()\&.
 .PP
 .nf
-120 { return keyWidth; }
+129 { return keyWidth; }
 .fi
 .SH "Field Documentation"
 .PP 
 .SS "QHash<QString, \fBKey\fP> KeyMap::_keys\fC [private]\fP"
 
 .PP
-Definition at line 147 of file keymap\&.h\&.
+Definition at line 156 of file keymap\&.h\&.
 .PP
 Referenced by contains(), count(), key(), keys(), map(), operator const QHash< QString, Key > &(), and positions()\&.
 .SS "short KeyMap::keyHeight\fC [private]\fP"
 
 .PP
-Definition at line 148 of file keymap\&.h\&.
+Definition at line 157 of file keymap\&.h\&.
 .PP
 Referenced by height()\&.
 .SS "\fBLayout\fP KeyMap::keyLayout\fC [private]\fP"
 
 .PP
-Definition at line 150 of file keymap\&.h\&.
+Definition at line 159 of file keymap\&.h\&.
 .PP
-Referenced by isISO(), layout(), and strLayout()\&.
+Referenced by isISO(), isJP(), layout(), and strLayout()\&.
 .SS "\fBModel\fP KeyMap::keyModel\fC [private]\fP"
 
 .PP
-Definition at line 149 of file keymap\&.h\&.
+Definition at line 158 of file keymap\&.h\&.
 .PP
 Referenced by isKeyboard(), isMouse(), model(), and strModel()\&.
 .SS "short KeyMap::keyWidth\fC [private]\fP"
 
 .PP
-Definition at line 148 of file keymap\&.h\&.
+Definition at line 157 of file keymap\&.h\&.
 .PP
 Referenced by width()\&.
 

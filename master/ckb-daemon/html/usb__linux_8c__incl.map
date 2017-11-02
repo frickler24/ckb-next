@@ -1,7 +1,7 @@
 <map id="src/ckb&#45;daemon/usb_linux.c" name="src/ckb&#45;daemon/usb_linux.c">
 <area shape="rect" id="node2" href="$device_8h.html" title="device.h" alt="" coords="949,171,1019,197"/>
 <area shape="rect" id="node27" href="$devnode_8h.html" title="devnode.h" alt="" coords="797,96,878,123"/>
-<area shape="rect" id="node28" href="$usb_8h.html" title="usb.h" alt="" coords="732,171,786,197"/>
+<area shape="rect" id="node28" href="$usb_8h.html" title="Definitions for using USB interface. " alt="" coords="732,171,786,197"/>
 <area shape="rect" id="node29" href="$input_8h.html" title="input.h" alt="" coords="661,96,722,123"/>
 <area shape="rect" id="node30" href="$notify_8h.html" title="notify.h" alt="" coords="904,96,969,123"/>
 <area shape="rect" id="node3" href="$includes_8h.html" title="includes.h" alt="" coords="797,245,878,272"/>

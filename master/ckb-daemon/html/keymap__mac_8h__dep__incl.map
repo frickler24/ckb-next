@@ -3,7 +3,7 @@
 <area shape="rect" id="node3" href="$structures_8h.html" title="src/ckb&#45;daemon/structures.h" alt="" coords="2138,171,2325,197"/>
 <area shape="rect" id="node16" href="$device_8h.html" title="src/ckb&#45;daemon/device.h" alt="" coords="1985,328,2153,355"/>
 <area shape="rect" id="node33" href="$keymap_8c.html" title="src/ckb&#45;daemon/keymap.c" alt="" coords="2405,411,2581,437"/>
-<area shape="rect" id="node35" href="$usb_8h.html" title="src/ckb&#45;daemon/usb.h" alt="" coords="2554,328,2704,355"/>
+<area shape="rect" id="node35" href="$usb_8h.html" title="Definitions for using USB interface. " alt="" coords="2554,328,2704,355"/>
 <area shape="rect" id="node4" href="$includes_8h.html" title="src/ckb&#45;daemon/includes.h" alt="" coords="2143,245,2321,272"/>
 <area shape="rect" id="node5" href="$command_8h.html" title="src/ckb&#45;daemon/command.h" alt="" coords="1755,411,1941,437"/>
 <area shape="rect" id="node17" href="$led_8h.html" title="src/ckb&#45;daemon/led.h" alt="" coords="1141,411,1288,437"/>

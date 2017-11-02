@@ -1,4 +1,4 @@
-.TH "src/ckb-daemon/device_keyboard.c" 3 "Wed May 24 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "src/ckb-daemon/device_keyboard.c" 3 "Thu Nov 2 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -45,152 +45,162 @@ src/ckb-daemon/device_keyboard.c \-
 .SS "int cmd_active_kb (\fBusbdevice\fP *kb, \fBusbmode\fP *dummy1, intdummy2, intdummy3, const char *dummy4)"
 
 .PP
-Definition at line 112 of file device_keyboard\&.c\&.
+Definition at line 114 of file device_keyboard\&.c\&.
 .PP
 References setactive_kb()\&.
 .PP
 .nf
-112                                                                                              {
-113     return setactive_kb(kb, 1);
-114 }
+114                                                                                              {
+115     (void)dummy1;
+116     (void)dummy2;
+117     (void)dummy3;
+118     (void)dummy4;
+119 
+120     return setactive_kb(kb, 1);
+121 }
 .fi
 .SS "int cmd_idle_kb (\fBusbdevice\fP *kb, \fBusbmode\fP *dummy1, intdummy2, intdummy3, const char *dummy4)"
 
 .PP
-Definition at line 116 of file device_keyboard\&.c\&.
+Definition at line 123 of file device_keyboard\&.c\&.
 .PP
 References setactive_kb()\&.
 .PP
 .nf
-116                                                                                            {
-117     return setactive_kb(kb, 0);
-118 }
+123                                                                                            {
+124     (void)dummy1;
+125     (void)dummy2;
+126     (void)dummy3;
+127     (void)dummy4;
+128 
+129     return setactive_kb(kb, 0);
+130 }
 .fi
 .SS "int setactive_kb (\fBusbdevice\fP *kb, intactive)"
 
 .PP
-Definition at line 18 of file device_keyboard\&.c\&.
+Definition at line 20 of file device_keyboard\&.c\&.
 .PP
 References ACT_LIGHT, ACT_LOCK, ACT_M1, ACT_M2, ACT_M3, ACT_MR_RING, usbdevice::active, DELAY_MEDIUM, lighting::forceupdate, imutex, IN_CORSAIR, IN_HID, usbdevice::input, inputupdate(), keymap, usbinput::keys, usbprofile::lastlight, MSG_SIZE, N_KEYS_HW, NEEDS_FW_UPDATE, usbdevice::profile, usbsend, and usbdevice::vtable\&.
 .PP
 Referenced by cmd_active_kb(), and cmd_idle_kb()\&.
 .PP
 .nf
-18                                            {
-19     if(NEEDS_FW_UPDATE(kb))
-20         return 0;
-21 
-22     pthread_mutex_lock(imutex(kb));
-23     kb->active = !!active;
-24     kb->profile->lastlight\&.forceupdate = 1;
-25     // Clear input
-26     memset(&kb->input\&.keys, 0, sizeof(kb->input\&.keys));
-27     inputupdate(kb);
-28     pthread_mutex_unlock(imutex(kb));
-29 
-30     uchar msg[3][MSG_SIZE] = {
-31         { 0x07, 0x04, 0 },                  // Disables or enables HW control for top row
-32         { 0x07, 0x40, 0 },                  // Selects key input
-33         { 0x07, 0x05, 2, 0, 0x03, 0x00 }    // Commits key input selection
-34     };
-35     if(active){
-36         // Put the M-keys (K95) as well as the Brightness/Lock keys into software-controlled mode\&.
-37         msg[0][2] = 2;
-38         if(!usbsend(kb, msg[0], 1))
-39             return -1;
-40         DELAY_MEDIUM(kb);
-41         // Set input mode on the keys\&. They must be grouped into packets of 60 bytes (+ 4 bytes header)
-42         // Keys are referenced in byte pairs, with the first byte representing the key and the second byte representing the mode\&.
-43         for(int key = 0; key < N_KEYS_HW; ){
-44             int pair;
-45             for(pair = 0; pair < 30 && key < N_KEYS_HW; pair++, key++){
-46                 // Select both standard and Corsair input\&. The standard input will be ignored except in BIOS mode\&.
-47                 uchar action = IN_HID | IN_CORSAIR;
-48                 // Additionally, make MR activate the MR ring (this is disabled for now, may be back later)
-49                 //if(keymap[key]\&.name && !strcmp(keymap[key]\&.name, "mr"))
-50                 //    action |= ACT_MR_RING;
-51                 msg[1][4 + pair * 2] = key;
-52                 msg[1][5 + pair * 2] = action;
-53             }
-54             // Byte 2 = pair count (usually 30, less on final message)
-55             msg[1][2] = pair;
-56             if(!usbsend(kb, msg[1], 1))
-57                 return -1;
-58         }
-59         // Commit new input settings
-60         if(!usbsend(kb, msg[2], 1))
-61             return -1;
-62         DELAY_MEDIUM(kb);
-63     } else {
-64         // Set the M-keys back into hardware mode, restore hardware RGB profile\&. It has to be sent twice for some reason\&.
-65         msg[0][2] = 1;
-66         if(!usbsend(kb, msg[0], 1))
-67             return -1;
-68         DELAY_MEDIUM(kb);
-69         if(!usbsend(kb, msg[0], 1))
-70             return -1;
-71         DELAY_MEDIUM(kb);
-72 #ifdef OS_LINUX
-73         // On OSX the default key mappings are fine\&. On Linux, the G keys will freeze the keyboard\&. Set the keyboard entirely to HID input\&.
-74         for(int key = 0; key < N_KEYS_HW; ){
-75             int pair;
-76             for(pair = 0; pair < 30 && key < N_KEYS_HW; pair++, key++){
-77                 uchar action = IN_HID;
-78                 // Enable hardware actions
-79                 if(keymap[key]\&.name){
-80                     if(!strcmp(keymap[key]\&.name, "mr"))
-81                         action = ACT_MR_RING;
-82                     else if(!strcmp(keymap[key]\&.name, "m1"))
-83                         action = ACT_M1;
-84                     else if(!strcmp(keymap[key]\&.name, "m2"))
-85                         action = ACT_M2;
-86                     else if(!strcmp(keymap[key]\&.name, "m3"))
-87                         action = ACT_M3;
-88                     else if(!strcmp(keymap[key]\&.name, "light"))
-89                         action = ACT_LIGHT;
-90                     else if(!strcmp(keymap[key]\&.name, "lock"))
-91                         action = ACT_LOCK;
-92                 }
-93                 msg[1][4 + pair * 2] = key;
-94                 msg[1][5 + pair * 2] = action;
-95             }
-96             // Byte 2 = pair count (usually 30, less on final message)
-97             msg[1][2] = pair;
-98             if(!usbsend(kb, msg[1], 1))
-99                 return -1;
-100         }
-101         // Commit new input settings
-102         if(!usbsend(kb, msg[2], 1))
-103             return -1;
-104         DELAY_MEDIUM(kb);
-105 #endif
-106     }
-107     // Update indicator LEDs if the profile contains settings for them
-108     kb->vtable->updateindicators(kb, 0);
-109     return 0;
-110 }
+20                                            {
+21     if(NEEDS_FW_UPDATE(kb))
+22         return 0;
+23 
+24     pthread_mutex_lock(imutex(kb));
+25     kb->active = !!active;
+26     kb->profile->lastlight\&.forceupdate = 1;
+27     // Clear input
+28     memset(&kb->input\&.keys, 0, sizeof(kb->input\&.keys));
+29     inputupdate(kb);
+30     pthread_mutex_unlock(imutex(kb));
+31 
+32     uchar msg[3][MSG_SIZE] = {
+33         { 0x07, 0x04, 0 },                  // Disables or enables HW control for top row
+34         { 0x07, 0x40, 0 },                  // Selects key input
+35         { 0x07, 0x05, 2, 0, 0x03, 0x00 }    // Commits key input selection
+36     };
+37     if(active){
+38         // Put the M-keys (K95) as well as the Brightness/Lock keys into software-controlled mode\&.
+39         msg[0][2] = 2;
+40         if(!usbsend(kb, msg[0], 1))
+41             return -1;
+42         DELAY_MEDIUM(kb);
+43         // Set input mode on the keys\&. They must be grouped into packets of 60 bytes (+ 4 bytes header)
+44         // Keys are referenced in byte pairs, with the first byte representing the key and the second byte representing the mode\&.
+45         for(int key = 0; key < N_KEYS_HW; ){
+46             int pair;
+47             for(pair = 0; pair < 30 && key < N_KEYS_HW; pair++, key++){
+48                 // Select both standard and Corsair input\&. The standard input will be ignored except in BIOS mode\&.
+49                 uchar action = IN_HID | IN_CORSAIR;
+50                 // Additionally, make MR activate the MR ring (this is disabled for now, may be back later)
+51                 //if(keymap[key]\&.name && !strcmp(keymap[key]\&.name, "mr"))
+52                 //    action |= ACT_MR_RING;
+53                 msg[1][4 + pair * 2] = key;
+54                 msg[1][5 + pair * 2] = action;
+55             }
+56             // Byte 2 = pair count (usually 30, less on final message)
+57             msg[1][2] = pair;
+58             if(!usbsend(kb, msg[1], 1))
+59                 return -1;
+60         }
+61         // Commit new input settings
+62         if(!usbsend(kb, msg[2], 1))
+63             return -1;
+64         DELAY_MEDIUM(kb);
+65     } else {
+66         // Set the M-keys back into hardware mode, restore hardware RGB profile\&. It has to be sent twice for some reason\&.
+67         msg[0][2] = 1;
+68         if(!usbsend(kb, msg[0], 1))
+69             return -1;
+70         DELAY_MEDIUM(kb);
+71         if(!usbsend(kb, msg[0], 1))
+72             return -1;
+73         DELAY_MEDIUM(kb);
+74 #ifdef OS_LINUX
+75         // On OSX the default key mappings are fine\&. On Linux, the G keys will freeze the keyboard\&. Set the keyboard entirely to HID input\&.
+76         for(int key = 0; key < N_KEYS_HW; ){
+77             int pair;
+78             for(pair = 0; pair < 30 && key < N_KEYS_HW; pair++, key++){
+79                 uchar action = IN_HID;
+80                 // Enable hardware actions
+81                 if(keymap[key]\&.name){
+82                     if(!strcmp(keymap[key]\&.name, "mr"))
+83                         action = ACT_MR_RING;
+84                     else if(!strcmp(keymap[key]\&.name, "m1"))
+85                         action = ACT_M1;
+86                     else if(!strcmp(keymap[key]\&.name, "m2"))
+87                         action = ACT_M2;
+88                     else if(!strcmp(keymap[key]\&.name, "m3"))
+89                         action = ACT_M3;
+90                     else if(!strcmp(keymap[key]\&.name, "light"))
+91                         action = ACT_LIGHT;
+92                     else if(!strcmp(keymap[key]\&.name, "lock"))
+93                         action = ACT_LOCK;
+94                 }
+95                 msg[1][4 + pair * 2] = key;
+96                 msg[1][5 + pair * 2] = action;
+97             }
+98             // Byte 2 = pair count (usually 30, less on final message)
+99             msg[1][2] = pair;
+100             if(!usbsend(kb, msg[1], 1))
+101                 return -1;
+102         }
+103         // Commit new input settings
+104         if(!usbsend(kb, msg[2], 1))
+105             return -1;
+106         DELAY_MEDIUM(kb);
+107 #endif
+108     }
+109     // Update indicator LEDs if the profile contains settings for them
+110     kb->vtable->updateindicators(kb, 0);
+111     return 0;
+112 }
 .fi
 .SS "void setmodeindex_nrgb (\fBusbdevice\fP *kb, intindex)"
 
 .PP
-Definition at line 120 of file device_keyboard\&.c\&.
+Definition at line 132 of file device_keyboard\&.c\&.
 .PP
 References NK95_M1, NK95_M2, NK95_M3, and nk95cmd\&.
 .PP
 .nf
-120                                                 {
-121     switch(index % 3){
-122     case 0:
-123         nk95cmd(kb, NK95_M1);
-124         break;
-125     case 1:
-126         nk95cmd(kb, NK95_M2);
-127         break;
-128     case 2:
-129         nk95cmd(kb, NK95_M3);
-130         break;
-131     }
-132 }
+132                                                 {
+133     switch(index % 3){
+134     case 0:
+135         nk95cmd(kb, NK95_M1);
+136         break;
+137     case 1:
+138         nk95cmd(kb, NK95_M2);
+139         break;
+140     case 2:
+141         nk95cmd(kb, NK95_M3);
+142         break;
+143     }
+144 }
 .fi
 .SS "int start_kb_nrgb (\fBusbdevice\fP *kb, intmakeactive)"
 
@@ -201,13 +211,15 @@ References usbdevice::active, NK95_HWOFF, nk95cmd, and usbdevice::pollrate\&.
 .PP
 .nf
 9                                                 {
-10     // Put the non-RGB K95 into software mode\&. Nothing else needs to be done hardware wise
-11     nk95cmd(kb, NK95_HWOFF);
-12     // Fill out RGB features for consistency, even though the keyboard doesn't have them
-13     kb->active = 1;
-14     kb->pollrate = -1;
-15     return 0;
-16 }
+10     (void)makeactive;
+11 
+12     // Put the non-RGB K95 into software mode\&. Nothing else needs to be done hardware wise
+13     nk95cmd(kb, NK95_HWOFF);
+14     // Fill out RGB features for consistency, even though the keyboard doesn't have them
+15     kb->active = 1;
+16     kb->pollrate = -1;
+17     return 0;
+18 }
 .fi
 .SH "Author"
 .PP 

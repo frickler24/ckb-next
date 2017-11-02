@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['delay',['delay',['../structures_8h.html#a4b18e06c9ef188aefdad5daa0e59e658',1,'usbdevice']]],
+  ['delay',['delay',['../structures_8h.html#a7a7c9896ceca4a73765ff73c08e0716c',1,'macroaction::delay()'],['../structures_8h.html#ac3f3ab5bda85925648ff834ba7afcacd',1,'usbdevice::delay()']]],
   ['devlistmutex',['devlistmutex',['../device_8c.html#a009a6978650a3c90df5488092c583064',1,'device.c']]],
   ['devmutex',['devmutex',['../device_8c.html#aca7076170e3f264e2960ebd508fff190',1,'devmutex():&#160;device.c'],['../device_8h.html#aca7076170e3f264e2960ebd508fff190',1,'devmutex():&#160;device.c']]],
   ['devpath',['devpath',['../devnode_8c.html#a6bb60389c0bd8be714f8fe2459205c89',1,'devpath():&#160;devnode.c'],['../devnode_8h.html#a6bb60389c0bd8be714f8fe2459205c89',1,'devpath():&#160;devnode.h']]],

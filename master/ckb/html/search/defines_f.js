@@ -1,19 +1,5 @@
 var searchData=
 [
-  ['sabre_5fheight',['SABRE_HEIGHT',['../keymap_8cpp.html#a7af83b9a62e5e91f706571334af0761e',1,'keymap.cpp']]],
-  ['sabre_5fwidth',['SABRE_WIDTH',['../keymap_8cpp.html#aa02d5b3f23a1785974dabd0de81993e9',1,'keymap.cpp']]],
-  ['scim_5fheight',['SCIM_HEIGHT',['../keymap_8cpp.html#a4488e9c2f2a8a7104dc5e77b5fa992cd',1,'keymap.cpp']]],
-  ['scim_5fwidth',['SCIM_WIDTH',['../keymap_8cpp.html#afa14c4ec280e05b84b25f2b3e2e4962e',1,'keymap.cpp']]],
-  ['seek_5fcur',['SEEK_CUR',['../qioapi_8cpp.html#a4c8d0b76b470ba65a43ca46a88320f39',1,'SEEK_CUR():&#160;qioapi.cpp'],['../zip_8c.html#a4c8d0b76b470ba65a43ca46a88320f39',1,'SEEK_CUR():&#160;zip.c']]],
-  ['seek_5fend',['SEEK_END',['../qioapi_8cpp.html#ad2a2e6c114780c3071efd24f16c7f7d8',1,'SEEK_END():&#160;qioapi.cpp'],['../zip_8c.html#ad2a2e6c114780c3071efd24f16c7f7d8',1,'SEEK_END():&#160;zip.c']]],
-  ['seek_5fset',['SEEK_SET',['../qioapi_8cpp.html#a0d112bae8fd35be772185b6ec6bcbe64',1,'SEEK_SET():&#160;qioapi.cpp'],['../zip_8c.html#a0d112bae8fd35be772185b6ec6bcbe64',1,'SEEK_SET():&#160;zip.c']]],
-  ['set_5fend',['SET_END',['../mperfwidget_8cpp.html#aacb40165e62fb091780ce2247ca564fd',1,'mperfwidget.cpp']]],
-  ['set_5fstart',['SET_START',['../mperfwidget_8cpp.html#a1c10f41936892bcfa81bba7db8c43df1',1,'mperfwidget.cpp']]],
-  ['shmem_5fsize',['SHMEM_SIZE',['../main_8cpp.html#af5f1f189381eeaf6528d2ca30bd63d6a',1,'main.cpp']]],
-  ['shmem_5fsize_5fv015',['SHMEM_SIZE_V015',['../main_8cpp.html#a6a8febd68af0a2dafeaa04d21ee09bad',1,'main.cpp']]],
-  ['sizecentraldiritem',['SIZECENTRALDIRITEM',['../unzip_8c.html#ad43fed5cb489b2075313779a757e5c03',1,'unzip.c']]],
-  ['sizecentralheader',['SIZECENTRALHEADER',['../zip_8c.html#a1d462da8349d0e3e53ecbaf284336066',1,'zip.c']]],
-  ['sizedata_5findatablock',['SIZEDATA_INDATABLOCK',['../zip_8c.html#a836292d756d7119c390ac856b702ba82',1,'zip.c']]],
-  ['sizeziplocalheader',['SIZEZIPLOCALHEADER',['../unzip_8c.html#a3c43e42371a71abc3db1b5a013382e77',1,'unzip.c']]],
-  ['strcmpcasenosentivefunction',['STRCMPCASENOSENTIVEFUNCTION',['../unzip_8c.html#a245d2af04dc8b6d6617f21d34635b033',1,'unzip.c']]]
+  ['patch',['patch',['../keymap_8cpp.html#a232acd5db27465982a3a27f8bb7a9aaa',1,'keymap.cpp']]],
+  ['patch_5fcount',['PATCH_COUNT',['../keymap_8cpp.html#a9ec1c480d7be6f9473a3f02af363404f',1,'keymap.cpp']]]
 ];

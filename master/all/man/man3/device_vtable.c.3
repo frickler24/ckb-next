@@ -1,4 +1,4 @@
-.TH "src/ckb-daemon/device_vtable.c" 3 "Wed May 24 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "src/ckb-daemon/device_vtable.c" 3 "Thu Nov 2 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -51,6 +51,7 @@ src/ckb-daemon/device_vtable.c \-
 .ti -1c
 .RI "const \fBdevcmd\fP \fBvtable_keyboard\fP"
 .br
+.RI "\fIRGB keyboard vtable holds functions for each device type\&. \fP"
 .ti -1c
 .RI "const \fBdevcmd\fP \fBvtable_keyboard_nonrgb\fP"
 .br
@@ -63,21 +64,32 @@ src/ckb-daemon/device_vtable.c \-
 .SS "static int cmd_io_none (\fBusbdevice\fP *kb, \fBusbmode\fP *dummy1, intdummy2, intdummy3, const char *dummy4)\fC [static]\fP"
 
 .PP
-Definition at line 13 of file device_vtable\&.c\&.
+Definition at line 18 of file device_vtable\&.c\&.
 .PP
 .nf
-13                                                                                                   {
-14     return 0;
-15 }
+18                                                                                                   {
+19     (void)kb;
+20     (void)dummy1;
+21     (void)dummy2;
+22     (void)dummy3;
+23     (void)dummy4;
+24 
+25     return 0;
+26 }
 .fi
 .SS "static void cmd_macro_none (\fBusbdevice\fP *kb, \fBusbmode\fP *dummy1, intdummy2, const char *dummy3, const char *dummy4)\fC [static]\fP"
 
 .PP
-Definition at line 16 of file device_vtable\&.c\&.
+Definition at line 27 of file device_vtable\&.c\&.
 .PP
 .nf
-16                                                                                                               {
-17 }
+27                                                                                                               {
+28     (void)kb;
+29     (void)dummy1;
+30     (void)dummy2;
+31     (void)dummy3;
+32     (void)dummy4;
+33 }
 .fi
 .SS "static void cmd_none (\fBusbdevice\fP *kb, \fBusbmode\fP *dummy1, intdummy2, intdummy3, const char *dummy4)\fC [static]\fP"
 
@@ -86,55 +98,67 @@ Definition at line 11 of file device_vtable\&.c\&.
 .PP
 .nf
 11                                                                                                 {
-12 }
+12     (void)kb;
+13     (void)dummy1;
+14     (void)dummy2;
+15     (void)dummy3;
+16     (void)dummy4;
+17 }
 .fi
 .SS "static int int1_int_none (\fBusbdevice\fP *kb, intdummy)\fC [static]\fP"
 
 .PP
-Definition at line 23 of file device_vtable\&.c\&.
+Definition at line 43 of file device_vtable\&.c\&.
 .PP
 .nf
-23                                                   {
-24     return 0;
-25 }
+43                                                   {
+44     (void)kb;
+45     (void)dummy;
+46 
+47     return 0;
+48 }
 .fi
 .SS "static void int1_void_none (\fBusbdevice\fP *kb, intdummy)\fC [static]\fP"
 
 .PP
-Definition at line 21 of file device_vtable\&.c\&.
+Definition at line 39 of file device_vtable\&.c\&.
 .PP
 .nf
-21                                                     {
-22 }
+39                                                     {
+40     (void)kb;
+41     (void)dummy;
+42 }
 .fi
 .SS "static int loadprofile_none (\fBusbdevice\fP *kb)\fC [static]\fP"
 
 .PP
-Definition at line 18 of file device_vtable\&.c\&.
+Definition at line 34 of file device_vtable\&.c\&.
 .PP
 .nf
-18                                           {
-19     return 0;
-20 }
+34                                           {
+35     (void)kb;
+36 
+37     return 0;
+38 }
 .fi
 .SH "Variable Documentation"
 .PP 
 .SS "const \fBdevcmd\fP vtable_keyboard"
 
 .PP
-Definition at line 28 of file device_vtable\&.c\&.
+Definition at line 52 of file device_vtable\&.c\&.
 .PP
 Referenced by get_vtable()\&.
 .SS "const \fBdevcmd\fP vtable_keyboard_nonrgb"
 
 .PP
-Definition at line 75 of file device_vtable\&.c\&.
+Definition at line 99 of file device_vtable\&.c\&.
 .PP
 Referenced by get_vtable()\&.
 .SS "const \fBdevcmd\fP vtable_mouse"
 
 .PP
-Definition at line 122 of file device_vtable\&.c\&.
+Definition at line 146 of file device_vtable\&.c\&.
 .PP
 Referenced by get_vtable()\&.
 .SH "Author"

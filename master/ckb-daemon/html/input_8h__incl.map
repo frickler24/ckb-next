@@ -1,6 +1,6 @@
 <map id="src/ckb&#45;daemon/input.h" name="src/ckb&#45;daemon/input.h">
 <area shape="rect" id="node2" href="$includes_8h.html" title="includes.h" alt="" coords="745,155,826,181"/>
-<area shape="rect" id="node26" href="$usb_8h.html" title="usb.h" alt="" coords="824,80,878,107"/>
+<area shape="rect" id="node26" href="$usb_8h.html" title="Definitions for using USB interface. " alt="" coords="824,80,878,107"/>
 <area shape="rect" id="node3" href="$os_8h.html" title="os.h" alt="" coords="382,453,428,480"/>
 <area shape="rect" id="node23" href="$structures_8h.html" title="structures.h" alt="" coords="1478,229,1568,256"/>
 <area shape="rect" id="node24" href="$keymap_8h.html" title="keymap.h" alt="" coords="1484,304,1562,331"/>

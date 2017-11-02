@@ -1,4 +1,4 @@
-.TH "src/ckb-daemon/led_mouse.c" 3 "Wed May 24 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "src/ckb-daemon/led_mouse.c" 3 "Thu Nov 2 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -56,37 +56,39 @@ Referenced by updatergb_mouse()\&.
 .SS "int loadrgb_mouse (\fBusbdevice\fP *kb, \fBlighting\fP *light, intmode)"
 
 .PP
-Definition at line 81 of file led_mouse\&.c\&.
+Definition at line 87 of file led_mouse\&.c\&.
 .PP
 References lighting::b, ckb_err, lighting::g, IS_SABRE, IS_SCIMITAR, LED_DPI, LED_MOUSE, MSG_SIZE, lighting::r, and usbrecv\&.
 .PP
 Referenced by cmd_hwload_mouse()\&.
 .PP
 .nf
-81                                                            {
-82     uchar data_pkt[MSG_SIZE] = { 0x0e, 0x13, 0x10, 1, 0 };
-83     uchar in_pkt[MSG_SIZE] = { 0 };
-84     // Load each RGB zone
-85     int zonecount = IS_SCIMITAR(kb) ? 4 : IS_SABRE(kb) ? 3 : 2;
-86     for(int i = 0; i < zonecount; i++){
-87         if(!usbrecv(kb, data_pkt, in_pkt))
-88             return -1;
-89         if(memcmp(in_pkt, data_pkt, 4)){
-90             ckb_err("Bad input header\n");
-91             return -2;
-92         }
-93         // Copy data
-94         int led = LED_MOUSE + i;
-95         if(led >= LED_DPI)
-96             led++;          // Skip DPI light
-97         light->r[led] = in_pkt[4];
-98         light->g[led] = in_pkt[5];
-99         light->b[led] = in_pkt[6];
-100         // Set packet for next zone
-101         data_pkt[2]++;
-102     }
-103     return 0;
-104 }
+87                                                            {
+88     (void)mode;
+89 
+90     uchar data_pkt[MSG_SIZE] = { 0x0e, 0x13, 0x10, 1, 0 };
+91     uchar in_pkt[MSG_SIZE] = { 0 };
+92     // Load each RGB zone
+93     int zonecount = IS_SCIMITAR(kb) ? 4 : IS_SABRE(kb) ? 3 : 2;
+94     for(int i = 0; i < zonecount; i++){
+95         if(!usbrecv(kb, data_pkt, in_pkt))
+96             return -1;
+97         if(memcmp(in_pkt, data_pkt, 4)){
+98             ckb_err("Bad input header\n");
+99             return -2;
+100         }
+101         // Copy data
+102         int led = LED_MOUSE + i;
+103         if(led >= LED_DPI)
+104             led++;          // Skip DPI light
+105         light->r[led] = in_pkt[4];
+106         light->g[led] = in_pkt[5];
+107         light->b[led] = in_pkt[6];
+108         // Set packet for next zone
+109         data_pkt[2]++;
+110     }
+111     return 0;
+112 }
 .fi
 .SS "static int rgbcmp (const \fBlighting\fP *lhs, const \fBlighting\fP *rhs)\fC [static]\fP"
 
@@ -105,38 +107,40 @@ Referenced by updatergb_mouse()\&.
 .SS "int savergb_mouse (\fBusbdevice\fP *kb, \fBlighting\fP *light, intmode)"
 
 .PP
-Definition at line 62 of file led_mouse\&.c\&.
+Definition at line 66 of file led_mouse\&.c\&.
 .PP
 References lighting::b, lighting::g, IS_SABRE, IS_SCIMITAR, LED_DPI, LED_MOUSE, MSG_SIZE, lighting::r, and usbsend\&.
 .PP
 Referenced by cmd_hwsave_mouse()\&.
 .PP
 .nf
-62                                                            {
-63     uchar data_pkt[MSG_SIZE] = { 0x07, 0x13, 0x10, 1, 0 };
-64     // Save each RGB zone, minus the DPI light which is sent in the DPI packets
-65     int zonecount = IS_SCIMITAR(kb) ? 4 : IS_SABRE(kb) ? 3 : 2;
-66     for(int i = 0; i < zonecount; i++){
-67         int led = LED_MOUSE + i;
-68         if(led >= LED_DPI)
-69             led++;          // Skip DPI light
-70         data_pkt[4] = light->r[led];
-71         data_pkt[5] = light->g[led];
-72         data_pkt[6] = light->b[led];
-73         if(!usbsend(kb, data_pkt, 1))
-74             return -1;
-75         // Set packet for next zone
-76         data_pkt[2]++;
-77     }
-78     return 0;
-79 }
+66                                                            {
+67     (void)mode;
+68 
+69     uchar data_pkt[MSG_SIZE] = { 0x07, 0x13, 0x10, 1, 0 };
+70     // Save each RGB zone, minus the DPI light which is sent in the DPI packets
+71     int zonecount = IS_SCIMITAR(kb) ? 4 : IS_SABRE(kb) ? 3 : 2;
+72     for(int i = 0; i < zonecount; i++){
+73         int led = LED_MOUSE + i;
+74         if(led >= LED_DPI)
+75             led++;          // Skip DPI light
+76         data_pkt[4] = light->r[led];
+77         data_pkt[5] = light->g[led];
+78         data_pkt[6] = light->b[led];
+79         if(!usbsend(kb, data_pkt, 1))
+80             return -1;
+81         // Set packet for next zone
+82         data_pkt[2]++;
+83     }
+84     return 0;
+85 }
 .fi
 .SS "int updatergb_mouse (\fBusbdevice\fP *kb, intforce)"
 
 .PP
 Definition at line 20 of file led_mouse\&.c\&.
 .PP
-References usbdevice::active, lighting::b, usbprofile::currentmode, lighting::forceupdate, lighting::g, isblack(), usbprofile::lastlight, LED_MOUSE, usbmode::light, MSG_SIZE, N_MOUSE_ZONES, usbdevice::profile, lighting::r, rgbcmp(), and usbsend\&.
+References usbdevice::active, lighting::b, usbprofile::currentmode, lighting::forceupdate, lighting::g, IS_GLAIVE, isblack(), usbprofile::lastlight, LED_MOUSE, usbmode::light, MSG_SIZE, N_MOUSE_ZONES, usbdevice::profile, lighting::r, rgbcmp(), and usbsend\&.
 .PP
 .nf
 20                                              {
@@ -150,36 +154,40 @@ References usbdevice::active, lighting::b, usbprofile::currentmode, lighting::fo
 28         return 0;
 29     lastlight->forceupdate = newlight->forceupdate = 0;
 30 
-31     // Send the RGB values for each zone to the mouse
-32     uchar data_pkt[2][MSG_SIZE] = {
-33         { 0x07, 0x22, N_MOUSE_ZONES, 0x01, 0 }, // RGB colors
-34         { 0x07, 0x05, 0x02, 0 }                 // Lighting on/off
-35     };
-36     uchar* rgb_data = &data_pkt[0][4];
-37     for(int i = 0; i < N_MOUSE_ZONES; i++){
-38         *rgb_data++ = i + 1;
-39         *rgb_data++ = newlight->r[LED_MOUSE + i];
-40         *rgb_data++ = newlight->g[LED_MOUSE + i];
-41         *rgb_data++ = newlight->b[LED_MOUSE + i];
-42     }
-43     // Send RGB data
-44     if(!usbsend(kb, data_pkt[0], 1))
-45         return -1;
-46     int was_black = isblack(kb, lastlight), is_black = isblack(kb, newlight);
-47     if(is_black){
-48         // If the lighting is black, send the deactivation packet (M65 only)
-49         if(!usbsend(kb, data_pkt[1], 1))
-50             return -1;
-51     } else if(was_black || force){
-52         // If the lighting WAS black, or if we're on forced update, send the activation packet
-53         data_pkt[1][4] = 1;
-54         if(!usbsend(kb, data_pkt[1], 1))
-55             return -1;
-56     }
-57 
-58     memcpy(lastlight, newlight, sizeof(lighting));
-59     return 0;
-60 }
+31     // Prevent writing to DPI LEDs or non-existent LED zones for the Glaive\&.
+32     int num_zones = IS_GLAIVE(kb) ? 3 : N_MOUSE_ZONES;
+33     // Send the RGB values for each zone to the mouse
+34     uchar data_pkt[2][MSG_SIZE] = {
+35         { 0x07, 0x22, num_zones, 0x01, 0 }, // RGB colors
+36         { 0x07, 0x05, 0x02, 0 }                 // Lighting on/off
+37     };
+38     uchar* rgb_data = &data_pkt[0][4];
+39     for(int i = 0; i < N_MOUSE_ZONES; i++){
+40         if (IS_GLAIVE(kb) && i != 0 && i != 1 && i != 5)
+41         continue;
+42         *rgb_data++ = i + 1;
+43         *rgb_data++ = newlight->r[LED_MOUSE + i];
+44         *rgb_data++ = newlight->g[LED_MOUSE + i];
+45         *rgb_data++ = newlight->b[LED_MOUSE + i];
+46     }
+47     // Send RGB data
+48     if(!usbsend(kb, data_pkt[0], 1))
+49         return -1;
+50     int was_black = isblack(kb, lastlight), is_black = isblack(kb, newlight);
+51     if(is_black){
+52         // If the lighting is black, send the deactivation packet (M65 only)
+53         if(!usbsend(kb, data_pkt[1], 1))
+54             return -1;
+55     } else if(was_black || force){
+56         // If the lighting WAS black, or if we're on forced update, send the activation packet
+57         data_pkt[1][4] = 1;
+58         if(!usbsend(kb, data_pkt[1], 1))
+59             return -1;
+60     }
+61 
+62     memcpy(lastlight, newlight, sizeof(lighting));
+63     return 0;
+64 }
 .fi
 .SH "Author"
 .PP 

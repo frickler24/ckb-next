@@ -178,8 +178,6 @@ var searchData=
   ['ctrllabel',['ctrlLabel',['../classUi__SettingsWidget.html#a1526b2a1231f1d53676c3ab2cc851692',1,'Ui_SettingsWidget']]],
   ['cur_5ffile_5finfo',['cur_file_info',['../unzip_8c.html#a2c0f02f769c43e2c351e310ff130f1c0',1,'unz64_s']]],
   ['cur_5ffile_5finfo_5finternal',['cur_file_info_internal',['../unzip_8c.html#aaf5f19b9e41e86ccde7a2d7802622bf6',1,'unz64_s']]],
-  ['curdpi',['curDpi',['../classKbPerf.html#a0a63c31c04ee2b750cc3b91e3dde4771',1,'KbPerf::curDpi() const '],['../classKbPerf.html#a63acb61ec1726f8448d247cc6ef832e5',1,'KbPerf::curDpi(const QPoint &amp;newDpi)'],['../classKbPerf.html#a99bb8a925bc4e0b6ad04bd212c4b3204',1,'KbPerf::curDpi(int newDpi)']]],
-  ['curdpiidx',['curDpiIdx',['../classKbPerf.html#a6badfb392027292171f3f30e949e0212',1,'KbPerf::curDpiIdx() const '],['../classKbPerf.html#a708a1293174fc9a257e429d0cb4410a8',1,'KbPerf::curDpiIdx(int newIdx)']]],
   ['curfile64_5finfo',['curfile64_info',['../zip_8c.html#structcurfile64__info',1,'']]],
   ['curlabel',['curLabel',['../classUi__FwUpgradeDialog.html#a9c7429b73b89ba1669490da4be3f9751',1,'Ui_FwUpgradeDialog']]],
   ['current',['current',['../classKbAnimWidget.html#a74e667a6be9e319f11da1378547ea052',1,'KbAnimWidget::current()'],['../classGradientDialogWidget.html#a3514509e581436a6a50a69505ffd9616',1,'GradientDialogWidget::current()']]],
@@ -193,6 +191,6 @@ var searchData=
   ['currentpreset',['currentPreset',['../classGradientDialog.html#adc9c3cac6fcc55137860546eadbe553f',1,'GradientDialog']]],
   ['currentprofile',['currentProfile',['../classKb.html#a4a9b9ba54fb83506ae61aa787d98cbb8',1,'Kb']]],
   ['currentselection',['currentSelection',['../classKbBindWidget.html#aaa2cf9328ea659f1f74e6d7373b28ff9',1,'KbBindWidget::currentSelection()'],['../classKbLightWidget.html#a5eb9e94898ea2fc8306db4b3510be7af',1,'KbLightWidget::currentSelection()']]],
-  ['ckb_2dnext_3a_20rgb_20driver_20for_20linux_20and_20os_20x',['ckb-next: RGB Driver for Linux and OS X',['../md_README.html',1,'']]],
+  ['ckb_2dnext_3a_20rgb_20driver_20for_20linux_20and_20macos',['ckb-next: RGB Driver for Linux and macOS',['../md_README.html',1,'']]],
   ['cbk_20improvements_20roadmap',['cbk Improvements Roadmap',['../md_ROADMAP.html',1,'']]]
 ];

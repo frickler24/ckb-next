@@ -8,6 +8,7 @@ var searchData=
   ['patcheu',['patchEU',['../keymap_8cpp.html#a73fb23361d58067525658c227062fc9c',1,'keymap.cpp']]],
   ['patchfr',['patchFR',['../keymap_8cpp.html#aad829372b55e87fbf12c8efa07b31572',1,'keymap.cpp']]],
   ['patchit',['patchIT',['../keymap_8cpp.html#a5f6659b3a077798431626d222fb92314',1,'keymap.cpp']]],
+  ['patchjp',['patchJP',['../keymap_8cpp.html#a22b9d733ea200d98a016eecbc16ba783',1,'keymap.cpp']]],
   ['patchmx',['patchMX',['../keymap_8cpp.html#af3b3526ccc4a1c82a79fc0c20239c699',1,'keymap.cpp']]],
   ['patchno',['patchNO',['../keymap_8cpp.html#aaaba0e8ff238111c6ecb7facbf32e954',1,'keymap.cpp']]],
   ['patchse',['patchSE',['../keymap_8cpp.html#a386f77bc0b4d7d87cc6db0f79fac7617',1,'keymap.cpp']]],

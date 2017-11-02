@@ -145,7 +145,16 @@ Macros</h2></td></tr>
 <tr class="separator:a96bbdd939f65eebc392e07d74e6e6605"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa87bd893f7d4bd0700cb699c88dd860b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="device_8h.html#aa87bd893f7d4bd0700cb699c88dd860b">imutex</a>(kb)&#160;&#160;&#160;(<a class="el" href="device_8h.html#aefb30be1551e1284c1e4a7545949d973">inputmutex</a> + <a class="el" href="includes_8h.html#ac114b913ed9d0b7cab3b83188f111530">INDEX_OF</a>(kb, <a class="el" href="device_8h.html#a5f2ad0f3998226c000c52c5c375c2661">keyboard</a>))</td></tr>
 <tr class="separator:aa87bd893f7d4bd0700cb699c88dd860b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c03b451627e1eefc2e17de9da445619"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="device_8h.html#a7c03b451627e1eefc2e17de9da445619">mmutex</a>(kb)&#160;&#160;&#160;(<a class="el" href="device_8h.html#a0435da20f2ad3d439f0a1f04b2f3f3cf">macromutex</a> + <a class="el" href="includes_8h.html#ac114b913ed9d0b7cab3b83188f111530">INDEX_OF</a>(kb, <a class="el" href="device_8h.html#a5f2ad0f3998226c000c52c5c375c2661">keyboard</a>))</td></tr>
+<tr class="separator:a7c03b451627e1eefc2e17de9da445619"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab73520714dbf67fbc99a20fc07f0dded"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="device_8h.html#ab73520714dbf67fbc99a20fc07f0dded">mmutex2</a>(kb)&#160;&#160;&#160;(<a class="el" href="device_8h.html#a9e2c060f6f466b6ed9406e6397ab3b1e">macromutex2</a> + <a class="el" href="includes_8h.html#ac114b913ed9d0b7cab3b83188f111530">INDEX_OF</a>(kb, <a class="el" href="device_8h.html#a5f2ad0f3998226c000c52c5c375c2661">keyboard</a>))</td></tr>
+<tr class="separator:ab73520714dbf67fbc99a20fc07f0dded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a462377863242694d02d0cb4781637f3c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="device_8h.html#a462377863242694d02d0cb4781637f3c">mvar</a>(kb)&#160;&#160;&#160;(<a class="el" href="device_8h.html#a26d8fa91b7834ac4c2806a73976ec0ca">macrovar</a> + <a class="el" href="includes_8h.html#ac114b913ed9d0b7cab3b83188f111530">INDEX_OF</a>(kb, <a class="el" href="device_8h.html#a5f2ad0f3998226c000c52c5c375c2661">keyboard</a>))</td></tr>
+<tr class="separator:a462377863242694d02d0cb4781637f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc841d1137ff44e8a225208262d97fae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="device_8h.html#afc841d1137ff44e8a225208262d97fae">setactive</a>(kb, makeactive)&#160;&#160;&#160;((makeactive) ? (kb)-&gt;vtable-&gt;active((kb), 0, 0, 0, 0) : (kb)-&gt;vtable-&gt;idle((kb), 0, 0, 0, 0))</td></tr>
+<tr class="memdesc:afc841d1137ff44e8a225208262d97fae"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="device_8h.html#afc841d1137ff44e8a225208262d97fae" title="setactive() calls via the corresponding kb-&gt;vtable either the active() or the idle() function...">setactive()</a> calls via the corresponding kb-&gt;vtable either the active() or the idle() function. <br/>
+ active() is called if the parameter makeactive is true, idle if it is false. <br/>
+ What function is called effectively is device dependent. Have a look at <em><a class="el" href="device__vtable_8c.html">device_vtable.c</a></em> for more information.  <a href="#afc841d1137ff44e8a225208262d97fae">More...</a><br/></td></tr>
 <tr class="separator:afc841d1137ff44e8a225208262d97fae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59cc5a60fd4977cc3badfbd75302d9cd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="device_8h.html#a59cc5a60fd4977cc3badfbd75302d9cd">IN_HID</a>&#160;&#160;&#160;0x80</td></tr>
 <tr class="separator:a59cc5a60fd4977cc3badfbd75302d9cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -194,11 +203,23 @@ Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a5f2ad0f3998226c000c52c5c375c2661"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structures_8h.html#structusbdevice">usbdevice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="device_8h.html#a5f2ad0f3998226c000c52c5c375c2661">keyboard</a> [9]</td></tr>
+<tr class="memdesc:a5f2ad0f3998226c000c52c5c375c2661"><td class="mdescLeft">&#160;</td><td class="mdescRight">remember all usb devices. Needed for <a class="el" href="usb_8c.html#a8732b3ade76da4ae362996232ef95431">closeusb()</a>.  <a href="#a5f2ad0f3998226c000c52c5c375c2661">More...</a><br/></td></tr>
 <tr class="separator:a5f2ad0f3998226c000c52c5c375c2661"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca7076170e3f264e2960ebd508fff190"><td class="memItemLeft" align="right" valign="top">pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="device_8h.html#aca7076170e3f264e2960ebd508fff190">devmutex</a> [9]</td></tr>
+<tr class="memdesc:aca7076170e3f264e2960ebd508fff190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutex for handling the usbdevice structure.  <a href="#aca7076170e3f264e2960ebd508fff190">More...</a><br/></td></tr>
 <tr class="separator:aca7076170e3f264e2960ebd508fff190"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefb30be1551e1284c1e4a7545949d973"><td class="memItemLeft" align="right" valign="top">pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="device_8h.html#aefb30be1551e1284c1e4a7545949d973">inputmutex</a> [9]</td></tr>
+<tr class="memdesc:aefb30be1551e1284c1e4a7545949d973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutex for dealing with usb input frames.  <a href="#aefb30be1551e1284c1e4a7545949d973">More...</a><br/></td></tr>
 <tr class="separator:aefb30be1551e1284c1e4a7545949d973"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0435da20f2ad3d439f0a1f04b2f3f3cf"><td class="memItemLeft" align="right" valign="top">pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="device_8h.html#a0435da20f2ad3d439f0a1f04b2f3f3cf">macromutex</a> [9]</td></tr>
+<tr class="memdesc:a0435da20f2ad3d439f0a1f04b2f3f3cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protecting macros against lightning: Both use usb_send.  <a href="#a0435da20f2ad3d439f0a1f04b2f3f3cf">More...</a><br/></td></tr>
+<tr class="separator:a0435da20f2ad3d439f0a1f04b2f3f3cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e2c060f6f466b6ed9406e6397ab3b1e"><td class="memItemLeft" align="right" valign="top">pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="device_8h.html#a9e2c060f6f466b6ed9406e6397ab3b1e">macromutex2</a> [9]</td></tr>
+<tr class="memdesc:a9e2c060f6f466b6ed9406e6397ab3b1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protecting the single link list of threads and the macrovar.  <a href="#a9e2c060f6f466b6ed9406e6397ab3b1e">More...</a><br/></td></tr>
+<tr class="separator:a9e2c060f6f466b6ed9406e6397ab3b1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26d8fa91b7834ac4c2806a73976ec0ca"><td class="memItemLeft" align="right" valign="top">pthread_cond_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="device_8h.html#a26d8fa91b7834ac4c2806a73976ec0ca">macrovar</a> [9]</td></tr>
+<tr class="memdesc:a26d8fa91b7834ac4c2806a73976ec0ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">This variable is used to stop and wakeup all macro threads which have to wait.  <a href="#a26d8fa91b7834ac4c2806a73976ec0ca">More...</a><br/></td></tr>
+<tr class="separator:a26d8fa91b7834ac4c2806a73976ec0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="a5d6acc7f5c3eabf2b53ed9d5f1499ce1"></a>
@@ -211,9 +232,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device_8h_source.html#l00056">56</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
+<p>Definition at line <a class="el" href="device_8h_source.html#l00068">68</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
 
-<p>Referenced by <a class="el" href="device__keyboard_8c_source.html#l00018">setactive_kb()</a>.</p>
+<p>Referenced by <a class="el" href="device__keyboard_8c_source.html#l00020">setactive_kb()</a>.</p>
 
 </div>
 </div>
@@ -227,9 +248,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device_8h_source.html#l00059">59</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
+<p>Definition at line <a class="el" href="device_8h_source.html#l00071">71</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
 
-<p>Referenced by <a class="el" href="device__keyboard_8c_source.html#l00018">setactive_kb()</a>.</p>
+<p>Referenced by <a class="el" href="device__keyboard_8c_source.html#l00020">setactive_kb()</a>.</p>
 
 </div>
 </div>
@@ -243,9 +264,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device_8h_source.html#l00061">61</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
+<p>Definition at line <a class="el" href="device_8h_source.html#l00073">73</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
 
-<p>Referenced by <a class="el" href="device__keyboard_8c_source.html#l00018">setactive_kb()</a>.</p>
+<p>Referenced by <a class="el" href="device__keyboard_8c_source.html#l00020">setactive_kb()</a>.</p>
 
 </div>
 </div>
@@ -259,9 +280,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device_8h_source.html#l00062">62</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
+<p>Definition at line <a class="el" href="device_8h_source.html#l00074">74</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
 
-<p>Referenced by <a class="el" href="device__keyboard_8c_source.html#l00018">setactive_kb()</a>.</p>
+<p>Referenced by <a class="el" href="device__keyboard_8c_source.html#l00020">setactive_kb()</a>.</p>
 
 </div>
 </div>
@@ -275,9 +296,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device_8h_source.html#l00063">63</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
+<p>Definition at line <a class="el" href="device_8h_source.html#l00075">75</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
 
-<p>Referenced by <a class="el" href="device__keyboard_8c_source.html#l00018">setactive_kb()</a>.</p>
+<p>Referenced by <a class="el" href="device__keyboard_8c_source.html#l00020">setactive_kb()</a>.</p>
 
 </div>
 </div>
@@ -291,9 +312,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device_8h_source.html#l00060">60</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
+<p>Definition at line <a class="el" href="device_8h_source.html#l00072">72</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
 
-<p>Referenced by <a class="el" href="device__keyboard_8c_source.html#l00018">setactive_kb()</a>.</p>
+<p>Referenced by <a class="el" href="device__keyboard_8c_source.html#l00020">setactive_kb()</a>.</p>
 
 </div>
 </div>
@@ -307,7 +328,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device_8h_source.html#l00057">57</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
+<p>Definition at line <a class="el" href="device_8h_source.html#l00069">69</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
 
 </div>
 </div>
@@ -321,7 +342,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device_8h_source.html#l00058">58</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
+<p>Definition at line <a class="el" href="device_8h_source.html#l00070">70</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
 
 </div>
 </div>
@@ -337,7 +358,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="device_8h_source.html#l00008">8</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
 
-<p>Referenced by <a class="el" href="devnode_8c_source.html#l00038">_updateconnected()</a>, <a class="el" href="main_8c_source.html#l00040">quitWithLock()</a>, <a class="el" href="usb__linux_8c_source.html#l00405">usb_rm_device()</a>, and <a class="el" href="usb__linux_8c_source.html#l00308">usbadd()</a>.</p>
+<p>Referenced by <a class="el" href="devnode_8c_source.html#l00055">_updateconnected()</a>, <a class="el" href="main_8c_source.html#l00040">quitWithLock()</a>, <a class="el" href="usb__linux_8c_source.html#l00723">usb_rm_device()</a>, and <a class="el" href="usb__linux_8c_source.html#l00593">usbadd()</a>.</p>
 
 </div>
 </div>
@@ -357,7 +378,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="device_8h_source.html#l00018">18</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
 
-<p>Referenced by <a class="el" href="input__linux_8c_source.html#l00159">_ledthread()</a>, <a class="el" href="usb_8c_source.html#l00077">_setupusb()</a>, <a class="el" href="usb_8c_source.html#l00238">closeusb()</a>, <a class="el" href="usb_8c_source.html#l00050">devmain()</a>, and <a class="el" href="usb__linux_8c_source.html#l00308">usbadd()</a>.</p>
+<p>Referenced by <a class="el" href="input__linux_8c_source.html#l00165">_ledthread()</a>, <a class="el" href="usb_8c_source.html#l00220">_setupusb()</a>, <a class="el" href="usb_8c_source.html#l00683">closeusb()</a>, <a class="el" href="usb_8c_source.html#l00141">devmain()</a>, and <a class="el" href="usb__linux_8c_source.html#l00593">usbadd()</a>.</p>
 
 </div>
 </div>
@@ -377,7 +398,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="device_8h_source.html#l00022">22</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
 
-<p>Referenced by <a class="el" href="usb_8c_source.html#l00077">_setupusb()</a>, <a class="el" href="usb_8c_source.html#l00238">closeusb()</a>, <a class="el" href="input_8c_source.html#l00188">cmd_bind()</a>, <a class="el" href="profile_8c_source.html#l00203">cmd_erase()</a>, <a class="el" href="profile_8c_source.html#l00221">cmd_eraseprofile()</a>, <a class="el" href="notify_8c_source.html#l00215">cmd_get()</a>, <a class="el" href="input_8c_source.html#l00332">cmd_macro()</a>, <a class="el" href="notify_8c_source.html#l00061">cmd_notify()</a>, <a class="el" href="input_8c_source.html#l00218">cmd_rebind()</a>, <a class="el" href="input_8c_source.html#l00210">cmd_unbind()</a>, <a class="el" href="usb__linux_8c_source.html#l00093">os_inputmain()</a>, <a class="el" href="device__keyboard_8c_source.html#l00018">setactive_kb()</a>, <a class="el" href="device__mouse_8c_source.html#l00009">setactive_mouse()</a>, and <a class="el" href="usb_8c_source.html#l00131">setupusb()</a>.</p>
+<p>Referenced by <a class="el" href="usb_8c_source.html#l00220">_setupusb()</a>, <a class="el" href="usb_8c_source.html#l00683">closeusb()</a>, <a class="el" href="input_8c_source.html#l00307">cmd_bind()</a>, <a class="el" href="profile_8c_source.html#l00219">cmd_erase()</a>, <a class="el" href="profile_8c_source.html#l00241">cmd_eraseprofile()</a>, <a class="el" href="notify_8c_source.html#l00215">cmd_get()</a>, <a class="el" href="input_8c_source.html#l00475">cmd_macro()</a>, <a class="el" href="notify_8c_source.html#l00061">cmd_notify()</a>, <a class="el" href="input_8c_source.html#l00342">cmd_rebind()</a>, <a class="el" href="input_8c_source.html#l00331">cmd_unbind()</a>, <a class="el" href="usb__linux_8c_source.html#l00238">os_inputmain()</a>, <a class="el" href="device__keyboard_8c_source.html#l00020">setactive_kb()</a>, <a class="el" href="device__mouse_8c_source.html#l00009">setactive_mouse()</a>, and <a class="el" href="usb_8c_source.html#l00392">setupusb()</a>.</p>
 
 </div>
 </div>
@@ -391,9 +412,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device_8h_source.html#l00053">53</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
+<p>Definition at line <a class="el" href="device_8h_source.html#l00065">65</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
 
-<p>Referenced by <a class="el" href="device__keyboard_8c_source.html#l00018">setactive_kb()</a>, and <a class="el" href="device__mouse_8c_source.html#l00009">setactive_mouse()</a>.</p>
+<p>Referenced by <a class="el" href="device__keyboard_8c_source.html#l00020">setactive_kb()</a>, and <a class="el" href="device__mouse_8c_source.html#l00009">setactive_mouse()</a>.</p>
 
 </div>
 </div>
@@ -407,9 +428,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device_8h_source.html#l00052">52</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
+<p>Definition at line <a class="el" href="device_8h_source.html#l00064">64</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
 
-<p>Referenced by <a class="el" href="device__keyboard_8c_source.html#l00018">setactive_kb()</a>, and <a class="el" href="device__mouse_8c_source.html#l00009">setactive_mouse()</a>.</p>
+<p>Referenced by <a class="el" href="device__keyboard_8c_source.html#l00020">setactive_kb()</a>, and <a class="el" href="device__mouse_8c_source.html#l00009">setactive_mouse()</a>.</p>
 
 </div>
 </div>
@@ -429,7 +450,67 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="device_8h_source.html#l00012">12</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
 
-<p>Referenced by <a class="el" href="devnode_8c_source.html#l00038">_updateconnected()</a>, <a class="el" href="usb_8c_source.html#l00050">devmain()</a>, <a class="el" href="main_8c_source.html#l00040">quitWithLock()</a>, and <a class="el" href="usb__linux_8c_source.html#l00308">usbadd()</a>.</p>
+<p>Referenced by <a class="el" href="devnode_8c_source.html#l00055">_updateconnected()</a>, <a class="el" href="usb_8c_source.html#l00141">devmain()</a>, <a class="el" href="main_8c_source.html#l00040">quitWithLock()</a>, and <a class="el" href="usb__linux_8c_source.html#l00593">usbadd()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7c03b451627e1eefc2e17de9da445619"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define mmutex</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">kb</td><td>)</td>
+          <td>&#160;&#160;&#160;(<a class="el" href="device_8h.html#a0435da20f2ad3d439f0a1f04b2f3f3cf">macromutex</a> + <a class="el" href="includes_8h.html#ac114b913ed9d0b7cab3b83188f111530">INDEX_OF</a>(kb, <a class="el" href="device_8h.html#a5f2ad0f3998226c000c52c5c375c2661">keyboard</a>))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="device_8h_source.html#l00026">26</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
+
+<p>Referenced by <a class="el" href="usb_8c_source.html#l00607">_usbrecv()</a>, <a class="el" href="usb_8c_source.html#l00538">_usbsend()</a>, and <a class="el" href="input_8c_source.html#l00079">play_macro()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab73520714dbf67fbc99a20fc07f0dded"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define mmutex2</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">kb</td><td>)</td>
+          <td>&#160;&#160;&#160;(<a class="el" href="device_8h.html#a9e2c060f6f466b6ed9406e6397ab3b1e">macromutex2</a> + <a class="el" href="includes_8h.html#ac114b913ed9d0b7cab3b83188f111530">INDEX_OF</a>(kb, <a class="el" href="device_8h.html#a5f2ad0f3998226c000c52c5c375c2661">keyboard</a>))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="device_8h_source.html#l00028">28</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
+
+<p>Referenced by <a class="el" href="input_8c_source.html#l00079">play_macro()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a462377863242694d02d0cb4781637f3c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define mvar</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">kb</td><td>)</td>
+          <td>&#160;&#160;&#160;(<a class="el" href="device_8h.html#a26d8fa91b7834ac4c2806a73976ec0ca">macrovar</a> + <a class="el" href="includes_8h.html#ac114b913ed9d0b7cab3b83188f111530">INDEX_OF</a>(kb, <a class="el" href="device_8h.html#a5f2ad0f3998226c000c52c5c375c2661">keyboard</a>))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="device_8h_source.html#l00030">30</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
+
+<p>Referenced by <a class="el" href="input_8c_source.html#l00079">play_macro()</a>.</p>
 
 </div>
 </div>
@@ -457,9 +538,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device_8h_source.html#l00032">32</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
+<p>Definition at line <a class="el" href="device_8h_source.html#l00044">44</a> of file <a class="el" href="device_8h_source.html">device.h</a>.</p>
 
-<p>Referenced by <a class="el" href="device_8c_source.html#l00015">_start_dev()</a>, and <a class="el" href="usb_8c_source.html#l00137">revertusb()</a>.</p>
+<p>Referenced by <a class="el" href="device_8c_source.html#l00025">_start_dev()</a>, and <a class="el" href="usb_8c_source.html#l00413">revertusb()</a>.</p>
 
 </div>
 </div>
@@ -506,13 +587,18 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device__keyboard_8c_source.html#l00112">112</a> of file <a class="el" href="device__keyboard_8c_source.html">device_keyboard.c</a>.</p>
+<p>Definition at line <a class="el" href="device__keyboard_8c_source.html#l00114">114</a> of file <a class="el" href="device__keyboard_8c_source.html">device_keyboard.c</a>.</p>
 
-<p>References <a class="el" href="device__keyboard_8c_source.html#l00018">setactive_kb()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                                                                                             {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="device__keyboard_8c.html#aeb1b886efdcfce59e4ee8977ba2fd135">setactive_kb</a>(kb, 1);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
-<div class="ttc" id="device__keyboard_8c_html_aeb1b886efdcfce59e4ee8977ba2fd135"><div class="ttname"><a href="device__keyboard_8c.html#aeb1b886efdcfce59e4ee8977ba2fd135">setactive_kb</a></div><div class="ttdeci">int setactive_kb(usbdevice *kb, int active)</div><div class="ttdef"><b>Definition:</b> <a href="device__keyboard_8c_source.html#l00018">device_keyboard.c:18</a></div></div>
+<p>References <a class="el" href="device__keyboard_8c_source.html#l00020">setactive_kb()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                                                                                             {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    (void)dummy1;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    (void)dummy2;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    (void)dummy3;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    (void)dummy4;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="device__keyboard_8c.html#aeb1b886efdcfce59e4ee8977ba2fd135">setactive_kb</a>(kb, 1);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
+<div class="ttc" id="device__keyboard_8c_html_aeb1b886efdcfce59e4ee8977ba2fd135"><div class="ttname"><a href="device__keyboard_8c.html#aeb1b886efdcfce59e4ee8977ba2fd135">setactive_kb</a></div><div class="ttdeci">int setactive_kb(usbdevice *kb, int active)</div><div class="ttdef"><b>Definition:</b> <a href="device__keyboard_8c_source.html#l00020">device_keyboard.c:20</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -521,7 +607,7 @@ Variables</h2></td></tr>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="device_8h_ac520b855af37b199562c5d6e2d4b8c80_cgraph.png" border="0" usemap="#device_8h_ac520b855af37b199562c5d6e2d4b8c80_cgraph" alt=""/></div>
 <map name="device_8h_ac520b855af37b199562c5d6e2d4b8c80_cgraph" id="device_8h_ac520b855af37b199562c5d6e2d4b8c80_cgraph">
-<area shape="rect" id="node2" href="device__keyboard_8c.html#aeb1b886efdcfce59e4ee8977ba2fd135" title="setactive_kb" alt="" coords="165,31,261,57"/><area shape="rect" id="node3" href="input_8c.html#ae360d0b9a764a1d38c5be5464be8b70a" title="inputupdate" alt="" coords="310,31,399,57"/><area shape="rect" id="node4" href="input_8c.html#aed8e9842ed5750c1d328c5dc4c1ba2bd" title="inputupdate_keys" alt="" coords="449,56,573,83"/><area shape="rect" id="node6" href="input_8h.html#a9f2cfb2d883ae4a3732047fe3f3da683" title="os_mousemove" alt="" coords="621,5,736,32"/><area shape="rect" id="node5" href="input_8c.html#abd38419ce56379559481f51d9491adeb" title="macromask" alt="" coords="633,56,724,83"/><area shape="rect" id="node8" href="input_8h.html#af0d3401f317f3214dadad7d1a3378c58" title="os_keypress" alt="" coords="631,107,727,133"/><area shape="rect" id="node9" href="notify_8c.html#ac2411c0997dfdbefdebd45f2584a5d04" title="nprintkey" alt="" coords="641,157,716,184"/><area shape="rect" id="node7" href="input__linux_8c.html#a14ff0fdf147e3702197db2cadb878460" title="isync" alt="" coords="787,56,840,83"/><area shape="rect" id="node10" href="notify_8c.html#a7ac88f15243030290e4d57c3c9ac7c98" title="nprintf" alt="" coords="784,157,843,184"/></map>
+<area shape="rect" id="node2" href="device__keyboard_8c.html#aeb1b886efdcfce59e4ee8977ba2fd135" title="setactive_kb" alt="" coords="165,196,261,223"/><area shape="rect" id="node3" href="input_8c.html#ae360d0b9a764a1d38c5be5464be8b70a" title="inputupdate" alt="" coords="310,196,399,223"/><area shape="rect" id="node4" href="input_8c.html#aed8e9842ed5750c1d328c5dc4c1ba2bd" title="inputupdate_keys Handle input from Keyboard or mouse; start Macrof if detected. " alt="" coords="449,132,573,159"/><area shape="rect" id="node9" href="input_8h.html#a9f2cfb2d883ae4a3732047fe3f3da683" title="os_mousemove" alt="" coords="769,259,884,285"/><area shape="rect" id="node5" href="input_8c.html#abd38419ce56379559481f51d9491adeb" title="macromask" alt="" coords="621,157,712,184"/><area shape="rect" id="node6" href="input_8c.html#a42ef48810461524270042eeda9616dba" title="play_macro is the code for all threads started to play a macro. " alt="" coords="622,107,711,133"/><area shape="rect" id="node8" href="input_8c.html#a34b6a3d2e97732b6973cd608e35317c9" title="macro_pt_first returns the first pthread_id but does not remove the first entry. " alt="" coords="774,208,879,235"/><area shape="rect" id="node11" href="input_8h.html#af0d3401f317f3214dadad7d1a3378c58" title="os_keypress" alt="" coords="779,56,875,83"/><area shape="rect" id="node13" href="notify_8c.html#ac2411c0997dfdbefdebd45f2584a5d04" title="nprintkey" alt="" coords="629,5,704,32"/><area shape="rect" id="node7" href="input_8c.html#a225fb4bb1f20d4a8b524f5d72763367d" title="macro_pt_enqueue Save the new thread in the single linked list (FIFO). " alt="" coords="761,107,893,133"/><area shape="rect" id="node12" href="input_8c.html#a712ce5a59c9a281c4d4c4d0ba3446de7" title="macro_pt_dequeue gets the first thread id of the list and returns the thread_id stored in it..." alt="" coords="761,157,893,184"/><area shape="rect" id="node10" href="input__linux_8c.html#a14ff0fdf147e3702197db2cadb878460" title="isync" alt="" coords="941,157,995,184"/><area shape="rect" id="node14" href="notify_8c.html#a7ac88f15243030290e4d57c3c9ac7c98" title="nprintf" alt="" coords="797,5,856,32"/></map>
 </div>
 </p>
 
@@ -573,8 +659,13 @@ Variables</h2></td></tr>
 
 <p>References <a class="el" href="device__mouse_8c_source.html#l00009">setactive_mouse()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                                                                                {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="device__mouse_8c.html#a78f463c19ce586845e80094c949beda2">setactive_mouse</a>(kb, 1);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    (void)dummy1;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    (void)dummy2;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    (void)dummy3;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    (void)dummy4;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="device__mouse_8c.html#a78f463c19ce586845e80094c949beda2">setactive_mouse</a>(kb, 1);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="ttc" id="device__mouse_8c_html_a78f463c19ce586845e80094c949beda2"><div class="ttname"><a href="device__mouse_8c.html#a78f463c19ce586845e80094c949beda2">setactive_mouse</a></div><div class="ttdeci">int setactive_mouse(usbdevice *kb, int active)</div><div class="ttdef"><b>Definition:</b> <a href="device__mouse_8c_source.html#l00009">device_mouse.c:9</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -584,7 +675,7 @@ Variables</h2></td></tr>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="device_8h_a645921c6fa6d8c1c2f3db338113fac51_cgraph.png" border="0" usemap="#device_8h_a645921c6fa6d8c1c2f3db338113fac51_cgraph" alt=""/></div>
 <map name="device_8h_a645921c6fa6d8c1c2f3db338113fac51_cgraph" id="device_8h_a645921c6fa6d8c1c2f3db338113fac51_cgraph">
-<area shape="rect" id="node2" href="device__mouse_8c.html#a78f463c19ce586845e80094c949beda2" title="setactive_mouse" alt="" coords="190,31,311,57"/><area shape="rect" id="node3" href="input_8c.html#ae360d0b9a764a1d38c5be5464be8b70a" title="inputupdate" alt="" coords="361,31,450,57"/><area shape="rect" id="node4" href="input_8c.html#aed8e9842ed5750c1d328c5dc4c1ba2bd" title="inputupdate_keys" alt="" coords="499,56,623,83"/><area shape="rect" id="node6" href="input_8h.html#a9f2cfb2d883ae4a3732047fe3f3da683" title="os_mousemove" alt="" coords="672,5,787,32"/><area shape="rect" id="node5" href="input_8c.html#abd38419ce56379559481f51d9491adeb" title="macromask" alt="" coords="684,56,775,83"/><area shape="rect" id="node8" href="input_8h.html#af0d3401f317f3214dadad7d1a3378c58" title="os_keypress" alt="" coords="681,107,777,133"/><area shape="rect" id="node9" href="notify_8c.html#ac2411c0997dfdbefdebd45f2584a5d04" title="nprintkey" alt="" coords="692,157,767,184"/><area shape="rect" id="node7" href="input__linux_8c.html#a14ff0fdf147e3702197db2cadb878460" title="isync" alt="" coords="837,56,891,83"/><area shape="rect" id="node10" href="notify_8c.html#a7ac88f15243030290e4d57c3c9ac7c98" title="nprintf" alt="" coords="835,157,893,184"/></map>
+<area shape="rect" id="node2" href="device__mouse_8c.html#a78f463c19ce586845e80094c949beda2" title="setactive_mouse" alt="" coords="190,196,311,223"/><area shape="rect" id="node3" href="input_8c.html#ae360d0b9a764a1d38c5be5464be8b70a" title="inputupdate" alt="" coords="361,196,450,223"/><area shape="rect" id="node4" href="input_8c.html#aed8e9842ed5750c1d328c5dc4c1ba2bd" title="inputupdate_keys Handle input from Keyboard or mouse; start Macrof if detected. " alt="" coords="499,132,623,159"/><area shape="rect" id="node9" href="input_8h.html#a9f2cfb2d883ae4a3732047fe3f3da683" title="os_mousemove" alt="" coords="820,259,935,285"/><area shape="rect" id="node5" href="input_8c.html#abd38419ce56379559481f51d9491adeb" title="macromask" alt="" coords="672,157,763,184"/><area shape="rect" id="node6" href="input_8c.html#a42ef48810461524270042eeda9616dba" title="play_macro is the code for all threads started to play a macro. " alt="" coords="673,107,762,133"/><area shape="rect" id="node8" href="input_8c.html#a34b6a3d2e97732b6973cd608e35317c9" title="macro_pt_first returns the first pthread_id but does not remove the first entry. " alt="" coords="825,208,930,235"/><area shape="rect" id="node11" href="input_8h.html#af0d3401f317f3214dadad7d1a3378c58" title="os_keypress" alt="" coords="829,56,925,83"/><area shape="rect" id="node13" href="notify_8c.html#ac2411c0997dfdbefdebd45f2584a5d04" title="nprintkey" alt="" coords="680,5,755,32"/><area shape="rect" id="node7" href="input_8c.html#a225fb4bb1f20d4a8b524f5d72763367d" title="macro_pt_enqueue Save the new thread in the single linked list (FIFO). " alt="" coords="811,107,943,133"/><area shape="rect" id="node12" href="input_8c.html#a712ce5a59c9a281c4d4c4d0ba3446de7" title="macro_pt_dequeue gets the first thread id of the list and returns the thread_id stored in it..." alt="" coords="811,157,943,184"/><area shape="rect" id="node10" href="input__linux_8c.html#a14ff0fdf147e3702197db2cadb878460" title="isync" alt="" coords="992,157,1045,184"/><area shape="rect" id="node14" href="notify_8c.html#a7ac88f15243030290e4d57c3c9ac7c98" title="nprintf" alt="" coords="848,5,907,32"/></map>
 </div>
 </p>
 
@@ -632,13 +723,18 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device__keyboard_8c_source.html#l00116">116</a> of file <a class="el" href="device__keyboard_8c_source.html">device_keyboard.c</a>.</p>
+<p>Definition at line <a class="el" href="device__keyboard_8c_source.html#l00123">123</a> of file <a class="el" href="device__keyboard_8c_source.html">device_keyboard.c</a>.</p>
 
-<p>References <a class="el" href="device__keyboard_8c_source.html#l00018">setactive_kb()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                                                                                           {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="device__keyboard_8c.html#aeb1b886efdcfce59e4ee8977ba2fd135">setactive_kb</a>(kb, 0);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
-<div class="ttc" id="device__keyboard_8c_html_aeb1b886efdcfce59e4ee8977ba2fd135"><div class="ttname"><a href="device__keyboard_8c.html#aeb1b886efdcfce59e4ee8977ba2fd135">setactive_kb</a></div><div class="ttdeci">int setactive_kb(usbdevice *kb, int active)</div><div class="ttdef"><b>Definition:</b> <a href="device__keyboard_8c_source.html#l00018">device_keyboard.c:18</a></div></div>
+<p>References <a class="el" href="device__keyboard_8c_source.html#l00020">setactive_kb()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                                                                                           {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    (void)dummy1;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    (void)dummy2;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    (void)dummy3;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    (void)dummy4;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="device__keyboard_8c.html#aeb1b886efdcfce59e4ee8977ba2fd135">setactive_kb</a>(kb, 0);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
+<div class="ttc" id="device__keyboard_8c_html_aeb1b886efdcfce59e4ee8977ba2fd135"><div class="ttname"><a href="device__keyboard_8c.html#aeb1b886efdcfce59e4ee8977ba2fd135">setactive_kb</a></div><div class="ttdeci">int setactive_kb(usbdevice *kb, int active)</div><div class="ttdef"><b>Definition:</b> <a href="device__keyboard_8c_source.html#l00020">device_keyboard.c:20</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -647,7 +743,7 @@ Variables</h2></td></tr>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="device_8h_ae904b92525c5e59de06c92a95120bdeb_cgraph.png" border="0" usemap="#device_8h_ae904b92525c5e59de06c92a95120bdeb_cgraph" alt=""/></div>
 <map name="device_8h_ae904b92525c5e59de06c92a95120bdeb_cgraph" id="device_8h_ae904b92525c5e59de06c92a95120bdeb_cgraph">
-<area shape="rect" id="node2" href="device__keyboard_8c.html#aeb1b886efdcfce59e4ee8977ba2fd135" title="setactive_kb" alt="" coords="149,31,245,57"/><area shape="rect" id="node3" href="input_8c.html#ae360d0b9a764a1d38c5be5464be8b70a" title="inputupdate" alt="" coords="294,31,383,57"/><area shape="rect" id="node4" href="input_8c.html#aed8e9842ed5750c1d328c5dc4c1ba2bd" title="inputupdate_keys" alt="" coords="433,56,557,83"/><area shape="rect" id="node6" href="input_8h.html#a9f2cfb2d883ae4a3732047fe3f3da683" title="os_mousemove" alt="" coords="605,5,720,32"/><area shape="rect" id="node5" href="input_8c.html#abd38419ce56379559481f51d9491adeb" title="macromask" alt="" coords="617,56,708,83"/><area shape="rect" id="node8" href="input_8h.html#af0d3401f317f3214dadad7d1a3378c58" title="os_keypress" alt="" coords="615,107,711,133"/><area shape="rect" id="node9" href="notify_8c.html#ac2411c0997dfdbefdebd45f2584a5d04" title="nprintkey" alt="" coords="625,157,700,184"/><area shape="rect" id="node7" href="input__linux_8c.html#a14ff0fdf147e3702197db2cadb878460" title="isync" alt="" coords="771,56,824,83"/><area shape="rect" id="node10" href="notify_8c.html#a7ac88f15243030290e4d57c3c9ac7c98" title="nprintf" alt="" coords="768,157,827,184"/></map>
+<area shape="rect" id="node2" href="device__keyboard_8c.html#aeb1b886efdcfce59e4ee8977ba2fd135" title="setactive_kb" alt="" coords="149,196,245,223"/><area shape="rect" id="node3" href="input_8c.html#ae360d0b9a764a1d38c5be5464be8b70a" title="inputupdate" alt="" coords="294,196,383,223"/><area shape="rect" id="node4" href="input_8c.html#aed8e9842ed5750c1d328c5dc4c1ba2bd" title="inputupdate_keys Handle input from Keyboard or mouse; start Macrof if detected. " alt="" coords="433,132,557,159"/><area shape="rect" id="node9" href="input_8h.html#a9f2cfb2d883ae4a3732047fe3f3da683" title="os_mousemove" alt="" coords="753,259,868,285"/><area shape="rect" id="node5" href="input_8c.html#abd38419ce56379559481f51d9491adeb" title="macromask" alt="" coords="605,157,696,184"/><area shape="rect" id="node6" href="input_8c.html#a42ef48810461524270042eeda9616dba" title="play_macro is the code for all threads started to play a macro. " alt="" coords="606,107,695,133"/><area shape="rect" id="node8" href="input_8c.html#a34b6a3d2e97732b6973cd608e35317c9" title="macro_pt_first returns the first pthread_id but does not remove the first entry. " alt="" coords="758,208,863,235"/><area shape="rect" id="node11" href="input_8h.html#af0d3401f317f3214dadad7d1a3378c58" title="os_keypress" alt="" coords="763,56,859,83"/><area shape="rect" id="node13" href="notify_8c.html#ac2411c0997dfdbefdebd45f2584a5d04" title="nprintkey" alt="" coords="613,5,688,32"/><area shape="rect" id="node7" href="input_8c.html#a225fb4bb1f20d4a8b524f5d72763367d" title="macro_pt_enqueue Save the new thread in the single linked list (FIFO). " alt="" coords="745,107,877,133"/><area shape="rect" id="node12" href="input_8c.html#a712ce5a59c9a281c4d4c4d0ba3446de7" title="macro_pt_dequeue gets the first thread id of the list and returns the thread_id stored in it..." alt="" coords="745,157,877,184"/><area shape="rect" id="node10" href="input__linux_8c.html#a14ff0fdf147e3702197db2cadb878460" title="isync" alt="" coords="925,157,979,184"/><area shape="rect" id="node14" href="notify_8c.html#a7ac88f15243030290e4d57c3c9ac7c98" title="nprintf" alt="" coords="781,5,840,32"/></map>
 </div>
 </p>
 
@@ -695,12 +791,17 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device__mouse_8c_source.html#l00048">48</a> of file <a class="el" href="device__mouse_8c_source.html">device_mouse.c</a>.</p>
+<p>Definition at line <a class="el" href="device__mouse_8c_source.html#l00053">53</a> of file <a class="el" href="device__mouse_8c_source.html">device_mouse.c</a>.</p>
 
 <p>References <a class="el" href="device__mouse_8c_source.html#l00009">setactive_mouse()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                                                                              {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="device__mouse_8c.html#a78f463c19ce586845e80094c949beda2">setactive_mouse</a>(kb, 0);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                                                                              {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    (void)dummy1;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    (void)dummy2;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    (void)dummy3;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    (void)dummy4;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="device__mouse_8c.html#a78f463c19ce586845e80094c949beda2">setactive_mouse</a>(kb, 0);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
 <div class="ttc" id="device__mouse_8c_html_a78f463c19ce586845e80094c949beda2"><div class="ttname"><a href="device__mouse_8c.html#a78f463c19ce586845e80094c949beda2">setactive_mouse</a></div><div class="ttdeci">int setactive_mouse(usbdevice *kb, int active)</div><div class="ttdef"><b>Definition:</b> <a href="device__mouse_8c_source.html#l00009">device_mouse.c:9</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -710,7 +811,7 @@ Variables</h2></td></tr>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="device_8h_ac071786fa2b1fb41f79c7876666f686c_cgraph.png" border="0" usemap="#device_8h_ac071786fa2b1fb41f79c7876666f686c_cgraph" alt=""/></div>
 <map name="device_8h_ac071786fa2b1fb41f79c7876666f686c_cgraph" id="device_8h_ac071786fa2b1fb41f79c7876666f686c_cgraph">
-<area shape="rect" id="node2" href="device__mouse_8c.html#a78f463c19ce586845e80094c949beda2" title="setactive_mouse" alt="" coords="174,31,295,57"/><area shape="rect" id="node3" href="input_8c.html#ae360d0b9a764a1d38c5be5464be8b70a" title="inputupdate" alt="" coords="345,31,434,57"/><area shape="rect" id="node4" href="input_8c.html#aed8e9842ed5750c1d328c5dc4c1ba2bd" title="inputupdate_keys" alt="" coords="483,56,607,83"/><area shape="rect" id="node6" href="input_8h.html#a9f2cfb2d883ae4a3732047fe3f3da683" title="os_mousemove" alt="" coords="656,5,771,32"/><area shape="rect" id="node5" href="input_8c.html#abd38419ce56379559481f51d9491adeb" title="macromask" alt="" coords="668,56,759,83"/><area shape="rect" id="node8" href="input_8h.html#af0d3401f317f3214dadad7d1a3378c58" title="os_keypress" alt="" coords="665,107,761,133"/><area shape="rect" id="node9" href="notify_8c.html#ac2411c0997dfdbefdebd45f2584a5d04" title="nprintkey" alt="" coords="676,157,751,184"/><area shape="rect" id="node7" href="input__linux_8c.html#a14ff0fdf147e3702197db2cadb878460" title="isync" alt="" coords="821,56,875,83"/><area shape="rect" id="node10" href="notify_8c.html#a7ac88f15243030290e4d57c3c9ac7c98" title="nprintf" alt="" coords="819,157,877,184"/></map>
+<area shape="rect" id="node2" href="device__mouse_8c.html#a78f463c19ce586845e80094c949beda2" title="setactive_mouse" alt="" coords="174,196,295,223"/><area shape="rect" id="node3" href="input_8c.html#ae360d0b9a764a1d38c5be5464be8b70a" title="inputupdate" alt="" coords="345,196,434,223"/><area shape="rect" id="node4" href="input_8c.html#aed8e9842ed5750c1d328c5dc4c1ba2bd" title="inputupdate_keys Handle input from Keyboard or mouse; start Macrof if detected. " alt="" coords="483,132,607,159"/><area shape="rect" id="node9" href="input_8h.html#a9f2cfb2d883ae4a3732047fe3f3da683" title="os_mousemove" alt="" coords="804,259,919,285"/><area shape="rect" id="node5" href="input_8c.html#abd38419ce56379559481f51d9491adeb" title="macromask" alt="" coords="656,157,747,184"/><area shape="rect" id="node6" href="input_8c.html#a42ef48810461524270042eeda9616dba" title="play_macro is the code for all threads started to play a macro. " alt="" coords="657,107,746,133"/><area shape="rect" id="node8" href="input_8c.html#a34b6a3d2e97732b6973cd608e35317c9" title="macro_pt_first returns the first pthread_id but does not remove the first entry. " alt="" coords="809,208,914,235"/><area shape="rect" id="node11" href="input_8h.html#af0d3401f317f3214dadad7d1a3378c58" title="os_keypress" alt="" coords="813,56,909,83"/><area shape="rect" id="node13" href="notify_8c.html#ac2411c0997dfdbefdebd45f2584a5d04" title="nprintkey" alt="" coords="664,5,739,32"/><area shape="rect" id="node7" href="input_8c.html#a225fb4bb1f20d4a8b524f5d72763367d" title="macro_pt_enqueue Save the new thread in the single linked list (FIFO). " alt="" coords="795,107,927,133"/><area shape="rect" id="node12" href="input_8c.html#a712ce5a59c9a281c4d4c4d0ba3446de7" title="macro_pt_dequeue gets the first thread id of the list and returns the thread_id stored in it..." alt="" coords="795,157,927,184"/><area shape="rect" id="node10" href="input__linux_8c.html#a14ff0fdf147e3702197db2cadb878460" title="isync" alt="" coords="976,157,1029,184"/><area shape="rect" id="node14" href="notify_8c.html#a7ac88f15243030290e4d57c3c9ac7c98" title="nprintf" alt="" coords="832,5,891,32"/></map>
 </div>
 </p>
 
@@ -758,23 +859,27 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device__mouse_8c_source.html#l00052">52</a> of file <a class="el" href="device__mouse_8c_source.html">device_mouse.c</a>.</p>
+<p>Definition at line <a class="el" href="device__mouse_8c_source.html#l00062">62</a> of file <a class="el" href="device__mouse_8c_source.html">device_mouse.c</a>.</p>
 
-<p>References <a class="el" href="structures_8h_source.html#l00175">MSG_SIZE</a>, <a class="el" href="structures_8h_source.html#l00240">usbdevice::pollrate</a>, and <a class="el" href="usb_8h_source.html#l00130">usbsend</a>.</p>
-<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                                                                          {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> msg[<a class="code" href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a>] = {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        0x07, 0x0a, 0, 0, (<a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a>)rate</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    };</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a>(kb, msg, 1))</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// Device should disconnect+reconnect, but update the poll rate field in case it doesn&#39;t</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    kb-&gt;<a class="code" href="structures_8h.html#a56e8458239a40a080e9cccf901875285">pollrate</a> = rate;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
-<div class="ttc" id="structures_8h_html_ad4d025ecf1bdbf8b244ca688df8e478d"><div class="ttname"><a href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a></div><div class="ttdeci">#define MSG_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00175">structures.h:175</a></div></div>
+<p>References <a class="el" href="structures_8h_source.html#l00176">MSG_SIZE</a>, <a class="el" href="structures_8h_source.html#l00241">usbdevice::pollrate</a>, and <a class="el" href="usb_8h_source.html#l00264">usbsend</a>.</p>
+<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                                                                          {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    (void)dummy1;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    (void)dummy2;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    (void)dummy3;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> msg[<a class="code" href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a>] = {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        0x07, 0x0a, 0, 0, (<a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a>)rate</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    };</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a>(kb, msg, 1))</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// Device should disconnect+reconnect, but update the poll rate field in case it doesn&#39;t</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    kb-&gt;<a class="code" href="structures_8h.html#a56e8458239a40a080e9cccf901875285">pollrate</a> = rate;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="ttc" id="structures_8h_html_ad4d025ecf1bdbf8b244ca688df8e478d"><div class="ttname"><a href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a></div><div class="ttdeci">#define MSG_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00176">structures.h:176</a></div></div>
 <div class="ttc" id="includes_8h_html_a65f85814a8290f9797005d3b28e7e5fc"><div class="ttname"><a href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a></div><div class="ttdeci">unsigned char uchar</div><div class="ttdef"><b>Definition:</b> <a href="includes_8h_source.html#l00024">includes.h:24</a></div></div>
-<div class="ttc" id="structures_8h_html_a56e8458239a40a080e9cccf901875285"><div class="ttname"><a href="structures_8h.html#a56e8458239a40a080e9cccf901875285">usbdevice::pollrate</a></div><div class="ttdeci">char pollrate</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00240">structures.h:240</a></div></div>
-<div class="ttc" id="usb_8h_html_a5eaa2b8ffe9e62747454c74b19876819"><div class="ttname"><a href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a></div><div class="ttdeci">#define usbsend(kb, messages, count)</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00130">usb.h:130</a></div></div>
+<div class="ttc" id="structures_8h_html_a56e8458239a40a080e9cccf901875285"><div class="ttname"><a href="structures_8h.html#a56e8458239a40a080e9cccf901875285">usbdevice::pollrate</a></div><div class="ttdeci">char pollrate</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00241">structures.h:241</a></div></div>
+<div class="ttc" id="usb_8h_html_a5eaa2b8ffe9e62747454c74b19876819"><div class="ttname"><a href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a></div><div class="ttdeci">#define usbsend(kb, messages, count)</div><div class="ttdoc">usbsend macro is used to wrap _usbsend() with debugging information (file and lineno) ...</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00264">usb.h:264</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -802,129 +907,129 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device__keyboard_8c_source.html#l00018">18</a> of file <a class="el" href="device__keyboard_8c_source.html">device_keyboard.c</a>.</p>
+<p>Definition at line <a class="el" href="device__keyboard_8c_source.html#l00020">20</a> of file <a class="el" href="device__keyboard_8c_source.html">device_keyboard.c</a>.</p>
 
-<p>References <a class="el" href="device_8h_source.html#l00056">ACT_LIGHT</a>, <a class="el" href="device_8h_source.html#l00059">ACT_LOCK</a>, <a class="el" href="device_8h_source.html#l00061">ACT_M1</a>, <a class="el" href="device_8h_source.html#l00062">ACT_M2</a>, <a class="el" href="device_8h_source.html#l00063">ACT_M3</a>, <a class="el" href="device_8h_source.html#l00060">ACT_MR_RING</a>, <a class="el" href="structures_8h_source.html#l00230">usbdevice::active</a>, <a class="el" href="usb_8h_source.html#l00099">DELAY_MEDIUM</a>, <a class="el" href="structures_8h_source.html#l00076">lighting::forceupdate</a>, <a class="el" href="device_8h_source.html#l00022">imutex</a>, <a class="el" href="device_8h_source.html#l00053">IN_CORSAIR</a>, <a class="el" href="device_8h_source.html#l00052">IN_HID</a>, <a class="el" href="structures_8h_source.html#l00244">usbdevice::input</a>, <a class="el" href="input_8c_source.html#l00122">inputupdate()</a>, <a class="el" href="keymap_8c_source.html#l00005">keymap</a>, <a class="el" href="structures_8h_source.html#l00129">usbinput::keys</a>, <a class="el" href="structures_8h_source.html#l00106">usbprofile::lastlight</a>, <a class="el" href="structures_8h_source.html#l00175">MSG_SIZE</a>, <a class="el" href="keymap_8h_source.html#l00024">N_KEYS_HW</a>, <a class="el" href="structures_8h_source.html#l00160">NEEDS_FW_UPDATE</a>, <a class="el" href="structures_8h_source.html#l00220">usbdevice::profile</a>, <a class="el" href="usb_8h_source.html#l00130">usbsend</a>, and <a class="el" href="structures_8h_source.html#l00179">usbdevice::vtable</a>.</p>
+<p>References <a class="el" href="device_8h_source.html#l00068">ACT_LIGHT</a>, <a class="el" href="device_8h_source.html#l00071">ACT_LOCK</a>, <a class="el" href="device_8h_source.html#l00073">ACT_M1</a>, <a class="el" href="device_8h_source.html#l00074">ACT_M2</a>, <a class="el" href="device_8h_source.html#l00075">ACT_M3</a>, <a class="el" href="device_8h_source.html#l00072">ACT_MR_RING</a>, <a class="el" href="structures_8h_source.html#l00231">usbdevice::active</a>, <a class="el" href="usb_8h_source.html#l00175">DELAY_MEDIUM</a>, <a class="el" href="structures_8h_source.html#l00077">lighting::forceupdate</a>, <a class="el" href="device_8h_source.html#l00022">imutex</a>, <a class="el" href="device_8h_source.html#l00065">IN_CORSAIR</a>, <a class="el" href="device_8h_source.html#l00064">IN_HID</a>, <a class="el" href="structures_8h_source.html#l00245">usbdevice::input</a>, <a class="el" href="input_8c_source.html#l00241">inputupdate()</a>, <a class="el" href="keymap_8c_source.html#l00005">keymap</a>, <a class="el" href="structures_8h_source.html#l00130">usbinput::keys</a>, <a class="el" href="structures_8h_source.html#l00107">usbprofile::lastlight</a>, <a class="el" href="structures_8h_source.html#l00176">MSG_SIZE</a>, <a class="el" href="keymap_8h_source.html#l00024">N_KEYS_HW</a>, <a class="el" href="structures_8h_source.html#l00161">NEEDS_FW_UPDATE</a>, <a class="el" href="structures_8h_source.html#l00221">usbdevice::profile</a>, <a class="el" href="usb_8h_source.html#l00264">usbsend</a>, and <a class="el" href="structures_8h_source.html#l00180">usbdevice::vtable</a>.</p>
 
-<p>Referenced by <a class="el" href="device__keyboard_8c_source.html#l00112">cmd_active_kb()</a>, and <a class="el" href="device__keyboard_8c_source.html#l00116">cmd_idle_kb()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                           {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="structures_8h.html#ac041871a5605e5dbcd73c3671ef2a8bc">NEEDS_FW_UPDATE</a>(kb))</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    pthread_mutex_lock(<a class="code" href="device_8h.html#aa87bd893f7d4bd0700cb699c88dd860b">imutex</a>(kb));</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    kb-&gt;<a class="code" href="structures_8h.html#a8889b6a5d3ce83427377e3a3de947f03">active</a> = !!active;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    kb-&gt;<a class="code" href="structures_8h.html#a9601fc030cb4b69d9e05997a44a3a89c">profile</a>-&gt;<a class="code" href="structures_8h.html#a51d0b1cc9f728c74e7134095205e3765">lastlight</a>.<a class="code" href="structures_8h.html#ae593d2a41548d4cc2a3c886caa4a53b2">forceupdate</a> = 1;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">// Clear input</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    memset(&amp;kb-&gt;<a class="code" href="structures_8h.html#a3dfdb1f843ec3df0f2aeca70ee6f011a">input</a>.<a class="code" href="structures_8h.html#a09eb578ef851df58b6b124d9e6cf1dc0">keys</a>, 0, <span class="keyword">sizeof</span>(kb-&gt;<a class="code" href="structures_8h.html#a3dfdb1f843ec3df0f2aeca70ee6f011a">input</a>.<a class="code" href="structures_8h.html#a09eb578ef851df58b6b124d9e6cf1dc0">keys</a>));</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="input_8c.html#ae360d0b9a764a1d38c5be5464be8b70a">inputupdate</a>(kb);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    pthread_mutex_unlock(<a class="code" href="device_8h.html#aa87bd893f7d4bd0700cb699c88dd860b">imutex</a>(kb));</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> msg[3][<a class="code" href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a>] = {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        { 0x07, 0x04, 0 },                  <span class="comment">// Disables or enables HW control for top row</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        { 0x07, 0x40, 0 },                  <span class="comment">// Selects key input</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        { 0x07, 0x05, 2, 0, 0x03, 0x00 }    <span class="comment">// Commits key input selection</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    };</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span>(active){</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="comment">// Put the M-keys (K95) as well as the Brightness/Lock keys into software-controlled mode.</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        msg[0][2] = 2;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a>(kb, msg[0], 1))</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="usb_8h.html#aff3be8eafb827438a28c97b8f9d2ddcc">DELAY_MEDIUM</a>(kb);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="comment">// Set input mode on the keys. They must be grouped into packets of 60 bytes (+ 4 bytes header)</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="comment">// Keys are referenced in byte pairs, with the first byte representing the key and the second byte representing the mode.</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> <a class="code" href="keymap_8h.html#structkey">key</a> = 0; <a class="code" href="keymap_8h.html#structkey">key</a> &lt; <a class="code" href="keymap_8h.html#a8da11aae2aeac140b30ec9bc334bead3">N_KEYS_HW</a>; ){</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordtype">int</span> pair;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordflow">for</span>(pair = 0; pair &lt; 30 &amp;&amp; <a class="code" href="keymap_8h.html#structkey">key</a> &lt; <a class="code" href="keymap_8h.html#a8da11aae2aeac140b30ec9bc334bead3">N_KEYS_HW</a>; pair++, <a class="code" href="keymap_8h.html#structkey">key</a>++){</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="comment">// Select both standard and Corsair input. The standard input will be ignored except in BIOS mode.</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> action = <a class="code" href="device_8h.html#a59cc5a60fd4977cc3badfbd75302d9cd">IN_HID</a> | <a class="code" href="device_8h.html#a97077dc1adc5e5b6d54a0f46c19f57bb">IN_CORSAIR</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="comment">// Additionally, make MR activate the MR ring (this is disabled for now, may be back later)</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="comment">//if(keymap[key].name &amp;&amp; !strcmp(keymap[key].name, &quot;mr&quot;))</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="comment">//    action |= ACT_MR_RING;</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                msg[1][4 + pair * 2] = <a class="code" href="keymap_8h.html#structkey">key</a>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                msg[1][5 + pair * 2] = action;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="comment">// Byte 2 = pair count (usually 30, less on final message)</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            msg[1][2] = pair;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a>(kb, msg[1], 1))</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="comment">// Commit new input settings</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a>(kb, msg[2], 1))</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="usb_8h.html#aff3be8eafb827438a28c97b8f9d2ddcc">DELAY_MEDIUM</a>(kb);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="comment">// Set the M-keys back into hardware mode, restore hardware RGB profile. It has to be sent twice for some reason.</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        msg[0][2] = 1;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a>(kb, msg[0], 1))</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="usb_8h.html#aff3be8eafb827438a28c97b8f9d2ddcc">DELAY_MEDIUM</a>(kb);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a>(kb, msg[0], 1))</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="usb_8h.html#aff3be8eafb827438a28c97b8f9d2ddcc">DELAY_MEDIUM</a>(kb);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#ifdef OS_LINUX</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor"></span>        <span class="comment">// On OSX the default key mappings are fine. On Linux, the G keys will freeze the keyboard. Set the keyboard entirely to HID input.</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> <a class="code" href="keymap_8h.html#structkey">key</a> = 0; <a class="code" href="keymap_8h.html#structkey">key</a> &lt; <a class="code" href="keymap_8h.html#a8da11aae2aeac140b30ec9bc334bead3">N_KEYS_HW</a>; ){</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordtype">int</span> pair;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">for</span>(pair = 0; pair &lt; 30 &amp;&amp; <a class="code" href="keymap_8h.html#structkey">key</a> &lt; <a class="code" href="keymap_8h.html#a8da11aae2aeac140b30ec9bc334bead3">N_KEYS_HW</a>; pair++, <a class="code" href="keymap_8h.html#structkey">key</a>++){</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> action = <a class="code" href="device_8h.html#a59cc5a60fd4977cc3badfbd75302d9cd">IN_HID</a>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="comment">// Enable hardware actions</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="keymap_8c.html#a5972a715b26e6b792acc53ad946e1fbb">keymap</a>[<a class="code" href="keymap_8h.html#structkey">key</a>].name){</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                    <span class="keywordflow">if</span>(!strcmp(<a class="code" href="keymap_8c.html#a5972a715b26e6b792acc53ad946e1fbb">keymap</a>[<a class="code" href="keymap_8h.html#structkey">key</a>].name, <span class="stringliteral">&quot;mr&quot;</span>))</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                        action = <a class="code" href="device_8h.html#a99ea38dbc58aebe3030eebc9f01297a3">ACT_MR_RING</a>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(!strcmp(<a class="code" href="keymap_8c.html#a5972a715b26e6b792acc53ad946e1fbb">keymap</a>[<a class="code" href="keymap_8h.html#structkey">key</a>].name, <span class="stringliteral">&quot;m1&quot;</span>))</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                        action = <a class="code" href="device_8h.html#abf95cdd1fcc5102f0839bf2c8ec6647b">ACT_M1</a>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(!strcmp(<a class="code" href="keymap_8c.html#a5972a715b26e6b792acc53ad946e1fbb">keymap</a>[<a class="code" href="keymap_8h.html#structkey">key</a>].name, <span class="stringliteral">&quot;m2&quot;</span>))</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                        action = <a class="code" href="device_8h.html#add678abfecc319da74fdd09e92144d2a">ACT_M2</a>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(!strcmp(<a class="code" href="keymap_8c.html#a5972a715b26e6b792acc53ad946e1fbb">keymap</a>[<a class="code" href="keymap_8h.html#structkey">key</a>].name, <span class="stringliteral">&quot;m3&quot;</span>))</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                        action = <a class="code" href="device_8h.html#ab1d645d5828b4aa4312b55b751d0f0fe">ACT_M3</a>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(!strcmp(<a class="code" href="keymap_8c.html#a5972a715b26e6b792acc53ad946e1fbb">keymap</a>[<a class="code" href="keymap_8h.html#structkey">key</a>].name, <span class="stringliteral">&quot;light&quot;</span>))</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                        action = <a class="code" href="device_8h.html#a5d6acc7f5c3eabf2b53ed9d5f1499ce1">ACT_LIGHT</a>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(!strcmp(<a class="code" href="keymap_8c.html#a5972a715b26e6b792acc53ad946e1fbb">keymap</a>[<a class="code" href="keymap_8h.html#structkey">key</a>].name, <span class="stringliteral">&quot;lock&quot;</span>))</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                        action = <a class="code" href="device_8h.html#af61e0faecb3b47deb7e4b3b0dae918ea">ACT_LOCK</a>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                msg[1][4 + pair * 2] = <a class="code" href="keymap_8h.html#structkey">key</a>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                msg[1][5 + pair * 2] = action;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="comment">// Byte 2 = pair count (usually 30, less on final message)</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            msg[1][2] = pair;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a>(kb, msg[1], 1))</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="comment">// Commit new input settings</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a>(kb, msg[2], 1))</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="usb_8h.html#aff3be8eafb827438a28c97b8f9d2ddcc">DELAY_MEDIUM</a>(kb);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor"></span>    }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">// Update indicator LEDs if the profile contains settings for them</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    kb-&gt;<a class="code" href="structures_8h.html#a3ad960bd68547aca1f870fac1138023b">vtable</a>-&gt;updateindicators(kb, 0);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
-<div class="ttc" id="structures_8h_html_ad4d025ecf1bdbf8b244ca688df8e478d"><div class="ttname"><a href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a></div><div class="ttdeci">#define MSG_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00175">structures.h:175</a></div></div>
-<div class="ttc" id="structures_8h_html_a51d0b1cc9f728c74e7134095205e3765"><div class="ttname"><a href="structures_8h.html#a51d0b1cc9f728c74e7134095205e3765">usbprofile::lastlight</a></div><div class="ttdeci">lighting lastlight</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00106">structures.h:106</a></div></div>
-<div class="ttc" id="structures_8h_html_a9601fc030cb4b69d9e05997a44a3a89c"><div class="ttname"><a href="structures_8h.html#a9601fc030cb4b69d9e05997a44a3a89c">usbdevice::profile</a></div><div class="ttdeci">usbprofile * profile</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00220">structures.h:220</a></div></div>
-<div class="ttc" id="device_8h_html_a99ea38dbc58aebe3030eebc9f01297a3"><div class="ttname"><a href="device_8h.html#a99ea38dbc58aebe3030eebc9f01297a3">ACT_MR_RING</a></div><div class="ttdeci">#define ACT_MR_RING</div><div class="ttdef"><b>Definition:</b> <a href="device_8h_source.html#l00060">device.h:60</a></div></div>
-<div class="ttc" id="usb_8h_html_aff3be8eafb827438a28c97b8f9d2ddcc"><div class="ttname"><a href="usb_8h.html#aff3be8eafb827438a28c97b8f9d2ddcc">DELAY_MEDIUM</a></div><div class="ttdeci">#define DELAY_MEDIUM(kb)</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00099">usb.h:99</a></div></div>
-<div class="ttc" id="device_8h_html_a5d6acc7f5c3eabf2b53ed9d5f1499ce1"><div class="ttname"><a href="device_8h.html#a5d6acc7f5c3eabf2b53ed9d5f1499ce1">ACT_LIGHT</a></div><div class="ttdeci">#define ACT_LIGHT</div><div class="ttdef"><b>Definition:</b> <a href="device_8h_source.html#l00056">device.h:56</a></div></div>
-<div class="ttc" id="structures_8h_html_a3dfdb1f843ec3df0f2aeca70ee6f011a"><div class="ttname"><a href="structures_8h.html#a3dfdb1f843ec3df0f2aeca70ee6f011a">usbdevice::input</a></div><div class="ttdeci">usbinput input</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00244">structures.h:244</a></div></div>
-<div class="ttc" id="device_8h_html_af61e0faecb3b47deb7e4b3b0dae918ea"><div class="ttname"><a href="device_8h.html#af61e0faecb3b47deb7e4b3b0dae918ea">ACT_LOCK</a></div><div class="ttdeci">#define ACT_LOCK</div><div class="ttdef"><b>Definition:</b> <a href="device_8h_source.html#l00059">device.h:59</a></div></div>
-<div class="ttc" id="device_8h_html_add678abfecc319da74fdd09e92144d2a"><div class="ttname"><a href="device_8h.html#add678abfecc319da74fdd09e92144d2a">ACT_M2</a></div><div class="ttdeci">#define ACT_M2</div><div class="ttdef"><b>Definition:</b> <a href="device_8h_source.html#l00062">device.h:62</a></div></div>
-<div class="ttc" id="structures_8h_html_a09eb578ef851df58b6b124d9e6cf1dc0"><div class="ttname"><a href="structures_8h.html#a09eb578ef851df58b6b124d9e6cf1dc0">usbinput::keys</a></div><div class="ttdeci">uchar keys[((((152+3+12)+25)+7)/8)]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00129">structures.h:129</a></div></div>
-<div class="ttc" id="structures_8h_html_a8889b6a5d3ce83427377e3a3de947f03"><div class="ttname"><a href="structures_8h.html#a8889b6a5d3ce83427377e3a3de947f03">usbdevice::active</a></div><div class="ttdeci">char active</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00230">structures.h:230</a></div></div>
+<p>Referenced by <a class="el" href="device__keyboard_8c_source.html#l00114">cmd_active_kb()</a>, and <a class="el" href="device__keyboard_8c_source.html#l00123">cmd_idle_kb()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                                           {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="structures_8h.html#ac041871a5605e5dbcd73c3671ef2a8bc">NEEDS_FW_UPDATE</a>(kb))</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    pthread_mutex_lock(<a class="code" href="device_8h.html#aa87bd893f7d4bd0700cb699c88dd860b">imutex</a>(kb));</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    kb-&gt;<a class="code" href="structures_8h.html#a8889b6a5d3ce83427377e3a3de947f03">active</a> = !!active;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    kb-&gt;<a class="code" href="structures_8h.html#a9601fc030cb4b69d9e05997a44a3a89c">profile</a>-&gt;<a class="code" href="structures_8h.html#a51d0b1cc9f728c74e7134095205e3765">lastlight</a>.<a class="code" href="structures_8h.html#ae593d2a41548d4cc2a3c886caa4a53b2">forceupdate</a> = 1;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// Clear input</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    memset(&amp;kb-&gt;<a class="code" href="structures_8h.html#a3dfdb1f843ec3df0f2aeca70ee6f011a">input</a>.<a class="code" href="structures_8h.html#a09eb578ef851df58b6b124d9e6cf1dc0">keys</a>, 0, <span class="keyword">sizeof</span>(kb-&gt;<a class="code" href="structures_8h.html#a3dfdb1f843ec3df0f2aeca70ee6f011a">input</a>.<a class="code" href="structures_8h.html#a09eb578ef851df58b6b124d9e6cf1dc0">keys</a>));</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="input_8c.html#ae360d0b9a764a1d38c5be5464be8b70a">inputupdate</a>(kb);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    pthread_mutex_unlock(<a class="code" href="device_8h.html#aa87bd893f7d4bd0700cb699c88dd860b">imutex</a>(kb));</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> msg[3][<a class="code" href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a>] = {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        { 0x07, 0x04, 0 },                  <span class="comment">// Disables or enables HW control for top row</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        { 0x07, 0x40, 0 },                  <span class="comment">// Selects key input</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        { 0x07, 0x05, 2, 0, 0x03, 0x00 }    <span class="comment">// Commits key input selection</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    };</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">if</span>(active){</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="comment">// Put the M-keys (K95) as well as the Brightness/Lock keys into software-controlled mode.</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        msg[0][2] = 2;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a>(kb, msg[0], 1))</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="usb_8h.html#aff3be8eafb827438a28c97b8f9d2ddcc">DELAY_MEDIUM</a>(kb);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="comment">// Set input mode on the keys. They must be grouped into packets of 60 bytes (+ 4 bytes header)</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="comment">// Keys are referenced in byte pairs, with the first byte representing the key and the second byte representing the mode.</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> <a class="code" href="keymap_8h.html#structkey">key</a> = 0; <a class="code" href="keymap_8h.html#structkey">key</a> &lt; <a class="code" href="keymap_8h.html#a8da11aae2aeac140b30ec9bc334bead3">N_KEYS_HW</a>; ){</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordtype">int</span> pair;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">for</span>(pair = 0; pair &lt; 30 &amp;&amp; <a class="code" href="keymap_8h.html#structkey">key</a> &lt; <a class="code" href="keymap_8h.html#a8da11aae2aeac140b30ec9bc334bead3">N_KEYS_HW</a>; pair++, <a class="code" href="keymap_8h.html#structkey">key</a>++){</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="comment">// Select both standard and Corsair input. The standard input will be ignored except in BIOS mode.</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> action = <a class="code" href="device_8h.html#a59cc5a60fd4977cc3badfbd75302d9cd">IN_HID</a> | <a class="code" href="device_8h.html#a97077dc1adc5e5b6d54a0f46c19f57bb">IN_CORSAIR</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="comment">// Additionally, make MR activate the MR ring (this is disabled for now, may be back later)</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="comment">//if(keymap[key].name &amp;&amp; !strcmp(keymap[key].name, &quot;mr&quot;))</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="comment">//    action |= ACT_MR_RING;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                msg[1][4 + pair * 2] = <a class="code" href="keymap_8h.html#structkey">key</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                msg[1][5 + pair * 2] = action;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="comment">// Byte 2 = pair count (usually 30, less on final message)</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            msg[1][2] = pair;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a>(kb, msg[1], 1))</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="comment">// Commit new input settings</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a>(kb, msg[2], 1))</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="usb_8h.html#aff3be8eafb827438a28c97b8f9d2ddcc">DELAY_MEDIUM</a>(kb);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="comment">// Set the M-keys back into hardware mode, restore hardware RGB profile. It has to be sent twice for some reason.</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        msg[0][2] = 1;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a>(kb, msg[0], 1))</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="usb_8h.html#aff3be8eafb827438a28c97b8f9d2ddcc">DELAY_MEDIUM</a>(kb);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a>(kb, msg[0], 1))</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="usb_8h.html#aff3be8eafb827438a28c97b8f9d2ddcc">DELAY_MEDIUM</a>(kb);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#ifdef OS_LINUX</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor"></span>        <span class="comment">// On OSX the default key mappings are fine. On Linux, the G keys will freeze the keyboard. Set the keyboard entirely to HID input.</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> <a class="code" href="keymap_8h.html#structkey">key</a> = 0; <a class="code" href="keymap_8h.html#structkey">key</a> &lt; <a class="code" href="keymap_8h.html#a8da11aae2aeac140b30ec9bc334bead3">N_KEYS_HW</a>; ){</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordtype">int</span> pair;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">for</span>(pair = 0; pair &lt; 30 &amp;&amp; <a class="code" href="keymap_8h.html#structkey">key</a> &lt; <a class="code" href="keymap_8h.html#a8da11aae2aeac140b30ec9bc334bead3">N_KEYS_HW</a>; pair++, <a class="code" href="keymap_8h.html#structkey">key</a>++){</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> action = <a class="code" href="device_8h.html#a59cc5a60fd4977cc3badfbd75302d9cd">IN_HID</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="comment">// Enable hardware actions</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="keymap_8c.html#a31ffccc603ad3264b7d2fd09f468318a">keymap</a>[<a class="code" href="keymap_8h.html#structkey">key</a>].name){</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    <span class="keywordflow">if</span>(!strcmp(<a class="code" href="keymap_8c.html#a31ffccc603ad3264b7d2fd09f468318a">keymap</a>[<a class="code" href="keymap_8h.html#structkey">key</a>].name, <span class="stringliteral">&quot;mr&quot;</span>))</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                        action = <a class="code" href="device_8h.html#a99ea38dbc58aebe3030eebc9f01297a3">ACT_MR_RING</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(!strcmp(<a class="code" href="keymap_8c.html#a31ffccc603ad3264b7d2fd09f468318a">keymap</a>[<a class="code" href="keymap_8h.html#structkey">key</a>].name, <span class="stringliteral">&quot;m1&quot;</span>))</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                        action = <a class="code" href="device_8h.html#abf95cdd1fcc5102f0839bf2c8ec6647b">ACT_M1</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(!strcmp(<a class="code" href="keymap_8c.html#a31ffccc603ad3264b7d2fd09f468318a">keymap</a>[<a class="code" href="keymap_8h.html#structkey">key</a>].name, <span class="stringliteral">&quot;m2&quot;</span>))</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                        action = <a class="code" href="device_8h.html#add678abfecc319da74fdd09e92144d2a">ACT_M2</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(!strcmp(<a class="code" href="keymap_8c.html#a31ffccc603ad3264b7d2fd09f468318a">keymap</a>[<a class="code" href="keymap_8h.html#structkey">key</a>].name, <span class="stringliteral">&quot;m3&quot;</span>))</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                        action = <a class="code" href="device_8h.html#ab1d645d5828b4aa4312b55b751d0f0fe">ACT_M3</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(!strcmp(<a class="code" href="keymap_8c.html#a31ffccc603ad3264b7d2fd09f468318a">keymap</a>[<a class="code" href="keymap_8h.html#structkey">key</a>].name, <span class="stringliteral">&quot;light&quot;</span>))</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                        action = <a class="code" href="device_8h.html#a5d6acc7f5c3eabf2b53ed9d5f1499ce1">ACT_LIGHT</a>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(!strcmp(<a class="code" href="keymap_8c.html#a31ffccc603ad3264b7d2fd09f468318a">keymap</a>[<a class="code" href="keymap_8h.html#structkey">key</a>].name, <span class="stringliteral">&quot;lock&quot;</span>))</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                        action = <a class="code" href="device_8h.html#af61e0faecb3b47deb7e4b3b0dae918ea">ACT_LOCK</a>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                msg[1][4 + pair * 2] = <a class="code" href="keymap_8h.html#structkey">key</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                msg[1][5 + pair * 2] = action;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="comment">// Byte 2 = pair count (usually 30, less on final message)</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            msg[1][2] = pair;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a>(kb, msg[1], 1))</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="comment">// Commit new input settings</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a>(kb, msg[2], 1))</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <a class="code" href="usb_8h.html#aff3be8eafb827438a28c97b8f9d2ddcc">DELAY_MEDIUM</a>(kb);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor"></span>    }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">// Update indicator LEDs if the profile contains settings for them</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    kb-&gt;<a class="code" href="structures_8h.html#a3ad960bd68547aca1f870fac1138023b">vtable</a>-&gt;updateindicators(kb, 0);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
+<div class="ttc" id="structures_8h_html_ad4d025ecf1bdbf8b244ca688df8e478d"><div class="ttname"><a href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a></div><div class="ttdeci">#define MSG_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00176">structures.h:176</a></div></div>
+<div class="ttc" id="structures_8h_html_a51d0b1cc9f728c74e7134095205e3765"><div class="ttname"><a href="structures_8h.html#a51d0b1cc9f728c74e7134095205e3765">usbprofile::lastlight</a></div><div class="ttdeci">lighting lastlight</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00107">structures.h:107</a></div></div>
+<div class="ttc" id="structures_8h_html_a9601fc030cb4b69d9e05997a44a3a89c"><div class="ttname"><a href="structures_8h.html#a9601fc030cb4b69d9e05997a44a3a89c">usbdevice::profile</a></div><div class="ttdeci">usbprofile * profile</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00221">structures.h:221</a></div></div>
+<div class="ttc" id="device_8h_html_a99ea38dbc58aebe3030eebc9f01297a3"><div class="ttname"><a href="device_8h.html#a99ea38dbc58aebe3030eebc9f01297a3">ACT_MR_RING</a></div><div class="ttdeci">#define ACT_MR_RING</div><div class="ttdef"><b>Definition:</b> <a href="device_8h_source.html#l00072">device.h:72</a></div></div>
+<div class="ttc" id="usb_8h_html_aff3be8eafb827438a28c97b8f9d2ddcc"><div class="ttname"><a href="usb_8h.html#aff3be8eafb827438a28c97b8f9d2ddcc">DELAY_MEDIUM</a></div><div class="ttdeci">#define DELAY_MEDIUM(kb)</div><div class="ttdoc">the medium delay is used after sending a command before waiting for the answer. </div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00175">usb.h:175</a></div></div>
+<div class="ttc" id="device_8h_html_a5d6acc7f5c3eabf2b53ed9d5f1499ce1"><div class="ttname"><a href="device_8h.html#a5d6acc7f5c3eabf2b53ed9d5f1499ce1">ACT_LIGHT</a></div><div class="ttdeci">#define ACT_LIGHT</div><div class="ttdef"><b>Definition:</b> <a href="device_8h_source.html#l00068">device.h:68</a></div></div>
+<div class="ttc" id="structures_8h_html_a3dfdb1f843ec3df0f2aeca70ee6f011a"><div class="ttname"><a href="structures_8h.html#a3dfdb1f843ec3df0f2aeca70ee6f011a">usbdevice::input</a></div><div class="ttdeci">usbinput input</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00245">structures.h:245</a></div></div>
+<div class="ttc" id="device_8h_html_af61e0faecb3b47deb7e4b3b0dae918ea"><div class="ttname"><a href="device_8h.html#af61e0faecb3b47deb7e4b3b0dae918ea">ACT_LOCK</a></div><div class="ttdeci">#define ACT_LOCK</div><div class="ttdef"><b>Definition:</b> <a href="device_8h_source.html#l00071">device.h:71</a></div></div>
+<div class="ttc" id="device_8h_html_add678abfecc319da74fdd09e92144d2a"><div class="ttname"><a href="device_8h.html#add678abfecc319da74fdd09e92144d2a">ACT_M2</a></div><div class="ttdeci">#define ACT_M2</div><div class="ttdef"><b>Definition:</b> <a href="device_8h_source.html#l00074">device.h:74</a></div></div>
+<div class="ttc" id="structures_8h_html_a09eb578ef851df58b6b124d9e6cf1dc0"><div class="ttname"><a href="structures_8h.html#a09eb578ef851df58b6b124d9e6cf1dc0">usbinput::keys</a></div><div class="ttdeci">uchar keys[((((152+3+12)+25)+7)/8)]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00130">structures.h:130</a></div></div>
+<div class="ttc" id="keymap_8c_html_a31ffccc603ad3264b7d2fd09f468318a"><div class="ttname"><a href="keymap_8c.html#a31ffccc603ad3264b7d2fd09f468318a">keymap</a></div><div class="ttdeci">const key keymap[(((152+3+12)+25)+12)]</div><div class="ttdef"><b>Definition:</b> <a href="keymap_8c_source.html#l00005">keymap.c:5</a></div></div>
+<div class="ttc" id="structures_8h_html_a8889b6a5d3ce83427377e3a3de947f03"><div class="ttname"><a href="structures_8h.html#a8889b6a5d3ce83427377e3a3de947f03">usbdevice::active</a></div><div class="ttdeci">char active</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00231">structures.h:231</a></div></div>
 <div class="ttc" id="keymap_8h_html_a8da11aae2aeac140b30ec9bc334bead3"><div class="ttname"><a href="keymap_8h.html#a8da11aae2aeac140b30ec9bc334bead3">N_KEYS_HW</a></div><div class="ttdeci">#define N_KEYS_HW</div><div class="ttdef"><b>Definition:</b> <a href="keymap_8h_source.html#l00024">keymap.h:24</a></div></div>
-<div class="ttc" id="input_8c_html_ae360d0b9a764a1d38c5be5464be8b70a"><div class="ttname"><a href="input_8c.html#ae360d0b9a764a1d38c5be5464be8b70a">inputupdate</a></div><div class="ttdeci">void inputupdate(usbdevice *kb)</div><div class="ttdef"><b>Definition:</b> <a href="input_8c_source.html#l00122">input.c:122</a></div></div>
+<div class="ttc" id="input_8c_html_ae360d0b9a764a1d38c5be5464be8b70a"><div class="ttname"><a href="input_8c.html#ae360d0b9a764a1d38c5be5464be8b70a">inputupdate</a></div><div class="ttdeci">void inputupdate(usbdevice *kb)</div><div class="ttdef"><b>Definition:</b> <a href="input_8c_source.html#l00241">input.c:241</a></div></div>
 <div class="ttc" id="includes_8h_html_a65f85814a8290f9797005d3b28e7e5fc"><div class="ttname"><a href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a></div><div class="ttdeci">unsigned char uchar</div><div class="ttdef"><b>Definition:</b> <a href="includes_8h_source.html#l00024">includes.h:24</a></div></div>
-<div class="ttc" id="structures_8h_html_ae593d2a41548d4cc2a3c886caa4a53b2"><div class="ttname"><a href="structures_8h.html#ae593d2a41548d4cc2a3c886caa4a53b2">lighting::forceupdate</a></div><div class="ttdeci">uchar forceupdate</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00076">structures.h:76</a></div></div>
-<div class="ttc" id="device_8h_html_a59cc5a60fd4977cc3badfbd75302d9cd"><div class="ttname"><a href="device_8h.html#a59cc5a60fd4977cc3badfbd75302d9cd">IN_HID</a></div><div class="ttdeci">#define IN_HID</div><div class="ttdef"><b>Definition:</b> <a href="device_8h_source.html#l00052">device.h:52</a></div></div>
-<div class="ttc" id="structures_8h_html_ac041871a5605e5dbcd73c3671ef2a8bc"><div class="ttname"><a href="structures_8h.html#ac041871a5605e5dbcd73c3671ef2a8bc">NEEDS_FW_UPDATE</a></div><div class="ttdeci">#define NEEDS_FW_UPDATE(kb)</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00160">structures.h:160</a></div></div>
-<div class="ttc" id="structures_8h_html_a3ad960bd68547aca1f870fac1138023b"><div class="ttname"><a href="structures_8h.html#a3ad960bd68547aca1f870fac1138023b">usbdevice::vtable</a></div><div class="ttdeci">const union devcmd * vtable</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00179">structures.h:179</a></div></div>
+<div class="ttc" id="structures_8h_html_ae593d2a41548d4cc2a3c886caa4a53b2"><div class="ttname"><a href="structures_8h.html#ae593d2a41548d4cc2a3c886caa4a53b2">lighting::forceupdate</a></div><div class="ttdeci">uchar forceupdate</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00077">structures.h:77</a></div></div>
+<div class="ttc" id="device_8h_html_a59cc5a60fd4977cc3badfbd75302d9cd"><div class="ttname"><a href="device_8h.html#a59cc5a60fd4977cc3badfbd75302d9cd">IN_HID</a></div><div class="ttdeci">#define IN_HID</div><div class="ttdef"><b>Definition:</b> <a href="device_8h_source.html#l00064">device.h:64</a></div></div>
+<div class="ttc" id="structures_8h_html_ac041871a5605e5dbcd73c3671ef2a8bc"><div class="ttname"><a href="structures_8h.html#ac041871a5605e5dbcd73c3671ef2a8bc">NEEDS_FW_UPDATE</a></div><div class="ttdeci">#define NEEDS_FW_UPDATE(kb)</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00161">structures.h:161</a></div></div>
+<div class="ttc" id="structures_8h_html_a3ad960bd68547aca1f870fac1138023b"><div class="ttname"><a href="structures_8h.html#a3ad960bd68547aca1f870fac1138023b">usbdevice::vtable</a></div><div class="ttdeci">const union devcmd * vtable</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00180">structures.h:180</a></div></div>
 <div class="ttc" id="device_8h_html_aa87bd893f7d4bd0700cb699c88dd860b"><div class="ttname"><a href="device_8h.html#aa87bd893f7d4bd0700cb699c88dd860b">imutex</a></div><div class="ttdeci">#define imutex(kb)</div><div class="ttdef"><b>Definition:</b> <a href="device_8h_source.html#l00022">device.h:22</a></div></div>
-<div class="ttc" id="device_8h_html_ab1d645d5828b4aa4312b55b751d0f0fe"><div class="ttname"><a href="device_8h.html#ab1d645d5828b4aa4312b55b751d0f0fe">ACT_M3</a></div><div class="ttdeci">#define ACT_M3</div><div class="ttdef"><b>Definition:</b> <a href="device_8h_source.html#l00063">device.h:63</a></div></div>
-<div class="ttc" id="keymap_8c_html_a5972a715b26e6b792acc53ad946e1fbb"><div class="ttname"><a href="keymap_8c.html#a5972a715b26e6b792acc53ad946e1fbb">keymap</a></div><div class="ttdeci">const key keymap[(((152+3+12)+25)+11)]</div><div class="ttdef"><b>Definition:</b> <a href="keymap_8c_source.html#l00005">keymap.c:5</a></div></div>
-<div class="ttc" id="device_8h_html_abf95cdd1fcc5102f0839bf2c8ec6647b"><div class="ttname"><a href="device_8h.html#abf95cdd1fcc5102f0839bf2c8ec6647b">ACT_M1</a></div><div class="ttdeci">#define ACT_M1</div><div class="ttdef"><b>Definition:</b> <a href="device_8h_source.html#l00061">device.h:61</a></div></div>
-<div class="ttc" id="usb_8h_html_a5eaa2b8ffe9e62747454c74b19876819"><div class="ttname"><a href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a></div><div class="ttdeci">#define usbsend(kb, messages, count)</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00130">usb.h:130</a></div></div>
+<div class="ttc" id="device_8h_html_ab1d645d5828b4aa4312b55b751d0f0fe"><div class="ttname"><a href="device_8h.html#ab1d645d5828b4aa4312b55b751d0f0fe">ACT_M3</a></div><div class="ttdeci">#define ACT_M3</div><div class="ttdef"><b>Definition:</b> <a href="device_8h_source.html#l00075">device.h:75</a></div></div>
+<div class="ttc" id="device_8h_html_abf95cdd1fcc5102f0839bf2c8ec6647b"><div class="ttname"><a href="device_8h.html#abf95cdd1fcc5102f0839bf2c8ec6647b">ACT_M1</a></div><div class="ttdeci">#define ACT_M1</div><div class="ttdef"><b>Definition:</b> <a href="device_8h_source.html#l00073">device.h:73</a></div></div>
+<div class="ttc" id="usb_8h_html_a5eaa2b8ffe9e62747454c74b19876819"><div class="ttname"><a href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a></div><div class="ttdeci">#define usbsend(kb, messages, count)</div><div class="ttdoc">usbsend macro is used to wrap _usbsend() with debugging information (file and lineno) ...</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00264">usb.h:264</a></div></div>
 <div class="ttc" id="keymap_8h_html_structkey"><div class="ttname"><a href="keymap_8h.html#structkey">key</a></div><div class="ttdef"><b>Definition:</b> <a href="keymap_8h_source.html#l00049">keymap.h:49</a></div></div>
-<div class="ttc" id="device_8h_html_a97077dc1adc5e5b6d54a0f46c19f57bb"><div class="ttname"><a href="device_8h.html#a97077dc1adc5e5b6d54a0f46c19f57bb">IN_CORSAIR</a></div><div class="ttdeci">#define IN_CORSAIR</div><div class="ttdef"><b>Definition:</b> <a href="device_8h_source.html#l00053">device.h:53</a></div></div>
+<div class="ttc" id="device_8h_html_a97077dc1adc5e5b6d54a0f46c19f57bb"><div class="ttname"><a href="device_8h.html#a97077dc1adc5e5b6d54a0f46c19f57bb">IN_CORSAIR</a></div><div class="ttdeci">#define IN_CORSAIR</div><div class="ttdef"><b>Definition:</b> <a href="device_8h_source.html#l00065">device.h:65</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -933,7 +1038,7 @@ Variables</h2></td></tr>
 <div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="device_8h_aeb1b886efdcfce59e4ee8977ba2fd135_cgraph.png" border="0" usemap="#device_8h_aeb1b886efdcfce59e4ee8977ba2fd135_cgraph" alt=""/></div>
 <map name="device_8h_aeb1b886efdcfce59e4ee8977ba2fd135_cgraph" id="device_8h_aeb1b886efdcfce59e4ee8977ba2fd135_cgraph">
-<area shape="rect" id="node2" href="input_8c.html#ae360d0b9a764a1d38c5be5464be8b70a" title="inputupdate" alt="" coords="150,31,239,57"/><area shape="rect" id="node3" href="input_8c.html#aed8e9842ed5750c1d328c5dc4c1ba2bd" title="inputupdate_keys" alt="" coords="289,56,413,83"/><area shape="rect" id="node5" href="input_8h.html#a9f2cfb2d883ae4a3732047fe3f3da683" title="os_mousemove" alt="" coords="461,5,576,32"/><area shape="rect" id="node4" href="input_8c.html#abd38419ce56379559481f51d9491adeb" title="macromask" alt="" coords="473,56,564,83"/><area shape="rect" id="node7" href="input_8h.html#af0d3401f317f3214dadad7d1a3378c58" title="os_keypress" alt="" coords="471,107,567,133"/><area shape="rect" id="node8" href="notify_8c.html#ac2411c0997dfdbefdebd45f2584a5d04" title="nprintkey" alt="" coords="481,157,556,184"/><area shape="rect" id="node6" href="input__linux_8c.html#a14ff0fdf147e3702197db2cadb878460" title="isync" alt="" coords="627,56,680,83"/><area shape="rect" id="node9" href="notify_8c.html#a7ac88f15243030290e4d57c3c9ac7c98" title="nprintf" alt="" coords="624,157,683,184"/></map>
+<area shape="rect" id="node2" href="input_8c.html#ae360d0b9a764a1d38c5be5464be8b70a" title="inputupdate" alt="" coords="150,196,239,223"/><area shape="rect" id="node3" href="input_8c.html#aed8e9842ed5750c1d328c5dc4c1ba2bd" title="inputupdate_keys Handle input from Keyboard or mouse; start Macrof if detected. " alt="" coords="289,132,413,159"/><area shape="rect" id="node8" href="input_8h.html#a9f2cfb2d883ae4a3732047fe3f3da683" title="os_mousemove" alt="" coords="609,259,724,285"/><area shape="rect" id="node4" href="input_8c.html#abd38419ce56379559481f51d9491adeb" title="macromask" alt="" coords="461,157,552,184"/><area shape="rect" id="node5" href="input_8c.html#a42ef48810461524270042eeda9616dba" title="play_macro is the code for all threads started to play a macro. " alt="" coords="462,107,551,133"/><area shape="rect" id="node7" href="input_8c.html#a34b6a3d2e97732b6973cd608e35317c9" title="macro_pt_first returns the first pthread_id but does not remove the first entry. " alt="" coords="614,208,719,235"/><area shape="rect" id="node10" href="input_8h.html#af0d3401f317f3214dadad7d1a3378c58" title="os_keypress" alt="" coords="619,56,715,83"/><area shape="rect" id="node12" href="notify_8c.html#ac2411c0997dfdbefdebd45f2584a5d04" title="nprintkey" alt="" coords="469,5,544,32"/><area shape="rect" id="node6" href="input_8c.html#a225fb4bb1f20d4a8b524f5d72763367d" title="macro_pt_enqueue Save the new thread in the single linked list (FIFO). " alt="" coords="601,107,733,133"/><area shape="rect" id="node11" href="input_8c.html#a712ce5a59c9a281c4d4c4d0ba3446de7" title="macro_pt_dequeue gets the first thread id of the list and returns the thread_id stored in it..." alt="" coords="601,157,733,184"/><area shape="rect" id="node9" href="input__linux_8c.html#a14ff0fdf147e3702197db2cadb878460" title="isync" alt="" coords="781,157,835,184"/><area shape="rect" id="node13" href="notify_8c.html#a7ac88f15243030290e4d57c3c9ac7c98" title="nprintf" alt="" coords="637,5,696,32"/></map>
 </div>
 </p>
 
@@ -976,9 +1081,9 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="device__mouse_8c_source.html#l00009">9</a> of file <a class="el" href="device__mouse_8c_source.html">device_mouse.c</a>.</p>
 
-<p>References <a class="el" href="structures_8h_source.html#l00230">usbdevice::active</a>, <a class="el" href="structures_8h_source.html#l00076">lighting::forceupdate</a>, <a class="el" href="device_8h_source.html#l00022">imutex</a>, <a class="el" href="device_8h_source.html#l00053">IN_CORSAIR</a>, <a class="el" href="device_8h_source.html#l00052">IN_HID</a>, <a class="el" href="structures_8h_source.html#l00244">usbdevice::input</a>, <a class="el" href="input_8c_source.html#l00122">inputupdate()</a>, <a class="el" href="structures_8h_source.html#l00129">usbinput::keys</a>, <a class="el" href="structures_8h_source.html#l00106">usbprofile::lastlight</a>, <a class="el" href="structures_8h_source.html#l00175">MSG_SIZE</a>, <a class="el" href="structures_8h_source.html#l00160">NEEDS_FW_UPDATE</a>, <a class="el" href="structures_8h_source.html#l00220">usbdevice::profile</a>, and <a class="el" href="usb_8h_source.html#l00130">usbsend</a>.</p>
+<p>References <a class="el" href="structures_8h_source.html#l00231">usbdevice::active</a>, <a class="el" href="structures_8h_source.html#l00077">lighting::forceupdate</a>, <a class="el" href="device_8h_source.html#l00022">imutex</a>, <a class="el" href="device_8h_source.html#l00065">IN_CORSAIR</a>, <a class="el" href="device_8h_source.html#l00064">IN_HID</a>, <a class="el" href="structures_8h_source.html#l00245">usbdevice::input</a>, <a class="el" href="input_8c_source.html#l00241">inputupdate()</a>, <a class="el" href="structures_8h_source.html#l00130">usbinput::keys</a>, <a class="el" href="structures_8h_source.html#l00107">usbprofile::lastlight</a>, <a class="el" href="structures_8h_source.html#l00176">MSG_SIZE</a>, <a class="el" href="structures_8h_source.html#l00161">NEEDS_FW_UPDATE</a>, <a class="el" href="structures_8h_source.html#l00221">usbdevice::profile</a>, and <a class="el" href="usb_8h_source.html#l00264">usbsend</a>.</p>
 
-<p>Referenced by <a class="el" href="device__mouse_8c_source.html#l00044">cmd_active_mouse()</a>, and <a class="el" href="device__mouse_8c_source.html#l00048">cmd_idle_mouse()</a>.</p>
+<p>Referenced by <a class="el" href="device__mouse_8c_source.html#l00044">cmd_active_mouse()</a>, and <a class="el" href="device__mouse_8c_source.html#l00053">cmd_idle_mouse()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                                              {</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="structures_8h.html#ac041871a5605e5dbcd73c3671ef2a8bc">NEEDS_FW_UPDATE</a>(kb))</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keywordflow">return</span> 0;</div>
@@ -1013,20 +1118,20 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
-<div class="ttc" id="structures_8h_html_ad4d025ecf1bdbf8b244ca688df8e478d"><div class="ttname"><a href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a></div><div class="ttdeci">#define MSG_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00175">structures.h:175</a></div></div>
-<div class="ttc" id="structures_8h_html_a51d0b1cc9f728c74e7134095205e3765"><div class="ttname"><a href="structures_8h.html#a51d0b1cc9f728c74e7134095205e3765">usbprofile::lastlight</a></div><div class="ttdeci">lighting lastlight</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00106">structures.h:106</a></div></div>
-<div class="ttc" id="structures_8h_html_a9601fc030cb4b69d9e05997a44a3a89c"><div class="ttname"><a href="structures_8h.html#a9601fc030cb4b69d9e05997a44a3a89c">usbdevice::profile</a></div><div class="ttdeci">usbprofile * profile</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00220">structures.h:220</a></div></div>
-<div class="ttc" id="structures_8h_html_a3dfdb1f843ec3df0f2aeca70ee6f011a"><div class="ttname"><a href="structures_8h.html#a3dfdb1f843ec3df0f2aeca70ee6f011a">usbdevice::input</a></div><div class="ttdeci">usbinput input</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00244">structures.h:244</a></div></div>
-<div class="ttc" id="structures_8h_html_a09eb578ef851df58b6b124d9e6cf1dc0"><div class="ttname"><a href="structures_8h.html#a09eb578ef851df58b6b124d9e6cf1dc0">usbinput::keys</a></div><div class="ttdeci">uchar keys[((((152+3+12)+25)+7)/8)]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00129">structures.h:129</a></div></div>
-<div class="ttc" id="structures_8h_html_a8889b6a5d3ce83427377e3a3de947f03"><div class="ttname"><a href="structures_8h.html#a8889b6a5d3ce83427377e3a3de947f03">usbdevice::active</a></div><div class="ttdeci">char active</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00230">structures.h:230</a></div></div>
-<div class="ttc" id="input_8c_html_ae360d0b9a764a1d38c5be5464be8b70a"><div class="ttname"><a href="input_8c.html#ae360d0b9a764a1d38c5be5464be8b70a">inputupdate</a></div><div class="ttdeci">void inputupdate(usbdevice *kb)</div><div class="ttdef"><b>Definition:</b> <a href="input_8c_source.html#l00122">input.c:122</a></div></div>
+<div class="ttc" id="structures_8h_html_ad4d025ecf1bdbf8b244ca688df8e478d"><div class="ttname"><a href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a></div><div class="ttdeci">#define MSG_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00176">structures.h:176</a></div></div>
+<div class="ttc" id="structures_8h_html_a51d0b1cc9f728c74e7134095205e3765"><div class="ttname"><a href="structures_8h.html#a51d0b1cc9f728c74e7134095205e3765">usbprofile::lastlight</a></div><div class="ttdeci">lighting lastlight</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00107">structures.h:107</a></div></div>
+<div class="ttc" id="structures_8h_html_a9601fc030cb4b69d9e05997a44a3a89c"><div class="ttname"><a href="structures_8h.html#a9601fc030cb4b69d9e05997a44a3a89c">usbdevice::profile</a></div><div class="ttdeci">usbprofile * profile</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00221">structures.h:221</a></div></div>
+<div class="ttc" id="structures_8h_html_a3dfdb1f843ec3df0f2aeca70ee6f011a"><div class="ttname"><a href="structures_8h.html#a3dfdb1f843ec3df0f2aeca70ee6f011a">usbdevice::input</a></div><div class="ttdeci">usbinput input</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00245">structures.h:245</a></div></div>
+<div class="ttc" id="structures_8h_html_a09eb578ef851df58b6b124d9e6cf1dc0"><div class="ttname"><a href="structures_8h.html#a09eb578ef851df58b6b124d9e6cf1dc0">usbinput::keys</a></div><div class="ttdeci">uchar keys[((((152+3+12)+25)+7)/8)]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00130">structures.h:130</a></div></div>
+<div class="ttc" id="structures_8h_html_a8889b6a5d3ce83427377e3a3de947f03"><div class="ttname"><a href="structures_8h.html#a8889b6a5d3ce83427377e3a3de947f03">usbdevice::active</a></div><div class="ttdeci">char active</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00231">structures.h:231</a></div></div>
+<div class="ttc" id="input_8c_html_ae360d0b9a764a1d38c5be5464be8b70a"><div class="ttname"><a href="input_8c.html#ae360d0b9a764a1d38c5be5464be8b70a">inputupdate</a></div><div class="ttdeci">void inputupdate(usbdevice *kb)</div><div class="ttdef"><b>Definition:</b> <a href="input_8c_source.html#l00241">input.c:241</a></div></div>
 <div class="ttc" id="includes_8h_html_a65f85814a8290f9797005d3b28e7e5fc"><div class="ttname"><a href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a></div><div class="ttdeci">unsigned char uchar</div><div class="ttdef"><b>Definition:</b> <a href="includes_8h_source.html#l00024">includes.h:24</a></div></div>
-<div class="ttc" id="structures_8h_html_ae593d2a41548d4cc2a3c886caa4a53b2"><div class="ttname"><a href="structures_8h.html#ae593d2a41548d4cc2a3c886caa4a53b2">lighting::forceupdate</a></div><div class="ttdeci">uchar forceupdate</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00076">structures.h:76</a></div></div>
-<div class="ttc" id="device_8h_html_a59cc5a60fd4977cc3badfbd75302d9cd"><div class="ttname"><a href="device_8h.html#a59cc5a60fd4977cc3badfbd75302d9cd">IN_HID</a></div><div class="ttdeci">#define IN_HID</div><div class="ttdef"><b>Definition:</b> <a href="device_8h_source.html#l00052">device.h:52</a></div></div>
-<div class="ttc" id="structures_8h_html_ac041871a5605e5dbcd73c3671ef2a8bc"><div class="ttname"><a href="structures_8h.html#ac041871a5605e5dbcd73c3671ef2a8bc">NEEDS_FW_UPDATE</a></div><div class="ttdeci">#define NEEDS_FW_UPDATE(kb)</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00160">structures.h:160</a></div></div>
+<div class="ttc" id="structures_8h_html_ae593d2a41548d4cc2a3c886caa4a53b2"><div class="ttname"><a href="structures_8h.html#ae593d2a41548d4cc2a3c886caa4a53b2">lighting::forceupdate</a></div><div class="ttdeci">uchar forceupdate</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00077">structures.h:77</a></div></div>
+<div class="ttc" id="device_8h_html_a59cc5a60fd4977cc3badfbd75302d9cd"><div class="ttname"><a href="device_8h.html#a59cc5a60fd4977cc3badfbd75302d9cd">IN_HID</a></div><div class="ttdeci">#define IN_HID</div><div class="ttdef"><b>Definition:</b> <a href="device_8h_source.html#l00064">device.h:64</a></div></div>
+<div class="ttc" id="structures_8h_html_ac041871a5605e5dbcd73c3671ef2a8bc"><div class="ttname"><a href="structures_8h.html#ac041871a5605e5dbcd73c3671ef2a8bc">NEEDS_FW_UPDATE</a></div><div class="ttdeci">#define NEEDS_FW_UPDATE(kb)</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00161">structures.h:161</a></div></div>
 <div class="ttc" id="device_8h_html_aa87bd893f7d4bd0700cb699c88dd860b"><div class="ttname"><a href="device_8h.html#aa87bd893f7d4bd0700cb699c88dd860b">imutex</a></div><div class="ttdeci">#define imutex(kb)</div><div class="ttdef"><b>Definition:</b> <a href="device_8h_source.html#l00022">device.h:22</a></div></div>
-<div class="ttc" id="usb_8h_html_a5eaa2b8ffe9e62747454c74b19876819"><div class="ttname"><a href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a></div><div class="ttdeci">#define usbsend(kb, messages, count)</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00130">usb.h:130</a></div></div>
-<div class="ttc" id="device_8h_html_a97077dc1adc5e5b6d54a0f46c19f57bb"><div class="ttname"><a href="device_8h.html#a97077dc1adc5e5b6d54a0f46c19f57bb">IN_CORSAIR</a></div><div class="ttdeci">#define IN_CORSAIR</div><div class="ttdef"><b>Definition:</b> <a href="device_8h_source.html#l00053">device.h:53</a></div></div>
+<div class="ttc" id="usb_8h_html_a5eaa2b8ffe9e62747454c74b19876819"><div class="ttname"><a href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a></div><div class="ttdeci">#define usbsend(kb, messages, count)</div><div class="ttdoc">usbsend macro is used to wrap _usbsend() with debugging information (file and lineno) ...</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00264">usb.h:264</a></div></div>
+<div class="ttc" id="device_8h_html_a97077dc1adc5e5b6d54a0f46c19f57bb"><div class="ttname"><a href="device_8h.html#a97077dc1adc5e5b6d54a0f46c19f57bb">IN_CORSAIR</a></div><div class="ttdeci">#define IN_CORSAIR</div><div class="ttdef"><b>Definition:</b> <a href="device_8h_source.html#l00065">device.h:65</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -1035,7 +1140,7 @@ Variables</h2></td></tr>
 <div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="device_8h_a78f463c19ce586845e80094c949beda2_cgraph.png" border="0" usemap="#device_8h_a78f463c19ce586845e80094c949beda2_cgraph" alt=""/></div>
 <map name="device_8h_a78f463c19ce586845e80094c949beda2_cgraph" id="device_8h_a78f463c19ce586845e80094c949beda2_cgraph">
-<area shape="rect" id="node2" href="input_8c.html#ae360d0b9a764a1d38c5be5464be8b70a" title="inputupdate" alt="" coords="177,31,266,57"/><area shape="rect" id="node3" href="input_8c.html#aed8e9842ed5750c1d328c5dc4c1ba2bd" title="inputupdate_keys" alt="" coords="315,56,439,83"/><area shape="rect" id="node5" href="input_8h.html#a9f2cfb2d883ae4a3732047fe3f3da683" title="os_mousemove" alt="" coords="488,5,603,32"/><area shape="rect" id="node4" href="input_8c.html#abd38419ce56379559481f51d9491adeb" title="macromask" alt="" coords="500,56,591,83"/><area shape="rect" id="node7" href="input_8h.html#af0d3401f317f3214dadad7d1a3378c58" title="os_keypress" alt="" coords="497,107,593,133"/><area shape="rect" id="node8" href="notify_8c.html#ac2411c0997dfdbefdebd45f2584a5d04" title="nprintkey" alt="" coords="508,157,583,184"/><area shape="rect" id="node6" href="input__linux_8c.html#a14ff0fdf147e3702197db2cadb878460" title="isync" alt="" coords="653,56,707,83"/><area shape="rect" id="node9" href="notify_8c.html#a7ac88f15243030290e4d57c3c9ac7c98" title="nprintf" alt="" coords="651,157,709,184"/></map>
+<area shape="rect" id="node2" href="input_8c.html#ae360d0b9a764a1d38c5be5464be8b70a" title="inputupdate" alt="" coords="177,196,266,223"/><area shape="rect" id="node3" href="input_8c.html#aed8e9842ed5750c1d328c5dc4c1ba2bd" title="inputupdate_keys Handle input from Keyboard or mouse; start Macrof if detected. " alt="" coords="315,132,439,159"/><area shape="rect" id="node8" href="input_8h.html#a9f2cfb2d883ae4a3732047fe3f3da683" title="os_mousemove" alt="" coords="636,259,751,285"/><area shape="rect" id="node4" href="input_8c.html#abd38419ce56379559481f51d9491adeb" title="macromask" alt="" coords="488,157,579,184"/><area shape="rect" id="node5" href="input_8c.html#a42ef48810461524270042eeda9616dba" title="play_macro is the code for all threads started to play a macro. " alt="" coords="489,107,578,133"/><area shape="rect" id="node7" href="input_8c.html#a34b6a3d2e97732b6973cd608e35317c9" title="macro_pt_first returns the first pthread_id but does not remove the first entry. " alt="" coords="641,208,746,235"/><area shape="rect" id="node10" href="input_8h.html#af0d3401f317f3214dadad7d1a3378c58" title="os_keypress" alt="" coords="645,56,741,83"/><area shape="rect" id="node12" href="notify_8c.html#ac2411c0997dfdbefdebd45f2584a5d04" title="nprintkey" alt="" coords="496,5,571,32"/><area shape="rect" id="node6" href="input_8c.html#a225fb4bb1f20d4a8b524f5d72763367d" title="macro_pt_enqueue Save the new thread in the single linked list (FIFO). " alt="" coords="627,107,759,133"/><area shape="rect" id="node11" href="input_8c.html#a712ce5a59c9a281c4d4c4d0ba3446de7" title="macro_pt_dequeue gets the first thread id of the list and returns the thread_id stored in it..." alt="" coords="627,157,759,184"/><area shape="rect" id="node9" href="input__linux_8c.html#a14ff0fdf147e3702197db2cadb878460" title="isync" alt="" coords="808,157,861,184"/><area shape="rect" id="node13" href="notify_8c.html#a7ac88f15243030290e4d57c3c9ac7c98" title="nprintf" alt="" coords="664,5,723,32"/></map>
 </div>
 </p>
 
@@ -1076,26 +1181,26 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device__keyboard_8c_source.html#l00120">120</a> of file <a class="el" href="device__keyboard_8c_source.html">device_keyboard.c</a>.</p>
+<p>Definition at line <a class="el" href="device__keyboard_8c_source.html#l00132">132</a> of file <a class="el" href="device__keyboard_8c_source.html">device_keyboard.c</a>.</p>
 
-<p>References <a class="el" href="usb_8h_source.html#l00148">NK95_M1</a>, <a class="el" href="usb_8h_source.html#l00149">NK95_M2</a>, <a class="el" href="usb_8h_source.html#l00150">NK95_M3</a>, and <a class="el" href="usb_8h_source.html#l00144">nk95cmd</a>.</p>
-<div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                                                {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">switch</span>(index % 3){</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">case</span> 0:</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <a class="code" href="usb_8h.html#aefc95e6120686dff0e06bba32ca21ad1">nk95cmd</a>(kb, <a class="code" href="usb_8h.html#ae7897e304126f1b024206ea3001d377d">NK95_M1</a>);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">case</span> 1:</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <a class="code" href="usb_8h.html#aefc95e6120686dff0e06bba32ca21ad1">nk95cmd</a>(kb, <a class="code" href="usb_8h.html#a87e33091f2020d26471856c43195d970">NK95_M2</a>);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">case</span> 2:</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <a class="code" href="usb_8h.html#aefc95e6120686dff0e06bba32ca21ad1">nk95cmd</a>(kb, <a class="code" href="usb_8h.html#aaa072888ddb1a257e739edb3655500bc">NK95_M3</a>);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
-<div class="ttc" id="usb_8h_html_aefc95e6120686dff0e06bba32ca21ad1"><div class="ttname"><a href="usb_8h.html#aefc95e6120686dff0e06bba32ca21ad1">nk95cmd</a></div><div class="ttdeci">#define nk95cmd(kb, command)</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00144">usb.h:144</a></div></div>
-<div class="ttc" id="usb_8h_html_ae7897e304126f1b024206ea3001d377d"><div class="ttname"><a href="usb_8h.html#ae7897e304126f1b024206ea3001d377d">NK95_M1</a></div><div class="ttdeci">#define NK95_M1</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00148">usb.h:148</a></div></div>
-<div class="ttc" id="usb_8h_html_aaa072888ddb1a257e739edb3655500bc"><div class="ttname"><a href="usb_8h.html#aaa072888ddb1a257e739edb3655500bc">NK95_M3</a></div><div class="ttdeci">#define NK95_M3</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00150">usb.h:150</a></div></div>
-<div class="ttc" id="usb_8h_html_a87e33091f2020d26471856c43195d970"><div class="ttname"><a href="usb_8h.html#a87e33091f2020d26471856c43195d970">NK95_M2</a></div><div class="ttdeci">#define NK95_M2</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00149">usb.h:149</a></div></div>
+<p>References <a class="el" href="usb_8h_source.html#l00332">NK95_M1</a>, <a class="el" href="usb_8h_source.html#l00335">NK95_M2</a>, <a class="el" href="usb_8h_source.html#l00338">NK95_M3</a>, and <a class="el" href="usb_8h_source.html#l00321">nk95cmd</a>.</p>
+<div class="fragment"><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                                                {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">switch</span>(index % 3){</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">case</span> 0:</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <a class="code" href="usb_8h.html#aefc95e6120686dff0e06bba32ca21ad1">nk95cmd</a>(kb, <a class="code" href="usb_8h.html#ae7897e304126f1b024206ea3001d377d">NK95_M1</a>);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">case</span> 1:</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <a class="code" href="usb_8h.html#aefc95e6120686dff0e06bba32ca21ad1">nk95cmd</a>(kb, <a class="code" href="usb_8h.html#a87e33091f2020d26471856c43195d970">NK95_M2</a>);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordflow">case</span> 2:</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <a class="code" href="usb_8h.html#aefc95e6120686dff0e06bba32ca21ad1">nk95cmd</a>(kb, <a class="code" href="usb_8h.html#aaa072888ddb1a257e739edb3655500bc">NK95_M3</a>);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;}</div>
+<div class="ttc" id="usb_8h_html_aefc95e6120686dff0e06bba32ca21ad1"><div class="ttname"><a href="usb_8h.html#aefc95e6120686dff0e06bba32ca21ad1">nk95cmd</a></div><div class="ttdeci">#define nk95cmd(kb, command)</div><div class="ttdoc">nk95cmd() macro is used to wrap _nk95cmd() with debugging information (file and lineno). the command structure is different:   Just the bits 23..16 are used as bits 7..0 for bRequest   Bits 15..0 are used as wValue </div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00321">usb.h:321</a></div></div>
+<div class="ttc" id="usb_8h_html_ae7897e304126f1b024206ea3001d377d"><div class="ttname"><a href="usb_8h.html#ae7897e304126f1b024206ea3001d377d">NK95_M1</a></div><div class="ttdeci">#define NK95_M1</div><div class="ttdoc">Switch to mode 1. </div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00332">usb.h:332</a></div></div>
+<div class="ttc" id="usb_8h_html_aaa072888ddb1a257e739edb3655500bc"><div class="ttname"><a href="usb_8h.html#aaa072888ddb1a257e739edb3655500bc">NK95_M3</a></div><div class="ttdeci">#define NK95_M3</div><div class="ttdoc">Switch to mode 3. </div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00338">usb.h:338</a></div></div>
+<div class="ttc" id="usb_8h_html_a87e33091f2020d26471856c43195d970"><div class="ttname"><a href="usb_8h.html#a87e33091f2020d26471856c43195d970">NK95_M2</a></div><div class="ttdeci">#define NK95_M2</div><div class="ttdoc">Switch to mode 2. </div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00335">usb.h:335</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1123,19 +1228,19 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device_8c_source.html#l00055">55</a> of file <a class="el" href="device_8c_source.html">device.c</a>.</p>
+<p>Definition at line <a class="el" href="device_8c_source.html#l00080">80</a> of file <a class="el" href="device_8c_source.html">device.c</a>.</p>
 
-<p>References <a class="el" href="device_8c_source.html#l00015">_start_dev()</a>, <a class="el" href="usb_8h_source.html#l00101">USB_DELAY_DEFAULT</a>, and <a class="el" href="structures_8h_source.html#l00242">usbdevice::usbdelay</a>.</p>
-<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                            {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// Force USB interval to 10ms during initial setup phase; return to nominal 5ms after setup completes.</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    kb-&gt;<a class="code" href="structures_8h.html#a0b79f63d24a3653b071b9e295f3b15fc">usbdelay</a> = 10;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">int</span> res = <a class="code" href="device_8c.html#a96ee4de97d66a995084757151f4ed150">_start_dev</a>(kb, makeactive);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    kb-&gt;<a class="code" href="structures_8h.html#a0b79f63d24a3653b071b9e295f3b15fc">usbdelay</a> = <a class="code" href="usb_8h.html#a099563afe2cc26cafb14b788b03d218e">USB_DELAY_DEFAULT</a>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">return</span> res;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
-<div class="ttc" id="usb_8h_html_a099563afe2cc26cafb14b788b03d218e"><div class="ttname"><a href="usb_8h.html#a099563afe2cc26cafb14b788b03d218e">USB_DELAY_DEFAULT</a></div><div class="ttdeci">#define USB_DELAY_DEFAULT</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00101">usb.h:101</a></div></div>
-<div class="ttc" id="device_8c_html_a96ee4de97d66a995084757151f4ed150"><div class="ttname"><a href="device_8c.html#a96ee4de97d66a995084757151f4ed150">_start_dev</a></div><div class="ttdeci">int _start_dev(usbdevice *kb, int makeactive)</div><div class="ttdef"><b>Definition:</b> <a href="device_8c_source.html#l00015">device.c:15</a></div></div>
-<div class="ttc" id="structures_8h_html_a0b79f63d24a3653b071b9e295f3b15fc"><div class="ttname"><a href="structures_8h.html#a0b79f63d24a3653b071b9e295f3b15fc">usbdevice::usbdelay</a></div><div class="ttdeci">char usbdelay</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00242">structures.h:242</a></div></div>
+<p>References <a class="el" href="device_8c_source.html#l00025">_start_dev()</a>, <a class="el" href="usb_8h_source.html#l00185">USB_DELAY_DEFAULT</a>, and <a class="el" href="structures_8h_source.html#l00243">usbdevice::usbdelay</a>.</p>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                            {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// Force USB interval to 10ms during initial setup phase; return to nominal 5ms after setup completes.</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    kb-&gt;<a class="code" href="structures_8h.html#a0b79f63d24a3653b071b9e295f3b15fc">usbdelay</a> = 10;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">int</span> res = <a class="code" href="device_8c.html#a96ee4de97d66a995084757151f4ed150">_start_dev</a>(kb, makeactive);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    kb-&gt;<a class="code" href="structures_8h.html#a0b79f63d24a3653b071b9e295f3b15fc">usbdelay</a> = <a class="code" href="usb_8h.html#a099563afe2cc26cafb14b788b03d218e">USB_DELAY_DEFAULT</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
+<div class="ttc" id="usb_8h_html_a099563afe2cc26cafb14b788b03d218e"><div class="ttname"><a href="usb_8h.html#a099563afe2cc26cafb14b788b03d218e">USB_DELAY_DEFAULT</a></div><div class="ttdeci">#define USB_DELAY_DEFAULT</div><div class="ttdoc">This constant is used to initialize kb-&gt;usbdelay. It is used in many places (see macros above) but of...</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00185">usb.h:185</a></div></div>
+<div class="ttc" id="device_8c_html_a96ee4de97d66a995084757151f4ed150"><div class="ttname"><a href="device_8c.html#a96ee4de97d66a995084757151f4ed150">_start_dev</a></div><div class="ttdeci">int _start_dev(usbdevice *kb, int makeactive)</div><div class="ttdef"><b>Definition:</b> <a href="device_8c_source.html#l00025">device.c:25</a></div></div>
+<div class="ttc" id="structures_8h_html_a0b79f63d24a3653b071b9e295f3b15fc"><div class="ttname"><a href="structures_8h.html#a0b79f63d24a3653b071b9e295f3b15fc">usbdevice::usbdelay</a></div><div class="ttdeci">char usbdelay</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00243">structures.h:243</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -1176,19 +1281,21 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="device__keyboard_8c_source.html#l00009">9</a> of file <a class="el" href="device__keyboard_8c_source.html">device_keyboard.c</a>.</p>
 
-<p>References <a class="el" href="structures_8h_source.html#l00230">usbdevice::active</a>, <a class="el" href="usb_8h_source.html#l00146">NK95_HWOFF</a>, <a class="el" href="usb_8h_source.html#l00144">nk95cmd</a>, and <a class="el" href="structures_8h_source.html#l00240">usbdevice::pollrate</a>.</p>
+<p>References <a class="el" href="structures_8h_source.html#l00231">usbdevice::active</a>, <a class="el" href="usb_8h_source.html#l00326">NK95_HWOFF</a>, <a class="el" href="usb_8h_source.html#l00321">nk95cmd</a>, and <a class="el" href="structures_8h_source.html#l00241">usbdevice::pollrate</a>.</p>
 <div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                                                {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="comment">// Put the non-RGB K95 into software mode. Nothing else needs to be done hardware wise</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="usb_8h.html#aefc95e6120686dff0e06bba32ca21ad1">nk95cmd</a>(kb, <a class="code" href="usb_8h.html#a9078f1b51a13f9710904c08826d57097">NK95_HWOFF</a>);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="comment">// Fill out RGB features for consistency, even though the keyboard doesn&#39;t have them</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    kb-&gt;<a class="code" href="structures_8h.html#a8889b6a5d3ce83427377e3a3de947f03">active</a> = 1;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    kb-&gt;<a class="code" href="structures_8h.html#a56e8458239a40a080e9cccf901875285">pollrate</a> = -1;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
-<div class="ttc" id="usb_8h_html_aefc95e6120686dff0e06bba32ca21ad1"><div class="ttname"><a href="usb_8h.html#aefc95e6120686dff0e06bba32ca21ad1">nk95cmd</a></div><div class="ttdeci">#define nk95cmd(kb, command)</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00144">usb.h:144</a></div></div>
-<div class="ttc" id="structures_8h_html_a8889b6a5d3ce83427377e3a3de947f03"><div class="ttname"><a href="structures_8h.html#a8889b6a5d3ce83427377e3a3de947f03">usbdevice::active</a></div><div class="ttdeci">char active</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00230">structures.h:230</a></div></div>
-<div class="ttc" id="usb_8h_html_a9078f1b51a13f9710904c08826d57097"><div class="ttname"><a href="usb_8h.html#a9078f1b51a13f9710904c08826d57097">NK95_HWOFF</a></div><div class="ttdeci">#define NK95_HWOFF</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00146">usb.h:146</a></div></div>
-<div class="ttc" id="structures_8h_html_a56e8458239a40a080e9cccf901875285"><div class="ttname"><a href="structures_8h.html#a56e8458239a40a080e9cccf901875285">usbdevice::pollrate</a></div><div class="ttdeci">char pollrate</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00240">structures.h:240</a></div></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    (void)makeactive;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="comment">// Put the non-RGB K95 into software mode. Nothing else needs to be done hardware wise</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="usb_8h.html#aefc95e6120686dff0e06bba32ca21ad1">nk95cmd</a>(kb, <a class="code" href="usb_8h.html#a9078f1b51a13f9710904c08826d57097">NK95_HWOFF</a>);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="comment">// Fill out RGB features for consistency, even though the keyboard doesn&#39;t have them</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    kb-&gt;<a class="code" href="structures_8h.html#a8889b6a5d3ce83427377e3a3de947f03">active</a> = 1;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    kb-&gt;<a class="code" href="structures_8h.html#a56e8458239a40a080e9cccf901875285">pollrate</a> = -1;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+<div class="ttc" id="usb_8h_html_aefc95e6120686dff0e06bba32ca21ad1"><div class="ttname"><a href="usb_8h.html#aefc95e6120686dff0e06bba32ca21ad1">nk95cmd</a></div><div class="ttdeci">#define nk95cmd(kb, command)</div><div class="ttdoc">nk95cmd() macro is used to wrap _nk95cmd() with debugging information (file and lineno). the command structure is different:   Just the bits 23..16 are used as bits 7..0 for bRequest   Bits 15..0 are used as wValue </div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00321">usb.h:321</a></div></div>
+<div class="ttc" id="structures_8h_html_a8889b6a5d3ce83427377e3a3de947f03"><div class="ttname"><a href="structures_8h.html#a8889b6a5d3ce83427377e3a3de947f03">usbdevice::active</a></div><div class="ttdeci">char active</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00231">structures.h:231</a></div></div>
+<div class="ttc" id="usb_8h_html_a9078f1b51a13f9710904c08826d57097"><div class="ttname"><a href="usb_8h.html#a9078f1b51a13f9710904c08826d57097">NK95_HWOFF</a></div><div class="ttdeci">#define NK95_HWOFF</div><div class="ttdoc">Hardware-specific commands for the K95 nonRGB,. </div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00326">usb.h:326</a></div></div>
+<div class="ttc" id="structures_8h_html_a56e8458239a40a080e9cccf901875285"><div class="ttname"><a href="structures_8h.html#a56e8458239a40a080e9cccf901875285">usbdevice::pollrate</a></div><div class="ttdeci">char pollrate</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00241">structures.h:241</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1205,7 +1312,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="device_8c_source.html#l00012">12</a> of file <a class="el" href="device_8c_source.html">device.c</a>.</p>
 
-<p>Referenced by <a class="el" href="devnode_8c_source.html#l00038">_updateconnected()</a>, <a class="el" href="main_8c_source.html#l00040">quitWithLock()</a>, and <a class="el" href="usb__linux_8c_source.html#l00405">usb_rm_device()</a>.</p>
+<p>Referenced by <a class="el" href="devnode_8c_source.html#l00055">_updateconnected()</a>, <a class="el" href="main_8c_source.html#l00040">quitWithLock()</a>, and <a class="el" href="usb__linux_8c_source.html#l00723">usb_rm_device()</a>.</p>
 
 </div>
 </div>
@@ -1235,7 +1342,49 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="device_8c_source.html#l00010">10</a> of file <a class="el" href="device_8c_source.html">device.c</a>.</p>
 
-<p>Referenced by <a class="el" href="devnode_8c_source.html#l00119">_mkdevpath()</a>, <a class="el" href="devnode_8c_source.html#l00070">_mknotifynode()</a>, <a class="el" href="devnode_8c_source.html#l00098">_rmnotifynode()</a>, <a class="el" href="usb_8c_source.html#l00077">_setupusb()</a>, <a class="el" href="devnode_8c_source.html#l00038">_updateconnected()</a>, <a class="el" href="usb_8c_source.html#l00238">closeusb()</a>, <a class="el" href="main_8c_source.html#l00088">main()</a>, <a class="el" href="devnode_8c_source.html#l00282">mkfwnode()</a>, <a class="el" href="usb__linux_8c_source.html#l00214">os_closeusb()</a>, <a class="el" href="usb__linux_8c_source.html#l00093">os_inputmain()</a>, <a class="el" href="input__linux_8c_source.html#l00049">os_inputopen()</a>, <a class="el" href="usb__linux_8c_source.html#l00271">os_setupusb()</a>, <a class="el" href="main_8c_source.html#l00040">quitWithLock()</a>, <a class="el" href="devnode_8c_source.html#l00258">rmdevpath()</a>, <a class="el" href="usb__linux_8c_source.html#l00405">usb_rm_device()</a>, and <a class="el" href="usb__linux_8c_source.html#l00308">usbadd()</a>.</p>
+<p>Referenced by <a class="el" href="devnode_8c_source.html#l00136">_mkdevpath()</a>, <a class="el" href="devnode_8c_source.html#l00087">_mknotifynode()</a>, <a class="el" href="devnode_8c_source.html#l00115">_rmnotifynode()</a>, <a class="el" href="usb_8c_source.html#l00220">_setupusb()</a>, <a class="el" href="devnode_8c_source.html#l00055">_updateconnected()</a>, <a class="el" href="usb_8c_source.html#l00683">closeusb()</a>, <a class="el" href="main_8c_source.html#l00088">main()</a>, <a class="el" href="devnode_8c_source.html#l00299">mkfwnode()</a>, <a class="el" href="usb__linux_8c_source.html#l00435">os_closeusb()</a>, <a class="el" href="usb__linux_8c_source.html#l00238">os_inputmain()</a>, <a class="el" href="input__linux_8c_source.html#l00055">os_inputopen()</a>, <a class="el" href="usb__linux_8c_source.html#l00535">os_setupusb()</a>, <a class="el" href="main_8c_source.html#l00040">quitWithLock()</a>, <a class="el" href="devnode_8c_source.html#l00275">rmdevpath()</a>, <a class="el" href="usb__linux_8c_source.html#l00723">usb_rm_device()</a>, and <a class="el" href="usb__linux_8c_source.html#l00593">usbadd()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0435da20f2ad3d439f0a1f04b2f3f3cf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pthread_mutex_t macromutex[9]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="device_8c_source.html#l00014">14</a> of file <a class="el" href="device_8c_source.html">device.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9e2c060f6f466b6ed9406e6397ab3b1e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pthread_mutex_t macromutex2[9]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="device_8c_source.html#l00015">15</a> of file <a class="el" href="device_8c_source.html">device.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a26d8fa91b7834ac4c2806a73976ec0ca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pthread_cond_t macrovar[9]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="device_8c_source.html#l00016">16</a> of file <a class="el" href="device_8c_source.html">device.c</a>.</p>
 
 </div>
 </div>
@@ -1245,7 +1394,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c663af95b3406af676444e819a47854e.html">ckb-daemon</a></li><li class="navelem"><a class="el" href="device_8h.html">device.h</a></li>
-    <li class="footer">Generated on Wed May 24 2017 08:16:54 for ckb-next by
+    <li class="footer">Generated on Thu Nov 2 2017 17:17:53 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -1,0 +1,11 @@
+<map id="KbPerf::baseDpiIdx" name="KbPerf::baseDpiIdx">
+<area shape="rect" id="node2" href="$classKbPerf.html#a6e177a85d035cfe0340b3eefdf8bf866" title="KbPerf::applyIndicators" alt="" coords="190,5,349,32"/>
+<area shape="rect" id="node4" href="$classKbPerf.html#a33dd1fcce661655cc91cc36a3db28d74" title="KbPerf::dpiCycleDown" alt="" coords="192,56,347,83"/>
+<area shape="rect" id="node5" href="$classKeyAction.html#a1fd7bef50c828e25299d514222d5b5a4" title="KeyAction::keyEvent" alt="" coords="398,183,543,209"/>
+<area shape="rect" id="node7" href="$classKb.html#afa36635dcc1cd9512f372594c57c546c" title="Kb::readNotify" alt="" coords="768,272,875,299"/>
+<area shape="rect" id="node8" href="$classKbPerf.html#a0ee37415120509dafea8da67b1c58f9a" title="KbPerf::dpiCycleUp" alt="" coords="200,157,339,184"/>
+<area shape="rect" id="node9" href="$classKbPerf.html#af2ce22038d4d6e4c33553d98b170d7c4" title="KbPerf::dpiDown" alt="" coords="209,208,330,235"/>
+<area shape="rect" id="node10" href="$classKbPerf.html#aab8ab63960f0e264af76628cae4762cc" title="KbPerf::dpiUp" alt="" coords="217,259,321,285"/>
+<area shape="rect" id="node3" href="$classKb.html#a97694a4cd55681adca7b972fb5722049" title="Kb::frameUpdate" alt="" coords="410,5,531,32"/>
+<area shape="rect" id="node6" href="$classKbBind.html#a1487a979f3386a6e592bf576a2745ab2" title="KbBind::keyEvent" alt="" coords="593,233,719,260"/>
+</map>

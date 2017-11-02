@@ -1,4 +1,4 @@
-.TH "src/ckb-daemon/profile_mouse.c" 3 "Wed May 24 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "src/ckb-daemon/profile_mouse.c" 3 "Thu Nov 2 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -36,90 +36,99 @@ References DELAY_LONG, hwprofile::dpi, usbdevice::hw, hwtonative(), hwprofile::i
 .PP
 .nf
 6                                                                                                {
-7     DELAY_LONG(kb);
-8     hwprofile* hw = calloc(1, sizeof(hwprofile));
-9     // Ask for profile and mode IDs
-10     uchar data_pkt[2][MSG_SIZE] = {
-11         { 0x0e, 0x15, 0x01, 0 },
-12         { 0x0e, 0x16, 0x01, 0 }
-13     };
-14     uchar in_pkt[MSG_SIZE];
-15     for(int i = 0; i <= 1; i++){
-16         data_pkt[0][3] = i;
-17         if(!usbrecv(kb, data_pkt[0], in_pkt)){
-18             free(hw);
-19             return -1;
-20         }
-21         memcpy(hw->id + i, in_pkt + 4, sizeof(usbid));
-22     }
-23     // Ask for profile and mode names
-24     for(int i = 0; i <= 1; i++){
-25         data_pkt[1][3] = i;
-26         if(!usbrecv(kb, data_pkt[1],in_pkt)){
-27             free(hw);
-28             return -1;
-29         }
-30         memcpy(hw->name[i], in_pkt + 4, PR_NAME_LEN * 2);
-31     }
-32 
-33     // Load the RGB and DPI settings
-34     if(loadrgb_mouse(kb, hw->light, 0)
-35             || loaddpi(kb, hw->dpi, hw->light)){
-36         free(hw);
-37         return -1;
-38     }
-39 
-40     // Make the profile active (if requested)
-41     if(apply)
-42         hwtonative(kb->profile, hw, 1);
-43     // Free the existing profile (if any)
-44     free(kb->hw);
-45     kb->hw = hw;
-46     DELAY_LONG(kb);
-47     return 0;
-48 }
+7     (void)dummy1;
+8     (void)dummy2;
+9     (void)dummy3;
+10 
+11     DELAY_LONG(kb);
+12     hwprofile* hw = calloc(1, sizeof(hwprofile));
+13     // Ask for profile and mode IDs
+14     uchar data_pkt[2][MSG_SIZE] = {
+15         { 0x0e, 0x15, 0x01, 0 },
+16         { 0x0e, 0x16, 0x01, 0 }
+17     };
+18     uchar in_pkt[MSG_SIZE];
+19     for(int i = 0; i <= 1; i++){
+20         data_pkt[0][3] = i;
+21         if(!usbrecv(kb, data_pkt[0], in_pkt)){
+22             free(hw);
+23             return -1;
+24         }
+25         memcpy(hw->id + i, in_pkt + 4, sizeof(usbid));
+26     }
+27     // Ask for profile and mode names
+28     for(int i = 0; i <= 1; i++){
+29         data_pkt[1][3] = i;
+30         if(!usbrecv(kb, data_pkt[1],in_pkt)){
+31             free(hw);
+32             return -1;
+33         }
+34         memcpy(hw->name[i], in_pkt + 4, PR_NAME_LEN * 2);
+35     }
+36 
+37     // Load the RGB and DPI settings
+38     if(loadrgb_mouse(kb, hw->light, 0)
+39             || loaddpi(kb, hw->dpi, hw->light)){
+40         free(hw);
+41         return -1;
+42     }
+43 
+44     // Make the profile active (if requested)
+45     if(apply)
+46         hwtonative(kb->profile, hw, 1);
+47     // Free the existing profile (if any)
+48     free(kb->hw);
+49     kb->hw = hw;
+50     DELAY_LONG(kb);
+51     return 0;
+52 }
 .fi
 .SS "int cmd_hwsave_mouse (\fBusbdevice\fP *kb, \fBusbmode\fP *dummy1, intdummy2, intdummy3, const char *dummy4)"
 
 .PP
-Definition at line 50 of file profile_mouse\&.c\&.
+Definition at line 54 of file profile_mouse\&.c\&.
 .PP
 References DELAY_LONG, hwprofile::dpi, usbdevice::hw, hwprofile::id, hwprofile::light, MD_NAME_LEN, MSG_SIZE, hwprofile::name, nativetohw(), usbdevice::profile, savedpi(), savergb_mouse(), and usbsend\&.
 .PP
 .nf
-50                                                                                                 {
-51     DELAY_LONG(kb);
-52     hwprofile* hw = kb->hw;
-53     if(!hw)
-54         hw = kb->hw = calloc(1, sizeof(hwprofile));
-55     nativetohw(kb->profile, hw, 1);
-56     // Save the profile and mode names
-57     uchar data_pkt[2][MSG_SIZE] = {
-58         { 0x07, 0x16, 0x01, 0 },
-59         { 0x07, 0x15, 0x01, 0 },
-60     };
-61     for(int i = 0; i <= 1; i++){
-62         data_pkt[0][3] = i;
-63         memcpy(data_pkt[0] + 4, hw->name[i], MD_NAME_LEN * 2);
-64         if(!usbsend(kb, data_pkt[0], 1))
-65             return -1;
-66     }
-67     // Save the IDs
-68     for(int i = 0; i <= 1; i++){
-69         data_pkt[1][3] = i;
-70         memcpy(data_pkt[1] + 4, hw->id + i, sizeof(usbid));
-71         if(!usbsend(kb, data_pkt[1], 1))
-72             return -1;
-73     }
-74     // Save the RGB data for the non-DPI zones
-75     if(savergb_mouse(kb, hw->light, 0))
-76         return -1;
-77     // Save the DPI data (also saves RGB for those states)
-78     if(savedpi(kb, hw->dpi, hw->light))
-79         return -1;
-80     DELAY_LONG(kb);
-81     return 0;
-82 }
+54                                                                                                 {
+55     (void)dummy1;
+56     (void)dummy2;
+57     (void)dummy3;
+58     (void)dummy4;
+59 
+60     DELAY_LONG(kb);
+61     hwprofile* hw = kb->hw;
+62     if(!hw)
+63         hw = kb->hw = calloc(1, sizeof(hwprofile));
+64     nativetohw(kb->profile, hw, 1);
+65     // Save the profile and mode names
+66     uchar data_pkt[2][MSG_SIZE] = {
+67         { 0x07, 0x16, 0x01, 0 },
+68         { 0x07, 0x15, 0x01, 0 },
+69     };
+70     for(int i = 0; i <= 1; i++){
+71         data_pkt[0][3] = i;
+72         memcpy(data_pkt[0] + 4, hw->name[i], MD_NAME_LEN * 2);
+73         if(!usbsend(kb, data_pkt[0], 1))
+74             return -1;
+75     }
+76     // Save the IDs
+77     for(int i = 0; i <= 1; i++){
+78         data_pkt[1][3] = i;
+79         memcpy(data_pkt[1] + 4, hw->id + i, sizeof(usbid));
+80         if(!usbsend(kb, data_pkt[1], 1))
+81             return -1;
+82     }
+83     // Save the RGB data for the non-DPI zones
+84     if(savergb_mouse(kb, hw->light, 0))
+85         return -1;
+86     // Save the DPI data (also saves RGB for those states)
+87     if(savedpi(kb, hw->dpi, hw->light))
+88         return -1;
+89     DELAY_LONG(kb);
+90     return 0;
+91 }
 .fi
 .SH "Author"
 .PP 

@@ -1,4 +1,4 @@
-.TH "src/ckb-daemon/device_mouse.c" 3 "Wed May 24 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "src/ckb-daemon/device_mouse.c" 3 "Thu Nov 2 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -48,39 +48,53 @@ References setactive_mouse()\&.
 .PP
 .nf
 44                                                                                                 {
-45     return setactive_mouse(kb, 1);
-46 }
+45     (void)dummy1;
+46     (void)dummy2;
+47     (void)dummy3;
+48     (void)dummy4;
+49 
+50     return setactive_mouse(kb, 1);
+51 }
 .fi
 .SS "int cmd_idle_mouse (\fBusbdevice\fP *kb, \fBusbmode\fP *dummy1, intdummy2, intdummy3, const char *dummy4)"
 
 .PP
-Definition at line 48 of file device_mouse\&.c\&.
+Definition at line 53 of file device_mouse\&.c\&.
 .PP
 References setactive_mouse()\&.
 .PP
 .nf
-48                                                                                               {
-49     return setactive_mouse(kb, 0);
-50 }
+53                                                                                               {
+54     (void)dummy1;
+55     (void)dummy2;
+56     (void)dummy3;
+57     (void)dummy4;
+58 
+59     return setactive_mouse(kb, 0);
+60 }
 .fi
 .SS "int cmd_pollrate (\fBusbdevice\fP *kb, \fBusbmode\fP *dummy1, intdummy2, intrate, const char *dummy3)"
 
 .PP
-Definition at line 52 of file device_mouse\&.c\&.
+Definition at line 62 of file device_mouse\&.c\&.
 .PP
 References MSG_SIZE, usbdevice::pollrate, and usbsend\&.
 .PP
 .nf
-52                                                                                           {
-53     uchar msg[MSG_SIZE] = {
-54         0x07, 0x0a, 0, 0, (uchar)rate
-55     };
-56     if(!usbsend(kb, msg, 1))
-57         return -1;
-58     // Device should disconnect+reconnect, but update the poll rate field in case it doesn't
-59     kb->pollrate = rate;
-60     return 0;
-61 }
+62                                                                                           {
+63     (void)dummy1;
+64     (void)dummy2;
+65     (void)dummy3;
+66 
+67     uchar msg[MSG_SIZE] = {
+68         0x07, 0x0a, 0, 0, (uchar)rate
+69     };
+70     if(!usbsend(kb, msg, 1))
+71         return -1;
+72     // Device should disconnect+reconnect, but update the poll rate field in case it doesn't
+73     kb->pollrate = rate;
+74     return 0;
+75 }
 .fi
 .SS "int setactive_mouse (\fBusbdevice\fP *kb, intactive)"
 

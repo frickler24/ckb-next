@@ -26,6 +26,7 @@ var searchData=
   ['macroreaderthread',['MacroReaderThread',['../classMacroReaderThread.html',1,'MacroReaderThread'],['../classMacroReaderThread.html#a55338956e86e7eae3b40df67245ef4f4',1,'MacroReaderThread::MacroReaderThread()'],['../classMacroReader.html#a630948aacd267c4a29ae589f3cfc4016',1,'MacroReader::macroReaderThread()']]],
   ['macrotab',['macroTab',['../classUi__RebindWidget.html#a96efeab655f12d30a78d888629ad3a36',1,'Ui_RebindWidget']]],
   ['macrotext',['macroText',['../classMacroReaderThread.html#ab46254193bebff8bcb8a7f72aa675727',1,'MacroReaderThread']]],
+  ['macrotiming',['macroTiming',['../classKeyAction.html#a1182588fa5f3158d72830a4b064dfa2d',1,'KeyAction']]],
   ['main',['main',['../ckb-anim_8h.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;ckb-anim.h'],['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;main.cpp']]],
   ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]],
   ['mainwindow',['MainWindow',['../classMainWindow.html',1,'MainWindow'],['../classSettingsWidget.html#af9db4b672c4d3104f5541893e08e1809',1,'SettingsWidget::MainWindow()'],['../classMainWindow.html#a8b244be8b7b7db1b08de2a2acb9409db',1,'MainWindow::MainWindow(QWidget *parent=0)'],['../classMainWindow.html#ad67e6c15ddc2716574875baa5fe52362',1,'MainWindow::mainWindow()']]],
@@ -152,8 +153,8 @@ var searchData=
   ['move',['move',['../classKbProfile.html#a35738c682136cda5b2d13e0b5b081fd1',1,'KbProfile']]],
   ['movecurrent',['moveCurrent',['../classGradientDialogWidget.html#aaadf433fda87b79898178dbee8e32aa7',1,'GradientDialogWidget']]],
   ['mperftab',['mPerfTab',['../classUi__KbWidget.html#a96b22505cbc7ac90e1d7b4e84de08bd7',1,'Ui_KbWidget']]],
-  ['mperfwidget',['MPerfWidget',['../classUi_1_1MPerfWidget.html',1,'Ui']]],
   ['mperfwidget',['MPerfWidget',['../classMPerfWidget.html',1,'MPerfWidget'],['../classMPerfWidget.html#a8c4d1f6edcab7c9c5c416c620a337cfd',1,'MPerfWidget::MPerfWidget()'],['../classUi__KbWidget.html#ac8901f3575d2a54ca1750893cc6c87bd',1,'Ui_KbWidget::mPerfWidget()']]],
+  ['mperfwidget',['MPerfWidget',['../classUi_1_1MPerfWidget.html',1,'Ui']]],
   ['mperfwidget_2ecpp',['mperfwidget.cpp',['../mperfwidget_8cpp.html',1,'']]],
   ['mperfwidget_2eh',['mperfwidget.h',['../mperfwidget_8h.html',1,'']]],
   ['multiply',['Multiply',['../classKbAnim.html#a165ef54083569b9330ac467620861c49a0e0a332d064f5bc7e9b4a502643bcba4',1,'KbAnim']]],
@@ -164,7 +165,6 @@ var searchData=
   ['mutecoloron',['muteColorOn',['../classUi__KPerfWidget.html#ad78b7e783f8dd503a1e5f620109c1aef',1,'Ui_KPerfWidget']]],
   ['muted',['MUTED',['../media_8h.html#a5de87393a37a174be410529a9ed77b01ad7750b2464175cffe19792309edf40f8',1,'media.h']]],
   ['mutenacolor',['muteNAColor',['../classKbPerf.html#ab9905363d612bf5a91115b65c94e2752',1,'KbPerf']]],
-  ['muteprocess',['muteProcess',['../media__linux_8cpp.html#a11880811b022c866caa6b97ca3c53834',1,'media_linux.cpp']]],
   ['mutestate',['muteState',['../media_8h.html#a5de87393a37a174be410529a9ed77b01',1,'media.h']]],
   ['mx',['MX',['../classKeyMap.html#ad1d282278b1b6a408e75ec29f06a546ca219ebe8814df03e2b2462837a5c848ec',1,'KeyMap']]]
 ];

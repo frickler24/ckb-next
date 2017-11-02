@@ -1,4 +1,4 @@
-.TH "src/ckb-daemon/input_linux.c" 3 "Wed May 24 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "src/ckb-daemon/input_linux.c" 3 "Thu Nov 2 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -22,6 +22,7 @@ src/ckb-daemon/input_linux.c \-
 .ti -1c
 .RI "int \fBos_inputopen\fP (\fBusbdevice\fP *kb)"
 .br
+.RI "\fIos_inputopen \fP"
 .ti -1c
 .RI "void \fBos_inputclose\fP (\fBusbdevice\fP *kb)"
 .br
@@ -46,217 +47,228 @@ src/ckb-daemon/input_linux.c \-
 .SS "void* _ledthread (void *ctx)"
 
 .PP
-Definition at line 159 of file input_linux\&.c\&.
+Definition at line 165 of file input_linux\&.c\&.
 .PP
 References dmutex, usbdevice::hw_ileds, usbdevice::uinput_kb, and usbdevice::vtable\&.
 .PP
 Referenced by os_setupindicators()\&.
 .PP
 .nf
-159                            {
-160     usbdevice* kb = ctx;
-161     uchar ileds = 0;
-162     // Read LED events from the uinput device
-163     struct input_event event;
-164     while(read(kb->uinput_kb - 1, &event, sizeof(event)) > 0){
-165         if(event\&.type == EV_LED && event\&.code < 8){
-166             char which = 1 << event\&.code;
-167             if(event\&.value)
-168                 ileds |= which;
-169             else
-170                 ileds &= ~which;
-171         }
-172         // Update them if needed
-173         pthread_mutex_lock(dmutex(kb));
-174         if(kb->hw_ileds != ileds){
-175             kb->hw_ileds = ileds;
-176             kb->vtable->updateindicators(kb, 0);
+165                            {
+166     usbdevice* kb = ctx;
+167     uchar ileds = 0;
+168     // Read LED events from the uinput device
+169     struct input_event event;
+170     while (read(kb->uinput_kb - 1, &event, sizeof(event)) > 0) {
+171         if (event\&.type == EV_LED && event\&.code < 8){
+172             char which = 1 << event\&.code;
+173             if(event\&.value)
+174                 ileds |= which;
+175             else
+176                 ileds &= ~which;
 177         }
-178         pthread_mutex_unlock(dmutex(kb));
-179     }
-180     return 0;
-181 }
+178         // Update them if needed
+179         pthread_mutex_lock(dmutex(kb));
+180         if(kb->hw_ileds != ileds){
+181             kb->hw_ileds = ileds;
+182             kb->vtable->updateindicators(kb, 0);
+183         }
+184         pthread_mutex_unlock(dmutex(kb));
+185     }
+186     return 0;
+187 }
 .fi
 .SS "static void isync (\fBusbdevice\fP *kb)\fC [static]\fP"
 
 .PP
-Definition at line 101 of file input_linux\&.c\&.
+Definition at line 107 of file input_linux\&.c\&.
 .PP
 References ckb_warn, usbdevice::uinput_kb, and usbdevice::uinput_mouse\&.
 .PP
 Referenced by os_keypress(), and os_mousemove()\&.
 .PP
 .nf
-101                                 {
-102     struct input_event event;
-103     memset(&event, 0, sizeof(event));
-104     event\&.type = EV_SYN;
-105     event\&.code = SYN_REPORT;
-106     if(write(kb->uinput_kb - 1, &event, sizeof(event)) <= 0)
-107         ckb_warn("uinput write failed: %s\n", strerror(errno));
-108     if(write(kb->uinput_mouse - 1, &event, sizeof(event)) <= 0)
-109         ckb_warn("uinput write failed: %s\n", strerror(errno));
-110 }
+107                                 {
+108     struct input_event event;
+109     memset(&event, 0, sizeof(event));
+110     event\&.type = EV_SYN;
+111     event\&.code = SYN_REPORT;
+112     if(write(kb->uinput_kb - 1, &event, sizeof(event)) <= 0)
+113         ckb_warn("uinput write failed: %s\n", strerror(errno));
+114     if(write(kb->uinput_mouse - 1, &event, sizeof(event)) <= 0)
+115         ckb_warn("uinput write failed: %s\n", strerror(errno));
+116 }
 .fi
 .SS "void os_inputclose (\fBusbdevice\fP *kb)"
 
 .PP
-Definition at line 70 of file input_linux\&.c\&.
+Definition at line 76 of file input_linux\&.c\&.
 .PP
 References ckb_warn, usbdevice::uinput_kb, and usbdevice::uinput_mouse\&.
 .PP
 Referenced by closeusb()\&.
 .PP
 .nf
-70                                  {
-71     if(kb->uinput_kb <= 0 || kb->uinput_mouse <= 0)
-72         return;
-73     // Set all keys released
-74     struct input_event event;
-75     memset(&event, 0, sizeof(event));
-76     event\&.type = EV_KEY;
-77     for(int key = 0; key < KEY_CNT; key++){
-78         event\&.code = key;
-79         if(write(kb->uinput_kb - 1, &event, sizeof(event)) <= 0)
-80             ckb_warn("uinput write failed: %s\n", strerror(errno));
-81         if(write(kb->uinput_mouse - 1, &event, sizeof(event)) <= 0)
-82             ckb_warn("uinput write failed: %s\n", strerror(errno));
-83     }
-84     event\&.type = EV_SYN;
-85     event\&.code = SYN_REPORT;
-86     if(write(kb->uinput_kb - 1, &event, sizeof(event)) <= 0)
-87         ckb_warn("uinput write failed: %s\n", strerror(errno));
-88     if(write(kb->uinput_mouse - 1, &event, sizeof(event)) <= 0)
-89         ckb_warn("uinput write failed: %s\n", strerror(errno));
-90     // Close the keyboard
-91     ioctl(kb->uinput_kb - 1, UI_DEV_DESTROY);
-92     close(kb->uinput_kb - 1);
-93     kb->uinput_kb = 0;
-94     // Close the mouse
-95     ioctl(kb->uinput_mouse - 1, UI_DEV_DESTROY);
-96     close(kb->uinput_mouse - 1);
-97     kb->uinput_mouse = 0;
-98 }
+76                                  {
+77     if(kb->uinput_kb <= 0 || kb->uinput_mouse <= 0)
+78         return;
+79     // Set all keys released
+80     struct input_event event;
+81     memset(&event, 0, sizeof(event));
+82     event\&.type = EV_KEY;
+83     for(int key = 0; key < KEY_CNT; key++){
+84         event\&.code = key;
+85         if(write(kb->uinput_kb - 1, &event, sizeof(event)) <= 0)
+86             ckb_warn("uinput write failed: %s\n", strerror(errno));
+87         if(write(kb->uinput_mouse - 1, &event, sizeof(event)) <= 0)
+88             ckb_warn("uinput write failed: %s\n", strerror(errno));
+89     }
+90     event\&.type = EV_SYN;
+91     event\&.code = SYN_REPORT;
+92     if(write(kb->uinput_kb - 1, &event, sizeof(event)) <= 0)
+93         ckb_warn("uinput write failed: %s\n", strerror(errno));
+94     if(write(kb->uinput_mouse - 1, &event, sizeof(event)) <= 0)
+95         ckb_warn("uinput write failed: %s\n", strerror(errno));
+96     // Close the keyboard
+97     ioctl(kb->uinput_kb - 1, UI_DEV_DESTROY);
+98     close(kb->uinput_kb - 1);
+99     kb->uinput_kb = 0;
+100     // Close the mouse
+101     ioctl(kb->uinput_mouse - 1, UI_DEV_DESTROY);
+102     close(kb->uinput_mouse - 1);
+103     kb->uinput_mouse = 0;
+104 }
 .fi
 .SS "int os_inputopen (\fBusbdevice\fP *kb)"
 
 .PP
-Definition at line 49 of file input_linux\&.c\&.
+\fBParameters:\fP
+.RS 4
+\fIkb\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.RE
+.PP
+Some tips on using \fCuinput_user_dev in\fP 
+.PP
+Definition at line 55 of file input_linux\&.c\&.
 .PP
 References usbdevice::fwversion, INDEX_OF, keyboard, usbdevice::name, usbdevice::product, usbdevice::uinput_kb, usbdevice::uinput_mouse, uinputopen(), and usbdevice::vendor\&.
 .PP
 Referenced by _setupusb()\&.
 .PP
 .nf
-49                                {
-50     // Create the new input device
-51     int index = INDEX_OF(kb, keyboard);
-52     struct uinput_user_dev indev;
-53     memset(&indev, 0, sizeof(indev));
-54     snprintf(indev\&.name, UINPUT_MAX_NAME_SIZE, "ckb%d: %s", index, kb->name);
-55     indev\&.id\&.bustype = BUS_USB;
-56     indev\&.id\&.vendor = kb->vendor;
-57     indev\&.id\&.product = kb->product;
-58     indev\&.id\&.version = kb->fwversion;
-59     // Open keyboard
-60     int fd = uinputopen(&indev, 0);
-61     kb->uinput_kb = fd;
-62     if(fd <= 0)
-63         return 0;
-64     // Open mouse
-65     fd = uinputopen(&indev, 1);
-66     kb->uinput_mouse = fd;
-67     return fd <= 0;
-68 }
+55                                {
+56     // Create the new input device
+57     int index = INDEX_OF(kb, keyboard);
+58     struct uinput_user_dev indev;
+59     memset(&indev, 0, sizeof(indev));
+60     snprintf(indev\&.name, UINPUT_MAX_NAME_SIZE, "ckb%d: %s", index, kb->name);
+61     indev\&.id\&.bustype = BUS_USB;
+62     indev\&.id\&.vendor = kb->vendor;
+63     indev\&.id\&.product = kb->product;
+64     indev\&.id\&.version = kb->fwversion;
+65     // Open keyboard
+66     int fd = uinputopen(&indev, 0);
+67     kb->uinput_kb = fd;
+68     if(fd <= 0)
+69         return 0;
+70     // Open mouse
+71     fd = uinputopen(&indev, 1);
+72     kb->uinput_mouse = fd;
+73     return fd <= 0;
+74 }
 .fi
 .SS "void os_keypress (\fBusbdevice\fP *kb, intscancode, intdown)"
 
 .PP
-Definition at line 112 of file input_linux\&.c\&.
+Definition at line 118 of file input_linux\&.c\&.
 .PP
 References BTN_WHEELDOWN, BTN_WHEELUP, ckb_warn, isync(), SCAN_MOUSE, usbdevice::uinput_kb, and usbdevice::uinput_mouse\&.
 .PP
-Referenced by inputupdate_keys()\&.
+Referenced by inputupdate_keys(), and play_macro()\&.
 .PP
 .nf
-112                                                        {
-113     struct input_event event;
-114     memset(&event, 0, sizeof(event));
-115     int is_mouse = 0;
-116     if(scancode == BTN_WHEELUP || scancode == BTN_WHEELDOWN){
-117         // The mouse wheel is a relative axis
-118         if(!down)
-119             return;
-120         event\&.type = EV_REL;
-121         event\&.code = REL_WHEEL;
-122         event\&.value = (scancode == BTN_WHEELUP ? 1 : -1);
-123         is_mouse = 1;
-124     } else {
-125         // Mouse buttons and key events are both EV_KEY\&. The scancodes are already correct, just remove the ckb bit
-126         event\&.type = EV_KEY;
-127         event\&.code = scancode & ~SCAN_MOUSE;
-128         event\&.value = down;
-129         is_mouse = !!(scancode & SCAN_MOUSE);
-130     }
-131     if(write((is_mouse ? kb->uinput_mouse : kb->uinput_kb) - 1, &event, sizeof(event)) <= 0)
-132         ckb_warn("uinput write failed: %s\n", strerror(errno));
-133     else
-134         isync(kb);
-135 }
+118                                                        {
+119     struct input_event event;
+120     memset(&event, 0, sizeof(event));
+121     int is_mouse = 0;
+122     if(scancode == BTN_WHEELUP || scancode == BTN_WHEELDOWN){
+123         // The mouse wheel is a relative axis
+124         if(!down)
+125             return;
+126         event\&.type = EV_REL;
+127         event\&.code = REL_WHEEL;
+128         event\&.value = (scancode == BTN_WHEELUP ? 1 : -1);
+129         is_mouse = 1;
+130     } else {
+131         // Mouse buttons and key events are both EV_KEY\&. The scancodes are already correct, just remove the ckb bit
+132         event\&.type = EV_KEY;
+133         event\&.code = scancode & ~SCAN_MOUSE;
+134         event\&.value = down;
+135         is_mouse = !!(scancode & SCAN_MOUSE);
+136     }
+137     if(write((is_mouse ? kb->uinput_mouse : kb->uinput_kb) - 1, &event, sizeof(event)) <= 0)
+138         ckb_warn("uinput write failed: %s\n", strerror(errno));
+139     else
+140         isync(kb);
+141 }
 .fi
 .SS "void os_mousemove (\fBusbdevice\fP *kb, intx, inty)"
 
 .PP
-Definition at line 137 of file input_linux\&.c\&.
+Definition at line 143 of file input_linux\&.c\&.
 .PP
 References ckb_warn, isync(), usbdevice::uinput_mouse, x, and y\&.
 .PP
-Referenced by inputupdate(), and inputupdate_keys()\&.
+Referenced by inputupdate(), and play_macro()\&.
 .PP
 .nf
-137                                               {
-138     struct input_event event;
-139     memset(&event, 0, sizeof(event));
-140     event\&.type = EV_REL;
-141     if(x != 0){
-142         event\&.code = REL_X;
-143         event\&.value = x;
-144         if(write(kb->uinput_mouse - 1, &event, sizeof(event)) <= 0)
-145             ckb_warn("uinput write failed: %s\n", strerror(errno));
-146         else
-147             isync(kb);
-148     }
-149     if(y != 0){
-150         event\&.code = REL_Y;
-151         event\&.value = y;
-152         if(write(kb->uinput_mouse - 1, &event, sizeof(event)) <= 0)
-153             ckb_warn("uinput write failed: %s\n", strerror(errno));
-154         else
-155             isync(kb);
-156     }
-157 }
+143                                               {
+144     struct input_event event;
+145     memset(&event, 0, sizeof(event));
+146     event\&.type = EV_REL;
+147     if(x != 0){
+148         event\&.code = REL_X;
+149         event\&.value = x;
+150         if(write(kb->uinput_mouse - 1, &event, sizeof(event)) <= 0)
+151             ckb_warn("uinput write failed: %s\n", strerror(errno));
+152         else
+153             isync(kb);
+154     }
+155     if(y != 0){
+156         event\&.code = REL_Y;
+157         event\&.value = y;
+158         if(write(kb->uinput_mouse - 1, &event, sizeof(event)) <= 0)
+159             ckb_warn("uinput write failed: %s\n", strerror(errno));
+160         else
+161             isync(kb);
+162     }
+163 }
 .fi
 .SS "int os_setupindicators (\fBusbdevice\fP *kb)"
 
 .PP
-Definition at line 183 of file input_linux\&.c\&.
+Definition at line 189 of file input_linux\&.c\&.
 .PP
 References _ledthread(), usbdevice::hw_ileds, usbdevice::hw_ileds_old, and usbdevice::ileds\&.
 .PP
 Referenced by _setupusb()\&.
 .PP
 .nf
-183                                      {
-184     // Initialize LEDs to all off
-185     kb->hw_ileds = kb->hw_ileds_old = kb->ileds = 0;
-186     // Create and detach thread to read LED events
-187     pthread_t thread;
-188     int err = pthread_create(&thread, 0, _ledthread, kb);
-189     if(err != 0)
-190         return err;
-191     pthread_detach(thread);
-192     return 0;
-193 }
+189                                      {
+190     // Initialize LEDs to all off
+191     kb->hw_ileds = kb->hw_ileds_old = kb->ileds = 0;
+192     // Create and detach thread to read LED events
+193     pthread_t thread;
+194     int err = pthread_create(&thread, 0, _ledthread, kb);
+195     if(err != 0)
+196         return err;
+197     pthread_detach(thread);
+198     return 0;
+199 }
 .fi
 .SS "int uinputopen (struct uinput_user_dev *indev, intmouse)"
 
