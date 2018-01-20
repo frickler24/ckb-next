@@ -1,4 +1,4 @@
-.TH "src/ckb-daemon/structures.h" 3 "Fri Nov 3 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "src/ckb-daemon/structures.h" 3 "Sat Jan 20 2018" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -243,7 +243,7 @@ int \fIactioncount\fP
 \fBmacroaction\fP * \fIactions\fP 
 .br
 .PP
-\fBuchar\fP \fIcombo[((((152+3+12)+25)+7)/8)]\fP 
+\fBuchar\fP \fIcombo[((((152+22+12)+25)+7)/8)]\fP 
 .br
 .PP
 char \fItriggered\fP 
@@ -257,7 +257,7 @@ Definition at line 43 of file structures\&.h\&.
 .PP
 \fBData Fields:\fP
 .RS 4
-int \fIbase[((152+3+12)+25)]\fP 
+int \fIbase[((152+22+12)+25)]\fP 
 .br
 .PP
 int \fImacrocap\fP 
@@ -353,7 +353,7 @@ Definition at line 83 of file structures\&.h\&.
 \fBushort\fP \fIname[16]\fP 
 .br
 .PP
-\fBuchar\fP \fInotify[10][((((152+3+12)+25)+7)/8)]\fP 
+\fBuchar\fP \fInotify[10][((((152+22+12)+25)+7)/8)]\fP 
 .br
 .PP
 .RE
@@ -410,10 +410,10 @@ Definition at line 129 of file structures\&.h\&.
 .PP
 \fBData Fields:\fP
 .RS 4
-\fBuchar\fP \fIkeys[((((152+3+12)+25)+7)/8)]\fP 
+\fBuchar\fP \fIkeys[((((152+22+12)+25)+7)/8)]\fP 
 .br
 .PP
-\fBuchar\fP \fIprevkeys[((((152+3+12)+25)+7)/8)]\fP 
+\fBuchar\fP \fIprevkeys[((((152+22+12)+25)+7)/8)]\fP 
 .br
 .PP
 short \fIrel_x\fP 

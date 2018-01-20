@@ -1,4 +1,4 @@
-.TH "Ui::KPerfWidget" 3 "Fri Nov 3 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "Ui::KPerfWidget" 3 "Sat Jan 20 2018" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -254,102 +254,102 @@ Inherits \fBUi_KPerfWidget\fP\&.
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 677 of file ui_kperfwidget\&.h\&.
+Definition at line 704 of file ui_kperfwidget\&.h\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "void Ui_KPerfWidget::retranslateUi (\fBQWidget\fP *KPerfWidget)\fC [inline]\fP, \fC [inherited]\fP"
 
 .PP
-Definition at line 589 of file ui_kperfwidget\&.h\&.
+Definition at line 616 of file ui_kperfwidget\&.h\&.
 .PP
 References Ui_KPerfWidget::capsBox, Ui_KPerfWidget::capsColorOff, Ui_KPerfWidget::capsColorOn, Ui_KPerfWidget::copyButton, Ui_KPerfWidget::intensityBox, Ui_KPerfWidget::k95Label1, Ui_KPerfWidget::k95Label2, Ui_KPerfWidget::k95Label3, Ui_KPerfWidget::k95Label4, Ui_KPerfWidget::k95Label5, Ui_KPerfWidget::k95Label6, Ui_KPerfWidget::label, Ui_KPerfWidget::label_10, Ui_KPerfWidget::label_11, Ui_KPerfWidget::label_12, Ui_KPerfWidget::label_14, Ui_KPerfWidget::label_15, Ui_KPerfWidget::label_16, Ui_KPerfWidget::label_17, Ui_KPerfWidget::label_18, Ui_KPerfWidget::label_19, Ui_KPerfWidget::label_2, Ui_KPerfWidget::label_20, Ui_KPerfWidget::label_21, Ui_KPerfWidget::label_22, Ui_KPerfWidget::label_23, Ui_KPerfWidget::label_24, Ui_KPerfWidget::label_3, Ui_KPerfWidget::label_4, Ui_KPerfWidget::label_5, Ui_KPerfWidget::label_6, Ui_KPerfWidget::label_7, Ui_KPerfWidget::label_8, Ui_KPerfWidget::lightBox, Ui_KPerfWidget::lightColor1, Ui_KPerfWidget::lightColor2, Ui_KPerfWidget::lightColor3, Ui_KPerfWidget::lockBox, Ui_KPerfWidget::lockColorOff, Ui_KPerfWidget::lockColorOn, Ui_KPerfWidget::macroBox, Ui_KPerfWidget::macroColorOff, Ui_KPerfWidget::macroColorOn, Ui_KPerfWidget::modeBox, Ui_KPerfWidget::modeColorOff, Ui_KPerfWidget::modeColorOn, Ui_KPerfWidget::muteBox, Ui_KPerfWidget::muteColorNA, Ui_KPerfWidget::muteColorOff, Ui_KPerfWidget::muteColorOn, Ui_KPerfWidget::numBox, Ui_KPerfWidget::numColorOff, Ui_KPerfWidget::numColorOn, Ui_KPerfWidget::scrollBox, Ui_KPerfWidget::scrollColorOff, and Ui_KPerfWidget::scrollColorOn\&.
 .PP
 Referenced by Ui_KPerfWidget::setupUi()\&.
 .PP
 .nf
-590     {
-591         KPerfWidget->setWindowTitle(QApplication::translate("KPerfWidget", "Form", Q_NULLPTR));
-592         label_10->setText(QApplication::translate("KPerfWidget", "100%", Q_NULLPTR));
-593         lockColorOff->setText(QString());
-594         k95Label2->setText(QApplication::translate("KPerfWidget", "On", Q_NULLPTR));
-595         label_12->setText(QApplication::translate("KPerfWidget", "On", Q_NULLPTR));
-596         modeColorOff->setText(QString());
-597         lightColor3->setText(QString());
-598         lockBox->setText(QApplication::translate("KPerfWidget", "Indicate Windows Lock:", Q_NULLPTR));
-599         modeColorOn->setText(QString());
-600         macroBox->setText(QApplication::translate("KPerfWidget", "Indicate macro recording:", Q_NULLPTR));
-601         numColorOn->setText(QString());
-602         numBox->clear();
-603         numBox->insertItems(0, QStringList()
-604          << QApplication::translate("KPerfWidget", "Normal", Q_NULLPTR)
-605          << QApplication::translate("KPerfWidget", "Always on", Q_NULLPTR)
-606          << QApplication::translate("KPerfWidget", "Always off", Q_NULLPTR)
-607          << QApplication::translate("KPerfWidget", "RGB indicator", Q_NULLPTR)
-608          << QApplication::translate("KPerfWidget", "RGB + normal", Q_NULLPTR)
-609         );
-610         label_5->setText(QApplication::translate("KPerfWidget", "Num lock:", Q_NULLPTR));
-611         lightColor2->setText(QString());
-612         label_8->setText(QApplication::translate("KPerfWidget", "Note: many desktop environments do not use scroll lock\&. The indicator may not turn on even when enabled\&.", Q_NULLPTR));
-613         lightBox->setText(QApplication::translate("KPerfWidget", "Indicate brightness:", Q_NULLPTR));
-614         lightColor1->setText(QString());
-615         label_6->setText(QApplication::translate("KPerfWidget", "Caps lock:", Q_NULLPTR));
-616         label->setText(QApplication::translate("KPerfWidget", "Miscellaneous", Q_NULLPTR));
-617         lockColorOn->setText(QString());
-618         label_4->setText(QApplication::translate("KPerfWidget", "Lock lights", Q_NULLPTR));
-619         modeBox->setText(QApplication::translate("KPerfWidget", "Indicate current mode:", Q_NULLPTR));
-620         capsColorOff->setText(QString());
-621         numColorOff->setText(QString());
-622         capsColorOn->setText(QString());
-623         label_22->setText(QApplication::translate("KPerfWidget", "Off", Q_NULLPTR));
-624         scrollBox->clear();
-625         scrollBox->insertItems(0, QStringList()
-626          << QApplication::translate("KPerfWidget", "Normal", Q_NULLPTR)
-627          << QApplication::translate("KPerfWidget", "Always on", Q_NULLPTR)
-628          << QApplication::translate("KPerfWidget", "Always off", Q_NULLPTR)
-629          << QApplication::translate("KPerfWidget", "RGB indicator", Q_NULLPTR)
-630          << QApplication::translate("KPerfWidget", "RGB + normal", Q_NULLPTR)
-631         );
-632         label_7->setText(QApplication::translate("KPerfWidget", "Scroll lock:", Q_NULLPTR));
-633         scrollColorOn->setText(QString());
-634         capsBox->clear();
-635         capsBox->insertItems(0, QStringList()
-636          << QApplication::translate("KPerfWidget", "Normal", Q_NULLPTR)
-637          << QApplication::translate("KPerfWidget", "Always on", Q_NULLPTR)
-638          << QApplication::translate("KPerfWidget", "Always off", Q_NULLPTR)
-639          << QApplication::translate("KPerfWidget", "RGB indicator", Q_NULLPTR)
-640          << QApplication::translate("KPerfWidget", "RGB + normal", Q_NULLPTR)
-641         );
-642         scrollColorOff->setText(QString());
-643         muteBox->setText(QApplication::translate("KPerfWidget", "Indicate mute:", Q_NULLPTR));
-644         muteColorOn->setText(QString());
-645         macroColorOff->setText(QString());
-646         label_3->setText(QApplication::translate("KPerfWidget", "Top row", Q_NULLPTR));
-647         muteColorOff->setText(QString());
-648         k95Label3->setText(QApplication::translate("KPerfWidget", "Off", Q_NULLPTR));
-649         macroColorOn->setText(QString());
-650 #ifndef QT_NO_TOOLTIP
-651         muteColorNA->setToolTip(QApplication::translate("KPerfWidget", "If the sound device does not support muting, or if mute status is unknown, this color will be displayed\&.", Q_NULLPTR));
-652 #endif // QT_NO_TOOLTIP
-653         muteColorNA->setText(QString());
-654         label_19->setText(QApplication::translate("KPerfWidget", "On", Q_NULLPTR));
-655         label_21->setText(QApplication::translate("KPerfWidget", "On", Q_NULLPTR));
-656         label_24->setText(QApplication::translate("KPerfWidget", "Off", Q_NULLPTR));
-657         label_20->setText(QApplication::translate("KPerfWidget", "On", Q_NULLPTR));
-658         label_16->setText(QApplication::translate("KPerfWidget", "67%", Q_NULLPTR));
-659         label_14->setText(QApplication::translate("KPerfWidget", "Off", Q_NULLPTR));
-660         label_18->setText(QApplication::translate("KPerfWidget", "33%", Q_NULLPTR));
-661         label_15->setText(QApplication::translate("KPerfWidget", "Off", Q_NULLPTR));
-662         k95Label4->setText(QApplication::translate("KPerfWidget", "On", Q_NULLPTR));
-663         label_17->setText(QApplication::translate("KPerfWidget", "Unknown", Q_NULLPTR));
-664         label_11->setText(QApplication::translate("KPerfWidget", "On", Q_NULLPTR));
-665         label_23->setText(QApplication::translate("KPerfWidget", "Off", Q_NULLPTR));
-666         k95Label1->setText(QApplication::translate("KPerfWidget", "K95 buttons", Q_NULLPTR));
-667         copyButton->setText(QApplication::translate("KPerfWidget", "Copy to mode\&.\&.\&.", Q_NULLPTR));
-668         label_2->setText(QApplication::translate("KPerfWidget", "Indicator intensity:", Q_NULLPTR));
-669         intensityBox->setSuffix(QApplication::translate("KPerfWidget", "%", Q_NULLPTR));
-670         k95Label5->setText(QApplication::translate("KPerfWidget", "Off", Q_NULLPTR));
-671         k95Label6->setText(QApplication::translate("KPerfWidget", "Note: macro recording not yet implemented\&. Indicator will always display \"off\"\&.", Q_NULLPTR));
-672     } // retranslateUi
+617     {
+618         KPerfWidget->setWindowTitle(QApplication::translate("KPerfWidget", "Form", Q_NULLPTR));
+619         label_10->setText(QApplication::translate("KPerfWidget", "100%", Q_NULLPTR));
+620         lockColorOff->setText(QString());
+621         k95Label2->setText(QApplication::translate("KPerfWidget", "On", Q_NULLPTR));
+622         label_12->setText(QApplication::translate("KPerfWidget", "On", Q_NULLPTR));
+623         modeColorOff->setText(QString());
+624         lightColor3->setText(QString());
+625         lockBox->setText(QApplication::translate("KPerfWidget", "Indicate Windows Lock:", Q_NULLPTR));
+626         modeColorOn->setText(QString());
+627         macroBox->setText(QApplication::translate("KPerfWidget", "Indicate macro recording:", Q_NULLPTR));
+628         numColorOn->setText(QString());
+629         numBox->clear();
+630         numBox->insertItems(0, QStringList()
+631          << QApplication::translate("KPerfWidget", "Normal", Q_NULLPTR)
+632          << QApplication::translate("KPerfWidget", "Always on", Q_NULLPTR)
+633          << QApplication::translate("KPerfWidget", "Always off", Q_NULLPTR)
+634          << QApplication::translate("KPerfWidget", "RGB indicator", Q_NULLPTR)
+635          << QApplication::translate("KPerfWidget", "RGB + normal", Q_NULLPTR)
+636         );
+637         label_5->setText(QApplication::translate("KPerfWidget", "Num lock:", Q_NULLPTR));
+638         lightColor2->setText(QString());
+639         label_8->setText(QApplication::translate("KPerfWidget", "Note: many desktop environments do not use scroll lock\&. The indicator may not turn on even when enabled\&.", Q_NULLPTR));
+640         lightBox->setText(QApplication::translate("KPerfWidget", "Indicate brightness:", Q_NULLPTR));
+641         lightColor1->setText(QString());
+642         label_6->setText(QApplication::translate("KPerfWidget", "Caps lock:", Q_NULLPTR));
+643         label->setText(QApplication::translate("KPerfWidget", "Miscellaneous", Q_NULLPTR));
+644         lockColorOn->setText(QString());
+645         label_4->setText(QApplication::translate("KPerfWidget", "Lock lights", Q_NULLPTR));
+646         modeBox->setText(QApplication::translate("KPerfWidget", "Indicate current mode:", Q_NULLPTR));
+647         capsColorOff->setText(QString());
+648         numColorOff->setText(QString());
+649         capsColorOn->setText(QString());
+650         label_22->setText(QApplication::translate("KPerfWidget", "Off", Q_NULLPTR));
+651         scrollBox->clear();
+652         scrollBox->insertItems(0, QStringList()
+653          << QApplication::translate("KPerfWidget", "Normal", Q_NULLPTR)
+654          << QApplication::translate("KPerfWidget", "Always on", Q_NULLPTR)
+655          << QApplication::translate("KPerfWidget", "Always off", Q_NULLPTR)
+656          << QApplication::translate("KPerfWidget", "RGB indicator", Q_NULLPTR)
+657          << QApplication::translate("KPerfWidget", "RGB + normal", Q_NULLPTR)
+658         );
+659         label_7->setText(QApplication::translate("KPerfWidget", "Scroll lock:", Q_NULLPTR));
+660         scrollColorOn->setText(QString());
+661         capsBox->clear();
+662         capsBox->insertItems(0, QStringList()
+663          << QApplication::translate("KPerfWidget", "Normal", Q_NULLPTR)
+664          << QApplication::translate("KPerfWidget", "Always on", Q_NULLPTR)
+665          << QApplication::translate("KPerfWidget", "Always off", Q_NULLPTR)
+666          << QApplication::translate("KPerfWidget", "RGB indicator", Q_NULLPTR)
+667          << QApplication::translate("KPerfWidget", "RGB + normal", Q_NULLPTR)
+668         );
+669         scrollColorOff->setText(QString());
+670         muteBox->setText(QApplication::translate("KPerfWidget", "Indicate mute:", Q_NULLPTR));
+671         muteColorOn->setText(QString());
+672         macroColorOff->setText(QString());
+673         label_3->setText(QApplication::translate("KPerfWidget", "Top row", Q_NULLPTR));
+674         muteColorOff->setText(QString());
+675         k95Label3->setText(QApplication::translate("KPerfWidget", "Off", Q_NULLPTR));
+676         macroColorOn->setText(QString());
+677 #ifndef QT_NO_TOOLTIP
+678         muteColorNA->setToolTip(QApplication::translate("KPerfWidget", "If the sound device does not support muting, or if mute status is unknown, this color will be displayed\&.", Q_NULLPTR));
+679 #endif // QT_NO_TOOLTIP
+680         muteColorNA->setText(QString());
+681         label_19->setText(QApplication::translate("KPerfWidget", "On", Q_NULLPTR));
+682         label_21->setText(QApplication::translate("KPerfWidget", "On", Q_NULLPTR));
+683         label_24->setText(QApplication::translate("KPerfWidget", "Off", Q_NULLPTR));
+684         label_20->setText(QApplication::translate("KPerfWidget", "On", Q_NULLPTR));
+685         label_16->setText(QApplication::translate("KPerfWidget", "67%", Q_NULLPTR));
+686         label_14->setText(QApplication::translate("KPerfWidget", "Off", Q_NULLPTR));
+687         label_18->setText(QApplication::translate("KPerfWidget", "33%", Q_NULLPTR));
+688         label_15->setText(QApplication::translate("KPerfWidget", "Off", Q_NULLPTR));
+689         k95Label4->setText(QApplication::translate("KPerfWidget", "On", Q_NULLPTR));
+690         label_17->setText(QApplication::translate("KPerfWidget", "Unknown", Q_NULLPTR));
+691         label_11->setText(QApplication::translate("KPerfWidget", "On", Q_NULLPTR));
+692         label_23->setText(QApplication::translate("KPerfWidget", "Off", Q_NULLPTR));
+693         k95Label1->setText(QApplication::translate("KPerfWidget", "K95 buttons", Q_NULLPTR));
+694         copyButton->setText(QApplication::translate("KPerfWidget", "Copy to mode\&.\&.\&.", Q_NULLPTR));
+695         label_2->setText(QApplication::translate("KPerfWidget", "Indicator intensity:", Q_NULLPTR));
+696         intensityBox->setSuffix(QApplication::translate("KPerfWidget", "%", Q_NULLPTR));
+697         k95Label5->setText(QApplication::translate("KPerfWidget", "Off", Q_NULLPTR));
+698         k95Label6->setText(QApplication::translate("KPerfWidget", "Note: macro recording not yet implemented\&. Indicator will always display \"off\"\&.", Q_NULLPTR));
+699     } // retranslateUi
 .fi
 .SS "void Ui_KPerfWidget::setupUi (\fBQWidget\fP *KPerfWidget)\fC [inline]\fP, \fC [inherited]\fP"
 
@@ -832,11 +832,38 @@ Referenced by KPerfWidget::KPerfWidget()\&.
 580 
 581         gridLayout->addWidget(k95Label6, 11, 1, 1, 10);
 582 
-583 
-584         retranslateUi(KPerfWidget);
-585 
-586         QMetaObject::connectSlotsByName(KPerfWidget);
-587     } // setupUi
+583         QWidget::setTabOrder(intensityBox, copyButton);
+584         QWidget::setTabOrder(copyButton, modeBox);
+585         QWidget::setTabOrder(modeBox, modeColorOn);
+586         QWidget::setTabOrder(modeColorOn, modeColorOff);
+587         QWidget::setTabOrder(modeColorOff, macroBox);
+588         QWidget::setTabOrder(macroBox, macroColorOn);
+589         QWidget::setTabOrder(macroColorOn, macroColorOff);
+590         QWidget::setTabOrder(macroColorOff, lightBox);
+591         QWidget::setTabOrder(lightBox, lightColor3);
+592         QWidget::setTabOrder(lightColor3, lightColor2);
+593         QWidget::setTabOrder(lightColor2, lightColor1);
+594         QWidget::setTabOrder(lightColor1, lockBox);
+595         QWidget::setTabOrder(lockBox, lockColorOn);
+596         QWidget::setTabOrder(lockColorOn, lockColorOff);
+597         QWidget::setTabOrder(lockColorOff, muteBox);
+598         QWidget::setTabOrder(muteBox, muteColorOn);
+599         QWidget::setTabOrder(muteColorOn, muteColorOff);
+600         QWidget::setTabOrder(muteColorOff, muteColorNA);
+601         QWidget::setTabOrder(muteColorNA, numBox);
+602         QWidget::setTabOrder(numBox, numColorOn);
+603         QWidget::setTabOrder(numColorOn, numColorOff);
+604         QWidget::setTabOrder(numColorOff, capsBox);
+605         QWidget::setTabOrder(capsBox, capsColorOn);
+606         QWidget::setTabOrder(capsColorOn, capsColorOff);
+607         QWidget::setTabOrder(capsColorOff, scrollBox);
+608         QWidget::setTabOrder(scrollBox, scrollColorOn);
+609         QWidget::setTabOrder(scrollColorOn, scrollColorOff);
+610 
+611         retranslateUi(KPerfWidget);
+612 
+613         QMetaObject::connectSlotsByName(KPerfWidget);
+614     } // setupUi
 .fi
 .SH "Field Documentation"
 .PP 

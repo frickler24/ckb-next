@@ -24,7 +24,7 @@ var searchData=
   ['nk95_5fm3',['NK95_M3',['../usb_8h.html#aaa072888ddb1a257e739edb3655500bc',1,'usb.h']]],
   ['nk95cmd',['nk95cmd',['../usb_8h.html#aefc95e6120686dff0e06bba32ca21ad1',1,'usb.h']]],
   ['none',['NONE',['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3ac157bdf0b85a40d2619cbc8bc1ae5fe2',1,'command.h']]],
-  ['notify',['notify',['../structures_8h.html#ae345af22703c6bb7c12cd6bfdc8f1942',1,'usbmode::notify()'],['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3a396912289122c12cc2db4ee6a7eb150e',1,'NOTIFY():&#160;command.h']]],
+  ['notify',['notify',['../structures_8h.html#af95d870bd32765636ad830e70dd0125b',1,'usbmode::notify()'],['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3a396912289122c12cc2db4ee6a7eb150e',1,'NOTIFY():&#160;command.h']]],
   ['notify_2ec',['notify.c',['../notify_8c.html',1,'']]],
   ['notify_2eh',['notify.h',['../notify_8h.html',1,'']]],
   ['notifyoff',['NOTIFYOFF',['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3a24c8ea0c5000cbf0e5caf374af5d484f',1,'command.h']]],

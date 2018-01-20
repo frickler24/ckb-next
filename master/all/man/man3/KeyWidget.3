@@ -1,4 +1,4 @@
-.TH "KeyWidget" 3 "Fri Nov 3 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "KeyWidget" 3 "Sat Jan 20 2018" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -556,7 +556,7 @@ References ADD, keyMap, KeyMap::keys(), mouseDownMode, newSelection, NONE, selec
 .PP
 Definition at line 70 of file keywidget\&.cpp\&.
 .PP
-References _bindMap, _colorMap, _displayColorMap, _indicators, _monochrome, _rgbMode, ADD, animation, ColorMap::colorForName(), KbBind::defaultAction(), drawInfo(), KeyMap::EU, KeyMap::EU_DVORAK, Key::friendlyName(), KeyMap::GLAIVE, glaiveOverlay, KbBind::globalRemap(), KeyMap::HARPOON, harpOverlay, Key::hasLed, Key::hasScan, Key::height, KeyMap::isMouse(), KeyMap::K65, keyMap, KeyMap::layout(), KeyMap::M65, m65Overlay, KeyMap::model(), monoRgb(), mouseCurrentX, mouseCurrentY, mouseDownMode, mouseDownX, mouseDownY, Key::name, newSelection, NONE, sabOverlay, KeyMap::SABRE, KeyMap::SCIMITAR, scimOverlay, selection, SET, KeyMap::STRAFE, SUBTRACT, TOGGLE, Key::width, width, Key::x, x, Key::y, and y\&.
+References _bindMap, _colorMap, _displayColorMap, _indicators, _monochrome, _rgbMode, ADD, animation, ColorMap::colorForName(), KbBind::defaultAction(), drawInfo(), KeyMap::EU, KeyMap::EU_DVORAK, Key::friendlyName(), KeyMap::GLAIVE, glaiveOverlay, KbBind::globalRemap(), KeyMap::HARPOON, harpOverlay, Key::hasLed, Key::hasScan, Key::height, KeyMap::isMouse(), KeyMap::K65, KeyMap::K95P, keyMap, KeyMap::layout(), KeyMap::M65, m65Overlay, KeyMap::model(), monoRgb(), mouseCurrentX, mouseCurrentY, mouseDownMode, mouseDownX, mouseDownY, Key::name, newSelection, NONE, sabOverlay, KeyMap::SABRE, KeyMap::SCIMITAR, scimOverlay, selection, SET, KeyMap::STRAFE, SUBTRACT, TOGGLE, Key::width, width, Key::x, x, Key::y, and y\&.
 .PP
 .nf
 70                                       {
@@ -713,9 +713,9 @@ References _bindMap, _colorMap, _displayColorMap, _indicators, _monochrome, _rgb
 221                     bgPainter\&.setOpacity(0\&.7);
 222             }
 223         }
-224         if(model != KeyMap::STRAFE && (!strcmp(key\&.name, "mr") || !strcmp(key\&.name, "m1") || !strcmp(key\&.name, "m2") || !strcmp(key\&.name, "m3")
+224         if((model != KeyMap::STRAFE && model != KeyMap::K95P) && (!strcmp(key\&.name, "mr") || !strcmp(key\&.name, "m1") || !strcmp(key\&.name, "m2") || !strcmp(key\&.name, "m3")
 225                 || !strcmp(key\&.name, "light") || !strcmp(key\&.name, "lock") || (model == KeyMap::K65 && !strcmp(key\&.name, "mute")))){
-226             // Switch keys are circular except for Strafe\&. All Strafe keys are square
+226             // Not all devices have circular buttons
 227             x += w / 8\&.f;
 228             y += h / 8\&.f;
 229             w *= 0\&.75f;

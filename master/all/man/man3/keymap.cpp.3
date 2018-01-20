@@ -1,4 +1,4 @@
-.TH "src/ckb/keymap.cpp" 3 "Fri Nov 3 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "src/ckb/keymap.cpp" 3 "Sat Jan 20 2018" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -25,6 +25,9 @@ src/ckb/keymap.cpp \-
 .in +1c
 .ti -1c
 .RI "#define \fBNS\fP   12, 12"
+.br
+.ti -1c
+.RI "#define \fBLBS\fP   17, 6"
 .br
 .ti -1c
 .RI "#define \fBKEYCOUNT_K95\fP   (sizeof(\fBK95Keys\fP) / sizeof(\fBKey\fP))"
@@ -60,6 +63,15 @@ src/ckb/keymap.cpp \-
 .RI "#define \fBK95_HEIGHT\fP   76"
 .br
 .ti -1c
+.RI "#define \fBK95P_HEIGHT\fP   82"
+.br
+.ti -1c
+.RI "#define \fBK95P_X_START\fP   20"
+.br
+.ti -1c
+.RI "#define \fBK95P_WIDTH\fP   (\fBK95_WIDTH\fP - \fBK95P_X_START\fP + 1)"
+.br
+.ti -1c
 .RI "#define \fBK70_X_START\fP   38"
 .br
 .ti -1c
@@ -67,6 +79,12 @@ src/ckb/keymap.cpp \-
 .br
 .ti -1c
 .RI "#define \fBK70_HEIGHT\fP   \fBK95_HEIGHT\fP"
+.br
+.ti -1c
+.RI "#define \fBK68_WIDTH\fP   \fBK70_WIDTH\fP"
+.br
+.ti -1c
+.RI "#define \fBK68_HEIGHT\fP   \fBK70_HEIGHT\fP"
 .br
 .ti -1c
 .RI "#define \fBK65_WIDTH\fP   209"
@@ -79,6 +97,9 @@ src/ckb/keymap.cpp \-
 .br
 .ti -1c
 .RI "#define \fBK63_HEIGHT\fP   \fBK65_HEIGHT\fP"
+.br
+.ti -1c
+.RI "#define \fBK68_TOP_COUNT\fP   (sizeof(\fBK68TopRow\fP) / sizeof(\fBKey\fP))"
 .br
 .ti -1c
 .RI "#define \fBK65_TOP_COUNT\fP   (sizeof(\fBK65TopRow\fP) / sizeof(\fBKey\fP))"
@@ -141,6 +162,9 @@ src/ckb/keymap.cpp \-
 .RI "#define \fBSCIM_HEIGHT\fP   \fBM65_HEIGHT\fP"
 .br
 .ti -1c
+.RI "#define \fBLBARCOUNT_K95P\fP   (sizeof(\fBK95PLbar\fP) / sizeof(\fBKey\fP))"
+.br
+.ti -1c
 .RI "#define \fBN_MODELS\fP   \fBKeyMap::_MODEL_MAX\fP"
 .br
 .ti -1c
@@ -167,6 +191,9 @@ src/ckb/keymap.cpp \-
 .br
 .ti -1c
 .RI "static void \fBpatchJP106fn\fP (QHash< QString, \fBKey\fP > &map)"
+.br
+.ti -1c
+.RI "static void \fBpatchABNT2\fP (QHash< QString, \fBKey\fP > &map)"
 .br
 .ti -1c
 .RI "static QHash< QString, \fBKey\fP > \fBgetMap\fP (\fBKeyMap::Model\fP model, \fBKeyMap::Layout\fP layout)"
@@ -200,6 +227,9 @@ src/ckb/keymap.cpp \-
 .RI "static const \fBKeyPatch\fP \fBpatchMX\fP []"
 .br
 .ti -1c
+.RI "static const \fBKeyPatch\fP \fBpatchPTBR\fP []"
+.br
+.ti -1c
 .RI "static const \fBKeyPatch\fP \fBpatchES\fP []"
 .br
 .ti -1c
@@ -210,6 +240,9 @@ src/ckb/keymap.cpp \-
 .br
 .ti -1c
 .RI "static const \fBKeyPatch\fP \fBpatchDvorak\fP []"
+.br
+.ti -1c
+.RI "static const \fBKey\fP \fBK68TopRow\fP []"
 .br
 .ti -1c
 .RI "static const \fBKey\fP \fBK65TopRow\fP []"
@@ -236,6 +269,9 @@ src/ckb/keymap.cpp \-
 .RI "static const \fBKey\fP \fBScimKeys\fP []"
 .br
 .ti -1c
+.RI "static const \fBKey\fP \fBK95PLbar\fP []"
+.br
+.ti -1c
 .RI "static QHash< QString, \fBKey\fP > \fBK95BaseMap\fP"
 .br
 .ti -1c
@@ -246,7 +282,7 @@ src/ckb/keymap.cpp \-
 .PP 
 .SH "struct KeyPatch"
 .PP 
-Definition at line 30 of file keymap\&.cpp\&.
+Definition at line 32 of file keymap\&.cpp\&.
 .PP
 \fBData Fields:\fP
 .RS 4
@@ -266,189 +302,233 @@ const char * \fIname\fP
 .SS "#define ANSI_ENTER_H   12"
 
 .PP
-Definition at line 25 of file keymap\&.cpp\&.
+Definition at line 27 of file keymap\&.cpp\&.
 .PP
 Referenced by patchANSI()\&.
 .SS "#define ANSI_ENTER_W   26"
 
 .PP
-Definition at line 24 of file keymap\&.cpp\&.
+Definition at line 26 of file keymap\&.cpp\&.
 .PP
 Referenced by patchANSI()\&.
 .SS "#define ANSI_ENTER_X   199"
 
 .PP
-Definition at line 22 of file keymap\&.cpp\&.
+Definition at line 24 of file keymap\&.cpp\&.
 .PP
 Referenced by patchANSI()\&.
 .SS "#define ANSI_ENTER_Y   51"
 
 .PP
-Definition at line 23 of file keymap\&.cpp\&.
+Definition at line 25 of file keymap\&.cpp\&.
 .PP
 Referenced by patchANSI()\&.
 .SS "#define ANSI_LSHIFT_W   26"
 
 .PP
-Definition at line 27 of file keymap\&.cpp\&.
+Definition at line 29 of file keymap\&.cpp\&.
 .PP
 Referenced by patchANSI(), and patchJP106()\&.
 .SS "#define ANSI_LSHIFT_X   45"
 
 .PP
-Definition at line 26 of file keymap\&.cpp\&.
+Definition at line 28 of file keymap\&.cpp\&.
 .PP
 Referenced by patchANSI(), and patchJP106()\&.
 .SS "#define GLAIVE_HEIGHT   \fBM65_HEIGHT\fP"
 
 .PP
-Definition at line 276 of file keymap\&.cpp\&.
+Definition at line 310 of file keymap\&.cpp\&.
 .SS "#define GLAIVE_WIDTH   \fBM65_WIDTH\fP"
 
 .PP
-Definition at line 275 of file keymap\&.cpp\&.
+Definition at line 309 of file keymap\&.cpp\&.
 .SS "#define HARPOON_HEIGHT   \fBM65_HEIGHT\fP"
 
 .PP
-Definition at line 264 of file keymap\&.cpp\&.
+Definition at line 298 of file keymap\&.cpp\&.
 .SS "#define HARPOON_WIDTH   \fBM65_WIDTH\fP"
 
 .PP
-Definition at line 263 of file keymap\&.cpp\&.
+Definition at line 297 of file keymap\&.cpp\&.
 .SS "#define K63_HEIGHT   \fBK65_HEIGHT\fP"
 
 .PP
-Definition at line 204 of file keymap\&.cpp\&.
+Definition at line 233 of file keymap\&.cpp\&.
 .SS "#define K63_TOP_COUNT   (sizeof(\fBK63TopRow\fP) / sizeof(\fBKey\fP))"
 
 .PP
-Definition at line 214 of file keymap\&.cpp\&.
+Definition at line 248 of file keymap\&.cpp\&.
 .PP
 Referenced by getMap()\&.
 .SS "#define K63_WIDTH   \fBK65_WIDTH\fP"
 
 .PP
-Definition at line 203 of file keymap\&.cpp\&.
+Definition at line 232 of file keymap\&.cpp\&.
 .PP
 Referenced by KeyMap::modelWidth()\&.
 .SS "#define K65_HEIGHT   \fBK70_HEIGHT\fP"
 
 .PP
-Definition at line 200 of file keymap\&.cpp\&.
+Definition at line 229 of file keymap\&.cpp\&.
 .SS "#define K65_TOP_COUNT   (sizeof(\fBK65TopRow\fP) / sizeof(\fBKey\fP))"
 
 .PP
-Definition at line 209 of file keymap\&.cpp\&.
+Definition at line 243 of file keymap\&.cpp\&.
 .PP
 Referenced by getMap()\&.
 .SS "#define K65_WIDTH   209"
 
 .PP
-Definition at line 199 of file keymap\&.cpp\&.
+Definition at line 228 of file keymap\&.cpp\&.
 .PP
 Referenced by getMap(), and KeyMap::modelWidth()\&.
+.SS "#define K68_HEIGHT   \fBK70_HEIGHT\fP"
+
+.PP
+Definition at line 225 of file keymap\&.cpp\&.
+.SS "#define K68_TOP_COUNT   (sizeof(\fBK68TopRow\fP) / sizeof(\fBKey\fP))"
+
+.PP
+Definition at line 238 of file keymap\&.cpp\&.
+.PP
+Referenced by getMap()\&.
+.SS "#define K68_WIDTH   \fBK70_WIDTH\fP"
+
+.PP
+Definition at line 224 of file keymap\&.cpp\&.
+.PP
+Referenced by KeyMap::modelWidth()\&.
 .SS "#define K70_HEIGHT   \fBK95_HEIGHT\fP"
 
 .PP
-Definition at line 196 of file keymap\&.cpp\&.
+Definition at line 222 of file keymap\&.cpp\&.
 .SS "#define K70_WIDTH   (\fBK95_WIDTH\fP - \fBK70_X_START\fP)"
 
 .PP
-Definition at line 195 of file keymap\&.cpp\&.
+Definition at line 221 of file keymap\&.cpp\&.
 .PP
 Referenced by KeyMap::modelWidth()\&.
 .SS "#define K70_X_START   38"
 
 .PP
-Definition at line 194 of file keymap\&.cpp\&.
+Definition at line 220 of file keymap\&.cpp\&.
 .PP
 Referenced by getMap()\&.
 .SS "#define K95_HEIGHT   76"
 
 .PP
-Definition at line 191 of file keymap\&.cpp\&.
+Definition at line 213 of file keymap\&.cpp\&.
 .PP
 Referenced by KeyMap::modelHeight()\&.
 .SS "#define K95_WIDTH   298"
 
 .PP
-Definition at line 190 of file keymap\&.cpp\&.
+Definition at line 212 of file keymap\&.cpp\&.
 .PP
 Referenced by KeyMap::modelWidth()\&.
+.SS "#define K95P_HEIGHT   82"
+
+.PP
+Definition at line 215 of file keymap\&.cpp\&.
+.PP
+Referenced by KeyMap::modelHeight()\&.
+.SS "#define K95P_WIDTH   (\fBK95_WIDTH\fP - \fBK95P_X_START\fP + 1)"
+
+.PP
+Definition at line 217 of file keymap\&.cpp\&.
+.PP
+Referenced by KeyMap::modelWidth()\&.
+.SS "#define K95P_X_START   20"
+
+.PP
+Definition at line 216 of file keymap\&.cpp\&.
+.PP
+Referenced by getMap()\&.
 .SS "#define KEYCOUNT_GLAIVE   (sizeof(\fBGlaiveKeys\fP) / sizeof(\fBKey\fP))"
 
 .PP
-Definition at line 273 of file keymap\&.cpp\&.
+Definition at line 307 of file keymap\&.cpp\&.
 .PP
 Referenced by getMap()\&.
 .SS "#define KEYCOUNT_HARPOON   (sizeof(\fBHarpoonKeys\fP) / sizeof(\fBKey\fP))"
 
 .PP
-Definition at line 261 of file keymap\&.cpp\&.
+Definition at line 295 of file keymap\&.cpp\&.
 .PP
 Referenced by getMap()\&.
 .SS "#define KEYCOUNT_K95   (sizeof(\fBK95Keys\fP) / sizeof(\fBKey\fP))"
 
 .PP
-Definition at line 19 of file keymap\&.cpp\&.
+Definition at line 21 of file keymap\&.cpp\&.
 .PP
 Referenced by getMap()\&.
 .SS "#define KEYCOUNT_M65   (sizeof(\fBM65Keys\fP) / sizeof(\fBKey\fP))"
 
 .PP
-Definition at line 236 of file keymap\&.cpp\&.
+Definition at line 270 of file keymap\&.cpp\&.
 .PP
 Referenced by getMap()\&.
 .SS "#define KEYCOUNT_SABRE   (sizeof(\fBSabreKeys\fP) / sizeof(\fBKey\fP))"
 
 .PP
-Definition at line 249 of file keymap\&.cpp\&.
+Definition at line 283 of file keymap\&.cpp\&.
 .PP
 Referenced by getMap()\&.
 .SS "#define KEYCOUNT_SCIM   (sizeof(\fBScimKeys\fP) / sizeof(\fBKey\fP))"
 
 .PP
-Definition at line 290 of file keymap\&.cpp\&.
+Definition at line 324 of file keymap\&.cpp\&.
 .PP
 Referenced by getMap()\&.
 .SS "#define KSTRAFE_HEIGHT   \fBK95_HEIGHT\fP"
 
 .PP
-Definition at line 219 of file keymap\&.cpp\&.
+Definition at line 253 of file keymap\&.cpp\&.
 .SS "#define KSTRAFE_WIDTH   (\fBK70_WIDTH\fP + (\fBKSTRAFE_X_START\fP * 2))"
 
 .PP
-Definition at line 218 of file keymap\&.cpp\&.
+Definition at line 252 of file keymap\&.cpp\&.
 .PP
 Referenced by KeyMap::modelWidth()\&.
 .SS "#define KSTRAFE_X_START   12"
 
 .PP
-Definition at line 217 of file keymap\&.cpp\&.
+Definition at line 251 of file keymap\&.cpp\&.
 .PP
 Referenced by getMap()\&.
+.SS "#define LBARCOUNT_K95P   (sizeof(\fBK95PLbar\fP) / sizeof(\fBKey\fP))"
+
+.PP
+Definition at line 336 of file keymap\&.cpp\&.
+.PP
+Referenced by getMap()\&.
+.SS "#define LBS   17, 6"
+
+.PP
+Definition at line 9 of file keymap\&.cpp\&.
 .SS "#define M65_HEIGHT   67"
 
 .PP
-Definition at line 239 of file keymap\&.cpp\&.
+Definition at line 273 of file keymap\&.cpp\&.
 .PP
 Referenced by KeyMap::modelHeight()\&.
 .SS "#define M65_WIDTH   52"
 
 .PP
-Definition at line 238 of file keymap\&.cpp\&.
+Definition at line 272 of file keymap\&.cpp\&.
 .PP
 Referenced by KeyMap::modelWidth()\&.
 .SS "#define N_LAYOUTS   \fBKeyMap::_LAYOUT_MAX\fP"
 
 .PP
-Definition at line 297 of file keymap\&.cpp\&.
+Definition at line 341 of file keymap\&.cpp\&.
 .PP
 Referenced by getMap()\&.
 .SS "#define N_MODELS   \fBKeyMap::_MODEL_MAX\fP"
 
 .PP
-Definition at line 296 of file keymap\&.cpp\&.
+Definition at line 340 of file keymap\&.cpp\&.
 .PP
 Referenced by getMap()\&.
 .SS "#define NS   12, 12"
@@ -458,389 +538,493 @@ Definition at line 6 of file keymap\&.cpp\&.
 .SS "#define patch(map, patches)   \fB_patch\fP(map, patches, \fBPATCH_COUNT\fP(patches))"
 
 .PP
-Definition at line 111 of file keymap\&.cpp\&.
+Definition at line 120 of file keymap\&.cpp\&.
 .PP
 Referenced by getMap()\&.
 .SS "#define PATCH_COUNT(\fBpatch\fP)   (sizeof(\fBpatch\fP) / sizeof(\fBKeyPatch\fP))"
 
 .PP
-Definition at line 110 of file keymap\&.cpp\&.
+Definition at line 119 of file keymap\&.cpp\&.
 .SS "#define SABRE_HEIGHT   \fBM65_HEIGHT\fP"
 
 .PP
-Definition at line 252 of file keymap\&.cpp\&.
+Definition at line 286 of file keymap\&.cpp\&.
 .SS "#define SABRE_WIDTH   \fBM65_WIDTH\fP"
 
 .PP
-Definition at line 251 of file keymap\&.cpp\&.
+Definition at line 285 of file keymap\&.cpp\&.
 .SS "#define SCIM_HEIGHT   \fBM65_HEIGHT\fP"
 
 .PP
-Definition at line 293 of file keymap\&.cpp\&.
+Definition at line 327 of file keymap\&.cpp\&.
 .SS "#define SCIM_WIDTH   \fBM65_WIDTH\fP"
 
 .PP
-Definition at line 292 of file keymap\&.cpp\&.
+Definition at line 326 of file keymap\&.cpp\&.
 .SH "Function Documentation"
 .PP 
 .SS "static void _patch (QHash< QString, \fBKey\fP > &map, const \fBKeyPatch\fP *patches, intpatchCount)\fC [static]\fP"
 
 .PP
-Definition at line 112 of file keymap\&.cpp\&.
+Definition at line 121 of file keymap\&.cpp\&.
 .PP
 References Key::_friendlyName, and Key::_storageName\&.
 .PP
 .nf
-112                                                                                      {
-113     for(const KeyPatch* p = patches; p < patches + patchCount; p++){
-114         Key& key = map[p->name];
-115         key\&._storageName = p->_storageName;
-116         key\&._friendlyName = p->_friendlyName;
-117     }
-118 }
+121                                                                                      {
+122     for(const KeyPatch* p = patches; p < patches + patchCount; p++){
+123         Key& key = map[p->name];
+124         key\&._storageName = p->_storageName;
+125         key\&._friendlyName = p->_friendlyName;
+126     }
+127 }
 .fi
 .SS "static QHash<QString, \fBKey\fP> getMap (\fBKeyMap::Model\fPmodel, \fBKeyMap::Layout\fPlayout)\fC [static]\fP"
 
 .PP
-Definition at line 300 of file keymap\&.cpp\&.
+Definition at line 344 of file keymap\&.cpp\&.
 .PP
-References KeyMap::DE, KeyMap::DK, KeyMap::ES, KeyMap::EU, KeyMap::EU_DVORAK, KeyMap::FR, KeyMap::GB_DVORAK, KeyMap::GLAIVE, KeyMap::HARPOON, Key::height, KeyMap::isISO(), KeyMap::isJP(), KeyMap::IT, KeyMap::JP, KeyMap::K63, K63_TOP_COUNT, KeyMap::K65, K65_TOP_COUNT, K65_WIDTH, KeyMap::K70, K70_X_START, KeyMap::K95, K95BaseMap, KEYCOUNT_GLAIVE, KEYCOUNT_HARPOON, KEYCOUNT_K95, KEYCOUNT_M65, KEYCOUNT_SABRE, KEYCOUNT_SCIM, KSTRAFE_X_START, KeyMap::M65, KeyMap::MX, N_LAYOUTS, N_MODELS, key::name, KeyMap::NO, patch, patchANSI(), patchISO(), patchJP106(), patchJP106fn(), KeyMap::SABRE, KeyMap::SCIMITAR, KeyMap::SE, standardMaps, KeyMap::STRAFE, KeyMap::US_DVORAK, Key::width, Key::x, and Key::y\&.
+References KeyMap::DE, KeyMap::DK, KeyMap::ES, KeyMap::EU, KeyMap::EU_DVORAK, KeyMap::FR, KeyMap::GB_DVORAK, KeyMap::GLAIVE, KeyMap::HARPOON, Key::height, KeyMap::isISO(), KeyMap::isJP(), KeyMap::isPTBR(), KeyMap::IT, KeyMap::JP, KeyMap::K63, K63_TOP_COUNT, KeyMap::K65, K65_TOP_COUNT, K65_WIDTH, KeyMap::K68, K68_TOP_COUNT, KeyMap::K70, K70_X_START, KeyMap::K95, K95BaseMap, KeyMap::K95P, K95P_X_START, KEYCOUNT_GLAIVE, KEYCOUNT_HARPOON, KEYCOUNT_K95, KEYCOUNT_M65, KEYCOUNT_SABRE, KEYCOUNT_SCIM, KSTRAFE_X_START, LBARCOUNT_K95P, KeyMap::M65, KeyMap::MX, N_LAYOUTS, N_MODELS, key::name, KeyMap::NO, patch, patchABNT2(), patchANSI(), patchISO(), patchJP106(), patchJP106fn(), KeyMap::PT_BR, KeyMap::SABRE, KeyMap::SCIMITAR, KeyMap::SE, standardMaps, KeyMap::STRAFE, KeyMap::US_DVORAK, Key::width, Key::x, and Key::y\&.
 .PP
 .nf
-300                                                                          {
-301     if(model < 0 || layout < 0 || model >= N_MODELS || layout >= N_LAYOUTS)
-302         return QHash<QString, Key>();
-303     // Return the map if it's already filled out
-304     QHash<QString, Key>& map = standardMaps[model][layout];
-305     if(!map\&.empty())
-306         return map;
-307     // Otherwise, create it
-308     switch(model){
-309     case KeyMap::K95:{
-310         // The K95 maps serve as bases for all the other keyboards
-311         // Fetch the master map, or create it if not yet done
-312         if(K95BaseMap\&.empty()){
-313             for(const Key* key = K95Keys; key < K95Keys + KEYCOUNT_K95; key++)
-314                 K95BaseMap[key->name] = *key;
-315         }
-316         map = K95BaseMap;
-317         // Patch the map for the layout
-318         switch(layout){
-319         case KeyMap::DK:
-320             patch(map, patchDK);
-321             break;
-322         case KeyMap::EU_DVORAK:
-323             patch(map, patchDvorak);    // fall through
-324         case KeyMap::EU:
-325             patch(map, patchEU);
-326             break;
-327         case KeyMap::GB_DVORAK:
-328         case KeyMap::US_DVORAK:
-329             patch(map, patchDvorak);
-330             break;
-331         case KeyMap::FR:
-332             patch(map, patchFR);
-333             break;
-334         case KeyMap::DE:
-335             patch(map, patchDE);
-336             break;
-337         case KeyMap::IT:
-338             patch(map, patchIT);
-339             break;
-340         case KeyMap::NO:
-341             patch(map, patchNO);
-342             break;
-343         case KeyMap::MX:
-344             patch(map, patchMX);
-345             break;
-346         case KeyMap::ES:
-347             patch(map, patchES);
-348             break;
-349         case KeyMap::SE:
-350             patch(map, patchSE);
-351             break;
-352         case KeyMap::JP:
-353             patch(map, patchJP);
-354             break;
-355         default:;
-356             // English QWERTY - no patch needed
-357         }
-358         if(KeyMap::isJP(layout))
-359             patchJP106(map);
-360         else if(KeyMap::isISO(layout))
-361             patchISO(map);
-362         else
-363             patchANSI(map);
-364         // Done! return the map
-365         break;
-366     }
-367     case KeyMap::K70:{
-368         // The K70 maps are based on the K95 maps\&. However all the keys are shifted left and the G keys are removed
-369         map = getMap(KeyMap::K95, layout);
-370         QMutableHashIterator<QString, Key> i(map);
-371         while(i\&.hasNext()){
-372             i\&.next();
-373             // Move key to left\&. Remove it if it fell off the edge
-374             if((i\&.value()\&.x -= K70_X_START) < 0)
-375                 i\&.remove();
-376         }
-377         // Remove the M buttons as well
-378         map\&.remove("mr");
-379         map\&.remove("m1");
-380         map\&.remove("m2");
-381         map\&.remove("m3");
-382         // Done!
-383         break;
-384     }
-385     case KeyMap::K65:{
-386         // The K65 maps additionally remove the numpad and have a modified top row
-387         map = getMap(KeyMap::K70, layout);
-388         QMutableHashIterator<QString, Key> i(map);
-389         while(i\&.hasNext()){
-390             i\&.next();
-391             if(i\&.value()\&.x >= K65_WIDTH)
-392                 i\&.remove();
-393         }
-394         for(const Key* key = K65TopRow; key < K65TopRow + K65_TOP_COUNT; key++)
-395             map[key->name] = *key;
-396 
-397         map\&.remove("rwin");
-398         map["fn"] = KStrafeKeys[3];
-399         map["fn"]\&.x -= 12;
-400 
-401         if(KeyMap::isJP(layout))
-402             patchJP106fn(map);
-403 
-404         // Done!
-405         break;
-406     }
-407     case KeyMap::K63:{
-408         // Same as the K65 but without the Fn key
-409         map = getMap(KeyMap::K70, layout);
-410         QMutableHashIterator<QString, Key> i(map);
-411         while(i\&.hasNext()){
-412             i\&.next();
-413             if(i\&.value()\&.x >= K65_WIDTH)
-414                 i\&.remove();
-415         }
-416         for(const Key* key = K63TopRow; key < K63TopRow + K63_TOP_COUNT; key++)
-417             map[key->name] = *key;
-418 
-419         break;
-420     }
-421     case KeyMap::STRAFE:{
-422         // The Strafe RGB maps are based on the K70 map minus the media keys
-423         map = getMap(KeyMap::K70, layout);
-424         //move light and lock right
-425         map["light"]\&.x=285 - K70_X_START;
-426         //map["light"]\&.hasLed=false;
-427         map["lock"]\&.x=297 - K70_X_START;
-428         //map["lock"]\&.hasLed=false;
-429         // move everything right to make the space for the left sidelight
-430         QMutableHashIterator<QString, Key> i(map);
-431         while(i\&.hasNext()){
-432             i\&.next();
-433             i\&.value()\&.x += KSTRAFE_X_START;
-434         }
-435         // Add Strafe lights and keys
-436         map["lsidel"] = KStrafeKeys[0];
-437         map["rsidel"] = KStrafeKeys[1];
-438         map["logo"] = KStrafeKeys[2];
-439         map["fn"] = KStrafeKeys[3];
-440         map\&.remove("rwin");
-441         // remove media controls
-442         map\&.remove("mute");
-443         map\&.remove("volup");
-444         map\&.remove("voldn");
-445         map\&.remove("stop");
-446         map\&.remove("prev");
-447         map\&.remove("play");
-448         map\&.remove("next");
-449 
-450         if(KeyMap::isJP(layout))
-451             patchJP106fn(map);
-452 
-453         // Done!
-454         break;
-455     }
-456     case KeyMap::M65:{
-457         // M65 isn't a keyboard; all mouse maps are unique\&.
-458         for(const Key* key = M65Keys; key < M65Keys + KEYCOUNT_M65; key++){
-459             // Keyboard keys are written from the center because that's where the LEDs are, but the mouse buttons are odd shapes so they're
-460             // written from the upper left
-461             Key translatedKey = *key;
-462             translatedKey\&.x += translatedKey\&.width / 2;
-463             translatedKey\&.y += translatedKey\&.height / 2;
-464             map[key->name] = translatedKey;
-465         }
-466         // Mice also have no layout patches - no other changes necessary
-467         break;
-468     }
-469     case KeyMap::SABRE:{
-470         // Sabre mouse
-471         for(const Key* key = SabreKeys; key < SabreKeys + KEYCOUNT_SABRE; key++){
-472             // Like the M65, the keys are upper-left justified
-473             Key translatedKey = *key;
-474             translatedKey\&.x += translatedKey\&.width / 2;
-475             translatedKey\&.y += translatedKey\&.height / 2;
-476             map[key->name] = translatedKey;
+344                                                                          {
+345     if(model < 0 || layout < 0 || model >= N_MODELS || layout >= N_LAYOUTS)
+346         return QHash<QString, Key>();
+347     // Return the map if it's already filled out
+348     QHash<QString, Key>& map = standardMaps[model][layout];
+349     if(!map\&.empty())
+350         return map;
+351     // Otherwise, create it
+352     switch(model){
+353     case KeyMap::K95:{
+354         // The K95 maps serve as bases for all the other keyboards
+355         // Fetch the master map, or create it if not yet done
+356         if(K95BaseMap\&.empty()){
+357             for(const Key* key = K95Keys; key < K95Keys + KEYCOUNT_K95; key++)
+358                 K95BaseMap[key->name] = *key;
+359         }
+360         map = K95BaseMap;
+361         // Patch the map for the layout
+362         switch(layout){
+363         case KeyMap::DK:
+364             patch(map, patchDK);
+365             break;
+366         case KeyMap::EU_DVORAK:
+367             patch(map, patchDvorak);    // fall through
+368         case KeyMap::EU:
+369             patch(map, patchEU);
+370             break;
+371         case KeyMap::GB_DVORAK:
+372         case KeyMap::US_DVORAK:
+373             patch(map, patchDvorak);
+374             break;
+375         case KeyMap::FR:
+376             patch(map, patchFR);
+377             break;
+378         case KeyMap::DE:
+379             patch(map, patchDE);
+380             break;
+381         case KeyMap::IT:
+382             patch(map, patchIT);
+383             break;
+384         case KeyMap::NO:
+385             patch(map, patchNO);
+386             break;
+387         case KeyMap::MX:
+388             patch(map, patchMX);
+389             break;
+390         case KeyMap::PT_BR:
+391             patch(map, patchPTBR);
+392             break;
+393         case KeyMap::ES:
+394             patch(map, patchES);
+395             break;
+396         case KeyMap::SE:
+397             patch(map, patchSE);
+398             break;
+399         case KeyMap::JP:
+400             patch(map, patchJP);
+401             break;
+402         default:;
+403             // English QWERTY - no patch needed
+404         }
+405         if(KeyMap::isJP(layout))
+406             patchJP106(map);
+407         else if(KeyMap::isPTBR(layout))
+408             patchABNT2(map);
+409         else if(KeyMap::isISO(layout))
+410             patchISO(map);
+411         else
+412             patchANSI(map);
+413         // Done! return the map
+414         break;
+415     }
+416     case KeyMap::K95P:{
+417         // The K95 Platinum map is based on the K95
+418         map = getMap(KeyMap::K95, layout);
+419         // Remove excess G keys
+420         map\&.remove("g7");
+421         map\&.remove("g8");
+422         map\&.remove("g9");
+423         map\&.remove("g10");
+424         map\&.remove("g11");
+425         map\&.remove("g12");
+426         map\&.remove("g13");
+427         map\&.remove("g14");
+428         map\&.remove("g15");
+429         map\&.remove("g16");
+430         map\&.remove("g17");
+431         map\&.remove("g18");
+432         // Place the remaining G keys vertically
+433         map["g1"]\&.x = 22;
+434         map["g2"]\&.x = 22;
+435         map["g3"]\&.x = 22;
+436         map["g4"]\&.x = 22;
+437         map["g5"]\&.x = 22;
+438         map["g6"]\&.x = 22;
+439         //map["g1"]\&.y = 14+(12*0);
+440         map["g2"]\&.y = 26; //14+(12*1)
+441         map["g3"]\&.y = 38; //14+(12*2)
+442         map["g4"]\&.y = 50; //14+(12*3)
+443         map["g5"]\&.y = 62; //14+(12*4)
+444         map["g6"]\&.y = 74; //14+(12*5)
+445         // Remove M keys
+446         map\&.remove("m1");
+447         map\&.remove("m2");
+448         map\&.remove("m3");
+449         // Centre MR/Brightness/Winlock between F1 and F4
+450         map["mr"]\&.x = 64;
+451         map["light"]\&.x = 75;
+452         map["lock"]\&.x = 86;
+453         // Resize them
+454         map["mr"]\&.height = 8;
+455         map["light"]\&.height = 8;
+456         map["lock"]\&.height = 8;
+457         map["mr"]\&.width = 11;
+458         map["light"]\&.width = 11;
+459         map["lock"]\&.width = 11;
+460         // Mute is above Stop
+461         map["mute"]\&.x -= 11;
+462         map["voldn"]\&.x -= 11;
+463         map["volup"]\&.x -= 11;
+464         // Move the buttons on the top a bit further down to centre them
+465         map["mr"]\&.y += 1;
+466         map["light"]\&.y += 1;
+467         map["lock"]\&.y += 1;
+468         map["mute"]\&.y += 1;
+469         map["voldn"]\&.y += 1;
+470         map["volup"]\&.y += 1;
+471         // Shift all keys down (to make room for the lightbar), and to the left
+472         QMutableHashIterator<QString, Key> i(map);
+473         while(i\&.hasNext()){
+474             i\&.next();
+475             i\&.value()\&.x -= K95P_X_START;
+476             i\&.value()\&.y += 6;
 477         }
-478         break;
-479     }
-480     case KeyMap::SCIMITAR:{
-481         // Scimitar mouse
-482         for(const Key* key = ScimKeys; key < ScimKeys + KEYCOUNT_SCIM; key++){
-483             Key translatedKey = *key;
-484             translatedKey\&.x += translatedKey\&.width / 2;
-485             translatedKey\&.y += translatedKey\&.height / 2;
-486             map[key->name] = translatedKey;
-487         }
-488         break;
-489     }
-490     case KeyMap::HARPOON:{
-491         // Harpoon mouse
-492         for(const Key* key = HarpoonKeys; key < HarpoonKeys + KEYCOUNT_HARPOON; key++){
-493             Key translatedKey = *key;
-494             translatedKey\&.x += translatedKey\&.width / 2;
-495             translatedKey\&.y += translatedKey\&.height / 2;
-496             map[key->name] = translatedKey;
-497         }
-498         break;
-499     }
-500     case KeyMap::GLAIVE:{
-501         // Glaive mouse
-502         for(const Key* key = GlaiveKeys; key < GlaiveKeys + KEYCOUNT_GLAIVE; key++){
-503             Key translatedKey = *key;
-504             translatedKey\&.x += translatedKey\&.width / 2;
-505             translatedKey\&.y += translatedKey\&.height / 2;
-506             map[key->name] = translatedKey;
-507         }
+478         // Add lightbar
+479         for(const Key* key = K95PLbar; key < K95PLbar + LBARCOUNT_K95P; key++)
+480                 map\&.insert(key->name, *key);
+481 
+482         break;
+483     }
+484     case KeyMap::K70:{
+485         // The K70 maps are based on the K95 maps\&. However all the keys are shifted left and the G keys are removed
+486         map = getMap(KeyMap::K95, layout);
+487         QMutableHashIterator<QString, Key> i(map);
+488         while(i\&.hasNext()){
+489             i\&.next();
+490             // Move key to left\&. Remove it if it fell off the edge
+491             if((i\&.value()\&.x -= K70_X_START) < 0)
+492                 i\&.remove();
+493         }
+494         // Remove the M buttons as well
+495         map\&.remove("mr");
+496         map\&.remove("m1");
+497         map\&.remove("m2");
+498         map\&.remove("m3");
+499         // Done!
+500         break;
+501     }
+502     case KeyMap::K68:{
+503         // Same as the K70, except volume up and down keys
+504         map = getMap(KeyMap::K70, layout);
+505         for(const Key* key = K68TopRow; key < K68TopRow + K68_TOP_COUNT; key++)
+506             map[key->name] = *key;
+507 
 508         break;
 509     }
-510     default:;    // <- stop GCC from complaining
-511     }
-512     // Map is finished, return result
-513     return map;
-514 }
+510     case KeyMap::K65:{
+511         // The K65 maps additionally remove the numpad and have a modified top row
+512         map = getMap(KeyMap::K70, layout);
+513         QMutableHashIterator<QString, Key> i(map);
+514         while(i\&.hasNext()){
+515             i\&.next();
+516             if(i\&.value()\&.x >= K65_WIDTH)
+517                 i\&.remove();
+518         }
+519         for(const Key* key = K65TopRow; key < K65TopRow + K65_TOP_COUNT; key++)
+520             map[key->name] = *key;
+521 
+522         map\&.remove("rwin");
+523         map["fn"] = KStrafeKeys[3];
+524         map["fn"]\&.x -= 12;
+525 
+526         if(KeyMap::isJP(layout))
+527             patchJP106fn(map);
+528 
+529         // Done!
+530         break;
+531     }
+532     case KeyMap::K63:{
+533         // Same as the K65 but without the Fn key
+534         map = getMap(KeyMap::K70, layout);
+535         QMutableHashIterator<QString, Key> i(map);
+536         while(i\&.hasNext()){
+537             i\&.next();
+538             if(i\&.value()\&.x >= K65_WIDTH)
+539                 i\&.remove();
+540         }
+541         for(const Key* key = K63TopRow; key < K63TopRow + K63_TOP_COUNT; key++)
+542             map[key->name] = *key;
+543 
+544         break;
+545     }
+546     case KeyMap::STRAFE:{
+547         // The Strafe RGB maps are based on the K70 map minus the media keys
+548         map = getMap(KeyMap::K70, layout);
+549         //move light and lock right
+550         map["light"]\&.x=285 - K70_X_START;
+551         //map["light"]\&.hasLed=false;
+552         map["lock"]\&.x=297 - K70_X_START;
+553         //map["lock"]\&.hasLed=false;
+554         // move everything right to make the space for the left sidelight
+555         QMutableHashIterator<QString, Key> i(map);
+556         while(i\&.hasNext()){
+557             i\&.next();
+558             i\&.value()\&.x += KSTRAFE_X_START;
+559         }
+560         // Add Strafe lights and keys
+561         map["lsidel"] = KStrafeKeys[0];
+562         map["rsidel"] = KStrafeKeys[1];
+563         map["logo"] = KStrafeKeys[2];
+564         map["fn"] = KStrafeKeys[3];
+565         map\&.remove("rwin");
+566         // remove media controls
+567         map\&.remove("mute");
+568         map\&.remove("volup");
+569         map\&.remove("voldn");
+570         map\&.remove("stop");
+571         map\&.remove("prev");
+572         map\&.remove("play");
+573         map\&.remove("next");
+574 
+575         if(KeyMap::isJP(layout))
+576             patchJP106fn(map);
+577 
+578         // Done!
+579         break;
+580     }
+581     case KeyMap::M65:{
+582         // M65 isn't a keyboard; all mouse maps are unique\&.
+583         for(const Key* key = M65Keys; key < M65Keys + KEYCOUNT_M65; key++){
+584             // Keyboard keys are written from the center because that's where the LEDs are, but the mouse buttons are odd shapes so they're
+585             // written from the upper left
+586             Key translatedKey = *key;
+587             translatedKey\&.x += translatedKey\&.width / 2;
+588             translatedKey\&.y += translatedKey\&.height / 2;
+589             map[key->name] = translatedKey;
+590         }
+591         // Mice also have no layout patches - no other changes necessary
+592         break;
+593     }
+594     case KeyMap::SABRE:{
+595         // Sabre mouse
+596         for(const Key* key = SabreKeys; key < SabreKeys + KEYCOUNT_SABRE; key++){
+597             // Like the M65, the keys are upper-left justified
+598             Key translatedKey = *key;
+599             translatedKey\&.x += translatedKey\&.width / 2;
+600             translatedKey\&.y += translatedKey\&.height / 2;
+601             map[key->name] = translatedKey;
+602         }
+603         break;
+604     }
+605     case KeyMap::SCIMITAR:{
+606         // Scimitar mouse
+607         for(const Key* key = ScimKeys; key < ScimKeys + KEYCOUNT_SCIM; key++){
+608             Key translatedKey = *key;
+609             translatedKey\&.x += translatedKey\&.width / 2;
+610             translatedKey\&.y += translatedKey\&.height / 2;
+611             map[key->name] = translatedKey;
+612         }
+613         break;
+614     }
+615     case KeyMap::HARPOON:{
+616         // Harpoon mouse
+617         for(const Key* key = HarpoonKeys; key < HarpoonKeys + KEYCOUNT_HARPOON; key++){
+618             Key translatedKey = *key;
+619             translatedKey\&.x += translatedKey\&.width / 2;
+620             translatedKey\&.y += translatedKey\&.height / 2;
+621             map[key->name] = translatedKey;
+622         }
+623         break;
+624     }
+625     case KeyMap::GLAIVE:{
+626         // Glaive mouse
+627         for(const Key* key = GlaiveKeys; key < GlaiveKeys + KEYCOUNT_GLAIVE; key++){
+628             Key translatedKey = *key;
+629             translatedKey\&.x += translatedKey\&.width / 2;
+630             translatedKey\&.y += translatedKey\&.height / 2;
+631             map[key->name] = translatedKey;
+632         }
+633         break;
+634     }
+635     default:;    // <- stop GCC from complaining
+636     }
+637     // Map is finished, return result
+638     return map;
+639 }
 .fi
-.SS "static void patchANSI (QHash< QString, \fBKey\fP > &map)\fC [static]\fP"
+.SS "static void patchABNT2 (QHash< QString, \fBKey\fP > &map)\fC [static]\fP"
 
 .PP
-Definition at line 132 of file keymap\&.cpp\&.
-.PP
-References ANSI_ENTER_H, ANSI_ENTER_W, ANSI_ENTER_X, ANSI_ENTER_Y, ANSI_LSHIFT_W, ANSI_LSHIFT_X, Key::height, patchnonJP106(), Key::width, Key::x, and Key::y\&.
-.PP
-Referenced by getMap()\&.
-.PP
-.nf
-132                                                {
-133     patchnonJP106(map);
-134     map\&.remove("bslash_iso");
-135     map\&.remove("hash");
-136     Key& enter = map["enter"];
-137     enter\&.x = ANSI_ENTER_X;
-138     enter\&.y = ANSI_ENTER_Y;
-139     enter\&.width = ANSI_ENTER_W;
-140     enter\&.height = ANSI_ENTER_H;
-141     Key& lshift = map["lshift"];
-142     lshift\&.x = ANSI_LSHIFT_X;
-143     lshift\&.width = ANSI_LSHIFT_W;
-144 }
-.fi
-.SS "static void patchISO (QHash< QString, \fBKey\fP > &map)\fC [static]\fP"
-
-.PP
-Definition at line 128 of file keymap\&.cpp\&.
-.PP
-References patchnonJP106()\&.
-.PP
-Referenced by getMap()\&.
-.PP
-.nf
-128                                               {
-129     patchnonJP106(map);
-130     map\&.remove("bslash");
-131 }
-.fi
-.SS "static void patchJP106 (QHash< QString, \fBKey\fP > &map)\fC [static]\fP"
-
-.PP
-Definition at line 145 of file keymap\&.cpp\&.
-.PP
-References ANSI_LSHIFT_W, ANSI_LSHIFT_X, Key::width, and Key::x\&.
-.PP
-Referenced by getMap()\&.
-.PP
-.nf
-145                                                 {
-146     // First apply the ISO patch
-147     map\&.remove("bslash");
-148 
-149     // Resize Backspace
-150     Key& bspace = map["bspace"];
-151     bspace\&.width -= 12;
-152     bspace\&.x = 206;
-153 
-154     // Resize RShift
-155     Key& rshift = map["rshift"];
-156     rshift\&.width -= 12;
-157     rshift\&.x += 6;
-158 
-159     // Resize Spacebar
-160     Key& space = map["space"];
-161     space\&.width -= 26;
-162     space\&.x -= 1;
-163 
-164     // Left shift
-165     Key& lshift = map["lshift"];
-166     lshift\&.x = ANSI_LSHIFT_X;
-167     lshift\&.width = ANSI_LSHIFT_W;
-168 
-169     map\&.remove("bslash_iso");
-170 
-171     // Resize and move ralt to make space for the extra keys
-172     Key& ralt = map["ralt"];
-173     ralt\&.x += 11;
-174     ralt\&.width += 2;
-175 
-176     // None of these layouts have rwin
-177     map\&.remove("rwin");
-178 }
-.fi
-.SS "static void patchJP106fn (QHash< QString, \fBKey\fP > &map)\fC [static]\fP"
-
-.PP
-Definition at line 180 of file keymap\&.cpp\&.
+Definition at line 198 of file keymap\&.cpp\&.
 .PP
 References Key::width, and Key::x\&.
 .PP
 Referenced by getMap()\&.
 .PP
 .nf
-180                                                   {
-181     if(map\&.contains("fn")){
-182         map\&.remove("ralt");
-183         Key& fn = map["fn"];
-184         fn\&.width += 4;
-185         fn\&.x -= 2;
-186     }
+198                                                 {
+199     map\&.remove("yen");
+200     map\&.remove("henkan");
+201     map\&.remove("muhenkan");
+202     map\&.remove("katahira");
+203     map\&.remove("bslash");
+204 
+205     // Resize RShift
+206     Key& rshift = map["rshift"];
+207     rshift\&.width -= 12;
+208     rshift\&.x += 6;
+209 }
+.fi
+.SS "static void patchANSI (QHash< QString, \fBKey\fP > &map)\fC [static]\fP"
+
+.PP
+Definition at line 141 of file keymap\&.cpp\&.
+.PP
+References ANSI_ENTER_H, ANSI_ENTER_W, ANSI_ENTER_X, ANSI_ENTER_Y, ANSI_LSHIFT_W, ANSI_LSHIFT_X, Key::height, patchnonJP106(), Key::width, Key::x, and Key::y\&.
+.PP
+Referenced by getMap()\&.
+.PP
+.nf
+141                                                {
+142     patchnonJP106(map);
+143     map\&.remove("bslash_iso");
+144     map\&.remove("hash");
+145     Key& enter = map["enter"];
+146     enter\&.x = ANSI_ENTER_X;
+147     enter\&.y = ANSI_ENTER_Y;
+148     enter\&.width = ANSI_ENTER_W;
+149     enter\&.height = ANSI_ENTER_H;
+150     Key& lshift = map["lshift"];
+151     lshift\&.x = ANSI_LSHIFT_X;
+152     lshift\&.width = ANSI_LSHIFT_W;
+153 }
+.fi
+.SS "static void patchISO (QHash< QString, \fBKey\fP > &map)\fC [static]\fP"
+
+.PP
+Definition at line 137 of file keymap\&.cpp\&.
+.PP
+References patchnonJP106()\&.
+.PP
+Referenced by getMap()\&.
+.PP
+.nf
+137                                               {
+138     patchnonJP106(map);
+139     map\&.remove("bslash");
+140 }
+.fi
+.SS "static void patchJP106 (QHash< QString, \fBKey\fP > &map)\fC [static]\fP"
+
+.PP
+Definition at line 154 of file keymap\&.cpp\&.
+.PP
+References ANSI_LSHIFT_W, ANSI_LSHIFT_X, Key::width, and Key::x\&.
+.PP
+Referenced by getMap()\&.
+.PP
+.nf
+154                                                 {
+155     // First apply the ISO patch
+156     map\&.remove("bslash");
+157 
+158     // Resize Backspace
+159     Key& bspace = map["bspace"];
+160     bspace\&.width -= 12;
+161     bspace\&.x = 206;
+162 
+163     // Resize RShift
+164     Key& rshift = map["rshift"];
+165     rshift\&.width -= 12;
+166     rshift\&.x += 6;
+167 
+168     // Resize Spacebar
+169     Key& space = map["space"];
+170     space\&.width -= 26;
+171     space\&.x -= 1;
+172 
+173     // Left shift
+174     Key& lshift = map["lshift"];
+175     lshift\&.x = ANSI_LSHIFT_X;
+176     lshift\&.width = ANSI_LSHIFT_W;
+177 
+178     map\&.remove("bslash_iso");
+179 
+180     // Resize and move ralt to make space for the extra keys
+181     Key& ralt = map["ralt"];
+182     ralt\&.x += 11;
+183     ralt\&.width += 2;
+184 
+185     // None of these layouts have rwin
+186     map\&.remove("rwin");
 187 }
+.fi
+.SS "static void patchJP106fn (QHash< QString, \fBKey\fP > &map)\fC [static]\fP"
+
+.PP
+Definition at line 189 of file keymap\&.cpp\&.
+.PP
+References Key::width, and Key::x\&.
+.PP
+Referenced by getMap()\&.
+.PP
+.nf
+189                                                   {
+190     if(map\&.contains("fn")){
+191         map\&.remove("ralt");
+192         Key& fn = map["fn"];
+193         fn\&.width += 4;
+194         fn\&.x -= 2;
+195     }
+196 }
 .fi
 .SS "static void patchnonJP106 (QHash< QString, \fBKey\fP > &map)\fC [static]\fP"
 
 .PP
-Definition at line 121 of file keymap\&.cpp\&.
+Definition at line 130 of file keymap\&.cpp\&.
 .PP
 Referenced by patchANSI(), and patchISO()\&.
 .PP
 .nf
-121                                                    {
-122     map\&.remove("yen");
-123     map\&.remove("henkan");
-124     map\&.remove("muhenkan");
-125     map\&.remove("katahira");
-126     map\&.remove("ro");
-127 }
+130                                                    {
+131     map\&.remove("yen");
+132     map\&.remove("henkan");
+133     map\&.remove("muhenkan");
+134     map\&.remove("katahira");
+135     map\&.remove("ro");
+136 }
 .fi
 .SH "Variable Documentation"
 .PP 
@@ -856,7 +1040,7 @@ Referenced by patchANSI(), and patchISO()\&.
     }
 .fi
 .PP
-Definition at line 267 of file keymap\&.cpp\&.
+Definition at line 301 of file keymap\&.cpp\&.
 .SS "const \fBKey\fP HarpoonKeys[]\fC [static]\fP"
 \fBInitial value:\fP
 .PP
@@ -869,7 +1053,7 @@ Definition at line 267 of file keymap\&.cpp\&.
     }
 .fi
 .PP
-Definition at line 255 of file keymap\&.cpp\&.
+Definition at line 289 of file keymap\&.cpp\&.
 .SS "const \fBKey\fP K63TopRow[]\fC [static]\fP"
 \fBInitial value:\fP
 .PP
@@ -879,7 +1063,7 @@ Definition at line 255 of file keymap\&.cpp\&.
 }
 .fi
 .PP
-Definition at line 211 of file keymap\&.cpp\&.
+Definition at line 245 of file keymap\&.cpp\&.
 .SS "const \fBKey\fP K65TopRow[]\fC [static]\fP"
 \fBInitial value:\fP
 .PP
@@ -889,11 +1073,21 @@ Definition at line 211 of file keymap\&.cpp\&.
 }
 .fi
 .PP
-Definition at line 206 of file keymap\&.cpp\&.
+Definition at line 240 of file keymap\&.cpp\&.
+.SS "const \fBKey\fP K68TopRow[]\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+    {0, "Volume Down", "voldn", 285 -  38 , 0, 13, 8, true, true}, {0, "Volume Up", "volup", 297 -  38 , 0, 13, 8, true, true},
+}
+.fi
+.PP
+Definition at line 235 of file keymap\&.cpp\&.
 .SS "QHash<QString, \fBKey\fP> K95BaseMap\fC [static]\fP"
 
 .PP
-Definition at line 298 of file keymap\&.cpp\&.
+Definition at line 342 of file keymap\&.cpp\&.
 .PP
 Referenced by getMap()\&.
 .SS "const \fBKey\fP K95Keys[]\fC [static]\fP"
@@ -911,7 +1105,20 @@ Referenced by getMap()\&.
 }
 .fi
 .PP
-Definition at line 10 of file keymap\&.cpp\&.
+Definition at line 12 of file keymap\&.cpp\&.
+.SS "const \fBKey\fP K95PLbar[]\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+    {0, 0, "topbar1", 4, -3,  17, 6 , true, false}, {0, 0, "topbar2", 19, -3,  17, 6 , true, false}, {0, 0, "topbar3", 34, -3,  17, 6 , true, false}, {0, 0, "topbar4", 49, -3,  17, 6 , true, false}, {0, 0, "topbar5", 64, -3,  17, 6 , true, false}, {0, 0, "topbar6", 79, -3,  17, 6 , true, false},
+    {0, 0, "topbar7", 94, -3,  17, 6 , true, false}, {0, 0, "topbar8", 109, -3,  17, 6 , true, false}, {0, 0, "topbar9", 124, -3,  17, 6 , true, false}, {0, 0, "topbar10", 139, -3,  17, 6 , true, false}, {0, 0, "topbar11", 154, -3,  17, 6 , true, false}, {0, 0, "topbar12", 169, -3,  17, 6 , true, false},
+    {0, 0, "topbar13", 184, -3,  17, 6 , true, false}, {0, 0, "topbar14", 199, -3,  17, 6 , true, false}, {0, 0, "topbar15", 214, -3,  17, 6 , true, false}, {0, 0, "topbar16", 229, -3,  17, 6 , true, false}, {0, 0, "topbar17", 244, -3,  17, 6 , true, false}, {0, 0, "topbar18", 259, -3,  17, 6 , true, false},
+    {0, 0, "topbar19", 274, -3,  17, 6 , true, false},
+}
+.fi
+.PP
+Definition at line 330 of file keymap\&.cpp\&.
 .SS "const \fBKey\fP KStrafeKeys[]\fC [static]\fP"
 \fBInitial value:\fP
 .PP
@@ -924,7 +1131,7 @@ Definition at line 10 of file keymap\&.cpp\&.
 }
 .fi
 .PP
-Definition at line 221 of file keymap\&.cpp\&.
+Definition at line 255 of file keymap\&.cpp\&.
 .SS "const \fBKey\fP M65Keys[]\fC [static]\fP"
 \fBInitial value:\fP
 .PP
@@ -938,7 +1145,7 @@ Definition at line 221 of file keymap\&.cpp\&.
 }
 .fi
 .PP
-Definition at line 229 of file keymap\&.cpp\&.
+Definition at line 263 of file keymap\&.cpp\&.
 .SS "const \fBKeyPatch\fP patchDE[]\fC [static]\fP"
 \fBInitial value:\fP
 .PP
@@ -951,7 +1158,7 @@ Definition at line 229 of file keymap\&.cpp\&.
 }
 .fi
 .PP
-Definition at line 55 of file keymap\&.cpp\&.
+Definition at line 57 of file keymap\&.cpp\&.
 .SS "const \fBKeyPatch\fP patchDK[]\fC [static]\fP"
 \fBInitial value:\fP
 .PP
@@ -964,7 +1171,7 @@ Definition at line 55 of file keymap\&.cpp\&.
 }
 .fi
 .PP
-Definition at line 36 of file keymap\&.cpp\&.
+Definition at line 38 of file keymap\&.cpp\&.
 .SS "const \fBKeyPatch\fP patchDvorak[]\fC [static]\fP"
 \fBInitial value:\fP
 .PP
@@ -977,7 +1184,7 @@ Definition at line 36 of file keymap\&.cpp\&.
 }
 .fi
 .PP
-Definition at line 102 of file keymap\&.cpp\&.
+Definition at line 111 of file keymap\&.cpp\&.
 .SS "const \fBKeyPatch\fP patchES[]\fC [static]\fP"
 \fBInitial value:\fP
 .PP
@@ -990,7 +1197,7 @@ Definition at line 102 of file keymap\&.cpp\&.
 }
 .fi
 .PP
-Definition at line 83 of file keymap\&.cpp\&.
+Definition at line 92 of file keymap\&.cpp\&.
 .SS "const \fBKeyPatch\fP patchEU[]\fC [static]\fP"
 \fBInitial value:\fP
 .PP
@@ -1001,7 +1208,7 @@ Definition at line 83 of file keymap\&.cpp\&.
 }
 .fi
 .PP
-Definition at line 43 of file keymap\&.cpp\&.
+Definition at line 45 of file keymap\&.cpp\&.
 .SS "const \fBKeyPatch\fP patchFR[]\fC [static]\fP"
 \fBInitial value:\fP
 .PP
@@ -1014,7 +1221,7 @@ Definition at line 43 of file keymap\&.cpp\&.
 }
 .fi
 .PP
-Definition at line 48 of file keymap\&.cpp\&.
+Definition at line 50 of file keymap\&.cpp\&.
 .SS "const \fBKeyPatch\fP patchIT[]\fC [static]\fP"
 \fBInitial value:\fP
 .PP
@@ -1027,7 +1234,7 @@ Definition at line 48 of file keymap\&.cpp\&.
 }
 .fi
 .PP
-Definition at line 62 of file keymap\&.cpp\&.
+Definition at line 64 of file keymap\&.cpp\&.
 .SS "const \fBKeyPatch\fP patchJP[]\fC [static]\fP"
 \fBInitial value:\fP
 .PP
@@ -1037,7 +1244,7 @@ Definition at line 62 of file keymap\&.cpp\&.
 }
 .fi
 .PP
-Definition at line 97 of file keymap\&.cpp\&.
+Definition at line 106 of file keymap\&.cpp\&.
 .SS "const \fBKeyPatch\fP patchMX[]\fC [static]\fP"
 \fBInitial value:\fP
 .PP
@@ -1050,7 +1257,7 @@ Definition at line 97 of file keymap\&.cpp\&.
 }
 .fi
 .PP
-Definition at line 76 of file keymap\&.cpp\&.
+Definition at line 78 of file keymap\&.cpp\&.
 .SS "const \fBKeyPatch\fP patchNO[]\fC [static]\fP"
 \fBInitial value:\fP
 .PP
@@ -1063,7 +1270,20 @@ Definition at line 76 of file keymap\&.cpp\&.
 }
 .fi
 .PP
-Definition at line 69 of file keymap\&.cpp\&.
+Definition at line 71 of file keymap\&.cpp\&.
+.SS "const \fBKeyPatch\fP patchPTBR[]\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+    {"quote", "'", "grave"},
+    {"accent", "´", "lbrace"}, {"lbrace", "[", "rbrace"},
+    {"cc", "Ç", "colon"}, {"tilde", "~", "quote"}, {"rbrace", "]", "hash"},
+    {"colon", ";", "slash"}, {"slash", "/", "ro"}, {"numcomma", ",", "numdot"},
+}
+.fi
+.PP
+Definition at line 85 of file keymap\&.cpp\&.
 .SS "const \fBKeyPatch\fP patchSE[]\fC [static]\fP"
 \fBInitial value:\fP
 .PP
@@ -1076,7 +1296,7 @@ Definition at line 69 of file keymap\&.cpp\&.
 }
 .fi
 .PP
-Definition at line 90 of file keymap\&.cpp\&.
+Definition at line 99 of file keymap\&.cpp\&.
 .SS "const \fBKey\fP SabreKeys[]\fC [static]\fP"
 \fBInitial value:\fP
 .PP
@@ -1090,7 +1310,7 @@ Definition at line 90 of file keymap\&.cpp\&.
 }
 .fi
 .PP
-Definition at line 242 of file keymap\&.cpp\&.
+Definition at line 276 of file keymap\&.cpp\&.
 .SS "const \fBKey\fP ScimKeys[]\fC [static]\fP"
 \fBInitial value:\fP
 .PP
@@ -1108,11 +1328,11 @@ Definition at line 242 of file keymap\&.cpp\&.
 }
 .fi
 .PP
-Definition at line 279 of file keymap\&.cpp\&.
+Definition at line 313 of file keymap\&.cpp\&.
 .SS "QHash<QString, \fBKey\fP> standardMaps[\fBKeyMap::_MODEL_MAX\fP][\fBKeyMap::_LAYOUT_MAX\fP]\fC [static]\fP"
 
 .PP
-Definition at line 299 of file keymap\&.cpp\&.
+Definition at line 343 of file keymap\&.cpp\&.
 .PP
 Referenced by getMap()\&.
 .SH "Author"

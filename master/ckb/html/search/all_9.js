@@ -56,6 +56,7 @@ var searchData=
   ['isnormal',['isNormal',['../classKeyAction.html#aeb94cb31b33753ccb50c30a136f66090',1,'KeyAction']]],
   ['isopen',['isOpen',['../classKb.html#a1ea23881e46ee720f4a964f836bac65b',1,'Kb::isOpen()'],['../classQuaZip.html#a5b869a9c0d4f49955b759592fec08888',1,'QuaZip::isOpen()']]],
   ['isprogram',['isProgram',['../classKeyAction.html#a631abc9880b982c218a0da90912bb826',1,'KeyAction']]],
+  ['isptbr',['isPTBR',['../classKeyMap.html#a77e5b5d44f4e6d3c50b7c25f9c069752',1,'KeyMap::isPTBR(Layout layout)'],['../classKeyMap.html#a202499f0f9c8fa86261e982732ec048b',1,'KeyMap::isPTBR() const ']]],
   ['israw',['isRaw',['../classQuaZipFile.html#a0df3db94c2a34c8d17ddaa0f54fc32c1',1,'QuaZipFile']]],
   ['isroot',['isRoot',['../classQuaZipDir.html#a598fdf23f1b37e1876476e5969040a32',1,'QuaZipDir']]],
   ['isrunning',['isRunning',['../classKbAnim.html#ab5bbacd92d8396badc0c9f26fd5e2e17',1,'KbAnim::isRunning()'],['../main_8cpp.html#a898e5673d48fec4e9204cb19daebd19d',1,'isRunning():&#160;main.cpp']]],

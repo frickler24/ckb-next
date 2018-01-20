@@ -1,12 +1,12 @@
-<div class="contentTitle">testing from Fri Nov  3 11:10:45 UTC 2017</div>
-<div class="contentText">
-<p><a href="testing/all/FORMATDEFINITION" target="_blank">Complete documentation</a></p>
-<p><a href="testing/ckb/FORMATDEFINITION" target="_blank">Documentation of ckb GUI client</a></p>
-<p><a href="testing/ckb-daemon/FORMATDEFINITION" target="_blank">Documentation of the ckb-next daemon</a></p>
-</div>
-<div class="contentTitle">master from Fri Nov  3 11:10:45 UTC 2017</div>
+<div class="contentTitle">master from Sat Jan 20 17:05:13 UTC 2018</div>
 <div class="contentText">
 <p><a href="master/all/FORMATDEFINITION" target="_blank">Complete documentation</a></p>
 <p><a href="master/ckb/FORMATDEFINITION" target="_blank">Documentation of ckb GUI client</a></p>
 <p><a href="master/ckb-daemon/FORMATDEFINITION" target="_blank">Documentation of the ckb-next daemon</a></p>
+</div>
+<div class="contentTitle">testing from Sat Jan 20 17:05:14 UTC 2018</div>
+<div class="contentText">
+<p><a href="testing/all/FORMATDEFINITION" target="_blank">Complete documentation</a></p>
+<p><a href="testing/ckb/FORMATDEFINITION" target="_blank">Documentation of ckb GUI client</a></p>
+<p><a href="testing/ckb-daemon/FORMATDEFINITION" target="_blank">Documentation of the ckb-next daemon</a></p>
 </div>

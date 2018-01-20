@@ -33,7 +33,7 @@
 <area shape="rect" id="node29" href="$keymap_8c.html#ad39ede76abd657f5123fa331853db017" title="corsair_kbcopy" alt="" coords="566,715,677,741"/>
 <area shape="rect" id="node30" href="$keymap_8c.html#a0dc9a16564cc51b35a35d28af1a96fb0" title="corsair_mousecopy" alt="" coords="554,765,689,792"/>
 <area shape="rect" id="node31" href="$keymap_8c.html#a6f4afd134546237416b271d9cefd2889" title="hid_kb_translate" alt="" coords="563,816,680,843"/>
-<area shape="rect" id="node32" href="$keymap_8c.html#a092f675ff366b5823c73b25f83d513f9" title="hid_mouse_translate" alt="" coords="550,867,693,893"/>
+<area shape="rect" id="node32" href="$keymap_8c.html#a2920fc11fa38bb26de051f00d63f79f1" title="hid_mouse_translate" alt="" coords="550,867,693,893"/>
 <area shape="rect" id="node33" href="$input_8c.html#ae360d0b9a764a1d38c5be5464be8b70a" title="inputupdate" alt="" coords="577,664,666,691"/>
 <area shape="rect" id="node34" href="$input_8c.html#aed8e9842ed5750c1d328c5dc4c1ba2bd" title="inputupdate_keys Handle input from Keyboard or mouse; start Macrof if detected. " alt="" coords="742,664,866,691"/>
 <area shape="rect" id="node42" href="$input_8h.html#a9f2cfb2d883ae4a3732047fe3f3da683" title="os_mousemove" alt="" coords="1091,765,1205,792"/>

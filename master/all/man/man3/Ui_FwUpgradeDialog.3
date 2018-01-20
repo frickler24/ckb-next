@@ -1,4 +1,4 @@
-.TH "Ui::FwUpgradeDialog" 3 "Fri Nov 3 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "Ui::FwUpgradeDialog" 3 "Sat Jan 20 2018" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -71,30 +71,30 @@ Inherits \fBUi_FwUpgradeDialog\fP\&.
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 171 of file ui_fwupgradedialog\&.h\&.
+Definition at line 172 of file ui_fwupgradedialog\&.h\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "void Ui_FwUpgradeDialog::retranslateUi (\fBQDialog\fP *FwUpgradeDialog)\fC [inline]\fP, \fC [inherited]\fP"
 
 .PP
-Definition at line 155 of file ui_fwupgradedialog\&.h\&.
+Definition at line 156 of file ui_fwupgradedialog\&.h\&.
 .PP
 References Ui_FwUpgradeDialog::actionButton, Ui_FwUpgradeDialog::cancelButton, Ui_FwUpgradeDialog::curLabel, Ui_FwUpgradeDialog::devLabel, Ui_FwUpgradeDialog::label_2, Ui_FwUpgradeDialog::label_4, Ui_FwUpgradeDialog::newLabel, and Ui_FwUpgradeDialog::statusLabel\&.
 .PP
 Referenced by Ui_FwUpgradeDialog::setupUi()\&.
 .PP
 .nf
-156     {
-157         FwUpgradeDialog->setWindowTitle(QApplication::translate("FwUpgradeDialog", "Firmware update", Q_NULLPTR));
-158         label_4->setText(QApplication::translate("FwUpgradeDialog", "New:", Q_NULLPTR));
-159         label_2->setText(QApplication::translate("FwUpgradeDialog", "Current:", Q_NULLPTR));
-160         curLabel->setText(QApplication::translate("FwUpgradeDialog", "0\&.00", Q_NULLPTR));
-161         newLabel->setText(QApplication::translate("FwUpgradeDialog", "0\&.00", Q_NULLPTR));
-162         statusLabel->setText(QApplication::translate("FwUpgradeDialog", "Downloading new firmware, please wait\&.\&.\&.", Q_NULLPTR));
-163         devLabel->setText(QApplication::translate("FwUpgradeDialog", "Device", Q_NULLPTR));
-164         actionButton->setText(QApplication::translate("FwUpgradeDialog", "Start", Q_NULLPTR));
-165         cancelButton->setText(QApplication::translate("FwUpgradeDialog", "Cancel", Q_NULLPTR));
-166     } // retranslateUi
+157     {
+158         FwUpgradeDialog->setWindowTitle(QApplication::translate("FwUpgradeDialog", "Firmware update", Q_NULLPTR));
+159         label_4->setText(QApplication::translate("FwUpgradeDialog", "New:", Q_NULLPTR));
+160         label_2->setText(QApplication::translate("FwUpgradeDialog", "Current:", Q_NULLPTR));
+161         curLabel->setText(QApplication::translate("FwUpgradeDialog", "0\&.00", Q_NULLPTR));
+162         newLabel->setText(QApplication::translate("FwUpgradeDialog", "0\&.00", Q_NULLPTR));
+163         statusLabel->setText(QApplication::translate("FwUpgradeDialog", "Downloading new firmware, please wait\&.\&.\&.", Q_NULLPTR));
+164         devLabel->setText(QApplication::translate("FwUpgradeDialog", "Device", Q_NULLPTR));
+165         actionButton->setText(QApplication::translate("FwUpgradeDialog", "Start", Q_NULLPTR));
+166         cancelButton->setText(QApplication::translate("FwUpgradeDialog", "Cancel", Q_NULLPTR));
+167     } // retranslateUi
 .fi
 .SS "void Ui_FwUpgradeDialog::setupUi (\fBQDialog\fP *FwUpgradeDialog)\fC [inline]\fP, \fC [inherited]\fP"
 
@@ -109,7 +109,7 @@ Referenced by FwUpgradeDialog::FwUpgradeDialog()\&.
 46     {
 47         if (FwUpgradeDialog->objectName()\&.isEmpty())
 48             FwUpgradeDialog->setObjectName(QStringLiteral("FwUpgradeDialog"));
-49         FwUpgradeDialog->resize(420, 240);
+49         FwUpgradeDialog->resize(420, 280);
 50         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 51         sizePolicy\&.setHorizontalStretch(0);
 52         sizePolicy\&.setVerticalStretch(0);
@@ -206,14 +206,15 @@ Referenced by FwUpgradeDialog::FwUpgradeDialog()\&.
 143 
 144         gridLayout_2->addWidget(cancelButton, 1, 1, 1, 1);
 145 
-146 
-147         retranslateUi(FwUpgradeDialog);
-148 
-149         actionButton->setDefault(true);
-150 
+146         QWidget::setTabOrder(actionButton, cancelButton);
+147 
+148         retranslateUi(FwUpgradeDialog);
+149 
+150         actionButton->setDefault(true);
 151 
-152         QMetaObject::connectSlotsByName(FwUpgradeDialog);
-153     } // setupUi
+152 
+153         QMetaObject::connectSlotsByName(FwUpgradeDialog);
+154     } // setupUi
 .fi
 .SH "Field Documentation"
 .PP 

@@ -1,4 +1,4 @@
-.TH "Ui::SettingsWidget" 3 "Fri Nov 3 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "Ui::SettingsWidget" 3 "Sat Jan 20 2018" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -161,45 +161,45 @@ Inherits \fBUi_SettingsWidget\fP\&.
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 378 of file ui_settingswidget\&.h\&.
+Definition at line 387 of file ui_settingswidget\&.h\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "void Ui_SettingsWidget::retranslateUi (\fBQWidget\fP *SettingsWidget)\fC [inline]\fP, \fC [inherited]\fP"
 
 .PP
-Definition at line 347 of file ui_settingswidget\&.h\&.
+Definition at line 356 of file ui_settingswidget\&.h\&.
 .PP
 References Ui_SettingsWidget::altLabel, Ui_SettingsWidget::autoFWBox, Ui_SettingsWidget::capsLabel, Ui_SettingsWidget::ctrlLabel, Ui_SettingsWidget::devicesLabel, Ui_SettingsWidget::extraButton, Ui_SettingsWidget::label, Ui_SettingsWidget::label_2, Ui_SettingsWidget::label_3, Ui_SettingsWidget::label_5, Ui_SettingsWidget::label_6, Ui_SettingsWidget::label_8, Ui_SettingsWidget::loginItemBox, Ui_SettingsWidget::pushButton, Ui_SettingsWidget::shiftLabel, Ui_SettingsWidget::versionLabel, and Ui_SettingsWidget::winLabel\&.
 .PP
 Referenced by Ui_SettingsWidget::setupUi()\&.
 .PP
 .nf
-348     {
-349         SettingsWidget->setWindowTitle(QApplication::translate("SettingsWidget", "Form", Q_NULLPTR));
-350         label_2->setText(QApplication::translate("SettingsWidget", "\302\251 2014-2016 <a href=\"https://github\&.com/ccMSC/\" style=\"text-decoration:none;\">ccMSC</a>\&.<br/>\302\251 2017 <a href=\"https://github\&.com/mattanger/ckb-next/graphs/contributors\" style=\"text-decoration:none;\">The ckb-next development team</a>\&.", Q_NULLPTR));
-351         label->setText(QApplication::translate("SettingsWidget", "Modifier keys", Q_NULLPTR));
-352         label_6->setText(QApplication::translate("SettingsWidget", "Application", Q_NULLPTR));
-353         devicesLabel->setText(QApplication::translate("SettingsWidget", "No devices connected", Q_NULLPTR));
-354         label_5->setText(QApplication::translate("SettingsWidget", "Keyboard layout:", Q_NULLPTR));
-355         label_3->setText(QApplication::translate("SettingsWidget", "<a href=\"https://github\&.com/mattanger/ckb-next\" style=\"text-decoration:none;\">https://github\&.com/mattanger/ckb-next</a>", Q_NULLPTR));
-356         pushButton->setText(QApplication::translate("SettingsWidget", "Quit", Q_NULLPTR));
-357 #ifndef QT_NO_TOOLTIP
-358         loginItemBox->setToolTip(QApplication::translate("SettingsWidget", "ckb-next will be started when you log in to your computer\&.", Q_NULLPTR));
-359 #endif // QT_NO_TOOLTIP
-360         loginItemBox->setText(QApplication::translate("SettingsWidget", "Start ckb-next at login", Q_NULLPTR));
-361 #ifndef QT_NO_TOOLTIP
-362         autoFWBox->setToolTip(QApplication::translate("SettingsWidget", "You will be notified when new firmware versions are available\&. You'll have the option to install them immediately or wait until later\&.", Q_NULLPTR));
-363 #endif // QT_NO_TOOLTIP
-364         autoFWBox->setText(QApplication::translate("SettingsWidget", "Check for new firmware automatically", Q_NULLPTR));
-365         label_8->setText(QApplication::translate("SettingsWidget", "These will override the keyboard profile\&. See \"Binding\" tab for more settings\&.", Q_NULLPTR));
-366         shiftLabel->setText(QApplication::translate("SettingsWidget", "Shift:", Q_NULLPTR));
-367         capsLabel->setText(QApplication::translate("SettingsWidget", "Caps Lock:", Q_NULLPTR));
-368         ctrlLabel->setText(QApplication::translate("SettingsWidget", "Ctrl:", Q_NULLPTR));
-369         winLabel->setText(QApplication::translate("SettingsWidget", "Windows:", Q_NULLPTR));
-370         altLabel->setText(QApplication::translate("SettingsWidget", "Alt:", Q_NULLPTR));
-371         versionLabel->setText(QApplication::translate("SettingsWidget", "ckb-next", Q_NULLPTR));
-372         extraButton->setText(QApplication::translate("SettingsWidget", "More settings", Q_NULLPTR));
-373     } // retranslateUi
+357     {
+358         SettingsWidget->setWindowTitle(QApplication::translate("SettingsWidget", "Form", Q_NULLPTR));
+359         label_2->setText(QApplication::translate("SettingsWidget", "\302\251 2014-2016 <a href=\"https://github\&.com/ccMSC/\" style=\"text-decoration:none;\">ccMSC</a>\&.<br/>\302\251 2017 <a href=\"https://github\&.com/mattanger/ckb-next/graphs/contributors\" style=\"text-decoration:none;\">The ckb-next development team</a>\&.", Q_NULLPTR));
+360         label->setText(QApplication::translate("SettingsWidget", "Modifier keys", Q_NULLPTR));
+361         label_6->setText(QApplication::translate("SettingsWidget", "Application", Q_NULLPTR));
+362         devicesLabel->setText(QApplication::translate("SettingsWidget", "No devices connected", Q_NULLPTR));
+363         label_5->setText(QApplication::translate("SettingsWidget", "Keyboard layout:", Q_NULLPTR));
+364         label_3->setText(QApplication::translate("SettingsWidget", "<a href=\"https://github\&.com/mattanger/ckb-next\" style=\"text-decoration:none;\">https://github\&.com/mattanger/ckb-next</a>", Q_NULLPTR));
+365         pushButton->setText(QApplication::translate("SettingsWidget", "Quit", Q_NULLPTR));
+366 #ifndef QT_NO_TOOLTIP
+367         loginItemBox->setToolTip(QApplication::translate("SettingsWidget", "ckb-next will be started when you log in to your computer\&.", Q_NULLPTR));
+368 #endif // QT_NO_TOOLTIP
+369         loginItemBox->setText(QApplication::translate("SettingsWidget", "Start ckb-next at login", Q_NULLPTR));
+370 #ifndef QT_NO_TOOLTIP
+371         autoFWBox->setToolTip(QApplication::translate("SettingsWidget", "You will be notified when new firmware versions are available\&. You'll have the option to install them immediately or wait until later\&.", Q_NULLPTR));
+372 #endif // QT_NO_TOOLTIP
+373         autoFWBox->setText(QApplication::translate("SettingsWidget", "Check for new firmware automatically", Q_NULLPTR));
+374         label_8->setText(QApplication::translate("SettingsWidget", "These will override the keyboard profile\&. See \"Binding\" tab for more settings\&.", Q_NULLPTR));
+375         shiftLabel->setText(QApplication::translate("SettingsWidget", "Shift:", Q_NULLPTR));
+376         capsLabel->setText(QApplication::translate("SettingsWidget", "Caps Lock:", Q_NULLPTR));
+377         ctrlLabel->setText(QApplication::translate("SettingsWidget", "Ctrl:", Q_NULLPTR));
+378         winLabel->setText(QApplication::translate("SettingsWidget", "Windows:", Q_NULLPTR));
+379         altLabel->setText(QApplication::translate("SettingsWidget", "Alt:", Q_NULLPTR));
+380         versionLabel->setText(QApplication::translate("SettingsWidget", "ckb-next", Q_NULLPTR));
+381         extraButton->setText(QApplication::translate("SettingsWidget", "More settings", Q_NULLPTR));
+382     } // retranslateUi
 .fi
 .SS "void Ui_SettingsWidget::setupUi (\fBQWidget\fP *SettingsWidget)\fC [inline]\fP, \fC [inherited]\fP"
 
@@ -219,8 +219,8 @@ Referenced by SettingsWidget::SettingsWidget()\&.
 84         gridLayout->setObjectName(QStringLiteral("gridLayout"));
 85         label_2 = new QLabel(SettingsWidget);
 86         label_2->setObjectName(QStringLiteral("label_2"));
-87         label_2->setOpenExternalLinks(true);
-88         label_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+87         label_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+88         label_2->setOpenExternalLinks(true);
 89 
 90         gridLayout->addWidget(label_2, 20, 0, 1, 2);
 91 
@@ -473,11 +473,20 @@ Referenced by SettingsWidget::SettingsWidget()\&.
 338 
 339         gridLayout->addItem(verticalSpacer_7, 17, 0, 1, 1);
 340 
-341 
-342         retranslateUi(SettingsWidget);
-343 
-344         QMetaObject::connectSlotsByName(SettingsWidget);
-345     } // setupUi
+341         QWidget::setTabOrder(layoutBox, capsBox);
+342         QWidget::setTabOrder(capsBox, shiftBox);
+343         QWidget::setTabOrder(shiftBox, ctrlBox);
+344         QWidget::setTabOrder(ctrlBox, winBox);
+345         QWidget::setTabOrder(winBox, altBox);
+346         QWidget::setTabOrder(altBox, autoFWBox);
+347         QWidget::setTabOrder(autoFWBox, loginItemBox);
+348         QWidget::setTabOrder(loginItemBox, extraButton);
+349         QWidget::setTabOrder(extraButton, pushButton);
+350 
+351         retranslateUi(SettingsWidget);
+352 
+353         QMetaObject::connectSlotsByName(SettingsWidget);
+354     } // setupUi
 .fi
 .SH "Field Documentation"
 .PP 

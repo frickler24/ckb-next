@@ -2,7 +2,7 @@ var searchData=
 [
   ['b',['b',['../ckb-anim_8h.html#a52c258e4d5fc3f55ee8c8044e37a2028',1,'ckb_key::b()'],['../ckb-anim_8h.html#a555923174250d704dce3cbd92ab52472',1,'ckb_gradient::b()'],['../structures_8h.html#ac382c44757d208247320c2978b1f48b9',1,'lighting::b()'],['../ckb-random_2main_8c.html#ae99e63aa161acf8066058b7af8b3e02c',1,'rgb::b()']]],
   ['backing',['backing',['../classCkbSettings.html#aed54cdf9c87066289a1419d72a437815',1,'CkbSettings']]],
-  ['base',['base',['../structures_8h.html#a7ca1dadcce398f5110d02b080ad1fe00',1,'binding']]],
+  ['base',['base',['../structures_8h.html#a66c52679fe1e1a841fa270f6d72d4178',1,'binding']]],
   ['begin_5fpos',['begin_pos',['../zip_8c.html#adff1d5f1509675f5f1c9797c5addc1a7',1,'zip64_internal']]],
   ['bgbutton',['bgButton',['../classUi__KbLightWidget.html#ab9c1f361ed4ed881903d85c8ea563990',1,'Ui_KbLightWidget']]],
   ['bind',['bind',['../classKbBindWidget.html#a1bb6624e5bd40458c10ae9f1d6ef1770',1,'KbBindWidget::bind()'],['../classRebindWidget.html#a8f0d1807ccead6dca0d305d3db40c2e8',1,'RebindWidget::bind()'],['../structures_8h.html#a60912d4777e7a95e3b5cdd8581c0cf0c',1,'usbmode::bind()']]],

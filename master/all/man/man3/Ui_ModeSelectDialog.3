@@ -1,4 +1,4 @@
-.TH "Ui::ModeSelectDialog" 3 "Fri Nov 3 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "Ui::ModeSelectDialog" 3 "Sat Jan 20 2018" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -44,25 +44,25 @@ Inherits \fBUi_ModeSelectDialog\fP\&.
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 93 of file ui_modeselectdialog\&.h\&.
+Definition at line 95 of file ui_modeselectdialog\&.h\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "void Ui_ModeSelectDialog::retranslateUi (\fBQDialog\fP *ModeSelectDialog)\fC [inline]\fP, \fC [inherited]\fP"
 
 .PP
-Definition at line 82 of file ui_modeselectdialog\&.h\&.
+Definition at line 84 of file ui_modeselectdialog\&.h\&.
 .PP
 References Ui_ModeSelectDialog::label, Ui_ModeSelectDialog::selAllButton, and Ui_ModeSelectDialog::selNoneButton\&.
 .PP
 Referenced by Ui_ModeSelectDialog::setupUi()\&.
 .PP
 .nf
-83     {
-84         ModeSelectDialog->setWindowTitle(QApplication::translate("ModeSelectDialog", "Select Modes", Q_NULLPTR));
-85         label->setText(QApplication::translate("ModeSelectDialog", "TextLabel", Q_NULLPTR));
-86         selAllButton->setText(QApplication::translate("ModeSelectDialog", "Select All", Q_NULLPTR));
-87         selNoneButton->setText(QApplication::translate("ModeSelectDialog", "Select None", Q_NULLPTR));
-88     } // retranslateUi
+85     {
+86         ModeSelectDialog->setWindowTitle(QApplication::translate("ModeSelectDialog", "Select Modes", Q_NULLPTR));
+87         label->setText(QApplication::translate("ModeSelectDialog", "TextLabel", Q_NULLPTR));
+88         selAllButton->setText(QApplication::translate("ModeSelectDialog", "Select All", Q_NULLPTR));
+89         selNoneButton->setText(QApplication::translate("ModeSelectDialog", "Select None", Q_NULLPTR));
+90     } // retranslateUi
 .fi
 .SS "void Ui_ModeSelectDialog::setupUi (\fBQDialog\fP *ModeSelectDialog)\fC [inline]\fP, \fC [inherited]\fP"
 
@@ -111,13 +111,15 @@ Referenced by ModeSelectDialog::ModeSelectDialog()\&.
 71 
 72         gridLayout->addWidget(selNoneButton, 2, 1, 1, 1);
 73 
-74 
-75         retranslateUi(ModeSelectDialog);
-76         QObject::connect(buttonBox, SIGNAL(accepted()), ModeSelectDialog, SLOT(accept()));
-77         QObject::connect(buttonBox, SIGNAL(rejected()), ModeSelectDialog, SLOT(reject()));
-78 
-79         QMetaObject::connectSlotsByName(ModeSelectDialog);
-80     } // setupUi
+74         QWidget::setTabOrder(modeList, selAllButton);
+75         QWidget::setTabOrder(selAllButton, selNoneButton);
+76 
+77         retranslateUi(ModeSelectDialog);
+78         QObject::connect(buttonBox, SIGNAL(accepted()), ModeSelectDialog, SLOT(accept()));
+79         QObject::connect(buttonBox, SIGNAL(rejected()), ModeSelectDialog, SLOT(reject()));
+80 
+81         QMetaObject::connectSlotsByName(ModeSelectDialog);
+82     } // setupUi
 .fi
 .SH "Field Documentation"
 .PP 

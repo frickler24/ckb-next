@@ -32,7 +32,7 @@ var searchData=
   ['macroreader',['MacroReader',['../classMacroReader.html',1,'MacroReader'],['../classMacroReader.html#af1303babee9627566ee763630a45158c',1,'MacroReader::MacroReader()'],['../classMacroReader.html#a4c8a7c7b890ee96648111b912e8ebf5a',1,'MacroReader::MacroReader(int macroNumber, QString macroPath, QPlainTextEdit *macBox, QPlainTextEdit *macText)']]],
   ['macroreader_2ecpp',['macroreader.cpp',['../macroreader_8cpp.html',1,'']]],
   ['macroreader_2eh',['macroreader.h',['../macroreader_8h.html',1,'']]],
-  ['macroreaderthread',['MacroReaderThread',['../classMacroReaderThread.html',1,'MacroReaderThread'],['../classMacroReader.html#a630948aacd267c4a29ae589f3cfc4016',1,'MacroReader::macroReaderThread()'],['../classMacroReaderThread.html#a55338956e86e7eae3b40df67245ef4f4',1,'MacroReaderThread::MacroReaderThread()']]],
+  ['macroreaderthread',['MacroReaderThread',['../classMacroReaderThread.html',1,'MacroReaderThread'],['../classMacroReaderThread.html#a55338956e86e7eae3b40df67245ef4f4',1,'MacroReaderThread::MacroReaderThread()'],['../classMacroReader.html#a630948aacd267c4a29ae589f3cfc4016',1,'MacroReader::macroReaderThread()']]],
   ['macros',['macros',['../structures_8h.html#a07ad87dd79741d47cabf12da5c03bf4c',1,'binding']]],
   ['macrotab',['macroTab',['../classUi__RebindWidget.html#a96efeab655f12d30a78d888629ad3a36',1,'Ui_RebindWidget']]],
   ['macrotext',['macroText',['../classMacroReaderThread.html#ab46254193bebff8bcb8a7f72aa675727',1,'MacroReaderThread']]],

@@ -8,5 +8,5 @@ var structures_8h_structusbmode =
     [ "ion", "structures_8h.html#a66827675394b4aa9cc927d5bb0037d2a", null ],
     [ "light", "structures_8h.html#a4adb0b5a770a32ee4db36dca49398ce9", null ],
     [ "name", "structures_8h.html#af61b96d68822607ac4ba55a79d1768a4", null ],
-    [ "notify", "structures_8h.html#ae345af22703c6bb7c12cd6bfdc8f1942", null ]
+    [ "notify", "structures_8h.html#af95d870bd32765636ad830e70dd0125b", null ]
 ];

@@ -1,4 +1,4 @@
-.TH "src/ckb/fwupgradedialog.cpp" 3 "Fri Nov 3 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "src/ckb/fwupgradedialog.cpp" 3 "Sat Jan 20 2018" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -75,47 +75,47 @@ Referenced by FwUpgradeDialog::exec()\&.
 .SS "static float verifyFw (const QByteArray &blob, const QString &features)\fC [static]\fP"
 
 .PP
-Definition at line 85 of file fwupgradedialog\&.cpp\&.
+Definition at line 86 of file fwupgradedialog\&.cpp\&.
 .PP
 References ids\&.
 .PP
 Referenced by FwUpgradeDialog::exec()\&.
 .PP
 .nf
-85                                                                       {
-86     if(blob\&.length() < 0x0108)
-87         return 0\&.f;
-88     const char* bData = blob\&.data();
-89     // Make sure it matches this device based on the vendor and product IDs embedded in the blob
-90     bool match = false;
-91     for(uint i = 0; i < sizeof(ids)/sizeof(KbId); i++){
-92         if(!memcmp(&ids[i]\&.vendor, bData + 0x102, 2) && !memcmp(&ids[i]\&.product, bData + 0x104, 2)
-93                 && features\&.startsWith(ids[i]\&.feature, Qt::CaseInsensitive)){
-94             match = true;
-95             break;
-96         }
-97     }
-98     if(!match)
-99         return 0\&.f;
-100     // Copy the version from the blob
-101     short version;
-102     memcpy(&version, bData + 0x106, 2);
-103     // Un-hexify it
-104     return QString::number(version, 16)\&.toFloat() / 100\&.f;
-105 }
+86                                                                       {
+87     if(blob\&.length() < 0x0108)
+88         return 0\&.f;
+89     const char* bData = blob\&.data();
+90     // Make sure it matches this device based on the vendor and product IDs embedded in the blob
+91     bool match = false;
+92     for(uint i = 0; i < sizeof(ids)/sizeof(KbId); i++){
+93         if(!memcmp(&ids[i]\&.vendor, bData + 0x102, 2) && !memcmp(&ids[i]\&.product, bData + 0x104, 2)
+94                 && features\&.startsWith(ids[i]\&.feature, Qt::CaseInsensitive)){
+95             match = true;
+96             break;
+97         }
+98     }
+99     if(!match)
+100         return 0\&.f;
+101     // Copy the version from the blob
+102     short version;
+103     memcpy(&version, bData + 0x106, 2);
+104     // Un-hexify it
+105     return QString::number(version, 16)\&.toFloat() / 100\&.f;
+106 }
 .fi
 .SH "Variable Documentation"
 .PP 
 .SS "const int DIALOG_HEIGHT_MIN = 200\fC [static]\fP"
 
 .PP
-Definition at line 29 of file fwupgradedialog\&.cpp\&.
+Definition at line 30 of file fwupgradedialog\&.cpp\&.
 .PP
 Referenced by FwUpgradeDialog::FwUpgradeDialog(), and FwUpgradeDialog::on_actionButton_clicked()\&.
 .SS "const int DIALOG_WIDTH = 420\fC [static]\fP"
 
 .PP
-Definition at line 28 of file fwupgradedialog\&.cpp\&.
+Definition at line 29 of file fwupgradedialog\&.cpp\&.
 .PP
 Referenced by FwUpgradeDialog::exec(), FwUpgradeDialog::FwUpgradeDialog(), and FwUpgradeDialog::on_actionButton_clicked()\&.
 .SS "\fBKbId\fP ids[]\fC [static]\fP"
@@ -125,6 +125,7 @@ Referenced by FwUpgradeDialog::exec(), FwUpgradeDialog::FwUpgradeDialog(), and F
 = {
     
     { 0x1b1c, 0x1b17, "corsair k65 rgb" },
+    { 0x1b1c, 0x1b3f, "corsair k68" },
     { 0x1b1c, 0x1b13, "corsair k70 rgb" },
     { 0x1b1c, 0x1b11, "corsair k95 rgb" },
     { 0x1b1c, 0x1b15, "corsair strafe monochrome" },

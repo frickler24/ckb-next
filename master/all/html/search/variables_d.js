@@ -12,7 +12,7 @@ var searchData=
   ['noanimlabel',['noAnimLabel',['../classUi__KbAnimWidget.html#aeb267629d37dc9779c7b245d67e40750',1,'Ui_KbAnimWidget']]],
   ['noreorder',['noReorder',['../classKbAnimWidget.html#a2489897e1f41ad2cdabd057bd65a05cf',1,'KbAnimWidget']]],
   ['noselpage',['noSelPage',['../classUi__KbAnimWidget.html#af8b707c5346d9d32a1ec38df7f9ec015',1,'Ui_KbAnimWidget']]],
-  ['notify',['notify',['../structures_8h.html#ae345af22703c6bb7c12cd6bfdc8f1942',1,'usbmode']]],
+  ['notify',['notify',['../structures_8h.html#af95d870bd32765636ad830e70dd0125b',1,'usbmode']]],
   ['notifynumber',['notifyNumber',['../classKb.html#a5e35aea49e6389abf7e8e56215447186',1,'Kb']]],
   ['notifypath',['notifyPath',['../classKb.html#a2109a345656ece871a0b0413b23dcc34',1,'Kb']]],
   ['notifypathmutex',['notifyPathMutex',['../kb_8cpp.html#aebfce47d7fd0da5464c066ffa6f01f39',1,'kb.cpp']]],

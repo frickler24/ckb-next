@@ -1,5 +1,10 @@
 var NAVTREEINDEX12 =
 {
+"extrasettingswidget_8h.html":[8,0,0,0,20],
+"extrasettingswidget_8h_source.html":[8,0,0,0,20],
+"files.html":[8,0],
+"functions.html":[7,3,0],
+"functions.html":[7,3,0,0],
 "functions_a.html":[7,3,0,1],
 "functions_b.html":[7,3,0,2],
 "functions_c.html":[7,3,0,3],
@@ -52,8 +57,8 @@ var NAVTREEINDEX12 =
 "functions_type.html":[7,3,3],
 "functions_u.html":[7,3,0,21],
 "functions_v.html":[7,3,0,22],
-"functions_vars.html":[7,3,2,0],
 "functions_vars.html":[7,3,2],
+"functions_vars.html":[7,3,2,0],
 "functions_vars_a.html":[7,3,2,1],
 "functions_vars_b.html":[7,3,2,2],
 "functions_vars_c.html":[7,3,2,3],
@@ -244,10 +249,5 @@ var NAVTREEINDEX12 =
 "ioapi_8h.html#structzlib__filefunc64__def__s":[7,0,145],
 "ioapi_8h.html#structzlib__filefunc__def__s":[7,0,146],
 "ioapi_8h_source.html":[8,0,0,0,0,1],
-"kb_8cpp.html":[8,0,0,0,29],
-"kb_8cpp.html#a1d79f8a0e6b3b448f6fe812147695dba":[8,0,0,0,29,0],
-"kb_8cpp.html#ae15f5269bffd02cd41c7a667cb6d8480":[8,0,0,0,29,2],
-"kb_8cpp.html#aebfce47d7fd0da5464c066ffa6f01f39":[8,0,0,0,29,1],
-"kb_8cpp_source.html":[8,0,0,0,29],
-"kb_8h.html":[8,0,0,0,30]
+"kb_8cpp.html":[8,0,0,0,29]
 };

@@ -507,7 +507,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    (void)kb;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    (void)dummy;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordtype">int</span> index = <a class="code" href="keymap_8c.html#a31ffccc603ad3264b7d2fd09f468318a">keymap</a>[keyindex].<a class="code" href="daemon_2keymap_8h.html#adfb7efb615d23c01a629dbf1f0aa83c4">led</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordtype">int</span> index = <a class="code" href="keymap_8c.html#a898b7841455029ebcb076c1e579de821">keymap</a>[keyindex].<a class="code" href="daemon_2keymap_8h.html#adfb7efb615d23c01a629dbf1f0aa83c4">led</a>;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordflow">if</span>(index &lt; 0) {</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordflow">if</span> (index == -2){     <span class="comment">// Process strafe sidelights</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> sideshine;</div>
@@ -524,8 +524,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
 <div class="ttc" id="structures_8h_html_a761a7cf0b0943ecba869358267c54028"><div class="ttname"><a href="structures_8h.html#a761a7cf0b0943ecba869358267c54028">lighting::sidelight</a></div><div class="ttdeci">uchar sidelight</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00078">structures.h:78</a></div></div>
+<div class="ttc" id="keymap_8c_html_a898b7841455029ebcb076c1e579de821"><div class="ttname"><a href="keymap_8c.html#a898b7841455029ebcb076c1e579de821">keymap</a></div><div class="ttdeci">const key keymap[(((152+22+12)+25)+12)]</div><div class="ttdef"><b>Definition:</b> <a href="keymap_8c_source.html#l00005">keymap.c:5</a></div></div>
 <div class="ttc" id="daemon_2keymap_8h_html_adfb7efb615d23c01a629dbf1f0aa83c4"><div class="ttname"><a href="daemon_2keymap_8h.html#adfb7efb615d23c01a629dbf1f0aa83c4">key::led</a></div><div class="ttdeci">short led</div><div class="ttdef"><b>Definition:</b> <a href="daemon_2keymap_8h_source.html#l00051">keymap.h:51</a></div></div>
-<div class="ttc" id="keymap_8c_html_a31ffccc603ad3264b7d2fd09f468318a"><div class="ttname"><a href="keymap_8c.html#a31ffccc603ad3264b7d2fd09f468318a">keymap</a></div><div class="ttdeci">const key keymap[(((152+3+12)+25)+12)]</div><div class="ttdef"><b>Definition:</b> <a href="keymap_8c_source.html#l00005">keymap.c:5</a></div></div>
 <div class="ttc" id="structures_8h_html_a4adb0b5a770a32ee4db36dca49398ce9"><div class="ttname"><a href="structures_8h.html#a4adb0b5a770a32ee4db36dca49398ce9">usbmode::light</a></div><div class="ttdeci">lighting light</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00084">structures.h:84</a></div></div>
 <div class="ttc" id="includes_8h_html_a65f85814a8290f9797005d3b28e7e5fc"><div class="ttname"><a href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a></div><div class="ttdeci">unsigned char uchar</div><div class="ttdef"><b>Definition:</b> <a href="includes_8h_source.html#l00024">includes.h:24</a></div></div>
 <div class="ttc" id="structures_8h_html_a3df276662a9e5c1573c10835db13e0e8"><div class="ttname"><a href="structures_8h.html#a3df276662a9e5c1573c10835db13e0e8">lighting::g</a></div><div class="ttdeci">uchar g[152+12]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00075">structures.h:75</a></div></div>
@@ -568,129 +568,129 @@ Functions</h2></td></tr>
 <pre class="fragment">                                              &lt; That is the old comparison method: you get back what you sent.
 </pre><p> Normally a firmware version &gt;= 2.05 runs with the new compare array. Up to now there is a 2.04 running in K70 RGB Lux with the same behavior. It seems that K70RGB has the same problem </p>
 
-<p>Definition at line <a class="el" href="led__keyboard_8c_source.html#l00183">183</a> of file <a class="el" href="led__keyboard_8c_source.html">led_keyboard.c</a>.</p>
+<p>Definition at line <a class="el" href="led__keyboard_8c_source.html#l00190">190</a> of file <a class="el" href="led__keyboard_8c_source.html">led_keyboard.c</a>.</p>
 
-<p>References <a class="el" href="structures_8h_source.html#l00076">lighting::b</a>, <a class="el" href="includes_8h_source.html#l00049">ckb_err</a>, <a class="el" href="structures_8h_source.html#l00239">usbdevice::fwversion</a>, <a class="el" href="structures_8h_source.html#l00075">lighting::g</a>, <a class="el" href="usb_8h_source.html#l00165">IS_NEW_PROTOCOL</a>, <a class="el" href="structures_8h_source.html#l00176">MSG_SIZE</a>, <a class="el" href="daemon_2keymap_8h_source.html#l00024">N_KEYS_HW</a>, <a class="el" href="usb_8h_source.html#l00062">P_K70_LUX</a>, <a class="el" href="usb_8h_source.html#l00064">P_K70_LUX_NRGB</a>, <a class="el" href="structures_8h_source.html#l00237">usbdevice::product</a>, <a class="el" href="structures_8h_source.html#l00074">lighting::r</a>, <a class="el" href="usb_8h_source.html#l00281">usbrecv</a>, and <a class="el" href="usb_8h_source.html#l00264">usbsend</a>.</p>
+<p>References <a class="el" href="structures_8h_source.html#l00076">lighting::b</a>, <a class="el" href="includes_8h_source.html#l00049">ckb_err</a>, <a class="el" href="structures_8h_source.html#l00239">usbdevice::fwversion</a>, <a class="el" href="structures_8h_source.html#l00075">lighting::g</a>, <a class="el" href="usb_8h_source.html#l00172">IS_V2_OVERRIDE</a>, <a class="el" href="structures_8h_source.html#l00176">MSG_SIZE</a>, <a class="el" href="daemon_2keymap_8h_source.html#l00024">N_KEYS_HW</a>, <a class="el" href="usb_8h_source.html#l00067">P_K70_LUX</a>, <a class="el" href="usb_8h_source.html#l00069">P_K70_LUX_NRGB</a>, <a class="el" href="structures_8h_source.html#l00237">usbdevice::product</a>, <a class="el" href="structures_8h_source.html#l00074">lighting::r</a>, <a class="el" href="usb_8h_source.html#l00288">usbrecv</a>, and <a class="el" href="usb_8h_source.html#l00271">usbsend</a>.</p>
 
 <p>Referenced by <a class="el" href="profile__keyboard_8c_source.html#l00005">hwloadmode()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                                                        {</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordflow">if</span>(kb-&gt;<a class="code" href="structures_8h.html#a47e0bd130899bcf5acdef059f2970ac7">fwversion</a> &gt;= 0x0120 || <a class="code" href="usb_8h.html#adce25fdab5fa7317b79baf38ef95e771">IS_NEW_PROTOCOL</a>(kb)){</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> data_pkt[12][<a class="code" href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a>] = {</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            { 0x0e, 0x14, 0x03, 0x01, 0x01, mode + 1, 0x01 },</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            { 0xff, 0x01, 60, 0 },</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            { 0xff, 0x02, 60, 0 },</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            { 0xff, 0x03, 24, 0 },</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            { 0x0e, 0x14, 0x03, 0x01, 0x01, mode + 1, 0x02 },</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            { 0xff, 0x01, 60, 0 },</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            { 0xff, 0x02, 60, 0 },</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            { 0xff, 0x03, 24, 0 },</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            { 0x0e, 0x14, 0x03, 0x01, 0x01, mode + 1, 0x03 },</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            { 0xff, 0x01, 60, 0 },</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            { 0xff, 0x02, 60, 0 },</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            { 0xff, 0x03, 24, 0 },</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        };</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> in_pkt[4][<a class="code" href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a>] = {</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            { 0x0e, 0x14, 0x03, 0x01 },</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            { 0xff, 0x01, 60, 0 },</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            { 0xff, 0x02, 60, 0 },</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            { 0xff, 0x03, 24, 0 },</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        };</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> cmp_pkt[4][4] = {</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            { 0x0e, 0x14, 0x03, 0x01 },</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            { 0x0e, 0xff, 0x01, 60 },</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            { 0x0e, 0xff, 0x02, 60 },</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            { 0x0e, 0xff, 0x03, 24 },</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        };</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a>* colors[3] = { light-&gt;<a class="code" href="structures_8h.html#a7de6a9b7b901c884d632b15772c8ef56">r</a>, light-&gt;<a class="code" href="structures_8h.html#a3df276662a9e5c1573c10835db13e0e8">g</a>, light-&gt;<a class="code" href="structures_8h.html#ac382c44757d208247320c2978b1f48b9">b</a> };</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> clr = 0; clr &lt; 3; clr++){</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 4; i++){</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a80241296ff114704b355cd6081d2ff2e">usbrecv</a>(kb, data_pkt[i + clr * 4], in_pkt[i]))</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                    <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a>* comparePacket = data_pkt[i + clr * 4];   </div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                <span class="keywordflow">if</span> ((kb-&gt;<a class="code" href="structures_8h.html#a47e0bd130899bcf5acdef059f2970ac7">fwversion</a> &gt;= 0x205)</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                        || ((kb-&gt;<a class="code" href="structures_8h.html#a47e0bd130899bcf5acdef059f2970ac7">fwversion</a> &gt;= 0x204)</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                            &amp;&amp; ((kb-&gt;<a class="code" href="structures_8h.html#a045b6c91e3f04e54f25d39da9bda105b">product</a> == <a class="code" href="usb_8h.html#aa0f89f20ca96ad159330a8d071a45352">P_K70_LUX_NRGB</a>) || (kb-&gt;<a class="code" href="structures_8h.html#a045b6c91e3f04e54f25d39da9bda105b">product</a> == <a class="code" href="usb_8h.html#a3fc42f14fec81381ff8251ca6a85b363">P_K70_LUX</a>)))) {</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                    comparePacket = cmp_pkt[i];</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                }</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                <span class="keywordflow">if</span> (memcmp(in_pkt[i], comparePacket, 4)) {</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                    <a class="code" href="includes_8h.html#a8312a1a42e03986afb7c76557f4d3e25">ckb_err</a>(<span class="stringliteral">&quot;Bad input header\n&quot;</span>);</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                    <a class="code" href="includes_8h.html#a8312a1a42e03986afb7c76557f4d3e25">ckb_err</a>(<span class="stringliteral">&quot;color = %d, i = %d, mode = %d\nOutput (Request): %2.2x %2.2x %2.2x %2.2x\nInput(Reply): %2.2x %2.2x %2.2x %2.2x %2.2x %2.2x %2.2x %2.2x\n&quot;</span>, clr, i, mode,</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                        comparePacket[0], comparePacket[1], comparePacket[2], comparePacket[3],</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                        in_pkt[i][0], in_pkt[i][1], in_pkt[i][2], in_pkt[i][3], in_pkt[i][4], in_pkt[i][5], in_pkt[i][6], in_pkt[i][7]);</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                    in_pkt[2][0] = 0x99;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                    in_pkt[2][1] = 0x99;</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                    in_pkt[2][2] = 0x99;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                    in_pkt[2][3] = 0x99;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                    <a class="code" href="usb_8h.html#a80241296ff114704b355cd6081d2ff2e">usbrecv</a>(kb, in_pkt[2], in_pkt[2]); <span class="comment">// just to find it in the wireshark log</span></div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                    <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                }</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            }</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            <span class="comment">// Copy colors to lighting. in_pkt[0] is irrelevant.</span></div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            memcpy(colors[clr], in_pkt[1] + 4, 60);</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            memcpy(colors[clr] + 60, in_pkt[2] + 4, 60);</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            memcpy(colors[clr] + 120, in_pkt[3] + 4, 24);</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        }</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> data_pkt[5][<a class="code" href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a>] = {</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            { 0x0e, 0x14, 0x02, 0x01, 0x01, mode + 1, 0 },</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            { 0xff, 0x01, 60, 0 },</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            { 0xff, 0x02, 60, 0 },</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            { 0xff, 0x03, 60, 0 },</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            { 0xff, 0x04, 36, 0 },</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        };</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> in_pkt[4][<a class="code" href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a>] = {</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            { 0xff, 0x01, 60, 0 },</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            { 0xff, 0x02, 60, 0 },</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            { 0xff, 0x03, 60, 0 },</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            { 0xff, 0x04, 36, 0 },</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        };</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <span class="comment">// Write initial packet</span></div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a>(kb, data_pkt[0], 1))</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <span class="comment">// Read colors</span></div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 1; i &lt; 5; i++){</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a80241296ff114704b355cd6081d2ff2e">usbrecv</a>(kb, data_pkt[i],in_pkt[i - 1]))</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            <span class="keywordflow">if</span>(memcmp(in_pkt[i - 1], data_pkt[i], 4)){</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                <a class="code" href="includes_8h.html#a8312a1a42e03986afb7c76557f4d3e25">ckb_err</a>(<span class="stringliteral">&quot;Bad input header\n&quot;</span>);</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            }</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        }</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="comment">// Copy the data back to the mode</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        uint8_t mr[<a class="code" href="daemon_2keymap_8h.html#a8da11aae2aeac140b30ec9bc334bead3">N_KEYS_HW</a> / 2], mg[<a class="code" href="daemon_2keymap_8h.html#a8da11aae2aeac140b30ec9bc334bead3">N_KEYS_HW</a> / 2], mb[<a class="code" href="daemon_2keymap_8h.html#a8da11aae2aeac140b30ec9bc334bead3">N_KEYS_HW</a> / 2];</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        memcpy(mr,      in_pkt[0] +  4, 60);</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        memcpy(mr + 60, in_pkt[1] +  4, 12);</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        memcpy(mg,      in_pkt[1] + 16, 48);</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        memcpy(mg + 48, in_pkt[2] +  4, 24);</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        memcpy(mb,      in_pkt[2] + 28, 36);</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        memcpy(mb + 36, in_pkt[3] +  4, 36);</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <span class="comment">// Unpack LED data to 8bpc format</span></div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="daemon_2keymap_8h.html#a8da11aae2aeac140b30ec9bc334bead3">N_KEYS_HW</a>; i++){</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            <span class="keywordtype">int</span>     i_2 = i / 2;</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            uint8_t r, g, b;</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            <span class="comment">// 3-bit intensities stored in alternate nybbles.</span></div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            <span class="keywordflow">if</span> (i &amp; 1) {</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                r = 7 - (mr[i_2] &gt;&gt; 4);</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                g = 7 - (mg[i_2] &gt;&gt; 4);</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                b = 7 - (mb[i_2] &gt;&gt; 4);</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                r = 7 - (mr[i_2] &amp; 0x0F);</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                g = 7 - (mg[i_2] &amp; 0x0F);</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                b = 7 - (mb[i_2] &amp; 0x0F);</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            }</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            <span class="comment">// Scale 3-bit values up to 8 bits.</span></div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            light-&gt;<a class="code" href="structures_8h.html#a7de6a9b7b901c884d632b15772c8ef56">r</a>[i] = r &lt;&lt; 5 | r &lt;&lt; 2 | r &gt;&gt; 1;</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            light-&gt;<a class="code" href="structures_8h.html#a3df276662a9e5c1573c10835db13e0e8">g</a>[i] = g &lt;&lt; 5 | g &lt;&lt; 2 | g &gt;&gt; 1;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            light-&gt;<a class="code" href="structures_8h.html#ac382c44757d208247320c2978b1f48b9">b</a>[i] = b &lt;&lt; 5 | b &lt;&lt; 2 | b &gt;&gt; 1;</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        }</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    }</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                                                        {</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordflow">if</span>(kb-&gt;<a class="code" href="structures_8h.html#a47e0bd130899bcf5acdef059f2970ac7">fwversion</a> &gt;= 0x0120 || <a class="code" href="usb_8h.html#ae10d27e29068b5bdd851b4b1688b6351">IS_V2_OVERRIDE</a>(kb)){</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> data_pkt[12][<a class="code" href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a>] = {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            { 0x0e, 0x14, 0x03, 0x01, 0x01, mode + 1, 0x01 },</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            { 0xff, 0x01, 60, 0 },</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            { 0xff, 0x02, 60, 0 },</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            { 0xff, 0x03, 24, 0 },</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            { 0x0e, 0x14, 0x03, 0x01, 0x01, mode + 1, 0x02 },</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            { 0xff, 0x01, 60, 0 },</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            { 0xff, 0x02, 60, 0 },</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            { 0xff, 0x03, 24, 0 },</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            { 0x0e, 0x14, 0x03, 0x01, 0x01, mode + 1, 0x03 },</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            { 0xff, 0x01, 60, 0 },</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            { 0xff, 0x02, 60, 0 },</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            { 0xff, 0x03, 24, 0 },</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        };</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> in_pkt[4][<a class="code" href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a>] = {</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            { 0x0e, 0x14, 0x03, 0x01 },</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            { 0xff, 0x01, 60, 0 },</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            { 0xff, 0x02, 60, 0 },</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            { 0xff, 0x03, 24, 0 },</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        };</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> cmp_pkt[4][4] = {</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            { 0x0e, 0x14, 0x03, 0x01 },</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            { 0x0e, 0xff, 0x01, 60 },</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            { 0x0e, 0xff, 0x02, 60 },</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            { 0x0e, 0xff, 0x03, 24 },</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        };</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a>* colors[3] = { light-&gt;<a class="code" href="structures_8h.html#a7de6a9b7b901c884d632b15772c8ef56">r</a>, light-&gt;<a class="code" href="structures_8h.html#a3df276662a9e5c1573c10835db13e0e8">g</a>, light-&gt;<a class="code" href="structures_8h.html#ac382c44757d208247320c2978b1f48b9">b</a> };</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> clr = 0; clr &lt; 3; clr++){</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 4; i++){</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a80241296ff114704b355cd6081d2ff2e">usbrecv</a>(kb, data_pkt[i + clr * 4], in_pkt[i]))</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a>* comparePacket = data_pkt[i + clr * 4];   </div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                <span class="keywordflow">if</span> ((kb-&gt;<a class="code" href="structures_8h.html#a47e0bd130899bcf5acdef059f2970ac7">fwversion</a> &gt;= 0x205)</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                        || ((kb-&gt;<a class="code" href="structures_8h.html#a47e0bd130899bcf5acdef059f2970ac7">fwversion</a> &gt;= 0x204)</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                            &amp;&amp; ((kb-&gt;<a class="code" href="structures_8h.html#a045b6c91e3f04e54f25d39da9bda105b">product</a> == <a class="code" href="usb_8h.html#aa0f89f20ca96ad159330a8d071a45352">P_K70_LUX_NRGB</a>) || (kb-&gt;<a class="code" href="structures_8h.html#a045b6c91e3f04e54f25d39da9bda105b">product</a> == <a class="code" href="usb_8h.html#a3fc42f14fec81381ff8251ca6a85b363">P_K70_LUX</a>)))) {</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                    comparePacket = cmp_pkt[i];</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                }</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                <span class="keywordflow">if</span> (memcmp(in_pkt[i], comparePacket, 4)) {</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                    <a class="code" href="includes_8h.html#a8312a1a42e03986afb7c76557f4d3e25">ckb_err</a>(<span class="stringliteral">&quot;Bad input header\n&quot;</span>);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                    <a class="code" href="includes_8h.html#a8312a1a42e03986afb7c76557f4d3e25">ckb_err</a>(<span class="stringliteral">&quot;color = %d, i = %d, mode = %d\nOutput (Request): %2.2x %2.2x %2.2x %2.2x\nInput(Reply): %2.2x %2.2x %2.2x %2.2x %2.2x %2.2x %2.2x %2.2x\n&quot;</span>, clr, i, mode,</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                        comparePacket[0], comparePacket[1], comparePacket[2], comparePacket[3],</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                        in_pkt[i][0], in_pkt[i][1], in_pkt[i][2], in_pkt[i][3], in_pkt[i][4], in_pkt[i][5], in_pkt[i][6], in_pkt[i][7]);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                    in_pkt[2][0] = 0x99;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                    in_pkt[2][1] = 0x99;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                    in_pkt[2][2] = 0x99;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                    in_pkt[2][3] = 0x99;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                    <a class="code" href="usb_8h.html#a80241296ff114704b355cd6081d2ff2e">usbrecv</a>(kb, in_pkt[2], in_pkt[2]); <span class="comment">// just to find it in the wireshark log</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                }</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            }</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            <span class="comment">// Copy colors to lighting. in_pkt[0] is irrelevant.</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            memcpy(colors[clr], in_pkt[1] + 4, 60);</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            memcpy(colors[clr] + 60, in_pkt[2] + 4, 60);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            memcpy(colors[clr] + 120, in_pkt[3] + 4, 24);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        }</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> data_pkt[5][<a class="code" href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a>] = {</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            { 0x0e, 0x14, 0x02, 0x01, 0x01, mode + 1, 0 },</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            { 0xff, 0x01, 60, 0 },</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            { 0xff, 0x02, 60, 0 },</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            { 0xff, 0x03, 60, 0 },</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            { 0xff, 0x04, 36, 0 },</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        };</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> in_pkt[4][<a class="code" href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a>] = {</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            { 0xff, 0x01, 60, 0 },</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            { 0xff, 0x02, 60, 0 },</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            { 0xff, 0x03, 60, 0 },</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            { 0xff, 0x04, 36, 0 },</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        };</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="comment">// Write initial packet</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a>(kb, data_pkt[0], 1))</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        <span class="comment">// Read colors</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 1; i &lt; 5; i++){</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a80241296ff114704b355cd6081d2ff2e">usbrecv</a>(kb, data_pkt[i],in_pkt[i - 1]))</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <span class="keywordflow">if</span>(memcmp(in_pkt[i - 1], data_pkt[i], 4)){</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                <a class="code" href="includes_8h.html#a8312a1a42e03986afb7c76557f4d3e25">ckb_err</a>(<span class="stringliteral">&quot;Bad input header\n&quot;</span>);</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            }</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        }</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <span class="comment">// Copy the data back to the mode</span></div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        uint8_t mr[<a class="code" href="daemon_2keymap_8h.html#a8da11aae2aeac140b30ec9bc334bead3">N_KEYS_HW</a> / 2], mg[<a class="code" href="daemon_2keymap_8h.html#a8da11aae2aeac140b30ec9bc334bead3">N_KEYS_HW</a> / 2], mb[<a class="code" href="daemon_2keymap_8h.html#a8da11aae2aeac140b30ec9bc334bead3">N_KEYS_HW</a> / 2];</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        memcpy(mr,      in_pkt[0] +  4, 60);</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        memcpy(mr + 60, in_pkt[1] +  4, 12);</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        memcpy(mg,      in_pkt[1] + 16, 48);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        memcpy(mg + 48, in_pkt[2] +  4, 24);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        memcpy(mb,      in_pkt[2] + 28, 36);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        memcpy(mb + 36, in_pkt[3] +  4, 36);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="comment">// Unpack LED data to 8bpc format</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="daemon_2keymap_8h.html#a8da11aae2aeac140b30ec9bc334bead3">N_KEYS_HW</a>; i++){</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            <span class="keywordtype">int</span>     i_2 = i / 2;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            uint8_t r, g, b;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            <span class="comment">// 3-bit intensities stored in alternate nybbles.</span></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            <span class="keywordflow">if</span> (i &amp; 1) {</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                r = 7 - (mr[i_2] &gt;&gt; 4);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                g = 7 - (mg[i_2] &gt;&gt; 4);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                b = 7 - (mb[i_2] &gt;&gt; 4);</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                r = 7 - (mr[i_2] &amp; 0x0F);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                g = 7 - (mg[i_2] &amp; 0x0F);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                b = 7 - (mb[i_2] &amp; 0x0F);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            }</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            <span class="comment">// Scale 3-bit values up to 8 bits.</span></div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            light-&gt;<a class="code" href="structures_8h.html#a7de6a9b7b901c884d632b15772c8ef56">r</a>[i] = r &lt;&lt; 5 | r &lt;&lt; 2 | r &gt;&gt; 1;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            light-&gt;<a class="code" href="structures_8h.html#a3df276662a9e5c1573c10835db13e0e8">g</a>[i] = g &lt;&lt; 5 | g &lt;&lt; 2 | g &gt;&gt; 1;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            light-&gt;<a class="code" href="structures_8h.html#ac382c44757d208247320c2978b1f48b9">b</a>[i] = b &lt;&lt; 5 | b &lt;&lt; 2 | b &gt;&gt; 1;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        }</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    }</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;}</div>
 <div class="ttc" id="structures_8h_html_ad4d025ecf1bdbf8b244ca688df8e478d"><div class="ttname"><a href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a></div><div class="ttdeci">#define MSG_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00176">structures.h:176</a></div></div>
 <div class="ttc" id="includes_8h_html_a8312a1a42e03986afb7c76557f4d3e25"><div class="ttname"><a href="includes_8h.html#a8312a1a42e03986afb7c76557f4d3e25">ckb_err</a></div><div class="ttdeci">#define ckb_err(fmt, args...)</div><div class="ttdef"><b>Definition:</b> <a href="includes_8h_source.html#l00049">includes.h:49</a></div></div>
 <div class="ttc" id="structures_8h_html_a47e0bd130899bcf5acdef059f2970ac7"><div class="ttname"><a href="structures_8h.html#a47e0bd130899bcf5acdef059f2970ac7">usbdevice::fwversion</a></div><div class="ttdeci">ushort fwversion</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00239">structures.h:239</a></div></div>
@@ -698,12 +698,12 @@ Functions</h2></td></tr>
 <div class="ttc" id="daemon_2keymap_8h_html_a8da11aae2aeac140b30ec9bc334bead3"><div class="ttname"><a href="daemon_2keymap_8h.html#a8da11aae2aeac140b30ec9bc334bead3">N_KEYS_HW</a></div><div class="ttdeci">#define N_KEYS_HW</div><div class="ttdef"><b>Definition:</b> <a href="daemon_2keymap_8h_source.html#l00024">keymap.h:24</a></div></div>
 <div class="ttc" id="structures_8h_html_a045b6c91e3f04e54f25d39da9bda105b"><div class="ttname"><a href="structures_8h.html#a045b6c91e3f04e54f25d39da9bda105b">usbdevice::product</a></div><div class="ttdeci">short product</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00237">structures.h:237</a></div></div>
 <div class="ttc" id="structures_8h_html_a3df276662a9e5c1573c10835db13e0e8"><div class="ttname"><a href="structures_8h.html#a3df276662a9e5c1573c10835db13e0e8">lighting::g</a></div><div class="ttdeci">uchar g[152+12]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00075">structures.h:75</a></div></div>
-<div class="ttc" id="usb_8h_html_a80241296ff114704b355cd6081d2ff2e"><div class="ttname"><a href="usb_8h.html#a80241296ff114704b355cd6081d2ff2e">usbrecv</a></div><div class="ttdeci">#define usbrecv(kb, out_msg, in_msg)</div><div class="ttdoc">usbrecv macro is used to wrap _usbrecv() with debugging information (file and lineno) ...</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00281">usb.h:281</a></div></div>
-<div class="ttc" id="usb_8h_html_a3fc42f14fec81381ff8251ca6a85b363"><div class="ttname"><a href="usb_8h.html#a3fc42f14fec81381ff8251ca6a85b363">P_K70_LUX</a></div><div class="ttdeci">#define P_K70_LUX</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00062">usb.h:62</a></div></div>
-<div class="ttc" id="usb_8h_html_adce25fdab5fa7317b79baf38ef95e771"><div class="ttname"><a href="usb_8h.html#adce25fdab5fa7317b79baf38ef95e771">IS_NEW_PROTOCOL</a></div><div class="ttdeci">#define IS_NEW_PROTOCOL(kb)</div><div class="ttdoc">Used when a device has a firmware with a low version number that uses the new protocol. </div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00165">usb.h:165</a></div></div>
-<div class="ttc" id="usb_8h_html_aa0f89f20ca96ad159330a8d071a45352"><div class="ttname"><a href="usb_8h.html#aa0f89f20ca96ad159330a8d071a45352">P_K70_LUX_NRGB</a></div><div class="ttdeci">#define P_K70_LUX_NRGB</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00064">usb.h:64</a></div></div>
+<div class="ttc" id="usb_8h_html_a80241296ff114704b355cd6081d2ff2e"><div class="ttname"><a href="usb_8h.html#a80241296ff114704b355cd6081d2ff2e">usbrecv</a></div><div class="ttdeci">#define usbrecv(kb, out_msg, in_msg)</div><div class="ttdoc">usbrecv macro is used to wrap _usbrecv() with debugging information (file and lineno) ...</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00288">usb.h:288</a></div></div>
+<div class="ttc" id="usb_8h_html_a3fc42f14fec81381ff8251ca6a85b363"><div class="ttname"><a href="usb_8h.html#a3fc42f14fec81381ff8251ca6a85b363">P_K70_LUX</a></div><div class="ttdeci">#define P_K70_LUX</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00067">usb.h:67</a></div></div>
+<div class="ttc" id="usb_8h_html_aa0f89f20ca96ad159330a8d071a45352"><div class="ttname"><a href="usb_8h.html#aa0f89f20ca96ad159330a8d071a45352">P_K70_LUX_NRGB</a></div><div class="ttdeci">#define P_K70_LUX_NRGB</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00069">usb.h:69</a></div></div>
 <div class="ttc" id="structures_8h_html_ac382c44757d208247320c2978b1f48b9"><div class="ttname"><a href="structures_8h.html#ac382c44757d208247320c2978b1f48b9">lighting::b</a></div><div class="ttdeci">uchar b[152+12]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00076">structures.h:76</a></div></div>
-<div class="ttc" id="usb_8h_html_a5eaa2b8ffe9e62747454c74b19876819"><div class="ttname"><a href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a></div><div class="ttdeci">#define usbsend(kb, messages, count)</div><div class="ttdoc">usbsend macro is used to wrap _usbsend() with debugging information (file and lineno) ...</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00264">usb.h:264</a></div></div>
+<div class="ttc" id="usb_8h_html_a5eaa2b8ffe9e62747454c74b19876819"><div class="ttname"><a href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a></div><div class="ttdeci">#define usbsend(kb, messages, count)</div><div class="ttdoc">usbsend macro is used to wrap _usbsend() with debugging information (file and lineno) ...</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00271">usb.h:271</a></div></div>
+<div class="ttc" id="usb_8h_html_ae10d27e29068b5bdd851b4b1688b6351"><div class="ttname"><a href="usb_8h.html#ae10d27e29068b5bdd851b4b1688b6351">IS_V2_OVERRIDE</a></div><div class="ttdeci">#define IS_V2_OVERRIDE(kb)</div><div class="ttdoc">Used when a device has a firmware with a low version number that uses the new protocol. </div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00172">usb.h:172</a></div></div>
 <div class="ttc" id="structures_8h_html_a7de6a9b7b901c884d632b15772c8ef56"><div class="ttname"><a href="structures_8h.html#a7de6a9b7b901c884d632b15772c8ef56">lighting::r</a></div><div class="ttdeci">uchar r[152+12]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00074">structures.h:74</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -751,7 +751,7 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="led__mouse_8c_source.html#l00087">87</a> of file <a class="el" href="led__mouse_8c_source.html">led_mouse.c</a>.</p>
 
-<p>References <a class="el" href="structures_8h_source.html#l00076">lighting::b</a>, <a class="el" href="includes_8h_source.html#l00049">ckb_err</a>, <a class="el" href="structures_8h_source.html#l00075">lighting::g</a>, <a class="el" href="usb_8h_source.html#l00100">IS_SABRE</a>, <a class="el" href="usb_8h_source.html#l00106">IS_SCIMITAR</a>, <a class="el" href="daemon_2keymap_8h_source.html#l00043">LED_DPI</a>, <a class="el" href="daemon_2keymap_8h_source.html#l00039">LED_MOUSE</a>, <a class="el" href="structures_8h_source.html#l00176">MSG_SIZE</a>, <a class="el" href="structures_8h_source.html#l00074">lighting::r</a>, and <a class="el" href="usb_8h_source.html#l00281">usbrecv</a>.</p>
+<p>References <a class="el" href="structures_8h_source.html#l00076">lighting::b</a>, <a class="el" href="includes_8h_source.html#l00049">ckb_err</a>, <a class="el" href="structures_8h_source.html#l00075">lighting::g</a>, <a class="el" href="usb_8h_source.html#l00107">IS_SABRE</a>, <a class="el" href="usb_8h_source.html#l00113">IS_SCIMITAR</a>, <a class="el" href="daemon_2keymap_8h_source.html#l00043">LED_DPI</a>, <a class="el" href="daemon_2keymap_8h_source.html#l00039">LED_MOUSE</a>, <a class="el" href="structures_8h_source.html#l00176">MSG_SIZE</a>, <a class="el" href="structures_8h_source.html#l00074">lighting::r</a>, and <a class="el" href="usb_8h_source.html#l00288">usbrecv</a>.</p>
 
 <p>Referenced by <a class="el" href="profile__mouse_8c_source.html#l00006">cmd_hwload_mouse()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                                           {</div>
@@ -782,13 +782,13 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
 <div class="ttc" id="structures_8h_html_ad4d025ecf1bdbf8b244ca688df8e478d"><div class="ttname"><a href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a></div><div class="ttdeci">#define MSG_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00176">structures.h:176</a></div></div>
 <div class="ttc" id="daemon_2keymap_8h_html_ac4f7d9dce5248992866a0f2e23fe8200"><div class="ttname"><a href="daemon_2keymap_8h.html#ac4f7d9dce5248992866a0f2e23fe8200">LED_MOUSE</a></div><div class="ttdeci">#define LED_MOUSE</div><div class="ttdef"><b>Definition:</b> <a href="daemon_2keymap_8h_source.html#l00039">keymap.h:39</a></div></div>
-<div class="ttc" id="usb_8h_html_a42d0504a482944df6fe7cbdb06c0851b"><div class="ttname"><a href="usb_8h.html#a42d0504a482944df6fe7cbdb06c0851b">IS_SCIMITAR</a></div><div class="ttdeci">#define IS_SCIMITAR(kb)</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00106">usb.h:106</a></div></div>
+<div class="ttc" id="usb_8h_html_a42d0504a482944df6fe7cbdb06c0851b"><div class="ttname"><a href="usb_8h.html#a42d0504a482944df6fe7cbdb06c0851b">IS_SCIMITAR</a></div><div class="ttdeci">#define IS_SCIMITAR(kb)</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00113">usb.h:113</a></div></div>
 <div class="ttc" id="includes_8h_html_a8312a1a42e03986afb7c76557f4d3e25"><div class="ttname"><a href="includes_8h.html#a8312a1a42e03986afb7c76557f4d3e25">ckb_err</a></div><div class="ttdeci">#define ckb_err(fmt, args...)</div><div class="ttdef"><b>Definition:</b> <a href="includes_8h_source.html#l00049">includes.h:49</a></div></div>
-<div class="ttc" id="usb_8h_html_a42deb465caa31f803a16306986cd6bbe"><div class="ttname"><a href="usb_8h.html#a42deb465caa31f803a16306986cd6bbe">IS_SABRE</a></div><div class="ttdeci">#define IS_SABRE(kb)</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00100">usb.h:100</a></div></div>
+<div class="ttc" id="usb_8h_html_a42deb465caa31f803a16306986cd6bbe"><div class="ttname"><a href="usb_8h.html#a42deb465caa31f803a16306986cd6bbe">IS_SABRE</a></div><div class="ttdeci">#define IS_SABRE(kb)</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00107">usb.h:107</a></div></div>
 <div class="ttc" id="daemon_2keymap_8h_html_a651d575ebe5d00bbe17ae5fd9dbf41f8"><div class="ttname"><a href="daemon_2keymap_8h.html#a651d575ebe5d00bbe17ae5fd9dbf41f8">LED_DPI</a></div><div class="ttdeci">#define LED_DPI</div><div class="ttdef"><b>Definition:</b> <a href="daemon_2keymap_8h_source.html#l00043">keymap.h:43</a></div></div>
 <div class="ttc" id="includes_8h_html_a65f85814a8290f9797005d3b28e7e5fc"><div class="ttname"><a href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a></div><div class="ttdeci">unsigned char uchar</div><div class="ttdef"><b>Definition:</b> <a href="includes_8h_source.html#l00024">includes.h:24</a></div></div>
 <div class="ttc" id="structures_8h_html_a3df276662a9e5c1573c10835db13e0e8"><div class="ttname"><a href="structures_8h.html#a3df276662a9e5c1573c10835db13e0e8">lighting::g</a></div><div class="ttdeci">uchar g[152+12]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00075">structures.h:75</a></div></div>
-<div class="ttc" id="usb_8h_html_a80241296ff114704b355cd6081d2ff2e"><div class="ttname"><a href="usb_8h.html#a80241296ff114704b355cd6081d2ff2e">usbrecv</a></div><div class="ttdeci">#define usbrecv(kb, out_msg, in_msg)</div><div class="ttdoc">usbrecv macro is used to wrap _usbrecv() with debugging information (file and lineno) ...</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00281">usb.h:281</a></div></div>
+<div class="ttc" id="usb_8h_html_a80241296ff114704b355cd6081d2ff2e"><div class="ttname"><a href="usb_8h.html#a80241296ff114704b355cd6081d2ff2e">usbrecv</a></div><div class="ttdeci">#define usbrecv(kb, out_msg, in_msg)</div><div class="ttdoc">usbrecv macro is used to wrap _usbrecv() with debugging information (file and lineno) ...</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00288">usb.h:288</a></div></div>
 <div class="ttc" id="structures_8h_html_ac382c44757d208247320c2978b1f48b9"><div class="ttname"><a href="structures_8h.html#ac382c44757d208247320c2978b1f48b9">lighting::b</a></div><div class="ttdeci">uchar b[152+12]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00076">structures.h:76</a></div></div>
 <div class="ttc" id="structures_8h_html_a7de6a9b7b901c884d632b15772c8ef56"><div class="ttname"><a href="structures_8h.html#a7de6a9b7b901c884d632b15772c8ef56">lighting::r</a></div><div class="ttdeci">uchar r[152+12]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00074">structures.h:74</a></div></div>
 </div><!-- fragment -->
@@ -841,7 +841,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keyword">const</span> <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a>* mb = light-&gt;<a class="code" href="structures_8h.html#ac382c44757d208247320c2978b1f48b9">b</a>;</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="daemon_2keymap_8h.html#ae1b7aad208a3aca184f7ea6f4bb8643c">N_KEYS_EXTENDED</a>; i++){</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="comment">// Translate the key index to an RGB index using the key map</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordtype">int</span> k = <a class="code" href="keymap_8c.html#a31ffccc603ad3264b7d2fd09f468318a">keymap</a>[i].<a class="code" href="daemon_2keymap_8h.html#adfb7efb615d23c01a629dbf1f0aa83c4">led</a>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordtype">int</span> k = <a class="code" href="keymap_8c.html#a898b7841455029ebcb076c1e579de821">keymap</a>[i].<a class="code" href="daemon_2keymap_8h.html#adfb7efb615d23c01a629dbf1f0aa83c4">led</a>;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">if</span>(k &lt; 0)</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        r[i] = mr[k];</div>
@@ -851,8 +851,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="comment">// Make a buffer to track key names and to filter out duplicates</span></div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordtype">char</span> names[<a class="code" href="daemon_2keymap_8h.html#ae1b7aad208a3aca184f7ea6f4bb8643c">N_KEYS_EXTENDED</a>][11];</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="daemon_2keymap_8h.html#ae1b7aad208a3aca184f7ea6f4bb8643c">N_KEYS_EXTENDED</a>; i++){</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span>* name = <a class="code" href="keymap_8c.html#a31ffccc603ad3264b7d2fd09f468318a">keymap</a>[i].<a class="code" href="daemon_2keymap_8h.html#aaa2ca200a4bd86567f53851153b045af">name</a>;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="keymap_8c.html#a31ffccc603ad3264b7d2fd09f468318a">keymap</a>[i].led &lt; 0 || !<a class="code" href="led_8c.html#a97b59f7ad581a5fdd8e2becec0b7725b">has_key</a>(name, kb))</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span>* name = <a class="code" href="keymap_8c.html#a898b7841455029ebcb076c1e579de821">keymap</a>[i].<a class="code" href="daemon_2keymap_8h.html#aaa2ca200a4bd86567f53851153b045af">name</a>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="keymap_8c.html#a898b7841455029ebcb076c1e579de821">keymap</a>[i].led &lt; 0 || !<a class="code" href="led_8c.html#a97b59f7ad581a5fdd8e2becec0b7725b">has_key</a>(name, kb))</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            names[i][0] = 0;</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            strncpy(names[i], name, 11);</div>
@@ -902,8 +902,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">return</span> buffer;</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;}</div>
 <div class="ttc" id="led_8c_html_a97b59f7ad581a5fdd8e2becec0b7725b"><div class="ttname"><a href="led_8c.html#a97b59f7ad581a5fdd8e2becec0b7725b">has_key</a></div><div class="ttdeci">static int has_key(const char *name, const usbdevice *kb)</div><div class="ttdef"><b>Definition:</b> <a href="led_8c_source.html#l00088">led.c:88</a></div></div>
+<div class="ttc" id="keymap_8c_html_a898b7841455029ebcb076c1e579de821"><div class="ttname"><a href="keymap_8c.html#a898b7841455029ebcb076c1e579de821">keymap</a></div><div class="ttdeci">const key keymap[(((152+22+12)+25)+12)]</div><div class="ttdef"><b>Definition:</b> <a href="keymap_8c_source.html#l00005">keymap.c:5</a></div></div>
 <div class="ttc" id="daemon_2keymap_8h_html_adfb7efb615d23c01a629dbf1f0aa83c4"><div class="ttname"><a href="daemon_2keymap_8h.html#adfb7efb615d23c01a629dbf1f0aa83c4">key::led</a></div><div class="ttdeci">short led</div><div class="ttdef"><b>Definition:</b> <a href="daemon_2keymap_8h_source.html#l00051">keymap.h:51</a></div></div>
-<div class="ttc" id="keymap_8c_html_a31ffccc603ad3264b7d2fd09f468318a"><div class="ttname"><a href="keymap_8c.html#a31ffccc603ad3264b7d2fd09f468318a">keymap</a></div><div class="ttdeci">const key keymap[(((152+3+12)+25)+12)]</div><div class="ttdef"><b>Definition:</b> <a href="keymap_8c_source.html#l00005">keymap.c:5</a></div></div>
 <div class="ttc" id="includes_8h_html_a65f85814a8290f9797005d3b28e7e5fc"><div class="ttname"><a href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a></div><div class="ttdeci">unsigned char uchar</div><div class="ttdef"><b>Definition:</b> <a href="includes_8h_source.html#l00024">includes.h:24</a></div></div>
 <div class="ttc" id="daemon_2keymap_8h_html_aaa2ca200a4bd86567f53851153b045af"><div class="ttname"><a href="daemon_2keymap_8h.html#aaa2ca200a4bd86567f53851153b045af">key::name</a></div><div class="ttdeci">const char * name</div><div class="ttdef"><b>Definition:</b> <a href="daemon_2keymap_8h_source.html#l00050">keymap.h:50</a></div></div>
 <div class="ttc" id="structures_8h_html_a3df276662a9e5c1573c10835db13e0e8"><div class="ttname"><a href="structures_8h.html#a3df276662a9e5c1573c10835db13e0e8">lighting::g</a></div><div class="ttdeci">uchar g[152+12]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00075">structures.h:75</a></div></div>
@@ -965,52 +965,52 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="led__keyboard_8c_source.html#l00141">141</a> of file <a class="el" href="led__keyboard_8c_source.html">led_keyboard.c</a>.</p>
+<p>Definition at line <a class="el" href="led__keyboard_8c_source.html#l00148">148</a> of file <a class="el" href="led__keyboard_8c_source.html">led_keyboard.c</a>.</p>
 
-<p>References <a class="el" href="structures_8h_source.html#l00249">usbdevice::dither</a>, <a class="el" href="structures_8h_source.html#l00239">usbdevice::fwversion</a>, <a class="el" href="usb_8h_source.html#l00165">IS_NEW_PROTOCOL</a>, <a class="el" href="usb_8h_source.html#l00084">IS_STRAFE</a>, <a class="el" href="led__keyboard_8c_source.html#l00038">makergb_512()</a>, <a class="el" href="led__keyboard_8c_source.html#l00058">makergb_full()</a>, <a class="el" href="structures_8h_source.html#l00176">MSG_SIZE</a>, <a class="el" href="led__keyboard_8c_source.html#l00024">ordered8to3()</a>, <a class="el" href="led__keyboard_8c_source.html#l00032">quantize8to3()</a>, and <a class="el" href="usb_8h_source.html#l00264">usbsend</a>.</p>
+<p>References <a class="el" href="structures_8h_source.html#l00249">usbdevice::dither</a>, <a class="el" href="structures_8h_source.html#l00239">usbdevice::fwversion</a>, <a class="el" href="usb_8h_source.html#l00091">IS_STRAFE</a>, <a class="el" href="usb_8h_source.html#l00172">IS_V2_OVERRIDE</a>, <a class="el" href="led__keyboard_8c_source.html#l00038">makergb_512()</a>, <a class="el" href="led__keyboard_8c_source.html#l00058">makergb_full()</a>, <a class="el" href="structures_8h_source.html#l00176">MSG_SIZE</a>, <a class="el" href="led__keyboard_8c_source.html#l00024">ordered8to3()</a>, <a class="el" href="led__keyboard_8c_source.html#l00032">quantize8to3()</a>, and <a class="el" href="usb_8h_source.html#l00271">usbsend</a>.</p>
 
 <p>Referenced by <a class="el" href="profile__keyboard_8c_source.html#l00061">cmd_hwsave_kb()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                                                        {</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">if</span>(kb-&gt;<a class="code" href="structures_8h.html#a47e0bd130899bcf5acdef059f2970ac7">fwversion</a> &gt;= 0x0120 || <a class="code" href="usb_8h.html#adce25fdab5fa7317b79baf38ef95e771">IS_NEW_PROTOCOL</a>(kb)){</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> data_pkt[12][<a class="code" href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a>] = {</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            <span class="comment">// Red</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            { 0x7f, 0x01, 60, 0 },</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            { 0x7f, 0x02, 60, 0 },</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            { 0x7f, 0x03, 24, 0 },</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            { 0x07, 0x14, 0x03, 0x01, 0x01, mode + 1, 0x01 },</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <span class="comment">// Green</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            { 0x7f, 0x01, 60, 0 },</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            { 0x7f, 0x02, 60, 0 },</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            { 0x7f, 0x03, 24, 0 },</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            { 0x07, 0x14, 0x03, 0x01, 0x01, mode + 1, 0x02 },</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <span class="comment">// Blue</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            { 0x7f, 0x01, 60, 0 },</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            { 0x7f, 0x02, 60, 0 },</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            { 0x7f, 0x03, 24, 0 },</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            { 0x07, 0x14, 0x03, 0x01, 0x01, mode + 1, 0x03 }</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        };</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <a class="code" href="led__keyboard_8c.html#aa2518c44d1de14ec9852cc768f4e19f8">makergb_full</a>(light, data_pkt);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a>(kb, data_pkt[0], 12))</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="usb_8h.html#a934f88a3315f982a29c851cd8293155f">IS_STRAFE</a>(kb)){ <span class="comment">// end save</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> save_end_pkt[<a class="code" href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a>] = { 0x07, 0x14, 0x04, 0x01, 0x01 };</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a>(kb, save_end_pkt, 1))</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        }</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> data_pkt[5][<a class="code" href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a>] = {</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            { 0x7f, 0x01, 60, 0 },</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            { 0x7f, 0x02, 60, 0 },</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            { 0x7f, 0x03, 60, 0 },</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            { 0x7f, 0x04, 36, 0 },</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            { 0x07, 0x14, 0x02, 0x00, 0x01, mode + 1 }</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        };</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <a class="code" href="led__keyboard_8c.html#ad37b49215ddbb5fdfcbc185bee256b28">makergb_512</a>(light, data_pkt, kb-&gt;<a class="code" href="structures_8h.html#ac001911d43498f4165bfc7cdd5024d39">dither</a> ? <a class="code" href="led__keyboard_8c.html#a384276467a5331b5c6d134c00476b8a3">ordered8to3</a> : <a class="code" href="led__keyboard_8c.html#abb9b4e916b13b54ab23b4b5ace4e293d">quantize8to3</a>);</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a>(kb, data_pkt[0], 5))</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    }</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                                                        {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">if</span>(kb-&gt;<a class="code" href="structures_8h.html#a47e0bd130899bcf5acdef059f2970ac7">fwversion</a> &gt;= 0x0120 || <a class="code" href="usb_8h.html#ae10d27e29068b5bdd851b4b1688b6351">IS_V2_OVERRIDE</a>(kb)){</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> data_pkt[12][<a class="code" href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a>] = {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            <span class="comment">// Red</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            { 0x7f, 0x01, 60, 0 },</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            { 0x7f, 0x02, 60, 0 },</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            { 0x7f, 0x03, 24, 0 },</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            { 0x07, 0x14, 0x03, 0x01, 0x01, mode + 1, 0x01 },</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            <span class="comment">// Green</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            { 0x7f, 0x01, 60, 0 },</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            { 0x7f, 0x02, 60, 0 },</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            { 0x7f, 0x03, 24, 0 },</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            { 0x07, 0x14, 0x03, 0x01, 0x01, mode + 1, 0x02 },</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <span class="comment">// Blue</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            { 0x7f, 0x01, 60, 0 },</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            { 0x7f, 0x02, 60, 0 },</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            { 0x7f, 0x03, 24, 0 },</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            { 0x07, 0x14, 0x03, 0x01, 0x01, mode + 1, 0x03 }</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        };</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <a class="code" href="led__keyboard_8c.html#aa2518c44d1de14ec9852cc768f4e19f8">makergb_full</a>(light, data_pkt);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a>(kb, data_pkt[0], 12))</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="usb_8h.html#a934f88a3315f982a29c851cd8293155f">IS_STRAFE</a>(kb)){ <span class="comment">// end save</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> save_end_pkt[<a class="code" href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a>] = { 0x07, 0x14, 0x04, 0x01, 0x01 };</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a>(kb, save_end_pkt, 1))</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        }</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> data_pkt[5][<a class="code" href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a>] = {</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            { 0x7f, 0x01, 60, 0 },</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            { 0x7f, 0x02, 60, 0 },</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            { 0x7f, 0x03, 60, 0 },</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            { 0x7f, 0x04, 36, 0 },</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            { 0x07, 0x14, 0x02, 0x00, 0x01, mode + 1 }</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        };</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <a class="code" href="led__keyboard_8c.html#ad37b49215ddbb5fdfcbc185bee256b28">makergb_512</a>(light, data_pkt, kb-&gt;<a class="code" href="structures_8h.html#ac001911d43498f4165bfc7cdd5024d39">dither</a> ? <a class="code" href="led__keyboard_8c.html#a384276467a5331b5c6d134c00476b8a3">ordered8to3</a> : <a class="code" href="led__keyboard_8c.html#abb9b4e916b13b54ab23b4b5ace4e293d">quantize8to3</a>);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a>(kb, data_pkt[0], 5))</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;}</div>
 <div class="ttc" id="structures_8h_html_ad4d025ecf1bdbf8b244ca688df8e478d"><div class="ttname"><a href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a></div><div class="ttdeci">#define MSG_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00176">structures.h:176</a></div></div>
 <div class="ttc" id="led__keyboard_8c_html_abb9b4e916b13b54ab23b4b5ace4e293d"><div class="ttname"><a href="led__keyboard_8c.html#abb9b4e916b13b54ab23b4b5ace4e293d">quantize8to3</a></div><div class="ttdeci">static uchar quantize8to3(int index, uchar value)</div><div class="ttdef"><b>Definition:</b> <a href="led__keyboard_8c_source.html#l00032">led_keyboard.c:32</a></div></div>
 <div class="ttc" id="structures_8h_html_a47e0bd130899bcf5acdef059f2970ac7"><div class="ttname"><a href="structures_8h.html#a47e0bd130899bcf5acdef059f2970ac7">usbdevice::fwversion</a></div><div class="ttdeci">ushort fwversion</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00239">structures.h:239</a></div></div>
@@ -1018,10 +1018,10 @@ Functions</h2></td></tr>
 <div class="ttc" id="led__keyboard_8c_html_aa2518c44d1de14ec9852cc768f4e19f8"><div class="ttname"><a href="led__keyboard_8c.html#aa2518c44d1de14ec9852cc768f4e19f8">makergb_full</a></div><div class="ttdeci">static void makergb_full(const lighting *light, uchar data_pkt[12][64])</div><div class="ttdef"><b>Definition:</b> <a href="led__keyboard_8c_source.html#l00058">led_keyboard.c:58</a></div></div>
 <div class="ttc" id="includes_8h_html_a65f85814a8290f9797005d3b28e7e5fc"><div class="ttname"><a href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a></div><div class="ttdeci">unsigned char uchar</div><div class="ttdef"><b>Definition:</b> <a href="includes_8h_source.html#l00024">includes.h:24</a></div></div>
 <div class="ttc" id="led__keyboard_8c_html_a384276467a5331b5c6d134c00476b8a3"><div class="ttname"><a href="led__keyboard_8c.html#a384276467a5331b5c6d134c00476b8a3">ordered8to3</a></div><div class="ttdeci">static uchar ordered8to3(int index, uchar value)</div><div class="ttdef"><b>Definition:</b> <a href="led__keyboard_8c_source.html#l00024">led_keyboard.c:24</a></div></div>
-<div class="ttc" id="usb_8h_html_a934f88a3315f982a29c851cd8293155f"><div class="ttname"><a href="usb_8h.html#a934f88a3315f982a29c851cd8293155f">IS_STRAFE</a></div><div class="ttdeci">#define IS_STRAFE(kb)</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00084">usb.h:84</a></div></div>
+<div class="ttc" id="usb_8h_html_a934f88a3315f982a29c851cd8293155f"><div class="ttname"><a href="usb_8h.html#a934f88a3315f982a29c851cd8293155f">IS_STRAFE</a></div><div class="ttdeci">#define IS_STRAFE(kb)</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00091">usb.h:91</a></div></div>
 <div class="ttc" id="led__keyboard_8c_html_ad37b49215ddbb5fdfcbc185bee256b28"><div class="ttname"><a href="led__keyboard_8c.html#ad37b49215ddbb5fdfcbc185bee256b28">makergb_512</a></div><div class="ttdeci">static void makergb_512(const lighting *light, uchar data_pkt[5][64], uchar(*ditherfn)(int, uchar))</div><div class="ttdef"><b>Definition:</b> <a href="led__keyboard_8c_source.html#l00038">led_keyboard.c:38</a></div></div>
-<div class="ttc" id="usb_8h_html_adce25fdab5fa7317b79baf38ef95e771"><div class="ttname"><a href="usb_8h.html#adce25fdab5fa7317b79baf38ef95e771">IS_NEW_PROTOCOL</a></div><div class="ttdeci">#define IS_NEW_PROTOCOL(kb)</div><div class="ttdoc">Used when a device has a firmware with a low version number that uses the new protocol. </div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00165">usb.h:165</a></div></div>
-<div class="ttc" id="usb_8h_html_a5eaa2b8ffe9e62747454c74b19876819"><div class="ttname"><a href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a></div><div class="ttdeci">#define usbsend(kb, messages, count)</div><div class="ttdoc">usbsend macro is used to wrap _usbsend() with debugging information (file and lineno) ...</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00264">usb.h:264</a></div></div>
+<div class="ttc" id="usb_8h_html_a5eaa2b8ffe9e62747454c74b19876819"><div class="ttname"><a href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a></div><div class="ttdeci">#define usbsend(kb, messages, count)</div><div class="ttdoc">usbsend macro is used to wrap _usbsend() with debugging information (file and lineno) ...</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00271">usb.h:271</a></div></div>
+<div class="ttc" id="usb_8h_html_ae10d27e29068b5bdd851b4b1688b6351"><div class="ttname"><a href="usb_8h.html#ae10d27e29068b5bdd851b4b1688b6351">IS_V2_OVERRIDE</a></div><div class="ttdeci">#define IS_V2_OVERRIDE(kb)</div><div class="ttdoc">Used when a device has a firmware with a low version number that uses the new protocol. </div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00172">usb.h:172</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -1079,7 +1079,7 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="led__mouse_8c_source.html#l00066">66</a> of file <a class="el" href="led__mouse_8c_source.html">led_mouse.c</a>.</p>
 
-<p>References <a class="el" href="structures_8h_source.html#l00076">lighting::b</a>, <a class="el" href="structures_8h_source.html#l00075">lighting::g</a>, <a class="el" href="usb_8h_source.html#l00100">IS_SABRE</a>, <a class="el" href="usb_8h_source.html#l00106">IS_SCIMITAR</a>, <a class="el" href="daemon_2keymap_8h_source.html#l00043">LED_DPI</a>, <a class="el" href="daemon_2keymap_8h_source.html#l00039">LED_MOUSE</a>, <a class="el" href="structures_8h_source.html#l00176">MSG_SIZE</a>, <a class="el" href="structures_8h_source.html#l00074">lighting::r</a>, and <a class="el" href="usb_8h_source.html#l00264">usbsend</a>.</p>
+<p>References <a class="el" href="structures_8h_source.html#l00076">lighting::b</a>, <a class="el" href="structures_8h_source.html#l00075">lighting::g</a>, <a class="el" href="usb_8h_source.html#l00107">IS_SABRE</a>, <a class="el" href="usb_8h_source.html#l00113">IS_SCIMITAR</a>, <a class="el" href="daemon_2keymap_8h_source.html#l00043">LED_DPI</a>, <a class="el" href="daemon_2keymap_8h_source.html#l00039">LED_MOUSE</a>, <a class="el" href="structures_8h_source.html#l00176">MSG_SIZE</a>, <a class="el" href="structures_8h_source.html#l00074">lighting::r</a>, and <a class="el" href="usb_8h_source.html#l00271">usbsend</a>.</p>
 
 <p>Referenced by <a class="el" href="profile__mouse_8c_source.html#l00054">cmd_hwsave_mouse()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                                           {</div>
@@ -1104,13 +1104,13 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
 <div class="ttc" id="structures_8h_html_ad4d025ecf1bdbf8b244ca688df8e478d"><div class="ttname"><a href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a></div><div class="ttdeci">#define MSG_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00176">structures.h:176</a></div></div>
 <div class="ttc" id="daemon_2keymap_8h_html_ac4f7d9dce5248992866a0f2e23fe8200"><div class="ttname"><a href="daemon_2keymap_8h.html#ac4f7d9dce5248992866a0f2e23fe8200">LED_MOUSE</a></div><div class="ttdeci">#define LED_MOUSE</div><div class="ttdef"><b>Definition:</b> <a href="daemon_2keymap_8h_source.html#l00039">keymap.h:39</a></div></div>
-<div class="ttc" id="usb_8h_html_a42d0504a482944df6fe7cbdb06c0851b"><div class="ttname"><a href="usb_8h.html#a42d0504a482944df6fe7cbdb06c0851b">IS_SCIMITAR</a></div><div class="ttdeci">#define IS_SCIMITAR(kb)</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00106">usb.h:106</a></div></div>
-<div class="ttc" id="usb_8h_html_a42deb465caa31f803a16306986cd6bbe"><div class="ttname"><a href="usb_8h.html#a42deb465caa31f803a16306986cd6bbe">IS_SABRE</a></div><div class="ttdeci">#define IS_SABRE(kb)</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00100">usb.h:100</a></div></div>
+<div class="ttc" id="usb_8h_html_a42d0504a482944df6fe7cbdb06c0851b"><div class="ttname"><a href="usb_8h.html#a42d0504a482944df6fe7cbdb06c0851b">IS_SCIMITAR</a></div><div class="ttdeci">#define IS_SCIMITAR(kb)</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00113">usb.h:113</a></div></div>
+<div class="ttc" id="usb_8h_html_a42deb465caa31f803a16306986cd6bbe"><div class="ttname"><a href="usb_8h.html#a42deb465caa31f803a16306986cd6bbe">IS_SABRE</a></div><div class="ttdeci">#define IS_SABRE(kb)</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00107">usb.h:107</a></div></div>
 <div class="ttc" id="daemon_2keymap_8h_html_a651d575ebe5d00bbe17ae5fd9dbf41f8"><div class="ttname"><a href="daemon_2keymap_8h.html#a651d575ebe5d00bbe17ae5fd9dbf41f8">LED_DPI</a></div><div class="ttdeci">#define LED_DPI</div><div class="ttdef"><b>Definition:</b> <a href="daemon_2keymap_8h_source.html#l00043">keymap.h:43</a></div></div>
 <div class="ttc" id="includes_8h_html_a65f85814a8290f9797005d3b28e7e5fc"><div class="ttname"><a href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a></div><div class="ttdeci">unsigned char uchar</div><div class="ttdef"><b>Definition:</b> <a href="includes_8h_source.html#l00024">includes.h:24</a></div></div>
 <div class="ttc" id="structures_8h_html_a3df276662a9e5c1573c10835db13e0e8"><div class="ttname"><a href="structures_8h.html#a3df276662a9e5c1573c10835db13e0e8">lighting::g</a></div><div class="ttdeci">uchar g[152+12]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00075">structures.h:75</a></div></div>
 <div class="ttc" id="structures_8h_html_ac382c44757d208247320c2978b1f48b9"><div class="ttname"><a href="structures_8h.html#ac382c44757d208247320c2978b1f48b9">lighting::b</a></div><div class="ttdeci">uchar b[152+12]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00076">structures.h:76</a></div></div>
-<div class="ttc" id="usb_8h_html_a5eaa2b8ffe9e62747454c74b19876819"><div class="ttname"><a href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a></div><div class="ttdeci">#define usbsend(kb, messages, count)</div><div class="ttdoc">usbsend macro is used to wrap _usbsend() with debugging information (file and lineno) ...</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00264">usb.h:264</a></div></div>
+<div class="ttc" id="usb_8h_html_a5eaa2b8ffe9e62747454c74b19876819"><div class="ttname"><a href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a></div><div class="ttdeci">#define usbsend(kb, messages, count)</div><div class="ttdoc">usbsend macro is used to wrap _usbsend() with debugging information (file and lineno) ...</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00271">usb.h:271</a></div></div>
 <div class="ttc" id="structures_8h_html_a7de6a9b7b901c884d632b15772c8ef56"><div class="ttname"><a href="structures_8h.html#a7de6a9b7b901c884d632b15772c8ef56">lighting::r</a></div><div class="ttdeci">uchar r[152+12]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00074">structures.h:74</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1152,7 +1152,7 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="led__keyboard_8c_source.html#l00079">79</a> of file <a class="el" href="led__keyboard_8c_source.html">led_keyboard.c</a>.</p>
 
-<p>References <a class="el" href="structures_8h_source.html#l00231">usbdevice::active</a>, <a class="el" href="structures_8h_source.html#l00105">usbprofile::currentmode</a>, <a class="el" href="structures_8h_source.html#l00249">usbdevice::dither</a>, <a class="el" href="structures_8h_source.html#l00077">lighting::forceupdate</a>, <a class="el" href="usb_8h_source.html#l00153">IS_FULLRANGE</a>, <a class="el" href="structures_8h_source.html#l00107">usbprofile::lastlight</a>, <a class="el" href="structures_8h_source.html#l00084">usbmode::light</a>, <a class="el" href="led__keyboard_8c_source.html#l00038">makergb_512()</a>, <a class="el" href="led__keyboard_8c_source.html#l00058">makergb_full()</a>, <a class="el" href="structures_8h_source.html#l00176">MSG_SIZE</a>, <a class="el" href="led__keyboard_8c_source.html#l00024">ordered8to3()</a>, <a class="el" href="structures_8h_source.html#l00221">usbdevice::profile</a>, <a class="el" href="led__keyboard_8c_source.html#l00032">quantize8to3()</a>, <a class="el" href="led__keyboard_8c_source.html#l00074">rgbcmp()</a>, <a class="el" href="structures_8h_source.html#l00078">lighting::sidelight</a>, and <a class="el" href="usb_8h_source.html#l00264">usbsend</a>.</p>
+<p>References <a class="el" href="structures_8h_source.html#l00231">usbdevice::active</a>, <a class="el" href="structures_8h_source.html#l00105">usbprofile::currentmode</a>, <a class="el" href="structures_8h_source.html#l00249">usbdevice::dither</a>, <a class="el" href="structures_8h_source.html#l00077">lighting::forceupdate</a>, <a class="el" href="usb_8h_source.html#l00160">IS_FULLRANGE</a>, <a class="el" href="structures_8h_source.html#l00107">usbprofile::lastlight</a>, <a class="el" href="structures_8h_source.html#l00084">usbmode::light</a>, <a class="el" href="led__keyboard_8c_source.html#l00038">makergb_512()</a>, <a class="el" href="led__keyboard_8c_source.html#l00058">makergb_full()</a>, <a class="el" href="structures_8h_source.html#l00176">MSG_SIZE</a>, <a class="el" href="led__keyboard_8c_source.html#l00024">ordered8to3()</a>, <a class="el" href="usb_8h_source.html#l00081">P_K95_PLATINUM</a>, <a class="el" href="structures_8h_source.html#l00237">usbdevice::product</a>, <a class="el" href="structures_8h_source.html#l00221">usbdevice::profile</a>, <a class="el" href="led__keyboard_8c_source.html#l00032">quantize8to3()</a>, <a class="el" href="led__keyboard_8c_source.html#l00074">rgbcmp()</a>, <a class="el" href="structures_8h_source.html#l00078">lighting::sidelight</a>, and <a class="el" href="usb_8h_source.html#l00271">usbsend</a>.</p>
 <div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                          {</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span>(!kb-&gt;<a class="code" href="structures_8h.html#a8889b6a5d3ce83427377e3a3de947f03">active</a>)</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">return</span> 0;</div>
@@ -1194,30 +1194,38 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            { 0x7f, 0x03, 0x18, 0 },</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            { 0x07, 0x28, 0x03, 0x03, 0x02, 0}</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        };</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <a class="code" href="led__keyboard_8c.html#aa2518c44d1de14ec9852cc768f4e19f8">makergb_full</a>(newlight, data_pkt);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a>(kb, data_pkt[0], 12))</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="comment">// On older keyboards it looks flickery and causes lighting glitches, so we don&#39;t use it.</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> data_pkt[5][<a class="code" href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a>] = {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            { 0x7f, 0x01, 60, 0 },</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            { 0x7f, 0x02, 60, 0 },</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            { 0x7f, 0x03, 60, 0 },</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            { 0x7f, 0x04, 36, 0 },</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            { 0x07, 0x27, 0x00, 0x00, 0xD8 }</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        };</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <a class="code" href="led__keyboard_8c.html#ad37b49215ddbb5fdfcbc185bee256b28">makergb_512</a>(newlight, data_pkt, kb-&gt;<a class="code" href="structures_8h.html#ac001911d43498f4165bfc7cdd5024d39">dither</a> ? <a class="code" href="led__keyboard_8c.html#a384276467a5331b5c6d134c00476b8a3">ordered8to3</a> : <a class="code" href="led__keyboard_8c.html#abb9b4e916b13b54ab23b4b5ace4e293d">quantize8to3</a>);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a>(kb, data_pkt[0], 5))</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    memcpy(lastlight, newlight, <span class="keyword">sizeof</span>(<a class="code" href="structures_8h.html#structlighting">lighting</a>));</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
-<div class="ttc" id="usb_8h_html_ad1509021d1156508bfd4c6c570987041"><div class="ttname"><a href="usb_8h.html#ad1509021d1156508bfd4c6c570987041">IS_FULLRANGE</a></div><div class="ttdeci">#define IS_FULLRANGE(kb)</div><div class="ttdoc">Full color range (16.8M) vs partial color range (512) </div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00153">usb.h:153</a></div></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="comment">// The K95 Platinum needs 0x30 for the lightbar to work, due to the length of the packet.</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="comment">// A way to dynamically calculate the length would be preferred, based on the device.</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">if</span>(kb-&gt;<a class="code" href="structures_8h.html#a045b6c91e3f04e54f25d39da9bda105b">product</a> == <a class="code" href="usb_8h.html#ab034dbd57f7ab5666729ce7e27d3e0b9">P_K95_PLATINUM</a>){</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            data_pkt[2][2] = 0x30;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            data_pkt[6][2] = 0x30;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            data_pkt[10][2] = 0x30;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <a class="code" href="led__keyboard_8c.html#aa2518c44d1de14ec9852cc768f4e19f8">makergb_full</a>(newlight, data_pkt);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a>(kb, data_pkt[0], 12))</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="comment">// On older keyboards it looks flickery and causes lighting glitches, so we don&#39;t use it.</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <a class="code" href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> data_pkt[5][<a class="code" href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a>] = {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            { 0x7f, 0x01, 60, 0 },</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            { 0x7f, 0x02, 60, 0 },</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            { 0x7f, 0x03, 60, 0 },</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            { 0x7f, 0x04, 36, 0 },</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            { 0x07, 0x27, 0x00, 0x00, 0xD8 }</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        };</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <a class="code" href="led__keyboard_8c.html#ad37b49215ddbb5fdfcbc185bee256b28">makergb_512</a>(newlight, data_pkt, kb-&gt;<a class="code" href="structures_8h.html#ac001911d43498f4165bfc7cdd5024d39">dither</a> ? <a class="code" href="led__keyboard_8c.html#a384276467a5331b5c6d134c00476b8a3">ordered8to3</a> : <a class="code" href="led__keyboard_8c.html#abb9b4e916b13b54ab23b4b5ace4e293d">quantize8to3</a>);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a>(kb, data_pkt[0], 5))</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    memcpy(lastlight, newlight, <span class="keyword">sizeof</span>(<a class="code" href="structures_8h.html#structlighting">lighting</a>));</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;}</div>
+<div class="ttc" id="usb_8h_html_ad1509021d1156508bfd4c6c570987041"><div class="ttname"><a href="usb_8h.html#ad1509021d1156508bfd4c6c570987041">IS_FULLRANGE</a></div><div class="ttdeci">#define IS_FULLRANGE(kb)</div><div class="ttdoc">Full color range (16.8M) vs partial color range (512) </div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00160">usb.h:160</a></div></div>
 <div class="ttc" id="structures_8h_html_ad4d025ecf1bdbf8b244ca688df8e478d"><div class="ttname"><a href="structures_8h.html#ad4d025ecf1bdbf8b244ca688df8e478d">MSG_SIZE</a></div><div class="ttdeci">#define MSG_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00176">structures.h:176</a></div></div>
 <div class="ttc" id="structures_8h_html_a761a7cf0b0943ecba869358267c54028"><div class="ttname"><a href="structures_8h.html#a761a7cf0b0943ecba869358267c54028">lighting::sidelight</a></div><div class="ttdeci">uchar sidelight</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00078">structures.h:78</a></div></div>
 <div class="ttc" id="structures_8h_html_a51d0b1cc9f728c74e7134095205e3765"><div class="ttname"><a href="structures_8h.html#a51d0b1cc9f728c74e7134095205e3765">usbprofile::lastlight</a></div><div class="ttdeci">lighting lastlight</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00107">structures.h:107</a></div></div>
+<div class="ttc" id="usb_8h_html_ab034dbd57f7ab5666729ce7e27d3e0b9"><div class="ttname"><a href="usb_8h.html#ab034dbd57f7ab5666729ce7e27d3e0b9">P_K95_PLATINUM</a></div><div class="ttdeci">#define P_K95_PLATINUM</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00081">usb.h:81</a></div></div>
 <div class="ttc" id="structures_8h_html_a9601fc030cb4b69d9e05997a44a3a89c"><div class="ttname"><a href="structures_8h.html#a9601fc030cb4b69d9e05997a44a3a89c">usbdevice::profile</a></div><div class="ttdeci">usbprofile * profile</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00221">structures.h:221</a></div></div>
 <div class="ttc" id="structures_8h_html_a5646d61c7780a87a21b70209396ff605"><div class="ttname"><a href="structures_8h.html#a5646d61c7780a87a21b70209396ff605">usbprofile::currentmode</a></div><div class="ttdeci">usbmode * currentmode</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00105">structures.h:105</a></div></div>
 <div class="ttc" id="led__keyboard_8c_html_abb9b4e916b13b54ab23b4b5ace4e293d"><div class="ttname"><a href="led__keyboard_8c.html#abb9b4e916b13b54ab23b4b5ace4e293d">quantize8to3</a></div><div class="ttdeci">static uchar quantize8to3(int index, uchar value)</div><div class="ttdef"><b>Definition:</b> <a href="led__keyboard_8c_source.html#l00032">led_keyboard.c:32</a></div></div>
@@ -1228,10 +1236,11 @@ Functions</h2></td></tr>
 <div class="ttc" id="includes_8h_html_a65f85814a8290f9797005d3b28e7e5fc"><div class="ttname"><a href="includes_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a></div><div class="ttdeci">unsigned char uchar</div><div class="ttdef"><b>Definition:</b> <a href="includes_8h_source.html#l00024">includes.h:24</a></div></div>
 <div class="ttc" id="led__keyboard_8c_html_a26c3f20a1a58c8116d45d3792ce9b923"><div class="ttname"><a href="led__keyboard_8c.html#a26c3f20a1a58c8116d45d3792ce9b923">rgbcmp</a></div><div class="ttdeci">static int rgbcmp(const lighting *lhs, const lighting *rhs)</div><div class="ttdef"><b>Definition:</b> <a href="led__keyboard_8c_source.html#l00074">led_keyboard.c:74</a></div></div>
 <div class="ttc" id="structures_8h_html_ae593d2a41548d4cc2a3c886caa4a53b2"><div class="ttname"><a href="structures_8h.html#ae593d2a41548d4cc2a3c886caa4a53b2">lighting::forceupdate</a></div><div class="ttdeci">uchar forceupdate</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00077">structures.h:77</a></div></div>
+<div class="ttc" id="structures_8h_html_a045b6c91e3f04e54f25d39da9bda105b"><div class="ttname"><a href="structures_8h.html#a045b6c91e3f04e54f25d39da9bda105b">usbdevice::product</a></div><div class="ttdeci">short product</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00237">structures.h:237</a></div></div>
 <div class="ttc" id="structures_8h_html_structlighting"><div class="ttname"><a href="structures_8h.html#structlighting">lighting</a></div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00073">structures.h:73</a></div></div>
 <div class="ttc" id="led__keyboard_8c_html_a384276467a5331b5c6d134c00476b8a3"><div class="ttname"><a href="led__keyboard_8c.html#a384276467a5331b5c6d134c00476b8a3">ordered8to3</a></div><div class="ttdeci">static uchar ordered8to3(int index, uchar value)</div><div class="ttdef"><b>Definition:</b> <a href="led__keyboard_8c_source.html#l00024">led_keyboard.c:24</a></div></div>
 <div class="ttc" id="led__keyboard_8c_html_ad37b49215ddbb5fdfcbc185bee256b28"><div class="ttname"><a href="led__keyboard_8c.html#ad37b49215ddbb5fdfcbc185bee256b28">makergb_512</a></div><div class="ttdeci">static void makergb_512(const lighting *light, uchar data_pkt[5][64], uchar(*ditherfn)(int, uchar))</div><div class="ttdef"><b>Definition:</b> <a href="led__keyboard_8c_source.html#l00038">led_keyboard.c:38</a></div></div>
-<div class="ttc" id="usb_8h_html_a5eaa2b8ffe9e62747454c74b19876819"><div class="ttname"><a href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a></div><div class="ttdeci">#define usbsend(kb, messages, count)</div><div class="ttdoc">usbsend macro is used to wrap _usbsend() with debugging information (file and lineno) ...</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00264">usb.h:264</a></div></div>
+<div class="ttc" id="usb_8h_html_a5eaa2b8ffe9e62747454c74b19876819"><div class="ttname"><a href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a></div><div class="ttdeci">#define usbsend(kb, messages, count)</div><div class="ttdoc">usbsend macro is used to wrap _usbsend() with debugging information (file and lineno) ...</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00271">usb.h:271</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -1272,7 +1281,7 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="led__mouse_8c_source.html#l00020">20</a> of file <a class="el" href="led__mouse_8c_source.html">led_mouse.c</a>.</p>
 
-<p>References <a class="el" href="structures_8h_source.html#l00231">usbdevice::active</a>, <a class="el" href="structures_8h_source.html#l00076">lighting::b</a>, <a class="el" href="structures_8h_source.html#l00105">usbprofile::currentmode</a>, <a class="el" href="structures_8h_source.html#l00077">lighting::forceupdate</a>, <a class="el" href="structures_8h_source.html#l00075">lighting::g</a>, <a class="el" href="usb_8h_source.html#l00114">IS_GLAIVE</a>, <a class="el" href="led__mouse_8c_source.html#l00013">isblack()</a>, <a class="el" href="structures_8h_source.html#l00107">usbprofile::lastlight</a>, <a class="el" href="daemon_2keymap_8h_source.html#l00039">LED_MOUSE</a>, <a class="el" href="structures_8h_source.html#l00084">usbmode::light</a>, <a class="el" href="structures_8h_source.html#l00176">MSG_SIZE</a>, <a class="el" href="daemon_2keymap_8h_source.html#l00040">N_MOUSE_ZONES</a>, <a class="el" href="structures_8h_source.html#l00221">usbdevice::profile</a>, <a class="el" href="structures_8h_source.html#l00074">lighting::r</a>, <a class="el" href="led__mouse_8c_source.html#l00007">rgbcmp()</a>, and <a class="el" href="usb_8h_source.html#l00264">usbsend</a>.</p>
+<p>References <a class="el" href="structures_8h_source.html#l00231">usbdevice::active</a>, <a class="el" href="structures_8h_source.html#l00076">lighting::b</a>, <a class="el" href="structures_8h_source.html#l00105">usbprofile::currentmode</a>, <a class="el" href="structures_8h_source.html#l00077">lighting::forceupdate</a>, <a class="el" href="structures_8h_source.html#l00075">lighting::g</a>, <a class="el" href="usb_8h_source.html#l00121">IS_GLAIVE</a>, <a class="el" href="led__mouse_8c_source.html#l00013">isblack()</a>, <a class="el" href="structures_8h_source.html#l00107">usbprofile::lastlight</a>, <a class="el" href="daemon_2keymap_8h_source.html#l00039">LED_MOUSE</a>, <a class="el" href="structures_8h_source.html#l00084">usbmode::light</a>, <a class="el" href="structures_8h_source.html#l00176">MSG_SIZE</a>, <a class="el" href="daemon_2keymap_8h_source.html#l00040">N_MOUSE_ZONES</a>, <a class="el" href="structures_8h_source.html#l00221">usbdevice::profile</a>, <a class="el" href="structures_8h_source.html#l00074">lighting::r</a>, <a class="el" href="led__mouse_8c_source.html#l00007">rgbcmp()</a>, and <a class="el" href="usb_8h_source.html#l00271">usbsend</a>.</p>
 <div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                                             {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">if</span>(!kb-&gt;<a class="code" href="structures_8h.html#a8889b6a5d3ce83427377e3a3de947f03">active</a>)</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">return</span> 0;</div>
@@ -1333,8 +1342,8 @@ Functions</h2></td></tr>
 <div class="ttc" id="structures_8h_html_a3df276662a9e5c1573c10835db13e0e8"><div class="ttname"><a href="structures_8h.html#a3df276662a9e5c1573c10835db13e0e8">lighting::g</a></div><div class="ttdeci">uchar g[152+12]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00075">structures.h:75</a></div></div>
 <div class="ttc" id="structures_8h_html_structlighting"><div class="ttname"><a href="structures_8h.html#structlighting">lighting</a></div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00073">structures.h:73</a></div></div>
 <div class="ttc" id="structures_8h_html_ac382c44757d208247320c2978b1f48b9"><div class="ttname"><a href="structures_8h.html#ac382c44757d208247320c2978b1f48b9">lighting::b</a></div><div class="ttdeci">uchar b[152+12]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00076">structures.h:76</a></div></div>
-<div class="ttc" id="usb_8h_html_a5eaa2b8ffe9e62747454c74b19876819"><div class="ttname"><a href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a></div><div class="ttdeci">#define usbsend(kb, messages, count)</div><div class="ttdoc">usbsend macro is used to wrap _usbsend() with debugging information (file and lineno) ...</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00264">usb.h:264</a></div></div>
-<div class="ttc" id="usb_8h_html_a86bd73abb4cb3d8a20a22f36a8d1a08c"><div class="ttname"><a href="usb_8h.html#a86bd73abb4cb3d8a20a22f36a8d1a08c">IS_GLAIVE</a></div><div class="ttdeci">#define IS_GLAIVE(kb)</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00114">usb.h:114</a></div></div>
+<div class="ttc" id="usb_8h_html_a5eaa2b8ffe9e62747454c74b19876819"><div class="ttname"><a href="usb_8h.html#a5eaa2b8ffe9e62747454c74b19876819">usbsend</a></div><div class="ttdeci">#define usbsend(kb, messages, count)</div><div class="ttdoc">usbsend macro is used to wrap _usbsend() with debugging information (file and lineno) ...</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00271">usb.h:271</a></div></div>
+<div class="ttc" id="usb_8h_html_a86bd73abb4cb3d8a20a22f36a8d1a08c"><div class="ttname"><a href="usb_8h.html#a86bd73abb4cb3d8a20a22f36a8d1a08c">IS_GLAIVE</a></div><div class="ttdeci">#define IS_GLAIVE(kb)</div><div class="ttdef"><b>Definition:</b> <a href="usb_8h_source.html#l00121">usb.h:121</a></div></div>
 <div class="ttc" id="structures_8h_html_a7de6a9b7b901c884d632b15772c8ef56"><div class="ttname"><a href="structures_8h.html#a7de6a9b7b901c884d632b15772c8ef56">lighting::r</a></div><div class="ttdeci">uchar r[152+12]</div><div class="ttdef"><b>Definition:</b> <a href="structures_8h_source.html#l00074">structures.h:74</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1356,7 +1365,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c663af95b3406af676444e819a47854e.html">ckb-daemon</a></li><li class="navelem"><a class="el" href="led_8h.html">led.h</a></li>
-    <li class="footer">Generated on Fri Nov 3 2017 11:04:55 for ckb-next by
+    <li class="footer">Generated on Sat Jan 20 2018 16:59:30 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -1,7 +1,7 @@
 var NAVTREE =
 [
   [ "ckb-next", "index.html", [
-    [ "ckb-next: RGB Driver for Linux and macOS", "md_README.html", null ],
+    [ "README", "md_README.html", null ],
     [ "Building ckb", "md_BUILD.html", null ],
     [ "cbk Improvements Roadmap", "md_ROADMAP.html", null ],
     [ "DAEMON", "md_DAEMON.html", null ],
@@ -47,23 +47,23 @@ var NAVTREEINDEX =
 "classKb.html#ad31c0469bf328f2dc4154c2c86611783",
 "classKbLight.html#af9396a537f57ee8e0c5e0f9138b0a359",
 "classKeyAction.html#a1af74ebd15833e4f928386a6de20ae3e",
-"classMacroReaderThread.html#adbb276710f35095c0d7a41e06a48199a",
-"classQuaZipPrivate.html#a84ac5959ed17829e9d8938e74b930991",
-"classUi_1_1FwUpgradeDialog.html#ac201aed1c75791c41301bf8db1bda6cb",
-"classUi_1_1LayoutDialog.html#ae344e09760c2d7a51809b66c71ca1359",
-"classUi_1_1SettingsWidget.html#a7ec0d2f6773e04b8c1193eafb4f4ef01",
-"classUi__KPerfWidget.html#af1b163decc5a1d4ab6a38eb5d6f3a5a0",
-"classUi__RebindWidget.html#a0af163dba716837d2266a568e0efeb6b",
-"crypt_8h_source.html",
-"functions_l.html",
-"input__linux_8c.html#a44df5105a6a3f2eda5bc39a88201bd1a",
-"keywidget_8h_source.html",
-"moc__kbanim_8cpp.html#acf8f5813531fda17743b6f1accb4400c",
-"notify_8h.html#a7ac88f15243030290e4d57c3c9ac7c98",
-"structQuaZipFileInfo.html#af6116eaac1f36b2a4b3a6a39851a85cc",
-"ui__kbprofiledialog_8h_source.html",
-"usb_8h.html#a0dcf30bf384db4146eb7be833c55c92b",
-"zip_8h.html#a13709e0e09add24878bdb8c130cdbd80"
+"classMacroReaderThread.html#a55338956e86e7eae3b40df67245ef4f4",
+"classQuaZipPrivate.html#a44f7d8ff4a27d1bd417e38fc01ac236d",
+"classUi_1_1FwUpgradeDialog.html#a57d678933172723d3c872df6413f3eac",
+"classUi_1_1LayoutDialog.html#a89645b249a1541eb33f548ab462f7763",
+"classUi_1_1SettingsWidget.html#a6af84da7dbafbccb75ff22ecbeb17ea6",
+"classUi__KPerfWidget.html#ad9598ad8a5dd7e9567a8877abf9f6a13",
+"classUi__RebindWidget.html#a008ef9c149f2e67b364036b4e7776465",
+"crypt_8h.html#a2ac0d8ec3c867c44d730a188d8b0418e",
+"functions_g.html",
+"input_8h.html#structptlist",
+"keymap_8cpp.html#afa14c4ec280e05b84b25f2b3e2e4962e",
+"moc__gradientdialogwidget_8cpp.html#a75bb9482d242cde0a06c9dbdc6b83abe",
+"mperfwidget_8h_source.html",
+"structKey.html#ae11349da57b933842d56768a88a6f4ca",
+"structures_8h_source.html",
+"usb_8c.html#a8e6389e8183a834fedb6ed317dd26f94",
+"zip_8c.html#ae25bb2a6b1e0b04f60011089db7fa123"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -202,7 +202,7 @@ var searchData=
   ['colormap_2ecpp',['colormap.cpp',['../colormap_8cpp.html',1,'']]],
   ['colormap_2eh',['colormap.h',['../colormap_8h.html',1,'']]],
   ['colors',['colors',['../classAnimScript.html#a12f66fcdb59d0f79e2a6f737e7bfc244',1,'AnimScript::colors()'],['../classColorMap.html#a177f4fe41f3a085128d563aaf32a24ad',1,'ColorMap::colors()'],['../classColorMap.html#adeec2f0b0a4971f25e7ca0c725806d4d',1,'ColorMap::colors() const ']]],
-  ['combo',['combo',['../structures_8h.html#a6562f2f834944c6b5a73fc28cff07cd4',1,'keymacro']]],
+  ['combo',['combo',['../structures_8h.html#a339159e4fbd81f7e129777f4194da97f',1,'keymacro']]],
   ['combobox',['comboBox',['../classUi__LayoutDialog.html#a3339478c373f46d1b7844be02b60505e',1,'Ui_LayoutDialog']]],
   ['command_2ec',['command.c',['../command_8c.html',1,'']]],
   ['command_2eh',['command.h',['../command_8h.html',1,'']]],
@@ -264,6 +264,5 @@ var searchData=
   ['currentpreset',['currentPreset',['../classGradientDialog.html#adc9c3cac6fcc55137860546eadbe553f',1,'GradientDialog']]],
   ['currentprofile',['currentProfile',['../classKb.html#a4a9b9ba54fb83506ae61aa787d98cbb8',1,'Kb']]],
   ['currentselection',['currentSelection',['../classKbBindWidget.html#aaa2cf9328ea659f1f74e6d7373b28ff9',1,'KbBindWidget::currentSelection()'],['../classKbLightWidget.html#a5eb9e94898ea2fc8306db4b3510be7af',1,'KbLightWidget::currentSelection()']]],
-  ['ckb_2dnext_3a_20rgb_20driver_20for_20linux_20and_20macos',['ckb-next: RGB Driver for Linux and macOS',['../md_README.html',1,'']]],
   ['cbk_20improvements_20roadmap',['cbk Improvements Roadmap',['../md_ROADMAP.html',1,'']]]
 ];

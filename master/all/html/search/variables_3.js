@@ -22,7 +22,7 @@ var searchData=
   ['color2',['color2',['../classKPerfWidget.html#a795f5ebda7f5a4d621cc411eed64cdda',1,'KPerfWidget::IndicatorUi']]],
   ['color3',['color3',['../classKPerfWidget.html#addee9f90ffba2c6085110a9eecc562ac',1,'KPerfWidget::IndicatorUi']]],
   ['colorlink',['colorLink',['../classMPerfWidget.html#aa2c6fdadf4986fcba7fb772ecec96414',1,'MPerfWidget']]],
-  ['combo',['combo',['../structures_8h.html#a6562f2f834944c6b5a73fc28cff07cd4',1,'keymacro']]],
+  ['combo',['combo',['../structures_8h.html#a339159e4fbd81f7e129777f4194da97f',1,'keymacro']]],
   ['combobox',['comboBox',['../classUi__LayoutDialog.html#a3339478c373f46d1b7844be02b60505e',1,'Ui_LayoutDialog']]],
   ['comment',['comment',['../classQuaZipPrivate.html#a4ca18bcb67a120e8d266392042090ef5',1,'QuaZipPrivate::comment()'],['../structQuaZipFileInfo.html#adc2aad7bbd87ce3415e2a19851266bfc',1,'QuaZipFileInfo::comment()'],['../structQuaZipFileInfo64.html#aba3f5b982087c3e0343bb61e8814c7d1',1,'QuaZipFileInfo64::comment()'],['../structQuaZipNewInfo.html#ae24b1d38c3550b4724862ffcf8f20924',1,'QuaZipNewInfo::comment()']]],
   ['commentcodec',['commentCodec',['../classQuaZipPrivate.html#a8f7a9cce30387d5f63c804d289a2f384',1,'QuaZipPrivate']]],

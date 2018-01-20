@@ -1,4 +1,4 @@
-.TH "src/ckb-daemon/device.c" 3 "Fri Nov 3 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "src/ckb-daemon/device.c" 3 "Sat Jan 20 2018" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -107,7 +107,7 @@ Load profile from device if the hw-pointer is not set yet and hw-loading is poss
 .PP
 Definition at line 25 of file device\&.c\&.
 .PP
-References usbdevice::active, ckb_info, ckb_warn, FEAT_ADJRATE, FEAT_FWUPDATE, FEAT_FWVERSION, FEAT_HWLOAD, FEAT_POLLRATE, FEAT_RGB, usbdevice::features, usbdevice::fwversion, getfwversion(), HAS_FEATURES, usbdevice::hw, hwload_mode, hwloadprofile, NEEDS_FW_UPDATE, usbdevice::pollrate, and setactive\&.
+References usbdevice::active, ckb_info, ckb_warn, DEV_MAX, FEAT_ADJRATE, FEAT_FWUPDATE, FEAT_FWVERSION, FEAT_HWLOAD, FEAT_POLLRATE, FEAT_RGB, usbdevice::features, usbdevice::fwversion, getfwversion(), HAS_FEATURES, usbdevice::hw, hwload_mode, hwloadprofile, NEEDS_FW_UPDATE, usbdevice::pollrate, and setactive\&.
 .PP
 Referenced by start_dev()\&.
 .PP
@@ -144,27 +144,36 @@ Referenced by start_dev()\&.
 71             kb->features &= ~FEAT_HWLOAD;
 72         }
 73     }
-74     // Active software mode if requested
+74     // Activate software mode if requested
 75     if(makeactive)
 76         return setactive(kb, 1);
-77     return 0;
-78 }
+77     #ifdef DEBUG
+78     // 12 for each device + null terminator
+79     char devlist[12*(DEV_MAX-1)+1];
+80     int devlistpos = 0;
+81     for(unsigned i = 1; i < DEV_MAX; i++){
+82         devlistpos += sprintf(&devlist[devlistpos], "%u: 0x%x; ", i, keyboard[i]\&.product);
+83     }
+84     ckb_info("Attached Devices: %s\n", devlist);
+85     #endif
+86     return 0;
+87 }
 .fi
 .SS "int start_dev (\fBusbdevice\fP *kb, intmakeactive)"
 
 .PP
-Definition at line 80 of file device\&.c\&.
+Definition at line 89 of file device\&.c\&.
 .PP
 References _start_dev(), USB_DELAY_DEFAULT, and usbdevice::usbdelay\&.
 .PP
 .nf
-80                                             {
-81     // Force USB interval to 10ms during initial setup phase; return to nominal 5ms after setup completes\&.
-82     kb->usbdelay = 10;
-83     int res = _start_dev(kb, makeactive);
-84     kb->usbdelay = USB_DELAY_DEFAULT;
-85     return res;
-86 }
+89                                             {
+90     // Force USB interval to 10ms during initial setup phase; return to nominal 5ms after setup completes\&.
+91     kb->usbdelay = 10;
+92     int res = _start_dev(kb, makeactive);
+93     kb->usbdelay = USB_DELAY_DEFAULT;
+94     return res;
+95 }
 .fi
 .SH "Variable Documentation"
 .PP 

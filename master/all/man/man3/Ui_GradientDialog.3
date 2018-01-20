@@ -1,4 +1,4 @@
-.TH "Ui::GradientDialog" 3 "Fri Nov 3 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "Ui::GradientDialog" 3 "Sat Jan 20 2018" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -95,32 +95,32 @@ Inherits \fBUi_GradientDialog\fP\&.
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 225 of file ui_gradientdialog\&.h\&.
+Definition at line 231 of file ui_gradientdialog\&.h\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "void Ui_GradientDialog::retranslateUi (\fBQDialog\fP *GradientDialog)\fC [inline]\fP, \fC [inherited]\fP"
 
 .PP
-Definition at line 207 of file ui_gradientdialog\&.h\&.
+Definition at line 213 of file ui_gradientdialog\&.h\&.
 .PP
 References Ui_GradientDialog::groupBox_2, Ui_GradientDialog::label, Ui_GradientDialog::label_2, Ui_GradientDialog::presetDelete, Ui_GradientDialog::presetName, Ui_GradientDialog::presetSave, Ui_GradientDialog::stopBox, Ui_GradientDialog::stopColor, Ui_GradientDialog::stopOpacity, and Ui_GradientDialog::stopPos\&.
 .PP
 Referenced by Ui_GradientDialog::setupUi()\&.
 .PP
 .nf
-208     {
-209         GradientDialog->setWindowTitle(QApplication::translate("GradientDialog", "Pick Gradient", Q_NULLPTR));
-210         stopBox->setTitle(QApplication::translate("GradientDialog", "Point X of Y", Q_NULLPTR));
-211         stopColor->setText(QApplication::translate("GradientDialog", "Pick Color\&.\&.\&.", Q_NULLPTR));
-212         stopOpacity->setSuffix(QApplication::translate("GradientDialog", "%", Q_NULLPTR));
-213         label->setText(QApplication::translate("GradientDialog", "Position:", Q_NULLPTR));
-214         stopPos->setSuffix(QApplication::translate("GradientDialog", "%", Q_NULLPTR));
-215         label_2->setText(QApplication::translate("GradientDialog", "Color:", Q_NULLPTR));
-216         groupBox_2->setTitle(QApplication::translate("GradientDialog", "Presets", Q_NULLPTR));
-217         presetName->setPlaceholderText(QApplication::translate("GradientDialog", "Name", Q_NULLPTR));
-218         presetSave->setText(QApplication::translate("GradientDialog", "Save", Q_NULLPTR));
-219         presetDelete->setText(QApplication::translate("GradientDialog", "Delete", Q_NULLPTR));
-220     } // retranslateUi
+214     {
+215         GradientDialog->setWindowTitle(QApplication::translate("GradientDialog", "Pick Gradient", Q_NULLPTR));
+216         stopBox->setTitle(QApplication::translate("GradientDialog", "Point X of Y", Q_NULLPTR));
+217         stopColor->setText(QApplication::translate("GradientDialog", "Pick Color\&.\&.\&.", Q_NULLPTR));
+218         stopOpacity->setSuffix(QApplication::translate("GradientDialog", "%", Q_NULLPTR));
+219         label->setText(QApplication::translate("GradientDialog", "Position:", Q_NULLPTR));
+220         stopPos->setSuffix(QApplication::translate("GradientDialog", "%", Q_NULLPTR));
+221         label_2->setText(QApplication::translate("GradientDialog", "Color:", Q_NULLPTR));
+222         groupBox_2->setTitle(QApplication::translate("GradientDialog", "Presets", Q_NULLPTR));
+223         presetName->setPlaceholderText(QApplication::translate("GradientDialog", "Name", Q_NULLPTR));
+224         presetSave->setText(QApplication::translate("GradientDialog", "Save", Q_NULLPTR));
+225         presetDelete->setText(QApplication::translate("GradientDialog", "Delete", Q_NULLPTR));
+226     } // retranslateUi
 .fi
 .SS "void Ui_GradientDialog::setupUi (\fBQDialog\fP *GradientDialog)\fC [inline]\fP, \fC [inherited]\fP"
 
@@ -270,13 +270,19 @@ Referenced by GradientDialog::GradientDialog()\&.
 196 
 197         gridLayout->addWidget(groupBox_2, 0, 0, 1, 1);
 198 
-199 
-200         retranslateUi(GradientDialog);
-201         QObject::connect(buttonBox, SIGNAL(accepted()), GradientDialog, SLOT(accept()));
-202         QObject::connect(buttonBox, SIGNAL(rejected()), GradientDialog, SLOT(reject()));
-203 
-204         QMetaObject::connectSlotsByName(GradientDialog);
-205     } // setupUi
+199         QWidget::setTabOrder(presetList, presetName);
+200         QWidget::setTabOrder(presetName, presetSave);
+201         QWidget::setTabOrder(presetSave, presetDelete);
+202         QWidget::setTabOrder(presetDelete, stopPos);
+203         QWidget::setTabOrder(stopPos, stopColor);
+204         QWidget::setTabOrder(stopColor, stopOpacity);
+205 
+206         retranslateUi(GradientDialog);
+207         QObject::connect(buttonBox, SIGNAL(accepted()), GradientDialog, SLOT(accept()));
+208         QObject::connect(buttonBox, SIGNAL(rejected()), GradientDialog, SLOT(reject()));
+209 
+210         QMetaObject::connectSlotsByName(GradientDialog);
+211     } // setupUi
 .fi
 .SH "Field Documentation"
 .PP 

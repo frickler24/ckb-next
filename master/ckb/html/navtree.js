@@ -1,7 +1,7 @@
 var NAVTREE =
 [
   [ "ckb-next", "index.html", [
-    [ "ckb-next: RGB Driver for Linux and macOS", "md_README.html", null ],
+    [ "README", "md_README.html", null ],
     [ "Building ckb", "md_BUILD.html", null ],
     [ "cbk Improvements Roadmap", "md_ROADMAP.html", null ],
     [ "DAEMON", "md_DAEMON.html", null ],
@@ -46,19 +46,19 @@ var NAVTREEINDEX =
 "classKb.html#a6020e4bb32cefb2fee38d4c27bce2c90",
 "classKbLight.html#a11a7ea44ecbfb9bec6565720c185a59f",
 "classKbProfileDialog.html#a23bf2a42986694eae434a60688ccc249",
-"classMPerfWidget.html#a213df320cdada52ac63bdcdce771c839",
-"classQuaZipFile.html#aa1f2274e1579327855a17d67a9046ec2",
-"classUi_1_1ExtraSettingsWidget.html#a44005c14bd7cc78c3a2c5beb2e40bf03",
-"classUi_1_1KbWidget.html",
-"classUi_1_1RebindWidget.html#adb17a7fe5d130ac6217dee490be5e268",
-"classUi__KPerfWidget.html#a5a83e48a7bd87a72e861d6af44dddd83",
-"classUi__MPerfWidget.html#ab762f13f3269abcf328d7c0cf68a5146",
-"functions_a.html",
-"kb_8h_source.html",
-"moc__ckbsettingswriter_8cpp.html#af222a8857d17097fa0d36f1312f1b276",
-"moc__quazipfile_8cpp.html#a194865a07adf35fa2c714815ea472eaa",
-"structQuaZipNewInfo.html",
-"unzip_8h.html#ad9440fb3b019cfdac9ba8b8d83026ffc"
+"classMPerfWidget.html#a0e8fd12100c6983e2a15fd09b0799867",
+"classQuaZipFile.html#a6f034a714aa94631367590de3f8f4e22",
+"classUi_1_1ExtraSettingsWidget.html#a2fb08d66ad553d9e27781c929d40bc54",
+"classUi_1_1KbProfileDialog.html#a4786195b4b6db79fddf858ffb5f528c4",
+"classUi_1_1RebindWidget.html#ad5075dcf64889bbc2d9c9e8df6059ad6",
+"classUi__KPerfWidget.html#a52c53c0ad4ab3a1617e5b95e72237b30",
+"classUi__MPerfWidget.html#aaae06391254a4b3e1a717e06f6c7d89d",
+"extrasettingswidget_8h.html",
+"kb_8cpp.html#a1d79f8a0e6b3b448f6fe812147695dba",
+"moc__animscript_8cpp.html#a75bb9482d242cde0a06c9dbdc6b83abe",
+"moc__mperfwidget_8cpp.html#structqt__meta__stringdata__MPerfWidget__t",
+"structQuaZipFileInfo64.html#a27654f5ce3a75331e9c9a7900b407169",
+"unzip_8h.html#aade219d06703540be04aff72624b3891"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

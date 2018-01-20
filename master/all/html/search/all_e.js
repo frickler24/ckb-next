@@ -50,7 +50,7 @@ var searchData=
   ['noreorder',['noReorder',['../classKbAnimWidget.html#a2489897e1f41ad2cdabd057bd65a05cf',1,'KbAnimWidget']]],
   ['normal',['NORMAL',['../classKbPerf.html#a46a48ea91414d3c89068ad1326a4327fa866b78001d43f618cb50000aee27dca4',1,'KbPerf::NORMAL()'],['../classKeyAction.html#aaf046486ea4bafca9614bb4ff4538646a840622ebd52322fef361aae7f0690d1f',1,'KeyAction::NORMAL()'],['../classKPerfWidget.html#a8fdc7e1080849feeef2fb7687d2d0c16a49db999e859d9fbbed8f07f82e29e4dd',1,'KPerfWidget::NORMAL()'],['../classKbAnim.html#a165ef54083569b9330ac467620861c49a32da35265a1508a7a3dad0c0b00f5336',1,'KbAnim::Normal()']]],
   ['noselpage',['noSelPage',['../classUi__KbAnimWidget.html#af8b707c5346d9d32a1ec38df7f9ec015',1,'Ui_KbAnimWidget']]],
-  ['notify',['notify',['../structures_8h.html#ae345af22703c6bb7c12cd6bfdc8f1942',1,'usbmode::notify()'],['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3a396912289122c12cc2db4ee6a7eb150e',1,'NOTIFY():&#160;command.h']]],
+  ['notify',['notify',['../structures_8h.html#af95d870bd32765636ad830e70dd0125b',1,'usbmode::notify()'],['../command_8h.html#adfc5ba7e22f5e4a6221c12a70503bef3a396912289122c12cc2db4ee6a7eb150e',1,'NOTIFY():&#160;command.h']]],
   ['notify_2ec',['notify.c',['../notify_8c.html',1,'']]],
   ['notify_2eh',['notify.h',['../notify_8h.html',1,'']]],
   ['notifynumber',['notifyNumber',['../classKb.html#a5e35aea49e6389abf7e8e56215447186',1,'Kb']]],

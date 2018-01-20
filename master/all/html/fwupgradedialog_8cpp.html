@@ -219,7 +219,7 @@ vendor</td>
 </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="fwupgradedialog_8cpp_source.html#l00107">FwUpgradeDialog::exec()</a>.</p>
+<p>Referenced by <a class="el" href="fwupgradedialog_8cpp_source.html#l00108">FwUpgradeDialog::exec()</a>.</p>
 
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -266,32 +266,32 @@ vendor</td>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="fwupgradedialog_8cpp_source.html#l00085">85</a> of file <a class="el" href="fwupgradedialog_8cpp_source.html">fwupgradedialog.cpp</a>.</p>
+<p>Definition at line <a class="el" href="fwupgradedialog_8cpp_source.html#l00086">86</a> of file <a class="el" href="fwupgradedialog_8cpp_source.html">fwupgradedialog.cpp</a>.</p>
 
 <p>References <a class="el" href="fwupgradedialog_8cpp_source.html#l00014">ids</a>.</p>
 
-<p>Referenced by <a class="el" href="fwupgradedialog_8cpp_source.html#l00107">FwUpgradeDialog::exec()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                                                      {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">if</span>(blob.length() &lt; 0x0108)</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">return</span> 0.f;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* bData = blob.data();</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// Make sure it matches this device based on the vendor and product IDs embedded in the blob</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">bool</span> match = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">for</span>(uint i = 0; i &lt; <span class="keyword">sizeof</span>(<a class="code" href="fwupgradedialog_8cpp.html#a631127b4178165854dab046ba2759584">ids</a>)/<span class="keyword">sizeof</span>(<a class="code" href="fwupgradedialog_8cpp.html#structKbId">KbId</a>); i++){</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">if</span>(!memcmp(&amp;<a class="code" href="fwupgradedialog_8cpp.html#a631127b4178165854dab046ba2759584">ids</a>[i].vendor, bData + 0x102, 2) &amp;&amp; !memcmp(&amp;<a class="code" href="fwupgradedialog_8cpp.html#a631127b4178165854dab046ba2759584">ids</a>[i].product, bData + 0x104, 2)</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                &amp;&amp; features.startsWith(<a class="code" href="fwupgradedialog_8cpp.html#a631127b4178165854dab046ba2759584">ids</a>[i].feature, Qt::CaseInsensitive)){</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            match = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">if</span>(!match)</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">return</span> 0.f;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// Copy the version from the blob</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">short</span> version;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    memcpy(&amp;version, bData + 0x106, 2);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">// Un-hexify it</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">return</span> QString::number(version, 16).toFloat() / 100.f;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<p>Referenced by <a class="el" href="fwupgradedialog_8cpp_source.html#l00108">FwUpgradeDialog::exec()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                                                                      {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">if</span>(blob.length() &lt; 0x0108)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> 0.f;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* bData = blob.data();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// Make sure it matches this device based on the vendor and product IDs embedded in the blob</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">bool</span> match = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">for</span>(uint i = 0; i &lt; <span class="keyword">sizeof</span>(<a class="code" href="fwupgradedialog_8cpp.html#a631127b4178165854dab046ba2759584">ids</a>)/<span class="keyword">sizeof</span>(<a class="code" href="fwupgradedialog_8cpp.html#structKbId">KbId</a>); i++){</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">if</span>(!memcmp(&amp;<a class="code" href="fwupgradedialog_8cpp.html#a631127b4178165854dab046ba2759584">ids</a>[i].vendor, bData + 0x102, 2) &amp;&amp; !memcmp(&amp;<a class="code" href="fwupgradedialog_8cpp.html#a631127b4178165854dab046ba2759584">ids</a>[i].product, bData + 0x104, 2)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                &amp;&amp; features.startsWith(<a class="code" href="fwupgradedialog_8cpp.html#a631127b4178165854dab046ba2759584">ids</a>[i].feature, Qt::CaseInsensitive)){</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            match = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">if</span>(!match)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">return</span> 0.f;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// Copy the version from the blob</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">short</span> version;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    memcpy(&amp;version, bData + 0x106, 2);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">// Un-hexify it</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">return</span> QString::number(version, 16).toFloat() / 100.f;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
 <div class="ttc" id="fwupgradedialog_8cpp_html_structKbId"><div class="ttname"><a href="fwupgradedialog_8cpp.html#structKbId">KbId</a></div><div class="ttdef"><b>Definition:</b> <a href="fwupgradedialog_8cpp_source.html#l00008">fwupgradedialog.cpp:8</a></div></div>
 <div class="ttc" id="fwupgradedialog_8cpp_html_a631127b4178165854dab046ba2759584"><div class="ttname"><a href="fwupgradedialog_8cpp.html#a631127b4178165854dab046ba2759584">ids</a></div><div class="ttdeci">static KbId ids[]</div><div class="ttdef"><b>Definition:</b> <a href="fwupgradedialog_8cpp_source.html#l00014">fwupgradedialog.cpp:14</a></div></div>
 </div><!-- fragment -->
@@ -327,9 +327,9 @@ vendor</td>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="fwupgradedialog_8cpp_source.html#l00029">29</a> of file <a class="el" href="fwupgradedialog_8cpp_source.html">fwupgradedialog.cpp</a>.</p>
+<p>Definition at line <a class="el" href="fwupgradedialog_8cpp_source.html#l00030">30</a> of file <a class="el" href="fwupgradedialog_8cpp_source.html">fwupgradedialog.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="fwupgradedialog_8cpp_source.html#l00031">FwUpgradeDialog::FwUpgradeDialog()</a>, and <a class="el" href="fwupgradedialog_8cpp_source.html#l00191">FwUpgradeDialog::on_actionButton_clicked()</a>.</p>
+<p>Referenced by <a class="el" href="fwupgradedialog_8cpp_source.html#l00032">FwUpgradeDialog::FwUpgradeDialog()</a>, and <a class="el" href="fwupgradedialog_8cpp_source.html#l00192">FwUpgradeDialog::on_actionButton_clicked()</a>.</p>
 
 </div>
 </div>
@@ -351,9 +351,9 @@ vendor</td>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="fwupgradedialog_8cpp_source.html#l00028">28</a> of file <a class="el" href="fwupgradedialog_8cpp_source.html">fwupgradedialog.cpp</a>.</p>
+<p>Definition at line <a class="el" href="fwupgradedialog_8cpp_source.html#l00029">29</a> of file <a class="el" href="fwupgradedialog_8cpp_source.html">fwupgradedialog.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="fwupgradedialog_8cpp_source.html#l00107">FwUpgradeDialog::exec()</a>, <a class="el" href="fwupgradedialog_8cpp_source.html#l00031">FwUpgradeDialog::FwUpgradeDialog()</a>, and <a class="el" href="fwupgradedialog_8cpp_source.html#l00191">FwUpgradeDialog::on_actionButton_clicked()</a>.</p>
+<p>Referenced by <a class="el" href="fwupgradedialog_8cpp_source.html#l00108">FwUpgradeDialog::exec()</a>, <a class="el" href="fwupgradedialog_8cpp_source.html#l00032">FwUpgradeDialog::FwUpgradeDialog()</a>, and <a class="el" href="fwupgradedialog_8cpp_source.html#l00192">FwUpgradeDialog::on_actionButton_clicked()</a>.</p>
 
 </div>
 </div>
@@ -377,6 +377,7 @@ vendor</td>
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
 <div class="line">    </div>
 <div class="line">    { 0x1b1c, 0x1b17, <span class="stringliteral">&quot;corsair k65 rgb&quot;</span> },</div>
+<div class="line">    { 0x1b1c, 0x1b3f, <span class="stringliteral">&quot;corsair k68&quot;</span> },</div>
 <div class="line">    { 0x1b1c, 0x1b13, <span class="stringliteral">&quot;corsair k70 rgb&quot;</span> },</div>
 <div class="line">    { 0x1b1c, 0x1b11, <span class="stringliteral">&quot;corsair k95 rgb&quot;</span> },</div>
 <div class="line">    { 0x1b1c, 0x1b15, <span class="stringliteral">&quot;corsair strafe monochrome&quot;</span> },</div>
@@ -390,7 +391,7 @@ vendor</td>
 </div><!-- fragment -->
 <p>Definition at line <a class="el" href="fwupgradedialog_8cpp_source.html#l00014">14</a> of file <a class="el" href="fwupgradedialog_8cpp_source.html">fwupgradedialog.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="fwupgradedialog_8cpp_source.html#l00085">verifyFw()</a>.</p>
+<p>Referenced by <a class="el" href="fwupgradedialog_8cpp_source.html#l00086">verifyFw()</a>.</p>
 
 </div>
 </div>
@@ -400,7 +401,7 @@ vendor</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_77b5d46a1bc2c75b90444f394c5858ea.html">ckb</a></li><li class="navelem"><a class="el" href="fwupgradedialog_8cpp.html">fwupgradedialog.cpp</a></li>
-    <li class="footer">Generated on Fri Nov 3 2017 11:04:57 for ckb-next by
+    <li class="footer">Generated on Sat Jan 20 2018 16:59:32 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

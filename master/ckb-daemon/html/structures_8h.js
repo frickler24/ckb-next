@@ -14,11 +14,11 @@ var structures_8h =
     [ "keymacro", "structures_8h.html#structkeymacro", [
       [ "actioncount", "structures_8h.html#a306f4a85a925b6657699e4a9797c71b9", null ],
       [ "actions", "structures_8h.html#a9327a20e8829c8de88b4c9aeb1f054b0", null ],
-      [ "combo", "structures_8h.html#a6562f2f834944c6b5a73fc28cff07cd4", null ],
+      [ "combo", "structures_8h.html#a339159e4fbd81f7e129777f4194da97f", null ],
       [ "triggered", "structures_8h.html#afdff09bbf4fdc0bb129de8d2f17e0ad8", null ]
     ] ],
     [ "binding", "structures_8h.html#structbinding", [
-      [ "base", "structures_8h.html#a7ca1dadcce398f5110d02b080ad1fe00", null ],
+      [ "base", "structures_8h.html#a66c52679fe1e1a841fa270f6d72d4178", null ],
       [ "macrocap", "structures_8h.html#a6b2bbaf2f7a55b7cdca6c99555919c7b", null ],
       [ "macrocount", "structures_8h.html#a454d3fda3c8436eb951eace5819728da", null ],
       [ "macros", "structures_8h.html#a07ad87dd79741d47cabf12da5c03bf4c", null ]
@@ -48,7 +48,7 @@ var structures_8h =
       [ "ion", "structures_8h.html#a66827675394b4aa9cc927d5bb0037d2a", null ],
       [ "light", "structures_8h.html#a4adb0b5a770a32ee4db36dca49398ce9", null ],
       [ "name", "structures_8h.html#af61b96d68822607ac4ba55a79d1768a4", null ],
-      [ "notify", "structures_8h.html#ae345af22703c6bb7c12cd6bfdc8f1942", null ]
+      [ "notify", "structures_8h.html#af95d870bd32765636ad830e70dd0125b", null ]
     ] ],
     [ "usbprofile", "structures_8h.html#structusbprofile", [
       [ "currentmode", "structures_8h.html#a5646d61c7780a87a21b70209396ff605", null ],
@@ -65,8 +65,8 @@ var structures_8h =
       [ "name", "structures_8h.html#a6c497bca5e78f2959b4590bdde095be0", null ]
     ] ],
     [ "usbinput", "structures_8h.html#structusbinput", [
-      [ "keys", "structures_8h.html#a09eb578ef851df58b6b124d9e6cf1dc0", null ],
-      [ "prevkeys", "structures_8h.html#a97fa60c3c54a8c7105f424b0f7104a1f", null ],
+      [ "keys", "structures_8h.html#a747e8840d26b8a5ea14bc5a2db5ac060", null ],
+      [ "prevkeys", "structures_8h.html#a600d5892afff77f7b16010bd4829cd8c", null ],
       [ "rel_x", "structures_8h.html#a67a69269768c4b55dd8fb7f09040c498", null ],
       [ "rel_y", "structures_8h.html#aaf170cc287147501a64f3ec7131f1df0", null ]
     ] ],

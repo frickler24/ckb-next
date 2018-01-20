@@ -1,4 +1,4 @@
-.TH "Ui::KbBindWidget" 3 "Fri Nov 3 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "Ui::KbBindWidget" 3 "Sat Jan 20 2018" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -77,27 +77,27 @@ Inherits \fBUi_KbBindWidget\fP\&.
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 206 of file ui_kbbindwidget\&.h\&.
+Definition at line 202 of file ui_kbbindwidget\&.h\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "void Ui_KbBindWidget::retranslateUi (\fBQWidget\fP *KbBindWidget)\fC [inline]\fP, \fC [inherited]\fP"
 
 .PP
-Definition at line 193 of file ui_kbbindwidget\&.h\&.
+Definition at line 189 of file ui_kbbindwidget\&.h\&.
 .PP
 References Ui_KbBindWidget::copyButton, Ui_KbBindWidget::label, Ui_KbBindWidget::label_2, Ui_KbBindWidget::resetButton, and Ui_KbBindWidget::selectLabel\&.
 .PP
 Referenced by Ui_KbBindWidget::setupUi()\&.
 .PP
 .nf
-194     {
-195         KbBindWidget->setWindowTitle(QApplication::translate("KbBindWidget", "Form", Q_NULLPTR));
-196         label->setText(QApplication::translate("KbBindWidget", "Keys", Q_NULLPTR));
-197         copyButton->setText(QApplication::translate("KbBindWidget", "Copy to mode\&.\&.\&.", Q_NULLPTR));
-198         selectLabel->setText(QApplication::translate("KbBindWidget", "Click to select keys", Q_NULLPTR));
-199         resetButton->setText(QApplication::translate("KbBindWidget", "Reset", Q_NULLPTR));
-200         label_2->setText(QApplication::translate("KbBindWidget", "Binding", Q_NULLPTR));
-201     } // retranslateUi
+190     {
+191         KbBindWidget->setWindowTitle(QApplication::translate("KbBindWidget", "Form", Q_NULLPTR));
+192         label->setText(QApplication::translate("KbBindWidget", "Keys", Q_NULLPTR));
+193         copyButton->setText(QApplication::translate("KbBindWidget", "Copy to mode\&.\&.\&.", Q_NULLPTR));
+194         selectLabel->setText(QApplication::translate("KbBindWidget", "Click to select keys", Q_NULLPTR));
+195         resetButton->setText(QApplication::translate("KbBindWidget", "Reset", Q_NULLPTR));
+196         label_2->setText(QApplication::translate("KbBindWidget", "Binding", Q_NULLPTR));
+197     } // retranslateUi
 .fi
 .SS "void Ui_KbBindWidget::setupUi (\fBQWidget\fP *KbBindWidget)\fC [inline]\fP, \fC [inherited]\fP"
 
@@ -239,16 +239,12 @@ Referenced by KbBindWidget::KbBindWidget()\&.
 179 
 180         verticalLayout->addWidget(widget);
 181 
-182         label->raise();
-183         line->raise();
-184         label_2->raise();
-185         line_2->raise();
-186         widget->raise();
-187 
-188         retranslateUi(KbBindWidget);
-189 
-190         QMetaObject::connectSlotsByName(KbBindWidget);
-191     } // setupUi
+182         QWidget::setTabOrder(copyButton, resetButton);
+183 
+184         retranslateUi(KbBindWidget);
+185 
+186         QMetaObject::connectSlotsByName(KbBindWidget);
+187     } // setupUi
 .fi
 .SH "Field Documentation"
 .PP 

@@ -2,7 +2,7 @@ var searchData=
 [
   ['b',['b',['../ckb-anim_8h.html#a52c258e4d5fc3f55ee8c8044e37a2028',1,'ckb_key::b()'],['../ckb-anim_8h.html#a555923174250d704dce3cbd92ab52472',1,'ckb_gradient::b()'],['../structures_8h.html#ac382c44757d208247320c2978b1f48b9',1,'lighting::b()'],['../ckb-random_2main_8c.html#ae99e63aa161acf8066058b7af8b3e02c',1,'rgb::b()']]],
   ['backing',['backing',['../classCkbSettings.html#aed54cdf9c87066289a1419d72a437815',1,'CkbSettings']]],
-  ['base',['base',['../structures_8h.html#a7ca1dadcce398f5110d02b080ad1fe00',1,'binding::base()'],['../classKbLight.html#a6bc366191c38d327b82b8d0acd741cea',1,'KbLight::base()']]],
+  ['base',['base',['../structures_8h.html#a66c52679fe1e1a841fa270f6d72d4178',1,'binding::base()'],['../classKbLight.html#a6bc366191c38d327b82b8d0acd741cea',1,'KbLight::base()']]],
   ['basedpiidx',['baseDpiIdx',['../classKbPerf.html#a45fcf914391d22f056fef42e2923de42',1,'KbPerf::baseDpiIdx() const '],['../classKbPerf.html#adfc89d33cf53d26eaa57f23b5c962fc9',1,'KbPerf::baseDpiIdx(int newIdx)']]],
   ['begin',['begin',['../classAnimScript.html#a72b76b011846a06fafc9ddff09eb85e3',1,'AnimScript']]],
   ['begin_5fpos',['begin_pos',['../zip_8c.html#adff1d5f1509675f5f1c9797c5addc1a7',1,'zip64_internal']]],

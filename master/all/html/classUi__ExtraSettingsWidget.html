@@ -257,50 +257,50 @@ Data Fields</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="ui__extrasettingswidget_8h_source.html#l00322">322</a> of file <a class="el" href="ui__extrasettingswidget_8h_source.html">ui_extrasettingswidget.h</a>.</p>
+<p>Definition at line <a class="el" href="ui__extrasettingswidget_8h_source.html#l00330">330</a> of file <a class="el" href="ui__extrasettingswidget_8h_source.html">ui_extrasettingswidget.h</a>.</p>
 
 <p>References <a class="el" href="ui__extrasettingswidget_8h_source.html#l00057">animCountLabel</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00056">animPathLabel</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00058">animScanButton</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00059">brightnessBox</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00067">delayBox</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00066">ditherBox</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00039">fpsWarnLabel</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00061">label</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00073">label_10</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00075">label_11</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00065">label_2</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00041">label_3</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00063">label_5</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00045">label_6</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00070">mAccelBox</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00068">osxLabel</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00048">sAccelBox</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00060">trayBox</a>.</p>
 
 <p>Referenced by <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    {</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        ExtraSettingsWidget-&gt;setWindowTitle(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Application Settings&quot;</span>, Q_NULLPTR));</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <a class="code" href="classUi__ExtraSettingsWidget.html#a0802b82af31dbfe2627c38afbd4b13a7">fpsWarnLabel</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Warning: high frame rates may cause stability issues&quot;</span>, Q_NULLPTR));</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <a class="code" href="classUi__ExtraSettingsWidget.html#a7843e2e7985c383465232a6d66018650">label_3</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Frame rate (FPS):&quot;</span>, Q_NULLPTR));</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        <a class="code" href="classUi__ExtraSettingsWidget.html#a84a28ac0504d5950146f604b0506f4ac">label_6</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Location:&quot;</span>, Q_NULLPTR));</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="preprocessor">#ifndef QT_NO_TOOLTIP</span></div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="preprocessor"></span>        <a class="code" href="classUi__ExtraSettingsWidget.html#aa090a02a0a9604b1d42d209a6de75636">sAccelBox</a>-&gt;setToolTip(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Try this if you&#39;re having problems with the scroll wheel.&quot;</span>, Q_NULLPTR));</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="preprocessor">#endif // QT_NO_TOOLTIP</span></div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="preprocessor"></span>        <a class="code" href="classUi__ExtraSettingsWidget.html#aa090a02a0a9604b1d42d209a6de75636">sAccelBox</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Disable scroll acceleration&quot;</span>, Q_NULLPTR));</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <a class="code" href="classUi__ExtraSettingsWidget.html#ab44db7d5176dc731eab3613f235c432d">animPathLabel</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;/path/to/animations&quot;</span>, Q_NULLPTR));</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <a class="code" href="classUi__ExtraSettingsWidget.html#a96e8f83c948a4d0dbfa4c3901f069c45">animCountLabel</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;0 animations found&quot;</span>, Q_NULLPTR));</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <a class="code" href="classUi__ExtraSettingsWidget.html#a9c1bfffa17650182a6dfce3567f473d1">animScanButton</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Re-scan&quot;</span>, Q_NULLPTR));</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="preprocessor">#ifndef QT_NO_TOOLTIP</span></div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="preprocessor"></span>        <a class="code" href="classUi__ExtraSettingsWidget.html#a669f75f9dcf82adad095f09c7a43e3c2">brightnessBox</a>-&gt;setToolTip(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;By default, the same brightness level will be applied to all profiles and all devices. Enable this to store it with the lighting mode instead.&quot;</span>, Q_NULLPTR));</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="preprocessor">#endif // QT_NO_TOOLTIP</span></div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="preprocessor"></span>        <a class="code" href="classUi__ExtraSettingsWidget.html#a669f75f9dcf82adad095f09c7a43e3c2">brightnessBox</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Set brightness per-mode&quot;</span>, Q_NULLPTR));</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="preprocessor">#ifndef QT_NO_TOOLTIP</span></div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="preprocessor"></span>        <a class="code" href="classUi__ExtraSettingsWidget.html#a8ae6fb8adb814269b630a46f632579c9">trayBox</a>-&gt;setToolTip(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;The tray icon will not be displayed. The application will still run in the background; re-launch the app to see the GUI again.&quot;</span>, Q_NULLPTR));</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="preprocessor">#endif // QT_NO_TOOLTIP</span></div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;<span class="preprocessor"></span>        <a class="code" href="classUi__ExtraSettingsWidget.html#a8ae6fb8adb814269b630a46f632579c9">trayBox</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Hide tray icon&quot;</span>, Q_NULLPTR));</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        <a class="code" href="classUi__ExtraSettingsWidget.html#ae12812617a718b6de4aaa96b9e91018a">label</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Behavior&quot;</span>, Q_NULLPTR));</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <a class="code" href="classUi__ExtraSettingsWidget.html#ab859b76ab45e79f57b121627a3fdd1df">label_5</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Animation scripts&quot;</span>, Q_NULLPTR));</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        <a class="code" href="classUi__ExtraSettingsWidget.html#a31258404755aa9126a25d8f4fd518fcc">label_2</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Hardware&quot;</span>, Q_NULLPTR));</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="preprocessor">#ifndef QT_NO_TOOLTIP</span></div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;<span class="preprocessor"></span>        <a class="code" href="classUi__ExtraSettingsWidget.html#a4c1036e9c8af1f083c7ee19d5668b6a0">ditherBox</a>-&gt;setToolTip(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;May improve appearance on some keyboards.&quot;</span>, Q_NULLPTR));</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="preprocessor">#endif // QT_NO_TOOLTIP</span></div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="preprocessor"></span>        <a class="code" href="classUi__ExtraSettingsWidget.html#a4c1036e9c8af1f083c7ee19d5668b6a0">ditherBox</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Use spatial dithering to simulate extra color resolution&quot;</span>, Q_NULLPTR));</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="preprocessor">#ifndef QT_NO_TOOLTIP</span></div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="preprocessor"></span>        <a class="code" href="classUi__ExtraSettingsWidget.html#a131cea77436a39b612ecc6f4aa1c90a7">delayBox</a>-&gt;setToolTip(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;When using macros with strings longer than 25 chars, some OS may lose characters (e.g. Mint 17.2). Select to prevent that bug.&quot;</span>, Q_NULLPTR));</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="preprocessor">#endif // QT_NO_TOOLTIP</span></div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="preprocessor"></span>        <a class="code" href="classUi__ExtraSettingsWidget.html#a131cea77436a39b612ecc6f4aa1c90a7">delayBox</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Use delay for very long macros&quot;</span>, Q_NULLPTR));</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <a class="code" href="classUi__ExtraSettingsWidget.html#a44005c14bd7cc78c3a2c5beb2e40bf03">osxLabel</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;OS X tweaks&quot;</span>, Q_NULLPTR));</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="preprocessor">#ifndef QT_NO_TOOLTIP</span></div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="preprocessor"></span>        <a class="code" href="classUi__ExtraSettingsWidget.html#a65c177a06cc799b22914c9b049666221">mAccelBox</a>-&gt;setToolTip(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Try this if you&#39;re having problems with mouse movement.&quot;</span>, Q_NULLPTR));</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="preprocessor">#endif // QT_NO_TOOLTIP</span></div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="preprocessor"></span>        <a class="code" href="classUi__ExtraSettingsWidget.html#a65c177a06cc799b22914c9b049666221">mAccelBox</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Disable mouse acceleration&quot;</span>, Q_NULLPTR));</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        <a class="code" href="classUi__ExtraSettingsWidget.html#a327e450cfebc89f3ea80bb63d4f0ea37">label_10</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Scroll&quot;</span>, Q_NULLPTR));</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        <a class="code" href="classUi__ExtraSettingsWidget.html#aa08eed6f8902a4a80f3cb0e26da96961">label_11</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;line(s) at a time&quot;</span>, Q_NULLPTR));</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    } <span class="comment">// retranslateUi</span></div>
+<div class="fragment"><div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    {</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        ExtraSettingsWidget-&gt;setWindowTitle(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Application Settings&quot;</span>, Q_NULLPTR));</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <a class="code" href="classUi__ExtraSettingsWidget.html#a0802b82af31dbfe2627c38afbd4b13a7">fpsWarnLabel</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Warning: high frame rates may cause stability issues&quot;</span>, Q_NULLPTR));</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <a class="code" href="classUi__ExtraSettingsWidget.html#a7843e2e7985c383465232a6d66018650">label_3</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Frame rate (FPS):&quot;</span>, Q_NULLPTR));</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <a class="code" href="classUi__ExtraSettingsWidget.html#a84a28ac0504d5950146f604b0506f4ac">label_6</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Location:&quot;</span>, Q_NULLPTR));</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="preprocessor">#ifndef QT_NO_TOOLTIP</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="preprocessor"></span>        <a class="code" href="classUi__ExtraSettingsWidget.html#aa090a02a0a9604b1d42d209a6de75636">sAccelBox</a>-&gt;setToolTip(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Try this if you&#39;re having problems with the scroll wheel.&quot;</span>, Q_NULLPTR));</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="preprocessor">#endif // QT_NO_TOOLTIP</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="preprocessor"></span>        <a class="code" href="classUi__ExtraSettingsWidget.html#aa090a02a0a9604b1d42d209a6de75636">sAccelBox</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Disable scroll acceleration&quot;</span>, Q_NULLPTR));</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <a class="code" href="classUi__ExtraSettingsWidget.html#ab44db7d5176dc731eab3613f235c432d">animPathLabel</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;/path/to/animations&quot;</span>, Q_NULLPTR));</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <a class="code" href="classUi__ExtraSettingsWidget.html#a96e8f83c948a4d0dbfa4c3901f069c45">animCountLabel</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;0 animations found&quot;</span>, Q_NULLPTR));</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        <a class="code" href="classUi__ExtraSettingsWidget.html#a9c1bfffa17650182a6dfce3567f473d1">animScanButton</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Re-scan&quot;</span>, Q_NULLPTR));</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="preprocessor">#ifndef QT_NO_TOOLTIP</span></div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;<span class="preprocessor"></span>        <a class="code" href="classUi__ExtraSettingsWidget.html#a669f75f9dcf82adad095f09c7a43e3c2">brightnessBox</a>-&gt;setToolTip(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;By default, the same brightness level will be applied to all profiles and all devices. Enable this to store it with the lighting mode instead.&quot;</span>, Q_NULLPTR));</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;<span class="preprocessor">#endif // QT_NO_TOOLTIP</span></div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="preprocessor"></span>        <a class="code" href="classUi__ExtraSettingsWidget.html#a669f75f9dcf82adad095f09c7a43e3c2">brightnessBox</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Set brightness per-mode&quot;</span>, Q_NULLPTR));</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;<span class="preprocessor">#ifndef QT_NO_TOOLTIP</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="preprocessor"></span>        <a class="code" href="classUi__ExtraSettingsWidget.html#a8ae6fb8adb814269b630a46f632579c9">trayBox</a>-&gt;setToolTip(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;The tray icon will not be displayed. The application will still run in the background; re-launch the app to see the GUI again.&quot;</span>, Q_NULLPTR));</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="preprocessor">#endif // QT_NO_TOOLTIP</span></div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="preprocessor"></span>        <a class="code" href="classUi__ExtraSettingsWidget.html#a8ae6fb8adb814269b630a46f632579c9">trayBox</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Hide tray icon&quot;</span>, Q_NULLPTR));</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <a class="code" href="classUi__ExtraSettingsWidget.html#ae12812617a718b6de4aaa96b9e91018a">label</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Behavior&quot;</span>, Q_NULLPTR));</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <a class="code" href="classUi__ExtraSettingsWidget.html#ab859b76ab45e79f57b121627a3fdd1df">label_5</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Animation scripts&quot;</span>, Q_NULLPTR));</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <a class="code" href="classUi__ExtraSettingsWidget.html#a31258404755aa9126a25d8f4fd518fcc">label_2</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Hardware&quot;</span>, Q_NULLPTR));</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="preprocessor">#ifndef QT_NO_TOOLTIP</span></div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="preprocessor"></span>        <a class="code" href="classUi__ExtraSettingsWidget.html#a4c1036e9c8af1f083c7ee19d5668b6a0">ditherBox</a>-&gt;setToolTip(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;May improve appearance on some keyboards.&quot;</span>, Q_NULLPTR));</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="preprocessor">#endif // QT_NO_TOOLTIP</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="preprocessor"></span>        <a class="code" href="classUi__ExtraSettingsWidget.html#a4c1036e9c8af1f083c7ee19d5668b6a0">ditherBox</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Use spatial dithering to simulate extra color resolution&quot;</span>, Q_NULLPTR));</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="preprocessor">#ifndef QT_NO_TOOLTIP</span></div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="preprocessor"></span>        <a class="code" href="classUi__ExtraSettingsWidget.html#a131cea77436a39b612ecc6f4aa1c90a7">delayBox</a>-&gt;setToolTip(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;When using macros with strings longer than 25 chars, some OS may lose characters (e.g. Mint 17.2). Select to prevent that bug.&quot;</span>, Q_NULLPTR));</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="preprocessor">#endif // QT_NO_TOOLTIP</span></div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;<span class="preprocessor"></span>        <a class="code" href="classUi__ExtraSettingsWidget.html#a131cea77436a39b612ecc6f4aa1c90a7">delayBox</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Use delay for very long macros&quot;</span>, Q_NULLPTR));</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <a class="code" href="classUi__ExtraSettingsWidget.html#a44005c14bd7cc78c3a2c5beb2e40bf03">osxLabel</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;OS X tweaks&quot;</span>, Q_NULLPTR));</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="preprocessor">#ifndef QT_NO_TOOLTIP</span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="preprocessor"></span>        <a class="code" href="classUi__ExtraSettingsWidget.html#a65c177a06cc799b22914c9b049666221">mAccelBox</a>-&gt;setToolTip(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Try this if you&#39;re having problems with mouse movement.&quot;</span>, Q_NULLPTR));</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="preprocessor">#endif // QT_NO_TOOLTIP</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="preprocessor"></span>        <a class="code" href="classUi__ExtraSettingsWidget.html#a65c177a06cc799b22914c9b049666221">mAccelBox</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Disable mouse acceleration&quot;</span>, Q_NULLPTR));</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        <a class="code" href="classUi__ExtraSettingsWidget.html#a327e450cfebc89f3ea80bb63d4f0ea37">label_10</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;Scroll&quot;</span>, Q_NULLPTR));</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        <a class="code" href="classUi__ExtraSettingsWidget.html#aa08eed6f8902a4a80f3cb0e26da96961">label_11</a>-&gt;setText(QApplication::translate(<span class="stringliteral">&quot;ExtraSettingsWidget&quot;</span>, <span class="stringliteral">&quot;line(s) at a time&quot;</span>, Q_NULLPTR));</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    } <span class="comment">// retranslateUi</span></div>
 <div class="ttc" id="classUi__ExtraSettingsWidget_html_a65c177a06cc799b22914c9b049666221"><div class="ttname"><a href="classUi__ExtraSettingsWidget.html#a65c177a06cc799b22914c9b049666221">Ui_ExtraSettingsWidget::mAccelBox</a></div><div class="ttdeci">QCheckBox * mAccelBox</div><div class="ttdef"><b>Definition:</b> <a href="ui__extrasettingswidget_8h_source.html#l00070">ui_extrasettingswidget.h:70</a></div></div>
 <div class="ttc" id="classUi__ExtraSettingsWidget_html_a96e8f83c948a4d0dbfa4c3901f069c45"><div class="ttname"><a href="classUi__ExtraSettingsWidget.html#a96e8f83c948a4d0dbfa4c3901f069c45">Ui_ExtraSettingsWidget::animCountLabel</a></div><div class="ttdeci">QLabel * animCountLabel</div><div class="ttdef"><b>Definition:</b> <a href="ui__extrasettingswidget_8h_source.html#l00057">ui_extrasettingswidget.h:57</a></div></div>
 <div class="ttc" id="classUi__ExtraSettingsWidget_html_a7843e2e7985c383465232a6d66018650"><div class="ttname"><a href="classUi__ExtraSettingsWidget.html#a7843e2e7985c383465232a6d66018650">Ui_ExtraSettingsWidget::label_3</a></div><div class="ttdeci">QLabel * label_3</div><div class="ttdef"><b>Definition:</b> <a href="ui__extrasettingswidget_8h_source.html#l00041">ui_extrasettingswidget.h:41</a></div></div>
@@ -357,7 +357,7 @@ Data Fields</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">78</a> of file <a class="el" href="ui__extrasettingswidget_8h_source.html">ui_extrasettingswidget.h</a>.</p>
 
-<p>References <a class="el" href="ui__extrasettingswidget_8h_source.html#l00057">animCountLabel</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00056">animPathLabel</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00058">animScanButton</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00059">brightnessBox</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00076">buttonBox</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00067">delayBox</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00066">ditherBox</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00042">fpsBox</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00039">fpsWarnLabel</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00034">gridLayout</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00055">horizontalLayout</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00072">horizontalLayout_2</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00053">horizontalSpacer</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00035">horizontalSpacer_2</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00040">horizontalSpacer_3</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00061">label</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00073">label_10</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00075">label_11</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00065">label_2</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00041">label_3</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00063">label_5</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00045">label_6</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00062">line</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00054">line_2</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00064">line_3</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00070">mAccelBox</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00068">osxLabel</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00069">osxLine</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00322">retranslateUi()</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00048">sAccelBox</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00074">sSpeedBox</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00071">sSpeedWidget</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00060">trayBox</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00036">verticalSpacer</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00051">verticalSpacer_10</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00052">verticalSpacer_11</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00038">verticalSpacer_2</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00037">verticalSpacer_3</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00043">verticalSpacer_4</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00047">verticalSpacer_5</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00046">verticalSpacer_6</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00049">verticalSpacer_7</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00050">verticalSpacer_8</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00044">verticalSpacer_9</a>.</p>
+<p>References <a class="el" href="ui__extrasettingswidget_8h_source.html#l00057">animCountLabel</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00056">animPathLabel</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00058">animScanButton</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00059">brightnessBox</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00076">buttonBox</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00067">delayBox</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00066">ditherBox</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00042">fpsBox</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00039">fpsWarnLabel</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00034">gridLayout</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00055">horizontalLayout</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00072">horizontalLayout_2</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00053">horizontalSpacer</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00035">horizontalSpacer_2</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00040">horizontalSpacer_3</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00061">label</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00073">label_10</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00075">label_11</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00065">label_2</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00041">label_3</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00063">label_5</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00045">label_6</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00062">line</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00054">line_2</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00064">line_3</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00070">mAccelBox</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00068">osxLabel</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00069">osxLine</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00330">retranslateUi()</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00048">sAccelBox</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00074">sSpeedBox</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00071">sSpeedWidget</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00060">trayBox</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00036">verticalSpacer</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00051">verticalSpacer_10</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00052">verticalSpacer_11</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00038">verticalSpacer_2</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00037">verticalSpacer_3</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00043">verticalSpacer_4</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00047">verticalSpacer_5</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00046">verticalSpacer_6</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00049">verticalSpacer_7</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00050">verticalSpacer_8</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00044">verticalSpacer_9</a>.</p>
 
 <p>Referenced by <a class="el" href="extrasettingswidget_8cpp_source.html#l00010">ExtraSettingsWidget::ExtraSettingsWidget()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
@@ -595,13 +595,21 @@ Data Fields</h2></td></tr>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <a class="code" href="classUi__ExtraSettingsWidget.html#ae0f52eb6db35e03cc90315172850fefa">gridLayout</a>-&gt;addWidget(<a class="code" href="classUi__ExtraSettingsWidget.html#a33ef3a9d345a45aa8c0423c91277db32">buttonBox</a>, 20, 0, 1, 7);</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <a class="code" href="classUi__ExtraSettingsWidget.html#a934b92d569f30e0d7978858ac538bd0e">retranslateUi</a>(ExtraSettingsWidget);</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        QObject::connect(<a class="code" href="classUi__ExtraSettingsWidget.html#a33ef3a9d345a45aa8c0423c91277db32">buttonBox</a>, SIGNAL(accepted()), ExtraSettingsWidget, SLOT(accept()));</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        QObject::connect(<a class="code" href="classUi__ExtraSettingsWidget.html#a33ef3a9d345a45aa8c0423c91277db32">buttonBox</a>, SIGNAL(rejected()), ExtraSettingsWidget, SLOT(reject()));</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        QMetaObject::connectSlotsByName(ExtraSettingsWidget);</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    } <span class="comment">// setupUi</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        QWidget::setTabOrder(<a class="code" href="classUi__ExtraSettingsWidget.html#a8ae6fb8adb814269b630a46f632579c9">trayBox</a>, <a class="code" href="classUi__ExtraSettingsWidget.html#a669f75f9dcf82adad095f09c7a43e3c2">brightnessBox</a>);</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        QWidget::setTabOrder(<a class="code" href="classUi__ExtraSettingsWidget.html#a669f75f9dcf82adad095f09c7a43e3c2">brightnessBox</a>, <a class="code" href="classUi__ExtraSettingsWidget.html#a9c1bfffa17650182a6dfce3567f473d1">animScanButton</a>);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        QWidget::setTabOrder(<a class="code" href="classUi__ExtraSettingsWidget.html#a9c1bfffa17650182a6dfce3567f473d1">animScanButton</a>, <a class="code" href="classUi__ExtraSettingsWidget.html#aad5026c398d37e94d46139badcbff80d">fpsBox</a>);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        QWidget::setTabOrder(<a class="code" href="classUi__ExtraSettingsWidget.html#aad5026c398d37e94d46139badcbff80d">fpsBox</a>, <a class="code" href="classUi__ExtraSettingsWidget.html#a4c1036e9c8af1f083c7ee19d5668b6a0">ditherBox</a>);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        QWidget::setTabOrder(<a class="code" href="classUi__ExtraSettingsWidget.html#a4c1036e9c8af1f083c7ee19d5668b6a0">ditherBox</a>, <a class="code" href="classUi__ExtraSettingsWidget.html#a131cea77436a39b612ecc6f4aa1c90a7">delayBox</a>);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        QWidget::setTabOrder(<a class="code" href="classUi__ExtraSettingsWidget.html#a131cea77436a39b612ecc6f4aa1c90a7">delayBox</a>, <a class="code" href="classUi__ExtraSettingsWidget.html#a65c177a06cc799b22914c9b049666221">mAccelBox</a>);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        QWidget::setTabOrder(<a class="code" href="classUi__ExtraSettingsWidget.html#a65c177a06cc799b22914c9b049666221">mAccelBox</a>, <a class="code" href="classUi__ExtraSettingsWidget.html#aa090a02a0a9604b1d42d209a6de75636">sAccelBox</a>);</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        QWidget::setTabOrder(<a class="code" href="classUi__ExtraSettingsWidget.html#aa090a02a0a9604b1d42d209a6de75636">sAccelBox</a>, <a class="code" href="classUi__ExtraSettingsWidget.html#ac652e55249419a2ee7c8e54efd50ebd9">sSpeedBox</a>);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <a class="code" href="classUi__ExtraSettingsWidget.html#a934b92d569f30e0d7978858ac538bd0e">retranslateUi</a>(ExtraSettingsWidget);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        QObject::connect(<a class="code" href="classUi__ExtraSettingsWidget.html#a33ef3a9d345a45aa8c0423c91277db32">buttonBox</a>, SIGNAL(accepted()), ExtraSettingsWidget, SLOT(accept()));</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        QObject::connect(<a class="code" href="classUi__ExtraSettingsWidget.html#a33ef3a9d345a45aa8c0423c91277db32">buttonBox</a>, SIGNAL(rejected()), ExtraSettingsWidget, SLOT(reject()));</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        QMetaObject::connectSlotsByName(ExtraSettingsWidget);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    } <span class="comment">// setupUi</span></div>
 <div class="ttc" id="classUi__ExtraSettingsWidget_html_a65c177a06cc799b22914c9b049666221"><div class="ttname"><a href="classUi__ExtraSettingsWidget.html#a65c177a06cc799b22914c9b049666221">Ui_ExtraSettingsWidget::mAccelBox</a></div><div class="ttdeci">QCheckBox * mAccelBox</div><div class="ttdef"><b>Definition:</b> <a href="ui__extrasettingswidget_8h_source.html#l00070">ui_extrasettingswidget.h:70</a></div></div>
 <div class="ttc" id="classUi__ExtraSettingsWidget_html_aed56984844a1f39664666942bd8c6332"><div class="ttname"><a href="classUi__ExtraSettingsWidget.html#aed56984844a1f39664666942bd8c6332">Ui_ExtraSettingsWidget::sSpeedWidget</a></div><div class="ttdeci">QWidget * sSpeedWidget</div><div class="ttdef"><b>Definition:</b> <a href="ui__extrasettingswidget_8h_source.html#l00071">ui_extrasettingswidget.h:71</a></div></div>
 <div class="ttc" id="classUi__ExtraSettingsWidget_html_a96e8f83c948a4d0dbfa4c3901f069c45"><div class="ttname"><a href="classUi__ExtraSettingsWidget.html#a96e8f83c948a4d0dbfa4c3901f069c45">Ui_ExtraSettingsWidget::animCountLabel</a></div><div class="ttdeci">QLabel * animCountLabel</div><div class="ttdef"><b>Definition:</b> <a href="ui__extrasettingswidget_8h_source.html#l00057">ui_extrasettingswidget.h:57</a></div></div>
@@ -639,7 +647,7 @@ Data Fields</h2></td></tr>
 <div class="ttc" id="classUi__ExtraSettingsWidget_html_a189c7c107e3a98ee71bd2a4696bfb563"><div class="ttname"><a href="classUi__ExtraSettingsWidget.html#a189c7c107e3a98ee71bd2a4696bfb563">Ui_ExtraSettingsWidget::verticalSpacer_9</a></div><div class="ttdeci">QSpacerItem * verticalSpacer_9</div><div class="ttdef"><b>Definition:</b> <a href="ui__extrasettingswidget_8h_source.html#l00044">ui_extrasettingswidget.h:44</a></div></div>
 <div class="ttc" id="classUi__ExtraSettingsWidget_html_a0c35e9bdbd8a8bc691237dac3e630775"><div class="ttname"><a href="classUi__ExtraSettingsWidget.html#a0c35e9bdbd8a8bc691237dac3e630775">Ui_ExtraSettingsWidget::line</a></div><div class="ttdeci">QFrame * line</div><div class="ttdef"><b>Definition:</b> <a href="ui__extrasettingswidget_8h_source.html#l00062">ui_extrasettingswidget.h:62</a></div></div>
 <div class="ttc" id="classUi__ExtraSettingsWidget_html_a408d749d5b00ae5ce46643209b0712ca"><div class="ttname"><a href="classUi__ExtraSettingsWidget.html#a408d749d5b00ae5ce46643209b0712ca">Ui_ExtraSettingsWidget::verticalSpacer_10</a></div><div class="ttdeci">QSpacerItem * verticalSpacer_10</div><div class="ttdef"><b>Definition:</b> <a href="ui__extrasettingswidget_8h_source.html#l00051">ui_extrasettingswidget.h:51</a></div></div>
-<div class="ttc" id="classUi__ExtraSettingsWidget_html_a934b92d569f30e0d7978858ac538bd0e"><div class="ttname"><a href="classUi__ExtraSettingsWidget.html#a934b92d569f30e0d7978858ac538bd0e">Ui_ExtraSettingsWidget::retranslateUi</a></div><div class="ttdeci">void retranslateUi(QDialog *ExtraSettingsWidget)</div><div class="ttdef"><b>Definition:</b> <a href="ui__extrasettingswidget_8h_source.html#l00322">ui_extrasettingswidget.h:322</a></div></div>
+<div class="ttc" id="classUi__ExtraSettingsWidget_html_a934b92d569f30e0d7978858ac538bd0e"><div class="ttname"><a href="classUi__ExtraSettingsWidget.html#a934b92d569f30e0d7978858ac538bd0e">Ui_ExtraSettingsWidget::retranslateUi</a></div><div class="ttdeci">void retranslateUi(QDialog *ExtraSettingsWidget)</div><div class="ttdef"><b>Definition:</b> <a href="ui__extrasettingswidget_8h_source.html#l00330">ui_extrasettingswidget.h:330</a></div></div>
 <div class="ttc" id="classUi__ExtraSettingsWidget_html_a101a4089acf526ec44c155185becdbf1"><div class="ttname"><a href="classUi__ExtraSettingsWidget.html#a101a4089acf526ec44c155185becdbf1">Ui_ExtraSettingsWidget::horizontalLayout</a></div><div class="ttdeci">QHBoxLayout * horizontalLayout</div><div class="ttdef"><b>Definition:</b> <a href="ui__extrasettingswidget_8h_source.html#l00055">ui_extrasettingswidget.h:55</a></div></div>
 <div class="ttc" id="classUi__ExtraSettingsWidget_html_a131cea77436a39b612ecc6f4aa1c90a7"><div class="ttname"><a href="classUi__ExtraSettingsWidget.html#a131cea77436a39b612ecc6f4aa1c90a7">Ui_ExtraSettingsWidget::delayBox</a></div><div class="ttdeci">QCheckBox * delayBox</div><div class="ttdef"><b>Definition:</b> <a href="ui__extrasettingswidget_8h_source.html#l00067">ui_extrasettingswidget.h:67</a></div></div>
 <div class="ttc" id="classUi__ExtraSettingsWidget_html_a62f6f0628590032f7b774f7ce1916ca4"><div class="ttname"><a href="classUi__ExtraSettingsWidget.html#a62f6f0628590032f7b774f7ce1916ca4">Ui_ExtraSettingsWidget::verticalSpacer_3</a></div><div class="ttdeci">QSpacerItem * verticalSpacer_3</div><div class="ttdef"><b>Definition:</b> <a href="ui__extrasettingswidget_8h_source.html#l00037">ui_extrasettingswidget.h:37</a></div></div>
@@ -686,7 +694,7 @@ Data Fields</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ui__extrasettingswidget_8h_source.html#l00057">57</a> of file <a class="el" href="ui__extrasettingswidget_8h_source.html">ui_extrasettingswidget.h</a>.</p>
 
-<p>Referenced by <a class="el" href="extrasettingswidget_8cpp_source.html#l00087">ExtraSettingsWidget::on_animScanButton_clicked()</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00322">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
+<p>Referenced by <a class="el" href="extrasettingswidget_8cpp_source.html#l00087">ExtraSettingsWidget::on_animScanButton_clicked()</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00330">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
 
 </div>
 </div>
@@ -702,7 +710,7 @@ Data Fields</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ui__extrasettingswidget_8h_source.html#l00056">56</a> of file <a class="el" href="ui__extrasettingswidget_8h_source.html">ui_extrasettingswidget.h</a>.</p>
 
-<p>Referenced by <a class="el" href="extrasettingswidget_8cpp_source.html#l00010">ExtraSettingsWidget::ExtraSettingsWidget()</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00322">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
+<p>Referenced by <a class="el" href="extrasettingswidget_8cpp_source.html#l00010">ExtraSettingsWidget::ExtraSettingsWidget()</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00330">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
 
 </div>
 </div>
@@ -718,7 +726,7 @@ Data Fields</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ui__extrasettingswidget_8h_source.html#l00058">58</a> of file <a class="el" href="ui__extrasettingswidget_8h_source.html">ui_extrasettingswidget.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ui__extrasettingswidget_8h_source.html#l00322">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
+<p>Referenced by <a class="el" href="ui__extrasettingswidget_8h_source.html#l00330">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
 
 </div>
 </div>
@@ -734,7 +742,7 @@ Data Fields</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ui__extrasettingswidget_8h_source.html#l00059">59</a> of file <a class="el" href="ui__extrasettingswidget_8h_source.html">ui_extrasettingswidget.h</a>.</p>
 
-<p>Referenced by <a class="el" href="extrasettingswidget_8cpp_source.html#l00010">ExtraSettingsWidget::ExtraSettingsWidget()</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00322">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
+<p>Referenced by <a class="el" href="extrasettingswidget_8cpp_source.html#l00010">ExtraSettingsWidget::ExtraSettingsWidget()</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00330">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
 
 </div>
 </div>
@@ -766,7 +774,7 @@ Data Fields</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ui__extrasettingswidget_8h_source.html#l00067">67</a> of file <a class="el" href="ui__extrasettingswidget_8h_source.html">ui_extrasettingswidget.h</a>.</p>
 
-<p>Referenced by <a class="el" href="extrasettingswidget_8cpp_source.html#l00010">ExtraSettingsWidget::ExtraSettingsWidget()</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00322">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
+<p>Referenced by <a class="el" href="extrasettingswidget_8cpp_source.html#l00010">ExtraSettingsWidget::ExtraSettingsWidget()</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00330">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
 
 </div>
 </div>
@@ -782,7 +790,7 @@ Data Fields</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ui__extrasettingswidget_8h_source.html#l00066">66</a> of file <a class="el" href="ui__extrasettingswidget_8h_source.html">ui_extrasettingswidget.h</a>.</p>
 
-<p>Referenced by <a class="el" href="extrasettingswidget_8cpp_source.html#l00010">ExtraSettingsWidget::ExtraSettingsWidget()</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00322">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
+<p>Referenced by <a class="el" href="extrasettingswidget_8cpp_source.html#l00010">ExtraSettingsWidget::ExtraSettingsWidget()</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00330">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
 
 </div>
 </div>
@@ -814,7 +822,7 @@ Data Fields</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ui__extrasettingswidget_8h_source.html#l00039">39</a> of file <a class="el" href="ui__extrasettingswidget_8h_source.html">ui_extrasettingswidget.h</a>.</p>
 
-<p>Referenced by <a class="el" href="extrasettingswidget_8cpp_source.html#l00010">ExtraSettingsWidget::ExtraSettingsWidget()</a>, <a class="el" href="extrasettingswidget_8cpp_source.html#l00098">ExtraSettingsWidget::on_fpsBox_valueChanged()</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00322">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
+<p>Referenced by <a class="el" href="extrasettingswidget_8cpp_source.html#l00010">ExtraSettingsWidget::ExtraSettingsWidget()</a>, <a class="el" href="extrasettingswidget_8cpp_source.html#l00098">ExtraSettingsWidget::on_fpsBox_valueChanged()</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00330">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
 
 </div>
 </div>
@@ -926,7 +934,7 @@ Data Fields</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ui__extrasettingswidget_8h_source.html#l00061">61</a> of file <a class="el" href="ui__extrasettingswidget_8h_source.html">ui_extrasettingswidget.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ui__extrasettingswidget_8h_source.html#l00322">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
+<p>Referenced by <a class="el" href="ui__extrasettingswidget_8h_source.html#l00330">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
 
 </div>
 </div>
@@ -942,7 +950,7 @@ Data Fields</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ui__extrasettingswidget_8h_source.html#l00073">73</a> of file <a class="el" href="ui__extrasettingswidget_8h_source.html">ui_extrasettingswidget.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ui__extrasettingswidget_8h_source.html#l00322">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
+<p>Referenced by <a class="el" href="ui__extrasettingswidget_8h_source.html#l00330">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
 
 </div>
 </div>
@@ -958,7 +966,7 @@ Data Fields</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ui__extrasettingswidget_8h_source.html#l00075">75</a> of file <a class="el" href="ui__extrasettingswidget_8h_source.html">ui_extrasettingswidget.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ui__extrasettingswidget_8h_source.html#l00322">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
+<p>Referenced by <a class="el" href="ui__extrasettingswidget_8h_source.html#l00330">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
 
 </div>
 </div>
@@ -974,7 +982,7 @@ Data Fields</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ui__extrasettingswidget_8h_source.html#l00065">65</a> of file <a class="el" href="ui__extrasettingswidget_8h_source.html">ui_extrasettingswidget.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ui__extrasettingswidget_8h_source.html#l00322">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
+<p>Referenced by <a class="el" href="ui__extrasettingswidget_8h_source.html#l00330">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
 
 </div>
 </div>
@@ -990,7 +998,7 @@ Data Fields</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ui__extrasettingswidget_8h_source.html#l00041">41</a> of file <a class="el" href="ui__extrasettingswidget_8h_source.html">ui_extrasettingswidget.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ui__extrasettingswidget_8h_source.html#l00322">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
+<p>Referenced by <a class="el" href="ui__extrasettingswidget_8h_source.html#l00330">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
 
 </div>
 </div>
@@ -1006,7 +1014,7 @@ Data Fields</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ui__extrasettingswidget_8h_source.html#l00063">63</a> of file <a class="el" href="ui__extrasettingswidget_8h_source.html">ui_extrasettingswidget.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ui__extrasettingswidget_8h_source.html#l00322">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
+<p>Referenced by <a class="el" href="ui__extrasettingswidget_8h_source.html#l00330">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
 
 </div>
 </div>
@@ -1022,7 +1030,7 @@ Data Fields</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ui__extrasettingswidget_8h_source.html#l00045">45</a> of file <a class="el" href="ui__extrasettingswidget_8h_source.html">ui_extrasettingswidget.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ui__extrasettingswidget_8h_source.html#l00322">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
+<p>Referenced by <a class="el" href="ui__extrasettingswidget_8h_source.html#l00330">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
 
 </div>
 </div>
@@ -1086,7 +1094,7 @@ Data Fields</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ui__extrasettingswidget_8h_source.html#l00070">70</a> of file <a class="el" href="ui__extrasettingswidget_8h_source.html">ui_extrasettingswidget.h</a>.</p>
 
-<p>Referenced by <a class="el" href="extrasettingswidget_8cpp_source.html#l00010">ExtraSettingsWidget::ExtraSettingsWidget()</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00322">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
+<p>Referenced by <a class="el" href="extrasettingswidget_8cpp_source.html#l00010">ExtraSettingsWidget::ExtraSettingsWidget()</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00330">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
 
 </div>
 </div>
@@ -1102,7 +1110,7 @@ Data Fields</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ui__extrasettingswidget_8h_source.html#l00068">68</a> of file <a class="el" href="ui__extrasettingswidget_8h_source.html">ui_extrasettingswidget.h</a>.</p>
 
-<p>Referenced by <a class="el" href="extrasettingswidget_8cpp_source.html#l00010">ExtraSettingsWidget::ExtraSettingsWidget()</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00322">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
+<p>Referenced by <a class="el" href="extrasettingswidget_8cpp_source.html#l00010">ExtraSettingsWidget::ExtraSettingsWidget()</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00330">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
 
 </div>
 </div>
@@ -1134,7 +1142,7 @@ Data Fields</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ui__extrasettingswidget_8h_source.html#l00048">48</a> of file <a class="el" href="ui__extrasettingswidget_8h_source.html">ui_extrasettingswidget.h</a>.</p>
 
-<p>Referenced by <a class="el" href="extrasettingswidget_8cpp_source.html#l00010">ExtraSettingsWidget::ExtraSettingsWidget()</a>, <a class="el" href="extrasettingswidget_8cpp_source.html#l00138">ExtraSettingsWidget::on_sSpeedBox_valueChanged()</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00322">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
+<p>Referenced by <a class="el" href="extrasettingswidget_8cpp_source.html#l00010">ExtraSettingsWidget::ExtraSettingsWidget()</a>, <a class="el" href="extrasettingswidget_8cpp_source.html#l00138">ExtraSettingsWidget::on_sSpeedBox_valueChanged()</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00330">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
 
 </div>
 </div>
@@ -1182,7 +1190,7 @@ Data Fields</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ui__extrasettingswidget_8h_source.html#l00060">60</a> of file <a class="el" href="ui__extrasettingswidget_8h_source.html">ui_extrasettingswidget.h</a>.</p>
 
-<p>Referenced by <a class="el" href="extrasettingswidget_8cpp_source.html#l00010">ExtraSettingsWidget::ExtraSettingsWidget()</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00322">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
+<p>Referenced by <a class="el" href="extrasettingswidget_8cpp_source.html#l00010">ExtraSettingsWidget::ExtraSettingsWidget()</a>, <a class="el" href="ui__extrasettingswidget_8h_source.html#l00330">retranslateUi()</a>, and <a class="el" href="ui__extrasettingswidget_8h_source.html#l00078">setupUi()</a>.</p>
 
 </div>
 </div>
@@ -1371,7 +1379,7 @@ Data Fields</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classUi__ExtraSettingsWidget.html">Ui_ExtraSettingsWidget</a></li>
-    <li class="footer">Generated on Fri Nov 3 2017 11:05:10 for ckb-next by
+    <li class="footer">Generated on Sat Jan 20 2018 16:59:43 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

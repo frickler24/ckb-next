@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['readme',['README',['../md_README.html',1,'']]],
   ['r',['r',['../ckb-anim_8h.html#a3cff08260cae881c0ea7e71ffa82b643',1,'ckb_key::r()'],['../ckb-anim_8h.html#a4b1a6a9880a7ad955d9421565e9a3539',1,'ckb_gradient::r()']]],
   ['raw',['raw',['../classQuaZipFilePrivate.html#a2faf005d62ad7f1b6e162f9bbb5e1da9',1,'QuaZipFilePrivate::raw()'],['../unzip_8c.html#a30297ce02b256c469e5c66c1500c17e1',1,'file_in_zip64_read_info_s::raw()'],['../zip_8c.html#ad86ea5e726a03803f04c05b405af370a',1,'curfile64_info::raw()']]],
   ['raw2mode',['raw2Mode',['../classKPerfWidget.html#a64b9a4645b42ef8341d5f6a5a8541a09',1,'KPerfWidget']]],

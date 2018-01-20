@@ -1,4 +1,4 @@
-.TH "src/ckb-daemon/led_keyboard.c" 3 "Fri Nov 3 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "src/ckb-daemon/led_keyboard.c" 3 "Sat Jan 20 2018" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -156,131 +156,131 @@ Read colors
 .PP
  Normally a firmware version >= 2\&.05 runs with the new compare array\&. Up to now there is a 2\&.04 running in K70 RGB Lux with the same behavior\&. It seems that K70RGB has the same problem 
 .PP
-Definition at line 183 of file led_keyboard\&.c\&.
+Definition at line 190 of file led_keyboard\&.c\&.
 .PP
-References lighting::b, ckb_err, usbdevice::fwversion, lighting::g, IS_NEW_PROTOCOL, MSG_SIZE, N_KEYS_HW, P_K70_LUX, P_K70_LUX_NRGB, usbdevice::product, lighting::r, usbrecv, and usbsend\&.
+References lighting::b, ckb_err, usbdevice::fwversion, lighting::g, IS_V2_OVERRIDE, MSG_SIZE, N_KEYS_HW, P_K70_LUX, P_K70_LUX_NRGB, usbdevice::product, lighting::r, usbrecv, and usbsend\&.
 .PP
 Referenced by hwloadmode()\&.
 .PP
 .nf
-183                                                         {
-184     if(kb->fwversion >= 0x0120 || IS_NEW_PROTOCOL(kb)){
-185         uchar data_pkt[12][MSG_SIZE] = {
-186             { 0x0e, 0x14, 0x03, 0x01, 0x01, mode + 1, 0x01 },
-187             { 0xff, 0x01, 60, 0 },
-188             { 0xff, 0x02, 60, 0 },
-189             { 0xff, 0x03, 24, 0 },
-190             { 0x0e, 0x14, 0x03, 0x01, 0x01, mode + 1, 0x02 },
-191             { 0xff, 0x01, 60, 0 },
-192             { 0xff, 0x02, 60, 0 },
-193             { 0xff, 0x03, 24, 0 },
-194             { 0x0e, 0x14, 0x03, 0x01, 0x01, mode + 1, 0x03 },
-195             { 0xff, 0x01, 60, 0 },
-196             { 0xff, 0x02, 60, 0 },
-197             { 0xff, 0x03, 24, 0 },
-198         };
-199         uchar in_pkt[4][MSG_SIZE] = {
-200             { 0x0e, 0x14, 0x03, 0x01 },
-201             { 0xff, 0x01, 60, 0 },
-202             { 0xff, 0x02, 60, 0 },
-203             { 0xff, 0x03, 24, 0 },
-204         };
-205 
-211 
-212         uchar cmp_pkt[4][4] = {
-213             { 0x0e, 0x14, 0x03, 0x01 },
-214             { 0x0e, 0xff, 0x01, 60 },
-215             { 0x0e, 0xff, 0x02, 60 },
-216             { 0x0e, 0xff, 0x03, 24 },
-217         };
-219         uchar* colors[3] = { light->r, light->g, light->b };
-220         for(int clr = 0; clr < 3; clr++){
-221             for(int i = 0; i < 4; i++){
-222                 if(!usbrecv(kb, data_pkt[i + clr * 4], in_pkt[i]))
-223                     return -1;
-224 
-225                 uchar* comparePacket = data_pkt[i + clr * 4];   
-226                 if ((kb->fwversion >= 0x205)
-230                         || ((kb->fwversion >= 0x204)
-231                             && ((kb->product == P_K70_LUX_NRGB) || (kb->product == P_K70_LUX)))) {
-232                     comparePacket = cmp_pkt[i];
-233                 }
-234 
-235                 if (memcmp(in_pkt[i], comparePacket, 4)) {
-236                     ckb_err("Bad input header\n");
-237                     ckb_err("color = %d, i = %d, mode = %d\nOutput (Request): %2\&.2x %2\&.2x %2\&.2x %2\&.2x\nInput(Reply): %2\&.2x %2\&.2x %2\&.2x %2\&.2x %2\&.2x %2\&.2x %2\&.2x %2\&.2x\n", clr, i, mode,
-238                         comparePacket[0], comparePacket[1], comparePacket[2], comparePacket[3],
-239                         in_pkt[i][0], in_pkt[i][1], in_pkt[i][2], in_pkt[i][3], in_pkt[i][4], in_pkt[i][5], in_pkt[i][6], in_pkt[i][7]);
-240                     in_pkt[2][0] = 0x99;
-241                     in_pkt[2][1] = 0x99;
-242                     in_pkt[2][2] = 0x99;
-243                     in_pkt[2][3] = 0x99;
-244                     usbrecv(kb, in_pkt[2], in_pkt[2]); // just to find it in the wireshark log
-245                     return -1;
-246                 }
-247             }
-248             // Copy colors to lighting\&. in_pkt[0] is irrelevant\&.
-249             memcpy(colors[clr], in_pkt[1] + 4, 60);
-250             memcpy(colors[clr] + 60, in_pkt[2] + 4, 60);
-251             memcpy(colors[clr] + 120, in_pkt[3] + 4, 24);
-252         }
-253     } else {
-254         uchar data_pkt[5][MSG_SIZE] = {
-255             { 0x0e, 0x14, 0x02, 0x01, 0x01, mode + 1, 0 },
-256             { 0xff, 0x01, 60, 0 },
-257             { 0xff, 0x02, 60, 0 },
-258             { 0xff, 0x03, 60, 0 },
-259             { 0xff, 0x04, 36, 0 },
-260         };
-261         uchar in_pkt[4][MSG_SIZE] = {
-262             { 0xff, 0x01, 60, 0 },
-263             { 0xff, 0x02, 60, 0 },
-264             { 0xff, 0x03, 60, 0 },
-265             { 0xff, 0x04, 36, 0 },
-266         };
-267         // Write initial packet
-268         if(!usbsend(kb, data_pkt[0], 1))
-269             return -1;
-270         // Read colors
-271         for(int i = 1; i < 5; i++){
-272             if(!usbrecv(kb, data_pkt[i],in_pkt[i - 1]))
-273                 return -1;
-274             if(memcmp(in_pkt[i - 1], data_pkt[i], 4)){
-275                 ckb_err("Bad input header\n");
-276                 return -1;
-277             }
-278         }
-279         // Copy the data back to the mode
-280         uint8_t mr[N_KEYS_HW / 2], mg[N_KEYS_HW / 2], mb[N_KEYS_HW / 2];
-281         memcpy(mr,      in_pkt[0] +  4, 60);
-282         memcpy(mr + 60, in_pkt[1] +  4, 12);
-283         memcpy(mg,      in_pkt[1] + 16, 48);
-284         memcpy(mg + 48, in_pkt[2] +  4, 24);
-285         memcpy(mb,      in_pkt[2] + 28, 36);
-286         memcpy(mb + 36, in_pkt[3] +  4, 36);
-287         // Unpack LED data to 8bpc format
-288         for(int i = 0; i < N_KEYS_HW; i++){
-289             int     i_2 = i / 2;
-290             uint8_t r, g, b;
-291 
-292             // 3-bit intensities stored in alternate nybbles\&.
-293             if (i & 1) {
-294                 r = 7 - (mr[i_2] >> 4);
-295                 g = 7 - (mg[i_2] >> 4);
-296                 b = 7 - (mb[i_2] >> 4);
-297             } else {
-298                 r = 7 - (mr[i_2] & 0x0F);
-299                 g = 7 - (mg[i_2] & 0x0F);
-300                 b = 7 - (mb[i_2] & 0x0F);
-301             }
-302             // Scale 3-bit values up to 8 bits\&.
-303             light->r[i] = r << 5 | r << 2 | r >> 1;
-304             light->g[i] = g << 5 | g << 2 | g >> 1;
-305             light->b[i] = b << 5 | b << 2 | b >> 1;
-306         }
-307     }
-308     return 0;
-309 }
+190                                                         {
+191     if(kb->fwversion >= 0x0120 || IS_V2_OVERRIDE(kb)){
+192         uchar data_pkt[12][MSG_SIZE] = {
+193             { 0x0e, 0x14, 0x03, 0x01, 0x01, mode + 1, 0x01 },
+194             { 0xff, 0x01, 60, 0 },
+195             { 0xff, 0x02, 60, 0 },
+196             { 0xff, 0x03, 24, 0 },
+197             { 0x0e, 0x14, 0x03, 0x01, 0x01, mode + 1, 0x02 },
+198             { 0xff, 0x01, 60, 0 },
+199             { 0xff, 0x02, 60, 0 },
+200             { 0xff, 0x03, 24, 0 },
+201             { 0x0e, 0x14, 0x03, 0x01, 0x01, mode + 1, 0x03 },
+202             { 0xff, 0x01, 60, 0 },
+203             { 0xff, 0x02, 60, 0 },
+204             { 0xff, 0x03, 24, 0 },
+205         };
+206         uchar in_pkt[4][MSG_SIZE] = {
+207             { 0x0e, 0x14, 0x03, 0x01 },
+208             { 0xff, 0x01, 60, 0 },
+209             { 0xff, 0x02, 60, 0 },
+210             { 0xff, 0x03, 24, 0 },
+211         };
+212 
+218 
+219         uchar cmp_pkt[4][4] = {
+220             { 0x0e, 0x14, 0x03, 0x01 },
+221             { 0x0e, 0xff, 0x01, 60 },
+222             { 0x0e, 0xff, 0x02, 60 },
+223             { 0x0e, 0xff, 0x03, 24 },
+224         };
+226         uchar* colors[3] = { light->r, light->g, light->b };
+227         for(int clr = 0; clr < 3; clr++){
+228             for(int i = 0; i < 4; i++){
+229                 if(!usbrecv(kb, data_pkt[i + clr * 4], in_pkt[i]))
+230                     return -1;
+231 
+232                 uchar* comparePacket = data_pkt[i + clr * 4];   
+233                 if ((kb->fwversion >= 0x205)
+237                         || ((kb->fwversion >= 0x204)
+238                             && ((kb->product == P_K70_LUX_NRGB) || (kb->product == P_K70_LUX)))) {
+239                     comparePacket = cmp_pkt[i];
+240                 }
+241 
+242                 if (memcmp(in_pkt[i], comparePacket, 4)) {
+243                     ckb_err("Bad input header\n");
+244                     ckb_err("color = %d, i = %d, mode = %d\nOutput (Request): %2\&.2x %2\&.2x %2\&.2x %2\&.2x\nInput(Reply): %2\&.2x %2\&.2x %2\&.2x %2\&.2x %2\&.2x %2\&.2x %2\&.2x %2\&.2x\n", clr, i, mode,
+245                         comparePacket[0], comparePacket[1], comparePacket[2], comparePacket[3],
+246                         in_pkt[i][0], in_pkt[i][1], in_pkt[i][2], in_pkt[i][3], in_pkt[i][4], in_pkt[i][5], in_pkt[i][6], in_pkt[i][7]);
+247                     in_pkt[2][0] = 0x99;
+248                     in_pkt[2][1] = 0x99;
+249                     in_pkt[2][2] = 0x99;
+250                     in_pkt[2][3] = 0x99;
+251                     usbrecv(kb, in_pkt[2], in_pkt[2]); // just to find it in the wireshark log
+252                     return -1;
+253                 }
+254             }
+255             // Copy colors to lighting\&. in_pkt[0] is irrelevant\&.
+256             memcpy(colors[clr], in_pkt[1] + 4, 60);
+257             memcpy(colors[clr] + 60, in_pkt[2] + 4, 60);
+258             memcpy(colors[clr] + 120, in_pkt[3] + 4, 24);
+259         }
+260     } else {
+261         uchar data_pkt[5][MSG_SIZE] = {
+262             { 0x0e, 0x14, 0x02, 0x01, 0x01, mode + 1, 0 },
+263             { 0xff, 0x01, 60, 0 },
+264             { 0xff, 0x02, 60, 0 },
+265             { 0xff, 0x03, 60, 0 },
+266             { 0xff, 0x04, 36, 0 },
+267         };
+268         uchar in_pkt[4][MSG_SIZE] = {
+269             { 0xff, 0x01, 60, 0 },
+270             { 0xff, 0x02, 60, 0 },
+271             { 0xff, 0x03, 60, 0 },
+272             { 0xff, 0x04, 36, 0 },
+273         };
+274         // Write initial packet
+275         if(!usbsend(kb, data_pkt[0], 1))
+276             return -1;
+277         // Read colors
+278         for(int i = 1; i < 5; i++){
+279             if(!usbrecv(kb, data_pkt[i],in_pkt[i - 1]))
+280                 return -1;
+281             if(memcmp(in_pkt[i - 1], data_pkt[i], 4)){
+282                 ckb_err("Bad input header\n");
+283                 return -1;
+284             }
+285         }
+286         // Copy the data back to the mode
+287         uint8_t mr[N_KEYS_HW / 2], mg[N_KEYS_HW / 2], mb[N_KEYS_HW / 2];
+288         memcpy(mr,      in_pkt[0] +  4, 60);
+289         memcpy(mr + 60, in_pkt[1] +  4, 12);
+290         memcpy(mg,      in_pkt[1] + 16, 48);
+291         memcpy(mg + 48, in_pkt[2] +  4, 24);
+292         memcpy(mb,      in_pkt[2] + 28, 36);
+293         memcpy(mb + 36, in_pkt[3] +  4, 36);
+294         // Unpack LED data to 8bpc format
+295         for(int i = 0; i < N_KEYS_HW; i++){
+296             int     i_2 = i / 2;
+297             uint8_t r, g, b;
+298 
+299             // 3-bit intensities stored in alternate nybbles\&.
+300             if (i & 1) {
+301                 r = 7 - (mr[i_2] >> 4);
+302                 g = 7 - (mg[i_2] >> 4);
+303                 b = 7 - (mb[i_2] >> 4);
+304             } else {
+305                 r = 7 - (mr[i_2] & 0x0F);
+306                 g = 7 - (mg[i_2] & 0x0F);
+307                 b = 7 - (mb[i_2] & 0x0F);
+308             }
+309             // Scale 3-bit values up to 8 bits\&.
+310             light->r[i] = r << 5 | r << 2 | r >> 1;
+311             light->g[i] = g << 5 | g << 2 | g >> 1;
+312             light->b[i] = b << 5 | b << 2 | b >> 1;
+313         }
+314     }
+315     return 0;
+316 }
 .fi
 .SS "static void makergb_512 (const \fBlighting\fP *light, \fBuchar\fPdata_pkt[5][64], \fBuchar\fP(*)(int, \fBuchar\fP)ditherfn)\fC [static]\fP"
 
@@ -326,15 +326,15 @@ Referenced by savergb_kb(), and updatergb_kb()\&.
 60     // Red
 61     memcpy(data_pkt[0] + 4, r, 60);
 62     memcpy(data_pkt[1] + 4, r + 60, 60);
-63     memcpy(data_pkt[2] + 4, r + 120, 24);
+63     memcpy(data_pkt[2] + 4, r + 120, 60);
 64     // Green (final R packet is blank)
 65     memcpy(data_pkt[4] + 4, g, 60);
 66     memcpy(data_pkt[5] + 4, g + 60, 60);
-67     memcpy(data_pkt[6] + 4, g + 120, 24);
+67     memcpy(data_pkt[6] + 4, g + 120, 60);
 68     // Blue (final G packet is blank)
 69     memcpy(data_pkt[8] + 4, b, 60);
 70     memcpy(data_pkt[9] + 4, b + 60, 60);
-71     memcpy(data_pkt[10] + 4, b + 120, 24);
+71     memcpy(data_pkt[10] + 4, b + 120, 60);
 72 }
 .fi
 .SS "static \fBuchar\fP ordered8to3 (intindex, \fBuchar\fPvalue)\fC [static]\fP"
@@ -387,61 +387,61 @@ Referenced by updatergb_kb()\&.
 .SS "int savergb_kb (\fBusbdevice\fP *kb, \fBlighting\fP *light, intmode)"
 
 .PP
-Definition at line 141 of file led_keyboard\&.c\&.
+Definition at line 148 of file led_keyboard\&.c\&.
 .PP
-References usbdevice::dither, usbdevice::fwversion, IS_NEW_PROTOCOL, IS_STRAFE, makergb_512(), makergb_full(), MSG_SIZE, ordered8to3(), quantize8to3(), and usbsend\&.
+References usbdevice::dither, usbdevice::fwversion, IS_STRAFE, IS_V2_OVERRIDE, makergb_512(), makergb_full(), MSG_SIZE, ordered8to3(), quantize8to3(), and usbsend\&.
 .PP
 Referenced by cmd_hwsave_kb()\&.
 .PP
 .nf
-141                                                         {
-142     if(kb->fwversion >= 0x0120 || IS_NEW_PROTOCOL(kb)){
-143         uchar data_pkt[12][MSG_SIZE] = {
-144             // Red
-145             { 0x7f, 0x01, 60, 0 },
-146             { 0x7f, 0x02, 60, 0 },
-147             { 0x7f, 0x03, 24, 0 },
-148             { 0x07, 0x14, 0x03, 0x01, 0x01, mode + 1, 0x01 },
-149             // Green
-150             { 0x7f, 0x01, 60, 0 },
-151             { 0x7f, 0x02, 60, 0 },
-152             { 0x7f, 0x03, 24, 0 },
-153             { 0x07, 0x14, 0x03, 0x01, 0x01, mode + 1, 0x02 },
-154             // Blue
-155             { 0x7f, 0x01, 60, 0 },
-156             { 0x7f, 0x02, 60, 0 },
-157             { 0x7f, 0x03, 24, 0 },
-158             { 0x07, 0x14, 0x03, 0x01, 0x01, mode + 1, 0x03 }
-159         };
-160         makergb_full(light, data_pkt);
-161         if(!usbsend(kb, data_pkt[0], 12))
-162             return -1;
-163         if (IS_STRAFE(kb)){ // end save
-164             uchar save_end_pkt[MSG_SIZE] = { 0x07, 0x14, 0x04, 0x01, 0x01 };
-165             if(!usbsend(kb, save_end_pkt, 1))
-166                 return -1;
-167         }
-168     } else {
-169         uchar data_pkt[5][MSG_SIZE] = {
-170             { 0x7f, 0x01, 60, 0 },
-171             { 0x7f, 0x02, 60, 0 },
-172             { 0x7f, 0x03, 60, 0 },
-173             { 0x7f, 0x04, 36, 0 },
-174             { 0x07, 0x14, 0x02, 0x00, 0x01, mode + 1 }
-175         };
-176         makergb_512(light, data_pkt, kb->dither ? ordered8to3 : quantize8to3);
-177         if(!usbsend(kb, data_pkt[0], 5))
-178             return -1;
-179     }
-180     return 0;
-181 }
+148                                                         {
+149     if(kb->fwversion >= 0x0120 || IS_V2_OVERRIDE(kb)){
+150         uchar data_pkt[12][MSG_SIZE] = {
+151             // Red
+152             { 0x7f, 0x01, 60, 0 },
+153             { 0x7f, 0x02, 60, 0 },
+154             { 0x7f, 0x03, 24, 0 },
+155             { 0x07, 0x14, 0x03, 0x01, 0x01, mode + 1, 0x01 },
+156             // Green
+157             { 0x7f, 0x01, 60, 0 },
+158             { 0x7f, 0x02, 60, 0 },
+159             { 0x7f, 0x03, 24, 0 },
+160             { 0x07, 0x14, 0x03, 0x01, 0x01, mode + 1, 0x02 },
+161             // Blue
+162             { 0x7f, 0x01, 60, 0 },
+163             { 0x7f, 0x02, 60, 0 },
+164             { 0x7f, 0x03, 24, 0 },
+165             { 0x07, 0x14, 0x03, 0x01, 0x01, mode + 1, 0x03 }
+166         };
+167         makergb_full(light, data_pkt);
+168         if(!usbsend(kb, data_pkt[0], 12))
+169             return -1;
+170         if (IS_STRAFE(kb)){ // end save
+171             uchar save_end_pkt[MSG_SIZE] = { 0x07, 0x14, 0x04, 0x01, 0x01 };
+172             if(!usbsend(kb, save_end_pkt, 1))
+173                 return -1;
+174         }
+175     } else {
+176         uchar data_pkt[5][MSG_SIZE] = {
+177             { 0x7f, 0x01, 60, 0 },
+178             { 0x7f, 0x02, 60, 0 },
+179             { 0x7f, 0x03, 60, 0 },
+180             { 0x7f, 0x04, 36, 0 },
+181             { 0x07, 0x14, 0x02, 0x00, 0x01, mode + 1 }
+182         };
+183         makergb_512(light, data_pkt, kb->dither ? ordered8to3 : quantize8to3);
+184         if(!usbsend(kb, data_pkt[0], 5))
+185             return -1;
+186     }
+187     return 0;
+188 }
 .fi
 .SS "int updatergb_kb (\fBusbdevice\fP *kb, intforce)"
 
 .PP
 Definition at line 79 of file led_keyboard\&.c\&.
 .PP
-References usbdevice::active, usbprofile::currentmode, usbdevice::dither, lighting::forceupdate, IS_FULLRANGE, usbprofile::lastlight, usbmode::light, makergb_512(), makergb_full(), MSG_SIZE, ordered8to3(), usbdevice::profile, quantize8to3(), rgbcmp(), lighting::sidelight, and usbsend\&.
+References usbdevice::active, usbprofile::currentmode, usbdevice::dither, lighting::forceupdate, IS_FULLRANGE, usbprofile::lastlight, usbmode::light, makergb_512(), makergb_full(), MSG_SIZE, ordered8to3(), P_K95_PLATINUM, usbdevice::product, usbdevice::profile, quantize8to3(), rgbcmp(), lighting::sidelight, and usbsend\&.
 .PP
 .nf
 79                                           {
@@ -485,26 +485,33 @@ References usbdevice::active, usbprofile::currentmode, usbdevice::dither, lighti
 117             { 0x7f, 0x03, 0x18, 0 },
 118             { 0x07, 0x28, 0x03, 0x03, 0x02, 0}
 119         };
-120         makergb_full(newlight, data_pkt);
-121         if(!usbsend(kb, data_pkt[0], 12))
-122             return -1;
-123     } else {
-124         // On older keyboards it looks flickery and causes lighting glitches, so we don't use it\&.
-125         uchar data_pkt[5][MSG_SIZE] = {
-126             { 0x7f, 0x01, 60, 0 },
-127             { 0x7f, 0x02, 60, 0 },
-128             { 0x7f, 0x03, 60, 0 },
-129             { 0x7f, 0x04, 36, 0 },
-130             { 0x07, 0x27, 0x00, 0x00, 0xD8 }
-131         };
-132         makergb_512(newlight, data_pkt, kb->dither ? ordered8to3 : quantize8to3);
-133         if(!usbsend(kb, data_pkt[0], 5))
-134             return -1;
-135     }
-136 
-137     memcpy(lastlight, newlight, sizeof(lighting));
-138     return 0;
-139 }
+120         // The K95 Platinum needs 0x30 for the lightbar to work, due to the length of the packet\&.
+121         // A way to dynamically calculate the length would be preferred, based on the device\&.
+122         if(kb->product == P_K95_PLATINUM){
+123             data_pkt[2][2] = 0x30;
+124             data_pkt[6][2] = 0x30;
+125             data_pkt[10][2] = 0x30;
+126         }
+127         makergb_full(newlight, data_pkt);
+128         if(!usbsend(kb, data_pkt[0], 12))
+129             return -1;
+130     } else {
+131         // On older keyboards it looks flickery and causes lighting glitches, so we don't use it\&.
+132         uchar data_pkt[5][MSG_SIZE] = {
+133             { 0x7f, 0x01, 60, 0 },
+134             { 0x7f, 0x02, 60, 0 },
+135             { 0x7f, 0x03, 60, 0 },
+136             { 0x7f, 0x04, 36, 0 },
+137             { 0x07, 0x27, 0x00, 0x00, 0xD8 }
+138         };
+139         makergb_512(newlight, data_pkt, kb->dither ? ordered8to3 : quantize8to3);
+140         if(!usbsend(kb, data_pkt[0], 5))
+141             return -1;
+142     }
+143 
+144     memcpy(lastlight, newlight, sizeof(lighting));
+145     return 0;
+146 }
 .fi
 .SH "Variable Documentation"
 .PP 

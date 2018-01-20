@@ -15,6 +15,7 @@ var searchData=
   ['is_5fharpoon',['IS_HARPOON',['../usb_8h.html#a5e668fced1aa7c9373d344e7053e82e0',1,'usb.h']]],
   ['is_5fk63',['IS_K63',['../usb_8h.html#a04d9b247abc0ad07d8c108f741f3f790',1,'usb.h']]],
   ['is_5fk65',['IS_K65',['../usb_8h.html#ae2e07011a0423b4667ec133f8b9900f8',1,'usb.h']]],
+  ['is_5fk68',['IS_K68',['../usb_8h.html#ad490a4ca7c1a0e3387764786105a7b1e',1,'usb.h']]],
   ['is_5fk70',['IS_K70',['../usb_8h.html#a370c092dd98743625b5a2fe4a30cd07f',1,'usb.h']]],
   ['is_5fk95',['IS_K95',['../usb_8h.html#af612b6b5e489ef9dd625458ba57af521',1,'usb.h']]],
   ['is_5fm65',['IS_M65',['../usb_8h.html#a44b001c544766f8e216932d5bf9a34df',1,'usb.h']]],
@@ -23,12 +24,12 @@ var searchData=
   ['is_5fmonochrome_5fdev',['IS_MONOCHROME_DEV',['../usb_8h.html#af6a318e53d5738f518114c9b87a59905',1,'usb.h']]],
   ['is_5fmouse',['IS_MOUSE',['../usb_8h.html#a9aa1b86ddc13dc886bb403fda7c72ee7',1,'usb.h']]],
   ['is_5fmouse_5fdev',['IS_MOUSE_DEV',['../usb_8h.html#a0e24dcd96662e477474671d345a84414',1,'usb.h']]],
-  ['is_5fnew_5fprotocol',['IS_NEW_PROTOCOL',['../usb_8h.html#adce25fdab5fa7317b79baf38ef95e771',1,'usb.h']]],
   ['is_5fplatinum',['IS_PLATINUM',['../usb_8h.html#a7efa4f0b45bee8fc0337c241da442869',1,'usb.h']]],
   ['is_5frgb',['IS_RGB',['../usb_8h.html#ab8fdd4551fc9bedbcef101983ef0ef93',1,'usb.h']]],
   ['is_5frgb_5fdev',['IS_RGB_DEV',['../usb_8h.html#ad52d5bb523bfdb33da00fba52d95f7c1',1,'usb.h']]],
   ['is_5fsabre',['IS_SABRE',['../usb_8h.html#a42deb465caa31f803a16306986cd6bbe',1,'usb.h']]],
   ['is_5fscimitar',['IS_SCIMITAR',['../usb_8h.html#a42d0504a482944df6fe7cbdb06c0851b',1,'usb.h']]],
   ['is_5fstrafe',['IS_STRAFE',['../usb_8h.html#a934f88a3315f982a29c851cd8293155f',1,'usb.h']]],
+  ['is_5fv2_5foverride',['IS_V2_OVERRIDE',['../usb_8h.html#ae10d27e29068b5bdd851b4b1688b6351',1,'usb.h']]],
   ['is_5fwheel',['IS_WHEEL',['../input_8c.html#a7627527f18b9e615c9a9d5ff2a4b2b32',1,'input.c']]]
 ];

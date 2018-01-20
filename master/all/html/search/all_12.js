@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['readme',['README',['../md_README.html',1,'']]],
   ['r',['r',['../ckb-anim_8h.html#a3cff08260cae881c0ea7e71ffa82b643',1,'ckb_key::r()'],['../ckb-anim_8h.html#a4b1a6a9880a7ad955d9421565e9a3539',1,'ckb_gradient::r()'],['../structures_8h.html#a7de6a9b7b901c884d632b15772c8ef56',1,'lighting::r()'],['../kiss__fft_8h.html#a5d203cc43600e5c53a7df3e91e40efba',1,'kiss_fft_cpx::r()'],['../ckb-random_2main_8c.html#a2e51db126cff93863d52bb429fbc422d',1,'rgb::r()']]],
   ['randombright',['randomBright',['../ckb-heat_2main_8c.html#a90e355557237722a09643a9fe2c3e74c',1,'main.c']]],
   ['randomize',['randomize',['../ckb-gradient_2main_8c.html#addb13f4d42f0a46a68b28cf6f402acea',1,'randomize():&#160;main.c'],['../ckb-ripple_2main_8c.html#addb13f4d42f0a46a68b28cf6f402acea',1,'randomize():&#160;main.c']]],

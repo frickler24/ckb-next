@@ -1,5 +1,10 @@
 var NAVTREEINDEX7 =
 {
+"classQuaZipPrivate.html#a44f7d8ff4a27d1bd417e38fc01ac236d":[7,0,126,2],
+"classQuaZipPrivate.html#a460ac58d30e44775886fc7e435e63802":[7,0,126,18],
+"classQuaZipPrivate.html#a4ca18bcb67a120e8d266392042090ef5":[7,0,126,10],
+"classQuaZipPrivate.html#a5413a1fa48c255f88aa4bdc31f3c087e":[7,0,126,19],
+"classQuaZipPrivate.html#a7eddafdcdfc540f25e98d6df03fed1a7":[7,0,126,7],
 "classQuaZipPrivate.html#a84ac5959ed17829e9d8938e74b930991":[7,0,126,20],
 "classQuaZipPrivate.html#a89dc352ab38346c5bb3307319a90b00a":[7,0,126,15],
 "classQuaZipPrivate.html#a8f7a9cce30387d5f63c804d289a2f384":[7,0,126,11],
@@ -244,10 +249,5 @@ var NAVTREEINDEX7 =
 "classUi_1_1FwUpgradeDialog.html#a2388a4ae7279b35505eee63734364800":[7,0,0,3,14],
 "classUi_1_1FwUpgradeDialog.html#a3540fe06f768b5604cf686eec8a0c02c":[7,0,0,3,0],
 "classUi_1_1FwUpgradeDialog.html#a3ace04f2c9a06fff92f7866c9cdfb49d":[7,0,0,3,2],
-"classUi_1_1FwUpgradeDialog.html#a459309238a07b33a781447d80963b333":[7,0,0,3,12],
-"classUi_1_1FwUpgradeDialog.html#a57d678933172723d3c872df6413f3eac":[7,0,0,3,8],
-"classUi_1_1FwUpgradeDialog.html#a67fd53de6628e3aba316ac7177d2b88a":[7,0,0,3,10],
-"classUi_1_1FwUpgradeDialog.html#a7fa20d712c4938d1ba7677e1cc29f4e9":[7,0,0,3,16],
-"classUi_1_1FwUpgradeDialog.html#a9c7429b73b89ba1669490da4be3f9751":[7,0,0,3,4],
-"classUi_1_1FwUpgradeDialog.html#abea09c7e378ad6edc6123d5323911796":[7,0,0,3,9]
+"classUi_1_1FwUpgradeDialog.html#a459309238a07b33a781447d80963b333":[7,0,0,3,12]
 };

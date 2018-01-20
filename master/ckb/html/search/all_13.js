@@ -47,7 +47,7 @@ var searchData=
   ['sellabel',['selLabel',['../classUi__KbLightWidget.html#ac0dfd851f51e79ab1d67915623232751',1,'Ui_KbLightWidget']]],
   ['selnonebutton',['selNoneButton',['../classUi__ModeSelectDialog.html#a936c00c8776eee65595385fd8007d8f1',1,'Ui_ModeSelectDialog']]],
   ['seriallabel',['serialLabel',['../classUi__KbWidget.html#ab3d4699720aabecf7ff3ed4d2263c298',1,'Ui_KbWidget']]],
-  ['set',['set',['../classCkbSettings.html#a65c4f3ff1f75e5a554759040fb76044e',1,'CkbSettings::set()'],['../classKeyWidget.html#afbfadc514a9b22a82a12ad01253760c2a774830733b08368ce91bad930bd1e11b',1,'KeyWidget::SET()']]],
+  ['set',['SET',['../classKeyWidget.html#afbfadc514a9b22a82a12ad01253760c2a774830733b08368ce91bad930bd1e11b',1,'KeyWidget::SET()'],['../classCkbSettings.html#a65c4f3ff1f75e5a554759040fb76044e',1,'CkbSettings::set()']]],
   ['set_5fend',['SET_END',['../mperfwidget_8cpp.html#aacb40165e62fb091780ce2247ca564fd',1,'mperfwidget.cpp']]],
   ['set_5fstart',['SET_START',['../mperfwidget_8cpp.html#a1c10f41936892bcfa81bba7db8c43df1',1,'mperfwidget.cpp']]],
   ['setaction',['setAction',['../classKbBind.html#a6c16c7cd34f6166cf078564a08959d81',1,'KbBind::setAction(const QString &amp;key, const QString &amp;action)'],['../classKbBind.html#ad357da0838ba9ce35900d79bd5f0fb76',1,'KbBind::setAction(const QStringList &amp;keys, const QString &amp;action)']]],

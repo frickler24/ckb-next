@@ -281,7 +281,7 @@ Functions</h2></td></tr>
 
 <p>References <a class="el" href="includes_8h_source.html#l00052">ckb_warn</a>, <a class="el" href="structures_8h_source.html#l00189">usbdevice::uinput_kb</a>, and <a class="el" href="structures_8h_source.html#l00189">usbdevice::uinput_mouse</a>.</p>
 
-<p>Referenced by <a class="el" href="usb_8c_source.html#l00683">closeusb()</a>.</p>
+<p>Referenced by <a class="el" href="usb_8c_source.html#l00687">closeusb()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                 {</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">if</span>(kb-&gt;<a class="code" href="structures_8h.html#aff8e43d6fa31f862313abbd82dd904ee">uinput_kb</a> &lt;= 0 || kb-&gt;<a class="code" href="structures_8h.html#ad7a9a7fa43e8c43f08504a445cdb5e97">uinput_mouse</a> &lt;= 0)</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">return</span>;</div>
@@ -355,7 +355,7 @@ Functions</h2></td></tr>
 
 <p>References <a class="el" href="structures_8h_source.html#l00239">usbdevice::fwversion</a>, <a class="el" href="includes_8h_source.html#l00027">INDEX_OF</a>, <a class="el" href="device_8c_source.html#l00010">keyboard</a>, <a class="el" href="structures_8h_source.html#l00233">usbdevice::name</a>, <a class="el" href="structures_8h_source.html#l00237">usbdevice::product</a>, <a class="el" href="structures_8h_source.html#l00189">usbdevice::uinput_kb</a>, <a class="el" href="structures_8h_source.html#l00189">usbdevice::uinput_mouse</a>, <a class="el" href="input__linux_8c_source.html#l00009">uinputopen()</a>, and <a class="el" href="structures_8h_source.html#l00237">usbdevice::vendor</a>.</p>
 
-<p>Referenced by <a class="el" href="usb_8c_source.html#l00220">_setupusb()</a>.</p>
+<p>Referenced by <a class="el" href="usb_8c_source.html#l00224">_setupusb()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                               {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// Create the new input device</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">int</span> index = <a class="code" href="includes_8h.html#ac114b913ed9d0b7cab3b83188f111530">INDEX_OF</a>(kb, <a class="code" href="device_8c.html#a5f2ad0f3998226c000c52c5c375c2661">keyboard</a>);</div>
@@ -605,7 +605,7 @@ Functions</h2></td></tr>
 
 <p>References <a class="el" href="input__linux_8c_source.html#l00165">_ledthread()</a>, <a class="el" href="structures_8h_source.html#l00247">usbdevice::hw_ileds</a>, <a class="el" href="structures_8h_source.html#l00247">usbdevice::hw_ileds_old</a>, and <a class="el" href="structures_8h_source.html#l00247">usbdevice::ileds</a>.</p>
 
-<p>Referenced by <a class="el" href="usb_8c_source.html#l00220">_setupusb()</a>.</p>
+<p>Referenced by <a class="el" href="usb_8c_source.html#l00224">_setupusb()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                                     {</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="comment">// Initialize LEDs to all off</span></div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    kb-&gt;<a class="code" href="structures_8h.html#a847250183c4b8ebeb7959006df503e18">hw_ileds</a> = kb-&gt;<a class="code" href="structures_8h.html#ab7229d32e9fece77b274220c835d9e1a">hw_ileds_old</a> = kb-&gt;<a class="code" href="structures_8h.html#ab972e12c3a761c070ec6e15cf45908f6">ileds</a> = 0;</div>
@@ -736,7 +736,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c663af95b3406af676444e819a47854e.html">ckb-daemon</a></li><li class="navelem"><a class="el" href="input__linux_8c.html">input_linux.c</a></li>
-    <li class="footer">Generated on Fri Nov 3 2017 11:04:55 for ckb-next by
+    <li class="footer">Generated on Sat Jan 20 2018 16:59:30 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

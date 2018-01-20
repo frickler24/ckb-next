@@ -1,10 +1,14 @@
 var NAVTREEINDEX13 =
 {
+"crypt_8h.html#a2ac0d8ec3c867c44d730a188d8b0418e":[8,0,0,0,0,0,1],
+"crypt_8h.html#a3d049bf9296cf72cff8a07cff388bb1d":[8,0,0,0,0,0,3],
+"crypt_8h.html#a9f548005c00fa0754e9c23b7726bf741":[8,0,0,0,0,0,0],
+"crypt_8h.html#ab92d403757ccb1b5d790d5b05b3c0c59":[8,0,0,0,0,0,5],
+"crypt_8h.html#ab9d6a91abe3a1127f8b5476ba9ee9316":[8,0,0,0,0,0,2],
 "crypt_8h_source.html":[8,0,0,0,0,0],
 "daemon_2keymap_8h.html":[8,0,0,1,21],
 "daemon_2keymap_8h.html#a02531bf28bf1c98caf3da055f22a08bd":[8,0,0,1,21,5],
 "daemon_2keymap_8h.html#a0375a5d2cddae84d3495f827c3e2b241":[8,0,0,1,21,10],
-"daemon_2keymap_8h.html#a092f675ff366b5823c73b25f83d513f9":[8,0,0,1,21,29],
 "daemon_2keymap_8h.html#a0dc9a16564cc51b35a35d28af1a96fb0":[8,0,0,1,21,27],
 "daemon_2keymap_8h.html#a10391e4f9bcda1c6efe03f2961bcd838":[8,0,0,1,21,1],
 "daemon_2keymap_8h.html#a13222e9e2e7decc49add579e180fc0ce":[8,0,0,1,21,24],
@@ -15,12 +19,13 @@ var NAVTREEINDEX13 =
 "daemon_2keymap_8h.html#a235f617fd296b13cdbb823ba39cca480":[8,0,0,1,21,15],
 "daemon_2keymap_8h.html#a274f3de972b30571c95f048562d7be03":[8,0,0,1,21,16],
 "daemon_2keymap_8h.html#a28297cc8eb7154aeb3c81fd42a3c59b2":[7,0,43,2],
-"daemon_2keymap_8h.html#a31ffccc603ad3264b7d2fd09f468318a":[8,0,0,1,21,30],
+"daemon_2keymap_8h.html#a2920fc11fa38bb26de051f00d63f79f1":[8,0,0,1,21,29],
 "daemon_2keymap_8h.html#a390cacb50de667138de3e6d54825332a":[8,0,0,1,21,18],
 "daemon_2keymap_8h.html#a4c690382afdb435f75a135309f15294d":[8,0,0,1,21,22],
 "daemon_2keymap_8h.html#a5b07146999ff30e78fa4829ff3e90f4f":[8,0,0,1,21,3],
 "daemon_2keymap_8h.html#a651d575ebe5d00bbe17ae5fd9dbf41f8":[8,0,0,1,21,7],
 "daemon_2keymap_8h.html#a6f4afd134546237416b271d9cefd2889":[8,0,0,1,21,28],
+"daemon_2keymap_8h.html#a898b7841455029ebcb076c1e579de821":[8,0,0,1,21,30],
 "daemon_2keymap_8h.html#a8da11aae2aeac140b30ec9bc334bead3":[8,0,0,1,21,19],
 "daemon_2keymap_8h.html#a903ade6db268bd86c74b2692ebadca54":[8,0,0,1,21,9],
 "daemon_2keymap_8h.html#a91f9df4a74bc03cbe6fe42e3dd110cb0":[8,0,0,1,21,25],
@@ -244,10 +249,5 @@ var NAVTREEINDEX13 =
 "functions_func_v.html":[7,3,1,21],
 "functions_func_w.html":[7,3,1,22],
 "functions_func_y.html":[7,3,1,23],
-"functions_func_~.html":[7,3,1,24],
-"functions_g.html":[7,3,0,7],
-"functions_h.html":[7,3,0,8],
-"functions_i.html":[7,3,0,9],
-"functions_j.html":[7,3,0,10],
-"functions_k.html":[7,3,0,11]
+"functions_func_~.html":[7,3,1,24]
 };

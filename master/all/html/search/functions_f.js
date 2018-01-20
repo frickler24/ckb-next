@@ -7,6 +7,7 @@ var searchData=
   ['paramiterator',['paramIterator',['../classAnimScript.html#a23c5c08ec3a2c35d907bfd4084d04d7e',1,'AnimScript']]],
   ['parsecommandline',['parseCommandLine',['../main_8cpp.html#aaafcce700ac38bd72e6b92df6bc07902',1,'main.cpp']]],
   ['parseversionstring',['parseVersionString',['../classKbManager.html#a4ce88ef95a35d0cd5a3ac67a0bc076ea',1,'KbManager']]],
+  ['patchabnt2',['patchABNT2',['../keymap_8cpp.html#a22b3bd9a179097c07ae733af8ce5b9b3',1,'keymap.cpp']]],
   ['patchansi',['patchANSI',['../keymap_8cpp.html#a8566b65d2b1a5c8e614b3ee8dab76b0c',1,'keymap.cpp']]],
   ['patchiso',['patchISO',['../keymap_8cpp.html#a8f0991f950f9a010301225bbf10094a8',1,'keymap.cpp']]],
   ['patchjp106',['patchJP106',['../keymap_8cpp.html#a98f00b0180ac3988cd57f52f21bd1f0b',1,'keymap.cpp']]],

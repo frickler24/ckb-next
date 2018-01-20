@@ -61,13 +61,12 @@ var searchData=
   ['cmdhandler',['cmdhandler',['../command_8h.html#ae5e6a8ec7e5ae9a0bd5363dbb1d1e82e',1,'command.h']]],
   ['cmdhandler_5fio',['cmdhandler_io',['../command_8h.html#a08dd48a63bda3ce71a6f770ead9b6b5d',1,'command.h']]],
   ['cmdhandler_5fmac',['cmdhandler_mac',['../command_8h.html#a27528e6853c9caeee49b2e240d188a78',1,'command.h']]],
-  ['combo',['combo',['../structures_8h.html#a6562f2f834944c6b5a73fc28cff07cd4',1,'keymacro']]],
+  ['combo',['combo',['../structures_8h.html#a339159e4fbd81f7e129777f4194da97f',1,'keymacro']]],
   ['command_2ec',['command.c',['../command_8c.html',1,'']]],
   ['command_2eh',['command.h',['../command_8h.html',1,'']]],
   ['corsair_5fkbcopy',['corsair_kbcopy',['../keymap_8c.html#ad39ede76abd657f5123fa331853db017',1,'corsair_kbcopy(unsigned char *kbinput, int endpoint, const unsigned char *urbinput):&#160;keymap.c'],['../keymap_8h.html#ad39ede76abd657f5123fa331853db017',1,'corsair_kbcopy(unsigned char *kbinput, int endpoint, const unsigned char *urbinput):&#160;keymap.c']]],
   ['corsair_5fmousecopy',['corsair_mousecopy',['../keymap_8c.html#a0dc9a16564cc51b35a35d28af1a96fb0',1,'corsair_mousecopy(unsigned char *kbinput, int endpoint, const unsigned char *urbinput):&#160;keymap.c'],['../keymap_8h.html#a0dc9a16564cc51b35a35d28af1a96fb0',1,'corsair_mousecopy(unsigned char *kbinput, int endpoint, const unsigned char *urbinput):&#160;keymap.c']]],
   ['current',['current',['../structures_8h.html#a19bec69caa1bec49b8f3a1bde78a5424',1,'dpiset']]],
   ['currentmode',['currentmode',['../structures_8h.html#a5646d61c7780a87a21b70209396ff605',1,'usbprofile']]],
-  ['ckb_2dnext_3a_20rgb_20driver_20for_20linux_20and_20macos',['ckb-next: RGB Driver for Linux and macOS',['../md_README.html',1,'']]],
   ['cbk_20improvements_20roadmap',['cbk Improvements Roadmap',['../md_ROADMAP.html',1,'']]]
 ];

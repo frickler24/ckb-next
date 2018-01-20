@@ -711,7 +711,7 @@ leftoverlen</td>
 
 <p>References <a class="el" href="devnode_8c_source.html#l00136">_mkdevpath()</a>, <a class="el" href="os_8h_source.html#l00040">euid_guard_start</a>, and <a class="el" href="os_8h_source.html#l00041">euid_guard_stop</a>.</p>
 
-<p>Referenced by <a class="el" href="usb_8c_source.html#l00220">_setupusb()</a>, and <a class="el" href="main_8c_source.html#l00088">main()</a>.</p>
+<p>Referenced by <a class="el" href="usb_8c_source.html#l00224">_setupusb()</a>, and <a class="el" href="main_8c_source.html#l00088">main()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                            {</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <a class="code" href="os_8h.html#aeff95c59e588ab0168a912118675c998">euid_guard_start</a>;</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keywordtype">int</span> res = <a class="code" href="devnode_8c.html#a81c81014b2dfa89e326dd61769842953">_mkdevpath</a>(kb);</div>
@@ -918,7 +918,7 @@ leftoverlen</td>
 
 <p>References <a class="el" href="devnode_8c_source.html#l00336">_readlines_ctx::buffer</a>, <a class="el" href="devnode_8c_source.html#l00337">_readlines_ctx::buffersize</a>, <a class="el" href="includes_8h_source.html#l00052">ckb_warn</a>, <a class="el" href="devnode_8c_source.html#l00338">_readlines_ctx::leftover</a>, <a class="el" href="devnode_8c_source.html#l00338">_readlines_ctx::leftoverlen</a>, and <a class="el" href="devnode_8c_source.html#l00334">MAX_BUFFER</a>.</p>
 
-<p>Referenced by <a class="el" href="usb_8c_source.html#l00141">devmain()</a>.</p>
+<p>Referenced by <a class="el" href="usb_8c_source.html#l00145">devmain()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                                                                 {</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <span class="comment">// Move any data left over from a previous read to the start of the buffer</span></div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <span class="keywordtype">char</span>* buffer = ctx-&gt;<a class="code" href="devnode_8c.html#afbb9a428bab37c19008f4339b0a9cb8f">buffer</a>;</div>
@@ -1010,7 +1010,7 @@ leftoverlen</td>
 
 <p>References <a class="el" href="devnode_8c_source.html#l00336">_readlines_ctx::buffer</a>.</p>
 
-<p>Referenced by <a class="el" href="usb_8c_source.html#l00141">devmain()</a>.</p>
+<p>Referenced by <a class="el" href="usb_8c_source.html#l00145">devmain()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                                          {</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    free(ctx-&gt;<a class="code" href="devnode_8c.html#afbb9a428bab37c19008f4339b0a9cb8f">buffer</a>);</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    free(ctx);</div>
@@ -1046,7 +1046,7 @@ leftoverlen</td>
 
 <p>Definition at line <a class="el" href="devnode_8c_source.html#l00341">341</a> of file <a class="el" href="devnode_8c_source.html">devnode.c</a>.</p>
 
-<p>Referenced by <a class="el" href="usb_8c_source.html#l00141">devmain()</a>.</p>
+<p>Referenced by <a class="el" href="usb_8c_source.html#l00145">devmain()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                                           {</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="comment">// Allocate buffers to store data</span></div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    *ctx = calloc(1, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code" href="devnode_8c.html#struct__readlines__ctx">_readlines_ctx</a>));</div>
@@ -1136,7 +1136,7 @@ leftoverlen</td>
 
 <p>References <a class="el" href="devnode_8c_source.html#l00115">_rmnotifynode()</a>, <a class="el" href="includes_8h_source.html#l00055">ckb_info</a>, <a class="el" href="includes_8h_source.html#l00052">ckb_warn</a>, <a class="el" href="devnode_8c_source.html#l00011">devpath</a>, <a class="el" href="os_8h_source.html#l00040">euid_guard_start</a>, <a class="el" href="os_8h_source.html#l00041">euid_guard_stop</a>, <a class="el" href="includes_8h_source.html#l00027">INDEX_OF</a>, <a class="el" href="structures_8h_source.html#l00225">usbdevice::infifo</a>, <a class="el" href="device_8c_source.html#l00010">keyboard</a>, <a class="el" href="structures_8h_source.html#l00024">OUTFIFO_MAX</a>, and <a class="el" href="devnode_8c_source.html#l00019">rm_recursive()</a>.</p>
 
-<p>Referenced by <a class="el" href="usb_8c_source.html#l00683">closeusb()</a>, and <a class="el" href="main_8c_source.html#l00040">quitWithLock()</a>.</p>
+<p>Referenced by <a class="el" href="usb_8c_source.html#l00687">closeusb()</a>, and <a class="el" href="main_8c_source.html#l00040">quitWithLock()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                            {</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <a class="code" href="os_8h.html#aeff95c59e588ab0168a912118675c998">euid_guard_start</a>;</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keywordtype">int</span> index = <a class="code" href="includes_8h.html#ac114b913ed9d0b7cab3b83188f111530">INDEX_OF</a>(kb, <a class="code" href="device_8c.html#a5f2ad0f3998226c000c52c5c375c2661">keyboard</a>);</div>
@@ -1276,7 +1276,7 @@ leftoverlen</td>
 
 <p>References <a class="el" href="devnode_8c_source.html#l00055">_updateconnected()</a>, <a class="el" href="os_8h_source.html#l00040">euid_guard_start</a>, and <a class="el" href="os_8h_source.html#l00041">euid_guard_stop</a>.</p>
 
-<p>Referenced by <a class="el" href="usb_8c_source.html#l00220">_setupusb()</a>, and <a class="el" href="usb_8c_source.html#l00683">closeusb()</a>.</p>
+<p>Referenced by <a class="el" href="usb_8c_source.html#l00224">_setupusb()</a>, and <a class="el" href="usb_8c_source.html#l00687">closeusb()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                      {</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="os_8h.html#aeff95c59e588ab0168a912118675c998">euid_guard_start</a>;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="devnode_8c.html#acc36eaba5eb854461ab3c0a4d146e9c9">_updateconnected</a>();</div>
@@ -1323,7 +1323,7 @@ leftoverlen</td>
 
 <p>Definition at line <a class="el" href="devnode_8c_source.html#l00011">11</a> of file <a class="el" href="devnode_8c_source.html">devnode.c</a>.</p>
 
-<p>Referenced by <a class="el" href="devnode_8c_source.html#l00136">_mkdevpath()</a>, <a class="el" href="devnode_8c_source.html#l00087">_mknotifynode()</a>, <a class="el" href="devnode_8c_source.html#l00115">_rmnotifynode()</a>, <a class="el" href="usb_8c_source.html#l00220">_setupusb()</a>, <a class="el" href="devnode_8c_source.html#l00055">_updateconnected()</a>, <a class="el" href="usb_8c_source.html#l00683">closeusb()</a>, <a class="el" href="main_8c_source.html#l00088">main()</a>, <a class="el" href="devnode_8c_source.html#l00299">mkfwnode()</a>, <a class="el" href="usb__linux_8c_source.html#l00238">os_inputmain()</a>, <a class="el" href="usb__linux_8c_source.html#l00535">os_setupusb()</a>, and <a class="el" href="devnode_8c_source.html#l00275">rmdevpath()</a>.</p>
+<p>Referenced by <a class="el" href="devnode_8c_source.html#l00136">_mkdevpath()</a>, <a class="el" href="devnode_8c_source.html#l00087">_mknotifynode()</a>, <a class="el" href="devnode_8c_source.html#l00115">_rmnotifynode()</a>, <a class="el" href="usb_8c_source.html#l00224">_setupusb()</a>, <a class="el" href="devnode_8c_source.html#l00055">_updateconnected()</a>, <a class="el" href="usb_8c_source.html#l00687">closeusb()</a>, <a class="el" href="main_8c_source.html#l00088">main()</a>, <a class="el" href="devnode_8c_source.html#l00299">mkfwnode()</a>, <a class="el" href="usb__linux_8c_source.html#l00248">os_inputmain()</a>, <a class="el" href="usb__linux_8c_source.html#l00548">os_setupusb()</a>, and <a class="el" href="devnode_8c_source.html#l00275">rmdevpath()</a>.</p>
 
 </div>
 </div>
@@ -1349,7 +1349,7 @@ leftoverlen</td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c663af95b3406af676444e819a47854e.html">ckb-daemon</a></li><li class="navelem"><a class="el" href="devnode_8c.html">devnode.c</a></li>
-    <li class="footer">Generated on Fri Nov 3 2017 11:04:51 for ckb-next by
+    <li class="footer">Generated on Sat Jan 20 2018 16:59:27 for ckb-next by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

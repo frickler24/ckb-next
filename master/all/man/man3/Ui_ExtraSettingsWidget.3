@@ -1,4 +1,4 @@
-.TH "Ui::ExtraSettingsWidget" 3 "Fri Nov 3 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "Ui::ExtraSettingsWidget" 3 "Sat Jan 20 2018" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -155,58 +155,58 @@ Inherits \fBUi_ExtraSettingsWidget\fP\&.
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 366 of file ui_extrasettingswidget\&.h\&.
+Definition at line 374 of file ui_extrasettingswidget\&.h\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "void Ui_ExtraSettingsWidget::retranslateUi (\fBQDialog\fP *ExtraSettingsWidget)\fC [inline]\fP, \fC [inherited]\fP"
 
 .PP
-Definition at line 322 of file ui_extrasettingswidget\&.h\&.
+Definition at line 330 of file ui_extrasettingswidget\&.h\&.
 .PP
 References Ui_ExtraSettingsWidget::animCountLabel, Ui_ExtraSettingsWidget::animPathLabel, Ui_ExtraSettingsWidget::animScanButton, Ui_ExtraSettingsWidget::brightnessBox, Ui_ExtraSettingsWidget::delayBox, Ui_ExtraSettingsWidget::ditherBox, Ui_ExtraSettingsWidget::fpsWarnLabel, Ui_ExtraSettingsWidget::label, Ui_ExtraSettingsWidget::label_10, Ui_ExtraSettingsWidget::label_11, Ui_ExtraSettingsWidget::label_2, Ui_ExtraSettingsWidget::label_3, Ui_ExtraSettingsWidget::label_5, Ui_ExtraSettingsWidget::label_6, Ui_ExtraSettingsWidget::mAccelBox, Ui_ExtraSettingsWidget::osxLabel, Ui_ExtraSettingsWidget::sAccelBox, and Ui_ExtraSettingsWidget::trayBox\&.
 .PP
 Referenced by Ui_ExtraSettingsWidget::setupUi()\&.
 .PP
 .nf
-323     {
-324         ExtraSettingsWidget->setWindowTitle(QApplication::translate("ExtraSettingsWidget", "Application Settings", Q_NULLPTR));
-325         fpsWarnLabel->setText(QApplication::translate("ExtraSettingsWidget", "Warning: high frame rates may cause stability issues", Q_NULLPTR));
-326         label_3->setText(QApplication::translate("ExtraSettingsWidget", "Frame rate (FPS):", Q_NULLPTR));
-327         label_6->setText(QApplication::translate("ExtraSettingsWidget", "Location:", Q_NULLPTR));
-328 #ifndef QT_NO_TOOLTIP
-329         sAccelBox->setToolTip(QApplication::translate("ExtraSettingsWidget", "Try this if you're having problems with the scroll wheel\&.", Q_NULLPTR));
-330 #endif // QT_NO_TOOLTIP
-331         sAccelBox->setText(QApplication::translate("ExtraSettingsWidget", "Disable scroll acceleration", Q_NULLPTR));
-332         animPathLabel->setText(QApplication::translate("ExtraSettingsWidget", "/path/to/animations", Q_NULLPTR));
-333         animCountLabel->setText(QApplication::translate("ExtraSettingsWidget", "0 animations found", Q_NULLPTR));
-334         animScanButton->setText(QApplication::translate("ExtraSettingsWidget", "Re-scan", Q_NULLPTR));
-335 #ifndef QT_NO_TOOLTIP
-336         brightnessBox->setToolTip(QApplication::translate("ExtraSettingsWidget", "By default, the same brightness level will be applied to all profiles and all devices\&. Enable this to store it with the lighting mode instead\&.", Q_NULLPTR));
-337 #endif // QT_NO_TOOLTIP
-338         brightnessBox->setText(QApplication::translate("ExtraSettingsWidget", "Set brightness per-mode", Q_NULLPTR));
-339 #ifndef QT_NO_TOOLTIP
-340         trayBox->setToolTip(QApplication::translate("ExtraSettingsWidget", "The tray icon will not be displayed\&. The application will still run in the background; re-launch the app to see the GUI again\&.", Q_NULLPTR));
-341 #endif // QT_NO_TOOLTIP
-342         trayBox->setText(QApplication::translate("ExtraSettingsWidget", "Hide tray icon", Q_NULLPTR));
-343         label->setText(QApplication::translate("ExtraSettingsWidget", "Behavior", Q_NULLPTR));
-344         label_5->setText(QApplication::translate("ExtraSettingsWidget", "Animation scripts", Q_NULLPTR));
-345         label_2->setText(QApplication::translate("ExtraSettingsWidget", "Hardware", Q_NULLPTR));
-346 #ifndef QT_NO_TOOLTIP
-347         ditherBox->setToolTip(QApplication::translate("ExtraSettingsWidget", "May improve appearance on some keyboards\&.", Q_NULLPTR));
-348 #endif // QT_NO_TOOLTIP
-349         ditherBox->setText(QApplication::translate("ExtraSettingsWidget", "Use spatial dithering to simulate extra color resolution", Q_NULLPTR));
-350 #ifndef QT_NO_TOOLTIP
-351         delayBox->setToolTip(QApplication::translate("ExtraSettingsWidget", "When using macros with strings longer than 25 chars, some OS may lose characters (e\&.g\&. Mint 17\&.2)\&. Select to prevent that bug\&.", Q_NULLPTR));
-352 #endif // QT_NO_TOOLTIP
-353         delayBox->setText(QApplication::translate("ExtraSettingsWidget", "Use delay for very long macros", Q_NULLPTR));
-354         osxLabel->setText(QApplication::translate("ExtraSettingsWidget", "OS X tweaks", Q_NULLPTR));
-355 #ifndef QT_NO_TOOLTIP
-356         mAccelBox->setToolTip(QApplication::translate("ExtraSettingsWidget", "Try this if you're having problems with mouse movement\&.", Q_NULLPTR));
-357 #endif // QT_NO_TOOLTIP
-358         mAccelBox->setText(QApplication::translate("ExtraSettingsWidget", "Disable mouse acceleration", Q_NULLPTR));
-359         label_10->setText(QApplication::translate("ExtraSettingsWidget", "Scroll", Q_NULLPTR));
-360         label_11->setText(QApplication::translate("ExtraSettingsWidget", "line(s) at a time", Q_NULLPTR));
-361     } // retranslateUi
+331     {
+332         ExtraSettingsWidget->setWindowTitle(QApplication::translate("ExtraSettingsWidget", "Application Settings", Q_NULLPTR));
+333         fpsWarnLabel->setText(QApplication::translate("ExtraSettingsWidget", "Warning: high frame rates may cause stability issues", Q_NULLPTR));
+334         label_3->setText(QApplication::translate("ExtraSettingsWidget", "Frame rate (FPS):", Q_NULLPTR));
+335         label_6->setText(QApplication::translate("ExtraSettingsWidget", "Location:", Q_NULLPTR));
+336 #ifndef QT_NO_TOOLTIP
+337         sAccelBox->setToolTip(QApplication::translate("ExtraSettingsWidget", "Try this if you're having problems with the scroll wheel\&.", Q_NULLPTR));
+338 #endif // QT_NO_TOOLTIP
+339         sAccelBox->setText(QApplication::translate("ExtraSettingsWidget", "Disable scroll acceleration", Q_NULLPTR));
+340         animPathLabel->setText(QApplication::translate("ExtraSettingsWidget", "/path/to/animations", Q_NULLPTR));
+341         animCountLabel->setText(QApplication::translate("ExtraSettingsWidget", "0 animations found", Q_NULLPTR));
+342         animScanButton->setText(QApplication::translate("ExtraSettingsWidget", "Re-scan", Q_NULLPTR));
+343 #ifndef QT_NO_TOOLTIP
+344         brightnessBox->setToolTip(QApplication::translate("ExtraSettingsWidget", "By default, the same brightness level will be applied to all profiles and all devices\&. Enable this to store it with the lighting mode instead\&.", Q_NULLPTR));
+345 #endif // QT_NO_TOOLTIP
+346         brightnessBox->setText(QApplication::translate("ExtraSettingsWidget", "Set brightness per-mode", Q_NULLPTR));
+347 #ifndef QT_NO_TOOLTIP
+348         trayBox->setToolTip(QApplication::translate("ExtraSettingsWidget", "The tray icon will not be displayed\&. The application will still run in the background; re-launch the app to see the GUI again\&.", Q_NULLPTR));
+349 #endif // QT_NO_TOOLTIP
+350         trayBox->setText(QApplication::translate("ExtraSettingsWidget", "Hide tray icon", Q_NULLPTR));
+351         label->setText(QApplication::translate("ExtraSettingsWidget", "Behavior", Q_NULLPTR));
+352         label_5->setText(QApplication::translate("ExtraSettingsWidget", "Animation scripts", Q_NULLPTR));
+353         label_2->setText(QApplication::translate("ExtraSettingsWidget", "Hardware", Q_NULLPTR));
+354 #ifndef QT_NO_TOOLTIP
+355         ditherBox->setToolTip(QApplication::translate("ExtraSettingsWidget", "May improve appearance on some keyboards\&.", Q_NULLPTR));
+356 #endif // QT_NO_TOOLTIP
+357         ditherBox->setText(QApplication::translate("ExtraSettingsWidget", "Use spatial dithering to simulate extra color resolution", Q_NULLPTR));
+358 #ifndef QT_NO_TOOLTIP
+359         delayBox->setToolTip(QApplication::translate("ExtraSettingsWidget", "When using macros with strings longer than 25 chars, some OS may lose characters (e\&.g\&. Mint 17\&.2)\&. Select to prevent that bug\&.", Q_NULLPTR));
+360 #endif // QT_NO_TOOLTIP
+361         delayBox->setText(QApplication::translate("ExtraSettingsWidget", "Use delay for very long macros", Q_NULLPTR));
+362         osxLabel->setText(QApplication::translate("ExtraSettingsWidget", "OS X tweaks", Q_NULLPTR));
+363 #ifndef QT_NO_TOOLTIP
+364         mAccelBox->setToolTip(QApplication::translate("ExtraSettingsWidget", "Try this if you're having problems with mouse movement\&.", Q_NULLPTR));
+365 #endif // QT_NO_TOOLTIP
+366         mAccelBox->setText(QApplication::translate("ExtraSettingsWidget", "Disable mouse acceleration", Q_NULLPTR));
+367         label_10->setText(QApplication::translate("ExtraSettingsWidget", "Scroll", Q_NULLPTR));
+368         label_11->setText(QApplication::translate("ExtraSettingsWidget", "line(s) at a time", Q_NULLPTR));
+369     } // retranslateUi
 .fi
 .SS "void Ui_ExtraSettingsWidget::setupUi (\fBQDialog\fP *ExtraSettingsWidget)\fC [inline]\fP, \fC [inherited]\fP"
 
@@ -453,13 +453,21 @@ Referenced by ExtraSettingsWidget::ExtraSettingsWidget()\&.
 311 
 312         gridLayout->addWidget(buttonBox, 20, 0, 1, 7);
 313 
-314 
-315         retranslateUi(ExtraSettingsWidget);
-316         QObject::connect(buttonBox, SIGNAL(accepted()), ExtraSettingsWidget, SLOT(accept()));
-317         QObject::connect(buttonBox, SIGNAL(rejected()), ExtraSettingsWidget, SLOT(reject()));
-318 
-319         QMetaObject::connectSlotsByName(ExtraSettingsWidget);
-320     } // setupUi
+314         QWidget::setTabOrder(trayBox, brightnessBox);
+315         QWidget::setTabOrder(brightnessBox, animScanButton);
+316         QWidget::setTabOrder(animScanButton, fpsBox);
+317         QWidget::setTabOrder(fpsBox, ditherBox);
+318         QWidget::setTabOrder(ditherBox, delayBox);
+319         QWidget::setTabOrder(delayBox, mAccelBox);
+320         QWidget::setTabOrder(mAccelBox, sAccelBox);
+321         QWidget::setTabOrder(sAccelBox, sSpeedBox);
+322 
+323         retranslateUi(ExtraSettingsWidget);
+324         QObject::connect(buttonBox, SIGNAL(accepted()), ExtraSettingsWidget, SLOT(accept()));
+325         QObject::connect(buttonBox, SIGNAL(rejected()), ExtraSettingsWidget, SLOT(reject()));
+326 
+327         QMetaObject::connectSlotsByName(ExtraSettingsWidget);
+328     } // setupUi
 .fi
 .SH "Field Documentation"
 .PP 

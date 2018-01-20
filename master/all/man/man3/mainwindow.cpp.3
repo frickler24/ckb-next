@@ -1,4 +1,4 @@
-.TH "src/ckb/mainwindow.cpp" 3 "Fri Nov 3 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "src/ckb/mainwindow.cpp" 3 "Sat Jan 20 2018" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -18,6 +18,8 @@ src/ckb/mainwindow.cpp \-
 .br
 \fC#include <cstdlib>\fP
 .br
+\fC#include <QFileInfo>\fP
+.br
 \fC#include <QSharedMemory>\fP
 .br
 \fC#include <QShortcut>\fP
@@ -36,7 +38,14 @@ src/ckb/mainwindow.cpp \-
 .RI "QSharedMemory \fBappShare\fP"
 .br
 .ti -1c
+.RI "QString \fBdevpath\fP"
+.br
+.RI "\fIDevice path base ('/dev/input/ckb' or '/var/run/ckb') \fP"
+.ti -1c
 .RI "static const QString \fBconfigLabel\fP = 'Settings'"
+.br
+.ti -1c
+.RI "QString \fBdaemonDialogText\fP"
 .br
 .in -1c
 .SH "Variable Documentation"
@@ -48,7 +57,26 @@ Referenced by MainWindow::timerTick()\&.
 .SS "const QString configLabel = 'Settings'\fC [static]\fP"
 
 .PP
-Definition at line 15 of file mainwindow\&.cpp\&.
+Definition at line 17 of file mainwindow\&.cpp\&.
+.PP
+Referenced by MainWindow::MainWindow()\&.
+.SS "QString daemonDialogText"
+\fBInitial value:\fP
+.PP
+.nf
+= QObject::tr("Start it once with:") +
+    "<blockquote><code>sudo systemctl start ckb-daemon</code></blockquote>" +
+    QObject::tr("Enable it for every boot:") +
+    "<blockquote><code>sudo systemctl enable ckb-daemon</code></blockquote>"
+.fi
+.PP
+Definition at line 20 of file mainwindow\&.cpp\&.
+.PP
+Referenced by MainWindow::MainWindow()\&.
+.SS "QString devpath"
+
+.PP
+Definition at line 4 of file kbmanager\&.cpp\&.
 .PP
 Referenced by MainWindow::MainWindow()\&.
 .SH "Author"

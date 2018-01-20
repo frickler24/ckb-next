@@ -1,4 +1,4 @@
-.TH "src/ckb-daemon/device.h" 3 "Fri Nov 3 2017" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
+.TH "src/ckb-daemon/device.h" 3 "Sat Jan 20 2018" "Version v0.2.8 at branch master" "ckb-next" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -187,7 +187,7 @@ Definition at line 70 of file device\&.h\&.
 .PP
 Definition at line 8 of file device\&.h\&.
 .PP
-Referenced by _updateconnected(), quitWithLock(), usb_rm_device(), and usbadd()\&.
+Referenced by _start_dev(), _updateconnected(), quitWithLock(), usb_rm_device(), and usbadd()\&.
 .SS "#define dmutex(kb)   (\fBdevmutex\fP + \fBINDEX_OF\fP(kb, \fBkeyboard\fP))"
 
 .PP
@@ -509,18 +509,18 @@ References NK95_M1, NK95_M2, NK95_M3, and nk95cmd\&.
 .SS "int start_dev (\fBusbdevice\fP *kb, intmakeactive)"
 
 .PP
-Definition at line 80 of file device\&.c\&.
+Definition at line 89 of file device\&.c\&.
 .PP
 References _start_dev(), USB_DELAY_DEFAULT, and usbdevice::usbdelay\&.
 .PP
 .nf
-80                                             {
-81     // Force USB interval to 10ms during initial setup phase; return to nominal 5ms after setup completes\&.
-82     kb->usbdelay = 10;
-83     int res = _start_dev(kb, makeactive);
-84     kb->usbdelay = USB_DELAY_DEFAULT;
-85     return res;
-86 }
+89                                             {
+90     // Force USB interval to 10ms during initial setup phase; return to nominal 5ms after setup completes\&.
+91     kb->usbdelay = 10;
+92     int res = _start_dev(kb, makeactive);
+93     kb->usbdelay = USB_DELAY_DEFAULT;
+94     return res;
+95 }
 .fi
 .SS "int start_kb_nrgb (\fBusbdevice\fP *kb, intmakeactive)"
 

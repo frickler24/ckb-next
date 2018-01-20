@@ -2,6 +2,7 @@ var searchData=
 [
   ['k63toprow',['K63TopRow',['../keymap_8cpp.html#a4ccf4005d21f2b4cc4f41a8bb13eea83',1,'keymap.cpp']]],
   ['k65toprow',['K65TopRow',['../keymap_8cpp.html#a7fb8412c39cb59ac78a1a9a4b280d929',1,'keymap.cpp']]],
+  ['k68toprow',['K68TopRow',['../keymap_8cpp.html#a058a9ba862329cb8a71f5e54a8319e81',1,'keymap.cpp']]],
   ['k95basemap',['K95BaseMap',['../keymap_8cpp.html#a4d026e29c078721c3754b020a90e096c',1,'keymap.cpp']]],
   ['k95keys',['K95Keys',['../keymap_8cpp.html#a67e5621d80735758a384e427c2c6f4ae',1,'keymap.cpp']]],
   ['k95label1',['k95Label1',['../classUi__KPerfWidget.html#ada32369d1be90a0b97614684d808149f',1,'Ui_KPerfWidget']]],
@@ -11,6 +12,7 @@ var searchData=
   ['k95label5',['k95Label5',['../classUi__KPerfWidget.html#a664757983a1baacd3b919d04cc59a660',1,'Ui_KPerfWidget']]],
   ['k95label6',['k95Label6',['../classUi__KPerfWidget.html#ad4460c9c2a3ca812ab9d01d7cfa7fab0',1,'Ui_KPerfWidget']]],
   ['k95line',['k95Line',['../classUi__KPerfWidget.html#a19de951bb93c7dddf330c21087bbb9dc',1,'Ui_KPerfWidget']]],
+  ['k95plbar',['K95PLbar',['../keymap_8cpp.html#a9b3f8dc991ad097a5a6009e69ec91e70',1,'keymap.cpp']]],
   ['k95spacer',['k95Spacer',['../classUi__KPerfWidget.html#a55c49b7b53d712084871cebf175b1e75',1,'Ui_KPerfWidget']]],
   ['k95widgets',['k95Widgets',['../classKPerfWidget.html#a827fd8959cd369da684a7582a4bd1ce4',1,'KPerfWidget']]],
   ['kb',['kb',['../classFwUpgradeDialog.html#a24b6dbbf72f0283464aac2b3964b7cd5',1,'FwUpgradeDialog']]],

@@ -1,5 +1,10 @@
 var NAVTREEINDEX11 =
 {
+"classUi__MPerfWidget.html#aaae06391254a4b3e1a717e06f6c7d89d":[7,0,130,15],
+"classUi__MPerfWidget.html#ab20ded81c35aeb56e39214fc589e05e2":[7,0,130,47],
+"classUi__MPerfWidget.html#ab3d10c28475cffd0cd24a3899a9f5e14":[7,0,130,23],
+"classUi__MPerfWidget.html#ab562f75f7ab09e001a0c20876a5bbf84":[7,0,130,3],
+"classUi__MPerfWidget.html#ab67942ac37c6bb172a97ec4196c3c0b9":[7,0,130,52],
 "classUi__MPerfWidget.html#ab762f13f3269abcf328d7c0cf68a5146":[7,0,130,25],
 "classUi__MPerfWidget.html#ac3b06addb324b24a3d8afcc131dae78f":[7,0,130,55],
 "classUi__MPerfWidget.html#ac6a5dd40903fee2fcd3ba4e73256bafc":[7,0,130,33],
@@ -244,10 +249,5 @@ var NAVTREEINDEX11 =
 "dir_dd40dbfb1a3e901c7a2442e5484380fc.html":[8,0,0,0,1],
 "extrasettingswidget_8cpp.html":[8,0,0,0,19],
 "extrasettingswidget_8cpp.html#a6c9fe658e9f7a958736ed09500375a5a":[8,0,0,0,19,0],
-"extrasettingswidget_8cpp_source.html":[8,0,0,0,19],
-"extrasettingswidget_8h.html":[8,0,0,0,20],
-"extrasettingswidget_8h_source.html":[8,0,0,0,20],
-"files.html":[8,0],
-"functions.html":[7,3,0],
-"functions.html":[7,3,0,0]
+"extrasettingswidget_8cpp_source.html":[8,0,0,0,19]
 };

@@ -11,6 +11,7 @@ var searchData=
   ['patchjp',['patchJP',['../keymap_8cpp.html#a22b9d733ea200d98a016eecbc16ba783',1,'keymap.cpp']]],
   ['patchmx',['patchMX',['../keymap_8cpp.html#af3b3526ccc4a1c82a79fc0c20239c699',1,'keymap.cpp']]],
   ['patchno',['patchNO',['../keymap_8cpp.html#aaaba0e8ff238111c6ecb7facbf32e954',1,'keymap.cpp']]],
+  ['patchptbr',['patchPTBR',['../keymap_8cpp.html#aa689e51d5639776d06cbf76ec0b16b9c',1,'keymap.cpp']]],
   ['patchse',['patchSE',['../keymap_8cpp.html#a386f77bc0b4d7d87cc6db0f79fac7617',1,'keymap.cpp']]],
   ['pcrc_5f32_5ftab',['pcrc_32_tab',['../unzip_8c.html#a1a05ae390405b254baab33422211acab',1,'unz64_s::pcrc_32_tab()'],['../zip_8c.html#a16813802061410c5c34cbd1f441739d8',1,'curfile64_info::pcrc_32_tab()']]],
   ['perf',['perf',['../classKPerfWidget.html#a3ca2ee7370af331f1aa55be4d77b032e',1,'KPerfWidget::perf()'],['../classMPerfWidget.html#a3d4b30a08ccc75c48c7976fcac33b883',1,'MPerfWidget::perf()']]],

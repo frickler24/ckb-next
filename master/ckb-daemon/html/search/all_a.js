@@ -10,9 +10,9 @@ var searchData=
   ['key_5funbound',['KEY_UNBOUND',['../keymap_8h.html#af6020b73885d2ba3a49b9330b5deeca0',1,'keymap.h']]],
   ['keyboard',['keyboard',['../device_8c.html#a5f2ad0f3998226c000c52c5c375c2661',1,'keyboard():&#160;device.c'],['../device_8h.html#a5f2ad0f3998226c000c52c5c375c2661',1,'keyboard():&#160;device.c']]],
   ['keymacro',['keymacro',['../structures_8h.html#structkeymacro',1,'']]],
-  ['keymap',['keymap',['../keymap_8c.html#a31ffccc603ad3264b7d2fd09f468318a',1,'keymap():&#160;keymap.c'],['../keymap_8h.html#a31ffccc603ad3264b7d2fd09f468318a',1,'keymap():&#160;keymap.c']]],
+  ['keymap',['keymap',['../keymap_8c.html#a898b7841455029ebcb076c1e579de821',1,'keymap():&#160;keymap.c'],['../keymap_8h.html#a898b7841455029ebcb076c1e579de821',1,'keymap():&#160;keymap.c']]],
   ['keymap_2ec',['keymap.c',['../keymap_8c.html',1,'']]],
   ['keymap_2eh',['keymap.h',['../keymap_8h.html',1,'']]],
   ['keymap_5fmac_2eh',['keymap_mac.h',['../keymap__mac_8h.html',1,'']]],
-  ['keys',['keys',['../structures_8h.html#a09eb578ef851df58b6b124d9e6cf1dc0',1,'usbinput']]]
+  ['keys',['keys',['../structures_8h.html#a747e8840d26b8a5ea14bc5a2db5ac060',1,'usbinput']]]
 ];
